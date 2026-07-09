@@ -234,4 +234,75 @@
             }
         }
 
+    .vocab-section {
+            margin-top: 20px;
+            width: 100%;
+        }
+        .vocab-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .vocab-table th {
+            background-color: #2980b9; /* Đồng bộ màu xanh dương bài 1 */
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+            font-size: 15px;
+        }
+        .vocab-table td {
+            padding: 14px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 16px;
+            vertical-align: middle; /* Đổi sang căn giữa dọc để cân đối với chữ Hán to */
+        }
+        .vocab-table tr:hover {
+            background-color: #f8fafc;
+        }
         
+        /* CHỮ HÁN SIÊU TO (TĂNG THÊM 50%) */
+        .vocab-hz {
+            font-size: 26px !important; /* Tăng từ 26px lên 39px */
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            font-weight: bold;
+            color: #2c3e50;
+            line-height: 1.2;
+        }
+        
+        .vocab-py {
+            color: #3498db;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        .vocab-type {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 14px;
+        }
+        .vocab-mean {
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        .vocab-example {
+            display: block;
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 6px;
+            line-height: 1.6;
+            font-family: "PingFang SC", sans-serif;
+        }
+        
+        /* Responsive mượt mà trên Mobile (TĂNG THÊM 50%) */
+        @media (max-width: 768px) {
+            .vocab-table th, .vocab-table td {
+                padding: 10px 8px;
+                font-size: 14px;
+            }
+            .vocab-hz { 
+                font-size: 22px !important; /* Tăng từ 22px lên 33px trên điện thoại */
+            }
+        }
