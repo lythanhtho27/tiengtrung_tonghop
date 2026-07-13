@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Giáo Trình Tiếng Trung Boya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Work Sans", "Microsoft YaHei", sans-serif;
+            background-color: #f4f7f6;
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        /* KHUNG CHỨA CHÍNH */
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* TIÊU ĐỀ CHÍNH */
+        header {
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        header p {
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+        header .divider {
+            width: 80px;
+            height: 4px;
+            background-color: #1abc9c;
+            margin: 15px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* BỐ CỤC LƯỚI CHỨA 4 QUYỂN BÀI HỌC */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* THẺ CARD CHO TỪNG QUYỂN */
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 35px 20px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid transparent;
+        }
+
+        /* ĐỊNH DẠNG MÀU SẮC ĐỘC LẬP THEO TỪNG QUYỂN */
+        .card-tc1 { border-top-color: #2980b9; } /* Xanh Dương */
+        .card-tc2 { border-top-color: #d35400; } /* Cam Sẫm */
+        .card-tc3 { border-top-color: #27ae60; } /* Xanh Lá */
+        .card-tc4 { border-top-color: #8e44ad; } /* Tím */
+
+        /* HIỆU ỨNG DI CHUỘT (HOVER) */
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+        .card-tc1:hover { background-color: #f0f7fc; }
+        .card-tc2:hover { background-color: #fdf5ef; }
+        .card-tc3:hover { background-color: #f4faf6; }
+        .card-tc4:hover { background-color: #f9f5fc; }
+
+        /* BIỂU TƯỢNG TRÊN CARD */
+        .card .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover .icon {
+            transform: scale(1.15);
+        }
+
+        /* TIÊU ĐỀ VÀ THÔNG TIN TỪNG QUYỂN */
+        .card h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        .card .sub-title {
+            font-size: 13px;
+            color: #95a5a6;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        /* NÚT VÀO HỌC */
+        .card .enter-btn {
+            padding: 8px 20px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #ffffff;
+            border-radius: 20px;
+            transition: background 0.2s;
+            margin-top: auto; /* Đẩy nút xuống sát đáy card */
+        }
+        .card-tc1 .enter-btn { background-color: #2980b9; }
+        .card-tc2 .enter-btn { background-color: #d35400; }
+        .card-tc3 .enter-btn { background-color: #27ae60; }
+        .card-tc4 .enter-btn { background-color: #8e44ad; }
+
+        .card-tc1:hover .enter-btn { background-color: #3498db; }
+        .card-tc2:hover .enter-btn { background-color: #e67e22; }
+        .card-tc3:hover .enter-btn { background-color: #2ecc71; }
+        .card-tc4:hover .enter-btn { background-color: #9b59b6; }
+
+        /* PHẦN FOOTER */
+        footer {
+            margin-top: 50px;
+            font-size: 13px;
+            color: #bdc3c7;
+        }
+
+        /* ĐIỆN THOẠI & TABLET: CHUYỂN THÀNH 2 CỘT HOẶC 1 CỘT TRÁNH NÁT CHỮ */
+        @media (max-width: 850px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Hệ Thống Giáo Trình Boya Chinese</h1>
+            <p>Vui lòng lựa chọn quyển giáo trình bạn muốn tham gia học tập</p>
+            <div class="divider"></div>
+        </header>
+
+        <div class="grid-container">
+            
+            <a href="tc1.html" class="card card-tc1">
+                <div class="icon">📘</div>
+                <h2>Trung Cấp 1</h2>
+                <div class="sub-title">Boya Chinese I</div>
+                <div class="enter-btn">Vào Học</div>
+            </a>
+
+            <a href="tc2.html" class="card card-tc2">
+                <div class="icon">📙</div>
+                <h2>Trung Cấp 2</h2>
+                <div class="sub-title">Boya Chinese II</div>
+                <div class="enter-btn">Vào Học</div>
+            </a>
+
+            <a href="tc3.html" class="card card-tc3">
+                <div class="icon">📗</div>
+                <h2>Trung Cấp 3</h2>
+                <div class="sub-title">Boya Chinese III</div>
+                <div class="enter-btn">Vào Học</div>
+            </a>
+
+            <a href="tc4.html" class="card card-tc4">
+                <div class="icon">📔</div>
+                <h2>Trung Cấp 4</h2>
+                <div class="sub-title">Boya Chinese IV</div>
+                <div class="enter-btn">Vào Học</div>
+            </a>
+
+        </div>
+
+        <footer>
+            <p>© Hộp Công Cụ Luyện Nghe & Học Tiếng Trung Thông Minh</p>
+        </footer>
+    </div>
+
+</body>
+</html>

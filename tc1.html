@@ -350,6 +350,10 @@
         </div>
 
         <div id="b1-doan1" class="sub-content">
+            <button class="play-audio-btn" data-audio="audio/Trung cap 1/第01课 Bai Khoa.mp3" data-title="Boya Trung Cấp 2 - Bài 1 (Bài Khóa)">
+                🔊 Nghe Bài Khóa
+            </button>
+
             <div class="btn-container"><button class="toggle-btn" onclick="togglePinyin('text-b1-d1')">Ẩn / Hiện Pinyin</button></div>
             <h2>Chữ Hán & Pinyin:</h2>
             <div class="chinese-text" id="text-b1-d1">
@@ -372,6 +376,10 @@
         </div>
 
         <div id="b1-doan2" class="sub-content">
+            <button class="play-audio-btn" data-audio="audio/Trung cap 1/第01课 Bai Khoa.mp3" data-title="Boya Trung Cấp 2 - Bài 1 (Bài Khóa)">
+                🔊 Nghe Bài Khóa
+            </button>
+
             <div class="btn-container"><button class="toggle-btn" onclick="togglePinyin('text-b1-d2')">Ẩn / Hiện Pinyin</button></div>
             <h2>Chữ Hán & Pinyin:</h2>
             <div class="chinese-text" id="text-b1-d2">
@@ -390,6 +398,10 @@
         </div>
 
         <div id="b1-doan3" class="sub-content">
+            <button class="play-audio-btn" data-audio="audio/Trung cap 1/第01课 Bai Khoa.mp3" data-title="Boya Trung Cấp 2 - Bài 1 (Bài Khóa)">
+                🔊 Nghe Bài Khóa
+            </button>
+
             <div class="btn-container"><button class="toggle-btn" onclick="togglePinyin('text-b1-d3')">Ẩn / Hiện Pinyin</button></div>
             <h2>Chữ Hán & Pinyin:</h2>
             <div class="chinese-text" id="text-b1-d3">
@@ -5860,6 +5872,25 @@
         </div>
     </div>
 
+    <div id="sticky-audio-player" class="sticky-player">
+        <div class="player-header">
+            <div class="player-info">
+                <span id="player-now-playing">Đang phát: Chưa có bài học</span>
+            </div>
+            <button class="player-close-btn" onclick="closePlayer()">×</button>
+        </div>
+        
+        <div class="player-skip-buttons">
+            <button class="skip-btn" onclick="skipAudio(-10)" title="Lùi 10 giây">⏮ -10s</button>
+            <button class="skip-btn" onclick="skipAudio(-5)" title="Lùi 5 giây">⏪ -5s</button>
+            <button class="skip-btn" onclick="skipAudio(5)" title="Tới 5 giây">⏩ +5s</button>
+            <button class="skip-btn" onclick="skipAudio(10)" title="Tới 10 giây">⏭ +10s</button>
+        </div>
+
+        <div class="player-controls">
+            <audio id="global-audio" controls controlsList="nodownload"></audio>
+        </div>
+    </div>
     <script src="script.js"></script>
 
 </body>

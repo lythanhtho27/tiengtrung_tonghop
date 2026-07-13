@@ -8178,6 +8178,25 @@
         </div>
     </div>
 
+    <div id="sticky-audio-player" class="sticky-player">
+        <div class="player-header">
+            <div class="player-info">
+                <span id="player-now-playing">Đang phát: Chưa có bài học</span>
+            </div>
+            <button class="player-close-btn" onclick="closePlayer()">×</button>
+        </div>
+        
+        <div class="player-skip-buttons">
+            <button class="skip-btn" onclick="skipAudio(-10)" title="Lùi 10 giây">⏮ -10s</button>
+            <button class="skip-btn" onclick="skipAudio(-5)" title="Lùi 5 giây">⏪ -5s</button>
+            <button class="skip-btn" onclick="skipAudio(5)" title="Tới 5 giây">⏩ +5s</button>
+            <button class="skip-btn" onclick="skipAudio(10)" title="Tới 10 giây">⏭ +10s</button>
+        </div>
+
+        <div class="player-controls">
+            <audio id="global-audio" controls controlsList="nodownload"></audio>
+        </div>
+    </div>
     <!-- LIÊN KẾT VỚI FILE JAVASCRIPT CỦA QUYỂN 1 -->
     <script src="script.js"></script>
 </body>
