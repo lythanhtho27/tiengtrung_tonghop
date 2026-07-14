@@ -362,105 +362,104 @@ rt {
 }
 
 /* ==========================================================================
-   TRÌNH PHÁT AUDIO STICKY GÓC DƯỚI BÊN PHẢI (NẰM TRÊN NÚT PINYIN)
-   ========================================================================== */
-/* ==========================================================================
-   TRÌNH PHÁT AUDIO STICKY CO DÃN THÔNG MINH GÓC DƯỚI BÊN PHẢI
+   TRÌNH PHÁT NHẠC DÍNH BẸT CHẶT VÀO ĐÁY MÀN HÌNH (STICKY BOTTOM BAR)
+   Không làm che khuất nội dung, bo tràn viền trên Mobile & Desktop
    ========================================================================== */
 .sticky-player {
     position: fixed;
-    right: -400px; /* Ban đầu giấu hoàn toàn sang bên phải */
-    bottom: 105px; /* Nằm trên nút bấm Pinyin cố định */
-    width: 320px; /* Chiều rộng cố định dạng hộp vuông gọn gàng */
-    height: auto; /* Tự động co dãn chiều cao theo nội dung, không lo thiếu chỗ */
+    left: 0;
+    bottom: -200px; /* Ban đầu giấu xuống dưới đáy */
+    width: 100%;
+    height: auto;
     background: #2c3e50;
     color: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    padding: 12px 25px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 9999;
-    transition: right 0.4s ease, bottom 0.3s ease;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 99999; /* Đảm bảo luôn nằm trên cùng tất cả phần tử */
+    transition: bottom 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-sizing: border-box;
 }
 
-/* Khi kích hoạt hiện lên thì trượt từ phải vào */
+/* Khi có class .show, trình phát đẩy lên dính bẹt vào đáy màn hình */
 .sticky-player.show {
-    right: 30px; 
+    bottom: 0;
 }
 
-/* Hàng đầu tiên (Tên bài & Nút đóng) */
+/* Container bên trái: Chứa thông tin bài đang phát */
 .player-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Căn đỉnh để nếu tên bài dài xuống dòng thì nút đóng vẫn ở vị trí chuẩn */
-    border-bottom: 1px solid #34495e;
-    padding-bottom: 8px;
-    gap: 10px;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0; /* Ép không cho text đẩy tràn layout */
 }
 
-/* Tựa đề Audio được thấy TOÀN BỘ (Hỗ trợ xuống dòng tự động) */
 .player-info {
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 700;
     color: #1abc9c;
-    line-height: 1.5;
-    text-align: left;
-    white-space: normal; /* Cho phép chữ tự động xuống hàng thay vì bị cắt bằng dấu ba chấm */
-    word-break: break-word; /* Bẻ chữ thông minh nếu gặp từ quá dài */
-    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Nếu tên bài dài trên một hàng ngang thì tự động hóa ... */
 }
 
+/* Căn chỉnh nút Tua thời gian gọn gàng xếp hàng ngang */
+.player-skip-buttons {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.skip-btn {
+    background: #34495e;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.skip-btn:hover {
+    background: #1abc9c;
+}
+
+/* Khối điều khiển tiến độ Audio của trình duyệt */
+.player-controls {
+    flex: 2;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+}
+.player-controls audio {
+    width: 100%;
+    height: 36px;
+}
+
+/* Nút tắt trình phát nhạc */
 .player-close-btn {
     background: transparent;
     border: none;
     color: #bdc3c7;
-    font-size: 22px;
+    font-size: 26px;
     cursor: pointer;
     line-height: 1;
-    padding: 0;
-    flex-shrink: 0; /* Không cho nút đóng bị bóp méo khi tên bài quá dài */
+    padding: 0 5px;
+    flex-shrink: 0;
+    transition: color 0.2s;
 }
 .player-close-btn:hover {
     color: #e74c3c;
 }
 
-/* Thanh điều khiển Audio và Tiến độ hiển thị TOÀN BỘ */
-.player-controls {
-    width: 100%;
-    display: block;
-}
-
-.player-controls audio {
-    width: 100%;
-    height: 40px; /* Tăng nhẹ chiều cao để thanh tiến độ và nút bấm mặc định của trình duyệt lộ ra rõ ràng nhất */
-    display: block;
-}
-
-/* Khu vực nút bấm Tua nhanh / Lùi nhanh */
-.player-skip-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 6px;
-}
-
-.skip-btn {
-    flex: 1;
-    background: #34495e;
-    color: #fff;
-    border: none;
-    padding: 6px 0;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.skip-btn:hover {
-    background: #1abc9c;
+/* ĐỒNG BỘ: Đẩy nút Pinyin cố định dịch lên trên khi có Audio Player xuất hiện */
+body.audio-playing .float-pinyin-btn {
+    bottom: 85px; /* Đẩy lên trên thanh audio (cao tầm 65px) */
 }
 
 /* ĐIỆN THOẠI: Thích ứng màn hình nhỏ tránh đè giao diện */
@@ -472,4 +471,42 @@ rt {
         width: calc(100% - 30px); /* Tối ưu kích thước tràn ngang trên mobile */
         bottom: 85px; /* Đẩy sát vừa vặn khoảng trống trên nút pinyin mobile */
     }
+}
+
+/* ==========================================================================
+   THAY ĐỔI GIAO DIỆN NÚT BẤM AUDIO (ĐẸP & CHUYÊN NGHIỆP HƠN)
+   ========================================================================== */
+.play-audio-btn {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 25px; /* Bo viền dạng viên thuốc sang trọng */
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3);
+    transition: all 0.3s ease;
+}
+.play-audio-btn:hover {
+    background: linear-gradient(135deg, #16a085, #11816b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(26, 188, 156, 0.4);
+}
+.play-audio-btn:active {
+    transform: translateY(0);
+}
+
+/* Đổi màu sắc nút nghe riêng cho Bài 1 Quyển 3 theo tone xanh dương của tab */
+#bai1 .play-audio-btn {
+    background: linear-gradient(135deg, #2980b9, #2574a9);
+    box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3);
+}
+#bai1 .play-audio-btn:hover {
+    background: linear-gradient(135deg, #2574a9, #1f618d);
+    box-shadow: 0 6px 15px rgba(41, 128, 185, 0.4);
 }

@@ -63,9 +63,7 @@ function initGlobalAudioPlayer() {
     const globalAudio = document.getElementById("global-audio");
     const nowPlayingText = document.getElementById("player-now-playing");
 
-    // Lắng nghe sự kiện click bằng cơ chế Ủy quyền sự kiện (Event Delegation)
     document.body.addEventListener("click", function(e) {
-        // Tìm xem phần tử click hoặc cha của nó có phải nút play audio không
         const button = e.target.closest('.play-audio-btn');
         if (!button) return;
 
@@ -75,38 +73,43 @@ function initGlobalAudioPlayer() {
         if (audioSrc) {
             nowPlayingText.textContent = "Đang phát: " + audioTitle;
             globalAudio.src = audioSrc;
+            
+            // Hiện trình phát nhạc dính sát đáy màn hình
             player.classList.add("show");
+            // Thêm class vào thẻ body để đẩy nút Pinyin lên trên
+            document.body.classList.add("audio-playing");
             
             globalAudio.play().catch(error => {
-                console.log("Trình duyệt yêu cầu tương tác trước khi tự động phát.", error);
+                console.log("Trình duyệt yêu cầu tương tác trước khi phát.", error);
             });
         }
     });
 }
 
 // Hàm xử lý tua nhanh hoặc lùi lại số giây (Ví dụ: -10, -5, 5, 10)
-function skipAudio(seconds) {
-    const globalAudio = document.getElementById("global-audio");
-    if (globalAudio && globalAudio.src) {
-        let targetTime = globalAudio.currentTime + seconds;
-        
-        if (targetTime < 0) targetTime = 0;
-        if (targetTime > globalAudio.duration) targetTime = globalAudio.duration;
-        
-        globalAudio.currentTime = targetTime;
-    }
-}
-
-// Logic đóng player
 function closePlayer() {
     const player = document.getElementById("sticky-audio-player");
     const globalAudio = document.getElementById("global-audio");
+    
     if (globalAudio) {
         globalAudio.pause();
         globalAudio.src = "";
     }
     if (player) {
         player.classList.remove("show");
+    }
+    // Xóa class ở body để nút Pinyin hạ xuống vị trí ban đầu
+    document.body.classList.remove("audio-playing");
+}
+
+// Hàm xử lý tua thời gian (Giữ nguyên)
+function skipAudio(seconds) {
+    const globalAudio = document.getElementById("global-audio");
+    if (globalAudio && globalAudio.src) {
+        let targetTime = globalAudio.currentTime + seconds;
+        if (targetTime < 0) targetTime = 0;
+        if (targetTime > globalAudio.duration) targetTime = globalAudio.duration;
+        globalAudio.currentTime = targetTime;
     }
 }
 
