@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. Cấu hình phân chia Quyển dựa trên Số thứ tự bài (Lesson Number)
-    // Quyển 1: Bài 1 -> 8 (Trung cấp 1)
-    // Quyển 2: Bài 9 -> 16 (Trung cấp 2)
-    // Quyển 3: Bài 17 -> 24 (Trung cấp 3)
-    // Quyển 4: Bài 25 trở đi (Trung cấp 4)
 
     const mainContentBlocks = document.querySelectorAll('.main-content');
 
@@ -27,13 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
             bookNumber = 3;
         } else if (currentFileName.includes("tc4")) {
             bookNumber = 4;
-        } else {
-            // Trường hợp dự phòng nếu dùng chung 1 file lớn hoặc không nhận diện được tên file
-            if (lessonNumber <= 8) bookNumber = 1;
-            else if (lessonNumber <= 16) bookNumber = 2;
-            else if (lessonNumber <= 24) bookNumber = 3;
-            else bookNumber = 4;
-        }
+        } 
 
         const bookFolder = `Trung cap ${bookNumber}`;
 
