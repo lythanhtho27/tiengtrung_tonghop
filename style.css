@@ -362,114 +362,161 @@ rt {
 }
 
 /* ==========================================================================
-   TRÌNH PHÁT NHẠC DÍNH BẸT CHẶT VÀO ĐÁY MÀN HÌNH (STICKY BOTTOM BAR)
-   Không làm che khuất nội dung, bo tràn viền trên Mobile & Desktop
+   TRÌNH PHÁT AUDIO STICKY ĐÁY MÀN HÌNH - THANH TIẾN ĐỘ NẰM TRÊN NÚT SEEK
    ========================================================================== */
 .sticky-player {
     position: fixed;
     left: 0;
-    bottom: -200px; /* Ban đầu giấu xuống dưới đáy */
+    bottom: -250px; /* Giấu sâu hơn dưới đáy đề phòng hộp phình cao */
     width: 100%;
     height: auto;
     background: #2c3e50;
     color: #fff;
-    padding: 12px 25px;
+    padding: 15px 25px;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    z-index: 99999; /* Đảm bảo luôn nằm trên cùng tất cả phần tử */
+    z-index: 99999;
     transition: bottom 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-sizing: border-box;
 }
 
-/* Khi có class .show, trình phát đẩy lên dính bẹt vào đáy màn hình */
 .sticky-player.show {
     bottom: 0;
 }
 
-/* Container bên trái: Chứa thông tin bài đang phát */
+/* Khối tiêu đề bên trái */
 .player-header {
     display: flex;
     flex-direction: column;
     gap: 2px;
     flex: 1;
-    min-width: 0; /* Ép không cho text đẩy tràn layout */
+    min-width: 0; 
+    padding-right: 25px; /* Chừa không gian cho nút đóng tuyệt đối */
 }
 
 .player-info {
     font-size: 13px;
     font-weight: 700;
     color: #1abc9c;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Nếu tên bài dài trên một hàng ngang thì tự động hóa ... */
+    white-space: normal; 
+    word-break: break-word;
+    line-height: 1.5;
 }
 
-/* Căn chỉnh nút Tua thời gian gọn gàng xếp hàng ngang */
+/* KHỐI TRUNG TÂM CHỨA AUDIO VÀ NÚT TUA (XẾP CHỒNG DỌC) */
+.player-body-content {
+    flex: 2;
+    /* max-width: 500px; */
+    display: flex;
+    flex-direction: column; /* Đảm bảo xếp theo chiều dọc */
+    gap: 8px; /* Khoảng cách giữa thanh tiến độ và nút tua */
+}
+
+/* 1. Thanh tiến độ nằm phía TRÊN */
+.player-controls {
+    width: 100%;
+}
+.player-controls audio {
+    width: 100%;
+    height: 36px;
+    display: block;
+}
+
+/* 2. Các nút seek nằm phía DƯỚI */
 .player-skip-buttons {
     display: flex;
-    gap: 4px;
-    flex-shrink: 0;
+    gap: 6px;
+    width: 100%;
 }
-
 .skip-btn {
+    flex: 1;
     background: #34495e;
     color: #fff;
     border: none;
-    padding: 6px 10px;
+    padding: 6px 0;
     font-size: 11px;
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
+    text-align: center;
     transition: background 0.2s;
 }
 .skip-btn:hover {
     background: #1abc9c;
 }
 
-/* Khối điều khiển tiến độ Audio của trình duyệt */
-.player-controls {
-    flex: 2;
-    max-width: 450px;
-    display: flex;
-    align-items: center;
-}
-.player-controls audio {
-    width: 100%;
-    height: 36px;
-}
-
-/* Nút tắt trình phát nhạc */
-.player-close-btn {
+/* NÚT ĐÓNG CỐ ĐỊNH GÓC TRÊN BÊN PHẢI */
+.sticky-player .player-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 20px;
     background: transparent;
     border: none;
     color: #bdc3c7;
-    font-size: 26px;
+    font-size: 28px;
     cursor: pointer;
     line-height: 1;
-    padding: 0 5px;
-    flex-shrink: 0;
+    padding: 0;
+    z-index: 10;
     transition: color 0.2s;
 }
-.player-close-btn:hover {
+.sticky-player .player-close-btn:hover {
     color: #e74c3c;
 }
 
-/* ĐỒNG BỘ: Đẩy nút Pinyin cố định dịch lên trên khi có Audio Player xuất hiện */
+/* Đẩy nút float Pinyin di động lên tránh đè giao diện */
 body.audio-playing .float-pinyin-btn {
-    bottom: 85px; /* Đẩy lên trên thanh audio (cao tầm 65px) */
+    bottom: 115px;
 }
 
-/* ĐIỆN THOẠI: Thích ứng màn hình nhỏ tránh đè giao diện */
-@media (max-width: 600px) {
-    .sticky-player.show {
+/* ==========================================================================
+   TỐI ƯU GIAO DIỆN TRÊN ĐIỆN THOẠI VÀ MÁY TÍNH BẢNG (MOBILE & TABLET)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .sticky-player {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+    }
+    
+    .player-header {
+        width: 100%;
+        border-bottom: 1px solid #34495e;
+        padding-bottom: 8px;
+        padding-right: 30px; 
+    }
+
+    .player-info {
+        font-size: 14px;
+    }
+    
+    /* Vị trí nút đóng trên di động */
+    .sticky-player .player-close-btn {
+        top: 12px;
         right: 15px;
     }
-    .sticky-player {
-        width: calc(100% - 30px); /* Tối ưu kích thước tràn ngang trên mobile */
-        bottom: 85px; /* Đẩy sát vừa vặn khoảng trống trên nút pinyin mobile */
+    
+    .player-body-content {
+        width: 100%;
+        max-width: 100%;
+        gap: 10px; /* Tăng khoảng cách trên mobile cho dễ chạm bấm */
+    }
+    
+    .player-controls audio {
+        height: 44px; /* Lộ diện hoàn toàn 100% thanh thời gian trên iOS và Android */
+    }
+    
+    .skip-btn {
+        padding: 8px 0;
+        font-size: 12px;
+    }
+
+    /* Đẩy nút Pinyin lên cao hơn do chiều cao player trên mobile tăng lên */
+    body.audio-playing .float-pinyin-btn {
+        bottom: 195px;
     }
 }
 
