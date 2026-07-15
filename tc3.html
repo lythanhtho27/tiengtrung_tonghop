@@ -11,7 +11,7 @@
 <body>
 
     <!-- NÚT NỔI FLOAT PINYIN ĐÃ ĐƯỢC ĐỒNG BỘ -->
-    <button class="float-pinyin-btn" onclick="togglePinyinGlobal()">👁️ Ẩn / Hiện Pinyin</button>
+    <button class="float-pinyin-btn" onclick="togglePinyinGlobal()">👁️</button>
 
     <!-- THANH MENU CHÍNH 2 DÒNG (Bắt đầu với Bài 1 Quyển 2) -->
     <div class="main-menu">
@@ -2699,94 +2699,630 @@
     
 
     <div id="bai6" class="main-content">
+
+        <div class="sub-menu">
+            <div class="sub-btn active" data-sub="bai6-baikhoa" onclick="switchSubMenu(this, 'bai6')">Bài khóa</div>
+            <div class="sub-btn" data-sub="bai6-tuvung" onclick="switchSubMenu(this, 'bai6')">Từ vựng</div>
+            <div class="sub-btn" data-sub="bai6-docthem" onclick="switchSubMenu(this, 'bai6')">Đọc thêm</div>
+        </div>
         
-        <h2>Chữ Hán & Pinyin:</h2>
-        <div class="chinese-text" id="text-bai6-full">
-            
-            <!-- Tiêu đề bài học -->
-            <span class="block" style="text-align: center; font-weight: bold; margin: 20px 0; font-size: 26px;">
-                <ruby>我的<rt>Wǒde</rt></ruby><ruby>梦想<rt>mèngxiǎng</rt></ruby>
-            </span>
+        <div id="bai6-baikhoa" class="sub-content active">
+            <h2>Chữ Hán & Pinyin:</h2>
+            <div class="chinese-text" id="text-bai6-full">
+                
+                <!-- Tiêu đề bài học -->
+                <span class="block" style="text-align: center; font-weight: bold; margin: 20px 0; font-size: 26px;">
+                    <ruby>我的<rt>Wǒde</rt></ruby><ruby>梦想<rt>mèngxiǎng</rt></ruby>
+                </span>
 
-            <!-- Đoạn 1 -->
-            <span class="block"><span class="indent"></span><ruby>也许<rt>Yěxǔ</rt></ruby><ruby>是因为<rt>shì yīnwèi</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>缺了<rt>quēle</rt></ruby><ruby>什么<rt>shénme</rt></ruby><ruby>就<rt>jiù</rt></ruby><ruby>更<rt>gèng</rt></ruby><ruby>喜欢<rt>xǐhuan</rt></ruby><ruby>什么<rt>shénme</rt></ruby><ruby>吧<rt>ba</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>虽然<rt>suīrán</rt></ruby><ruby>两条<rt>liǎng tiáo</rt></ruby><ruby>腿<rt>tuǐ</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>残疾<rt>cánjí</rt></ruby>性能，<ruby>却<rt>què</rt></ruby><ruby>是个<rt>shìgè</rt></ruby><ruby>体育迷<rt>tǐyùmí</rt></ruby>性能。<ruby>我<rt>Wǒ</rt></ruby><ruby>不光<rt>bùguāng</rt></ruby><ruby>喜欢<rt>xǐhuan</rt></ruby><ruby>看<rt>kàn</rt></ruby><ruby>足球<rt>zúqiú</rt></ruby>性能、<ruby>篮球<rt>lánqiú</rt></ruby><ruby>以及<rt>yǐjí</rt></ruby><ruby>其他<rt>qítā</rt></ruby><ruby>各种<rt>gèzhǒng</rt></ruby><ruby>球类<rt>qiúlèi</rt></ruby><ruby>比赛<rt>bǐsài</rt></ruby>性能，<ruby>也<rt>yě</rt></ruby><ruby>喜欢<rt>xǐhuan</rt></ruby><ruby>看<rt>kàn</rt></ruby><ruby>田径<rt>tiánjìng</rt></ruby>性能、<ruby>游泳<rt>yóuyǒng</rt></ruby>性能、<ruby>拳击<rt>quánjī</rt></ruby>性能性能、<ruby>滑冰<rt>huábīng</rt></ruby>性能性能、<ruby>滑雪<rt>huáxuě</rt></ruby>性能性能、<ruby>自行车<rt>zìxíngchē</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>汽车<rt>qìchē</rt></ruby><ruby>比赛<rt>bǐsài</rt></ruby>性能，<ruby>总之<rt>zǒngzhī</rt></ruby>性能，<ruby>我是个<rt>wǒ shìgè</rt></ruby><ruby>全能<rt>quánnéng</rt></ruby><ruby>体育迷<rt>tǐyùmí</rt></ruby>性能性能。<ruby>当然<rt>Dāngrán</rt></ruby><ruby>传统<rt>dōushì</rt></ruby><ruby>从<rt>cóng</rt></ruby><ruby>电视<rt>diànshì</rt></ruby><ruby>上看<rt>shàng kàn</rt></ruby>性能，<ruby>体育场馆<rt>tǐyù chǎngguǎn</rt></ruby><ruby>门前<rt>ménqián</rt></ruby><ruby>都有<rt>dōuyǒu</rt></ruby><ruby>很高<rt>hěn gāo</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>台阶<rt>táijiē</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>上不去<rt>shàngbúqù</rt></ruby>性能。<ruby>如果<rt>Rúguǒ</rt></ruby><ruby>某一天<rt>mǒu yì tiān</rt></ruby><ruby>电视<rt>diànshì</rt></ruby><ruby>里<rt>li</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>精彩<rt>jīngcǎi</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>体育<rt>tǐyù</rt></ruby><ruby>节目<rt>jiémù</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>一天<rt>yìtiān</rt></ruby><ruby>当中<rt>dāngzhōng</rt></ruby><ruby>无论<rt>wúlùn</rt></ruby><ruby>干什么<rt>gàn shénme</rt></ruby><ruby>心里<rt>xīnlǐ</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>想着<rt>xiǎngzhe</rt></ruby><ruby>它<rt>tā</rt></ruby>性能，<ruby>一分一秒<rt>yì fēn yì miǎo</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>过得<rt>guòde</rt></ruby><ruby>很<rt>hěn</rt></ruby><ruby>愉快<rt>yúkuài</rt></ruby>性能。</span>
+                <!-- Đoạn 1 -->
+                <span class="block"><span class="indent"></span><ruby>也许<rt>Yěxǔ</rt></ruby><ruby>是因为<rt>shì yīnwèi</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>缺了<rt>quēle</rt></ruby><ruby>什么<rt>shénme</rt></ruby><ruby>就<rt>jiù</rt></ruby><ruby>更<rt>gèng</rt></ruby><ruby>喜欢<rt>xǐhuan</rt></ruby><ruby>什么<rt>shénme</rt></ruby><ruby>吧<rt>ba</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>虽然<rt>suīrán</rt></ruby><ruby>两条<rt>liǎng tiáo</rt></ruby><ruby>腿<rt>tuǐ</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>残疾<rt>cánjí</rt></ruby>性能，<ruby>却<rt>què</rt></ruby><ruby>是个<rt>shìgè</rt></ruby><ruby>体育迷<rt>tǐyùmí</rt></ruby>性能。<ruby>我<rt>Wǒ</rt></ruby><ruby>不光<rt>bùguāng</rt></ruby><ruby>喜欢<rt>xǐhuan</rt></ruby><ruby>看<rt>kàn</rt></ruby><ruby>足球<rt>zúqiú</rt></ruby>性能、<ruby>篮球<rt>lánqiú</rt></ruby><ruby>以及<rt>yǐjí</rt></ruby><ruby>其他<rt>qítā</rt></ruby><ruby>各种<rt>gèzhǒng</rt></ruby><ruby>球类<rt>qiúlèi</rt></ruby><ruby>比赛<rt>bǐsài</rt></ruby>性能，<ruby>也<rt>yě</rt></ruby><ruby>喜欢<rt>xǐhuan</rt></ruby><ruby>看<rt>kàn</rt></ruby><ruby>田径<rt>tiánjìng</rt></ruby>性能、<ruby>游泳<rt>yóuyǒng</rt></ruby>性能、<ruby>拳击<rt>quánjī</rt></ruby>性能性能、<ruby>滑冰<rt>huábīng</rt></ruby>性能性能、<ruby>滑雪<rt>huáxuě</rt></ruby>性能性能、<ruby>自行车<rt>zìxíngchē</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>汽车<rt>qìchē</rt></ruby><ruby>比赛<rt>bǐsài</rt></ruby>性能，<ruby>总之<rt>zǒngzhī</rt></ruby>性能，<ruby>我是个<rt>wǒ shìgè</rt></ruby><ruby>全能<rt>quánnéng</rt></ruby><ruby>体育迷<rt>tǐyùmí</rt></ruby>性能性能。<ruby>当然<rt>Dāngrán</rt></ruby><ruby>传统<rt>dōushì</rt></ruby><ruby>从<rt>cóng</rt></ruby><ruby>电视<rt>diànshì</rt></ruby><ruby>上看<rt>shàng kàn</rt></ruby>性能，<ruby>体育场馆<rt>tǐyù chǎngguǎn</rt></ruby><ruby>门前<rt>ménqián</rt></ruby><ruby>都有<rt>dōuyǒu</rt></ruby><ruby>很高<rt>hěn gāo</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>台阶<rt>táijiē</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>上不去<rt>shàngbúqù</rt></ruby>性能。<ruby>如果<rt>Rúguǒ</rt></ruby><ruby>某一天<rt>mǒu yì tiān</rt></ruby><ruby>电视<rt>diànshì</rt></ruby><ruby>里<rt>li</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>精彩<rt>jīngcǎi</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>体育<rt>tǐyù</rt></ruby><ruby>节目<rt>jiémù</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>一天<rt>yìtiān</rt></ruby><ruby>当中<rt>dāngzhōng</rt></ruby><ruby>无论<rt>wúlùn</rt></ruby><ruby>干什么<rt>gàn shénme</rt></ruby><ruby>心里<rt>xīnlǐ</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>想着<rt>xiǎngzhe</rt></ruby><ruby>它<rt>tā</rt></ruby>性能，<ruby>一分一秒<rt>yì fēn yì miǎo</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>过得<rt>guòde</rt></ruby><ruby>很<rt>hěn</rt></ruby><ruby>愉快<rt>yúkuài</rt></ruby>性能。</span>
 
-            <!-- Đoạn 2 -->
-            <span class="block"><span class="indent"></span><ruby>我<rt>Wǒ</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>喜欢<rt>xǐhuan</rt></ruby><ruby>田径<rt>tiánjìng</rt></ruby>性能性能。<ruby>我<rt>Wǒ</rt></ruby><ruby>能<rt>néng</rt></ruby><ruby>说出<rt>shuōchū</rt></ruby><ruby>所有<rt>suǒyǒu</rt></ruby><ruby>田径<rt>tiánjìng</rt></ruby><ruby>项目<rt>xiàngmù</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>世界纪录<rt>shìjiè jìlù</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>多少<rt>duōshǎo</rt></ruby>性能，<ruby>是由<rt>shì yóu</rt></ruby><ruby>谁<rt>shéi</rt></ruby><ruby>保持<rt>bǎochí</rt></ruby><ruby>的<rt>de</rt></ruby>性能性能性能，<ruby>保持<rt>bǎochí</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>时间<rt>shíjiān</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>长<rt>cháng</rt></ruby><ruby>还是<rt>háishi</rt></ruby><ruby>短<rt>duǎn</rt></ruby>性能。<ruby>这些<rt>Zhèxiē</rt></ruby><ruby>纪录<rt>jìlù</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>顺便<rt>shùnbiàn</rt></ruby><ruby>便<rt>biàn</rt></ruby><ruby>记住<rt>jìzhù</rt></ruby><ruby>的<rt>de</rt></ruby>性能，<ruby>田径<rt>tiánjìng</rt></ruby><ruby>运动<rt>yùndòng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>魅力<rt>mèilì</rt></ruby><ruby>不在于<rt>búzàiyú</rt></ruby><ruby>纪录<rt>jìlù</rt></ruby>性能，<ruby>而在于<rt>ér zàiyú</rt></ruby><ruby>它<rt>tā</rt></ruby><ruby>能<rt>néng</rt></ruby><ruby>充分<rt>chōngfèn</rt></ruby><ruby>展现<rt>zhǎnxiàn</rt></ruby><ruby>出<rt>chū</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>力量<rt>lìliàng</rt></ruby>性能、<ruby>意志<rt>yìzhì</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>优美<rt>yōuměi</rt></ruby>性能。<ruby>因此<rt>Yīncǐ</rt></ruby>性能，<ruby>在<rt>zài</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>看来<rt>kànlái</rt></ruby>性能，<ruby>它<rt>tā</rt></ruby><ruby>比<rt>bǐ</rt></ruby><ruby>任何<rt>rènhé</rt></ruby><ruby>舞蹈<rt>wǔdǎo</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>好看<rt>hǎokàn</rt></ruby>性能。<ruby>看<rt>Kàn</rt></ruby><ruby>一些<rt>yìxiē</rt></ruby><ruby>世界<rt>shìjiè</rt></ruby><ruby>著名<rt>zhùmíng</rt></ruby><ruby>运动员<rt>yùndòngyuán</rt></ruby><ruby>奔跑<rt>bēnpǎo</rt></ruby>性能，<ruby>你<rt>nǐ</rt></ruby><ruby>会<rt>huì</rt></ruby><ruby>觉得<rt>juéde</rt></ruby><ruby>它们<rt>tāmen</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>从<rt>cóng</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>原始<rt>yuánshǐ</rt></ruby><ruby>跑来<rt>pǎolái</rt></ruby>性能，<ruby>向<rt>xiàng</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>未来<rt>wèilái</rt></ruby><ruby>跑去<rt>pǎoqù</rt></ruby>性能，<ruby>这样<rt>zhèyàng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>奔跑<rt>bēnpǎo</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>自然<rt>zìrang</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>舞蹈<rt>wǔdǎo</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>自由<rt>zìyóu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>歌<rt>gē</rt></ruby>性能。</span>
+                <!-- Đoạn 2 -->
+                <span class="block"><span class="indent"></span><ruby>我<rt>Wǒ</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>喜欢<rt>xǐhuan</rt></ruby><ruby>田径<rt>tiánjìng</rt></ruby>性能性能。<ruby>我<rt>Wǒ</rt></ruby><ruby>能<rt>néng</rt></ruby><ruby>说出<rt>shuōchū</rt></ruby><ruby>所有<rt>suǒyǒu</rt></ruby><ruby>田径<rt>tiánjìng</rt></ruby><ruby>项目<rt>xiàngmù</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>世界纪录<rt>shìjiè jìlù</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>多少<rt>duōshǎo</rt></ruby>性能，<ruby>是由<rt>shì yóu</rt></ruby><ruby>谁<rt>shéi</rt></ruby><ruby>保持<rt>bǎochí</rt></ruby><ruby>的<rt>de</rt></ruby>性能性能性能，<ruby>保持<rt>bǎochí</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>时间<rt>shíjiān</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>长<rt>cháng</rt></ruby><ruby>还是<rt>háishi</rt></ruby><ruby>短<rt>duǎn</rt></ruby>性能。<ruby>这些<rt>Zhèxiē</rt></ruby><ruby>纪录<rt>jìlù</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>顺便<rt>shùnbiàn</rt></ruby><ruby>便<rt>biàn</rt></ruby><ruby>记住<rt>jìzhù</rt></ruby><ruby>的<rt>de</rt></ruby>性能，<ruby>田径<rt>tiánjìng</rt></ruby><ruby>运动<rt>yùndòng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>魅力<rt>mèilì</rt></ruby><ruby>不在于<rt>búzàiyú</rt></ruby><ruby>纪录<rt>jìlù</rt></ruby>性能，<ruby>而在于<rt>ér zàiyú</rt></ruby><ruby>它<rt>tā</rt></ruby><ruby>能<rt>néng</rt></ruby><ruby>充分<rt>chōngfèn</rt></ruby><ruby>展现<rt>zhǎnxiàn</rt></ruby><ruby>出<rt>chū</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>力量<rt>lìliàng</rt></ruby>性能、<ruby>意志<rt>yìzhì</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>优美<rt>yōuměi</rt></ruby>性能。<ruby>因此<rt>Yīncǐ</rt></ruby>性能，<ruby>在<rt>zài</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>看来<rt>kànlái</rt></ruby>性能，<ruby>它<rt>tā</rt></ruby><ruby>比<rt>bǐ</rt></ruby><ruby>任何<rt>rènhé</rt></ruby><ruby>舞蹈<rt>wǔdǎo</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>好看<rt>hǎokàn</rt></ruby>性能。<ruby>看<rt>Kàn</rt></ruby><ruby>一些<rt>yìxiē</rt></ruby><ruby>世界<rt>shìjiè</rt></ruby><ruby>著名<rt>zhùmíng</rt></ruby><ruby>运动员<rt>yùndòngyuán</rt></ruby><ruby>奔跑<rt>bēnpǎo</rt></ruby>性能，<ruby>你<rt>nǐ</rt></ruby><ruby>会<rt>huì</rt></ruby><ruby>觉得<rt>juéde</rt></ruby><ruby>它们<rt>tāmen</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>从<rt>cóng</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>原始<rt>yuánshǐ</rt></ruby><ruby>跑来<rt>pǎolái</rt></ruby>性能，<ruby>向<rt>xiàng</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>未来<rt>wèilái</rt></ruby><ruby>跑去<rt>pǎoqù</rt></ruby>性能，<ruby>这样<rt>zhèyàng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>奔跑<rt>bēnpǎo</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>自然<rt>zìrang</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>舞蹈<rt>wǔdǎo</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>自由<rt>zìyóu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>歌<rt>gē</rt></ruby>性能。</span>
 
-            <!-- Đoạn 3 -->
-            <span class="block"><span class="indent"></span><ruby>我<rt>Wǒ</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>喜爱<rt>xǐ'ài</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>羡慕<rt>xiànmù</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby>性能，<ruby>他<rt>tā</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>心中<rt>xīnzhōng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>偶像<rt>ǒuxiàng</rt></ruby>性能性能。<ruby>他<rt>Tā</rt></ruby><ruby>身高<rt>shēnggāo</rt></ruby><ruby>一米八八<rt>yìmǐ bābā</rt></ruby>性能，<ruby>长得<rt>zhǎngde</rt></ruby><ruby>肩宽<rt>jiānkuān</rt></ruby><ruby>腿<rt>tuǐ</rt></ruby><ruby>长<rt>cháng</rt></ruby>性能，<ruby>随便<rt>suíbiàn</rt></ruby><ruby>一跑<rt>yì pǎo</rt></ruby><ruby>就是<rt>jiùshì</rt></ruby><ruby>十秒<rt>shímiǎo</rt></ruby><ruby>以内<rt>yǐnèi</rt></ruby>性能，<ruby>随便<rt>suíbiàn</rt></ruby><ruby>一跳<rt>yí tiào</rt></ruby><ruby>就在<rt>jiù zài</rt></ruby><ruby>八米<rt>bāmǐ</rt></ruby><ruby>开外<rt>kāiwài</rt></ruby>性能，<ruby>而且<rt>érqiě</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>最重要<rt>zuì zhòngyào</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>比赛<rt>bǐsài</rt></ruby><ruby>中<rt>zhōng</rt></ruby>性能，<ruby>他<rt>tā</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>动作<rt>dòngzuò</rt></ruby><ruby>也是<rt>yěshì</rt></ruby><ruby>那么<rt>nàme</rt></ruby><ruby>潇洒<rt>xiāoshǎ</rt></ruby>性能性能性能。<ruby>有时候<rt>Yǒushíhou</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>真<rt>zhēn</rt></ruby><ruby>恨不得<rt>hànbùdé</rt></ruby><ruby>马上<rt>mǎshàng</rt></ruby><ruby>变成<rt>biànchéng</rt></ruby><ruby>他<rt>tā</rt></ruby>性能，<ruby>因此<rt>yīncǐ</rt></ruby>性能性能，<ruby>我<rt>wǒ</rt></ruby><ruby>常<rt>cháng</rt></ruby><ruby>暗自<rt>ànzì</rt></ruby><ruby>祈祷<rt>qídǎo</rt></ruby>性能，<ruby>假若<rt>jiǎruò</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>真能<rt>zhēnnéng</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>来世<rt>láishì</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>不<rt>bù</rt></ruby><ruby>要求<rt>yāoqiú</rt></ruby><ruby>别的<rt>biéde</rt></ruby>性能，<ruby>只<rt>zhǐ</rt></ruby><ruby>要求<rt>yāoqiú</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>那样<rt>nàyàng</rt></ruby><ruby>一副<rt>yí fù</rt></ruby><ruby>健美<rt>jiànměi</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>身体<rt>shēntǐ</rt></ruby><ruby>就好<rt>jiù hǎo</rt></ruby>性能性能。<ruby>我<rt>Wǒ</rt></ruby><ruby>之所以<rt>zhīsuǒyǐ</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>这样<rt>zhèyàng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>白日梦<rt>báirìmèng</rt></ruby>性能性能，<ruby>是因为<rt>shì yīnwèi</rt></ruby><ruby>现实<rt>xiànshí</rt></ruby><ruby>中<rt>zhōng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>这个<rt>zhège</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>太<rt>tài</rt></ruby><ruby>令人<rt>lìngrén</rt></ruby><ruby>沮丧<rt>jǔsàng</rt></ruby>性能，<ruby>才<rt>cái</rt></ruby><ruby>想出<rt>xiǎngchū</rt></ruby><ruby>这个<rt>zhège</rt></ruby><ruby>法子<rt>fǎzi</rt></ruby><ruby>来<rt>lái</rt></ruby><ruby>给<rt>gěi</rt></ruby><ruby>自己<rt>zìjǐ</rt></ruby><ruby>一点儿<rt>yìdiǎnr</rt></ruby><ruby>安慰<rt>ānwèi</rt></ruby>性能。<ruby>总之<rt>Zǒngzhī</rt></ruby>性能，<ruby>我对<rt>wǒ duì</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>喜爱<rt>xǐ'ài</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>崇拜<rt>chóngbài</rt></ruby><ruby>与日俱增<rt>yǔrìjùzēng</rt></ruby>性能，<ruby>相信<rt>xiāngxìn</rt></ruby><ruby>他<rt>tā</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>世界<rt>shìjiè</rt></ruby><ruby>上<rt>shang</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>幸福<rt>xìngfú</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>人<rt>rén</rt></ruby>性能性能。</span>
+                <!-- Đoạn 3 -->
+                <span class="block"><span class="indent"></span><ruby>我<rt>Wǒ</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>喜爱<rt>xǐ'ài</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>羡慕<rt>xiànmù</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby>性能，<ruby>他<rt>tā</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>心中<rt>xīnzhōng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>偶像<rt>ǒuxiàng</rt></ruby>性能性能。<ruby>他<rt>Tā</rt></ruby><ruby>身高<rt>shēnggāo</rt></ruby><ruby>一米八八<rt>yìmǐ bābā</rt></ruby>性能，<ruby>长得<rt>zhǎngde</rt></ruby><ruby>肩宽<rt>jiānkuān</rt></ruby><ruby>腿<rt>tuǐ</rt></ruby><ruby>长<rt>cháng</rt></ruby>性能，<ruby>随便<rt>suíbiàn</rt></ruby><ruby>一跑<rt>yì pǎo</rt></ruby><ruby>就是<rt>jiùshì</rt></ruby><ruby>十秒<rt>shímiǎo</rt></ruby><ruby>以内<rt>yǐnèi</rt></ruby>性能，<ruby>随便<rt>suíbiàn</rt></ruby><ruby>一跳<rt>yí tiào</rt></ruby><ruby>就在<rt>jiù zài</rt></ruby><ruby>八米<rt>bāmǐ</rt></ruby><ruby>开外<rt>kāiwài</rt></ruby>性能，<ruby>而且<rt>érqiě</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>最重要<rt>zuì zhòngyào</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>比赛<rt>bǐsài</rt></ruby><ruby>中<rt>zhōng</rt></ruby>性能，<ruby>他<rt>tā</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>动作<rt>dòngzuò</rt></ruby><ruby>也是<rt>yěshì</rt></ruby><ruby>那么<rt>nàme</rt></ruby><ruby>潇洒<rt>xiāoshǎ</rt></ruby>性能性能性能。<ruby>有时候<rt>Yǒushíhou</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>真<rt>zhēn</rt></ruby><ruby>恨不得<rt>hànbùdé</rt></ruby><ruby>马上<rt>mǎshàng</rt></ruby><ruby>变成<rt>biànchéng</rt></ruby><ruby>他<rt>tā</rt></ruby>性能，<ruby>因此<rt>yīncǐ</rt></ruby>性能性能，<ruby>我<rt>wǒ</rt></ruby><ruby>常<rt>cháng</rt></ruby><ruby>暗自<rt>ànzì</rt></ruby><ruby>祈祷<rt>qídǎo</rt></ruby>性能，<ruby>假若<rt>jiǎruò</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>真能<rt>zhēnnéng</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>来世<rt>láishì</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>不<rt>bù</rt></ruby><ruby>要求<rt>yāoqiú</rt></ruby><ruby>别的<rt>biéde</rt></ruby>性能，<ruby>只<rt>zhǐ</rt></ruby><ruby>要求<rt>yāoqiú</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>那样<rt>nàyàng</rt></ruby><ruby>一副<rt>yí fù</rt></ruby><ruby>健美<rt>jiànměi</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>身体<rt>shēntǐ</rt></ruby><ruby>就好<rt>jiù hǎo</rt></ruby>性能性能。<ruby>我<rt>Wǒ</rt></ruby><ruby>之所以<rt>zhīsuǒyǐ</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>这样<rt>zhèyàng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>白日梦<rt>báirìmèng</rt></ruby>性能性能，<ruby>是因为<rt>shì yīnwèi</rt></ruby><ruby>现实<rt>xiànshí</rt></ruby><ruby>中<rt>zhōng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>这个<rt>zhège</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>太<rt>tài</rt></ruby><ruby>令人<rt>lìngrén</rt></ruby><ruby>沮丧<rt>jǔsàng</rt></ruby>性能，<ruby>才<rt>cái</rt></ruby><ruby>想出<rt>xiǎngchū</rt></ruby><ruby>这个<rt>zhège</rt></ruby><ruby>法子<rt>fǎzi</rt></ruby><ruby>来<rt>lái</rt></ruby><ruby>给<rt>gěi</rt></ruby><ruby>自己<rt>zìjǐ</rt></ruby><ruby>一点儿<rt>yìdiǎnr</rt></ruby><ruby>安慰<rt>ānwèi</rt></ruby>性能。<ruby>总之<rt>Zǒngzhī</rt></ruby>性能，<ruby>我对<rt>wǒ duì</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>喜爱<rt>xǐ'ài</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>崇拜<rt>chóngbài</rt></ruby><ruby>与日俱增<rt>yǔrìjùzēng</rt></ruby>性能，<ruby>相信<rt>xiāngxìn</rt></ruby><ruby>他<rt>tā</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>世界<rt>shìjiè</rt></ruby><ruby>上<rt>shang</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>幸福<rt>xìngfú</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>人<rt>rén</rt></ruby>性能性能。</span>
 
-            <!-- Đoạn 4 -->
-            <span class="block"><span class="indent"></span><ruby>奥运会<rt>Àoyùnhuì</rt></ruby><ruby>上<rt>shang</rt></ruby>性能，<ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>输给<rt>shūgěi</rt></ruby><ruby>约翰逊<rt>Yuēhànxùn</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>那个<rt>nàge</rt></ruby><ruby>中午<rt>zhōngwǔ</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>沮丧<rt>jǔsàng</rt></ruby><ruby>极了<rt>jíle</rt></ruby>性能，<ruby>直到<rt>zhídào</rt></ruby><ruby>晚上<rt>wǎnshang</rt></ruby><ruby>心里<rt>xīnlǐ</rt></ruby><ruby>还是<rt>háishi</rt></ruby><ruby>别别扭扭<rt>biébièniǔniǔ</rt></ruby><ruby>的<rt>de</rt></ruby>性能，<ruby>夜里<rt>yèlǐ</rt></ruby><ruby>也没<rt>yě méi</rt></ruby><ruby>睡好<rt>shuìhǎo</rt></ruby><ruby>觉<rt>jiào</rt></ruby>性能。<ruby>眼前<rt>Yǎnqián</rt></ruby><ruby>老<rt>lǎo</rt></ruby><ruby>出现<rt>chūxiàn</rt></ruby><ruby>中午<rt>zhōngwǔ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>场面<rt>chǎngmiàn</rt></ruby>性能：“<ruby>所有<rt>suǒyǒu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>都在<rt>dōuzài</rt></ruby><ruby>向<rt>xiàng</rt></ruby><ruby>约翰逊<rt>Yuēhànxùn</rt></ruby><ruby>欢呼<rt>huānhū</rt></ruby>性能性能，<ruby>所有<rt>suǒyǒu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>旗帜<rt>qízhì</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>鲜花<rt>xiānhuā</rt></ruby><ruby>都在<rt>dōuzài</rt></ruby><ruby>向<rt>xiàng</rt></ruby><ruby>约翰逊<rt>Yuēhànxùn</rt></ruby><ruby>挥舞<rt>huīwǔ</rt></ruby>性能性能，<ruby>浪潮<rt>làngcháo</rt></ruby><ruby>般<rt>bān</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>记者们<rt>jìzhěmen</rt></ruby><ruby>簇拥着<rt>cùyōngzhe</rt></ruby><ruby>约翰逊<rt>Yuēhànxùn</rt></ruby><ruby>走出<rt>zǒuchū</rt></ruby><ruby>赛场<rt>sàichǎng</rt></ruby>性能，<ruby>而<rt>ér</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>则<rt>zé</rt></ruby><ruby>被<rt>bèi</rt></ruby><ruby>冷落<rt>lěngluò</rt></ruby><ruby>在一旁<rt>zài yìpáng</rt></ruby>性能。”<ruby>一连<rt>Yìlián</rt></ruby><ruby>几天<rt>jǐtiān</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>闷闷不乐<rt>mènmènbúlè</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>似乎<rt>sìhū</rt></ruby><ruby>比<rt>bǐ</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>还<rt>hái</rt></ruby><ruby>败得<rt>bàide</rt></ruby><ruby>惨<rt>cǎn</rt></ruby>性能性能性能性能性能。<ruby>这<rt>Zhè</rt></ruby><ruby>不是<rt>búshì</rt></ruby><ruby>怪事<rt>guàishì</rt></ruby><ruby>吗<rt>ma</rt></ruby>？<ruby>在<rt>Zài</rt></ruby><ruby>外人<rt>wàirén</rt></ruby><ruby>看来<rt>kànlái</rt></ruby><ruby>这<rt>zhè</rt></ruby><ruby>不是<rt>búshì</rt></ruby><ruby>精神病<rt>jīngshénbìng</rt></ruby><ruby>吗<rt>ma</rt></ruby>？<ruby>我<rt>Wǒ</rt></ruby><ruby>慢慢<rt>mànmàn</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>想<rt>xiǎng</rt></ruby><ruby>其中<rt>qízhōng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>原因<rt>yuányīn</rt></ruby>性能。</span>
+                <!-- Đoạn 4 -->
+                <span class="block"><span class="indent"></span><ruby>奥运会<rt>Àoyùnhuì</rt></ruby><ruby>上<rt>shang</rt></ruby>性能，<ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>输给<rt>shūgěi</rt></ruby><ruby>约翰逊<rt>Yuēhànxùn</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>那个<rt>nàge</rt></ruby><ruby>中午<rt>zhōngwǔ</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>沮丧<rt>jǔsàng</rt></ruby><ruby>极了<rt>jíle</rt></ruby>性能，<ruby>直到<rt>zhídào</rt></ruby><ruby>晚上<rt>wǎnshang</rt></ruby><ruby>心里<rt>xīnlǐ</rt></ruby><ruby>还是<rt>háishi</rt></ruby><ruby>别别扭扭<rt>biébièniǔniǔ</rt></ruby><ruby>的<rt>de</rt></ruby>性能，<ruby>夜里<rt>yèlǐ</rt></ruby><ruby>也没<rt>yě méi</rt></ruby><ruby>睡好<rt>shuìhǎo</rt></ruby><ruby>觉<rt>jiào</rt></ruby>性能。<ruby>眼前<rt>Yǎnqián</rt></ruby><ruby>老<rt>lǎo</rt></ruby><ruby>出现<rt>chūxiàn</rt></ruby><ruby>中午<rt>zhōngwǔ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>场面<rt>chǎngmiàn</rt></ruby>性能：“<ruby>所有<rt>suǒyǒu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>都在<rt>dōuzài</rt></ruby><ruby>向<rt>xiàng</rt></ruby><ruby>约翰逊<rt>Yuēhànxùn</rt></ruby><ruby>欢呼<rt>huānhū</rt></ruby>性能性能，<ruby>所有<rt>suǒyǒu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>旗帜<rt>qízhì</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>鲜花<rt>xiānhuā</rt></ruby><ruby>都在<rt>dōuzài</rt></ruby><ruby>向<rt>xiàng</rt></ruby><ruby>约翰逊<rt>Yuēhànxùn</rt></ruby><ruby>挥舞<rt>huīwǔ</rt></ruby>性能性能，<ruby>浪潮<rt>làngcháo</rt></ruby><ruby>般<rt>bān</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>记者们<rt>jìzhěmen</rt></ruby><ruby>簇拥着<rt>cùyōngzhe</rt></ruby><ruby>约翰逊<rt>Yuēhànxùn</rt></ruby><ruby>走出<rt>zǒuchū</rt></ruby><ruby>赛场<rt>sàichǎng</rt></ruby>性能，<ruby>而<rt>ér</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>则<rt>zé</rt></ruby><ruby>被<rt>bèi</rt></ruby><ruby>冷落<rt>lěngluò</rt></ruby><ruby>在一旁<rt>zài yìpáng</rt></ruby>性能。”<ruby>一连<rt>Yìlián</rt></ruby><ruby>几天<rt>jǐtiān</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>闷闷不乐<rt>mènmènbúlè</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>似乎<rt>sìhū</rt></ruby><ruby>比<rt>bǐ</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>还<rt>hái</rt></ruby><ruby>败得<rt>bàide</rt></ruby><ruby>惨<rt>cǎn</rt></ruby>性能性能性能性能性能。<ruby>这<rt>Zhè</rt></ruby><ruby>不是<rt>búshì</rt></ruby><ruby>怪事<rt>guàishì</rt></ruby><ruby>吗<rt>ma</rt></ruby>？<ruby>在<rt>Zài</rt></ruby><ruby>外人<rt>wàirén</rt></ruby><ruby>看来<rt>kànlái</rt></ruby><ruby>这<rt>zhè</rt></ruby><ruby>不是<rt>búshì</rt></ruby><ruby>精神病<rt>jīngshénbìng</rt></ruby><ruby>吗<rt>ma</rt></ruby>？<ruby>我<rt>Wǒ</rt></ruby><ruby>慢慢<rt>mànmàn</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>想<rt>xiǎng</rt></ruby><ruby>其中<rt>qízhōng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>原因<rt>yuányīn</rt></ruby>性能。</span>
 
-            <!-- Đoạn 5 -->
-            <span class="block"><span class="indent"></span><ruby>到底<rt>Dàodǐ</rt></ruby><ruby>为什么<rt>wèishénme</rt></ruby><ruby>呢<rt>ne</rt></ruby>？<ruby>最后<rt>Zuìhòu</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>知道了<rt>zhīdàole</rt></ruby>性能：“<ruby>我<rt>wǒ</rt></ruby><ruby>看见了<rt>kànjiànle</rt></ruby><ruby>所谓<rt>suǒwèi</rt></ruby>‘<ruby>最<rt>zuì</rt></ruby><ruby>幸福<rt>xìngfú</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>人<rt>rén</rt></ruby>’<ruby>的<rt>de</rt></ruby><ruby>不幸<rt>búxìng</rt></ruby>性能性能，<ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>那<rt>nà</rt></ruby><ruby>茫然<rt>mángrán</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>目光<rt>mùguāng</rt></ruby><ruby>使<rt>shǐ</rt></ruby><ruby>我的<rt>wǒde</rt></ruby>‘<ruby>最<rt>zuì</rt></ruby><ruby>幸福<rt>xìngfú</rt></ruby>’<ruby>的<rt>de</rt></ruby><ruby>概念<rt>gàiniàn</rt></ruby><ruby>完全<rt>wánquán</rt></ruby><ruby>动摇<rt>dòngyáo</rt></ruby><ruby>了<rt>le</rt></ruby>性能性能性能。<ruby>上帝<rt>Shàngdì</rt></ruby><ruby>从来不<rt>cóngláibù</rt></ruby><ruby>给<rt>gěi</rt></ruby><ruby>任何<rt>rènhé</rt></ruby><ruby>人<rt>rén</rt></ruby>‘<ruby>最<rt>zuì</rt></ruby><ruby>幸福<rt>xìngfú</rt></ruby>’<ruby>这<rt>zhè</rt></ruby><ruby>三个<rt>sāngè</rt></ruby><ruby>字<rt>zì</rt></ruby>性能性能性能，<ruby>他<rt>tā</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>所有<rt>suǒyǒu</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>欲望<rt>yùwàng</rt></ruby><ruby>面前<rt>miànqián</rt></ruby><ruby>设下<rt>shèxià</rt></ruby><ruby>永恒<rt>yǒnghéng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>距离<rt>jùlí</rt></ruby>性能，<ruby>公平地<rt>gōngpíngde</rt></ruby><ruby>给<rt>gěi</rt></ruby><ruby>每个人<rt>měigèrén</rt></ruby><ruby>以<rt>yǐ</rt></ruby><ruby>局限<rt>júxiàn</rt></ruby>性能性能性能性能。<ruby>如果<rt>Rúguǒ</rt></ruby><ruby>不能<rt>bùnéng</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>超越<rt>chāoyuè</rt></ruby><ruby>自我<rt>zìwǒ</rt></ruby><ruby>局限<rt>júxiàn</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>无尽<rt>wújìn</rt></ruby><ruby>路途<rt>lùtú</rt></ruby><ruby>上去<rt>shàng qù</rt></ruby><ruby>理解<rt>lǐjiě</rt></ruby><ruby>幸福<rt>xìngfú</rt></ruby>性能性能，<ruby>那么<rt>nàme</rt></ruby><ruby>我的<rt>wǒde</rt></ruby><ruby>不能<rt>bùnéng</rt></ruby><ruby>跑<rt>pǎo</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>不能<rt>bùnéng</rt></ruby><ruby>跑得<rt>pǎode</rt></ruby><ruby>更快<rt>gèngkuài</rt></ruby><ruby>就<rt>jiù</rt></ruby><ruby>完全<rt>wánquán</rt></ruby><ruby>等同<rt>děngtóng</rt></ruby>性能，<ruby>都是<rt>dōushì</rt></ruby><ruby>沮丧<rt>jǔsàng</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>痛苦<rt>tòngkǔ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>根源<rt>gēnyuán</rt></ruby>性能性能性能。<ruby>假若<rt>Jiǎruò</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>不能<rt>bùnéng</rt></ruby><ruby>懂得<rt>dǒngde</rt></ruby><ruby>这些<rt>zhèxiē</rt></ruby><ruby>事<rt>shì</rt></ruby><ruby>性能性能，<ruby>我<rt>wǒ</rt></ruby><ruby>相信<rt>xiāngxìn</rt></ruby>性能，<ruby>在<rt>zài</rt></ruby><ruby>那个<rt>nàge</rt></ruby><ruby>中午<rt>zhōngwǔ</rt></ruby>性能性能，<ruby>他<rt>tā</rt></ruby><ruby>一定<rt>yídìng</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>世界<rt>shìjiè</rt></ruby><ruby>上<rt>shang</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>不幸<rt>búxìng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>人<rt>rén</rt></ruby>性能性能。”</span>
+                <!-- Đoạn 5 -->
+                <span class="block"><span class="indent"></span><ruby>到底<rt>Dàodǐ</rt></ruby><ruby>为什么<rt>wèishénme</rt></ruby><ruby>呢<rt>ne</rt></ruby>？<ruby>最后<rt>Zuìhòu</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>知道了<rt>zhīdàole</rt></ruby>性能：“<ruby>我<rt>wǒ</rt></ruby><ruby>看见了<rt>kànjiànle</rt></ruby><ruby>所谓<rt>suǒwèi</rt></ruby>‘<ruby>最<rt>zuì</rt></ruby><ruby>幸福<rt>xìngfú</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>人<rt>rén</rt></ruby>’<ruby>的<rt>de</rt></ruby><ruby>不幸<rt>búxìng</rt></ruby>性能性能，<ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>那<rt>nà</rt></ruby><ruby>茫然<rt>mángrán</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>目光<rt>mùguāng</rt></ruby><ruby>使<rt>shǐ</rt></ruby><ruby>我的<rt>wǒde</rt></ruby>‘<ruby>最<rt>zuì</rt></ruby><ruby>幸福<rt>xìngfú</rt></ruby>’<ruby>的<rt>de</rt></ruby><ruby>概念<rt>gàiniàn</rt></ruby><ruby>完全<rt>wánquán</rt></ruby><ruby>动摇<rt>dòngyáo</rt></ruby><ruby>了<rt>le</rt></ruby>性能性能性能。<ruby>上帝<rt>Shàngdì</rt></ruby><ruby>从来不<rt>cóngláibù</rt></ruby><ruby>给<rt>gěi</rt></ruby><ruby>任何<rt>rènhé</rt></ruby><ruby>人<rt>rén</rt></ruby>‘<ruby>最<rt>zuì</rt></ruby><ruby>幸福<rt>xìngfú</rt></ruby>’<ruby>这<rt>zhè</rt></ruby><ruby>三个<rt>sāngè</rt></ruby><ruby>字<rt>zì</rt></ruby>性能性能性能，<ruby>他<rt>tā</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>所有<rt>suǒyǒu</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>欲望<rt>yùwàng</rt></ruby><ruby>面前<rt>miànqián</rt></ruby><ruby>设下<rt>shèxià</rt></ruby><ruby>永恒<rt>yǒnghéng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>距离<rt>jùlí</rt></ruby>性能，<ruby>公平地<rt>gōngpíngde</rt></ruby><ruby>给<rt>gěi</rt></ruby><ruby>每个人<rt>měigèrén</rt></ruby><ruby>以<rt>yǐ</rt></ruby><ruby>局限<rt>júxiàn</rt></ruby>性能性能性能性能。<ruby>如果<rt>Rúguǒ</rt></ruby><ruby>不能<rt>bùnéng</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>超越<rt>chāoyuè</rt></ruby><ruby>自我<rt>zìwǒ</rt></ruby><ruby>局限<rt>júxiàn</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>无尽<rt>wújìn</rt></ruby><ruby>路途<rt>lùtú</rt></ruby><ruby>上去<rt>shàng qù</rt></ruby><ruby>理解<rt>lǐjiě</rt></ruby><ruby>幸福<rt>xìngfú</rt></ruby>性能性能，<ruby>那么<rt>nàme</rt></ruby><ruby>我的<rt>wǒde</rt></ruby><ruby>不能<rt>bùnéng</rt></ruby><ruby>跑<rt>pǎo</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>不能<rt>bùnéng</rt></ruby><ruby>跑得<rt>pǎode</rt></ruby><ruby>更快<rt>gèngkuài</rt></ruby><ruby>就<rt>jiù</rt></ruby><ruby>完全<rt>wánquán</rt></ruby><ruby>等同<rt>děngtóng</rt></ruby>性能，<ruby>都是<rt>dōushì</rt></ruby><ruby>沮丧<rt>jǔsàng</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>痛苦<rt>tòngkǔ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>根源<rt>gēnyuán</rt></ruby>性能性能性能。<ruby>假若<rt>Jiǎruò</rt></ruby><ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>不能<rt>bùnéng</rt></ruby><ruby>懂得<rt>dǒngde</rt></ruby><ruby>这些<rt>zhèxiē</rt></ruby><ruby>事<rt>shì</rt></ruby><ruby>性能性能，<ruby>我<rt>wǒ</rt></ruby><ruby>相信<rt>xiāngxìn</rt></ruby>性能，<ruby>在<rt>zài</rt></ruby><ruby>那个<rt>nàge</rt></ruby><ruby>中午<rt>zhōngwǔ</rt></ruby>性能性能，<ruby>他<rt>tā</rt></ruby><ruby>一定<rt>yídìng</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>世界<rt>shìjiè</rt></ruby><ruby>上<rt>shang</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>不幸<rt>búxìng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>人<rt>rén</rt></ruby>性能性能。”</span>
 
-            <!-- Đoạn 6 -->
-            <span class="block"><span class="indent"></span><ruby>在<rt>Zài</rt></ruby><ruby>百米<rt>bǎimǐ</rt></ruby><ruby>决赛<rt>juésài</rt></ruby><ruby>后<rt>hòu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>第二天<rt>dìèrtiān</rt></ruby>性能，<ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>跳远<rt>tiàoyuǎn</rt></ruby><ruby>比赛<rt>bǐsài</rt></ruby><ruby>中<rt>zhōng</rt></ruby><ruby>跳出<rt>tiàochū</rt></ruby><ruby>了<rt>le</rt></ruby><ruby>八米七二<rt>bāmǐ qī'èr</rt></ruby>性能性能性能，<ruby>他<rt>tā</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>好样的<rt>hǎoyàngde</rt></ruby>性能。<ruby>看来<rt>Kànlái</rt></ruby><ruby>他<rt>tā</rt></ruby><ruby>懂<rt>dǒng</rt></ruby>性能，<ruby>他<rt>tā</rt></ruby><ruby>知道<rt>zhīdào</rt></ruby><ruby>奥林匹斯山<rt>Àolínpǐsī Shān</rt></ruby><ruby>上<rt>shang</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>圣火<rt>shènghuǒ</rt></ruby><ruby>为何<rt>wèihé</rt></ruby><ruby>而<rt>ér</rt></ruby><ruby>燃烧<rt>ránshāo</rt></ruby>性能性能，<ruby>那<rt>nà</rt></ruby><ruby>不是<rt>búshì</rt></ruby><ruby>为了<rt>wèile</rt></ruby><ruby>一个人<rt>yígèrén</rt></ruby><ruby>把<rt>bǎ</rt></ruby><ruby>另一个<rt>lìng yígè</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>打败<rt>dǎbài</rt></ruby性能，<ruby>而是<rt>érshì</rt></ruby><ruby>为了<rt>wèile</rt></ruby><ruby>有机会<rt>yǒu jīhuì</rt></ruby><ruby>表现<rt>biǎoxiàn</rt></ruby><ruby>人类<rt>rénlèi</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>不屈<rt>bùqū</rt></ruby>性能性能性能。<ruby>命定<rt>Mìngdìng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>局限<rt>júxiàn</rt></ruby><ruby>虽然<rt>suīrán</rt></ruby><ruby>永远<rt>yǒngyuǎn</rt></ruby><ruby>存在<rt>cúnzài</rt></ruby>性能，<ruby>但是<rt>dànshì</rt></ruby><ruby>不屈<rt>bùqū</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>挑战<rt>tiǎozhàn</rt></ruby><ruby>却<rt>què</rt></ruby><ruby>也<rt>yě</rt></ruby><ruby>从未<rt>cóngwèi</rt></ruby><ruby>缺席<rt>quēxí</rt></ruby>性能性能。</span>
+                <!-- Đoạn 6 -->
+                <span class="block"><span class="indent"></span><ruby>在<rt>Zài</rt></ruby><ruby>百米<rt>bǎimǐ</rt></ruby><ruby>决赛<rt>juésài</rt></ruby><ruby>后<rt>hòu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>第二天<rt>dìèrtiān</rt></ruby>性能，<ruby>刘易斯<rt>Liúyìsī</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>跳远<rt>tiàoyuǎn</rt></ruby><ruby>比赛<rt>bǐsài</rt></ruby><ruby>中<rt>zhōng</rt></ruby><ruby>跳出<rt>tiàochū</rt></ruby><ruby>了<rt>le</rt></ruby><ruby>八米七二<rt>bāmǐ qī'èr</rt></ruby>性能性能性能，<ruby>他<rt>tā</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>好样的<rt>hǎoyàngde</rt></ruby>性能。<ruby>看来<rt>Kànlái</rt></ruby><ruby>他<rt>tā</rt></ruby><ruby>懂<rt>dǒng</rt></ruby>性能，<ruby>他<rt>tā</rt></ruby><ruby>知道<rt>zhīdào</rt></ruby><ruby>奥林匹斯山<rt>Àolínpǐsī Shān</rt></ruby><ruby>上<rt>shang</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>圣火<rt>shènghuǒ</rt></ruby><ruby>为何<rt>wèihé</rt></ruby><ruby>而<rt>ér</rt></ruby><ruby>燃烧<rt>ránshāo</rt></ruby>性能性能，<ruby>那<rt>nà</rt></ruby><ruby>不是<rt>búshì</rt></ruby><ruby>为了<rt>wèile</rt></ruby><ruby>一个人<rt>yígèrén</rt></ruby><ruby>把<rt>bǎ</rt></ruby><ruby>另一个<rt>lìng yígè</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>打败<rt>dǎbài</rt></ruby性能，<ruby>而是<rt>érshì</rt></ruby><ruby>为了<rt>wèile</rt></ruby><ruby>有机会<rt>yǒu jīhuì</rt></ruby><ruby>表现<rt>biǎoxiàn</rt></ruby><ruby>人类<rt>rénlèi</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>不屈<rt>bùqū</rt></ruby>性能性能性能。<ruby>命定<rt>Mìngdìng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>局限<rt>júxiàn</rt></ruby><ruby>虽然<rt>suīrán</rt></ruby><ruby>永远<rt>yǒngyuǎn</rt></ruby><ruby>存在<rt>cúnzài</rt></ruby>性能，<ruby>但是<rt>dànshì</rt></ruby><ruby>不屈<rt>bùqū</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>挑战<rt>tiǎozhàn</rt></ruby><ruby>却<rt>què</rt></ruby><ruby>也<rt>yě</rt></ruby><ruby>从未<rt>cóngwèi</rt></ruby><ruby>缺席<rt>quēxí</rt></ruby>性能性能。</span>
 
-            <!-- Đoạn 7 -->
-            <span class="block"><span class="indent"></span><ruby>这样一来<rt>Zhèyàngyīlái</rt></ruby>性能性能，<ruby>我的<rt>wǒde</rt></ruby><ruby>白日梦<rt>báirìmèng</rt></ruby><ruby>就<rt>jiù</rt></ruby><ruby>需要<rt>xūyào</rt></ruby><ruby>重新<rt>chóngxīn</rt></ruby><ruby>设计<rt>shèjì</rt></ruby><ruby>一番<rt>yìfān</rt></ruby><ruby>了<rt>le</rt></ruby>性能性能。<ruby>至少<rt>Zhìshǎo</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>不再<rt>búzài</rt></ruby><ruby>愿意<rt>yuànyì</rt></ruby><ruby>用<rt>yòng</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>领悟<rt>lǐngwù</rt></ruby><ruby>到<rt>dào</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>这一切<rt>zhè yíqiè</rt></ruby>性能性能，<ruby>仅仅<rt>jǐnjǐn</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>换<rt>huàn</rt></ruby><ruby>一个<rt>yígè</rt></ruby><ruby>健美<rt>jiànměi</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>身体<rt>shēntǐ</rt></ruby>性能，<ruby>原因<rt>yuányīn</rt></ruby><ruby>很简单<rt>hěn jiǎndān</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>不想<rt>bùxiǎng</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>来世<rt>láishì</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>某一个<rt>mǒu yígè</rt></ruby><ruby>中午<rt>zhōngwǔ</rt></ruby><ruby>成为<rt>chéngwéi</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>不幸<rt>búxìng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>人<rt>rén</rt></ruby>性能性能。<ruby>即使<rt>Jíshǐ</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>可以<rt>kěyǐ</rt></ruby><ruby>跑出<rt>pǎochū</rt></ruby><ruby>九秒五九<rt>jiǔmiǎo wǔjiǔ</rt></ruby>性能性能，<ruby>也<rt>yě</rt></ruby><ruby>仍然<rt>réngrán</rt></ruby><ruby>意味着<rt>yìwèizhe</rt></ruby><ruby>局限<rt>júxiàn</rt></ruby>性能性能。<ruby>我<rt>Wǒ</rt></ruby><ruby>希望<rt>xīwàng</rt></ruby><ruby>既<rt>jì</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>一个<rt>yígè</rt></ruby><ruby>健美<rt>jiànměi</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>身体<rt>shēntǐ</rt></ruby>性能性能，<ruby>又有<rt>yòu yǒu</rt></ruby><ruby>一个<rt>yígè</rt></ruby><ruby>领悟<rt>lǐngwù</rt></ruby><ruby>了<rt>le</rt></ruby><ruby>人生<rt>rénshēng</rt></ruby><ruby>意义<rt>yìyì</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>灵魂<rt>línghún</rt></ruby>性能性能。<ruby>但是<rt>Dànshì</rt></ruby>性能，<ruby>前者<rt>qiánzhě</rt></ruby><ruby>可以<rt>kěyǐ</rt></ruby><ruby>向上<rt>xiàngshàng</rt></ruby><ruby>帝<rt>Dì</rt></ruby><ruby>祈祷<rt>qídǎo</rt></ruby>性能，<ruby>后者<rt>hòuzhě</rt></ruby><ruby>却<rt>què</rt></ruby><ruby>必须<rt>bìxū</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>千难万苦<rt>qiānnánwànkǔ</rt></ruby><ruby>中<rt>zhōng</rt></ruby><ruby>靠<rt>kào</rt></ruby><ruby>自己<rt>zìjǐ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>获得<rt>huòdé</rt></ruby>性能性能。</span>
+                <!-- Đoạn 7 -->
+                <span class="block"><span class="indent"></span><ruby>这样一来<rt>Zhèyàngyīlái</rt></ruby>性能性能，<ruby>我的<rt>wǒde</rt></ruby><ruby>白日梦<rt>báirìmèng</rt></ruby><ruby>就<rt>jiù</rt></ruby><ruby>需要<rt>xūyào</rt></ruby><ruby>重新<rt>chóngxīn</rt></ruby><ruby>设计<rt>shèjì</rt></ruby><ruby>一番<rt>yìfān</rt></ruby><ruby>了<rt>le</rt></ruby>性能性能。<ruby>至少<rt>Zhìshǎo</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>不再<rt>búzài</rt></ruby><ruby>愿意<rt>yuànyì</rt></ruby><ruby>用<rt>yòng</rt></ruby><ruby>我<rt>wǒ</rt></ruby><ruby>领悟<rt>lǐngwù</rt></ruby><ruby>到<rt>dào</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>这一切<rt>zhè yíqiè</rt></ruby>性能性能，<ruby>仅仅<rt>jǐnjǐn</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>换<rt>huàn</rt></ruby><ruby>一个<rt>yígè</rt></ruby><ruby>健美<rt>jiànměi</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>身体<rt>shēntǐ</rt></ruby>性能，<ruby>原因<rt>yuányīn</rt></ruby><ruby>很简单<rt>hěn jiǎndān</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>不想<rt>bùxiǎng</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>来世<rt>láishì</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>某一个<rt>mǒu yígè</rt></ruby><ruby>中午<rt>zhōngwǔ</rt></ruby><ruby>成为<rt>chéngwéi</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>不幸<rt>búxìng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>人<rt>rén</rt></ruby>性能性能。<ruby>即使<rt>Jíshǐ</rt></ruby><ruby>人<rt>rén</rt></ruby><ruby>可以<rt>kěyǐ</rt></ruby><ruby>跑出<rt>pǎochū</rt></ruby><ruby>九秒五九<rt>jiǔmiǎo wǔjiǔ</rt></ruby>性能性能，<ruby>也<rt>yě</rt></ruby><ruby>仍然<rt>réngrán</rt></ruby><ruby>意味着<rt>yìwèizhe</rt></ruby><ruby>局限<rt>júxiàn</rt></ruby>性能性能。<ruby>我<rt>Wǒ</rt></ruby><ruby>希望<rt>xīwàng</rt></ruby><ruby>既<rt>jì</rt></ruby><ruby>有<rt>yǒu</rt></ruby><ruby>一个<rt>yígè</rt></ruby><ruby>健美<rt>jiànměi</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>身体<rt>shēntǐ</rt></ruby>性能性能，<ruby>又有<rt>yòu yǒu</rt></ruby><ruby>一个<rt>yígè</rt></ruby><ruby>领悟<rt>lǐngwù</rt></ruby><ruby>了<rt>le</rt></ruby><ruby>人生<rt>rénshēng</rt></ruby><ruby>意义<rt>yìyì</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>灵魂<rt>línghún</rt></ruby>性能性能。<ruby>但是<rt>Dànshì</rt></ruby>性能，<ruby>前者<rt>qiánzhě</rt></ruby><ruby>可以<rt>kěyǐ</rt></ruby><ruby>向上<rt>xiàngshàng</rt></ruby><ruby>帝<rt>Dì</rt></ruby><ruby>祈祷<rt>qídǎo</rt></ruby>性能，<ruby>后者<rt>hòuzhě</rt></ruby><ruby>却<rt>què</rt></ruby><ruby>必须<rt>bìxū</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>千难万苦<rt>qiānnánwànkǔ</rt></ruby><ruby>中<rt>zhōng</rt></ruby><ruby>靠<rt>kào</rt></ruby><ruby>自己<rt>zìjǐ</rt></ruby><ruby>去<rt>qù</rt></ruby><ruby>获得<rt>huòdé</rt></ruby>性能性能。</span>
+            </div>
+
+            <h2>Dịch nghĩa Tiếng Việt:</h2>
+            <div class="translation-container">
+                <div class="translation-line">Có lẽ bởi vì con người ta thiếu thốn cái gì thì lại càng say mê yêu thích cái đó, tôi tuy rằng đôi chân mang tật nguyền bẩm sinh, thế nhưng lại là một tín đồ cuồng nhiệt của thể thao. Tôi không chỉ thích xem bóng đá, bóng rổ cùng thảy các môn thi đấu bóng loại khác, mà còn đặc biệt hứng thú dõi theo các nội dung điền kinh, bơi lội, quyền anh, trượt băng, trượt tuyết, cho đến đua xe đạp và đua xe ô tô. Tóm lại, tôi là một người hâm mộ thể thao toàn năng. Dĩ nhiên thảy đều là xem qua màn hình vô tuyến tivi, bởi vì trước cửa các sân vận động hay nhà thi đấu luôn có những bậc thềm rất cao mà tôi thì chẳng thể nào tự mình leo lên được. Nếu như vào một ngày nào đó trên tivi phát sóng một chương trình thể thao đặc sắc, thì suốt cả ngày hôm ấy dẫu có làm bất cứ việc gì, trong lòng tôi cũng đều hướng về nó, mỗi một phút một giây trôi qua thảy đều tràn ngập niềm vui sướng.</div>
+                
+                <div class="translation-line">Trong số đó, tôi dành tình cảm nguyên sơ và nồng nhiệt nhất cho bộ môn điền kinh. Tôi có thể đọc van vách kỷ lục thế giới của thảy các nội dung điền kinh là bao nhiêu, do ai đang thiết lập và nắm giữ, thời gian duy trì kỷ lục đó là dài hay ngắn. Những cột mốc kỷ lục này là do tôi vô tình ghi nhớ được trong lúc xem, bởi sức hấp dẫn cốt lõi của phong trào điền kinh vốn dĩ không nằm ở những con số kỷ lục lạnh lùng, mà nằm ở chỗ nó có thể lột tả và thể hiện một cách trọn vẹn nhất sức mạnh, ý chí quật cường cùng vẻ đẹp thanh thoát của con người. Chính vì vậy, dưới góc nhìn của riêng tôi, nó còn mang tính nghệ thuật và đáng xem hơn bất kỳ vũ điệu dân gian hay điệu nhảy nào. Chiêm ngưỡng khoảnh khắc những vận động viên nổi tiếng hàng đầu thế giới sải bước băng băng về đích, bạn sẽ có cảm giác như thể họ đang chạy ra từ cội nguồn nguyên thủy của nhân loại, và hướng thẳng về phía tương lai rộng mở của loài người. Những bước chạy sải rộng như vậy chính là vũ điệu tự nhiên nhất và là khúc ca tự do tự tại nhất của sự sống.</div>
+                
+                <div class="translation-line">Người mà tôi kính trọng, yêu mến và ngưỡng mộ nhất chính là vận động viên Carl Lewis, anh ấy là vị thần tượng độc tôn trong lòng tôi. Anh ấy sở hữu chiều cao lý tưởng một mét tám mươi tám, vóc dáng bờ vai rộng, đôi chân dài, chỉ cần sải bước rảo chân chạy nhẹ nhàng là đã cán mốc dưới mười giây ở cự ly một trăm mét, tùy ý bật nhảy một phát là đã vượt qua cột mốc tám mét trên hố cát, và điều quan trọng hơn cả là trong những trận chung kết mang tính quyết định nhất, từng động tác kỹ thuật của anh ấy thảy đều toát lên vẻ hào hoa, lịch lãm khôn cùng. Có những lúc, tôi thực sự thèm khát bản thân có thể ngay lập tức hóa thân thành anh ấy. Chính vì thế, tôi thường âm thầm cầu nguyện rằng, ví thử con người ta thực sự có kiếp sau, tôi chẳng mưu cầu điều gì cao sang, chỉ xin ông trời ban tặng cho một cơ thể cường tráng,健 mỹ và hoàn hảo giống như Carl Lewis là mãn nguyện lắm rồi. Sở dĩ tôi luôn chìm đắm vào những giấc mộng giữa ban ngày xa vời thực tế như vậy là bởi vì cái hình hài hiện tại này của tôi ngoài đời thực quá đỗi tồi tệ và khiến bản thân tuyệt vọng, nên tôi mới phải tìm kiếm một phương thuốc tinh thần này để tự vỗ về và an ủi chính mình. Tóm lại, niềm yêu thích và lòng sùng bái tôi dành cho Carl Lewis cứ thế tăng tiến theo từng ngày, tôi luôn tin chắc rằng anh ấy chính là người đàn ông hạnh phúc và viên mãn nhất trên đời này.</div>
+                
+                <div class="translation-line">Thế rồi, tại kỳ Thế vận hội Olympic năm ấy, cái buổi trưa mà Carl Lewis phải nếm mùi thất bại trước Ben Johnson đã khiến tôi rơi vào trạng thái suy sụp và hụt hẫng tột cùng, mãi cho đến tận đêm muộn trong lòng vẫn cứ cảm thấy bứt rứt, khó chịu không yên, suốt cả đêm hôm đó cũng chẳng tài nào chợp mắt ngủ ngon giấc được. Trước mắt tôi cứ liên tục tái hiện đi tái hiện lại khung cảnh của buổi trưa hôm ấy: thảy mọi người đều đang vây quanh tung hô, chúc mừng cho Ben Johnson; muôn vàn lá cờ hoa rực rỡ đều đang hướng về phía Ben Johnson mà vẫy chào; làn sóng các phóng viên, nhà báo đông nghịt vây kín ríu rít hộ tống Ben Johnson bước ra khỏi sàn đấu, trong khi Carl Lewis tội nghiệp thì lại bị bỏ lại đơn độc, ghẻ lạnh ở một góc khán đài. Suốt liền mấy ngày sau đó, tôi lúc nào cũng ủ rũ, âu sầu, cảm giác như chính bản thân mình mới là kẻ vừa phải gánh chịu trận thua cay đắng và thảm hại hơn cả Carl Lewis vậy. Chuyện này chẳng phải quá đỗi kỳ quặc hay sao? Dưới con mắt của những người ngoài cuộc, hành vi này của tôi chẳng phải là biểu hiện của chứng bệnh tâm thần hay sao? Tôi bắt đầu chậm rãi suy ngẫm sâu sắc để tìm ra nguyên nhân cốt lõi ẩn giấu đằng sau những dòng cảm xúc ấy.</div>
+                
+                <div class="translation-line">Rốt cuộc là tại vì sao chứ? Đến cuối cùng thì tôi cũng đã bừng tỉnh hiểu ra rồi: Tôi đã tận mắt chứng kiến sự bất hạnh khốn cùng của người vốn được mệnh danh là "kẻ hạnh phúc nhất thế gian", chính ánh mắt thất thần, nhìn vô định đầy sầu não của Carl Lewis lúc thua trận đã hoàn toàn đánh sập và lung lay tận gốc rễ khái niệm về sự "hạnh phúc định ước" trong tôi. Thượng đế tối cao vốn dĩ chưa từng ban tặng cho bất kỳ một ai ba chữ "hạnh phúc nhất" vẹn toàn cả, Ngài luôn khéo léo đặt ra một khoảng cách vĩnh hằng và bất biến ngay trước những ham muốn, dục vọng tột cùng của con người, và vô cùng công bằng khi ban tặng cho mỗi một sinh linh những giới hạn, rào cản mang tính định mệnh của riêng mình. Nếu như bản thân không thể thấu cảm và tìm kiếm hạnh phúc ngay trên cuộc hành trình vô tận của việc vượt lên trên những giới hạn của chính mình, vậy thì cái sự bất lực không thể chạy của tôi và sự bất lực không thể chạy nhanh hơn nữa của Carl Lewis thảy đều mang một bản chất hoàn toàn đồng đẳng như nhau, chúng đều là căn nguyên gốc rễ đào sâu thêm sự tuyệt vọng và nỗi đau khổ tột cùng của nhân sinh. Ví thử Carl Lewis không thể tự mình nhìn nhận và thấu suốt được chân lý này, tôi tin chắc rằng, vào cái buổi trưa định mệnh ấy, anh ấy chính là kẻ bất hạnh và đáng thương nhất trên cõi đời này.</div>
+                
+                <div class="translation-line">Cứ ngỡ mọi chuyện đã khép lại, nhưng ngay vào ngày hôm sau của trận chung kết một trăm mét đầy cay đắng đó, Carl Lewis đã xuất sắc thực hiện cú nhảy đạt thành tích tám mét bảy mươi hai ở nội dung nhảy xa, anh ấy quả thực là một đấng nam nhi đại trượng phu kiên cường! Xem ra anh ấy đã thấu suốt rồi, anh ấy đã hiểu rõ ngọn lửa thiêng trên đỉnh núi Olympus tối cao vì điều gì mà bùng cháy, ngọn lửa ấy thắp sáng không phải là để chứng kiến việc một cá nhân này dùng sức mạnh để đánh bại và chà đạp lên một cá nhân khác, mà là để trao cho nhân loại một cơ hội quý báu để phô diễn trọn vẹn tinh thần bất khuất, kiên định trước nghịch cảnh của con người. Những giới hạn mang tính định ước của số phận dẫu cho có luôn bủa vây và tồn tại vĩnh viễn đi chăng nữa, thì những lời thách thức đầy ngạo nghễ và bất khuất của con người cũng chưa từng một lần chịu vắng bóng trên đấu trường cuộc đời.</div>
+                
+                <div class="translation-line">Giờ đây, giấc mơ giữa ban ngày của tôi xem ra đã đến lúc cần phải được thiết kế và định hình lại một cách hoàn chỉnh rồi. Ít nhất là tôi không còn ngu muội muốn đánh đổi tất cả những chiêm nghiệm ý nghĩa mà mình vừa thức tỉnh hiểu ra này chỉ để đổi lấy một hình hài cơ thể健 mỹ cường tráng đơn thuần nữa, lý do vô cùng đơn giản: tôi không muốn vào một buổi trưa định mệnh nào đó ở kiếp sau, mình lại phải sắm vai một kẻ bất hạnh nhất thế gian. Cho dù con người ta có thể chạm đến giới hạn chạy hết chín giây năm mươi chín đi chăng nữa, thì con số đó vẫn biểu thị cho một giới hạn cố hữu của thực thể vật lý. Thứ mà tôi hằng mong ước và khát khao có được ở kiếp sau chính là việc vừa sở hữu một cơ thể khỏe mạnh,健 mỹ, lại vừa đồng thời có được một linh hồn thức tỉnh, thấu suốt được trọn vẹn ý nghĩa đích thực của nhân sinh. Thế nhưng, vế thứ nhất thì chúng ta hoàn toàn có thể thành tâm hướng lên Thượng đế để cầu nguyện xin ban phát; còn vế thứ hai thì lại bắt buộc bản thân phải tự mình sải bước đi qua muôn vàn gian nan, thử thách và cay đắng của cuộc đời mới có thể hy vọng gặt hái và đạt được.</div>
+            </div>
         </div>
 
-        <h2>Dịch nghĩa Tiếng Việt:</h2>
-        <div class="translation-container">
-            <div class="translation-line">Có lẽ bởi vì con người ta thiếu thốn cái gì thì lại càng say mê yêu thích cái đó, tôi tuy rằng đôi chân mang tật nguyền bẩm sinh, thế nhưng lại là một tín đồ cuồng nhiệt của thể thao. Tôi không chỉ thích xem bóng đá, bóng rổ cùng thảy các môn thi đấu bóng loại khác, mà còn đặc biệt hứng thú dõi theo các nội dung điền kinh, bơi lội, quyền anh, trượt băng, trượt tuyết, cho đến đua xe đạp và đua xe ô tô. Tóm lại, tôi là một người hâm mộ thể thao toàn năng. Dĩ nhiên thảy đều là xem qua màn hình vô tuyến tivi, bởi vì trước cửa các sân vận động hay nhà thi đấu luôn có những bậc thềm rất cao mà tôi thì chẳng thể nào tự mình leo lên được. Nếu như vào một ngày nào đó trên tivi phát sóng một chương trình thể thao đặc sắc, thì suốt cả ngày hôm ấy dẫu có làm bất cứ việc gì, trong lòng tôi cũng đều hướng về nó, mỗi một phút một giây trôi qua thảy đều tràn ngập niềm vui sướng.</div>
-            
-            <div class="translation-line">Trong số đó, tôi dành tình cảm nguyên sơ và nồng nhiệt nhất cho bộ môn điền kinh. Tôi có thể đọc van vách kỷ lục thế giới của thảy các nội dung điền kinh là bao nhiêu, do ai đang thiết lập và nắm giữ, thời gian duy trì kỷ lục đó là dài hay ngắn. Những cột mốc kỷ lục này là do tôi vô tình ghi nhớ được trong lúc xem, bởi sức hấp dẫn cốt lõi của phong trào điền kinh vốn dĩ không nằm ở những con số kỷ lục lạnh lùng, mà nằm ở chỗ nó có thể lột tả và thể hiện một cách trọn vẹn nhất sức mạnh, ý chí quật cường cùng vẻ đẹp thanh thoát của con người. Chính vì vậy, dưới góc nhìn của riêng tôi, nó còn mang tính nghệ thuật và đáng xem hơn bất kỳ vũ điệu dân gian hay điệu nhảy nào. Chiêm ngưỡng khoảnh khắc những vận động viên nổi tiếng hàng đầu thế giới sải bước băng băng về đích, bạn sẽ có cảm giác như thể họ đang chạy ra từ cội nguồn nguyên thủy của nhân loại, và hướng thẳng về phía tương lai rộng mở của loài người. Những bước chạy sải rộng như vậy chính là vũ điệu tự nhiên nhất và là khúc ca tự do tự tại nhất của sự sống.</div>
-            
-            <div class="translation-line">Người mà tôi kính trọng, yêu mến và ngưỡng mộ nhất chính là vận động viên Carl Lewis, anh ấy là vị thần tượng độc tôn trong lòng tôi. Anh ấy sở hữu chiều cao lý tưởng một mét tám mươi tám, vóc dáng bờ vai rộng, đôi chân dài, chỉ cần sải bước rảo chân chạy nhẹ nhàng là đã cán mốc dưới mười giây ở cự ly một trăm mét, tùy ý bật nhảy một phát là đã vượt qua cột mốc tám mét trên hố cát, và điều quan trọng hơn cả là trong những trận chung kết mang tính quyết định nhất, từng động tác kỹ thuật của anh ấy thảy đều toát lên vẻ hào hoa, lịch lãm khôn cùng. Có những lúc, tôi thực sự thèm khát bản thân có thể ngay lập tức hóa thân thành anh ấy. Chính vì thế, tôi thường âm thầm cầu nguyện rằng, ví thử con người ta thực sự có kiếp sau, tôi chẳng mưu cầu điều gì cao sang, chỉ xin ông trời ban tặng cho một cơ thể cường tráng,健 mỹ và hoàn hảo giống như Carl Lewis là mãn nguyện lắm rồi. Sở dĩ tôi luôn chìm đắm vào những giấc mộng giữa ban ngày xa vời thực tế như vậy là bởi vì cái hình hài hiện tại này của tôi ngoài đời thực quá đỗi tồi tệ và khiến bản thân tuyệt vọng, nên tôi mới phải tìm kiếm một phương thuốc tinh thần này để tự vỗ về và an ủi chính mình. Tóm lại, niềm yêu thích và lòng sùng bái tôi dành cho Carl Lewis cứ thế tăng tiến theo từng ngày, tôi luôn tin chắc rằng anh ấy chính là người đàn ông hạnh phúc và viên mãn nhất trên đời này.</div>
-            
-            <div class="translation-line">Thế rồi, tại kỳ Thế vận hội Olympic năm ấy, cái buổi trưa mà Carl Lewis phải nếm mùi thất bại trước Ben Johnson đã khiến tôi rơi vào trạng thái suy sụp và hụt hẫng tột cùng, mãi cho đến tận đêm muộn trong lòng vẫn cứ cảm thấy bứt rứt, khó chịu không yên, suốt cả đêm hôm đó cũng chẳng tài nào chợp mắt ngủ ngon giấc được. Trước mắt tôi cứ liên tục tái hiện đi tái hiện lại khung cảnh của buổi trưa hôm ấy: thảy mọi người đều đang vây quanh tung hô, chúc mừng cho Ben Johnson; muôn vàn lá cờ hoa rực rỡ đều đang hướng về phía Ben Johnson mà vẫy chào; làn sóng các phóng viên, nhà báo đông nghịt vây kín ríu rít hộ tống Ben Johnson bước ra khỏi sàn đấu, trong khi Carl Lewis tội nghiệp thì lại bị bỏ lại đơn độc, ghẻ lạnh ở một góc khán đài. Suốt liền mấy ngày sau đó, tôi lúc nào cũng ủ rũ, âu sầu, cảm giác như chính bản thân mình mới là kẻ vừa phải gánh chịu trận thua cay đắng và thảm hại hơn cả Carl Lewis vậy. Chuyện này chẳng phải quá đỗi kỳ quặc hay sao? Dưới con mắt của những người ngoài cuộc, hành vi này của tôi chẳng phải là biểu hiện của chứng bệnh tâm thần hay sao? Tôi bắt đầu chậm rãi suy ngẫm sâu sắc để tìm ra nguyên nhân cốt lõi ẩn giấu đằng sau những dòng cảm xúc ấy.</div>
-            
-            <div class="translation-line">Rốt cuộc là tại vì sao chứ? Đến cuối cùng thì tôi cũng đã bừng tỉnh hiểu ra rồi: Tôi đã tận mắt chứng kiến sự bất hạnh khốn cùng của người vốn được mệnh danh là "kẻ hạnh phúc nhất thế gian", chính ánh mắt thất thần, nhìn vô định đầy sầu não của Carl Lewis lúc thua trận đã hoàn toàn đánh sập và lung lay tận gốc rễ khái niệm về sự "hạnh phúc định ước" trong tôi. Thượng đế tối cao vốn dĩ chưa từng ban tặng cho bất kỳ một ai ba chữ "hạnh phúc nhất" vẹn toàn cả, Ngài luôn khéo léo đặt ra một khoảng cách vĩnh hằng và bất biến ngay trước những ham muốn, dục vọng tột cùng của con người, và vô cùng công bằng khi ban tặng cho mỗi một sinh linh những giới hạn, rào cản mang tính định mệnh của riêng mình. Nếu như bản thân không thể thấu cảm và tìm kiếm hạnh phúc ngay trên cuộc hành trình vô tận của việc vượt lên trên những giới hạn của chính mình, vậy thì cái sự bất lực không thể chạy của tôi và sự bất lực không thể chạy nhanh hơn nữa của Carl Lewis thảy đều mang một bản chất hoàn toàn đồng đẳng như nhau, chúng đều là căn nguyên gốc rễ đào sâu thêm sự tuyệt vọng và nỗi đau khổ tột cùng của nhân sinh. Ví thử Carl Lewis không thể tự mình nhìn nhận và thấu suốt được chân lý này, tôi tin chắc rằng, vào cái buổi trưa định mệnh ấy, anh ấy chính là kẻ bất hạnh và đáng thương nhất trên cõi đời này.</div>
-            
-            <div class="translation-line">Cứ ngỡ mọi chuyện đã khép lại, nhưng ngay vào ngày hôm sau của trận chung kết một trăm mét đầy cay đắng đó, Carl Lewis đã xuất sắc thực hiện cú nhảy đạt thành tích tám mét bảy mươi hai ở nội dung nhảy xa, anh ấy quả thực là một đấng nam nhi đại trượng phu kiên cường! Xem ra anh ấy đã thấu suốt rồi, anh ấy đã hiểu rõ ngọn lửa thiêng trên đỉnh núi Olympus tối cao vì điều gì mà bùng cháy, ngọn lửa ấy thắp sáng không phải là để chứng kiến việc một cá nhân này dùng sức mạnh để đánh bại và chà đạp lên một cá nhân khác, mà là để trao cho nhân loại một cơ hội quý báu để phô diễn trọn vẹn tinh thần bất khuất, kiên định trước nghịch cảnh của con người. Những giới hạn mang tính định ước của số phận dẫu cho có luôn bủa vây và tồn tại vĩnh viễn đi chăng nữa, thì những lời thách thức đầy ngạo nghễ và bất khuất của con người cũng chưa từng một lần chịu vắng bóng trên đấu trường cuộc đời.</div>
-            
-            <div class="translation-line">Giờ đây, giấc mơ giữa ban ngày của tôi xem ra đã đến lúc cần phải được thiết kế và định hình lại một cách hoàn chỉnh rồi. Ít nhất là tôi không còn ngu muội muốn đánh đổi tất cả những chiêm nghiệm ý nghĩa mà mình vừa thức tỉnh hiểu ra này chỉ để đổi lấy một hình hài cơ thể健 mỹ cường tráng đơn thuần nữa, lý do vô cùng đơn giản: tôi không muốn vào một buổi trưa định mệnh nào đó ở kiếp sau, mình lại phải sắm vai một kẻ bất hạnh nhất thế gian. Cho dù con người ta có thể chạm đến giới hạn chạy hết chín giây năm mươi chín đi chăng nữa, thì con số đó vẫn biểu thị cho một giới hạn cố hữu của thực thể vật lý. Thứ mà tôi hằng mong ước và khát khao có được ở kiếp sau chính là việc vừa sở hữu một cơ thể khỏe mạnh,健 mỹ, lại vừa đồng thời có được một linh hồn thức tỉnh, thấu suốt được trọn vẹn ý nghĩa đích thực của nhân sinh. Thế nhưng, vế thứ nhất thì chúng ta hoàn toàn có thể thành tâm hướng lên Thượng đế để cầu nguyện xin ban phát; còn vế thứ hai thì lại bắt buộc bản thân phải tự mình sải bước đi qua muôn vàn gian nan, thử thách và cay đắng của cuộc đời mới có thể hy vọng gặt hái và đạt được.</div>
+        <div id="bai6-tuvung" class="sub-content">
+            <div class="vocab-section">
+                <table class="vocab-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 7%;">STT</th>
+                            <th style="width: 25%;">Chữ Hán / Từ ghép</th>
+                            <th style="width: 18%;">Pinyin</th>
+                            <th style="width: 12%;">Từ loại</th>
+                            <th style="width: 38%;">Ý nghĩa Tiếng Việt & Ví dụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="vocab-hz">残疾</td>
+                            <td class="vocab-py">cánjí</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">người khuyết tật, tàn tật (khuyết tật trên một bộ phận cơ thể hoặc chức năng sinh lý)[cite: 1]<br>
+                                <span class="vocab-example">◎ 残疾人 ◎ 他的身体有残疾。[cite: 1]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="vocab-hz">体育迷</td>
+                            <td class="vocab-py">tǐyùmí</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">đam mê thể thao (người cực kỳ yêu thích vận động thể dục thể thao hoặc thích xem các trận thi đấu thể thao)[cite: 1]<br>
+                                <span class="vocab-example">◎ 他是一个体育迷，喜欢看各种体育比赛。[cite: 1]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="vocab-hz">田径</td>
+                            <td class="vocab-py">tiánjìng</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">điền kinh (tên gọi chung của các hạng mục vận động chạy và nhảy, bao gồm nhảy cao, nhảy xa, ném lao, đẩy tạ, chạy vượt rào, đi bộ nhanh...)[cite: 1]<br>
+                                <span class="vocab-example">◎ 田径比赛 ◎ 田径运动会[cite: 1]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="vocab-hz">拳击</td>
+                            <td class="vocab-py">quánjī</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">đấm bốc, boxing (một môn thể thao vận động, hai người đeo găng tay da chuyên dụng, dùng hai nắm đấm để tấn công và phòng ngự trước đối phương)[cite: 1]<br>
+                                <span class="vocab-example">◎ 我不喜欢看拳击比赛。[cite: 1]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td class="vocab-hz">滑冰</td>
+                            <td class="vocab-py">huá bīng</td>
+                            <td class="vocab-type"></td>
+                            <td class="vocab-mean">trượt băng (một môn vận động thể thao mang giày trượt chuyên dụng trượt trên sân băng; hoặc chỉ chung động tác trượt trên băng)[cite: 2]<br>
+                                <span class="vocab-example">◎ 我以前没有滑过冰。 ◎ 我最喜欢的体育运动是滑冰。[cite: 2]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td class="vocab-hz">全能</td>
+                            <td class="vocab-py">quánnéng</td>
+                            <td class="vocab-type">【形】</td>
+                            <td class="vocab-mean">toàn năng (ở trong một phạm vi quy định, mặt nào cũng giỏi, nội dung nào cũng thông thạo)[cite: 2]<br>
+                                <span class="vocab-example">◎ 五项全能冠军[cite: 2]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td class="vocab-hz">项目</td>
+                            <td class="vocab-py">xiàngmù</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">hạng mục (sự vật được phân loại theo tính chất tương ứng)[cite: 2]<br>
+                                <span class="vocab-example">◎ 体育项目 ◎ 比赛项目 ◎ 工程项目[cite: 2]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td class="vocab-hz">纪录</td>
+                            <td class="vocab-py">jìlù</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">kỳ lục, kỷ lục (thành tích tốt nhất được ghi chép lại trong một khoảng thời gian và phạm vi nhất định)[cite: 2]<br>
+                                <span class="vocab-example">◎ 他打破了由 he 自己保持的世界纪录。[cite: 2]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td class="vocab-hz">保持</td>
+                            <td class="vocab-py">bǎochí</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">duy trì, giữ vững (làm cho một trạng thái nào đó không bị mất đi hoặc giảm bớt)[cite: 2]<br>
+                                <span class="vocab-example">◎ 保持安静 ◎ 保持中立 ◎ 世界纪录保持者[cite: 2]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td class="vocab-hz">顺便</td>
+                            <td class="vocab-py">shùnbiàn</td>
+                            <td class="vocab-type">【副】</td>
+                            <td class="vocab-mean">nhân tiện, tiện thể (làm một việc gì đó nhân lúc đang làm một việc khác, không phải cố ý sắp xếp làm riêng)[cite: 2]<br>
+                                <span class="vocab-example">◎ 回家的路上，我顺便去了趟超市。[cite: 2]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td class="vocab-hz">魅力</td>
+                            <td class="vocab-py">mèilì</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">sức hấp dẫn, mị lực (lực thu hút mạnh mẽ)[cite: 2]<br>
+                                <span class="vocab-example">◎ 这项运动充满魅力。 ◎ 她很有魅力。[cite: 2]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td class="vocab-hz">展现</td>
+                            <td class="vocab-py">zhǎnxiàn</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">hiện ra, hiển lộ (lộ ra một đặc tính nào đó, văn viết)[cite: 2]<br>
+                                <span class="vocab-example">◎ 这个古老的小镇展现出无穷的魅力。[cite: 2]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td class="vocab-hz">意志</td>
+                            <td class="vocab-py">yìzhì</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">ý chí (trạng thái tâm lý nảy sinh khi quyết tâm đạt được một mục đích cụ thể nào đó)[cite: 2]<br>
+                                <span class="vocab-example">◎ 不管做什么，都需要有坚强的意志。[cite: 2]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td class="vocab-hz">优美</td>
+                            <td class="vocab-py">yōuměi</td>
+                            <td class="vocab-type">【形】</td>
+                            <td class="vocab-mean">đẹp, ưu mỹ (động tác, phong cảnh, ngôn ngữ, âm nhạc... rất đẹp đẽ thanh tao)[cite: 2]<br>
+                                <span class="vocab-example">◎ 这个体操运动员的动作很优美。 ◎ 颐和园的风景非常优美。</span>
+                                <span class="vocab-example">◎ 他写了很多优美的诗歌。[cite: 2]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td class="vocab-hz">舞蹈</td>
+                            <td class="vocab-py">wǔdǎo</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">múa, vũ đạo[cite: 2]<br>
+                                <span class="vocab-example">◎ 他的专业是少数民族舞蹈研究。[cite: 2]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td class="vocab-hz">奔跑</td>
+                            <td class="vocab-py">bēnpǎo</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">chạy băng băng, chạy nhanh (di chuyển bằng chân nhanh chóng, văn viết)[cite: 2]</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td class="vocab-hz">原始</td>
+                            <td class="vocab-py">yuánshǐ</td>
+                            <td class="vocab-type">【形】</td>
+                            <td class="vocab-mean">thời nguyên thủy, thuở ban đầu, sơ khai (ban đầu nhất, cổ xưa nhất hoặc đơn giản lạc hậu nhất)[cite: 2]<br>
+                                <span class="vocab-example">◎ 原始社会 ◎ 原始森林 ◎ 原始部落</span>
+                                <span class="vocab-example">◎ 这种用牛耕地的方法太原始了。[cite: 2]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td class="vocab-hz">羡慕</td>
+                            <td class="vocab-py">xiànmù</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">hâm mộ, thèm muốn (nhìn thấy ưu điểm, thế mạnh của người khác và mong muốn bản thân cũng có được)<br>
+                                <span class="vocab-example">◎ 她长长的头发真让人羡慕。 ◎ 我很羡慕你有这么好的口才。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td class="vocab-hz">偶像</td>
+                            <td class="vocab-py">ǒuxiàng</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">thần tượng (đối tượng được tôn sùng, kính trọng trong lòng mọi người)<br>
+                                <span class="vocab-example">◎ 这个足球运动员是他心中的偶像, 他的屋子里贴满了这位球星的照片。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td class="vocab-hz">潇洒</td>
+                            <td class="vocab-py">xiāosǎ</td>
+                            <td class="vocab-type">【形】</td>
+                            <td class="vocab-mean">tự nhiên, phóng khoáng, tiêu sái (động tác, phong thái, ăn mặc... tự nhiên hào sảng hoặc lối sống tự do tự tại)<br>
+                                <span class="vocab-example">◎ 他的动作 / 举止 / 穿着很潇洒。 ◎ 他只要赚到钱，就四处旅游，活得很潇洒。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td class="vocab-hz">恨不得</td>
+                            <td class="vocab-py">hènbude</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">ước gì, rất mong muốn (cực kỳ muốn làm một việc gì đó nhưng tạm thời chưa làm được, khao khát nóng lòng)<br>
+                                <span class="vocab-example">◎ 听到妈妈生病的消息，他恨不得立刻坐飞机回家去。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td class="vocab-hz">祈祷</td>
+                            <td class="vocab-py">qǐdǎo</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">cầu nguyện (hướng về thần linh cầu chúc ban phước lành)<br>
+                                <span class="vocab-example">◎ 祈祷和平 ◎ 祈祷平安</span>
+                                <span class="vocab-example">◎ 让我们为他祈祷吧！ ◎ 你还是向上帝祈祷吧。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td class="vocab-hz">假若</td>
+                            <td class="vocab-py">jiǎruò</td>
+                            <td class="vocab-type">【连】</td>
+                            <td class="vocab-mean">nếu như, giả sử (văn viết)<br>
+                                <span class="vocab-example">◎ 假若你感到身体不适，就一定要停止工作。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td class="vocab-hz">来世</td>
+                            <td class="vocab-py">láishì</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">kiếp sau, đời sau (kiếp sống tiếp theo, đến sau)<br>
+                                <span class="vocab-example">◎ 佛教相信人有来世。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td class="vocab-hz">健美</td>
+                            <td class="vocab-py">jiànměi</td>
+                            <td class="vocab-type">【形】</td>
+                            <td class="vocab-mean">khỏe đẹp (cơ thể khỏe mạnh cường tráng và đẹp đẽ)<br>
+                                <span class="vocab-example">◎ 健美的身材 ◎ 健美的体形 ◎ 健美运动</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td class="vocab-hz">白日梦</td>
+                            <td class="vocab-py">báirìmèng</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">nằm mơ giữa ban ngày, mơ mộng hão huyền (ví với những ảo tưởng không có khả năng thực hiện)<br>
+                                <span class="vocab-example">◎ 你不要整天做白日梦了。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td class="vocab-hz">崇拜</td>
+                            <td class="vocab-py">chóngbài</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">tôn sùng, kính ngưỡng, sùng bái (tôn kính và khâm phục cao độ)<br>
+                                <span class="vocab-example">◎ 他很崇拜秦始皇 / 那位英雄 / 上帝。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td class="vocab-hz">与日俱增</td>
+                            <td class="vocab-py">yǔ rì jù zēng</td>
+                            <td class="vocab-type"></td>
+                            <td class="vocab-mean">ngày càng tăng, tăng lên theo từng ngày (ngày một nhiều hơn, tăng trưởng nhanh chóng)<br>
+                                <span class="vocab-example">◎ 随着交往的增多，我对她的好感与日俱增。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>29</td>
+                            <td class="vocab-hz">沮丧</td>
+                            <td class="vocab-py">jǔsàng</td>
+                            <td class="vocab-type">【形】</td>
+                            <td class="vocab-mean">chán nản, ủ rũ (buồn bã nản lòng, mất đi nhu khí)<br>
+                                <span class="vocab-example">◎ 看到自己的球队输了，很多球迷感到很沮丧。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td class="vocab-hz">别扭</td>
+                            <td class="vocab-py">bièniu</td>
+                            <td class="vocab-type">【形】</td>
+                            <td class="vocab-mean">day dứt, khó chịu, ngượng ngùng (không thoải mái, không thuận tai, không trôi chảy)<br>
+                                <span class="vocab-example">◎ 听了 he 的话，我心里很别扭。 ◎ 你这个句子听起来有点儿别扭。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>31</td>
+                            <td class="vocab-hz">场面</td>
+                            <td class="vocab-py">chǎngmiàn</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">cảnh tượng, tình cảnh (tình cảnh, không khí xảy ra khi sự việc diễn ra)<br>
+                                <span class="vocab-example">◎ 奥运会虽然结束了，可是我们还记得当时热烈的场面。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td class="vocab-hz">旗帜</td>
+                            <td class="vocab-py">qízhì</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">cờ xí, cờ (tên gọi chung của các loại cờ)</td>
+                        </tr>
+                        <tr>
+                            <td>33</td>
+                            <td class="vocab-hz">挥舞</td>
+                            <td class="vocab-py">huīwǔ</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">vẫy, vung vẫy (giơ cao cánh tay cùng với đồ vật cầm trong tay để vẫy động liên tục)<br>
+                                <span class="vocab-example">◎ 他们挥舞着旗帜给运动员加油。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>34</td>
+                            <td class="vocab-hz">簇拥</td>
+                            <td class="vocab-py">cùyōng</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">bủa vây, vây chặt (nhiều người tụ tập vây quanh sát hoặc đi theo hộ vệ bảo vệ)<br>
+                                <span class="vocab-example">◎ 记者们簇拥着刚刚当选的总理，提着各种问题。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>35</td>
+                            <td class="vocab-hz">冷落</td>
+                            <td class="vocab-py">lěngluò</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">lạnh nhạt, thờ ơ (đối đãi một cách tẻ nhạt, xem nhẹ hoặc thờ ơ trong hoàn cảnh náo nhiệt)<br>
+                                <span class="vocab-example">◎ 受冷落 / 被冷落 / 冷落了客人</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>36</td>
+                            <td class="vocab-hz">闷闷不乐</td>
+                            <td class="vocab-py">mènmèn bú lè</td>
+                            <td class="vocab-type"></td>
+                            <td class="vocab-mean">bứt rứt không vui, u uất (tâm tình không thoải mái, buồn bã bực bội trong lòng)<br>
+                                <span class="vocab-example">◎ 他因为丢了钱包，一整天都闷闷不乐的。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>37</td>
+                            <td class="vocab-hz">惨</td>
+                            <td class="vocab-py">cǎn</td>
+                            <td class="vocab-type">【形】</td>
+                            <td class="vocab-mean">thảm, thê thảm, tồi tệ (rất tệ hại, nghiêm trọng, thường dùng trong khẩu ngữ)<br>
+                                <span class="vocab-example">◎ 你没有带钥匙？我也没有带。这下惨了，我们进不了屋子了。</span>
+                                <span class="vocab-example">◎ 这次我们输得很惨。 ◎ 孩子被打得很惨。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>38</td>
+                            <td class="vocab-hz">外人</td>
+                            <td class="vocab-py">wàirén</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">người ngoài (chỉ những người nằm ngoài một phạm vi nhất định, người không liên quan)<br>
+                                <span class="vocab-example">◎ 我们自己家的事情，不要随便对外人讲。 ◎ 她的隐私从来不让外人知道。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>39</td>
+                            <td class="vocab-hz">所谓</td>
+                            <td class="vocab-py">suǒwèi</td>
+                            <td class="vocab-type">【形】</td>
+                            <td class="vocab-mean">cái gọi là (thường mang hàm ý thực tế không hoàn toàn đúng như tên gọi)<br>
+                                <span class="vocab-example">◎ 所谓长三角，就是指以上海为龙头的长江三角洲经济区。</span>
+                                <span class="vocab-example">◎ 很多人吃肉是为了所谓的营养，其实肉食中有很多有害物质。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>40</td>
+                            <td class="vocab-hz">茫然</td>
+                            <td class="vocab-py">mángrán</td>
+                            <td class="vocab-type">【形】</td>
+                            <td class="vocab-mean">lơ mơ, mờ mịt, ngơ ngác (biểu hiện cảm xúc hoang mang lúng túng, không biết phải làm sao)<br>
+                                <span class="vocab-example">◎ 老师没有解释清楚游戏规则，游戏开始后，大家都感到很茫然。</span>
+                                <span class="vocab-example">◎ 看他茫然的表情，就知道他肯定不知道这件事情。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>41</td>
+                            <td class="vocab-hz">动摇</td>
+                            <td class="vocab-py">dòngyáo</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">dao động, lung lay, không kiên định (làm cho không kiên định, không vững vàng)<br>
+                                <span class="vocab-example">◎ 我对他的信任完全动摇了。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>42</td>
+                            <td class="vocab-hz">欲望</td>
+                            <td class="vocab-py">yùwàng</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">mong muốn, ước muốn, dục vọng (khát khao mong muốn mạnh mẽ trong lòng)<br>
+                                <span class="vocab-example">◎ 他对金钱有强烈 láng giềng dục vọng.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>43</td>
+                            <td class="vocab-hz">局限</td>
+                            <td class="vocab-py">júxiàn</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">hạn chế, giới hạn (hạn chế trong một phạm vi nhỏ hẹp nhất định)<br>
+                                <span class="vocab-example">◎ 他写的文章局限于学校生活 / 有一定的局限性。</span>
+                                <span class="vocab-example">◎ 这个孩子的教育受到了家庭经济条件的局限。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td class="vocab-hz">超越</td>
+                            <td class="vocab-py">chāoyuè</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">vượt qua, vượt lên trên (vượt qua, chiến thắng ranh giới cũ)<br>
+                                <span class="vocab-example">◎ 超越局限 ◎ 超越自我 ◎ 超越极限</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>45</td>
+                            <td class="vocab-hz">根源</td>
+                            <td class="vocab-py">gēnyuán</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">căn nguyên, ngọn ngành, nguyên nhân sâu xa (nguyên nhân căn bản phát sinh ra sự vật, sự việc)<br>
+                                <span class="vocab-example">◎ 交通问题之所以这么严重，根源在于道路设计不合理。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>46</td>
+                            <td class="vocab-hz">决赛</td>
+                            <td class="vocab-py">juésài</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">trận chung kết (vòng thi đấu quyết định vị trí thứ nhất của một môn thể thao)<br>
+                                <span class="vocab-example">◎ 我们球队已经进入 / 参加了决赛。 ◎ 我们晚上要和上海队进行决赛。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>47</td>
+                            <td class="vocab-hz">好样子</td>
+                            <td class="vocab-py">hǎoyàngrde</td>
+                            <td class="vocab-type"></td>
+                            <td class="vocab-mean">tài giỏi, xuất sắc (người rất xuất sắc, khẩu ngữ)<br>
+                                <span class="vocab-example">◎ 他每门功课都是优秀，真是好样子的。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>48</td>
+                            <td class="vocab-hz">圣火</td>
+                            <td class="vocab-py">shènghuǒ</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">đuốc, lửa thiêng (ngọn đuốc rước đặc biệt của Đại hội Thể thao Olympic)<br>
+                                <span class="vocab-example">◎ 在希腊点燃了奥运会的圣火。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>49</td>
+                            <td class="vocab-hz">燃烧</td>
+                            <td class="vocab-py">ránshāo</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">cháy (bốc cháy sinh nhiệt, văn viết)<br>
+                                <span class="vocab-example">◎ 大火如果燃烧起来，就很难熄灭。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td class="vocab-hz">不屈</td>
+                            <td class="vocab-py">bùqū</td>
+                            <td class="vocab-type">【形】</td>
+                            <td class="vocab-mean">không khuất phục (không chịu nhượng bộ, không từ bỏ gục ngã, văn viết)<br>
+                                <span class="vocab-example">◎ 不屈的生活态度 ◎ 不屈的精神</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>51</td>
+                            <td class="vocab-hz">挑战</td>
+                            <td class="vocab-py">tiǎozhàn</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">thách thức, khiêu chiến (khích lệ đối phương tham gia tranh đua với mình)<br>
+                                <span class="vocab-example">◎ 向……（发出）挑战 ◎ 面对挑战 ◎ 接受……的挑战</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>52</td>
+                            <td class="vocab-hz">缺席</td>
+                            <td class="vocab-py">quē xí</td>
+                            <td class="vocab-type"></td>
+                            <td class="vocab-mean">vắng mặt, khuyết chỗ (không có mặt, không tham gia phiên họp/buổi học đáng lẽ phải đến)<br>
+                                <span class="vocab-example">◎ 昨天的会议有很多人缺席。 ◎ 他上课从来没缺席过。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>53</td>
+                            <td class="vocab-hz">番</td>
+                            <td class="vocab-py">fān</td>
+                            <td class="vocab-type">【量】</td>
+                            <td class="vocab-mean">lượt, lần (đơn vị đo lường lần, hồi; thường biểu thị thời gian hành động dài hoặc mức độ khó khăn lớn)<br>
+                                <span class="vocab-example">◎ 爸爸给我讲了一番努力学习的道理。 ◎ 不研究一番，怎么能解决问题？</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>54</td>
+                            <td class="vocab-hz">领悟</td>
+                            <td class="vocab-py">lǐngwù</td>
+                            <td class="vocab-type">【动】</td>
+                            <td class="vocab-mean">thức tỉnh, hiểu ra, lĩnh hội (thấu hiểu hoặc sáng tỏ một đạo lý, ý nghĩa sâu xa nào đó)<br>
+                                <span class="vocab-example">◎ 父亲的去世使 he 领悟到人生很短暂。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>55</td>
+                            <td class="vocab-hz">意味着</td>
+                            <td class="vocab-py">yìwèizhe</td>
+                            <td class="vocab-type"></td>
+                            <td class="vocab-mean">có nghĩa là, biểu thị (trong một sự việc hoặc sự vật cụ thể hàm chứa một ý nghĩa nào đó)<br>
+                                <span class="vocab-example">◎ 这学期 he 有三门课不及格，这就意味着 he 必须重读一年。</span>
+                                <span class="vocab-example">◎ 奥运会的圣火意味着不屈的精神。</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>56</td>
+                            <td class="vocab-hz">灵魂</td>
+                            <td class="vocab-py">línghún</td>
+                            <td class="vocab-type">【名】</td>
+                            <td class="vocab-mean">linh hồn, tư tưởng, nhân cách (phần tinh thần, ý thức bám trụ vào cơ thể con người)<br>
+                                <span class="vocab-example">◎ 你相信人死后还有灵魂存在吗？</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="bai6-docthem" class="sub-content">
+        
+            <h2>Chữ Hán & Pinyin:</h2>
+            <div class="chinese-text" id="text-bai6-docthem">
+                
+                <!-- Tiêu đề bài học -->
+                <span class="block" style="text-align: center; font-weight: bold; margin: 20px 0; font-size: 26px;">
+                    <ruby>即使<rt>Jíshǐ</rt></ruby><ruby>所有<rt>suǒyǒu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>青藤树<rt>qīngténgshù</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>倒了<rt>dǎole</rt></ruby>
+                </span>
+
+                <!-- Đoạn 1 -->
+                <span class="block"><span class="indent"></span>“<ruby>即使<rt>Jíshǐ</rt></ruby><ruby>所有<rt>suǒyǒu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>青藤<rt>qīngténg</rt></ruby><ruby>树<rt>shù</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>倒了<rt>dǎole</rt></ruby>，<ruby>你<rt>nǐ</rt></ruby><ruby>也要<rt>yěyào</rt></ruby><ruby>站着<rt>zhànzhe</rt></ruby>，<ruby>即使<rt>jíshǐ</rt></ruby><ruby>全世界<rt>quán shìjiè</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>沉睡<rt>chénshuì</rt></ruby><ruby>了<rt>le</rt></ruby>性能，<ruby>你<rt>nǐ</rt></ruby><ruby>也要<rt>yěyào</rt></ruby><ruby>醒着<rt>xǐngzhe</rt></ruby>。”<ruby>六年<rt>Liùnián</rt></ruby><ruby>前<rt>qián</rt></ruby>，<ruby>我<rt>wǒ</rt></ruby><ruby>把<rt>bǎ</rt></ruby><ruby>这句话<rt>zhè huà</rt></ruby><ruby>写在<rt>xiězài</rt></ruby><ruby>他<rt>tā</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>笔记本<rt>bǐjìběn</rt></ruby><ruby>上<rt>shang</rt></ruby>，<ruby>然后<rt>ránhòu</rt></ruby><ruby>告别<rt>gàobié</rt></ruby><ruby>母校<rt>mǔxiào</rt></ruby>，<ruby>各奔东西<rt>gèbèndōngxī</rt></ruby>。</span>
+
+                <!-- Đoạn 2 -->
+                <span class="block"><span class="indent"></span><ruby>他<rt>Tā</rt></ruby><ruby>给我<rt>gěi wǒ</rt></ruby><ruby>印象<rt>yìnxiàng</rt></ruby><ruby>最深<rt>zuìshēn</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>沿着<rt>yánzhe</rt></ruby><ruby>校园<rt>xiàoyuán</rt></ruby><ruby>长跑<rt>chángpǎo</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>背影<rt>bèiyǐng</rt></ruby>，<ruby>拖着<rt>tuōzhe</rt></ruby><ruby>残疾<rt>cánjí</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>右腿<rt>yòutuǐ</rt></ruby>，<ruby>一跛<rt>yìbǒ</rt></ruby><ruby>一跛<rt>yìbǒ</rt></ruby><ruby>的<rt>de</rt></ruby>，<ruby>迎接<rt>yíngjiē</rt></ruby><ruby>着<rt>zhe</rt></ruby><ruby>一张张<rt>yìzhāngzhāng</rt></ruby><ruby>表情<rt>biǎoqíng</rt></ruby><ruby>各异<rt>gèyì</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>面孔<rt>miànkǒng</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>一双双<rt>yìshuāngshuāng</rt></ruby><ruby>好奇<rt>hàoqí</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>眼睛<rt>yǎnjing</rt></ruby>性能。<ruby>足球场<rt>Zúqiúchǎng</rt></ruby><ruby>上<rt>shang</rt></ruby>，<ruby>他<rt>tā</rt></ruby><ruby>在<rt>zài</rt></ruby>“<ruby>瘸子<rt>quézi</rt></ruby>，<ruby>射门<rt>shèmén</rt></ruby>！”<ruby>的<rt>de</rt></ruby><ruby>叫喊<rt>jiàohǎn</rt></ruby><ruby>声<rt>shēng</rt></ruby><ruby>中<rt>zhōng</rt></ruby><ruby>跌倒<rt>diēdǎo</rt></ruby>，<ruby>又<rt>yòu</rt></ruby><ruby>爬起来<rt>pá qǐlái</rt></ruby>……</span>
+
+                <!-- Đoạn 3 -->
+                <span class="block"><span class="indent"></span><ruby>六年<rt>Liùnián</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>光阴<rt>guāngyīn</rt></ruby><ruby>不算<rt>búsuàn</rt></ruby><ruby>长<rt>cháng</rt></ruby>，<ruby>想起<rt>xiǎngqǐ</rt></ruby><ruby>从前<rt>cóngqián</rt></ruby><ruby>却<rt>què</rt></ruby><ruby>恍如隔世<rt>huǎngrúgéshì</rt></ruby>。<ruby>这期间<rt>Zhè qījiān</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>很多<rt>hěnduō</rt></ruby><ruby>同龄人<rt>tónglíngrén</rt></ruby><ruby>一样<rt>yíyàng</rt></ruby>性能，<ruby>承受<rt>chéngshòu</rt></ruby><ruby>了<rt>le</rt></ruby><ruby>不少<rt>bùshǎo</rt></ruby><ruby>原以为<rt>yuányǐwéi</rt></ruby><ruby>承受不起<rt>chéngshòubùqǐ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>东西<rt>dōngxi</rt></ruby>性能，<ruby>但<rt>dàn</rt></ruby><ruby>即使<rt>jíshǐ</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>沮丧<rt>jǔsàng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>时候<rt>shíhou</rt></ruby>，<ruby>也不曾<rt>yě bùcéng</rt></ruby><ruby>用<rt>yòng</rt></ruby><ruby>勉励<rt>miǎnlì</rt></ruby><ruby>别人<rt>biérén</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>话<rt>huà</rt></ruby><ruby>来<rt>lái</rt></ruby><ruby>勉励<rt>miǎnlì</rt></ruby><ruby>自己<rt>zìjǐ</rt></ruby>性能，<ruby>但<rt>dàn</rt></ruby><ruby>每当<rt>měidāng</rt></ruby><ruby>碰到<rt>pèngdào</rt></ruby><ruby>困难<rt>kùnnan</rt></ruby>性能，<ruby>眼前<rt>yǎnqián</rt></ruby><ruby>就<rt>jiù</rt></ruby><ruby>出现<rt>chūxiàn</rt></ruby><ruby>他<rt>tā</rt></ruby><ruby>一跛一跛<rt>yìbǒ yìbǒ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>背影<rt>bèiyǐng</rt></ruby>性能，<ruby>于是<rt>yúshì</rt></ruby><ruby>艰难地<rt>jiānnánde</rt></ruby><ruby>学会<rt>xuéhuì</rt></ruby><ruby>将<rt>jiāng</rt></ruby><ruby>痛苦<rt>tòngkǔ</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>耻辱<rt>chǐrǔ</rt></ruby><ruby>变成<rt>biànchéng</rt></ruby><ruby>人生<rt>rénshēng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>财富<rt>cáichǎn</rt></ruby>性能。<ruby>为此<rt>Wèicǐ</rt></ruby>性能，<ruby>我对<rt>wǒ duì</rt></ruby><ruby>他<rt>tā</rt></ruby><ruby>充满<rt>chōngmǎn</rt></ruby><ruby>感激<rt>gǎnjī</rt></ruby>。<ruby>不想<rt>Bùxiǎng</rt></ruby>性能，<ruby>六年<rt>liùnián</rt></ruby><ruby>后<rt>hòu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>今天<rt>jīntiān</rt></ruby><ruby>相遇<rt>xiāngyù</rt></ruby>，<ruby>他<rt>tā</rt></ruby><ruby>竟<rt>jìng</rt></ruby><ruby>真诚地<rt>zhēnchéngde</rt></ruby><ruby>告诉<rt>gàosu</rt></ruby><ruby>我<rt>wǒ</rt></ruby>性能，<ruby>直到现在<rt>zhídàoxiànzài</rt></ruby>，<ruby>他<rt>tā</rt></ruby><ruby>还在<rt>hái zài</rt></ruby><ruby>读<rt>dú</rt></ruby><ruby>那几句<rt>nà jǐ jù</rt></ruby><ruby>留言<rt>liúyán</rt></ruby>性能，“<ruby>即使<rt>jíshǐ</rt></ruby><ruby>所有<rt>suǒyǒu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>青藤<rt>qīngténg</rt></ruby><ruby>树<rt>shù</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>倒了<rt>dǎole</rt></ruby>……”<ruby>他<rt>tā</rt></ruby><ruby>脱口而出<rt>tuōkǒu'érchū</rt></ruby>性能。<ruby>六年<rt>Liùnián</rt></ruby><ruby>来<rt>lái</rt></ruby>性能，<ruby>他<rt>tā</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>工作<rt>gōngzuò</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>生活<rt>shēnghuó</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>经历了<rt>jīnglìle</rt></ruby><ruby>很多<rt>hěnduō</rt></ruby><ruby>不幸<rt>búxìng</rt></ruby>性能性能，<ruby>他<rt>tā</rt></ruby><ruby>说<rt>shuō</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>这几句<rt>zhè jǐ jù</rt></ruby><ruby>留言<rt>liúyán</rt></ruby><ruby>使<rt>shǐ</rt></ruby><ruby>他<rt>tā</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>梦想<rt>mèngxiǎng</rt></ruby><ruby>没有<rt>méiyǒu</rt></ruby><ruby>动摇<rt>dòngyáo</rt></ruby>性能。</span>
+
+                <!-- Đoạn 4 -->
+                <span class="block"><span class="indent"></span><ruby>我<rt>Wǒ</rt></ruby><ruby>一下子<rt>yíxiàzi</rt></ruby><ruby>愣住了<rt>lèngzhùle</rt></ruby>性能，<ruby>原来<rt>yuánlái</rt></ruby><ruby>我们<rt>wǒmen</rt></ruby><ruby>每个人<rt>měigèrén</rt></ruby><ruby>都可以<rt>dōu kěyǐ</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>有意<rt>yǒuyì</rt></ruby><ruby>无意<rt>wúyì</rt></ruby><ruby>中<rt>zhōng</rt></ruby><ruby>给<rt>gěi</rt></ruby><ruby>别人<rt>biérén</rt></ruby><ruby>很多很多<rt>hěnduō hěnduō</rt></ruby>性能，<ruby>同样<rt>tóngyàng</rt></ruby>性能，<ruby>也可以<rt>yě kěyǐ</rt></ruby><ruby>剥夺<rt>bōduó</rt></ruby>性能<ruby>别人<rt>biérén</rt></ruby><ruby>很多很多<rt>hěnduō hěnduō</rt></ruby>性能。<ruby>岁月<rt>Suìyuè</rt></ruby><ruby>流逝<rt>liúshì</rt></ruby>性能，<ruby>我们<rt>wǒmen</rt></ruby><ruby>抓住<rt>zhuāzhù</rt></ruby><ruby>了<rt>le</rt></ruby><ruby>什么<rt>shénme</rt></ruby>？<ruby>又<rt>Yòu</rt></ruby><ruby>放弃<rt>fàngqì</rt></ruby><ruby>了<rt>le</rt></ruby><ruby>什么<rt>shénme</rt></ruby>？</span>
+
+                <!-- Đoạn 5 -->
+                <span class="block"><span class="indent"></span><ruby>每个人<rt>Měigèrén</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>同<rt>tóng</rt></ruby><ruby>自己<rt>zìjǐ</rt></ruby><ruby>一样<rt>yíyàng</rt></ruby><ruby>充满<rt>chōngmǎn</rt></ruby><ruby>了<rt>le</rt></ruby><ruby>渴望<rt>kěwàng</rt></ruby>性能：“<ruby>一<rt>yì</rt></ruby><ruby>声<rt>shēng</rt></ruby><ruby>呼唤<rt>hūhuàn</rt></ruby>性能、<ruby>一个<rt>yígè</rt></ruby><ruby>微笑<rt>wēixiào</rt></ruby>性能、<ruby>一道<rt>yídào</rt></ruby><ruby>目光<rt>mùguāng</rt></ruby>性能、<ruby>一纸<rt>yìzhǐ</rt></ruby><ruby>信笺<rt>xìnjiān</rt></ruby>性能、<ruby>一个<rt>yígè</rt></ruby><ruby>电话<rt>diànhuà</rt></ruby>性能、<ruby>一种<rt>yìzhǒng</rt></ruby><ruby>关注<rt>guānzhù</rt></ruby>性能，”<ruby>而<rt>ér</rt></ruby><ruby>我们<rt>wǒmen</rt></ruby><ruby>却<rt>què</rt></ruby><ruby>常常<rt>chángcháng</rt></ruby><ruby>忽略<rt>hūlüè</rt></ruby>性能性能。<ruby>每个人<rt>Měigèrén</rt></ruby><ruby>心<rt>xīn</rt></ruby>……</span>
+            </div>
+
+            <h2>Dịch nghĩa Tiếng Việt:</h2>
+            <div class="translation-container">
+                <div class="translation-line">"Cho dù tất cả các cây thanh đằng có ngã đổ xuống, bạn cũng phải hiên ngang đứng vững; cho dù cả thế giới này có chìm vào giấc ngủ sâu, bạn cũng phải giữ cho mình luôn thức tỉnh." Sáu năm trước, tôi đã nắn nót viết dòng chữ này vào cuốn sổ tay của anh ấy, rồi sau đó lưu luyến nói lời chia tay mái trường mến yêu, mỗi người tự bươn chải theo một phương trời riêng.</div>
+                
+                <div class="translation-line">Điều khắc sâu vào tâm khảm tôi nhất về anh chính là bóng dáng anh kiên trì chạy bền dọc theo khuôn viên trường, anh kéo lê chiếc chân phải mang tật nguyền, từng bước một cách khập khiễng, đối diện với biết bao khuôn mặt mang đủ sắc thái biểu cảm khác nhau cùng những ánh mắt đầy vẻ tò mò dòm ngó. Trên sân bóng đá, anh từng không ít lần ngã nhào ngã sấp trong những tiếng la hét châm chọc: "Thằng què kìa, sút môn đi!", nhưng rồi anh lại lồm cồm bò dậy để tiếp tục chạy tiếp...</div>
+                
+                <div class="translation-line">Quãng thời gian sáu năm trôi qua nói dài cũng không dài, thế nhưng mỗi khi hồi tưởng lại những chuyện ngày xưa, trong lòng tôi lại dấy lên một cảm giác giống như hoảng như cách thế (như đã cách cả một thế hệ). Trong quãng thời gian này, tôi cũng giống hệt như bao người bạn đồng lứa khác, phải gồng mình gánh vác khôn nguôi những áp lực, rắc rối mà bản thân từng ngỡ sẽ chẳng thể nào chịu đựng nổi. Thế nhưng, ngay cả vào những khoảnh khắc chán chường, tuyệt vọng nhất, tôi chưa từng dùng những lời lẽ hoa mỹ để tự cổ vũ bản thân, mà cứ hễ mỗi lần đối diện với chông gai nghịch cảnh, trước mắt tôi lại hiện lên cái bóng dáng chạy khập khiễng đầy kiên cường của anh ấy. Nhờ vậy, tôi đã học được cách đầy gian nan để biến những nỗi đau khổ và sự tủi nhục trở thành khối tài sản vô giá của cuộc đời mình. Chính vì lẽ đó, trong lòng tôi luôn ngập tràn niềm cảm kích sâu sắc đối với anh. Không thể ngờ được rằng, sau sáu năm dài đằng đẵng, cuộc hội ngộ tình cờ ngày hôm nay, anh lại chân thành bộc bạch với tôi rằng, cho đến tận bây giờ, anh vẫn luôn đọc lại vài dòng chữ năm xưa tôi để lại: "Cho dù tất cả các cây thanh đằng có ngã đổ xuống...". Anh đọc van vách thuộc lòng một cách đầy tự nhiên. Anh bảo suốt sáu năm qua, cả trong công việc lẫn cuộc sống hằng ngày anh đã phải trải qua rất nhiều chuyện bất hạnh và không may, chính vài dòng chữ để lại năm ấy đã giúp cho ngọn lửa ước mơ trong anh chưa một lần bị lung lay, dao động.</div>
+                
+                <div class="translation-line">Lời bộc bạch của anh khiến tôi sững sờ, ngẩn người ra trong phút chốc. Hóa ra, mỗi một con người trong chúng ta thảy đều có thể vô tình hay hữu ý trao tặng cho người khác rất nhiều, rất nhiều điều tốt đẹp, và ngược lại, chúng ta cũng hoàn toàn có thể nhẫn tâm tước đoạt đi của người khác rất nhiều, rất nhiều thứ. Tuổi nguyệt cứ thế lững lờ trôi qua, rốt cuộc chúng ta đã nắm giữ được những điều gì? Và đã đành lòng từ bỏ đi những điều gì rồi?</div>
+                
+                <div class="translation-line">Mỗi một con người thảy đều mang bên trong mình những khát khao, mong mỏi cháy bỏng giống hệt như chính bản thân chúng ta vậy: một tiếng gọi hỏi han, một nụ cười ấm áp, một ánh mắt động viên, một phong thư viết vội, một cuộc điện thoại sẻ chia, hay chỉ đơn thuần là một chút sự quan tâm, dõi theo chân thành... Ấy thế mà chúng ta lại thường xuyên vô tình ngó lơ và ngó lơ mất. Trái tim của mỗi người...</div>
+            </div>
         </div>
     </div>
 
-    <div id="bai6-docthem" class="main-content">
-        
-        <h2>Chữ Hán & Pinyin:</h2>
-        <div class="chinese-text" id="text-bai6-docthem">
-            
-            <!-- Tiêu đề bài học -->
-            <span class="block" style="text-align: center; font-weight: bold; margin: 20px 0; font-size: 26px;">
-                <ruby>即使<rt>Jíshǐ</rt></ruby><ruby>所有<rt>suǒyǒu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>青藤树<rt>qīngténgshù</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>倒了<rt>dǎole</rt></ruby>
-            </span>
-
-            <!-- Đoạn 1 -->
-            <span class="block"><span class="indent"></span>“<ruby>即使<rt>Jíshǐ</rt></ruby><ruby>所有<rt>suǒyǒu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>青藤<rt>qīngténg</rt></ruby><ruby>树<rt>shù</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>倒了<rt>dǎole</rt></ruby>，<ruby>你<rt>nǐ</rt></ruby><ruby>也要<rt>yěyào</rt></ruby><ruby>站着<rt>zhànzhe</rt></ruby>，<ruby>即使<rt>jíshǐ</rt></ruby><ruby>全世界<rt>quán shìjiè</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>沉睡<rt>chénshuì</rt></ruby><ruby>了<rt>le</rt></ruby>性能，<ruby>你<rt>nǐ</rt></ruby><ruby>也要<rt>yěyào</rt></ruby><ruby>醒着<rt>xǐngzhe</rt></ruby>。”<ruby>六年<rt>Liùnián</rt></ruby><ruby>前<rt>qián</rt></ruby>，<ruby>我<rt>wǒ</rt></ruby><ruby>把<rt>bǎ</rt></ruby><ruby>这句话<rt>zhè huà</rt></ruby><ruby>写在<rt>xiězài</rt></ruby><ruby>他<rt>tā</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>笔记本<rt>bǐjìběn</rt></ruby><ruby>上<rt>shang</rt></ruby>，<ruby>然后<rt>ránhòu</rt></ruby><ruby>告别<rt>gàobié</rt></ruby><ruby>母校<rt>mǔxiào</rt></ruby>，<ruby>各奔东西<rt>gèbèndōngxī</rt></ruby>。</span>
-
-            <!-- Đoạn 2 -->
-            <span class="block"><span class="indent"></span><ruby>他<rt>Tā</rt></ruby><ruby>给我<rt>gěi wǒ</rt></ruby><ruby>印象<rt>yìnxiàng</rt></ruby><ruby>最深<rt>zuìshēn</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>沿着<rt>yánzhe</rt></ruby><ruby>校园<rt>xiàoyuán</rt></ruby><ruby>长跑<rt>chángpǎo</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>背影<rt>bèiyǐng</rt></ruby>，<ruby>拖着<rt>tuōzhe</rt></ruby><ruby>残疾<rt>cánjí</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>右腿<rt>yòutuǐ</rt></ruby>，<ruby>一跛<rt>yìbǒ</rt></ruby><ruby>一跛<rt>yìbǒ</rt></ruby><ruby>的<rt>de</rt></ruby>，<ruby>迎接<rt>yíngjiē</rt></ruby><ruby>着<rt>zhe</rt></ruby><ruby>一张张<rt>yìzhāngzhāng</rt></ruby><ruby>表情<rt>biǎoqíng</rt></ruby><ruby>各异<rt>gèyì</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>面孔<rt>miànkǒng</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>一双双<rt>yìshuāngshuāng</rt></ruby><ruby>好奇<rt>hàoqí</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>眼睛<rt>yǎnjing</rt></ruby>性能。<ruby>足球场<rt>Zúqiúchǎng</rt></ruby><ruby>上<rt>shang</rt></ruby>，<ruby>他<rt>tā</rt></ruby><ruby>在<rt>zài</rt></ruby>“<ruby>瘸子<rt>quézi</rt></ruby>，<ruby>射门<rt>shèmén</rt></ruby>！”<ruby>的<rt>de</rt></ruby><ruby>叫喊<rt>jiàohǎn</rt></ruby><ruby>声<rt>shēng</rt></ruby><ruby>中<rt>zhōng</rt></ruby><ruby>跌倒<rt>diēdǎo</rt></ruby>，<ruby>又<rt>yòu</rt></ruby><ruby>爬起来<rt>pá qǐlái</rt></ruby>……</span>
-
-            <!-- Đoạn 3 -->
-            <span class="block"><span class="indent"></span><ruby>六年<rt>Liùnián</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>光阴<rt>guāngyīn</rt></ruby><ruby>不算<rt>búsuàn</rt></ruby><ruby>长<rt>cháng</rt></ruby>，<ruby>想起<rt>xiǎngqǐ</rt></ruby><ruby>从前<rt>cóngqián</rt></ruby><ruby>却<rt>què</rt></ruby><ruby>恍如隔世<rt>huǎngrúgéshì</rt></ruby>。<ruby>这期间<rt>Zhè qījiān</rt></ruby>性能，<ruby>我<rt>wǒ</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>很多<rt>hěnduō</rt></ruby><ruby>同龄人<rt>tónglíngrén</rt></ruby><ruby>一样<rt>yíyàng</rt></ruby>性能，<ruby>承受<rt>chéngshòu</rt></ruby><ruby>了<rt>le</rt></ruby><ruby>不少<rt>bùshǎo</rt></ruby><ruby>原以为<rt>yuányǐwéi</rt></ruby><ruby>承受不起<rt>chéngshòubùqǐ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>东西<rt>dōngxi</rt></ruby>性能，<ruby>但<rt>dàn</rt></ruby><ruby>即使<rt>jíshǐ</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>最<rt>zuì</rt></ruby><ruby>沮丧<rt>jǔsàng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>时候<rt>shíhou</rt></ruby>，<ruby>也不曾<rt>yě bùcéng</rt></ruby><ruby>用<rt>yòng</rt></ruby><ruby>勉励<rt>miǎnlì</rt></ruby><ruby>别人<rt>biérén</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>话<rt>huà</rt></ruby><ruby>来<rt>lái</rt></ruby><ruby>勉励<rt>miǎnlì</rt></ruby><ruby>自己<rt>zìjǐ</rt></ruby>性能，<ruby>但<rt>dàn</rt></ruby><ruby>每当<rt>měidāng</rt></ruby><ruby>碰到<rt>pèngdào</rt></ruby><ruby>困难<rt>kùnnan</rt></ruby>性能，<ruby>眼前<rt>yǎnqián</rt></ruby><ruby>就<rt>jiù</rt></ruby><ruby>出现<rt>chūxiàn</rt></ruby><ruby>他<rt>tā</rt></ruby><ruby>一跛一跛<rt>yìbǒ yìbǒ</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>背影<rt>bèiyǐng</rt></ruby>性能，<ruby>于是<rt>yúshì</rt></ruby><ruby>艰难地<rt>jiānnánde</rt></ruby><ruby>学会<rt>xuéhuì</rt></ruby><ruby>将<rt>jiāng</rt></ruby><ruby>痛苦<rt>tòngkǔ</rt></ruby><ruby>与<rt>yǔ</rt></ruby><ruby>耻辱<rt>chǐrǔ</rt></ruby><ruby>变成<rt>biànchéng</rt></ruby><ruby>人生<rt>rénshēng</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>财富<rt>cáichǎn</rt></ruby>性能。<ruby>为此<rt>Wèicǐ</rt></ruby>性能，<ruby>我对<rt>wǒ duì</rt></ruby><ruby>他<rt>tā</rt></ruby><ruby>充满<rt>chōngmǎn</rt></ruby><ruby>感激<rt>gǎnjī</rt></ruby>。<ruby>不想<rt>Bùxiǎng</rt></ruby>性能，<ruby>六年<rt>liùnián</rt></ruby><ruby>后<rt>hòu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>今天<rt>jīntiān</rt></ruby><ruby>相遇<rt>xiāngyù</rt></ruby>，<ruby>他<rt>tā</rt></ruby><ruby>竟<rt>jìng</rt></ruby><ruby>真诚地<rt>zhēnchéngde</rt></ruby><ruby>告诉<rt>gàosu</rt></ruby><ruby>我<rt>wǒ</rt></ruby>性能，<ruby>直到现在<rt>zhídàoxiànzài</rt></ruby>，<ruby>他<rt>tā</rt></ruby><ruby>还在<rt>hái zài</rt></ruby><ruby>读<rt>dú</rt></ruby><ruby>那几句<rt>nà jǐ jù</rt></ruby><ruby>留言<rt>liúyán</rt></ruby>性能，“<ruby>即使<rt>jíshǐ</rt></ruby><ruby>所有<rt>suǒyǒu</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>青藤<rt>qīngténg</rt></ruby><ruby>树<rt>shù</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>倒了<rt>dǎole</rt></ruby>……”<ruby>他<rt>tā</rt></ruby><ruby>脱口而出<rt>tuōkǒu'érchū</rt></ruby>性能。<ruby>六年<rt>Liùnián</rt></ruby><ruby>来<rt>lái</rt></ruby>性能，<ruby>他<rt>tā</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>工作<rt>gōngzuò</rt></ruby><ruby>和<rt>hé</rt></ruby><ruby>生活<rt>shēnghuó</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>经历了<rt>jīnglìle</rt></ruby><ruby>很多<rt>hěnduō</rt></ruby><ruby>不幸<rt>búxìng</rt></ruby>性能性能，<ruby>他<rt>tā</rt></ruby><ruby>说<rt>shuō</rt></ruby><ruby>是<rt>shì</rt></ruby><ruby>这几句<rt>zhè jǐ jù</rt></ruby><ruby>留言<rt>liúyán</rt></ruby><ruby>使<rt>shǐ</rt></ruby><ruby>他<rt>tā</rt></ruby><ruby>的<rt>de</rt></ruby><ruby>梦想<rt>mèngxiǎng</rt></ruby><ruby>没有<rt>méiyǒu</rt></ruby><ruby>动摇<rt>dòngyáo</rt></ruby>性能。</span>
-
-            <!-- Đoạn 4 -->
-            <span class="block"><span class="indent"></span><ruby>我<rt>Wǒ</rt></ruby><ruby>一下子<rt>yíxiàzi</rt></ruby><ruby>愣住了<rt>lèngzhùle</rt></ruby>性能，<ruby>原来<rt>yuánlái</rt></ruby><ruby>我们<rt>wǒmen</rt></ruby><ruby>每个人<rt>měigèrén</rt></ruby><ruby>都可以<rt>dōu kěyǐ</rt></ruby><ruby>在<rt>zài</rt></ruby><ruby>有意<rt>yǒuyì</rt></ruby><ruby>无意<rt>wúyì</rt></ruby><ruby>中<rt>zhōng</rt></ruby><ruby>给<rt>gěi</rt></ruby><ruby>别人<rt>biérén</rt></ruby><ruby>很多很多<rt>hěnduō hěnduō</rt></ruby>性能，<ruby>同样<rt>tóngyàng</rt></ruby>性能，<ruby>也可以<rt>yě kěyǐ</rt></ruby><ruby>剥夺<rt>bōduó</rt></ruby>性能<ruby>别人<rt>biérén</rt></ruby><ruby>很多很多<rt>hěnduō hěnduō</rt></ruby>性能。<ruby>岁月<rt>Suìyuè</rt></ruby><ruby>流逝<rt>liúshì</rt></ruby>性能，<ruby>我们<rt>wǒmen</rt></ruby><ruby>抓住<rt>zhuāzhù</rt></ruby><ruby>了<rt>le</rt></ruby><ruby>什么<rt>shénme</rt></ruby>？<ruby>又<rt>Yòu</rt></ruby><ruby>放弃<rt>fàngqì</rt></ruby><ruby>了<rt>le</rt></ruby><ruby>什么<rt>shénme</rt></ruby>？</span>
-
-            <!-- Đoạn 5 -->
-            <span class="block"><span class="indent"></span><ruby>每个人<rt>Měigèrén</rt></ruby><ruby>都<rt>dōu</rt></ruby><ruby>同<rt>tóng</rt></ruby><ruby>自己<rt>zìjǐ</rt></ruby><ruby>一样<rt>yíyàng</rt></ruby><ruby>充满<rt>chōngmǎn</rt></ruby><ruby>了<rt>le</rt></ruby><ruby>渴望<rt>kěwàng</rt></ruby>性能：“<ruby>一<rt>yì</rt></ruby><ruby>声<rt>shēng</rt></ruby><ruby>呼唤<rt>hūhuàn</rt></ruby>性能、<ruby>一个<rt>yígè</rt></ruby><ruby>微笑<rt>wēixiào</rt></ruby>性能、<ruby>一道<rt>yídào</rt></ruby><ruby>目光<rt>mùguāng</rt></ruby>性能、<ruby>一纸<rt>yìzhǐ</rt></ruby><ruby>信笺<rt>xìnjiān</rt></ruby>性能、<ruby>一个<rt>yígè</rt></ruby><ruby>电话<rt>diànhuà</rt></ruby>性能、<ruby>一种<rt>yìzhǒng</rt></ruby><ruby>关注<rt>guānzhù</rt></ruby>性能，”<ruby>而<rt>ér</rt></ruby><ruby>我们<rt>wǒmen</rt></ruby><ruby>却<rt>què</rt></ruby><ruby>常常<rt>chángcháng</rt></ruby><ruby>忽略<rt>hūlüè</rt></ruby>性能性能。<ruby>每个人<rt>Měigèrén</rt></ruby><ruby>心<rt>xīn</rt></ruby>……</span>
-        </div>
-
-        <h2>Dịch nghĩa Tiếng Việt:</h2>
-        <div class="translation-container">
-            <div class="translation-line">"Cho dù tất cả các cây thanh đằng có ngã đổ xuống, bạn cũng phải hiên ngang đứng vững; cho dù cả thế giới này có chìm vào giấc ngủ sâu, bạn cũng phải giữ cho mình luôn thức tỉnh." Sáu năm trước, tôi đã nắn nót viết dòng chữ này vào cuốn sổ tay của anh ấy, rồi sau đó lưu luyến nói lời chia tay mái trường mến yêu, mỗi người tự bươn chải theo một phương trời riêng.</div>
-            
-            <div class="translation-line">Điều khắc sâu vào tâm khảm tôi nhất về anh chính là bóng dáng anh kiên trì chạy bền dọc theo khuôn viên trường, anh kéo lê chiếc chân phải mang tật nguyền, từng bước một cách khập khiễng, đối diện với biết bao khuôn mặt mang đủ sắc thái biểu cảm khác nhau cùng những ánh mắt đầy vẻ tò mò dòm ngó. Trên sân bóng đá, anh từng không ít lần ngã nhào ngã sấp trong những tiếng la hét châm chọc: "Thằng què kìa, sút môn đi!", nhưng rồi anh lại lồm cồm bò dậy để tiếp tục chạy tiếp...</div>
-            
-            <div class="translation-line">Quãng thời gian sáu năm trôi qua nói dài cũng không dài, thế nhưng mỗi khi hồi tưởng lại những chuyện ngày xưa, trong lòng tôi lại dấy lên một cảm giác giống như hoảng như cách thế (như đã cách cả một thế hệ). Trong quãng thời gian này, tôi cũng giống hệt như bao người bạn đồng lứa khác, phải gồng mình gánh vác khôn nguôi những áp lực, rắc rối mà bản thân từng ngỡ sẽ chẳng thể nào chịu đựng nổi. Thế nhưng, ngay cả vào những khoảnh khắc chán chường, tuyệt vọng nhất, tôi chưa từng dùng những lời lẽ hoa mỹ để tự cổ vũ bản thân, mà cứ hễ mỗi lần đối diện với chông gai nghịch cảnh, trước mắt tôi lại hiện lên cái bóng dáng chạy khập khiễng đầy kiên cường của anh ấy. Nhờ vậy, tôi đã học được cách đầy gian nan để biến những nỗi đau khổ và sự tủi nhục trở thành khối tài sản vô giá của cuộc đời mình. Chính vì lẽ đó, trong lòng tôi luôn ngập tràn niềm cảm kích sâu sắc đối với anh. Không thể ngờ được rằng, sau sáu năm dài đằng đẵng, cuộc hội ngộ tình cờ ngày hôm nay, anh lại chân thành bộc bạch với tôi rằng, cho đến tận bây giờ, anh vẫn luôn đọc lại vài dòng chữ năm xưa tôi để lại: "Cho dù tất cả các cây thanh đằng có ngã đổ xuống...". Anh đọc van vách thuộc lòng một cách đầy tự nhiên. Anh bảo suốt sáu năm qua, cả trong công việc lẫn cuộc sống hằng ngày anh đã phải trải qua rất nhiều chuyện bất hạnh và không may, chính vài dòng chữ để lại năm ấy đã giúp cho ngọn lửa ước mơ trong anh chưa một lần bị lung lay, dao động.</div>
-            
-            <div class="translation-line">Lời bộc bạch của anh khiến tôi sững sờ, ngẩn người ra trong phút chốc. Hóa ra, mỗi một con người trong chúng ta thảy đều có thể vô tình hay hữu ý trao tặng cho người khác rất nhiều, rất nhiều điều tốt đẹp, và ngược lại, chúng ta cũng hoàn toàn có thể nhẫn tâm tước đoạt đi của người khác rất nhiều, rất nhiều thứ. Tuổi nguyệt cứ thế lững lờ trôi qua, rốt cuộc chúng ta đã nắm giữ được những điều gì? Và đã đành lòng từ bỏ đi những điều gì rồi?</div>
-            
-            <div class="translation-line">Mỗi một con người thảy đều mang bên trong mình những khát khao, mong mỏi cháy bỏng giống hệt như chính bản thân chúng ta vậy: một tiếng gọi hỏi han, một nụ cười ấm áp, một ánh mắt động viên, một phong thư viết vội, một cuộc điện thoại sẻ chia, hay chỉ đơn thuần là một chút sự quan tâm, dõi theo chân thành... Ấy thế mà chúng ta lại thường xuyên vô tình ngó lơ và ngó lơ mất. Trái tim của mỗi người...</div>
-        </div>
-    </div>
+    
 
     <div id="sticky-audio-player" class="sticky-player">
         <div class="player-header">
