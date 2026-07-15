@@ -256,6 +256,11 @@ rt {
     text-align: justify;
 }
 
+.lesson-title{
+    text-align: center;
+    color: red;
+}
+
 /* NÚT FLOAT ĐỂ ẨN HIỆN PINYIN CỐ ĐỊNH GÓC PHẢI */
 .float-pinyin-btn {
     position: fixed;
