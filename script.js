@@ -91,10 +91,15 @@ function initGlobalAudioPlayer() {
             nowPlayingText.textContent = "Đang phát: " + audioTitle;
             globalAudio.src = audioSrc;
 
-            // Hiện trình phát nhạc dính sát đáy màn hình
+            // 1. Hiện trình phát nhạc dính sát đáy màn hình
             player.classList.add("show");
-            // Thêm class vào thẻ body để đẩy nút Pinyin lên trên
             document.body.classList.add("audio-playing");
+
+            // 2. TÍNH TOÁN ĐỘNG: Thêm khoảng đệm bằng đúng chiều cao thực tế của Player + 20px dự phòng
+            setTimeout(() => {
+                const playerHeight = player.offsetHeight;
+                document.body.style.paddingBottom = (playerHeight + 20) + "px";
+            }, 50); // Trì hoãn nhẹ 50ms để đợi CSS transition của Player hoàn tất
 
             globalAudio.play().catch(error => {
                 console.log("Trình duyệt yêu cầu tương tác trước khi phát.", error);
@@ -115,8 +120,10 @@ function closePlayer() {
     if (player) {
         player.classList.remove("show");
     }
-    // Xóa class ở body để nút Pinyin hạ xuống vị trí ban đầu
     document.body.classList.remove("audio-playing");
+
+    // 3. Khôi phục lại khoảng đệm ban đầu của body khi đóng trình phát
+    document.body.style.paddingBottom = "20px"; 
 }
 
 // Hàm xử lý tua thời gian (Giữ nguyên)

@@ -12,6 +12,7 @@ body {
     color: #2c3e50; /* Giữ nguyên[cite: 1] */
     max-width: 950px; /* Giữ nguyên[cite: 1] */
     margin: 0 auto; /* Giữ nguyên[cite: 1] */
+    transition: padding-bottom 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* MENU LỚN - CẤP 1 (CHỌN BÀI 1 / BÀI 2) */
