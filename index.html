@@ -139,6 +139,74 @@
         .card-tc3:hover .enter-btn { background-color: #2ecc71; }
         .card-tc4:hover .enter-btn { background-color: #9b59b6; }
 
+        /* BANNER ÔN TẬP TỪ VỰNG */
+        .vocab-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #1e293b 0%, #2980b9 100%);
+            color: #ffffff;
+            padding: 22px 28px;
+            border-radius: 16px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(41, 128, 185, 0.25);
+            transition: all 0.3s ease;
+            text-align: left;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .vocab-banner:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 35px rgba(41, 128, 185, 0.35);
+        }
+        .banner-content {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .banner-icon {
+            font-size: 42px;
+            line-height: 1;
+        }
+        .banner-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .banner-badge {
+            font-size: 11px;
+            background: #e74c3c;
+            color: #ffffff;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .banner-desc {
+            font-size: 13px;
+            color: #e2e8f0;
+            line-height: 1.4;
+        }
+        .banner-action-btn {
+            background: #ffffff;
+            color: #2980b9;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 10px 22px;
+            border-radius: 25px;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.2s ease;
+        }
+        .vocab-banner:hover .banner-action-btn {
+            background: #f1f5f9;
+            transform: scale(1.05);
+        }
+
         /* PHẦN FOOTER */
         footer {
             margin-top: 50px;
@@ -152,6 +220,14 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
+            .vocab-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .banner-action-btn {
+                align-self: flex-end;
+            }
         }
         @media (max-width: 480px) {
             .grid-container {
@@ -159,6 +235,11 @@
             }
             header h1 {
                 font-size: 26px;
+            }
+            .banner-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
             }
         }
     </style>
@@ -171,6 +252,25 @@
             <p>Vui lòng lựa chọn quyển giáo trình bạn muốn tham gia học tập</p>
             <div class="divider"></div>
         </header>
+
+        <!-- BANNER ÔN TẬP TỪ VỰNG TỔNG HỢP -->
+        <a href="tuvung.html" class="vocab-banner">
+            <div class="banner-content">
+                <div class="banner-icon">🏮</div>
+                <div>
+                    <div class="banner-title">
+                        <span>Trung Tâm Ôn Tập Từ Vựng Tổng Hợp</span>
+                        <span class="banner-badge">2.565 Từ</span>
+                    </div>
+                    <div class="banner-desc">
+                        Bao gồm toàn bộ từ vựng TC 1 - 4 • Flashcards 3D • Trắc nghiệm phản xạ • Ghép thẻ • Phát âm chuẩn
+                    </div>
+                </div>
+            </div>
+            <div class="banner-action-btn">
+                Luyện Tập Ngay ➔
+            </div>
+        </a>
 
         <div class="grid-container">
             

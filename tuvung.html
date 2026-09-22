@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Tập Từ Vựng Tiếng Trung Boya (Trung Cấp 1 - 4)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tuvung.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="app-header">
+        <div class="header-inner">
+            <a href="index.html" class="header-brand">
+                <span class="brand-icon">🏮</span>
+                <div class="brand-title">
+                    <h1>Boya Chinese • Ôn Tập Từ Vựng</h1>
+                    <span>Giáo trình Tiếng Trung Boya Trung Cấp (Quyển 1 - 4)</span>
+                </div>
+            </a>
+
+            <div class="header-actions">
+                <span class="badge-stat" id="stat-total-words">0 từ</span>
+                <span class="badge-stat star-stat" id="stat-starred-words">★ 0 đã lưu</span>
+                <a href="index.html" class="btn-home">🏠 Trang Chủ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="main-wrapper">
+
+        <!-- CONTROLS & FILTERS -->
+        <section class="control-card">
+            <!-- Book Pills -->
+            <div class="book-selector">
+                <button class="book-btn active" data-book="all">
+                    <span>Toàn Bộ Giáo Trình</span>
+                    <span class="book-sub">54 bài • 2.565 từ</span>
+                </button>
+                <button class="book-btn" data-book="tc1">
+                    <span>📘 Trung Cấp 1</span>
+                    <span class="book-sub">16 bài • 540 từ</span>
+                </button>
+                <button class="book-btn" data-book="tc2">
+                    <span>📙 Trung Cấp 2</span>
+                    <span class="book-sub">16 bài • 762 từ</span>
+                </button>
+                <button class="book-btn" data-book="tc3">
+                    <span>📗 Trung Cấp 3</span>
+                    <span class="book-sub">12 bài • 623 từ</span>
+                </button>
+                <button class="book-btn" data-book="tc4">
+                    <span>📔 Trung Cấp 4</span>
+                    <span class="book-sub">10 bài • 640 từ</span>
+                </button>
+            </div>
+
+            <!-- Filters -->
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="select-lesson">📖 Bài học:</label>
+                    <select id="select-lesson" class="custom-select">
+                        <option value="all">Tất cả bài học</option>
+                    </select>
+                </div>
+
+                <div class="filter-group" style="max-width: 220px;">
+                    <label for="select-type">🏷️ Từ loại:</label>
+                    <select id="select-type" class="custom-select">
+                        <option value="all">Tất cả từ loại</option>
+                    </select>
+                </div>
+
+                <button class="btn-pill" id="btn-filter-starred" title="Chỉ hiển thị những từ bạn đã gắn sao">
+                    ★ Chỉ từ đã lưu
+                </button>
+            </div>
+
+            <!-- Lesson Audio Bar -->
+            <div class="audio-bar" id="lesson-audio-bar">
+                <span class="audio-label" id="audio-lesson-title">🎧 Audio Từ Vựng:</span>
+                <audio id="lesson-audio-player" controls preload="none"></audio>
+            </div>
+        </section>
+
+        <!-- MODE TABS -->
+        <nav class="mode-tabs">
+            <button class="tab-btn active" data-mode="table">
+                📋 Bảng Từ Vựng
+            </button>
+            <button class="tab-btn" data-mode="flashcard">
+                🗂️ Flashcard 3D
+            </button>
+            <button class="tab-btn" data-mode="quiz">
+                ✍️ Trắc Nghiệm Phản Xạ
+            </button>
+            <button class="tab-btn" data-mode="match">
+                🧩 Trò Chơi Ghép Thẻ
+            </button>
+        </nav>
+
+        <!-- TAB 1: BẢNG TỪ VỰNG -->
+        <section id="mode-table" class="tab-content active">
+            <div class="vocab-toolbar">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="vocab-search" placeholder="Tìm kiếm theo Chữ Hán, Pinyin hoặc nghĩa Tiếng Việt...">
+                </div>
+
+                <div class="toggle-group">
+                    <button class="toggle-btn" id="btn-toggle-pinyin" title="Ẩn/Hiện Pinyin để tự luyện đọc">
+                        👁️ Ẩn/Hiện Pinyin
+                    </button>
+                    <button class="toggle-btn" id="btn-toggle-mean" title="Ẩn/Hiện nghĩa để tự kiểm tra">
+                        👁️ Ẩn/Hiện Nghĩa
+                    </button>
+                </div>
+            </div>
+
+            <div class="vocab-table-container" id="table-wrapper">
+                <table class="vocab-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 50px; text-align: center;">STT</th>
+                            <th style="width: 40px; text-align: center;">★</th>
+                            <th style="width: 20%;">Chữ Hán</th>
+                            <th style="width: 18%;">Pinyin</th>
+                            <th style="width: 12%;">Từ loại</th>
+                            <th style="width: 36%;">Ý nghĩa & Ví dụ</th>
+                            <th style="width: 14%;">Bài</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vocab-tbody">
+                        <!-- Rendered by Javascript -->
+                    </tbody>
+                </table>
+                <div class="table-footer">
+                    <span id="table-count-info">Đang tải từ vựng...</span>
+                    <span>💡 Nhấp vào biểu tượng 🔊 để nghe phát âm chuẩn</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: FLASHCARD 3D -->
+        <section id="mode-flashcard" class="tab-content">
+            <div id="flashcard-container">
+                <!-- Rendered by Javascript -->
+            </div>
+        </section>
+
+        <!-- TAB 3: TRẮC NGHIỆM -->
+        <section id="mode-quiz" class="tab-content">
+            <div id="quiz-container">
+                <!-- Rendered by Javascript -->
+            </div>
+        </section>
+
+        <!-- TAB 4: TRÒ CHƠI GHÉP THẺ -->
+        <section id="mode-match" class="tab-content">
+            <div id="match-container">
+                <!-- Rendered by Javascript -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© Hệ Thống Học & Ôn Tập Tiếng Trung Boya Thông Minh (Boya Chinese I - IV)</p>
+    </footer>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="app-toast" class="toast-msg"></div>
+
+    <!-- SCRIPTS -->
+    <script src="vocab_data.js"></script>
+    <script src="tuvung.js"></script>
+</body>
+</html>
