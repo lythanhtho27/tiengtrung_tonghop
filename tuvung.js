@@ -19,7 +19,8 @@
         typeFilter: "all",
         hidePinyin: false,
         hideMean: false,
-        currentMode: "table", // 'table' | 'flashcard' | 'quiz' | 'match'
+        currentMode: "table", // 'table' | 'flashcard' | 'quiz' | 'games'
+        activeGame: null,     // null | 'match' | 'tf' | 'scramble' | 'hunter'
         
         // Flashcard state
         fcList: [],
@@ -125,6 +126,75 @@
             toast.classList.remove("show");
         }, 2200);
     }
+
+    // Web Audio API Synthesizer for Game Sound FX
+    const soundFX = {
+        ctx: null,
+        enabled: true,
+        init() {
+            if (!this.ctx && (window.AudioContext || window.webkitAudioContext)) {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                this.ctx = new AudioCtx();
+            }
+            if (this.ctx && this.ctx.state === "suspended") {
+                this.ctx.resume();
+            }
+        },
+        playTone(freq, type, duration, startTime = 0) {
+            if (!this.enabled) return;
+            try {
+                this.init();
+                if (!this.ctx) return;
+                const t = this.ctx.currentTime + startTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, t);
+                gain.gain.setValueAtTime(0.12, t);
+                gain.gain.exponentialRampToValueAtTime(0.0001, t + duration);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start(t);
+                osc.stop(t + duration);
+            } catch (e) {}
+        },
+        correct() {
+            this.playTone(523.25, "sine", 0.1, 0);
+            this.playTone(659.25, "sine", 0.1, 0.08);
+            this.playTone(783.99, "sine", 0.22, 0.16);
+        },
+        wrong() {
+            if (!this.enabled) return;
+            try {
+                this.init();
+                if (!this.ctx) return;
+                const t = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = "sawtooth";
+                osc.frequency.setValueAtTime(160, t);
+                osc.frequency.linearRampToValueAtTime(110, t + 0.22);
+                gain.gain.setValueAtTime(0.12, t);
+                gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.22);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start(t);
+                osc.stop(t + 0.22);
+            } catch (e) {}
+        },
+        tick() {
+            this.playTone(800, "triangle", 0.03, 0);
+        },
+        fanfare() {
+            const notes = [
+                { f: 523.25, d: 0.12, t: 0 },
+                { f: 659.25, d: 0.12, t: 0.11 },
+                { f: 783.99, d: 0.12, t: 0.22 },
+                { f: 1046.50, d: 0.35, t: 0.33 }
+            ];
+            notes.forEach(n => this.playTone(n.f, "triangle", n.d, n.t));
+        }
+    };
 
     // Initialize Data
     function initData() {
@@ -288,7 +358,9 @@
             }
         }
         audioBar.classList.remove("show");
-        audioElem.pause();
+        if (typeof audioElem.pause === "function") {
+            audioElem.pause();
+        }
     }
 
     // Bind Event Listeners
@@ -389,11 +461,23 @@
             });
         }
 
-        // Keyboard listener for Flashcards
+        // Sound Toggle
+        const soundBtn = document.getElementById("btn-toggle-sound");
+        if (soundBtn) {
+            soundBtn.addEventListener("click", () => {
+                soundFX.enabled = !soundFX.enabled;
+                soundBtn.textContent = soundFX.enabled ? "🔊 Âm thanh" : "🔇 Tắt tiếng";
+                soundBtn.style.opacity = soundFX.enabled ? "1" : "0.7";
+                showToast(soundFX.enabled ? "Đã bật hiệu ứng âm thanh 🔊" : "Đã tắt hiệu ứng âm thanh 🔇");
+            });
+        }
+
+        // Keyboard listener for Flashcards & Speed True/False
         window.addEventListener("keydown", handleKeydown);
     }
 
     function renderCurrentMode() {
+        clearGameTimers();
         switch (state.currentMode) {
             case "table":
                 renderTableMode();
@@ -404,8 +488,9 @@
             case "quiz":
                 setupQuizMode();
                 break;
+            case "games":
             case "match":
-                setupMatchMode();
+                setupGameZone();
                 break;
         }
     }
@@ -762,27 +847,38 @@
     }
 
     function handleKeydown(e) {
-        if (state.currentMode !== "flashcard") return;
-        // Don't trigger if user is typing in search box
+        // Don't trigger if user is typing in input or select
         if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
 
-        if (e.code === "Space") {
-            e.preventDefault();
-            state.fcFlipped = !state.fcFlipped;
-            const card = document.getElementById("fc-card");
-            if (card) card.classList.toggle("flipped", state.fcFlipped);
-        } else if (e.code === "ArrowRight") {
-            e.preventDefault();
-            moveFlashcard(1);
-        } else if (e.code === "ArrowLeft") {
-            e.preventDefault();
-            moveFlashcard(-1);
-        } else if (e.key === "1") {
-            const btnHard = document.getElementById("fc-btn-hard");
-            if (btnHard) btnHard.click();
-        } else if (e.key === "2") {
-            const btnEasy = document.getElementById("fc-btn-easy");
-            if (btnEasy) btnEasy.click();
+        if (state.currentMode === "flashcard") {
+            if (e.code === "Space") {
+                e.preventDefault();
+                state.fcFlipped = !state.fcFlipped;
+                const card = document.getElementById("fc-card");
+                if (card) card.classList.toggle("flipped", state.fcFlipped);
+            } else if (e.code === "ArrowRight") {
+                e.preventDefault();
+                moveFlashcard(1);
+            } else if (e.code === "ArrowLeft") {
+                e.preventDefault();
+                moveFlashcard(-1);
+            } else if (e.key === "1") {
+                const btnHard = document.getElementById("fc-btn-hard");
+                if (btnHard) btnHard.click();
+            } else if (e.key === "2") {
+                const btnEasy = document.getElementById("fc-btn-easy");
+                if (btnEasy) btnEasy.click();
+            }
+        } else if (state.currentMode === "games" && state.activeGame === "tf") {
+            if (e.code === "ArrowLeft") {
+                e.preventDefault();
+                const btnTrue = document.getElementById("btn-tf-true");
+                if (btnTrue && !btnTrue.disabled) btnTrue.click();
+            } else if (e.code === "ArrowRight") {
+                e.preventDefault();
+                const btnFalse = document.getElementById("btn-tf-false");
+                if (btnFalse && !btnFalse.disabled) btnFalse.click();
+            }
         }
     }
 
@@ -1167,34 +1263,135 @@
     }
 
     // =========================================================================
-    // MODE 4: MATCHING GAME (GHÉP TỪ)
+    // MODE 4: KHU TRÒ CHƠI ÔN TẬP (GAME ZONE: 4 GAMES)
     // =========================================================================
-    function setupMatchMode() {
-        const container = document.getElementById("match-container");
+    let gameTimers = [];
+    function addGameTimer(t) {
+        gameTimers.push(t);
+        return t;
+    }
+    function clearGameTimers() {
+        if (state.gameTimer) {
+            clearInterval(state.gameTimer);
+            state.gameTimer = null;
+        }
+        gameTimers.forEach(t => {
+            clearInterval(t);
+            clearTimeout(t);
+        });
+        gameTimers = [];
+    }
+
+    function setupGameZone() {
+        clearGameTimers();
+        state.activeGame = null;
+        renderGameHub();
+    }
+
+    function renderGameHub() {
+        clearGameTimers();
+        state.activeGame = null;
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
         if (!container) return;
 
         const words = getFilteredWords();
+        const wordCount = words.length;
+
+        container.innerHTML = `
+            <div class="game-zone-wrapper">
+                <div class="game-hub-header">
+                    <h2>🎮 Khu Trò Chơi Ôn Tập Từ Vựng</h2>
+                    <p>Kho từ hiện tại: <strong>${wordCount} từ</strong> (theo phạm vi bộ lọc đang chọn). Hãy chọn trò chơi yêu thích để bắt đầu!</p>
+                </div>
+
+                <div class="game-hub-grid">
+                    <div class="game-card-item game-card-1" data-game="match">
+                        <div class="game-card-top">
+                            <span class="game-card-icon">🧩</span>
+                            <span class="game-card-badge">Trí Nhớ & Ghép Đôi</span>
+                        </div>
+                        <div class="game-card-title">1. Ghép Cặp Thẻ (Card Matching)</div>
+                        <div class="game-card-desc">Lật và ghép các cặp Chữ Hán với Nghĩa Tiếng Việt tương ứng nhanh nhất có thể.</div>
+                        <button class="game-card-btn">Chơi Ngay ▶</button>
+                    </div>
+
+                    <div class="game-card-item game-card-2" data-game="tf">
+                        <div class="game-card-top">
+                            <span class="game-card-icon">⚡</span>
+                            <span class="game-card-badge">Phản Xạ Cực Nhanh</span>
+                        </div>
+                        <div class="game-card-title">2. Đúng Hay Sai? (Speed Rush)</div>
+                        <div class="game-card-desc">Chữ Hán và Nghĩa có khớp nhau không? Phản xạ 5 giây, bảo vệ 3 mạng sống và tích chuỗi combo!</div>
+                        <button class="game-card-btn">Chơi Ngay ▶</button>
+                    </div>
+
+                    <div class="game-card-item game-card-3" data-game="scramble">
+                        <div class="game-card-top">
+                            <span class="game-card-icon">🔤</span>
+                            <span class="game-card-badge">Tái Tạo Chữ Hán</span>
+                        </div>
+                        <div class="game-card-title">3. Xếp Từ Hán Tự (Scramble Builder)</div>
+                        <div class="game-card-desc">Sắp xếp các ký tự Hán tự bị xáo trộn vào đúng vị trí để tạo thành từ vựng hoàn chỉnh.</div>
+                        <button class="game-card-btn">Chơi Ngay ▶</button>
+                    </div>
+
+                    <div class="game-card-item game-card-4" data-game="hunter">
+                        <div class="game-card-top">
+                            <span class="game-card-icon">🎯</span>
+                            <span class="game-card-badge">Luyện Nghe Phản Xạ</span>
+                        </div>
+                        <div class="game-card-title">4. Bắt Chữ Theo Âm (Audio Hunter)</div>
+                        <div class="game-card-desc">Lắng nghe phát âm chuẩn và nhanh tay chọn trúng Chữ Hán chính xác trong 6 mục tiêu!</div>
+                        <button class="game-card-btn">Chơi Ngay ▶</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        container.querySelectorAll(".game-card-item").forEach(card => {
+            card.addEventListener("click", () => {
+                const gameType = card.dataset.game;
+                if (gameType === "match") startMatchingGame();
+                else if (gameType === "tf") startTrueFalseGame();
+                else if (gameType === "scramble") startScrambleGame();
+                else if (gameType === "hunter") startAudioHunterGame();
+            });
+        });
+    }
+
+    // -------------------------------------------------------------------------
+    // GAME 1: CARD MATCHING (GHÉP CẶP THẺ)
+    // -------------------------------------------------------------------------
+    function startMatchingGame() {
+        clearGameTimers();
+        state.activeGame = "match";
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
+        if (!container) return;
+
+        let words = getFilteredWords();
+        if (words.length < 6) {
+            words = state.allWords;
+        }
         if (words.length < 6) {
             container.innerHTML = `
                 <div class="empty-state">
                     <div class="empty-icon">🧩</div>
-                    <div class="empty-title">Cần tối thiểu 6 từ vựng để chơi trò chơi ghép thẻ</div>
-                    <div class="empty-sub">Hãy chọn phạm vi bài học rộng hơn để bắt đầu</div>
+                    <div class="empty-title">Cần tối thiểu 6 từ vựng để bắt đầu</div>
+                    <button class="btn-pill" id="btn-back-hub" style="margin-top:15px;">← Quay lại Khu Trò Chơi</button>
                 </div>
             `;
+            const bBtn = document.getElementById("btn-back-hub");
+            if (bBtn) bBtn.addEventListener("click", renderGameHub);
             return;
         }
 
-        // Pick 8 words (or min 6)
         const pairCount = Math.min(8, words.length);
         const pool = [...words];
         shuffleArray(pool);
         const selectedPairs = pool.slice(0, pairCount);
 
-        // Generate tiles
         const tiles = [];
         selectedPairs.forEach(w => {
-            // Hanzi tile
             tiles.push({
                 id: `hz_${w.id}`,
                 wordId: w.id,
@@ -1203,7 +1400,6 @@
                 subText: w.py,
                 speakText: w.hz
             });
-            // Meaning tile
             tiles.push({
                 id: `mean_${w.id}`,
                 wordId: w.id,
@@ -1233,17 +1429,20 @@
 
         container.innerHTML = `
             <div class="game-wrapper">
-                <div class="game-header">
-                    <div class="game-stat">Ghép đúng: <strong id="game-matched-display" style="color:var(--success);">0 / ${pairCount}</strong> cặp</div>
-                    <div class="game-stat">Thời gian: <strong id="game-timer-display">00:00</strong></div>
-                    <button class="btn-pill" id="btn-restart-game">🔄 Chơi ván mới</button>
+                <div class="game-top-bar">
+                    <button class="btn-back-hub" id="btn-game-back">← Khu trò chơi</button>
+                    <div class="game-stats-group">
+                        <div>Ghép đúng: <strong id="game-matched-display" style="color:var(--success);">0 / ${pairCount}</strong> cặp</div>
+                        <div>Thời gian: <strong id="game-timer-display">00:00</strong></div>
+                    </div>
+                    <button class="btn-pill" id="btn-restart-game">🔄 Ván mới</button>
                 </div>
 
                 <div class="match-grid" id="match-grid">
                     ${tiles.map(tile => `
                         <div class="match-tile" data-tile-id="${tile.id}" data-word-id="${tile.wordId}" data-type="${tile.type}">
                             ${tile.type === 'hz' 
-                                ? `<div class="tile-hz">${escapeHtml(tile.text)}</div><div style="font-size:12px; color:#e67e22; margin-top:4px;">${escapeHtml(tile.subText)}</div>`
+                                ? `<div class="tile-hz">${escapeHtml(tile.text)}</div><div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:600;">${escapeHtml(tile.subText)}</div>`
                                 : `<div class="tile-mean">${escapeHtml(tile.text)}</div>`
                             }
                         </div>
@@ -1252,11 +1451,9 @@
             </div>
         `;
 
-        document.getElementById("btn-restart-game").addEventListener("click", () => {
-            setupMatchMode();
-        });
+        document.getElementById("btn-game-back").addEventListener("click", renderGameHub);
+        document.getElementById("btn-restart-game").addEventListener("click", startMatchingGame);
 
-        // Tile clicks
         const grid = document.getElementById("match-grid");
         grid.querySelectorAll(".match-tile").forEach(tileElem => {
             tileElem.addEventListener("click", () => {
@@ -1272,14 +1469,14 @@
         const wordId = tileElem.dataset.wordId;
         const tileType = tileElem.dataset.type;
 
-        // If no first tile selected
+        soundFX.tick();
+
         if (!state.gameSelectedTile) {
             state.gameSelectedTile = { elem: tileElem, wordId, tileType, tileId };
             tileElem.classList.add("selected");
             return;
         }
 
-        // If same tile or same type (e.g. two hanzi) clicked, swap selection
         if (state.gameSelectedTile.tileType === tileType) {
             state.gameSelectedTile.elem.classList.remove("selected");
             state.gameSelectedTile = { elem: tileElem, wordId, tileType, tileId };
@@ -1287,12 +1484,12 @@
             return;
         }
 
-        // Two different types selected -> Check Match!
         const first = state.gameSelectedTile;
         tileElem.classList.add("selected");
 
         if (first.wordId === wordId) {
             // MATCH!
+            soundFX.correct();
             const matchedWord = state.allWords.find(w => w.id === wordId);
             if (matchedWord) speakChinese(matchedWord.hz);
 
@@ -1308,16 +1505,17 @@
 
                 state.gameSelectedTile = null;
 
-                // Win check
                 if (state.gameMatchedCount === totalPairs) {
                     clearInterval(state.gameTimer);
+                    soundFX.fanfare();
                     const mins = String(Math.floor(state.gameSeconds / 60)).padStart(2, "0");
                     const secs = String(state.gameSeconds % 60).padStart(2, "0");
-                    showToast(`🎉 Xuất sắc! Hoàn thành trong ${mins}:${secs}!`);
+                    showToast(`🎉 Xuất sắc! Hoàn thành ván trong ${mins}:${secs}!`);
                 }
-            }, 300);
+            }, 250);
         } else {
             // WRONG!
+            soundFX.wrong();
             setTimeout(() => {
                 first.elem.classList.add("wrong");
                 tileElem.classList.add("wrong");
@@ -1327,8 +1525,750 @@
                     tileElem.classList.remove("selected", "wrong");
                     state.gameSelectedTile = null;
                 }, 400);
-            }, 200);
+            }, 180);
         }
+    }
+
+    // -------------------------------------------------------------------------
+    // GAME 2: SPEED TRUE/FALSE RUSH (ĐÚNG HAY SAI?)
+    // -------------------------------------------------------------------------
+    function startTrueFalseGame() {
+        clearGameTimers();
+        state.activeGame = "tf";
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
+        if (!container) return;
+
+        let words = getFilteredWords();
+        if (words.length < 4) words = state.allWords;
+        if (words.length < 4) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-icon">⚡</div>
+                    <div class="empty-title">Cần tối thiểu 4 từ vựng để chơi Đúng Hay Sai</div>
+                    <button class="btn-pill" id="btn-back-hub" style="margin-top:15px;">← Quay lại Khu Trò Chơi</button>
+                </div>
+            `;
+            const bBtn = document.getElementById("btn-back-hub");
+            if (bBtn) bBtn.addEventListener("click", renderGameHub);
+            return;
+        }
+
+        const shuffledPool = [...words];
+        shuffleArray(shuffledPool);
+
+        const totalQ = Math.min(15, shuffledPool.length);
+        let currentQIdx = 0;
+        let lives = 3;
+        let score = 0;
+        let combo = 0;
+        let maxCombo = 0;
+        let answered = false;
+        let timerInterval = null;
+        const TIME_LIMIT = 5000; // 5 seconds
+
+        container.innerHTML = `
+            <div class="game-wrapper">
+                <div class="game-top-bar">
+                    <button class="btn-back-hub" id="btn-game-back">← Khu trò chơi</button>
+                    <div class="game-stats-group">
+                        <div>Mạng: <span id="tf-lives-display" style="font-size:18px; letter-spacing:2px;">❤️❤️❤️</span></div>
+                        <div>Điểm: <strong id="tf-score-display" style="color:#e67e22;">0</strong></div>
+                        <div id="tf-combo-badge" class="tf-streak-badge" style="display:none;">🔥 Combo x0</div>
+                        <div>Câu: <strong id="tf-prog-display">1 / ${totalQ}</strong></div>
+                    </div>
+                    <button class="btn-pill" id="btn-tf-restart">🔄 Chơi lại</button>
+                </div>
+
+                <div class="tf-play-box" id="tf-box">
+                    <div class="tf-timer-wrap">
+                        <div class="tf-timer-bar" id="tf-timer-bar" style="width: 100%;"></div>
+                    </div>
+
+                    <div class="tf-card-display" id="tf-card-view">
+                        <div class="tf-hz" id="tf-hz">...</div>
+                        <div class="tf-py" id="tf-py">...</div>
+                        <div class="tf-divider">Có nghĩa là?</div>
+                        <div class="tf-mean" id="tf-mean">...</div>
+                    </div>
+
+                    <div class="tf-buttons">
+                        <button class="btn-tf btn-tf-true" id="btn-tf-true">
+                            <span>✅</span> ĐÚNG 
+                            <span style="font-size:12px; opacity:0.85; margin-left:4px;">(← Phím Trái)</span>
+                        </button>
+                        <button class="btn-tf btn-tf-false" id="btn-tf-false">
+                            <span>❌</span> SAI 
+                            <span style="font-size:12px; opacity:0.85; margin-left:4px;">(Phím Phải →)</span>
+                        </button>
+                    </div>
+
+                    <div id="tf-feedback" style="min-height: 28px; font-size: 15px; font-weight: 600; margin-top: 10px;"></div>
+                </div>
+            </div>
+        `;
+
+        document.getElementById("btn-game-back").addEventListener("click", () => {
+            clearGameTimers();
+            renderGameHub();
+        });
+        document.getElementById("btn-tf-restart").addEventListener("click", startTrueFalseGame);
+
+        function updateStatsDisplay() {
+            const livesElem = document.getElementById("tf-lives-display");
+            if (livesElem) {
+                let hearts = "";
+                for (let i = 0; i < 3; i++) {
+                    hearts += (i < lives) ? "❤️" : "🖤";
+                }
+                livesElem.textContent = hearts;
+            }
+            const scoreElem = document.getElementById("tf-score-display");
+            if (scoreElem) scoreElem.textContent = score;
+
+            const comboBadge = document.getElementById("tf-combo-badge");
+            if (comboBadge) {
+                if (combo >= 2) {
+                    comboBadge.style.display = "inline-flex";
+                    comboBadge.textContent = `🔥 Combo x${combo}`;
+                } else {
+                    comboBadge.style.display = "none";
+                }
+            }
+
+            const progElem = document.getElementById("tf-prog-display");
+            if (progElem) progElem.textContent = `${currentQIdx + 1} / ${totalQ}`;
+        }
+
+        function loadQuestion() {
+            if (lives <= 0 || currentQIdx >= totalQ) {
+                finishGame();
+                return;
+            }
+
+            answered = false;
+            updateStatsDisplay();
+
+            const targetWord = shuffledPool[currentQIdx];
+            const isTrue = Math.random() < 0.5;
+            let displayedMean = targetWord.mean;
+
+            if (!isTrue) {
+                const otherWords = words.filter(w => w.id !== targetWord.id && w.mean !== targetWord.mean);
+                if (otherWords.length > 0) {
+                    const randomOther = otherWords[Math.floor(Math.random() * otherWords.length)];
+                    displayedMean = randomOther.mean;
+                }
+            }
+
+            const hzElem = document.getElementById("tf-hz");
+            const pyElem = document.getElementById("tf-py");
+            const meanElem = document.getElementById("tf-mean");
+            const timerBar = document.getElementById("tf-timer-bar");
+            const feedbackElem = document.getElementById("tf-feedback");
+            const cardView = document.getElementById("tf-card-view");
+
+            if (hzElem) hzElem.textContent = targetWord.hz;
+            if (pyElem) pyElem.textContent = targetWord.py;
+            if (meanElem) meanElem.textContent = displayedMean;
+            if (feedbackElem) feedbackElem.textContent = "";
+            if (cardView) cardView.style.borderColor = "#e2e8f0";
+
+            // Reset timer bar
+            if (timerBar) {
+                timerBar.style.width = "100%";
+                timerBar.style.backgroundColor = "#22c55e";
+            }
+
+            let startTime = Date.now();
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                const elapsed = Date.now() - startTime;
+                const remaining = Math.max(0, TIME_LIMIT - elapsed);
+                const percent = (remaining / TIME_LIMIT) * 100;
+
+                if (timerBar) {
+                    timerBar.style.width = `${percent}%`;
+                    if (percent < 30) {
+                        timerBar.style.backgroundColor = "#ef4444";
+                    } else if (percent < 60) {
+                        timerBar.style.backgroundColor = "#f59e0b";
+                    }
+                }
+
+                if (remaining <= 0) {
+                    clearInterval(timerInterval);
+                    if (!answered) {
+                        handleChoice(null, isTrue, targetWord);
+                    }
+                }
+            }, 50);
+            addGameTimer(timerInterval);
+
+            // Button handlers
+            const btnTrue = document.getElementById("btn-tf-true");
+            const btnFalse = document.getElementById("btn-tf-false");
+
+            btnTrue.onclick = () => {
+                if (!answered) handleChoice(true, isTrue, targetWord);
+            };
+            btnFalse.onclick = () => {
+                if (!answered) handleChoice(false, isTrue, targetWord);
+            };
+        }
+
+        function handleChoice(userChoice, isActuallyTrue, targetWord) {
+            answered = true;
+            clearInterval(timerInterval);
+
+            const isCorrect = (userChoice !== null && userChoice === isActuallyTrue);
+            const feedbackElem = document.getElementById("tf-feedback");
+            const cardView = document.getElementById("tf-card-view");
+
+            if (isCorrect) {
+                soundFX.correct();
+                combo++;
+                if (combo > maxCombo) maxCombo = combo;
+                const points = 100 * Math.min(combo, 5);
+                score += points;
+                if (feedbackElem) {
+                    feedbackElem.style.color = "var(--success)";
+                    feedbackElem.textContent = `🎉 Đúng rồi! (+${points} điểm)`;
+                }
+                if (cardView) cardView.style.borderColor = "var(--success)";
+                speakChinese(targetWord.hz);
+            } else {
+                soundFX.wrong();
+                lives--;
+                combo = 0;
+                if (feedbackElem) {
+                    feedbackElem.style.color = "var(--danger)";
+                    const reason = (userChoice === null) ? "Hết thời gian 5s!" : "Chưa chính xác!";
+                    feedbackElem.innerHTML = `❌ ${reason} Nghĩa đúng: <strong>${escapeHtml(targetWord.mean)}</strong>`;
+                }
+                if (cardView) cardView.style.borderColor = "var(--danger)";
+                speakChinese(targetWord.hz);
+            }
+
+            updateStatsDisplay();
+
+            const delayTimer = setTimeout(() => {
+                currentQIdx++;
+                loadQuestion();
+            }, 1000);
+            addGameTimer(delayTimer);
+        }
+
+        function finishGame() {
+            clearInterval(timerInterval);
+            const box = document.getElementById("tf-box");
+            if (!box) return;
+
+            const isVictory = (lives > 0);
+            if (isVictory) soundFX.fanfare();
+
+            box.innerHTML = `
+                <div style="text-align: center; padding: 20px 10px;">
+                    <div style="font-size: 56px; margin-bottom: 12px;">${isVictory ? '🏆' : '💥'}</div>
+                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                        ${isVictory ? 'Tuyệt Vời! Vượt Qua Thử Thách!' : 'Hết Mạng! Trò Chơi Kết Thúc'}
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
+                        ${isVictory ? 'Bạn có phản xạ nhận diện từ vựng rất nhanh và chuẩn xác!' : 'Đừng nản lòng, phản xạ nhanh cần rèn luyện thường xuyên!'}
+                    </p>
+
+                    <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 30px; flex-wrap: wrap;">
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 22px; text-align: center;">
+                            <div style="font-size: 13px; color: var(--text-muted);">Tổng Điểm</div>
+                            <div style="font-size: 28px; font-weight: 700; color: #e67e22;">${score}</div>
+                        </div>
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 22px; text-align: center;">
+                            <div style="font-size: 13px; color: var(--text-muted);">Combo Dài Nhất</div>
+                            <div style="font-size: 28px; font-weight: 700; color: #ea580c;">🔥 x${maxCombo}</div>
+                        </div>
+                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 22px; text-align: center;">
+                            <div style="font-size: 13px; color: var(--text-muted);">Số Câu Trả Lời</div>
+                            <div style="font-size: 28px; font-weight: 700; color: #2980b9;">${currentQIdx} / ${totalQ}</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: center; gap: 14px;">
+                        <button class="btn-pill" id="btn-tf-again">🔄 Chơi Lại Ván Khác</button>
+                        <button class="btn-pill" id="btn-tf-to-hub">🏠 Về Khu Trò Chơi</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("btn-tf-again").addEventListener("click", startTrueFalseGame);
+            document.getElementById("btn-tf-to-hub").addEventListener("click", renderGameHub);
+        }
+
+        loadQuestion();
+    }
+
+    // -------------------------------------------------------------------------
+    // GAME 3: HANZI SCRAMBLE BUILDER (XẾP TỪ HÁN TỰ)
+    // -------------------------------------------------------------------------
+    function startScrambleGame() {
+        clearGameTimers();
+        state.activeGame = "scramble";
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
+        if (!container) return;
+
+        let words = getFilteredWords().filter(w => w.hz && w.hz.length >= 2);
+        if (words.length < 3) {
+            words = state.allWords.filter(w => w.hz && w.hz.length >= 2);
+        }
+        if (words.length < 3) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-icon">🔤</div>
+                    <div class="empty-title">Cần tối thiểu 3 từ vựng từ 2 chữ Hán trở lên để ghép từ</div>
+                    <button class="btn-pill" id="btn-back-hub" style="margin-top:15px;">← Quay lại Khu Trò Chơi</button>
+                </div>
+            `;
+            const bBtn = document.getElementById("btn-back-hub");
+            if (bBtn) bBtn.addEventListener("click", renderGameHub);
+            return;
+        }
+
+        const shuffledPool = [...words];
+        shuffleArray(shuffledPool);
+
+        const totalWords = Math.min(8, shuffledPool.length);
+        let wordIdx = 0;
+        let score = 0;
+        let solvedWords = [];
+
+        container.innerHTML = `
+            <div class="game-wrapper">
+                <div class="game-top-bar">
+                    <button class="btn-back-hub" id="btn-game-back">← Khu trò chơi</button>
+                    <div class="game-stats-group">
+                        <div>Tiến độ: <strong id="scramble-prog">1 / ${totalWords}</strong> từ</div>
+                        <div>Điểm: <strong id="scramble-score" style="color:#27ae60;">0</strong></div>
+                    </div>
+                    <button class="btn-pill" id="btn-scramble-restart">🔄 Chơi ván mới</button>
+                </div>
+
+                <div class="scramble-play-box" id="scramble-box">
+                    <div class="scramble-prompt-box">
+                        <div class="scramble-mean" id="scramble-mean">...</div>
+                        <div class="scramble-py" id="scramble-py">...</div>
+                        <button class="btn-mini-speak" id="btn-scramble-speak" style="margin-top: 10px; font-size: 14px; font-weight: 600; color: #27ae60; background: none; border: none; cursor: pointer;">
+                            🔊 Nghe phát âm
+                        </button>
+                    </div>
+
+                    <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
+                        Nhấp chọn chữ Hán theo thứ tự đúng để lấp đầy các ô:
+                    </div>
+
+                    <div class="scramble-slots-area" id="scramble-slots"></div>
+
+                    <div class="scramble-pool-area" id="scramble-chips"></div>
+
+                    <div class="scramble-actions">
+                        <button class="btn-pill" id="btn-scramble-hint">💡 Gợi ý chữ đầu</button>
+                        <button class="btn-pill" id="btn-scramble-reset">🔄 Xóa làm lại</button>
+                        <button class="btn-pill" id="btn-scramble-skip">Bỏ qua ▶</button>
+                    </div>
+
+                    <div id="scramble-feedback" style="min-height: 28px; font-size: 15px; font-weight: 700; margin-top: 16px;"></div>
+                </div>
+            </div>
+        `;
+
+        document.getElementById("btn-game-back").addEventListener("click", renderGameHub);
+        document.getElementById("btn-scramble-restart").addEventListener("click", startScrambleGame);
+
+        function loadWord() {
+            if (wordIdx >= totalWords) {
+                finishScramble();
+                return;
+            }
+
+            const targetWord = shuffledPool[wordIdx];
+            const targetChars = targetWord.hz.split("");
+            const numSlots = targetChars.length;
+
+            document.getElementById("scramble-prog").textContent = `${wordIdx + 1} / ${totalWords}`;
+            document.getElementById("scramble-score").textContent = score;
+            document.getElementById("scramble-mean").textContent = targetWord.mean;
+            document.getElementById("scramble-py").textContent = targetWord.py;
+            document.getElementById("scramble-feedback").textContent = "";
+
+            const speakBtn = document.getElementById("btn-scramble-speak");
+            if (speakBtn) {
+                speakBtn.onclick = () => speakChinese(targetWord.hz);
+            }
+
+            // Generate chips: chars + 1 distractor if 2 chars
+            const chips = targetChars.map((ch, idx) => ({ id: `c_${idx}`, char: ch, used: false }));
+            if (numSlots === 2) {
+                const otherChars = words
+                    .filter(w => w.id !== targetWord.id)
+                    .map(w => w.hz)
+                    .join("")
+                    .split("")
+                    .filter(ch => !targetChars.includes(ch));
+                if (otherChars.length > 0) {
+                    const distractorChar = otherChars[Math.floor(Math.random() * otherChars.length)];
+                    chips.push({ id: `c_dist`, char: distractorChar, used: false });
+                }
+            }
+            shuffleArray(chips);
+
+            let slots = new Array(numSlots).fill(null); // stores chip object or null
+
+            function renderSlotsAndChips() {
+                const slotsContainer = document.getElementById("scramble-slots");
+                const chipsContainer = document.getElementById("scramble-chips");
+
+                // Render slots
+                slotsContainer.innerHTML = slots.map((sl, idx) => `
+                    <div class="scramble-slot ${sl ? 'filled' : ''}" data-slot-idx="${idx}" title="${sl ? 'Nhấp để gỡ chữ này' : 'Ô trống'}">
+                        ${sl ? escapeHtml(sl.char) : ''}
+                    </div>
+                `).join("");
+
+                // Render chips
+                chipsContainer.innerHTML = chips.map(chip => `
+                    <div class="scramble-chip ${chip.used ? 'used' : ''}" data-chip-id="${chip.id}">
+                        ${escapeHtml(chip.char)}
+                    </div>
+                `).join("");
+
+                // Slot click -> unassign
+                slotsContainer.querySelectorAll(".scramble-slot").forEach(elem => {
+                    elem.addEventListener("click", () => {
+                        const sIdx = parseInt(elem.dataset.slotIdx, 10);
+                        if (slots[sIdx]) {
+                            soundFX.tick();
+                            slots[sIdx].used = false;
+                            slots[sIdx] = null;
+                            document.getElementById("scramble-feedback").textContent = "";
+                            renderSlotsAndChips();
+                        }
+                    });
+                });
+
+                // Chip click -> assign to first empty slot
+                chipsContainer.querySelectorAll(".scramble-chip").forEach(elem => {
+                    elem.addEventListener("click", () => {
+                        const chipId = elem.dataset.chipId;
+                        const chip = chips.find(c => c.id === chipId);
+                        if (!chip || chip.used) return;
+
+                        const emptySlotIdx = slots.indexOf(null);
+                        if (emptySlotIdx === -1) return; // all full
+
+                        soundFX.tick();
+                        chip.used = true;
+                        slots[emptySlotIdx] = chip;
+                        renderSlotsAndChips();
+
+                        // Check if all slots full
+                        if (!slots.includes(null)) {
+                            validateAnswer(slots, targetWord);
+                        }
+                    });
+                });
+            }
+
+            function validateAnswer(currentSlots, targetWord) {
+                const assembled = currentSlots.map(s => s.char).join("");
+                const feedbackElem = document.getElementById("scramble-feedback");
+                const slotsArea = document.getElementById("scramble-slots");
+
+                if (assembled === targetWord.hz) {
+                    soundFX.correct();
+                    score += 100;
+                    solvedWords.push(targetWord);
+                    document.getElementById("scramble-score").textContent = score;
+                    if (feedbackElem) {
+                        feedbackElem.style.color = "var(--success)";
+                        feedbackElem.textContent = "🎉 Hoàn hảo! Bạn đã ghép từ chính xác!";
+                    }
+                    speakChinese(targetWord.hz);
+
+                    const delayTimer = setTimeout(() => {
+                        wordIdx++;
+                        loadWord();
+                    }, 1100);
+                    addGameTimer(delayTimer);
+                } else {
+                    soundFX.wrong();
+                    if (slotsArea) {
+                        slotsArea.classList.add("wrong");
+                        setTimeout(() => slotsArea.classList.remove("wrong"), 500);
+                    }
+                    if (feedbackElem) {
+                        feedbackElem.style.color = "var(--danger)";
+                        feedbackElem.textContent = "❌ Chưa đúng thứ tự! Hãy nhấp vào ô để gỡ và thử lại.";
+                    }
+                }
+            }
+
+            // Hint: Place 1st character into slot 0
+            document.getElementById("btn-scramble-hint").onclick = () => {
+                const firstChar = targetChars[0];
+                const matchingChip = chips.find(c => c.char === firstChar && !c.used);
+                if (matchingChip) {
+                    soundFX.tick();
+                    // Clear slot 0 if occupied
+                    if (slots[0]) slots[0].used = false;
+                    matchingChip.used = true;
+                    slots[0] = matchingChip;
+                    renderSlotsAndChips();
+                    if (!slots.includes(null)) {
+                        validateAnswer(slots, targetWord);
+                    }
+                }
+            };
+
+            // Reset slots
+            document.getElementById("btn-scramble-reset").onclick = () => {
+                soundFX.tick();
+                slots.forEach(s => { if (s) s.used = false; });
+                slots = new Array(numSlots).fill(null);
+                document.getElementById("scramble-feedback").textContent = "";
+                renderSlotsAndChips();
+            };
+
+            // Skip
+            document.getElementById("btn-scramble-skip").onclick = () => {
+                wordIdx++;
+                loadWord();
+            };
+
+            renderSlotsAndChips();
+        }
+
+        function finishScramble() {
+            const box = document.getElementById("scramble-box");
+            if (!box) return;
+
+            soundFX.fanfare();
+
+            box.innerHTML = `
+                <div style="text-align: center; padding: 20px 10px;">
+                    <div style="font-size: 56px; margin-bottom: 12px;">🌟</div>
+                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                        Hoàn Thành Ván Xếp Từ Hán Tự!
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
+                        Bạn đã ghép đúng <strong>${solvedWords.length} / ${totalWords}</strong> từ vựng!
+                    </p>
+
+                    <div style="font-size: 32px; font-weight: 700; color: #27ae60; margin-bottom: 24px;">
+                        ${score} Điểm
+                    </div>
+
+                    ${solvedWords.length > 0 ? `
+                        <div style="text-align: left; max-height: 200px; overflow-y: auto; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; margin-bottom: 24px;">
+                            ${solvedWords.map(w => `
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #f1f5f9;">
+                                    <div>
+                                        <strong style="font-size: 17px;">${escapeHtml(w.hz)}</strong> 
+                                        <span style="color: #e67e22; font-size: 13px;">${escapeHtml(w.py)}</span>: 
+                                        <span style="color: #475569; font-size: 13px;">${escapeHtml(w.mean)}</span>
+                                    </div>
+                                    <button class="btn-speak scramble-item-speak" data-hz="${escapeHtml(w.hz)}">🔊</button>
+                                </div>
+                            `).join("")}
+                        </div>
+                    ` : ''}
+
+                    <div style="display: flex; justify-content: center; gap: 14px;">
+                        <button class="btn-pill" id="btn-scramble-again">🔄 Chơi Lại Ván Mới</button>
+                        <button class="btn-pill" id="btn-scramble-to-hub">🏠 Về Khu Trò Chơi</button>
+                    </div>
+                </div>
+            `;
+
+            box.querySelectorAll(".scramble-item-speak").forEach(btn => {
+                btn.addEventListener("click", () => speakChinese(btn.dataset.hz));
+            });
+            document.getElementById("btn-scramble-again").addEventListener("click", startScrambleGame);
+            document.getElementById("btn-scramble-to-hub").addEventListener("click", renderGameHub);
+        }
+
+        loadWord();
+    }
+
+    // -------------------------------------------------------------------------
+    // GAME 4: AUDIO WORD HUNTER (BẮT CHỮ THEO ÂM THANH)
+    // -------------------------------------------------------------------------
+    function startAudioHunterGame() {
+        clearGameTimers();
+        state.activeGame = "hunter";
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
+        if (!container) return;
+
+        let words = getFilteredWords();
+        if (words.length < 6) words = state.allWords;
+        if (words.length < 6) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-icon">🎯</div>
+                    <div class="empty-title">Cần tối thiểu 6 từ vựng để bắt đầu trò chơi Bắt Chữ Theo Âm</div>
+                    <button class="btn-pill" id="btn-back-hub" style="margin-top:15px;">← Quay lại Khu Trò Chơi</button>
+                </div>
+            `;
+            const bBtn = document.getElementById("btn-back-hub");
+            if (bBtn) bBtn.addEventListener("click", renderGameHub);
+            return;
+        }
+
+        const shuffledPool = [...words];
+        shuffleArray(shuffledPool);
+
+        const totalRounds = Math.min(10, shuffledPool.length);
+        let roundIdx = 0;
+        let score = 0;
+        let correctCount = 0;
+        let roundAnswered = false;
+
+        container.innerHTML = `
+            <div class="game-wrapper">
+                <div class="game-top-bar">
+                    <button class="btn-back-hub" id="btn-game-back">← Khu trò chơi</button>
+                    <div class="game-stats-group">
+                        <div>Vòng: <strong id="hunter-prog">1 / ${totalRounds}</strong></div>
+                        <div>Điểm: <strong id="hunter-score" style="color:#8e44ad;">0</strong></div>
+                    </div>
+                    <button class="btn-pill" id="btn-hunter-restart">🔄 Chơi ván mới</button>
+                </div>
+
+                <div class="hunter-play-box" id="hunter-box">
+                    <div class="hunter-audio-zone">
+                        <button class="hunter-speaker-btn pulse" id="btn-hunter-listen" title="Nhấp để nghe lại phát âm">🔊</button>
+                        <div style="margin-top: 12px; font-size: 14px; color: var(--text-muted); font-weight: 500;">
+                            🎧 Lắng nghe phát âm và bấm chọn đúng Chữ Hán (Nhấp biểu tượng 🔊 để nghe lại)
+                        </div>
+                    </div>
+
+                    <div class="hunter-grid" id="hunter-grid"></div>
+
+                    <div id="hunter-feedback" style="min-height: 32px; font-size: 16px; font-weight: 700; margin-top: 16px;"></div>
+                </div>
+            </div>
+        `;
+
+        document.getElementById("btn-game-back").addEventListener("click", renderGameHub);
+        document.getElementById("btn-hunter-restart").addEventListener("click", startAudioHunterGame);
+
+        function loadRound() {
+            if (roundIdx >= totalRounds) {
+                finishHunter();
+                return;
+            }
+
+            roundAnswered = false;
+            document.getElementById("hunter-prog").textContent = `${roundIdx + 1} / ${totalRounds}`;
+            document.getElementById("hunter-score").textContent = score;
+            const feedbackElem = document.getElementById("hunter-feedback");
+            if (feedbackElem) feedbackElem.textContent = "";
+
+            const targetWord = shuffledPool[roundIdx];
+
+            // 5 distractors
+            const otherWords = words.filter(w => w.id !== targetWord.id);
+            shuffleArray(otherWords);
+            const candidates = [targetWord, ...otherWords.slice(0, 5)];
+            shuffleArray(candidates);
+
+            // Audio speaker button
+            const spkBtn = document.getElementById("btn-hunter-listen");
+            if (spkBtn) {
+                spkBtn.onclick = () => {
+                    spkBtn.classList.remove("pulse");
+                    void spkBtn.offsetWidth;
+                    spkBtn.classList.add("pulse");
+                    speakChinese(targetWord.hz);
+                };
+            }
+
+            // Auto pronounce
+            speakChinese(targetWord.hz);
+
+            // Render grid
+            const grid = document.getElementById("hunter-grid");
+            grid.innerHTML = candidates.map(w => `
+                <div class="hunter-tile" data-id="${w.id}">
+                    <div class="hunter-hz">${escapeHtml(w.hz)}</div>
+                    <div class="hunter-py">${escapeHtml(w.py)}</div>
+                </div>
+            `).join("");
+
+            grid.querySelectorAll(".hunter-tile").forEach(tile => {
+                tile.addEventListener("click", () => {
+                    if (roundAnswered) return;
+                    const clickedId = tile.dataset.id;
+
+                    if (clickedId === targetWord.id) {
+                        roundAnswered = true;
+                        soundFX.correct();
+                        score += 100;
+                        correctCount++;
+                        tile.classList.add("correct");
+                        document.getElementById("hunter-score").textContent = score;
+                        if (feedbackElem) {
+                            feedbackElem.style.color = "var(--success)";
+                            feedbackElem.innerHTML = `🎉 Chính xác! <strong>${escapeHtml(targetWord.hz)}</strong> [${escapeHtml(targetWord.py)}]: ${escapeHtml(targetWord.mean)}`;
+                        }
+
+                        const delayTimer = setTimeout(() => {
+                            roundIdx++;
+                            loadRound();
+                        }, 1200);
+                        addGameTimer(delayTimer);
+                    } else {
+                        soundFX.wrong();
+                        tile.classList.add("wrong");
+                        setTimeout(() => tile.classList.remove("wrong"), 500);
+                        if (feedbackElem) {
+                            feedbackElem.style.color = "var(--danger)";
+                            feedbackElem.textContent = "❌ Chưa chính xác! Hãy lắng nghe lại âm thanh.";
+                        }
+                    }
+                });
+            });
+        }
+
+        function finishHunter() {
+            const box = document.getElementById("hunter-box");
+            if (!box) return;
+
+            soundFX.fanfare();
+            const accuracy = Math.round((correctCount / totalRounds) * 100);
+
+            box.innerHTML = `
+                <div style="text-align: center; padding: 20px 10px;">
+                    <div style="font-size: 56px; margin-bottom: 12px;">🎯</div>
+                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                        Hoàn Thành Vòng Bắt Chữ Theo Âm!
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
+                        Bạn có đôi tai tiếng Trung rất tuyệt vời! Độ chính xác: <strong>${accuracy}%</strong>
+                    </p>
+
+                    <div style="font-size: 36px; font-weight: 700; color: #8e44ad; margin-bottom: 28px;">
+                        ${score} Điểm
+                    </div>
+
+                    <div style="display: flex; justify-content: center; gap: 14px;">
+                        <button class="btn-pill" id="btn-hunter-again">🔄 Chơi Lại Ván Mới</button>
+                        <button class="btn-pill" id="btn-hunter-to-hub">🏠 Về Khu Trò Chơi</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("btn-hunter-again").addEventListener("click", startAudioHunterGame);
+            document.getElementById("btn-hunter-to-hub").addEventListener("click", renderGameHub);
+        }
+
+        loadRound();
     }
 
     // =========================================================================

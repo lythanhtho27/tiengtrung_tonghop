@@ -24893,9 +24893,9 @@
               "hz": "打招呼",
               "py": "dǎ zhāohu",
               "type": "",
-              "mean": "chào, chào hỏi nhau (lúc gặp mặt gọi hoặc nói \"xin chào\", \"này\", hoặc thông qua động tác để ra hiệu, hỏi thăm)[cite: 3] /",
+              "mean": "chào, chào hỏi nhau (lúc gặp mặt gọi hoặc nói \"xin chào\", \"này\", hoặc thông qua động tác để ra hiệu, hỏi thăm) /",
               "examples": [
-                "走，我们过去跟他们打个招呼。[cite: 3]"
+                "走，我们过去跟他们打个招呼。"
               ],
               "is_proper": false
             },
@@ -24908,9 +24908,9 @@
               "hz": "出租",
               "py": "chūzū",
               "type": "【动】",
-              "mean": "cho thuê (thu một khoản tiền thuê nhất định rồi cho người khác sử dụng vật gì đó trong thời gian quy định)[cite: 3] /",
+              "mean": "cho thuê (thu một khoản tiền thuê nhất định rồi cho người khác sử dụng vật gì đó trong thời gian quy định) /",
               "examples": [
-                "校园里有出租自行车的吗？我想租一辆。[cite: 3]"
+                "校园里有出租自行车的吗？我想租一辆。"
               ],
               "is_proper": false
             },
@@ -24923,9 +24923,9 @@
               "hz": "毫无",
               "py": "háo wú",
               "type": "",
-              "mean": "không, không hề (một chút cũng không có)[cite: 3] /",
+              "mean": "không, không hề (một chút cũng không có) /",
               "examples": [
-                "毫无兴趣 / 毫无关系 / 毫无准备[cite: 3]"
+                "毫无兴趣 / 毫无关系 / 毫无准备"
               ],
               "is_proper": false
             },
@@ -24938,9 +24938,9 @@
               "hz": "手势",
               "py": "shǒushì",
               "type": "【名】",
-              "mean": "động tác tay, thủ thế (động tác ra hiệu bằng tay dùng để biểu đạt tư tưởng, truyền đạt mệnh lệnh hoặc nguyện vọng)[cite: 3] /",
+              "mean": "động tác tay, thủ thế (động tác ra hiệu bằng tay dùng để biểu đạt tư tưởng, truyền đạt mệnh lệnh hoặc nguyện vọng) /",
               "examples": [
-                "教练向裁判打了个暂停的手势。[cite: 3]"
+                "教练向裁判打了个暂停的手势。"
               ],
               "is_proper": false
             },
@@ -24953,9 +24953,9 @@
               "hz": "凡是",
               "py": "fánshì",
               "type": "【连】",
-              "mean": "phàm là, bất kỳ ai, hễ là (chỉ cần là...)[cite: 3] /",
+              "mean": "phàm là, bất kỳ ai, hễ là (chỉ cần là...) /",
               "examples": [
-                "凡是高级班的学生，都要选一门文化课。[cite: 3]"
+                "凡是高级班的学生，都要选一门文化课。"
               ],
               "is_proper": false
             },
@@ -24968,9 +24968,9 @@
               "hz": "钢琴",
               "py": "gāngqín",
               "type": "【名】",
-              "mean": "đàn piano[cite: 3] /",
+              "mean": "đàn piano /",
               "examples": [
-                "一架钢琴 / 弹钢琴[cite: 3]"
+                "一架钢琴 / 弹钢琴"
               ],
               "is_proper": false
             },
@@ -24983,9 +24983,9 @@
               "hz": "抽屉",
               "py": "chōuti",
               "type": "【名】",
-              "mean": "ngăn kéo[cite: 3] /",
+              "mean": "ngăn kéo /",
               "examples": [
-                "拉开抽屉[cite: 3]"
+                "拉开抽屉"
               ],
               "is_proper": false
             },
@@ -24998,9 +24998,9 @@
               "hz": "小提琴",
               "py": "xiǎotíqín",
               "type": "【名】",
-              "mean": "đàn vi-ô-lông, violin[cite: 3] /",
+              "mean": "đàn vi-ô-lông, violin /",
               "examples": [
-                "一把小提琴 / 拉小提琴[cite: 3]"
+                "一把小提琴 / 拉小提琴"
               ],
               "is_proper": false
             },
@@ -25013,9 +25013,9 @@
               "hz": "箭",
               "py": "jiàn",
               "type": "【名】",
-              "mean": "tên, mũi tên[cite: 3] /",
+              "mean": "tên, mũi tên /",
               "examples": [
-                "射箭[cite: 3]"
+                "射箭"
               ],
               "is_proper": false
             },
@@ -25028,9 +25028,9 @@
               "hz": "限于",
               "py": "xiànyú",
               "type": "【动】",
-              "mean": "giới hạn, hạn chế (chịu sự ràng buộc của một số điều kiện hoặc tình huống cụ thể, bó hẹp trong một phạm vi nào đó)[cite: 3] /",
+              "mean": "giới hạn, hạn chế (chịu sự ràng buộc của một số điều kiện hoặc tình huống cụ thể, bó hẹp trong một phạm vi nào đó) /",
               "examples": [
-                "这次考试的范围不限于第 2 单元。[cite: 3]"
+                "这次考试的范围不限于第 2 单元。"
               ],
               "is_proper": false
             },
@@ -25043,7 +25043,7 @@
               "hz": "酱油",
               "py": "jiàngyóu",
               "type": "【名】",
-              "mean": "xì dầu, nước tương[cite: 3]",
+              "mean": "xì dầu, nước tương",
               "examples": [],
               "is_proper": false
             },
@@ -25056,9 +25056,9 @@
               "hz": "同义词",
               "py": "tóngyìcí",
               "type": "【名】",
-              "mean": "từ đồng nghĩa (từ có ý nghĩa giống nhau)[cite: 3] /",
+              "mean": "từ đồng nghĩa (từ có ý nghĩa giống nhau) /",
               "examples": [
-                "“西红柿”和“番茄”是同义词。[cite: 3]"
+                "“西红柿”和“番茄”是同义词。"
               ],
               "is_proper": false
             },
@@ -25071,9 +25071,9 @@
               "hz": "液体",
               "py": "yètǐ",
               "type": "【名】",
-              "mean": "chất lỏng, thể lỏng[cite: 3] /",
+              "mean": "chất lỏng, thể lỏng /",
               "examples": [
-                "水是一种液体。[cite: 3]"
+                "水是一种液体。"
               ],
               "is_proper": false
             },
@@ -25086,7 +25086,7 @@
               "hz": "醋",
               "py": "cù",
               "type": "【名】",
-              "mean": "giấm[cite: 3]",
+              "mean": "giấm",
               "examples": [],
               "is_proper": false
             },
@@ -25099,9 +25099,9 @@
               "hz": "超市",
               "py": "chāoshì",
               "type": "【名】",
-              "mean": "siêu thị[cite: 3] /",
+              "mean": "siêu thị /",
               "examples": [
-                "那边新开 了一家超市。[cite: 3]"
+                "那边新开 了一家超市。"
               ],
               "is_proper": false
             },
@@ -25114,7 +25114,7 @@
               "hz": "容器",
               "py": "róngqì",
               "type": "【名】",
-              "mean": "đồ đựng, đồ chứa (vật dùng để bao gói hoặc chứa đựng vật phẩm)[cite: 4]",
+              "mean": "đồ đựng, đồ chứa (vật dùng để bao gói hoặc chứa đựng vật phẩm)",
               "examples": [],
               "is_proper": false
             },
@@ -25127,9 +25127,9 @@
               "hz": "盛",
               "py": "chéng",
               "type": "【动】",
-              "mean": "múc, xới (cho đồ vật vào trong bình chứa)[cite: 4] /",
+              "mean": "múc, xới (cho đồ vật vào trong bình chứa) /",
               "examples": [
-                "你去给我盛一碗汤，好吗？[cite: 4]"
+                "你去给我盛一碗汤，好吗？"
               ],
               "is_proper": false
             },
@@ -25142,9 +25142,9 @@
               "hz": "事先",
               "py": "shíxiān",
               "type": "【名】",
-              "mean": "trước đây, trước tiên (trước khi sự việc bắt đầu)[cite: 4] /",
+              "mean": "trước đây, trước tiên (trước khi sự việc bắt đầu) /",
               "examples": [
-                "我事先并不知道这件事儿。[cite: 4]"
+                "我事先并不知道这件事儿。"
               ],
               "is_proper": false
             },
@@ -25157,7 +25157,7 @@
               "hz": "饭盒",
               "py": "fànhé",
               "type": "【名】",
-              "mean": "hộp cơm (hộp chuyên dùng để đựng cơm thức ăn)[cite: 4]",
+              "mean": "hộp cơm (hộp chuyên dùng để đựng cơm thức ăn)",
               "examples": [],
               "is_proper": false
             },
@@ -25170,9 +25170,9 @@
               "hz": "拎",
               "py": "līn",
               "type": "【动】",
-              "mean": "xách (dùng tay nhấc, cầm xách hoặc mang đi)[cite: 4] /",
+              "mean": "xách (dùng tay nhấc, cầm xách hoặc mang đi) /",
               "examples": [
-                "我刚才看见她拎着包出去 provisional 了。 ◎ 这个包太沉了，我拎不动 / 起来。[cite: 4]"
+                "我刚才看见她拎着包出去 provisional 了。 ◎ 这个包太沉了，我拎不动 / 起来。"
               ],
               "is_proper": false
             },
@@ -25185,9 +25185,9 @@
               "hz": "毕竟",
               "py": "bìjìng",
               "type": "【副】",
-              "mean": "rốt cuộc, chung quy (đến cuối cùng; rốt cuộc thì)[cite: 4] /",
+              "mean": "rốt cuộc, chung quy (đến cuối cùng; rốt cuộc thì) /",
               "examples": [
-                "天气虽然冷，可是毕竟是三月了，风没有冬天那么刺骨了。[cite: 4]"
+                "天气虽然冷，可是毕竟是三月了，风没有冬天那么刺骨了。"
               ],
               "is_proper": false
             },
@@ -25200,9 +25200,9 @@
               "hz": "打交道",
               "py": "dǎ jiāodào",
               "type": "",
-              "mean": "chào hỏi, giao thiệp (có sự qua lại, tiếp xúc với...)[cite: 4] /",
+              "mean": "chào hỏi, giao thiệp (có sự qua lại, tiếp xúc với...) /",
               "examples": [
-                "我从未跟他打过交道。[cite: 4]"
+                "我从未跟他打过交道。"
               ],
               "is_proper": false
             },
@@ -25215,9 +25215,9 @@
               "hz": "来往",
               "py": "láiwǎng",
               "type": "【动】",
-              "mean": "qua lại, giao hảo (liên hệ, tiếp xúc qua lại lẫn nhau)[cite: 4] /",
+              "mean": "qua lại, giao hảo (liên hệ, tiếp xúc qua lại lẫn nhau) /",
               "examples": [
-                "有来往 / 来往密切[cite: 4]"
+                "有来往 / 来往密切"
               ],
               "is_proper": false
             },
@@ -25230,9 +25230,9 @@
               "hz": "打官司",
               "py": "dǎ guānsi",
               "type": "",
-              "mean": "đi kiện, kiện tụng (ở tòa án thông qua trình tự pháp luật để giải quyết tranh chấp)[cite: 4] /",
+              "mean": "đi kiện, kiện tụng (ở tòa án thông qua trình tự pháp luật để giải quyết tranh chấp) /",
               "examples": [
-                "听说中国人很不喜欢跟人打官司，是真的吗？[cite: 4]"
+                "听说中国人很不喜欢跟人打官司，是真的吗？"
               ],
               "is_proper": false
             },
@@ -25245,9 +25245,9 @@
               "hz": "纠纷",
               "py": "jiūfēn",
               "type": "【名】",
-              "mean": "tranh chấp (sự việc giằng co không giải quyết được)[cite: 4] /",
+              "mean": "tranh chấp (sự việc giằng co không giải quyết được) /",
               "examples": [
-                "产生纠纷 / 调节纠纷 / 经济纠纷 / 领土纠纷[cite: 4]"
+                "产生纠纷 / 调节纠纷 / 经济纠纷 / 领土纠纷"
               ],
               "is_proper": false
             },
@@ -25260,9 +25260,9 @@
               "hz": "交涉",
               "py": "jiāoshè",
               "type": "【动】",
-              "mean": "giao thiệp, thương lượng (cùng đối phương hiệp thương đàm phán để giải quyết một sự việc nào đó)[cite: 4] /",
+              "mean": "giao thiệp, thương lượng (cùng đối phương hiệp thương đàm phán để giải quyết một sự việc nào đó) /",
               "examples": [
-                "我们不打算在这个问题上继续与他交涉。[cite: 4]"
+                "我们不打算在这个问题上继续与他交涉。"
               ],
               "is_proper": false
             },
@@ -25275,9 +25275,9 @@
               "hz": "行为",
               "py": "xíngwéi",
               "type": "【名】",
-              "mean": "hành vi, cử chỉ (hành động thực hiện ra bên ngoài)[cite: 4] /",
+              "mean": "hành vi, cử chỉ (hành động thực hiện ra bên ngoài) /",
               "examples": [
-                "问别人的收入是一种干涉别人隐私的行为。[cite: 4]"
+                "问别人的收入是一种干涉别人隐私的行为。"
               ],
               "is_proper": false
             },
@@ -25290,7 +25290,7 @@
               "hz": "打嗝",
               "py": "dǎ gé",
               "type": "",
-              "mean": "nấc, nấc cụt[cite: 4]",
+              "mean": "nấc, nấc cụt",
               "examples": [],
               "is_proper": false
             },
@@ -25303,9 +25303,9 @@
               "hz": "打哈欠",
               "py": "dǎ hāqian",
               "type": "",
-              "mean": "ngáp (động tác há to miệng khi con người cảm thấy buồn ngủ, mệt mỏi)[cite: 4] /",
+              "mean": "ngáp (động tác há to miệng khi con người cảm thấy buồn ngủ, mệt mỏi) /",
               "examples": [
-                "因为夜里休息不好，开会的时候他老打哈欠。[cite: 4]"
+                "因为夜里休息不好，开会的时候他老打哈欠。"
               ],
               "is_proper": false
             },
@@ -25318,7 +25318,7 @@
               "hz": "打喷嚏",
               "py": "dǎ pèntì",
               "type": "",
-              "mean": "hắt hơi[cite: 4]",
+              "mean": "hắt hơi",
               "examples": [],
               "is_proper": false
             },
@@ -25331,9 +25331,9 @@
               "hz": "生理",
               "py": "shēnglǐ",
               "type": "【名】",
-              "mean": "sinh lý (hiện tượng có liên quan trực tiếp đến cơ thể)[cite: 4] /",
+              "mean": "sinh lý (hiện tượng có liên quan trực tiếp đến cơ thể) /",
               "examples": [
-                "医生认为，他的病不是生理上的，而是心理上的。[cite: 4]"
+                "医生认为，他的病不是生理上的，而是心理上的。"
               ],
               "is_proper": false
             },
@@ -26322,7 +26322,7 @@
               "type": "",
               "mean": "rút thẻ, xin xăm (rút thẻ trước thần phật để bói toán lành dữ) /",
               "examples": [
-                "他常常到庙里去求签。[cite: 2]"
+                "他常常到庙里去求签。"
               ],
               "is_proper": false
             },
@@ -26335,7 +26335,7 @@
               "hz": "瞎子",
               "py": "xiāzi",
               "type": "【名】",
-              "mean": "đồ mù, người mù lòa (cách gọi không mấy lễ độ đối với người khiếm thị)[cite: 2]",
+              "mean": "đồ mù, người mù lòa (cách gọi không mấy lễ độ đối với người khiếm thị)",
               "examples": [],
               "is_proper": false
             },
@@ -26348,10 +26348,10 @@
               "hz": "乌鸦",
               "py": "wūyā",
               "type": "【名】",
-              "mean": "quạ (một loài chim mỏ to mọc thẳng, toàn thân lông đen)[cite: 2] /",
+              "mean": "quạ (một loài chim mỏ to mọc thẳng, toàn thân lông đen) /",
               "examples": [
-                "在中国，人们把乌鸦看成是不吉祥的象征。[cite: 2]",
-                "什么？你说我们队要输？你真是乌鸦嘴！[cite: 2]"
+                "在中国，人们把乌鸦看成是不吉祥的象征。",
+                "什么？你说我们队要输？你真是乌鸦嘴！"
               ],
               "is_proper": false
             },
@@ -26364,10 +26364,10 @@
               "hz": "撞",
               "py": "zhuàng",
               "type": "【动】",
-              "mean": "đâm vào, đụng phải, va chạm[cite: 2] /",
+              "mean": "đâm vào, đụng phải, va chạm /",
               "examples": [
-                "昨天我一出校门就撞上了小王。[cite: 2]",
-                "屋子里太黑，他不小心撞到了椅子上。[cite: 2]"
+                "昨天我一出校门就撞上了小王。",
+                "屋子里太黑，他不小心撞到了椅子上。"
               ],
               "is_proper": false
             },
@@ -26380,10 +26380,10 @@
               "hz": "晦气",
               "py": "huìqì",
               "type": "【形】【名】",
-              "mean": "xúi quẩy, xui xẻo (vận khí xấu, đen đủi) / nét mặt khó coi khi gặp xui xẻo hoặc đau ốm[cite: 2] /",
+              "mean": "xúi quẩy, xui xẻo (vận khí xấu, đen đủi) / nét mặt khó coi khi gặp xui xẻo hoặc đau ốm /",
               "examples": [
-                "真晦气！一出远门就下雨。[cite: 2]",
-                "满脸晦气[cite: 2]"
+                "真晦气！一出远门就下雨。",
+                "满脸晦气"
               ],
               "is_proper": false
             },
@@ -26396,7 +26396,7 @@
               "hz": "人类学",
               "py": "rénlèixué",
               "type": "【名】",
-              "mean": "nhân loại học (khoa học nghiên cứu lịch sử, hiện trạng, phát triển và phân loại chủng tộc con người)[cite: 2]",
+              "mean": "nhân loại học (khoa học nghiên cứu lịch sử, hiện trạng, phát triển và phân loại chủng tộc con người)",
               "examples": [],
               "is_proper": false
             },
@@ -26409,9 +26409,9 @@
               "hz": "吉凶",
               "py": "jí xiōng",
               "type": "",
-              "mean": "lành dữ (chỉ vận tốt hoặc vận xấu trong tương lai)[cite: 2] /",
+              "mean": "lành dữ (chỉ vận tốt hoặc vận xấu trong tương lai) /",
               "examples": [
-                "老板这次找我谈，不知道是吉是凶。[cite: 2]"
+                "老板这次找我谈，不知道是吉是凶。"
               ],
               "is_proper": false
             },
@@ -26424,9 +26424,9 @@
               "hz": "赛马",
               "py": "sàimǎ",
               "type": "【名】",
-              "mean": "đua ngựa (môn thể thao thi đấu tốc độ của ngựa)[cite: 2] /",
+              "mean": "đua ngựa (môn thể thao thi đấu tốc độ của ngựa) /",
               "examples": [
-                "他很喜欢看赛马。[cite: 2]"
+                "他很喜欢看赛马。"
               ],
               "is_proper": false
             },
@@ -26439,9 +26439,9 @@
               "hz": "马鞭",
               "py": "mǎbiān",
               "type": "【名】",
-              "mean": "roi ngựa (dụng cụ xua đuổi ngựa, thường được bện bằng da thừng)[cite: 2] /",
+              "mean": "roi ngựa (dụng cụ xua đuổi ngựa, thường được bện bằng da thừng) /",
               "examples": [
-                "快马加鞭[cite: 2]"
+                "快马加鞭"
               ],
               "is_proper": false
             },
@@ -26454,9 +26454,9 @@
               "hz": "失手",
               "py": "shī shǒu",
               "type": "",
-              "mean": "nhỡ tay, lỡ tay (sơ suất ở bàn tay gây ra hậu quả không tốt)[cite: 2] /",
+              "mean": "nhỡ tay, lỡ tay (sơ suất ở bàn tay gây ra hậu quả không tốt) /",
               "examples": [
-                "昨天我失手打碎了一个茶杯。[cite: 2]"
+                "昨天我失手打碎了一个茶杯。"
               ],
               "is_proper": false
             },
@@ -26469,9 +26469,9 @@
               "hz": "凶兆",
               "py": "xiōngzhào",
               "type": "【名】",
-              "mean": "điềm dữ (điềm báo trước điều không tốt lành)[cite: 2] /",
+              "mean": "điềm dữ (điềm báo trước điều không tốt lành) /",
               "examples": [
-                "他们把乌鸦叫看作 是一种凶兆。[cite: 2]"
+                "他们把乌鸦叫看作 是一种凶兆。"
               ],
               "is_proper": false
             },
@@ -26484,7 +26484,7 @@
               "hz": "唾液",
               "py": "tuòyè",
               "type": "【名】",
-              "mean": "nước bọt, nước dãi (văn viết)[cite: 2]",
+              "mean": "nước bọt, nước dãi (văn viết)",
               "examples": [],
               "is_proper": false
             },
@@ -26497,9 +26497,9 @@
               "hz": "讨",
               "py": "tǎo",
               "type": "【动】",
-              "mean": "tìm kiếm, đòi, xin (xin hoặc mong muốn người khác ban cho điều gì)[cite: 2] /",
+              "mean": "tìm kiếm, đòi, xin (xin hoặc mong muốn người khác ban cho điều gì) /",
               "examples": [
-                "讨债 ◎ 讨吉祥[cite: 2]"
+                "讨债 ◎ 讨吉祥"
               ],
               "is_proper": false
             },
@@ -26512,9 +26512,9 @@
               "hz": "吉祥",
               "py": "jíxiáng",
               "type": "【形】",
-              "mean": "tốt lành, may mắn, cát tường[cite: 2] /",
+              "mean": "tốt lành, may mắn, cát tường /",
               "examples": [
-                "祝你们新的一年吉祥如意！[cite: 2]"
+                "祝你们新的一年吉祥如意！"
               ],
               "is_proper": false
             },
@@ -26527,9 +26527,9 @@
               "hz": "戏剧界",
               "py": "xìjùjiè",
               "type": "【名】",
-              "mean": "giới sân khấu, lĩnh vực kịch nghệ[cite: 2] /",
+              "mean": "giới sân khấu, lĩnh vực kịch nghệ /",
               "examples": [
-                "音乐界 ◎ 体育界 ◎ 经济界[cite: 2]"
+                "音乐界 ◎ 体育界 ◎ 经济界"
               ],
               "is_proper": false
             },
@@ -28188,9 +28188,9 @@
               "hz": "三十年河东，三十年河西",
               "py": "sānshí nián hé dōng, sānshí nián hé xī",
               "type": "",
-              "mean": "Ba mươi năm Hà Đông, ba mươi năm Hà Tây (Chỉ địa vị chiếm ưu thế sẽ thay đổi theo thời gian)[cite: 1] /",
+              "mean": "Ba mươi năm Hà Đông, ba mươi năm Hà Tây (Chỉ địa vị chiếm ưu thế sẽ thay đổi theo thời gian) /",
               "examples": [
-                "上次和哲学系 的比赛，我们队实力弱，输得很惨，可是三十年河东，三十年河西，这次我们的实力提高了，战胜他们应该没有问题。[cite: 1]"
+                "上次和哲学系 的比赛，我们队实力弱，输得很惨，可是三十年河东，三十年河西，这次我们的实力提高了，战胜他们应该没有问题。"
               ],
               "is_proper": false
             },
@@ -28203,9 +28203,9 @@
               "hz": "宏观",
               "py": "hóngguān",
               "type": "【形】",
-              "mean": "vĩ mố (Phương diện lớn, bao quát)[cite: 1] /",
+              "mean": "vĩ mố (Phương diện lớn, bao quát) /",
               "examples": [
-                "宏观经济 / 宏观调控  反义词：微观[cite: 1]"
+                "宏观经济 / 宏观调控  反义词：微观"
               ],
               "is_proper": false
             },
@@ -28218,9 +28218,9 @@
               "hz": "范畴",
               "py": "fànchóu",
               "type": "【名】",
-              "mean": "phạm trù (Lĩnh vực, phạm vi)[cite: 2] /",
+              "mean": "phạm trù (Lĩnh vực, phạm vi) /",
               "examples": [
-                "“资本”这一概念属于经济学范畴。[cite: 2]"
+                "“资本”这一概念属于经济学范畴。"
               ],
               "is_proper": false
             },
@@ -28233,9 +28233,9 @@
               "hz": "体系",
               "py": "tǐxì",
               "type": "【名】",
-              "mean": "hệ thống (Một thể thống nhất do một số sự vật có liên quan hữu cơ cấu thành)[cite: 2] /",
+              "mean": "hệ thống (Một thể thống nhất do một số sự vật có liên quan hữu cơ cấu thành) /",
               "examples": [
-                "工业体系 / 经济体系 / 思想体系[cite: 2]"
+                "工业体系 / 经济体系 / 思想体系"
               ],
               "is_proper": false
             },
@@ -28248,10 +28248,10 @@
               "hz": "主导",
               "py": "zhǔdǎo",
               "type": "【动】",
-              "mean": "chủ đạo (Lãnh đạo toàn cục, giữ vai trò vô cùng quan trọng)[cite: 2] /",
+              "mean": "chủ đạo (Lãnh đạo toàn cục, giữ vai trò vô cùng quan trọng) /",
               "examples": [
                 "起主导作用 / 占主导地位",
-                "这个组织由几个大国主导。[cite: 2]"
+                "这个组织由几个大国主导。"
               ],
               "is_proper": false
             },
@@ -28264,9 +28264,9 @@
               "hz": "一成不变",
               "py": "yì chéng bú biàn",
               "type": "",
-              "mean": "không thay đổi (Một khi đã hình thành thì không còn thay đổi nữa)[cite: 2] /",
+              "mean": "không thay đổi (Một khi đã hình thành thì không còn thay đổi nữa) /",
               "examples": [
-                "世界上没有一成不变的事物。[cite: 2]"
+                "世界上没有一成不变的事物。"
               ],
               "is_proper": false
             },
@@ -28279,9 +28279,9 @@
               "hz": "诞生",
               "py": "dànshēng",
               "type": "【动】",
-              "mean": "ra đời (Chỉ con người sinh ra hoặc sự vật mới xuất hiện)[cite: 2] /",
+              "mean": "ra đời (Chỉ con người sinh ra hoặc sự vật mới xuất hiện) /",
               "examples": [
-                "这位伟人诞生于 1840 年。 ◎ 一个新的时代诞生了。[cite: 2]"
+                "这位伟人诞生于 1840 年。 ◎ 一个新的时代诞生了。"
               ],
               "is_proper": false
             },
@@ -28294,10 +28294,10 @@
               "hz": "兴盛",
               "py": "xīngshèng",
               "type": "【形】",
-              "mean": "hưng thịnh (Kinh tế, văn hóa... ở vào trạng thái tốt đẹp nhất)[cite: 2] /",
+              "mean": "hưng thịnh (Kinh tế, văn hóa... ở vào trạng thái tốt đẹp nhất) /",
               "examples": [
                 "目前这个地区的文化非常兴盛。",
-                "通过改革，这个国家的国力兴盛起来。[cite: 2]"
+                "通过改革，这个国家的国力兴盛起来。"
               ],
               "is_proper": false
             },
@@ -28310,9 +28310,9 @@
               "hz": "衰落",
               "py": "shuāiluò",
               "type": "【动】",
-              "mean": "suy thoái (Từ hưng thịnh đi xuống; từ mạnh chuyển thành yếu)[cite: 2] /",
+              "mean": "suy thoái (Từ hưng thịnh đi xuống; từ mạnh chuyển thành yếu) /",
               "examples": [
-                "11 世纪初期，这个国家的国力 / 文化开始衰落下去。[cite: 2]"
+                "11 世纪初期，这个国家的国力 / 文化开始衰落下去。"
               ],
               "is_proper": false
             },
@@ -28325,7 +28325,7 @@
               "hz": "代之而起",
               "py": "dài zhī ér qǐ",
               "type": "",
-              "mean": "thay thế nó (Sự vật này thay thế cho sự vật khác)[cite: 2]",
+              "mean": "thay thế nó (Sự vật này thay thế cho sự vật khác)",
               "examples": [],
               "is_proper": false
             },
@@ -28338,10 +28338,10 @@
               "hz": "面临",
               "py": "miànlín",
               "type": "【动】",
-              "mean": "đối mặt với, đối diện với (Đối mặt trước hoàn cảnh)[cite: 2] /",
+              "mean": "đối mặt với, đối diện với (Đối mặt trước hoàn cảnh) /",
               "examples": [
                 "目前这家企业正面临着即将破产的困境 / 危险 / 严峻形势。",
-                "新世纪，人类将面临新的挑战。[cite: 2]"
+                "新世纪，人类将面临新的挑战。"
               ],
               "is_proper": false
             },
@@ -28354,9 +28354,9 @@
               "hz": "文艺复兴",
               "py": "wényì fùxīng",
               "type": "",
-              "mean": "phục hưng văn hóa (Đặc biệt chỉ trào lưu tư tưởng văn hóa chủ yếu của châu Âu từ thế kỷ 14 đến thế kỷ 16)[cite: 2] /",
+              "mean": "phục hưng văn hóa (Đặc biệt chỉ trào lưu tư tưởng văn hóa chủ yếu của châu Âu từ thế kỷ 14 đến thế kỷ 16) /",
               "examples": [
-                "文艺复兴时期[cite: 2]"
+                "文艺复兴时期"
               ],
               "is_proper": false
             },
@@ -28369,9 +28369,9 @@
               "hz": "生产力",
               "py": "shēngchǎnlì",
               "type": "【名】",
-              "mean": "sức sản xuất (Năng lực con người lợi dụng công cụ để cải tạo tự nhiên)[cite: 2] /",
+              "mean": "sức sản xuất (Năng lực con người lợi dụng công cụ để cải tạo tự nhiên) /",
               "examples": [
-                "他们采取各种措施来提高 / 发展生产力。[cite: 2]"
+                "他们采取各种措施来提高 / 发展生产力。"
               ],
               "is_proper": false
             },
@@ -28384,9 +28384,9 @@
               "hz": "空前",
               "py": "kōngqián",
               "type": "【形】",
-              "mean": "chưa từng có (Mức độ to lớn từ trước tới nay chưa từng xuất hiện)[cite: 2] /",
+              "mean": "chưa từng có (Mức độ to lớn từ trước tới nay chưa từng xuất hiện) /",
               "examples": [
-                "改革开放以来，中国的经济取得了空前的进步。[cite: 2]"
+                "改革开放以来，中国的经济取得了空前的进步。"
               ],
               "is_proper": false
             },
@@ -28399,7 +28399,7 @@
               "hz": "永世长存",
               "py": "yǒng shì cháng cún",
               "type": "",
-              "mean": "tồn tại vĩnh viễn, trường tồn mãi mãi[cite: 2]",
+              "mean": "tồn tại vĩnh viễn, trường tồn mãi mãi",
               "examples": [],
               "is_proper": false
             },
@@ -28412,7 +28412,7 @@
               "hz": "端倪",
               "py": "duānní",
               "type": "【名】",
-              "mean": "manh mối (Đầu mối, dấu hiệu ban đầu của sự việc)[cite: 2] /",
+              "mean": "manh mối (Đầu mối, dấu hiệu ban đầu của sự việc) /",
               "examples": [
                 "作者认为，20 世纪初期，西方文化就已经露出了衰落的端倪。"
               ],
