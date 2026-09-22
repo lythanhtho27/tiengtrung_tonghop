@@ -459,7 +459,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .vocab-table thead {
@@ -468,10 +468,11 @@ body {
 }
 
 .vocab-table th {
-    padding: 12px 14px;
-    font-weight: 600;
-    color: #475569;
-    font-size: 13px;
+    padding: 14px 16px;
+    font-weight: 700;
+    color: #334155;
+    font-size: 15px;
+    letter-spacing: 0.3px;
 }
 
 .vocab-table tbody tr {
@@ -484,19 +485,20 @@ body {
 }
 
 .vocab-table td {
-    padding: 12px 14px;
+    padding: 14px 16px;
     vertical-align: middle;
 }
 
 .col-stt {
-    width: 50px;
+    width: 55px;
     text-align: center;
-    color: var(--text-muted);
-    font-size: 12px;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .col-star {
-    width: 40px;
+    width: 45px;
     text-align: center;
 }
 
@@ -504,7 +506,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 22px;
     color: #cbd5e1;
     transition: transform 0.2s ease, color 0.2s ease;
 }
@@ -518,29 +520,30 @@ body {
 }
 
 .col-hz {
-    font-size: 20px;
-    font-weight: bold;
-    color: #1e293b;
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0.5px;
     white-space: nowrap;
 }
 
 .hz-wrap {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .btn-speak {
     background: #f1f5f9;
     border: none;
     border-radius: 50%;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 15px;
     color: var(--primary);
     transition: var(--transition);
 }
@@ -552,23 +555,23 @@ body {
 }
 
 .col-py {
-    font-size: 14px;
-    color: #e67e22;
-    font-weight: 500;
+    font-size: 17px;
+    color: #d97706;
+    font-weight: 600;
 }
 
 .col-type {
-    width: 90px;
+    width: 100px;
 }
 
 .type-badge {
     display: inline-block;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 13.5px;
     font-weight: 600;
     background: #edf2f7;
-    color: #4a5568;
+    color: #334155;
 }
 
 .type-badge.proper {
@@ -577,39 +580,43 @@ body {
 }
 
 .col-mean {
-    color: #334155;
-    line-height: 1.5;
+    font-size: 16px;
+    color: #1e293b;
+    line-height: 1.6;
 }
 
 .col-lesson {
-    font-size: 11px;
-    color: var(--text-muted);
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
     white-space: nowrap;
 }
 
 .mean-examples {
-    margin-top: 6px;
-    padding-left: 10px;
-    border-left: 2px solid #cbd5e1;
-    font-size: 13px;
+    margin-top: 8px;
+    padding-left: 12px;
+    border-left: 3px solid #cbd5e1;
+    font-size: 15px;
     color: #475569;
+    line-height: 1.6;
 }
 
 .example-item {
-    margin-top: 3px;
+    margin-top: 4px;
     display: flex;
     align-items: baseline;
-    gap: 6px;
+    gap: 8px;
 }
 
 .example-item .btn-mini-speak {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 11px;
+    font-size: 13px;
     color: var(--primary);
-    opacity: 0.7;
+    opacity: 0.75;
     padding: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .example-item .btn-mini-speak:hover {
@@ -1379,11 +1386,26 @@ footer {
     }
     .vocab-table th:nth-child(1),
     .vocab-table td:nth-child(1),
-    .vocab-table th:nth-child(4),
-    .vocab-table td:nth-child(4),
-    .vocab-table th:nth-child(6),
-    .vocab-table td:nth-child(6) {
+    .vocab-table th:nth-child(5),
+    .vocab-table td:nth-child(5),
+    .vocab-table th:nth-child(7),
+    .vocab-table td:nth-child(7) {
         display: none;
+    }
+    .vocab-table td {
+        padding: 10px 10px;
+    }
+    .col-hz {
+        font-size: 22px;
+    }
+    .col-py {
+        font-size: 15px;
+    }
+    .col-mean {
+        font-size: 15px;
+    }
+    .mean-examples {
+        font-size: 14px;
     }
     .flashcard-scene {
         height: 320px;
