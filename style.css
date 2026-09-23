@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Work+Sans:wght@400;500;600;700&display=swap');
+
 /* ==========================================================================
    BOYA CHINESE - MODERN DESIGN SYSTEM (TC1, TC2, TC3, TC4)
    ========================================================================== */
@@ -589,20 +591,48 @@ h2 {
    CHINESE TEXT READING AREA (RUBY PINYIN READER MODE)
    ========================================================================== */
 .chinese-text {
+    font-family: var(--chinese-font, "KaiTi", "STKaiti", "Kaiti SC", "楷体", "楷体_GB2312", "Noto Serif SC", "SimSun", "Songti SC", serif);
     font-size: var(--chinese-font-size, 24px);
-    line-height: var(--chinese-line-height, 2.4);
+    font-weight: 400; /* Nét thanh mảnh chuẩn sách giáo khoa, không bị đậm/béo nét */
+    color: #1e293b; /* Màu mực đen than dịu mắt, không gắt */
+    line-height: var(--chinese-line-height, 2.6);
     background: #ffffff;
     padding: 36px 40px;
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
     margin-bottom: 25px;
-    letter-spacing: 0.8px;
+    letter-spacing: 1.2px; /* Giãn cách chữ thoáng đạt, dễ nhìn từng nét cấu tạo */
     text-align: justify;
     word-break: break-word;
     display: block;
     width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     transition: font-size 0.2s ease, line-height 0.2s ease;
+}
+
+/* Các chế độ kiểu chữ tùy chọn */
+body.font-mode-kaiti .chinese-text,
+.chinese-text.font-kaiti {
+    font-family: "KaiTi", "STKaiti", "Kaiti SC", "楷体", "楷体_GB2312", "Noto Serif SC", serif;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+}
+
+body.font-mode-serif .chinese-text,
+.chinese-text.font-serif {
+    font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", "Songti SC", "STSong", serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+body.font-mode-sans .chinese-text,
+.chinese-text.font-sans {
+    font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.8px;
 }
 
 .indent {
@@ -629,13 +659,14 @@ ruby {
 }
 
 rt {
+    font-family: "Work Sans", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
     font-size: 13px;
-    color: #d97706; /* Amber-orange: high readability and contrast */
-    font-weight: 600;
+    color: #c2410c; /* Cam hổ phách đậm nét rõ thanh điệu */
+    font-weight: 500;
     padding-bottom: 4px;
     user-select: none;
-    letter-spacing: 0;
-    line-height: 1.1;
+    letter-spacing: 0.2px;
+    line-height: 1.2;
     transition: opacity 0.2s ease;
 }
 

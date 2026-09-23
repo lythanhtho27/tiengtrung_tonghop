@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 6. Khởi tạo kích thước chữ đã lưu (nếu có)
     initSavedFontSize();
+
+    // 7. Khởi tạo kiểu phông chữ Hán chuẩn đã lưu (mặc định Khải Thư)
+    initSavedFontMode();
 });
 
 // ==========================================================================
@@ -121,6 +124,9 @@ function injectReaderToolbar() {
     toolbar.innerHTML = `
         <div class="toolbar-left">
             <span class="toolbar-label">⚙️ Tiện ích:</span>
+            <button class="tool-btn" id="btn-toggle-font" onclick="cycleChineseFont()" title="Đổi kiểu chữ: Khải Thư (Chuẩn nét) / Tống Thể / Không Chân">
+                ✍️ <span id="font-style-label">Khải Thư (Chuẩn)</span>
+            </button>
             <button class="tool-btn" id="btn-toggle-pinyin" onclick="togglePinyinGlobal()" title="Ẩn/Hiện phiên âm Pinyin để tự luyện đọc">
                 👁️ Ẩn/Hiện Pinyin
             </button>
@@ -422,6 +428,53 @@ function initSavedFontSize() {
             }
         }
     } catch (e) {}
+}
+
+// ==========================================================================
+// KIỂU PHÔNG CHỮ HÁN (Khải Thư nét chuẩn / Tống Thể / Không Chân)
+// ==========================================================================
+const FONT_MODES = [
+    { id: "kaiti", label: "Khải Thư (Chuẩn)", className: "font-mode-kaiti" },
+    { id: "serif", label: "Tống Thể (Serif)", className: "font-mode-serif" },
+    { id: "sans", label: "Không Chân (Sans)", className: "font-mode-sans" }
+];
+let currentFontIndex = 0;
+
+function applyChineseFont(modeId) {
+    const idx = FONT_MODES.findIndex(m => m.id === modeId);
+    if (idx !== -1) {
+        currentFontIndex = idx;
+    }
+    const currentMode = FONT_MODES[currentFontIndex];
+
+    FONT_MODES.forEach(m => document.body.classList.remove(m.className));
+    document.body.classList.add(currentMode.className);
+
+    const lbl = document.getElementById("font-style-label");
+    if (lbl) {
+        lbl.textContent = currentMode.label;
+    }
+
+    try {
+        localStorage.setItem("boya_chinese_font_mode", currentMode.id);
+    } catch (e) {}
+}
+
+function cycleChineseFont() {
+    currentFontIndex = (currentFontIndex + 1) % FONT_MODES.length;
+    applyChineseFont(FONT_MODES[currentFontIndex].id);
+}
+
+function initSavedFontMode() {
+    try {
+        const saved = localStorage.getItem("boya_chinese_font_mode");
+        if (saved) {
+            applyChineseFont(saved);
+            return;
+        }
+    } catch (e) {}
+    // Mặc định Khải Thư chuẩn nét giáo trình
+    applyChineseFont("kaiti");
 }
 
 // Text-to-Speech (TTS) cho Chữ Hán
