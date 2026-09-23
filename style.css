@@ -1,597 +1,1148 @@
+/* ==========================================================================
+   BOYA CHINESE - MODERN DESIGN SYSTEM (TC1, TC2, TC3, TC4)
+   ========================================================================== */
+
+:root {
+    /* Base Color Tokens */
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-light: #eff6ff;
+    --primary-border: #bfdbfe;
+    --primary-gradient: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    --accent: #d97706;
+    --bg-page: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --radius-sm: 8px;
+    --radius: 14px;
+    --radius-lg: 20px;
+    --chinese-font-size: 24px;
+    --chinese-line-height: 2.4;
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   BOOK-SPECIFIC THEMES (Auto-applied by script.js)
+   ========================================================================== */
+
+/* 📘 Trung Cấp 1: Ocean Blue */
+body.book-tc1 {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-light: #eff6ff;
+    --primary-border: #bfdbfe;
+    --primary-gradient: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    --accent: #d97706;
+}
+
+/* 📙 Trung Cấp 2: Amber Terracotta */
+body.book-tc2 {
+    --primary: #ea580c;
+    --primary-hover: #c2410c;
+    --primary-light: #fff7ed;
+    --primary-border: #fed7aa;
+    --primary-gradient: linear-gradient(135deg, #c2410c, #f97316);
+    --accent: #2563eb;
+}
+
+/* 📗 Trung Cấp 3: Emerald Jade */
+body.book-tc3 {
+    --primary: #059669;
+    --primary-hover: #047857;
+    --primary-light: #ecfdf5;
+    --primary-border: #a7f3d0;
+    --primary-gradient: linear-gradient(135deg, #047857, #10b981);
+    --accent: #d97706;
+}
+
+/* 📔 Trung Cấp 4: Royal Amethyst */
+body.book-tc4 {
+    --primary: #7c3aed;
+    --primary-hover: #6d28d9;
+    --primary-light: #f5f3ff;
+    --primary-border: #ddd6fe;
+    --primary-gradient: linear-gradient(135deg, #6d28d9, #8b5cf6);
+    --accent: #ea580c;
+}
+
+/* ==========================================================================
+   BASE RESET & BODY
+   ========================================================================== */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-}
-body {
-    /* Thay thế dòng font-family cũ bằng dòng này */
-    font-family: "PingFang SC", "Work Sans", "Microsoft YaHei", "Heiti SC", "Malgun Gothic", sans-serif;
-    line-height: 2; /* Giữ nguyên */
-    padding: 20px; /* Giữ nguyên */
-    background-color: #f4f7f6; /* Giữ nguyên[cite: 1] */
-    color: #2c3e50; /* Giữ nguyên[cite: 1] */
-    max-width: 950px; /* Giữ nguyên[cite: 1] */
-    margin: 0 auto; /* Giữ nguyên[cite: 1] */
-    transition: padding-bottom 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin: 0;
+    padding: 0;
 }
 
-/* MENU LỚN - CẤP 1 (CHỌN BÀI 1 / BÀI 2) */
-/* MENU LỚN - CẤP 1 (SẮP XẾP TỪ TRÁI SANG PHẢI, TỪ TRÊN XUỐNG DƯỚI) */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Work Sans", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    padding: 0 0 40px 0;
+    margin: 0;
+    min-height: 100vh;
+    transition: padding-bottom 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    -webkit-font-smoothing: antialiased;
+}
+
+.main-wrapper,
+.lesson-nav-card,
+.reader-toolbar,
+.main-content {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lesson-nav-card,
+.reader-toolbar {
+    margin-top: 20px;
+}
+
+/* ==========================================================================
+   TOP APP HEADER (NAVIGATION & BRANDING)
+   ========================================================================== */
+.app-header {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.header-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-brand .brand-icon {
+    font-size: 28px;
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.header-brand .brand-title h1 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.25;
+}
+
+.header-brand .brand-title span {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.book-pill-nav {
+    display: flex;
+    align-items: center;
+    background: #f1f5f9;
+    padding: 4px;
+    border-radius: 30px;
+    gap: 3px;
+}
+
+.book-pill-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #475569;
+    transition: var(--transition);
+}
+
+.book-pill-nav a:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.book-pill-nav a.active {
+    background: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    background: #ffffff;
+    color: #334155;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.header-btn:hover {
+    background: var(--primary-light);
+    border-color: var(--primary-border);
+    color: var(--primary);
+    transform: translateY(-1px);
+}
+
+.header-btn.vocab-link {
+    background: var(--primary-gradient);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.header-btn.vocab-link:hover {
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   READER TOOLBAR (PINYIN, FONT ZOOM, TRANSLATION TOGGLE)
+   ========================================================================== */
+.reader-toolbar {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 10px 16px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.toolbar-left,
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.toolbar-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.tool-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    color: #334155;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tool-btn:hover {
+    background: var(--primary-light);
+    border-color: var(--primary-border);
+    color: var(--primary);
+}
+
+.tool-btn.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+}
+
+.zoom-group {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.zoom-btn {
+    background: none;
+    border: none;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #334155;
+    transition: background 0.2s ease;
+}
+
+.zoom-btn:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.zoom-display {
+    padding: 0 8px;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   MAIN MENU (LESSON PICKER: BÀI 1 / BÀI 2...)
+   ========================================================================== */
+.lesson-nav-card {
+    background: #ffffff;
+    border-radius: var(--radius);
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 24px;
+}
+
+.lesson-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 0 4px;
+}
+
+.lesson-nav-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.lesson-nav-badge {
+    font-size: 12px;
+    color: var(--primary);
+    background: var(--primary-light);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
 .main-menu {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* Ép cố định đúng 8 cột trên một dòng */
-    grid-auto-flow: row; /* Chữ chạy từ trái sang phải, hết 8 cột tự động xuống dòng 2 */
-    gap: 6px; /* Khoảng cách vừa phải giữa các nút */
-    margin-bottom: 25px;
-    background-color: #2c3e50;
-    border-radius: 8px;
-    padding: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .main-btn {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 10px 4px; /* Thu gọn padding để nút cân đối */
+    padding: 10px 4px;
     cursor: pointer;
-    font-weight: bold;
-    font-size: 11px; /* Cỡ chữ nhỏ gọn giúp tối ưu không gian */
-    color: #bdc3c7;
-    border-radius: 4px;
-    line-height: 1.3;
-    transition: all 0.3s ease;
-    white-space: normal; /* Tên bài quá dài sẽ tự ngắt dòng bên trong nút chứ không tràn ra ngoài */
+    font-weight: 700;
+    font-size: 13px;
+    color: #475569;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    line-height: 1.25;
+    transition: var(--transition);
+    user-select: none;
 }
 
 .main-btn:hover {
-    background-color: #34495e;
-    color: #fff;
+    background-color: var(--primary-light);
+    border-color: var(--primary-border);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
 }
 
 .main-btn.active {
-    background-color: #1abc9c;
-    color: white;
+    background: var(--primary-gradient);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    transform: translateY(-2px);
 }
 
-/* ĐIỆN THOẠI: BIẾN THÀNH THANH CUỘN NGANG ĐỂ TRÁNH NÁT CHỮ */
-@media (max-width: 900px) {
-    .main-menu {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto; /* Vuốt ngang mượt mà trên smartphone */
-        padding: 10px;
-    }
-    .main-btn {
-        flex: 0 0 auto;
-        font-size: 13px;
-        padding: 10px 16px;
-    }
+/* ==========================================================================
+   SUB MENU (TABS IN EACH LESSON: BÀI KHÓA, TỪ VỰNG, ĐỌC THÊM)
+   ========================================================================== */
+.sub-menu {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    margin-bottom: 22px;
+    background-color: #f1f5f9;
+    border-radius: 12px;
+    padding: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    overflow-x: auto;
+    gap: 6px;
 }
 
-/* KHUNG CHỨA BÀI HỌC CHÍNH */
+.sub-btn {
+    flex: 1;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14.5px;
+    color: #64748b;
+    border-radius: 8px;
+    border: none;
+    border-bottom: none;
+    background: transparent;
+    transition: var(--transition);
+    user-select: none;
+    white-space: nowrap;
+}
+
+.sub-btn:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: var(--text-main);
+}
+
+.sub-btn.active {
+    background-color: #ffffff;
+    color: var(--primary);
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   CONTENT VISIBILITY TOGGLE
+   ========================================================================== */
 .main-content {
     display: none;
+    animation: fadeIn 0.3s ease;
 }
+
 .main-content.active {
     display: block;
 }
 
-/* MENU NHỎ - CẤP 2 (TAB ĐOẠN TRONG TỪNG BÀI) */
-.sub-menu {
-    display: table;
-    width: 100%;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    border: 1px solid #e2e8f0;
-}
-.sub-btn {
-    display: table-cell;
-    text-align: center;
-    padding: 12px 10px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 15px;
-    color: #7f8c8d;
-    border-bottom: 3px solid transparent;
-    transition: all 0.3s ease;
-}
-.sub-btn:hover {
-    background-color: #f8fafc;
-    color: #2c3e50;
-}
-/* Màu active cho Tab của Bài 1 (Xanh Dương) */
-#bai1 .sub-btn.active {
-    color: #2980b9;
-    border-bottom-color: #2980b9;
-    background-color: #f0f7fc;
-}
-/* Màu active cho Tab của Bài 2 (Cam Sẫm) */
-#bai2 .sub-btn.active {
-    color: #d35400;
-    border-bottom-color: #d35400;
-    background-color: #fdf5ef;
-}
-
-/* KHUNG ĐOẠN NHỎ (TAB NỘI DUNG) */
 .sub-content {
     display: none;
+    animation: fadeIn 0.3s ease;
 }
+
 .sub-content.active {
     display: block;
 }
 
-/* KHU VỰC TIÊU ĐỀ VÀ NÚT BẤM */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   LESSON TITLE & HEADER BANNER
+   ========================================================================== */
+.lesson-title-card {
+    background: #ffffff;
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 22px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-top: 4px solid var(--primary);
+}
+
+.lesson-title-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.lesson-meta-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    background: var(--primary-light);
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.lesson-title {
+    text-align: left;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.25;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* Support legacy standalone .lesson-title if not wrapped */
+h1.lesson-title {
+    text-align: center;
+    color: #0f172a;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--primary-border);
+}
+
+/* ==========================================================================
+   SECTION HEADINGS & TOGGLE BUTTONS
+   ========================================================================== */
 h2 {
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 17px;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
     padding-bottom: 8px;
-}
-#bai1 h2 {
-    color: #2980b9;
-    border-bottom: 2px solid #2980b9;
-}
-#bai2 h2 {
-    color: #d35400;
-    border-bottom: 2px solid #d35400;
+    border-bottom: 2px solid var(--primary-border);
 }
 
 .btn-container {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
+
 .toggle-btn {
-    color: white;
+    color: #ffffff;
     border: none;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
+    padding: 8px 18px;
+    font-size: 13.5px;
+    font-weight: 600;
     cursor: pointer;
     border-radius: 20px;
-    box-shadow: 0 3px 6px rgba(197, 5, 5, 0.1);
-    background-color: #d35400;
-    transition: transform 0.2s;
-}
-.toggle-btn:hover {
-    transform: translateY(-1px);
-}
-#bai1 .toggle-btn {
-    background-color: #2980b9;
-}
-#bai2 .toggle-btn {
-    background-color: #d35400;
-}
-#bai3 .toggle-btn {
-    background-color: #27ae60;
-}
-#bai4 .toggle-btn {
-    background-color: #8e44ad;
-}
-#bai5 .toggle-btn {
-    background-color: #e74c3c;
-}
-#bai6 .toggle-btn {
-    background-color: #f39c12;
-}
-#bai7 .toggle-btn {
-    background-color: #16a085;
-}
-
-/* KHUNG HIỂN THỊ CHỮ HÁN & RUBY PINYIN */
-.chinese-text {
-    font-size: 22px;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    margin-bottom: 25px;
-    letter-spacing: 1px;
-    text-align: justify;
-
-    /* THÊM 2 DÒNG NÀY VÀO LÀ CÂN MỌI LOẠI THẺ RUBY KHÔNG LO BỊ TRÀN DÒNG */
-    display: inline-block;
-    word-break: break-all;
-}
-.indent {
-    display: inline-block;
-    width: 2em;
-}
-.block {
-    display: block;
-    margin-bottom: 15px;
-}
-.align-right {
-    text-align: right;
-    display: block;
-    margin-top: 15px;
-}
-
-ruby {
-    ruby-position: over;
-}
-rt {
-    font-size: 13px;
-    color: #3498db; /* Đổi thành màu xanh lam (Blue) */
-    padding-bottom: 3px;
-    user-select: none; /* */
-}
-/* Lớp ẩn Pinyin mà không làm lệch hoặc nhảy dòng chữ Hán */
-.hide-pinyin rt {
-    visibility: hidden;
-}
-
-/* KHUNG BẢN DỊCH TIẾNG VIỆT */
-.translation-container {
-    background-color: #eef2f5;
-    padding: 25px;
-    border-radius: 0 12px 12px 0;
-    font-size: 16px;
-    line-height: 1.6;
-}
-#bai1 .translation-container {
-    border-left: 5px solid #2980b9;
-}
-#bai2 .translation-container {
-    border-left: 5px solid #d35400;
-}
-#bai3 .translation-container {
-    border-left: 5px solid #27ae60;
-}
-#bai4 .translation-container {
-    border-left: 5px solid #8e44ad;
-}
-#bai5 .translation-container {
-    border-left: 5px solid #e74c3c;
-}
-#bai6 .translation-container {
-    border-left: 5px solid #f39c12;
-}
-#bai7 .translation-container {
-    border-left: 5px solid #16a085;
-}
-.translation-line {
-    margin-bottom: 12px;
-    text-align: justify;
-}
-
-.lesson-title{
-    text-align: center;
-    color: red;
-}
-
-/* NÚT FLOAT ĐỂ ẨN HIỆN PINYIN CỐ ĐỊNH GÓC PHẢI */
-.float-pinyin-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 9999;
-    background-color: #e67e22; /* Màu cam nổi bật dễ thấy */
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 50px; /* Bo tròn viền dạng viên thuốc */
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Tạo hiệu ứng đổ bóng nổi lên */
-    transition: all 0.3s ease;
-}
-.float-pinyin-btn:hover {
-    background-color: #d35400;
-    transform: scale(1.05); /* Phóng to nhẹ khi rê chuột vào */
-}
-
-/* NÚT FLOAT DẪN ĐẾN TRANG ÔN TẬP TỪ VỰNG */
-.float-vocab-btn {
-    position: fixed;
-    bottom: 85px;
-    right: 30px;
-    z-index: 9999;
-    background-color: #2980b9;
-    color: white;
-    text-decoration: none;
-    padding: 10px 18px;
-    font-size: 13px;
-    font-weight: bold;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    background: var(--primary-gradient);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transition: var(--transition);
     display: inline-flex;
     align-items: center;
     gap: 6px;
 }
-.float-vocab-btn:hover {
-    background-color: #1b4f72;
-    transform: scale(1.05);
-    color: white;
+
+.toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
 }
 
-/* Giao diện mượt mà trên điện thoại */
-@media (max-width: 600px) {
-    .float-pinyin-btn {
-        bottom: 20px;
-        right: 20px;
-        padding: 10px 16px;
-        font-size: 13px;
-    }
-    .float-vocab-btn {
-        bottom: 70px;
-        right: 20px;
-        padding: 8px 14px;
-        font-size: 12px;
-    }
+/* ==========================================================================
+   CHINESE TEXT READING AREA (RUBY PINYIN READER MODE)
+   ========================================================================== */
+.chinese-text {
+    font-size: var(--chinese-font-size, 24px);
+    line-height: var(--chinese-line-height, 2.4);
+    background: #ffffff;
+    padding: 36px 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    margin-bottom: 25px;
+    letter-spacing: 0.8px;
+    text-align: justify;
+    word-break: break-word;
+    display: block;
+    width: 100%;
+    transition: font-size 0.2s ease, line-height 0.2s ease;
 }
 
+.indent {
+    display: inline-block;
+    width: 2em;
+}
+
+.block {
+    display: block;
+    margin-bottom: 18px;
+}
+
+.align-right {
+    text-align: right;
+    display: block;
+    margin-top: 16px;
+    font-style: italic;
+}
+
+ruby {
+    ruby-position: over;
+    -webkit-ruby-position: over;
+    margin: 0 1px;
+}
+
+rt {
+    font-size: 13px;
+    color: #d97706; /* Amber-orange: high readability and contrast */
+    font-weight: 600;
+    padding-bottom: 4px;
+    user-select: none;
+    letter-spacing: 0;
+    line-height: 1.1;
+    transition: opacity 0.2s ease;
+}
+
+/* Smooth Pinyin hiding */
+.hide-pinyin rt {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Numbered paragraph badges like 【1】, 【2】 */
+.chinese-text .badge-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 7px;
+    margin-right: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary);
+    background: var(--primary-light);
+    border-radius: 6px;
+    vertical-align: middle;
+    letter-spacing: 0;
+    border: 1px solid var(--primary-border);
+}
+
+/* ==========================================================================
+   TRANSLATION CONTAINER (VIETNAMESE)
+   ========================================================================== */
+.translation-container {
+    background-color: #fbfcfe;
+    padding: 26px 30px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary);
+    font-size: 16px;
+    line-height: 1.8;
+    box-shadow: var(--shadow-sm);
+    color: #334155;
+    transition: var(--transition);
+}
+
+.translation-container.collapsed {
+    display: none;
+}
+
+.translation-line {
+    margin-bottom: 14px;
+    text-align: justify;
+}
+
+.translation-line:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   VOCABULARY TABLE (ELEGANT DESIGN WITH LARGE HANZI & TTS)
+   ========================================================================== */
 .vocab-section {
     margin-top: 20px;
     width: 100%;
 }
+
 .vocab-table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    border-radius: 8px;
+    background: #ffffff;
+    border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
     margin-bottom: 30px;
 }
+
 .vocab-table th {
-    background-color: #2980b9; /* Đồng bộ màu xanh dương bài 1 */
-    color: white;
+    background: var(--primary-gradient);
+    color: #ffffff;
     text-align: left;
-    padding: 12px 15px;
+    padding: 14px 16px;
     font-size: 15px;
-}
-.vocab-table td {
-    padding: 14px 15px;
-    border-bottom: 1px solid #e2e8f0;
-    font-size: 16px;
-    vertical-align: middle; /* Đổi sang căn giữa dọc để cân đối với chữ Hán to */
-}
-.vocab-table tr:hover {
-    background-color: #f8fafc;
+    font-weight: 600;
+    letter-spacing: 0.3px;
 }
 
-/* CHỮ HÁN SIÊU TO (TĂNG THÊM 50%) */
+.vocab-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 15.5px;
+    vertical-align: middle;
+    transition: background 0.2s ease;
+}
+
+.vocab-table tbody tr:hover {
+    background-color: var(--primary-light);
+}
+
+.vocab-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* CHỮ HÁN TO RÕ (26px) */
 .vocab-hz {
-    font-size: 26px !important; /* Tăng từ 26px lên 39px */
-    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-    font-weight: bold;
-    color: #2c3e50;
-    line-height: 1.2;
+    font-size: 26px !important;
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.vocab-hz:hover {
+    color: var(--primary);
+}
+
+.btn-cell-speak {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--primary);
+    opacity: 0.65;
+    padding: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-cell-speak:hover {
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 .vocab-py {
-    color: #3498db;
-    font-weight: 500;
-    font-size: 16px;
+    color: #d97706;
+    font-weight: 600;
+    font-size: 16.5px;
 }
+
 .vocab-type {
-    color: #7f8c8d;
-    font-style: italic;
-    font-size: 14px;
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+    font-style: normal;
 }
+
 .vocab-mean {
-    color: #2c3e50;
+    color: #1e293b;
     line-height: 1.6;
+    font-size: 15.5px;
 }
+
 .vocab-example {
     display: block;
-    font-size: 14px;
-    color: #7f8c8d;
+    font-size: 14.5px;
+    color: #64748b;
     margin-top: 6px;
+    padding-left: 10px;
+    border-left: 2px solid #cbd5e1;
     line-height: 1.6;
-    font-family: "PingFang SC", sans-serif;
-}
-
-/* Responsive mượt mà trên Mobile (TĂNG THÊM 50%) */
-@media (max-width: 768px) {
-    .vocab-table th,
-    .vocab-table td {
-        padding: 10px 8px;
-        font-size: 14px;
-    }
-    .vocab-hz {
-        font-size: 22px !important; /* Tăng từ 22px lên 33px trên điện thoại */
-    }
 }
 
 /* ==========================================================================
-   TRÌNH PHÁT AUDIO STICKY ĐÁY MÀN HÌNH - THANH TIẾN ĐỘ NẰM TRÊN NÚT SEEK
-   ========================================================================== */
-.sticky-player {
-    position: fixed;
-    left: 0;
-    bottom: -250px; /* Giấu sâu hơn dưới đáy đề phòng hộp phình cao */
-    width: 100%;
-    height: auto;
-    background: #2c3e50;
-    color: #fff;
-    padding: 15px 25px;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    z-index: 99999;
-    transition: bottom 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-sizing: border-box;
-}
-
-.sticky-player.show {
-    bottom: 0;
-}
-
-/* Khối tiêu đề bên trái */
-.player-header {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    flex: 1;
-    min-width: 0; 
-    padding-right: 25px; /* Chừa không gian cho nút đóng tuyệt đối */
-}
-
-.player-info {
-    font-size: 13px;
-    font-weight: 700;
-    color: #1abc9c;
-    white-space: normal; 
-    word-break: break-word;
-    line-height: 1.5;
-}
-
-/* KHỐI TRUNG TÂM CHỨA AUDIO VÀ NÚT TUA (XẾP CHỒNG DỌC) */
-.player-body-content {
-    flex: 2;
-    /* max-width: 500px; */
-    display: flex;
-    flex-direction: column; /* Đảm bảo xếp theo chiều dọc */
-    gap: 8px; /* Khoảng cách giữa thanh tiến độ và nút tua */
-}
-
-/* 1. Thanh tiến độ nằm phía TRÊN */
-.player-controls {
-    width: 100%;
-}
-.player-controls audio {
-    width: 100%;
-    height: 36px;
-    display: block;
-}
-
-/* 2. Các nút seek nằm phía DƯỚI */
-.player-skip-buttons {
-    display: flex;
-    gap: 6px;
-    width: 100%;
-}
-.skip-btn {
-    flex: 1;
-    background: #34495e;
-    color: #fff;
-    border: none;
-    padding: 6px 0;
-    font-size: 11px;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    transition: background 0.2s;
-}
-.skip-btn:hover {
-    background: #1abc9c;
-}
-
-/* NÚT ĐÓNG CỐ ĐỊNH GÓC TRÊN BÊN PHẢI */
-.sticky-player .player-close-btn {
-    position: absolute;
-    top: 12px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    color: #bdc3c7;
-    font-size: 28px;
-    cursor: pointer;
-    line-height: 1;
-    padding: 0;
-    z-index: 10;
-    transition: color 0.2s;
-}
-.sticky-player .player-close-btn:hover {
-    color: #e74c3c;
-}
-
-/* Đẩy nút float Pinyin di động lên tránh đè giao diện */
-body.audio-playing .float-pinyin-btn {
-    bottom: 115px;
-}
-
-/* ==========================================================================
-   TỐI ƯU GIAO DIỆN TRÊN ĐIỆN THOẠI VÀ MÁY TÍNH BẢNG (MOBILE & TABLET)
-   ========================================================================== */
-@media (max-width: 768px) {
-    .sticky-player {
-        flex-direction: column;
-        gap: 12px;
-        padding: 15px;
-    }
-    
-    .player-header {
-        width: 100%;
-        border-bottom: 1px solid #34495e;
-        padding-bottom: 8px;
-        padding-right: 30px; 
-    }
-
-    .player-info {
-        font-size: 14px;
-    }
-    
-    /* Vị trí nút đóng trên di động */
-    .sticky-player .player-close-btn {
-        top: 12px;
-        right: 15px;
-    }
-    
-    .player-body-content {
-        width: 100%;
-        max-width: 100%;
-        gap: 10px; /* Tăng khoảng cách trên mobile cho dễ chạm bấm */
-    }
-    
-    .player-controls audio {
-        height: 44px; /* Lộ diện hoàn toàn 100% thanh thời gian trên iOS và Android */
-    }
-    
-    .skip-btn {
-        padding: 8px 0;
-        font-size: 12px;
-    }
-
-    /* Đẩy nút Pinyin lên cao hơn do chiều cao player trên mobile tăng lên */
-    body.audio-playing .float-pinyin-btn {
-        bottom: 195px;
-    }
-}
-
-/* ==========================================================================
-   THAY ĐỔI GIAO DIỆN NÚT BẤM AUDIO (ĐẸP & CHUYÊN NGHIỆP HƠN)
+   AUDIO PLAY BUTTON
    ========================================================================== */
 .play-audio-btn {
-    background: linear-gradient(135deg, #1abc9c, #16a085);
-    color: white;
+    background: var(--primary-gradient);
+    color: #ffffff;
     border: none;
     padding: 10px 22px;
     font-size: 14px;
-    font-weight: bold;
-    border-radius: 25px; /* Bo viền dạng viên thuốc sang trọng */
+    font-weight: 700;
+    border-radius: 30px;
     cursor: pointer;
     margin-bottom: 20px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
 }
+
 .play-audio-btn:hover {
-    background: linear-gradient(135deg, #16a085, #11816b);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(26, 188, 156, 0.4);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
 }
+
 .play-audio-btn:active {
     transform: translateY(0);
 }
 
-/* Đổi màu sắc nút nghe riêng cho Bài 1 Quyển 3 theo tone xanh dương của tab */
-#bai1 .play-audio-btn {
-    background: linear-gradient(135deg, #2980b9, #2574a9);
-    box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3);
+/* ==========================================================================
+   STICKY BOTTOM AUDIO PLAYER
+   ========================================================================== */
+.sticky-player {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -250px;
+    width: min(960px, calc(100% - 24px));
+    height: auto;
+    background: rgba(15, 23, 42, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    color: #ffffff;
+    padding: 14px 22px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 99999;
+    transition: bottom 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
 }
-#bai1 .play-audio-btn:hover {
-    background: linear-gradient(135deg, #2574a9, #1f618d);
-    box-shadow: 0 6px 15px rgba(41, 128, 185, 0.4);
+
+.sticky-player.show {
+    bottom: 16px;
+}
+
+.player-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+    padding-right: 25px;
+}
+
+.player-info {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #38bdf8;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.player-body-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.player-controls {
+    width: 100%;
+}
+
+.player-controls audio {
+    width: 100%;
+    height: 36px;
+    display: block;
+    outline: none;
+}
+
+.player-skip-buttons {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.skip-btn {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 0;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.skip-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+}
+
+.sticky-player .player-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 26px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    z-index: 10;
+    transition: color 0.2s ease;
+}
+
+.sticky-player .player-close-btn:hover {
+    color: #f87171;
+}
+
+/* ==========================================================================
+   FLOATING ACTION BUTTONS (BOTTOM RIGHT)
+   ========================================================================== */
+.float-btn-group {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+    transition: bottom 0.35s ease;
+}
+
+body.audio-playing .float-btn-group,
+body.audio-playing .float-pinyin-btn,
+body.audio-playing .float-vocab-btn {
+    bottom: 125px;
+}
+
+.float-action-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.float-action-btn:hover {
+    transform: scale(1.1);
+}
+
+.float-pinyin-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.float-pinyin-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.float-vocab-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 24px;
+    z-index: 9999;
+    background: var(--primary-gradient);
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.float-vocab-btn:hover {
+    transform: scale(1.06);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer.app-footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-muted);
+    font-size: 13.5px;
+    border-top: 1px solid var(--border-color);
+    background: #ffffff;
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .book-pill-nav {
+        justify-content: center;
+        overflow-x: auto;
+    }
+
+    .main-menu {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .main-btn {
+        flex: 0 0 auto;
+        min-width: 78px;
+        padding: 8px 12px;
+    }
+
+    .chinese-text {
+        padding: 24px 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 0 0 30px 0;
+    }
+
+    .main-wrapper {
+        padding: 16px 12px;
+    }
+
+    .header-actions {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .reader-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .toolbar-left,
+    .toolbar-right {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .chinese-text {
+        font-size: 20px;
+        padding: 20px 14px;
+        line-height: 2.2;
+    }
+
+    .sub-menu {
+        padding: 4px;
+    }
+
+    .sub-btn {
+        min-width: 90px;
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    /* Compact Vocabulary table for mobile */
+    .vocab-table th:nth-child(1),
+    .vocab-table td:nth-child(1),
+    .vocab-table th:nth-child(4),
+    .vocab-table td:nth-child(4) {
+        display: none;
+    }
+
+    .vocab-hz {
+        font-size: 22px !important;
+    }
+
+    .sticky-player {
+        flex-direction: column;
+        gap: 12px;
+        padding: 14px;
+        bottom: -320px;
+    }
+
+    body.audio-playing .float-pinyin-btn,
+    body.audio-playing .float-vocab-btn {
+        bottom: 215px;
+    }
 }
