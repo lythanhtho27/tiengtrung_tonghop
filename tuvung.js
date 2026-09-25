@@ -879,12 +879,156 @@
                 const btnFalse = document.getElementById("btn-tf-false");
                 if (btnFalse && !btnFalse.disabled) btnFalse.click();
             }
+        } else if (state.currentMode === "quiz") {
+            if (["1", "2", "3", "4"].includes(e.key)) {
+                const idx = parseInt(e.key, 10) - 1;
+                const btns = document.querySelectorAll("#quiz-play-view .ans-btn");
+                if (btns[idx] && !btns[idx].disabled) btns[idx].click();
+            } else if (["a", "b", "c", "d", "A", "B", "C", "D"].includes(e.key)) {
+                const map = { a: 0, b: 1, c: 2, d: 3, A: 0, B: 1, C: 2, D: 3 };
+                const idx = map[e.key];
+                const btns = document.querySelectorAll("#quiz-play-view .ans-btn");
+                if (btns[idx] && !btns[idx].disabled) btns[idx].click();
+            } else if (e.code === "Space" || e.code === "Enter") {
+                const nextBtn = document.getElementById("btn-quiz-next");
+                if (nextBtn && nextBtn.classList.contains("show")) {
+                    e.preventDefault();
+                    nextBtn.click();
+                }
+            }
         }
     }
 
     // =========================================================================
     // MODE 3: TRẮC NGHIỆM (QUIZ)
     // =========================================================================
+    function generatePinyinDistractors(targetPy, pool) {
+        if (!targetPy) return [];
+
+        const TONE_REPLACEMENTS = {
+            'ā': ['á', 'ǎ', 'à'], 'á': ['ā', 'ǎ', 'à'], 'ǎ': ['ā', 'á', 'à'], 'à': ['ā', 'á', 'ǎ'],
+            'ē': ['é', 'ě', 'è'], 'é': ['ē', 'ě', 'è'], 'ě': ['ē', 'é', 'è'], 'è': ['ē', 'é', 'ě'],
+            'ī': ['í', 'ǐ', 'ì'], 'í': ['ī', 'ǐ', 'ì'], 'ǐ': ['ī', 'í', 'ì'], 'ì': ['ī', 'í', 'ǐ'],
+            'ō': ['ó', 'ǒ', 'ò'], 'ó': ['ō', 'ǒ', 'ò'], 'ǒ': ['ō', 'ó', 'ò'], 'ò': ['ō', 'ó', 'ǒ'],
+            'ū': ['ú', 'ǔ', 'ù'], 'ú': ['ū', 'ǔ', 'ù'], 'ǔ': ['ū', 'ú', 'ù'], 'ù': ['ū', 'ú', 'ǔ'],
+            'ǖ': ['ǘ', 'ǚ', 'ǜ'], 'ǘ': ['ǖ', 'ǚ', 'ǜ'], 'ǚ': ['ǖ', 'ǘ', 'ǜ'], 'ǜ': ['ǖ', 'ǘ', 'ǚ']
+        };
+
+        const CONFUSING_PAIRS = [
+            { from: /zh/g, to: 'z' }, { from: /(^|[^zcs])z(?!h)/g, to: '$1zh' },
+            { from: /ch/g, to: 'c' }, { from: /(^|[^zcs])c(?!h)/g, to: '$1ch' },
+            { from: /sh/g, to: 's' }, { from: /(^|[^zcs])s(?!h)/g, to: '$1sh' },
+            { from: /ing/g, to: 'in' }, { from: /in(?![g])/g, to: 'ing' },
+            { from: /eng/g, to: 'en' }, { from: /en(?![g])/g, to: 'eng' },
+            { from: /ang/g, to: 'an' }, { from: /an(?![g])/g, to: 'ang' }
+        ];
+
+        const candidates = new Set();
+        const occurrences = [];
+        for (let i = 0; i < targetPy.length; i++) {
+            if (TONE_REPLACEMENTS[targetPy[i]]) {
+                occurrences.push({ index: i, char: targetPy[i] });
+            }
+        }
+
+        // Alter single tone
+        occurrences.forEach(occ => {
+            const repls = TONE_REPLACEMENTS[occ.char];
+            repls.forEach(r => {
+                const variant = targetPy.substring(0, occ.index) + r + targetPy.substring(occ.index + 1);
+                if (variant !== targetPy) candidates.add(variant);
+            });
+        });
+
+        // Alter multiple tones if 2 or more syllables
+        if (occurrences.length >= 2) {
+            const occ1 = occurrences[0];
+            const occ2 = occurrences[1];
+            TONE_REPLACEMENTS[occ1.char].forEach(r1 => {
+                TONE_REPLACEMENTS[occ2.char].forEach(r2 => {
+                    let v = targetPy.substring(0, occ1.index) + r1 + targetPy.substring(occ1.index + 1);
+                    v = v.substring(0, occ2.index) + r2 + v.substring(occ2.index + 1);
+                    if (v !== targetPy) candidates.add(v);
+                });
+            });
+        }
+
+        // Confusing initial/final swaps (zh/ch/sh vs z/c/s, in/ing, en/eng)
+        CONFUSING_PAIRS.forEach(pair => {
+            if (pair.from.test(targetPy)) {
+                const variant = targetPy.replace(pair.from, pair.to);
+                if (variant !== targetPy) candidates.add(variant);
+            }
+        });
+
+        // Combine swaps with tone shift
+        const swapList = [...candidates];
+        swapList.forEach(sv => {
+            for (let i = 0; i < sv.length; i++) {
+                if (TONE_REPLACEMENTS[sv[i]]) {
+                    TONE_REPLACEMENTS[sv[i]].forEach(r => {
+                        const v = sv.substring(0, i) + r + sv.substring(i + 1);
+                        if (v !== targetPy) candidates.add(v);
+                    });
+                }
+            }
+        });
+
+        // Fallback: Pick from other words in pool
+        if (candidates.size < 3 && pool && pool.length > 0) {
+            const otherPys = pool
+                .filter(w => w.py && w.py !== targetPy)
+                .map(w => w.py);
+            shuffleArray(otherPys);
+            otherPys.forEach(py => {
+                if (candidates.size < 6 && py !== targetPy) {
+                    candidates.add(py);
+                }
+            });
+        }
+
+        const candidateList = [...candidates].filter(c => c !== targetPy);
+        shuffleArray(candidateList);
+        return candidateList.slice(0, 3);
+    }
+
+    function buildQuizQuestion(targetWord, qType, pool) {
+        if (qType === "hz_to_py") {
+            const distractorsPy = generatePinyinDistractors(targetWord.py, pool);
+            const options = [
+                { id: targetWord.id, py: targetWord.py, hz: targetWord.hz, mean: targetWord.mean },
+                { id: "distractor_0_" + Math.random(), py: distractorsPy[0] || "pīnyīn", hz: targetWord.hz, mean: targetWord.mean },
+                { id: "distractor_1_" + Math.random(), py: distractorsPy[1] || "pínyīn", hz: targetWord.hz, mean: targetWord.mean },
+                { id: "distractor_2_" + Math.random(), py: distractorsPy[2] || "pǐnyīn", hz: targetWord.hz, mean: targetWord.mean }
+            ];
+            shuffleArray(options);
+            return {
+                word: targetWord,
+                type: qType,
+                options: options,
+                correctWord: targetWord
+            };
+        }
+
+        const distractors = [];
+        const otherWords = state.allWords.filter(w => w.id !== targetWord.id && w.mean !== targetWord.mean && w.hz !== targetWord.hz);
+        shuffleArray(otherWords);
+
+        for (let i = 0; i < otherWords.length && distractors.length < 3; i++) {
+            distractors.push(otherWords[i]);
+        }
+
+        const options = [targetWord, ...distractors];
+        shuffleArray(options);
+
+        return {
+            word: targetWord,
+            type: qType,
+            options: options,
+            correctWord: targetWord
+        };
+    }
+
     function setupQuizMode() {
         const container = document.getElementById("quiz-container");
         if (!container) return;
@@ -921,13 +1065,18 @@
                         <div class="quiz-opt-box">
                             <label for="quiz-mode-select">Dạng bài thi:</label>
                             <select id="quiz-mode-select" class="custom-select">
-                                <option value="mix_no_audio" selected>📖 Hỗn hợp Đọc & Nghĩa (Không nghe âm thanh)</option>
-                                <option value="mix">🔀 Hỗn hợp toàn diện (Bao gồm nghe âm thanh)</option>
-                                <option value="hz_to_mean">🀄 Nhìn Chữ Hán -> Chọn Nghĩa</option>
+                                <option value="mix_no_audio" selected>📖 Hỗn hợp Đọc, Nghĩa & Pinyin (Không audio)</option>
+                                <option value="mix">🔀 Hỗn hợp toàn diện (Đọc, Nghĩa, Pinyin & Audio)</option>
+                                <option value="hz_to_mean">🀄 Nhìn Chữ Hán -> Chọn Nghĩa Tiếng Việt</option>
                                 <option value="mean_to_hz">🇻🇳 Nhìn Nghĩa -> Chọn Chữ Hán</option>
+                                <option value="hz_to_py">🔤 Nhìn Chữ Hán -> Chọn Pinyin & Thanh điệu</option>
                                 <option value="audio_to_hz">🎧 Nghe Âm Thanh -> Chọn Chữ Hán</option>
                             </select>
                         </div>
+                    </div>
+
+                    <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">
+                        💡 <em>Mẹo phản xạ: Dùng phím số <strong>1, 2, 3, 4</strong> hoặc phím chữ <strong>A, B, C, D</strong> để chọn đáp án và phím <strong>Space/Enter</strong> để chuyển câu nhanh!</em>
                     </div>
 
                     <button class="btn-start-quiz" id="btn-start-quiz">Bắt Đầu Làm Bài</button>
@@ -960,32 +1109,14 @@
             // Determine question type
             let qType = modeVal;
             if (modeVal === "mix") {
-                const types = ["hz_to_mean", "mean_to_hz", "audio_to_hz"];
+                const types = ["hz_to_mean", "mean_to_hz", "hz_to_py", "audio_to_hz"];
                 qType = types[Math.floor(Math.random() * types.length)];
             } else if (modeVal === "mix_no_audio") {
-                const types = ["hz_to_mean", "mean_to_hz"];
+                const types = ["hz_to_mean", "mean_to_hz", "hz_to_py"];
                 qType = types[Math.floor(Math.random() * types.length)];
             }
 
-            // Pick 3 distractors from allWords
-            const distractors = [];
-            const otherWords = state.allWords.filter(w => w.id !== targetWord.id && w.mean !== targetWord.mean && w.hz !== targetWord.hz);
-            shuffleArray(otherWords);
-
-            for (let i = 0; i < otherWords.length && distractors.length < 3; i++) {
-                distractors.push(otherWords[i]);
-            }
-
-            // Create options
-            const options = [targetWord, ...distractors];
-            shuffleArray(options);
-
-            return {
-                word: targetWord,
-                type: qType,
-                options: options,
-                correctWord: targetWord
-            };
+            return buildQuizQuestion(targetWord, qType, pool);
         });
 
         state.quizCurrentIdx = 0;
@@ -1012,7 +1143,6 @@
 
         let promptHtml = "";
         let promptLabel = "";
-        let audioPlayBtn = "";
 
         if (q.type === "hz_to_mean") {
             promptLabel = "Chọn nghĩa tiếng Việt đúng cho từ:";
@@ -1022,6 +1152,10 @@
             promptLabel = "Chọn Chữ Hán tương ứng với nghĩa:";
             promptHtml = `<div class="quiz-q-prompt mean-prompt">${escapeHtml(q.word.mean)}</div>
                           <div class="quiz-q-sub" style="font-size:14px; color:#64748b;">${q.word.type ? escapeHtml(q.word.type) : ''}</div>`;
+        } else if (q.type === "hz_to_py") {
+            promptLabel = "Chọn phiên âm Pinyin & Thanh điệu chính xác:";
+            promptHtml = `<div class="quiz-q-prompt">${escapeHtml(q.word.hz)}</div>
+                          <div class="quiz-q-sub" style="font-size:14.5px; color:#475569; margin-top:4px;">Nghĩa: <em>${escapeHtml(q.word.mean)}</em> ${q.word.type ? `(${escapeHtml(q.word.type)})` : ''}</div>`;
         } else if (q.type === "audio_to_hz") {
             promptLabel = "Nghe âm thanh và chọn Chữ Hán đúng:";
             promptHtml = `
@@ -1030,7 +1164,6 @@
                 </div>
                 <div class="quiz-q-sub">Nhấn loa để nghe lại</div>
             `;
-            // auto play audio once
             setTimeout(() => speakChinese(q.word.hz), 250);
         }
 
@@ -1056,6 +1189,12 @@
                     let contentHtml = "";
                     if (q.type === "hz_to_mean") {
                         contentHtml = `<span class="ans-mean">${escapeHtml(opt.mean)}</span>`;
+                    } else if (q.type === "hz_to_py") {
+                        contentHtml = `
+                            <div class="ans-hz-wrap" style="padding: 2px 0;">
+                                <span class="ans-py" style="font-size: 21px; font-weight: 700; color: #ea580c; letter-spacing: 0.5px;">${escapeHtml(opt.py)}</span>
+                            </div>
+                        `;
                     } else {
                         contentHtml = `
                             <div class="ans-hz-wrap">
@@ -1065,7 +1204,7 @@
                         `;
                     }
                     return `
-                        <button class="ans-btn ${q.type !== 'hz_to_mean' ? 'ans-btn-hz' : ''}" data-id="${opt.id}" data-idx="${i}">
+                        <button class="ans-btn ${q.type === 'mean_to_hz' || q.type === 'audio_to_hz' ? 'ans-btn-hz' : ''}" data-id="${opt.id}" data-idx="${i}">
                             <span class="ans-letter">${letters[i]}</span>
                             <div class="ans-content">
                                 ${contentHtml}
@@ -1079,7 +1218,7 @@
 
             <div class="quiz-footer">
                 <button class="btn-next-q" id="btn-quiz-next">
-                    ${currentNum === total ? 'Xem Kết Quả' : 'Câu Tiếp Theo ▶'}
+                    ${currentNum === total ? 'Xem Kết Quả' : 'Câu Tiếp Theo ▶ (Space/Enter)'}
                 </button>
             </div>
         `;
@@ -1134,18 +1273,20 @@
         });
 
         if (isCorrect) {
+            if (typeof soundFX !== "undefined" && soundFX.correct) soundFX.correct();
             state.quizScore++;
             feedbackBox.className = "quiz-feedback show correct";
             feedbackBox.innerHTML = `
                 🎉 <strong>Chính xác!</strong> 
-                <strong>${escapeHtml(question.correctWord.hz)}</strong> [${escapeHtml(question.correctWord.py)}]: ${escapeHtml(question.correctWord.mean)}
+                <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(question.correctWord.mean)}
             `;
         } else {
+            if (typeof soundFX !== "undefined" && soundFX.wrong) soundFX.wrong();
             state.quizIncorrect.push(question.correctWord);
             feedbackBox.className = "quiz-feedback show wrong";
             feedbackBox.innerHTML = `
                 ❌ <strong>Chưa chính xác!</strong> Đáp án đúng là: 
-                <strong>${escapeHtml(question.correctWord.hz)}</strong> [${escapeHtml(question.correctWord.py)}]: ${escapeHtml(question.correctWord.mean)}
+                <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(question.correctWord.mean)}
             `;
         }
 
@@ -1164,9 +1305,11 @@
         let badge = "🎉";
         let title = "Làm Tốt Lắm!";
         if (percent === 100) {
+            if (typeof soundFX !== "undefined" && soundFX.fanfare) soundFX.fanfare();
             badge = "🏆";
             title = "Hoàn Hảo! Điểm Tuyệt Đối!";
         } else if (percent >= 80) {
+            if (typeof soundFX !== "undefined" && soundFX.fanfare) soundFX.fanfare();
             badge = "🌟";
             title = "Xuất Sắc! Bạn Nhớ Rất Tốt!";
         } else if (percent < 50) {
@@ -1230,22 +1373,18 @@
         const reviewWrongBtn = document.getElementById("btn-quiz-review-wrong");
         if (reviewWrongBtn) {
             reviewWrongBtn.addEventListener("click", () => {
-                // temporarily filter to incorrect words
+                const modeVal = document.getElementById("quiz-mode-select") ? document.getElementById("quiz-mode-select").value : "mix";
+                const pool = [...getFilteredWords()];
                 state.quizQuestions = state.quizIncorrect.map(targetWord => {
-                    const distractors = [];
-                    const otherWords = state.allWords.filter(w => w.id !== targetWord.id && w.mean !== targetWord.mean);
-                    shuffleArray(otherWords);
-                    for (let i = 0; i < otherWords.length && distractors.length < 3; i++) {
-                        distractors.push(otherWords[i]);
+                    let qType = modeVal;
+                    if (modeVal === "mix") {
+                        const types = ["hz_to_mean", "mean_to_hz", "hz_to_py", "audio_to_hz"];
+                        qType = types[Math.floor(Math.random() * types.length)];
+                    } else if (modeVal === "mix_no_audio") {
+                        const types = ["hz_to_mean", "mean_to_hz", "hz_to_py"];
+                        qType = types[Math.floor(Math.random() * types.length)];
                     }
-                    const options = [targetWord, ...distractors];
-                    shuffleArray(options);
-                    return {
-                        word: targetWord,
-                        type: "hz_to_mean",
-                        options: options,
-                        correctWord: targetWord
-                    };
+                    return buildQuizQuestion(targetWord, qType, pool);
                 });
                 state.quizCurrentIdx = 0;
                 state.quizScore = 0;
