@@ -2304,3 +2304,574 @@ footer {
     }
 }
 
+/* ==========================================================================
+   GAME 9: RADICAL ALCHEMY (CHẾ TÁC CHỮ HÁN / 拆字合成)
+   ========================================================================== */
+.alchemy-crucible-wrapper {
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(49, 46, 129, 0.25);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.alchemy-target-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.alchemy-crucible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 20px auto;
+    flex-wrap: wrap;
+}
+
+.alchemy-slot {
+    width: 90px;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px dashed rgba(255, 255, 255, 0.35);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.alchemy-slot.filled {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #818cf8;
+    box-shadow: 0 0 15px rgba(129, 140, 248, 0.4);
+}
+
+.alchemy-slot .slot-hz {
+    font-family: "KaiTi", "STKaiti", "楷体", serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.alchemy-slot .slot-hint {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.alchemy-plus {
+    font-size: 28px;
+    font-weight: 700;
+    color: #a5b4fc;
+}
+
+.alchemy-equals {
+    font-size: 28px;
+    font-weight: 700;
+    color: #a5b4fc;
+}
+
+.alchemy-result-slot {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(234, 179, 8, 0.25) 0%, rgba(234, 179, 8, 0.05) 70%);
+    border: 2px solid #eab308;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
+}
+
+.alchemy-result-slot .res-hz {
+    font-family: "KaiTi", "STKaiti", "楷体", serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #fef08a;
+    text-shadow: 0 0 12px rgba(234, 179, 8, 0.6);
+}
+
+.alchemy-tray {
+    background: #ffffff;
+    border-radius: var(--radius);
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.alchemy-tile {
+    font-family: "KaiTi", "STKaiti", "楷体", serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e293b;
+    background: #f8fafc;
+    border: 2px solid var(--border-color);
+    border-radius: 14px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: var(--transition);
+}
+
+.alchemy-tile:hover:not(.used) {
+    background: #eff6ff;
+    border-color: #6366f1;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.2);
+}
+
+.alchemy-tile.used {
+    opacity: 0.25;
+    cursor: not-allowed;
+    border-style: dashed;
+}
+
+.alchemy-fuse-btn {
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+    transition: var(--transition);
+}
+
+.alchemy-fuse-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(234, 88, 12, 0.45);
+}
+
+/* ==========================================================================
+   GAME 10: WORD CHAIN (NỐI TỪ TIẾP SỨC / 词语接龙)
+   ========================================================================== */
+.chain-wrapper {
+    background: #ffffff;
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 24px;
+}
+
+.chain-timer-bar-wrap {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.chain-timer-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #f59e0b, #ef4444);
+    width: 100%;
+    transition: width 0.1s linear;
+}
+
+.chain-track-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 16px 8px;
+    margin-bottom: 28px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+}
+
+.chain-node {
+    display: inline-flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1.5px solid var(--border-color);
+    border-radius: 10px;
+    padding: 8px 14px;
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    gap: 6px;
+}
+
+.chain-node.current {
+    border-color: #ea580c;
+    background: #fff7ed;
+    color: #c2410c;
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
+}
+
+.chain-node-arrow {
+    color: #94a3b8;
+    font-weight: 700;
+}
+
+.chain-target-prompt {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.chain-target-char {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #fff7ed, #ffedd5);
+    border: 2px solid #ea580c;
+    border-radius: 16px;
+    font-family: "KaiTi", "STKaiti", "楷体", serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #c2410c;
+    margin: 8px 0;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.15);
+}
+
+.chain-choices-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.chain-choice-btn {
+    background: #f8fafc;
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.chain-choice-btn:hover {
+    background: #eff6ff;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.chain-choice-hz {
+    font-family: "KaiTi", "STKaiti", "楷体", serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.chain-choice-py {
+    font-size: 13.5px;
+    color: #ea580c;
+    font-weight: 500;
+}
+
+.chain-choice-mean {
+    font-size: 12.5px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* ==========================================================================
+   GAME 11: HANZI WORDLE (WORDLE CHỮ HÁN / 猜词宝典)
+   ========================================================================== */
+.wordle-card {
+    background: #ffffff;
+    border-radius: var(--radius);
+    padding: 28px 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.wordle-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.wordle-row {
+    display: flex;
+    gap: 10px;
+}
+
+.wordle-tile {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "KaiTi", "STKaiti", "楷体", serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #1e293b;
+    background: #ffffff;
+    user-select: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wordle-tile.active-input {
+    border-color: #3b82f6;
+    animation: popTile 0.15s ease;
+}
+
+.wordle-tile.correct {
+    background: #10b981 !important;
+    border-color: #10b981 !important;
+    color: #ffffff !important;
+    animation: flipTile 0.4s ease;
+}
+
+.wordle-tile.present {
+    background: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: #ffffff !important;
+    animation: flipTile 0.4s ease;
+}
+
+.wordle-tile.absent {
+    background: #64748b !important;
+    border-color: #64748b !important;
+    color: #ffffff !important;
+    animation: flipTile 0.4s ease;
+}
+
+@keyframes popTile {
+    0% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes flipTile {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(90deg); }
+    100% { transform: rotateX(0deg); }
+}
+
+.wordle-keypad {
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 16px;
+    margin: 20px auto;
+    max-width: 580px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.wordle-key {
+    font-family: "KaiTi", "STKaiti", "楷体", serif;
+    font-size: 22px;
+    font-weight: 700;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.wordle-key:hover {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    transform: translateY(-1px);
+}
+
+.wordle-key.key-correct {
+    background: #10b981;
+    border-color: #10b981;
+    color: #ffffff;
+}
+
+.wordle-key.key-absent {
+    background: #cbd5e1;
+    color: #64748b;
+    opacity: 0.5;
+}
+
+/* ==========================================================================
+   GAME 12: VOCABULARY BOSS BATTLE (ĐẤU BOSS TỪ VỰNG / RPG BATTLE)
+   ========================================================================== */
+.boss-arena {
+    background: radial-gradient(circle at center top, #1e1b4b, #0f172a);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    color: #ffffff;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.4);
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.boss-top-hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.player-hearts {
+    display: flex;
+    gap: 6px;
+    font-size: 22px;
+}
+
+.boss-status-box {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.boss-avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.boss-avatar-icon {
+    font-size: 64px;
+    line-height: 1;
+    filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.5));
+    transition: transform 0.2s ease;
+}
+
+.boss-avatar-icon.hit {
+    animation: bossHitShake 0.4s ease;
+    filter: brightness(2) drop-shadow(0 0 25px #ef4444);
+}
+
+@keyframes bossHitShake {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(-10px, 4px); }
+    50% { transform: translate(10px, -4px); }
+    75% { transform: translate(-6px, 2px); }
+}
+
+.boss-hp-track {
+    width: 100%;
+    max-width: 480px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ef4444;
+    border-radius: 10px;
+    margin: 8px auto 4px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.boss-hp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ef4444, #f97316);
+    width: 100%;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.boss-hp-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.boss-question-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+}
+
+.boss-q-prompt {
+    font-family: "KaiTi", "STKaiti", "楷体", serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #fef08a;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.boss-answers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.boss-ans-btn {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.boss-ans-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #60a5fa;
+    transform: translateY(-2px);
+}
+
+.boss-damage-float {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: 900;
+    color: #ef4444;
+    text-shadow: 0 0 10px #ffffff;
+    pointer-events: none;
+    animation: floatDamage 0.8s ease-out forwards;
+}
+
+@keyframes floatDamage {
+    0% { opacity: 1; transform: translate(-50%, 0) scale(1.2); }
+    100% { opacity: 0; transform: translate(-50%, -60px) scale(0.8); }
+}
+
+@media (max-width: 768px) {
+    .chain-choices-grid, .boss-answers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+

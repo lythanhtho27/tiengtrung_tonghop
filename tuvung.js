@@ -1300,12 +1300,59 @@
         container.innerHTML = `
             <div class="game-zone-wrapper">
                 <div class="game-hub-header">
-                    <h2>🎮 Khu Luyện Tập & Trò Chơi Ôn Tập (8 Chế Độ)</h2>
+                    <h2>🎮 Khu Luyện Tập & Trò Chơi Ôn Tập (12 Chế Độ Toàn Diện)</h2>
                     <p>Kho từ hiện tại: <strong>${wordCount} từ</strong> (theo phạm vi bộ lọc đang chọn). Hãy chọn thử thách yêu thích để bắt đầu!</p>
                 </div>
 
-                <!-- PHẦN 1: BÀI KHÓA, NGỮ PHÁP & CỤM TỪ THỰC CHIẾN -->
+                <!-- PHẦN 1: ĐẤU TRÍ & THỬ THÁCH ĐẶC BIỆT (RPG & PUZZLE) -->
                 <div class="game-hub-section-title">
+                    <span class="hub-sec-icon">⚔️</span>
+                    <span>Đấu Trí & Thử Thách Đặc Biệt (RPG & Câu Đố)</span>
+                </div>
+                <div class="game-hub-grid">
+                    <div class="game-card-item game-card-boss" data-game="boss">
+                        <div class="game-card-top">
+                            <span class="game-card-icon">⚔️</span>
+                            <span class="game-card-badge badge-hot">Siêu Hot • RPG</span>
+                        </div>
+                        <div class="game-card-title">1. Đấu Boss Từ Vựng (Boss Battle)</div>
+                        <div class="game-card-desc">Chiến đấu với Ma Vương Quên Lãng (1000 HP). Trả lời thần tốc gây sát thương bạo kích và bảo vệ 3 mạng sống!</div>
+                        <button class="game-card-btn">Chiến Ngay ▶</button>
+                    </div>
+
+                    <div class="game-card-item game-card-wordle" data-game="wordle">
+                        <div class="game-card-top">
+                            <span class="game-card-icon">🟩</span>
+                            <span class="game-card-badge badge-hot">Mới • Giải Đố</span>
+                        </div>
+                        <div class="game-card-title">2. Wordle Chữ Hán (Hanzi Wordle)</div>
+                        <div class="game-card-desc">Đoán từ vựng 2 chữ Hán bí mật trong 5 lượt thử với ô xanh, vàng, xám và gợi ý Pinyin, nghĩa tiếng Việt.</div>
+                        <button class="game-card-btn">Đoán Ngay ▶</button>
+                    </div>
+
+                    <div class="game-card-item game-card-alchemy" data-game="alchemy">
+                        <div class="game-card-top">
+                            <span class="game-card-icon">🧪</span>
+                            <span class="game-card-badge badge-hot">Mới • Bộ Thủ</span>
+                        </div>
+                        <div class="game-card-title">3. Chế Tác Chữ Hán (Radical Alchemy)</div>
+                        <div class="game-card-desc">Ghép các bộ thủ và thành phần biểu âm rời rạc thành chữ Hán hoàn chỉnh. Nhớ sâu cấu trúc chữ Hán!</div>
+                        <button class="game-card-btn">Chế Tác ▶</button>
+                    </div>
+
+                    <div class="game-card-item game-card-chain" data-game="chain">
+                        <div class="game-card-top">
+                            <span class="game-card-icon">🐉</span>
+                            <span class="game-card-badge badge-hot">Mới • 12 Giây</span>
+                        </div>
+                        <div class="game-card-title">4. Nối Từ Tiếp Sức (Word Chain)</div>
+                        <div class="game-card-desc">Lấy chữ cuối của từ trước làm chữ đầu của từ sau trong 12 giây phản xạ. Kéo dài chuỗi rồng từ vựng!</div>
+                        <button class="game-card-btn">Nối Từ ▶</button>
+                    </div>
+                </div>
+
+                <!-- PHẦN 2: BÀI KHÓA, NGỮ PHÁP & CỤM TỪ THỰC CHIẾN -->
+                <div class="game-hub-section-title" style="margin-top: 28px;">
                     <span class="hub-sec-icon">📖</span>
                     <span>Luyện Bài Khóa, Ngữ Pháp & Cụm Từ Thực Chiến (Boya HSK)</span>
                 </div>
@@ -1313,9 +1360,9 @@
                     <div class="game-card-item game-card-cloze" data-game="cloze">
                         <div class="game-card-top">
                             <span class="game-card-icon">🧩</span>
-                            <span class="game-card-badge badge-hot">Mới • Bài Khóa</span>
+                            <span class="game-card-badge">Bài Khóa</span>
                         </div>
-                        <div class="game-card-title">1. Điền Từ Bài Khóa (Cloze Test)</div>
+                        <div class="game-card-title">5. Điền Từ Bài Khóa (Cloze Test)</div>
                         <div class="game-card-desc">Thử thách điền từ vựng còn thiếu vào câu trích thực tế từ bài khóa và câu ví dụ để nhớ ngữ cảnh.</div>
                         <button class="game-card-btn">Luyện Ngay ▶</button>
                     </div>
@@ -1323,9 +1370,9 @@
                     <div class="game-card-item game-card-scramble-sentence" data-game="scramble_sentence">
                         <div class="game-card-top">
                             <span class="game-card-icon">🔤</span>
-                            <span class="game-card-badge badge-hot">Mới • Ngữ Pháp HSK</span>
+                            <span class="game-card-badge">Ngữ Pháp HSK</span>
                         </div>
-                        <div class="game-card-title">2. Sắp Xếp Trật Tự Câu (Sentence Scramble)</div>
+                        <div class="game-card-title">6. Sắp Xếp Trật Tự Câu (Sentence Scramble)</div>
                         <div class="game-card-desc">Ghép các khối từ rời rạc thành câu hoàn chỉnh đúng chuẩn ngữ pháp tiếng Trung (dạng bài thi HSK 4-5).</div>
                         <button class="game-card-btn">Luyện Ngay ▶</button>
                     </div>
@@ -1333,9 +1380,9 @@
                     <div class="game-card-item game-card-collocation" data-game="collocation">
                         <div class="game-card-top">
                             <span class="game-card-icon">🔗</span>
-                            <span class="game-card-badge badge-hot">Mới • Cụm Cố Định</span>
+                            <span class="game-card-badge">Cụm Cố Định</span>
                         </div>
-                        <div class="game-card-title">3. Nối Cụm Từ Phối Hợp (Collocation Matching)</div>
+                        <div class="game-card-title">7. Nối Cụm Từ Phối Hợp (Collocation Matching)</div>
                         <div class="game-card-desc">Nối các cặp Động từ – Danh từ, Tính từ – Danh từ kinh điển trong bài học (như 克服困难, 珍惜时间...).</div>
                         <button class="game-card-btn">Luyện Ngay ▶</button>
                     </div>
@@ -1343,15 +1390,15 @@
                     <div class="game-card-item game-card-synonyms" data-game="synonyms">
                         <div class="game-card-top">
                             <span class="game-card-icon">⚖️</span>
-                            <span class="game-card-badge badge-hot">Mới • Biện Tích</span>
+                            <span class="game-card-badge">Biện Tích</span>
                         </div>
-                        <div class="game-card-title">4. Phân Biệt Từ Gần Nghĩa (Synonyms Drill)</div>
+                        <div class="game-card-title">8. Phân Biệt Từ Gần Nghĩa (Synonyms Drill)</div>
                         <div class="game-card-desc">Chọn từ chính xác nhất giữa các cặp từ dễ nhầm lẫn (như 满足 vs 满意, 珍惜 vs 爱惜) kèm lời giải sư phạm chi tiết!</div>
                         <button class="game-card-btn">Luyện Ngay ▶</button>
                     </div>
                 </div>
 
-                <!-- PHẦN 2: PHẢN XẠ TỪ VỰNG, TRÍ NHỚ & ÂM THANH -->
+                <!-- PHẦN 3: PHẢN XẠ TỪ VỰNG, TRÍ NHỚ & ÂM THANH -->
                 <div class="game-hub-section-title" style="margin-top: 28px;">
                     <span class="hub-sec-icon">⚡</span>
                     <span>Phản Xạ Từ Vựng, Trí Nhớ & Âm Thanh</span>
@@ -1362,7 +1409,7 @@
                             <span class="game-card-icon">🃏</span>
                             <span class="game-card-badge">Trí Nhớ & Ghép Đôi</span>
                         </div>
-                        <div class="game-card-title">5. Ghép Cặp Thẻ (Card Matching)</div>
+                        <div class="game-card-title">9. Ghép Cặp Thẻ (Card Matching)</div>
                         <div class="game-card-desc">Lật và ghép các cặp Chữ Hán với Nghĩa Tiếng Việt tương ứng nhanh nhất có thể.</div>
                         <button class="game-card-btn">Chơi Ngay ▶</button>
                     </div>
@@ -1372,7 +1419,7 @@
                             <span class="game-card-icon">⚡</span>
                             <span class="game-card-badge">Tốc Độ Cao</span>
                         </div>
-                        <div class="game-card-title">6. Đúng Hay Sai? (Speed Rush)</div>
+                        <div class="game-card-title">10. Đúng Hay Sai? (Speed Rush)</div>
                         <div class="game-card-desc">Chữ Hán và Nghĩa có khớp nhau không? Phản xạ 5 giây, bảo vệ 3 mạng sống và tích chuỗi combo!</div>
                         <button class="game-card-btn">Chơi Ngay ▶</button>
                     </div>
@@ -1382,7 +1429,7 @@
                             <span class="game-card-icon">🧩</span>
                             <span class="game-card-badge">Tái Tạo Chữ Hán</span>
                         </div>
-                        <div class="game-card-title">7. Xếp Từ Hán Tự (Word Builder)</div>
+                        <div class="game-card-title">11. Xếp Từ Hán Tự (Word Builder)</div>
                         <div class="game-card-desc">Sắp xếp các ký tự Hán tự bị xáo trộn vào đúng vị trí để tạo thành từ vựng hoàn chỉnh.</div>
                         <button class="game-card-btn">Chơi Ngay ▶</button>
                     </div>
@@ -1392,7 +1439,7 @@
                             <span class="game-card-icon">🎯</span>
                             <span class="game-card-badge">Luyện Nghe Phản Xạ</span>
                         </div>
-                        <div class="game-card-title">8. Bắt Chữ Theo Âm (Audio Hunter)</div>
+                        <div class="game-card-title">12. Bắt Chữ Theo Âm (Audio Hunter)</div>
                         <div class="game-card-desc">Lắng nghe phát âm chuẩn và nhanh tay chọn trúng Chữ Hán chính xác trong 6 mục tiêu!</div>
                         <button class="game-card-btn">Chơi Ngay ▶</button>
                     </div>
@@ -1403,7 +1450,11 @@
         container.querySelectorAll(".game-card-item").forEach(card => {
             card.addEventListener("click", () => {
                 const gameType = card.dataset.game;
-                if (gameType === "cloze") startClozeTest();
+                if (gameType === "boss") startBossBattle();
+                else if (gameType === "wordle") startHanziWordle();
+                else if (gameType === "alchemy") startRadicalAlchemy();
+                else if (gameType === "chain") startWordChain();
+                else if (gameType === "cloze") startClozeTest();
                 else if (gameType === "scramble_sentence") startSentenceScramble();
                 else if (gameType === "collocation") startCollocationGame();
                 else if (gameType === "synonyms") startSynonymsDrill();
@@ -3416,6 +3467,1222 @@
 
             document.getElementById("btn-syn-again").addEventListener("click", startSynonymsDrill);
             document.getElementById("btn-syn-to-hub").addEventListener("click", renderGameHub);
+        }
+
+        loadQuestion();
+    }
+
+    // =========================================================================
+    // GAME 9: RADICAL ALCHEMY (CHẾ TÁC CHỮ HÁN / 拆字合成)
+    // =========================================================================
+    const BOYA_RADICALS_DATA = [
+        { target: "休", pinyin: "xiū", mean: "nghỉ ngơi", parts: ["亻", "木"], explain: "亻 (Người) + 木 (Cây) = 休 (Người tựa vào gốc cây để nghỉ ngơi)." },
+        { target: "明", pinyin: "míng", mean: "sáng sủa, thông minh", parts: ["日", "月"], explain: "日 (Mặt trời) + 月 (Mặt trăng) = 明 (Hai nguồn ánh sáng vũ trụ hợp lại tạo thành sự sáng rõ)." },
+        { target: "好", pinyin: "hǎo", mean: "tốt, đẹp, thích", parts: ["女", "子"], explain: "女 (Phụ nữ) + 子 (Con cái) = 好 (Mẹ và con tượng trưng cho sự sum vầy, tốt đẹp)." },
+        { target: "鸣", pinyin: "míng", mean: "tiếng hót, kêu", parts: ["口", "鸟"], explain: "口 (Miệng) + 鸟 (Con chim) = 鸣 (Tiếng chim cất tiếng hót líu lo)." },
+        { target: "林", pinyin: "lín", mean: "rừng cây nhỏ", parts: ["木", "木"], explain: "木 (Cây) + 木 (Cây) = 林 (Hai cây đứng cạnh nhau thành rừng cây)." },
+        { target: "安", pinyin: "ān", mean: "yên bình, an toàn", parts: ["宀", "女"], explain: "宀 (Mái nhà) + 女 (Người phụ nữ) = 安 (Người phụ nữ ở yên dưới mái ấm đem lại sự bình an)." },
+        { target: "看", pinyin: "kàn", mean: "nhìn, xem", parts: ["手", "目"], explain: "手 (Bàn tay) + 目 (Mắt) = 看 (Đưa tay lên trán che nắng để phóng tầm mắt nhìn xa)." },
+        { target: "闷", pinyin: "mèn", mean: "ngột ngạt, buồn bực", parts: ["门", "心"], explain: "门 (Cánh cửa) + 心 (Trái tim) = 闷 (Trái tim bị giam hãm sau cánh cửa gây cảm giác ngột ngạt)." },
+        { target: "泪", pinyin: "lèi", mean: "nước mắt, giọt lệ", parts: ["氵", "目"], explain: "氵 (Nước) + 目 (Mắt) = 泪 (Nước chảy ra từ khóe mắt là giọt nước mắt)." },
+        { target: "问", pinyin: "wèn", mean: "hỏi", parts: ["门", "口"], explain: "门 (Cánh cửa) + 口 (Miệng) = 问 (Đến trước cửa cất lời hỏi thăm)." },
+        { target: "闪", pinyin: "shǎn", mean: "lóe sáng, né tránh", parts: ["门", "人"], explain: "门 (Cánh cửa) + 人 (Người) = 闪 (Người thoắt ẩn thoắt hiện qua cánh cửa như ánh chớp)." },
+        { target: "信", pinyin: "xìn", mean: "tin tưởng, thư tín", parts: ["亻", "言"], explain: "亻 (Người) + 言 (Lời nói) = 信 (Lời nói của con người phải giữ trọn chữ tín)." },
+        { target: "尖", pinyin: "jiān", mean: "đầu nhọn, sắc bén", parts: ["小", "大"], explain: "小 (Nhỏ) ở trên + 大 (To) ở dưới = 尖 (Dưới to trên thu nhỏ lại thành chóp nhọn)." },
+        { target: "灾", pinyin: "zāi", mean: "tai họa, hỏa hoạn", parts: ["宀", "火"], explain: "宀 (Mái nhà) + 火 (Lửa) = 灾 (Ngọn lửa bốc cháy trong nhà là tai họa khôn lường)." },
+        { target: "尘", pinyin: "chén", mean: "bụi bặm", parts: ["小", "土"], explain: "小 (Nhỏ bé) + 土 (Đất cát) = 尘 (Những hạt đất cát li ti bay trong không khí là bụi bặm)." },
+        { target: "卡", pinyin: "kǎ", mean: "thẻ, mắc kẹt", parts: ["上", "下"], explain: "上 (Trên) + 下 (Dưới) = 卡 (Lơ lửng không lên trên không xuống dưới tức là bị kẹt lại)." },
+        { target: "意", pinyin: "yì", mean: "ý nghĩa, tâm ý", parts: ["音", "心"], explain: "音 (Âm thanh) + 心 (Trái tim) = 意 (Âm thanh phát ra từ đáy lòng là ý nghĩ, tâm ý)." },
+        { target: "男", pinyin: "nán", mean: "nam giới, đàn ông", parts: ["田", "力"], explain: "田 (Ruộng đất) + 力 (Sức lực) = 男 (Người dùng sức mạnh canh tác trên ruộng đồng là nam giới)." },
+        { target: "森", pinyin: "sēn", mean: "rừng rậm, sum sê", parts: ["木", "林"], explain: "木 (Cây) + 林 (Rừng cây) = 森 (Cây cối bạt ngàn tạo thành rừng rậm nguyên sinh)." }
+    ];
+
+    function startRadicalAlchemy() {
+        clearGameTimers();
+        state.activeGame = "alchemy";
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
+        if (!container) return;
+
+        const pool = [...BOYA_RADICALS_DATA];
+        shuffleArray(pool);
+        const totalQ = Math.min(10, pool.length);
+        let currentIdx = 0;
+        let score = 0;
+
+        container.innerHTML = `
+            <div class="game-play-wrapper">
+                <div class="game-nav-header">
+                    <button class="btn-pill btn-back-hub" id="btn-alchemy-back">← Khu Trò Chơi</button>
+                    <div class="game-meta-group">
+                        <span class="game-meta-badge">🧪 Chế Tác Chữ Hán</span>
+                        <span class="game-meta-badge" id="alchemy-round-info">Câu: 1 / ${totalQ}</span>
+                        <span class="game-meta-badge score-badge">Điểm: <strong id="alchemy-score">0</strong></span>
+                    </div>
+                    <button class="btn-pill" id="btn-alchemy-restart">🔄 Chơi Lại</button>
+                </div>
+
+                <div id="alchemy-box"></div>
+            </div>
+        `;
+
+        document.getElementById("btn-alchemy-back").addEventListener("click", renderGameHub);
+        document.getElementById("btn-alchemy-restart").addEventListener("click", startRadicalAlchemy);
+
+        function loadQuestion() {
+            if (currentIdx >= totalQ) {
+                finishAlchemy();
+                return;
+            }
+
+            const q = pool[currentIdx];
+            document.getElementById("alchemy-round-info").textContent = `Câu: ${currentIdx + 1} / ${totalQ}`;
+            document.getElementById("alchemy-score").textContent = score;
+
+            const box = document.getElementById("alchemy-box");
+            if (!box) return;
+
+            // Slots state
+            let slot0Part = null;
+            let slot1Part = null;
+            let slot0TileIndex = null;
+            let slot1TileIndex = null;
+
+            // Collect distractor parts from other items
+            const allOtherParts = [];
+            pool.forEach(item => {
+                if (item.target !== q.target) {
+                    allOtherParts.push(...item.parts);
+                }
+            });
+            shuffleArray(allOtherParts);
+            const uniqueDistractors = [...new Set(allOtherParts)].filter(p => !q.parts.includes(p)).slice(0, 6);
+            
+            // Combine target parts + distractors
+            const trayParts = [...q.parts, ...uniqueDistractors];
+            shuffleArray(trayParts);
+
+            box.innerHTML = `
+                <div class="alchemy-crucible-wrapper">
+                    <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #cbd5e1; margin-bottom: 6px;">
+                        Lò Luyện Hán Tự • Chế Tác Chữ Hán
+                    </div>
+                    <div style="font-size: 24px; font-weight: 700; color: #fef08a; margin-bottom: 4px;">
+                        ${escapeHtml(q.mean)}
+                    </div>
+                    <div style="font-size: 16px; color: #c7d2fe; margin-bottom: 22px;">
+                        Phiên âm: <strong>${escapeHtml(q.pinyin)}</strong>
+                    </div>
+
+                    <div class="alchemy-crucible" id="crucible-elem">
+                        <div class="alchemy-slot" id="slot-0" title="Nhấp để gỡ bỏ">
+                            <span class="slot-hz">?</span>
+                            <span class="slot-hint">Thành phần 1</span>
+                        </div>
+                        <div class="alchemy-plus">+</div>
+                        <div class="alchemy-slot" id="slot-1" title="Nhấp để gỡ bỏ">
+                            <span class="slot-hz">?</span>
+                            <span class="slot-hint">Thành phần 2</span>
+                        </div>
+                        <div class="alchemy-equals">=</div>
+                        <div class="alchemy-result-slot" id="result-slot">
+                            <span class="res-hz">?</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <button class="alchemy-fuse-btn" id="btn-fuse">✨ Luyện Hóa (Ghép Chữ)</button>
+                    </div>
+                </div>
+
+                <div style="font-size: 14px; font-weight: 600; color: var(--text-muted); margin-bottom: 10px; text-align: center;">
+                    👇 Chọn 2 bộ thủ / thành phần phù hợp từ khay bên dưới:
+                </div>
+                <div class="alchemy-tray" id="alchemy-tray-tiles">
+                    ${trayParts.map((part, idx) => `
+                        <div class="alchemy-tile" data-idx="${idx}" data-part="${escapeHtml(part)}">${escapeHtml(part)}</div>
+                    `).join("")}
+                </div>
+
+                <div id="alchemy-feedback-zone"></div>
+            `;
+
+            const slot0Elem = document.getElementById("slot-0");
+            const slot1Elem = document.getElementById("slot-1");
+            const resultSlotElem = document.getElementById("result-slot");
+            const fuseBtn = document.getElementById("btn-fuse");
+            const tiles = box.querySelectorAll(".alchemy-tile");
+            const feedbackZone = document.getElementById("alchemy-feedback-zone");
+
+            function updateSlotsUI() {
+                if (slot0Part) {
+                    slot0Elem.classList.add("filled");
+                    slot0Elem.querySelector(".slot-hz").textContent = slot0Part;
+                    slot0Elem.querySelector(".slot-hint").textContent = "Nhấp để gỡ";
+                } else {
+                    slot0Elem.classList.remove("filled");
+                    slot0Elem.querySelector(".slot-hz").textContent = "?";
+                    slot0Elem.querySelector(".slot-hint").textContent = "Thành phần 1";
+                }
+
+                if (slot1Part) {
+                    slot1Elem.classList.add("filled");
+                    slot1Elem.querySelector(".slot-hz").textContent = slot1Part;
+                    slot1Elem.querySelector(".slot-hint").textContent = "Nhấp để gỡ";
+                } else {
+                    slot1Elem.classList.remove("filled");
+                    slot1Elem.querySelector(".slot-hz").textContent = "?";
+                    slot1Elem.querySelector(".slot-hint").textContent = "Thành phần 2";
+                }
+            }
+
+            // Click tile in tray
+            tiles.forEach(tile => {
+                tile.addEventListener("click", () => {
+                    if (tile.classList.contains("used")) return;
+                    const part = tile.dataset.part;
+                    const idx = tile.dataset.idx;
+
+                    if (!slot0Part) {
+                        slot0Part = part;
+                        slot0TileIndex = idx;
+                        tile.classList.add("used");
+                        soundFX.tick();
+                        updateSlotsUI();
+                    } else if (!slot1Part) {
+                        slot1Part = part;
+                        slot1TileIndex = idx;
+                        tile.classList.add("used");
+                        soundFX.tick();
+                        updateSlotsUI();
+                    }
+                });
+            });
+
+            // Click slot to remove
+            slot0Elem.addEventListener("click", () => {
+                if (slot0Part) {
+                    if (slot0TileIndex !== null) {
+                        const tile = box.querySelector(`.alchemy-tile[data-idx="${slot0TileIndex}"]`);
+                        if (tile) tile.classList.remove("used");
+                    }
+                    slot0Part = null;
+                    slot0TileIndex = null;
+                    soundFX.tick();
+                    updateSlotsUI();
+                }
+            });
+
+            slot1Elem.addEventListener("click", () => {
+                if (slot1Part) {
+                    if (slot1TileIndex !== null) {
+                        const tile = box.querySelector(`.alchemy-tile[data-idx="${slot1TileIndex}"]`);
+                        if (tile) tile.classList.remove("used");
+                    }
+                    slot1Part = null;
+                    slot1TileIndex = null;
+                    soundFX.tick();
+                    updateSlotsUI();
+                }
+            });
+
+            // Fuse button
+            fuseBtn.addEventListener("click", () => {
+                if (!slot0Part || !slot1Part) {
+                    feedbackZone.innerHTML = `
+                        <div style="text-align: center; color: #ef4444; font-weight: 600; margin-top: 14px;">
+                            ⚠️ Hãy chọn đủ 2 thành phần trước khi tiến hành luyện hóa!
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Check match
+                const userParts = [slot0Part, slot1Part].sort();
+                const expectedParts = [...q.parts].sort();
+                const isCorrect = userParts[0] === expectedParts[0] && userParts[1] === expectedParts[1];
+
+                if (isCorrect) {
+                    soundFX.correct();
+                    score += 100;
+                    document.getElementById("alchemy-score").textContent = score;
+
+                    resultSlotElem.querySelector(".res-hz").textContent = q.target;
+                    resultSlotElem.style.boxShadow = "0 0 30px #eab308";
+                    fuseBtn.disabled = true;
+                    fuseBtn.style.opacity = "0.5";
+
+                    speakChinese(q.target);
+
+                    feedbackZone.innerHTML = `
+                        <div class="cloze-feedback-box" style="margin-top: 24px; border-left-color: #10b981; background: #ecfdf5;">
+                            <div style="flex: 1;">
+                                <div style="font-weight: 700; color: #047857; margin-bottom: 6px; font-size: 16px;">
+                                    🎉 Tuyệt vời! Chế tác thành công chữ: <strong style="font-size: 20px; font-family: KaiTi, serif;">${escapeHtml(q.target)}</strong> (${escapeHtml(q.pinyin)})
+                                </div>
+                                <div style="font-size: 14.5px; color: #1e293b; line-height: 1.5;">
+                                    💡 <strong>Chiết tự ghi nhớ:</strong> ${escapeHtml(q.explain)}
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <button class="btn-pill" id="btn-alchemy-speak">🔊 Nghe đọc</button>
+                                <button class="btn-pill" id="btn-alchemy-next" style="background: #10b981; color: #ffffff; border-color: #10b981;">Câu Tiếp Theo ▶</button>
+                            </div>
+                        </div>
+                    `;
+
+                    document.getElementById("btn-alchemy-speak").addEventListener("click", () => speakChinese(q.target));
+                    document.getElementById("btn-alchemy-next").addEventListener("click", () => {
+                        currentIdx++;
+                        loadQuestion();
+                    });
+                } else {
+                    soundFX.wrong();
+                    const crucible = document.getElementById("crucible-elem");
+                    if (crucible) {
+                        crucible.classList.add("shake-elem");
+                        setTimeout(() => crucible.classList.remove("shake-elem"), 500);
+                    }
+                    feedbackZone.innerHTML = `
+                        <div style="text-align: center; color: #ef4444; font-weight: 600; margin-top: 14px;">
+                            ❌ Hai thành phần này chưa tạo thành chữ <strong>${escapeHtml(q.mean)}</strong> (${escapeHtml(q.pinyin)}). Hãy nhấp vào ô để đổi thành phần khác!
+                        </div>
+                    `;
+                }
+            });
+        }
+
+        function finishAlchemy() {
+            const box = document.getElementById("alchemy-box");
+            if (!box) return;
+            soundFX.fanfare();
+            const accuracy = Math.round((score / (totalQ * 100)) * 100);
+
+            box.innerHTML = `
+                <div class="cloze-card" style="padding: 40px 20px;">
+                    <div style="font-size: 56px; margin-bottom: 12px;">🧪</div>
+                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                        Hoàn Thành Thử Thách Chế Tác Chữ Hán!
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
+                        Mức độ làm chủ cấu trúc bộ thủ: <strong>${accuracy}%</strong>
+                    </p>
+                    <div style="font-size: 38px; font-weight: 700; color: #eab308; margin-bottom: 28px;">
+                        ${score} Điểm
+                    </div>
+                    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                        <button class="btn-pill" id="btn-alchemy-again">🔄 Chế Tác Lại</button>
+                        <button class="btn-pill" id="btn-alchemy-to-hub">🏠 Về Khu Trò Chơi</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("btn-alchemy-again").addEventListener("click", startRadicalAlchemy);
+            document.getElementById("btn-alchemy-to-hub").addEventListener("click", renderGameHub);
+        }
+
+        loadQuestion();
+    }
+
+    // =========================================================================
+    // GAME 10: WORD CHAIN (NỐI TỪ TIẾP SỨC / 词语接龙)
+    // =========================================================================
+    const BOYA_WORD_CHAIN_DATA = [
+        { hz: "珍惜", py: "zhēnxī", mean: "trân trọng" },
+        { hz: "惜别", py: "xībié", mean: "lưu luyến chia tay" },
+        { hz: "别人", py: "biérén", mean: "người khác" },
+        { hz: "人生", py: "rénshēng", mean: "đời người, nhân sinh" },
+        { hz: "生活", py: "shēnghuó", mean: "cuộc sống" },
+        { hz: "活动", py: "huódòng", mean: "hoạt động" },
+        { hz: "动物", py: "dòngwù", mean: "động vật" },
+        { hz: "物理", py: "wùlǐ", mean: "vật lý" },
+        { hz: "理想", py: "lǐxiǎng", mean: "lý tưởng" },
+        { hz: "想法", py: "xiǎngfǎ", mean: "suy nghĩ, cách nghĩ" },
+        { hz: "法律", py: "fǎlǜ", mean: "pháp luật" },
+        { hz: "律师", py: "lǜshī", mean: "luật sư" },
+        { hz: "老师", py: "lǎoshī", mean: "giáo viên" },
+        { hz: "师生", py: "shīshēng", mean: "thầy trò" },
+        { hz: "生产", py: "shēngchǎn", mean: "sản xuất" },
+        { hz: "产品", py: "chǎnpǐn", mean: "sản phẩm" },
+        { hz: "品质", py: "pǐnzhì", mean: "phẩm chất" },
+        { hz: "质量", py: "zhìliàng", mean: "chất lượng" },
+        { hz: "力量", py: "lìliàng", mean: "sức mạnh, năng lượng" },
+        { hz: "量变", py: "liàngbiàn", mean: "biến đổi về lượng" },
+        { hz: "变化", py: "biànhuà", mean: "biến hóa, thay đổi" },
+        { hz: "化学", py: "huàxué", mean: "hóa học" },
+        { hz: "学生", py: "xuéshēng", mean: "học sinh" },
+        { hz: "生日", py: "shēngrì", mean: "ngày sinh nhật" },
+        { hz: "日常", py: "rìcháng", mean: "thường ngày" },
+        { hz: "常识", py: "chángshí", mean: "thường thức" },
+        { hz: "识别", py: "shíbié", mean: "nhận biết, phân biệt" },
+        { hz: "表达", py: "biǎodá", mean: "bày tỏ, diễn đạt" },
+        { hz: "达到", py: "dádào", mean: "đạt tới" },
+        { hz: "到达", py: "dàodá", mean: "đến nơi" },
+        { hz: "道理", py: "dàolǐ", mean: "đạo lý, lý lẽ" },
+        { hz: "理解", py: "lǐjiě", mean: "hiểu, thấu hiểu" },
+        { hz: "解决", py: "jiějué", mean: "giải quyết" },
+        { hz: "决心", py: "juéxīn", mean: "quyết tâm" },
+        { hz: "心情", py: "xīnqíng", mean: "tâm trạng" },
+        { hz: "情况", py: "qíngkuàng", mean: "tình hình" },
+        { hz: "况且", py: "kuàngqiě", mean: "hơn nữa" },
+        { hz: "并且", py: "bìngqiě", mean: "đồng thời, hơn nữa" }
+    ];
+
+    function startWordChain() {
+        clearGameTimers();
+        state.activeGame = "chain";
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
+        if (!container) return;
+
+        let words = getFilteredWords().filter(w => w.hz && w.hz.length >= 2);
+        if (words.length < 10) words = state.allWords.filter(w => w.hz && w.hz.length >= 2);
+
+        const TIME_LIMIT = 12000; // 12 seconds
+        let timerInterval = null;
+        let lives = 3;
+        let score = 0;
+        let combo = 0;
+        let maxCombo = 0;
+        let chainHistory = [];
+        let totalAnswered = 0;
+        const targetRounds = 10;
+
+        // Choose starting word
+        let currentWord = BOYA_WORD_CHAIN_DATA[0];
+        chainHistory.push(currentWord);
+
+        container.innerHTML = `
+            <div class="game-play-wrapper">
+                <div class="game-nav-header">
+                    <button class="btn-pill btn-back-hub" id="btn-chain-back">← Khu Trò Chơi</button>
+                    <div class="game-meta-group">
+                        <span class="game-meta-badge">🐉 Nối Từ Tiếp Sức</span>
+                        <span class="game-meta-badge" id="chain-lives-display">❤️❤️❤️</span>
+                        <span class="game-meta-badge score-badge">Điểm: <strong id="chain-score">0</strong></span>
+                        <span class="game-meta-badge" id="chain-combo-badge" style="display:none; color:#ea580c; font-weight:700;">🔥 Combo x0</span>
+                    </div>
+                    <button class="btn-pill" id="btn-chain-restart">🔄 Chơi Lại</button>
+                </div>
+
+                <div class="chain-wrapper" id="chain-box">
+                    <div class="chain-timer-bar-wrap">
+                        <div class="chain-timer-bar-fill" id="chain-timer-bar"></div>
+                    </div>
+
+                    <div style="font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">
+                        📜 Chuỗi Rồng Từ Vựng (Đã nối được <span id="chain-len">1</span> từ):
+                    </div>
+                    <div class="chain-track-box" id="chain-track">
+                        <!-- Chain Nodes -->
+                    </div>
+
+                    <div class="chain-target-prompt">
+                        <div style="font-size: 14.5px; color: var(--text-muted); margin-bottom: 4px;">
+                            Tìm từ vựng bắt đầu bằng chữ Hán:
+                        </div>
+                        <div class="chain-target-char" id="chain-target-char">?</div>
+                        <div style="font-size: 13px; color: #ea580c;" id="chain-target-hint">
+                            Thời gian suy nghĩ: 12 giây!
+                        </div>
+                    </div>
+
+                    <div class="chain-choices-grid" id="chain-choices">
+                        <!-- 4 Choice buttons -->
+                    </div>
+
+                    <div id="chain-feedback" style="min-height: 24px; text-align: center; margin-top: 16px; font-weight: 600;"></div>
+                </div>
+            </div>
+        `;
+
+        document.getElementById("btn-chain-back").addEventListener("click", () => {
+            clearGameTimers();
+            renderGameHub();
+        });
+        document.getElementById("btn-chain-restart").addEventListener("click", startWordChain);
+
+        function renderChainTrack() {
+            const track = document.getElementById("chain-track");
+            const chainLenElem = document.getElementById("chain-len");
+            if (!track) return;
+            if (chainLenElem) chainLenElem.textContent = chainHistory.length;
+
+            track.innerHTML = chainHistory.map((item, idx) => `
+                <div class="chain-node ${idx === chainHistory.length - 1 ? 'current' : ''}">
+                    <span>${escapeHtml(item.hz)}</span>
+                    <span style="font-size: 11px; opacity: 0.75;">(${escapeHtml(item.py)})</span>
+                </div>
+                ${idx < chainHistory.length - 1 ? '<span class="chain-node-arrow">➔</span>' : ''}
+            `).join("");
+
+            setTimeout(() => {
+                track.scrollLeft = track.scrollWidth;
+            }, 50);
+        }
+
+        function updateHUD() {
+            const livesElem = document.getElementById("chain-lives-display");
+            if (livesElem) {
+                let h = "";
+                for (let i = 0; i < 3; i++) h += (i < lives) ? "❤️" : "🖤";
+                livesElem.textContent = h;
+            }
+            const scoreElem = document.getElementById("chain-score");
+            if (scoreElem) scoreElem.textContent = score;
+
+            const comboBadge = document.getElementById("chain-combo-badge");
+            if (comboBadge) {
+                if (combo >= 2) {
+                    comboBadge.style.display = "inline-flex";
+                    comboBadge.textContent = `🔥 Combo x${combo}`;
+                } else {
+                    comboBadge.style.display = "none";
+                }
+            }
+        }
+
+        function nextTurn() {
+            if (lives <= 0 || totalAnswered >= targetRounds) {
+                finishWordChain();
+                return;
+            }
+
+            renderChainTrack();
+            updateHUD();
+
+            const lastWord = chainHistory[chainHistory.length - 1];
+            const lastChar = lastWord.hz.slice(-1);
+
+            const targetCharElem = document.getElementById("chain-target-char");
+            if (targetCharElem) targetCharElem.textContent = lastChar;
+
+            // Find valid continuation candidate
+            let validNext = BOYA_WORD_CHAIN_DATA.find(w => w.hz.startsWith(lastChar) && !chainHistory.some(ch => ch.hz === w.hz));
+            if (!validNext) {
+                validNext = words.find(w => w.hz.startsWith(lastChar) && !chainHistory.some(ch => ch.hz === w.hz));
+            }
+            if (!validNext) {
+                validNext = BOYA_WORD_CHAIN_DATA.find(w => w.hz.startsWith(lastChar));
+            }
+            if (!validNext) {
+                validNext = BOYA_WORD_CHAIN_DATA[(chainHistory.length) % BOYA_WORD_CHAIN_DATA.length];
+                if (targetCharElem) targetCharElem.textContent = validNext.hz[0];
+            }
+
+            // Distractors: 3 words not starting with lastChar
+            const distractors = words.filter(w => !w.hz.startsWith(lastChar) && w.hz !== validNext.hz);
+            shuffleArray(distractors);
+            const choices = [validNext, ...distractors.slice(0, 3)];
+            shuffleArray(choices);
+
+            const choicesGrid = document.getElementById("chain-choices");
+            const feedbackElem = document.getElementById("chain-feedback");
+            const timerBar = document.getElementById("chain-timer-bar");
+            if (feedbackElem) feedbackElem.textContent = "";
+
+            if (choicesGrid) {
+                choicesGrid.innerHTML = choices.map(c => `
+                    <div class="chain-choice-btn" data-hz="${escapeHtml(c.hz)}" data-is-correct="${c.hz === validNext.hz}">
+                        <div class="chain-choice-hz">${escapeHtml(c.hz)}</div>
+                        <div class="chain-choice-py">${escapeHtml(c.py)}</div>
+                        <div class="chain-choice-mean">${escapeHtml(c.mean)}</div>
+                    </div>
+                `).join("");
+            }
+
+            if (timerBar) {
+                timerBar.style.width = "100%";
+                timerBar.style.background = "#10b981";
+            }
+
+            let startTime = Date.now();
+            clearInterval(timerInterval);
+            let answered = false;
+
+            timerInterval = setInterval(() => {
+                const elapsed = Date.now() - startTime;
+                const remaining = Math.max(0, TIME_LIMIT - elapsed);
+                const pct = (remaining / TIME_LIMIT) * 100;
+
+                if (timerBar) {
+                    timerBar.style.width = `${pct}%`;
+                    if (pct < 30) timerBar.style.background = "#ef4444";
+                    else if (pct < 60) timerBar.style.background = "#f59e0b";
+                }
+
+                if (remaining <= 0) {
+                    clearInterval(timerInterval);
+                    if (!answered) {
+                        answered = true;
+                        handleTimeout(validNext);
+                    }
+                }
+            }, 50);
+            addGameTimer(timerInterval);
+
+            // Handle user click
+            const btns = choicesGrid.querySelectorAll(".chain-choice-btn");
+            btns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    if (answered) return;
+                    answered = true;
+                    clearInterval(timerInterval);
+
+                    const isCorrect = btn.dataset.isCorrect === "true";
+                    totalAnswered++;
+
+                    if (isCorrect) {
+                        soundFX.correct();
+                        combo++;
+                        if (combo > maxCombo) maxCombo = combo;
+                        const elapsed = Date.now() - startTime;
+                        const timeBonus = Math.max(0, Math.round((TIME_LIMIT - elapsed) / 100));
+                        const pts = 100 + timeBonus + (combo * 15);
+                        score += pts;
+
+                        btn.style.borderColor = "#10b981";
+                        btn.style.background = "#ecfdf5";
+                        if (feedbackElem) {
+                            feedbackElem.style.color = "#10b981";
+                            feedbackElem.textContent = `🎉 Nối chuỗi thành công! (+${pts} điểm)`;
+                        }
+
+                        speakChinese(validNext.hz);
+                        chainHistory.push(validNext);
+
+                        setTimeout(nextTurn, 1000);
+                    } else {
+                        soundFX.wrong();
+                        lives--;
+                        combo = 0;
+                        btn.style.borderColor = "#ef4444";
+                        btn.style.background = "#fef2f2";
+
+                        btns.forEach(b => {
+                            if (b.dataset.isCorrect === "true") {
+                                b.style.borderColor = "#10b981";
+                                b.style.background = "#ecfdf5";
+                            }
+                        });
+
+                        if (feedbackElem) {
+                            feedbackElem.style.color = "#ef4444";
+                            feedbackElem.textContent = `❌ Chưa chính xác! Chữ tiếp theo bắt đầu bằng "${lastChar}" là: ${validNext.hz}`;
+                        }
+
+                        speakChinese(validNext.hz);
+                        updateHUD();
+                        setTimeout(nextTurn, 1500);
+                    }
+                });
+            });
+        }
+
+        function handleTimeout(validNext) {
+            totalAnswered++;
+            soundFX.wrong();
+            lives--;
+            combo = 0;
+            updateHUD();
+
+            const feedbackElem = document.getElementById("chain-feedback");
+            if (feedbackElem) {
+                feedbackElem.style.color = "#ef4444";
+                feedbackElem.textContent = `⏰ Hết thời gian 12 giây! Từ cần nối là: ${validNext.hz} (${validNext.py})`;
+            }
+
+            const choicesGrid = document.getElementById("chain-choices");
+            if (choicesGrid) {
+                choicesGrid.querySelectorAll(".chain-choice-btn").forEach(b => {
+                    if (b.dataset.isCorrect === "true") {
+                        b.style.borderColor = "#10b981";
+                        b.style.background = "#ecfdf5";
+                    }
+                });
+            }
+
+            speakChinese(validNext.hz);
+            setTimeout(nextTurn, 1600);
+        }
+
+        function finishWordChain() {
+            clearInterval(timerInterval);
+            const box = document.getElementById("chain-box");
+            if (!box) return;
+            soundFX.fanfare();
+
+            box.innerHTML = `
+                <div class="cloze-card" style="padding: 40px 20px;">
+                    <div style="font-size: 56px; margin-bottom: 12px;">🐉</div>
+                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                        ${lives > 0 ? "Tuyệt Đỉnh Nối Từ Tiếp Sức!" : "Kết Thúc Lượt Chơi!"}
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 14px;">
+                        Bạn đã tạo nên chuỗi Rồng gồm <strong>${chainHistory.length} từ vựng</strong> liên tiếp!
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 24px;">
+                        <div>Combo lớn nhất: <strong style="color: #ea580c;">x${maxCombo}</strong></div>
+                        <div>Mạng còn lại: <strong>${lives}/3</strong></div>
+                    </div>
+                    <div style="font-size: 38px; font-weight: 700; color: #ea580c; margin-bottom: 28px;">
+                        ${score} Điểm
+                    </div>
+                    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                        <button class="btn-pill" id="btn-chain-again">🔄 Thử Thách Lại</button>
+                        <button class="btn-pill" id="btn-chain-to-hub">🏠 Về Khu Trò Chơi</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("btn-chain-again").addEventListener("click", startWordChain);
+            document.getElementById("btn-chain-to-hub").addEventListener("click", renderGameHub);
+        }
+
+        nextTurn();
+    }
+
+    // =========================================================================
+    // GAME 11: HANZI WORDLE (WORDLE CHỮ HÁN / 猜词宝典)
+    // =========================================================================
+    function startHanziWordle() {
+        clearGameTimers();
+        state.activeGame = "wordle";
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
+        if (!container) return;
+
+        // Filter 2-character words
+        let pool = getFilteredWords().filter(w => w.hz && w.hz.length === 2);
+        if (pool.length < 8) {
+            pool = state.allWords.filter(w => w.hz && w.hz.length === 2);
+        }
+
+        const targetWord = pool[Math.floor(Math.random() * pool.length)];
+        const maxAttempts = 5;
+        let currentAttempt = 0;
+        let currentInput = [];
+        let isGameOver = false;
+        let showHint = false;
+
+        // Generate virtual keypad characters
+        const keypadCharSet = new Set([targetWord.hz[0], targetWord.hz[1]]);
+        shuffleArray(pool);
+        for (const w of pool) {
+            if (keypadCharSet.size >= 14) break;
+            if (w.hz[0]) keypadCharSet.add(w.hz[0]);
+            if (w.hz[1] && keypadCharSet.size < 14) keypadCharSet.add(w.hz[1]);
+        }
+        const keypadChars = [...keypadCharSet];
+        shuffleArray(keypadChars);
+
+        container.innerHTML = `
+            <div class="game-play-wrapper">
+                <div class="game-nav-header">
+                    <button class="btn-pill btn-back-hub" id="btn-wordle-back">← Khu Trò Chơi</button>
+                    <div class="game-meta-group">
+                        <span class="game-meta-badge">🟩 Hanzi Wordle</span>
+                        <span class="game-meta-badge" id="wordle-attempt-badge">Lượt thử: 1 / ${maxAttempts}</span>
+                    </div>
+                    <button class="btn-pill" id="btn-wordle-restart">🔄 Từ Khác</button>
+                </div>
+
+                <div class="wordle-card" id="wordle-box">
+                    <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px;">
+                        ĐOÁN TỪ VỰNG 2 CHỮ HÁN TRONG 5 LƯỢT THỬ
+                    </div>
+                    <div style="font-size: 13.5px; color: #64748b; margin-bottom: 16px;">
+                        🟩 <strong>Xanh lá</strong>: Đúng chữ & đúng vị trí &nbsp;|&nbsp; 🟨 <strong>Vàng</strong>: Có trong từ nhưng sai vị trí &nbsp;|&nbsp; ⬜ <strong>Xám</strong>: Không có trong từ
+                    </div>
+
+                    <!-- Nút Mở Gợi Ý -->
+                    <div style="margin-bottom: 18px;">
+                        <button class="btn-pill" id="btn-wordle-hint" style="font-size: 13px; padding: 6px 16px;">
+                            💡 Mở Gợi Ý Nghĩa Tiếng Việt
+                        </button>
+                        <div id="wordle-hint-text" style="display:none; margin-top: 8px; font-size: 15px; font-weight: 600; color: #0284c7;">
+                            Nghĩa từ: <em>${escapeHtml(targetWord.mean)}</em>
+                        </div>
+                    </div>
+
+                    <!-- Bàn cờ 5 hàng x 2 ô -->
+                    <div class="wordle-board" id="wordle-board">
+                        ${Array.from({ length: maxAttempts }).map((_, rIdx) => `
+                            <div class="wordle-row" id="wordle-row-${rIdx}">
+                                <div class="wordle-tile" id="tile-${rIdx}-0"></div>
+                                <div class="wordle-tile" id="tile-${rIdx}-1"></div>
+                            </div>
+                        `).join("")}
+                    </div>
+
+                    <!-- Thông báo trạng thái -->
+                    <div id="wordle-message" style="min-height: 24px; font-size: 14.5px; font-weight: 600; margin-bottom: 12px;"></div>
+
+                    <!-- Bàn phím ký tự ảo -->
+                    <div class="wordle-keypad" id="wordle-keypad">
+                        ${keypadChars.map(char => `
+                            <button class="wordle-key" data-char="${escapeHtml(char)}">${escapeHtml(char)}</button>
+                        `).join("")}
+                    </div>
+
+                    <!-- Phím chức năng -->
+                    <div style="display: flex; justify-content: center; gap: 12px; margin-top: 10px;">
+                        <button class="btn-pill" id="btn-wordle-delete" style="font-weight: 700;">⌫ Xóa</button>
+                        <button class="btn-pill" id="btn-wordle-submit" style="background: #10b981; color: #ffffff; border-color: #10b981; font-weight: 700;">✓ Xác Nhận Đoán</button>
+                    </div>
+
+                    <div id="wordle-solution-card"></div>
+                </div>
+            </div>
+        `;
+
+        document.getElementById("btn-wordle-back").addEventListener("click", renderGameHub);
+        document.getElementById("btn-wordle-restart").addEventListener("click", startHanziWordle);
+
+        // Hint button
+        const hintBtn = document.getElementById("btn-wordle-hint");
+        const hintText = document.getElementById("wordle-hint-text");
+        if (hintBtn) {
+            hintBtn.addEventListener("click", () => {
+                showHint = !showHint;
+                hintText.style.display = showHint ? "block" : "none";
+                hintBtn.textContent = showHint ? "🙈 Ẩn Gợi Ý" : "💡 Mở Gợi Ý Nghĩa Tiếng Việt";
+            });
+        }
+
+        const messageElem = document.getElementById("wordle-message");
+        const keypadElem = document.getElementById("wordle-keypad");
+
+        function updateBoardInput() {
+            const tile0 = document.getElementById(`tile-${currentAttempt}-0`);
+            const tile1 = document.getElementById(`tile-${currentAttempt}-1`);
+            if (tile0) {
+                tile0.textContent = currentInput[0] || "";
+                if (currentInput[0]) tile0.classList.add("active-input");
+                else tile0.classList.remove("active-input");
+            }
+            if (tile1) {
+                tile1.textContent = currentInput[1] || "";
+                if (currentInput[1]) tile1.classList.add("active-input");
+                else tile1.classList.remove("active-input");
+            }
+        }
+
+        // Key click handlers
+        keypadElem.querySelectorAll(".wordle-key").forEach(key => {
+            key.addEventListener("click", () => {
+                if (isGameOver) return;
+                if (currentInput.length < 2) {
+                    currentInput.push(key.dataset.char);
+                    soundFX.tick();
+                    updateBoardInput();
+                }
+            });
+        });
+
+        // Delete handler
+        document.getElementById("btn-wordle-delete").addEventListener("click", () => {
+            if (isGameOver) return;
+            if (currentInput.length > 0) {
+                currentInput.pop();
+                soundFX.tick();
+                updateBoardInput();
+            }
+        });
+
+        // Submit handler
+        document.getElementById("btn-wordle-submit").addEventListener("click", submitGuess);
+
+        function submitGuess() {
+            if (isGameOver) return;
+            if (currentInput.length < 2) {
+                if (messageElem) {
+                    messageElem.style.color = "#ef4444";
+                    messageElem.textContent = "⚠️ Hãy chọn đủ 2 chữ Hán trước khi xác nhận!";
+                }
+                return;
+            }
+
+            const guess = currentInput.join("");
+            const tile0 = document.getElementById(`tile-${currentAttempt}-0`);
+            const tile1 = document.getElementById(`tile-${currentAttempt}-1`);
+
+            // Evaluate colors
+            const target = targetWord.hz;
+            const evalRes = [null, null];
+
+            // First pass: exact matches
+            if (guess[0] === target[0]) evalRes[0] = "correct";
+            if (guess[1] === target[1]) evalRes[1] = "correct";
+
+            // Second pass: present matches
+            if (evalRes[0] === null) {
+                evalRes[0] = (guess[0] === target[1] && evalRes[1] !== "correct") ? "present" : "absent";
+            }
+            if (evalRes[1] === null) {
+                evalRes[1] = (guess[1] === target[0] && evalRes[0] !== "correct") ? "present" : "absent";
+            }
+
+            // Apply to board tiles
+            if (tile0) tile0.classList.add(evalRes[0]);
+            if (tile1) tile1.classList.add(evalRes[1]);
+
+            // Update keypad keys
+            currentInput.forEach((char, idx) => {
+                const key = keypadElem.querySelector(`.wordle-key[data-char="${char}"]`);
+                if (key) {
+                    if (evalRes[idx] === "correct") {
+                        key.className = "wordle-key key-correct";
+                    } else if (evalRes[idx] === "absent" && !key.classList.contains("key-correct")) {
+                        key.className = "wordle-key key-absent";
+                    }
+                }
+            });
+
+            // Check Win
+            if (guess === target) {
+                isGameOver = true;
+                soundFX.correct();
+                soundFX.fanfare();
+                speakChinese(targetWord.hz);
+                showWordleResult(true);
+                return;
+            }
+
+            // Next attempt
+            currentAttempt++;
+            currentInput = [];
+            document.getElementById("wordle-attempt-badge").textContent = `Lượt thử: ${Math.min(currentAttempt + 1, maxAttempts)} / ${maxAttempts}`;
+
+            if (currentAttempt >= maxAttempts) {
+                isGameOver = true;
+                soundFX.wrong();
+                speakChinese(targetWord.hz);
+                showWordleResult(false);
+            } else {
+                soundFX.tick();
+                if (messageElem) {
+                    messageElem.style.color = "#d97706";
+                    messageElem.textContent = `Lượt thử tiếp theo! Bạn còn ${maxAttempts - currentAttempt} lượt.`;
+                }
+            }
+        }
+
+        function showWordleResult(isWin) {
+            const solutionCard = document.getElementById("wordle-solution-card");
+            if (!solutionCard) return;
+
+            solutionCard.innerHTML = `
+                <div class="cloze-feedback-box" style="margin-top: 24px; border-left-color: ${isWin ? '#10b981' : '#ef4444'}; background: ${isWin ? '#ecfdf5' : '#fef2f2'};">
+                    <div style="flex: 1;">
+                        <div style="font-weight: 700; color: ${isWin ? '#047857' : '#b91c1c'}; margin-bottom: 6px; font-size: 16px;">
+                            ${isWin ? '🎉 CHÚC MỪNG BẠN ĐÃ ĐOÁN ĐÚNG!' : '❌ HẾT LƯỢT THỬ! TỪ BÍ MẬT LÀ:'}
+                        </div>
+                        <div style="font-size: 26px; font-family: KaiTi, serif; font-weight: 700; color: #0f172a; margin-bottom: 4px;">
+                            ${escapeHtml(targetWord.hz)} <span style="font-size: 16px; font-family: inherit; color: #ea580c; font-weight: 500;">(${escapeHtml(targetWord.py)})</span>
+                        </div>
+                        <div style="font-size: 14.5px; color: #334155;">
+                            Ý nghĩa: <strong>${escapeHtml(targetWord.mean)}</strong>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                        <button class="btn-pill" id="btn-wordle-speak">🔊 Nghe đọc</button>
+                        <button class="btn-pill" id="btn-wordle-next" style="background: #10b981; color: #ffffff; border-color: #10b981;">Đoán Từ Tiếp Theo ▶</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("btn-wordle-speak").addEventListener("click", () => speakChinese(targetWord.hz));
+            document.getElementById("btn-wordle-next").addEventListener("click", startHanziWordle);
+        }
+    }
+
+    // =========================================================================
+    // GAME 12: VOCABULARY BOSS BATTLE (ĐẤU BOSS TỪ VỰNG / RPG BATTLE)
+    // =========================================================================
+    function startBossBattle() {
+        clearGameTimers();
+        state.activeGame = "boss";
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
+        if (!container) return;
+
+        let words = getFilteredWords();
+        if (words.length < 8) words = state.allWords;
+
+        const BOSS_MAX_HP = 1000;
+        let bossHP = BOSS_MAX_HP;
+        let playerHearts = 3;
+        let score = 0;
+        let combo = 0;
+        let currentQIdx = 0;
+        let qStartTime = 0;
+        let answered = false;
+
+        const shuffledPool = [...words];
+        shuffleArray(shuffledPool);
+
+        container.innerHTML = `
+            <div class="game-play-wrapper">
+                <div class="game-nav-header">
+                    <button class="btn-pill btn-back-hub" id="btn-boss-back">← Khu Trò Chơi</button>
+                    <div class="game-meta-group">
+                        <span class="game-meta-badge">⚔️ Đấu Boss Từ Vựng</span>
+                        <span class="game-meta-badge score-badge">Điểm: <strong id="boss-score">0</strong></span>
+                    </div>
+                    <button class="btn-pill" id="btn-boss-restart">🔄 Khiêu Chiến Lại</button>
+                </div>
+
+                <div class="boss-arena" id="boss-arena">
+                    <div class="boss-top-hud">
+                        <div class="player-hearts" id="boss-hearts">
+                            ❤️❤️❤️
+                        </div>
+                        <div id="boss-combo-tag" style="font-weight: 700; color: #f59e0b; font-size: 15px;"></div>
+                    </div>
+
+                    <div class="boss-status-box">
+                        <div class="boss-avatar-wrapper">
+                            <div class="boss-avatar-icon" id="boss-icon">👹</div>
+                        </div>
+                        <div style="font-size: 16px; font-weight: 700; letter-spacing: 1px; color: #fca5a5;">
+                            MA VƯƠNG QUÊN LÃNG (遗忘魔王)
+                        </div>
+                        <div class="boss-hp-track">
+                            <div class="boss-hp-fill" id="boss-hp-bar" style="width: 100%;"></div>
+                            <span class="boss-hp-text" id="boss-hp-text">1000 / 1000 HP</span>
+                        </div>
+                    </div>
+
+                    <div class="boss-question-card" id="boss-q-card">
+                        <div id="boss-q-header" style="font-size: 14px; color: #94a3b8; margin-bottom: 8px;">
+                            CÂU HỎI TẤN CÔNG (Đáp nhanh dưới 3.5s để gây BẠO KÍCH!)
+                        </div>
+                        <div class="boss-q-prompt" id="boss-q-prompt">...</div>
+                        <div class="boss-answers-grid" id="boss-answers">
+                            <!-- 4 answer choices -->
+                        </div>
+                    </div>
+
+                    <div id="boss-float-zone"></div>
+                </div>
+            </div>
+        `;
+
+        document.getElementById("btn-boss-back").addEventListener("click", () => {
+            clearGameTimers();
+            renderGameHub();
+        });
+        document.getElementById("btn-boss-restart").addEventListener("click", startBossBattle);
+
+        function updateHUD() {
+            const heartsElem = document.getElementById("boss-hearts");
+            if (heartsElem) {
+                let h = "";
+                for (let i = 0; i < 3; i++) h += (i < playerHearts) ? "❤️" : "🖤";
+                heartsElem.textContent = h;
+            }
+            const scoreElem = document.getElementById("boss-score");
+            if (scoreElem) scoreElem.textContent = score;
+
+            const comboElem = document.getElementById("boss-combo-tag");
+            if (comboElem) {
+                comboElem.textContent = combo >= 2 ? `🔥 Combo x${combo}` : "";
+            }
+
+            const hpBar = document.getElementById("boss-hp-bar");
+            const hpText = document.getElementById("boss-hp-text");
+            if (hpBar) {
+                const pct = Math.max(0, (bossHP / BOSS_MAX_HP) * 100);
+                hpBar.style.width = `${pct}%`;
+            }
+            if (hpText) {
+                hpText.textContent = `${Math.max(0, bossHP)} / ${BOSS_MAX_HP} HP`;
+            }
+        }
+
+        function triggerDamageFloat(amount, isCrit) {
+            const arena = document.getElementById("boss-arena");
+            if (!arena) return;
+            const floatElem = document.createElement("div");
+            floatElem.className = "boss-damage-float";
+            floatElem.textContent = isCrit ? `-${amount} ⚡ BẠO KÍCH!` : `-${amount}`;
+            if (isCrit) {
+                floatElem.style.color = "#f59e0b";
+                floatElem.style.fontSize = "38px";
+            }
+            arena.appendChild(floatElem);
+            setTimeout(() => floatElem.remove(), 800);
+        }
+
+        function triggerBossShake() {
+            const icon = document.getElementById("boss-icon");
+            if (icon) {
+                icon.classList.add("hit");
+                setTimeout(() => icon.classList.remove("hit"), 400);
+            }
+        }
+
+        function loadQuestion() {
+            if (bossHP <= 0) {
+                finishBossBattle(true);
+                return;
+            }
+            if (playerHearts <= 0) {
+                finishBossBattle(false);
+                return;
+            }
+
+            answered = false;
+            updateHUD();
+
+            const targetWord = shuffledPool[currentQIdx % shuffledPool.length];
+            currentQIdx++;
+
+            // Question types: 0: Hz->Mean, 1: Py->Hz, 2: Mean->Hz, 3: Audio->Hz
+            const qType = Math.floor(Math.random() * 4);
+
+            const promptElem = document.getElementById("boss-q-prompt");
+            const answersGrid = document.getElementById("boss-answers");
+            const headerElem = document.getElementById("boss-q-header");
+
+            // Pick 3 distractors
+            const otherWords = words.filter(w => w.id !== targetWord.id);
+            shuffleArray(otherWords);
+            const distractors = otherWords.slice(0, 3);
+            const choices = [targetWord, ...distractors];
+            shuffleArray(choices);
+
+            let promptHtml = "";
+            let choiceFormatter = null;
+
+            if (qType === 0) {
+                headerElem.textContent = "⚔️ TẤN CÔNG: Chọn nghĩa tiếng Việt của chữ Hán sau:";
+                promptHtml = `${escapeHtml(targetWord.hz)} <span style="font-size:20px; color:#f97316;">(${escapeHtml(targetWord.py)})</span>`;
+                choiceFormatter = (w) => escapeHtml(w.mean);
+            } else if (qType === 1) {
+                headerElem.textContent = "⚔️ TẤN CÔNG: Chọn chữ Hán có phiên âm tương ứng:";
+                promptHtml = `${escapeHtml(targetWord.py)}`;
+                choiceFormatter = (w) => `${escapeHtml(w.hz)} <span style="font-size:12px; opacity:0.8;">(${escapeHtml(w.mean)})</span>`;
+            } else if (qType === 2) {
+                headerElem.textContent = "⚔️ TẤN CÔNG: Chọn chữ Hán có nghĩa tương ứng:";
+                promptHtml = `"${escapeHtml(targetWord.mean)}"`;
+                choiceFormatter = (w) => `${escapeHtml(w.hz)} <span style="font-size:12px; opacity:0.8;">(${escapeHtml(w.py)})</span>`;
+            } else {
+                headerElem.textContent = "⚔️ TẤN CÔNG: Lắng nghe và chọn chữ Hán đúng:";
+                promptHtml = `<button class="btn-pill" id="btn-boss-audio" style="font-size:18px; padding:10px 24px;">🔊 Phát Âm</button>`;
+                choiceFormatter = (w) => `${escapeHtml(w.hz)} <span style="font-size:12px; opacity:0.8;">(${escapeHtml(w.mean)})</span>`;
+            }
+
+            promptElem.innerHTML = promptHtml;
+
+            if (qType === 3) {
+                speakChinese(targetWord.hz);
+                const audioBtn = document.getElementById("btn-boss-audio");
+                if (audioBtn) audioBtn.addEventListener("click", () => speakChinese(targetWord.hz));
+            }
+
+            answersGrid.innerHTML = choices.map(w => `
+                <button class="boss-ans-btn" data-id="${w.id}">
+                    ${choiceFormatter(w)}
+                </button>
+            `).join("");
+
+            qStartTime = Date.now();
+
+            answersGrid.querySelectorAll(".boss-ans-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    if (answered) return;
+                    answered = true;
+
+                    const isCorrect = btn.dataset.id == targetWord.id;
+                    const responseTime = (Date.now() - qStartTime) / 1000;
+
+                    if (isCorrect) {
+                        soundFX.correct();
+                        combo++;
+                        const isCrit = responseTime <= 3.5;
+                        const damage = isCrit ? 200 : 100;
+                        bossHP -= damage;
+                        score += (isCrit ? 250 : 100) + (combo * 20);
+
+                        btn.style.background = "#10b981";
+                        btn.style.borderColor = "#10b981";
+
+                        triggerBossShake();
+                        triggerDamageFloat(damage, isCrit);
+                        updateHUD();
+                        speakChinese(targetWord.hz);
+
+                        setTimeout(loadQuestion, 900);
+                    } else {
+                        soundFX.wrong();
+                        playerHearts--;
+                        combo = 0;
+
+                        btn.style.background = "#ef4444";
+                        btn.style.borderColor = "#ef4444";
+
+                        // Highlight correct button
+                        answersGrid.querySelectorAll(".boss-ans-btn").forEach(b => {
+                            if (b.dataset.id == targetWord.id) {
+                                b.style.background = "#10b981";
+                                b.style.borderColor = "#10b981";
+                            }
+                        });
+
+                        updateHUD();
+                        speakChinese(targetWord.hz);
+
+                        setTimeout(loadQuestion, 1200);
+                    }
+                });
+            });
+        }
+
+        function finishBossBattle(isVictory) {
+            const arena = document.getElementById("boss-arena");
+            if (!arena) return;
+
+            if (isVictory) soundFX.fanfare();
+            else soundFX.wrong();
+
+            arena.innerHTML = `
+                <div style="text-align: center; padding: 40px 20px;">
+                    <div style="font-size: 64px; margin-bottom: 14px;">
+                        ${isVictory ? "🏆" : "💀"}
+                    </div>
+                    <h2 style="font-size: 26px; font-weight: 700; color: #ffffff; margin-bottom: 8px;">
+                        ${isVictory ? "CHIẾN THẮNG HUY HOÀNG!" : "BẠN ĐÃ BỊ MA VƯƠNG ĐÁNH BẠI!"}
+                    </h2>
+                    <p style="color: #cbd5e1; font-size: 15px; margin-bottom: 24px;">
+                        ${isVictory 
+                            ? "Bạn đã tiêu diệt hoàn toàn Ma Vương Quên Lãng và giải phóng kho tàng từ vựng!" 
+                            : "Ma Vương Quên Lãng quá mạnh mẽ. Hãy rèn luyện thêm từ vựng để quay lại báo thù!"}
+                    </p>
+
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 14px; padding: 18px; max-width: 400px; margin: 0 auto 28px auto;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span>Sát thương gây ra:</span>
+                            <strong style="color: #fca5a5;">${BOSS_MAX_HP - Math.max(0, bossHP)} HP</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span>Mạng còn lại:</span>
+                            <strong>${playerHearts} / 3</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Điểm chiến tích:</span>
+                            <strong style="color: #fef08a; font-size: 18px;">${score} Điểm</strong>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                        <button class="btn-pill" id="btn-boss-retry" style="background: #f59e0b; color: #ffffff; border-color: #f59e0b;">
+                            ${isVictory ? "⚔️ Tái Đấu Ma Vương" : "🔥 Hồi Sinh & Đấu Lại"}
+                        </button>
+                        <button class="btn-pill" id="btn-boss-to-hub">🏠 Về Khu Trò Chơi</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("btn-boss-retry").addEventListener("click", startBossBattle);
+            document.getElementById("btn-boss-to-hub").addEventListener("click", renderGameHub);
         }
 
         loadQuestion();
