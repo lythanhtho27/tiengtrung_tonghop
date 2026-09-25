@@ -133,6 +133,9 @@ function injectReaderToolbar() {
             <button class="tool-btn" id="btn-toggle-translation" onclick="toggleTranslationGlobal()" title="Ẩn/Hiện phần dịch nghĩa tiếng Việt">
                 🇻🇳 Ẩn/Hiện Bản Dịch
             </button>
+            <button class="tool-btn" id="btn-toggle-disappear" onclick="cycleDisappearingMode()" title="Chế độ Bài khóa ẩn dần: Luyện trí nhớ từ vựng">
+                🌫️ <span id="disappear-mode-label">Ẩn dần: Tắt</span>
+            </button>
         </div>
 
         <div class="toolbar-right">
@@ -146,6 +149,21 @@ function injectReaderToolbar() {
     `;
 
     mainMenu.parentNode.insertBefore(toolbar, mainMenu);
+
+    // Thêm thanh công cụ phụ trợ cho chế độ ẩn dần
+    const helperBar = document.createElement("div");
+    helperBar.id = "disappear-helper-bar";
+    helperBar.className = "disappear-helper-bar";
+    helperBar.style.display = "none";
+    helperBar.innerHTML = `
+        <span class="disappear-stat" id="disappear-stat-text">🌫️ Chế độ ẩn dần đang bật (Nhấp vào thẻ [ ___ ] để lật mở)</span>
+        <div class="disappear-actions">
+            <button class="disappear-sub-btn" onclick="revealAllDisappeared()" title="Mở tất cả các từ">👁️ Mở tất cả</button>
+            <button class="disappear-sub-btn" onclick="hideAllDisappeared()" title="Ẩn lại tất cả các từ">🙈 Ẩn tất cả</button>
+            <button class="disappear-sub-btn" onclick="rerollDisappeared()" title="Đổi các vị trí ẩn mới">🔀 Đổi vị trí</button>
+        </div>
+    `;
+    mainMenu.parentNode.insertBefore(helperBar, mainMenu);
 }
 
 function enhanceLessonNavigation() {
@@ -328,6 +346,10 @@ function switchMainMenu(btn) {
             const y = navCard.getBoundingClientRect().top + window.pageYOffset + yOffset;
             window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
         }
+
+        if (disappearingLevel > 0) {
+            applyDisappearingMode();
+        }
     }
 }
 
@@ -350,6 +372,9 @@ function switchSubMenu(btn, parentId) {
     const targetElement = document.getElementById(targetSubId);
     if (targetElement) {
         targetElement.classList.add("active");
+        if (disappearingLevel > 0) {
+            applyDisappearingMode();
+        }
     }
 }
 
@@ -476,6 +501,167 @@ function initSavedFontMode() {
     // Mặc định Khải Thư chuẩn nét giáo trình
     applyChineseFont("kaiti");
 }
+
+// ==========================================================================
+// THỬ THÁCH BÀI KHÓA ẨN DẦN (Progressive Disappearing Text)
+// ==========================================================================
+let disappearingLevel = 0; // 0: Tắt, 1: 30%, 2: 60%, 3: 90%
+const DISAPPEAR_LEVELS = [
+    { level: 0, label: "Ẩn dần: Tắt", percent: 0 },
+    { level: 1, label: "Ẩn dần: 30%", percent: 0.30 },
+    { level: 2, label: "Ẩn dần: 60%", percent: 0.60 },
+    { level: 3, label: "Ẩn dần: 90%", percent: 0.90 }
+];
+
+const originalChineseHTML = new Map();
+
+function cycleDisappearingMode() {
+    disappearingLevel = (disappearingLevel + 1) % DISAPPEAR_LEVELS.length;
+    applyDisappearingMode();
+}
+
+function applyDisappearingMode() {
+    const cur = DISAPPEAR_LEVELS[disappearingLevel];
+    const lbl = document.getElementById("disappear-mode-label");
+    const btn = document.getElementById("btn-toggle-disappear");
+    if (lbl) lbl.textContent = cur.label;
+    if (btn) {
+        if (disappearingLevel > 0) {
+            btn.classList.add("active");
+        } else {
+            btn.classList.remove("active");
+        }
+    }
+
+    const helperBar = document.getElementById("disappear-helper-bar");
+    if (helperBar) {
+        helperBar.style.display = disappearingLevel > 0 ? "flex" : "none";
+    }
+
+    const activeMain = document.querySelector(".main-content.active") || document.body;
+    const texts = activeMain.querySelectorAll(".chinese-text");
+
+    texts.forEach(el => {
+        // Lưu HTML gốc nếu chưa lưu
+        if (!originalChineseHTML.has(el)) {
+            originalChineseHTML.set(el, el.innerHTML);
+        }
+
+        if (disappearingLevel === 0) {
+            el.innerHTML = originalChineseHTML.get(el);
+            return;
+        }
+
+        const rawHTML = originalChineseHTML.get(el);
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = rawHTML;
+
+        const rubies = Array.from(tempDiv.querySelectorAll("ruby"));
+        if (rubies.length === 0) return;
+
+        const countToHide = Math.max(1, Math.round(rubies.length * cur.percent));
+        const indices = rubies.map((_, i) => i);
+        // Shuffle indices
+        for (let i = indices.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [indices[i], indices[j]] = [indices[j], indices[i]];
+        }
+        const hideSet = new Set(indices.slice(0, countToHide));
+
+        rubies.forEach((ruby, idx) => {
+            if (hideSet.has(idx)) {
+                const rubyOuter = ruby.outerHTML;
+                const span = document.createElement("span");
+                span.className = "disappear-blank";
+                span.dataset.revealed = "false";
+                span.title = "Nhấp để lật mở / ẩn lại";
+                span.innerHTML = `<span class="blank-slot">[ ___ ]</span><span class="revealed-content" style="display:none;">${rubyOuter}</span>`;
+                ruby.parentNode.replaceChild(span, ruby);
+            }
+        });
+
+        el.innerHTML = tempDiv.innerHTML;
+        el.querySelectorAll(".disappear-blank").forEach(blank => {
+            blank.addEventListener("click", function() {
+                toggleDisappearBlank(this);
+            });
+        });
+    });
+
+    updateDisappearStat();
+}
+
+function toggleDisappearBlank(blankEl) {
+    if (!blankEl) return;
+    const isRev = blankEl.dataset.revealed === "true";
+    const slot = blankEl.querySelector(".blank-slot");
+    const content = blankEl.querySelector(".revealed-content");
+
+    if (!isRev) {
+        blankEl.dataset.revealed = "true";
+        blankEl.classList.add("revealed");
+        if (slot) slot.style.display = "none";
+        if (content) content.style.display = "inline";
+    } else {
+        blankEl.dataset.revealed = "false";
+        blankEl.classList.remove("revealed");
+        if (slot) slot.style.display = "inline";
+        if (content) content.style.display = "none";
+    }
+    updateDisappearStat();
+}
+
+function revealAllDisappeared() {
+    const activeMain = document.querySelector(".main-content.active") || document.body;
+    activeMain.querySelectorAll(".disappear-blank").forEach(blank => {
+        blank.dataset.revealed = "true";
+        blank.classList.add("revealed");
+        const slot = blank.querySelector(".blank-slot");
+        const content = blank.querySelector(".revealed-content");
+        if (slot) slot.style.display = "none";
+        if (content) content.style.display = "inline";
+    });
+    updateDisappearStat();
+}
+
+function hideAllDisappeared() {
+    const activeMain = document.querySelector(".main-content.active") || document.body;
+    activeMain.querySelectorAll(".disappear-blank").forEach(blank => {
+        blank.dataset.revealed = "false";
+        blank.classList.remove("revealed");
+        const slot = blank.querySelector(".blank-slot");
+        const content = blank.querySelector(".revealed-content");
+        if (slot) slot.style.display = "inline";
+        if (content) content.style.display = "none";
+    });
+    updateDisappearStat();
+}
+
+function rerollDisappeared() {
+    if (disappearingLevel > 0) {
+        applyDisappearingMode();
+    }
+}
+
+function updateDisappearStat() {
+    const activeMain = document.querySelector(".main-content.active") || document.body;
+    const blanks = activeMain.querySelectorAll(".chinese-text .disappear-blank");
+    if (blanks.length === 0) return;
+    let revealedCount = 0;
+    blanks.forEach(b => {
+        if (b.dataset.revealed === "true") revealedCount++;
+    });
+    const stat = document.getElementById("disappear-stat-text");
+    if (stat) {
+        stat.innerHTML = `🌫️ Chế độ <strong>${DISAPPEAR_LEVELS[disappearingLevel].label}</strong> • Đã lật mở: <strong>${revealedCount}/${blanks.length}</strong> từ`;
+    }
+}
+
+window.cycleDisappearingMode = cycleDisappearingMode;
+window.toggleDisappearBlank = toggleDisappearBlank;
+window.revealAllDisappeared = revealAllDisappeared;
+window.hideAllDisappeared = hideAllDisappeared;
+window.rerollDisappeared = rerollDisappeared;
 
 // Text-to-Speech (TTS) cho Chữ Hán
 let zhVoice = null;

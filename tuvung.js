@@ -1300,17 +1300,69 @@
         container.innerHTML = `
             <div class="game-zone-wrapper">
                 <div class="game-hub-header">
-                    <h2>🎮 Khu Trò Chơi Ôn Tập Từ Vựng</h2>
-                    <p>Kho từ hiện tại: <strong>${wordCount} từ</strong> (theo phạm vi bộ lọc đang chọn). Hãy chọn trò chơi yêu thích để bắt đầu!</p>
+                    <h2>🎮 Khu Luyện Tập & Trò Chơi Ôn Tập (8 Chế Độ)</h2>
+                    <p>Kho từ hiện tại: <strong>${wordCount} từ</strong> (theo phạm vi bộ lọc đang chọn). Hãy chọn thử thách yêu thích để bắt đầu!</p>
                 </div>
 
+                <!-- PHẦN 1: BÀI KHÓA, NGỮ PHÁP & CỤM TỪ THỰC CHIẾN -->
+                <div class="game-hub-section-title">
+                    <span class="hub-sec-icon">📖</span>
+                    <span>Luyện Bài Khóa, Ngữ Pháp & Cụm Từ Thực Chiến (Boya HSK)</span>
+                </div>
+                <div class="game-hub-grid">
+                    <div class="game-card-item game-card-cloze" data-game="cloze">
+                        <div class="game-card-top">
+                            <span class="game-card-icon">🧩</span>
+                            <span class="game-card-badge badge-hot">Mới • Bài Khóa</span>
+                        </div>
+                        <div class="game-card-title">1. Điền Từ Bài Khóa (Cloze Test)</div>
+                        <div class="game-card-desc">Thử thách điền từ vựng còn thiếu vào câu trích thực tế từ bài khóa và câu ví dụ để nhớ ngữ cảnh.</div>
+                        <button class="game-card-btn">Luyện Ngay ▶</button>
+                    </div>
+
+                    <div class="game-card-item game-card-scramble-sentence" data-game="scramble_sentence">
+                        <div class="game-card-top">
+                            <span class="game-card-icon">🔤</span>
+                            <span class="game-card-badge badge-hot">Mới • Ngữ Pháp HSK</span>
+                        </div>
+                        <div class="game-card-title">2. Sắp Xếp Trật Tự Câu (Sentence Scramble)</div>
+                        <div class="game-card-desc">Ghép các khối từ rời rạc thành câu hoàn chỉnh đúng chuẩn ngữ pháp tiếng Trung (dạng bài thi HSK 4-5).</div>
+                        <button class="game-card-btn">Luyện Ngay ▶</button>
+                    </div>
+
+                    <div class="game-card-item game-card-collocation" data-game="collocation">
+                        <div class="game-card-top">
+                            <span class="game-card-icon">🔗</span>
+                            <span class="game-card-badge badge-hot">Mới • Cụm Cố Định</span>
+                        </div>
+                        <div class="game-card-title">3. Nối Cụm Từ Phối Hợp (Collocation Matching)</div>
+                        <div class="game-card-desc">Nối các cặp Động từ – Danh từ, Tính từ – Danh từ kinh điển trong bài học (như 克服困难, 珍惜时间...).</div>
+                        <button class="game-card-btn">Luyện Ngay ▶</button>
+                    </div>
+
+                    <div class="game-card-item game-card-synonyms" data-game="synonyms">
+                        <div class="game-card-top">
+                            <span class="game-card-icon">⚖️</span>
+                            <span class="game-card-badge badge-hot">Mới • Biện Tích</span>
+                        </div>
+                        <div class="game-card-title">4. Phân Biệt Từ Gần Nghĩa (Synonyms Drill)</div>
+                        <div class="game-card-desc">Chọn từ chính xác nhất giữa các cặp từ dễ nhầm lẫn (như 满足 vs 满意, 珍惜 vs 爱惜) kèm lời giải sư phạm chi tiết!</div>
+                        <button class="game-card-btn">Luyện Ngay ▶</button>
+                    </div>
+                </div>
+
+                <!-- PHẦN 2: PHẢN XẠ TỪ VỰNG, TRÍ NHỚ & ÂM THANH -->
+                <div class="game-hub-section-title" style="margin-top: 28px;">
+                    <span class="hub-sec-icon">⚡</span>
+                    <span>Phản Xạ Từ Vựng, Trí Nhớ & Âm Thanh</span>
+                </div>
                 <div class="game-hub-grid">
                     <div class="game-card-item game-card-1" data-game="match">
                         <div class="game-card-top">
-                            <span class="game-card-icon">🧩</span>
+                            <span class="game-card-icon">🃏</span>
                             <span class="game-card-badge">Trí Nhớ & Ghép Đôi</span>
                         </div>
-                        <div class="game-card-title">1. Ghép Cặp Thẻ (Card Matching)</div>
+                        <div class="game-card-title">5. Ghép Cặp Thẻ (Card Matching)</div>
                         <div class="game-card-desc">Lật và ghép các cặp Chữ Hán với Nghĩa Tiếng Việt tương ứng nhanh nhất có thể.</div>
                         <button class="game-card-btn">Chơi Ngay ▶</button>
                     </div>
@@ -1318,19 +1370,19 @@
                     <div class="game-card-item game-card-2" data-game="tf">
                         <div class="game-card-top">
                             <span class="game-card-icon">⚡</span>
-                            <span class="game-card-badge">Phản Xạ Cực Nhanh</span>
+                            <span class="game-card-badge">Tốc Độ Cao</span>
                         </div>
-                        <div class="game-card-title">2. Đúng Hay Sai? (Speed Rush)</div>
+                        <div class="game-card-title">6. Đúng Hay Sai? (Speed Rush)</div>
                         <div class="game-card-desc">Chữ Hán và Nghĩa có khớp nhau không? Phản xạ 5 giây, bảo vệ 3 mạng sống và tích chuỗi combo!</div>
                         <button class="game-card-btn">Chơi Ngay ▶</button>
                     </div>
 
                     <div class="game-card-item game-card-3" data-game="scramble">
                         <div class="game-card-top">
-                            <span class="game-card-icon">🔤</span>
+                            <span class="game-card-icon">🧩</span>
                             <span class="game-card-badge">Tái Tạo Chữ Hán</span>
                         </div>
-                        <div class="game-card-title">3. Xếp Từ Hán Tự (Scramble Builder)</div>
+                        <div class="game-card-title">7. Xếp Từ Hán Tự (Word Builder)</div>
                         <div class="game-card-desc">Sắp xếp các ký tự Hán tự bị xáo trộn vào đúng vị trí để tạo thành từ vựng hoàn chỉnh.</div>
                         <button class="game-card-btn">Chơi Ngay ▶</button>
                     </div>
@@ -1340,7 +1392,7 @@
                             <span class="game-card-icon">🎯</span>
                             <span class="game-card-badge">Luyện Nghe Phản Xạ</span>
                         </div>
-                        <div class="game-card-title">4. Bắt Chữ Theo Âm (Audio Hunter)</div>
+                        <div class="game-card-title">8. Bắt Chữ Theo Âm (Audio Hunter)</div>
                         <div class="game-card-desc">Lắng nghe phát âm chuẩn và nhanh tay chọn trúng Chữ Hán chính xác trong 6 mục tiêu!</div>
                         <button class="game-card-btn">Chơi Ngay ▶</button>
                     </div>
@@ -1351,7 +1403,11 @@
         container.querySelectorAll(".game-card-item").forEach(card => {
             card.addEventListener("click", () => {
                 const gameType = card.dataset.game;
-                if (gameType === "match") startMatchingGame();
+                if (gameType === "cloze") startClozeTest();
+                else if (gameType === "scramble_sentence") startSentenceScramble();
+                else if (gameType === "collocation") startCollocationGame();
+                else if (gameType === "synonyms") startSynonymsDrill();
+                else if (gameType === "match") startMatchingGame();
                 else if (gameType === "tf") startTrueFalseGame();
                 else if (gameType === "scramble") startScrambleGame();
                 else if (gameType === "hunter") startAudioHunterGame();
@@ -2269,6 +2325,1100 @@
         }
 
         loadRound();
+    }
+
+    // =========================================================================
+    // DATASETS: COLLOCATIONS, SYNONYMS & SENTENCE SCRAMBLE
+    // =========================================================================
+    const BOYA_COLLOCATIONS_DATA = [
+        { left: "珍惜", right: "时间", py: "zhēnxī shíjiān", mean: "trân trọng thời gian" },
+        { left: "克服", right: "困难", py: "kèfú kùnnan", mean: "khắc phục khó khăn" },
+        { left: "遵守", right: "规则", py: "zūnshǒu guīzé", mean: "tuân thủ quy tắc" },
+        { left: "培养", right: "习惯", py: "péiyǎng xíguàn", mean: "nuôi dưỡng thói quen" },
+        { left: "交流", right: "经验", py: "jiāoliú jīngyàn", mean: "trao đổi kinh nghiệm" },
+        { left: "恢复", right: "健康", py: "huīfù jiànkāng", mean: "hồi phục sức khỏe" },
+        { left: "保护", right: "环境", py: "bǎohù huánjìng", mean: "bảo vệ môi trường" },
+        { left: "适应", right: "生活", py: "shìyìng shēnghuó", mean: "thích ứng cuộc sống" },
+        { left: "办", right: "手续", py: "bàn shǒuxù", mean: "làm thủ tục" },
+        { left: "设计", right: "服装", py: "shèjì fúzhuāng", mean: "thiết kế trang phục" },
+        { left: "主持", right: "会议", py: "zhǔchí huìyì", mean: "chủ trì cuộc họp" },
+        { left: "交换", right: "礼物", py: "jiāohuàn lǐwù", mean: "trao đổi quà tặng" },
+        { left: "解决", right: "问题", py: "jiějué wèntí", mean: "giải quyết vấn đề" },
+        { left: "积累", right: "经验", py: "jīlěi jīngyàn", mean: "tích lũy kinh nghiệm" },
+        { left: "表达", right: "感情", py: "biǎodá gǎnqíng", mean: "bày tỏ tình cảm" },
+        { left: "承担", right: "责任", py: "chéngdān zérèn", mean: "gánh vác trách nhiệm" },
+        { left: "满足", right: "要求", py: "mǎnzú yāoqiú", mean: "thỏa mãn yêu cầu" },
+        { left: "掌握", right: "技术", py: "zhǎngwò jìshù", mean: "nắm vững kỹ thuật" },
+        { left: "深刻的", right: "印象", py: "shēnkè de yìnxiàng", mean: "ấn tượng sâu sắc" },
+        { left: "严肃的", right: "表情", py: "yánsù de biǎoqíng", mean: "nét mặt nghiêm túc" },
+        { left: "明亮的", right: "眼睛", py: "míngliàng de yǎnjing", mean: "đôi mắt sáng ngời" },
+        { left: "雪白的", right: "皮肤", py: "xuěbái de pífū", mean: "làn da trắng tuyết" },
+        { left: "准确的", right: "时间", py: "zhǔnquè de shíjiān", mean: "thời gian chính xác" },
+        { left: "流利的", right: "汉语", py: "liúlì de Hànyǔ", mean: "tiếng Hán lưu loát" },
+        { left: "激动的", right: "眼泪", py: "jīdòng de yǎnlèi", mean: "nước mắt xúc động" },
+        { left: "宝贵的", right: "时间", py: "bǎoguì de shíjiān", mean: "thời gian quý báu" },
+        { left: "丰富的", right: "想象力", py: "fēngfù de xiǎngxiànglì", mean: "trí tưởng tượng phong phú" },
+        { left: "痛苦的", right: "经历", py: "tòngkǔ de jīnglì", mean: "trải nghiệm đau khổ" },
+        { left: "热烈的", right: "欢迎", py: "rèliè de huānyíng", mean: "nhiệt liệt hoan nghênh" },
+        { left: "巨大的", right: "变化", py: "jùdà de biànhuà", mean: "biến đổi to lớn" }
+    ];
+
+    const BOYA_SYNONYMS_DATA = [
+        {
+            id: "syn_1",
+            pair: ["满足", "满意"],
+            correct: "满意",
+            sentence: "听了这个振奋人心的好消息，大家都感到十分【 ______ 】。",
+            py: "Tīngle zhè ge zhènfèn rénxīn de hǎo xiāoxi, dàjiā dōu gǎndào shífēn mǎnyì.",
+            mean: "Nghe được tin vui phấn khởi lòng người này, mọi người đều cảm thấy vô cùng hài lòng.",
+            notes: [
+                { hz: "满意", py: "mǎnyì", role: "Tính từ", hint: "Vừa lòng, thỏa nguyện (tâm trạng)" },
+                { hz: "满足", py: "mǎnzú", role: "Động từ", hint: "Làm cho đầy đủ, thỏa mãn nhu cầu/điều kiện" }
+            ],
+            explain: "💡 【满意】là tính từ biểu thị tâm trạng vui vẻ, vừa lòng (thường dùng: 感到满意 / 对……很满意). Còn 【满足】thường là động từ mang ý nghĩa đáp ứng đầy đủ (thường dùng: 满足需要 / 满足愿望 / 满足条件)."
+        },
+        {
+            id: "syn_2",
+            pair: ["珍惜", "爱惜"],
+            correct: "珍惜",
+            sentence: "大学时光非常宝贵，我们一定要【 ______ 】每一天。",
+            py: "Dàxué shíguāng fēicháng bǎoguì, wǒmen yídìng yào zhēnxī měi yì tiān.",
+            mean: "Thời sinh viên đại học vô cùng quý giá, chúng ta nhất định phải trân trọng từng ngày.",
+            notes: [
+                { hz: "珍惜", py: "zhēnxī", role: "Động từ", hint: "Trân quý điều trừu tượng (thời gian, cơ hội, tình bạn)" },
+                { hz: "爱惜", py: "àixī", role: "Động từ", hint: "Yêu quý giữ gìn đồ vật cụ thể, sức khỏe" }
+            ],
+            explain: "💡 【珍惜】thường kết hợp với các danh từ trừu tượng, quý giá như 'thời gian (时间)', 'cơ hội (机会)', 'tình cảm (感情)'. Còn 【爱惜】chuyên dùng cho đồ vật hữu hình hoặc thể xác (như: 爱惜粮食 - tiết kiệm lương thực, 爱惜身体 - giữ gìn thân thể)."
+        },
+        {
+            id: "syn_3",
+            pair: ["熟悉", "熟练"],
+            correct: "熟练",
+            sentence: "他在这家汽修厂工作了多年，修车的技术非常【 ______ 】。",
+            py: "Tā zài zhè jiā qìxiū chǎng gōngzuòle duō nián, xiūchē de jìshù fēicháng shúliàn.",
+            mean: "Anh ấy đã làm việc ở xưởng sửa xe này nhiều năm, kỹ thuật sửa xe rất thành thạo.",
+            notes: [
+                { hz: "熟练", py: "shúliàn", role: "Tính từ", hint: "Thành thạo, nhuần nhuyễn kỹ năng/tay nghề" },
+                { hz: "熟悉", py: "shúxī", role: "Động từ/Tính từ", hint: "Quen thuộc con người, môi trường" }
+            ],
+            explain: "💡 【熟练】chỉ kỹ năng, thao tác điêu luyện thành thạo do làm đi làm lại nhiều lần (熟练的动作 / 熟练的技术). Còn 【熟悉】chỉ sự am hiểu, quen thuộc về người hoặc cảnh vật (熟悉这里的环境 / 熟悉彼此)."
+        },
+        {
+            id: "syn_4",
+            pair: ["偶然", "偶尔"],
+            correct: "偶尔",
+            sentence: "他平时工作太忙很少看电视，只有周末才【 ______ 】看一下。",
+            py: "Tā píngshí gōngzuò tài máng hěn shǎo kàn diànshì, zhǐyǒu zhōumò cái ǒu'ěr kàn yíxià.",
+            mean: "Bình thường anh ấy quá bận ít khi xem tivi, chỉ có cuối tuần mới thỉnh thoảng xem một chút.",
+            notes: [
+                { hz: "偶尔", py: "ǒu'ěr", role: "Phó từ", hint: "Thỉnh thoảng, đôi khi (tần suất thấp)" },
+                { hz: "偶然", py: "ǒurán", role: "Tính từ/Phó từ", hint: "Tình cờ, ngẫu nhiên, bất ngờ" }
+            ],
+            explain: "💡 【偶尔】là phó từ chỉ tần suất ít ỏi (ngược nghĩa với 经常). Còn 【偶然】nhấn mạnh tính chất ngẫu nhiên bất ngờ, không báo trước (ngược nghĩa với 必然 - tất nhiên: 偶然的发现)."
+        },
+        {
+            id: "syn_5",
+            pair: ["合适", "适合"],
+            correct: "合适",
+            sentence: "这件羊毛大衣样式很好看，你穿在身上非常【 ______ 】。",
+            py: "Zhè jiàn yángmáo dàyī yàngshì hěn hǎokàn, nǐ chuān zài shēnshang fēicháng héshì.",
+            mean: "Chiếc áo dạ này kiểu dáng rất đẹp, bạn mặc trên người rất vừa vặn/phù hợp.",
+            notes: [
+                { hz: "合适", py: "héshì", role: "Tính từ", hint: "Vừa vặn, thích hợp (đứng sau phó từ 很/非常)" },
+                { hz: "适合", py: "shìhé", role: "Động từ", hint: "Phù hợp với ai/cái gì (phía sau có tân ngữ)" }
+            ],
+            explain: "💡 【合适】là Tính từ, đứng một mình hoặc sau phó từ chỉ mức độ (很合适 / 非常合适). Còn 【适合】là Động từ, phía sau phải có tân ngữ (ví dụ: 这件衣服很适合你, 工作适合他)."
+        },
+        {
+            id: "syn_6",
+            pair: ["突然", "忽然"],
+            correct: "突然",
+            sentence: "这次调动的消息太【 ______ 】了，大家一时都没思想准备。",
+            py: "Zhè cì diàodòng de xiāoxi tài tūrán le, dàjiā yìshí dōu méi sīxiǎng zhǔnbèi.",
+            mean: "Tin tức điều động lần này đột ngột quá, mọi người nhất thời chưa có chuẩn bị tâm lý.",
+            notes: [
+                { hz: "突然", py: "tūrán", role: "Tính từ/Phó từ", hint: "Đột ngột, bất ngờ (làm vị ngữ: 太突然了)" },
+                { hz: "忽然", py: "hūrán", role: "Phó từ", hint: "Chỉ làm phó từ đứng trước động từ" }
+            ],
+            explain: "💡 【突然】vừa là tính từ vừa là phó từ, có thể làm vị ngữ trong câu (很突然 / 太突然了). Còn 【忽然】chỉ có thể làm phó từ bổ nghĩa cho động từ (忽然下雨 / 忽然想起来), không thể nói '太忽然了'."
+        },
+        {
+            id: "syn_7",
+            pair: ["通过", "经过"],
+            correct: "通过",
+            sentence: "【 ______ 】朋友的热情介绍，我终于找到了一份满意的工作。",
+            py: "Tōngguò péngyou de rèqíng jièshào, wǒ zhōngyú zhǎodàole yí fèn mǎnyì de gōngzuò.",
+            mean: "Thông qua sự giới thiệu nhiệt tình của bạn bè, tôi cuối cùng đã tìm được công việc ưng ý.",
+            notes: [
+                { hz: "通过", py: "tōngguò", role: "Giới từ/Động từ", hint: "Nhờ người/phương tiện làm cầu nối (thông qua)" },
+                { hz: "经过", py: "jīngguò", role: "Giới từ/Động từ", hint: "Trải qua quá trình thời gian/không gian" }
+            ],
+            explain: "💡 【通过】dùng khi muốn nhấn mạnh người giới thiệu, phương tiện hoặc cách thức đạt kết quả (通过朋友介绍 / 通过努力). Còn 【经过】nhấn mạnh trải qua quá trình thời gian/sự việc (经过两天的讨论 / 汽车经过桥梁)."
+        },
+        {
+            id: "syn_8",
+            pair: ["流利", "流畅"],
+            correct: "流利",
+            sentence: "他在北京留学了两年，能说一口非常【 ______ 】的普通话。",
+            py: "Tā zài Běijīng liúxuéle liǎng nián, néng shuō yì kǒu fēicháng liúlì de pǔtōnghuà.",
+            mean: "Cậu ấy đã du học ở Bắc Kinh hai năm, có thể nói một thứ tiếng phổ thông cực kỳ lưu loát.",
+            notes: [
+                { hz: "流利", py: "liúlì", role: "Tính từ", hint: "Lưu loát, trơn tru (dùng cho nói/đọc ngôn ngữ)" },
+                { hz: "流畅", py: "liúchàng", role: "Tính từ", hint: "Trôi chảy, mạch lạc (dùng cho văn phong viết)" }
+            ],
+            explain: "💡 【流利】chuyên dùng cho kỹ năng nói hoặc đọc khẩu ngữ (汉语说得很流利). Còn 【流畅】chuyên dùng cho văn phong bài viết hoặc nét vẽ mượt mà (文笔流畅 / 线条流畅)."
+        },
+        {
+            id: "syn_9",
+            pair: ["严肃", "严厉"],
+            correct: "严肃",
+            sentence: "讨论这么重要的话题，大家的态度都应当非常【 ______ 】。",
+            py: "Tǎolùn zhème zhòngyào de huàtí, dàjiā de tàidù dōu yīngdāng fēicháng yánsù.",
+            mean: "Thảo luận một chủ đề quan trọng như vậy, thái độ của mọi người đều phải hết sức nghiêm túc.",
+            notes: [
+                { hz: "严肃", py: "yánsù", role: "Tính từ", hint: "Nghiêm túc, trang trọng (thái độ, không khí)" },
+                { hz: "严厉", py: "yánlì", role: "Tính từ", hint: "Nghiêm khắc, trừng phạt khắt khe" }
+            ],
+            explain: "💡 【严肃】chỉ tác phong, thái độ hoặc nét mặt đứng đắn, không cợt nhả (严肃的态度 / 严肃的表情). Còn 【严厉】chỉ sự khắt khe khi phê bình hoặc trừng phạt lỗi lầm (严厉地批评 / 严厉的惩罚)."
+        },
+        {
+            id: "syn_10",
+            pair: ["解释", "说明"],
+            correct: "解释",
+            sentence: "老师，这个生词的用法我不太懂，请您再给我【 ______ 】一下。",
+            py: "Lǎoshī, zhè ge shēngcí de yòngfǎ wǒ bú tài dǒng, qǐng nín zài gěi wǒ jiěshì yíxià.",
+            mean: "Thưa cô, cách dùng của từ mới này em chưa hiểu lắm, xin cô giảng giải lại cho em một chút.",
+            notes: [
+                { hz: "解释", py: "jiěshì", role: "Động từ", hint: "Giải thích rõ ý nghĩa, nguyên nhân vì sao" },
+                { hz: "说明", py: "shuōmíng", role: "Động từ/Danh từ", hint: "Thuyết minh, làm rõ sự thật/tình hình" }
+            ],
+            explain: "💡 【解释】thường là giải thích cặn kẽ ý nghĩa của từ, nguyên nhân hiểu lầm (解释词义 / 解释原因). Còn 【说明】là trình bày làm rõ tình hình hoặc bản thuyết minh hướng dẫn sử dụng (说明情况 / 产品说明书)."
+        }
+    ];
+
+    const BOYA_SCRAMBLE_DATA = [
+        {
+            chunks: ["在大家的努力下，", "我们终于", "克服了", "各种困难。"],
+            answer: "在大家的努力下，我们终于克服了各种困难。",
+            mean: "Dưới sự nỗ lực của mọi người, cuối cùng chúng tôi đã khắc phục mọi khó khăn.",
+            pinyin: "Zài dàjiā de nǔlì xià, wǒmen zhōngyú kèfúle gèzhǒng kùnnan."
+        },
+        {
+            chunks: ["虽然我只会说", "“你好”“谢谢”，", "但是司机都说", "我的汉语非常好。"],
+            answer: "虽然我只会说“你好”“谢谢”，但是司机都说我的汉语非常好。",
+            mean: "Mặc dù tôi chỉ biết nói xin chào và cảm ơn, nhưng các bác tài xế đều khen tiếng Trung của tôi rất tốt.",
+            pinyin: "Suīrán wǒ zhǐ huì shuō “nǐ hǎo”“xièxie”, dànshì sījī dōu shuō wǒ de Hànyǔ fēicháng hǎo."
+        },
+        {
+            chunks: ["他和原来的老板", "吵架了，", "一生气就离开了", "那家公司。"],
+            answer: "他和原来的老板吵架了，一生气就离开了那家公司。",
+            mean: "Anh ấy cãi nhau với ông chủ cũ, vì tức giận liền rời bỏ công ty đó.",
+            pinyin: "Tā hé yuánlái de lǎobǎn chǎojià le, yí shēngqì jiù líkāile nà jiā gōngsī."
+        },
+        {
+            chunks: ["做鸡蛋炒饭其实", "非常简单，", "几分钟就能", "做好了。"],
+            answer: "做鸡蛋炒饭其实非常简单，几分钟就能做好了。",
+            mean: "Làm cơm rang trứng thực ra rất đơn giản, vài phút là có thể làm xong.",
+            pinyin: "Zuò jīdàn chǎofàn qíshí fēicháng jiǎndān, jǐ fēnzhōng jiù néng zuòhǎole."
+        },
+        {
+            chunks: ["在中国，", "想学好汉语", "需要有", "足够的时间。"],
+            answer: "在中国，想学好汉语需要有足够的时间。",
+            mean: "Ở Trung Quốc, muốn học tốt tiếng Hán cần phải có đủ thời gian.",
+            pinyin: "Zài Zhōngguó, xiǎng xuéhǎo Hànyǔ xūyào yǒu zúgòu de shíjiān."
+        },
+        {
+            chunks: ["听到这个好消息，", "同学们", "高兴得", "跳了起来。"],
+            answer: "听到这个好消息，同学们高兴得跳了起来。",
+            mean: "Nghe được tin tốt này, các bạn học vui mừng nhảy cẫng lên.",
+            pinyin: "Tīngdào zhè ge hǎo xiāoxi, tóngxuémen gāoxìng de tiàole qǐlái."
+        },
+        {
+            chunks: ["我们应该从小", "培养孩子", "良好的", "阅读习惯。"],
+            answer: "我们应该从小培养孩子良好的阅读习惯。",
+            mean: "Chúng ta nên bồi dưỡng cho trẻ thói quen đọc sách tốt ngay từ nhỏ.",
+            pinyin: "Wǒmen yīnggāi cóngxiǎo péiyǎng háizi liánghǎo de yuèdú xíguàn."
+        },
+        {
+            chunks: ["他天天吃素，", "身体", "却一直恢复得", "很好。"],
+            answer: "他天天吃素，身体却一直恢复得很好。",
+            mean: "Anh ấy ngày nào cũng ăn chay, nhưng sức khỏe vẫn luôn hồi phục rất tốt.",
+            pinyin: "Tā tiāntiān chīsù, shēntǐ què yìzhí huīfù de hěn hǎo."
+        },
+        {
+            chunks: ["只要坚持不懈，", "你一定能", "说一口", "流利的汉语。"],
+            answer: "只要坚持不懈，你一定能说一口流利的汉语。",
+            mean: "Chỉ cần kiên trì không nản, bạn nhất định có thể nói một thứ tiếng Hán lưu loát.",
+            pinyin: "Zhǐyào jiānchí bú xiè, nǐ yídìng néng shuō yì kǒu liúlì de Hànyǔ."
+        },
+        {
+            chunks: ["这件衣服我和老板", "砍了半天价，", "最后便宜了", "五十块钱。"],
+            answer: "这件衣服我和老板砍了半天价，最后便宜了五十块钱。",
+            mean: "Bộ quần áo này tôi mặc cả với ông chủ nửa ngày, cuối cùng rẻ được 50 tệ.",
+            pinyin: "Zhè jiàn yīfu wǒ hé lǎobǎn kǎnle bàntiān jià, zuìhòu piányile wǔshí kuài qián."
+        }
+    ];
+
+    // Helper tạo danh sách câu hỏi Cloze từ câu ví dụ bài học
+    function getClozeQuestionPool() {
+        const pool = [];
+        const filtered = getFilteredWords();
+        const candidateWords = filtered.length >= 8 ? filtered : state.allWords;
+
+        candidateWords.forEach(w => {
+            if (!w.examples || w.examples.length === 0) return;
+            w.examples.forEach(ex => {
+                let sentence = "";
+                if (ex.includes("～")) {
+                    sentence = ex.replace(/[①②③④⑤]/g, "").trim();
+                } else if (ex.includes(w.hz)) {
+                    sentence = ex.replace(/[①②③④⑤]/g, "").trim();
+                    sentence = sentence.replace(new RegExp(w.hz, "g"), "～");
+                }
+                if (sentence && sentence.includes("～") && sentence.length >= 6 && sentence.length <= 65) {
+                    const others = candidateWords.filter(o => o.id !== w.id && o.hz !== w.hz && o.hz.length === w.hz.length);
+                    const poolOthers = others.length >= 3 ? others : candidateWords.filter(o => o.id !== w.id);
+                    shuffleArray(poolOthers);
+                    const options = [w, ...poolOthers.slice(0, 3)];
+                    shuffleArray(options);
+                    pool.push({
+                        targetWord: w,
+                        rawSentence: sentence,
+                        displaySentence: sentence.replace("～", "【 ______ 】"),
+                        options: options
+                    });
+                }
+            });
+        });
+
+        // Nếu số câu trích được ít, bổ sung câu chuẩn
+        if (pool.length < 5) {
+            const fallbackCloze = [
+                {
+                    targetWord: { id: "fb_1", hz: "吃素", py: "chīsù", mean: "ăn chay", book_name: "Trung Cấp 1", lesson_title: "Bài 1" },
+                    rawSentence: "他天天～，身体却一直很好。",
+                    displaySentence: "他天天【 ______ 】，身体却一直很好。",
+                    options: [
+                        { id: "fb_1", hz: "吃素", py: "chīsù", mean: "ăn chay" },
+                        { id: "fb_2", hz: "吵架", py: "chǎojià", mean: "cãi nhau" },
+                        { id: "fb_3", hz: "毕业", py: "bìyè", mean: "tốt nghiệp" },
+                        { id: "fb_4", hz: "锻炼", py: "duànliàn", mean: "rèn luyện" }
+                    ]
+                },
+                {
+                    targetWord: { id: "fb_5", hz: "克服", py: "kèfú", mean: "khắc phục", book_name: "Trung Cấp 2", lesson_title: "Bài 3" },
+                    rawSentence: "在大家的努力下，我们终于～了困难。",
+                    displaySentence: "在大家的努力下，我们终于【 ______ 】了困难。",
+                    options: [
+                        { id: "fb_5", hz: "克服", py: "kèfú", mean: "khắc phục" },
+                        { id: "fb_6", hz: "适应", py: "shìyìng", mean: "thích ứng" },
+                        { id: "fb_7", hz: "交流", py: "jiāoliú", mean: "giao lưu" },
+                        { id: "fb_8", hz: "遵守", py: "zūnshǒu", mean: "tuân thủ" }
+                    ]
+                },
+                {
+                    targetWord: { id: "fb_9", hz: "珍惜", py: "zhēnxī", mean: "trân trọng", book_name: "Trung Cấp 1", lesson_title: "Bài 5" },
+                    rawSentence: "时间非常宝贵，我们要～每一分钟。",
+                    displaySentence: "时间非常宝贵，我们要【 ______ 】每一分钟。",
+                    options: [
+                        { id: "fb_9", hz: "珍惜", py: "zhēnxī", mean: "trân trọng" },
+                        { id: "fb_10", hz: "爱惜", py: "àixī", mean: "yêu quý giữ gìn" },
+                        { id: "fb_11", hz: "浪费", py: "làngfèi", mean: "lãng phí" },
+                        { id: "fb_12", hz: "恢复", py: "huīfù", mean: "hồi phục" }
+                    ]
+                }
+            ];
+            pool.push(...fallbackCloze);
+        }
+
+        shuffleArray(pool);
+        return pool;
+    }
+
+    // -------------------------------------------------------------------------
+    // GAME 5: CLOZE TEST (ĐIỀN TỪ BÀI KHÓA)
+    // -------------------------------------------------------------------------
+    function startClozeTest() {
+        clearGameTimers();
+        state.activeGame = "cloze";
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
+        if (!container) return;
+
+        const questions = getClozeQuestionPool();
+        if (questions.length === 0) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-icon">🧩</div>
+                    <div class="empty-title">Chưa đủ dữ liệu câu ví dụ cho phạm vi này</div>
+                    <button class="btn-pill" id="btn-back-hub" style="margin-top:15px;">← Quay lại Khu Trò Chơi</button>
+                </div>
+            `;
+            const bBtn = document.getElementById("btn-back-hub");
+            if (bBtn) bBtn.addEventListener("click", renderGameHub);
+            return;
+        }
+
+        const totalQ = Math.min(10, questions.length);
+        let currentIdx = 0;
+        let score = 0;
+        let streak = 0;
+        let answered = false;
+
+        container.innerHTML = `
+            <div class="game-play-wrapper">
+                <div class="game-nav-header">
+                    <button class="btn-pill btn-back-hub" id="btn-game-back">← Khu Trò Chơi</button>
+                    <div class="game-meta-group">
+                        <span class="game-meta-badge">🧩 Điền Từ Bài Khóa</span>
+                        <span class="game-meta-badge" id="cloze-prog">1 / ${totalQ}</span>
+                        <span class="game-meta-badge score-badge">Điểm: <strong id="cloze-score">0</strong></span>
+                        <span class="game-meta-badge streak-badge" id="cloze-streak" style="display:none;">🔥 Combo x0</span>
+                    </div>
+                    <button class="btn-pill" id="btn-cloze-restart">🔄 Chơi Lại</button>
+                </div>
+
+                <div id="cloze-box"></div>
+            </div>
+        `;
+
+        document.getElementById("btn-game-back").addEventListener("click", renderGameHub);
+        document.getElementById("btn-cloze-restart").addEventListener("click", startClozeTest);
+
+        function loadQuestion() {
+            if (currentIdx >= totalQ) {
+                finishCloze();
+                return;
+            }
+
+            answered = false;
+            document.getElementById("cloze-prog").textContent = `${currentIdx + 1} / ${totalQ}`;
+            document.getElementById("cloze-score").textContent = score;
+
+            const q = questions[currentIdx];
+            const box = document.getElementById("cloze-box");
+
+            box.innerHTML = `
+                <div class="cloze-card">
+                    <div class="cloze-meta-badge">
+                        📖 ${escapeHtml(q.targetWord.book_name || "Boya")} • ${escapeHtml(q.targetWord.lesson_title || "Bài học")}
+                    </div>
+
+                    <div class="cloze-sentence" id="cloze-sentence-display">
+                        ${escapeHtml(q.displaySentence).replace(/【 ______ 】/g, `<span class="cloze-blank-box" id="cloze-blank-slot">【 ______ 】</span>`)}
+                    </div>
+
+                    <div class="cloze-options-grid" id="cloze-options-grid">
+                        ${q.options.map(opt => `
+                            <button class="cloze-opt-btn" data-id="${opt.id}">
+                                <span class="cloze-opt-hz">${escapeHtml(opt.hz)}</span>
+                                <span class="cloze-opt-py">${escapeHtml(opt.py)}</span>
+                                <span class="cloze-opt-mean">${escapeHtml(opt.mean)}</span>
+                            </button>
+                        `).join("")}
+                    </div>
+
+                    <div id="cloze-feedback-zone"></div>
+                </div>
+            `;
+
+            box.querySelectorAll(".cloze-opt-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    if (answered) return;
+                    answered = true;
+                    const chosenId = btn.dataset.id;
+                    const isCorrect = chosenId === q.targetWord.id;
+                    const blankSlot = document.getElementById("cloze-blank-slot");
+                    const feedbackZone = document.getElementById("cloze-feedback-zone");
+
+                    if (isCorrect) {
+                        soundFX.correct();
+                        score += 100;
+                        streak++;
+                        btn.classList.add("correct");
+                        if (blankSlot) {
+                            blankSlot.classList.add("solved");
+                            blankSlot.textContent = `【 ${q.targetWord.hz} 】`;
+                        }
+                    } else {
+                        soundFX.wrong();
+                        streak = 0;
+                        btn.classList.add("wrong");
+                        if (blankSlot) {
+                            blankSlot.classList.add("wrong");
+                            blankSlot.textContent = `【 ${q.targetWord.hz} 】`;
+                        }
+                        box.querySelectorAll(".cloze-opt-btn").forEach(b => {
+                            if (b.dataset.id === q.targetWord.id) b.classList.add("correct");
+                        });
+                    }
+
+                    document.getElementById("cloze-score").textContent = score;
+                    const streakBadge = document.getElementById("cloze-streak");
+                    if (streak >= 2) {
+                        streakBadge.style.display = "inline-flex";
+                        streakBadge.textContent = `🔥 Combo x${streak}`;
+                    } else {
+                        streakBadge.style.display = "none";
+                    }
+
+                    const fullSentence = q.rawSentence.replace(/～/g, q.targetWord.hz);
+                    speakChinese(fullSentence);
+
+                    feedbackZone.innerHTML = `
+                        <div class="cloze-feedback-box">
+                            <div style="flex:1;">
+                                <div style="font-weight:700; color: ${isCorrect ? '#059669' : '#dc2626'}; margin-bottom:4px;">
+                                    ${isCorrect ? '🎉 Chính xác!' : '❌ Chưa đúng!'} Đáp án đúng là: <strong>${escapeHtml(q.targetWord.hz)}</strong> (${escapeHtml(q.targetWord.py)})
+                                </div>
+                                <div style="font-size:13.5px; color:#475569;">
+                                    Ý nghĩa từ: <em>${escapeHtml(q.targetWord.mean)}</em>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:8px;">
+                                <button class="btn-pill" id="btn-cloze-speak-full" title="Nghe lại cả câu">🔊 Nghe câu</button>
+                                <button class="btn-pill" id="btn-cloze-next" style="background:var(--primary); color:#ffffff; border-color:var(--primary);">Câu Tiếp ▶</button>
+                            </div>
+                        </div>
+                    `;
+
+                    document.getElementById("btn-cloze-speak-full").addEventListener("click", () => {
+                        speakChinese(fullSentence);
+                    });
+
+                    document.getElementById("btn-cloze-next").addEventListener("click", () => {
+                        currentIdx++;
+                        loadQuestion();
+                    });
+                });
+            });
+        }
+
+        function finishCloze() {
+            const box = document.getElementById("cloze-box");
+            if (!box) return;
+            soundFX.fanfare();
+            const accuracy = Math.round((score / (totalQ * 100)) * 100);
+
+            box.innerHTML = `
+                <div class="cloze-card" style="padding: 40px 20px;">
+                    <div style="font-size: 56px; margin-bottom: 12px;">🎉</div>
+                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                        Hoàn Thành Thử Thách Điền Từ Bài Khóa!
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
+                        Độ chính xác ngữ cảnh của bạn: <strong>${accuracy}%</strong>
+                    </p>
+                    <div style="font-size: 38px; font-weight: 700; color: #2563eb; margin-bottom: 28px;">
+                        ${score} Điểm
+                    </div>
+                    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                        <button class="btn-pill" id="btn-cloze-again">🔄 Luyện Ván Mới</button>
+                        <button class="btn-pill" id="btn-cloze-to-hub">🏠 Về Khu Trò Chơi</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("btn-cloze-again").addEventListener("click", startClozeTest);
+            document.getElementById("btn-cloze-to-hub").addEventListener("click", renderGameHub);
+        }
+
+        loadQuestion();
+    }
+
+    // -------------------------------------------------------------------------
+    // GAME 6: SENTENCE SCRAMBLE (SẮP XẾP TRẬT TỰ CÂU)
+    // -------------------------------------------------------------------------
+    function startSentenceScramble() {
+        clearGameTimers();
+        state.activeGame = "scramble_sentence";
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
+        if (!container) return;
+
+        const pool = [...BOYA_SCRAMBLE_DATA];
+        shuffleArray(pool);
+        const totalQ = Math.min(8, pool.length);
+        let currentIdx = 0;
+        let score = 0;
+
+        container.innerHTML = `
+            <div class="game-play-wrapper">
+                <div class="game-nav-header">
+                    <button class="btn-pill btn-back-hub" id="btn-game-back">← Khu Trò Chơi</button>
+                    <div class="game-meta-group">
+                        <span class="game-meta-badge">🔤 Sắp Xếp Trật Tự Câu</span>
+                        <span class="game-meta-badge" id="scramble-prog">1 / ${totalQ}</span>
+                        <span class="game-meta-badge score-badge">Điểm: <strong id="scramble-score">0</strong></span>
+                    </div>
+                    <button class="btn-pill" id="btn-scramble-restart">🔄 Chơi Lại</button>
+                </div>
+
+                <div id="scramble-box"></div>
+            </div>
+        `;
+
+        document.getElementById("btn-game-back").addEventListener("click", renderGameHub);
+        document.getElementById("btn-scramble-restart").addEventListener("click", startSentenceScramble);
+
+        function loadQuestion() {
+            if (currentIdx >= totalQ) {
+                finishScramble();
+                return;
+            }
+
+            document.getElementById("scramble-prog").textContent = `${currentIdx + 1} / ${totalQ}`;
+            document.getElementById("scramble-score").textContent = score;
+
+            const q = pool[currentIdx];
+            const box = document.getElementById("scramble-box");
+
+            // Danh sách các khối từ
+            let availableChunks = q.chunks.map((text, idx) => ({ id: `chk_${idx}`, text: text, origIdx: idx }));
+            shuffleArray(availableChunks);
+            let placedChunks = [];
+
+            function renderBoard() {
+                box.innerHTML = `
+                    <div class="scramble-card" style="background:#ffffff; border-radius:var(--radius); padding:28px 24px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm); margin-bottom:20px;">
+                        <p style="color:var(--text-muted); font-size:14px; margin-bottom:14px; text-align:center;">
+                            💡 Nhấp vào các thẻ bên dưới để xếp vào khung câu theo đúng trật tự ngữ pháp tiếng Trung:
+                        </p>
+
+                        <!-- Khung câu đang xếp -->
+                        <div class="scramble-slots-zone" id="scramble-slots">
+                            ${placedChunks.length === 0 ? `<span style="color:#94a3b8; font-size:15px; margin:auto;">(Chạm vào các khối từ bên dưới để đưa lên đây)</span>` : ''}
+                            ${placedChunks.map(c => `
+                                <div class="scramble-chip in-slot" data-id="${c.id}" title="Nhấp để trả về khay">
+                                    <span>${escapeHtml(c.text)}</span>
+                                    <span style="font-size:12px; opacity:0.6;">✕</span>
+                                </div>
+                            `).join("")}
+                        </div>
+
+                        <!-- Khay các từ còn lại -->
+                        <div class="scramble-bank-zone" id="scramble-bank">
+                            ${availableChunks.map(c => `
+                                <div class="scramble-chip" data-id="${c.id}" title="Nhấp để chọn">
+                                    <span>${escapeHtml(c.text)}</span>
+                                </div>
+                            `).join("")}
+                        </div>
+
+                        <!-- Điều khiển -->
+                        <div class="scramble-controls">
+                            <button class="btn-pill" id="btn-scramble-reset" ${placedChunks.length === 0 ? 'disabled' : ''}>🔄 Đặt Lại</button>
+                            <button class="btn-pill" id="btn-scramble-hint">💡 Gợi Ý 1 Khối</button>
+                            <button class="btn-pill" id="btn-scramble-check" style="background:var(--primary); color:#ffffff; border-color:var(--primary);" ${placedChunks.length === 0 ? 'disabled' : ''}>✅ Kiểm Tra</button>
+                        </div>
+
+                        <div id="scramble-result-zone"></div>
+                    </div>
+                `;
+
+                // Click từ trong khay -> đưa lên khung
+                box.querySelectorAll("#scramble-bank .scramble-chip").forEach(chip => {
+                    chip.addEventListener("click", () => {
+                        const id = chip.dataset.id;
+                        const idx = availableChunks.findIndex(c => c.id === id);
+                        if (idx !== -1) {
+                            const [item] = availableChunks.splice(idx, 1);
+                            placedChunks.push(item);
+                            soundFX.tick();
+                            renderBoard();
+                        }
+                    });
+                });
+
+                // Click từ trong khung -> trả về khay
+                box.querySelectorAll("#scramble-slots .scramble-chip").forEach(chip => {
+                    chip.addEventListener("click", () => {
+                        const id = chip.dataset.id;
+                        const idx = placedChunks.findIndex(c => c.id === id);
+                        if (idx !== -1) {
+                            const [item] = placedChunks.splice(idx, 1);
+                            availableChunks.push(item);
+                            soundFX.tick();
+                            renderBoard();
+                        }
+                    });
+                });
+
+                // Nút Đặt lại
+                const resetBtn = document.getElementById("btn-scramble-reset");
+                if (resetBtn) {
+                    resetBtn.addEventListener("click", () => {
+                        availableChunks.push(...placedChunks);
+                        placedChunks = [];
+                        renderBoard();
+                    });
+                }
+
+                // Nút Gợi ý
+                const hintBtn = document.getElementById("btn-scramble-hint");
+                if (hintBtn) {
+                    hintBtn.addEventListener("click", () => {
+                        const nextTargetChunkText = q.chunks[placedChunks.length];
+                        if (!nextTargetChunkText) return;
+                        const bankIdx = availableChunks.findIndex(c => c.text === nextTargetChunkText);
+                        if (bankIdx !== -1) {
+                            const [item] = availableChunks.splice(bankIdx, 1);
+                            placedChunks.push(item);
+                            soundFX.tick();
+                            renderBoard();
+                        }
+                    });
+                }
+
+                // Nút Kiểm tra
+                const checkBtn = document.getElementById("btn-scramble-check");
+                if (checkBtn) {
+                    checkBtn.addEventListener("click", () => {
+                        const currentBuilt = placedChunks.map(c => c.text).join("").replace(/[。！？\s]/g, "");
+                        const targetAnswer = q.answer.replace(/[。！？\s]/g, "");
+                        const isCorrect = currentBuilt === targetAnswer;
+                        const slotsZone = document.getElementById("scramble-slots");
+                        const resultZone = document.getElementById("scramble-result-zone");
+
+                        if (isCorrect) {
+                            soundFX.correct();
+                            score += 100;
+                            document.getElementById("scramble-score").textContent = score;
+                            if (slotsZone) slotsZone.classList.add("is-complete");
+
+                            speakChinese(q.answer);
+
+                            resultZone.innerHTML = `
+                                <div class="cloze-feedback-box" style="margin-top:20px; border-left-color:#10b981; background:#ecfdf5;">
+                                    <div style="flex:1;">
+                                        <div style="font-weight:700; color:#047857; margin-bottom:4px; font-size:16px;">
+                                            🎉 Tuyệt vời! Bạn đã sắp xếp hoàn toàn chính xác!
+                                        </div>
+                                        <div style="font-size:14px; color:#1e293b; margin-bottom:2px;">
+                                            ${escapeHtml(q.pinyin)}
+                                        </div>
+                                        <div style="font-size:13.5px; color:#475569;">
+                                            Dịch nghĩa: <em>${escapeHtml(q.mean)}</em>
+                                        </div>
+                                    </div>
+                                    <div style="display:flex; gap:8px;">
+                                        <button class="btn-pill" id="btn-scramble-speak">🔊 Nghe câu</button>
+                                        <button class="btn-pill" id="btn-scramble-next" style="background:#10b981; color:#ffffff; border-color:#10b981;">Câu Tiếp Theo ▶</button>
+                                    </div>
+                                </div>
+                            `;
+
+                            document.getElementById("btn-scramble-speak").addEventListener("click", () => speakChinese(q.answer));
+                            document.getElementById("btn-scramble-next").addEventListener("click", () => {
+                                currentIdx++;
+                                loadQuestion();
+                            });
+                        } else {
+                            soundFX.wrong();
+                            if (slotsZone) {
+                                slotsZone.classList.add("is-error");
+                                setTimeout(() => slotsZone.classList.remove("is-error"), 600);
+                            }
+                            resultZone.innerHTML = `
+                                <div style="margin-top:14px; text-align:center; color:#dc2626; font-weight:600; font-size:14px;">
+                                    ❌ Trật tự câu chưa chính xác. Hãy nhấp thẻ để điều chỉnh lại hoặc bấm "💡 Gợi ý"!
+                                </div>
+                            `;
+                        }
+                    });
+                }
+            }
+
+            renderBoard();
+        }
+
+        function finishScramble() {
+            const box = document.getElementById("scramble-box");
+            if (!box) return;
+            soundFX.fanfare();
+            const accuracy = Math.round((score / (totalQ * 100)) * 100);
+
+            box.innerHTML = `
+                <div class="cloze-card" style="padding: 40px 20px;">
+                    <div style="font-size: 56px; margin-bottom: 12px;">🏆</div>
+                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                        Hoàn Thành Thử Thách Xếp Câu!
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
+                        Khả năng làm chủ cấu trúc câu tiếng Trung: <strong>${accuracy}%</strong>
+                    </p>
+                    <div style="font-size: 38px; font-weight: 700; color: #7c3aed; margin-bottom: 28px;">
+                        ${score} Điểm
+                    </div>
+                    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                        <button class="btn-pill" id="btn-scramble-again">🔄 Thử Thách Lại</button>
+                        <button class="btn-pill" id="btn-scramble-to-hub">🏠 Về Khu Trò Chơi</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("btn-scramble-again").addEventListener("click", startSentenceScramble);
+            document.getElementById("btn-scramble-to-hub").addEventListener("click", renderGameHub);
+        }
+
+        loadQuestion();
+    }
+
+    // -------------------------------------------------------------------------
+    // GAME 7: COLLOCATION MATCHING (NỐI CỤM TỪ PHỐI HỢP)
+    // -------------------------------------------------------------------------
+    function startCollocationGame() {
+        clearGameTimers();
+        state.activeGame = "collocation";
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
+        if (!container) return;
+
+        const pool = [...BOYA_COLLOCATIONS_DATA];
+        shuffleArray(pool);
+        const pairsPerRound = 5;
+        const totalRounds = 3;
+        let roundIdx = 0;
+        let score = 0;
+
+        container.innerHTML = `
+            <div class="game-play-wrapper">
+                <div class="game-nav-header">
+                    <button class="btn-pill btn-back-hub" id="btn-game-back">← Khu Trò Chơi</button>
+                    <div class="game-meta-group">
+                        <span class="game-meta-badge">🔗 Nối Cụm Từ Phối Hợp</span>
+                        <span class="game-meta-badge" id="colloc-round">Hiệp: 1 / ${totalRounds}</span>
+                        <span class="game-meta-badge score-badge">Điểm: <strong id="colloc-score">0</strong></span>
+                    </div>
+                    <button class="btn-pill" id="btn-colloc-restart">🔄 Chơi Lại</button>
+                </div>
+
+                <div id="colloc-box"></div>
+            </div>
+        `;
+
+        document.getElementById("btn-game-back").addEventListener("click", renderGameHub);
+        document.getElementById("btn-colloc-restart").addEventListener("click", startCollocationGame);
+
+        function loadRound() {
+            if (roundIdx >= totalRounds) {
+                finishCollocation();
+                return;
+            }
+
+            document.getElementById("colloc-round").textContent = `Hiệp: ${roundIdx + 1} / ${totalRounds}`;
+            document.getElementById("colloc-score").textContent = score;
+
+            const roundPairs = pool.slice(roundIdx * pairsPerRound, (roundIdx + 1) * pairsPerRound);
+            if (roundPairs.length < pairsPerRound) {
+                finishCollocation();
+                return;
+            }
+
+            const leftItems = roundPairs.map(p => ({ text: p.left, pairId: p.left + "_" + p.right, py: p.py, mean: p.mean }));
+            const rightItems = roundPairs.map(p => ({ text: p.right, pairId: p.left + "_" + p.right, mean: p.mean }));
+            shuffleArray(leftItems);
+            shuffleArray(rightItems);
+
+            let selectedLeft = null;
+            let matchedPairsCount = 0;
+
+            const box = document.getElementById("colloc-box");
+            box.innerHTML = `
+                <div style="background:#ffffff; border-radius:var(--radius); padding:28px 24px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm); margin-bottom:20px;">
+                    <p style="color:var(--text-muted); font-size:14px; margin-bottom:18px; text-align:center;">
+                        💡 Nhấp vào 1 từ ở cột trái, sau đó nhấp vào từ tương ứng ở cột phải để tạo thành cụm từ cố định:
+                    </p>
+
+                    <div class="colloc-wrapper">
+                        <!-- Cột Trái -->
+                        <div class="colloc-col" id="colloc-left-col">
+                            ${leftItems.map(item => `
+                                <div class="colloc-card" data-side="left" data-pair="${item.pairId}" data-text="${item.text}">
+                                    <span class="colloc-hz">${escapeHtml(item.text)}</span>
+                                    <span class="colloc-mean">${escapeHtml(item.mean.split('/')[0])}</span>
+                                </div>
+                            `).join("")}
+                        </div>
+
+                        <!-- Cột Phải -->
+                        <div class="colloc-col" id="colloc-right-col">
+                            ${rightItems.map(item => `
+                                <div class="colloc-card" data-side="right" data-pair="${item.pairId}" data-text="${item.text}">
+                                    <span class="colloc-hz">${escapeHtml(item.text)}</span>
+                                </div>
+                            `).join("")}
+                        </div>
+                    </div>
+
+                    <div id="colloc-feedback" style="min-height:36px; text-align:center; font-weight:700; font-size:16px;"></div>
+                </div>
+            `;
+
+            const leftCards = box.querySelectorAll('#colloc-left-col .colloc-card');
+            const rightCards = box.querySelectorAll('#colloc-right-col .colloc-card');
+
+            leftCards.forEach(card => {
+                card.addEventListener("click", () => {
+                    if (card.classList.contains("matched")) return;
+                    leftCards.forEach(c => c.classList.remove("selected"));
+                    card.classList.add("selected");
+                    selectedLeft = card;
+                    soundFX.tick();
+                });
+            });
+
+            rightCards.forEach(card => {
+                card.addEventListener("click", () => {
+                    if (card.classList.contains("matched") || !selectedLeft) return;
+
+                    const leftPair = selectedLeft.dataset.pair;
+                    const rightPair = card.dataset.pair;
+                    const feedback = document.getElementById("colloc-feedback");
+
+                    if (leftPair === rightPair) {
+                        // MATCH!
+                        soundFX.correct();
+                        score += 50;
+                        matchedPairsCount++;
+                        document.getElementById("colloc-score").textContent = score;
+
+                        selectedLeft.classList.remove("selected");
+                        selectedLeft.classList.add("matched");
+                        selectedLeft.innerHTML += `<span style="font-size:16px; margin-left:8px;">✓</span>`;
+                        card.classList.add("matched");
+                        card.innerHTML += `<span style="font-size:16px; margin-left:8px;">✓</span>`;
+
+                        const fullPhrase = selectedLeft.dataset.text + card.dataset.text;
+                        speakChinese(fullPhrase);
+
+                        if (feedback) {
+                            feedback.style.color = "var(--success)";
+                            feedback.innerHTML = `🎉 Ghép đúng cụm: <strong>${escapeHtml(fullPhrase)}</strong>`;
+                        }
+                        selectedLeft = null;
+
+                        if (matchedPairsCount === pairsPerRound) {
+                            soundFX.fanfare();
+                            setTimeout(() => {
+                                roundIdx++;
+                                loadRound();
+                            }, 1200);
+                        }
+                    } else {
+                        // WRONG
+                        soundFX.wrong();
+                        card.classList.add("wrong");
+                        selectedLeft.classList.add("wrong");
+                        if (feedback) {
+                            feedback.style.color = "var(--danger)";
+                            feedback.textContent = "❌ Hai từ này không đi cùng nhau. Hãy thử lại!";
+                        }
+                        setTimeout(() => {
+                            card.classList.remove("wrong");
+                            if (selectedLeft) selectedLeft.classList.remove("wrong", "selected");
+                            selectedLeft = null;
+                        }, 500);
+                    }
+                });
+            });
+        }
+
+        function finishCollocation() {
+            const box = document.getElementById("colloc-box");
+            if (!box) return;
+            soundFX.fanfare();
+
+            box.innerHTML = `
+                <div class="cloze-card" style="padding: 40px 20px;">
+                    <div style="font-size: 56px; margin-bottom: 12px;">🌟</div>
+                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                        Hoàn Thành Thử Thách Nối Cụm Từ!
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
+                        Bạn đã nắm rất vững các cụm từ phối hợp kinh điển của Boya Trung Cấp!
+                    </p>
+                    <div style="font-size: 38px; font-weight: 700; color: #059669; margin-bottom: 28px;">
+                        ${score} Điểm
+                    </div>
+                    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                        <button class="btn-pill" id="btn-colloc-again">🔄 Chơi Ván Mới</button>
+                        <button class="btn-pill" id="btn-colloc-to-hub">🏠 Về Khu Trò Chơi</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("btn-colloc-again").addEventListener("click", startCollocationGame);
+            document.getElementById("btn-colloc-to-hub").addEventListener("click", renderGameHub);
+        }
+
+        loadRound();
+    }
+
+    // -------------------------------------------------------------------------
+    // GAME 8: SYNONYMS DRILL (PHÂN BIỆT TỪ GẦN NGHĨA)
+    // -------------------------------------------------------------------------
+    function startSynonymsDrill() {
+        clearGameTimers();
+        state.activeGame = "synonyms";
+        const container = document.getElementById("games-container") || document.getElementById("match-container");
+        if (!container) return;
+
+        const pool = [...BOYA_SYNONYMS_DATA];
+        shuffleArray(pool);
+        const totalQ = pool.length;
+        let currentIdx = 0;
+        let score = 0;
+        let answered = false;
+
+        container.innerHTML = `
+            <div class="game-play-wrapper">
+                <div class="game-nav-header">
+                    <button class="btn-pill btn-back-hub" id="btn-game-back">← Khu Trò Chơi</button>
+                    <div class="game-meta-group">
+                        <span class="game-meta-badge">⚖️ Phân Biệt Từ Gần Nghĩa</span>
+                        <span class="game-meta-badge" id="syn-prog">1 / ${totalQ}</span>
+                        <span class="game-meta-badge score-badge">Điểm: <strong id="syn-score">0</strong></span>
+                    </div>
+                    <button class="btn-pill" id="btn-syn-restart">🔄 Chơi Lại</button>
+                </div>
+
+                <div id="syn-box"></div>
+            </div>
+        `;
+
+        document.getElementById("btn-game-back").addEventListener("click", renderGameHub);
+        document.getElementById("btn-syn-restart").addEventListener("click", startSynonymsDrill);
+
+        function loadQuestion() {
+            if (currentIdx >= totalQ) {
+                finishSynonyms();
+                return;
+            }
+
+            answered = false;
+            document.getElementById("syn-prog").textContent = `${currentIdx + 1} / ${totalQ}`;
+            document.getElementById("syn-score").textContent = score;
+
+            const q = pool[currentIdx];
+            const box = document.getElementById("syn-box");
+
+            box.innerHTML = `
+                <div class="syn-card">
+                    <p style="color:var(--text-muted); font-size:14px; margin-bottom:16px; text-align:center;">
+                        💡 Hãy chọn từ thích hợp nhất để điền vào chỗ trống theo ngữ cảnh và ngữ pháp:
+                    </p>
+
+                    <div class="syn-sentence" id="syn-sentence-display">
+                        ${escapeHtml(q.sentence).replace(/【 ______ 】/g, `<span class="cloze-blank-box" id="syn-blank-slot">【 ______ 】</span>`)}
+                    </div>
+
+                    <div class="syn-options-row" id="syn-options-row">
+                        ${q.pair.map(word => {
+                            const noteObj = q.notes.find(n => n.hz === word) || {};
+                            return `
+                                <div class="syn-choice-btn" data-word="${word}">
+                                    <div class="syn-hz">${escapeHtml(word)}</div>
+                                    <div class="syn-py">${escapeHtml(noteObj.py || '')}</div>
+                                    <div style="font-size:12.5px; color:#64748b; margin-top:4px;">${escapeHtml(noteObj.role || '')}: ${escapeHtml(noteObj.hint || '')}</div>
+                                </div>
+                            `;
+                        }).join("")}
+                    </div>
+
+                    <div id="syn-explanation-zone"></div>
+                </div>
+            `;
+
+            box.querySelectorAll(".syn-choice-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    if (answered) return;
+                    answered = true;
+                    const chosenWord = btn.dataset.word;
+                    const isCorrect = chosenWord === q.correct;
+                    const blankSlot = document.getElementById("syn-blank-slot");
+                    const explainZone = document.getElementById("syn-explanation-zone");
+
+                    if (isCorrect) {
+                        soundFX.correct();
+                        score += 100;
+                        btn.classList.add("correct");
+                        if (blankSlot) {
+                            blankSlot.classList.add("solved");
+                            blankSlot.textContent = `【 ${q.correct} 】`;
+                        }
+                    } else {
+                        soundFX.wrong();
+                        btn.classList.add("wrong");
+                        if (blankSlot) {
+                            blankSlot.classList.add("wrong");
+                            blankSlot.textContent = `【 ${q.correct} 】`;
+                        }
+                        box.querySelectorAll(".syn-choice-btn").forEach(b => {
+                            if (b.dataset.word === q.correct) b.classList.add("correct");
+                        });
+                    }
+
+                    document.getElementById("syn-score").textContent = score;
+
+                    const fullSentence = q.sentence.replace(/【 ______ 】/g, q.correct);
+                    speakChinese(fullSentence);
+
+                    explainZone.innerHTML = `
+                        <div class="syn-explain-card">
+                            <div class="syn-explain-title">
+                                <span>${isCorrect ? '🎉 Bạn chọn rất chuẩn xác!' : '❌ Chưa chính xác!'}</span>
+                                <span style="font-size:13px; font-weight:normal; color:#78350f;">(Đáp án đúng: <strong>${escapeHtml(q.correct)}</strong>)</span>
+                            </div>
+                            <div class="syn-explain-text">
+                                ${escapeHtml(q.explain)}
+                            </div>
+                            <div style="margin-top:10px; font-size:13.5px; color:#451a03; border-top:1px dashed #fde68a; padding-top:8px;">
+                                🇻🇳 Bản dịch câu: <em>${escapeHtml(q.mean)}</em>
+                            </div>
+                            <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:14px;">
+                                <button class="btn-pill" id="btn-syn-speak">🔊 Nghe câu</button>
+                                <button class="btn-pill" id="btn-syn-next" style="background:#ea580c; color:#ffffff; border-color:#ea580c;">Câu Tiếp Theo ▶</button>
+                            </div>
+                        </div>
+                    `;
+
+                    document.getElementById("btn-syn-speak").addEventListener("click", () => speakChinese(fullSentence));
+                    document.getElementById("btn-syn-next").addEventListener("click", () => {
+                        currentIdx++;
+                        loadQuestion();
+                    });
+                });
+            });
+        }
+
+        function finishSynonyms() {
+            const box = document.getElementById("syn-box");
+            if (!box) return;
+            soundFX.fanfare();
+            const accuracy = Math.round((score / (totalQ * 100)) * 100);
+
+            box.innerHTML = `
+                <div class="cloze-card" style="padding: 40px 20px;">
+                    <div style="font-size: 56px; margin-bottom: 12px;">⚖️</div>
+                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                        Hoàn Thành Thử Thách Phân Biệt Từ Gần Nghĩa!
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
+                        Khả năng phân biệt sắc thái từ vựng: <strong>${accuracy}%</strong>
+                    </p>
+                    <div style="font-size: 38px; font-weight: 700; color: #ea580c; margin-bottom: 28px;">
+                        ${score} Điểm
+                    </div>
+                    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                        <button class="btn-pill" id="btn-syn-again">🔄 Ôn Lại Lần Nữa</button>
+                        <button class="btn-pill" id="btn-syn-to-hub">🏠 Về Khu Trò Chơi</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("btn-syn-again").addEventListener("click", startSynonymsDrill);
+            document.getElementById("btn-syn-to-hub").addEventListener("click", renderGameHub);
+        }
+
+        loadQuestion();
     }
 
     // =========================================================================

@@ -1177,3 +1177,101 @@ footer.app-footer {
         bottom: 215px;
     }
 }
+
+/* ==========================================================================
+   PROGRESSIVE DISAPPEARING TEXT (THỬ THÁCH BÀI KHÓA ẨN DẦN)
+   ========================================================================== */
+.disappear-blank {
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: baseline;
+    user-select: none;
+    margin: 0 3px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.disappear-blank .blank-slot {
+    display: inline-block;
+    background: #fef3c7;
+    color: #b45309;
+    border: 1.5px dashed #f59e0b;
+    border-radius: 6px;
+    padding: 2px 10px;
+    font-size: 0.85em;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px rgba(245, 158, 11, 0.15);
+    transition: all 0.2s ease;
+}
+
+.disappear-blank:hover .blank-slot {
+    background: #fde68a;
+    border-color: #d97706;
+    color: #92400e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(217, 119, 6, 0.25);
+}
+
+.disappear-blank.revealed {
+    background: rgba(34, 197, 94, 0.12);
+    border-radius: 6px;
+    padding: 0 4px;
+    border-bottom: 2px solid #22c55e;
+    animation: popReveal 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popReveal {
+    0% { transform: scale(0.92); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.disappear-helper-bar {
+    max-width: 1000px;
+    margin: -10px auto 20px auto;
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    border: 1px solid #fde68a;
+    border-radius: var(--radius);
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    box-shadow: var(--shadow-sm);
+    animation: fadeIn 0.3s ease;
+}
+
+.disappear-stat {
+    font-size: 13.5px;
+    color: #92400e;
+    font-weight: 500;
+}
+
+.disappear-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.disappear-sub-btn {
+    background: #ffffff;
+    border: 1px solid #fcd34d;
+    color: #b45309;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.disappear-sub-btn:hover {
+    background: #fef3c7;
+    border-color: #f59e0b;
+    color: #78350f;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(245, 158, 11, 0.2);
+}
