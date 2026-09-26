@@ -1065,7 +1065,7 @@
                         <div class="quiz-opt-box">
                             <label for="quiz-mode-select">Dạng bài thi:</label>
                             <select id="quiz-mode-select" class="custom-select">
-                                <option value="mix_no_audio" selected>📖 Hỗn hợp Đọc, Nghĩa & Pinyin (Không audio)</option>
+                                <option value="mix_no_audio" selected>📖 Hỗn hợp Đọc & Nghĩa (Không audio)</option>
                                 <option value="mix">🔀 Hỗn hợp toàn diện (Đọc, Nghĩa, Pinyin & Audio)</option>
                                 <option value="hz_to_mean">🀄 Nhìn Chữ Hán -> Chọn Nghĩa Tiếng Việt</option>
                                 <option value="mean_to_hz">🇻🇳 Nhìn Nghĩa -> Chọn Chữ Hán</option>
@@ -1112,7 +1112,7 @@
                 const types = ["hz_to_mean", "mean_to_hz", "hz_to_py", "audio_to_hz"];
                 qType = types[Math.floor(Math.random() * types.length)];
             } else if (modeVal === "mix_no_audio") {
-                const types = ["hz_to_mean", "mean_to_hz", "hz_to_py"];
+                const types = ["hz_to_mean", "mean_to_hz"];
                 qType = types[Math.floor(Math.random() * types.length)];
             }
 
@@ -1381,7 +1381,7 @@
                         const types = ["hz_to_mean", "mean_to_hz", "hz_to_py", "audio_to_hz"];
                         qType = types[Math.floor(Math.random() * types.length)];
                     } else if (modeVal === "mix_no_audio") {
-                        const types = ["hz_to_mean", "mean_to_hz", "hz_to_py"];
+                        const types = ["hz_to_mean", "mean_to_hz"];
                         qType = types[Math.floor(Math.random() * types.length)];
                     }
                     return buildQuizQuestion(targetWord, qType, pool);
