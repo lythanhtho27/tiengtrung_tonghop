@@ -26,7 +26,12 @@
         fcList: [],
         fcIndex: 0,
         fcFlipped: false,
-        fcFrontType: "hz", // 'hz' (Chinese front) or 'mean' (Vietnamese front)
+        fcDirection: "hz_mean", // 'hz_mean' | 'mean_hz' | 'audio_hz'
+        fcFilter: "all",        // 'all' | 'unmastered' | 'starred' | 'mastered'
+        fcAutoPlay: false,
+        fcAutoTts: true,
+        fcSpeed: 2500,          // 1500, 2500, 4000
+        fcAutoTimer: null,
         
         // Quiz state
         quizQuestions: [],
@@ -44,7 +49,8 @@
         
         // Storage
         starredWords: new Set(),
-        masteredWords: new Set()
+        masteredWords: new Set(),
+        unmasteredWords: new Set()
     };
 
     // Load LocalStorage Data
@@ -57,6 +63,10 @@
             const savedMastered = localStorage.getItem("boya_mastered_words");
             if (savedMastered) {
                 state.masteredWords = new Set(JSON.parse(savedMastered));
+            }
+            const savedUnmastered = localStorage.getItem("boya_unmastered_words");
+            if (savedUnmastered) {
+                state.unmasteredWords = new Set(JSON.parse(savedUnmastered));
             }
         } catch (e) {
             console.warn("Could not load from localStorage", e);
@@ -78,6 +88,14 @@
             updateHeaderStats();
         } catch (e) {
             console.warn("Could not save mastered to localStorage", e);
+        }
+    }
+
+    function saveUnmastered() {
+        try {
+            localStorage.setItem("boya_unmastered_words", JSON.stringify(Array.from(state.unmasteredWords)));
+        } catch (e) {
+            console.warn("Could not save unmastered to localStorage", e);
         }
     }
 
@@ -477,6 +495,7 @@
     }
 
     function renderCurrentMode() {
+        stopFcAutoPlay();
         clearGameTimers();
         switch (state.currentMode) {
             case "table":
@@ -620,36 +639,163 @@
     }
 
     // =========================================================================
-    // MODE 2: FLASHCARDS 3D
+    // MODE 2: FLASHCARDS 3D (ĐẢO CHIỀU, BỘ LỌC DỨT ĐIỂM, TỰ ĐỘNG PHÁT RẢNH TAY)
     // =========================================================================
+    function getFlashcardWords() {
+        const baseWords = getFilteredWords();
+        if (state.fcFilter === "unmastered") {
+            const explicitlyUnmastered = baseWords.filter(w => state.unmasteredWords.has(w.id));
+            if (explicitlyUnmastered.length > 0) {
+                return explicitlyUnmastered;
+            }
+            // Fallback nếu chưa đánh dấu từ nào: lấy các từ chưa thuộc
+            return baseWords.filter(w => !state.masteredWords.has(w.id));
+        } else if (state.fcFilter === "starred") {
+            return baseWords.filter(w => state.starredWords.has(w.id));
+        } else if (state.fcFilter === "mastered") {
+            return baseWords.filter(w => state.masteredWords.has(w.id));
+        }
+        return baseWords;
+    }
+
     function setupFlashcardMode() {
-        const words = getFilteredWords();
-        state.fcList = [...words];
+        stopFcAutoPlay();
+        state.fcList = getFlashcardWords();
         state.fcIndex = 0;
         state.fcFlipped = false;
 
         renderFlashcardUI();
+
+        // Tự động phát âm từ đầu tiên nếu bật auto-tts
+        if ((state.fcAutoTts || state.fcDirection === "audio_hz") && state.fcList.length > 0 && state.fcDirection !== "mean_hz") {
+            speakChinese(state.fcList[state.fcIndex].hz);
+        }
     }
 
     function renderFlashcardUI() {
         const container = document.getElementById("flashcard-container");
         if (!container) return;
 
+        const baseWords = getFilteredWords();
+        const countAll = baseWords.length;
+        const explicitlyUnmastered = baseWords.filter(w => state.unmasteredWords.has(w.id));
+        const countUnmastered = explicitlyUnmastered.length > 0 
+            ? explicitlyUnmastered.length 
+            : baseWords.filter(w => !state.masteredWords.has(w.id)).length;
+        const countStarred = baseWords.filter(w => state.starredWords.has(w.id)).length;
+        const countMastered = baseWords.filter(w => state.masteredWords.has(w.id)).length;
+
+        // Toolbar HTML (3 dòng: Chiều học • Bộ lọc • Tự động phát)
+        const toolbarHtml = `
+            <div class="fc-toolbar">
+                <!-- Dòng 1: Chiều học -->
+                <div class="fc-toolbar-row">
+                    <div class="fc-toolbar-group">
+                        <span class="fc-group-label">🔄 Chiều học:</span>
+                        <button class="fc-dir-btn ${state.fcDirection === 'hz_mean' ? 'active' : ''}" data-dir="hz_mean" title="Mặt trước Chữ Hán ➔ Mặt sau Nghĩa & Pinyin">
+                            🔤 Chữ Hán ➔ Nghĩa
+                        </button>
+                        <button class="fc-dir-btn ${state.fcDirection === 'mean_hz' ? 'active' : ''}" data-dir="mean_hz" title="Mặt trước Nghĩa Tiếng Việt ➔ Tự nhớ Chữ Hán & Pinyin">
+                            💡 Nghĩa ➔ Chữ Hán
+                        </button>
+                        <button class="fc-dir-btn ${state.fcDirection === 'audio_hz' ? 'active' : ''}" data-dir="audio_hz" title="Mặt trước chỉ nghe âm thanh ➔ Đoán chữ & lật xem">
+                            🎧 Nghe ➔ Chữ Hán
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dòng 2: Bộ lọc dứt điểm -->
+                <div class="fc-toolbar-row">
+                    <div class="fc-toolbar-group">
+                        <span class="fc-group-label">🎯 Bộ lọc:</span>
+                        <button class="fc-filter-btn ${state.fcFilter === 'all' ? 'active' : ''}" data-filter="all">
+                            Tất cả <span class="fc-count-badge">${countAll}</span>
+                        </button>
+                        <button class="fc-filter-btn btn-filter-unmastered ${state.fcFilter === 'unmastered' ? 'active' : ''}" data-filter="unmastered" title="Chỉ ôn những từ chưa nhớ hoặc cần ôn lại">
+                            ❌ Chưa nhớ <span class="fc-count-badge">${countUnmastered}</span>
+                        </button>
+                        <button class="fc-filter-btn btn-filter-starred ${state.fcFilter === 'starred' ? 'active' : ''}" data-filter="starred" title="Chỉ ôn những từ bạn đã gắn sao ★">
+                            ★ Đã lưu <span class="fc-count-badge">${countStarred}</span>
+                        </button>
+                        <button class="fc-filter-btn btn-filter-mastered ${state.fcFilter === 'mastered' ? 'active' : ''}" data-filter="mastered" title="Chỉ xem lại những từ đã thuộc">
+                            ✅ Đã thuộc <span class="fc-count-badge">${countMastered}</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dòng 3: Tự Động Phát Hands-free & Tốc độ -->
+                <div class="fc-toolbar-row">
+                    <div class="fc-toolbar-group">
+                        <button class="fc-btn-autoplay ${state.fcAutoPlay ? 'running' : ''}" id="fc-btn-autoplay" title="Tự động lật và chuyển thẻ rảnh tay">
+                            ${state.fcAutoPlay ? '⏸ Dừng tự động' : '▶ Tự động phát (Hands-free)'}
+                        </button>
+                        <div class="fc-speed-picker">
+                            <span class="speed-label">⏱️ Tốc độ:</span>
+                            <button class="speed-btn ${state.fcSpeed === 4000 ? 'active' : ''}" data-speed="4000">4s (Chậm)</button>
+                            <button class="speed-btn ${state.fcSpeed === 2500 ? 'active' : ''}" data-speed="2500">2.5s (Vừa)</button>
+                            <button class="speed-btn ${state.fcSpeed === 1500 ? 'active' : ''}" data-speed="1500">1.5s (Nhanh)</button>
+                        </div>
+                    </div>
+                    <div class="fc-toolbar-group">
+                        <label class="fc-autotts-label" title="Tự động đọc âm thanh chuẩn mỗi khi chuyển hoặc lật thẻ">
+                            <input type="checkbox" id="fc-toggle-autotts" ${state.fcAutoTts ? 'checked' : ''}>
+                            <span>🔊 Tự động đọc</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Khi danh sách rỗng trong bộ lọc hiện tại
         if (state.fcList.length === 0) {
+            let emptyIcon = "🗂️";
+            let emptyTitle = "Không có từ vựng nào trong danh sách hiện tại";
+            let emptySub = "Hãy chọn bài học khác hoặc bỏ bớt bộ lọc.";
+            if (state.fcFilter === "unmastered") {
+                emptyIcon = "🎉";
+                emptyTitle = "Tuyệt vời! Không còn từ nào trong danh sách Chưa nhớ 👏";
+                emptySub = "Bạn đã thuộc hết các từ hoặc chưa đánh dấu từ nào là Chưa nhớ. Hãy bấm nút ❌ Chưa nhớ khi lật thẻ để gom từ khó vào đây!";
+            } else if (state.fcFilter === "starred") {
+                emptyIcon = "★";
+                emptyTitle = "Chưa có từ vựng nào được gắn sao ★";
+                emptySub = "Bấm vào biểu tượng ngôi sao trên mỗi thẻ hoặc trong bảng từ vựng để lưu các từ quan trọng.";
+            } else if (state.fcFilter === "mastered") {
+                emptyIcon = "✅";
+                emptyTitle = "Chưa có từ vựng nào được đánh dấu Đã thuộc";
+                emptySub = "Hãy học các thẻ và bấm ✅ Đã thuộc khi bạn đã ghi nhớ từ vựng nhé!";
+            }
+
             container.innerHTML = `
-                <div class="empty-state">
-                    <div class="empty-icon">🗂️</div>
-                    <div class="empty-title">Không có từ vựng nào trong danh sách hiện tại</div>
-                    <div class="empty-sub">Hãy chọn quyển/bài học khác hoặc bỏ bộ lọc</div>
+                <div class="flashcard-wrapper">
+                    ${toolbarHtml}
+                    <div class="empty-state">
+                        <div class="empty-icon">${emptyIcon}</div>
+                        <div class="empty-title">${emptyTitle}</div>
+                        <div class="empty-sub">${emptySub}</div>
+                        <div class="fc-empty-action">
+                            <button class="btn-pill" id="btn-fc-reset-filter">📖 Xem tất cả từ</button>
+                        </div>
+                    </div>
                 </div>
             `;
+            attachFlashcardToolbarEvents();
+            const resetFilterBtn = document.getElementById("btn-fc-reset-filter");
+            if (resetFilterBtn) {
+                resetFilterBtn.addEventListener("click", () => {
+                    state.fcFilter = "all";
+                    state.fcList = getFlashcardWords();
+                    state.fcIndex = 0;
+                    state.fcFlipped = false;
+                    renderFlashcardUI();
+                });
+            }
             return;
         }
 
-        // Current word
+        // Từ hiện tại
+        if (state.fcIndex >= state.fcList.length) state.fcIndex = 0;
         const w = state.fcList[state.fcIndex];
         const isStarred = state.starredWords.has(w.id);
-        const isMastered = state.masteredWords.has(w.id);
         const progressPercent = Math.round(((state.fcIndex + 1) / state.fcList.length) * 100);
 
         let examplesBackHtml = "";
@@ -662,8 +808,70 @@
             `;
         }
 
+        // Render nội dung Mặt trước theo Chiều học
+        let frontFaceContentHtml = "";
+        if (state.fcDirection === "hz_mean") {
+            frontFaceContentHtml = `
+                <div class="card-top-info">
+                    <span>Nhấn thẻ hoặc phím [Space] để lật</span>
+                    <button class="star-btn ${isStarred ? 'starred' : ''}" id="fc-star-btn" title="Gắn sao">
+                        ${isStarred ? '★' : '☆'}
+                    </button>
+                </div>
+                <div class="card-center">
+                    <div class="fc-hanzi">${escapeHtml(w.hz)}</div>
+                    <button class="btn-speak" style="width:38px; height:38px; font-size:16px;" id="fc-front-speak" title="Nghe phát âm">🔊</button>
+                    ${w.type ? `<span class="fc-type">${escapeHtml(w.type)}</span>` : ''}
+                    <div class="card-hint">Nhấp để xem Phiên âm & Nghĩa</div>
+                </div>
+                <div class="card-hint">
+                    ${w.lesson_title ? `Bài ${w.lesson_num}: ${escapeHtml(w.lesson_title)}` : ''}
+                </div>
+            `;
+        } else if (state.fcDirection === "mean_hz") {
+            frontFaceContentHtml = `
+                <div class="card-top-info">
+                    <span class="fc-dir-badge">💡 NGHĨA TIẾNG VIỆT</span>
+                    <button class="star-btn ${isStarred ? 'starred' : ''}" id="fc-star-btn" title="Gắn sao">
+                        ${isStarred ? '★' : '☆'}
+                    </button>
+                </div>
+                <div class="card-center">
+                    <div class="fc-mean-front">${escapeHtml(w.mean)}</div>
+                    ${w.type ? `<span class="fc-type">Từ loại: ${escapeHtml(w.type)}</span>` : ''}
+                    <div class="card-hint" style="margin-top:10px;">🤔 Tự nhớ xem Chữ Hán & Pinyin là gì rồi lật thẻ kiểm tra</div>
+                </div>
+                <div class="card-hint">
+                    Nhấn thẻ hoặc phím [Space] để xem Chữ Hán & Pinyin
+                </div>
+            `;
+        } else if (state.fcDirection === "audio_hz") {
+            frontFaceContentHtml = `
+                <div class="card-top-info">
+                    <span class="fc-dir-badge">🎧 PHẢN XẠ ÂM THANH</span>
+                    <button class="star-btn ${isStarred ? 'starred' : ''}" id="fc-star-btn" title="Gắn sao">
+                        ${isStarred ? '★' : '☆'}
+                    </button>
+                </div>
+                <div class="card-center">
+                    <div class="fc-audio-pulse-box">
+                        <button class="btn-fc-audio-big" id="fc-front-speak" title="Nghe lại phát âm">
+                            🔊 Nghe phát âm
+                        </button>
+                        ${w.type ? `<span class="fc-type">Gợi ý từ loại: ${escapeHtml(w.type)}</span>` : ''}
+                    </div>
+                    <div class="card-hint">👂 Lắng nghe phát âm và đoán từ vựng trước khi lật thẻ</div>
+                </div>
+                <div class="card-hint">
+                    Nhấn thẻ hoặc phím [Space] để xem Chữ Hán & Nghĩa
+                </div>
+            `;
+        }
+
         container.innerHTML = `
             <div class="flashcard-wrapper">
+                ${toolbarHtml}
+
                 <div class="fc-meta">
                     <div><strong>${escapeHtml(w.book_name)}</strong> • Bài ${w.lesson_num}: ${escapeHtml(w.lesson_title || '')}</div>
                     <div>Thẻ <strong>${state.fcIndex + 1}</strong> / ${state.fcList.length} (${progressPercent}%)</div>
@@ -678,40 +886,25 @@
                         
                         <!-- MẶT TRƯỚC -->
                         <div class="flashcard-face flashcard-front">
-                            <div class="card-top-info">
-                                <span>Nhấn vào thẻ hoặc phím [Space] để lật</span>
-                                <button class="star-btn ${isStarred ? 'starred' : ''}" id="fc-star-btn">
-                                    ${isStarred ? '★' : '☆'}
-                                </button>
-                            </div>
-
-                            <div class="card-center">
-                                <div class="fc-hanzi">${escapeHtml(w.hz)}</div>
-                                <button class="btn-speak" style="width:36px; height:36px; font-size:16px;" id="fc-front-speak" title="Nghe phát âm">🔊</button>
-                                ${state.fcFlipped ? '' : '<div class="card-hint">Nhấp để xem Phiên âm & Nghĩa</div>'}
-                            </div>
-
-                            <div class="card-hint">
-                                ${w.type ? `<span class="type-badge">${escapeHtml(w.type)}</span>` : ''}
-                            </div>
+                            ${frontFaceContentHtml}
                         </div>
 
                         <!-- MẶT SAU -->
                         <div class="flashcard-face flashcard-back">
                             <div class="card-top-info">
                                 <span>${escapeHtml(w.book_name)} - Bài ${w.lesson_num}</span>
-                                <button class="btn-speak" style="width:32px; height:32px; font-size:14px;" id="fc-back-speak" title="Nghe phát âm">🔊</button>
+                                <button class="btn-speak" style="width:34px; height:34px; font-size:15px;" id="fc-back-speak" title="Nghe phát âm">🔊</button>
                             </div>
 
                             <div class="card-center">
-                                <div style="font-size:32px; font-weight:700; color:#1e293b;">${escapeHtml(w.hz)}</div>
+                                <div style="font-size:36px; font-weight:700; color:#1e293b; letter-spacing:1px;">${escapeHtml(w.hz)}</div>
                                 <div class="fc-pinyin">${escapeHtml(w.py)}</div>
                                 ${w.type ? `<span class="fc-type">${escapeHtml(w.type)}</span>` : ''}
                                 <div class="fc-mean">${escapeHtml(w.mean)}</div>
                                 ${examplesBackHtml}
                             </div>
 
-                            <div class="card-hint">Nhấp để lật lại mặt trước</div>
+                            <div class="card-hint">Nhấp thẻ hoặc phím [Space] để lật lại</div>
                         </div>
 
                     </div>
@@ -724,7 +917,7 @@
                     </button>
 
                     <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
-                        <button class="fc-action-btn btn-hard" id="fc-btn-hard" title="Chưa nhớ (Ôn lại)">
+                        <button class="fc-action-btn btn-hard" id="fc-btn-hard" title="Chưa nhớ (Gom vào danh sách ôn lại)">
                             ❌ Chưa nhớ
                         </button>
                         <button class="fc-action-btn" id="fc-btn-flip-action" style="background:#e0f2fe; color:#0284c7;" title="Lật mặt thẻ">
@@ -746,39 +939,125 @@
                 </div>
 
                 <div class="key-hints">
-                    Phím tắt: <kbd>Space</kbd> Lật thẻ • <kbd>←</kbd> Thẻ trước • <kbd>→</kbd> Thẻ sau • <kbd>1</kbd> Chưa nhớ • <kbd>2</kbd> Đã thuộc
+                    Phím tắt: <kbd>Space</kbd> Lật thẻ • <kbd>←</kbd> Thẻ trước • <kbd>→</kbd> Thẻ sau • <kbd>1</kbd> Chưa nhớ • <kbd>2</kbd> Đã thuộc • <kbd>P</kbd> Tự động phát • <kbd>A</kbd> Nghe đọc
                 </div>
             </div>
         `;
 
-        // Card flip event
+        attachFlashcardToolbarEvents();
+        attachFlashcardCardEvents(w);
+    }
+
+    function attachFlashcardToolbarEvents() {
+        // Chuyển Chiều học
+        document.querySelectorAll(".fc-dir-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                if (state.fcAutoPlay) stopFcAutoPlay();
+                const dir = btn.dataset.dir;
+                if (state.fcDirection === dir) return;
+                state.fcDirection = dir;
+                state.fcFlipped = false;
+                renderFlashcardUI();
+
+                if ((state.fcAutoTts || state.fcDirection === "audio_hz") && state.fcList.length > 0 && state.fcDirection !== "mean_hz") {
+                    speakChinese(state.fcList[state.fcIndex].hz);
+                }
+            });
+        });
+
+        // Chuyển Bộ lọc
+        document.querySelectorAll(".fc-filter-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                if (state.fcAutoPlay) stopFcAutoPlay();
+                const filter = btn.dataset.filter;
+                if (state.fcFilter === filter) return;
+                state.fcFilter = filter;
+                state.fcList = getFlashcardWords();
+                state.fcIndex = 0;
+                state.fcFlipped = false;
+                renderFlashcardUI();
+
+                if ((state.fcAutoTts || state.fcDirection === "audio_hz") && state.fcList.length > 0 && state.fcDirection !== "mean_hz") {
+                    speakChinese(state.fcList[state.fcIndex].hz);
+                }
+            });
+        });
+
+        // Bật / Dừng Tự Động Phát
+        const autoBtn = document.getElementById("fc-btn-autoplay");
+        if (autoBtn) {
+            autoBtn.addEventListener("click", () => {
+                if (state.fcAutoPlay) {
+                    stopFcAutoPlay();
+                    showToast("Đã tạm dừng tự động phát ⏸");
+                    renderFlashcardUI();
+                } else {
+                    startFcAutoPlay();
+                }
+            });
+        }
+
+        // Chọn Tốc độ
+        document.querySelectorAll(".speed-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                state.fcSpeed = parseInt(btn.dataset.speed, 10);
+                document.querySelectorAll(".speed-btn").forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                showToast(`Tốc độ chuyển thẻ: ${(state.fcSpeed / 1000).toFixed(1)}s`);
+                if (state.fcAutoPlay) {
+                    stopFcAutoPlay();
+                    startFcAutoPlay();
+                }
+            });
+        });
+
+        // Toggle Auto-TTS
+        const toggleTts = document.getElementById("fc-toggle-autotts");
+        if (toggleTts) {
+            toggleTts.addEventListener("change", (e) => {
+                state.fcAutoTts = e.target.checked;
+                showToast(state.fcAutoTts ? "Đã bật tự động đọc âm thanh 🔊" : "Đã tắt tự động đọc 🔇");
+            });
+        }
+    }
+
+    function attachFlashcardCardEvents(w) {
+        // Lật mặt thẻ
         const cardScene = document.getElementById("fc-scene");
         if (cardScene) {
             cardScene.addEventListener("click", (e) => {
-                // Don't flip if clicking speaker or star
-                if (e.target.closest(".btn-speak") || e.target.closest(".star-btn")) return;
-                state.fcFlipped = !state.fcFlipped;
-                const card = document.getElementById("fc-card");
-                if (card) card.classList.toggle("flipped", state.fcFlipped);
+                if (e.target.closest(".btn-speak") || e.target.closest(".btn-fc-audio-big") || e.target.closest(".star-btn")) return;
+                if (state.fcAutoPlay) stopFcAutoPlay();
+                toggleFlashcardFlip(w);
             });
         }
 
         const flipActionBtn = document.getElementById("fc-btn-flip-action");
         if (flipActionBtn) {
             flipActionBtn.addEventListener("click", () => {
-                state.fcFlipped = !state.fcFlipped;
-                const card = document.getElementById("fc-card");
-                if (card) card.classList.toggle("flipped", state.fcFlipped);
+                if (state.fcAutoPlay) stopFcAutoPlay();
+                toggleFlashcardFlip(w);
             });
         }
 
-        // Speakers
+        // Phát âm thanh
         const frontSpeak = document.getElementById("fc-front-speak");
-        if (frontSpeak) frontSpeak.addEventListener("click", () => speakChinese(w.hz));
-        const backSpeak = document.getElementById("fc-back-speak");
-        if (backSpeak) backSpeak.addEventListener("click", () => speakChinese(w.hz));
+        if (frontSpeak) {
+            frontSpeak.addEventListener("click", (e) => {
+                e.stopPropagation();
+                speakChinese(w.hz);
+            });
+        }
 
-        // Star
+        const backSpeak = document.getElementById("fc-back-speak");
+        if (backSpeak) {
+            backSpeak.addEventListener("click", (e) => {
+                e.stopPropagation();
+                speakChinese(w.hz);
+            });
+        }
+
+        // Đánh dấu sao ★
         const fcStarBtn = document.getElementById("fc-star-btn");
         if (fcStarBtn) {
             fcStarBtn.addEventListener("click", (e) => {
@@ -787,19 +1066,22 @@
             });
         }
 
-        // Prev & Next
+        // Trước & Tiếp
         const btnPrev = document.getElementById("fc-btn-prev");
         if (btnPrev) btnPrev.addEventListener("click", () => moveFlashcard(-1));
         const btnNext = document.getElementById("fc-btn-next");
         if (btnNext) btnNext.addEventListener("click", () => moveFlashcard(1));
 
-        // Hard & Easy
+        // Nút Chưa nhớ (❌) & Đã thuộc (✅)
         const btnHard = document.getElementById("fc-btn-hard");
         if (btnHard) {
             btnHard.addEventListener("click", () => {
+                if (state.fcAutoPlay) stopFcAutoPlay();
+                state.unmasteredWords.add(w.id);
                 state.masteredWords.delete(w.id);
                 saveMastered();
-                showToast("Đã ghi nhận: Cần ôn lại từ này");
+                saveUnmastered();
+                showToast("Đã ghi nhận: Cần ôn lại từ này ❌");
                 moveFlashcard(1);
             });
         }
@@ -807,17 +1089,32 @@
         const btnEasy = document.getElementById("fc-btn-easy");
         if (btnEasy) {
             btnEasy.addEventListener("click", () => {
+                if (state.fcAutoPlay) stopFcAutoPlay();
                 state.masteredWords.add(w.id);
+                state.unmasteredWords.delete(w.id);
                 saveMastered();
+                saveUnmastered();
                 showToast("Xuất sắc! Đã thuộc từ này 🎉");
-                moveFlashcard(1);
+
+                // Nếu đang ở bộ lọc "Chưa nhớ", loại từ này ra khỏi danh sách đang ôn
+                if (state.fcFilter === "unmastered") {
+                    state.fcList = getFlashcardWords();
+                    if (state.fcIndex >= state.fcList.length) {
+                        state.fcIndex = Math.max(0, state.fcList.length - 1);
+                    }
+                    state.fcFlipped = false;
+                    renderFlashcardUI();
+                } else {
+                    moveFlashcard(1);
+                }
             });
         }
 
-        // Shuffle
+        // Xáo trộn thẻ
         const btnShuffle = document.getElementById("fc-btn-shuffle");
         if (btnShuffle) {
             btnShuffle.addEventListener("click", () => {
+                if (state.fcAutoPlay) stopFcAutoPlay();
                 shuffleArray(state.fcList);
                 state.fcIndex = 0;
                 state.fcFlipped = false;
@@ -826,10 +1123,11 @@
             });
         }
 
-        // Reset
+        // Về đầu
         const btnReset = document.getElementById("fc-btn-reset");
         if (btnReset) {
             btnReset.addEventListener("click", () => {
+                if (state.fcAutoPlay) stopFcAutoPlay();
                 state.fcIndex = 0;
                 state.fcFlipped = false;
                 renderFlashcardUI();
@@ -837,25 +1135,129 @@
         }
     }
 
+    function toggleFlashcardFlip(w) {
+        state.fcFlipped = !state.fcFlipped;
+        const card = document.getElementById("fc-card");
+        if (card) card.classList.toggle("flipped", state.fcFlipped);
+
+        // Nếu lật sang mặt sau ở chế độ Nghĩa ➔ Chữ Hán, phát âm ngay
+        if (state.fcFlipped && state.fcDirection === "mean_hz" && state.fcAutoTts) {
+            speakChinese(w.hz);
+        }
+    }
+
     function moveFlashcard(delta) {
+        if (state.fcAutoPlay) stopFcAutoPlay();
         const nextIdx = state.fcIndex + delta;
         if (nextIdx >= 0 && nextIdx < state.fcList.length) {
             state.fcIndex = nextIdx;
             state.fcFlipped = false;
             renderFlashcardUI();
+
+            // Tự động phát âm khi chuyển thẻ
+            if ((state.fcAutoTts || state.fcDirection === "audio_hz") && state.fcDirection !== "mean_hz") {
+                const nextWord = state.fcList[state.fcIndex];
+                if (nextWord) speakChinese(nextWord.hz);
+            }
         }
     }
 
+    // Tự Động Phát Hands-free
+    function startFcAutoPlay() {
+        stopFcAutoPlay();
+        if (!state.fcList || state.fcList.length === 0) {
+            showToast("Không có thẻ nào để phát tự động!");
+            return;
+        }
+        state.fcAutoPlay = true;
+        renderFlashcardUI();
+        showToast("Đã bật chế độ Tự động phát Hands-free ▶");
+        runAutoPlayCycle();
+    }
+
+    function stopFcAutoPlay() {
+        if (!state.fcAutoPlay && !state.fcAutoTimer) return;
+        state.fcAutoPlay = false;
+        if (state.fcAutoTimer) {
+            clearTimeout(state.fcAutoTimer);
+            state.fcAutoTimer = null;
+        }
+        const autoBtn = document.getElementById("fc-btn-autoplay");
+        if (autoBtn) {
+            autoBtn.classList.remove("running");
+            autoBtn.innerHTML = "▶ Tự động phát (Hands-free)";
+        }
+    }
+
+    function runAutoPlayCycle() {
+        if (!state.fcAutoPlay) return;
+        if (!state.fcList || state.fcList.length === 0) {
+            stopFcAutoPlay();
+            return;
+        }
+
+        const w = state.fcList[state.fcIndex];
+        if (!w) {
+            stopFcAutoPlay();
+            return;
+        }
+
+        // Bước 1: Mặt trước
+        state.fcFlipped = false;
+        const cardElem = document.getElementById("fc-card");
+        if (cardElem) cardElem.classList.remove("flipped");
+
+        // Phát âm mặt trước nếu hợp lệ
+        if (state.fcAutoTts || state.fcDirection === "audio_hz") {
+            if (state.fcDirection !== "mean_hz") {
+                speakChinese(w.hz);
+            }
+        }
+
+        // Bước 2: Hẹn giờ lật sang mặt sau
+        state.fcAutoTimer = setTimeout(() => {
+            if (!state.fcAutoPlay) return;
+
+            state.fcFlipped = true;
+            const currentCard = document.getElementById("fc-card");
+            if (currentCard) currentCard.classList.add("flipped");
+
+            // Nếu chế độ Nghĩa ➔ Chữ Hán: bây giờ phát âm Chữ Hán
+            if (state.fcAutoTts && state.fcDirection === "mean_hz") {
+                speakChinese(w.hz);
+            }
+
+            // Bước 3: Hẹn giờ chuyển thẻ tiếp theo
+            state.fcAutoTimer = setTimeout(() => {
+                if (!state.fcAutoPlay) return;
+
+                if (state.fcIndex < state.fcList.length - 1) {
+                    state.fcIndex++;
+                    state.fcFlipped = false;
+                    renderFlashcardUI();
+                    runAutoPlayCycle();
+                } else {
+                    showToast("Đã hoàn thành 1 vòng thẻ! Bắt đầu lại 🔁");
+                    state.fcIndex = 0;
+                    state.fcFlipped = false;
+                    renderFlashcardUI();
+                    runAutoPlayCycle();
+                }
+            }, state.fcSpeed);
+
+        }, state.fcSpeed);
+    }
+
     function handleKeydown(e) {
-        // Don't trigger if user is typing in input or select
+        // Không nhận phím tắt nếu đang nhập ô tìm kiếm hoặc chọn dropdown
         if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
 
         if (state.currentMode === "flashcard") {
             if (e.code === "Space") {
                 e.preventDefault();
-                state.fcFlipped = !state.fcFlipped;
-                const card = document.getElementById("fc-card");
-                if (card) card.classList.toggle("flipped", state.fcFlipped);
+                if (state.fcAutoPlay) stopFcAutoPlay();
+                const w = state.fcList[state.fcIndex];
+                if (w) toggleFlashcardFlip(w);
             } else if (e.code === "ArrowRight") {
                 e.preventDefault();
                 moveFlashcard(1);
@@ -868,6 +1270,12 @@
             } else if (e.key === "2") {
                 const btnEasy = document.getElementById("fc-btn-easy");
                 if (btnEasy) btnEasy.click();
+            } else if (e.key === "p" || e.key === "P") {
+                const autoBtn = document.getElementById("fc-btn-autoplay");
+                if (autoBtn) autoBtn.click();
+            } else if (e.key === "a" || e.key === "A") {
+                const w = state.fcList[state.fcIndex];
+                if (w) speakChinese(w.hz);
             }
         } else if (state.currentMode === "games" && state.activeGame === "tf") {
             if (e.code === "ArrowLeft") {

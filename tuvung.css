@@ -873,6 +873,296 @@ body {
     color: #475569;
 }
 
+/* ==================== FLASHCARD 3D ENHANCEMENTS ==================== */
+.fc-toolbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    box-shadow: var(--shadow-sm);
+}
+
+.fc-toolbar-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.fc-toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.fc-group-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Direction Buttons */
+.fc-dir-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #cbd5e1;
+    border-radius: 20px;
+    background: #f8fafc;
+    color: #475569;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fc-dir-btn:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+    border-color: #94a3b8;
+}
+
+.fc-dir-btn.active {
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: #ffffff;
+    border-color: #0284c7;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.35);
+}
+
+/* Filter Buttons */
+.fc-filter-btn {
+    padding: 6px 13px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #64748b;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.fc-filter-btn:hover {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+.fc-filter-btn.active {
+    background: #e0f2fe;
+    color: #0369a1;
+    border-color: #7dd3fc;
+    font-weight: 700;
+}
+
+.fc-filter-btn.btn-filter-unmastered.active {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-color: #fca5a5;
+}
+
+.fc-filter-btn.btn-filter-starred.active {
+    background: #fef3c7;
+    color: #b45309;
+    border-color: #fde68a;
+}
+
+.fc-filter-btn.btn-filter-mastered.active {
+    background: #dcfce7;
+    color: #15803d;
+    border-color: #86efac;
+}
+
+.fc-count-badge {
+    background: rgba(0, 0, 0, 0.08);
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+.fc-filter-btn.active .fc-count-badge {
+    background: rgba(0, 0, 0, 0.16);
+}
+
+/* Auto-Play Row */
+.fc-btn-autoplay {
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+.fc-btn-autoplay:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-1px);
+}
+
+.fc-btn-autoplay.running {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+    animation: pulse-autoplay 1.5s infinite;
+}
+
+@keyframes pulse-autoplay {
+    0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+/* Speed picker */
+.fc-speed-picker {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #f1f5f9;
+    padding: 3px 6px;
+    border-radius: 8px;
+}
+
+.speed-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+    margin-right: 2px;
+}
+
+.speed-btn {
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: #475569;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.speed-btn:hover {
+    background: #e2e8f0;
+}
+
+.speed-btn.active {
+    background: #ffffff;
+    color: #0284c7;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Auto-TTS Checkbox */
+.fc-autotts-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    user-select: none;
+    background: #f8fafc;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.fc-autotts-label:hover {
+    background: #f1f5f9;
+}
+
+.fc-autotts-label input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: #0284c7;
+}
+
+/* Flashcard Front Specific Enhancements */
+.fc-dir-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    background: #e0f2fe;
+    color: #0284c7;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.fc-mean-front {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.4;
+    max-width: 90%;
+    margin: 8px 0;
+}
+
+.fc-audio-pulse-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 15px 0;
+}
+
+.btn-fc-audio-big {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, #0284c7, #0ea5e9);
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+    transition: all 0.25s ease;
+}
+
+.btn-fc-audio-big:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+    background: linear-gradient(135deg, #0369a1, #0284c7);
+}
+
+.btn-fc-audio-big:active {
+    transform: scale(0.98);
+}
+
+/* Empty state action */
+.fc-empty-action {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
 /* ==================== MODE 3: QUIZ ==================== */
 .quiz-wrapper {
     max-width: 680px;
@@ -1841,6 +2131,20 @@ footer {
     }
     .fc-hanzi {
         font-size: 42px;
+    }
+    .fc-toolbar {
+        padding: 10px 12px;
+    }
+    .fc-dir-btn, .fc-filter-btn {
+        font-size: 11.5px;
+        padding: 5px 10px;
+    }
+    .fc-mean-front {
+        font-size: 22px;
+    }
+    .btn-fc-audio-big {
+        padding: 10px 20px;
+        font-size: 15px;
     }
     .match-grid {
         grid-template-columns: repeat(2, 1fr);
