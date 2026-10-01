@@ -1083,73 +1083,10 @@ body.hide-pinyin .dock-btn-pinyin .dock-key-tag {
     border-color: rgba(245, 158, 11, 0.35);
 }
 
-/* Vocab practice button in dock */
-.dock-btn-vocab {
-    background: var(--primary-gradient, linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%));
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.25);
-}
-
-.dock-btn-vocab:hover {
-    color: #ffffff;
-    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
-}
-
-/* Backward compatibility for any unmigrated standalone buttons */
-.float-btn-group {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 9999;
-    transition: bottom 0.35s ease;
-}
-
-body.audio-playing .float-btn-group,
-body.audio-playing .float-pinyin-btn,
-body.audio-playing .float-vocab-btn {
-    bottom: 125px;
-}
-
-.float-pinyin-btn {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 9999;
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+/* Hide any floating vocab buttons to prevent misclicks */
+.dock-btn-vocab,
 .float-vocab-btn {
-    position: fixed;
-    bottom: 80px;
-    right: 24px;
-    z-index: 9999;
-    background: var(--primary-gradient);
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    font-size: 13px;
-    font-weight: 700;
-    border-radius: 30px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    transition: var(--transition);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+    display: none !important;
 }
 
 /* ==========================================================================
@@ -1339,8 +1276,7 @@ footer.app-footer {
 
     body.audio-playing .floating-dock,
     body.audio-playing .float-btn-group,
-    body.audio-playing .float-pinyin-btn,
-    body.audio-playing .float-vocab-btn {
+    body.audio-playing .float-pinyin-btn {
         bottom: 215px;
     }
 

@@ -564,7 +564,7 @@ function showToast(message) {
     }, 2200);
 }
 
-// Khởi tạo Floating Dock điều khiển góc dưới phải (Chống đè lên nhau 100%)
+// Khởi tạo Floating Dock điều khiển góc dưới phải (Chỉ hiển thị nút Pinyin, loại bỏ nút Ôn từ vựng để tránh nhấn nhầm)
 function setupFloatingControls() {
     let dock = document.querySelector(".floating-dock");
 
@@ -573,6 +573,9 @@ function setupFloatingControls() {
     if (oldPinyinBtn) oldPinyinBtn.remove();
     const oldVocabBtn = document.querySelector("body > .float-vocab-btn");
     if (oldVocabBtn) oldVocabBtn.remove();
+
+    // Xóa triệt để mọi nút floating ôn từ vựng (tránh người học bấm nhầm)
+    document.querySelectorAll(".dock-btn-vocab, .float-vocab-btn").forEach(el => el.remove());
 
     if (!dock) {
         dock = document.createElement("div");
@@ -588,10 +591,6 @@ function setupFloatingControls() {
                 <span class="dock-label">Pinyin: Bật</span>
                 <kbd class="dock-key-tag">P</kbd>
             </button>
-            <a href="tuvung.html" class="dock-btn dock-btn-vocab" title="Đến trung tâm ôn tập từ vựng & trò chơi">
-                <span class="dock-icon">🏮</span>
-                <span class="dock-label">Ôn từ vựng</span>
-            </a>
         `;
     }
 
