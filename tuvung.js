@@ -39,6 +39,24 @@
         quizScore: 0,
         quizIncorrect: [],
         quizAnswered: false,
+        quizPlayType: "standard", // 'standard' | 'survival' | 'time_attack'
+        quizTimerSeconds: 10,     // 10 | 5 | 0 (0 = no limit)
+        quizAutoAdvance: true,    // auto advance after answer
+        quizLives: 3,             // survival mode lives
+        quizStreak: 0,
+        quizMaxStreak: 0,
+        quizQuestionStartTime: 0,
+        quizResponseTimes: [],    // in seconds
+        quizSkills: {
+            hz_to_mean: { correct: 0, total: 0 },
+            mean_to_hz: { correct: 0, total: 0 },
+            hz_to_py: { correct: 0, total: 0 },
+            audio_to_hz: { correct: 0, total: 0 }
+        },
+        quizTimerInterval: null,
+        quizTimeRemaining: 0,
+        quizTimeAttackRemaining: 60,
+        quizTimeAttackInterval: null,
         
         // Matching game state
         gameTiles: [],
@@ -1400,14 +1418,41 @@
         return candidateList.slice(0, 3);
     }
 
+    // =========================================================================
+    // MODE 3: TRẮC NGHIỆM PHẢN XẠ (NÂNG CẤP TỐC ĐỘ, SINH TỒN, TIME ATTACK, BẪY THÔNG MINH)
+    // =========================================================================
+    let quizAdvanceTimeout = null;
+    function clearQuizTimers() {
+        if (state.quizTimerInterval) {
+            clearInterval(state.quizTimerInterval);
+            state.quizTimerInterval = null;
+        }
+        if (state.quizTimeAttackInterval) {
+            clearInterval(state.quizTimeAttackInterval);
+            state.quizTimeAttackInterval = null;
+        }
+        if (quizAdvanceTimeout) {
+            clearTimeout(quizAdvanceTimeout);
+            quizAdvanceTimeout = null;
+        }
+    }
+
+    function renderLivesHtml(lives) {
+        let html = "";
+        for (let i = 1; i <= 3; i++) {
+            html += (i <= lives) ? "❤️" : "🖤";
+        }
+        return html;
+    }
+
     function buildQuizQuestion(targetWord, qType, pool) {
         if (qType === "hz_to_py") {
             const distractorsPy = generatePinyinDistractors(targetWord.py, pool);
             const options = [
-                { id: targetWord.id, py: targetWord.py, hz: targetWord.hz, mean: targetWord.mean },
-                { id: "distractor_0_" + Math.random(), py: distractorsPy[0] || "pīnyīn", hz: targetWord.hz, mean: targetWord.mean },
-                { id: "distractor_1_" + Math.random(), py: distractorsPy[1] || "pínyīn", hz: targetWord.hz, mean: targetWord.mean },
-                { id: "distractor_2_" + Math.random(), py: distractorsPy[2] || "pǐnyīn", hz: targetWord.hz, mean: targetWord.mean }
+                { id: targetWord.id, py: targetWord.py, hz: targetWord.hz, mean: targetWord.mean, type: targetWord.type },
+                { id: "distractor_0_" + Math.random(), py: distractorsPy[0] || "pīnyīn", hz: targetWord.hz, mean: targetWord.mean, type: targetWord.type },
+                { id: "distractor_1_" + Math.random(), py: distractorsPy[1] || "pínyīn", hz: targetWord.hz, mean: targetWord.mean, type: targetWord.type },
+                { id: "distractor_2_" + Math.random(), py: distractorsPy[2] || "pǐnyīn", hz: targetWord.hz, mean: targetWord.mean, type: targetWord.type }
             ];
             shuffleArray(options);
             return {
@@ -1418,12 +1463,43 @@
             };
         }
 
+        // Bẫy thông minh (Smart Distractors): Ưu tiên cùng từ loại và cùng bài học
         const distractors = [];
-        const otherWords = state.allWords.filter(w => w.id !== targetWord.id && w.mean !== targetWord.mean && w.hz !== targetWord.hz);
-        shuffleArray(otherWords);
 
-        for (let i = 0; i < otherWords.length && distractors.length < 3; i++) {
-            distractors.push(otherWords[i]);
+        // 1. Cùng từ loại trong pool hiện tại
+        if (targetWord.type) {
+            const sameTypePool = pool.filter(w => w.id !== targetWord.id && w.mean !== targetWord.mean && w.hz !== targetWord.hz && w.type === targetWord.type);
+            shuffleArray(sameTypePool);
+            for (let i = 0; i < sameTypePool.length && distractors.length < 3; i++) {
+                distractors.push(sameTypePool[i]);
+            }
+        }
+
+        // 2. Cùng pool (cùng bài / giáo trình) bất kể từ loại
+        if (distractors.length < 3) {
+            const samePool = pool.filter(w => w.id !== targetWord.id && w.mean !== targetWord.mean && w.hz !== targetWord.hz && !distractors.some(d => d.id === w.id));
+            shuffleArray(samePool);
+            for (let i = 0; i < samePool.length && distractors.length < 3; i++) {
+                distractors.push(samePool[i]);
+            }
+        }
+
+        // 3. Cùng từ loại trong toàn bộ kho từ
+        if (distractors.length < 3 && targetWord.type) {
+            const sameTypeAll = state.allWords.filter(w => w.id !== targetWord.id && w.mean !== targetWord.mean && w.hz !== targetWord.hz && w.type === targetWord.type && !distractors.some(d => d.id === w.id));
+            shuffleArray(sameTypeAll);
+            for (let i = 0; i < sameTypeAll.length && distractors.length < 3; i++) {
+                distractors.push(sameTypeAll[i]);
+            }
+        }
+
+        // 4. Các từ bất kỳ khác trong toàn kho
+        if (distractors.length < 3) {
+            const others = state.allWords.filter(w => w.id !== targetWord.id && w.mean !== targetWord.mean && w.hz !== targetWord.hz && !distractors.some(d => d.id === w.id));
+            shuffleArray(others);
+            for (let i = 0; i < others.length && distractors.length < 3; i++) {
+                distractors.push(others[i]);
+            }
         }
 
         const options = [targetWord, ...distractors];
@@ -1438,6 +1514,7 @@
     }
 
     function setupQuizMode() {
+        clearQuizTimers();
         const container = document.getElementById("quiz-container");
         if (!container) return;
 
@@ -1459,8 +1536,27 @@
                     <h2>🎯 Luyện Tập Trắc Nghiệm Phản Xạ</h2>
                     <p>Ngân hàng câu hỏi hiện tại: <strong>${words.length} từ vựng</strong> đang chọn</p>
 
+                    <!-- Chọn Chế Độ Chơi (Play Type) -->
+                    <div style="text-align: left; margin-bottom: 20px;">
+                        <label style="display:block; font-size:13px; font-weight:700; color:#334155; margin-bottom:6px;">
+                            🎮 Chế độ thử thách:
+                        </label>
+                        <div class="quiz-mode-pills" id="quiz-play-type-group">
+                            <button type="button" class="quiz-mode-pill ${state.quizPlayType === 'standard' ? 'active' : ''}" data-type="standard">
+                                🎯 Tiêu Chuẩn<br><small style="font-weight:400; font-size:11px; color:#64748b;">Làm theo số câu chọn</small>
+                            </button>
+                            <button type="button" class="quiz-mode-pill ${state.quizPlayType === 'survival' ? 'active' : ''}" data-type="survival">
+                                ❤️ Sinh Tồn (3 Mạng)<br><small style="font-weight:400; font-size:11px; color:#64748b;">Sai 3 câu là Game Over</small>
+                            </button>
+                            <button type="button" class="quiz-mode-pill ${state.quizPlayType === 'time_attack' ? 'active' : ''}" data-type="time_attack">
+                                ⚡ Cơn Lốc 60 Giây<br><small style="font-weight:400; font-size:11px; color:#64748b;">Đua tốc độ trong 1 phút</small>
+                            </button>
+                        </div>
+                    </div>
+
                     <div class="quiz-options-grid">
-                        <div class="quiz-opt-box">
+                        <!-- Số lượng câu (ẩn khi ở chế độ sinh tồn / time attack) -->
+                        <div class="quiz-opt-box" id="box-quiz-count" style="${state.quizPlayType !== 'standard' ? 'display:none;' : ''}">
                             <label for="quiz-count-select">Số lượng câu hỏi:</label>
                             <select id="quiz-count-select" class="custom-select">
                                 <option value="10">10 câu</option>
@@ -1470,16 +1566,35 @@
                             </select>
                         </div>
 
-                        <div class="quiz-opt-box">
+                        <!-- Dạng bài thi -->
+                        <div class="quiz-opt-box" id="box-quiz-format" style="${state.quizPlayType !== 'standard' ? 'grid-column: 1 / -1;' : ''}">
                             <label for="quiz-mode-select">Dạng bài thi:</label>
                             <select id="quiz-mode-select" class="custom-select">
                                 <option value="mix_no_audio" selected>📖 Hỗn hợp Đọc & Nghĩa (Không audio)</option>
                                 <option value="mix">🔀 Hỗn hợp toàn diện (Đọc, Nghĩa, Pinyin & Audio)</option>
-                                <option value="hz_to_mean">🀄 Nhìn Chữ Hán -> Chọn Nghĩa Tiếng Việt</option>
-                                <option value="mean_to_hz">🇻🇳 Nhìn Nghĩa -> Chọn Chữ Hán</option>
-                                <option value="hz_to_py">🔤 Nhìn Chữ Hán -> Chọn Pinyin & Thanh điệu</option>
-                                <option value="audio_to_hz">🎧 Nghe Âm Thanh -> Chọn Chữ Hán</option>
+                                <option value="hz_to_mean">🀄 Nhìn Chữ Hán ➔ Chọn Nghĩa Tiếng Việt</option>
+                                <option value="mean_to_hz">🇻🇳 Nhìn Nghĩa ➔ Chọn Chữ Hán</option>
+                                <option value="hz_to_py">🔤 Nhìn Chữ Hán ➔ Chọn Pinyin & Thanh điệu</option>
+                                <option value="audio_to_hz">🎧 Nghe Âm Thanh ➔ Chọn Chữ Hán</option>
                             </select>
+                        </div>
+
+                        <!-- Áp lực phản xạ từng câu (ẩn khi time attack) -->
+                        <div class="quiz-opt-box" id="box-quiz-timer" style="${state.quizPlayType === 'time_attack' ? 'display:none;' : ''}">
+                            <label for="quiz-timer-select">⏱️ Áp lực thời gian mỗi câu:</label>
+                            <select id="quiz-timer-select" class="custom-select">
+                                <option value="5" ${state.quizTimerSeconds === 5 ? 'selected' : ''}>⚡ 5 giây (Phản xạ chớp nhoáng)</option>
+                                <option value="10" ${state.quizTimerSeconds === 10 ? 'selected' : ''}>⏱️ 10 giây (Tiêu chuẩn)</option>
+                                <option value="0" ${state.quizTimerSeconds === 0 ? 'selected' : ''}>⏳ Không giới hạn thời gian</option>
+                            </select>
+                        </div>
+
+                        <!-- Tự động chuyển câu -->
+                        <div class="quiz-opt-box" style="display:flex; align-items:center; margin-top:20px;">
+                            <label style="display:inline-flex; align-items:center; gap:8px; cursor:pointer; user-select:none; font-size:13px; font-weight:600; color:#334155; margin-bottom:0;">
+                                <input type="checkbox" id="quiz-auto-advance" ${state.quizAutoAdvance ? 'checked' : ''} style="width:16px; height:16px; accent-color:#0284c7;">
+                                <span>⏩ Tự động chuyển câu siêu tốc (sau 1s)</span>
+                            </label>
                         </div>
                     </div>
 
@@ -1487,7 +1602,7 @@
                         💡 <em>Mẹo phản xạ: Dùng phím số <strong>1, 2, 3, 4</strong> hoặc phím chữ <strong>A, B, C, D</strong> để chọn đáp án và phím <strong>Space/Enter</strong> để chuyển câu nhanh!</em>
                     </div>
 
-                    <button class="btn-start-quiz" id="btn-start-quiz">Bắt Đầu Làm Bài</button>
+                    <button class="btn-start-quiz" id="btn-start-quiz">Bắt Đầu Thử Thách 🚀</button>
                 </div>
 
                 <div class="quiz-play-card" id="quiz-play-view"></div>
@@ -1495,26 +1610,83 @@
             </div>
         `;
 
+        // Event listeners for play type pills
+        document.querySelectorAll("#quiz-play-type-group .quiz-mode-pill").forEach(pill => {
+            pill.addEventListener("click", () => {
+                document.querySelectorAll("#quiz-play-type-group .quiz-mode-pill").forEach(p => p.classList.remove("active"));
+                pill.classList.add("active");
+                state.quizPlayType = pill.dataset.type;
+
+                const countBox = document.getElementById("box-quiz-count");
+                const timerBox = document.getElementById("box-quiz-timer");
+                const formatBox = document.getElementById("box-quiz-format");
+
+                if (state.quizPlayType === "standard") {
+                    if (countBox) countBox.style.display = "block";
+                    if (timerBox) timerBox.style.display = "block";
+                    if (formatBox) formatBox.style.gridColumn = "";
+                } else if (state.quizPlayType === "survival") {
+                    if (countBox) countBox.style.display = "none";
+                    if (timerBox) timerBox.style.display = "block";
+                    if (formatBox) formatBox.style.gridColumn = "1 / -1";
+                } else if (state.quizPlayType === "time_attack") {
+                    if (countBox) countBox.style.display = "none";
+                    if (timerBox) timerBox.style.display = "none";
+                    if (formatBox) formatBox.style.gridColumn = "1 / -1";
+                }
+            });
+        });
+
         const startBtn = document.getElementById("btn-start-quiz");
         if (startBtn) {
             startBtn.addEventListener("click", () => {
-                const countVal = document.getElementById("quiz-count-select").value;
+                const countVal = document.getElementById("quiz-count-select") ? document.getElementById("quiz-count-select").value : "20";
                 const modeVal = document.getElementById("quiz-mode-select").value;
+                const timerVal = document.getElementById("quiz-timer-select") ? parseInt(document.getElementById("quiz-timer-select").value, 10) : 10;
+                const autoAdv = document.getElementById("quiz-auto-advance") ? document.getElementById("quiz-auto-advance").checked : true;
+
+                state.quizTimerSeconds = timerVal;
+                state.quizAutoAdvance = autoAdv;
+
                 startQuizSession(countVal, modeVal);
             });
         }
     }
 
     function startQuizSession(countVal, modeVal) {
+        clearQuizTimers();
         const pool = [...getFilteredWords()];
         shuffleArray(pool);
 
-        let totalQ = countVal === "all" ? pool.length : Math.min(parseInt(countVal, 10), pool.length);
-        const selectedWords = pool.slice(0, totalQ);
+        // Reset state
+        state.quizCurrentIdx = 0;
+        state.quizScore = 0;
+        state.quizIncorrect = [];
+        state.quizAnswered = false;
+        state.quizStreak = 0;
+        state.quizMaxStreak = 0;
+        state.quizResponseTimes = [];
+        state.quizLives = 3;
+        state.quizSkills = {
+            hz_to_mean: { correct: 0, total: 0 },
+            mean_to_hz: { correct: 0, total: 0 },
+            hz_to_py: { correct: 0, total: 0 },
+            audio_to_hz: { correct: 0, total: 0 }
+        };
 
-        // Generate questions
-        state.quizQuestions = selectedWords.map(targetWord => {
-            // Determine question type
+        // Determine total questions
+        let totalQ = 20;
+        if (state.quizPlayType === "standard") {
+            totalQ = countVal === "all" ? pool.length : Math.min(parseInt(countVal, 10), pool.length);
+        } else if (state.quizPlayType === "survival") {
+            totalQ = Math.max(pool.length, 60);
+        } else if (state.quizPlayType === "time_attack") {
+            totalQ = Math.max(pool.length, 60);
+        }
+
+        state.quizQuestions = [];
+        for (let i = 0; i < totalQ; i++) {
+            const targetWord = pool[i % pool.length];
             let qType = modeVal;
             if (modeVal === "mix") {
                 const types = ["hz_to_mean", "mean_to_hz", "hz_to_py", "audio_to_hz"];
@@ -1523,18 +1695,33 @@
                 const types = ["hz_to_mean", "mean_to_hz"];
                 qType = types[Math.floor(Math.random() * types.length)];
             }
-
-            return buildQuizQuestion(targetWord, qType, pool);
-        });
-
-        state.quizCurrentIdx = 0;
-        state.quizScore = 0;
-        state.quizIncorrect = [];
-        state.quizAnswered = false;
+            state.quizQuestions.push(buildQuizQuestion(targetWord, qType, pool));
+        }
 
         document.getElementById("quiz-setup-view").style.display = "none";
         document.getElementById("quiz-result-view").style.display = "none";
         document.getElementById("quiz-play-view").style.display = "block";
+
+        // Time Attack countdown
+        if (state.quizPlayType === "time_attack") {
+            state.quizTimeAttackRemaining = 60;
+            state.quizTimeAttackInterval = setInterval(() => {
+                state.quizTimeAttackRemaining--;
+                const timeElem = document.getElementById("quiz-hud-time-val");
+                if (timeElem) {
+                    timeElem.textContent = `${state.quizTimeAttackRemaining}s`;
+                    if (state.quizTimeAttackRemaining <= 10) {
+                        timeElem.style.color = "#dc2626";
+                        if (typeof soundFX !== "undefined" && soundFX.tick) soundFX.tick();
+                    }
+                }
+                if (state.quizTimeAttackRemaining <= 0) {
+                    clearQuizTimers();
+                    showToast("⚡ Hết thời gian 60 giây!");
+                    renderQuizResults();
+                }
+            }, 1000);
+        }
 
         renderQuizQuestion();
     }
@@ -1543,11 +1730,36 @@
         const playView = document.getElementById("quiz-play-view");
         if (!playView) return;
 
+        clearQuizTimers();
         state.quizAnswered = false;
+
+        // Check survival game over
+        if (state.quizPlayType === "survival" && state.quizLives <= 0) {
+            renderQuizResults();
+            return;
+        }
+
+        // Check standard game over
+        if (state.quizPlayType === "standard" && state.quizCurrentIdx >= state.quizQuestions.length) {
+            renderQuizResults();
+            return;
+        }
+
+        // Ensure questions available for continuous modes
+        if (state.quizCurrentIdx >= state.quizQuestions.length) {
+            const pool = [...getFilteredWords()];
+            shuffleArray(pool);
+            for (let i = 0; i < 20; i++) {
+                state.quizQuestions.push(buildQuizQuestion(pool[i % pool.length], "mix_no_audio", pool));
+            }
+        }
+
         const q = state.quizQuestions[state.quizCurrentIdx];
         const total = state.quizQuestions.length;
         const currentNum = state.quizCurrentIdx + 1;
         const progressPercent = Math.round((currentNum / total) * 100);
+
+        state.quizQuestionStartTime = Date.now();
 
         let promptHtml = "";
         let promptLabel = "";
@@ -1576,19 +1788,68 @@
         }
 
         const letters = ["A", "B", "C", "D"];
+        const isStarred = state.starredWords.has(q.word.id);
+
+        // Header info by play type
+        let headerLeftHtml = "";
+        let headerRightHtml = "";
+        if (state.quizPlayType === "standard") {
+            headerLeftHtml = `<div>Câu hỏi <strong>${currentNum}</strong> / ${total}</div>`;
+            headerRightHtml = `
+                <div style="display:flex; align-items:center; gap:10px;">
+                    ${state.quizStreak >= 2 ? `<span class="quiz-hud-streak">🔥 x${state.quizStreak} Streak</span>` : ''}
+                    <div>Điểm: <strong style="color:var(--primary);">${state.quizScore}</strong></div>
+                </div>
+            `;
+        } else if (state.quizPlayType === "survival") {
+            headerLeftHtml = `<div class="quiz-hud-lives" title="Mạng còn lại: ${state.quizLives}/3">${renderLivesHtml(state.quizLives)}</div>`;
+            headerRightHtml = `
+                <div style="display:flex; align-items:center; gap:10px;">
+                    ${state.quizStreak >= 2 ? `<span class="quiz-hud-streak">🔥 x${state.quizStreak} Streak</span>` : ''}
+                    <div>Đã vượt: <strong style="color:#16a34a;">${state.quizScore}</strong> câu</div>
+                </div>
+            `;
+        } else if (state.quizPlayType === "time_attack") {
+            headerLeftHtml = `<div class="quiz-hud-time-attack">⏳ <strong id="quiz-hud-time-val">${state.quizTimeAttackRemaining}s</strong></div>`;
+            headerRightHtml = `
+                <div style="display:flex; align-items:center; gap:10px;">
+                    ${state.quizStreak >= 2 ? `<span class="quiz-hud-streak">🔥 x${state.quizStreak} Streak</span>` : ''}
+                    <div>Điểm: <strong style="color:#d97706;">${state.quizScore}</strong></div>
+                </div>
+            `;
+        }
+
+        // Countdown Bar
+        let countdownHtml = "";
+        if (state.quizTimerSeconds > 0 && state.quizPlayType !== "time_attack") {
+            countdownHtml = `
+                <div class="quiz-countdown-wrap">
+                    <div class="quiz-countdown-fill" id="quiz-countdown-bar" style="width: 100%;"></div>
+                </div>
+            `;
+        }
 
         playView.innerHTML = `
             <div class="quiz-header">
-                <div>Câu hỏi <strong>${currentNum}</strong> / ${total}</div>
-                <div>Điểm số: <strong style="color:var(--primary);">${state.quizScore}</strong></div>
+                ${headerLeftHtml}
+                ${headerRightHtml}
             </div>
 
-            <div class="quiz-progress-bar">
-                <div class="quiz-progress-fill" style="width: ${progressPercent}%;"></div>
-            </div>
+            ${state.quizPlayType === 'standard' ? `
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" style="width: ${progressPercent}%;"></div>
+                </div>
+            ` : ''}
+
+            ${countdownHtml}
 
             <div class="quiz-question-box">
-                <div class="quiz-q-label">${promptLabel}</div>
+                <div class="quiz-q-top-row">
+                    <div class="quiz-q-label">${promptLabel}</div>
+                    <button class="star-btn ${isStarred ? 'starred' : ''}" id="quiz-star-btn" title="Lưu vào từ quan trọng ★">
+                        ${isStarred ? '★' : '☆'}
+                    </button>
+                </div>
                 ${promptHtml}
             </div>
 
@@ -1626,10 +1887,18 @@
 
             <div class="quiz-footer">
                 <button class="btn-next-q" id="btn-quiz-next">
-                    ${currentNum === total ? 'Xem Kết Quả' : 'Câu Tiếp Theo ▶ (Space/Enter)'}
+                    Câu Tiếp Theo ▶ (Space/Enter)
                 </button>
             </div>
         `;
+
+        // Star button in question
+        const starBtn = document.getElementById("quiz-star-btn");
+        if (starBtn) {
+            starBtn.addEventListener("click", () => {
+                toggleStarWord(q.word.id, starBtn);
+            });
+        }
 
         // Audio play button if audio type
         const audioBtn = document.getElementById("btn-quiz-audio");
@@ -1649,23 +1918,61 @@
         const nextBtn = document.getElementById("btn-quiz-next");
         if (nextBtn) {
             nextBtn.addEventListener("click", () => {
-                state.quizCurrentIdx++;
-                if (state.quizCurrentIdx < state.quizQuestions.length) {
-                    renderQuizQuestion();
-                } else {
-                    renderQuizResults();
-                }
+                advanceToNextQuizQuestion();
             });
+        }
+
+        // Start countdown timer if enabled
+        if (state.quizTimerSeconds > 0 && state.quizPlayType !== "time_attack") {
+            const totalMs = state.quizTimerSeconds * 1000;
+            const startTime = Date.now();
+            state.quizTimerInterval = setInterval(() => {
+                if (state.quizAnswered) {
+                    clearInterval(state.quizTimerInterval);
+                    state.quizTimerInterval = null;
+                    return;
+                }
+                const elapsed = Date.now() - startTime;
+                const remain = Math.max(0, totalMs - elapsed);
+                const percent = (remain / totalMs) * 100;
+                const bar = document.getElementById("quiz-countdown-bar");
+                if (bar) {
+                    bar.style.width = percent + "%";
+                    if (percent <= 25) {
+                        bar.className = "quiz-countdown-fill danger";
+                    } else if (percent <= 50) {
+                        bar.className = "quiz-countdown-fill warning";
+                    }
+                }
+                if (remain <= 3000 && remain > 200 && Math.floor(remain / 1000) !== Math.floor((remain + 80) / 1000)) {
+                    if (typeof soundFX !== "undefined" && soundFX.tick) soundFX.tick();
+                }
+                if (remain <= 0) {
+                    clearInterval(state.quizTimerInterval);
+                    state.quizTimerInterval = null;
+                    handleQuizTimeout(q);
+                }
+            }, 80);
         }
     }
 
     function handleAnswerSelection(selectedBtn, question) {
+        clearQuizTimers();
         state.quizAnswered = true;
+
+        const reactionSec = (Date.now() - state.quizQuestionStartTime) / 1000;
+        state.quizResponseTimes.push(reactionSec);
+
         const selectedId = selectedBtn.dataset.id;
         const isCorrect = (selectedId === question.correctWord.id);
         const playView = document.getElementById("quiz-play-view");
         const feedbackBox = document.getElementById("quiz-feedback-box");
         const nextBtn = document.getElementById("btn-quiz-next");
+
+        // Record skill stat
+        if (state.quizSkills[question.type]) {
+            state.quizSkills[question.type].total++;
+        }
 
         // Speak word
         speakChinese(question.correctWord.hz);
@@ -1683,55 +1990,240 @@
         if (isCorrect) {
             if (typeof soundFX !== "undefined" && soundFX.correct) soundFX.correct();
             state.quizScore++;
+            state.quizStreak++;
+            if (state.quizStreak > state.quizMaxStreak) state.quizMaxStreak = state.quizStreak;
+            if (state.quizSkills[question.type]) state.quizSkills[question.type].correct++;
+
             feedbackBox.className = "quiz-feedback show correct";
             feedbackBox.innerHTML = `
                 🎉 <strong>Chính xác!</strong> 
                 <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(question.correctWord.mean)}
+                ${state.quizStreak >= 3 ? `<span style="margin-left:8px; font-weight:700; color:#ea580c;">🔥 Chuỗi x${state.quizStreak}!</span>` : ''}
             `;
         } else {
             if (typeof soundFX !== "undefined" && soundFX.wrong) soundFX.wrong();
+            state.quizStreak = 0;
             state.quizIncorrect.push(question.correctWord);
+            if (state.quizPlayType === "survival") {
+                state.quizLives--;
+            }
+
             feedbackBox.className = "quiz-feedback show wrong";
             feedbackBox.innerHTML = `
-                ❌ <strong>Chưa chính xác!</strong> Đáp án đúng là: 
+                ❌ <strong>Chưa chính xác!</strong> Đáp án đúng: 
                 <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(question.correctWord.mean)}
+                ${state.quizPlayType === 'survival' ? `<span style="margin-left:8px; font-weight:700; color:#dc2626;">(Mất 1 ❤️)</span>` : ''}
             `;
         }
 
-        nextBtn.classList.add("show");
+        // Update streak display in HUD immediately
+        const streakElem = document.getElementById("quiz-hud-streak");
+        if (streakElem) {
+            streakElem.textContent = state.quizStreak >= 2 ? `🔥 x${state.quizStreak} Streak` : "";
+        }
+
+        const isGameOver = (state.quizPlayType === "survival" && state.quizLives <= 0) ||
+                           (state.quizPlayType === "standard" && (state.quizCurrentIdx + 1) >= state.quizQuestions.length);
+
+        if (nextBtn) {
+            if (isGameOver) {
+                nextBtn.textContent = state.quizPlayType === "survival" ? "Xem Kết Quả (Hết Mạng 💔)" : "Xem Kết Quả 🏆";
+            } else {
+                nextBtn.textContent = "Câu Tiếp Theo ▶ (Space/Enter)";
+            }
+            nextBtn.classList.add("show");
+        }
+
+        // Auto-advance
+        if (state.quizAutoAdvance) {
+            const delay = isCorrect ? 900 : 1500;
+            quizAdvanceTimeout = setTimeout(() => {
+                advanceToNextQuizQuestion();
+            }, delay);
+        }
+    }
+
+    function handleQuizTimeout(question) {
+        clearQuizTimers();
+        state.quizAnswered = true;
+
+        const reactionSec = state.quizTimerSeconds;
+        state.quizResponseTimes.push(reactionSec);
+
+        const playView = document.getElementById("quiz-play-view");
+        const feedbackBox = document.getElementById("quiz-feedback-box");
+        const nextBtn = document.getElementById("btn-quiz-next");
+
+        // Record skill stat
+        if (state.quizSkills[question.type]) {
+            state.quizSkills[question.type].total++;
+        }
+
+        speakChinese(question.correctWord.hz);
+        if (typeof soundFX !== "undefined" && soundFX.wrong) soundFX.wrong();
+
+        state.quizStreak = 0;
+        state.quizIncorrect.push(question.correctWord);
+        if (state.quizPlayType === "survival") {
+            state.quizLives--;
+        }
+
+        playView.querySelectorAll(".ans-btn").forEach(btn => {
+            btn.disabled = true;
+            if (btn.dataset.id === question.correctWord.id) {
+                btn.classList.add("correct");
+            }
+        });
+
+        feedbackBox.className = "quiz-feedback show wrong";
+        feedbackBox.innerHTML = `
+            ⏰ <strong>Hết thời gian phản xạ!</strong> Đáp án đúng là: 
+            <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(question.correctWord.mean)}
+            ${state.quizPlayType === 'survival' ? `<span style="margin-left:8px; font-weight:700; color:#dc2626;">(Mất 1 ❤️)</span>` : ''}
+        `;
+
+        const isGameOver = (state.quizPlayType === "survival" && state.quizLives <= 0) ||
+                           (state.quizPlayType === "standard" && (state.quizCurrentIdx + 1) >= state.quizQuestions.length);
+
+        if (nextBtn) {
+            if (isGameOver) {
+                nextBtn.textContent = state.quizPlayType === "survival" ? "Xem Kết Quả (Hết Mạng 💔)" : "Xem Kết Quả 🏆";
+            } else {
+                nextBtn.textContent = "Câu Tiếp Theo ▶ (Space/Enter)";
+            }
+            nextBtn.classList.add("show");
+        }
+
+        if (state.quizAutoAdvance) {
+            quizAdvanceTimeout = setTimeout(() => {
+                advanceToNextQuizQuestion();
+            }, 1500);
+        }
+    }
+
+    function advanceToNextQuizQuestion() {
+        clearQuizTimers();
+        if (state.quizPlayType === "survival" && state.quizLives <= 0) {
+            renderQuizResults();
+            return;
+        }
+
+        state.quizCurrentIdx++;
+        if (state.quizPlayType === "standard") {
+            if (state.quizCurrentIdx >= state.quizQuestions.length) {
+                renderQuizResults();
+            } else {
+                renderQuizQuestion();
+            }
+        } else {
+            // Survival or Time Attack
+            renderQuizQuestion();
+        }
     }
 
     function renderQuizResults() {
+        clearQuizTimers();
         document.getElementById("quiz-play-view").style.display = "none";
         const resultView = document.getElementById("quiz-result-view");
         resultView.style.display = "block";
 
-        const total = state.quizQuestions.length;
+        const totalAnswered = state.quizResponseTimes.length || 1;
         const score = state.quizScore;
-        const percent = Math.round((score / total) * 100);
+        const percent = Math.round((score / totalAnswered) * 100);
+
+        // Average reaction time
+        const avgReaction = state.quizResponseTimes.length > 0
+            ? (state.quizResponseTimes.reduce((a, b) => a + b, 0) / state.quizResponseTimes.length).toFixed(1)
+            : "0.0";
+
+        let reflexTitle = "";
+        if (parseFloat(avgReaction) <= 1.5) {
+            reflexTitle = "⚡ Siêu Thần Tốc";
+        } else if (parseFloat(avgReaction) <= 2.8) {
+            reflexTitle = "🏎️ Nhạy Bén";
+        } else if (parseFloat(avgReaction) <= 4.5) {
+            reflexTitle = "🚶 Vững Vàng";
+        } else {
+            reflexTitle = "🐢 Cần Rèn Thêm";
+        }
 
         let badge = "🎉";
-        let title = "Làm Tốt Lắm!";
-        if (percent === 100) {
+        let title = "Hoàn Thành Xuất Sắc!";
+        if (state.quizPlayType === "survival" && state.quizLives <= 0) {
+            badge = "💔";
+            title = `Hết Mạng! Trụ Được ${score} Câu!`;
+        } else if (state.quizPlayType === "time_attack") {
+            badge = "⚡";
+            title = `Hết 60 Giây! Đạt ${score} Câu Đúng!`;
+        } else if (percent === 100) {
             if (typeof soundFX !== "undefined" && soundFX.fanfare) soundFX.fanfare();
             badge = "🏆";
             title = "Hoàn Hảo! Điểm Tuyệt Đối!";
         } else if (percent >= 80) {
             if (typeof soundFX !== "undefined" && soundFX.fanfare) soundFX.fanfare();
             badge = "🌟";
-            title = "Xuất Sắc! Bạn Nhớ Rất Tốt!";
+            title = "Xuất Sắc! Nhớ Rất Tốt!";
         } else if (percent < 50) {
             badge = "💪";
             title = "Cần Cố Gắng Thêm Nhé!";
         }
 
+        // Skills breakdown
+        const skillLabels = {
+            hz_to_mean: "🀄 Nhìn Chữ Hán ➔ Nghĩa Tiếng Việt",
+            mean_to_hz: "🇻🇳 Nhìn Nghĩa ➔ Chọn Chữ Hán",
+            hz_to_py: "🔤 Nhớ Pinyin & Thanh Điệu",
+            audio_to_hz: "🎧 Phản Xạ Bắt Âm Thanh"
+        };
+        let skillsHtml = "";
+        const testedSkills = Object.keys(state.quizSkills).filter(k => state.quizSkills[k].total > 0);
+        if (testedSkills.length > 0) {
+            skillsHtml = `
+                <div class="quiz-skills-card">
+                    <div class="quiz-skills-title">📊 Phân Tích Kỹ Năng Đa Chiều</div>
+                    ${testedSkills.map(k => {
+                        const s = state.quizSkills[k];
+                        const p = Math.round((s.correct / s.total) * 100);
+                        return `
+                            <div class="quiz-skill-row">
+                                <div class="quiz-skill-header">
+                                    <span>${skillLabels[k] || k}</span>
+                                    <span><strong>${s.correct}/${s.total}</strong> (${p}%)</span>
+                                </div>
+                                <div class="quiz-skill-bar">
+                                    <div class="quiz-skill-fill" style="width: ${p}%;"></div>
+                                </div>
+                            </div>
+                        `;
+                    }).join("")}
+                </div>
+            `;
+        }
+
+        // Deduplicate incorrect words
+        const uniqueIncorrect = [];
+        const seen = new Set();
+        state.quizIncorrect.forEach(w => {
+            if (!seen.has(w.id)) {
+                seen.add(w.id);
+                uniqueIncorrect.push(w);
+            }
+        });
+
         let incorrectHtml = "";
-        if (state.quizIncorrect.length > 0) {
+        if (uniqueIncorrect.length > 0) {
             incorrectHtml = `
                 <div style="text-align: left; margin-top: 25px; padding: 20px; background: #fff5f5; border-radius: 12px; border: 1px solid #fed7d7;">
-                    <h3 style="font-size: 15px; color: #c53030; margin-bottom: 12px;">Các từ cần ôn lại (${state.quizIncorrect.length} từ):</h3>
-                    <div style="display: flex; flex-direction: column; gap: 8px;">
-                        ${state.quizIncorrect.map(w => `
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+                        <h3 style="font-size: 15px; color: #c53030; margin:0;">
+                            Các từ cần ôn lại (${uniqueIncorrect.length} từ):
+                        </h3>
+                        <button class="btn-push-unmastered" id="btn-quiz-send-to-unmastered">
+                            📥 Gom ${uniqueIncorrect.length} câu sai vào Flashcard Chưa Nhớ (❌)
+                        </button>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 8px; max-height: 240px; overflow-y: auto;">
+                        ${uniqueIncorrect.map(w => `
                             <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 8px 12px; border-radius: 8px; border: 1px solid #feb2b2;">
                                 <div>
                                     <strong style="font-size: 16px;">${escapeHtml(w.hz)}</strong> 
@@ -1746,25 +2238,53 @@
             `;
         }
 
+        let modeSublabel = "Chế độ Tiêu Chuẩn";
+        if (state.quizPlayType === "survival") modeSublabel = "Chế độ Sinh Tồn";
+        if (state.quizPlayType === "time_attack") modeSublabel = "Cơn Lốc 60 Giây";
+
         resultView.innerHTML = `
             <div class="result-badge">${badge}</div>
             <h2>${title}</h2>
-            <p style="color: var(--text-muted); font-size: 14px;">Bạn đã hoàn thành bài kiểm tra trắc nghiệm</p>
+            <p style="color: var(--text-muted); font-size: 14px;">${modeSublabel} • Đã trả lời ${totalAnswered} câu hỏi</p>
 
             <div class="quiz-score-circle" style="--percent: ${percent};">
-                <span class="score-num">${score}/${total}</span>
+                <span class="score-num">${score}/${totalAnswered}</span>
                 <span class="score-label">${percent}% Đúng</span>
             </div>
 
+            <!-- Stats 4 Cards Grid -->
+            <div class="quiz-stats-grid">
+                <div class="quiz-stat-card">
+                    <div class="quiz-stat-num" style="color:var(--primary);">${score}/${totalAnswered}</div>
+                    <div class="quiz-stat-label">Chính Xác (${percent}%)</div>
+                </div>
+                <div class="quiz-stat-card">
+                    <div class="quiz-stat-num" style="color:#d97706;">${avgReaction}s</div>
+                    <div class="quiz-stat-label">${reflexTitle}</div>
+                </div>
+                <div class="quiz-stat-card">
+                    <div class="quiz-stat-num" style="color:#ea580c;">x${state.quizMaxStreak}</div>
+                    <div class="quiz-stat-label">Chuỗi Đúng Kỷ Lục</div>
+                </div>
+                <div class="quiz-stat-card">
+                    <div class="quiz-stat-num" style="color:#10b981;">
+                        ${state.quizPlayType === 'survival' ? (state.quizLives > 0 ? `${state.quizLives} ❤️` : '0 ❤️') : (state.quizPlayType === 'time_attack' ? '60s' : `${totalAnswered} câu`)}
+                    </div>
+                    <div class="quiz-stat-label">${modeSublabel}</div>
+                </div>
+            </div>
+
+            ${skillsHtml}
             ${incorrectHtml}
 
             <div class="result-actions">
                 <button class="btn-pill" id="btn-quiz-retry">🔄 Làm Lại Bài Này</button>
-                ${state.quizIncorrect.length > 0 ? `<button class="btn-pill" id="btn-quiz-review-wrong" style="background:#fee2e2; color:#dc2626; border-color:#fca5a5;">⚠️ Chỉ Ôn Lại Các Câu Sai</button>` : ''}
+                ${uniqueIncorrect.length > 0 ? `<button class="btn-pill" id="btn-quiz-review-wrong" style="background:#fee2e2; color:#dc2626; border-color:#fca5a5;">⚠️ Chỉ Ôn Lại Các Câu Sai (${uniqueIncorrect.length})</button>` : ''}
                 <button class="btn-pill" id="btn-quiz-new-config">⚙️ Cài Đặt Mới</button>
             </div>
         `;
 
+        // Pronounce buttons for incorrect words
         resultView.querySelectorAll(".quiz-inc-speak").forEach(spkBtn => {
             spkBtn.addEventListener("click", () => {
                 const txt = decodeURIComponent(spkBtn.dataset.speak);
@@ -1772,18 +2292,36 @@
             });
         });
 
+        // Push to Flashcard button
+        const sendBtn = document.getElementById("btn-quiz-send-to-unmastered");
+        if (sendBtn) {
+            sendBtn.addEventListener("click", () => {
+                uniqueIncorrect.forEach(w => {
+                    state.unmasteredWords.add(w.id);
+                    state.masteredWords.delete(w.id);
+                });
+                saveUnmastered();
+                saveMastered();
+                showToast(`Đã đưa ${uniqueIncorrect.length} từ vào danh sách Chưa Nhớ ❌ của Flashcard!`);
+                sendBtn.disabled = true;
+                sendBtn.innerHTML = "✅ Đã gom vào Flashcard Chưa Nhớ";
+            });
+        }
+
+        // Retry
         document.getElementById("btn-quiz-retry").addEventListener("click", () => {
             const countVal = document.getElementById("quiz-count-select") ? document.getElementById("quiz-count-select").value : "20";
-            const modeVal = document.getElementById("quiz-mode-select") ? document.getElementById("quiz-mode-select").value : "mix";
+            const modeVal = document.getElementById("quiz-mode-select") ? document.getElementById("quiz-mode-select").value : "mix_no_audio";
             startQuizSession(countVal, modeVal);
         });
 
+        // Review wrong
         const reviewWrongBtn = document.getElementById("btn-quiz-review-wrong");
         if (reviewWrongBtn) {
             reviewWrongBtn.addEventListener("click", () => {
-                const modeVal = document.getElementById("quiz-mode-select") ? document.getElementById("quiz-mode-select").value : "mix";
+                const modeVal = document.getElementById("quiz-mode-select") ? document.getElementById("quiz-mode-select").value : "mix_no_audio";
                 const pool = [...getFilteredWords()];
-                state.quizQuestions = state.quizIncorrect.map(targetWord => {
+                state.quizQuestions = uniqueIncorrect.map(targetWord => {
                     let qType = modeVal;
                     if (modeVal === "mix") {
                         const types = ["hz_to_mean", "mean_to_hz", "hz_to_py", "audio_to_hz"];
@@ -1798,12 +2336,23 @@
                 state.quizScore = 0;
                 state.quizIncorrect = [];
                 state.quizAnswered = false;
+                state.quizStreak = 0;
+                state.quizMaxStreak = 0;
+                state.quizResponseTimes = [];
+                state.quizSkills = {
+                    hz_to_mean: { correct: 0, total: 0 },
+                    mean_to_hz: { correct: 0, total: 0 },
+                    hz_to_py: { correct: 0, total: 0 },
+                    audio_to_hz: { correct: 0, total: 0 }
+                };
+
                 document.getElementById("quiz-result-view").style.display = "none";
                 document.getElementById("quiz-play-view").style.display = "block";
                 renderQuizQuestion();
             });
         }
 
+        // New Config
         document.getElementById("btn-quiz-new-config").addEventListener("click", () => {
             setupQuizMode();
         });
@@ -1818,6 +2367,7 @@
         return t;
     }
     function clearGameTimers() {
+        clearQuizTimers();
         if (state.gameTimer) {
             clearInterval(state.gameTimer);
             state.gameTimer = null;

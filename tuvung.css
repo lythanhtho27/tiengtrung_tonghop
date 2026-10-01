@@ -1497,6 +1497,233 @@ body {
     flex-wrap: wrap;
 }
 
+/* ==================== QUIZ REFLEX & GAMIFICATION ENHANCEMENTS ==================== */
+/* Mode pills in Setup */
+.quiz-mode-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.quiz-mode-pill {
+    flex: 1;
+    min-width: 140px;
+    padding: 10px 14px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.quiz-mode-pill:hover {
+    border-color: #cbd5e1;
+    background: #f1f5f9;
+}
+
+.quiz-mode-pill.active {
+    background: #e0f2fe;
+    color: #0284c7;
+    border-color: #0284c7;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.2);
+}
+
+/* Quiz Timer & Streak HUD */
+.quiz-hud-streak {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+    color: #ea580c;
+    background: #fff7ed;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid #ffedd5;
+    font-size: 12px;
+    box-shadow: 0 1px 3px rgba(234, 88, 12, 0.1);
+}
+
+.quiz-hud-lives {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.quiz-hud-time-attack {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 700;
+    color: #d97706;
+    background: #fef3c7;
+    padding: 4px 11px;
+    border-radius: 20px;
+    font-size: 13px;
+    border: 1px solid #fde68a;
+}
+
+/* Countdown bar per question */
+.quiz-countdown-wrap {
+    width: 100%;
+    height: 5px;
+    background: #f1f5f9;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.quiz-countdown-fill {
+    height: 100%;
+    width: 100%;
+    background: #10b981;
+    transition: width 0.1s linear, background-color 0.3s ease;
+}
+
+.quiz-countdown-fill.warning {
+    background: #f59e0b;
+}
+
+.quiz-countdown-fill.danger {
+    background: #ef4444;
+    animation: pulse-countdown-danger 0.5s infinite;
+}
+
+@keyframes pulse-countdown-danger {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Question header top row */
+.quiz-q-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Stats grid on results */
+.quiz-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.quiz-stat-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px 8px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.quiz-stat-card:hover {
+    background: #ffffff;
+    box-shadow: var(--shadow-sm);
+}
+
+.quiz-stat-num {
+    font-size: 19px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.quiz-stat-label {
+    font-size: 11.5px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Skills breakdown */
+.quiz-skills-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.quiz-skills-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.quiz-skill-row {
+    margin-bottom: 12px;
+}
+
+.quiz-skill-row:last-child {
+    margin-bottom: 0;
+}
+
+.quiz-skill-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 5px;
+}
+
+.quiz-skill-bar {
+    width: 100%;
+    height: 7px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.quiz-skill-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #0284c7, #10b981);
+    transition: width 0.6s ease;
+}
+
+/* Push to flashcard button */
+.btn-push-unmastered {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-push-unmastered:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.btn-push-unmastered:disabled {
+    background: #94a3b8;
+    box-shadow: none;
+    cursor: default;
+}
+
 /* ==================== MODE 4: MATCHING GAME ==================== */
 .game-wrapper {
     max-width: 800px;
@@ -2173,6 +2400,16 @@ footer {
     }
     .quiz-q-prompt.mean-prompt {
         font-size: 20px;
+    }
+    .quiz-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    .quiz-mode-pills {
+        flex-direction: column;
+    }
+    .quiz-mode-pill {
+        min-width: 100%;
     }
 }
 

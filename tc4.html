@@ -9,9 +9,17 @@
 </head>
 <body>
 
-    <!-- NÚT NỔI FLOAT PINYIN ĐÃ ĐƯỢC ĐỒNG BỘ -->
-    <button class="float-pinyin-btn" onclick="togglePinyinGlobal()" title="Ẩn/Hiện Pinyin">👁️</button>
-    <a href="tuvung.html" class="float-vocab-btn" title="Ôn tập từ vựng">🏮 Ôn từ vựng</a>
+    <div class="floating-dock" id="floating-dock">
+        <button class="dock-btn dock-btn-pinyin" id="dock-btn-pinyin" onclick="togglePinyinGlobal()" title="Ẩn/Hiện Pinyin để tự luyện đọc (Phím tắt: P)">
+            <span class="dock-icon">👁️</span>
+            <span class="dock-label">Pinyin: Bật</span>
+            <kbd class="dock-key-tag">P</kbd>
+        </button>
+        <a href="tuvung.html" class="dock-btn dock-btn-vocab" title="Đến trung tâm ôn tập từ vựng & trò chơi">
+            <span class="dock-icon">🏮</span>
+            <span class="dock-label">Ôn từ vựng</span>
+        </a>
+    </div>
 
     <!-- THANH MENU CHÍNH 2 DÒNG (Bắt đầu với Bài 1 Quyển 2) -->
     <div class="main-menu">

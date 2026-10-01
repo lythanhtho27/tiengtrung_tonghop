@@ -28,6 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 7. Khởi tạo kiểu phông chữ Hán chuẩn đã lưu (mặc định Khải Thư)
     initSavedFontMode();
+
+    // 8. Khởi tạo Floating Dock điều khiển (Pinyin & Ôn từ vựng - chống đè nhau)
+    setupFloatingControls();
+
+    // 9. Lắng nghe phím tắt 'P' toàn cục
+    initPinyinKeyboardShortcut();
+
+    // 10. Khôi phục trạng thái Pinyin đã lưu
+    initSavedPinyinState();
 });
 
 // ==========================================================================
@@ -220,16 +229,27 @@ function initLessonAudioButtons(bookInfo) {
             card.appendChild(info);
         }
 
-        // Bài Khóa Audio Button
+        // Bài Khóa Audio Button & Thanh tiện ích bài đọc
         const baiKhoaContainer = document.getElementById(`${blockId}-baikhoa`);
-        if (baiKhoaContainer && !baiKhoaContainer.querySelector(".play-audio-btn")) {
+        if (baiKhoaContainer && !baiKhoaContainer.querySelector(".lesson-actions-bar")) {
             const audioPathKhoa = `audio/${bookFolder}/第${paddedLesson}课 Bai Khoa.mp3`;
-            const btnKhoa = document.createElement("button");
-            btnKhoa.className = "play-audio-btn";
-            btnKhoa.setAttribute("data-audio", audioPathKhoa);
-            btnKhoa.setAttribute("data-title", `Boya ${bookFolder} - Bài ${lessonNumber} (Bài Khóa)`);
-            btnKhoa.innerHTML = "🔊 Nghe Bài Khóa";
-            baiKhoaContainer.insertBefore(btnKhoa, baiKhoaContainer.firstChild);
+
+            const oldAudioBtn = baiKhoaContainer.querySelector(".play-audio-btn");
+            if (oldAudioBtn) oldAudioBtn.remove();
+
+            const bar = document.createElement("div");
+            bar.className = "lesson-actions-bar";
+            bar.innerHTML = `
+                <button class="play-audio-btn" data-audio="${audioPathKhoa}" data-title="Boya ${bookFolder} - Bài ${lessonNumber} (Bài Khóa)">
+                    🔊 Nghe Bài Khóa
+                </button>
+                <button class="action-toggle-pinyin-btn" onclick="togglePinyinGlobal()" title="Ẩn/Hiện Pinyin để tự luyện đọc (Phím tắt: P)">
+                    <span class="action-pinyin-icon">${isPinyinGloballyHidden ? "🙈" : "👁️"}</span>
+                    <span class="action-pinyin-text">${isPinyinGloballyHidden ? "Pinyin: Đang Ẩn" : "Ẩn/Hiện Pinyin"}</span>
+                    <kbd class="dock-key-tag">P</kbd>
+                </button>
+            `;
+            baiKhoaContainer.insertBefore(bar, baiKhoaContainer.firstChild);
         }
 
         // Từ Vựng Audio Button
@@ -247,16 +267,43 @@ function initLessonAudioButtons(bookInfo) {
         // Đọc Thêm Audio Button (Chỉ áp dụng Quyển 3 & Quyển 4)
         if (bookInfo.number === 3 || bookInfo.number === 4) {
             const docThemContainer = document.getElementById(`${blockId}-docthem`);
-            if (docThemContainer && !docThemContainer.querySelector(".play-audio-btn")) {
+            if (docThemContainer && !docThemContainer.querySelector(".lesson-actions-bar")) {
                 const audioPathDocThem = `audio/${bookFolder}/第${paddedLesson}课 Doc Them.mp3`;
-                const btnDocThem = document.createElement("button");
-                btnDocThem.className = "play-audio-btn";
-                btnDocThem.setAttribute("data-audio", audioPathDocThem);
-                btnDocThem.setAttribute("data-title", `Boya ${bookFolder} - Bài ${lessonNumber} (Đọc Thêm)`);
-                btnDocThem.innerHTML = "🔊 Nghe Bài Đọc Thêm";
-                docThemContainer.insertBefore(btnDocThem, docThemContainer.firstChild);
+
+                const oldDocThemBtn = docThemContainer.querySelector(".play-audio-btn");
+                if (oldDocThemBtn) oldDocThemBtn.remove();
+
+                const bar = document.createElement("div");
+                bar.className = "lesson-actions-bar";
+                bar.innerHTML = `
+                    <button class="play-audio-btn" data-audio="${audioPathDocThem}" data-title="Boya ${bookFolder} - Bài ${lessonNumber} (Đọc Thêm)">
+                        🔊 Nghe Bài Đọc Thêm
+                    </button>
+                    <button class="action-toggle-pinyin-btn" onclick="togglePinyinGlobal()" title="Ẩn/Hiện Pinyin để tự luyện đọc (Phím tắt: P)">
+                        <span class="action-pinyin-icon">${isPinyinGloballyHidden ? "🙈" : "👁️"}</span>
+                        <span class="action-pinyin-text">${isPinyinGloballyHidden ? "Pinyin: Đang Ẩn" : "Ẩn/Hiện Pinyin"}</span>
+                        <kbd class="dock-key-tag">P</kbd>
+                    </button>
+                `;
+                docThemContainer.insertBefore(bar, docThemContainer.firstChild);
             }
         }
+
+        // Bổ sung nút Ẩn/Hiện Pinyin cho các phân đoạn bài đọc riêng lẻ (như Đoạn 1, 2, 3 ở Quyển 1)
+        block.querySelectorAll(".sub-content").forEach(sub => {
+            if (sub.id && !sub.id.endsWith("-tuvung") && sub.querySelector(".chinese-text") && !sub.querySelector(".lesson-actions-bar")) {
+                const bar = document.createElement("div");
+                bar.className = "lesson-actions-bar";
+                bar.innerHTML = `
+                    <button class="action-toggle-pinyin-btn" onclick="togglePinyinGlobal()" title="Ẩn/Hiện Pinyin để tự luyện đọc (Phím tắt: P)">
+                        <span class="action-pinyin-icon">${isPinyinGloballyHidden ? "🙈" : "👁️"}</span>
+                        <span class="action-pinyin-text">${isPinyinGloballyHidden ? "Pinyin: Đang Ẩn" : "Ẩn/Hiện Pinyin"}</span>
+                        <kbd class="dock-key-tag">P</kbd>
+                    </button>
+                `;
+                sub.insertBefore(bar, sub.firstChild);
+            }
+        });
     });
 }
 
@@ -382,6 +429,8 @@ function switchSubMenu(btn, parentId) {
 // 6. READING TOOLS (PINYIN, FONT ZOOM, TRANSLATION TOGGLE, TTS)
 // ==========================================================================
 
+let isPinyinGloballyHidden = false;
+
 // Ẩn/Hiện Pinyin cho từng khung riêng lẻ
 function togglePinyin(boxId) {
     const textBox = document.getElementById(boxId);
@@ -390,22 +439,163 @@ function togglePinyin(boxId) {
     }
 }
 
-// Ẩn/Hiện Pinyin toàn trang
-function togglePinyinGlobal() {
-    const activeMainContent = document.querySelector(".main-content.active");
-    if (!activeMainContent) return;
+// Ẩn/Hiện Pinyin toàn trang (Tất cả bài học & bài đọc)
+function togglePinyinGlobal(forceState) {
+    if (typeof forceState === "boolean") {
+        isPinyinGloballyHidden = forceState;
+    } else {
+        isPinyinGloballyHidden = !isPinyinGloballyHidden;
+    }
 
-    const textElements = activeMainContent.querySelectorAll(".chinese-text");
-    let isCurrentlyHidden = false;
+    // Toggle body class để ẩn/hiện tức thì trên toàn bộ DOM
+    document.body.classList.toggle("hide-pinyin", isPinyinGloballyHidden);
 
-    textElements.forEach(box => {
-        isCurrentlyHidden = box.classList.toggle("hide-pinyin");
+    // Đồng bộ class trên tất cả .chinese-text
+    document.querySelectorAll(".chinese-text").forEach(box => {
+        box.classList.toggle("hide-pinyin", isPinyinGloballyHidden);
     });
 
-    const btn = document.getElementById("btn-toggle-pinyin");
-    if (btn) {
-        btn.classList.toggle("active", isCurrentlyHidden);
+    // Cập nhật giao diện toàn bộ các nút điều khiển
+    updatePinyinButtonsUI();
+
+    // Thông báo Toast nhanh cho người học
+    if (isPinyinGloballyHidden) {
+        showToast("🙈 Đã ẩn Pinyin • Nhấn phím P hoặc nút để bật lại");
+    } else {
+        showToast("👁️ Đã hiện Pinyin • Nhấn phím P hoặc nút để tắt");
     }
+
+    try {
+        localStorage.setItem("boya_pinyin_hidden", isPinyinGloballyHidden ? "1" : "0");
+    } catch (e) {}
+}
+
+// Cập nhật trạng thái hiển thị của các nút Pinyin (Toolbar, Floating Dock, Lesson bar)
+function updatePinyinButtonsUI() {
+    // 1. Nút trên Toolbar đầu trang
+    const toolbarBtn = document.getElementById("btn-toggle-pinyin");
+    if (toolbarBtn) {
+        toolbarBtn.classList.toggle("active", isPinyinGloballyHidden);
+        toolbarBtn.innerHTML = isPinyinGloballyHidden
+            ? `🙈 <span>Pinyin: Đang Ẩn</span>`
+            : `👁️ <span>Ẩn/Hiện Pinyin</span>`;
+    }
+
+    // 2. Nút trên Floating Dock góc dưới phải
+    const dockBtn = document.getElementById("dock-btn-pinyin");
+    if (dockBtn) {
+        dockBtn.classList.toggle("pinyin-hidden", isPinyinGloballyHidden);
+        dockBtn.innerHTML = `
+            <span class="dock-icon">${isPinyinGloballyHidden ? "🙈" : "👁️"}</span>
+            <span class="dock-label">${isPinyinGloballyHidden ? "Pinyin: Tắt" : "Pinyin: Bật"}</span>
+            <kbd class="dock-key-tag">P</kbd>
+        `;
+        dockBtn.title = isPinyinGloballyHidden
+            ? "Bật lại Pinyin (Phím tắt: P)"
+            : "Ẩn Pinyin để tự luyện đọc (Phím tắt: P)";
+    }
+
+    // 3. Fallback cho nút nổi cũ (nếu có)
+    const oldFloatBtn = document.querySelector(".float-pinyin-btn");
+    if (oldFloatBtn) {
+        oldFloatBtn.innerHTML = isPinyinGloballyHidden ? "🙈" : "👁️";
+        oldFloatBtn.title = isPinyinGloballyHidden ? "Bật lại Pinyin" : "Ẩn Pinyin";
+    }
+
+    // 4. Các nút trong thanh điều khiển đầu bài đọc (.action-toggle-pinyin-btn)
+    document.querySelectorAll(".action-toggle-pinyin-btn").forEach(btn => {
+        btn.classList.toggle("pinyin-hidden", isPinyinGloballyHidden);
+        btn.innerHTML = `
+            <span class="action-pinyin-icon">${isPinyinGloballyHidden ? "🙈" : "👁️"}</span>
+            <span class="action-pinyin-text">${isPinyinGloballyHidden ? "Pinyin: Đang Ẩn" : "Ẩn/Hiện Pinyin"}</span>
+            <kbd class="dock-key-tag">P</kbd>
+        `;
+    });
+}
+
+// Khởi tạo phím tắt 'P' toàn cục
+function initPinyinKeyboardShortcut() {
+    window.addEventListener("keydown", function (e) {
+        const tag = (e.target.tagName || "").toLowerCase();
+        if (tag === "input" || tag === "textarea" || e.target.isContentEditable) {
+            return;
+        }
+
+        if ((e.key === "p" || e.key === "P") && !e.ctrlKey && !e.altKey && !e.metaKey) {
+            e.preventDefault();
+            togglePinyinGlobal();
+        }
+    });
+}
+
+// Khôi phục trạng thái Pinyin đã lưu
+function initSavedPinyinState() {
+    try {
+        const saved = localStorage.getItem("boya_pinyin_hidden");
+        if (saved === "1") {
+            togglePinyinGlobal(true);
+        } else {
+            updatePinyinButtonsUI();
+        }
+    } catch (e) {
+        updatePinyinButtonsUI();
+    }
+}
+
+// Toast thông báo nhẹ nhàng giữa màn hình
+let readerToastTimer = null;
+function showToast(message) {
+    let toast = document.querySelector(".reader-toast");
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.className = "reader-toast";
+        document.body.appendChild(toast);
+    }
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    if (readerToastTimer) {
+        clearTimeout(readerToastTimer);
+    }
+
+    readerToastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2200);
+}
+
+// Khởi tạo Floating Dock điều khiển góc dưới phải (Chống đè lên nhau 100%)
+function setupFloatingControls() {
+    let dock = document.querySelector(".floating-dock");
+
+    // Xóa nút standalone cũ nếu còn sót trong DOM
+    const oldPinyinBtn = document.querySelector("body > .float-pinyin-btn");
+    if (oldPinyinBtn) oldPinyinBtn.remove();
+    const oldVocabBtn = document.querySelector("body > .float-vocab-btn");
+    if (oldVocabBtn) oldVocabBtn.remove();
+
+    if (!dock) {
+        dock = document.createElement("div");
+        dock.className = "floating-dock";
+        dock.id = "floating-dock";
+        document.body.appendChild(dock);
+    }
+
+    if (!dock.querySelector("#dock-btn-pinyin")) {
+        dock.innerHTML = `
+            <button class="dock-btn dock-btn-pinyin" id="dock-btn-pinyin" onclick="togglePinyinGlobal()" title="Ẩn/Hiện Pinyin để tự luyện đọc (Phím tắt: P)">
+                <span class="dock-icon">👁️</span>
+                <span class="dock-label">Pinyin: Bật</span>
+                <kbd class="dock-key-tag">P</kbd>
+            </button>
+            <a href="tuvung.html" class="dock-btn dock-btn-vocab" title="Đến trung tâm ôn tập từ vựng & trò chơi">
+                <span class="dock-icon">🏮</span>
+                <span class="dock-label">Ôn từ vựng</span>
+            </a>
+        `;
+    }
+
+    updatePinyinButtonsUI();
 }
 
 // Ẩn/Hiện Bản Dịch Tiếng Việt

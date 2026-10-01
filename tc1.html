@@ -8,8 +8,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="float-pinyin-btn" onclick="togglePinyinGlobal()" title="Ẩn/Hiện Pinyin">👁️</button>
-    <a href="tuvung.html" class="float-vocab-btn" title="Ôn tập từ vựng">🏮 Ôn từ vựng</a>
+    <div class="floating-dock" id="floating-dock">
+        <button class="dock-btn dock-btn-pinyin" id="dock-btn-pinyin" onclick="togglePinyinGlobal()" title="Ẩn/Hiện Pinyin để tự luyện đọc (Phím tắt: P)">
+            <span class="dock-icon">👁️</span>
+            <span class="dock-label">Pinyin: Bật</span>
+            <kbd class="dock-key-tag">P</kbd>
+        </button>
+        <a href="tuvung.html" class="dock-btn dock-btn-vocab" title="Đến trung tâm ôn tập từ vựng & trò chơi">
+            <span class="dock-icon">🏮</span>
+            <span class="dock-label">Ôn từ vựng</span>
+        </a>
+    </div>
     <div class="main-menu">
         <div class="main-btn active" data-main="bai1" onclick="switchMainMenu(this)">BÀI 1</div>
         <div class="main-btn" data-main="bai2" onclick="switchMainMenu(this)">BÀI 2</div>
