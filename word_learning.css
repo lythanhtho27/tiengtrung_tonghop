@@ -1061,7 +1061,7 @@ body {
 
 .qmc-hz {
     font-family: var(--font-cn);
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 700;
     color: var(--text-primary);
     cursor: pointer;
@@ -1076,7 +1076,7 @@ body {
 
 .qmc-trad {
     font-family: var(--font-cn);
-    font-size: 0.92rem;
+    font-size: 1.7rem;
     color: var(--text-muted);
 }
 
