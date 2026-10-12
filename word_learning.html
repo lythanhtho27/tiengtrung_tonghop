@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giáo Trình Luyện & Nhớ Nhanh Từ Vựng HSK 3.0 (Cấp 1 – 9) | Dữ Liệu JSON</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="word_learning.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="wl-header">
+        <div class="wl-header-left">
+            <a href="index.html" class="back-home-btn" title="Về Trang Chủ">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                <span>Trang chủ</span>
+            </a>
+            <div class="brand-title">
+                <div class="brand-badge">HSK 3.0 · JSON WEB</div>
+                <h1>词汇速记速练手册 <span class="brand-sub">Sổ Tay Ghi Nhớ & Luyện Tập Nhanh Từ Vựng (11.092 Từ · 368 Bài)</span></h1>
+            </div>
+        </div>
+
+        <div class="wl-header-Center">
+            <div class="global-search-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                </svg>
+                <input type="text" id="globalWordSearch" placeholder="Tìm nhanh từ vựng trong quyển đang mở (Chữ Hán, Pinyin, nghĩa tiếng Việt)...">
+                <button id="clearGlobalSearch" class="clear-btn hidden" title="Xóa">✕</button>
+            </div>
+        </div>
+
+        <div class="wl-header-right">
+            <button id="btnGrammarModal" class="action-pill" title="Bảng từ viết tắt của các thuật ngữ ngữ pháp">
+                🔤 Ký hiệu từ loại
+            </button>
+            <a id="btnDownloadJson" href="json_data/quyen_1.json" download class="action-pill" title="Tải file dữ liệu JSON của quyển đang mở">
+                📥 File JSON
+            </a>
+            <a href="tuvung.html" class="action-pill" title="Chuyển sang Sổ tay từ vựng Boya">
+                🏮 Từ vựng Boya
+            </a>
+            <button id="themeToggleBtn" class="icon-btn" title="Đổi giao diện Sáng / Tối">
+                ☀️
+            </button>
+        </div>
+    </header>
+
+    <!-- Book Selector Shelf (Quyển 1 -> 7-9 Hạ) -->
+    <section class="book-shelf-bar" id="bookShelfBar">
+        <!-- Populated dynamically from HSK_BOOKS_INDEX -->
+    </section>
+
+    <!-- Main 2-Column Interactive Workspace -->
+    <main class="wl-workspace">
+        <!-- LEFT SIDEBAR: Unit Directory (368 Units across 8 Books) -->
+        <aside class="wl-sidebar" id="wlSidebar">
+            <div class="sidebar-book-summary" id="sidebarBookSummary">
+                <!-- Populated dynamically -->
+            </div>
+
+            <!-- Unit Search & Filter -->
+            <div class="unit-filter-bar">
+                <div class="unit-search-wrap">
+                    <input type="text" id="unitSearchInput" placeholder="Tìm bài (VD: Bài 5, 爱心, aixin)...">
+                </div>
+                <div class="unit-filter-pills">
+                    <button class="uf-pill active" data-filter="all">Tất cả</button>
+                    <button class="uf-pill" data-filter="todo">Chưa học</button>
+                    <button class="uf-pill" data-filter="done">✓ Đã học</button>
+                    <button class="uf-pill" data-filter="star">⭐ Đánh dấu</button>
+                </div>
+            </div>
+
+            <!-- Scrollable Unit List -->
+            <div class="unit-list" id="unitList">
+                <!-- Populated dynamically -->
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT PANEL: Pure JSON-Rendered Textbook Unit & Interactive Exercises -->
+        <section class="wl-main-panel">
+            <!-- Unit Top Navigation & Mode Tabs -->
+            <div class="unit-top-bar">
+                <div class="utb-left">
+                    <button id="toggleSidebarBtn" class="icon-btn-sm" title="Ẩn/Hiện danh sách bài học">☰</button>
+                    <div class="active-unit-title">
+                        <span class="au-badge" id="activeUnitBadge">Bài 1</span>
+                        <h2 id="activeUnitHeading">爱 — 北边</h2>
+                        <span class="au-pinyin" id="activeUnitSub">(Từ 1 – 20 · Trang 9)</span>
+                    </div>
+                </div>
+
+                <!-- Main Study Mode Switcher -->
+                <div class="study-mode-tabs">
+                    <button class="sm-tab active" data-smode="memory" id="tabBtnMemory">
+                        📖 Ghi nhớ nhanh (速记) <span class="sm-count" id="lblTargetCount">20 từ</span>
+                    </button>
+                    <button class="sm-tab" data-smode="practice" id="tabBtnPractice">
+                        ✍️ Luyện tập nhanh (速练) <span class="sm-count" id="lblPracticeStatus">3 phần</span>
+                    </button>
+                    <button class="sm-tab" data-smode="flashcard" id="tabBtnFlashcard">
+                        🎴 Flashcard & Quiz
+                    </button>
+                    <button class="sm-tab" data-smode="pdf" id="tabBtnPdf">
+                        📄 Xem PDF gốc
+                    </button>
+                </div>
+
+                <div class="utb-right">
+                    <button class="mark-done-btn" id="btnToggleUnitDone" title="Đánh dấu hoàn thành bài học này">
+                        ☐ Đánh dấu Đã học
+                    </button>
+                    <button class="star-unit-btn" id="btnToggleUnitStar" title="Đánh dấu sao bài học">☆</button>
+                    <div class="unit-prev-next">
+                        <button class="pg-btn" id="btnPrevUnit" title="Bài trước">◀ Bài trước</button>
+                        <button class="pg-btn" id="btnNextUnit" title="Bài tiếp theo">Bài sau ▶</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrollable Content Stage -->
+            <div class="unit-stage-scroll" id="unitStageScroll">
+
+                <!-- =========================================================
+                     MODE 1: GHI NHỚ NHANH (目标词语 & 速记 — RENDERED FROM JSON)
+                     ========================================================= -->
+                <div class="smode-pane active" id="paneMemory">
+                    <!-- Target Words Box (◎ 目标词语 Từ vựng mục tiêu) -->
+                    <div class="target-words-box" id="targetWordsBox">
+                        <div class="twb-header">
+                            <div class="twb-title">
+                                <span class="twb-icon">◎</span>
+                                <strong>目标词语</strong>
+                                <span>Từ vựng mục tiêu</span>
+                            </div>
+                            <div class="twb-controls">
+                                <button class="ctrl-chip" id="btnSpeakAllWords" title="Đọc lần lượt các từ mục tiêu trong bài">
+                                    🔊 Nghe cả bài
+                                </button>
+                                <button class="ctrl-chip active" id="btnTogglePinyin" title="Ẩn/Hiện phiên âm Pinyin ở câu ví dụ">
+                                    👁️ Pinyin ví dụ
+                                </button>
+                                <button class="ctrl-chip active" id="btnToggleMeaning" title="Ẩn/Hiện nghĩa tiếng Việt ở câu ví dụ">
+                                    🇻🇳 Nghĩa ví dụ
+                                </button>
+                                <button class="ctrl-chip" id="btnFilterStarredWords" title="Chỉ hiện các từ bạn đã đánh dấu sao">
+                                    ⭐ Từ đã lưu
+                                </button>
+                            </div>
+                        </div>
+                        <div class="twb-grid" id="targetWordsGrid">
+                            <!-- 20 (or 60) clickable target word chips -->
+                        </div>
+                    </div>
+
+                    <!-- Quick Memory List (◎ 速记 Ghi nhớ nhanh) -->
+                    <div class="quick-memory-section">
+                        <div class="qms-header">
+                            <span class="twb-icon">◎</span>
+                            <strong>速记</strong>
+                            <span>Ghi nhớ nhanh (Phiên âm · Từ loại · Nghĩa · Cụm từ & Câu ví dụ)</span>
+                        </div>
+                        <div class="qms-list" id="quickMemoryList">
+                            <!-- Populated dynamically from unit.target_words JSON -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =========================================================
+                     MODE 2: LUYỆN TẬP NHANH (◎ 速练 — INTERACTIVE AUTO-GRADED)
+                     ========================================================= -->
+                <div class="smode-pane" id="panePractice">
+                    <div class="practice-banner">
+                        <div class="pb-left">
+                            <div class="pb-title">◎ 速练 · Luyện Tập Nhanh — <span id="pracBannerUnit">Bài 1</span></div>
+                            <p class="pb-desc">Làm trực tiếp 3 phần bài tập từ dữ liệu JSON của bài học và bấm <strong>Chấm điểm & Xem đáp án</strong> để kiểm tra kết quả ngay.</p>
+                        </div>
+                        <div class="pb-actions">
+                            <div class="score-badge hidden" id="practiceScoreBadge">Điểm: 0 / 35</div>
+                            <button class="btn-primary-action" id="btnCheckPractice">🎯 Chấm điểm & Xem đáp án</button>
+                            <button class="btn-secondary-action" id="btnShowPracticeAnswers">👁️ Điền đáp án mẫu</button>
+                            <button class="btn-ghost-action" id="btnResetPractice">🔄 Làm lại</button>
+                        </div>
+                    </div>
+
+                    <!-- Section I: Matching Pinyin & Meaning -->
+                    <div class="exercise-block" id="exSection1">
+                        <!-- Rendered from unit.exercises.section1 -->
+                    </div>
+
+                    <!-- Section II: Fill in the blank (4 groups x 5 sentences) -->
+                    <div class="exercise-block" id="exSection2">
+                        <!-- Rendered from unit.exercises.section2 -->
+                    </div>
+
+                    <!-- Section III: Multiple Choice Sentence Completion -->
+                    <div class="exercise-block" id="exSection3">
+                        <!-- Rendered from unit.exercises.section3 -->
+                    </div>
+                </div>
+
+                <!-- =========================================================
+                     MODE 3: FLASHCARD 3D & TRẮC NGHIỆM PHẢN XẠ
+                     ========================================================= -->
+                <div class="smode-pane" id="paneFlashcard">
+                    <div class="fc-workspace">
+                        <!-- Left: 3D Flashcard -->
+                        <div class="fc-panel-card">
+                            <div class="fc-panel-head">
+                                <h3>🎴 Lật Thẻ Flashcard 3D</h3>
+                                <div class="fc-scope-wrap">
+                                    <select id="fcScopeSelect">
+                                        <option value="unit">Từ vựng Bài đang học</option>
+                                        <option value="starred">Từ vựng Đã lưu sao (⭐)</option>
+                                        <option value="book">Toàn bộ Quyển này</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="fc-card-3d" id="fcCard3d">
+                                <div class="fc-face fc-front">
+                                    <span class="fc-badge" id="fcWordNumBadge">#1</span>
+                                    <button class="fc-audio-btn" id="btnFcSpeakFront" title="Nghe phát âm">🔊</button>
+                                    <div class="fc-hanzi" id="fcFrontHanzi">爱</div>
+                                    <div class="fc-pos-chip" id="fcFrontPos">đ. (Động từ)</div>
+                                    <div class="fc-hint">Nhấn vào thẻ để lật xem Pinyin, Nghĩa & Ví dụ</div>
+                                </div>
+                                <div class="fc-face fc-back">
+                                    <button class="fc-audio-btn" id="btnFcSpeakBack" title="Nghe phát âm">🔊</button>
+                                    <div class="fc-hanzi-sm" id="fcBackHanzi">爱</div>
+                                    <div class="fc-pinyin" id="fcBackPinyin">ài</div>
+                                    <div class="fc-meaning" id="fcBackMeaning">yêu</div>
+                                    <div class="fc-example" id="fcBackExample"></div>
+                                </div>
+                            </div>
+
+                            <div class="fc-controls">
+                                <button class="fc-nav-btn" id="btnFcPrev">◀ Từ trước</button>
+                                <span class="fc-counter" id="fcCounter">1 / 20</span>
+                                <button class="fc-nav-btn" id="btnFcShuffle">🔀 Trộn thẻ</button>
+                                <button class="fc-nav-btn" id="btnFcNext">Từ sau ▶</button>
+                            </div>
+                        </div>
+
+                        <!-- Right: Reflex Multiple Choice Quiz -->
+                        <div class="fc-panel-card">
+                            <div class="fc-panel-head">
+                                <h3>🎯 Trắc Nghiệm Phản Xạ Từ Vựng</h3>
+                                <div class="quiz-score-pill">
+                                    Đúng: <strong id="quizScore">0</strong> / <span id="quizTotal">0</span>
+                                </div>
+                            </div>
+
+                            <div class="quiz-question-box">
+                                <div class="qq-word" id="quizPromptWord">爱</div>
+                                <div class="qq-pinyin" id="quizPromptPinyin">ài · đ.</div>
+                                <button class="qq-audio" id="btnQuizSpeak">🔊 Nghe phát âm</button>
+                            </div>
+
+                            <div class="quiz-options" id="quizOptions">
+                                <!-- 4 options -->
+                            </div>
+
+                            <div class="quiz-bottom-bar">
+                                <button class="btn-primary-action" id="btnNextQuizQ">Câu tiếp theo ➔</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =========================================================
+                     MODE 4: XEM TRANG SÁCH PDF GỐC (OPTIONAL REFERENCE)
+                     ========================================================= -->
+                <div class="smode-pane" id="panePdf">
+                    <div class="pdf-ref-toolbar">
+                        <div class="prt-left">
+                            <span>Đối chiếu bản scan PDF gốc:</span>
+                            <button class="ctrl-chip active" id="btnPdfJumpTheory">📖 Trang Lý thuyết (速记)</button>
+                            <button class="ctrl-chip" id="btnPdfJumpPractice">✍️ Trang Bài tập (速练)</button>
+                            <button class="ctrl-chip" id="btnPdfJumpIndex">🔍 Bảng tra từ cuối sách</button>
+                        </div>
+                        <div class="prt-right">
+                            <button class="pg-btn" id="btnPdfPrevPage">◀ Trang trước</button>
+                            <span id="lblCurrentPdfPage" class="prt-page-num">Trang PDF: 9</span>
+                            <button class="pg-btn" id="btnPdfNextPage">Trang sau ▶</button>
+                        </div>
+                    </div>
+                    <div class="pdf-ref-frame-wrap" id="pdfRefFrameWrap">
+                        <iframe id="pdfRefIframe" title="Sách PDF gốc" src="about:blank"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Grammar Abbreviations Modal -->
+    <div class="modal-backdrop hidden" id="grammarModal">
+        <div class="modal-box">
+            <div class="modal-head">
+                <h3>语法术语缩略形式一览表 · Bảng Từ Viết Tắt Ngữ Pháp</h3>
+                <button class="clear-btn" id="btnCloseGrammarModal">✕</button>
+            </div>
+            <div class="modal-body">
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>Ký hiệu viết tắt</th>
+                            <th>Thuật ngữ tiếng Việt</th>
+                            <th>Thuật ngữ tiếng Trung</th>
+                        </tr>
+                    </thead>
+                    <tbody id="grammarTableBody">
+                        <!-- Populated from HSK_GRAMMAR_ABBR -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Lightweight Index Metadata + Default Book 1 Data -->
+    <script src="hsk_book_data.js"></script>
+    <script src="json_data/quyen_1.js"></script>
+    <script src="word_learning.js"></script>
+</body>
+</html>
