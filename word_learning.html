@@ -153,8 +153,8 @@
                                 </button>
                             </div>
                             <div class="twb-controls">
-                                <button class="ctrl-chip" id="btnSpeakAllWords" title="Đọc lần lượt các từ mục tiêu trong bài">
-                                    🔊 Nghe cả bài
+                                <button class="ctrl-chip speak-all-btn" id="btnSpeakAllWords" title="Phát âm lần lượt từng từ vựng kèm câu ví dụ của từ đó trong bài">
+                                    🔊 Đọc cả bài (Từ + Ví dụ)
                                 </button>
                                 <button class="ctrl-chip active" id="btnTogglePinyin" title="Ẩn/Hiện phiên âm Pinyin ở câu ví dụ">
                                     👁️ Pinyin ví dụ
@@ -175,9 +175,14 @@
                     <!-- Quick Memory List (◎ 速记 Ghi nhớ nhanh) -->
                     <div class="quick-memory-section">
                         <div class="qms-header">
-                            <span class="twb-icon">◎</span>
-                            <strong>速记</strong>
-                            <span>Ghi nhớ nhanh (Phiên âm · Từ loại · Nghĩa · Cụm từ & Câu ví dụ)</span>
+                            <div class="qms-header-left">
+                                <span class="twb-icon">◎</span>
+                                <strong>速记</strong>
+                                <span>Ghi nhớ nhanh (Phiên âm · Từ loại · Nghĩa · Cụm từ & Câu ví dụ)</span>
+                            </div>
+                            <button class="ctrl-chip speak-all-btn" id="btnSpeakAllWordsQm" title="Phát âm lần lượt từng từ vựng kèm các câu ví dụ trong bài">
+                                🔊 Đọc cả bài (Từ + Ví dụ)
+                            </button>
                         </div>
                         <div class="qms-list" id="quickMemoryList">
                             <!-- Populated dynamically from unit.target_words JSON -->

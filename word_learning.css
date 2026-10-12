@@ -864,6 +864,25 @@ body {
     color: var(--text-primary);
 }
 
+.ctrl-chip.speak-all-btn {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(56, 189, 248, 0.16));
+    border-color: var(--accent-emerald);
+    color: #34d399;
+    font-weight: 700;
+}
+
+.ctrl-chip.speak-all-btn:hover {
+    background: rgba(16, 185, 129, 0.3);
+    color: #fff;
+}
+
+.ctrl-chip.speak-all-btn.active {
+    background: linear-gradient(135deg, #f43f5e, #e11d48);
+    border-color: #f43f5e;
+    color: #fff;
+    box-shadow: 0 0 12px rgba(244, 63, 94, 0.45);
+}
+
 .twb-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -965,13 +984,21 @@ body {
 .qms-header {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: space-between;
+    gap: 10px;
     font-size: 1.04rem;
     padding: 4px 2px;
     flex-wrap: wrap;
 }
 
-.qms-header span:last-child {
+.qms-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.qms-header-left span:last-child {
     font-size: 0.84rem;
     color: var(--text-muted);
 }
@@ -999,7 +1026,8 @@ body {
     border-color: rgba(99, 102, 241, 0.55);
 }
 
-.qm-word-card.highlight-flash {
+.qm-word-card.highlight-flash,
+.qm-word-card.speaking-card {
     border-color: var(--accent-amber);
     box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.35);
 }
@@ -1038,10 +1066,12 @@ body {
     color: var(--text-primary);
     cursor: pointer;
     line-height: 1.2;
+    transition: color 0.15s, transform 0.15s;
 }
 
-.qmc-hz:hover {
-    color: var(--accent-sky);
+.qmc-hz:hover,
+.qmc-hz.speaking-word-now {
+    color: var(--accent-amber);
 }
 
 .qmc-trad {
@@ -1153,6 +1183,14 @@ body {
     border-left: 3px solid var(--accent-emerald);
     padding: 9px 12px;
     border-radius: 0 8px 8px 0;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.qmc-ex-item.speaking-ex-now {
+    background: rgba(16, 185, 129, 0.16);
+    border-color: var(--accent-emerald);
+    border-left-width: 4px;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
 }
 
 .qmc-ex-hz {

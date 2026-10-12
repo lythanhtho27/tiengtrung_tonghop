@@ -645,7 +645,7 @@
         const examplesHtml = examples.length
             ? `<div class="qmc-examples">
                    ${examples.map((ex, idx) => `
-                       <div class="qmc-ex-item">
+                       <div class="qmc-ex-item" id="qm-word-${w.num}-ex-${idx}">
                            <div class="qmc-ex-hz">
                                <span><strong>${idx + 1}.</strong> ${highlightTargetWord(ex.hz, w.word)}</span>
                                <button class="ex-speak-btn" data-speak="${escapeAttr(ex.hz)}" title="Nghe câu ví dụ">🔊</button>
@@ -670,7 +670,8 @@
                     </div>
                     <div class="qmc-actions">
                         ${unitBadgeInfo ? `<button class="qmc-icon-btn" data-jump-unit="${unitBadgeInfo.unit}" title="Chuyển tới Bài ${unitBadgeInfo.unit}">📖 Bài ${unitBadgeInfo.unit}</button>` : ''}
-                        <button class="qmc-icon-btn" data-speak="${escapeAttr(cleanHz)}" title="Nghe phát âm">🔊 Nghe</button>
+                        <button class="qmc-icon-btn" data-speak="${escapeAttr(cleanHz)}" title="Chỉ nghe phát âm từ vựng">🔊 Từ</button>
+                        <button class="qmc-icon-btn" data-speak-word-ex="${w.num}" title="Đọc từ vựng này rồi đọc tiếp các câu ví dụ của từ">▶️ Từ + VD</button>
                         <button class="qmc-icon-btn ${isStar ? 'starred' : ''}" data-star-id="${w.id}" title="Lưu từ vựng này">
                             ${isStar ? '⭐ Đã lưu' : '☆ Lưu'}
                         </button>
@@ -692,8 +693,22 @@
         container.querySelectorAll('[data-speak]').forEach(el => {
             el.addEventListener('click', (e) => {
                 e.stopPropagation();
+                stopSpeakingAll();
                 const text = el.getAttribute('data-speak');
                 if (text) speakChinese(text);
+            });
+        });
+
+        container.querySelectorAll('[data-speak-word-ex]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const wNum = parseInt(btn.getAttribute('data-speak-word-ex'), 10);
+                const unitData = getCurrentUnitData();
+                if (!unitData || !unitData.target_words) return;
+                const wordObj = unitData.target_words.find(item => item.num === wNum);
+                if (wordObj) {
+                    startSpeakingWordsWithExamples([wordObj]);
+                }
             });
         });
 
@@ -1476,6 +1491,123 @@
         }
     }
 
+    let speakAllTimerId = null;
+
+    function updateSpeakAllButtonsUI(isActive, labelText) {
+        const defaultLabel = '🔊 Đọc cả bài (Từ + Ví dụ)';
+        const text = isActive ? (labelText || '⏹️ Dừng đọc') : defaultLabel;
+        ['btnSpeakAllWords', 'btnSpeakAllWordsQm'].forEach(id => {
+            const btn = document.getElementById(id);
+            if (btn) {
+                btn.classList.toggle('active', isActive);
+                btn.textContent = text;
+            }
+        });
+    }
+
+    function clearSpeakingHighlights() {
+        document.querySelectorAll('.qm-word-card.speaking-card').forEach(el => el.classList.remove('speaking-card'));
+        document.querySelectorAll('.qmc-hz.speaking-word-now').forEach(el => el.classList.remove('speaking-word-now'));
+        document.querySelectorAll('.qmc-ex-item.speaking-ex-now').forEach(el => el.classList.remove('speaking-ex-now'));
+    }
+
+    function startSpeakingWordsWithExamples(wordsList) {
+        if (!wordsList || !wordsList.length) return;
+        if (!('speechSynthesis' in window)) return;
+
+        stopSpeakingAll();
+        state.speakingAll = true;
+
+        // Build playback queue: Word -> Example 1 -> Example 2 -> Next Word ...
+        const queue = [];
+        wordsList.forEach(w => {
+            const cleanHz = cleanHanziForTts(w.word);
+            if (cleanHz) {
+                queue.push({
+                    type: 'word',
+                    word: w,
+                    text: cleanHz,
+                    exIdx: -1,
+                    statusLabel: `⏹️ Dừng (#${w.num} ${w.word})`
+                });
+            }
+            (w.examples || []).forEach((ex, exIdx) => {
+                if (ex && ex.hz) {
+                    queue.push({
+                        type: 'example',
+                        word: w,
+                        text: ex.hz,
+                        exIdx: exIdx,
+                        statusLabel: `⏹️ Dừng (#${w.num} ${w.word} · Ví dụ ${exIdx + 1})`
+                    });
+                }
+            });
+        });
+
+        if (!queue.length) {
+            stopSpeakingAll();
+            return;
+        }
+
+        let qIdx = 0;
+
+        function speakNextStep() {
+            if (!state.speakingAll || qIdx >= queue.length) {
+                stopSpeakingAll();
+                return;
+            }
+
+            const item = queue[qIdx++];
+            const w = item.word;
+
+            clearSpeakingHighlights();
+            updateSpeakAllButtonsUI(true, item.statusLabel);
+
+            // Highlight target word chip in top box
+            document.querySelectorAll('.tw-chip').forEach(chip => {
+                const cNum = parseInt(chip.getAttribute('data-word-num'), 10);
+                chip.classList.toggle('active', cNum === w.num);
+            });
+
+            // Highlight and scroll to the word card in Quick Memory
+            const card = document.getElementById(`qm-word-${w.num}`);
+            if (card) {
+                card.classList.add('speaking-card');
+                if (item.type === 'word') {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const hzEl = card.querySelector('.qmc-hz');
+                    if (hzEl) hzEl.classList.add('speaking-word-now');
+                } else if (item.type === 'example') {
+                    const exEl = document.getElementById(`qm-word-${w.num}-ex-${item.exIdx}`);
+                    if (exEl) {
+                        exEl.classList.add('speaking-ex-now');
+                        exEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }
+            }
+
+            window.speechSynthesis.cancel();
+            const utter = new SpeechSynthesisUtterance(item.text);
+            utter.lang = 'zh-CN';
+            utter.rate = item.type === 'word' ? 0.86 : 0.9;
+
+            utter.onend = () => {
+                if (!state.speakingAll) return;
+                const pauseMs = item.type === 'word' ? 420 : 650;
+                speakAllTimerId = setTimeout(speakNextStep, pauseMs);
+            };
+
+            utter.onerror = () => {
+                if (!state.speakingAll) return;
+                speakAllTimerId = setTimeout(speakNextStep, 300);
+            };
+
+            window.speechSynthesis.speak(utter);
+        }
+
+        speakNextStep();
+    }
+
     function toggleSpeakAllWords() {
         if (state.speakingAll) {
             stopSpeakingAll();
@@ -1484,59 +1616,25 @@
         const unitData = getCurrentUnitData();
         if (!unitData || !unitData.target_words || !unitData.target_words.length) return;
 
-        state.speakingAll = true;
-        const btn = document.getElementById('btnSpeakAllWords');
-        if (btn) {
-            btn.classList.add('active');
-            btn.textContent = '⏹️ Dừng đọc';
-        }
+        const wordsToSpeak = state.onlyStarredWords
+            ? unitData.target_words.filter(w => !!state.starredWords[w.id])
+            : unitData.target_words;
 
-        const words = unitData.target_words;
-        let idx = 0;
-
-        function speakNext() {
-            if (!state.speakingAll || idx >= words.length) {
-                stopSpeakingAll();
-                return;
-            }
-            const w = words[idx++];
-            const card = document.getElementById(`qm-word-${w.num}`);
-            if (card) {
-                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                card.classList.add('highlight-flash');
-                setTimeout(() => card.classList.remove('highlight-flash'), 1200);
-            }
-
-            if (!('speechSynthesis' in window)) {
-                stopSpeakingAll();
-                return;
-            }
-            window.speechSynthesis.cancel();
-            const utter = new SpeechSynthesisUtterance(cleanHanziForTts(w.word));
-            utter.lang = 'zh-CN';
-            utter.rate = 0.88;
-            utter.onend = () => {
-                if (state.speakingAll) {
-                    setTimeout(speakNext, 450);
-                }
-            };
-            utter.onerror = () => stopSpeakingAll();
-            window.speechSynthesis.speak(utter);
-        }
-
-        speakNext();
+        if (!wordsToSpeak.length) return;
+        startSpeakingWordsWithExamples(wordsToSpeak);
     }
 
     function stopSpeakingAll() {
         state.speakingAll = false;
+        if (speakAllTimerId) {
+            clearTimeout(speakAllTimerId);
+            speakAllTimerId = null;
+        }
         if ('speechSynthesis' in window) {
             window.speechSynthesis.cancel();
         }
-        const btn = document.getElementById('btnSpeakAllWords');
-        if (btn) {
-            btn.classList.remove('active');
-            btn.textContent = '🔊 Nghe cả bài';
-        }
+        clearSpeakingHighlights();
+        updateSpeakAllButtonsUI(false);
     }
 
     // ==================== EVENT BINDINGS ====================
@@ -1692,8 +1790,10 @@
         if (btnGoFc)   btnGoFc.addEventListener('click', () => switchStudyMode('flashcard'));
 
         // Mode 1 controls
-        const btnSpeakAll = document.getElementById('btnSpeakAllWords');
-        if (btnSpeakAll) btnSpeakAll.addEventListener('click', toggleSpeakAllWords);
+        const btnSpeakAll   = document.getElementById('btnSpeakAllWords');
+        const btnSpeakAllQm = document.getElementById('btnSpeakAllWordsQm');
+        if (btnSpeakAll)   btnSpeakAll.addEventListener('click', toggleSpeakAllWords);
+        if (btnSpeakAllQm) btnSpeakAllQm.addEventListener('click', toggleSpeakAllWords);
 
         const btnTogglePy = document.getElementById('btnTogglePinyin');
         if (btnTogglePy) {
