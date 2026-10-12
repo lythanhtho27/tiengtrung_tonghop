@@ -2,6 +2,7 @@
  * word_learning.js
  * Hệ thống Học & Luyện Tập Từ Vựng HSK 3.0 (Cấp 1 – 9) từ dữ liệu JSON
  * Gồm 8 quyển · 368 Bài (Units) · 11.092 Từ vựng chuẩn GF 0025-2021
+ * Hỗ trợ đầy đủ Desktop, Tablet & Mobile
  */
 
 (function () {
@@ -23,6 +24,7 @@
         showPinyin: true,
         showMeaning: true,
         onlyStarredWords: false,
+        targetGridCollapsed: false,
         speakingAll: false,
         currentPdfPage: 9,
 
@@ -56,7 +58,6 @@
     window.HSK_BOOK_JSON = window.HSK_BOOK_JSON || {};
     const loadingBookPromises = {};
 
-    // Helper to normalize unit number from units_index item (supports both u.u and u.unit)
     function getUnitNum(u) {
         return (u && (u.u !== undefined ? u.u : u.unit)) || 1;
     }
@@ -76,7 +77,6 @@
         renderGrammarModalTable();
         bindEvents();
 
-        // Parse URL params if any (?book=q3&unit=5)
         const params = new URLSearchParams(window.location.search);
         const urlBook = params.get('book');
         const urlUnit = parseInt(params.get('unit'), 10);
@@ -97,12 +97,6 @@
         return window.HSK_BOOK_JSON[bookId] || null;
     }
 
-    /**
-     * Dynamically loads a book's JSON data:
-     * 1. Checks window.HSK_BOOK_JSON[bookId]
-     * 2. Tries fetch(bookMeta.json_file)
-     * 3. Falls back to injecting <script src="json_data/quyen_X.js"> (works 100% on file:// protocol!)
-     */
     async function ensureBookDataLoaded(bookId) {
         if (window.HSK_BOOK_JSON[bookId]) {
             return window.HSK_BOOK_JSON[bookId];
@@ -209,6 +203,39 @@
         btn.textContent = isLight ? '🌙' : '☀️';
     }
 
+    // ==================== SIDEBAR DRAWER (MOBILE / TABLET / DESKTOP) ====================
+    function isMobileOrTabletViewport() {
+        return window.innerWidth <= 1024;
+    }
+
+    function openMobileSidebar() {
+        const sidebarEl  = document.getElementById('wlSidebar');
+        const backdropEl = document.getElementById('sidebarBackdrop');
+        if (sidebarEl) sidebarEl.classList.add('mobile-open');
+        if (backdropEl) backdropEl.classList.remove('hidden');
+    }
+
+    function closeMobileSidebar() {
+        const sidebarEl  = document.getElementById('wlSidebar');
+        const backdropEl = document.getElementById('sidebarBackdrop');
+        if (sidebarEl) sidebarEl.classList.remove('mobile-open');
+        if (backdropEl) backdropEl.classList.add('hidden');
+    }
+
+    function toggleSidebar() {
+        const sidebarEl = document.getElementById('wlSidebar');
+        if (!sidebarEl) return;
+        if (isMobileOrTabletViewport()) {
+            if (sidebarEl.classList.contains('mobile-open')) {
+                closeMobileSidebar();
+            } else {
+                openMobileSidebar();
+            }
+        } else {
+            sidebarEl.classList.toggle('collapsed');
+        }
+    }
+
     // ==================== BOOK SHELF & SIDEBAR ====================
     function renderBookShelf() {
         const shelf = document.getElementById('bookShelfBar');
@@ -248,6 +275,11 @@
                 }
             });
         });
+
+        const activeCard = shelf.querySelector('.book-tab-card.active');
+        if (activeCard) {
+            activeCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
     }
 
     async function selectBook(bookId, targetUnitNum) {
@@ -256,14 +288,12 @@
         const meta = getBookIndexMeta(bookId);
         if (!meta) return;
 
-        // Update download JSON button href
         const dlBtn = document.getElementById('btnDownloadJson');
         if (dlBtn && meta.json_file) {
             dlBtn.href = meta.json_file;
             dlBtn.setAttribute('download', meta.json_file.split('/').pop());
         }
 
-        // Determine default unit number for this book
         const firstUnit = meta.units_index.length ? getUnitNum(meta.units_index[0]) : 1;
         const validUnits = new Set(meta.units_index.map(u => getUnitNum(u)));
         if (targetUnitNum && validUnits.has(targetUnitNum)) {
@@ -276,7 +306,6 @@
         renderSidebarSummary(meta);
         renderUnitList(meta);
 
-        // Show loading state while loading large JSON file if not cached
         if (!getLoadedBookData(bookId)) {
             const qmList = document.getElementById('quickMemoryList');
             if (qmList) {
@@ -402,6 +431,9 @@
                 const uNum = parseInt(el.getAttribute('data-unit-num'), 10);
                 if (!isNaN(uNum)) {
                     selectUnit(uNum);
+                    if (isMobileOrTabletViewport()) {
+                        closeMobileSidebar();
+                    }
                 }
             });
         });
@@ -439,7 +471,6 @@
             renderBookShelf();
         }
 
-        // Scroll active unit into view in sidebar
         const activeSidebarItem = document.querySelector(`.unit-item[data-unit-num="${unitNum}"]`);
         if (activeSidebarItem) {
             activeSidebarItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -447,7 +478,6 @@
 
         if (!unitData) return;
 
-        // Update Top Unit Bar
         const badgeEl   = document.getElementById('activeUnitBadge');
         const headingEl = document.getElementById('activeUnitHeading');
         const subEl     = document.getElementById('activeUnitSub');
@@ -467,7 +497,6 @@
 
         updateUnitActionButtons();
 
-        // Render all 4 study panes for this unit
         renderMemoryPane(unitData);
         renderPracticePane(unitData);
         initFlashcardDeck();
@@ -477,7 +506,6 @@
             renderPdfPane();
         }
 
-        // Scroll main stage to top
         const stage = document.getElementById('unitStageScroll');
         if (stage) stage.scrollTop = 0;
     }
@@ -493,6 +521,12 @@
             btnDone.innerHTML = isDone ? '✓ Đã hoàn thành' : '☐ Đánh dấu Đã học';
         }
 
+        const mobDone = document.getElementById('mobToggleDone');
+        if (mobDone) {
+            mobDone.classList.toggle('done-active', isDone);
+            mobDone.innerHTML = isDone ? '✓ Đã học' : '☐ Đã học';
+        }
+
         const btnStar = document.getElementById('btnToggleUnitStar');
         if (btnStar) {
             btnStar.classList.toggle('starred', isStar);
@@ -502,10 +536,22 @@
         const meta = getBookIndexMeta(state.activeBookId);
         if (meta && meta.units_index) {
             const idx = meta.units_index.findIndex(u => getUnitNum(u) === state.activeUnitNum);
+            const atFirst = idx <= 0;
+            const atLast  = idx < 0 || idx >= meta.units_index.length - 1;
+
             const btnPrev = document.getElementById('btnPrevUnit');
             const btnNext = document.getElementById('btnNextUnit');
-            if (btnPrev) btnPrev.disabled = idx <= 0;
-            if (btnNext) btnNext.disabled = idx < 0 || idx >= meta.units_index.length - 1;
+            if (btnPrev) btnPrev.disabled = atFirst;
+            if (btnNext) btnNext.disabled = atLast;
+
+            const mobPrev = document.getElementById('mobPrevUnit');
+            const mobNext = document.getElementById('mobNextUnit');
+            const mobLbl  = document.getElementById('mobCurrentUnitLabel');
+            if (mobPrev) mobPrev.disabled = atFirst;
+            if (mobNext) mobNext.disabled = atLast;
+            if (mobLbl) {
+                mobLbl.textContent = `Bài ${state.activeUnitNum} (${idx + 1}/${meta.units_index.length})`;
+            }
         }
     }
 
@@ -517,14 +563,12 @@
 
         const words = unitData.target_words || [];
 
-        // Check if global search is active across the whole book
         const gQuery = state.globalSearchQuery.trim();
         if (gQuery) {
             renderGlobalSearchInMemoryPane(gQuery, gridEl, listEl);
             return;
         }
 
-        // 1. Render Target Words Box (◎ 目标词语)
         gridEl.innerHTML = words.map(w => {
             const isStar = !!state.starredWords[w.id];
             const isActive = w.num === state.activeWordNum;
@@ -571,7 +615,6 @@
             });
         });
 
-        // 2. Render Quick Memory Detailed Cards (◎ 速记)
         const displayWords = state.onlyStarredWords
             ? words.filter(w => !!state.starredWords[w.id])
             : words;
@@ -669,7 +712,6 @@
                     btn.textContent = '⭐ Đã lưu';
                 }
                 saveProgress();
-                // Refresh target words chips to show/hide star icon
                 const unitData = getCurrentUnitData();
                 if (unitData && !state.globalSearchQuery) {
                     renderMemoryPane(unitData);
@@ -739,9 +781,9 @@
         }
 
         const scoreBadge = document.getElementById('practiceScoreBadge');
-        if (scoreBadge) {
-            scoreBadge.classList.add('hidden');
-        }
+        const scoreBadgeBottom = document.getElementById('practiceScoreBadgeBottom');
+        if (scoreBadge) scoreBadge.classList.add('hidden');
+        if (scoreBadgeBottom) scoreBadgeBottom.classList.add('hidden');
 
         const ex = (unitData && unitData.exercises) ? unitData.exercises : null;
         if (!ex) return;
@@ -751,7 +793,6 @@
         renderExSection3(ex.section3);
     }
 
-    // --- Section I: Matching Hanzi, Pinyin & Meaning ---
     function renderExSection1(sec1) {
         const container = document.getElementById('exSection1');
         if (!container || !sec1) return;
@@ -773,29 +814,37 @@
 
             return `
                 <div class="s1-q-row" id="s1-row-${q.q_num}">
-                    <span class="s1-q-num">${q.q_num}.</span>
-                    <span class="s1-q-word" data-speak="${escapeAttr(cleanHanziForTts(q.word))}" style="cursor:pointer" title="Nhấn để nghe phát âm">
-                        ${escapeHtml(q.word)} 🔊
-                    </span>
-                    <div class="s1-select-group">
-                        <span class="s1-select-label">Pinyin:</span>
-                        <select class="s1-select" data-s1-py="${q.q_num}">
-                            <option value="">-- Chọn A-J --</option>
-                            ${pyLetters.map(l => {
-                                const bankItem = sec1.pinyin_bank.find(b => b.letter === l);
-                                return `<option value="${l}" ${curPy === l ? 'selected' : ''}>${l}. ${bankItem ? escapeHtml(bankItem.text) : ''}</option>`;
-                            }).join('')}
-                        </select>
-                        <span class="s1-select-label">Nghĩa:</span>
-                        <select class="s1-select" data-s1-mn="${q.q_num}">
-                            <option value="">-- Chọn a-j --</option>
-                            ${mnLetters.map(l => {
-                                const bankItem = sec1.meaning_bank.find(b => b.letter === l);
-                                return `<option value="${l}" ${curMn === l ? 'selected' : ''}>${l}. ${bankItem ? escapeHtml(truncateText(bankItem.text, 28)) : ''}</option>`;
-                            }).join('')}
-                        </select>
+                    <div class="s1-q-top">
+                        <div>
+                            <span class="s1-q-num">${q.q_num}.</span>
+                            <span class="s1-q-word" data-speak="${escapeAttr(cleanHanziForTts(q.word))}" style="cursor:pointer" title="Nhấn để nghe phát âm">
+                                ${escapeHtml(q.word)} 🔊
+                            </span>
+                        </div>
+                        <span class="s1-feedback hidden" id="s1-fb-${q.q_num}"></span>
                     </div>
-                    <span class="s1-feedback hidden" id="s1-fb-${q.q_num}"></span>
+                    <div class="s1-select-group">
+                        <div class="s1-select-wrap">
+                            <span class="s1-select-label">Chọn Pinyin (A–J):</span>
+                            <select class="s1-select" data-s1-py="${q.q_num}">
+                                <option value="">-- Pinyin --</option>
+                                ${pyLetters.map(l => {
+                                    const bankItem = sec1.pinyin_bank.find(b => b.letter === l);
+                                    return `<option value="${l}" ${curPy === l ? 'selected' : ''}>${l}. ${bankItem ? escapeHtml(bankItem.text) : ''}</option>`;
+                                }).join('')}
+                            </select>
+                        </div>
+                        <div class="s1-select-wrap">
+                            <span class="s1-select-label">Chọn Nghĩa (a–j):</span>
+                            <select class="s1-select" data-s1-mn="${q.q_num}">
+                                <option value="">-- Nghĩa --</option>
+                                ${mnLetters.map(l => {
+                                    const bankItem = sec1.meaning_bank.find(b => b.letter === l);
+                                    return `<option value="${l}" ${curMn === l ? 'selected' : ''}>${l}. ${bankItem ? escapeHtml(truncateText(bankItem.text, 30)) : ''}</option>`;
+                                }).join('')}
+                            </select>
+                        </div>
+                    </div>
                 </div>
             `;
         }).join('');
@@ -841,7 +890,6 @@
         });
     }
 
-    // --- Section II: 4 Groups x 5 Cloze Sentences ---
     function renderExSection2(sec2) {
         const container = document.getElementById('exSection2');
         if (!container || !sec2) return;
@@ -868,9 +916,8 @@
 
                 return `
                     <div class="s2-q-item" id="s2-item-${key}">
-                        <span class="s1-q-num">${q.q_num}.</span>
                         <div class="s2-q-sentence">
-                            <div>${sentenceHtml}</div>
+                            <div><span class="s1-q-num">${q.q_num}.</span> ${sentenceHtml}</div>
                             <div class="s2-q-hint hidden" id="s2-hint-${key}">
                                 💡 <em>${escapeHtml(q.hint_py || '')}</em> — ${escapeHtml(q.hint_vn || '')}
                             </div>
@@ -939,7 +986,6 @@
         });
     }
 
-    // --- Section III: Multiple Choice Sentence Completion ---
     function renderExSection3(sec3) {
         const container = document.getElementById('exSection3');
         if (!container || !sec3) return;
@@ -1013,7 +1059,6 @@
         });
     }
 
-    // --- Auto-Grade, Fill Model Answers & Reset ---
     function checkPracticeAnswers() {
         const unitData = getCurrentUnitData();
         if (!unitData || !unitData.exercises) return;
@@ -1128,10 +1173,17 @@
         }
 
         const scoreBadge = document.getElementById('practiceScoreBadge');
+        const scoreBadgeBottom = document.getElementById('practiceScoreBadgeBottom');
         const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+        const scoreText = `🎯 Điểm: ${score} / ${total} (${pct}%)`;
+
         if (scoreBadge) {
-            scoreBadge.textContent = `🎯 Điểm: ${score} / ${total} (${pct}%)`;
+            scoreBadge.textContent = scoreText;
             scoreBadge.classList.remove('hidden');
+        }
+        if (scoreBadgeBottom) {
+            scoreBadgeBottom.textContent = scoreText;
+            scoreBadgeBottom.classList.remove('hidden');
         }
 
         const unitKey = `${state.activeBookId}_${state.activeUnitNum}`;
@@ -1386,6 +1438,9 @@
         if (mode === 'pdf') {
             renderPdfPane();
         }
+
+        const stage = document.getElementById('unitStageScroll');
+        if (stage) stage.scrollTop = 0;
     }
 
     // ==================== GRAMMAR ABBREVIATIONS MODAL ====================
@@ -1485,15 +1540,69 @@
     }
 
     // ==================== EVENT BINDINGS ====================
+    function goPrevUnit() {
+        const meta = getBookIndexMeta(state.activeBookId);
+        if (!meta || !meta.units_index) return;
+        const idx = meta.units_index.findIndex(u => getUnitNum(u) === state.activeUnitNum);
+        if (idx > 0) selectUnit(getUnitNum(meta.units_index[idx - 1]));
+    }
+
+    function goNextUnit() {
+        const meta = getBookIndexMeta(state.activeBookId);
+        if (!meta || !meta.units_index) return;
+        const idx = meta.units_index.findIndex(u => getUnitNum(u) === state.activeUnitNum);
+        if (idx >= 0 && idx < meta.units_index.length - 1) {
+            selectUnit(getUnitNum(meta.units_index[idx + 1]));
+        }
+    }
+
+    function toggleCurrentUnitDone() {
+        const key = `${state.activeBookId}_${state.activeUnitNum}`;
+        if (state.doneUnits[key]) delete state.doneUnits[key];
+        else state.doneUnits[key] = true;
+        saveProgress();
+        updateUnitActionButtons();
+        const meta = getBookIndexMeta(state.activeBookId);
+        if (meta) {
+            renderSidebarSummary(meta);
+            renderUnitList(meta);
+            renderBookShelf();
+        }
+    }
+
     function bindEvents() {
         const themeBtn = document.getElementById('themeToggleBtn');
         if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
 
-        const sidebarBtn = document.getElementById('toggleSidebarBtn');
-        const sidebarEl  = document.getElementById('wlSidebar');
-        if (sidebarBtn && sidebarEl) {
-            sidebarBtn.addEventListener('click', () => {
-                sidebarEl.classList.toggle('collapsed');
+        // Sidebar toggle & mobile drawer controls
+        const sidebarBtn   = document.getElementById('toggleSidebarBtn');
+        const closeSideBtn = document.getElementById('closeSidebarBtn');
+        const backdropEl   = document.getElementById('sidebarBackdrop');
+        const titleArea    = document.getElementById('activeUnitTitleArea');
+        const mobOpenBtn   = document.getElementById('mobOpenUnitDrawer');
+
+        if (sidebarBtn)   sidebarBtn.addEventListener('click', toggleSidebar);
+        if (closeSideBtn) closeSideBtn.addEventListener('click', closeMobileSidebar);
+        if (backdropEl)   backdropEl.addEventListener('click', closeMobileSidebar);
+        if (mobOpenBtn)   mobOpenBtn.addEventListener('click', openMobileSidebar);
+        if (titleArea) {
+            titleArea.addEventListener('click', () => {
+                if (isMobileOrTabletViewport()) openMobileSidebar();
+            });
+        }
+
+        // Collapse / Expand Target Words Grid
+        const btnCollapseGrid = document.getElementById('btnCollapseTargetGrid');
+        const targetGridEl    = document.getElementById('targetWordsGrid');
+        const targetHeaderEl  = document.querySelector('.twb-header');
+        if (btnCollapseGrid && targetGridEl) {
+            btnCollapseGrid.addEventListener('click', () => {
+                state.targetGridCollapsed = !state.targetGridCollapsed;
+                targetGridEl.classList.toggle('hidden', state.targetGridCollapsed);
+                if (targetHeaderEl) {
+                    targetHeaderEl.classList.toggle('collapsed-head', state.targetGridCollapsed);
+                }
+                btnCollapseGrid.textContent = state.targetGridCollapsed ? '🔽 Mở bảng từ' : '🔼 Thu gọn';
             });
         }
 
@@ -1548,22 +1657,11 @@
             });
         }
 
+        // Unit Done, Star & Prev/Next (Desktop + Mobile Sticky Bar)
         const btnDone = document.getElementById('btnToggleUnitDone');
-        if (btnDone) {
-            btnDone.addEventListener('click', () => {
-                const key = `${state.activeBookId}_${state.activeUnitNum}`;
-                if (state.doneUnits[key]) delete state.doneUnits[key];
-                else state.doneUnits[key] = true;
-                saveProgress();
-                updateUnitActionButtons();
-                const meta = getBookIndexMeta(state.activeBookId);
-                if (meta) {
-                    renderSidebarSummary(meta);
-                    renderUnitList(meta);
-                    renderBookShelf();
-                }
-            });
-        }
+        const mobDone = document.getElementById('mobToggleDone');
+        if (btnDone) btnDone.addEventListener('click', toggleCurrentUnitDone);
+        if (mobDone) mobDone.addEventListener('click', toggleCurrentUnitDone);
 
         const btnStar = document.getElementById('btnToggleUnitStar');
         if (btnStar) {
@@ -1580,25 +1678,20 @@
 
         const btnPrevUnit = document.getElementById('btnPrevUnit');
         const btnNextUnit = document.getElementById('btnNextUnit');
-        if (btnPrevUnit) {
-            btnPrevUnit.addEventListener('click', () => {
-                const meta = getBookIndexMeta(state.activeBookId);
-                if (!meta || !meta.units_index) return;
-                const idx = meta.units_index.findIndex(u => getUnitNum(u) === state.activeUnitNum);
-                if (idx > 0) selectUnit(getUnitNum(meta.units_index[idx - 1]));
-            });
-        }
-        if (btnNextUnit) {
-            btnNextUnit.addEventListener('click', () => {
-                const meta = getBookIndexMeta(state.activeBookId);
-                if (!meta || !meta.units_index) return;
-                const idx = meta.units_index.findIndex(u => getUnitNum(u) === state.activeUnitNum);
-                if (idx >= 0 && idx < meta.units_index.length - 1) {
-                    selectUnit(getUnitNum(meta.units_index[idx + 1]));
-                }
-            });
-        }
+        const mobPrevUnit = document.getElementById('mobPrevUnit');
+        const mobNextUnit = document.getElementById('mobNextUnit');
+        if (btnPrevUnit) btnPrevUnit.addEventListener('click', goPrevUnit);
+        if (btnNextUnit) btnNextUnit.addEventListener('click', goNextUnit);
+        if (mobPrevUnit) mobPrevUnit.addEventListener('click', goPrevUnit);
+        if (mobNextUnit) mobNextUnit.addEventListener('click', goNextUnit);
 
+        // Bottom CTAs in Memory Mode
+        const btnGoPrac = document.getElementById('btnGoToPracticeBottom');
+        const btnGoFc   = document.getElementById('btnGoToFlashcardBottom');
+        if (btnGoPrac) btnGoPrac.addEventListener('click', () => switchStudyMode('practice'));
+        if (btnGoFc)   btnGoFc.addEventListener('click', () => switchStudyMode('flashcard'));
+
+        // Mode 1 controls
         const btnSpeakAll = document.getElementById('btnSpeakAllWords');
         if (btnSpeakAll) btnSpeakAll.addEventListener('click', toggleSpeakAllWords);
 
@@ -1634,13 +1727,22 @@
             });
         }
 
-        const btnCheck = document.getElementById('btnCheckPractice');
-        const btnShow  = document.getElementById('btnShowPracticeAnswers');
-        const btnReset = document.getElementById('btnResetPractice');
-        if (btnCheck) btnCheck.addEventListener('click', checkPracticeAnswers);
-        if (btnShow)  btnShow.addEventListener('click', fillPracticeModelAnswers);
-        if (btnReset) btnReset.addEventListener('click', resetPracticeAnswers);
+        // Mode 2 Practice buttons (Top & Bottom bars)
+        const btnCheck       = document.getElementById('btnCheckPractice');
+        const btnShow        = document.getElementById('btnShowPracticeAnswers');
+        const btnReset       = document.getElementById('btnResetPractice');
+        const btnCheckBottom = document.getElementById('btnCheckPracticeBottom');
+        const btnShowBottom  = document.getElementById('btnShowPracticeAnswersBottom');
+        const btnResetBottom = document.getElementById('btnResetPracticeBottom');
 
+        if (btnCheck)       btnCheck.addEventListener('click', checkPracticeAnswers);
+        if (btnShow)        btnShow.addEventListener('click', fillPracticeModelAnswers);
+        if (btnReset)       btnReset.addEventListener('click', resetPracticeAnswers);
+        if (btnCheckBottom) btnCheckBottom.addEventListener('click', checkPracticeAnswers);
+        if (btnShowBottom)  btnShowBottom.addEventListener('click', fillPracticeModelAnswers);
+        if (btnResetBottom) btnResetBottom.addEventListener('click', resetPracticeAnswers);
+
+        // Mode 3 Flashcard & Quiz
         const fcScopeSel = document.getElementById('fcScopeSelect');
         if (fcScopeSel) {
             fcScopeSel.addEventListener('change', () => {
@@ -1710,6 +1812,7 @@
             btnNextQuiz.addEventListener('click', nextReflexQuizQuestion);
         }
 
+        // Mode 4 PDF buttons
         const btnPdfTheory = document.getElementById('btnPdfJumpTheory');
         const btnPdfPrac   = document.getElementById('btnPdfJumpPractice');
         const btnPdfIndex  = document.getElementById('btnPdfJumpIndex');
@@ -1800,7 +1903,6 @@
 
     function formatConciseEnglish(enStr, viStr) {
         if (!enStr || enStr === viStr) return '';
-        // Strip technical POS prefixes like "det.: " or "v.: " and cap at 4 glosses
         const cleaned = String(enStr).replace(/^[a-z]+\.\s*:\s*/i, '');
         const parts = cleaned.split(',').map(s => s.trim()).filter(Boolean);
         return parts.slice(0, 4).join(', ');
