@@ -34,7 +34,7 @@ const HSK_BOOKS_INDEX = [
       },
       {
         "u": 2,
-        "range": "北京—不客气",
+        "range": "北京—唱",
         "start_py": "Běijīng",
         "end_py": "chàng",
         "word_start": 21,
@@ -45,8 +45,8 @@ const HSK_BOOKS_INDEX = [
       },
       {
         "u": 3,
-        "range": "不—常常",
-        "start_py": "chàng//gē",
+        "range": "唱歌—打球",
+        "start_py": "chànggē",
         "end_py": "dǎ qiú",
         "word_start": 41,
         "word_end": 60,
@@ -56,7 +56,7 @@ const HSK_BOOKS_INDEX = [
       },
       {
         "u": 4,
-        "range": "唱—穿",
+        "range": "大—电视",
         "start_py": "dà",
         "end_py": "diànshì",
         "word_start": 61,
@@ -67,7 +67,7 @@ const HSK_BOOKS_INDEX = [
       },
       {
         "u": 5,
-        "range": "次—地",
+        "range": "电视机—饭店",
         "start_py": "diànshìjī",
         "end_py": "fàndiàn",
         "word_start": 81,
@@ -78,7 +78,7 @@ const HSK_BOOKS_INDEX = [
       },
       {
         "u": 6,
-        "range": "地点—读",
+        "range": "房间—个",
         "start_py": "fángjiān",
         "end_py": "gè",
         "word_start": 101,
@@ -89,7 +89,7 @@ const HSK_BOOKS_INDEX = [
       },
       {
         "u": 7,
-        "range": "读书—房子",
+        "range": "给—好看",
         "start_py": "gěi",
         "end_py": "hǎokàn",
         "word_start": 121,
@@ -100,7 +100,7 @@ const HSK_BOOKS_INDEX = [
       },
       {
         "u": 8,
-        "range": "放—高兴",
+        "range": "好听—会",
         "start_py": "hǎotīng",
         "end_py": "huì",
         "word_start": 141,
@@ -111,7 +111,7 @@ const HSK_BOOKS_INDEX = [
       },
       {
         "u": 9,
-        "range": "告诉—贵",
+        "range": "火车—今年",
         "start_py": "huǒchē",
         "end_py": "jīnnián",
         "word_start": 161,
@@ -122,7 +122,7 @@ const HSK_BOOKS_INDEX = [
       },
       {
         "u": 10,
-        "range": "国—好看",
+        "range": "今天—课本",
         "start_py": "jīntiān",
         "end_py": "kèběn",
         "word_start": 181,
@@ -133,168 +133,168 @@ const HSK_BOOKS_INDEX = [
       },
       {
         "u": 11,
-        "range": "好听—回到",
+        "range": "课文—楼下",
         "start_py": "kèwén",
         "end_py": "lóu xià",
         "word_start": 201,
         "word_end": 220,
         "book_page": 49,
         "pdf_page": 49,
-        "practice_pdf_page": 52
+        "practice_pdf_page": 51
       },
       {
         "u": 12,
-        "range": "回家—记",
+        "range": "路—门票",
         "start_py": "lù",
         "end_py": "ménpiào",
         "word_start": 221,
         "word_end": 240,
-        "book_page": 54,
-        "pdf_page": 54,
-        "practice_pdf_page": 56
+        "book_page": 53,
+        "pdf_page": 53,
+        "practice_pdf_page": 55
       },
       {
         "u": 13,
-        "range": "记得—今天",
+        "range": "们（朋友们）—奶奶",
         "start_py": "men (péngyoumen)",
         "end_py": "nǎinai",
         "word_start": 241,
         "word_end": 260,
-        "book_page": 58,
-        "pdf_page": 58,
-        "practice_pdf_page": 60
+        "book_page": 57,
+        "pdf_page": 57,
+        "practice_pdf_page": 59
       },
       {
         "u": 14,
-        "range": "进—看病",
+        "range": "男—女人",
         "start_py": "nán",
         "end_py": "nǚrén",
         "word_start": 261,
         "word_end": 280,
-        "book_page": 62,
-        "pdf_page": 62,
-        "practice_pdf_page": 64
+        "book_page": 61,
+        "pdf_page": 61,
+        "practice_pdf_page": 63
       },
       {
         "u": 15,
-        "range": "看到—块",
+        "range": "女生—请坐",
         "start_py": "nǚshēng",
         "end_py": "qǐng zuò",
         "word_start": 281,
         "word_end": 300,
-        "book_page": 66,
-        "pdf_page": 66,
-        "practice_pdf_page": 68
+        "book_page": 65,
+        "pdf_page": 65,
+        "practice_pdf_page": 67
       },
       {
         "u": 16,
-        "range": "快—零|〇",
+        "range": "球—上课",
         "start_py": "qiú",
-        "end_py": "shàng//kè",
+        "end_py": "shàngkè",
         "word_start": 301,
         "word_end": 320,
-        "book_page": 70,
-        "pdf_page": 70,
-        "practice_pdf_page": 72
+        "book_page": 69,
+        "pdf_page": 69,
+        "practice_pdf_page": 71
       },
       {
         "u": 17,
-        "range": "六—忙",
-        "start_py": "shàng//wǎng",
+        "range": "上网—手机",
+        "start_py": "shàngwǎng",
         "end_py": "shǒujī",
         "word_start": 321,
         "word_end": 340,
-        "book_page": 74,
-        "pdf_page": 74,
-        "practice_pdf_page": 77
+        "book_page": 73,
+        "pdf_page": 73,
+        "practice_pdf_page": 75
       },
       {
         "u": 18,
-        "range": "毛—明天",
+        "range": "书—天气",
         "start_py": "shū",
         "end_py": "tiānqì",
         "word_start": 341,
         "word_end": 360,
-        "book_page": 79,
-        "pdf_page": 79,
-        "practice_pdf_page": 82
+        "book_page": 77,
+        "pdf_page": 77,
+        "practice_pdf_page": 79
       },
       {
         "u": 19,
-        "range": "拿—女儿",
+        "range": "听—我",
         "start_py": "tīng",
         "end_py": "wǒ",
         "word_start": 361,
         "word_end": 380,
-        "book_page": 84,
-        "pdf_page": 84,
-        "practice_pdf_page": 86
+        "book_page": 81,
+        "pdf_page": 81,
+        "practice_pdf_page": 83
       },
       {
         "u": 20,
-        "range": "女士—起床",
+        "range": "我们—想",
         "start_py": "wǒmen",
         "end_py": "xiǎng",
         "word_start": 381,
         "word_end": 400,
-        "book_page": 88,
-        "pdf_page": 88,
-        "practice_pdf_page": 90
+        "book_page": 85,
+        "pdf_page": 85,
+        "practice_pdf_page": 87
       },
       {
         "u": 21,
-        "range": "起来—日",
+        "range": "小—学习",
         "start_py": "xiǎo",
         "end_py": "xuéxí",
         "word_start": 401,
         "word_end": 420,
-        "book_page": 92,
-        "pdf_page": 92,
-        "practice_pdf_page": 94
+        "book_page": 89,
+        "pdf_page": 89,
+        "practice_pdf_page": 91
       },
       {
         "u": 22,
-        "range": "日期—生气",
+        "range": "学校—用",
         "start_py": "xuéxiào",
         "end_py": "yòng",
         "word_start": 421,
         "word_end": 440,
-        "book_page": 96,
-        "pdf_page": 96,
-        "practice_pdf_page": 98
+        "book_page": 93,
+        "pdf_page": 93,
+        "practice_pdf_page": 95
       },
       {
         "u": 23,
-        "range": "生日—水",
+        "range": "有—怎么",
         "start_py": "yǒu",
         "end_py": "zěnme",
         "word_start": 441,
         "word_end": 460,
-        "book_page": 100,
-        "pdf_page": 100,
-        "practice_pdf_page": 103
+        "book_page": 97,
+        "pdf_page": 97,
+        "practice_pdf_page": 99
       },
       {
         "u": 24,
-        "range": "水果—听见",
+        "range": "站—中午",
         "start_py": "zhàn",
         "end_py": "zhōngwǔ",
         "word_start": 461,
         "word_end": 480,
-        "book_page": 105,
-        "pdf_page": 105,
-        "practice_pdf_page": 107
+        "book_page": 101,
+        "pdf_page": 101,
+        "practice_pdf_page": 103
       },
       {
         "u": 25,
-        "range": "听写—做",
+        "range": "中学—做",
         "start_py": "zhōngxué",
         "end_py": "zuò",
         "word_start": 481,
         "word_end": 500,
-        "book_page": 109,
-        "pdf_page": 109,
-        "practice_pdf_page": 111
+        "book_page": 105,
+        "pdf_page": 105,
+        "practice_pdf_page": 107
       }
     ]
   },
@@ -304,7 +304,7 @@ const HSK_BOOKS_INDEX = [
     "badge": "CẤP ĐỘ 2",
     "title": "Quyển 2 — Cấp độ 2 (二级)",
     "subtitle": "Giáo trình luyện và nhớ nhanh từ vựng HSK 3.0",
-    "translator": "Đang cập nhật file PDF (Có thể tra cứu từ vựng Cấp 2 ở Tab Từ Điển)",
+    "translator": "Đang cập nhật file PDF (Có thể học và luyện tập toàn bộ từ vựng Cấp 2)",
     "lang": "Chưa có file PDF",
     "color": "#f97316",
     "word_count": 772,
@@ -411,7 +411,7 @@ const HSK_BOOKS_INDEX = [
         "u": 9,
         "range": "方向—干活儿",
         "start_py": "fāngxiàng",
-        "end_py": "gàn//huór",
+        "end_py": "gànhuór",
         "word_start": 161,
         "word_end": 180,
         "book_page": 41,
@@ -432,7 +432,7 @@ const HSK_BOOKS_INDEX = [
       {
         "u": 11,
         "range": "关机—好像",
-        "start_py": "guān//jī",
+        "start_py": "guānjī",
         "end_py": "hǎoxiàng",
         "word_start": 201,
         "word_end": 220,
@@ -675,7 +675,7 @@ const HSK_BOOKS_INDEX = [
         "u": 33,
         "range": "药片—一般",
         "start_py": "yàopiàn",
-        "end_py": "yìbān",
+        "end_py": "yībān",
         "word_start": 641,
         "word_end": 660,
         "book_page": 137,
@@ -685,7 +685,7 @@ const HSK_BOOKS_INDEX = [
       {
         "u": 34,
         "range": "一点点—永远",
-        "start_py": "yì diǎndiǎn",
+        "start_py": "yī diǎndiǎn",
         "end_py": "yǒngyuǎn",
         "word_start": 661,
         "word_end": 680,
@@ -708,7 +708,7 @@ const HSK_BOOKS_INDEX = [
         "u": 36,
         "range": "云—照相",
         "start_py": "yún",
-        "end_py": "zhào//xiàng",
+        "end_py": "zhàoxiàng",
         "word_start": 701,
         "word_end": 720,
         "book_page": 149,
@@ -741,7 +741,7 @@ const HSK_BOOKS_INDEX = [
         "u": 39,
         "range": "组长—做饭",
         "start_py": "zǔzhǎng",
-        "end_py": "zuò//fàn",
+        "end_py": "zuòfàn",
         "word_start": 761,
         "word_end": 772,
         "book_page": 161,
@@ -780,7 +780,7 @@ const HSK_BOOKS_INDEX = [
         "word_end": 20,
         "book_page": 9,
         "pdf_page": 9,
-        "practice_pdf_page": 12
+        "practice_pdf_page": 11
       },
       {
         "u": 2,
@@ -789,9 +789,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "bìrán",
         "word_start": 21,
         "word_end": 40,
-        "book_page": 14,
-        "pdf_page": 14,
-        "practice_pdf_page": 17
+        "book_page": 13,
+        "pdf_page": 13,
+        "practice_pdf_page": 15
       },
       {
         "u": 3,
@@ -800,9 +800,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "bǔchōng",
         "word_start": 41,
         "word_end": 60,
-        "book_page": 19,
-        "pdf_page": 19,
-        "practice_pdf_page": 22
+        "book_page": 17,
+        "pdf_page": 17,
+        "practice_pdf_page": 19
       },
       {
         "u": 4,
@@ -811,9 +811,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "chǎnghé",
         "word_start": 61,
         "word_end": 80,
-        "book_page": 24,
-        "pdf_page": 24,
-        "practice_pdf_page": 27
+        "book_page": 21,
+        "pdf_page": 21,
+        "practice_pdf_page": 23
       },
       {
         "u": 5,
@@ -822,9 +822,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "chōngmǎn",
         "word_start": 81,
         "word_end": 100,
-        "book_page": 29,
-        "pdf_page": 29,
-        "practice_pdf_page": 32
+        "book_page": 25,
+        "pdf_page": 25,
+        "practice_pdf_page": 27
       },
       {
         "u": 6,
@@ -833,9 +833,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "cūn",
         "word_start": 101,
         "word_end": 120,
-        "book_page": 34,
-        "pdf_page": 34,
-        "practice_pdf_page": 37
+        "book_page": 29,
+        "pdf_page": 29,
+        "practice_pdf_page": 31
       },
       {
         "u": 7,
@@ -844,9 +844,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "dāngzhōng",
         "word_start": 121,
         "word_end": 140,
-        "book_page": 39,
-        "pdf_page": 39,
-        "practice_pdf_page": 42
+        "book_page": 33,
+        "pdf_page": 33,
+        "practice_pdf_page": 35
       },
       {
         "u": 8,
@@ -855,9 +855,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "dúzhě",
         "word_start": 141,
         "word_end": 160,
-        "book_page": 44,
-        "pdf_page": 44,
-        "practice_pdf_page": 47
+        "book_page": 37,
+        "pdf_page": 37,
+        "practice_pdf_page": 39
       },
       {
         "u": 9,
@@ -866,9 +866,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "fǎnduì",
         "word_start": 161,
         "word_end": 180,
-        "book_page": 49,
-        "pdf_page": 49,
-        "practice_pdf_page": 52
+        "book_page": 41,
+        "pdf_page": 41,
+        "practice_pdf_page": 43
       },
       {
         "u": 10,
@@ -877,9 +877,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "fēngxiǎn",
         "word_start": 181,
         "word_end": 200,
-        "book_page": 54,
-        "pdf_page": 54,
-        "practice_pdf_page": 57
+        "book_page": 45,
+        "pdf_page": 45,
+        "practice_pdf_page": 47
       },
       {
         "u": 11,
@@ -888,9 +888,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "gǎnmào",
         "word_start": 201,
         "word_end": 220,
-        "book_page": 59,
-        "pdf_page": 59,
-        "practice_pdf_page": 62
+        "book_page": 49,
+        "pdf_page": 49,
+        "practice_pdf_page": 51
       },
       {
         "u": 12,
@@ -899,20 +899,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "gōngchéngshī",
         "word_start": 221,
         "word_end": 240,
-        "book_page": 64,
-        "pdf_page": 64,
-        "practice_pdf_page": 67
+        "book_page": 53,
+        "pdf_page": 53,
+        "practice_pdf_page": 55
       },
       {
         "u": 13,
         "range": "工夫—关系",
         "start_py": "gōngfu",
-        "end_py": "guān·xì",
+        "end_py": "guānxì",
         "word_start": 241,
         "word_end": 260,
-        "book_page": 69,
-        "pdf_page": 69,
-        "practice_pdf_page": 72
+        "book_page": 57,
+        "pdf_page": 57,
+        "practice_pdf_page": 59
       },
       {
         "u": 14,
@@ -921,9 +921,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "hāhā",
         "word_start": 261,
         "word_end": 280,
-        "book_page": 74,
-        "pdf_page": 74,
-        "practice_pdf_page": 77
+        "book_page": 61,
+        "pdf_page": 61,
+        "practice_pdf_page": 63
       },
       {
         "u": 15,
@@ -932,20 +932,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "huárén",
         "word_start": 281,
         "word_end": 300,
-        "book_page": 79,
-        "pdf_page": 79,
-        "practice_pdf_page": 82
+        "book_page": 65,
+        "pdf_page": 65,
+        "practice_pdf_page": 67
       },
       {
         "u": 16,
-        "range": "化—集中",
+        "range": "化（现代化）—集中",
         "start_py": "huà (xiàndàihuà)",
         "end_py": "jízhōng",
         "word_start": 301,
         "word_end": 320,
-        "book_page": 84,
-        "pdf_page": 84,
-        "practice_pdf_page": 87
+        "book_page": 69,
+        "pdf_page": 69,
+        "practice_pdf_page": 71
       },
       {
         "u": 17,
@@ -954,9 +954,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jiānqiáng",
         "word_start": 321,
         "word_end": 340,
-        "book_page": 89,
-        "pdf_page": 89,
-        "practice_pdf_page": 92
+        "book_page": 73,
+        "pdf_page": 73,
+        "practice_pdf_page": 75
       },
       {
         "u": 18,
@@ -965,9 +965,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jiēdài",
         "word_start": 341,
         "word_end": 360,
-        "book_page": 94,
-        "pdf_page": 94,
-        "practice_pdf_page": 97
+        "book_page": 77,
+        "pdf_page": 77,
+        "practice_pdf_page": 79
       },
       {
         "u": 19,
@@ -976,9 +976,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jīngjù",
         "word_start": 361,
         "word_end": 380,
-        "book_page": 99,
-        "pdf_page": 99,
-        "practice_pdf_page": 102
+        "book_page": 81,
+        "pdf_page": 81,
+        "practice_pdf_page": 83
       },
       {
         "u": 20,
@@ -987,9 +987,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jùshuō",
         "word_start": 381,
         "word_end": 400,
-        "book_page": 104,
-        "pdf_page": 104,
-        "practice_pdf_page": 107
+        "book_page": 85,
+        "pdf_page": 85,
+        "practice_pdf_page": 87
       },
       {
         "u": 21,
@@ -998,9 +998,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "kōng",
         "word_start": 401,
         "word_end": 420,
-        "book_page": 109,
-        "pdf_page": 109,
-        "practice_pdf_page": 112
+        "book_page": 89,
+        "pdf_page": 89,
+        "practice_pdf_page": 91
       },
       {
         "u": 22,
@@ -1009,31 +1009,31 @@ const HSK_BOOKS_INDEX = [
         "end_py": "lǐjiě",
         "word_start": 421,
         "word_end": 440,
-        "book_page": 114,
-        "pdf_page": 114,
-        "practice_pdf_page": 117
+        "book_page": 93,
+        "pdf_page": 93,
+        "practice_pdf_page": 95
       },
       {
         "u": 23,
         "range": "理论—另一方面",
         "start_py": "lǐlùn",
-        "end_py": "lìng yìfāngmiàn",
+        "end_py": "lìng yīfāngmiàn",
         "word_start": 441,
         "word_end": 460,
-        "book_page": 119,
-        "pdf_page": 119,
-        "practice_pdf_page": 122
+        "book_page": 97,
+        "pdf_page": 97,
+        "practice_pdf_page": 99
       },
       {
         "u": 24,
         "range": "留学—美",
-        "start_py": "liú//xué",
+        "start_py": "liúxué",
         "end_py": "měi",
         "word_start": 461,
         "word_end": 480,
-        "book_page": 124,
-        "pdf_page": 124,
-        "practice_pdf_page": 127
+        "book_page": 101,
+        "pdf_page": 101,
+        "practice_pdf_page": 103
       },
       {
         "u": 25,
@@ -1042,9 +1042,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "nǎichá",
         "word_start": 481,
         "word_end": 500,
-        "book_page": 129,
-        "pdf_page": 129,
-        "practice_pdf_page": 132
+        "book_page": 105,
+        "pdf_page": 105,
+        "practice_pdf_page": 107
       },
       {
         "u": 26,
@@ -1053,9 +1053,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "nuǎnhuo",
         "word_start": 501,
         "word_end": 520,
-        "book_page": 134,
-        "pdf_page": 134,
-        "practice_pdf_page": 137
+        "book_page": 109,
+        "pdf_page": 109,
+        "practice_pdf_page": 111
       },
       {
         "u": 27,
@@ -1064,9 +1064,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "pò",
         "word_start": 521,
         "word_end": 540,
-        "book_page": 139,
-        "pdf_page": 139,
-        "practice_pdf_page": 142
+        "book_page": 113,
+        "pdf_page": 113,
+        "practice_pdf_page": 115
       },
       {
         "u": 28,
@@ -1075,9 +1075,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "qiǎo",
         "word_start": 541,
         "word_end": 560,
-        "book_page": 144,
-        "pdf_page": 144,
-        "practice_pdf_page": 147
+        "book_page": 117,
+        "pdf_page": 117,
+        "practice_pdf_page": 119
       },
       {
         "u": 29,
@@ -1086,9 +1086,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "quèbǎo",
         "word_start": 561,
         "word_end": 580,
-        "book_page": 149,
-        "pdf_page": 149,
-        "practice_pdf_page": 152
+        "book_page": 121,
+        "pdf_page": 121,
+        "practice_pdf_page": 123
       },
       {
         "u": 30,
@@ -1097,9 +1097,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "rènhé",
         "word_start": 581,
         "word_end": 600,
-        "book_page": 154,
-        "pdf_page": 154,
-        "practice_pdf_page": 157
+        "book_page": 125,
+        "pdf_page": 125,
+        "practice_pdf_page": 127
       },
       {
         "u": 31,
@@ -1108,9 +1108,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shèjì",
         "word_start": 601,
         "word_end": 620,
-        "book_page": 159,
-        "pdf_page": 159,
-        "practice_pdf_page": 162
+        "book_page": 129,
+        "pdf_page": 129,
+        "practice_pdf_page": 131
       },
       {
         "u": 32,
@@ -1119,9 +1119,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shíyóu",
         "word_start": 621,
         "word_end": 640,
-        "book_page": 164,
-        "pdf_page": 164,
-        "practice_pdf_page": 167
+        "book_page": 133,
+        "pdf_page": 133,
+        "practice_pdf_page": 135
       },
       {
         "u": 33,
@@ -1130,9 +1130,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shìyè",
         "word_start": 641,
         "word_end": 660,
-        "book_page": 169,
-        "pdf_page": 169,
-        "practice_pdf_page": 172
+        "book_page": 137,
+        "pdf_page": 137,
+        "practice_pdf_page": 139
       },
       {
         "u": 34,
@@ -1141,9 +1141,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shúrén",
         "word_start": 661,
         "word_end": 680,
-        "book_page": 174,
-        "pdf_page": 174,
-        "practice_pdf_page": 177
+        "book_page": 141,
+        "pdf_page": 141,
+        "practice_pdf_page": 143
       },
       {
         "u": 35,
@@ -1152,31 +1152,31 @@ const HSK_BOOKS_INDEX = [
         "end_py": "tíqián",
         "word_start": 681,
         "word_end": 700,
-        "book_page": 179,
-        "pdf_page": 179,
-        "practice_pdf_page": 182
+        "book_page": 145,
+        "pdf_page": 145,
+        "practice_pdf_page": 147
       },
       {
         "u": 36,
         "range": "提问—通信",
         "start_py": "tíwèn",
-        "end_py": "tōng//xìn",
+        "end_py": "tōngxìn",
         "word_start": 701,
         "word_end": 720,
-        "book_page": 184,
-        "pdf_page": 184,
-        "practice_pdf_page": 187
+        "book_page": 149,
+        "pdf_page": 149,
+        "practice_pdf_page": 151
       },
       {
         "u": 37,
         "range": "同意—退休",
         "start_py": "tóngyì",
-        "end_py": "tuì//xiū",
+        "end_py": "tuìxiū",
         "word_start": 721,
         "word_end": 740,
-        "book_page": 189,
-        "pdf_page": 189,
-        "practice_pdf_page": 192
+        "book_page": 153,
+        "pdf_page": 153,
+        "practice_pdf_page": 155
       },
       {
         "u": 38,
@@ -1185,9 +1185,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "wénjiàn",
         "word_start": 741,
         "word_end": 760,
-        "book_page": 194,
-        "pdf_page": 194,
-        "practice_pdf_page": 197
+        "book_page": 157,
+        "pdf_page": 157,
+        "practice_pdf_page": 159
       },
       {
         "u": 39,
@@ -1196,9 +1196,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xiànchǎng",
         "word_start": 761,
         "word_end": 780,
-        "book_page": 199,
-        "pdf_page": 199,
-        "practice_pdf_page": 202
+        "book_page": 161,
+        "pdf_page": 161,
+        "practice_pdf_page": 163
       },
       {
         "u": 40,
@@ -1207,9 +1207,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xìn",
         "word_start": 781,
         "word_end": 800,
-        "book_page": 204,
-        "pdf_page": 204,
-        "practice_pdf_page": 207
+        "book_page": 165,
+        "pdf_page": 165,
+        "practice_pdf_page": 167
       },
       {
         "u": 41,
@@ -1218,9 +1218,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xuéfèi",
         "word_start": 801,
         "word_end": 820,
-        "book_page": 209,
-        "pdf_page": 209,
-        "practice_pdf_page": 212
+        "book_page": 169,
+        "pdf_page": 169,
+        "practice_pdf_page": 171
       },
       {
         "u": 42,
@@ -1229,9 +1229,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yìwài",
         "word_start": 821,
         "word_end": 840,
-        "book_page": 214,
-        "pdf_page": 214,
-        "practice_pdf_page": 217
+        "book_page": 173,
+        "pdf_page": 173,
+        "practice_pdf_page": 175
       },
       {
         "u": 43,
@@ -1240,9 +1240,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yóuxì",
         "word_start": 841,
         "word_end": 860,
-        "book_page": 219,
-        "pdf_page": 219,
-        "practice_pdf_page": 222
+        "book_page": 177,
+        "pdf_page": 177,
+        "practice_pdf_page": 179
       },
       {
         "u": 44,
@@ -1251,9 +1251,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zēngjiā",
         "word_start": 861,
         "word_end": 880,
-        "book_page": 224,
-        "pdf_page": 224,
-        "practice_pdf_page": 227
+        "book_page": 181,
+        "pdf_page": 181,
+        "practice_pdf_page": 183
       },
       {
         "u": 45,
@@ -1262,9 +1262,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhèngjù",
         "word_start": 881,
         "word_end": 900,
-        "book_page": 229,
-        "pdf_page": 229,
-        "practice_pdf_page": 232
+        "book_page": 185,
+        "pdf_page": 185,
+        "practice_pdf_page": 187
       },
       {
         "u": 46,
@@ -1273,9 +1273,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhìshǎo",
         "word_start": 901,
         "word_end": 920,
-        "book_page": 234,
-        "pdf_page": 234,
-        "practice_pdf_page": 237
+        "book_page": 189,
+        "pdf_page": 189,
+        "practice_pdf_page": 191
       },
       {
         "u": 47,
@@ -1284,31 +1284,31 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhǔzhāng",
         "word_start": 921,
         "word_end": 940,
-        "book_page": 239,
-        "pdf_page": 239,
-        "practice_pdf_page": 242
+        "book_page": 193,
+        "pdf_page": 193,
+        "practice_pdf_page": 195
       },
       {
         "u": 48,
         "range": "注意—自觉",
-        "start_py": "zhù//yì",
+        "start_py": "zhùyì",
         "end_py": "zìjué",
         "word_start": 941,
         "word_end": 960,
-        "book_page": 244,
-        "pdf_page": 244,
-        "practice_pdf_page": 247
+        "book_page": 197,
+        "pdf_page": 197,
+        "practice_pdf_page": 199
       },
       {
         "u": 49,
         "range": "自然—做客",
         "start_py": "zìrán",
-        "end_py": "zuò//kè",
+        "end_py": "zuòkè",
         "word_start": 961,
         "word_end": 973,
-        "book_page": 249,
-        "pdf_page": 249,
-        "practice_pdf_page": 251
+        "book_page": 201,
+        "pdf_page": 201,
+        "practice_pdf_page": 203
       }
     ]
   },
@@ -1381,7 +1381,7 @@ const HSK_BOOKS_INDEX = [
         "u": 5,
         "range": "潮湿—充电",
         "start_py": "cháoshī",
-        "end_py": "chōng//diàn",
+        "end_py": "chōngdiàn",
         "word_start": 81,
         "word_end": 100,
         "book_page": 25,
@@ -1403,7 +1403,7 @@ const HSK_BOOKS_INDEX = [
         "u": 7,
         "range": "词汇—打针",
         "start_py": "cíhuì",
-        "end_py": "dǎ//zhēn",
+        "end_py": "dǎzhēn",
         "word_start": 121,
         "word_end": 140,
         "book_page": 33,
@@ -1414,12 +1414,12 @@ const HSK_BOOKS_INDEX = [
         "u": 8,
         "range": "大巴—担心",
         "start_py": "dàbā",
-        "end_py": "dān//xīn",
+        "end_py": "dānxīn",
         "word_start": 141,
         "word_end": 160,
         "book_page": 37,
         "pdf_page": 37,
-        "practice_pdf_page": 40
+        "practice_pdf_page": 39
       },
       {
         "u": 9,
@@ -1428,9 +1428,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "dǐ",
         "word_start": 161,
         "word_end": 180,
-        "book_page": 42,
-        "pdf_page": 42,
-        "practice_pdf_page": 45
+        "book_page": 41,
+        "pdf_page": 41,
+        "practice_pdf_page": 43
       },
       {
         "u": 10,
@@ -1439,9 +1439,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "dúzì",
         "word_start": 181,
         "word_end": 200,
-        "book_page": 47,
-        "pdf_page": 47,
-        "practice_pdf_page": 50
+        "book_page": 45,
+        "pdf_page": 45,
+        "practice_pdf_page": 47
       },
       {
         "u": 11,
@@ -1450,20 +1450,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "fāpiào",
         "word_start": 201,
         "word_end": 220,
-        "book_page": 52,
-        "pdf_page": 52,
-        "practice_pdf_page": 54
+        "book_page": 49,
+        "pdf_page": 49,
+        "practice_pdf_page": 51
       },
       {
         "u": 12,
         "range": "发烧—分手",
-        "start_py": "fā//shāo",
-        "end_py": "fēn//shǒu",
+        "start_py": "fāshāo",
+        "end_py": "fēnshǒu",
         "word_start": 221,
         "word_end": 240,
-        "book_page": 56,
-        "pdf_page": 56,
-        "practice_pdf_page": 59
+        "book_page": 53,
+        "pdf_page": 53,
+        "practice_pdf_page": 55
       },
       {
         "u": 13,
@@ -1472,9 +1472,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "gǎizhèng",
         "word_start": 241,
         "word_end": 260,
-        "book_page": 61,
-        "pdf_page": 61,
-        "practice_pdf_page": 64
+        "book_page": 57,
+        "pdf_page": 57,
+        "practice_pdf_page": 59
       },
       {
         "u": 14,
@@ -1483,9 +1483,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "gòuchéng",
         "word_start": 261,
         "word_end": 280,
-        "book_page": 66,
-        "pdf_page": 66,
-        "practice_pdf_page": 69
+        "book_page": 61,
+        "pdf_page": 61,
+        "practice_pdf_page": 63
       },
       {
         "u": 15,
@@ -1494,20 +1494,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "guǒshí",
         "word_start": 281,
         "word_end": 300,
-        "book_page": 71,
-        "pdf_page": 71,
-        "practice_pdf_page": 74
+        "book_page": 65,
+        "pdf_page": 65,
+        "practice_pdf_page": 67
       },
       {
         "u": 16,
         "range": "过分—红包",
-        "start_py": "guò//fèn",
+        "start_py": "guòfèn",
         "end_py": "hóngbāo",
         "word_start": 301,
         "word_end": 320,
-        "book_page": 76,
-        "pdf_page": 76,
-        "practice_pdf_page": 78
+        "book_page": 69,
+        "pdf_page": 69,
+        "practice_pdf_page": 71
       },
       {
         "u": 17,
@@ -1516,9 +1516,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "huǒ",
         "word_start": 321,
         "word_end": 340,
-        "book_page": 80,
-        "pdf_page": 80,
-        "practice_pdf_page": 82
+        "book_page": 73,
+        "pdf_page": 73,
+        "practice_pdf_page": 75
       },
       {
         "u": 18,
@@ -1527,9 +1527,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jíhé",
         "word_start": 341,
         "word_end": 360,
-        "book_page": 84,
-        "pdf_page": 84,
-        "practice_pdf_page": 86
+        "book_page": 77,
+        "pdf_page": 77,
+        "practice_pdf_page": 79
       },
       {
         "u": 19,
@@ -1538,9 +1538,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jiǎnshǎo",
         "word_start": 361,
         "word_end": 380,
-        "book_page": 88,
-        "pdf_page": 88,
-        "practice_pdf_page": 90
+        "book_page": 81,
+        "pdf_page": 81,
+        "practice_pdf_page": 83
       },
       {
         "u": 20,
@@ -1549,9 +1549,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jiēdào",
         "word_start": 381,
         "word_end": 400,
-        "book_page": 92,
-        "pdf_page": 92,
-        "practice_pdf_page": 95
+        "book_page": 85,
+        "pdf_page": 85,
+        "practice_pdf_page": 87
       },
       {
         "u": 21,
@@ -1560,9 +1560,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jūmín",
         "word_start": 401,
         "word_end": 420,
-        "book_page": 97,
-        "pdf_page": 97,
-        "practice_pdf_page": 99
+        "book_page": 89,
+        "pdf_page": 89,
+        "practice_pdf_page": 91
       },
       {
         "u": 22,
@@ -1571,9 +1571,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "kōngjiān",
         "word_start": 421,
         "word_end": 440,
-        "book_page": 101,
-        "pdf_page": 101,
-        "practice_pdf_page": 103
+        "book_page": 93,
+        "pdf_page": 93,
+        "practice_pdf_page": 95
       },
       {
         "u": 23,
@@ -1582,9 +1582,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "lǎojiā",
         "word_start": 441,
         "word_end": 460,
-        "book_page": 105,
-        "pdf_page": 105,
-        "practice_pdf_page": 107
+        "book_page": 97,
+        "pdf_page": 97,
+        "practice_pdf_page": 99
       },
       {
         "u": 24,
@@ -1593,9 +1593,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "liáoyǎng",
         "word_start": 461,
         "word_end": 480,
-        "book_page": 109,
-        "pdf_page": 109,
-        "practice_pdf_page": 111
+        "book_page": 101,
+        "pdf_page": 101,
+        "practice_pdf_page": 103
       },
       {
         "u": 25,
@@ -1604,9 +1604,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "luò",
         "word_start": 481,
         "word_end": 500,
-        "book_page": 113,
-        "pdf_page": 113,
-        "practice_pdf_page": 115
+        "book_page": 105,
+        "pdf_page": 105,
+        "practice_pdf_page": 107
       },
       {
         "u": 26,
@@ -1615,9 +1615,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "miáoshù",
         "word_start": 501,
         "word_end": 520,
-        "book_page": 117,
-        "pdf_page": 117,
-        "practice_pdf_page": 119
+        "book_page": 109,
+        "pdf_page": 109,
+        "practice_pdf_page": 111
       },
       {
         "u": 27,
@@ -1626,9 +1626,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "nénggàn",
         "word_start": 521,
         "word_end": 540,
-        "book_page": 121,
-        "pdf_page": 121,
-        "practice_pdf_page": 123
+        "book_page": 113,
+        "pdf_page": 113,
+        "practice_pdf_page": 115
       },
       {
         "u": 28,
@@ -1637,9 +1637,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "píngjìng",
         "word_start": 541,
         "word_end": 560,
-        "book_page": 125,
-        "pdf_page": 125,
-        "practice_pdf_page": 127
+        "book_page": 117,
+        "pdf_page": 117,
+        "practice_pdf_page": 119
       },
       {
         "u": 29,
@@ -1648,9 +1648,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "qiǎokèlì",
         "word_start": 561,
         "word_end": 580,
-        "book_page": 129,
-        "pdf_page": 129,
-        "practice_pdf_page": 131
+        "book_page": 121,
+        "pdf_page": 121,
+        "practice_pdf_page": 123
       },
       {
         "u": 30,
@@ -1659,9 +1659,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "rènao",
         "word_start": 581,
         "word_end": 600,
-        "book_page": 133,
-        "pdf_page": 133,
-        "practice_pdf_page": 135
+        "book_page": 125,
+        "pdf_page": 125,
+        "practice_pdf_page": 127
       },
       {
         "u": 31,
@@ -1670,9 +1670,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shǎng",
         "word_start": 601,
         "word_end": 620,
-        "book_page": 137,
-        "pdf_page": 137,
-        "practice_pdf_page": 139
+        "book_page": 129,
+        "pdf_page": 129,
+        "practice_pdf_page": 131
       },
       {
         "u": 32,
@@ -1681,9 +1681,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shī",
         "word_start": 621,
         "word_end": 640,
-        "book_page": 141,
-        "pdf_page": 141,
-        "practice_pdf_page": 143
+        "book_page": 133,
+        "pdf_page": 133,
+        "practice_pdf_page": 135
       },
       {
         "u": 33,
@@ -1692,9 +1692,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shǒu",
         "word_start": 641,
         "word_end": 660,
-        "book_page": 145,
-        "pdf_page": 145,
-        "practice_pdf_page": 147
+        "book_page": 137,
+        "pdf_page": 137,
+        "practice_pdf_page": 139
       },
       {
         "u": 34,
@@ -1703,9 +1703,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shuōfú",
         "word_start": 661,
         "word_end": 680,
-        "book_page": 149,
-        "pdf_page": 149,
-        "practice_pdf_page": 151
+        "book_page": 141,
+        "pdf_page": 141,
+        "practice_pdf_page": 143
       },
       {
         "u": 35,
@@ -1714,9 +1714,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "tèzhēng",
         "word_start": 681,
         "word_end": 700,
-        "book_page": 153,
-        "pdf_page": 153,
-        "practice_pdf_page": 155
+        "book_page": 145,
+        "pdf_page": 145,
+        "practice_pdf_page": 147
       },
       {
         "u": 36,
@@ -1725,9 +1725,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "tóngqíng",
         "word_start": 701,
         "word_end": 720,
-        "book_page": 157,
-        "pdf_page": 157,
-        "practice_pdf_page": 159
+        "book_page": 149,
+        "pdf_page": 149,
+        "practice_pdf_page": 151
       },
       {
         "u": 37,
@@ -1736,9 +1736,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "wàijiāoguān",
         "word_start": 721,
         "word_end": 740,
-        "book_page": 161,
-        "pdf_page": 161,
-        "practice_pdf_page": 163
+        "book_page": 153,
+        "pdf_page": 153,
+        "practice_pdf_page": 155
       },
       {
         "u": 38,
@@ -1747,9 +1747,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "wèi",
         "word_start": 741,
         "word_end": 760,
-        "book_page": 165,
-        "pdf_page": 165,
-        "practice_pdf_page": 167
+        "book_page": 157,
+        "pdf_page": 157,
+        "practice_pdf_page": 159
       },
       {
         "u": 39,
@@ -1758,9 +1758,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xìliè",
         "word_start": 761,
         "word_end": 780,
-        "book_page": 169,
-        "pdf_page": 169,
-        "practice_pdf_page": 171
+        "book_page": 161,
+        "pdf_page": 161,
+        "practice_pdf_page": 163
       },
       {
         "u": 40,
@@ -1769,9 +1769,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xiāngzi",
         "word_start": 781,
         "word_end": 800,
-        "book_page": 173,
-        "pdf_page": 173,
-        "practice_pdf_page": 175
+        "book_page": 165,
+        "pdf_page": 165,
+        "practice_pdf_page": 167
       },
       {
         "u": 41,
@@ -1780,9 +1780,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xíngshì",
         "word_start": 801,
         "word_end": 820,
-        "book_page": 177,
-        "pdf_page": 177,
-        "practice_pdf_page": 179
+        "book_page": 169,
+        "pdf_page": 169,
+        "practice_pdf_page": 171
       },
       {
         "u": 42,
@@ -1791,9 +1791,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "ya",
         "word_start": 821,
         "word_end": 840,
-        "book_page": 181,
-        "pdf_page": 181,
-        "practice_pdf_page": 183
+        "book_page": 173,
+        "pdf_page": 173,
+        "practice_pdf_page": 175
       },
       {
         "u": 43,
@@ -1802,9 +1802,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yào",
         "word_start": 841,
         "word_end": 860,
-        "book_page": 185,
-        "pdf_page": 185,
-        "practice_pdf_page": 187
+        "book_page": 177,
+        "pdf_page": 177,
+        "practice_pdf_page": 179
       },
       {
         "u": 44,
@@ -1813,9 +1813,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yìlùn",
         "word_start": 861,
         "word_end": 880,
-        "book_page": 189,
-        "pdf_page": 189,
-        "practice_pdf_page": 191
+        "book_page": 181,
+        "pdf_page": 181,
+        "practice_pdf_page": 183
       },
       {
         "u": 45,
@@ -1824,9 +1824,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yòu'éryuán",
         "word_start": 881,
         "word_end": 900,
-        "book_page": 193,
-        "pdf_page": 193,
-        "practice_pdf_page": 195
+        "book_page": 185,
+        "pdf_page": 185,
+        "practice_pdf_page": 187
       },
       {
         "u": 46,
@@ -1835,9 +1835,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yùnqi",
         "word_start": 901,
         "word_end": 920,
-        "book_page": 197,
-        "pdf_page": 197,
-        "practice_pdf_page": 199
+        "book_page": 189,
+        "pdf_page": 189,
+        "practice_pdf_page": 191
       },
       {
         "u": 47,
@@ -1846,9 +1846,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhēn",
         "word_start": 921,
         "word_end": 940,
-        "book_page": 201,
-        "pdf_page": 201,
-        "practice_pdf_page": 203
+        "book_page": 193,
+        "pdf_page": 193,
+        "practice_pdf_page": 195
       },
       {
         "u": 48,
@@ -1857,9 +1857,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhìnéng",
         "word_start": 941,
         "word_end": 960,
-        "book_page": 205,
-        "pdf_page": 205,
-        "practice_pdf_page": 207
+        "book_page": 197,
+        "pdf_page": 197,
+        "practice_pdf_page": 199
       },
       {
         "u": 49,
@@ -1868,20 +1868,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhuǎnyí",
         "word_start": 961,
         "word_end": 980,
-        "book_page": 209,
-        "pdf_page": 209,
-        "practice_pdf_page": 211
+        "book_page": 201,
+        "pdf_page": 201,
+        "practice_pdf_page": 203
       },
       {
         "u": 50,
         "range": "装修—做梦",
         "start_py": "zhuāngxiū",
-        "end_py": "zuò//mèng",
+        "end_py": "zuòmèng",
         "word_start": 981,
         "word_end": 1000,
-        "book_page": 213,
-        "pdf_page": 213,
-        "practice_pdf_page": 215
+        "book_page": 205,
+        "pdf_page": 205,
+        "practice_pdf_page": 207
       }
     ]
   },
@@ -1963,7 +1963,7 @@ const HSK_BOOKS_INDEX = [
       },
       {
         "u": 6,
-        "range": "称—丑",
+        "range": "称2—丑",
         "start_py": "chēng",
         "end_py": "chǒu",
         "word_start": 101,
@@ -1976,12 +1976,12 @@ const HSK_BOOKS_INDEX = [
         "u": 7,
         "range": "臭—辞职",
         "start_py": "chòu",
-        "end_py": "cí//zhí",
+        "end_py": "cízhí",
         "word_start": 121,
         "word_end": 140,
         "book_page": 33,
         "pdf_page": 33,
-        "practice_pdf_page": 36
+        "practice_pdf_page": 35
       },
       {
         "u": 8,
@@ -1990,9 +1990,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "dàdū",
         "word_start": 141,
         "word_end": 160,
-        "book_page": 38,
-        "pdf_page": 38,
-        "practice_pdf_page": 40
+        "book_page": 37,
+        "pdf_page": 37,
+        "practice_pdf_page": 39
       },
       {
         "u": 9,
@@ -2001,9 +2001,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "dàngāo",
         "word_start": 161,
         "word_end": 180,
-        "book_page": 42,
-        "pdf_page": 42,
-        "practice_pdf_page": 44
+        "book_page": 41,
+        "pdf_page": 41,
+        "practice_pdf_page": 43
       },
       {
         "u": 10,
@@ -2012,9 +2012,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "diǎnlǐ",
         "word_start": 181,
         "word_end": 200,
-        "book_page": 46,
-        "pdf_page": 46,
-        "practice_pdf_page": 48
+        "book_page": 45,
+        "pdf_page": 45,
+        "practice_pdf_page": 47
       },
       {
         "u": 11,
@@ -2023,9 +2023,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "duǒ",
         "word_start": 201,
         "word_end": 220,
-        "book_page": 50,
-        "pdf_page": 50,
-        "practice_pdf_page": 53
+        "book_page": 49,
+        "pdf_page": 49,
+        "practice_pdf_page": 51
       },
       {
         "u": 12,
@@ -2034,9 +2034,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "fēnlí",
         "word_start": 221,
         "word_end": 240,
-        "book_page": 55,
-        "pdf_page": 55,
-        "practice_pdf_page": 57
+        "book_page": 53,
+        "pdf_page": 53,
+        "practice_pdf_page": 55
       },
       {
         "u": 13,
@@ -2045,9 +2045,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "gānyù",
         "word_start": 241,
         "word_end": 260,
-        "book_page": 59,
-        "pdf_page": 59,
-        "practice_pdf_page": 61
+        "book_page": 57,
+        "pdf_page": 57,
+        "practice_pdf_page": 59
       },
       {
         "u": 14,
@@ -2056,9 +2056,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "gōngzuòrì",
         "word_start": 261,
         "word_end": 280,
-        "book_page": 63,
-        "pdf_page": 63,
-        "practice_pdf_page": 65
+        "book_page": 61,
+        "pdf_page": 61,
+        "practice_pdf_page": 63
       },
       {
         "u": 15,
@@ -2067,9 +2067,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "guāngxiàn",
         "word_start": 281,
         "word_end": 300,
-        "book_page": 67,
-        "pdf_page": 67,
-        "practice_pdf_page": 69
+        "book_page": 65,
+        "pdf_page": 65,
+        "practice_pdf_page": 67
       },
       {
         "u": 16,
@@ -2078,9 +2078,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "héfàn",
         "word_start": 301,
         "word_end": 320,
-        "book_page": 71,
-        "pdf_page": 71,
-        "practice_pdf_page": 74
+        "book_page": 69,
+        "pdf_page": 69,
+        "practice_pdf_page": 71
       },
       {
         "u": 17,
@@ -2089,9 +2089,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "huíbì",
         "word_start": 321,
         "word_end": 340,
-        "book_page": 76,
-        "pdf_page": 76,
-        "practice_pdf_page": 78
+        "book_page": 73,
+        "pdf_page": 73,
+        "practice_pdf_page": 75
       },
       {
         "u": 18,
@@ -2100,9 +2100,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jítuán",
         "word_start": 341,
         "word_end": 360,
-        "book_page": 80,
-        "pdf_page": 80,
-        "practice_pdf_page": 82
+        "book_page": 77,
+        "pdf_page": 77,
+        "practice_pdf_page": 79
       },
       {
         "u": 19,
@@ -2111,9 +2111,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jiǎn",
         "word_start": 361,
         "word_end": 380,
-        "book_page": 84,
-        "pdf_page": 84,
-        "practice_pdf_page": 87
+        "book_page": 81,
+        "pdf_page": 81,
+        "practice_pdf_page": 83
       },
       {
         "u": 20,
@@ -2122,9 +2122,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jiěfàng",
         "word_start": 381,
         "word_end": 400,
-        "book_page": 89,
-        "pdf_page": 89,
-        "practice_pdf_page": 91
+        "book_page": 85,
+        "pdf_page": 85,
+        "practice_pdf_page": 87
       },
       {
         "u": 21,
@@ -2133,9 +2133,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jùjué",
         "word_start": 401,
         "word_end": 420,
-        "book_page": 93,
-        "pdf_page": 93,
-        "practice_pdf_page": 95
+        "book_page": 89,
+        "pdf_page": 89,
+        "practice_pdf_page": 91
       },
       {
         "u": 22,
@@ -2144,9 +2144,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "kěwàng",
         "word_start": 421,
         "word_end": 440,
-        "book_page": 97,
-        "pdf_page": 97,
-        "practice_pdf_page": 99
+        "book_page": 93,
+        "pdf_page": 93,
+        "practice_pdf_page": 95
       },
       {
         "u": 23,
@@ -2155,9 +2155,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "làngmàn",
         "word_start": 441,
         "word_end": 460,
-        "book_page": 101,
-        "pdf_page": 101,
-        "practice_pdf_page": 104
+        "book_page": 97,
+        "pdf_page": 97,
+        "practice_pdf_page": 99
       },
       {
         "u": 24,
@@ -2166,9 +2166,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "língshēng",
         "word_start": 461,
         "word_end": 480,
-        "book_page": 106,
-        "pdf_page": 106,
-        "practice_pdf_page": 109
+        "book_page": 101,
+        "pdf_page": 101,
+        "practice_pdf_page": 103
       },
       {
         "u": 25,
@@ -2177,9 +2177,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "ménzhěn",
         "word_start": 481,
         "word_end": 500,
-        "book_page": 111,
-        "pdf_page": 111,
-        "practice_pdf_page": 114
+        "book_page": 105,
+        "pdf_page": 105,
+        "practice_pdf_page": 107
       },
       {
         "u": 26,
@@ -2188,9 +2188,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "nánběi",
         "word_start": 501,
         "word_end": 520,
-        "book_page": 116,
-        "pdf_page": 116,
-        "practice_pdf_page": 119
+        "book_page": 109,
+        "pdf_page": 109,
+        "practice_pdf_page": 111
       },
       {
         "u": 27,
@@ -2199,9 +2199,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "páng",
         "word_start": 521,
         "word_end": 540,
-        "book_page": 121,
-        "pdf_page": 121,
-        "practice_pdf_page": 124
+        "book_page": 113,
+        "pdf_page": 113,
+        "practice_pdf_page": 115
       },
       {
         "u": 28,
@@ -2210,9 +2210,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "pǐnzhǒng",
         "word_start": 541,
         "word_end": 560,
-        "book_page": 126,
-        "pdf_page": 126,
-        "practice_pdf_page": 128
+        "book_page": 117,
+        "pdf_page": 117,
+        "practice_pdf_page": 119
       },
       {
         "u": 29,
@@ -2221,20 +2221,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "qiāndìng",
         "word_start": 561,
         "word_end": 580,
-        "book_page": 130,
-        "pdf_page": 130,
-        "practice_pdf_page": 133
+        "book_page": 121,
+        "pdf_page": 121,
+        "practice_pdf_page": 123
       },
       {
         "u": 30,
         "range": "签名—青",
-        "start_py": "qiān//míng",
+        "start_py": "qiānmíng",
         "end_py": "qīng",
         "word_start": 581,
         "word_end": 600,
-        "book_page": 135,
-        "pdf_page": 135,
-        "practice_pdf_page": 137
+        "book_page": 125,
+        "pdf_page": 125,
+        "practice_pdf_page": 127
       },
       {
         "u": 31,
@@ -2243,20 +2243,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "rénlì",
         "word_start": 601,
         "word_end": 620,
-        "book_page": 139,
-        "pdf_page": 139,
-        "practice_pdf_page": 141
+        "book_page": 129,
+        "pdf_page": 129,
+        "practice_pdf_page": 131
       },
       {
         "u": 32,
         "range": "人士—杀毒",
         "start_py": "rénshì",
-        "end_py": "shā//dú",
+        "end_py": "shādú",
         "word_start": 621,
         "word_end": 640,
-        "book_page": 143,
-        "pdf_page": 143,
-        "practice_pdf_page": 145
+        "book_page": 133,
+        "pdf_page": 133,
+        "practice_pdf_page": 135
       },
       {
         "u": 33,
@@ -2265,9 +2265,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shèjī",
         "word_start": 641,
         "word_end": 660,
-        "book_page": 147,
-        "pdf_page": 147,
-        "practice_pdf_page": 150
+        "book_page": 137,
+        "pdf_page": 137,
+        "practice_pdf_page": 139
       },
       {
         "u": 34,
@@ -2276,9 +2276,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shīgē",
         "word_start": 661,
         "word_end": 680,
-        "book_page": 152,
-        "pdf_page": 152,
-        "practice_pdf_page": 154
+        "book_page": 141,
+        "pdf_page": 141,
+        "practice_pdf_page": 143
       },
       {
         "u": 35,
@@ -2287,42 +2287,42 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shòusī",
         "word_start": 681,
         "word_end": 700,
-        "book_page": 156,
-        "pdf_page": 156,
-        "practice_pdf_page": 158
+        "book_page": 145,
+        "pdf_page": 145,
+        "practice_pdf_page": 147
       },
       {
         "u": 36,
         "range": "受灾—睡眠",
-        "start_py": "shòu//zāi",
+        "start_py": "shòuzāi",
         "end_py": "shuìmián",
         "word_start": 701,
         "word_end": 720,
-        "book_page": 160,
-        "pdf_page": 160,
-        "practice_pdf_page": 162
+        "book_page": 149,
+        "pdf_page": 149,
+        "practice_pdf_page": 151
       },
       {
         "u": 37,
         "range": "说法—抬",
-        "start_py": "shuō·fǎ",
+        "start_py": "shuōfǎ",
         "end_py": "tái",
         "word_start": 721,
         "word_end": 740,
-        "book_page": 164,
-        "pdf_page": 164,
-        "practice_pdf_page": 166
+        "book_page": 153,
+        "pdf_page": 153,
+        "practice_pdf_page": 155
       },
       {
         "u": 38,
         "range": "抬头—天才",
-        "start_py": "tái//tóu",
+        "start_py": "táitóu",
         "end_py": "tiāncái",
         "word_start": 741,
         "word_end": 760,
-        "book_page": 168,
-        "pdf_page": 168,
-        "practice_pdf_page": 170
+        "book_page": 157,
+        "pdf_page": 157,
+        "practice_pdf_page": 159
       },
       {
         "u": 39,
@@ -2331,9 +2331,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "wēibó",
         "word_start": 761,
         "word_end": 780,
-        "book_page": 172,
-        "pdf_page": 172,
-        "practice_pdf_page": 174
+        "book_page": 161,
+        "pdf_page": 161,
+        "practice_pdf_page": 163
       },
       {
         "u": 40,
@@ -2342,9 +2342,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "wū",
         "word_start": 781,
         "word_end": 800,
-        "book_page": 176,
-        "pdf_page": 176,
-        "practice_pdf_page": 178
+        "book_page": 165,
+        "pdf_page": 165,
+        "practice_pdf_page": 167
       },
       {
         "u": 41,
@@ -2353,9 +2353,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xiànzhuàng",
         "word_start": 801,
         "word_end": 820,
-        "book_page": 180,
-        "pdf_page": 180,
-        "practice_pdf_page": 183
+        "book_page": 169,
+        "pdf_page": 169,
+        "practice_pdf_page": 171
       },
       {
         "u": 42,
@@ -2364,9 +2364,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xiǎotōur",
         "word_start": 821,
         "word_end": 840,
-        "book_page": 185,
-        "pdf_page": 185,
-        "practice_pdf_page": 187
+        "book_page": 173,
+        "pdf_page": 173,
+        "practice_pdf_page": 175
       },
       {
         "u": 43,
@@ -2375,9 +2375,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xūxīn",
         "word_start": 841,
         "word_end": 860,
-        "book_page": 189,
-        "pdf_page": 189,
-        "practice_pdf_page": 191
+        "book_page": 177,
+        "pdf_page": 177,
+        "practice_pdf_page": 179
       },
       {
         "u": 44,
@@ -2386,31 +2386,31 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yěhǎo",
         "word_start": 861,
         "word_end": 880,
-        "book_page": 193,
-        "pdf_page": 193,
-        "practice_pdf_page": 195
+        "book_page": 181,
+        "pdf_page": 181,
+        "practice_pdf_page": 183
       },
       {
         "u": 45,
         "range": "业务—一身",
         "start_py": "yèwù",
-        "end_py": "yìshēn",
+        "end_py": "yīshēn",
         "word_start": 881,
         "word_end": 900,
-        "book_page": 197,
-        "pdf_page": 197,
-        "practice_pdf_page": 200
+        "book_page": 185,
+        "pdf_page": 185,
+        "practice_pdf_page": 187
       },
       {
         "u": 46,
         "range": "意识—尤其",
-        "start_py": "yì·shí",
+        "start_py": "yìshí",
         "end_py": "yóuqí",
         "word_start": 901,
         "word_end": 920,
-        "book_page": 202,
-        "pdf_page": 202,
-        "practice_pdf_page": 204
+        "book_page": 189,
+        "pdf_page": 189,
+        "practice_pdf_page": 191
       },
       {
         "u": 47,
@@ -2419,9 +2419,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yuányǒu",
         "word_start": 921,
         "word_end": 940,
-        "book_page": 206,
-        "pdf_page": 206,
-        "practice_pdf_page": 208
+        "book_page": 193,
+        "pdf_page": 193,
+        "practice_pdf_page": 195
       },
       {
         "u": 48,
@@ -2430,20 +2430,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zāo",
         "word_start": 941,
         "word_end": 960,
-        "book_page": 210,
-        "pdf_page": 210,
-        "practice_pdf_page": 212
+        "book_page": 197,
+        "pdf_page": 197,
+        "practice_pdf_page": 199
       },
       {
         "u": 49,
         "range": "糟糕—招手",
         "start_py": "zāogāo",
-        "end_py": "zhāo//shǒu",
+        "end_py": "zhāoshǒu",
         "word_start": 961,
         "word_end": 980,
-        "book_page": 214,
-        "pdf_page": 214,
-        "practice_pdf_page": 216
+        "book_page": 201,
+        "pdf_page": 201,
+        "practice_pdf_page": 203
       },
       {
         "u": 50,
@@ -2452,9 +2452,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhīwài",
         "word_start": 981,
         "word_end": 1000,
-        "book_page": 218,
-        "pdf_page": 218,
-        "practice_pdf_page": 220
+        "book_page": 205,
+        "pdf_page": 205,
+        "practice_pdf_page": 207
       },
       {
         "u": 51,
@@ -2463,20 +2463,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhì'ān",
         "word_start": 1001,
         "word_end": 1020,
-        "book_page": 222,
-        "pdf_page": 222,
-        "practice_pdf_page": 224
+        "book_page": 209,
+        "pdf_page": 209,
+        "practice_pdf_page": 211
       },
       {
         "u": 52,
         "range": "治理—注册",
         "start_py": "zhìlǐ",
-        "end_py": "zhù//cè",
+        "end_py": "zhùcè",
         "word_start": 1021,
         "word_end": 1040,
-        "book_page": 226,
-        "pdf_page": 226,
-        "practice_pdf_page": 229
+        "book_page": 213,
+        "pdf_page": 213,
+        "practice_pdf_page": 215
       },
       {
         "u": 53,
@@ -2485,9 +2485,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zìshā",
         "word_start": 1041,
         "word_end": 1060,
-        "book_page": 231,
-        "pdf_page": 231,
-        "practice_pdf_page": 233
+        "book_page": 217,
+        "pdf_page": 217,
+        "practice_pdf_page": 219
       },
       {
         "u": 54,
@@ -2496,9 +2496,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zūnshǒu",
         "word_start": 1061,
         "word_end": 1071,
-        "book_page": 235,
-        "pdf_page": 235,
-        "practice_pdf_page": 236
+        "book_page": 221,
+        "pdf_page": 221,
+        "practice_pdf_page": 223
       }
     ]
   },
@@ -2549,7 +2549,7 @@ const HSK_BOOKS_INDEX = [
         "u": 3,
         "range": "边缘—不再",
         "start_py": "biānyuán",
-        "end_py": "búzài",
+        "end_py": "bùzài",
         "word_start": 41,
         "word_end": 60,
         "book_page": 17,
@@ -2559,7 +2559,7 @@ const HSK_BOOKS_INDEX = [
       {
         "u": 4,
         "range": "不至于—餐",
-        "start_py": "búzhìyú",
+        "start_py": "bùzhìyú",
         "end_py": "cān",
         "word_start": 61,
         "word_end": 80,
@@ -2570,7 +2570,7 @@ const HSK_BOOKS_INDEX = [
       {
         "u": 5,
         "range": "残疾—长短",
-        "start_py": "cán·jí",
+        "start_py": "cánjí",
         "end_py": "chángduǎn",
         "word_start": 81,
         "word_end": 100,
@@ -2587,7 +2587,7 @@ const HSK_BOOKS_INDEX = [
         "word_end": 120,
         "book_page": 29,
         "pdf_page": 29,
-        "practice_pdf_page": 32
+        "practice_pdf_page": 31
       },
       {
         "u": 7,
@@ -2596,20 +2596,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "chūlù",
         "word_start": 121,
         "word_end": 140,
-        "book_page": 34,
-        "pdf_page": 34,
-        "practice_pdf_page": 37
+        "book_page": 33,
+        "pdf_page": 33,
+        "practice_pdf_page": 35
       },
       {
         "u": 8,
         "range": "出面—串",
-        "start_py": "chū//miàn",
+        "start_py": "chūmiàn",
         "end_py": "chuàn",
         "word_start": 141,
         "word_end": 160,
-        "book_page": 39,
-        "pdf_page": 39,
-        "practice_pdf_page": 42
+        "book_page": 37,
+        "pdf_page": 37,
+        "practice_pdf_page": 39
       },
       {
         "u": 9,
@@ -2618,9 +2618,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "dǎduàn",
         "word_start": 161,
         "word_end": 180,
-        "book_page": 44,
-        "pdf_page": 44,
-        "practice_pdf_page": 46
+        "book_page": 41,
+        "pdf_page": 41,
+        "practice_pdf_page": 43
       },
       {
         "u": 10,
@@ -2629,9 +2629,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "dàngchéng",
         "word_start": 181,
         "word_end": 200,
-        "book_page": 48,
-        "pdf_page": 48,
-        "practice_pdf_page": 50
+        "book_page": 45,
+        "pdf_page": 45,
+        "practice_pdf_page": 47
       },
       {
         "u": 11,
@@ -2640,9 +2640,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "diànlì",
         "word_start": 201,
         "word_end": 220,
-        "book_page": 52,
-        "pdf_page": 52,
-        "practice_pdf_page": 54
+        "book_page": 49,
+        "pdf_page": 49,
+        "practice_pdf_page": 51
       },
       {
         "u": 12,
@@ -2651,9 +2651,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "duìwài",
         "word_start": 221,
         "word_end": 240,
-        "book_page": 56,
-        "pdf_page": 56,
-        "practice_pdf_page": 59
+        "book_page": 53,
+        "pdf_page": 53,
+        "practice_pdf_page": 55
       },
       {
         "u": 13,
@@ -2662,9 +2662,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "fánshì",
         "word_start": 241,
         "word_end": 260,
-        "book_page": 61,
-        "pdf_page": 61,
-        "practice_pdf_page": 63
+        "book_page": 57,
+        "pdf_page": 57,
+        "practice_pdf_page": 59
       },
       {
         "u": 14,
@@ -2673,20 +2673,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "fèngxiàn",
         "word_start": 261,
         "word_end": 280,
-        "book_page": 65,
-        "pdf_page": 65,
-        "practice_pdf_page": 67
+        "book_page": 61,
+        "pdf_page": 61,
+        "practice_pdf_page": 63
       },
       {
         "u": 15,
         "range": "佛—赶上",
         "start_py": "fó",
-        "end_py": "gǎn//·shàng",
+        "end_py": "gǎnshàng",
         "word_start": 281,
         "word_end": 300,
-        "book_page": 69,
-        "pdf_page": 69,
-        "practice_pdf_page": 71
+        "book_page": 65,
+        "pdf_page": 65,
+        "practice_pdf_page": 67
       },
       {
         "u": 16,
@@ -2695,9 +2695,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "gōng",
         "word_start": 301,
         "word_end": 320,
-        "book_page": 73,
-        "pdf_page": 73,
-        "practice_pdf_page": 76
+        "book_page": 69,
+        "pdf_page": 69,
+        "practice_pdf_page": 71
       },
       {
         "u": 17,
@@ -2706,9 +2706,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "guā",
         "word_start": 321,
         "word_end": 340,
-        "book_page": 78,
-        "pdf_page": 78,
-        "practice_pdf_page": 81
+        "book_page": 73,
+        "pdf_page": 73,
+        "practice_pdf_page": 75
       },
       {
         "u": 18,
@@ -2717,9 +2717,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "guòshí",
         "word_start": 341,
         "word_end": 360,
-        "book_page": 83,
-        "pdf_page": 83,
-        "practice_pdf_page": 85
+        "book_page": 77,
+        "pdf_page": 77,
+        "practice_pdf_page": 79
       },
       {
         "u": 19,
@@ -2728,9 +2728,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "hóngdà",
         "word_start": 361,
         "word_end": 380,
-        "book_page": 87,
-        "pdf_page": 87,
-        "practice_pdf_page": 89
+        "book_page": 81,
+        "pdf_page": 81,
+        "practice_pdf_page": 83
       },
       {
         "u": 20,
@@ -2739,9 +2739,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "hùn",
         "word_start": 381,
         "word_end": 400,
-        "book_page": 91,
-        "pdf_page": 91,
-        "practice_pdf_page": 94
+        "book_page": 85,
+        "pdf_page": 85,
+        "practice_pdf_page": 87
       },
       {
         "u": 21,
@@ -2750,9 +2750,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jiābīn",
         "word_start": 401,
         "word_end": 420,
-        "book_page": 96,
-        "pdf_page": 96,
-        "practice_pdf_page": 99
+        "book_page": 89,
+        "pdf_page": 89,
+        "practice_pdf_page": 91
       },
       {
         "u": 22,
@@ -2761,9 +2761,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jiēshōu",
         "word_start": 421,
         "word_end": 440,
-        "book_page": 101,
-        "pdf_page": 101,
-        "practice_pdf_page": 104
+        "book_page": 93,
+        "pdf_page": 93,
+        "practice_pdf_page": 95
       },
       {
         "u": 23,
@@ -2772,9 +2772,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jìnrì",
         "word_start": 441,
         "word_end": 460,
-        "book_page": 106,
-        "pdf_page": 106,
-        "practice_pdf_page": 109
+        "book_page": 97,
+        "pdf_page": 97,
+        "practice_pdf_page": 99
       },
       {
         "u": 24,
@@ -2783,9 +2783,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jù",
         "word_start": 461,
         "word_end": 480,
-        "book_page": 111,
-        "pdf_page": 111,
-        "practice_pdf_page": 114
+        "book_page": 101,
+        "pdf_page": 101,
+        "practice_pdf_page": 103
       },
       {
         "u": 25,
@@ -2794,9 +2794,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "kānguǎn",
         "word_start": 481,
         "word_end": 500,
-        "book_page": 116,
-        "pdf_page": 116,
-        "practice_pdf_page": 119
+        "book_page": 105,
+        "pdf_page": 105,
+        "practice_pdf_page": 107
       },
       {
         "u": 26,
@@ -2805,9 +2805,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "kuò",
         "word_start": 501,
         "word_end": 520,
-        "book_page": 121,
-        "pdf_page": 121,
-        "practice_pdf_page": 123
+        "book_page": 109,
+        "pdf_page": 109,
+        "practice_pdf_page": 111
       },
       {
         "u": 27,
@@ -2816,9 +2816,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "liánshǒu",
         "word_start": 521,
         "word_end": 540,
-        "book_page": 125,
-        "pdf_page": 125,
-        "practice_pdf_page": 128
+        "book_page": 113,
+        "pdf_page": 113,
+        "practice_pdf_page": 115
       },
       {
         "u": 28,
@@ -2827,9 +2827,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "lùyīnjī",
         "word_start": 541,
         "word_end": 560,
-        "book_page": 130,
-        "pdf_page": 130,
-        "practice_pdf_page": 133
+        "book_page": 117,
+        "pdf_page": 117,
+        "practice_pdf_page": 119
       },
       {
         "u": 29,
@@ -2838,9 +2838,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "miào",
         "word_start": 561,
         "word_end": 580,
-        "book_page": 135,
-        "pdf_page": 135,
-        "practice_pdf_page": 137
+        "book_page": 121,
+        "pdf_page": 121,
+        "practice_pdf_page": 123
       },
       {
         "u": 30,
@@ -2849,9 +2849,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "mǔzǐ",
         "word_start": 581,
         "word_end": 600,
-        "book_page": 139,
-        "pdf_page": 139,
-        "practice_pdf_page": 142
+        "book_page": 125,
+        "pdf_page": 125,
+        "practice_pdf_page": 127
       },
       {
         "u": 31,
@@ -2860,20 +2860,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "píqiú",
         "word_start": 601,
         "word_end": 620,
-        "book_page": 144,
-        "pdf_page": 144,
-        "practice_pdf_page": 146
+        "book_page": 129,
+        "pdf_page": 129,
+        "practice_pdf_page": 131
       },
       {
         "u": 32,
         "range": "偏—气氛",
         "start_py": "piān",
-        "end_py": "qì·fēn",
+        "end_py": "qìfēn",
         "word_start": 621,
         "word_end": 640,
-        "book_page": 148,
-        "pdf_page": 148,
-        "practice_pdf_page": 150
+        "book_page": 133,
+        "pdf_page": 133,
+        "practice_pdf_page": 135
       },
       {
         "u": 33,
@@ -2882,9 +2882,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "qīnyǎn",
         "word_start": 641,
         "word_end": 660,
-        "book_page": 152,
-        "pdf_page": 152,
-        "practice_pdf_page": 154
+        "book_page": 137,
+        "pdf_page": 137,
+        "practice_pdf_page": 139
       },
       {
         "u": 34,
@@ -2893,9 +2893,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "quánxīn",
         "word_start": 661,
         "word_end": 680,
-        "book_page": 156,
-        "pdf_page": 156,
-        "practice_pdf_page": 159
+        "book_page": 141,
+        "pdf_page": 141,
+        "practice_pdf_page": 143
       },
       {
         "u": 35,
@@ -2904,9 +2904,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "ruò",
         "word_start": 681,
         "word_end": 700,
-        "book_page": 161,
-        "pdf_page": 161,
-        "practice_pdf_page": 164
+        "book_page": 145,
+        "pdf_page": 145,
+        "practice_pdf_page": 147
       },
       {
         "u": 36,
@@ -2915,9 +2915,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shétou",
         "word_start": 701,
         "word_end": 720,
-        "book_page": 166,
-        "pdf_page": 166,
-        "practice_pdf_page": 168
+        "book_page": 149,
+        "pdf_page": 149,
+        "practice_pdf_page": 151
       },
       {
         "u": 37,
@@ -2926,20 +2926,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shí",
         "word_start": 721,
         "word_end": 740,
-        "book_page": 170,
-        "pdf_page": 170,
-        "practice_pdf_page": 172
+        "book_page": 153,
+        "pdf_page": 153,
+        "practice_pdf_page": 155
       },
       {
         "u": 38,
         "range": "识字—双打",
-        "start_py": "shí//zì",
+        "start_py": "shízì",
         "end_py": "shuāngdǎ",
         "word_start": 741,
         "word_end": 760,
-        "book_page": 174,
-        "pdf_page": 174,
-        "practice_pdf_page": 177
+        "book_page": 157,
+        "pdf_page": 157,
+        "practice_pdf_page": 159
       },
       {
         "u": 39,
@@ -2948,9 +2948,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "tǎ",
         "word_start": 761,
         "word_end": 780,
-        "book_page": 179,
-        "pdf_page": 179,
-        "practice_pdf_page": 182
+        "book_page": 161,
+        "pdf_page": 161,
+        "practice_pdf_page": 163
       },
       {
         "u": 40,
@@ -2959,9 +2959,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "tiānxià",
         "word_start": 781,
         "word_end": 800,
-        "book_page": 184,
-        "pdf_page": 184,
-        "practice_pdf_page": 186
+        "book_page": 165,
+        "pdf_page": 165,
+        "practice_pdf_page": 167
       },
       {
         "u": 41,
@@ -2970,9 +2970,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "tòulù",
         "word_start": 801,
         "word_end": 820,
-        "book_page": 188,
-        "pdf_page": 188,
-        "practice_pdf_page": 191
+        "book_page": 169,
+        "pdf_page": 169,
+        "practice_pdf_page": 171
       },
       {
         "u": 42,
@@ -2981,9 +2981,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "wàilái",
         "word_start": 821,
         "word_end": 840,
-        "book_page": 193,
-        "pdf_page": 193,
-        "practice_pdf_page": 195
+        "book_page": 173,
+        "pdf_page": 173,
+        "practice_pdf_page": 175
       },
       {
         "u": 43,
@@ -2992,9 +2992,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "wèihé",
         "word_start": 841,
         "word_end": 860,
-        "book_page": 197,
-        "pdf_page": 197,
-        "practice_pdf_page": 199
+        "book_page": 177,
+        "pdf_page": 177,
+        "practice_pdf_page": 179
       },
       {
         "u": 44,
@@ -3003,9 +3003,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xiǎn",
         "word_start": 861,
         "word_end": 880,
-        "book_page": 201,
-        "pdf_page": 201,
-        "practice_pdf_page": 203
+        "book_page": 181,
+        "pdf_page": 181,
+        "practice_pdf_page": 183
       },
       {
         "u": 45,
@@ -3014,9 +3014,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xīnlíng",
         "word_start": 881,
         "word_end": 900,
-        "book_page": 205,
-        "pdf_page": 205,
-        "practice_pdf_page": 208
+        "book_page": 185,
+        "pdf_page": 185,
+        "practice_pdf_page": 187
       },
       {
         "u": 46,
@@ -3025,9 +3025,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xuéhuì",
         "word_start": 901,
         "word_end": 920,
-        "book_page": 210,
-        "pdf_page": 210,
-        "practice_pdf_page": 212
+        "book_page": 189,
+        "pdf_page": 189,
+        "practice_pdf_page": 191
       },
       {
         "u": 47,
@@ -3036,31 +3036,31 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yàobùrán",
         "word_start": 921,
         "word_end": 940,
-        "book_page": 214,
-        "pdf_page": 214,
-        "practice_pdf_page": 216
+        "book_page": 193,
+        "pdf_page": 193,
+        "practice_pdf_page": 195
       },
       {
         "u": 48,
         "range": "要好—一时",
         "start_py": "yàohǎo",
-        "end_py": "yìshí",
+        "end_py": "yīshí",
         "word_start": 941,
         "word_end": 960,
-        "book_page": 218,
-        "pdf_page": 218,
-        "practice_pdf_page": 221
+        "book_page": 197,
+        "pdf_page": 197,
+        "practice_pdf_page": 199
       },
       {
         "u": 49,
         "range": "一同—影星",
-        "start_py": "yìtóng",
+        "start_py": "yītóng",
         "end_py": "yǐngxīng",
         "word_start": 961,
         "word_end": 980,
-        "book_page": 223,
-        "pdf_page": 223,
-        "practice_pdf_page": 226
+        "book_page": 201,
+        "pdf_page": 201,
+        "practice_pdf_page": 203
       },
       {
         "u": 50,
@@ -3069,20 +3069,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yǔhángyuán",
         "word_start": 981,
         "word_end": 1000,
-        "book_page": 228,
-        "pdf_page": 228,
-        "practice_pdf_page": 230
+        "book_page": 205,
+        "pdf_page": 205,
+        "practice_pdf_page": 207
       },
       {
         "u": 51,
         "range": "雨衣—晕车",
         "start_py": "yǔyī",
-        "end_py": "yùn//chē",
+        "end_py": "yùnchē",
         "word_start": 1001,
         "word_end": 1020,
-        "book_page": 232,
-        "pdf_page": 232,
-        "practice_pdf_page": 234
+        "book_page": 209,
+        "pdf_page": 209,
+        "practice_pdf_page": 211
       },
       {
         "u": 52,
@@ -3091,9 +3091,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhànyǒu",
         "word_start": 1021,
         "word_end": 1040,
-        "book_page": 236,
-        "pdf_page": 236,
-        "practice_pdf_page": 239
+        "book_page": 213,
+        "pdf_page": 213,
+        "practice_pdf_page": 215
       },
       {
         "u": 53,
@@ -3102,9 +3102,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhèngcè",
         "word_start": 1041,
         "word_end": 1060,
-        "book_page": 241,
-        "pdf_page": 241,
-        "practice_pdf_page": 244
+        "book_page": 217,
+        "pdf_page": 217,
+        "practice_pdf_page": 219
       },
       {
         "u": 54,
@@ -3113,9 +3113,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhìyú",
         "word_start": 1061,
         "word_end": 1080,
-        "book_page": 246,
-        "pdf_page": 246,
-        "practice_pdf_page": 249
+        "book_page": 221,
+        "pdf_page": 221,
+        "practice_pdf_page": 223
       },
       {
         "u": 55,
@@ -3124,9 +3124,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhùzi",
         "word_start": 1081,
         "word_end": 1100,
-        "book_page": 251,
-        "pdf_page": 251,
-        "practice_pdf_page": 253
+        "book_page": 225,
+        "pdf_page": 225,
+        "practice_pdf_page": 227
       },
       {
         "u": 56,
@@ -3135,9 +3135,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zǒngjīnglǐ",
         "word_start": 1101,
         "word_end": 1120,
-        "book_page": 255,
-        "pdf_page": 255,
-        "practice_pdf_page": 257
+        "book_page": 229,
+        "pdf_page": 229,
+        "practice_pdf_page": 231
       },
       {
         "u": 57,
@@ -3146,9 +3146,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zuòtánhuì",
         "word_start": 1121,
         "word_end": 1140,
-        "book_page": 259,
-        "pdf_page": 259,
-        "practice_pdf_page": 261
+        "book_page": 233,
+        "pdf_page": 233,
+        "practice_pdf_page": 235
       }
     ]
   },
@@ -3157,7 +3157,7 @@ const HSK_BOOKS_INDEX = [
     "level": 7,
     "badge": "CẤP 7–9 (THƯỢNG)",
     "title": "Quyển 7–9 Thượng (七—九级 · 上册)",
-    "subtitle": "Bài 1 – Bài 47 (Từ 1 – 2839) · Bản gốc Song ngữ Trung–Anh (BLCUP)",
+    "subtitle": "Bài 1 – Bài 47 (Từ 1 – 2820) · Bản gốc Song ngữ Trung–Anh (BLCUP)",
     "translator": "Quách Thự Hạo chủ biên (Beijing Language & Culture University Press)",
     "lang": "Bản Trung – Anh (Trang đôi)",
     "color": "#8b5cf6",
@@ -3177,12 +3177,12 @@ const HSK_BOOKS_INDEX = [
         "u": 1,
         "range": "阿拉伯语—拜年",
         "start_py": "Ālābóyǔ",
-        "end_py": "bài//nián",
+        "end_py": "bàinián",
         "word_start": 1,
         "word_end": 60,
-        "book_page": 1,
-        "pdf_page": 10,
-        "practice_pdf_page": 12
+        "book_page": 9,
+        "pdf_page": 9,
+        "practice_pdf_page": 11
       },
       {
         "u": 2,
@@ -3191,7 +3191,7 @@ const HSK_BOOKS_INDEX = [
         "end_py": "bàolì",
         "word_start": 61,
         "word_end": 120,
-        "book_page": 6,
+        "book_page": 13,
         "pdf_page": 13,
         "practice_pdf_page": 15
       },
@@ -3202,9 +3202,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "biānxiě",
         "word_start": 121,
         "word_end": 180,
-        "book_page": 12,
-        "pdf_page": 16,
-        "practice_pdf_page": 18
+        "book_page": 17,
+        "pdf_page": 17,
+        "practice_pdf_page": 19
       },
       {
         "u": 4,
@@ -3213,9 +3213,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "bōlán",
         "word_start": 181,
         "word_end": 240,
-        "book_page": 18,
-        "pdf_page": 19,
-        "practice_pdf_page": 21
+        "book_page": 21,
+        "pdf_page": 21,
+        "practice_pdf_page": 23
       },
       {
         "u": 5,
@@ -3224,9 +3224,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "bù yǔ",
         "word_start": 241,
         "word_end": 300,
-        "book_page": 24,
-        "pdf_page": 22,
-        "practice_pdf_page": 24
+        "book_page": 25,
+        "pdf_page": 25,
+        "practice_pdf_page": 27
       },
       {
         "u": 6,
@@ -3235,9 +3235,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "cèng",
         "word_start": 301,
         "word_end": 360,
-        "book_page": 31,
-        "pdf_page": 25,
-        "practice_pdf_page": 27
+        "book_page": 29,
+        "pdf_page": 29,
+        "practice_pdf_page": 31
       },
       {
         "u": 7,
@@ -3246,9 +3246,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "chēwèi",
         "word_start": 361,
         "word_end": 420,
-        "book_page": 37,
-        "pdf_page": 28,
-        "practice_pdf_page": 30
+        "book_page": 33,
+        "pdf_page": 33,
+        "practice_pdf_page": 35
       },
       {
         "u": 8,
@@ -3257,9 +3257,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "chímíng",
         "word_start": 421,
         "word_end": 480,
-        "book_page": 42,
-        "pdf_page": 31,
-        "practice_pdf_page": 33
+        "book_page": 37,
+        "pdf_page": 37,
+        "practice_pdf_page": 39
       },
       {
         "u": 9,
@@ -3268,31 +3268,31 @@ const HSK_BOOKS_INDEX = [
         "end_py": "chūmài",
         "word_start": 481,
         "word_end": 540,
-        "book_page": 48,
-        "pdf_page": 34,
-        "practice_pdf_page": 35
+        "book_page": 41,
+        "pdf_page": 41,
+        "practice_pdf_page": 43
       },
       {
         "u": 10,
         "range": "出毛病—创始人",
-        "start_py": "chū máo·bìng",
+        "start_py": "chū máobìng",
         "end_py": "chuàngshǐrén",
         "word_start": 541,
         "word_end": 600,
-        "book_page": 53,
-        "pdf_page": 36,
-        "practice_pdf_page": 38
+        "book_page": 45,
+        "pdf_page": 45,
+        "practice_pdf_page": 47
       },
       {
         "u": 11,
-        "range": "吹牛—摧毁",
+        "range": "吹了—摧毁",
         "start_py": "chuī le",
         "end_py": "cuīhuǐ",
         "word_start": 601,
         "word_end": 660,
-        "book_page": 59,
-        "pdf_page": 39,
-        "practice_pdf_page": 41
+        "book_page": 49,
+        "pdf_page": 49,
+        "practice_pdf_page": 51
       },
       {
         "u": 12,
@@ -3301,9 +3301,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "dàyi",
         "word_start": 661,
         "word_end": 720,
-        "book_page": 65,
-        "pdf_page": 42,
-        "practice_pdf_page": 44
+        "book_page": 53,
+        "pdf_page": 53,
+        "practice_pdf_page": 55
       },
       {
         "u": 13,
@@ -3312,20 +3312,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "dàotóulái",
         "word_start": 721,
         "word_end": 780,
-        "book_page": 71,
-        "pdf_page": 45,
-        "practice_pdf_page": 47
+        "book_page": 57,
+        "pdf_page": 57,
+        "practice_pdf_page": 59
       },
       {
         "u": 14,
         "range": "到位—帝国",
-        "start_py": "dào//wèi",
+        "start_py": "dàowèi",
         "end_py": "dìguó",
         "word_start": 781,
         "word_end": 840,
-        "book_page": 76,
-        "pdf_page": 48,
-        "practice_pdf_page": 49
+        "book_page": 61,
+        "pdf_page": 61,
+        "practice_pdf_page": 63
       },
       {
         "u": 15,
@@ -3334,9 +3334,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "dìngzuò",
         "word_start": 841,
         "word_end": 900,
-        "book_page": 81,
-        "pdf_page": 50,
-        "practice_pdf_page": 52
+        "book_page": 65,
+        "pdf_page": 65,
+        "practice_pdf_page": 67
       },
       {
         "u": 16,
@@ -3345,31 +3345,31 @@ const HSK_BOOKS_INDEX = [
         "end_py": "duìbái",
         "word_start": 901,
         "word_end": 960,
-        "book_page": 86,
-        "pdf_page": 53,
-        "practice_pdf_page": 55
+        "book_page": 69,
+        "pdf_page": 69,
+        "practice_pdf_page": 71
       },
       {
         "u": 17,
         "range": "对策—发火",
         "start_py": "duìcè",
-        "end_py": "fā//huǒ",
+        "end_py": "fāhuǒ",
         "word_start": 961,
         "word_end": 1020,
-        "book_page": 92,
-        "pdf_page": 56,
-        "practice_pdf_page": 58
+        "book_page": 73,
+        "pdf_page": 73,
+        "practice_pdf_page": 75
       },
       {
         "u": 18,
         "range": "发酵—房地产",
-        "start_py": "fā//jiào",
+        "start_py": "fājiào",
         "end_py": "fángdìchǎn",
         "word_start": 1021,
         "word_end": 1080,
-        "book_page": 98,
-        "pdf_page": 59,
-        "practice_pdf_page": 61
+        "book_page": 77,
+        "pdf_page": 77,
+        "practice_pdf_page": 79
       },
       {
         "u": 19,
@@ -3378,9 +3378,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "fèn",
         "word_start": 1081,
         "word_end": 1140,
-        "book_page": 104,
-        "pdf_page": 62,
-        "practice_pdf_page": 63
+        "book_page": 81,
+        "pdf_page": 81,
+        "practice_pdf_page": 83
       },
       {
         "u": 20,
@@ -3389,9 +3389,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "fǔdǎo",
         "word_start": 1141,
         "word_end": 1200,
-        "book_page": 109,
-        "pdf_page": 64,
-        "practice_pdf_page": 66
+        "book_page": 85,
+        "pdf_page": 85,
+        "practice_pdf_page": 87
       },
       {
         "u": 21,
@@ -3400,9 +3400,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "gǎnjī",
         "word_start": 1201,
         "word_end": 1260,
-        "book_page": 115,
-        "pdf_page": 67,
-        "practice_pdf_page": 69
+        "book_page": 89,
+        "pdf_page": 89,
+        "practice_pdf_page": 91
       },
       {
         "u": 22,
@@ -3411,9 +3411,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "gè'àn",
         "word_start": 1261,
         "word_end": 1320,
-        "book_page": 120,
-        "pdf_page": 70,
-        "practice_pdf_page": 71
+        "book_page": 93,
+        "pdf_page": 93,
+        "practice_pdf_page": 95
       },
       {
         "u": 23,
@@ -3422,9 +3422,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "gōngnuǎn",
         "word_start": 1321,
         "word_end": 1380,
-        "book_page": 125,
-        "pdf_page": 72,
-        "practice_pdf_page": 74
+        "book_page": 97,
+        "pdf_page": 97,
+        "practice_pdf_page": 99
       },
       {
         "u": 24,
@@ -3433,42 +3433,42 @@ const HSK_BOOKS_INDEX = [
         "end_py": "guàniàn",
         "word_start": 1381,
         "word_end": 1440,
-        "book_page": 131,
-        "pdf_page": 75,
-        "practice_pdf_page": 77
+        "book_page": 101,
+        "pdf_page": 101,
+        "practice_pdf_page": 103
       },
       {
         "u": 25,
         "range": "挂失—规格",
-        "start_py": "guà//shī",
+        "start_py": "guàshī",
         "end_py": "guīgé",
         "word_start": 1441,
         "word_end": 1500,
-        "book_page": 137,
-        "pdf_page": 78,
-        "practice_pdf_page": 80
+        "book_page": 105,
+        "pdf_page": 105,
+        "practice_pdf_page": 107
       },
       {
         "u": 26,
         "range": "规矩—害臊",
         "start_py": "guīju",
-        "end_py": "hài//sào",
+        "end_py": "hàisào",
         "word_start": 1501,
         "word_end": 1560,
-        "book_page": 142,
-        "pdf_page": 81,
-        "practice_pdf_page": 82
+        "book_page": 109,
+        "pdf_page": 109,
+        "practice_pdf_page": 111
       },
       {
         "u": 27,
         "range": "害羞—何时",
-        "start_py": "hài//xiū",
+        "start_py": "hàixiū",
         "end_py": "hé shí",
         "word_start": 1561,
         "word_end": 1620,
-        "book_page": 147,
-        "pdf_page": 83,
-        "practice_pdf_page": 85
+        "book_page": 113,
+        "pdf_page": 113,
+        "practice_pdf_page": 115
       },
       {
         "u": 28,
@@ -3477,9 +3477,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "hòuqī",
         "word_start": 1621,
         "word_end": 1680,
-        "book_page": 152,
-        "pdf_page": 86,
-        "practice_pdf_page": 88
+        "book_page": 117,
+        "pdf_page": 117,
+        "practice_pdf_page": 119
       },
       {
         "u": 29,
@@ -3488,9 +3488,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "huáijiù",
         "word_start": 1681,
         "word_end": 1740,
-        "book_page": 158,
-        "pdf_page": 89,
-        "practice_pdf_page": 91
+        "book_page": 121,
+        "pdf_page": 121,
+        "practice_pdf_page": 123
       },
       {
         "u": 30,
@@ -3499,9 +3499,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "huǐhèn",
         "word_start": 1741,
         "word_end": 1800,
-        "book_page": 164,
-        "pdf_page": 92,
-        "practice_pdf_page": 93
+        "book_page": 125,
+        "pdf_page": 125,
+        "practice_pdf_page": 127
       },
       {
         "u": 31,
@@ -3510,9 +3510,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jīběngōng",
         "word_start": 1801,
         "word_end": 1860,
-        "book_page": 169,
-        "pdf_page": 94,
-        "practice_pdf_page": 96
+        "book_page": 129,
+        "pdf_page": 129,
+        "practice_pdf_page": 131
       },
       {
         "u": 32,
@@ -3521,9 +3521,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jìxiàng",
         "word_start": 1861,
         "word_end": 1920,
-        "book_page": 174,
-        "pdf_page": 97,
-        "practice_pdf_page": 98
+        "book_page": 133,
+        "pdf_page": 133,
+        "practice_pdf_page": 135
       },
       {
         "u": 33,
@@ -3532,9 +3532,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jiānshì",
         "word_start": 1921,
         "word_end": 1980,
-        "book_page": 179,
-        "pdf_page": 99,
-        "practice_pdf_page": 101
+        "book_page": 137,
+        "pdf_page": 137,
+        "practice_pdf_page": 139
       },
       {
         "u": 34,
@@ -3543,9 +3543,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jiāofù",
         "word_start": 1981,
         "word_end": 2040,
-        "book_page": 184,
-        "pdf_page": 102,
-        "practice_pdf_page": 103
+        "book_page": 141,
+        "pdf_page": 141,
+        "practice_pdf_page": 143
       },
       {
         "u": 35,
@@ -3554,9 +3554,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jiētōng",
         "word_start": 2041,
         "word_end": 2100,
-        "book_page": 189,
-        "pdf_page": 104,
-        "practice_pdf_page": 106
+        "book_page": 145,
+        "pdf_page": 145,
+        "practice_pdf_page": 147
       },
       {
         "u": 36,
@@ -3565,9 +3565,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jǐnqí",
         "word_start": 2101,
         "word_end": 2160,
-        "book_page": 194,
-        "pdf_page": 107,
-        "practice_pdf_page": 108
+        "book_page": 149,
+        "pdf_page": 149,
+        "practice_pdf_page": 151
       },
       {
         "u": 37,
@@ -3576,9 +3576,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jǐngzhōng",
         "word_start": 2161,
         "word_end": 2220,
-        "book_page": 199,
-        "pdf_page": 109,
-        "practice_pdf_page": 111
+        "book_page": 153,
+        "pdf_page": 153,
+        "practice_pdf_page": 155
       },
       {
         "u": 38,
@@ -3587,9 +3587,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "jǔyī-fǎnsān",
         "word_start": 2221,
         "word_end": 2280,
-        "book_page": 204,
-        "pdf_page": 112,
-        "practice_pdf_page": 114
+        "book_page": 157,
+        "pdf_page": 157,
+        "practice_pdf_page": 159
       },
       {
         "u": 39,
@@ -3598,9 +3598,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "kāipì",
         "word_start": 2281,
         "word_end": 2340,
-        "book_page": 210,
-        "pdf_page": 115,
-        "practice_pdf_page": 116
+        "book_page": 161,
+        "pdf_page": 161,
+        "practice_pdf_page": 163
       },
       {
         "u": 40,
@@ -3609,9 +3609,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "kèfáng",
         "word_start": 2341,
         "word_end": 2400,
-        "book_page": 215,
-        "pdf_page": 117,
-        "practice_pdf_page": 119
+        "book_page": 165,
+        "pdf_page": 165,
+        "practice_pdf_page": 167
       },
       {
         "u": 41,
@@ -3620,9 +3620,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "kuà",
         "word_start": 2401,
         "word_end": 2460,
-        "book_page": 221,
-        "pdf_page": 120,
-        "practice_pdf_page": 122
+        "book_page": 169,
+        "pdf_page": 169,
+        "practice_pdf_page": 171
       },
       {
         "u": 42,
@@ -3631,9 +3631,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "láng",
         "word_start": 2461,
         "word_end": 2520,
-        "book_page": 226,
-        "pdf_page": 123,
-        "practice_pdf_page": 124
+        "book_page": 173,
+        "pdf_page": 173,
+        "practice_pdf_page": 175
       },
       {
         "u": 43,
@@ -3642,9 +3642,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "lìsuǒnéngjí",
         "word_start": 2521,
         "word_end": 2580,
-        "book_page": 231,
-        "pdf_page": 125,
-        "practice_pdf_page": 127
+        "book_page": 177,
+        "pdf_page": 177,
+        "practice_pdf_page": 179
       },
       {
         "u": 44,
@@ -3653,9 +3653,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "lièshì",
         "word_start": 2581,
         "word_end": 2640,
-        "book_page": 237,
-        "pdf_page": 128,
-        "practice_pdf_page": 130
+        "book_page": 181,
+        "pdf_page": 181,
+        "practice_pdf_page": 183
       },
       {
         "u": 45,
@@ -3664,9 +3664,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "lóngzhōu",
         "word_start": 2641,
         "word_end": 2700,
-        "book_page": 243,
-        "pdf_page": 131,
-        "practice_pdf_page": 133
+        "book_page": 185,
+        "pdf_page": 185,
+        "practice_pdf_page": 187
       },
       {
         "u": 46,
@@ -3675,9 +3675,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "luòxia",
         "word_start": 2701,
         "word_end": 2760,
-        "book_page": 248,
-        "pdf_page": 134,
-        "practice_pdf_page": 135
+        "book_page": 189,
+        "pdf_page": 189,
+        "practice_pdf_page": 191
       },
       {
         "u": 47,
@@ -3686,9 +3686,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "měidé",
         "word_start": 2761,
         "word_end": 2820,
-        "book_page": 253,
-        "pdf_page": 136,
-        "practice_pdf_page": 138
+        "book_page": 193,
+        "pdf_page": 193,
+        "practice_pdf_page": 195
       }
     ]
   },
@@ -3720,20 +3720,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "miáohuì",
         "word_start": 2821,
         "word_end": 2880,
-        "book_page": 1,
-        "pdf_page": 13,
-        "practice_pdf_page": 17
+        "book_page": 9,
+        "pdf_page": 9,
+        "practice_pdf_page": 11
       },
       {
         "u": 49,
         "range": "瞄准—目录",
-        "start_py": "miáo//zhǔn",
+        "start_py": "miáozhǔn",
         "end_py": "mùlù",
         "word_start": 2881,
         "word_end": 2940,
-        "book_page": 7,
-        "pdf_page": 19,
-        "practice_pdf_page": 22
+        "book_page": 13,
+        "pdf_page": 13,
+        "practice_pdf_page": 15
       },
       {
         "u": 50,
@@ -3742,9 +3742,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "niánmài",
         "word_start": 2941,
         "word_end": 3000,
-        "book_page": 12,
-        "pdf_page": 24,
-        "practice_pdf_page": 28
+        "book_page": 17,
+        "pdf_page": 17,
+        "practice_pdf_page": 19
       },
       {
         "u": 51,
@@ -3753,9 +3753,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "pànjué",
         "word_start": 3001,
         "word_end": 3060,
-        "book_page": 18,
-        "pdf_page": 30,
-        "practice_pdf_page": 34
+        "book_page": 21,
+        "pdf_page": 21,
+        "practice_pdf_page": 23
       },
       {
         "u": 52,
@@ -3764,9 +3764,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "piāo",
         "word_start": 3061,
         "word_end": 3120,
-        "book_page": 24,
-        "pdf_page": 36,
-        "practice_pdf_page": 39
+        "book_page": 25,
+        "pdf_page": 25,
+        "practice_pdf_page": 27
       },
       {
         "u": 53,
@@ -3776,19 +3776,19 @@ const HSK_BOOKS_INDEX = [
         "word_start": 3121,
         "word_end": 3180,
         "book_page": 29,
-        "pdf_page": 41,
-        "practice_pdf_page": 45
+        "pdf_page": 29,
+        "practice_pdf_page": 31
       },
       {
         "u": 54,
         "range": "期盼—千钧一发",
         "start_py": "qīpàn",
-        "end_py": "qiānjūn-yífà",
+        "end_py": "qiānjūn-yīfà",
         "word_start": 3181,
         "word_end": 3240,
-        "book_page": 35,
-        "pdf_page": 47,
-        "practice_pdf_page": 51
+        "book_page": 33,
+        "pdf_page": 33,
+        "practice_pdf_page": 35
       },
       {
         "u": 55,
@@ -3797,9 +3797,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "qiēduàn",
         "word_start": 3241,
         "word_end": 3300,
-        "book_page": 41,
-        "pdf_page": 53,
-        "practice_pdf_page": 56
+        "book_page": 37,
+        "pdf_page": 37,
+        "practice_pdf_page": 39
       },
       {
         "u": 56,
@@ -3808,9 +3808,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "qìngxìng",
         "word_start": 3301,
         "word_end": 3360,
-        "book_page": 46,
-        "pdf_page": 58,
-        "practice_pdf_page": 62
+        "book_page": 41,
+        "pdf_page": 41,
+        "practice_pdf_page": 43
       },
       {
         "u": 57,
@@ -3819,9 +3819,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "ráoshù",
         "word_start": 3361,
         "word_end": 3420,
-        "book_page": 52,
-        "pdf_page": 64,
-        "practice_pdf_page": 67
+        "book_page": 45,
+        "pdf_page": 45,
+        "practice_pdf_page": 47
       },
       {
         "u": 58,
@@ -3830,9 +3830,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "róng",
         "word_start": 3421,
         "word_end": 3480,
-        "book_page": 57,
-        "pdf_page": 69,
-        "practice_pdf_page": 72
+        "book_page": 49,
+        "pdf_page": 49,
+        "practice_pdf_page": 51
       },
       {
         "u": 59,
@@ -3841,9 +3841,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shāndǐng",
         "word_start": 3481,
         "word_end": 3540,
-        "book_page": 62,
-        "pdf_page": 74,
-        "practice_pdf_page": 78
+        "book_page": 53,
+        "pdf_page": 53,
+        "practice_pdf_page": 55
       },
       {
         "u": 60,
@@ -3852,9 +3852,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shèfǎ",
         "word_start": 3541,
         "word_end": 3600,
-        "book_page": 68,
-        "pdf_page": 80,
-        "practice_pdf_page": 83
+        "book_page": 57,
+        "pdf_page": 57,
+        "practice_pdf_page": 59
       },
       {
         "u": 61,
@@ -3863,9 +3863,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shēngchēng",
         "word_start": 3601,
         "word_end": 3660,
-        "book_page": 73,
-        "pdf_page": 85,
-        "practice_pdf_page": 88
+        "book_page": 61,
+        "pdf_page": 61,
+        "practice_pdf_page": 63
       },
       {
         "u": 62,
@@ -3874,9 +3874,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shǐmìng",
         "word_start": 3661,
         "word_end": 3720,
-        "book_page": 78,
-        "pdf_page": 90,
-        "practice_pdf_page": 93
+        "book_page": 65,
+        "pdf_page": 65,
+        "practice_pdf_page": 67
       },
       {
         "u": 63,
@@ -3885,9 +3885,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shǒuhù",
         "word_start": 3721,
         "word_end": 3780,
-        "book_page": 83,
-        "pdf_page": 95,
-        "practice_pdf_page": 99
+        "book_page": 69,
+        "pdf_page": 69,
+        "practice_pdf_page": 71
       },
       {
         "u": 64,
@@ -3896,20 +3896,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "shuāituì",
         "word_start": 3781,
         "word_end": 3840,
-        "book_page": 89,
-        "pdf_page": 101,
-        "practice_pdf_page": 104
+        "book_page": 73,
+        "pdf_page": 73,
+        "practice_pdf_page": 75
       },
       {
         "u": 65,
         "range": "摔跤—司令",
-        "start_py": "shuāi//jiāo",
+        "start_py": "shuāijiāo",
         "end_py": "sīlìng",
         "word_start": 3841,
         "word_end": 3900,
-        "book_page": 94,
-        "pdf_page": 106,
-        "practice_pdf_page": 110
+        "book_page": 77,
+        "pdf_page": 77,
+        "practice_pdf_page": 79
       },
       {
         "u": 66,
@@ -3918,9 +3918,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "suíjī",
         "word_start": 3901,
         "word_end": 3960,
-        "book_page": 100,
-        "pdf_page": 112,
-        "practice_pdf_page": 116
+        "book_page": 81,
+        "pdf_page": 81,
+        "practice_pdf_page": 83
       },
       {
         "u": 67,
@@ -3929,9 +3929,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "táng",
         "word_start": 3961,
         "word_end": 4020,
-        "book_page": 106,
-        "pdf_page": 118,
-        "practice_pdf_page": 122
+        "book_page": 85,
+        "pdf_page": 85,
+        "practice_pdf_page": 87
       },
       {
         "u": 68,
@@ -3940,9 +3940,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "tiānxiàn",
         "word_start": 4021,
         "word_end": 4080,
-        "book_page": 112,
-        "pdf_page": 124,
-        "practice_pdf_page": 128
+        "book_page": 89,
+        "pdf_page": 89,
+        "practice_pdf_page": 91
       },
       {
         "u": 69,
@@ -3951,9 +3951,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "tǒngtǒng",
         "word_start": 4081,
         "word_end": 4140,
-        "book_page": 118,
-        "pdf_page": 130,
-        "practice_pdf_page": 133
+        "book_page": 93,
+        "pdf_page": 93,
+        "practice_pdf_page": 95
       },
       {
         "u": 70,
@@ -3962,9 +3962,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "tuìhuí",
         "word_start": 4141,
         "word_end": 4200,
-        "book_page": 123,
-        "pdf_page": 135,
-        "practice_pdf_page": 139
+        "book_page": 97,
+        "pdf_page": 97,
+        "practice_pdf_page": 99
       },
       {
         "u": 71,
@@ -3973,20 +3973,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "wànwàn",
         "word_start": 4201,
         "word_end": 4260,
-        "book_page": 129,
-        "pdf_page": 141,
-        "practice_pdf_page": 145
+        "book_page": 101,
+        "pdf_page": 101,
+        "practice_pdf_page": 103
       },
       {
         "u": 72,
         "range": "万无一失—慰劳",
-        "start_py": "wànwú-yìshī",
+        "start_py": "wànwú-yīshī",
         "end_py": "wèiláo",
         "word_start": 4261,
         "word_end": 4320,
-        "book_page": 135,
-        "pdf_page": 147,
-        "practice_pdf_page": 151
+        "book_page": 105,
+        "pdf_page": 105,
+        "practice_pdf_page": 107
       },
       {
         "u": 73,
@@ -3995,9 +3995,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "wúsuǒshìshì",
         "word_start": 4321,
         "word_end": 4380,
-        "book_page": 141,
-        "pdf_page": 153,
-        "practice_pdf_page": 157
+        "book_page": 109,
+        "pdf_page": 109,
+        "practice_pdf_page": 111
       },
       {
         "u": 74,
@@ -4006,9 +4006,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xǐyuè",
         "word_start": 4381,
         "word_end": 4440,
-        "book_page": 147,
-        "pdf_page": 159,
-        "practice_pdf_page": 164
+        "book_page": 113,
+        "pdf_page": 113,
+        "practice_pdf_page": 115
       },
       {
         "u": 75,
@@ -4017,9 +4017,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xiàndù",
         "word_start": 4441,
         "word_end": 4500,
-        "book_page": 154,
-        "pdf_page": 166,
-        "practice_pdf_page": 170
+        "book_page": 117,
+        "pdf_page": 117,
+        "practice_pdf_page": 119
       },
       {
         "u": 76,
@@ -4028,9 +4028,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xiǎochǒu",
         "word_start": 4501,
         "word_end": 4560,
-        "book_page": 160,
-        "pdf_page": 172,
-        "practice_pdf_page": 176
+        "book_page": 121,
+        "pdf_page": 121,
+        "practice_pdf_page": 123
       },
       {
         "u": 77,
@@ -4039,9 +4039,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xīnxǐ",
         "word_start": 4561,
         "word_end": 4620,
-        "book_page": 166,
-        "pdf_page": 178,
-        "practice_pdf_page": 182
+        "book_page": 125,
+        "pdf_page": 125,
+        "practice_pdf_page": 127
       },
       {
         "u": 78,
@@ -4050,9 +4050,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xiùshǒu-pángguān",
         "word_start": 4621,
         "word_end": 4680,
-        "book_page": 172,
-        "pdf_page": 184,
-        "practice_pdf_page": 188
+        "book_page": 129,
+        "pdf_page": 129,
+        "practice_pdf_page": 131
       },
       {
         "u": 79,
@@ -4061,20 +4061,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "xūnzhāng",
         "word_start": 4681,
         "word_end": 4740,
-        "book_page": 178,
-        "pdf_page": 190,
-        "practice_pdf_page": 193
+        "book_page": 133,
+        "pdf_page": 133,
+        "practice_pdf_page": 135
       },
       {
         "u": 80,
         "range": "熏—演戏",
         "start_py": "xūn",
-        "end_py": "yǎn//xì",
+        "end_py": "yǎnxì",
         "word_start": 4741,
         "word_end": 4800,
-        "book_page": 183,
-        "pdf_page": 195,
-        "practice_pdf_page": 199
+        "book_page": 137,
+        "pdf_page": 137,
+        "practice_pdf_page": 139
       },
       {
         "u": 81,
@@ -4083,42 +4083,42 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yèbān",
         "word_start": 4801,
         "word_end": 4860,
-        "book_page": 189,
-        "pdf_page": 201,
-        "practice_pdf_page": 204
+        "book_page": 141,
+        "pdf_page": 141,
+        "practice_pdf_page": 143
       },
       {
         "u": 82,
         "range": "夜市—一帆风顺",
         "start_py": "yèshì",
-        "end_py": "yìfān-fēngshùn",
+        "end_py": "yīfān-fēngshùn",
         "word_start": 4861,
         "word_end": 4920,
-        "book_page": 194,
-        "pdf_page": 206,
-        "practice_pdf_page": 211
+        "book_page": 145,
+        "pdf_page": 145,
+        "practice_pdf_page": 147
       },
       {
         "u": 83,
         "range": "一干二净—阴性",
-        "start_py": "yìgān-èrjìng",
+        "start_py": "yīgān-èrjìng",
         "end_py": "yīnxìng",
         "word_start": 4921,
         "word_end": 4980,
-        "book_page": 201,
-        "pdf_page": 213,
-        "practice_pdf_page": 219
+        "book_page": 149,
+        "pdf_page": 149,
+        "practice_pdf_page": 151
       },
       {
         "u": 84,
         "range": "音响—用餐",
         "start_py": "yīnxiǎng",
-        "end_py": "yòng//cān",
+        "end_py": "yòngcān",
         "word_start": 4981,
         "word_end": 5040,
-        "book_page": 209,
-        "pdf_page": 221,
-        "practice_pdf_page": 225
+        "book_page": 153,
+        "pdf_page": 153,
+        "practice_pdf_page": 155
       },
       {
         "u": 85,
@@ -4127,9 +4127,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yǔcǐ-tóngshí",
         "word_start": 5041,
         "word_end": 5100,
-        "book_page": 215,
-        "pdf_page": 227,
-        "practice_pdf_page": 231
+        "book_page": 157,
+        "pdf_page": 157,
+        "practice_pdf_page": 159
       },
       {
         "u": 86,
@@ -4138,9 +4138,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "yuèpiào",
         "word_start": 5101,
         "word_end": 5160,
-        "book_page": 221,
-        "pdf_page": 233,
-        "practice_pdf_page": 238
+        "book_page": 161,
+        "pdf_page": 161,
+        "practice_pdf_page": 163
       },
       {
         "u": 87,
@@ -4149,9 +4149,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zéi",
         "word_start": 5161,
         "word_end": 5220,
-        "book_page": 228,
-        "pdf_page": 240,
-        "practice_pdf_page": 244
+        "book_page": 165,
+        "pdf_page": 165,
+        "practice_pdf_page": 167
       },
       {
         "u": 88,
@@ -4160,20 +4160,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhàoshì",
         "word_start": 5221,
         "word_end": 5280,
-        "book_page": 234,
-        "pdf_page": 246,
-        "practice_pdf_page": 250
+        "book_page": 169,
+        "pdf_page": 169,
+        "practice_pdf_page": 171
       },
       {
         "u": 89,
-        "range": "折腾—之²",
+        "range": "折腾—之",
         "start_py": "zhēteng",
         "end_py": "zhī",
         "word_start": 5281,
         "word_end": 5340,
-        "book_page": 240,
-        "pdf_page": 252,
-        "practice_pdf_page": 256
+        "book_page": 173,
+        "pdf_page": 173,
+        "practice_pdf_page": 175
       },
       {
         "u": 90,
@@ -4182,9 +4182,9 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhìmìng",
         "word_start": 5341,
         "word_end": 5400,
-        "book_page": 246,
-        "pdf_page": 258,
-        "practice_pdf_page": 262
+        "book_page": 177,
+        "pdf_page": 177,
+        "practice_pdf_page": 179
       },
       {
         "u": 91,
@@ -4193,20 +4193,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zhǔyì",
         "word_start": 5401,
         "word_end": 5460,
-        "book_page": 252,
-        "pdf_page": 264,
-        "practice_pdf_page": 268
+        "book_page": 181,
+        "pdf_page": 181,
+        "practice_pdf_page": 183
       },
       {
         "u": 92,
         "range": "主宰—追尾",
         "start_py": "zhǔzǎi",
-        "end_py": "zhuī//wěi",
+        "end_py": "zhuīwěi",
         "word_start": 5461,
         "word_end": 5520,
-        "book_page": 258,
-        "pdf_page": 270,
-        "practice_pdf_page": 273
+        "book_page": 185,
+        "pdf_page": 185,
+        "practice_pdf_page": 187
       },
       {
         "u": 93,
@@ -4215,20 +4215,20 @@ const HSK_BOOKS_INDEX = [
         "end_py": "zōng",
         "word_start": 5521,
         "word_end": 5580,
-        "book_page": 263,
-        "pdf_page": 275,
-        "practice_pdf_page": 280
+        "book_page": 189,
+        "pdf_page": 189,
+        "practice_pdf_page": 191
       },
       {
         "u": 94,
         "range": "宗旨—做证",
         "start_py": "zōngzhǐ",
-        "end_py": "zuò//zhèng",
+        "end_py": "zuòzhèng",
         "word_start": 5581,
         "word_end": 5636,
-        "book_page": 270,
-        "pdf_page": 282,
-        "practice_pdf_page": 287
+        "book_page": 193,
+        "pdf_page": 193,
+        "practice_pdf_page": 195
       }
     ]
   }
