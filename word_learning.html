@@ -117,6 +117,10 @@
                         <h2 id="activeUnitHeading">爱 — 北边</h2>
                         <span class="au-pinyin" id="activeUnitSub">(Từ 1 – 20 · Trang 9)</span>
                     </div>
+                    <button class="top-speak-all-btn" id="btnSpeakAllTop" title="Phát âm lần lượt cả bài (Từ + Ví dụ) — Nhấn lại để Dừng bất kỳ lúc nào">
+                        <span class="tsa-icon">🔊</span>
+                        <span class="tsa-text">Đọc cả bài</span>
+                    </button>
                 </div>
 
                 <!-- Main Study Mode Switcher -->
@@ -129,6 +133,9 @@
                     </button>
                     <button class="sm-tab" data-smode="flashcard" id="tabBtnFlashcard">
                         🎴 <span class="sm-tab-text">Flashcard & Quiz</span>
+                    </button>
+                    <button class="sm-tab" data-smode="shadowing" id="tabBtnShadowing">
+                        🎙️ <span class="sm-tab-text">Luyện nói (Shadowing)</span>
                     </button>
                     <button class="sm-tab" data-smode="pdf" id="tabBtnPdf">
                         📄 <span class="sm-tab-text">PDF gốc</span>
@@ -406,6 +413,165 @@
                 </div>
 
                 <!-- =========================================================
+                     MODE 5: LUYỆN NÓI & PHÁT ÂM TƯƠNG TÁC (VOICE & SHADOWING STUDIO)
+                     ========================================================= -->
+                <div class="smode-pane" id="paneShadowing">
+                    <div class="shad-workspace">
+                        <!-- Top Shadowing Toolbar -->
+                        <div class="shad-toolbar">
+                            <div class="shad-nav-group">
+                                <button class="shad-nav-btn" id="btnShadPrevWord" title="Từ trước">◀ Trước</button>
+                                <div class="shad-select-wrap">
+                                    <select id="shadWordSelect" title="Chọn từ vựng để luyện phát âm">
+                                        <!-- Populated dynamically -->
+                                    </select>
+                                </div>
+                                <button class="shad-nav-btn" id="btnShadNextWord" title="Từ sau">Sau ▶</button>
+                                <button class="shad-nav-btn" id="btnShadRandomWord" title="Chọn ngẫu nhiên một từ trong bài">🔀 Ngẫu nhiên</button>
+                            </div>
+                            <div class="shad-target-types">
+                                <button class="shad-type-pill active" data-shad-type="word" id="btnShadModeWord">
+                                    🔤 Từ vựng mục tiêu
+                                </button>
+                                <button class="shad-type-pill" data-shad-type="ex" id="btnShadModeEx">
+                                    💬 Câu ví dụ (Shadowing)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 2-Column Studio Grid: Native Model (Left) vs Voice Recording & AI (Right) -->
+                        <div class="shad-grid">
+                            <!-- Left Card: Native Reference & Audio Player -->
+                            <div class="shad-card shad-native-card">
+                                <div class="shad-card-head">
+                                    <span class="shad-badge native-badge">🔊 Giọng Mẫu Bản Xứ Chuẩn</span>
+                                    <div class="shad-speed-wrap">
+                                        <span>Tốc độ:</span>
+                                        <select id="shadSpeedSelect" title="Tốc độ phát âm">
+                                            <option value="0.75">0.75x Chậm</option>
+                                            <option value="0.9" selected>0.9x Tự nhiên</option>
+                                            <option value="1.0">1.0x Chuẩn</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="shad-target-display">
+                                    <div class="shad-hz" id="shadHz">爱</div>
+                                    <div class="shad-py" id="shadPy">ài</div>
+                                    <div class="shad-vn" id="shadVn">yêu, thích</div>
+                                    <div class="shad-pos" id="shadPos">đ. (Động từ)</div>
+                                </div>
+
+                                <!-- Example Sentence Preview (When in sentence mode or on demand) -->
+                                <div class="shad-ex-preview-box hidden" id="shadExPreviewBox">
+                                    <div class="sep-label">💬 Câu ví dụ đang luyện:</div>
+                                    <div class="sep-hz" id="shadExHz">我爱中国菜。</div>
+                                    <div class="sep-py" id="shadExPy">Wǒ ài Zhōngguó cài.</div>
+                                    <div class="sep-vn" id="shadExVn">Tôi yêu món ăn Trung Quốc.</div>
+                                </div>
+
+                                <div class="shad-native-actions">
+                                    <button class="btn-shad-play-native" id="btnPlayNativeAudio">
+                                        <span class="bspn-icon">🔊</span>
+                                        <span id="lblPlayNativeAudio">Nghe phát âm mẫu bản xứ</span>
+                                    </button>
+                                    <button class="btn-shad-repeat" id="btnRepeatNativeAudio" title="Lặp lại 3 lần chậm để nghe rõ thanh điệu">
+                                        🔁 Lặp lại 3 lần
+                                    </button>
+                                </div>
+
+                                <div class="shad-tone-guide">
+                                    <div class="stg-head">💡 Hướng dẫn phát âm & Thanh điệu (声调):</div>
+                                    <div class="stg-body" id="shadToneTip">
+                                        Thanh 4 (à): Phát âm dứt khoát, đi từ cao xuống thấp (5 ➔ 1), như dứt khoát hạ giọng.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Card: Recording Studio & AI Pronunciation Evaluation -->
+                            <div class="shad-card shad-rec-card">
+                                <div class="shad-card-head">
+                                    <span class="shad-badge rec-badge">🎙️ Phòng Thu & Chấm Điểm AI</span>
+                                    <span class="shad-engine-tag" id="shadEngineTag">Web Speech AI: Sẵn sàng</span>
+                                </div>
+
+                                <!-- Mic Record Button & Wave Animation -->
+                                <div class="shad-rec-stage">
+                                    <div class="shad-mic-wrap" id="shadMicWrap">
+                                        <div class="mic-wave-ring wave-1"></div>
+                                        <div class="mic-wave-ring wave-2"></div>
+                                        <button class="shad-mic-btn" id="btnShadMicToggle" title="Nhấn để bắt đầu nói">
+                                            <span class="smb-icon" id="shadMicIcon">🎙️</span>
+                                            <span class="smb-label" id="shadMicLabel">Bấm để Nói</span>
+                                        </button>
+                                    </div>
+                                    <div class="shad-rec-timer hidden" id="shadRecTimer">00:00</div>
+                                    <div class="shad-rec-prompt" id="shadRecPrompt">
+                                        Nhấn micro, cho phép trình duyệt truy cập và đọc to chữ Hán trên màn hình
+                                    </div>
+                                </div>
+
+                                <!-- Audio Playback & Dual Comparison -->
+                                <div class="shad-playback-bar hidden" id="shadPlaybackBar">
+                                    <div class="spb-title">🎧 Nghe lại giọng của bạn & Đối chiếu bản xứ:</div>
+                                    <div class="spb-actions">
+                                        <button class="btn-spb play-user" id="btnPlayUserAudio">
+                                            ▶️ Nghe giọng của bạn
+                                        </button>
+                                        <button class="btn-spb compare-both" id="btnCompareAudios" title="Tự động phát giọng mẫu trước rồi phát giọng bạn ngay sau đó">
+                                            ⚖️ So sánh: Giọng mẫu ➔ Giọng bạn
+                                        </button>
+                                        <button class="btn-spb re-record" id="btnShadRetest">
+                                            🔄 Thu lại
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- AI Speech Recognition & Real-time Scoring -->
+                                <div class="shad-eval-box hidden" id="shadEvalBox">
+                                    <div class="seb-score-row">
+                                        <div class="seb-score-circle" id="shadScoreCircle">
+                                            <span class="ssc-val" id="shadScoreVal">95</span>
+                                            <span class="ssc-label">Điểm AI</span>
+                                        </div>
+                                        <div class="seb-rating-info">
+                                            <div class="sri-title" id="shadRatingTitle">🌟 Phát âm xuất sắc!</div>
+                                            <div class="sri-sub" id="shadRatingSub">Độ chuẩn xác âm sắc và thanh điệu rất cao (+25 XP)</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="seb-transcript-row">
+                                        <div class="str-label">AI nhận diện bạn đã đọc:</div>
+                                        <div class="str-recognized" id="shadRecognizedText">爱</div>
+                                    </div>
+
+                                    <div class="seb-breakdown-row">
+                                        <div class="sbr-label">Chi tiết từng âm tiết:</div>
+                                        <div class="sbr-chips" id="shadCharBreakdown">
+                                            <!-- Green or Red character chips -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Notice/Fallback message for non-supported browsers or mic blocked -->
+                                <div class="shad-notice-box hidden" id="shadNoticeBox"></div>
+                            </div>
+                        </div>
+
+                        <!-- Sentence Shadowing List for current word -->
+                        <div class="shad-sentences-box" id="shadSentencesBox">
+                            <div class="ssb-head">
+                                <h4>💬 Luyện Shadowing Theo Từng Câu Ví Dụ Của Từ “<span id="ssbCurrentWord">爱</span>”</h4>
+                                <span class="ssb-sub">Luyện nói cả câu trong ngữ cảnh tự nhiên để hình thành phản xạ nói lưu loát</span>
+                            </div>
+                            <div class="ssb-list" id="shadSentencesList">
+                                <!-- Populated dynamically with sentence cards -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =========================================================
                      MODE 4: XEM TRANG SÁCH PDF GỐC (OPTIONAL REFERENCE)
                      ========================================================= -->
                 <div class="smode-pane" id="panePdf">
@@ -434,6 +600,9 @@
                 <button class="mbn-btn" id="mobPrevUnit">◀ Bài trước</button>
                 <button class="mbn-btn mbn-center-btn" id="mobOpenUnitDrawer">
                     📑 <span id="mobCurrentUnitLabel">Bài 1 / 25</span>
+                </button>
+                <button class="mbn-btn mbn-speak-all-btn" id="mobBtnSpeakAll" title="Đọc cả bài / Dừng đọc">
+                    🔊 Đọc cả bài
                 </button>
                 <button class="mbn-btn" id="mobToggleDone">☐ Đã học</button>
                 <button class="mbn-btn" id="mobNextUnit">Bài sau ▶</button>
@@ -597,7 +766,7 @@
                 <!-- Badges Collection Grid -->
                 <div class="badges-section-head">
                     <h4>🏅 Bộ Sưu Tập Huy Hiệu Danh Dự</h4>
-                    <span class="badges-unlocked-count" id="bmBadgesUnlockedCount">0 / 12 huy hiệu</span>
+                    <span class="badges-unlocked-count" id="bmBadgesUnlockedCount">0 / 14 huy hiệu</span>
                 </div>
                 <div class="badges-grid" id="badgesGrid">
                     <!-- Populated dynamically -->

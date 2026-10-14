@@ -97,6 +97,25 @@
             scope: 'unit',
             loop: true,
             timerId: null
+        },
+
+        // Voice & Shadowing Studio state
+        shadowing: {
+            wordIndex: 0,
+            targetType: 'word',     // 'word' | 'ex'
+            targetExIndex: 0,
+            speed: 0.9,
+            isRecording: false,
+            mediaRecorder: null,
+            audioChunks: [],
+            audioBlobUrl: null,
+            userAudio: null,
+            recTimerId: null,
+            recSeconds: 0,
+            recognition: null,
+            recognizedText: '',
+            score: null,
+            stream: null
         }
     };
 
@@ -378,6 +397,8 @@
         { id: 'b_srs_first', icon: '🧠', title: 'Người Rèn Luyện', desc: 'Đưa từ vựng đầu tiên vào Hộp từ khó SRS', xp: 50 },
         { id: 'b_srs_master_10', icon: '💎', title: 'Trí Nhớ Thép', desc: 'Đạt Hộp 5 (Thành thạo) cho 10 từ trong SRS', xp: 350 },
         { id: 'b_podcast_fan', icon: '🎧', title: 'Thính Giả Chăm Chỉ', desc: 'Bật chế độ nghe thụ động Hands-free Podcast', xp: 60 },
+        { id: 'b_voice_first', icon: '🎙️', title: 'Tiếng Nói Đầu Tiên', desc: 'Ghi âm và luyện phát âm từ vựng đầu tiên', xp: 60 },
+        { id: 'b_voice_master', icon: '🌟', title: 'Bản Xứ Chuẩn Giọng', desc: 'Đạt điểm phát âm xuất sắc (>=85 điểm) với AI', xp: 150 },
         { id: 'b_unit_master', icon: '🏆', title: 'Chinh Phục Bài Học', desc: 'Hoàn thành trọn vẹn cả 3 phần bài tập một bài học', xp: 150 }
     ];
 
@@ -495,6 +516,8 @@
         if (Object.keys(state.srsData || {}).length >= 1) unlockBadge('b_srs_first');
         if (stats.srsMastered >= 10) unlockBadge('b_srs_master_10');
         if (stats.podcastRuns >= 1) unlockBadge('b_podcast_fan');
+        if (stats.voicePracticed >= 1) unlockBadge('b_voice_first');
+        if (stats.voiceScoreBest >= 85) unlockBadge('b_voice_master');
     }
 
     function updateGamifyUI() {
@@ -1288,6 +1311,11 @@
         renderPracticePane(unitData);
         initFlashcardDeck();
         initReflexQuiz();
+        if (state.studyMode === 'shadowing') {
+            initShadowingStudio();
+        } else {
+            updateShadowingWordList();
+        }
         state.currentPdfPage = unitData.pdf_page || 1;
         if (state.studyMode === 'pdf') {
             renderPdfPane();
@@ -2551,12 +2579,15 @@
             memory: 'paneMemory',
             practice: 'panePractice',
             flashcard: 'paneFlashcard',
+            shadowing: 'paneShadowing',
             pdf: 'panePdf'
         };
         const targetPane = document.getElementById(map[mode]);
         if (targetPane) targetPane.classList.add('active');
 
-        if (mode === 'pdf') {
+        if (mode === 'shadowing') {
+            initShadowingStudio();
+        } else if (mode === 'pdf') {
             renderPdfPane();
         }
 
@@ -2609,6 +2640,20 @@
                 btn.textContent = text;
             }
         });
+
+        const topBtn = document.getElementById('btnSpeakAllTop');
+        if (topBtn) {
+            topBtn.classList.toggle('active', isActive);
+            topBtn.innerHTML = isActive
+                ? `<span class="tsa-icon">⏹️</span> <span class="tsa-text">${escapeHtml(labelText || 'Dừng đọc')}</span>`
+                : `<span class="tsa-icon">🔊</span> <span class="tsa-text">Đọc cả bài</span>`;
+        }
+
+        const mobBtn = document.getElementById('mobBtnSpeakAll');
+        if (mobBtn) {
+            mobBtn.classList.toggle('active', isActive);
+            mobBtn.textContent = isActive ? (labelText ? labelText.replace('⏹️ Dừng', '⏹️ Dừng') : '⏹️ Dừng đọc') : '🔊 Đọc cả bài';
+        }
     }
 
     function clearSpeakingHighlights() {
@@ -2895,11 +2940,15 @@
         if (btnGoPrac) btnGoPrac.addEventListener('click', () => switchStudyMode('practice'));
         if (btnGoFc)   btnGoFc.addEventListener('click', () => switchStudyMode('flashcard'));
 
-        // Mode 1 controls
-        const btnSpeakAll   = document.getElementById('btnSpeakAllWords');
-        const btnSpeakAllQm = document.getElementById('btnSpeakAllWordsQm');
-        if (btnSpeakAll)   btnSpeakAll.addEventListener('click', toggleSpeakAllWords);
-        if (btnSpeakAllQm) btnSpeakAllQm.addEventListener('click', toggleSpeakAllWords);
+        // Speak All Words in Unit controls (Header, Quick Memory, Sticky Top & Mobile Bottom)
+        const btnSpeakAll    = document.getElementById('btnSpeakAllWords');
+        const btnSpeakAllQm  = document.getElementById('btnSpeakAllWordsQm');
+        const btnSpeakAllTop = document.getElementById('btnSpeakAllTop');
+        const mobBtnSpeakAll = document.getElementById('mobBtnSpeakAll');
+        if (btnSpeakAll)    btnSpeakAll.addEventListener('click', toggleSpeakAllWords);
+        if (btnSpeakAllQm)  btnSpeakAllQm.addEventListener('click', toggleSpeakAllWords);
+        if (btnSpeakAllTop) btnSpeakAllTop.addEventListener('click', toggleSpeakAllWords);
+        if (mobBtnSpeakAll) mobBtnSpeakAll.addEventListener('click', toggleSpeakAllWords);
 
         const btnTogglePy = document.getElementById('btnTogglePinyin');
         if (btnTogglePy) {
@@ -3300,6 +3349,656 @@
                 if (e.target === modalGrammar) modalGrammar.classList.add('hidden');
             });
         }
+
+        // Voice & Shadowing Studio controls
+        const btnShadPrev = document.getElementById('btnShadPrevWord');
+        const btnShadNext = document.getElementById('btnShadNextWord');
+        const btnShadRandom = document.getElementById('btnShadRandomWord');
+        const shadWordSelect = document.getElementById('shadWordSelect');
+        const btnShadModeWord = document.getElementById('btnShadModeWord');
+        const btnShadModeEx = document.getElementById('btnShadModeEx');
+        const btnPlayNative = document.getElementById('btnPlayNativeAudio');
+        const btnRepeatNative = document.getElementById('btnRepeatNativeAudio');
+        const btnMicToggle = document.getElementById('btnShadMicToggle');
+        const btnPlayUser = document.getElementById('btnPlayUserAudio');
+        const btnCompare = document.getElementById('btnCompareAudios');
+        const btnRetest = document.getElementById('btnShadRetest');
+
+        if (btnShadPrev) {
+            btnShadPrev.addEventListener('click', () => {
+                const words = getShadowingWords();
+                if (!words.length) return;
+                state.shadowing.wordIndex = (state.shadowing.wordIndex - 1 + words.length) % words.length;
+                state.shadowing.targetType = 'word';
+                updateShadowingWordList();
+                renderShadowingActiveTarget();
+            });
+        }
+
+        if (btnShadNext) {
+            btnShadNext.addEventListener('click', () => {
+                const words = getShadowingWords();
+                if (!words.length) return;
+                state.shadowing.wordIndex = (state.shadowing.wordIndex + 1) % words.length;
+                state.shadowing.targetType = 'word';
+                updateShadowingWordList();
+                renderShadowingActiveTarget();
+            });
+        }
+
+        if (btnShadRandom) {
+            btnShadRandom.addEventListener('click', () => {
+                const words = getShadowingWords();
+                if (!words.length) return;
+                state.shadowing.wordIndex = Math.floor(Math.random() * words.length);
+                state.shadowing.targetType = 'word';
+                updateShadowingWordList();
+                renderShadowingActiveTarget();
+            });
+        }
+
+        if (shadWordSelect) {
+            shadWordSelect.addEventListener('change', () => {
+                state.shadowing.wordIndex = parseInt(shadWordSelect.value, 10) || 0;
+                state.shadowing.targetType = 'word';
+                renderShadowingActiveTarget();
+            });
+        }
+
+        if (btnShadModeWord) {
+            btnShadModeWord.addEventListener('click', () => {
+                state.shadowing.targetType = 'word';
+                btnShadModeWord.classList.add('active');
+                if (btnShadModeEx) btnShadModeEx.classList.remove('active');
+                renderShadowingActiveTarget();
+            });
+        }
+
+        if (btnShadModeEx) {
+            btnShadModeEx.addEventListener('click', () => {
+                state.shadowing.targetType = 'ex';
+                btnShadModeEx.classList.add('active');
+                if (btnShadModeWord) btnShadModeWord.classList.remove('active');
+                renderShadowingActiveTarget();
+            });
+        }
+
+        if (btnPlayNative) btnPlayNative.addEventListener('click', () => playNativeShadowingAudio(1));
+        if (btnRepeatNative) btnRepeatNative.addEventListener('click', () => playNativeShadowingAudio(3));
+        if (btnMicToggle) btnMicToggle.addEventListener('click', toggleVoiceRecording);
+        if (btnPlayUser) btnPlayUser.addEventListener('click', playUserRecordedAudio);
+        if (btnCompare) btnCompare.addEventListener('click', compareNativeAndUserAudios);
+        if (btnRetest) btnRetest.addEventListener('click', () => startVoiceRecording());
+    }
+
+    // ==================== MODE 5: VOICE & SHADOWING STUDIO ENGINE ====================
+    function getSpeechRecognitionClass() {
+        return window.SpeechRecognition || window.webkitSpeechRecognition || null;
+    }
+
+    function initShadowingStudio() {
+        const engineTag = document.getElementById('shadEngineTag');
+        const SpeechRec = getSpeechRecognitionClass();
+        if (engineTag) {
+            if (SpeechRec) {
+                engineTag.textContent = 'Web Speech AI: Sẵn sàng';
+                engineTag.style.color = '#34d399';
+            } else {
+                engineTag.textContent = 'Ghi âm & Đối chiếu: Sẵn sàng';
+                engineTag.style.color = '#38bdf8';
+            }
+        }
+
+        updateShadowingWordList();
+        renderShadowingActiveTarget();
+    }
+
+    function getShadowingWords() {
+        const unitData = getCurrentUnitData();
+        return (unitData && unitData.target_words && unitData.target_words.length) ? unitData.target_words : [];
+    }
+
+    function updateShadowingWordList() {
+        const sel = document.getElementById('shadWordSelect');
+        if (!sel) return;
+
+        const words = getShadowingWords();
+        if (!words.length) {
+            sel.innerHTML = '<option value="0">Không có từ vựng</option>';
+            return;
+        }
+
+        sel.innerHTML = words.map((w, idx) => `
+            <option value="${idx}" ${idx === state.shadowing.wordIndex ? 'selected' : ''}>
+                #${w.num} ${escapeHtml(w.word)} (${escapeHtml(w.pinyin)}) — ${escapeHtml(truncateText(w.meaning_vi || w.meaning_primary || '', 24))}
+            </option>
+        `).join('');
+    }
+
+    function getToneGuidance(pinyin) {
+        if (!pinyin) return 'Chú ý mở rộng khẩu hình và phát âm tròn vành rõ chữ.';
+        const cleanPy = pinyin.toLowerCase();
+
+        const hasTone1 = /[āōēīūǖ]/.test(cleanPy);
+        const hasTone2 = /[áóéíúǘ]/.test(cleanPy);
+        const hasTone3 = /[ǎǒěǐǔǚ]/.test(cleanPy);
+        const hasTone4 = /[àòèìùǜ]/.test(cleanPy);
+
+        const tips = [];
+        if (hasTone1) {
+            tips.push('<strong>Thanh 1 (ngang/cao 5-5)</strong>: Giữ cao độ bằng phẳng và cao, phát âm ngân đều, không hạ giọng.');
+        }
+        if (hasTone2) {
+            tips.push('<strong>Thanh 2 (sắc 3-5)</strong>: Đi từ độ cao trung bình vút thẳng lên cao như hỏi "Hả?", dứt khoát.');
+        }
+        if (hasTone3) {
+            tips.push('<strong>Thanh 3 (hỏi 2-1-4)</strong>: Hạ giọng sâu trầm ở cổ họng rồi hơi nâng nhẹ lên, không lướt qua quá nhanh.');
+        }
+        if (hasTone4) {
+            tips.push('<strong>Thanh 4 (huyền/rơi 5-1)</strong>: Rơi dứt khoát và nhanh từ điểm cao nhất xuống thấp nhất, dứt khoát hạ giọng.');
+        }
+
+        if (!tips.length) {
+            tips.push('<strong>Thanh nhẹ (khinh thanh)</strong>: Đọc ngắn, nhẹ và nhanh, cơ miệng và lưỡi thả lỏng tự nhiên.');
+        }
+
+        return tips.join('<br>');
+    }
+
+    function renderShadowingActiveTarget() {
+        const words = getShadowingWords();
+        if (!words.length) return;
+
+        if (state.shadowing.wordIndex < 0 || state.shadowing.wordIndex >= words.length) {
+            state.shadowing.wordIndex = 0;
+        }
+
+        const w = words[state.shadowing.wordIndex];
+        const hzEl = document.getElementById('shadHz');
+        const pyEl = document.getElementById('shadPy');
+        const vnEl = document.getElementById('shadVn');
+        const posEl = document.getElementById('shadPos');
+        const toneTipEl = document.getElementById('shadToneTip');
+        const exBox = document.getElementById('shadExPreviewBox');
+        const exHz = document.getElementById('shadExHz');
+        const exPy = document.getElementById('shadExPy');
+        const exVn = document.getElementById('shadExVn');
+        const lblPlay = document.getElementById('lblPlayNativeAudio');
+        const ssbWord = document.getElementById('ssbCurrentWord');
+        const ssbList = document.getElementById('shadSentencesList');
+
+        if (hzEl) hzEl.textContent = w.word;
+        if (pyEl) pyEl.textContent = w.pinyin;
+        if (vnEl) vnEl.textContent = w.meaning_vi || w.meaning_primary || '';
+        if (posEl) posEl.textContent = w.pos_full || w.pos || 'Từ vựng';
+        if (toneTipEl) toneTipEl.innerHTML = getToneGuidance(w.pinyin);
+        if (ssbWord) ssbWord.textContent = w.word;
+
+        const examples = w.examples || [];
+        const isExMode = state.shadowing.targetType === 'ex' && examples.length > 0;
+
+        if (isExMode) {
+            if (state.shadowing.targetExIndex >= examples.length) {
+                state.shadowing.targetExIndex = 0;
+            }
+            const activeEx = examples[state.shadowing.targetExIndex];
+            if (exBox) exBox.classList.remove('hidden');
+            if (exHz) exHz.textContent = activeEx.hz;
+            if (exPy) exPy.textContent = activeEx.py;
+            if (exVn) exVn.textContent = activeEx.vn;
+            if (lblPlay) lblPlay.textContent = `Nghe câu ví dụ mẫu #${state.shadowing.targetExIndex + 1}`;
+        } else {
+            if (exBox) exBox.classList.add('hidden');
+            if (lblPlay) lblPlay.textContent = 'Nghe phát âm từ vựng mẫu';
+        }
+
+        // Render sentences list for current word
+        if (ssbList) {
+            if (!examples.length) {
+                ssbList.innerHTML = `<div class="empty-msg" style="padding:20px 10px;">Từ này không có câu ví dụ riêng trong bài. Bạn hãy tập trung luyện phát âm từ mục tiêu nhé!</div>`;
+            } else {
+                ssbList.innerHTML = examples.map((ex, idx) => {
+                    const isSelected = isExMode && state.shadowing.targetExIndex === idx;
+                    return `
+                        <div class="shad-sentence-card ${isSelected ? 'active' : ''}" id="shad-sent-${idx}">
+                            <div class="ssc-text-wrap">
+                                <div class="ssc-hz"><strong>${idx + 1}.</strong> ${escapeHtml(ex.hz)}</div>
+                                <div class="ssc-py">${escapeHtml(ex.py)}</div>
+                                <div class="ssc-vn">${escapeHtml(ex.vn)}</div>
+                            </div>
+                            <div class="ssc-actions">
+                                <button class="btn-ssc-speak" data-speak="${escapeAttr(ex.hz)}" title="Nghe câu này">🔊 Nghe</button>
+                                <button class="btn-ssc-select" data-select-ex="${idx}" title="Chọn câu này để luyện Shadowing">🎙️ Luyện câu này</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                ssbList.querySelectorAll('.btn-ssc-speak').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const text = btn.getAttribute('data-speak');
+                        if (text) speakChinese(text);
+                    });
+                });
+
+                ssbList.querySelectorAll('.btn-ssc-select').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const exIdx = parseInt(btn.getAttribute('data-select-ex'), 10);
+                        selectShadowingExample(exIdx);
+                    });
+                });
+            }
+        }
+
+        // Reset previous recording session UI for new target
+        resetShadowingRecordingSession();
+    }
+
+    function selectShadowingExample(exIdx) {
+        state.shadowing.targetType = 'ex';
+        state.shadowing.targetExIndex = exIdx;
+
+        const btnWord = document.getElementById('btnShadModeWord');
+        const btnEx = document.getElementById('btnShadModeEx');
+        if (btnWord) btnWord.classList.remove('active');
+        if (btnEx) btnEx.classList.add('active');
+
+        renderShadowingActiveTarget();
+        const stage = document.getElementById('unitStageScroll');
+        if (stage) stage.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetShadowingRecordingSession() {
+        stopVoiceRecording();
+        const pBar = document.getElementById('shadPlaybackBar');
+        const evalBox = document.getElementById('shadEvalBox');
+        const noticeBox = document.getElementById('shadNoticeBox');
+        if (pBar) pBar.classList.add('hidden');
+        if (evalBox) evalBox.classList.add('hidden');
+        if (noticeBox) noticeBox.classList.add('hidden');
+
+        const prompt = document.getElementById('shadRecPrompt');
+        if (prompt) {
+            prompt.textContent = 'Nhấn micro, cho phép trình duyệt truy cập và đọc to chữ Hán trên màn hình';
+        }
+    }
+
+    function getShadowingCurrentTargetText() {
+        const words = getShadowingWords();
+        if (!words.length) return '';
+        const w = words[state.shadowing.wordIndex];
+        if (state.shadowing.targetType === 'ex' && w.examples && w.examples[state.shadowing.targetExIndex]) {
+            return w.examples[state.shadowing.targetExIndex].hz;
+        }
+        return cleanHanziForTts(w.word);
+    }
+
+    function playNativeShadowingAudio(repeatTimes = 1) {
+        const text = getShadowingCurrentTargetText();
+        if (!text || !('speechSynthesis' in window)) return;
+
+        window.speechSynthesis.cancel();
+        const speedSel = document.getElementById('shadSpeedSelect');
+        const rate = speedSel ? (parseFloat(speedSel.value) || 0.9) : 0.9;
+        const playBtn = document.getElementById('btnPlayNativeAudio');
+
+        if (playBtn) playBtn.classList.add('playing');
+
+        let timesPlayed = 0;
+        function playOnce() {
+            const utter = new SpeechSynthesisUtterance(text);
+            utter.lang = 'zh-CN';
+            utter.rate = rate;
+
+            utter.onend = () => {
+                timesPlayed++;
+                if (timesPlayed < repeatTimes) {
+                    setTimeout(playOnce, 450);
+                } else {
+                    if (playBtn) playBtn.classList.remove('playing');
+                }
+            };
+
+            utter.onerror = () => {
+                if (playBtn) playBtn.classList.remove('playing');
+            };
+
+            window.speechSynthesis.speak(utter);
+        }
+
+        playOnce();
+    }
+
+    async function toggleVoiceRecording() {
+        if (state.shadowing.isRecording) {
+            stopVoiceRecording();
+        } else {
+            await startVoiceRecording();
+        }
+    }
+
+    async function startVoiceRecording() {
+        resetShadowingRecordingSession();
+
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+            showShadNotice('Trình duyệt của bạn không hỗ trợ tính năng thu âm qua getUserMedia hoặc bạn đang mở trang không qua giao thức an toàn (HTTPS/Localhost).');
+            return;
+        }
+
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            state.shadowing.stream = stream;
+            state.shadowing.audioChunks = [];
+            state.shadowing.recognizedText = '';
+
+            const options = {};
+            if (MediaRecorder.isTypeSupported('audio/webm;codecs=opus')) {
+                options.mimeType = 'audio/webm;codecs=opus';
+            } else if (MediaRecorder.isTypeSupported('audio/ogg;codecs=opus')) {
+                options.mimeType = 'audio/ogg;codecs=opus';
+            }
+
+            const recorder = new MediaRecorder(stream, options);
+            recorder.ondataavailable = (e) => {
+                if (e.data && e.data.size > 0) {
+                    state.shadowing.audioChunks.push(e.data);
+                }
+            };
+
+            recorder.onstop = () => {
+                const blob = new Blob(state.shadowing.audioChunks, { type: recorder.mimeType || 'audio/webm' });
+                if (state.shadowing.audioBlobUrl) {
+                    URL.revokeObjectURL(state.shadowing.audioBlobUrl);
+                }
+                state.shadowing.audioBlobUrl = URL.createObjectURL(blob);
+                state.shadowing.userAudio = new Audio(state.shadowing.audioBlobUrl);
+
+                const pBar = document.getElementById('shadPlaybackBar');
+                if (pBar) pBar.classList.remove('hidden');
+
+                setTimeout(evaluatePronunciation, 350);
+            };
+
+            recorder.start(100);
+            state.shadowing.mediaRecorder = recorder;
+
+            // Start SpeechRecognition concurrently if available
+            const SpeechRec = getSpeechRecognitionClass();
+            if (SpeechRec) {
+                try {
+                    const rec = new SpeechRec();
+                    rec.lang = 'zh-CN';
+                    rec.continuous = false;
+                    rec.interimResults = false;
+                    rec.maxAlternatives = 3;
+
+                    rec.onresult = (e) => {
+                        if (e.results && e.results[0] && e.results[0][0]) {
+                            state.shadowing.recognizedText = e.results[0][0].transcript;
+                        }
+                    };
+
+                    rec.onerror = (e) => {
+                        console.warn('SpeechRecognition error:', e.error);
+                    };
+
+                    rec.start();
+                    state.shadowing.recognition = rec;
+                } catch (recErr) {
+                    console.warn('SpeechRecognition start failed:', recErr);
+                }
+            }
+
+            // Update UI state
+            state.shadowing.isRecording = true;
+            state.shadowing.recSeconds = 0;
+
+            const micBtn = document.getElementById('btnShadMicToggle');
+            const micWrap = document.getElementById('shadMicWrap');
+            const micIcon = document.getElementById('shadMicIcon');
+            const micLabel = document.getElementById('shadMicLabel');
+            const timerEl = document.getElementById('shadRecTimer');
+            const prompt = document.getElementById('shadRecPrompt');
+
+            if (micBtn) micBtn.classList.add('recording');
+            if (micWrap) micWrap.classList.add('recording');
+            if (micIcon) micIcon.textContent = '⏹️';
+            if (micLabel) micLabel.textContent = 'Dừng Nói';
+            if (timerEl) {
+                timerEl.classList.remove('hidden');
+                timerEl.textContent = '00:00';
+            }
+            if (prompt) prompt.textContent = '🔴 Đang lắng nghe... Hãy đọc to và rõ ràng câu/từ tiếng Trung!';
+
+            state.shadowing.recTimerId = setInterval(() => {
+                state.shadowing.recSeconds += 1;
+                const m = String(Math.floor(state.shadowing.recSeconds / 60)).padStart(2, '0');
+                const s = String(state.shadowing.recSeconds % 60).padStart(2, '0');
+                if (timerEl) timerEl.textContent = `${m}:${s}`;
+
+                if (state.shadowing.recSeconds >= 15) {
+                    stopVoiceRecording();
+                }
+            }, 1000);
+
+        } catch (err) {
+            console.warn('getUserMedia error:', err);
+            showShadNotice('Không thể kích hoạt micro. Vui lòng kiểm tra quyền cho phép Micro (Microphone permission) trong cài đặt trình duyệt.');
+        }
+    }
+
+    function stopVoiceRecording() {
+        if (!state.shadowing.isRecording) return;
+        state.shadowing.isRecording = false;
+
+        if (state.shadowing.recTimerId) {
+            clearInterval(state.shadowing.recTimerId);
+            state.shadowing.recTimerId = null;
+        }
+
+        if (state.shadowing.mediaRecorder && state.shadowing.mediaRecorder.state !== 'inactive') {
+            try { state.shadowing.mediaRecorder.stop(); } catch (e) {}
+        }
+
+        if (state.shadowing.stream) {
+            state.shadowing.stream.getTracks().forEach(track => track.stop());
+            state.shadowing.stream = null;
+        }
+
+        if (state.shadowing.recognition) {
+            try { state.shadowing.recognition.stop(); } catch (e) {}
+            state.shadowing.recognition = null;
+        }
+
+        const micBtn = document.getElementById('btnShadMicToggle');
+        const micWrap = document.getElementById('shadMicWrap');
+        const micIcon = document.getElementById('shadMicIcon');
+        const micLabel = document.getElementById('shadMicLabel');
+        const timerEl = document.getElementById('shadRecTimer');
+        const prompt = document.getElementById('shadRecPrompt');
+
+        if (micBtn) micBtn.classList.remove('recording');
+        if (micWrap) micWrap.classList.remove('recording');
+        if (micIcon) micIcon.textContent = '🎙️';
+        if (micLabel) micLabel.textContent = 'Bấm để Nói';
+        if (timerEl) timerEl.classList.add('hidden');
+        if (prompt) prompt.textContent = '✅ Đã ghi âm xong! Đang phân tích âm sắc & chấm điểm...';
+    }
+
+    function showShadNotice(msg) {
+        const box = document.getElementById('shadNoticeBox');
+        if (box) {
+            box.textContent = msg;
+            box.classList.remove('hidden');
+        }
+    }
+
+    function cleanChineseString(str) {
+        if (!str) return '';
+        return String(str).replace(/[^\u4e00-\u9fa5a-zA-Z0-9]/g, '').toLowerCase().trim();
+    }
+
+    function calculateLevenshtein(a, b) {
+        const matrix = [];
+        for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+        for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+        for (let i = 1; i <= b.length; i++) {
+            for (let j = 1; j <= a.length; j++) {
+                if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                    matrix[i][j] = matrix[i - 1][j - 1];
+                } else {
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j - 1] + 1,
+                        matrix[i][j - 1] + 1,
+                        matrix[i - 1][j] + 1
+                    );
+                }
+            }
+        }
+        return matrix[b.length][a.length];
+    }
+
+    function evaluatePronunciation() {
+        const evalBox = document.getElementById('shadEvalBox');
+        const scoreCircle = document.getElementById('shadScoreCircle');
+        const scoreVal = document.getElementById('shadScoreVal');
+        const ratingTitle = document.getElementById('shadRatingTitle');
+        const ratingSub = document.getElementById('shadRatingSub');
+        const recogText = document.getElementById('shadRecognizedText');
+        const breakdown = document.getElementById('shadCharBreakdown');
+        const prompt = document.getElementById('shadRecPrompt');
+
+        if (!evalBox) return;
+
+        const targetRaw = getShadowingCurrentTargetText();
+        const expected = cleanChineseString(targetRaw);
+        const spoken = cleanChineseString(state.shadowing.recognizedText);
+
+        state.gamify.stats.voicePracticed = (state.gamify.stats.voicePracticed || 0) + 1;
+
+        if (!spoken) {
+            const hasRecClass = !!getSpeechRecognitionClass();
+            evalBox.classList.remove('hidden');
+            if (recogText) recogText.textContent = '(Chưa bắt được âm tiết rõ ràng)';
+            if (breakdown) breakdown.innerHTML = '<span class="char-chip missed">⚠️ Không phát hiện âm thanh rõ</span>';
+
+            if (scoreCircle) {
+                scoreCircle.className = 'seb-score-circle grade-low';
+            }
+            if (scoreVal) scoreVal.textContent = '--';
+            if (ratingTitle) ratingTitle.textContent = hasRecClass ? 'Chưa nghe rõ giọng bạn' : 'Đã thu âm giọng nói';
+            if (ratingSub) {
+                ratingSub.textContent = hasRecClass
+                    ? 'Hãy thử nói to hơn, sát micro hơn hoặc bấm "Thu lại".'
+                    : 'Trình duyệt chưa hỗ trợ AI chấm điểm tự động, nhưng bạn có thể nghe lại giọng và bấm So sánh với bản xứ!';
+            }
+            if (prompt) prompt.textContent = 'Hoàn tất ghi âm. Bạn có thể nghe lại hoặc thu lại bất cứ lúc nào.';
+            saveProgress();
+            return;
+        }
+
+        // Compare expected and spoken
+        if (recogText) recogText.textContent = state.shadowing.recognizedText;
+
+        const maxLen = Math.max(expected.length, spoken.length);
+        const dist = calculateLevenshtein(expected, spoken);
+        let scorePct = Math.round(Math.max(0, (1 - dist / maxLen)) * 100);
+
+        if (spoken === expected) {
+            scorePct = 98;
+        } else if (spoken.includes(expected) || expected.includes(spoken)) {
+            scorePct = Math.max(scorePct, 88);
+        }
+
+        state.shadowing.score = scorePct;
+        state.gamify.stats.voiceScoreBest = Math.max(state.gamify.stats.voiceScoreBest || 0, scorePct);
+
+        if (scoreVal) scoreVal.textContent = scorePct;
+
+        // Breakdown character chips
+        if (breakdown) {
+            const expectedChars = targetRaw.replace(/[0-9()（）]/g, '').trim().split('');
+            breakdown.innerHTML = expectedChars.map(char => {
+                const isMatch = spoken.includes(char.toLowerCase());
+                return `
+                    <span class="char-chip ${isMatch ? 'matched' : 'missed'}">
+                        ${isMatch ? '✅' : '❌'} ${escapeHtml(char)}
+                    </span>
+                `;
+            }).join('');
+        }
+
+        // Ratings & XP
+        if (scoreCircle) {
+            scoreCircle.className = 'seb-score-circle';
+            if (scorePct >= 85) scoreCircle.classList.add('grade-good');
+            else if (scorePct >= 65) scoreCircle.classList.add('grade-mid');
+            else scoreCircle.classList.add('grade-low');
+        }
+
+        if (scorePct >= 85) {
+            if (ratingTitle) ratingTitle.textContent = '🌟 Phát âm xuất sắc!';
+            if (ratingSub) ratingSub.textContent = `Thanh điệu và phát âm chuẩn xác ngữ âm bản xứ! (+25 XP)`;
+            playSoundEffect('correct');
+            awardXp(25, 'Luyện nói xuất sắc');
+        } else if (scorePct >= 65) {
+            if (ratingTitle) ratingTitle.textContent = '👍 Phát âm khá tốt!';
+            if (ratingSub) ratingSub.textContent = `Khẩu hình và cao độ tương đối rõ ràng. Hãy nghe lại để hoàn thiện hơn (+18 XP)`;
+            awardXp(18, 'Luyện nói khá tốt');
+        } else {
+            if (ratingTitle) ratingTitle.textContent = '💪 Cần luyện tập thêm!';
+            if (ratingSub) ratingSub.textContent = `Một số âm tiết chưa chuẩn. Hãy bấm "Nghe Mẫu ➔ Giọng bạn" để đối chiếu nhé (+10 XP)`;
+            awardXp(10, 'Luyện nói');
+        }
+
+        if (prompt) prompt.textContent = `Đã hoàn tất chấm điểm: ${scorePct}/100 điểm.`;
+        evalBox.classList.remove('hidden');
+        saveProgress();
+    }
+
+    function playUserRecordedAudio() {
+        if (!state.shadowing.userAudio) return;
+        state.shadowing.userAudio.currentTime = 0;
+        state.shadowing.userAudio.play();
+    }
+
+    function compareNativeAndUserAudios() {
+        if (!state.shadowing.userAudio) return;
+
+        const target = getShadowingCurrentTargetText();
+        if (!target || !('speechSynthesis' in window)) return;
+
+        const speedSel = document.getElementById('shadSpeedSelect');
+        const rate = speedSel ? (parseFloat(speedSel.value) || 0.9) : 0.9;
+        const compareBtn = document.getElementById('btnCompareAudios');
+
+        if (compareBtn) compareBtn.classList.add('active');
+
+        window.speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(target);
+        utter.lang = 'zh-CN';
+        utter.rate = rate;
+
+        utter.onend = () => {
+            setTimeout(() => {
+                if (state.shadowing.userAudio) {
+                    state.shadowing.userAudio.currentTime = 0;
+                    state.shadowing.userAudio.play();
+                    state.shadowing.userAudio.onended = () => {
+                        if (compareBtn) compareBtn.classList.remove('active');
+                    };
+                } else {
+                    if (compareBtn) compareBtn.classList.remove('active');
+                }
+            }, 450);
+        };
+
+        utter.onerror = () => {
+            if (compareBtn) compareBtn.classList.remove('active');
+        };
+
+        window.speechSynthesis.speak(utter);
     }
 
     // ==================== HELPERS ====================
