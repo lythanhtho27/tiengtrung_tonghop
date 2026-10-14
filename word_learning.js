@@ -1339,7 +1339,7 @@
         const mobDone = document.getElementById('mobToggleDone');
         if (mobDone) {
             mobDone.classList.toggle('done-active', isDone);
-            mobDone.innerHTML = isDone ? '✓ Đã học' : '☐ Đã học';
+            mobDone.innerHTML = isDone ? '✓ Học' : '☐ Học';
         }
 
         const btnStar = document.getElementById('btnToggleUnitStar');
@@ -1365,7 +1365,8 @@
             if (mobPrev) mobPrev.disabled = atFirst;
             if (mobNext) mobNext.disabled = atLast;
             if (mobLbl) {
-                mobLbl.textContent = `Bài ${state.activeUnitNum} (${idx + 1}/${meta.units_index.length})`;
+                mobLbl.textContent = `Bài ${state.activeUnitNum}`;
+                mobLbl.title = `Bài ${state.activeUnitNum} (${idx + 1}/${meta.units_index.length})`;
             }
         }
     }
@@ -2652,7 +2653,7 @@
         const mobBtn = document.getElementById('mobBtnSpeakAll');
         if (mobBtn) {
             mobBtn.classList.toggle('active', isActive);
-            mobBtn.textContent = isActive ? (labelText ? labelText.replace('⏹️ Dừng', '⏹️ Dừng') : '⏹️ Dừng đọc') : '🔊 Đọc cả bài';
+            mobBtn.textContent = isActive ? '⏹️ Dừng' : '🔊 Đọc';
         }
     }
 
