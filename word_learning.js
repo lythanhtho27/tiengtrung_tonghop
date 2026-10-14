@@ -11,6 +11,8 @@
     // ==================== STORAGE KEYS ====================
     const STORAGE_KEY_PROGRESS = 'hsk_wl_json_progress_v2';
     const STORAGE_KEY_THEME    = 'hsk_wl_json_theme_v2';
+    const STORAGE_KEY_SRS      = 'hsk_wl_srs_data_v2';
+    const STORAGE_KEY_GAMIFY   = 'hsk_wl_gamify_data_v2';
 
     // ==================== STATE ====================
     let state = {
@@ -18,7 +20,7 @@
         activeUnitNum: 1,
         activeWordNum: 1,
         studyMode: 'memory',       // 'memory' | 'practice' | 'flashcard' | 'pdf'
-        unitFilter: 'all',         // 'all' | 'todo' | 'done' | 'star'
+        unitFilter: 'all',         // 'all' | 'todo' | 'done' | 'star' | 'srs'
         unitSearchQuery: '',
         globalSearchQuery: '',
         showPinyin: true,
@@ -34,6 +36,27 @@
         starredWords: {},          // { "L1-0001": true }
         practiceScores: {},        // { "q1_1": { score: 40, total: 45 } }
 
+        // SRS Spaced Repetition (Leitner 5 boxes)
+        srsData: {},               // { [wordId]: { box, addedAt, nextDue, reviewCount } }
+
+        // Gamification: Streak, XP, Level, Badges & Stats
+        gamify: {
+            streak: 1,
+            lastDate: '',
+            longestStreak: 1,
+            xp: 0,
+            level: 1,
+            stats: {
+                wordsLearned: 0,
+                quizzesCompleted: 0,
+                quizStreakBest: 0,
+                flashcardsFlipped: 0,
+                podcastRuns: 0,
+                srsMastered: 0
+            },
+            unlockedBadges: {}
+        },
+
         // Current unit user answers in Mode 2 (Practice)
         userAnswers: {
             sec1Pinyin: {},        // { q_num: 'A' }
@@ -43,15 +66,38 @@
         },
         practiceChecked: false,
 
-        // Flashcard & Quiz state
-        fcScope: 'unit',           // 'unit' | 'starred' | 'book'
+        // Flashcard state
+        fcScope: 'unit',           // 'unit' | 'srs' | 'starred' | 'book'
+        fcFaceMode: 'hz',          // 'hz' | 'vi' | 'audio'
+        fcAutoSpeak: true,
         fcDeck: [],
         fcIndex: 0,
         fcFlipped: false,
+
+        // Quiz state
+        quizType: 'hz_to_vn',      // 'hz_to_vn' | 'vn_to_hz' | 'audio_to_hz'
+        quizTimerEnabled: true,
+        quizSoundEnabled: true,
+        quizStreak: 0,
         quizCorrect: 0,
         quizTotal: 0,
         quizCurrentQ: null,
-        quizAnswered: false
+        quizAnswered: false,
+        quizTimerId: null,
+
+        // Hands-free Podcast Player state
+        podcast: {
+            active: false,
+            isPlaying: false,
+            list: [],
+            index: 0,
+            step: 'word',          // 'word' | 'meaning' | 'ex' | 'ex_vn'
+            speed: 1.0,
+            voiceMode: 'bilingual', // 'bilingual' | 'zh_only'
+            scope: 'unit',
+            loop: true,
+            timerId: null
+        }
     };
 
     // Cache of loaded book JSON objects
@@ -143,7 +189,7 @@
         }
     }
 
-    // ==================== LOCAL STORAGE & THEME ====================
+    // ==================== LOCAL STORAGE & PERSISTENCE ====================
     function loadSavedProgress() {
         try {
             const raw = localStorage.getItem(STORAGE_KEY_PROGRESS);
@@ -160,6 +206,38 @@
                     state.activeUnitNum = Number(parsed.lastUnitNum);
                 }
             }
+
+            // Load SRS data
+            const rawSrs = localStorage.getItem(STORAGE_KEY_SRS);
+            if (rawSrs) {
+                state.srsData = JSON.parse(rawSrs) || {};
+            }
+
+            // Load Gamification data
+            const rawGamify = localStorage.getItem(STORAGE_KEY_GAMIFY);
+            if (rawGamify) {
+                const g = JSON.parse(rawGamify);
+                state.gamify = {
+                    streak: g.streak || 1,
+                    lastDate: g.lastDate || '',
+                    longestStreak: g.longestStreak || 1,
+                    xp: g.xp || 0,
+                    level: g.level || 1,
+                    stats: Object.assign({
+                        wordsLearned: 0,
+                        quizzesCompleted: 0,
+                        quizStreakBest: 0,
+                        flashcardsFlipped: 0,
+                        podcastRuns: 0,
+                        srsMastered: 0
+                    }, g.stats || {}),
+                    unlockedBadges: g.unlockedBadges || {}
+                };
+            }
+
+            checkDailyStreak();
+            updateGamifyUI();
+            updateSrsHeaderBadge();
         } catch (e) {
             console.warn('Không thể đọc tiến độ từ localStorage:', e);
         }
@@ -175,9 +253,712 @@
                 lastBookId: state.activeBookId,
                 lastUnitNum: state.activeUnitNum
             }));
+
+            localStorage.setItem(STORAGE_KEY_SRS, JSON.stringify(state.srsData || {}));
+            localStorage.setItem(STORAGE_KEY_GAMIFY, JSON.stringify(state.gamify || {}));
         } catch (e) {
             console.warn('Không thể lưu tiến độ:', e);
         }
+    }
+
+    // ==================== AUDIO SOUND FX ENGINE (WEB AUDIO API) ====================
+    let audioCtx = null;
+    function getAudioContext() {
+        if (!audioCtx) {
+            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+            if (AudioContextClass) audioCtx = new AudioContextClass();
+        }
+        if (audioCtx && audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+        return audioCtx;
+    }
+
+    function playSoundEffect(type) {
+        if (!state.quizSoundEnabled && type !== 'badge') return;
+        try {
+            const ctx = getAudioContext();
+            if (!ctx) return;
+            const now = ctx.currentTime;
+
+            if (type === 'correct') {
+                // Two-tone bright bell chime: D5 -> A5
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(587.33, now);
+                osc.frequency.setValueAtTime(880.00, now + 0.1);
+                gain.gain.setValueAtTime(0.2, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.4);
+            } else if (type === 'wrong') {
+                // Soft buzzer
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(180, now);
+                osc.frequency.linearRampToValueAtTime(130, now + 0.25);
+                gain.gain.setValueAtTime(0.15, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            } else if (type === 'flip') {
+                // Crisp click
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(420, now);
+                gain.gain.setValueAtTime(0.08, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.08);
+            } else if (type === 'badge') {
+                // Celebration fanfare: C5 -> E5 -> G5 -> C6
+                const notes = [523.25, 659.25, 783.99, 1046.50];
+                notes.forEach((freq, idx) => {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(freq, now + idx * 0.1);
+                    gain.gain.setValueAtTime(0.25, now + idx * 0.1);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.1 + 0.35);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start(now + idx * 0.1);
+                    osc.stop(now + idx * 0.1 + 0.35);
+                });
+            }
+        } catch (e) {
+            // Audio context not allowed or supported
+        }
+    }
+
+    // ==================== TOAST NOTIFICATIONS ====================
+    function showToast(title, message, icon = '✨', isBadge = false) {
+        const container = document.getElementById('toastContainer');
+        if (!container) return;
+
+        const toast = document.createElement('div');
+        toast.className = `wl-toast ${isBadge ? 'toast-badge' : ''}`;
+        toast.innerHTML = `
+            <div class="wl-toast-icon">${escapeHtml(icon)}</div>
+            <div class="wl-toast-content">
+                <div class="wl-toast-title">${escapeHtml(title)}</div>
+                <div class="wl-toast-msg">${escapeHtml(message)}</div>
+            </div>
+        `;
+        container.appendChild(toast);
+
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateX(60px)';
+            setTimeout(() => {
+                if (toast.parentNode) toast.parentNode.removeChild(toast);
+            }, 300);
+        }, 3600);
+    }
+
+    // ==================== GAMIFICATION: STREAK, LEVEL, BADGES ====================
+    const BADGES_CATALOG = [
+        { id: 'b_first_word', icon: '🥉', title: 'Khởi Đầu Nan', desc: 'Học hoặc ôn tập từ vựng đầu tiên', xp: 50 },
+        { id: 'b_streak_3', icon: '🔥', title: 'Giữ Lửa 3 Ngày', desc: 'Duy trì chuỗi học liên tục 3 ngày', xp: 100 },
+        { id: 'b_streak_7', icon: '⚡', title: 'Chiến Binh Chăm Chỉ', desc: 'Duy trì chuỗi học liên tục 7 ngày', xp: 250 },
+        { id: 'b_streak_30', icon: '👑', title: 'Bậc Thầy Kiên Trì', desc: 'Duy trì chuỗi học liên tục 30 ngày', xp: 1000 },
+        { id: 'b_fc_50', icon: '🎴', title: 'Thợ Lật Thẻ', desc: 'Lật 50 lượt thẻ Flashcard', xp: 80 },
+        { id: 'b_fc_200', icon: '🃏', title: 'Chuyên Gia Flashcard', desc: 'Lật 200 lượt thẻ Flashcard', xp: 300 },
+        { id: 'b_quiz_streak_5', icon: '🎯', title: 'Phản Xạ Nhạy Bén', desc: 'Đạt combo 5 câu Quiz đúng liên tiếp', xp: 100 },
+        { id: 'b_quiz_streak_10', icon: '🏹', title: 'Xạ Thủ Bách Phát', desc: 'Đạt combo 10 câu Quiz đúng liên tiếp', xp: 300 },
+        { id: 'b_srs_first', icon: '🧠', title: 'Người Rèn Luyện', desc: 'Đưa từ vựng đầu tiên vào Hộp từ khó SRS', xp: 50 },
+        { id: 'b_srs_master_10', icon: '💎', title: 'Trí Nhớ Thép', desc: 'Đạt Hộp 5 (Thành thạo) cho 10 từ trong SRS', xp: 350 },
+        { id: 'b_podcast_fan', icon: '🎧', title: 'Thính Giả Chăm Chỉ', desc: 'Bật chế độ nghe thụ động Hands-free Podcast', xp: 60 },
+        { id: 'b_unit_master', icon: '🏆', title: 'Chinh Phục Bài Học', desc: 'Hoàn thành trọn vẹn cả 3 phần bài tập một bài học', xp: 150 }
+    ];
+
+    function getLevelInfo(xp) {
+        const titles = [
+            'Tân thủ HSK',
+            'Sơ cấp 1',
+            'Sơ cấp 2',
+            'Trung cấp 1',
+            'Trung cấp 2',
+            'Cao cấp 1',
+            'Cao cấp 2',
+            'Bậc thầy HSK',
+            'Đại tông sư HSK'
+        ];
+        let lvl = 1;
+        let prevThresh = 0;
+        let nextThresh = 100;
+
+        for (let i = 1; i <= 20; i++) {
+            const step = 80 + i * 50;
+            if (xp < prevThresh + step) {
+                lvl = i;
+                nextThresh = prevThresh + step;
+                break;
+            }
+            prevThresh += step;
+        }
+
+        const titleIndex = Math.min(lvl - 1, titles.length - 1);
+        const title = titles[titleIndex];
+        const curLevelXp = xp - prevThresh;
+        const neededXp = nextThresh - prevThresh;
+        const pct = Math.min(100, Math.round((curLevelXp / neededXp) * 100));
+
+        return { level: lvl, title, curLevelXp, neededXp, pct, totalXp: xp };
+    }
+
+    function checkDailyStreak() {
+        const todayStr = new Date().toISOString().split('T')[0];
+        const last = state.gamify.lastDate;
+
+        if (!last) {
+            state.gamify.lastDate = todayStr;
+            state.gamify.streak = 1;
+            state.gamify.longestStreak = Math.max(state.gamify.longestStreak || 1, 1);
+            saveProgress();
+            return;
+        }
+
+        if (last === todayStr) {
+            return;
+        }
+
+        const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+        if (last === yesterday) {
+            state.gamify.streak = (state.gamify.streak || 1) + 1;
+            state.gamify.lastDate = todayStr;
+            state.gamify.longestStreak = Math.max(state.gamify.longestStreak || 1, state.gamify.streak);
+            showToast('🔥 Tăng chuỗi ngày học!', `Bạn đã duy trì học liên tục ${state.gamify.streak} ngày!`, '🔥');
+            awardXp(30, 'Duy trì streak hàng ngày');
+        } else {
+            state.gamify.streak = 1;
+            state.gamify.lastDate = todayStr;
+        }
+        saveProgress();
+        checkBadgeUnlocks();
+        updateGamifyUI();
+    }
+
+    function awardXp(amount, reason = '') {
+        const oldLvl = getLevelInfo(state.gamify.xp || 0).level;
+        state.gamify.xp = (state.gamify.xp || 0) + amount;
+        const newLvlInfo = getLevelInfo(state.gamify.xp);
+
+        if (newLvlInfo.level > oldLvl) {
+            playSoundEffect('badge');
+            showToast('⚡ THĂNG CẤP MỚI!', `Chúc mừng! Bạn đã đạt Cấp ${newLvlInfo.level} · ${newLvlInfo.title}!`, '🎉', true);
+        }
+
+        saveProgress();
+        updateGamifyUI();
+        checkBadgeUnlocks();
+    }
+
+    function unlockBadge(badgeId) {
+        if (!state.gamify.unlockedBadges) state.gamify.unlockedBadges = {};
+        if (state.gamify.unlockedBadges[badgeId]) return;
+
+        const badge = BADGES_CATALOG.find(b => b.id === badgeId);
+        if (!badge) return;
+
+        const todayStr = new Date().toLocaleDateString('vi-VN');
+        state.gamify.unlockedBadges[badgeId] = todayStr;
+        state.gamify.xp = (state.gamify.xp || 0) + badge.xp;
+        saveProgress();
+
+        playSoundEffect('badge');
+        showToast(`🎉 Mở khóa Huy hiệu: ${badge.title}!`, `${badge.desc} (+${badge.xp} XP)`, badge.icon, true);
+        updateGamifyUI();
+    }
+
+    function checkBadgeUnlocks() {
+        const stats = state.gamify.stats || {};
+        const streak = state.gamify.streak || 1;
+
+        if (stats.wordsLearned >= 1) unlockBadge('b_first_word');
+        if (streak >= 3) unlockBadge('b_streak_3');
+        if (streak >= 7) unlockBadge('b_streak_7');
+        if (streak >= 30) unlockBadge('b_streak_30');
+        if (stats.flashcardsFlipped >= 50) unlockBadge('b_fc_50');
+        if (stats.flashcardsFlipped >= 200) unlockBadge('b_fc_200');
+        if (stats.quizStreakBest >= 5) unlockBadge('b_quiz_streak_5');
+        if (stats.quizStreakBest >= 10) unlockBadge('b_quiz_streak_10');
+        if (Object.keys(state.srsData || {}).length >= 1) unlockBadge('b_srs_first');
+        if (stats.srsMastered >= 10) unlockBadge('b_srs_master_10');
+        if (stats.podcastRuns >= 1) unlockBadge('b_podcast_fan');
+    }
+
+    function updateGamifyUI() {
+        const streakEl = document.getElementById('hdrStreakCount');
+        const lvlEl = document.getElementById('hdrUserLevel');
+        const lvlInfo = getLevelInfo(state.gamify.xp || 0);
+
+        if (streakEl) streakEl.textContent = state.gamify.streak || 1;
+        if (lvlEl) lvlEl.textContent = `Lv.${lvlInfo.level}`;
+
+        // Inside Badges Modal
+        const bmStreak = document.getElementById('bmStreakCount');
+        const bmLongest = document.getElementById('bmLongestStreak');
+        const bmLevelTitle = document.getElementById('bmLevelTitle');
+        const bmCurrentXp = document.getElementById('bmCurrentXp');
+        const bmNextXp = document.getElementById('bmNextXp');
+        const bmXpFill = document.getElementById('bmXpFill');
+
+        if (bmStreak) bmStreak.textContent = state.gamify.streak || 1;
+        if (bmLongest) bmLongest.textContent = state.gamify.longestStreak || 1;
+        if (bmLevelTitle) bmLevelTitle.textContent = `Cấp ${lvlInfo.level} · ${lvlInfo.title}`;
+        if (bmCurrentXp) bmCurrentXp.textContent = lvlInfo.curLevelXp;
+        if (bmNextXp) bmNextXp.textContent = lvlInfo.neededXp;
+        if (bmXpFill) bmXpFill.style.width = `${lvlInfo.pct}%`;
+
+        const stats = state.gamify.stats || {};
+        const statWords = document.getElementById('bmStatWords');
+        const statQuiz = document.getElementById('bmStatQuiz');
+        const statFc = document.getElementById('bmStatFc');
+        const statSrs = document.getElementById('bmStatSrs');
+
+        if (statWords) statWords.textContent = stats.wordsLearned || 0;
+        if (statQuiz) statQuiz.textContent = stats.quizzesCompleted || 0;
+        if (statFc) statFc.textContent = stats.flashcardsFlipped || 0;
+        if (statSrs) statSrs.textContent = stats.srsMastered || 0;
+
+        renderBadgesGrid();
+    }
+
+    function renderBadgesGrid() {
+        const grid = document.getElementById('badgesGrid');
+        const countEl = document.getElementById('bmBadgesUnlockedCount');
+        if (!grid) return;
+
+        const unlocked = state.gamify.unlockedBadges || {};
+        const unlockedCount = Object.keys(unlocked).length;
+        if (countEl) countEl.textContent = `${unlockedCount} / ${BADGES_CATALOG.length} huy hiệu`;
+
+        grid.innerHTML = BADGES_CATALOG.map(b => {
+            const isUnlocked = !!unlocked[b.id];
+            const dateStr = unlocked[b.id] || '';
+            return `
+                <div class="badge-card ${isUnlocked ? 'unlocked' : 'locked'}">
+                    <div class="badge-icon">${b.icon}</div>
+                    <div class="badge-info">
+                        <div class="badge-title">${escapeHtml(b.title)}</div>
+                        <div class="badge-desc">${escapeHtml(b.desc)}</div>
+                        ${isUnlocked
+                            ? `<div class="badge-date">✓ Đã đạt: ${dateStr}</div>`
+                            : `<div class="badge-xp-reward">+${b.xp} XP khi mở khóa</div>`}
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    // ==================== SPACED REPETITION (SRS / LEITNER) ENGINE ====================
+    const SRS_INTERVALS_MS = {
+        1: 0,                   // Box 1: Immediate / today
+        2: 1 * 86400000,        // Box 2: 1 day
+        3: 3 * 86400000,        // Box 3: 3 days
+        4: 7 * 86400000,        // Box 4: 7 days
+        5: 14 * 86400000        // Box 5: 14 days (Mastered)
+    };
+
+    function addToSrs(wordId, initialBox = 1) {
+        if (!state.srsData) state.srsData = {};
+        const existing = state.srsData[wordId];
+        const now = Date.now();
+
+        state.srsData[wordId] = {
+            wordId,
+            box: initialBox,
+            addedAt: existing ? existing.addedAt : now,
+            lastReviewed: now,
+            nextDue: now + (SRS_INTERVALS_MS[initialBox] || 0),
+            reviewCount: existing ? existing.reviewCount + 1 : 1
+        };
+
+        saveProgress();
+        updateSrsHeaderBadge();
+        checkBadgeUnlocks();
+    }
+
+    function rateSrsWord(wordId, rating) {
+        if (!state.srsData) state.srsData = {};
+        const item = state.srsData[wordId] || { wordId, box: 1, reviewCount: 0 };
+        const now = Date.now();
+        let newBox = 1;
+
+        if (rating === 1) {
+            newBox = 1;
+        } else if (rating === 2) {
+            newBox = Math.max(1, Math.min(3, item.box));
+        } else if (rating === 3) {
+            newBox = Math.min(5, (item.box || 1) + 1);
+            if (newBox === 5 && item.box < 5) {
+                state.gamify.stats.srsMastered = (state.gamify.stats.srsMastered || 0) + 1;
+            }
+            awardXp(12, 'Ghi nhớ từ trong SRS');
+        }
+
+        state.srsData[wordId] = {
+            wordId,
+            box: newBox,
+            addedAt: item.addedAt || now,
+            lastReviewed: now,
+            nextDue: now + (SRS_INTERVALS_MS[newBox] || 0),
+            reviewCount: (item.reviewCount || 0) + 1
+        };
+
+        saveProgress();
+        updateSrsHeaderBadge();
+        checkBadgeUnlocks();
+    }
+
+    function removeWordFromSrs(wordId) {
+        if (state.srsData && state.srsData[wordId]) {
+            delete state.srsData[wordId];
+            saveProgress();
+            updateSrsHeaderBadge();
+            renderSrsModal();
+        }
+    }
+
+    function getSrsDueWords() {
+        const bookData = getLoadedBookData(state.activeBookId);
+        if (!bookData || !bookData.units) return [];
+        const now = Date.now();
+        const dueWords = [];
+
+        const wordMap = {};
+        bookData.units.forEach(u => {
+            (u.target_words || []).forEach(w => {
+                wordMap[w.id] = w;
+            });
+        });
+
+        for (const [wid, srsInfo] of Object.entries(state.srsData || {})) {
+            if (wordMap[wid] && srsInfo.nextDue <= now + 60000) {
+                dueWords.push(wordMap[wid]);
+            }
+        }
+        return dueWords;
+    }
+
+    function getAllSrsWordsForCurrentBook() {
+        const bookData = getLoadedBookData(state.activeBookId);
+        if (!bookData || !bookData.units) return [];
+        const srsWords = [];
+
+        const wordMap = {};
+        bookData.units.forEach(u => {
+            (u.target_words || []).forEach(w => {
+                wordMap[w.id] = w;
+            });
+        });
+
+        for (const [wid, srsInfo] of Object.entries(state.srsData || {})) {
+            if (wordMap[wid]) {
+                srsWords.push({ word: wordMap[wid], srs: srsInfo });
+            }
+        }
+        return srsWords;
+    }
+
+    function updateSrsHeaderBadge() {
+        const badge = document.getElementById('hdrSrsCount');
+        if (!badge) return;
+        const due = getSrsDueWords().length;
+        badge.textContent = due;
+        badge.classList.toggle('hidden', due === 0);
+    }
+
+    function renderSrsModal() {
+        const modal = document.getElementById('srsModal');
+        const boxesBar = document.getElementById('srsBoxesBar');
+        const listEl = document.getElementById('srsWordList');
+        if (!modal || !boxesBar || !listEl) return;
+
+        const allSrs = getAllSrsWordsForCurrentBook();
+        const boxCounts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+        allSrs.forEach(item => {
+            const b = item.srs.box || 1;
+            boxCounts[b] = (boxCounts[b] || 0) + 1;
+        });
+
+        boxesBar.innerHTML = [1, 2, 3, 4, 5].map(b => `
+            <div class="srs-box-chip box-${b}" data-box-filter="${b}">
+                <div class="sbc-title">Hộp ${b}</div>
+                <div class="sbc-count">${boxCounts[b]}</div>
+            </div>
+        `).join('');
+
+        if (!allSrs.length) {
+            listEl.innerHTML = `
+                <div class="empty-msg" style="padding:40px 16px;">
+                    🎉 Hộp từ khó của bạn hiện đang trống! Khi bạn làm sai câu hỏi hoặc bấm nút <strong>🧠 Cần ôn</strong> trên thẻ từ, các từ vựng sẽ tự động tập hợp về đây để bạn ôn tập ngắt quãng.
+                </div>
+            `;
+            return;
+        }
+
+        listEl.innerHTML = allSrs.map(item => `
+            <div class="srs-item-row" id="srs-row-${item.word.id}">
+                <div class="sir-left">
+                    <span class="sir-hz" data-speak="${escapeAttr(cleanHanziForTts(item.word.word))}" title="Nhấn để nghe">${escapeHtml(item.word.word)}</span>
+                    <span class="sir-py">${escapeHtml(item.word.pinyin)}</span>
+                    <span class="sir-vn">${escapeHtml(item.word.meaning_vi || item.word.meaning_primary)}</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <span class="sir-box-badge">Hộp ${item.srs.box || 1}</span>
+                    <button class="sir-remove-btn" data-remove-srs="${item.word.id}">Bỏ theo dõi</button>
+                </div>
+            </div>
+        `).join('');
+
+        listEl.querySelectorAll('[data-speak]').forEach(el => {
+            el.addEventListener('click', () => speakChinese(el.getAttribute('data-speak')));
+        });
+
+        listEl.querySelectorAll('[data-remove-srs]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const wid = btn.getAttribute('data-remove-srs');
+                removeWordFromSrs(wid);
+            });
+        });
+    }
+
+    // ==================== HANDS-FREE PODCAST PLAYER ENGINE ====================
+    function openPodcastPlayer() {
+        const bar = document.getElementById('podcastPlayerBar');
+        const btnHeader = document.getElementById('btnTogglePodcast');
+        if (bar) bar.classList.remove('hidden');
+        if (btnHeader) btnHeader.classList.add('active');
+
+        state.podcast.active = true;
+        initPodcastPlaylist();
+        startPodcastPlayback();
+    }
+
+    function closePodcastPlayer() {
+        const bar = document.getElementById('podcastPlayerBar');
+        const btnHeader = document.getElementById('btnTogglePodcast');
+        if (bar) bar.classList.add('hidden');
+        if (btnHeader) btnHeader.classList.remove('active');
+
+        stopPodcastPlayback();
+        state.podcast.active = false;
+    }
+
+    function initPodcastPlaylist() {
+        const scope = state.podcast.scope;
+        let words = [];
+
+        if (scope === 'srs') {
+            words = getAllSrsWordsForCurrentBook().map(item => item.word);
+        } else if (scope === 'star') {
+            words = getWordsForScope('starred');
+        } else if (scope === 'book') {
+            words = getWordsForScope('book');
+        } else {
+            words = getWordsForScope('unit');
+        }
+
+        state.podcast.list = words.length ? words : (getCurrentUnitData() ? getCurrentUnitData().target_words : []);
+        state.podcast.index = 0;
+        state.podcast.step = 'word';
+        updatePodcastUI();
+    }
+
+    function updatePodcastUI() {
+        const bar = document.getElementById('podcastPlayerBar');
+        const hzEl = document.getElementById('ppbHz');
+        const pyEl = document.getElementById('ppbPy');
+        const vnEl = document.getElementById('ppbVn');
+        const stepEl = document.getElementById('ppbStepBadge');
+        const exEl = document.getElementById('ppbExPreview');
+        const counterEl = document.getElementById('ppbCounter');
+        const fillEl = document.getElementById('ppbProgressBar');
+        const btnPlay = document.getElementById('ppbBtnPlay');
+
+        if (!state.podcast.list.length) return;
+        const w = state.podcast.list[state.podcast.index] || state.podcast.list[0];
+
+        if (hzEl) hzEl.textContent = w.word;
+        if (pyEl) pyEl.textContent = w.pinyin;
+        if (vnEl) vnEl.textContent = w.meaning_vi || w.meaning_primary || '';
+
+        const stepLabels = {
+            word: '🔊 Từ vựng (x2)',
+            meaning: '🇻🇳 Nghĩa tiếng Việt',
+            ex: '💬 Câu ví dụ',
+            ex_vn: '📝 Dịch câu ví dụ'
+        };
+        if (stepEl) stepEl.textContent = stepLabels[state.podcast.step] || '🔊 Phát âm';
+
+        const ex = (w.examples && w.examples[0]) ? w.examples[0] : null;
+        if (exEl) {
+            exEl.textContent = ex ? `“${ex.hz}”` : '';
+        }
+
+        if (counterEl) {
+            counterEl.textContent = `${state.podcast.index + 1} / ${state.podcast.list.length}`;
+        }
+        if (fillEl) {
+            const pct = Math.round(((state.podcast.index + 1) / state.podcast.list.length) * 100);
+            fillEl.style.width = `${pct}%`;
+        }
+        if (btnPlay) {
+            btnPlay.textContent = state.podcast.isPlaying ? '⏸️' : '▶️';
+        }
+        if (bar) {
+            bar.classList.toggle('playing', state.podcast.isPlaying);
+        }
+    }
+
+    function startPodcastPlayback() {
+        state.podcast.isPlaying = true;
+        updatePodcastUI();
+        state.gamify.stats.podcastRuns = (state.gamify.stats.podcastRuns || 0) + 1;
+        awardXp(15, 'Nghe podcast thụ động');
+        playPodcastCurrentStep();
+    }
+
+    function stopPodcastPlayback() {
+        state.podcast.isPlaying = false;
+        if (state.podcast.timerId) {
+            clearTimeout(state.podcast.timerId);
+            state.podcast.timerId = null;
+        }
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
+        updatePodcastUI();
+    }
+
+    function playPodcastCurrentStep() {
+        if (!state.podcast.isPlaying || !state.podcast.list.length) return;
+
+        const w = state.podcast.list[state.podcast.index];
+        if (!w) return;
+
+        const ex = (w.examples && w.examples[0]) ? w.examples[0] : null;
+        updatePodcastUI();
+
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
+
+        const step = state.podcast.step;
+        let textToSpeak = '';
+        let lang = 'zh-CN';
+        let rate = state.podcast.speed || 1.0;
+
+        if (step === 'word') {
+            textToSpeak = `${cleanHanziForTts(w.word)}, , ${cleanHanziForTts(w.word)}`;
+            lang = 'zh-CN';
+        } else if (step === 'meaning') {
+            textToSpeak = w.meaning_vi || w.meaning_primary || '';
+            lang = 'vi-VN';
+        } else if (step === 'ex') {
+            if (ex && ex.hz) {
+                textToSpeak = ex.hz;
+                lang = 'zh-CN';
+            } else {
+                advancePodcastStep();
+                return;
+            }
+        } else if (step === 'ex_vn') {
+            if (ex && ex.vn) {
+                textToSpeak = ex.vn;
+                lang = 'vi-VN';
+            } else {
+                advancePodcastStep();
+                return;
+            }
+        }
+
+        if (!textToSpeak) {
+            advancePodcastStep();
+            return;
+        }
+
+        const utter = new SpeechSynthesisUtterance(textToSpeak);
+        utter.lang = lang;
+        utter.rate = rate;
+
+        utter.onend = () => {
+            if (!state.podcast.isPlaying) return;
+            const pause = step === 'word' ? 600 : (step === 'meaning' ? 700 : 900);
+            state.podcast.timerId = setTimeout(advancePodcastStep, pause);
+        };
+
+        utter.onerror = () => {
+            if (!state.podcast.isPlaying) return;
+            state.podcast.timerId = setTimeout(advancePodcastStep, 500);
+        };
+
+        window.speechSynthesis.speak(utter);
+    }
+
+    function advancePodcastStep() {
+        if (!state.podcast.isPlaying) return;
+
+        const w = state.podcast.list[state.podcast.index];
+        const hasEx = w && w.examples && w.examples.length;
+        const isBilingual = state.podcast.voiceMode === 'bilingual';
+
+        if (state.podcast.step === 'word') {
+            if (isBilingual) {
+                state.podcast.step = 'meaning';
+            } else if (hasEx) {
+                state.podcast.step = 'ex';
+            } else {
+                gotoNextPodcastWord();
+                return;
+            }
+        } else if (state.podcast.step === 'meaning') {
+            if (hasEx) {
+                state.podcast.step = 'ex';
+            } else {
+                gotoNextPodcastWord();
+                return;
+            }
+        } else if (state.podcast.step === 'ex') {
+            if (isBilingual && hasEx) {
+                state.podcast.step = 'ex_vn';
+            } else {
+                gotoNextPodcastWord();
+                return;
+            }
+        } else if (state.podcast.step === 'ex_vn') {
+            gotoNextPodcastWord();
+            return;
+        }
+
+        playPodcastCurrentStep();
+    }
+
+    function gotoNextPodcastWord() {
+        state.podcast.step = 'word';
+        if (state.podcast.index < state.podcast.list.length - 1) {
+            state.podcast.index += 1;
+        } else {
+            if (state.podcast.loop) {
+                state.podcast.index = 0;
+            } else {
+                stopPodcastPlayback();
+                showToast('🎧 Hoàn thành Podcast!', 'Bạn đã nghe xong toàn bộ danh sách từ vựng!', '🎉');
+                return;
+            }
+        }
+        playPodcastCurrentStep();
     }
 
     function initTheme() {
@@ -367,6 +1148,12 @@
             if (state.unitFilter === 'todo' && isDone) return false;
             if (state.unitFilter === 'done' && !isDone) return false;
             if (state.unitFilter === 'star' && !isStar) return false;
+            if (state.unitFilter === 'srs') {
+                const fullU = unitMap[uNum];
+                if (!fullU || !fullU.target_words) return false;
+                const hasSrs = fullU.target_words.some(w => !!state.srsData[w.id]);
+                if (!hasSrs) return false;
+            }
 
             if (!q) return true;
 
@@ -657,6 +1444,9 @@
                </div>`
             : '';
 
+        const srsInfo = state.srsData && state.srsData[w.id];
+        const isSrs = !!srsInfo;
+
         return `
             <div class="qm-word-card" id="qm-word-${w.num}" data-word-id="${w.id}">
                 <div class="qmc-head">
@@ -672,6 +1462,9 @@
                         ${unitBadgeInfo ? `<button class="qmc-icon-btn" data-jump-unit="${unitBadgeInfo.unit}" title="Chuyển tới Bài ${unitBadgeInfo.unit}">📖 Bài ${unitBadgeInfo.unit}</button>` : ''}
                         <button class="qmc-icon-btn" data-speak="${escapeAttr(cleanHz)}" title="Chỉ nghe phát âm từ vựng">🔊 Từ</button>
                         <button class="qmc-icon-btn" data-speak-word-ex="${w.num}" title="Đọc từ vựng này rồi đọc tiếp các câu ví dụ của từ">▶️ Từ + VD</button>
+                        <button class="qmc-icon-btn ${isSrs ? 'srs-hard' : ''}" data-srs-id="${w.id}" title="Đánh dấu từ khó / Hộp lặp lại ngắt quãng SRS">
+                            ${isSrs ? `🧠 Hộp ${srsInfo.box || 1}` : '🧠 Cần ôn'}
+                        </button>
                         <button class="qmc-icon-btn ${isStar ? 'starred' : ''}" data-star-id="${w.id}" title="Lưu từ vựng này">
                             ${isStar ? '⭐ Đã lưu' : '☆ Lưu'}
                         </button>
@@ -709,6 +1502,27 @@
                 if (wordObj) {
                     startSpeakingWordsWithExamples([wordObj]);
                 }
+            });
+        });
+
+        container.querySelectorAll('[data-srs-id]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const wid = btn.getAttribute('data-srs-id');
+                if (!wid) return;
+                if (state.srsData && state.srsData[wid]) {
+                    delete state.srsData[wid];
+                    btn.classList.remove('srs-hard');
+                    btn.textContent = '🧠 Cần ôn';
+                    showToast('Đã bỏ theo dõi', 'Đã xóa từ khỏi Hộp từ khó SRS', 'ℹ️');
+                } else {
+                    addToSrs(wid, 1);
+                    btn.classList.add('srs-hard');
+                    btn.textContent = '🧠 Hộp 1';
+                    showToast('🧠 Đã thêm vào Hộp SRS!', 'Từ này sẽ được lên lịch ôn ngắt quãng', '🧠');
+                }
+                saveProgress();
+                updateSrsHeaderBadge();
             });
         });
 
@@ -1116,6 +1930,10 @@
                         fbEl.textContent = `Đáp án: ${q.answer_pinyin} - ${q.answer_meaning}`;
                     }
                 }
+                if (!pyOk || !mnOk) {
+                    const targetWord = (unitData.target_words || []).find(w => w.num === q.word_num);
+                    if (targetWord) addToSrs(targetWord.id, 1);
+                }
             });
         }
 
@@ -1126,7 +1944,12 @@
                     const key = `g${grp.group_num}_q${q.q_num}`;
                     const userChoice = state.userAnswers.sec2Cloze[key] || '';
                     const isOk = userChoice === q.answer;
-                    if (isOk) score += 1;
+                    if (isOk) {
+                        score += 1;
+                    } else {
+                        const targetWord = (unitData.target_words || []).find(w => w.word === q.target_word);
+                        if (targetWord) addToSrs(targetWord.id, 1);
+                    }
 
                     const slot = document.getElementById(`s2-slot-${key}`);
                     const hint = document.getElementById(`s2-hint-${key}`);
@@ -1161,7 +1984,12 @@
                 total += 1;
                 const userChoice = state.userAnswers.sec3Mcq[q.q_num] || '';
                 const isOk = userChoice === q.answer;
-                if (isOk) score += 1;
+                if (isOk) {
+                    score += 1;
+                } else {
+                    const targetWord = (unitData.target_words || []).find(w => w.word === q.target_word);
+                    if (targetWord) addToSrs(targetWord.id, 1);
+                }
 
                 const slot  = document.getElementById(`s3-slot-${q.q_num}`);
                 const trans = document.getElementById(`s3-trans-${q.q_num}`);
@@ -1207,7 +2035,19 @@
             state.doneUnits[unitKey] = true;
             updateUnitActionButtons();
         }
+
+        if (score > 0) {
+            awardXp(score * 2, 'Luyện tập bài tập');
+            playSoundEffect(pct >= 80 ? 'badge' : 'correct');
+        } else {
+            playSoundEffect('wrong');
+        }
+        if (pct === 100) {
+            unlockBadge('b_unit_master');
+        }
+
         saveProgress();
+        updateSrsHeaderBadge();
 
         const meta = getBookIndexMeta(state.activeBookId);
         if (meta) {
@@ -1256,11 +2096,21 @@
         if (unitData) renderPracticePane(unitData);
     }
 
-    // ==================== MODE 3: FLASHCARD 3D & REFLEX QUIZ ====================
+    // ==================== MODE 3: FLASHCARD 3D & REFLEX QUIZ (UPGRADED) ====================
     function getWordsForScope(scope) {
         const bookData = getLoadedBookData(state.activeBookId);
         const unitData = getCurrentUnitData();
         if (!bookData) return [];
+
+        if (scope === 'srs') {
+            const allWords = [];
+            (bookData.units || []).forEach(u => {
+                (u.target_words || []).forEach(w => {
+                    if (state.srsData && state.srsData[w.id]) allWords.push(w);
+                });
+            });
+            return allWords.length ? allWords : (unitData ? unitData.target_words : []);
+        }
 
         if (scope === 'starred') {
             const allWords = [];
@@ -1295,24 +2145,85 @@
         if (!cardEl) return;
         cardEl.classList.toggle('flipped', state.fcFlipped);
 
-        if (!state.fcDeck.length) return;
+        if (!state.fcDeck.length) {
+            const frontHz = document.getElementById('fcFrontHanzi');
+            if (frontHz) frontHz.textContent = 'Trống';
+            return;
+        }
+
         const w = state.fcDeck[state.fcIndex] || state.fcDeck[0];
 
-        const numBadge   = document.getElementById('fcWordNumBadge');
-        const frontHz    = document.getElementById('fcFrontHanzi');
-        const frontPos   = document.getElementById('fcFrontPos');
-        const backHz     = document.getElementById('fcBackHanzi');
-        const backPy     = document.getElementById('fcBackPinyin');
-        const backMn     = document.getElementById('fcBackMeaning');
-        const backEx     = document.getElementById('fcBackExample');
-        const counterEl  = document.getElementById('fcCounter');
+        // Header info
+        const deckBadge = document.getElementById('fcDeckBadge');
+        const srsBoxBadge = document.getElementById('fcSrsBoxBadge');
+        const numBadge = document.getElementById('fcWordNumBadge');
+        const progBar = document.getElementById('fcDeckProgressBar');
+        const counterEl = document.getElementById('fcCounter');
+
+        if (deckBadge) {
+            const scopeLabels = { unit: `Bài ${state.activeUnitNum}`, srs: '🧠 Hộp SRS', starred: '⭐ Đã lưu', book: 'Toàn quyển' };
+            deckBadge.textContent = scopeLabels[state.fcScope] || `Bài ${state.activeUnitNum}`;
+        }
+
+        if (srsBoxBadge) {
+            const srsInfo = state.srsData && state.srsData[w.id];
+            if (srsInfo) {
+                srsBoxBadge.textContent = `Hộp SRS ${srsInfo.box || 1}`;
+                srsBoxBadge.classList.remove('hidden');
+            } else {
+                srsBoxBadge.classList.add('hidden');
+            }
+        }
 
         if (numBadge) numBadge.textContent = `#${w.num}`;
-        if (frontHz)  frontHz.textContent  = w.word;
-        if (frontPos) frontPos.textContent = w.pos_full || w.pos || 'Từ vựng';
-        if (backHz)   backHz.textContent   = w.word;
-        if (backPy)   backPy.textContent   = w.pinyin;
-        if (backMn)   backMn.textContent   = w.meaning_vi || w.meaning_primary || w.meaning_en;
+        if (counterEl) counterEl.textContent = `${state.fcIndex + 1} / ${state.fcDeck.length}`;
+
+        if (progBar) {
+            const pct = Math.round(((state.fcIndex + 1) / state.fcDeck.length) * 100);
+            progBar.style.width = `${pct}%`;
+        }
+
+        // Front Face Display according to fcFaceMode
+        const frontHz = document.getElementById('fcFrontHanzi');
+        const frontSub = document.getElementById('fcFrontSub');
+        const frontPos = document.getElementById('fcFrontPos');
+
+        if (state.fcFaceMode === 'vi') {
+            if (frontHz) {
+                frontHz.textContent = w.meaning_vi || w.meaning_primary || '';
+                frontHz.style.fontSize = '1.75rem';
+            }
+            if (frontSub) frontSub.textContent = `[${w.pos_full || w.pos || 'Từ vựng'}]`;
+            if (frontPos) frontPos.textContent = 'Nhấn vào thẻ (hoặc Space) để xem Chữ Hán & Pinyin';
+        } else if (state.fcFaceMode === 'audio') {
+            if (frontHz) {
+                frontHz.textContent = '🔊';
+                frontHz.style.fontSize = '3.5rem';
+            }
+            if (frontSub) frontSub.textContent = 'Lắng nghe & Đoán từ vựng';
+            if (frontPos) frontPos.textContent = `[${w.pos_full || w.pos || 'Từ vựng'}] Nhấn thẻ để xem chữ`;
+            if (state.fcAutoSpeak && !state.fcFlipped) {
+                speakChinese(cleanHanziForTts(w.word));
+            }
+        } else {
+            // Default 'hz'
+            if (frontHz) {
+                frontHz.textContent = w.word;
+                frontHz.style.fontSize = '3.1rem';
+            }
+            if (frontSub) frontSub.textContent = '';
+            if (frontPos) frontPos.textContent = w.pos_full || w.pos || 'Từ vựng';
+        }
+
+        // Back Face Display
+        const backHz = document.getElementById('fcBackHanzi');
+        const backPy = document.getElementById('fcBackPinyin');
+        const backMn = document.getElementById('fcBackMeaning');
+        const backEx = document.getElementById('fcBackExample');
+
+        if (backHz) backHz.textContent = w.word;
+        if (backPy) backPy.textContent = w.pinyin;
+        if (backMn) backMn.textContent = w.meaning_vi || w.meaning_primary || w.meaning_en;
 
         if (backEx) {
             const ex = (w.examples && w.examples[0]) ? w.examples[0] : null;
@@ -1323,26 +2234,138 @@
                 : `<div>Cấp độ ${state.activeBookId.toUpperCase()}</div>`;
         }
 
-        if (counterEl) {
-            counterEl.textContent = `${state.fcIndex + 1} / ${state.fcDeck.length}`;
+        // Auto speak on flip
+        if (state.fcFlipped && state.fcAutoSpeak && state.fcFaceMode !== 'audio') {
+            speakChinese(cleanHanziForTts(w.word));
         }
     }
 
+    function advanceFlashcard(delta = 1) {
+        if (!state.fcDeck.length) return;
+        state.fcIndex = (state.fcIndex + delta + state.fcDeck.length) % state.fcDeck.length;
+        state.fcFlipped = false;
+        renderFlashcard();
+    }
+
+    function handleFlashcardRate(rating) {
+        if (!state.fcDeck.length) return;
+        const w = state.fcDeck[state.fcIndex];
+        if (!w) return;
+
+        rateSrsWord(w.id, rating);
+        state.gamify.stats.flashcardsFlipped = (state.gamify.stats.flashcardsFlipped || 0) + 1;
+        checkBadgeUnlocks();
+        saveProgress();
+
+        playSoundEffect(rating === 1 ? 'wrong' : 'correct');
+        advanceFlashcard(1);
+    }
+
+    // ==================== ENHANCED REFLEX QUIZ ====================
     function initReflexQuiz() {
         state.quizCorrect = 0;
         state.quizTotal = 0;
+        state.quizStreak = 0;
         updateQuizScoreUI();
+        updateQuizStreakUI();
         nextReflexQuizQuestion();
     }
 
     function updateQuizScoreUI() {
         const sEl = document.getElementById('quizScore');
         const tEl = document.getElementById('quizTotal');
+        const rEl = document.getElementById('quizAccRate');
         if (sEl) sEl.textContent = state.quizCorrect;
         if (tEl) tEl.textContent = state.quizTotal;
+        if (rEl) {
+            const pct = state.quizTotal > 0 ? Math.round((state.quizCorrect / state.quizTotal) * 100) : 0;
+            rEl.textContent = `(${pct}%)`;
+        }
+    }
+
+    function updateQuizStreakUI() {
+        const badge = document.getElementById('quizStreakBadge');
+        const count = document.getElementById('quizStreakCount');
+        if (!badge || !count) return;
+
+        count.textContent = state.quizStreak;
+        if (state.quizStreak >= 3) {
+            badge.classList.remove('hidden');
+        } else {
+            badge.classList.add('hidden');
+        }
+    }
+
+    function startQuizTimer() {
+        if (state.quizTimerId) {
+            clearInterval(state.quizTimerId);
+            state.quizTimerId = null;
+        }
+
+        const timerWrap = document.getElementById('quizTimerWrap');
+        const timerFill = document.getElementById('quizTimerFill');
+        if (!timerWrap || !timerFill) return;
+
+        if (!state.quizTimerEnabled) {
+            timerWrap.classList.add('hidden');
+            return;
+        }
+        timerWrap.classList.remove('hidden');
+
+        const totalMs = 10000;
+        const intervalMs = 100;
+        let remaining = totalMs;
+        timerFill.style.width = '100%';
+
+        state.quizTimerId = setInterval(() => {
+            if (state.quizAnswered) {
+                clearInterval(state.quizTimerId);
+                state.quizTimerId = null;
+                return;
+            }
+
+            remaining -= intervalMs;
+            const pct = Math.max(0, (remaining / totalMs) * 100);
+            timerFill.style.width = `${pct}%`;
+
+            if (remaining <= 0) {
+                clearInterval(state.quizTimerId);
+                state.quizTimerId = null;
+                handleQuizTimeout();
+            }
+        }, intervalMs);
+    }
+
+    function handleQuizTimeout() {
+        if (state.quizAnswered) return;
+        state.quizAnswered = true;
+        state.quizTotal += 1;
+        state.quizStreak = 0;
+        updateQuizStreakUI();
+
+        playSoundEffect('wrong');
+
+        const target = state.quizCurrentQ.target;
+        addToSrs(target.id, 1);
+        showToast('⏱️ Hết giờ!', `Đáp án đúng là: “${target.word}” (${target.meaning_vi || target.meaning_primary})`, '⏰');
+
+        const optsEl = document.getElementById('quizOptions');
+        if (optsEl) {
+            optsEl.querySelectorAll('.quiz-opt-btn').forEach(b => {
+                if (b.getAttribute('data-quiz-id') === target.id) {
+                    b.classList.add('correct');
+                }
+            });
+        }
+        updateQuizScoreUI();
     }
 
     function nextReflexQuizQuestion() {
+        if (state.quizTimerId) {
+            clearInterval(state.quizTimerId);
+            state.quizTimerId = null;
+        }
+
         const pool = state.fcDeck.length >= 4 ? state.fcDeck : getWordsForScope('unit');
         if (!pool.length) return;
 
@@ -1358,43 +2381,126 @@
 
         const wordEl = document.getElementById('quizPromptWord');
         const pyEl   = document.getElementById('quizPromptPinyin');
+        const btnSpk = document.getElementById('btnQuizSpeak');
         const optsEl = document.getElementById('quizOptions');
 
-        if (wordEl) wordEl.textContent = target.word;
-        if (pyEl)   pyEl.textContent   = `${target.pinyin} · ${target.pos_full || target.pos || ''}`;
+        const letters = ['A', 'B', 'C', 'D'];
 
-        if (optsEl) {
-            const letters = ['A', 'B', 'C', 'D'];
-            optsEl.innerHTML = options.map((opt, idx) => `
-                <button class="quiz-opt-btn" data-quiz-id="${opt.id}">
-                    <strong>${letters[idx]}.</strong> ${escapeHtml(opt.meaning_vi || opt.meaning_primary || opt.meaning_en)}
-                </button>
-            `).join('');
+        if (state.quizType === 'vn_to_hz') {
+            // Prompt is Vietnamese meaning, options are Hanzi
+            if (wordEl) {
+                wordEl.textContent = target.meaning_vi || target.meaning_primary;
+                wordEl.style.fontSize = '1.75rem';
+            }
+            if (pyEl) pyEl.textContent = `[${target.pos_full || target.pos || 'Từ vựng'}] Chọn chữ Hán tương ứng:`;
+            if (btnSpk) btnSpk.classList.add('hidden');
 
-            optsEl.querySelectorAll('.quiz-opt-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    if (state.quizAnswered) return;
-                    state.quizAnswered = true;
-                    state.quizTotal += 1;
+            if (optsEl) {
+                optsEl.innerHTML = options.map((opt, idx) => `
+                    <button class="quiz-opt-btn" data-quiz-id="${opt.id}" data-opt-letter="${letters[idx]}">
+                        <span class="kbd-key">${letters[idx]}</span>
+                        <strong style="font-family:var(--font-cn);font-size:1.15rem;margin-left:4px;">${escapeHtml(opt.word)}</strong>
+                        <span style="color:var(--accent-sky);font-size:0.84rem;margin-left:6px;">(${escapeHtml(opt.pinyin)})</span>
+                    </button>
+                `).join('');
+            }
+        } else if (state.quizType === 'audio_to_hz') {
+            // Prompt is audio button, options are Hanzi
+            if (wordEl) {
+                wordEl.textContent = '🎧';
+                wordEl.style.fontSize = '3.2rem';
+            }
+            if (pyEl) pyEl.textContent = 'Lắng nghe phát âm và chọn chữ Hán đúng:';
+            if (btnSpk) btnSpk.classList.remove('hidden');
 
-                    const pickedId = btn.getAttribute('data-quiz-id');
-                    const isCorrect = pickedId === target.id;
-                    if (isCorrect) {
-                        state.quizCorrect += 1;
-                        btn.classList.add('correct');
-                        speakChinese(cleanHanziForTts(target.word));
-                    } else {
-                        btn.classList.add('wrong');
-                        optsEl.querySelectorAll('.quiz-opt-btn').forEach(b => {
-                            if (b.getAttribute('data-quiz-id') === target.id) {
-                                b.classList.add('correct');
-                            }
-                        });
-                    }
-                    updateQuizScoreUI();
-                });
-            });
+            speakChinese(cleanHanziForTts(target.word));
+
+            if (optsEl) {
+                optsEl.innerHTML = options.map((opt, idx) => `
+                    <button class="quiz-opt-btn" data-quiz-id="${opt.id}" data-opt-letter="${letters[idx]}">
+                        <span class="kbd-key">${letters[idx]}</span>
+                        <strong style="font-family:var(--font-cn);font-size:1.15rem;margin-left:4px;">${escapeHtml(opt.word)}</strong>
+                        <span style="color:var(--text-muted);font-size:0.82rem;margin-left:6px;">— ${escapeHtml(opt.meaning_vi || opt.meaning_primary)}</span>
+                    </button>
+                `).join('');
+            }
+        } else {
+            // Default 'hz_to_vn'
+            if (wordEl) {
+                wordEl.textContent = target.word;
+                wordEl.style.fontSize = '2.3rem';
+            }
+            if (pyEl) pyEl.textContent = `${target.pinyin} · ${target.pos_full || target.pos || ''}`;
+            if (btnSpk) btnSpk.classList.remove('hidden');
+
+            if (optsEl) {
+                optsEl.innerHTML = options.map((opt, idx) => `
+                    <button class="quiz-opt-btn" data-quiz-id="${opt.id}" data-opt-letter="${letters[idx]}">
+                        <span class="kbd-key">${letters[idx]}</span>
+                        <span style="margin-left:4px;">${escapeHtml(opt.meaning_vi || opt.meaning_primary || opt.meaning_en)}</span>
+                    </button>
+                `).join('');
+            }
         }
+
+        bindQuizOptionEvents();
+        startQuizTimer();
+    }
+
+    function bindQuizOptionEvents() {
+        const optsEl = document.getElementById('quizOptions');
+        if (!optsEl || !state.quizCurrentQ) return;
+        const target = state.quizCurrentQ.target;
+
+        optsEl.querySelectorAll('.quiz-opt-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (state.quizAnswered) return;
+                state.quizAnswered = true;
+                state.quizTotal += 1;
+
+                if (state.quizTimerId) {
+                    clearInterval(state.quizTimerId);
+                    state.quizTimerId = null;
+                }
+
+                const pickedId = btn.getAttribute('data-quiz-id');
+                const isCorrect = pickedId === target.id;
+
+                if (isCorrect) {
+                    state.quizCorrect += 1;
+                    state.quizStreak += 1;
+                    btn.classList.add('correct');
+                    playSoundEffect('correct');
+                    speakChinese(cleanHanziForTts(target.word));
+
+                    state.gamify.stats.quizzesCompleted = (state.gamify.stats.quizzesCompleted || 0) + 1;
+                    state.gamify.stats.quizStreakBest = Math.max(state.gamify.stats.quizStreakBest || 0, state.quizStreak);
+
+                    const streakBonus = Math.min(20, state.quizStreak * 2);
+                    awardXp(10 + streakBonus, 'Trả lời Quiz đúng');
+
+                    if (state.srsData && state.srsData[target.id]) {
+                        rateSrsWord(target.id, 3);
+                    }
+                } else {
+                    state.quizStreak = 0;
+                    btn.classList.add('wrong');
+                    playSoundEffect('wrong');
+
+                    optsEl.querySelectorAll('.quiz-opt-btn').forEach(b => {
+                        if (b.getAttribute('data-quiz-id') === target.id) {
+                            b.classList.add('correct');
+                        }
+                    });
+
+                    addToSrs(target.id, 1);
+                    showToast('Đã đưa vào Hộp từ khó', `Từ “${target.word}” đã được thêm vào SRS để bạn ôn lại!`, '🧠');
+                }
+
+                updateQuizScoreUI();
+                updateQuizStreakUI();
+            });
+        });
     }
 
     // ==================== MODE 4: XEM SÁCH PDF GỐC ====================
@@ -1842,7 +2948,143 @@
         if (btnShowBottom)  btnShowBottom.addEventListener('click', fillPracticeModelAnswers);
         if (btnResetBottom) btnResetBottom.addEventListener('click', resetPracticeAnswers);
 
-        // Mode 3 Flashcard & Quiz
+        // Header Action Widgets (Badges/Streak, SRS, Podcast)
+        const btnBadges = document.getElementById('btnBadgesModal');
+        const modalBadges = document.getElementById('badgesModal');
+        const closeBadges = document.getElementById('btnCloseBadgesModal');
+        if (btnBadges && modalBadges) {
+            btnBadges.addEventListener('click', () => {
+                updateGamifyUI();
+                modalBadges.classList.remove('hidden');
+            });
+        }
+        if (closeBadges && modalBadges) {
+            closeBadges.addEventListener('click', () => modalBadges.classList.add('hidden'));
+        }
+        if (modalBadges) {
+            modalBadges.addEventListener('click', (e) => {
+                if (e.target === modalBadges) modalBadges.classList.add('hidden');
+            });
+        }
+
+        const btnSrsHeader = document.getElementById('btnSrsQuickReview');
+        const modalSrs = document.getElementById('srsModal');
+        const closeSrs = document.getElementById('btnCloseSrsModal');
+        if (btnSrsHeader && modalSrs) {
+            btnSrsHeader.addEventListener('click', () => {
+                renderSrsModal();
+                modalSrs.classList.remove('hidden');
+            });
+        }
+        if (closeSrs && modalSrs) {
+            closeSrs.addEventListener('click', () => modalSrs.classList.add('hidden'));
+        }
+        if (modalSrs) {
+            modalSrs.addEventListener('click', (e) => {
+                if (e.target === modalSrs) modalSrs.classList.add('hidden');
+            });
+        }
+
+        const btnStartSrsFc = document.getElementById('btnStartSrsFlashcard');
+        const btnStartSrsQz = document.getElementById('btnStartSrsQuiz');
+        const btnClearSrs = document.getElementById('btnClearMasteredSrs');
+
+        if (btnStartSrsFc) {
+            btnStartSrsFc.addEventListener('click', () => {
+                if (modalSrs) modalSrs.classList.add('hidden');
+                switchStudyMode('flashcard');
+                state.fcScope = 'srs';
+                const fcScopeSel = document.getElementById('fcScopeSelect');
+                if (fcScopeSel) fcScopeSel.value = 'srs';
+                initFlashcardDeck();
+            });
+        }
+        if (btnStartSrsQz) {
+            btnStartSrsQz.addEventListener('click', () => {
+                if (modalSrs) modalSrs.classList.add('hidden');
+                switchStudyMode('flashcard');
+                state.fcScope = 'srs';
+                const fcScopeSel = document.getElementById('fcScopeSelect');
+                if (fcScopeSel) fcScopeSel.value = 'srs';
+                initReflexQuiz();
+            });
+        }
+        if (btnClearSrs) {
+            btnClearSrs.addEventListener('click', () => {
+                let cleared = 0;
+                for (const [wid, info] of Object.entries(state.srsData || {})) {
+                    if (info.box >= 5) {
+                        delete state.srsData[wid];
+                        cleared += 1;
+                    }
+                }
+                saveProgress();
+                updateSrsHeaderBadge();
+                renderSrsModal();
+                showToast('Đã dọn dẹp Hộp SRS', `Đã xóa ${cleared} từ đã ghi nhớ thành thạo (Hộp 5).`, '🧹');
+            });
+        }
+
+        // Hands-free Podcast Player Controls
+        const btnTogPod = document.getElementById('btnTogglePodcast');
+        if (btnTogPod) {
+            btnTogPod.addEventListener('click', () => {
+                if (state.podcast.active) closePodcastPlayer();
+                else openPodcastPlayer();
+            });
+        }
+
+        const ppbBtnPlay = document.getElementById('ppbBtnPlay');
+        const ppbBtnNext = document.getElementById('ppbBtnNext');
+        const ppbBtnPrev = document.getElementById('ppbBtnPrev');
+        const ppbSpeedSel = document.getElementById('ppbSpeedSelect');
+        const ppbVoiceSel = document.getElementById('ppbVoiceModeSelect');
+        const ppbScopeSel = document.getElementById('ppbScopeSelect');
+        const ppbBtnLoop  = document.getElementById('ppbBtnLoop');
+        const ppbBtnClose = document.getElementById('ppbBtnClose');
+
+        if (ppbBtnPlay) {
+            ppbBtnPlay.addEventListener('click', () => {
+                if (state.podcast.isPlaying) stopPodcastPlayback();
+                else startPodcastPlayback();
+            });
+        }
+        if (ppbBtnNext) ppbBtnNext.addEventListener('click', gotoNextPodcastWord);
+        if (ppbBtnPrev) {
+            ppbBtnPrev.addEventListener('click', () => {
+                if (state.podcast.index > 0) state.podcast.index -= 1;
+                else state.podcast.index = state.podcast.list.length - 1;
+                state.podcast.step = 'word';
+                playPodcastCurrentStep();
+            });
+        }
+        if (ppbSpeedSel) {
+            ppbSpeedSel.addEventListener('change', () => {
+                state.podcast.speed = parseFloat(ppbSpeedSel.value) || 1.0;
+            });
+        }
+        if (ppbVoiceSel) {
+            ppbVoiceSel.addEventListener('change', () => {
+                state.podcast.voiceMode = ppbVoiceSel.value;
+            });
+        }
+        if (ppbScopeSel) {
+            ppbScopeSel.addEventListener('change', () => {
+                state.podcast.scope = ppbScopeSel.value;
+                initPodcastPlaylist();
+                if (state.podcast.isPlaying) playPodcastCurrentStep();
+            });
+        }
+        if (ppbBtnLoop) {
+            ppbBtnLoop.addEventListener('click', () => {
+                state.podcast.loop = !state.podcast.loop;
+                ppbBtnLoop.classList.toggle('active', state.podcast.loop);
+                ppbBtnLoop.title = `Lặp lại danh sách: ${state.podcast.loop ? 'BẬT' : 'TẮT'}`;
+            });
+        }
+        if (ppbBtnClose) ppbBtnClose.addEventListener('click', closePodcastPlayer);
+
+        // Mode 3 Flashcard Controls
         const fcScopeSel = document.getElementById('fcScopeSelect');
         if (fcScopeSel) {
             fcScopeSel.addEventListener('change', () => {
@@ -1852,14 +3094,37 @@
             });
         }
 
+        const fcFaceSel = document.getElementById('fcFaceModeSelect');
+        if (fcFaceSel) {
+            fcFaceSel.addEventListener('change', () => {
+                state.fcFaceMode = fcFaceSel.value;
+                renderFlashcard();
+            });
+        }
+
+        const chkAutoSpk = document.getElementById('chkFcAutoSpeak');
+        if (chkAutoSpk) {
+            chkAutoSpk.addEventListener('change', () => {
+                state.fcAutoSpeak = chkAutoSpk.checked;
+            });
+        }
+
         const fcCard = document.getElementById('fcCard3d');
         if (fcCard) {
             fcCard.addEventListener('click', (e) => {
                 if (e.target.closest('.fc-audio-btn')) return;
                 state.fcFlipped = !state.fcFlipped;
-                fcCard.classList.toggle('flipped', state.fcFlipped);
+                playSoundEffect('flip');
+                renderFlashcard();
             });
         }
+
+        const btnFcRateHard = document.getElementById('btnFcRateHard');
+        const btnFcRateMed  = document.getElementById('btnFcRateMed');
+        const btnFcRateEasy = document.getElementById('btnFcRateEasy');
+        if (btnFcRateHard) btnFcRateHard.addEventListener('click', () => handleFlashcardRate(1));
+        if (btnFcRateMed)  btnFcRateMed.addEventListener('click', () => handleFlashcardRate(2));
+        if (btnFcRateEasy) btnFcRateEasy.addEventListener('click', () => handleFlashcardRate(3));
 
         const btnFcSpeakF = document.getElementById('btnFcSpeakFront');
         const btnFcSpeakB = document.getElementById('btnFcSpeakBack');
@@ -1874,22 +3139,8 @@
         const btnFcPrev = document.getElementById('btnFcPrev');
         const btnFcNext = document.getElementById('btnFcNext');
         const btnFcShuf = document.getElementById('btnFcShuffle');
-        if (btnFcPrev) {
-            btnFcPrev.addEventListener('click', () => {
-                if (!state.fcDeck.length) return;
-                state.fcIndex = (state.fcIndex - 1 + state.fcDeck.length) % state.fcDeck.length;
-                state.fcFlipped = false;
-                renderFlashcard();
-            });
-        }
-        if (btnFcNext) {
-            btnFcNext.addEventListener('click', () => {
-                if (!state.fcDeck.length) return;
-                state.fcIndex = (state.fcIndex + 1) % state.fcDeck.length;
-                state.fcFlipped = false;
-                renderFlashcard();
-            });
-        }
+        if (btnFcPrev) btnFcPrev.addEventListener('click', () => advanceFlashcard(-1));
+        if (btnFcNext) btnFcNext.addEventListener('click', () => advanceFlashcard(1));
         if (btnFcShuf) {
             btnFcShuf.addEventListener('click', () => {
                 state.fcDeck.sort(() => Math.random() - 0.5);
@@ -1898,6 +3149,40 @@
                 renderFlashcard();
             });
         }
+
+        // Mode 3 Quiz Controls
+        document.querySelectorAll('.qtype-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.qtype-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                state.quizType = btn.getAttribute('data-qtype') || 'hz_to_vn';
+                nextReflexQuizQuestion();
+            });
+        });
+
+        const btnTogTimer = document.getElementById('btnQuizToggleTimer');
+        const lblTimer = document.getElementById('lblQuizTimerStatus');
+        if (btnTogTimer) {
+            btnTogTimer.addEventListener('click', () => {
+                state.quizTimerEnabled = !state.quizTimerEnabled;
+                btnTogTimer.classList.toggle('active', state.quizTimerEnabled);
+                if (lblTimer) lblTimer.textContent = state.quizTimerEnabled ? 'BẬT' : 'TẮT';
+                startQuizTimer();
+            });
+        }
+
+        const btnTogSnd = document.getElementById('btnQuizToggleSound');
+        const lblSnd = document.getElementById('lblQuizSoundStatus');
+        if (btnTogSnd) {
+            btnTogSnd.addEventListener('click', () => {
+                state.quizSoundEnabled = !state.quizSoundEnabled;
+                btnTogSnd.classList.toggle('active', state.quizSoundEnabled);
+                if (lblSnd) lblSnd.textContent = state.quizSoundEnabled ? 'BẬT' : 'TẮT';
+            });
+        }
+
+        const btnResetQz = document.getElementById('btnQuizResetScore');
+        if (btnResetQz) btnResetQz.addEventListener('click', initReflexQuiz);
 
         const btnQuizSpeak = document.getElementById('btnQuizSpeak');
         if (btnQuizSpeak) {
@@ -1911,6 +3196,42 @@
         if (btnNextQuiz) {
             btnNextQuiz.addEventListener('click', nextReflexQuizQuestion);
         }
+
+        // Global Keyboard Shortcuts
+        window.addEventListener('keydown', (e) => {
+            const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : '';
+            if (tag === 'input' || tag === 'select' || tag === 'textarea') return;
+
+            if (state.studyMode === 'flashcard') {
+                if (e.code === 'Space') {
+                    e.preventDefault();
+                    state.fcFlipped = !state.fcFlipped;
+                    playSoundEffect('flip');
+                    renderFlashcard();
+                } else if (e.code === 'ArrowLeft') {
+                    e.preventDefault();
+                    advanceFlashcard(-1);
+                } else if (e.code === 'ArrowRight') {
+                    e.preventDefault();
+                    advanceFlashcard(1);
+                } else if (e.key === '1') {
+                    handleFlashcardRate(1);
+                } else if (e.key === '2') {
+                    handleFlashcardRate(2);
+                } else if (e.key === '3') {
+                    handleFlashcardRate(3);
+                } else if (e.key === 'r' || e.key === 'R') {
+                    const w = state.fcDeck[state.fcIndex];
+                    if (w) speakChinese(cleanHanziForTts(w.word));
+                } else if (['a', 'b', 'c', 'd', 'A', 'B', 'C', 'D'].includes(e.key)) {
+                    const letter = e.key.toUpperCase();
+                    const btn = document.querySelector(`.quiz-opt-btn[data-opt-letter="${letter}"]`);
+                    if (btn) btn.click();
+                } else if (e.code === 'Enter') {
+                    if (state.quizAnswered) nextReflexQuizQuestion();
+                }
+            }
+        });
 
         // Mode 4 PDF buttons
         const btnPdfTheory = document.getElementById('btnPdfJumpTheory');

@@ -36,6 +36,18 @@
         </div>
 
         <div class="wl-header-right">
+            <!-- Streak & Badges Widget -->
+            <button id="btnBadgesModal" class="action-pill streak-pill" title="Xem chuỗi ngày học, cấp độ & huy hiệu thành tích">
+                🔥 <span id="hdrStreakCount">1</span> ngày · <span id="hdrUserLevel">Lv.1</span>
+            </button>
+            <!-- SRS Quick Review Button -->
+            <button id="btnSrsQuickReview" class="action-pill srs-pill" title="Hộp từ khó (Spaced Repetition) - Xem các từ cần ôn tập">
+                🧠 <span class="hide-sm">Từ khó</span> <span class="srs-count-badge" id="hdrSrsCount">0</span>
+            </button>
+            <!-- Hands-free Podcast Mode Button -->
+            <button id="btnTogglePodcast" class="action-pill podcast-pill" title="Bật/Tắt Chế độ Nghe thụ động / Chạy nền (Hands-free Podcast)">
+                🎧 <span class="hide-sm">Podcast</span>
+            </button>
             <button id="btnGrammarModal" class="action-pill" title="Bảng từ viết tắt của các thuật ngữ ngữ pháp">
                 🔤 <span class="hide-sm">Từ loại</span>
             </button>
@@ -82,6 +94,7 @@
                     <button class="uf-pill" data-filter="todo">Chưa học</button>
                     <button class="uf-pill" data-filter="done">✓ Đã học</button>
                     <button class="uf-pill" data-filter="star">⭐ Lưu</button>
+                    <button class="uf-pill" data-filter="srs" title="Các bài có từ khó trong Hộp lặp lại ngắt quãng SRS">🧠 Cần ôn</button>
                 </div>
             </div>
 
@@ -242,30 +255,51 @@
                 </div>
 
                 <!-- =========================================================
-                     MODE 3: FLASHCARD 3D & TRẮC NGHIỆM PHẢN XẠ
+                     MODE 3: FLASHCARD 3D & TRẮC NGHIỆM PHẢN XẠ (NÂNG CẤP SRS & GAMIFIED)
                      ========================================================= -->
                 <div class="smode-pane" id="paneFlashcard">
                     <div class="fc-workspace">
-                        <!-- Left: 3D Flashcard -->
+                        <!-- Left: 3D Flashcard with Leitner SRS -->
                         <div class="fc-panel-card">
                             <div class="fc-panel-head">
-                                <h3>🎴 Lật Thẻ Flashcard 3D</h3>
-                                <div class="fc-scope-wrap">
-                                    <select id="fcScopeSelect">
-                                        <option value="unit">Từ vựng Bài đang học</option>
-                                        <option value="starred">Từ vựng Đã lưu sao (⭐)</option>
-                                        <option value="book">Toàn bộ Quyển này</option>
-                                    </select>
+                                <div class="fph-title-wrap">
+                                    <h3>🎴 Lật Thẻ Flashcard 3D</h3>
+                                    <span class="fc-deck-badge" id="fcDeckBadge">Bài 1</span>
+                                </div>
+                                <div class="fc-head-tools">
+                                    <div class="fc-scope-wrap">
+                                        <select id="fcScopeSelect" title="Chọn nguồn từ vựng để lật thẻ">
+                                            <option value="unit">Từ vựng Bài đang học</option>
+                                            <option value="srs">🧠 Hộp từ khó (SRS cần ôn)</option>
+                                            <option value="starred">Từ vựng Đã lưu sao (⭐)</option>
+                                            <option value="book">Toàn bộ Quyển này</option>
+                                        </select>
+                                    </div>
+                                    <div class="fc-face-mode-wrap">
+                                        <select id="fcFaceModeSelect" title="Chọn mặt trước hiển thị">
+                                            <option value="hz">Mặt trước: Chữ Hán</option>
+                                            <option value="vi">Mặt trước: Nghĩa tiếng Việt</option>
+                                            <option value="audio">Mặt trước: Chỉ Nghe âm</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
+                            <!-- Visual Deck Progress Bar -->
+                            <div class="fc-progress-container" title="Tiến độ duyệt thẻ">
+                                <div class="fc-progress-fill" id="fcDeckProgressBar"></div>
+                            </div>
+
+                            <!-- 3D Card Stage -->
                             <div class="fc-card-3d" id="fcCard3d">
                                 <div class="fc-face fc-front">
                                     <span class="fc-badge" id="fcWordNumBadge">#1</span>
+                                    <span class="fc-srs-box-badge hidden" id="fcSrsBoxBadge">Hộp SRS 1</span>
                                     <button class="fc-audio-btn" id="btnFcSpeakFront" title="Nghe phát âm">🔊</button>
                                     <div class="fc-hanzi" id="fcFrontHanzi">爱</div>
+                                    <div class="fc-front-sub" id="fcFrontSub"></div>
                                     <div class="fc-pos-chip" id="fcFrontPos">đ. (Động từ)</div>
-                                    <div class="fc-hint">Nhấn vào thẻ để lật xem Pinyin, Nghĩa & Ví dụ</div>
+                                    <div class="fc-hint">Nhấn vào thẻ (hoặc bấm Space) để lật xem chi tiết</div>
                                 </div>
                                 <div class="fc-face fc-back">
                                     <button class="fc-audio-btn" id="btnFcSpeakBack" title="Nghe phát âm">🔊</button>
@@ -276,34 +310,95 @@
                                 </div>
                             </div>
 
-                            <div class="fc-controls">
-                                <button class="fc-nav-btn" id="btnFcPrev">◀ Từ trước</button>
-                                <span class="fc-counter" id="fcCounter">1 / 20</span>
-                                <button class="fc-nav-btn" id="btnFcShuffle">🔀 Trộn thẻ</button>
-                                <button class="fc-nav-btn" id="btnFcNext">Từ sau ▶</button>
-                            </div>
-                        </div>
-
-                        <!-- Right: Reflex Multiple Choice Quiz -->
-                        <div class="fc-panel-card">
-                            <div class="fc-panel-head">
-                                <h3>🎯 Trắc Nghiệm Phản Xạ Từ Vựng</h3>
-                                <div class="quiz-score-pill">
-                                    Đúng: <strong id="quizScore">0</strong> / <span id="quizTotal">0</span>
+                            <!-- SRS Leitner Rating Buttons -->
+                            <div class="fc-srs-actions" id="fcSrsActions">
+                                <span class="fc-srs-label">Đánh giá khả năng nhớ:</span>
+                                <div class="fc-srs-btn-group">
+                                    <button class="fc-rate-btn rate-hard" id="btnFcRateHard" title="Phím 1: Chưa nhớ - Chuyển về Hộp 1 để ôn lại ngay">
+                                        ❌ Chưa nhớ <span class="kbd-key">1</span>
+                                    </button>
+                                    <button class="fc-rate-btn rate-med" id="btnFcRateMed" title="Phím 2: Khó nhớ - Đưa vào Hộp 2">
+                                        🤔 Khó nhớ <span class="kbd-key">2</span>
+                                    </button>
+                                    <button class="fc-rate-btn rate-easy" id="btnFcRateEasy" title="Phím 3: Đã nhớ tốt - Tăng Hộp SRS & nhận +XP">
+                                        ✅ Đã nhớ <span class="kbd-key">3</span>
+                                    </button>
                                 </div>
                             </div>
 
-                            <div class="quiz-question-box">
+                            <!-- Controls & Toggles -->
+                            <div class="fc-controls">
+                                <button class="fc-nav-btn" id="btnFcPrev" title="Phím Mũi tên Trái">◀ Từ trước</button>
+                                <span class="fc-counter" id="fcCounter">1 / 20</span>
+                                <button class="fc-nav-btn" id="btnFcShuffle" title="Trộn ngẫu nhiên thứ tự thẻ">🔀 Trộn thẻ</button>
+                                <button class="fc-nav-btn" id="btnFcNext" title="Phím Mũi tên Phải">Từ sau ▶</button>
+                            </div>
+
+                            <div class="fc-sub-toolbar">
+                                <label class="fc-toggle-wrap" title="Tự động phát âm tiếng Trung ngay khi lật thẻ">
+                                    <input type="checkbox" id="chkFcAutoSpeak" checked>
+                                    <span>🔊 Tự đọc khi lật thẻ</span>
+                                </label>
+                                <div class="fc-shortcuts-pill hide-sm">
+                                    ⌨️ <strong>Space</strong>: Lật · <strong>← / →</strong>: Trước / Sau · <strong>1, 2, 3</strong>: Đánh giá
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Reflex Multiple Choice Quiz with 3 Modes, Timer & Streaks -->
+                        <div class="fc-panel-card">
+                            <div class="fc-panel-head">
+                                <div class="quiz-head-left">
+                                    <h3>🎯 Trắc Nghiệm Phản Xạ</h3>
+                                    <div class="quiz-streak-badge hidden" id="quizStreakBadge">
+                                        🔥 Combo: <strong id="quizStreakCount">0</strong> liên tiếp!
+                                    </div>
+                                </div>
+                                <div class="quiz-score-pill">
+                                    Đúng: <strong id="quizScore">0</strong> / <span id="quizTotal">0</span>
+                                    <span class="quiz-acc-rate" id="quizAccRate">(0%)</span>
+                                </div>
+                            </div>
+
+                            <!-- Quiz Type Switcher Pills -->
+                            <div class="quiz-types-bar">
+                                <button class="qtype-btn active" data-qtype="hz_to_vn">🔤 Chữ ➔ Nghĩa</button>
+                                <button class="qtype-btn" data-qtype="vn_to_hz">🇻🇳 Nghĩa ➔ Chữ</button>
+                                <button class="qtype-btn" data-qtype="audio_to_hz">🎧 Nghe ➔ Chữ</button>
+                            </div>
+
+                            <!-- Quiz Settings & Timer Bar -->
+                            <div class="quiz-tools-bar">
+                                <button class="qtool-btn active" id="btnQuizToggleTimer" title="Bật/Tắt đếm ngược 10 giây mỗi câu">
+                                    ⏱️ 10s: <strong id="lblQuizTimerStatus">BẬT</strong>
+                                </button>
+                                <button class="qtool-btn active" id="btnQuizToggleSound" title="Bật/Tắt âm thanh thông báo">
+                                    🔔 Âm thanh: <strong id="lblQuizSoundStatus">BẬT</strong>
+                                </button>
+                                <button class="qtool-btn" id="btnQuizResetScore" title="Đặt lại điểm số">
+                                    🔄 Làm mới
+                                </button>
+                            </div>
+
+                            <!-- Countdown Bar -->
+                            <div class="quiz-timer-wrap" id="quizTimerWrap">
+                                <div class="quiz-timer-fill" id="quizTimerFill"></div>
+                            </div>
+
+                            <!-- Question Prompt Box -->
+                            <div class="quiz-question-box" id="quizQuestionBox">
                                 <div class="qq-word" id="quizPromptWord">爱</div>
                                 <div class="qq-pinyin" id="quizPromptPinyin">ài · đ.</div>
                                 <button class="qq-audio" id="btnQuizSpeak">🔊 Nghe phát âm</button>
                             </div>
 
+                            <!-- 4 Multiple Choice Options with keyboard shortcuts A, B, C, D -->
                             <div class="quiz-options" id="quizOptions">
-                                <!-- 4 options -->
+                                <!-- 4 options populated dynamically -->
                             </div>
 
                             <div class="quiz-bottom-bar">
+                                <span class="quiz-kbd-hint hide-sm">Phím tắt: Bấm <strong>A, B, C, D</strong> hoặc <strong>1, 2, 3, 4</strong> để chọn</span>
                                 <button class="btn-primary-action" id="btnNextQuizQ">Câu tiếp theo ➔</button>
                             </div>
                         </div>
@@ -369,6 +464,181 @@
             </div>
         </div>
     </div>
+
+    <!-- =========================================================
+         HANDS-FREE PODCAST FLOATING / DOCKED PLAYER
+         ========================================================= -->
+    <div class="podcast-player-bar hidden" id="podcastPlayerBar">
+        <div class="ppb-inner">
+            <div class="ppb-left">
+                <div class="ppb-visualizer">
+                    <span class="bar b1"></span>
+                    <span class="bar b2"></span>
+                    <span class="bar b3"></span>
+                    <span class="bar b4"></span>
+                </div>
+                <div class="ppb-word-info">
+                    <div class="ppb-line1">
+                        <strong class="ppb-hz" id="ppbHz">爱</strong>
+                        <span class="ppb-py" id="ppbPy">ài</span>
+                        <span class="ppb-step-badge" id="ppbStepBadge">🔊 Từ vựng</span>
+                    </div>
+                    <div class="ppb-line2">
+                        <span class="ppb-vn" id="ppbVn">yêu, thích</span>
+                        <span class="ppb-ex-preview" id="ppbExPreview"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ppb-center">
+                <div class="ppb-controls">
+                    <button class="ppb-btn" id="ppbBtnPrev" title="Từ trước">⏮️</button>
+                    <button class="ppb-btn ppb-play-btn" id="ppbBtnPlay" title="Phát / Tạm dừng">▶️</button>
+                    <button class="ppb-btn" id="ppbBtnNext" title="Từ tiếp theo">⏭️</button>
+                    
+                    <div class="ppb-select-wrap">
+                        <select id="ppbSpeedSelect" title="Tốc độ đọc">
+                            <option value="0.8">0.8x Chậm</option>
+                            <option value="1.0" selected>1.0x Chuẩn</option>
+                            <option value="1.2">1.2x Nhanh</option>
+                        </select>
+                    </div>
+
+                    <div class="ppb-select-wrap hide-xs">
+                        <select id="ppbVoiceModeSelect" title="Chế độ giọng đọc">
+                            <option value="bilingual" selected>🇻🇳 Song ngữ (Trung + Việt)</option>
+                            <option value="zh_only">🇨🇳 Chỉ tiếng Trung</option>
+                        </select>
+                    </div>
+
+                    <div class="ppb-select-wrap hide-sm">
+                        <select id="ppbScopeSelect" title="Phạm vi phát âm">
+                            <option value="unit" selected>Bài đang học</option>
+                            <option value="srs">🧠 Hộp từ khó (SRS)</option>
+                            <option value="star">⭐ Từ đã lưu sao</option>
+                            <option value="book">Toàn bộ Quyển</option>
+                        </select>
+                    </div>
+
+                    <button class="ppb-btn ppb-loop-btn active" id="ppbBtnLoop" title="Lặp lại danh sách: BẬT">🔁</button>
+                </div>
+                <div class="ppb-progress-wrap">
+                    <div class="ppb-progress-bar" id="ppbProgressBar"></div>
+                </div>
+            </div>
+
+            <div class="ppb-right">
+                <span class="ppb-counter" id="ppbCounter">1 / 20</span>
+                <button class="ppb-close-btn" id="ppbBtnClose" title="Đóng thanh Podcast">✕</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         ACHIEVEMENTS & STREAK MODAL (HUY HIỆU & CHUỖI NGÀY HỌC)
+         ========================================================= -->
+    <div class="modal-backdrop hidden" id="badgesModal">
+        <div class="modal-box modal-lg">
+            <div class="modal-head">
+                <div class="mhead-title">
+                    <span class="mhead-icon">🏆</span>
+                    <div>
+                        <h3>Bảng Thành Tựu & Chuỗi Ngày Học HSK</h3>
+                        <p class="mhead-sub">Theo dõi thói quen học tập, cấp bậc kinh nghiệm và huy hiệu danh dự</p>
+                    </div>
+                </div>
+                <button class="clear-btn" id="btnCloseBadgesModal">✕</button>
+            </div>
+            <div class="modal-body badges-modal-body">
+                <!-- Top Gamification Summary Cards -->
+                <div class="gamify-summary-grid">
+                    <!-- Card 1: Streak -->
+                    <div class="gamify-card streak-card">
+                        <div class="gc-icon">🔥</div>
+                        <div class="gc-info">
+                            <div class="gc-val"><span id="bmStreakCount">1</span> ngày liên tục</div>
+                            <div class="gc-label">Kỷ lục dài nhất: <strong id="bmLongestStreak">1</strong> ngày</div>
+                            <div class="gc-status" id="bmStreakMsg">Hôm nay bạn đã hoàn thành bài học! Giữ vững phong độ nhé!</div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Level & EXP -->
+                    <div class="gamify-card level-card">
+                        <div class="gc-icon">⚡</div>
+                        <div class="gc-info">
+                            <div class="gc-val" id="bmLevelTitle">Cấp 1 · Tân thủ HSK</div>
+                            <div class="gc-label">Kinh nghiệm: <span id="bmCurrentXp">50</span> / <span id="bmNextXp">100</span> XP</div>
+                            <div class="level-progress-wrap">
+                                <div class="level-progress-fill" id="bmXpFill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Key Stats -->
+                    <div class="gamify-card stats-card">
+                        <div class="gc-icon">📊</div>
+                        <div class="gc-info">
+                            <div class="stat-mini-row">
+                                <span>📖 Từ vựng đã học:</span> <strong id="bmStatWords">0</strong>
+                            </div>
+                            <div class="stat-mini-row">
+                                <span>🎯 Quiz đúng:</span> <strong id="bmStatQuiz">0</strong>
+                            </div>
+                            <div class="stat-mini-row">
+                                <span>🎴 Thẻ Flashcard đã lật:</span> <strong id="bmStatFc">0</strong>
+                            </div>
+                            <div class="stat-mini-row">
+                                <span>🧠 Từ đã nhớ trong SRS:</span> <strong id="bmStatSrs">0</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Badges Collection Grid -->
+                <div class="badges-section-head">
+                    <h4>🏅 Bộ Sưu Tập Huy Hiệu Danh Dự</h4>
+                    <span class="badges-unlocked-count" id="bmBadgesUnlockedCount">0 / 12 huy hiệu</span>
+                </div>
+                <div class="badges-grid" id="badgesGrid">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         SRS SPICED REPETITION MODAL (HỘP TỪ KHÓ CẦN ÔN)
+         ========================================================= -->
+    <div class="modal-backdrop hidden" id="srsModal">
+        <div class="modal-box modal-lg">
+            <div class="modal-head">
+                <div class="mhead-title">
+                    <span class="mhead-icon">🧠</span>
+                    <div>
+                        <h3>Hộp Từ Khó & Lặp Lại Ngắt Quãng (Spaced Repetition System)</h3>
+                        <p class="mhead-sub">Các từ bạn đánh dấu khó, hay làm sai hoặc đã đến hạn cần ôn lại theo thuật toán ghi nhớ Leitner</p>
+                    </div>
+                </div>
+                <button class="clear-btn" id="btnCloseSrsModal">✕</button>
+            </div>
+            <div class="modal-body srs-modal-body">
+                <div class="srs-boxes-bar" id="srsBoxesBar">
+                    <!-- 5 Leitner Boxes summary chips -->
+                </div>
+                <div class="srs-actions-toolbar">
+                    <button class="btn-primary-action" id="btnStartSrsFlashcard">🎴 Ôn tập bằng Flashcard ngay</button>
+                    <button class="btn-secondary-action" id="btnStartSrsQuiz">🎯 Kiểm tra bằng Quiz ngay</button>
+                    <button class="btn-ghost-action" id="btnClearMasteredSrs">🧹 Xóa các từ đã nhớ kỹ</button>
+                </div>
+                <div class="srs-word-list" id="srsWordList">
+                    <!-- List of current SRS words -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="wl-toast-container" id="toastContainer"></div>
 
     <!-- Load Lightweight Index Metadata + Default Book 1 Data -->
     <script src="hsk_book_data.js"></script>
