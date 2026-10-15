@@ -26,7 +26,8 @@
         showPinyin: true,
         showMeaning: true,
         onlyStarredWords: false,
-        targetGridCollapsed: false,
+        targetGridCollapsed: true,
+        viewMode: localStorage.getItem('wl_view_mode') || 'compact',
         speakingAll: false,
         currentPdfPage: 9,
 
@@ -68,11 +69,26 @@
 
         // Flashcard state
         fcScope: 'unit',           // 'unit' | 'srs' | 'starred' | 'book'
-        fcFaceMode: 'hz',          // 'hz' | 'vi' | 'audio'
+        fcFaceMode: 'visual',      // 'visual' | 'hz' | 'vi' | 'audio'
         fcAutoSpeak: true,
         fcDeck: [],
         fcIndex: 0,
         fcFlipped: false,
+
+        // Games & Practice Hub state
+        gamesSubMode: 'bubble',    // 'bubble' | 'quiz' | 'practice'
+        bubbleGame: {
+            isRunning: false,
+            score: 0,
+            combo: 1,
+            maxCombo: 1,
+            lives: 3,
+            timeLeft: 60,
+            target: null,
+            timerId: null,
+            poppedCount: 0,
+            mode: 'vn_to_hz'       // 'vn_to_hz' | 'audio_to_hz' | 'py_to_hz'
+        },
 
         // Quiz state
         quizType: 'hz_to_vn',      // 'hz_to_vn' | 'vn_to_hz' | 'audio_to_hz'
@@ -338,6 +354,19 @@
                 gain.connect(ctx.destination);
                 osc.start(now);
                 osc.stop(now + 0.08);
+            } else if (type === 'pop') {
+                // Bouncy bubble pop chirp
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(980, now);
+                osc.frequency.exponentialRampToValueAtTime(320, now + 0.09);
+                gain.gain.setValueAtTime(0.22, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now);
+                osc.stop(now + 0.09);
             } else if (type === 'badge') {
                 // Celebration fanfare: C5 -> E5 -> G5 -> C6
                 const notes = [523.25, 659.25, 783.99, 1046.50];
@@ -582,6 +611,335 @@
                 </div>
             `;
         }).join('');
+    }
+
+    // ==================== VISUAL MNEMONICS & RADICAL ENGINE ====================
+    const RADICAL_MEANINGS = {
+        '氵': { name: 'Bộ Thủy', vi: 'Nước, chất lỏng, sông suối', icon: '💧' },
+        '水': { name: 'Bộ Thủy', vi: 'Nước, chất lỏng', icon: '💧' },
+        '亻': { name: 'Bộ Nhân đứng', vi: 'Con người, hành vi, mối quan hệ', icon: '👤' },
+        '人': { name: 'Bộ Nhân', vi: 'Con người', icon: '👤' },
+        '口': { name: 'Bộ Khẩu', vi: 'Cái miệng, ăn uống, lời nói', icon: '👄' },
+        '木': { name: 'Bộ Mộc', vi: 'Cây cối, rừng, đồ gỗ', icon: '🌳' },
+        '火': { name: 'Bộ Hỏa', vi: 'Ngọn lửa, nhiệt độ, nấu nướng', icon: '🔥' },
+        '灬': { name: 'Bộ Hỏa', vi: 'Bốn chấm lửa, đun nấu', icon: '🔥' },
+        '讠': { name: 'Bộ Ngôn', vi: 'Lời nói, ngôn ngữ, giao tiếp', icon: '💬' },
+        '言': { name: 'Bộ Ngôn', vi: 'Lời nói, ngôn ngữ', icon: '💬' },
+        '日': { name: 'Bộ Nhật', vi: 'Mặt trời, ban ngày, thời gian', icon: '☀️' },
+        '月': { name: 'Bộ Nguyệt', vi: 'Mặt trăng / Bộ Nhục (cơ thể, da thịt)', icon: '🌙' },
+        '目': { name: 'Bộ Mục', vi: 'Con mắt, nhìn ngắm', icon: '👀' },
+        '手': { name: 'Bộ Thủ', vi: 'Bàn tay, lao động', icon: '✋' },
+        '扌': { name: 'Bộ Tài gảy', vi: 'Bàn tay cầm nắm, thao tác', icon: '✋' },
+        '足': { name: 'Bộ Túc', vi: 'Bàn chân, bước đi, đá, nhảy', icon: '🦶' },
+        '𧾷': { name: 'Bộ Túc', vi: 'Bàn chân, chạy nhảy', icon: '🦶' },
+        '心': { name: 'Bộ Tâm', vi: 'Trái tim, tình cảm, suy nghĩ', icon: '❤️' },
+        '忄': { name: 'Bộ Tâm đứng', vi: 'Cảm xúc, tâm trạng nội tâm', icon: '💭' },
+        '食': { name: 'Bộ Thực', vi: 'Thực phẩm, ăn uống, món ăn', icon: '🍲' },
+        '饣': { name: 'Bộ Thực', vi: 'Thức ăn, ẩm thực', icon: '🍲' },
+        '辶': { name: 'Bộ Quai xước', vi: 'Di chuyển, đi đường, tiến bước', icon: '🚶' },
+        '钅': { name: 'Bộ Kim', vi: 'Kim loại, tiền bạc, vàng bạc', icon: '💰' },
+        '金': { name: 'Bộ Kim', vi: 'Vàng, kim loại', icon: '💰' },
+        '犭': { name: 'Bộ Khuyển', vi: 'Động vật, thú nuôi, muông thú', icon: '🐾' },
+        '犬': { name: 'Bộ Khuyển', vi: 'Con chó, thú vật', icon: '🐾' },
+        '宀': { name: 'Bộ Miên', vi: 'Mái nhà, gia đình, nơi ở che chở', icon: '🏠' },
+        '女': { name: 'Bộ Nữ', vi: 'Phụ nữ, mẹ, chị em gái', icon: '👩' },
+        '子': { name: 'Bộ Tử', vi: 'Con cái, trẻ nhỏ, mầm sống', icon: '👶' },
+        '车': { name: 'Bộ Xa', vi: 'Xe cộ, phương tiện giao thông', icon: '🚗' },
+        '门': { name: 'Bộ Môn', vi: 'Cửa ra vào, cổng chào', icon: '🚪' },
+        '雨': { name: 'Bộ Vũ', vi: 'Mưa, sấm sét, thời tiết mây mù', icon: '🌧️' },
+        '艹': { name: 'Bộ Thảo', vi: 'Cây cỏ, hoa lá, thảo mộc', icon: '🌿' },
+        '衣': { name: 'Bộ Y', vi: 'Áo quần, vải vóc trang phục', icon: '👕' },
+        '衤': { name: 'Bộ Y', vi: 'Trang phục, y phục', icon: '👕' },
+        '山': { name: 'Bộ Sơn', vi: 'Núi non, địa hình cao lớn', icon: '⛰️' },
+        '田': { name: 'Bộ Điền', vi: 'Ruộng đất, nông nghiệp', icon: '🌾' },
+        '力': { name: 'Bộ Lực', vi: 'Sức mạnh, cơ bắp, nỗ lực', icon: '💪' },
+        '刀': { name: 'Bộ Đao', vi: 'Con dao, chặt, cắt, chia', icon: '🔪' },
+        '刂': { name: 'Bộ Đao đứng', vi: 'Vũ khí sắc nhọn, phân chia', icon: '🔪' },
+        '土': { name: 'Bộ Thổ', vi: 'Đất đai, mặt đất, bờ cõi', icon: '🧱' },
+        '石': { name: 'Bộ Thạch', vi: 'Hòn đá, khoáng vật, kiên cố', icon: '🪨' },
+        '禾': { name: 'Bộ Hòa', vi: 'Cây lúa, ngũ cốc, mùa màng', icon: '🌾' },
+        '攵': { name: 'Bộ Phộc', vi: 'Đánh khẽ, hành động giục giã', icon: '✍️' },
+        '夂': { name: 'Bộ Trĩ', vi: 'Bước đi theo sau, chậm rãi', icon: '👣' },
+        '爫': { name: 'Bộ Trảo', vi: 'Móng vuốt, nắm bắt, che chở', icon: '🦅' }
+    };
+
+    const WORD_VISUAL_MAP = {
+        '爱': {
+            icon: '❤️',
+            radicals: [
+                { r: '爫', name: 'Bộ Trảo (Bàn tay che chở / Móng vuốt)' },
+                { r: '冖', name: 'Bộ Miên (Mái nhà / Nơi chốn ấm áp)' },
+                { r: '心', name: 'Bộ Tâm (Trái tim / Tình cảm)' },
+                { r: '夂', name: 'Bộ Trĩ (Bước theo / Cùng nhau đồng hành)' }
+            ],
+            story: 'Dưới mái nhà (冖), hai người trao trọn con tim (心), dùng bàn tay nâng niu che chở (爫) và nguyện cùng nhau sánh bước (夂) trọn đời ➔ Đó chính là TÌNH YÊU (爱).',
+            family: [
+                { word: '爱情', py: 'àiqíng', vi: 'tình yêu' },
+                { word: '爱好', py: 'àihào', vi: 'sở thích' },
+                { word: '爱心', py: 'àixīn', vi: 'lòng nhân ái' },
+                { word: '可爱', py: 'kě\'ài', vi: 'đáng yêu' }
+            ]
+        },
+        '好': {
+            icon: '👍',
+            radicals: [
+                { r: '女', name: 'Bộ Nữ (Người mẹ / Phụ nữ)' },
+                { r: '子', name: 'Bộ Tử (Đứa con thơ)' }
+            ],
+            story: 'Người mẹ (女) âu yếm bế đứa con nhỏ (子) trong lòng ➔ Cảnh tượng gia đình đầm ấm, trọn vẹn là điều TỐT ĐẸP nhất (好).',
+            family: [
+                { word: '你好', py: 'nǐ hǎo', vi: 'xin chào' },
+                { word: '好看', py: 'hǎokàn', vi: 'đẹp, hay' },
+                { word: '好吃', py: 'hǎochī', vi: 'ngon miệng' },
+                { word: '好处', py: 'hǎochu', vi: 'lợi ích' }
+            ]
+        },
+        '家': {
+            icon: '🏠',
+            radicals: [
+                { r: '宀', name: 'Bộ Miên (Mái nhà che mưa nắng)' },
+                { r: '豕', name: 'Bộ Thỉ (Con heo / Gia súc ấm no)' }
+            ],
+            story: 'Dưới mái nhà (宀) có nuôi gia súc (豕) no ấm, sung túc ➔ Nơi bình yên ấm cúng để trở về chính là NHÀ (家).',
+            family: [
+                { word: '大家', py: 'dàjiā', vi: 'mọi người' },
+                { word: '家人', py: 'jiārén', vi: 'người nhà' },
+                { word: '回家', py: 'huí jiā', vi: 'về nhà' },
+                { word: '国家', py: 'guójiā', vi: 'quốc gia' }
+            ]
+        },
+        '看': {
+            icon: '👀',
+            radicals: [
+                { r: '手', name: 'Bộ Thủ (Bàn tay)' },
+                { r: '目', name: 'Bộ Mục (Đôi mắt)' }
+            ],
+            story: 'Đưa bàn tay (手) lên trán che bớt nắng chói để đôi mắt (目) nhìn rõ vật ở phía xa ➔ Nghĩa là NHÌN, XEM (看).',
+            family: [
+                { word: '看见', py: 'kànjiàn', vi: 'nhìn thấy' },
+                { word: '看书', py: 'kàn shū', vi: 'đọc sách' },
+                { word: '好看', py: 'hǎokàn', vi: 'đẹp, ưa nhìn' }
+            ]
+        },
+        '听': {
+            icon: '🎧',
+            radicals: [
+                { r: '口', name: 'Bộ Khẩu (Cái miệng / Âm thanh)' },
+                { r: '斤', name: 'Bộ Cân (Cái búa / Cân nhắc)' }
+            ],
+            story: 'Mở tai lắng nghe từng lời nói từ miệng (口) một cách cẩn trọng, cân nhắc (斤) từng câu chữ ➔ Nghĩa là NGHE (听).',
+            family: [
+                { word: '听到', py: 'tīng dào', vi: 'nghe được' },
+                { word: '听说', py: 'tīngshuō', vi: 'nghe nói' },
+                { word: '好听', py: 'hǎotīng', vi: 'hay, êm tai' }
+            ]
+        },
+        '吃': {
+            icon: '🍜',
+            radicals: [
+                { r: '口', name: 'Bộ Khẩu (Cái miệng)' },
+                { r: '乞', name: 'Bộ Khất (Cầu xin / Nạp vào)' }
+            ],
+            story: 'Cái miệng (口) đưa thức ăn vào để nuôi sống cơ thể ➔ Nghĩa là ĂN (吃).',
+            family: [
+                { word: '吃饭', py: 'chī fàn', vi: 'ăn cơm' },
+                { word: '好吃', py: 'hǎochī', vi: 'ngon' },
+                { word: '小吃', py: 'xiǎochī', vi: 'đồ ăn vặt' }
+            ]
+        },
+        '喝': {
+            icon: '🥤',
+            radicals: [
+                { r: '口', name: 'Bộ Khẩu (Cái miệng)' },
+                { r: '日', name: 'Mặt trời nắng gắt' }
+            ],
+            story: 'Trời nắng gắt cổ họng khô khát, miệng (口) cần dòng nước mát giải tỏa ➔ Nghĩa là UỐNG (喝).',
+            family: [
+                { word: '喝水', py: 'hē shuǐ', vi: 'uống nước' },
+                { word: '喝茶', py: 'hē chá', vi: 'uống trà' }
+            ]
+        },
+        '学': {
+            icon: '🎓',
+            radicals: [
+                { r: '冖', name: 'Mái trường' },
+                { r: '子', name: 'Bộ Tử (Học trò, con trẻ)' }
+            ],
+            story: 'Học trò nhỏ (子) ngồi dưới mái trường (冖) tiếp thu kiến thức và khai sáng tư duy ➔ Nghĩa là HỌC TẬP (学).',
+            family: [
+                { word: '学校', py: 'xuéxiào', vi: 'trường học' },
+                { word: '学生', py: 'xuéshēng', vi: 'học sinh' },
+                { word: '学习', py: 'xuéxí', vi: 'học tập' },
+                { word: '大学', py: 'dàxué', vi: 'đại học' }
+            ]
+        },
+        '书': {
+            icon: '📚',
+            radicals: [
+                { r: '乛', name: 'Tay cầm bút lông' },
+                { r: '丨', name: 'Nét chữ ghi chép' }
+            ],
+            story: 'Bàn tay cầm bút ghi chép lại lời răn dạy của người xưa trên từng trang giấy ➔ Nghĩa là SÁCH (书).',
+            family: [
+                { word: '书店', py: 'shūdiàn', vi: 'hiệu sách' },
+                { word: '看书', py: 'kàn shū', vi: 'đọc sách' },
+                { word: '买书', py: 'mǎi shū', vi: 'mua sách' }
+            ]
+        },
+        '买': {
+            icon: '🛒',
+            radicals: [
+                { r: '乛', name: 'Chiếc giỏ mua sắm' },
+                { r: '头', name: 'Người mang tiền đi chợ' }
+            ],
+            story: 'Cầm tiền đi chợ chọn lựa hàng hóa bỏ vào giỏ ➔ Nghĩa là MUA (买).',
+            family: [
+                { word: '买单', py: 'mǎidān', vi: 'thanh toán' },
+                { word: '买卖', py: 'mǎimai', vi: 'buôn bán' }
+            ]
+        },
+        '水': {
+            icon: '💧',
+            radicals: [{ r: '水', name: 'Bộ Thủy (Dòng nước uốn lượn)' }],
+            story: 'Hình vẽ dòng sông uốn khúc ở giữa và những bọt nước bắn tung tóe hai bên ➔ Nghĩa là NƯỚC (水).',
+            family: [
+                { word: '水果', py: 'shuǐguǒ', vi: 'hoa quả' },
+                { word: '开水', py: 'kāishuǐ', vi: 'nước sôi' },
+                { word: '喝水', py: 'hē shuǐ', vi: 'uống nước' }
+            ]
+        },
+        '火': {
+            icon: '🔥',
+            radicals: [{ r: '火', name: 'Bộ Hỏa (Ngọn lửa bốc cháy)' }],
+            story: 'Hình ngọn lửa bùng cháy từ củi khô, tàn lửa bay rực sáng ➔ Nghĩa là LỬA (火).',
+            family: [
+                { word: '火车', py: 'huǒchē', vi: 'xe lửa, tàu hỏa' },
+                { word: '红火', py: 'hónghuo', vi: 'thịnh vượng, đỏ rực' }
+            ]
+        },
+        '车': {
+            icon: '🚗',
+            radicals: [{ r: '车', name: 'Bộ Xa (Cỗ xe hai bánh)' }],
+            story: 'Hình cỗ xe nhìn từ trên cao với bánh xe và thanh trục kéo vững chắc ➔ Nghĩa là XE CỘ (车).',
+            family: [
+                { word: '车站', py: 'chēzhàn', vi: 'bến xe' },
+                { word: '打车', py: 'dǎchē', vi: 'bắt taxi' },
+                { word: '开车', py: 'kāi chē', vi: 'lái xe' }
+            ]
+        },
+        '钱': {
+            icon: '💰',
+            radicals: [
+                { r: '钅', name: 'Bộ Kim (Kim loại quý)' },
+                { r: '戋', name: 'Những đồng tiền xếp lớp' }
+            ],
+            story: 'Những đồng tiền bằng kim loại quý (钅) được xếp thành từng chồng lấp lánh ➔ Nghĩa là TIỀN (钱).',
+            family: [
+                { word: '钱包', py: 'qiánbāo', vi: 'ví tiền' },
+                { word: '多少钱', py: 'duōshao qián', vi: 'bao nhiêu tiền' },
+                { word: '有钱', py: 'yǒu qián', vi: 'giàu có' }
+            ]
+        },
+        '朋友': {
+            icon: '🤝',
+            radicals: [
+                { r: '月', name: 'Hai vầng trăng song hành' },
+                { r: '又', name: 'Hai bàn tay nắm chặt' }
+            ],
+            story: 'Hai người như hai vầng trăng soi chiếu cho nhau, hai bàn tay (又) nắm chặt cùng sẻ chia ngọt bùi ➔ Nghĩa là BẠN BÈ (朋友).',
+            family: [
+                { word: '好朋友', py: 'hǎo péngyou', vi: 'bạn thân' },
+                { word: '老朋友', py: 'lǎo péngyou', vi: 'bạn cũ' },
+                { word: '交朋友', py: 'jiāo péngyou', vi: 'kết bạn' }
+            ]
+        },
+        '医生': {
+            icon: '👨‍⚕️',
+            radicals: [
+                { r: '匚', name: 'Hộp cứu thương / Mũi tên' },
+                { r: '生', name: 'Sự sống nảy mầm' }
+            ],
+            story: 'Người dùng y thuật và thuốc thang để bảo vệ sự sống (生) cho muôn người ➔ Nghĩa là BÁC SĨ (医生).',
+            family: [
+                { word: '医院', py: 'yīyuàn', vi: 'bệnh viện' },
+                { word: '看病', py: 'kàn bìng', vi: 'khám bệnh' }
+            ]
+        },
+        '飞机': {
+            icon: '✈️',
+            radicals: [
+                { r: '飞', name: 'Cánh chim giang rộng bay lượn' },
+                { r: '机', name: 'Cỗ máy hoạt động' }
+            ],
+            story: 'Cỗ máy khổng lồ có cánh sải dài bay vút lên bầu trời như loài chim ➔ Nghĩa là MÁY BAY (飞机).',
+            family: [
+                { word: '机场', py: 'jīchǎng', vi: 'sân bay' },
+                { word: '飞机场', py: 'fēijīchǎng', vi: 'phi trường' },
+                { word: '起飞', py: 'qǐfēi', vi: 'cất cánh' }
+            ]
+        },
+        '苹果': {
+            icon: '🍎',
+            radicals: [
+                { r: '艹', name: 'Cây cỏ thực vật' },
+                { r: '果', name: 'Trái ngọt trên cây' }
+            ],
+            story: 'Loại quả ngọt ngào mọc từ cành lá xum xuê mang hương thơm thanh mát ➔ Nghĩa là QUẢ TÁO (苹果).',
+            family: [
+                { word: '水果', py: 'shuǐguǒ', vi: 'trái cây' },
+                { word: '苹果树', py: 'píngguǒ shù', vi: 'cây táo' }
+            ]
+        }
+    };
+
+    function getWordVisualData(word, vi = '', en = '') {
+        const cleanWord = (word || '').trim();
+        if (WORD_VISUAL_MAP[cleanWord]) {
+            return WORD_VISUAL_MAP[cleanWord];
+        }
+
+        const chars = cleanWord.split('');
+        const foundRadicals = [];
+        let matchedIcon = null;
+
+        chars.forEach(ch => {
+            for (const [radChar, info] of Object.entries(RADICAL_MEANINGS)) {
+                if (ch.includes(radChar)) {
+                    foundRadicals.push({ r: radChar, name: info.name, vi: info.vi });
+                    if (!matchedIcon) matchedIcon = info.icon;
+                    break;
+                }
+            }
+        });
+
+        const viLower = (vi || '').toLowerCase();
+        if (!matchedIcon) {
+            if (/yêu|thích|nhớ|tình|tim|cảm/.test(viLower)) matchedIcon = '❤️';
+            else if (/ăn|cơm|bánh|đói|món|thực/.test(viLower)) matchedIcon = '🍲';
+            else if (/uống|nước|trà|bia|rượu|canh/.test(viLower)) matchedIcon = '🥤';
+            else if (/người|bố|mẹ|anh|chị|ông|bà|con|thầy|cô|bạn/.test(viLower)) matchedIcon = '👤';
+            else if (/sách|học|đọc|viết|vở|bài|chữ/.test(viLower)) matchedIcon = '📚';
+            else if (/xe|đi|chạy|bước|đường|bay|tàu/.test(viLower)) matchedIcon = '🚗';
+            else if (/nhà|phòng|trường|viện|quán|chợ|cửa/.test(viLower)) matchedIcon = '🏠';
+            else if (/tiền|mua|bán|giá|đắt|rẻ/.test(viLower)) matchedIcon = '💰';
+            else if (/thời gian|ngày|tháng|năm|giờ|sáng|tối|trưa/.test(viLower)) matchedIcon = '⏰';
+            else if (/to|nhỏ|cao|thấp|dài|ngắn|nặng/.test(viLower)) matchedIcon = '📐';
+            else if (/vui|buồn|cười|khóc|sợ|giận/.test(viLower)) matchedIcon = '😊';
+            else matchedIcon = '✨';
+        }
+
+        if (!foundRadicals.length) {
+            foundRadicals.push({ r: chars[0] || '字', name: 'Nét chữ Hán', vi: 'Bộ phận cấu thành tự nhiên' });
+        }
+
+        const story = `Chữ “${cleanWord}” mang hình tượng ${matchedIcon}, mang nghĩa “${vi || en}”. Hãy liên tưởng hình ảnh ${matchedIcon} với âm thanh và các nét chữ để khắc sâu vào tiềm thức.`;
+
+        return {
+            icon: matchedIcon,
+            radicals: foundRadicals,
+            story: story,
+            family: []
+        };
     }
 
     // ==================== SPACED REPETITION (SRS / LEITNER) ENGINE ====================
@@ -1339,7 +1697,23 @@
         renderMemoryPane(unitData);
         renderPracticePane(unitData);
         initFlashcardDeck();
-        initReflexQuiz();
+        if (state.studyMode === 'games') {
+            if (state.gamesSubMode === 'quiz') {
+                initReflexQuiz();
+            } else if (state.gamesSubMode === 'bubble' && state.bubbleGame.isRunning) {
+                spawnBubbleRound();
+            }
+        } else {
+            if (state.quizTimerId) {
+                clearInterval(state.quizTimerId);
+                state.quizTimerId = null;
+            }
+            if (state.bubbleGame && state.bubbleGame.isRunning) {
+                if (state.bubbleGame.timerId) clearInterval(state.bubbleGame.timerId);
+                state.bubbleGame.timerId = null;
+                state.bubbleGame.isRunning = false;
+            }
+        }
         if (state.studyMode === 'shadowing') {
             initShadowingStudio();
         } else {
@@ -1467,6 +1841,40 @@
 
         listEl.innerHTML = displayWords.map(w => renderQuickMemoryCardHtml(w, null)).join('');
         bindQuickMemoryCardEvents(listEl);
+
+        const btnCompact = document.getElementById('btnViewCompact');
+        const btnFull    = document.getElementById('btnViewFull');
+        if (btnCompact) btnCompact.classList.toggle('active', state.viewMode === 'compact');
+        if (btnFull)    btnFull.classList.toggle('active', state.viewMode === 'full');
+    }
+
+    function setViewMode(mode) {
+        state.viewMode = mode;
+        try {
+            localStorage.setItem('wl_view_mode', mode);
+        } catch (e) {}
+
+        const btnCompact = document.getElementById('btnViewCompact');
+        const btnFull    = document.getElementById('btnViewFull');
+        if (btnCompact) btnCompact.classList.toggle('active', mode === 'compact');
+        if (btnFull)    btnFull.classList.toggle('active', mode === 'full');
+
+        const listEl = document.getElementById('quickMemoryList');
+        if (!listEl) return;
+
+        listEl.querySelectorAll('.qm-word-card').forEach(card => {
+            const col = card.querySelector('.qmc-collapsible-content');
+            const arrow = card.querySelector('.ex-arrow');
+            if (mode === 'compact') {
+                card.classList.add('is-compact');
+                if (col) col.classList.add('hidden');
+                if (arrow) arrow.textContent = '▾';
+            } else {
+                card.classList.remove('is-compact');
+                if (col) col.classList.remove('hidden');
+                if (arrow) arrow.textContent = '▴';
+            }
+        });
     }
 
     function renderQuickMemoryCardHtml(w, unitBadgeInfo) {
@@ -1474,6 +1882,10 @@
         const cleanHz = cleanHanziForTts(w.word);
         const showTrad = w.traditional && w.traditional !== w.word && !w.word.includes(w.traditional);
         const conciseEn = formatConciseEnglish(w.meaning_en, w.meaning_vi);
+        const srsInfo = state.srsData && state.srsData[w.id];
+        const isSrs = !!srsInfo;
+        const isCompact = state.viewMode === 'compact';
+        const vData = getWordVisualData(w.word, w.meaning_vi || w.meaning_primary, w.meaning_en);
 
         const collocationsHtml = w.collocations
             ? `<div class="qmc-collocations">
@@ -1498,30 +1910,50 @@
                </div>`
             : '';
 
-        const srsInfo = state.srsData && state.srsData[w.id];
-        const isSrs = !!srsInfo;
-
         return `
-            <div class="qm-word-card" id="qm-word-${w.num}" data-word-id="${w.id}">
+            <div class="qm-word-card ${isCompact ? 'is-compact' : ''}" id="qm-word-${w.num}" data-word-id="${w.id}">
                 <div class="qmc-head">
                     <div class="qmc-title-group">
                         <span class="qmc-num">#${w.num}</span>
+                        <button class="qmc-visual-pill" data-mnemonic-id="${w.id}" title="Xem Chiết tự & Mẹo nhớ hình ảnh (${escapeAttr(vData.icon)})">
+                            <span class="qmc-vis-icon">${vData.icon}</span>
+                        </button>
                         <span class="qmc-hz" data-speak="${escapeAttr(cleanHz)}" title="Nhấn để nghe phát âm">${escapeHtml(w.word)}</span>
                         ${showTrad ? `<span class="qmc-trad" title="Chữ Phồn thể">[${escapeHtml(w.traditional)}]</span>` : ''}
                         <span class="qmc-py">${escapeHtml(w.pinyin)}</span>
                         ${w.pos_full ? `<span class="qmc-pos">${escapeHtml(w.pos_full)}</span>` : ''}
                         ${w.han_viet ? `<span class="qmc-hv">HV: ${escapeHtml(w.han_viet)}</span>` : ''}
+                        ${isSrs ? `<span class="qmc-srs-pill" title="Từ khó trong Hộp ${srsInfo.box || 1} SRS">🧠 Hộp ${srsInfo.box || 1}</span>` : ''}
                     </div>
                     <div class="qmc-actions">
-                        ${unitBadgeInfo ? `<button class="qmc-icon-btn" data-jump-unit="${unitBadgeInfo.unit}" title="Chuyển tới Bài ${unitBadgeInfo.unit}">📖 Bài ${unitBadgeInfo.unit}</button>` : ''}
-                        <button class="qmc-icon-btn" data-speak="${escapeAttr(cleanHz)}" title="Chỉ nghe phát âm từ vựng">🔊 Từ</button>
-                        <button class="qmc-icon-btn" data-speak-word-ex="${w.num}" title="Đọc từ vựng này rồi đọc tiếp các câu ví dụ của từ">▶️ Từ + VD</button>
-                        <button class="qmc-icon-btn ${isSrs ? 'srs-hard' : ''}" data-srs-id="${w.id}" title="Đánh dấu từ khó / Hộp lặp lại ngắt quãng SRS">
-                            ${isSrs ? `🧠 Hộp ${srsInfo.box || 1}` : '🧠 Cần ôn'}
+                        ${examples.length ? `
+                            <button class="qmc-icon-btn qmc-toggle-ex-btn" data-toggle-ex="${w.num}" title="Gập/Mở câu ví dụ">
+                                💬 ${examples.length} ví dụ <span class="ex-arrow">${isCompact ? '▾' : '▴'}</span>
+                            </button>
+                        ` : ''}
+                        <button class="qmc-icon-btn qmc-speak-btn" data-speak="${escapeAttr(cleanHz)}" title="Nghe phát âm từ vựng">🔊</button>
+                        <button class="qmc-icon-btn qmc-star-btn ${isStar ? 'starred' : ''}" data-star-id="${w.id}" title="${isStar ? 'Bỏ lưu từ này' : 'Lưu từ vựng'}">
+                            ${isStar ? '⭐' : '☆'}
                         </button>
-                        <button class="qmc-icon-btn ${isStar ? 'starred' : ''}" data-star-id="${w.id}" title="Lưu từ vựng này">
-                            ${isStar ? '⭐ Đã lưu' : '☆ Lưu'}
-                        </button>
+
+                        <div class="qmc-more-wrap">
+                            <button class="qmc-icon-btn qmc-more-btn" data-more-id="${w.num}" title="Tùy chọn khác">⋯</button>
+                            <div class="qmc-more-menu hidden" id="qmcMoreMenu-${w.num}">
+                                <button class="qmm-item" data-mnemonic-id="${w.id}">
+                                    🎨 ${vData.icon} Xem chiết tự & mẹo nhớ
+                                </button>
+                                <button class="qmm-item" data-srs-id="${w.id}">
+                                    ${isSrs ? `🧠 Hộp ${srsInfo.box || 1} (Gỡ khỏi SRS)` : '🧠 Thêm vào Hộp từ khó (SRS)'}
+                                </button>
+                                <button class="qmm-item" data-speak-word-ex="${w.num}">
+                                    ▶️ Đọc từ kèm câu ví dụ
+                                </button>
+                                <button class="qmm-item" data-shad-word="${escapeAttr(cleanHz)}">
+                                    🗣️ Luyện nói & Shadowing
+                                </button>
+                                ${unitBadgeInfo ? `<button class="qmm-item" data-jump-unit="${unitBadgeInfo.unit}">📖 Chuyển tới Bài ${unitBadgeInfo.unit}</button>` : ''}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1530,13 +1962,68 @@
                     ${conciseEn ? `<div class="qmc-meaning-en">🇬🇧 ${escapeHtml(conciseEn)}</div>` : ''}
                 </div>
 
-                ${collocationsHtml}
-                ${examplesHtml}
+                <div class="qmc-collapsible-content ${isCompact ? 'hidden' : ''}">
+                    ${collocationsHtml}
+                    ${examplesHtml}
+                </div>
             </div>
         `;
     }
 
+    function selectShadowingWordByText(text) {
+        if (!text) return;
+        const words = getShadowingWords();
+        const cleanT = cleanHanziForTts(text);
+        const idx = words.findIndex(w => w.word === text || cleanHanziForTts(w.word) === cleanT);
+        if (idx !== -1) {
+            state.shadowing.wordIndex = idx;
+            const sel = document.getElementById('shadWordSelect');
+            if (sel) sel.value = idx;
+            renderShadowingActiveTarget();
+        }
+    }
+
     function bindQuickMemoryCardEvents(container) {
+        // Toggle individual card examples accordion
+        container.querySelectorAll('[data-toggle-ex]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const wNum = btn.getAttribute('data-toggle-ex');
+                const card = document.getElementById(`qm-word-${wNum}`);
+                if (!card) return;
+                const colContent = card.querySelector('.qmc-collapsible-content');
+                if (!colContent) return;
+                const isHidden = colContent.classList.contains('hidden');
+                colContent.classList.toggle('hidden', !isHidden);
+                const arrow = btn.querySelector('.ex-arrow');
+                if (arrow) arrow.textContent = isHidden ? '▴' : '▾';
+            });
+        });
+
+        // More options dropdown toggle
+        container.querySelectorAll('[data-more-id]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const wNum = btn.getAttribute('data-more-id');
+                const menu = document.getElementById(`qmcMoreMenu-${wNum}`);
+                document.querySelectorAll('.qmc-more-menu').forEach(m => {
+                    if (m !== menu) m.classList.add('hidden');
+                });
+                if (menu) menu.classList.toggle('hidden');
+            });
+        });
+
+        // Jump to shadowing
+        container.querySelectorAll('[data-shad-word]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                document.querySelectorAll('.qmc-more-menu').forEach(m => m.classList.add('hidden'));
+                const wText = btn.getAttribute('data-shad-word');
+                switchStudyMode('shadowing');
+                selectShadowingWordByText(wText);
+            });
+        });
+
         container.querySelectorAll('[data-speak]').forEach(el => {
             el.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -1549,6 +2036,7 @@
         container.querySelectorAll('[data-speak-word-ex]').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
+                document.querySelectorAll('.qmc-more-menu').forEach(m => m.classList.add('hidden'));
                 const wNum = parseInt(btn.getAttribute('data-speak-word-ex'), 10);
                 const unitData = getCurrentUnitData();
                 if (!unitData || !unitData.target_words) return;
@@ -1559,24 +2047,35 @@
             });
         });
 
+        // Visual Mnemonics Modal trigger
+        container.querySelectorAll('[data-mnemonic-id]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                document.querySelectorAll('.qmc-more-menu').forEach(m => m.classList.add('hidden'));
+                const wid = btn.getAttribute('data-mnemonic-id');
+                if (wid) openMnemonicModal(wid);
+            });
+        });
+
         container.querySelectorAll('[data-srs-id]').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
+                document.querySelectorAll('.qmc-more-menu').forEach(m => m.classList.add('hidden'));
                 const wid = btn.getAttribute('data-srs-id');
                 if (!wid) return;
                 if (state.srsData && state.srsData[wid]) {
                     delete state.srsData[wid];
-                    btn.classList.remove('srs-hard');
-                    btn.textContent = '🧠 Cần ôn';
                     showToast('Đã bỏ theo dõi', 'Đã xóa từ khỏi Hộp từ khó SRS', 'ℹ️');
                 } else {
                     addToSrs(wid, 1);
-                    btn.classList.add('srs-hard');
-                    btn.textContent = '🧠 Hộp 1';
                     showToast('🧠 Đã thêm vào Hộp SRS!', 'Từ này sẽ được lên lịch ôn ngắt quãng', '🧠');
                 }
                 saveProgress();
                 updateSrsHeaderBadge();
+                const unitData = getCurrentUnitData();
+                if (unitData && !state.globalSearchQuery) {
+                    renderMemoryPane(unitData);
+                }
             });
         });
 
@@ -1588,11 +2087,13 @@
                 if (state.starredWords[wid]) {
                     delete state.starredWords[wid];
                     btn.classList.remove('starred');
-                    btn.textContent = '☆ Lưu';
+                    btn.textContent = '☆';
+                    btn.title = 'Lưu từ vựng';
                 } else {
                     state.starredWords[wid] = true;
                     btn.classList.add('starred');
-                    btn.textContent = '⭐ Đã lưu';
+                    btn.textContent = '⭐';
+                    btn.title = 'Bỏ lưu từ này';
                 }
                 saveProgress();
                 const unitData = getCurrentUnitData();
@@ -1604,6 +2105,7 @@
 
         container.querySelectorAll('[data-jump-unit]').forEach(btn => {
             btn.addEventListener('click', () => {
+                document.querySelectorAll('.qmc-more-menu').forEach(m => m.classList.add('hidden'));
                 const uNum = parseInt(btn.getAttribute('data-jump-unit'), 10);
                 if (!isNaN(uNum)) {
                     state.globalSearchQuery = '';
@@ -2237,12 +2739,28 @@
             progBar.style.width = `${pct}%`;
         }
 
+        // Visual & Mnemonics Data
+        const vData = getWordVisualData(w.word, w.meaning_vi || w.meaning_primary, w.meaning_en);
+
         // Front Face Display according to fcFaceMode
         const frontHz = document.getElementById('fcFrontHanzi');
         const frontSub = document.getElementById('fcFrontSub');
         const frontPos = document.getElementById('fcFrontPos');
+        const frontVis = document.getElementById('fcFrontVisual');
 
-        if (state.fcFaceMode === 'vi') {
+        if (frontVis) {
+            frontVis.textContent = vData.icon || '✨';
+            frontVis.style.display = (state.fcFaceMode === 'visual') ? 'flex' : 'none';
+        }
+
+        if (state.fcFaceMode === 'visual') {
+            if (frontHz) {
+                frontHz.textContent = '❓ Đoán chữ Hán?';
+                frontHz.style.fontSize = '1.75rem';
+            }
+            if (frontSub) frontSub.textContent = `Gợi ý nghĩa: ${w.meaning_vi || w.meaning_primary || ''}`;
+            if (frontPos) frontPos.textContent = `[${w.pos_full || w.pos || 'Từ vựng'}] Nhấn thẻ để xem chữ & chiết tự`;
+        } else if (state.fcFaceMode === 'vi') {
             if (frontHz) {
                 frontHz.textContent = w.meaning_vi || w.meaning_primary || '';
                 frontHz.style.fontSize = '1.75rem';
@@ -2273,11 +2791,42 @@
         const backHz = document.getElementById('fcBackHanzi');
         const backPy = document.getElementById('fcBackPinyin');
         const backMn = document.getElementById('fcBackMeaning');
+        const backHv = document.getElementById('fcBackHanViet');
         const backEx = document.getElementById('fcBackExample');
+        const backVis = document.getElementById('fcBackVisual');
+        const backRads = document.getElementById('fcBackRadicals');
+        const backStory = document.getElementById('fcBackMnemonicStory');
 
+        if (backVis) backVis.textContent = vData.icon || '✨';
         if (backHz) backHz.textContent = w.word;
         if (backPy) backPy.textContent = w.pinyin;
         if (backMn) backMn.textContent = w.meaning_vi || w.meaning_primary || w.meaning_en;
+
+        if (backHv) {
+            if (w.han_viet) {
+                backHv.textContent = `Hán Việt: ${w.han_viet.toUpperCase()}`;
+                backHv.classList.remove('hidden');
+            } else {
+                backHv.classList.add('hidden');
+            }
+        }
+
+        if (backRads) {
+            if (vData.radicals && vData.radicals.length) {
+                backRads.innerHTML = vData.radicals.map(r => `
+                    <span class="fcm-rad-chip" title="${escapeAttr(r.name)}: ${escapeAttr(r.vi)}">
+                        <strong class="fcm-rc-char">${escapeHtml(r.r)}</strong>
+                        <span class="fcm-rc-info">${escapeHtml(r.name)} (${escapeHtml(r.vi)})</span>
+                    </span>
+                `).join('');
+            } else {
+                backRads.innerHTML = '';
+            }
+        }
+
+        if (backStory) {
+            backStory.textContent = vData.story || '';
+        }
 
         if (backEx) {
             const ex = (w.examples && w.examples[0]) ? w.examples[0] : null;
@@ -2360,7 +2909,7 @@
         const timerFill = document.getElementById('quizTimerFill');
         if (!timerWrap || !timerFill) return;
 
-        if (!state.quizTimerEnabled) {
+        if (state.studyMode !== 'quiz' || !state.quizTimerEnabled) {
             timerWrap.classList.add('hidden');
             return;
         }
@@ -2372,7 +2921,7 @@
         timerFill.style.width = '100%';
 
         state.quizTimerId = setInterval(() => {
-            if (state.quizAnswered) {
+            if (state.studyMode !== 'quiz' || state.quizAnswered) {
                 clearInterval(state.quizTimerId);
                 state.quizTimerId = null;
                 return;
@@ -2391,7 +2940,7 @@
     }
 
     function handleQuizTimeout() {
-        if (state.quizAnswered) return;
+        if (state.studyMode !== 'quiz' || state.quizAnswered) return;
         state.quizAnswered = true;
         state.quizTotal += 1;
         state.quizStreak = 0;
@@ -2557,8 +3106,27 @@
         });
     }
 
-    // ==================== STUDY MODE SWITCHER ====================
+    // ==================== STUDY MODE & GAMES HUB SWITCHER ====================
     function switchStudyMode(mode) {
+        // Map legacy or shortcut sub-modes to 'games'
+        if (['quiz', 'practice', 'bubble'].includes(mode)) {
+            state.gamesSubMode = mode;
+            mode = 'games';
+        }
+
+        // Clean up active timers when leaving modes
+        if (state.studyMode === 'games' && mode !== 'games') {
+            if (state.quizTimerId) {
+                clearInterval(state.quizTimerId);
+                state.quizTimerId = null;
+            }
+            if (state.bubbleGame && state.bubbleGame.isRunning) {
+                if (state.bubbleGame.timerId) clearInterval(state.bubbleGame.timerId);
+                state.bubbleGame.timerId = null;
+                state.bubbleGame.isRunning = false;
+            }
+        }
+
         state.studyMode = mode;
         document.querySelectorAll('.sm-tab').forEach(tab => {
             tab.classList.toggle('active', tab.getAttribute('data-smode') === mode);
@@ -2569,24 +3137,474 @@
 
         const map = {
             memory: 'paneMemory',
-            practice: 'panePractice',
             flashcard: 'paneFlashcard',
-            quiz: 'paneQuiz',
-            shadowing: 'paneShadowing'
+            games: 'paneGames',
+            shadowing: 'paneShadowing',
+            // Fallbacks for direct IDs
+            practice: 'paneGames',
+            quiz: 'paneGames',
+            bubble: 'paneGames'
         };
         const targetPane = document.getElementById(map[mode]);
         if (targetPane) targetPane.classList.add('active');
 
         if (mode === 'flashcard') {
             initFlashcardDeck();
-        } else if (mode === 'quiz') {
-            initReflexQuiz();
+        } else if (mode === 'games') {
+            switchGamesSubMode(state.gamesSubMode || 'bubble');
         } else if (mode === 'shadowing') {
             initShadowingStudio();
         }
 
         const stage = document.getElementById('unitStageScroll');
         if (stage) stage.scrollTop = 0;
+    }
+
+    function switchGamesSubMode(subMode) {
+        // Cleanup when switching between game sub-panes
+        if (state.gamesSubMode === 'quiz' && subMode !== 'quiz' && state.quizTimerId) {
+            clearInterval(state.quizTimerId);
+            state.quizTimerId = null;
+        }
+        if (state.gamesSubMode === 'bubble' && subMode !== 'bubble' && state.bubbleGame.isRunning) {
+            if (state.bubbleGame.timerId) clearInterval(state.bubbleGame.timerId);
+            state.bubbleGame.timerId = null;
+            state.bubbleGame.isRunning = false;
+        }
+
+        state.gamesSubMode = subMode;
+
+        // Update sub-tabs
+        document.querySelectorAll('.ghh-tab').forEach(tab => {
+            tab.classList.toggle('active', tab.getAttribute('data-gsub') === subMode);
+        });
+
+        // Update sub-panes
+        document.querySelectorAll('.gsub-pane').forEach(pane => {
+            pane.classList.remove('active');
+        });
+
+        const map = {
+            bubble: 'subPaneBubble',
+            quiz: 'subPaneQuiz',
+            practice: 'subPanePractice'
+        };
+        const targetSubPane = document.getElementById(map[subMode]);
+        if (targetSubPane) targetSubPane.classList.add('active');
+
+        if (subMode === 'bubble') {
+            initBubbleGame();
+        } else if (subMode === 'quiz') {
+            initReflexQuiz();
+        }
+    }
+
+    // ==================== WORD BUBBLE POP GAME CONTROLLER ====================
+    const BUBBLE_THEMES = [
+        { bg: 'radial-gradient(circle at 32% 28%, rgba(56, 189, 248, 0.42), rgba(14, 165, 233, 0.16))', border: 'rgba(56, 189, 248, 0.65)', shadow: '0 8px 24px rgba(14, 165, 233, 0.35)' },
+        { bg: 'radial-gradient(circle at 32% 28%, rgba(244, 114, 182, 0.42), rgba(236, 72, 153, 0.16))', border: 'rgba(244, 114, 182, 0.65)', shadow: '0 8px 24px rgba(236, 72, 153, 0.35)' },
+        { bg: 'radial-gradient(circle at 32% 28%, rgba(167, 139, 250, 0.42), rgba(139, 92, 246, 0.16))', border: 'rgba(167, 139, 250, 0.65)', shadow: '0 8px 24px rgba(139, 92, 246, 0.35)' },
+        { bg: 'radial-gradient(circle at 32% 28%, rgba(52, 211, 153, 0.42), rgba(16, 185, 129, 0.16))', border: 'rgba(52, 211, 153, 0.65)', shadow: '0 8px 24px rgba(16, 185, 129, 0.35)' },
+        { bg: 'radial-gradient(circle at 32% 28%, rgba(251, 191, 36, 0.42), rgba(245, 158, 11, 0.16))', border: 'rgba(251, 191, 36, 0.65)', shadow: '0 8px 24px rgba(245, 158, 11, 0.35)' }
+    ];
+
+    function initBubbleGame() {
+        const arena = document.getElementById('bubbleArena');
+        const overlay = document.getElementById('bubbleStartOverlay');
+        const resModal = document.getElementById('bpopResultModal');
+        const btnRestart = document.getElementById('btnBpopRestart');
+        const btnStart = document.getElementById('btnBpopStart');
+
+        if (resModal) resModal.classList.add('hidden');
+
+        if (!state.bubbleGame.isRunning) {
+            if (overlay) overlay.classList.remove('hidden');
+            if (btnRestart) btnRestart.classList.add('hidden');
+            if (btnStart) btnStart.classList.remove('hidden');
+            if (arena) {
+                arena.querySelectorAll('.game-bubble').forEach(b => b.remove());
+            }
+        }
+        updateBubbleHUD();
+    }
+
+    function startBubbleGame() {
+        if (state.bubbleGame.timerId) {
+            clearInterval(state.bubbleGame.timerId);
+            state.bubbleGame.timerId = null;
+        }
+
+        state.bubbleGame.isRunning = true;
+        state.bubbleGame.score = 0;
+        state.bubbleGame.combo = 1;
+        state.bubbleGame.maxCombo = 1;
+        state.bubbleGame.lives = 3;
+        state.bubbleGame.timeLeft = 60;
+        state.bubbleGame.poppedCount = 0;
+
+        const overlay = document.getElementById('bubbleStartOverlay');
+        const resModal = document.getElementById('bpopResultModal');
+        const btnRestart = document.getElementById('btnBpopRestart');
+        const btnStart = document.getElementById('btnBpopStart');
+
+        if (overlay) overlay.classList.add('hidden');
+        if (resModal) resModal.classList.add('hidden');
+        if (btnRestart) btnRestart.classList.remove('hidden');
+        if (btnStart) btnStart.classList.add('hidden');
+
+        updateBubbleHUD();
+        spawnBubbleRound();
+
+        state.bubbleGame.timerId = setInterval(() => {
+            if (!state.bubbleGame.isRunning) return;
+            state.bubbleGame.timeLeft -= 1;
+            updateBubbleHUD();
+
+            if (state.bubbleGame.timeLeft <= 0) {
+                endBubbleGame(true);
+            }
+        }, 1000);
+    }
+
+    function spawnBubbleRound() {
+        const arena = document.getElementById('bubbleArena');
+        if (!arena) return;
+
+        // Clean previous bubbles
+        arena.querySelectorAll('.game-bubble').forEach(b => b.remove());
+
+        // Pool words: prefer current unit
+        const curUnit = getCurrentUnitData();
+        let pool = (curUnit && curUnit.target_words && curUnit.target_words.length >= 4)
+            ? [...curUnit.target_words]
+            : (state.fcDeck && state.fcDeck.length >= 4)
+                ? [...state.fcDeck]
+                : [];
+
+        if (pool.length < 4) {
+            const bMeta = getLoadedBookData(state.activeBookId);
+            if (bMeta && bMeta.units) {
+                bMeta.units.forEach(u => {
+                    if (u.target_words) pool.push(...u.target_words);
+                });
+            }
+        }
+
+        if (pool.length < 4) {
+            pool = [
+                { word: '爱', pinyin: 'ài', meaning_vi: 'yêu, thích', pos_full: 'Động từ' },
+                { word: '八', pinyin: 'bā', meaning_vi: 'số tám (8)', pos_full: 'Số từ' },
+                { word: '爸爸', pinyin: 'bàba', meaning_vi: 'bố, cha', pos_full: 'Danh từ' },
+                { word: '杯子', pinyin: 'bēizi', meaning_vi: 'cốc, chén', pos_full: 'Danh từ' }
+            ];
+        }
+
+        // Pick 1 target
+        const target = pool[Math.floor(Math.random() * pool.length)];
+        state.bubbleGame.target = target;
+
+        // Pick 3 distractors
+        const otherWords = pool.filter(w => w.word !== target.word);
+        otherWords.sort(() => Math.random() - 0.5);
+        const options = [target, otherWords[0], otherWords[1], otherWords[2]];
+        options.sort(() => Math.random() - 0.5);
+
+        // Update Prompt in HUD
+        const promptText = document.getElementById('bpopPromptText');
+        const promptSub = document.getElementById('bpopPromptSub');
+        const vTarget = getWordVisualData(target.word, target.meaning_vi || target.meaning_primary, target.meaning_en);
+
+        if (state.bubbleGame.mode === 'audio_to_hz') {
+            if (promptText) promptText.textContent = `🔊 Nghe phát âm & Bắn chữ`;
+            if (promptSub) promptSub.textContent = `[${target.pos_full || target.pos || 'Từ vựng'}] ${vTarget.icon}`;
+            speakChinese(cleanHanziForTts(target.word));
+        } else if (state.bubbleGame.mode === 'py_to_hz') {
+            if (promptText) promptText.textContent = target.pinyin;
+            if (promptSub) promptSub.textContent = `[${target.pos_full || target.pos || 'Từ vựng'}] ${vTarget.icon}`;
+        } else {
+            // Default vn_to_hz
+            if (promptText) promptText.textContent = target.meaning_vi || target.meaning_primary || target.meaning_en;
+            if (promptSub) promptSub.textContent = `[${target.pos_full || target.pos || 'Từ vựng'}] ${vTarget.icon}`;
+        }
+
+        // Slot positions across width: [8%, 32%, 56%, 80%] with gentle jitter
+        const slots = [8, 32, 56, 80];
+        slots.sort(() => Math.random() - 0.5);
+
+        options.forEach((optWord, i) => {
+            const vData = getWordVisualData(optWord.word, optWord.meaning_vi || optWord.meaning_primary, optWord.meaning_en);
+            const theme = BUBBLE_THEMES[i % BUBBLE_THEMES.length];
+            const slotX = slots[i];
+            const jitterX = (Math.random() * 8) - 4;
+            const leftPct = Math.max(5, Math.min(85, slotX + jitterX));
+            const floatDur = (3.2 + Math.random() * 1.6).toFixed(2);
+            const floatDelay = -(Math.random() * 2).toFixed(2);
+
+            const bubble = document.createElement('div');
+            bubble.className = 'game-bubble';
+            bubble.setAttribute('data-hz', optWord.word);
+            bubble.style.left = `${leftPct}%`;
+            bubble.style.background = theme.bg;
+            bubble.style.borderColor = theme.border;
+            bubble.style.boxShadow = theme.shadow;
+            bubble.style.animationDuration = `${floatDur}s`;
+            bubble.style.animationDelay = `${floatDelay}s`;
+
+            bubble.innerHTML = `
+                <span class="gb-icon">${vData.icon}</span>
+                <span class="gb-hz">${escapeHtml(optWord.word)}</span>
+                <span class="gb-py">${escapeHtml(optWord.pinyin || '')}</span>
+            `;
+
+            bubble.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (!state.bubbleGame.isRunning) return;
+                const isCorrect = (optWord.word === state.bubbleGame.target.word);
+                handleBubbleClick(bubble, optWord, isCorrect);
+            });
+
+            arena.appendChild(bubble);
+        });
+    }
+
+    function handleBubbleClick(bubbleEl, wordObj, isCorrect) {
+        if (bubbleEl.classList.contains('popped') || bubbleEl.classList.contains('wrong-shake')) return;
+
+        const arena = document.getElementById('bubbleArena');
+
+        if (isCorrect) {
+            playSoundEffect('pop');
+            bubbleEl.classList.add('popped');
+
+            // Floating +score text animation
+            const addedScore = 10 * state.bubbleGame.combo;
+            state.bubbleGame.score += addedScore;
+            state.bubbleGame.combo += 1;
+            state.bubbleGame.maxCombo = Math.max(state.bubbleGame.maxCombo, state.bubbleGame.combo);
+            state.bubbleGame.poppedCount += 1;
+
+            if (arena) {
+                const floatText = document.createElement('div');
+                floatText.className = 'bpop-floating-text';
+                floatText.textContent = `+${addedScore}`;
+                const rect = bubbleEl.getBoundingClientRect();
+                const arenaRect = arena.getBoundingClientRect();
+                floatText.style.left = `${rect.left - arenaRect.left + (rect.width / 2)}px`;
+                floatText.style.top = `${rect.top - arenaRect.top}px`;
+                arena.appendChild(floatText);
+                setTimeout(() => floatText.remove(), 700);
+            }
+
+            // Speak word
+            speakChinese(cleanHanziForTts(wordObj.word));
+
+            updateBubbleHUD();
+
+            // Next question after a tiny delay
+            setTimeout(() => {
+                if (state.bubbleGame.isRunning) {
+                    spawnBubbleRound();
+                }
+            }, 320);
+        } else {
+            playSoundEffect('wrong');
+            bubbleEl.classList.add('wrong-shake');
+            state.bubbleGame.combo = 1;
+            state.bubbleGame.lives -= 1;
+            updateBubbleHUD();
+
+            setTimeout(() => {
+                bubbleEl.classList.remove('wrong-shake');
+            }, 500);
+
+            if (state.bubbleGame.lives <= 0) {
+                endBubbleGame(false);
+            }
+        }
+    }
+
+    function updateBubbleHUD() {
+        const sEl = document.getElementById('bpopScore');
+        const cEl = document.getElementById('bpopCombo');
+        const lEl = document.getElementById('bpopLives');
+        const tEl = document.getElementById('bpopTimer');
+
+        if (sEl) sEl.textContent = state.bubbleGame.score;
+        if (cEl) {
+            cEl.textContent = `x${state.bubbleGame.combo}`;
+            cEl.style.color = (state.bubbleGame.combo >= 3) ? '#f59e0b' : 'inherit';
+        }
+        if (lEl) {
+            const lives = Math.max(0, state.bubbleGame.lives);
+            lEl.textContent = '❤️'.repeat(lives) + '🖤'.repeat(Math.max(0, 3 - lives));
+        }
+        if (tEl) {
+            tEl.textContent = `${Math.max(0, state.bubbleGame.timeLeft)}s`;
+            tEl.style.color = (state.bubbleGame.timeLeft <= 10) ? '#ef4444' : 'inherit';
+        }
+    }
+
+    function endBubbleGame(victory) {
+        if (state.bubbleGame.timerId) {
+            clearInterval(state.bubbleGame.timerId);
+            state.bubbleGame.timerId = null;
+        }
+        state.bubbleGame.isRunning = false;
+
+        const xpEarned = Math.max(10, Math.floor(state.bubbleGame.score / 2));
+        awardXp(xpEarned, 'Game Bắn Bong Bóng Từ Vựng');
+        playSoundEffect(victory ? 'badge' : 'wrong');
+
+        const arena = document.getElementById('bubbleArena');
+        if (arena) arena.querySelectorAll('.game-bubble').forEach(b => b.remove());
+
+        const resModal = document.getElementById('bpopResultModal');
+        const rIcon = document.getElementById('brmIcon');
+        const rTitle = document.getElementById('brmTitle');
+        const rScore = document.getElementById('brmScore');
+        const rCombo = document.getElementById('brmMaxCombo');
+        const rPopped = document.getElementById('brmPopped');
+        const rXp = document.getElementById('brmXp');
+
+        if (rIcon) rIcon.textContent = victory ? '🏆' : '💥';
+        if (rTitle) rTitle.textContent = victory ? 'Hết Giờ - Kết Quả Xuất Sắc!' : 'Hết Mạng! Hãy Thử Lại Nhé!';
+        if (rScore) rScore.textContent = state.bubbleGame.score;
+        if (rCombo) rCombo.textContent = `x${state.bubbleGame.maxCombo}`;
+        if (rPopped) rPopped.textContent = state.bubbleGame.poppedCount;
+        if (rXp) rXp.textContent = `+${xpEarned} XP`;
+
+        if (resModal) resModal.classList.remove('hidden');
+
+        const btnRestart = document.getElementById('btnBpopRestart');
+        const btnStart = document.getElementById('btnBpopStart');
+        if (btnRestart) btnRestart.classList.add('hidden');
+        if (btnStart) btnStart.classList.remove('hidden');
+    }
+
+    // ==================== VISUAL MNEMONICS & WORD FAMILY MODAL ====================
+    function findWordObject(wordId) {
+        if (!wordId) return null;
+        const curUnit = getCurrentUnitData();
+        if (curUnit && curUnit.target_words) {
+            const found = curUnit.target_words.find(w => w.id === wordId);
+            if (found) return found;
+        }
+        if (state.fcDeck && state.fcDeck.length) {
+            const found = state.fcDeck.find(w => w.id === wordId);
+            if (found) return found;
+        }
+        const bMeta = getLoadedBookData(state.activeBookId);
+        if (bMeta && bMeta.units) {
+            for (const u of bMeta.units) {
+                if (u.target_words) {
+                    const found = u.target_words.find(w => w.id === wordId);
+                    if (found) return found;
+                }
+            }
+        }
+        return null;
+    }
+
+    function openMnemonicModal(wordId) {
+        const modal = document.getElementById('visualMnemonicModal');
+        if (!modal) return;
+
+        const w = findWordObject(wordId);
+        if (!w) return;
+
+        const vData = getWordVisualData(w.word, w.meaning_vi || w.meaning_primary, w.meaning_en);
+
+        const vNum = document.getElementById('vmmNum');
+        const vAvatar = document.getElementById('vmmVisualAvatar');
+        const vHz = document.getElementById('vmmHz');
+        const vPy = document.getElementById('vmmPy');
+        const vMn = document.getElementById('vmmMeaning');
+        const vHv = document.getElementById('vmmHanViet');
+        const radGrid = document.getElementById('vmmRadicalsGrid');
+        const storyCard = document.getElementById('vmmStoryCard');
+        const familyTree = document.getElementById('vmmFamilyTree');
+
+        if (vNum) vNum.textContent = `#${w.num}`;
+        if (vAvatar) vAvatar.textContent = vData.icon;
+        if (vHz) vHz.textContent = w.word;
+        if (vPy) vPy.textContent = w.pinyin;
+        if (vMn) vMn.textContent = w.meaning_vi || w.meaning_primary || w.meaning_en;
+        if (vHv) {
+            vHv.textContent = `Hán Việt: ${(w.han_viet || '').toUpperCase()} · Từ loại: ${w.pos_full || w.pos || 'Từ vựng'}`;
+        }
+
+        // Radicals Breakdown
+        if (radGrid) {
+            if (vData.radicals && vData.radicals.length) {
+                radGrid.innerHTML = vData.radicals.map(r => `
+                    <div class="vmm-rad-item">
+                        <span class="vmm-rad-char">${escapeHtml(r.r)}</span>
+                        <div class="vmm-rad-info">
+                            <strong>${escapeHtml(r.name)}</strong>
+                            <span class="vmm-rad-vi">${escapeHtml(r.vi)}</span>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                radGrid.innerHTML = '<div class="text-muted" style="padding:10px;">Chữ Hán tự nhiên cấu thành từ các nét cơ bản.</div>';
+            }
+        }
+
+        // Mnemonic Story
+        if (storyCard) {
+            storyCard.innerHTML = `
+                <div class="vmm-story-icon">${vData.icon}</div>
+                <div class="vmm-story-text">${escapeHtml(vData.story)}</div>
+            `;
+        }
+
+        // Word Family Mindmap
+        if (familyTree) {
+            let families = (vData.family && vData.family.length) ? [...vData.family] : [];
+
+            // Add related words from current unit if none or few
+            if (families.length < 3) {
+                const curUnit = getCurrentUnitData();
+                if (curUnit && curUnit.target_words) {
+                    curUnit.target_words.forEach(ow => {
+                        if (ow.id !== w.id && (ow.word.includes(w.word) || w.word.includes(ow.word))) {
+                            if (!families.some(f => f.word === ow.word)) {
+                                families.push({ word: ow.word, py: ow.pinyin, vi: ow.meaning_vi || ow.meaning_primary });
+                            }
+                        }
+                    });
+                }
+            }
+
+            if (!families.length) {
+                families = [
+                    { word: w.word, py: w.pinyin, vi: w.meaning_vi || w.meaning_primary }
+                ];
+            }
+
+            familyTree.innerHTML = families.map(f => `
+                <div class="vmm-family-chip" data-speak="${escapeAttr(cleanHanziForTts(f.word))}">
+                    <span class="vfc-hz">${escapeHtml(f.word)}</span>
+                    <span class="vfc-py">${escapeHtml(f.py)}</span>
+                    <span class="vfc-vi">${escapeHtml(f.vi)}</span>
+                    <span class="vfc-audio">🔊</span>
+                </div>
+            `).join('');
+
+            familyTree.querySelectorAll('.vmm-family-chip').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    const spk = chip.getAttribute('data-speak');
+                    if (spk) speakChinese(spk);
+                });
+            });
+        }
+
+        modal.classList.remove('hidden');
+    }
+
+    function closeMnemonicModal() {
+        const modal = document.getElementById('visualMnemonicModal');
+        if (modal) modal.classList.add('hidden');
     }
 
     // ==================== GRAMMAR ABBREVIATIONS MODAL ====================
@@ -2625,16 +3643,6 @@
     let speakAllTimerId = null;
 
     function updateSpeakAllButtonsUI(isActive, labelText) {
-        const defaultLabel = '🔊 Đọc cả bài (Từ + Ví dụ)';
-        const text = isActive ? (labelText || '⏹️ Dừng đọc') : defaultLabel;
-        ['btnSpeakAllWords', 'btnSpeakAllWordsQm'].forEach(id => {
-            const btn = document.getElementById(id);
-            if (btn) {
-                btn.classList.toggle('active', isActive);
-                btn.textContent = text;
-            }
-        });
-
         const topBtn = document.getElementById('btnSpeakAllTop');
         if (topBtn) {
             topBtn.classList.toggle('active', isActive);
@@ -2845,9 +3853,22 @@
                 if (targetHeaderEl) {
                     targetHeaderEl.classList.toggle('collapsed-head', state.targetGridCollapsed);
                 }
-                btnCollapseGrid.textContent = state.targetGridCollapsed ? '🔽 Mở bảng từ' : '🔼 Thu gọn';
+                btnCollapseGrid.textContent = state.targetGridCollapsed ? '🔽 Xem bảng từ' : '🔼 Thu gọn';
             });
         }
+
+        // View Mode Switcher: Compact vs Full
+        const btnViewCompact = document.getElementById('btnViewCompact');
+        const btnViewFull    = document.getElementById('btnViewFull');
+        if (btnViewCompact) btnViewCompact.addEventListener('click', () => setViewMode('compact'));
+        if (btnViewFull)    btnViewFull.addEventListener('click', () => setViewMode('full'));
+
+        // Close any open card more menus when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.qmc-more-wrap')) {
+                document.querySelectorAll('.qmc-more-menu').forEach(m => m.classList.add('hidden'));
+            }
+        });
 
         document.querySelectorAll('.sm-tab').forEach(tab => {
             tab.addEventListener('click', () => {
@@ -2934,13 +3955,9 @@
         if (btnGoPrac) btnGoPrac.addEventListener('click', () => switchStudyMode('practice'));
         if (btnGoFc)   btnGoFc.addEventListener('click', () => switchStudyMode('flashcard'));
 
-        // Speak All Words in Unit controls (Header, Quick Memory, Sticky Top & Mobile Bottom)
-        const btnSpeakAll    = document.getElementById('btnSpeakAllWords');
-        const btnSpeakAllQm  = document.getElementById('btnSpeakAllWordsQm');
+        // Master Speak All Words in Unit controls (Sticky Top & Mobile Bottom)
         const btnSpeakAllTop = document.getElementById('btnSpeakAllTop');
         const mobBtnSpeakAll = document.getElementById('mobBtnSpeakAll');
-        if (btnSpeakAll)    btnSpeakAll.addEventListener('click', toggleSpeakAllWords);
-        if (btnSpeakAllQm)  btnSpeakAllQm.addEventListener('click', toggleSpeakAllWords);
         if (btnSpeakAllTop) btnSpeakAllTop.addEventListener('click', toggleSpeakAllWords);
         if (mobBtnSpeakAll) mobBtnSpeakAll.addEventListener('click', toggleSpeakAllWords);
 
@@ -3287,6 +4304,71 @@
         });
 
 
+
+        // ==================== GAMES HUB & BUBBLE POP EVENTS ====================
+        document.querySelectorAll('.ghh-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const sub = tab.getAttribute('data-gsub');
+                if (sub) switchGamesSubMode(sub);
+            });
+        });
+
+        const btnBpopStart = document.getElementById('btnBpopStart');
+        const btnStartBubbleDirect = document.getElementById('btnStartBubbleGameDirect');
+        const btnBpopRestart = document.getElementById('btnBpopRestart');
+        const btnBpopAudio = document.getElementById('btnBpopAudio');
+        const bpopModeSel = document.getElementById('bpopModeSelect');
+        const btnBrmPlayAgain = document.getElementById('btnBrmPlayAgain');
+        const btnBrmSwitchQuiz = document.getElementById('btnBrmSwitchQuiz');
+
+        if (btnBpopStart) btnBpopStart.addEventListener('click', startBubbleGame);
+        if (btnStartBubbleDirect) btnStartBubbleDirect.addEventListener('click', startBubbleGame);
+        if (btnBpopRestart) btnBpopRestart.addEventListener('click', startBubbleGame);
+        if (btnBpopAudio) {
+            btnBpopAudio.addEventListener('click', () => {
+                if (state.bubbleGame.target) {
+                    speakChinese(cleanHanziForTts(state.bubbleGame.target.word));
+                }
+            });
+        }
+        if (bpopModeSel) {
+            bpopModeSel.addEventListener('change', () => {
+                state.bubbleGame.mode = bpopModeSel.value;
+                if (state.bubbleGame.isRunning) spawnBubbleRound();
+            });
+        }
+        if (btnBrmPlayAgain) {
+            btnBrmPlayAgain.addEventListener('click', () => {
+                const modal = document.getElementById('bpopResultModal');
+                if (modal) modal.classList.add('hidden');
+                startBubbleGame();
+            });
+        }
+        if (btnBrmSwitchQuiz) {
+            btnBrmSwitchQuiz.addEventListener('click', () => {
+                const modal = document.getElementById('bpopResultModal');
+                if (modal) modal.classList.add('hidden');
+                switchGamesSubMode('quiz');
+            });
+        }
+
+        // ==================== VISUAL MNEMONICS MODAL EVENTS ====================
+        const btnCloseMnemonic = document.getElementById('btnCloseMnemonicModal');
+        const modalMnemonic = document.getElementById('visualMnemonicModal');
+        const btnVmmSpeak = document.getElementById('btnVmmSpeak');
+
+        if (btnCloseMnemonic) btnCloseMnemonic.addEventListener('click', closeMnemonicModal);
+        if (modalMnemonic) {
+            modalMnemonic.addEventListener('click', (e) => {
+                if (e.target === modalMnemonic) closeMnemonicModal();
+            });
+        }
+        if (btnVmmSpeak) {
+            btnVmmSpeak.addEventListener('click', () => {
+                const hzEl = document.getElementById('vmmHz');
+                if (hzEl && hzEl.textContent) speakChinese(cleanHanziForTts(hzEl.textContent));
+            });
+        }
 
         const btnGrammar   = document.getElementById('btnGrammarModal');
         const closeGrammar = document.getElementById('btnCloseGrammarModal');
