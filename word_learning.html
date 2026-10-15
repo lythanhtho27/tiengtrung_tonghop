@@ -63,9 +63,18 @@
         </div>
     </header>
 
-    <!-- Book Selector Shelf (Quyển 1 -> 7-9 Hạ) -->
+    <!-- Compact Book Selector Bar (Gọn gàng & Tiết kiệm không gian) -->
     <section class="book-shelf-bar" id="bookShelfBar">
-        <!-- Populated dynamically from HSK_BOOKS_INDEX -->
+        <div class="bsb-inner">
+            <div class="bsb-select-wrap">
+                <span class="bsb-icon">📚</span>
+                <span class="bsb-label hide-xs">Quyển:</span>
+                <select id="bookSelectDropdown" class="bsb-select" title="Chọn quyển sách HSK 3.0 để học"></select>
+            </div>
+            <div class="bsb-chips-track" id="bookChipsTrack">
+                <!-- Mini chips populated dynamically -->
+            </div>
+        </div>
     </section>
 
     <!-- Main 2-Column Interactive Workspace -->
@@ -139,9 +148,6 @@
                     </button>
                     <button class="sm-tab" data-smode="shadowing" id="tabBtnShadowing">
                         🎙️ <span class="sm-tab-text">Luyện nói (Shadowing)</span>
-                    </button>
-                    <button class="sm-tab" data-smode="pdf" id="tabBtnPdf">
-                        📄 <span class="sm-tab-text">PDF gốc</span>
                     </button>
                 </div>
 
@@ -432,14 +438,16 @@
                         <!-- Top Shadowing Toolbar -->
                         <div class="shad-toolbar">
                             <div class="shad-nav-group">
-                                <button class="shad-nav-btn" id="btnShadPrevWord" title="Từ trước">◀ Trước</button>
                                 <div class="shad-select-wrap">
                                     <select id="shadWordSelect" title="Chọn từ vựng để luyện phát âm">
                                         <!-- Populated dynamically -->
                                     </select>
                                 </div>
-                                <button class="shad-nav-btn" id="btnShadNextWord" title="Từ sau">Sau ▶</button>
-                                <button class="shad-nav-btn" id="btnShadRandomWord" title="Chọn ngẫu nhiên một từ trong bài">🔀 Ngẫu nhiên</button>
+                                <div class="shad-nav-btns-row">
+                                    <button class="shad-nav-btn" id="btnShadPrevWord" title="Từ trước">◀ Trước</button>
+                                    <button class="shad-nav-btn" id="btnShadRandomWord" title="Chọn ngẫu nhiên một từ trong bài">🎲 Ngẫu nhiên</button>
+                                    <button class="shad-nav-btn" id="btnShadNextWord" title="Từ sau">Tiếp ▶</button>
+                                </div>
                             </div>
                             <div class="shad-target-types">
                                 <button class="shad-type-pill active" data-shad-type="word" id="btnShadModeWord">
@@ -617,29 +625,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- =========================================================
-                     MODE 4: XEM TRANG SÁCH PDF GỐC (OPTIONAL REFERENCE)
-                     ========================================================= -->
-                <div class="smode-pane" id="panePdf">
-                    <div class="pdf-ref-toolbar">
-                        <div class="prt-left">
-                            <span>Đối chiếu bản scan PDF gốc:</span>
-                            <button class="ctrl-chip active" id="btnPdfJumpTheory">📖 Trang Lý thuyết (速记)</button>
-                            <button class="ctrl-chip" id="btnPdfJumpPractice">✍️ Trang Bài tập (速练)</button>
-                            <button class="ctrl-chip" id="btnPdfJumpIndex">🔍 Bảng tra từ cuối sách</button>
-                        </div>
-                        <div class="prt-right">
-                            <button class="pg-btn" id="btnPdfPrevPage">◀ Trang trước</button>
-                            <span id="lblCurrentPdfPage" class="prt-page-num">Trang PDF: 9</span>
-                            <button class="pg-btn" id="btnPdfNextPage">Trang sau ▶</button>
-                        </div>
-                    </div>
-                    <div class="pdf-ref-frame-wrap" id="pdfRefFrameWrap">
-                        <iframe id="pdfRefIframe" title="Sách PDF gốc" src="about:blank"></iframe>
-                    </div>
-                </div>
-
             </div>
 
             <!-- Mobile / Tablet Sticky Bottom Unit Bar -->

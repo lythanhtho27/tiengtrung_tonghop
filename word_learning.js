@@ -1042,47 +1042,66 @@
 
     // ==================== BOOK SHELF & SIDEBAR ====================
     function renderBookShelf() {
-        const shelf = document.getElementById('bookShelfBar');
-        if (!shelf || typeof HSK_BOOKS_INDEX === 'undefined') return;
+        if (typeof HSK_BOOKS_INDEX === 'undefined') return;
 
-        shelf.innerHTML = HSK_BOOKS_INDEX.map(book => {
-            const isActive = book.id === state.activeBookId;
-            const doneCount = (book.units_index || []).filter(u => state.doneUnits[`${book.id}_${getUnitNum(u)}`]).length;
-            const shortTitle = book.title.split('—')[0].trim();
+        // 1. Populate Dropdown
+        const sel = document.getElementById('bookSelectDropdown');
+        if (sel) {
+            sel.innerHTML = HSK_BOOKS_INDEX.map(book => {
+                const doneCount = (book.units_index || []).filter(u => state.doneUnits[`${book.id}_${getUnitNum(u)}`]).length;
+                const doneText = doneCount > 0 ? ` (✓ ${doneCount}/${book.unit_count})` : '';
+                return `
+                    <option value="${book.id}" ${book.id === state.activeBookId ? 'selected' : ''}>
+                        ${escapeHtml(book.title)} · ${book.unit_count} bài · ${book.word_count.toLocaleString('vi-VN')} từ${doneText}
+                    </option>
+                `;
+            }).join('');
+            sel.value = state.activeBookId;
 
-            return `
-                <div class="book-tab-card ${isActive ? 'active' : ''}"
-                     style="--book-color: ${book.color}"
-                     data-book-id="${book.id}">
-                    <span class="bt-dot"></span>
-                    <div class="bt-info">
-                        <div class="bt-name">
-                            <span>${escapeHtml(shortTitle)}</span>
-                            <span class="bt-json-tag">${escapeHtml(book.badge)}</span>
-                        </div>
-                        <div class="bt-meta">
-                            <span>📚 ${book.unit_count} bài</span>
-                            <span>·</span>
-                            <span>🔤 ${book.word_count.toLocaleString('vi-VN')} từ</span>
-                            ${doneCount > 0 ? `<span>· ✓ ${doneCount}/${book.unit_count}</span>` : ''}
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).join('');
+            if (!sel.dataset.bound) {
+                sel.dataset.bound = 'true';
+                sel.addEventListener('change', () => {
+                    const bid = sel.value;
+                    if (bid && bid !== state.activeBookId) {
+                        selectBook(bid, null);
+                    }
+                });
+            }
+        }
 
-        shelf.querySelectorAll('.book-tab-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const bid = card.getAttribute('data-book-id');
-                if (bid && bid !== state.activeBookId) {
-                    selectBook(bid, null);
-                }
+        // 2. Populate Mini-Chips Track
+        const track = document.getElementById('bookChipsTrack');
+        if (track) {
+            track.innerHTML = HSK_BOOKS_INDEX.map(book => {
+                const isActive = book.id === state.activeBookId;
+                const doneCount = (book.units_index || []).filter(u => state.doneUnits[`${book.id}_${getUnitNum(u)}`]).length;
+                const shortName = book.id === 'q7' ? 'Q.7-9 上' : (book.id === 'q8' ? 'Q.7-9 下' : `Q.${book.level}`);
+
+                return `
+                    <button class="bsb-chip ${isActive ? 'active' : ''}"
+                            style="--book-color: ${book.color}"
+                            data-book-id="${book.id}"
+                            title="${escapeHtml(book.title)} (${book.unit_count} bài · ${book.word_count.toLocaleString('vi-VN')} từ)">
+                        <span class="bc-dot"></span>
+                        <span class="bc-label">${shortName}</span>
+                        ${doneCount > 0 ? `<span class="bc-done">✓</span>` : ''}
+                    </button>
+                `;
+            }).join('');
+
+            track.querySelectorAll('.bsb-chip').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    const bid = chip.getAttribute('data-book-id');
+                    if (bid && bid !== state.activeBookId) {
+                        selectBook(bid, null);
+                    }
+                });
             });
-        });
 
-        const activeCard = shelf.querySelector('.book-tab-card.active');
-        if (activeCard) {
-            activeCard.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            const activeChip = track.querySelector('.bsb-chip.active');
+            if (activeChip) {
+                activeChip.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
         }
     }
 
@@ -1134,9 +1153,10 @@
         const pct = meta.unit_count > 0 ? Math.round((doneCount / meta.unit_count) * 100) : 0;
 
         box.innerHTML = `
-            <div class="sbs-title">
-                <span>${escapeHtml(meta.title)}</span>
-                <span class="au-badge" style="background:${meta.color}">${escapeHtml(meta.badge)}</span>
+            <div class="sbs-head-row">
+                <select class="sbs-book-select" id="sidebarBookSelect" title="Đổi quyển học">
+                    ${HSK_BOOKS_INDEX.map(b => `<option value="${b.id}" ${b.id === meta.id ? 'selected' : ''}>📚 ${escapeHtml(b.title)}</option>`).join('')}
+                </select>
             </div>
             <div class="sbs-sub">${escapeHtml(meta.translator)}</div>
             <div class="sbs-progress-row">
@@ -1147,6 +1167,15 @@
                 <div class="sbs-fill" style="width:${pct}%"></div>
             </div>
         `;
+
+        const sSel = box.querySelector('#sidebarBookSelect');
+        if (sSel) {
+            sSel.addEventListener('change', () => {
+                if (sSel.value && sSel.value !== state.activeBookId) {
+                    selectBook(sSel.value, null);
+                }
+            });
+        }
     }
 
     function renderUnitList(meta) {
@@ -1315,10 +1344,6 @@
             initShadowingStudio();
         } else {
             updateShadowingWordList();
-        }
-        state.currentPdfPage = unitData.pdf_page || 1;
-        if (state.studyMode === 'pdf') {
-            renderPdfPane();
         }
 
         const stage = document.getElementById('unitStageScroll');
@@ -2532,40 +2557,6 @@
         });
     }
 
-    // ==================== MODE 4: XEM SÁCH PDF GỐC ====================
-    function renderPdfPane() {
-        const meta = getBookIndexMeta(state.activeBookId);
-        const wrap = document.getElementById('pdfRefFrameWrap');
-        const lbl  = document.getElementById('lblCurrentPdfPage');
-        if (!meta || !wrap) return;
-
-        if (lbl) lbl.textContent = `Trang PDF: ${state.currentPdfPage}`;
-
-        if (!meta.has_pdf || !meta.pdf_file) {
-            wrap.innerHTML = `
-                <div class="empty-msg" style="padding:60px 24px;">
-                    <h3 style="font-size:1.2rem;margin-bottom:10px;color:var(--text-primary);">
-                        📗 Quyển 2 (Cấp độ 2) đã được tích hợp 100% dữ liệu JSON (39 Bài · 772 Từ)
-                    </h3>
-                    <p style="max-width:560px;margin:0 auto 16px;line-height:1.6;">
-                        Mặc dù thư mục <code>word_learning_book</code> của bạn thiếu file scan <code>QUYỂN 2.pdf</code>,
-                        toàn bộ <strong>39 Bài học (772 từ vựng mục tiêu, phiên âm, từ loại, nghĩa tiếng Việt, câu ví dụ và bài tập 3 phần)</strong>
-                        của Quyển 2 đã được khôi phục đầy đủ trong file <code>json_data/quyen_2.json</code>!
-                    </p>
-                    <button class="btn-primary-action" id="btnBackToMemoryFromPdf">📖 Quay lại học bản Điện tử JSON</button>
-                </div>
-            `;
-            const backBtn = document.getElementById('btnBackToMemoryFromPdf');
-            if (backBtn) {
-                backBtn.addEventListener('click', () => switchStudyMode('memory'));
-            }
-            return;
-        }
-
-        const encodedPdf = meta.pdf_file.split('/').map(encodeURIComponent).join('/');
-        wrap.innerHTML = `<iframe id="pdfRefIframe" title="Sách PDF gốc" src="${encodedPdf}#page=${state.currentPdfPage}&view=FitH"></iframe>`;
-    }
-
     // ==================== STUDY MODE SWITCHER ====================
     function switchStudyMode(mode) {
         state.studyMode = mode;
@@ -2581,8 +2572,7 @@
             practice: 'panePractice',
             flashcard: 'paneFlashcard',
             quiz: 'paneQuiz',
-            shadowing: 'paneShadowing',
-            pdf: 'panePdf'
+            shadowing: 'paneShadowing'
         };
         const targetPane = document.getElementById(map[mode]);
         if (targetPane) targetPane.classList.add('active');
@@ -2593,8 +2583,6 @@
             initReflexQuiz();
         } else if (mode === 'shadowing') {
             initShadowingStudio();
-        } else if (mode === 'pdf') {
-            renderPdfPane();
         }
 
         const stage = document.getElementById('unitStageScroll');
@@ -3298,58 +3286,7 @@
             }
         });
 
-        // Mode 4 PDF buttons
-        const btnPdfTheory = document.getElementById('btnPdfJumpTheory');
-        const btnPdfPrac   = document.getElementById('btnPdfJumpPractice');
-        const btnPdfIndex  = document.getElementById('btnPdfJumpIndex');
-        const btnPdfPrev   = document.getElementById('btnPdfPrevPage');
-        const btnPdfNext   = document.getElementById('btnPdfNextPage');
 
-        if (btnPdfTheory) {
-            btnPdfTheory.addEventListener('click', () => {
-                const u = getCurrentUnitData();
-                if (u) {
-                    state.currentPdfPage = u.pdf_page || 1;
-                    renderPdfPane();
-                }
-            });
-        }
-        if (btnPdfPrac) {
-            btnPdfPrac.addEventListener('click', () => {
-                const u = getCurrentUnitData();
-                if (u) {
-                    state.currentPdfPage = u.practice_pdf_page || (u.pdf_page + 1) || 1;
-                    renderPdfPane();
-                }
-            });
-        }
-        if (btnPdfIndex) {
-            btnPdfIndex.addEventListener('click', () => {
-                const meta = getBookIndexMeta(state.activeBookId);
-                if (meta && meta.index_pdf_page) {
-                    state.currentPdfPage = meta.index_pdf_page;
-                    renderPdfPane();
-                }
-            });
-        }
-        if (btnPdfPrev) {
-            btnPdfPrev.addEventListener('click', () => {
-                if (state.currentPdfPage > 1) {
-                    state.currentPdfPage -= 1;
-                    renderPdfPane();
-                }
-            });
-        }
-        if (btnPdfNext) {
-            btnPdfNext.addEventListener('click', () => {
-                const meta = getBookIndexMeta(state.activeBookId);
-                const maxP = (meta && meta.total_pdf_pages) ? meta.total_pdf_pages : 999;
-                if (state.currentPdfPage < maxP) {
-                    state.currentPdfPage += 1;
-                    renderPdfPane();
-                }
-            });
-        }
 
         const btnGrammar   = document.getElementById('btnGrammarModal');
         const closeGrammar = document.getElementById('btnCloseGrammarModal');
