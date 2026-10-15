@@ -1310,7 +1310,7 @@ body {
 
 .qmc-ex-hz {
     font-family: var(--font-cn);
-    font-size: 0.98rem;
+    font-size: 1.28rem;
     font-weight: 500;
     color: var(--text-primary);
     display: flex;
@@ -1464,7 +1464,7 @@ body {
 }
 
 .ex-title {
-    font-size: 0.98rem;
+    font-size: 1.28rem;
     font-weight: 800;
     color: var(--text-primary);
 }
@@ -1982,7 +1982,7 @@ body {
     background: rgba(15, 23, 42, 0.45);
     padding: 10px;
     border-radius: 8px;
-    font-size: 0.78rem;
+    font-size: 1.28rem;
 }
 
 .fc-controls {
@@ -3735,7 +3735,7 @@ body.light-mode .wl-toast {
     }
 
     .fc-srs-btn-group {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
 }

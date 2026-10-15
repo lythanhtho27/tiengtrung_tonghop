@@ -2453,7 +2453,7 @@
                 optsEl.innerHTML = options.map((opt, idx) => `
                     <button class="quiz-opt-btn" data-quiz-id="${opt.id}" data-opt-letter="${letters[idx]}">
                         <span class="kbd-key">${letters[idx]}</span>
-                        <strong style="font-family:var(--font-cn);font-size:1.15rem;margin-left:4px;">${escapeHtml(opt.word)}</strong>
+                        <strong style="font-family:var(--font-cn);font-size:1.5rem;margin-left:4px;">${escapeHtml(opt.word)}</strong>
                         <span style="color:var(--accent-sky);font-size:0.84rem;margin-left:6px;">(${escapeHtml(opt.pinyin)})</span>
                     </button>
                 `).join('');
@@ -2473,7 +2473,7 @@
                 optsEl.innerHTML = options.map((opt, idx) => `
                     <button class="quiz-opt-btn" data-quiz-id="${opt.id}" data-opt-letter="${letters[idx]}">
                         <span class="kbd-key">${letters[idx]}</span>
-                        <strong style="font-family:var(--font-cn);font-size:1.15rem;margin-left:4px;">${escapeHtml(opt.word)}</strong>
+                        <strong style="font-family:var(--font-cn);font-size:1.5rem;margin-left:4px;">${escapeHtml(opt.word)}</strong>
                         <span style="color:var(--text-muted);font-size:0.82rem;margin-left:6px;">— ${escapeHtml(opt.meaning_vi || opt.meaning_primary)}</span>
                     </button>
                 `).join('');
