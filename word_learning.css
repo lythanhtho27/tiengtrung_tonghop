@@ -249,47 +249,20 @@ body {
 }
 
 /* ==========================================================================
-   2. COMPACT BOOK SELECTOR BAR (Gọn gàng & Tiết kiệm diện tích)
+   2. UNIT TOP BAR BOOK SELECTOR (Dời xuống thanh tiêu đề bài để bớt 1 dòng)
    ========================================================================== */
-.book-shelf-bar {
-    display: flex;
-    align-items: center;
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
-    padding: 5px 16px;
-    flex-shrink: 0;
-    min-height: 40px;
-}
-
-.bsb-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.bsb-select-wrap {
-    display: flex;
+.utb-book-select-wrap {
+    display: inline-flex;
     align-items: center;
     gap: 6px;
     flex-shrink: 0;
 }
 
-.bsb-icon {
+.utb-book-select-wrap .bsb-icon {
     font-size: 0.95rem;
 }
 
-.bsb-label {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    white-space: nowrap;
-}
-
-.bsb-select {
+.utb-book-select-wrap .bsb-select {
     padding: 5px 10px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
@@ -299,14 +272,17 @@ body {
     font-weight: 700;
     cursor: pointer;
     outline: none;
-    transition: all 0.2s;
-    max-width: 340px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: 290px;
+    height: 33px;
+    text-overflow: ellipsis;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.bsb-select:hover,
-.bsb-select:focus {
+.utb-book-select-wrap .bsb-select:hover,
+.utb-book-select-wrap .bsb-select:focus {
     border-color: var(--accent-primary);
-    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
 }
 
 .bsb-chips-track {
@@ -2444,35 +2420,17 @@ body {
         font-size: 0.72rem;
     }
 
-    .book-shelf-bar {
-        padding: 4px 10px;
-        min-height: 36px;
+    .utb-book-select-wrap {
+        width: 100%;
+        order: 4;
+        margin-top: 4px;
     }
 
-    .bsb-inner {
-        gap: 8px;
-    }
-
-    .bsb-select-wrap {
-        flex: 1;
-        min-width: 0;
-    }
-
-    .bsb-select {
+    .utb-book-select-wrap .bsb-select {
         width: 100%;
         max-width: 100%;
         padding: 5px 8px;
         font-size: 0.76rem;
-    }
-
-    .bsb-chips-track {
-        max-width: 45%;
-        flex-shrink: 0;
-    }
-
-    .bsb-chip {
-        padding: 3px 8px;
-        font-size: 0.72rem;
     }
 
     .unit-top-bar {
@@ -2488,6 +2446,7 @@ body {
         align-items: center;
         justify-content: space-between;
         gap: 6px;
+        flex-wrap: wrap;
     }
 
     .active-unit-title {
@@ -2695,22 +2654,9 @@ body {
         display: none;
     }
 
-    .book-shelf-bar {
-        padding: 3px 8px;
-        min-height: 34px;
-    }
-
-    .bsb-chips-track {
-        display: none;
-    }
-
-    .bsb-select-wrap {
-        width: 100%;
-    }
-
-    .bsb-select {
+    .utb-book-select-wrap .bsb-select {
         font-size: 0.76rem;
-        height: 30px;
+        height: 32px;
         padding: 4px 8px;
     }
 

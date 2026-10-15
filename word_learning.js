@@ -1426,41 +1426,6 @@
                 });
             }
         }
-
-        // 2. Populate Mini-Chips Track
-        const track = document.getElementById('bookChipsTrack');
-        if (track) {
-            track.innerHTML = HSK_BOOKS_INDEX.map(book => {
-                const isActive = book.id === state.activeBookId;
-                const doneCount = (book.units_index || []).filter(u => state.doneUnits[`${book.id}_${getUnitNum(u)}`]).length;
-                const shortName = book.id === 'q7' ? 'Q.7-9 上' : (book.id === 'q8' ? 'Q.7-9 下' : `Q.${book.level}`);
-
-                return `
-                    <button class="bsb-chip ${isActive ? 'active' : ''}"
-                            style="--book-color: ${book.color}"
-                            data-book-id="${book.id}"
-                            title="${escapeHtml(book.title)} (${book.unit_count} bài · ${book.word_count.toLocaleString('vi-VN')} từ)">
-                        <span class="bc-dot"></span>
-                        <span class="bc-label">${shortName}</span>
-                        ${doneCount > 0 ? `<span class="bc-done">✓</span>` : ''}
-                    </button>
-                `;
-            }).join('');
-
-            track.querySelectorAll('.bsb-chip').forEach(chip => {
-                chip.addEventListener('click', () => {
-                    const bid = chip.getAttribute('data-book-id');
-                    if (bid && bid !== state.activeBookId) {
-                        selectBook(bid, null);
-                    }
-                });
-            });
-
-            const activeChip = track.querySelector('.bsb-chip.active');
-            if (activeChip) {
-                activeChip.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-            }
-        }
     }
 
     async function selectBook(bookId, targetUnitNum) {
@@ -1677,7 +1642,6 @@
 
         const badgeEl   = document.getElementById('activeUnitBadge');
         const headingEl = document.getElementById('activeUnitHeading');
-        const subEl     = document.getElementById('activeUnitSub');
         const lblCount  = document.getElementById('lblTargetCount');
 
         if (badgeEl) {
@@ -1685,9 +1649,6 @@
             if (meta) badgeEl.style.background = meta.color;
         }
         if (headingEl) headingEl.textContent = unitData.range.replace('—', ' — ');
-        if (subEl) {
-            subEl.textContent = `(Từ ${unitData.word_start} – ${unitData.word_end} · Trang sách ${unitData.book_page})`;
-        }
         if (lblCount) {
             lblCount.textContent = `${unitData.target_words ? unitData.target_words.length : 20} từ`;
         }

@@ -48,34 +48,11 @@
             <button id="btnTogglePodcast" class="action-pill podcast-pill" title="Bật/Tắt Chế độ Nghe thụ động / Chạy nền (Hands-free Podcast)">
                 🎧 <span class="hide-sm">Podcast</span>
             </button>
-            <button id="btnGrammarModal" class="action-pill" title="Bảng từ viết tắt của các thuật ngữ ngữ pháp">
-                🔤 <span class="hide-sm">Từ loại</span>
-            </button>
-            <a id="btnDownloadJson" href="json_data/quyen_1.json" download class="action-pill" title="Tải file dữ liệu JSON của quyển đang mở">
-                📥 <span class="hide-sm">JSON</span>
-            </a>
-            <a href="tuvung.html" class="action-pill" title="Chuyển sang Sổ tay từ vựng Boya">
-                🏮 <span class="hide-sm">Boya</span>
-            </a>
             <button id="themeToggleBtn" class="icon-btn" title="Đổi giao diện Sáng / Tối">
                 ☀️
             </button>
         </div>
     </header>
-
-    <!-- Compact Book Selector Bar (Gọn gàng & Tiết kiệm không gian) -->
-    <section class="book-shelf-bar" id="bookShelfBar">
-        <div class="bsb-inner">
-            <div class="bsb-select-wrap">
-                <span class="bsb-icon">📚</span>
-                <span class="bsb-label hide-xs">Quyển:</span>
-                <select id="bookSelectDropdown" class="bsb-select" title="Chọn quyển sách HSK 3.0 để học"></select>
-            </div>
-            <div class="bsb-chips-track" id="bookChipsTrack">
-                <!-- Mini chips populated dynamically -->
-            </div>
-        </div>
-    </section>
 
     <!-- Main 2-Column Interactive Workspace -->
     <main class="wl-workspace">
@@ -124,12 +101,16 @@
                     <div class="active-unit-title" id="activeUnitTitleArea" title="Nhấn để mở danh sách bài học">
                         <span class="au-badge" id="activeUnitBadge">Bài 1</span>
                         <h2 id="activeUnitHeading">爱 — 北边</h2>
-                        <span class="au-pinyin" id="activeUnitSub">(Từ 1 – 20 · Trang 9)</span>
                     </div>
                     <button class="top-speak-all-btn" id="btnSpeakAllTop" title="Phát âm lần lượt cả bài (Từ + Ví dụ) — Nhấn lại để Dừng bất kỳ lúc nào">
                         <span class="tsa-icon">🔊</span>
                         <span class="tsa-text">Đọc cả bài</span>
                     </button>
+                    <!-- Book Selector Dropdown relocated here to save space & eliminate extra row -->
+                    <div class="utb-book-select-wrap" id="utbBookSelectWrap">
+                        <span class="bsb-icon">📚</span>
+                        <select id="bookSelectDropdown" class="bsb-select" title="Chọn quyển sách HSK 3.0 để học"></select>
+                    </div>
                 </div>
 
                 <!-- Main Study Mode Switcher: 4 Clean Consolidated Pillars -->
