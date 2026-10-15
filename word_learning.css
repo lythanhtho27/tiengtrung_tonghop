@@ -1770,12 +1770,16 @@ body {
 }
 
 /* ==========================================================================
-   7. MODE 3: FLASHCARD 3D & QUIZ
+   7. MODE 3: FLASHCARD 3D & MODE 4: REFLEX QUIZ
    ========================================================================== */
-.fc-workspace {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.fc-workspace,
+.quiz-workspace {
+    max-width: 820px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .fc-panel-card {
@@ -3663,8 +3667,89 @@ body.light-mode .wl-toast {
         grid-template-columns: 1fr;
     }
 
+    .shad-workspace {
+        gap: 12px;
+        padding-bottom: 75px;
+    }
+
+    .shad-toolbar {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .shad-nav-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        width: 100%;
+    }
+
+    .shad-select-wrap {
+        width: 100%;
+        flex: 1 1 100%;
+        order: 1;
+    }
+
+    .shad-select-wrap select {
+        width: 100%;
+        padding: 7px 10px;
+        font-size: 0.82rem;
+    }
+
+    #btnShadPrev {
+        flex: 1;
+        order: 2;
+        padding: 7px 6px;
+        text-align: center;
+    }
+
+    #btnShadRandom {
+        flex: 0 0 auto;
+        order: 3;
+        padding: 7px 10px;
+    }
+
+    #btnShadNext {
+        flex: 1;
+        order: 4;
+        padding: 7px 6px;
+        text-align: center;
+    }
+
+    .shad-target-types {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .shad-type-pill {
+        flex: 1;
+        text-align: center;
+        padding: 7px 8px;
+        font-size: 0.78rem;
+    }
+
     .shad-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .shad-rec-card {
+        order: 1;
+        padding: 14px 12px;
+        gap: 12px;
+    }
+
+    .shad-native-card {
+        order: 2;
+        padding: 14px 12px;
+        gap: 12px;
+    }
+
+    .shad-target-display {
+        padding: 14px 12px;
+        gap: 4px;
     }
 
     .shad-hz {
@@ -3674,11 +3759,74 @@ body.light-mode .wl-toast {
         text-align: center;
     }
 
+    .shad-rec-stage {
+        min-height: auto;
+        padding: 14px 12px;
+        gap: 8px;
+    }
+
+    .shad-mic-wrap {
+        width: 76px;
+        height: 76px;
+    }
+
+    .shad-mic-btn {
+        width: 66px;
+        height: 66px;
+    }
+
+    .smb-icon {
+        font-size: 1.25rem;
+    }
+
+    .smb-label {
+        font-size: 0.62rem;
+    }
+
+    .shad-rec-prompt {
+        font-size: 0.78rem;
+        max-width: 100%;
+        line-height: 1.35;
+    }
+
+    .shad-teleprompter {
+        padding: 12px 12px;
+        gap: 8px;
+    }
+
+    .stp-badge-bar {
+        gap: 6px;
+        padding-bottom: 6px;
+    }
+
+    .stp-actions-bar {
+        gap: 5px;
+    }
+
+    .stp-listen-btn,
+    .stp-speed-btn {
+        padding: 4px 8px;
+        font-size: 0.74rem;
+    }
+
+    .stp-hz {
+        font-size: clamp(1.25rem, 5.5vw, 1.6rem);
+    }
+
+    .stp-py {
+        font-size: 0.9rem;
+    }
+
+    .stp-vn {
+        font-size: 0.82rem;
+    }
+
     .shad-sentence-card {
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
         padding: 10px 12px;
+        cursor: pointer;
     }
 
     .ssc-text-wrap {
@@ -3699,28 +3847,6 @@ body.light-mode .wl-toast {
         text-align: center;
         padding: 7px 8px;
         font-size: 0.76rem;
-    }
-
-    .shad-nav-group {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .shad-select-wrap {
-        flex: 1;
-    }
-
-    .shad-select-wrap select {
-        width: 100%;
-    }
-
-    .shad-target-types {
-        width: 100%;
-    }
-
-    .shad-type-pill {
-        flex: 1;
-        text-align: center;
     }
 
     .spb-actions {
@@ -3951,36 +4077,250 @@ body.light-mode .wl-toast {
 /* Example sentence preview */
 .shad-ex-preview-box {
     background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.25);
     border-left: 4px solid var(--accent-primary);
     padding: 12px 14px;
     border-radius: 0 10px 10px 0;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
+}
+
+.sep-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 2px;
 }
 
 .sep-label {
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size: 0.78rem;
+    font-weight: 800;
     color: var(--accent-secondary);
+}
+
+.sep-nav-btns {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sep-counter {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    padding: 0 4px;
+}
+
+.sep-nav-btn,
+.stp-nav-btn {
+    padding: 3px 8px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.72rem;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.sep-nav-btn:hover,
+.stp-nav-btn:hover {
+    border-color: var(--accent-primary);
+    background: var(--bg-tertiary);
 }
 
 .sep-hz {
     font-family: var(--font-cn);
-    font-size: 1.15rem;
-    font-weight: 600;
+    font-size: 1.18rem;
+    font-weight: 700;
     color: var(--text-primary);
     line-height: 1.4;
 }
 
 .sep-py {
-    font-size: 0.84rem;
+    font-size: 0.86rem;
+    font-weight: 600;
     color: var(--accent-sky);
 }
 
 .sep-vn {
-    font-size: 0.85rem;
+    font-size: 0.86rem;
     color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   SHADOWING TELEPROMPTER (In Recording Card, right above the mic)
+   ========================================================================== */
+.shad-teleprompter {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.25s ease;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.shad-teleprompter.recording {
+    border-color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.05);
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.35);
+}
+
+.shad-teleprompter.highlight-pulse {
+    border-color: var(--accent-emerald) !important;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.45);
+    animation: teleprompterPulse 0.7s ease alternate 2;
+}
+
+@keyframes teleprompterPulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.02); }
+}
+
+.stp-badge-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stp-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.stp-type-badge {
+    font-size: 0.74rem;
+    font-weight: 800;
+    color: var(--accent-emerald);
+    letter-spacing: 0.3px;
+}
+
+.stp-status-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 5px;
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+}
+
+.stp-status-badge.recording {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    animation: speakPulse 1s infinite alternate;
+}
+
+.stp-status-badge.done {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+}
+
+.stp-actions-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stp-ex-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stp-nav-counter {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    padding: 0 4px;
+}
+
+.stp-listen-btn {
+    padding: 5px 11px;
+    border-radius: 6px;
+    border: 1px solid var(--accent-emerald);
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    font-size: 0.76rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stp-listen-btn:hover {
+    background: var(--accent-emerald);
+    color: #fff;
+}
+
+.stp-speed-btn {
+    padding: 5px 9px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-tertiary);
+    color: var(--accent-amber);
+    font-size: 0.74rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stp-speed-btn:hover {
+    border-color: var(--accent-amber);
+    background: rgba(245, 158, 11, 0.15);
+}
+
+.stp-text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+    padding: 6px 0;
+}
+
+.stp-hz {
+    font-family: var(--font-cn);
+    font-size: clamp(1.35rem, 4.2vw, 1.8rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.35;
+    letter-spacing: 1px;
+    word-break: break-word;
+}
+
+.shad-teleprompter.recording .stp-hz {
+    color: var(--accent-amber);
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+}
+
+.stp-py {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--accent-sky);
+    letter-spacing: 0.5px;
+    word-break: break-word;
+}
+
+.stp-vn {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    word-break: break-word;
 }
 
 /* Native buttons */
@@ -4036,24 +4376,53 @@ body.light-mode .wl-toast {
     border-color: var(--accent-primary);
 }
 
-.shad-tone-guide {
+details.shad-tone-guide {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
     border-radius: 9px;
-    padding: 12px 14px;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-.stg-head {
-    font-size: 0.78rem;
+details.shad-tone-guide[open] {
+    border-color: var(--accent-amber);
+    box-shadow: 0 2px 10px rgba(245, 158, 11, 0.1);
+}
+
+details.shad-tone-guide summary.stg-head {
+    font-size: 0.8rem;
     font-weight: 800;
     color: var(--accent-amber);
-    margin-bottom: 5px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    margin-bottom: 0;
+}
+
+details.shad-tone-guide summary.stg-head::-webkit-details-marker {
+    display: none;
+}
+
+details.shad-tone-guide summary.stg-head::after {
+    content: "▾";
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+
+details.shad-tone-guide[open] summary.stg-head::after {
+    transform: rotate(180deg);
 }
 
 .stg-body {
     font-size: 0.82rem;
     color: var(--text-secondary);
     line-height: 1.45;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border-color);
 }
 
 /* Right Card: Recording Studio */

@@ -132,7 +132,10 @@
                         ✍️ <span class="sm-tab-text">Luyện tập (速练)</span> <span class="sm-count" id="lblPracticeStatus">3 phần</span>
                     </button>
                     <button class="sm-tab" data-smode="flashcard" id="tabBtnFlashcard">
-                        🎴 <span class="sm-tab-text">Flashcard & Quiz</span>
+                        🎴 <span class="sm-tab-text">Flashcard 3D</span>
+                    </button>
+                    <button class="sm-tab" data-smode="quiz" id="tabBtnQuiz">
+                        🎯 <span class="sm-tab-text">Trắc nghiệm (Quiz)</span>
                     </button>
                     <button class="sm-tab" data-smode="shadowing" id="tabBtnShadowing">
                         🎙️ <span class="sm-tab-text">Luyện nói (Shadowing)</span>
@@ -264,9 +267,12 @@
                 <!-- =========================================================
                      MODE 3: FLASHCARD 3D & TRẮC NGHIỆM PHẢN XẠ (NÂNG CẤP SRS & GAMIFIED)
                      ========================================================= -->
+                <!-- =========================================================
+                     MODE 3: FLASHCARD 3D (LẬT THẺ THÔNG MINH & LEITNER SRS)
+                     ========================================================= -->
                 <div class="smode-pane" id="paneFlashcard">
                     <div class="fc-workspace">
-                        <!-- Left: 3D Flashcard with Leitner SRS -->
+                        <!-- 3D Flashcard with Leitner SRS -->
                         <div class="fc-panel-card">
                             <div class="fc-panel-head">
                                 <div class="fph-title-wrap">
@@ -351,9 +357,15 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Right: Reflex Multiple Choice Quiz with 3 Modes, Timer & Streaks -->
-                        <div class="fc-panel-card">
+                <!-- =========================================================
+                     MODE 4: TRẮC NGHIỆM PHẢN XẠ (REFLEX QUIZ, TIMER & STREAKS)
+                     ========================================================= -->
+                <div class="smode-pane" id="paneQuiz">
+                    <div class="quiz-workspace">
+                        <div class="fc-panel-card quiz-panel-card">
                             <div class="fc-panel-head">
                                 <div class="quiz-head-left">
                                     <h3>🎯 Trắc Nghiệm Phản Xạ</h3>
@@ -464,7 +476,14 @@
 
                                 <!-- Example Sentence Preview (When in sentence mode or on demand) -->
                                 <div class="shad-ex-preview-box hidden" id="shadExPreviewBox">
-                                    <div class="sep-label">💬 Câu ví dụ đang luyện:</div>
+                                    <div class="sep-header-row">
+                                        <span class="sep-label" id="sepLabel">💬 Câu ví dụ đang luyện:</span>
+                                        <div class="sep-nav-btns">
+                                            <button class="sep-nav-btn" id="btnSepPrevEx" title="Câu ví dụ trước">◀</button>
+                                            <span class="sep-counter" id="sepCounter">1/2</span>
+                                            <button class="sep-nav-btn" id="btnSepNextEx" title="Câu ví dụ sau">▶</button>
+                                        </div>
+                                    </div>
                                     <div class="sep-hz" id="shadExHz">我爱中国菜。</div>
                                     <div class="sep-py" id="shadExPy">Wǒ ài Zhōngguó cài.</div>
                                     <div class="sep-vn" id="shadExVn">Tôi yêu món ăn Trung Quốc.</div>
@@ -480,12 +499,12 @@
                                     </button>
                                 </div>
 
-                                <div class="shad-tone-guide">
-                                    <div class="stg-head">💡 Hướng dẫn phát âm & Thanh điệu (声调):</div>
+                                <details class="shad-tone-guide">
+                                    <summary class="stg-head">💡 Hướng dẫn phát âm & Thanh điệu (声调)</summary>
                                     <div class="stg-body" id="shadToneTip">
                                         Thanh 4 (à): Phát âm dứt khoát, đi từ cao xuống thấp (5 ➔ 1), như dứt khoát hạ giọng.
                                     </div>
-                                </div>
+                                </details>
                             </div>
 
                             <!-- Right Card: Recording Studio & AI Pronunciation Evaluation -->
@@ -493,6 +512,34 @@
                                 <div class="shad-card-head">
                                     <span class="shad-badge rec-badge">🎙️ Phòng Thu & Chấm Điểm AI</span>
                                     <span class="shad-engine-tag" id="shadEngineTag">Web Speech AI: Sẵn sàng</span>
+                                </div>
+
+                                <!-- Prominent Shadowing Teleprompter: Clearly displays the target text to shadow right above the mic -->
+                                <div class="shad-teleprompter" id="shadTeleprompter">
+                                    <div class="stp-badge-bar">
+                                        <div class="stp-title-wrap">
+                                            <span class="stp-type-badge" id="stpTypeBadge">💬 CÂU VÍ DỤ CẦN NÓI:</span>
+                                            <span class="stp-status-badge" id="stpStatusBadge">Đang chờ thu âm</span>
+                                        </div>
+                                        <div class="stp-actions-bar">
+                                            <div class="stp-ex-nav hidden" id="stpExNav">
+                                                <button class="stp-nav-btn" id="btnStpPrevEx" title="Câu trước">◀</button>
+                                                <span class="stp-nav-counter" id="stpExCounter">Câu 1/2</span>
+                                                <button class="stp-nav-btn" id="btnStpNextEx" title="Câu tiếp theo">▶</button>
+                                            </div>
+                                            <button class="stp-listen-btn" id="btnStpListen" title="Nghe mẫu phát âm chuẩn câu/từ này">
+                                                🔊 Nghe mẫu
+                                            </button>
+                                            <button class="stp-speed-btn" id="btnStpSpeed" title="Đổi tốc độ phát âm (0.75x / 0.9x / 1.0x)">
+                                                0.9x
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="stp-text-box">
+                                        <div class="stp-hz" id="stpTextHz">我爱中国菜。</div>
+                                        <div class="stp-py" id="stpTextPy">Wǒ ài Zhōngguó cài.</div>
+                                        <div class="stp-vn" id="stpTextVn">Tôi yêu món ăn Trung Quốc.</div>
+                                    </div>
                                 </div>
 
                                 <!-- Mic Record Button & Wave Animation -->

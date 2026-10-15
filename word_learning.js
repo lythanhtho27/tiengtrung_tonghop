@@ -2580,13 +2580,18 @@
             memory: 'paneMemory',
             practice: 'panePractice',
             flashcard: 'paneFlashcard',
+            quiz: 'paneQuiz',
             shadowing: 'paneShadowing',
             pdf: 'panePdf'
         };
         const targetPane = document.getElementById(map[mode]);
         if (targetPane) targetPane.classList.add('active');
 
-        if (mode === 'shadowing') {
+        if (mode === 'flashcard') {
+            initFlashcardDeck();
+        } else if (mode === 'quiz') {
+            initReflexQuiz();
+        } else if (mode === 'shadowing') {
             initShadowingStudio();
         } else if (mode === 'pdf') {
             renderPdfPane();
@@ -3052,7 +3057,7 @@
         if (btnStartSrsQz) {
             btnStartSrsQz.addEventListener('click', () => {
                 if (modalSrs) modalSrs.classList.add('hidden');
-                switchStudyMode('flashcard');
+                switchStudyMode('quiz');
                 state.fcScope = 'srs';
                 const fcScopeSel = document.getElementById('fcScopeSelect');
                 if (fcScopeSel) fcScopeSel.value = 'srs';
@@ -3273,12 +3278,22 @@
                 } else if (e.key === 'r' || e.key === 'R') {
                     const w = state.fcDeck[state.fcIndex];
                     if (w) speakChinese(cleanHanziForTts(w.word));
-                } else if (['a', 'b', 'c', 'd', 'A', 'B', 'C', 'D'].includes(e.key)) {
+                }
+            } else if (state.studyMode === 'quiz') {
+                if (['a', 'b', 'c', 'd', 'A', 'B', 'C', 'D'].includes(e.key)) {
                     const letter = e.key.toUpperCase();
+                    const btn = document.querySelector(`.quiz-opt-btn[data-opt-letter="${letter}"]`);
+                    if (btn) btn.click();
+                } else if (['1', '2', '3', '4'].includes(e.key)) {
+                    const idx = parseInt(e.key, 10) - 1;
+                    const letter = ['A', 'B', 'C', 'D'][idx];
                     const btn = document.querySelector(`.quiz-opt-btn[data-opt-letter="${letter}"]`);
                     if (btn) btn.click();
                 } else if (e.code === 'Enter') {
                     if (state.quizAnswered) nextReflexQuizQuestion();
+                } else if (e.key === 'r' || e.key === 'R') {
+                    const btnQuizSpeak = document.getElementById('btnQuizSpeak');
+                    if (btnQuizSpeak) btnQuizSpeak.click();
                 }
             }
         });
@@ -3430,6 +3445,38 @@
         if (btnPlayUser) btnPlayUser.addEventListener('click', playUserRecordedAudio);
         if (btnCompare) btnCompare.addEventListener('click', compareNativeAndUserAudios);
         if (btnRetest) btnRetest.addEventListener('click', () => startVoiceRecording());
+
+        const btnStpListen = document.getElementById('btnStpListen');
+        if (btnStpListen) {
+            btnStpListen.addEventListener('click', () => playNativeShadowingAudio(1));
+        }
+        const btnStpPrev = document.getElementById('btnStpPrevEx');
+        const btnStpNext = document.getElementById('btnStpNextEx');
+        const btnSepPrev = document.getElementById('btnSepPrevEx');
+        const btnSepNext = document.getElementById('btnSepNextEx');
+        if (btnStpPrev) btnStpPrev.addEventListener('click', () => changeShadowingSentence(-1));
+        if (btnStpNext) btnStpNext.addEventListener('click', () => changeShadowingSentence(1));
+        if (btnSepPrev) btnSepPrev.addEventListener('click', () => changeShadowingSentence(-1));
+        if (btnSepNext) btnSepNext.addEventListener('click', () => changeShadowingSentence(1));
+
+        const btnStpSpeed = document.getElementById('btnStpSpeed');
+        const speedSel = document.getElementById('shadSpeedSelect');
+        if (btnStpSpeed) {
+            if (speedSel) btnStpSpeed.textContent = `${speedSel.value}x`;
+            btnStpSpeed.addEventListener('click', () => {
+                const speeds = ['0.75', '0.9', '1.0'];
+                const cur = speedSel ? speedSel.value : '0.9';
+                let idx = speeds.indexOf(cur);
+                const next = speeds[(idx + 1) % speeds.length];
+                if (speedSel) speedSel.value = next;
+                btnStpSpeed.textContent = `${next}x`;
+            });
+        }
+        if (speedSel) {
+            speedSel.addEventListener('change', () => {
+                if (btnStpSpeed) btnStpSpeed.textContent = `${speedSel.value}x`;
+            });
+        }
     }
 
     // ==================== MODE 5: VOICE & SHADOWING STUDIO ENGINE ====================
@@ -3528,6 +3575,16 @@
         const ssbWord = document.getElementById('ssbCurrentWord');
         const ssbList = document.getElementById('shadSentencesList');
 
+        const stpHz = document.getElementById('stpTextHz');
+        const stpPy = document.getElementById('stpTextPy');
+        const stpVn = document.getElementById('stpTextVn');
+        const stpTypeBadge = document.getElementById('stpTypeBadge');
+        const stpStatusBadge = document.getElementById('stpStatusBadge');
+        const stpExNav = document.getElementById('stpExNav');
+        const stpExCounter = document.getElementById('stpExCounter');
+        const sepCounter = document.getElementById('sepCounter');
+        const sepLabel = document.getElementById('sepLabel');
+
         if (hzEl) hzEl.textContent = w.word;
         if (pyEl) pyEl.textContent = w.pinyin;
         if (vnEl) vnEl.textContent = w.meaning_vi || w.meaning_primary || '';
@@ -3547,10 +3604,32 @@
             if (exHz) exHz.textContent = activeEx.hz;
             if (exPy) exPy.textContent = activeEx.py;
             if (exVn) exVn.textContent = activeEx.vn;
+            if (sepCounter) sepCounter.textContent = `${state.shadowing.targetExIndex + 1}/${examples.length}`;
+            if (sepLabel) sepLabel.textContent = `💬 Câu ví dụ đang luyện:`;
             if (lblPlay) lblPlay.textContent = `Nghe câu ví dụ mẫu #${state.shadowing.targetExIndex + 1}`;
+
+            // Teleprompter display in Recording Card
+            if (stpHz) stpHz.textContent = activeEx.hz;
+            if (stpPy) stpPy.textContent = activeEx.py;
+            if (stpVn) stpVn.textContent = activeEx.vn;
+            if (stpTypeBadge) stpTypeBadge.textContent = '💬 CÂU VÍ DỤ SHADOWING:';
+            if (stpExNav) stpExNav.classList.toggle('hidden', examples.length <= 1);
+            if (stpExCounter) stpExCounter.textContent = `Câu ${state.shadowing.targetExIndex + 1}/${examples.length}`;
         } else {
             if (exBox) exBox.classList.add('hidden');
             if (lblPlay) lblPlay.textContent = 'Nghe phát âm từ vựng mẫu';
+
+            // Teleprompter display in Recording Card
+            if (stpHz) stpHz.textContent = w.word;
+            if (stpPy) stpPy.textContent = w.pinyin;
+            if (stpVn) stpVn.textContent = w.meaning_vi || w.meaning_primary || '';
+            if (stpTypeBadge) stpTypeBadge.textContent = '🔤 TỪ VỰNG MỤC TIÊU:';
+            if (stpExNav) stpExNav.classList.add('hidden');
+        }
+
+        if (stpStatusBadge) {
+            stpStatusBadge.textContent = 'Đang chờ thu âm';
+            stpStatusBadge.className = 'stp-status-badge';
         }
 
         // Render sentences list for current word
@@ -3584,9 +3663,20 @@
                 });
 
                 ssbList.querySelectorAll('.btn-ssc-select').forEach(btn => {
-                    btn.addEventListener('click', () => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
                         const exIdx = parseInt(btn.getAttribute('data-select-ex'), 10);
                         selectShadowingExample(exIdx);
+                    });
+                });
+
+                ssbList.querySelectorAll('.shad-sentence-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const selectBtn = card.querySelector('.btn-ssc-select');
+                        if (selectBtn) {
+                            const exIdx = parseInt(selectBtn.getAttribute('data-select-ex'), 10);
+                            selectShadowingExample(exIdx);
+                        }
                     });
                 });
             }
@@ -3606,8 +3696,33 @@
         if (btnEx) btnEx.classList.add('active');
 
         renderShadowingActiveTarget();
-        const stage = document.getElementById('unitStageScroll');
-        if (stage) stage.scrollTo({ top: 0, behavior: 'smooth' });
+        playNativeShadowingAudio(1);
+
+        const teleprompter = document.getElementById('shadTeleprompter');
+        if (teleprompter) {
+            teleprompter.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            teleprompter.classList.add('highlight-pulse');
+            setTimeout(() => teleprompter.classList.remove('highlight-pulse'), 1400);
+        }
+    }
+
+    function changeShadowingSentence(delta) {
+        const words = getShadowingWords();
+        if (!words.length) return;
+        const w = words[state.shadowing.wordIndex];
+        const examples = w.examples || [];
+        if (!examples.length) return;
+
+        state.shadowing.targetType = 'ex';
+        state.shadowing.targetExIndex = (state.shadowing.targetExIndex + delta + examples.length) % examples.length;
+
+        const btnWord = document.getElementById('btnShadModeWord');
+        const btnEx = document.getElementById('btnShadModeEx');
+        if (btnWord) btnWord.classList.remove('active');
+        if (btnEx) btnEx.classList.add('active');
+
+        renderShadowingActiveTarget();
+        playNativeShadowingAudio(1);
     }
 
     function resetShadowingRecordingSession() {
@@ -3619,9 +3734,20 @@
         if (evalBox) evalBox.classList.add('hidden');
         if (noticeBox) noticeBox.classList.add('hidden');
 
+        const teleprompter = document.getElementById('shadTeleprompter');
+        if (teleprompter) {
+            teleprompter.classList.remove('recording');
+            teleprompter.classList.remove('highlight-pulse');
+        }
+        const stpStatus = document.getElementById('stpStatusBadge');
+        if (stpStatus) {
+            stpStatus.textContent = 'Đang chờ thu âm';
+            stpStatus.className = 'stp-status-badge';
+        }
+
         const prompt = document.getElementById('shadRecPrompt');
         if (prompt) {
-            prompt.textContent = 'Nhấn micro, cho phép trình duyệt truy cập và đọc to chữ Hán trên màn hình';
+            prompt.textContent = 'Nhấn micro và đọc to theo nội dung hiển thị ở trên';
         }
     }
 
@@ -3772,6 +3898,14 @@
             }
             if (prompt) prompt.textContent = '🔴 Đang lắng nghe... Hãy đọc to và rõ ràng câu/từ tiếng Trung!';
 
+            const teleprompter = document.getElementById('shadTeleprompter');
+            if (teleprompter) teleprompter.classList.add('recording');
+            const stpStatus = document.getElementById('stpStatusBadge');
+            if (stpStatus) {
+                stpStatus.textContent = '🔴 Đang ghi âm...';
+                stpStatus.className = 'stp-status-badge recording';
+            }
+
             state.shadowing.recTimerId = setInterval(() => {
                 state.shadowing.recSeconds += 1;
                 const m = String(Math.floor(state.shadowing.recSeconds / 60)).padStart(2, '0');
@@ -3825,6 +3959,14 @@
         if (micLabel) micLabel.textContent = 'Bấm để Nói';
         if (timerEl) timerEl.classList.add('hidden');
         if (prompt) prompt.textContent = '✅ Đã ghi âm xong! Đang phân tích âm sắc & chấm điểm...';
+
+        const teleprompter = document.getElementById('shadTeleprompter');
+        if (teleprompter) teleprompter.classList.remove('recording');
+        const stpStatus = document.getElementById('stpStatusBadge');
+        if (stpStatus) {
+            stpStatus.textContent = '✅ Đã ghi âm';
+            stpStatus.className = 'stp-status-badge done';
+        }
     }
 
     function showShadNotice(msg) {
