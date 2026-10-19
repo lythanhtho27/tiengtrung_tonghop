@@ -188,6 +188,13 @@ body {
     padding: 4px;
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
+    overflow-x: auto;
+    max-width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.book-pills-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .book-pill-btn {

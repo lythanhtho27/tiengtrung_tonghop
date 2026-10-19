@@ -1,6 +1,6 @@
 /**
  * BOYA LEARNING PLATFORM - BOYA_LEARNING.JS
- * Quản trị toàn bộ logic tương tác học tập Boya (4 Quyển · 54 Bài · 2.565 Từ · Audio · Flashcard · Quiz · PDF)
+ * Quản trị toàn bộ logic tương tác học tập Boya (6 Quyển · 74 Bài · 2.674+ Từ · Audio · Flashcard · Quiz · PDF)
  */
 
 (function () {
@@ -1908,9 +1908,11 @@
         const q = query.trim().toLowerCase();
 
         if (!q) {
+            const totV = window.BOYA_DATA?.total_vocab || '2.674+';
+            const totL = window.BOYA_DATA?.total_lessons || 74;
             dom.modalResultsList.innerHTML = `
                 <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 13px;">
-                    Nhập chữ Hán, Pinyin, nghĩa tiếng Việt hoặc số bài để tìm kiếm toàn bộ 2.565 từ vựng & 54 bài học.
+                    Nhập chữ Hán, Pinyin, nghĩa tiếng Việt hoặc số bài để tìm kiếm trong ${totL} bài học & ${totV} từ vựng.
                 </div>
             `;
             return;
