@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Boya Chinese Master • Nền Tảng Học Toàn Diện Giáo Trình Boya (4 Quyển · 54 Bài)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="boya_learning.css">
+</head>
+<body>
+
+    <!-- 1. TOP APP HEADER -->
+    <header class="boya-header">
+        <div class="header-left">
+            <a href="index.html" class="header-btn" title="Về trang chủ chọn tài liệu">
+                <span>←</span>
+                <span>Trang Chủ</span>
+            </a>
+
+            <div class="brand-wrap">
+                <span class="brand-icon">🏮</span>
+                <div class="brand-titles">
+                    <h1>
+                        <span>Boya Chinese Master</span>
+                        <span class="brand-badge">Full Portal</span>
+                    </h1>
+                    <div class="brand-sub">Hệ Thống Học Giáo Trình Boya Toàn Diện (4 Quyển · 54 Bài · 2.565 Từ Vựng)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book Switcher Nav Pills -->
+        <nav class="book-pills-nav" id="bookPillsNav" aria-label="Chọn Quyển Giáo Trình Boya">
+            <!-- Populated dynamically via JS -->
+        </nav>
+
+        <div class="header-right">
+            <!-- Global Search Trigger -->
+            <button class="header-search-btn" id="globalSearchBtn" title="Tìm kiếm bài học và từ vựng (Ctrl + K)">
+                <span>🔍 Tìm kiếm...</span>
+                <kbd>Ctrl K</kbd>
+            </button>
+
+            <!-- Streak Pill -->
+            <div class="header-btn" style="cursor: default; font-weight: 700; color: #ea580c; background: var(--bg-surface);" title="Chuỗi ngày học tập liên tiếp">
+                🔥 <span id="hdrStreakCount">1</span> ngày
+            </div>
+
+            <!-- Dark / Light Theme Toggle -->
+            <button class="header-btn theme-toggle-btn" id="themeToggleBtn" title="Chuyển chế độ Sáng / Tối">
+                🌓
+            </button>
+        </div>
+    </header>
+
+    <!-- 2. MAIN 2-COLUMN WORKSPACE -->
+    <main class="boya-workspace">
+        <!-- Mobile/Tablet Drawer Backdrop -->
+        <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+        <!-- LEFT SIDEBAR: LESSON DIRECTORY -->
+        <aside class="boya-sidebar" id="boyaSidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-book-badge-wrap">
+                    <span class="sidebar-book-badge" id="sidebarBookBadge">Boya Chuẩn Trung Cấp 1</span>
+                    <span class="sidebar-progress-label" id="sidebarProgressLabel">0/16 Bài (0%)</span>
+                </div>
+                <div class="sidebar-progress-bar">
+                    <div class="sidebar-progress-fill" id="sidebarProgressFill"></div>
+                </div>
+            </div>
+
+            <div class="sidebar-filter-wrap">
+                <input type="text" class="sidebar-search-input" id="sidebarSearch" placeholder="Tìm bài (VD: Bài 3, E-mail, 生词)...">
+                <div class="sidebar-filter-pills">
+                    <button class="sf-pill active" data-filter="all">Tất cả</button>
+                    <button class="sf-pill" data-filter="todo">Chưa học</button>
+                    <button class="sf-pill" data-filter="done">✓ Đã học</button>
+                </div>
+            </div>
+
+            <div class="sidebar-lesson-list" id="sidebarLessonList">
+                <!-- Dynamically populated lessons -->
+            </div>
+        </aside>
+
+        <!-- RIGHT MAIN PANEL -->
+        <section class="boya-main-panel">
+            <!-- Lesson Top Banner -->
+            <div class="lesson-top-banner">
+                <div class="ltb-left">
+                    <button class="btn-sidebar-toggle" id="sidebarToggleBtn" title="Mở danh sách bài học">
+                        ☰ Danh sách bài
+                    </button>
+                    <div>
+                        <div class="lesson-meta-badge" id="lessonMetaBadge">
+                            <!-- e.g. 📘 CHUẨN TRUNG CẤP 1 • BÀI 1 / 16 -->
+                        </div>
+                        <h1 class="lesson-main-title" id="lessonMainTitle">
+                            <!-- e.g. 三封E-mail -->
+                        </h1>
+                        <div class="lesson-subtitle" id="lessonSubtitle">
+                            <!-- Subtitle meta -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ltb-right">
+                    <button class="btn-mark-complete" id="btnMarkComplete">
+                        ○ Đánh dấu hoàn thành
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mode Tabs Bar -->
+            <div class="mode-tabs-bar" role="tablist">
+                <button class="mode-tab-btn active" data-mode="reading" title="Xem Bài Khóa & Bản Dịch Song Ngữ">
+                    <span>📖</span>
+                    <span>Bài Khóa</span>
+                </button>
+                <button class="mode-tab-btn" data-mode="vocab" title="Học Từ Vựng, Loại Từ & Ví Dụ Thực Tế">
+                    <span>🏮</span>
+                    <span>Từ Vựng</span>
+                    <span class="tab-badge" id="tabBadgeVocab">0</span>
+                </button>
+                <button class="mode-tab-btn" data-mode="grammar" title="Học Cấu Trúc Ngữ Pháp & Điểm Ngôn Ngữ">
+                    <span>📐</span>
+                    <span>Ngữ Pháp</span>
+                    <span class="tab-badge" id="tabBadgeGrammar">0</span>
+                </button>
+                <button class="mode-tab-btn" data-mode="flashcard" title="Lật Thẻ Flashcard 3D Thông Minh">
+                    <span>🎴</span>
+                    <span>Flashcards</span>
+                </button>
+                <button class="mode-tab-btn" data-mode="quiz" title="Trắc Nghiệm & Trò Chơi Nối Từ">
+                    <span>🎯</span>
+                    <span>Luyện Tập</span>
+                </button>
+                <button class="mode-tab-btn" data-mode="podcast" title="Nghe Thụ Động Rảnh Tay">
+                    <span>🎧</span>
+                    <span>Podcast</span>
+                </button>
+            </div>
+
+            <!-- Dynamic Study Mode Content Container -->
+            <div class="mode-content-container" id="modeContentContainer">
+                <!-- Populated via JS based on active mode -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 3. STICKY GLOBAL AUDIO PLAYER (BOTTOM) -->
+    <div class="boya-audio-dock">
+        <audio id="globalAudioElement" preload="metadata"></audio>
+
+        <!-- Track Information -->
+        <div class="dock-left">
+            <div class="dock-track-icon">🎵</div>
+            <div class="dock-track-info">
+                <div class="dock-track-title" id="dockTrackTitle">Chưa chọn audio bài học</div>
+                <div class="dock-track-sub" id="dockTrackSub">Boya Chinese Audio</div>
+            </div>
+        </div>
+
+        <!-- Controls & Scrubber Slider -->
+        <div class="dock-center">
+            <div class="dock-controls-row">
+                <button class="btn-player-ctrl" id="btnAudioRewind" title="Lùi 10 giây">⏮ 10s</button>
+                <button class="btn-player-ctrl btn-play-pause" id="btnPlayPause" title="Phát / Dừng">▶</button>
+                <button class="btn-player-ctrl" id="btnAudioForward" title="Tua tới 10 giây">10s ⏭</button>
+            </div>
+            <div class="dock-timeline-row">
+                <span class="time-label current" id="timeCurrent">00:00</span>
+                <input type="range" class="audio-scrubber-slider" id="audioScrubber" value="0" min="0" max="100" step="0.1">
+                <span class="time-label total" id="timeTotal">00:00</span>
+            </div>
+        </div>
+
+        <!-- Speed & Actions -->
+        <div class="dock-right">
+            <button class="speed-badge-btn" id="btnSpeedToggle" title="Điều chỉnh tốc độ phát âm thanh">
+                1.0x
+            </button>
+            <button class="btn-player-ctrl" id="btnToggleAudioDock" title="Thu gọn / Mở rộng trình phát nhạc" style="font-size: 14px; margin-left: 6px;">
+                ▾
+            </button>
+        </div>
+    </div>
+
+    <!-- 4. SEARCH MODAL DIALOG (CTRL + K) -->
+    <div class="modal-backdrop" id="searchModal">
+        <div class="search-modal-dialog">
+            <div class="modal-search-input-wrap">
+                <span style="font-size: 18px;">🔍</span>
+                <input type="text" class="modal-search-input" id="modalSearchInput" placeholder="Tìm theo chữ Hán, Pinyin, nghĩa tiếng Việt hoặc số bài...">
+                <kbd style="font-size: 11px; background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px; color: var(--text-muted);">ESC</kbd>
+            </div>
+            <div class="modal-results-list" id="modalResultsList">
+                <!-- Search results injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. SCRIPTS: FAST DIRECT DATA + APP LOGIC -->
+    <script src="boya_data.js"></script>
+    <script src="boya_learning.js"></script>
+
+</body>
+</html>
