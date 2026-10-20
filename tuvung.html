@@ -23,6 +23,9 @@
             <div class="header-actions">
                 <span class="badge-stat" id="stat-total-words">0 từ</span>
                 <span class="badge-stat star-stat" id="stat-starred-words">★ 0 đã lưu</span>
+                <button class="badge-stat wrong-stat-btn" id="stat-wrong-words" title="Nhấp xem danh sách từ bạn hay trả lời sai">📕 0 từ sai</button>
+                <button class="badge-stat srs-stat-btn" id="stat-srs-words" title="Nhấp xem các từ đến hạn ôn tập ngắt quãng (SRS) hôm nay">🧠 0 cần ôn SRS</button>
+                <button class="btn-home btn-podcast-header" id="btn-open-podcast" title="Nghe từ vựng thụ động rảnh tay (Hands-free Podcast)">🎧 Podcast Rảnh Tay</button>
                 <button class="btn-home" id="btn-toggle-sound" title="Bật/Tắt âm thanh hiệu ứng trò chơi">🔊 Âm thanh</button>
                 <a href="word_learning.html" class="btn-home" title="Chuyển sang Sổ tay Ghi nhớ & Luyện tập nhanh Từ vựng HSK 3.0">📚 Sổ Tay HSK 3.0</a>
                 <a href="index.html" class="btn-home">🏠 Trang Chủ</a>
@@ -78,6 +81,14 @@
                 <button class="btn-pill" id="btn-filter-starred" title="Chỉ hiển thị những từ bạn đã gắn sao">
                     ★ Chỉ từ đã lưu
                 </button>
+
+                <button class="btn-pill btn-pill-wrong" id="btn-filter-wrong" title="Chỉ hiển thị các từ bạn hay trả lời sai trong Quiz / Games">
+                    📕 Sổ từ hay sai (<span id="count-filter-wrong">0</span>)
+                </button>
+
+                <button class="btn-pill btn-pill-srs" id="btn-filter-srs" title="Lọc các từ đến hạn ôn tập lặp lại ngắt quãng (SRS) hôm nay">
+                    🧠 Đến hạn ôn SRS (<span id="count-filter-srs">0</span>)
+                </button>
             </div>
 
             <!-- Lesson Audio Bar -->
@@ -93,13 +104,16 @@
                 📋 Bảng Từ Vựng
             </button>
             <button class="tab-btn" data-mode="flashcard">
-                🗂️ Flashcard 3D
+                🗂️ Flashcard 3D & SRS
+            </button>
+            <button class="tab-btn" data-mode="speech">
+                🎙️ Luyện Nói Speech AI
             </button>
             <button class="tab-btn" data-mode="quiz">
                 ✍️ Trắc Nghiệm Phản Xạ
             </button>
             <button class="tab-btn" data-mode="games">
-                🎮 Khu Trò Chơi & Luyện Tập (15 Chế Độ)
+                🎮 Khu Trò Chơi (15 Chế Độ)
             </button>
         </nav>
 
@@ -127,11 +141,11 @@
                         <tr>
                             <th style="width: 55px; text-align: center;">STT</th>
                             <th style="width: 45px; text-align: center;">★</th>
-                            <th style="width: 22%;">Chữ Hán</th>
-                            <th style="width: 18%;">Pinyin</th>
-                            <th style="width: 11%;">Từ loại</th>
-                            <th style="width: 36%;">Ý nghĩa & Ví dụ</th>
-                            <th style="width: 13%;">Bài</th>
+                            <th style="width: 23%;">Chữ Hán & Phát Âm</th>
+                            <th style="width: 17%;">Pinyin</th>
+                            <th style="width: 10%;">Từ loại</th>
+                            <th style="width: 33%;">Ý nghĩa & Ví dụ</th>
+                            <th style="width: 12%;">Bài & Trí Nhớ</th>
                         </tr>
                     </thead>
                     <tbody id="vocab-tbody">
@@ -140,26 +154,33 @@
                 </table>
                 <div class="table-footer">
                     <span id="table-count-info">Đang tải từ vựng...</span>
-                    <span>💡 Nhấp vào biểu tượng 🔊 để nghe phát âm chuẩn</span>
+                    <span>💡 Nhấp vào biểu tượng 🔊 để nghe • Nhấp 🎙️ để luyện phát âm Speech AI</span>
                 </div>
             </div>
         </section>
 
-        <!-- TAB 2: FLASHCARD 3D -->
+        <!-- TAB 2: FLASHCARD 3D & SRS -->
         <section id="mode-flashcard" class="tab-content">
             <div id="flashcard-container">
                 <!-- Rendered by Javascript -->
             </div>
         </section>
 
-        <!-- TAB 3: TRẮC NGHIỆM -->
+        <!-- TAB 3: LUYỆN NÓI SPEECH AI -->
+        <section id="mode-speech" class="tab-content">
+            <div id="speech-container">
+                <!-- Rendered by Javascript: Speech Studio -->
+            </div>
+        </section>
+
+        <!-- TAB 4: TRẮC NGHIỆM -->
         <section id="mode-quiz" class="tab-content">
             <div id="quiz-container">
                 <!-- Rendered by Javascript -->
             </div>
         </section>
 
-        <!-- TAB 4: KHU TRÒ CHƠI ÔN TẬP (GAME ZONE) -->
+        <!-- TAB 5: KHU TRÒ CHƠI ÔN TẬP (GAME ZONE) -->
         <section id="mode-games" class="tab-content">
             <div id="games-container">
                 <!-- Rendered by Javascript: Game Hub or Active Game -->
@@ -167,6 +188,182 @@
         </section>
 
     </main>
+
+    <!-- FLOATING PODCAST PLAYER BAR (HANDS-FREE BACKGROUND AUDIO) -->
+    <div id="podcast-player-bar" class="podcast-bar hidden">
+        <div class="podcast-inner">
+            <div class="podcast-left">
+                <div class="podcast-disc">
+                    <span class="podcast-disc-icon">📻</span>
+                </div>
+                <div class="podcast-info">
+                    <div class="podcast-hz-row">
+                        <span class="podcast-hz" id="podcast-curr-hz">--</span>
+                        <span class="podcast-py" id="podcast-curr-py">--</span>
+                    </div>
+                    <div class="podcast-mean" id="podcast-curr-mean">Đang sẵn sàng phát...</div>
+                    <div class="podcast-example" id="podcast-curr-example"></div>
+                </div>
+            </div>
+
+            <div class="podcast-center">
+                <div class="podcast-controls">
+                    <button class="podcast-ctrl-btn" id="podcast-btn-prev" title="Từ trước đó (Phím ←)">⏮️</button>
+                    <button class="podcast-ctrl-btn podcast-btn-play" id="podcast-btn-toggle" title="Phát / Tạm dừng (Phím Space)">▶️</button>
+                    <button class="podcast-ctrl-btn" id="podcast-btn-next" title="Từ tiếp theo (Phím →)">⏭️</button>
+                </div>
+                <div class="podcast-progress-wrap">
+                    <span class="podcast-prog-text" id="podcast-prog-text">0 / 0</span>
+                    <div class="podcast-progress-bar">
+                        <div class="podcast-progress-fill" id="podcast-prog-fill"></div>
+                    </div>
+                    <span class="podcast-status-tag" id="podcast-status-tag">Tạm dừng</span>
+                </div>
+            </div>
+
+            <div class="podcast-right">
+                <div class="podcast-settings-bar">
+                    <button class="podcast-tool-btn" id="podcast-btn-mode" title="Chế độ lặp">🔁 Cả bài</button>
+                    <button class="podcast-tool-btn" id="podcast-btn-speed" title="Tốc độ đọc">⚡ 1.0x</button>
+                    <button class="podcast-tool-btn" id="podcast-btn-timer" title="Hẹn giờ tắt (Sleep Timer)">⏱️ Tắt: Không</button>
+                    <button class="podcast-tool-btn" id="podcast-btn-options" title="Cài đặt phát âm thanh">⚙️ Tùy chọn</button>
+                    <button class="podcast-close-btn" id="podcast-btn-close" title="Đóng trình phát Podcast">✕</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Podcast Options Dropdown Drawer -->
+        <div class="podcast-options-drawer hidden" id="podcast-options-drawer">
+            <div class="podcast-opt-title">⚙️ Cài đặt Nghe thụ động rảnh tay</div>
+            <div class="podcast-opt-grid">
+                <label class="podcast-opt-item">
+                    <input type="checkbox" id="pod-opt-repeat-zh" checked>
+                    <span>Lặp lại tiếng Trung 2 lần</span>
+                </label>
+                <label class="podcast-opt-item">
+                    <input type="checkbox" id="pod-opt-read-mean" checked>
+                    <span>Đọc nghĩa tiếng Việt</span>
+                </label>
+                <label class="podcast-opt-item">
+                    <input type="checkbox" id="pod-opt-read-ex" checked>
+                    <span>Đọc câu ví dụ (nếu có)</span>
+                </label>
+                <div class="podcast-opt-select-row">
+                    <span>Khoảng nghỉ giữa các từ:</span>
+                    <select id="pod-opt-pause">
+                        <option value="1200">1.2 giây (Nhanh)</option>
+                        <option value="1800" selected>1.8 giây (Vừa)</option>
+                        <option value="2500">2.5 giây (Chậm rãi)</option>
+                        <option value="3500">3.5 giây (Ngẫm sâu)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL LUYỆN NÓI SPEECH AI TRỰC TIẾP -->
+    <div id="speech-modal" class="speech-modal-overlay hidden">
+        <div class="speech-modal-box">
+            <button class="modal-close-btn" id="speech-modal-close">✕</button>
+            <div class="speech-modal-header">
+                <h3>🎙️ Luyện Phát Âm • Trí Tuệ Nhân Tạo Speech AI</h3>
+                <p>Nhấn vào Microphone và đọc to từ vựng tiếng Trung chuẩn thanh điệu</p>
+            </div>
+
+            <div class="speech-modal-wordcard">
+                <div class="sm-hz" id="sm-hz">你好</div>
+                <div class="sm-py" id="sm-py">nǐ hǎo</div>
+                <div class="sm-mean" id="sm-mean">Chào bạn</div>
+                <button class="btn-sm-speak" id="sm-btn-listen" title="Nghe giọng chuẩn">🔊 Nghe phát âm mẫu</button>
+            </div>
+
+            <div class="speech-mic-zone">
+                <div class="speech-pulse-ring" id="sm-pulse-ring"></div>
+                <button class="speech-big-mic-btn" id="sm-mic-btn" title="Nhấn để bắt đầu đọc">
+                    <span class="sm-mic-icon">🎙️</span>
+                </button>
+                <div class="speech-status-prompt" id="sm-status-prompt">Nhấn vào Micro để đọc</div>
+            </div>
+
+            <div class="speech-result-box hidden" id="sm-result-box">
+                <div class="sm-res-badge" id="sm-res-badge">100 Điểm</div>
+                <div class="sm-res-detail" id="sm-res-detail">
+                    <div class="sm-res-recognized">Máy nghe được: <strong id="sm-transcript">...</strong></div>
+                    <div class="sm-res-message" id="sm-feedback-msg">Xuất sắc! Phát âm chuẩn 100%.</div>
+                </div>
+            </div>
+
+            <div class="speech-modal-footer">
+                <button class="btn-modal-action" id="sm-btn-prev">⏮️ Từ trước</button>
+                <button class="btn-modal-action" id="sm-btn-add-wrong" title="Đánh dấu cần ôn luyện thêm">📕 Lưu vào sổ lỗi</button>
+                <button class="btn-modal-action btn-modal-primary" id="sm-btn-next">Từ tiếp theo ⏭️</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL QUẢN LÝ SỔ TAY TỪ HAY SAI & SRS -->
+    <div id="srs-mistake-modal" class="speech-modal-overlay hidden">
+        <div class="speech-modal-box srs-modal-large">
+            <button class="modal-close-btn" id="srs-modal-close">✕</button>
+            <div class="speech-modal-header">
+                <h3>🧠 Trung Tâm Quản Lý Trí Nhớ & Sổ Tay Từ Khó</h3>
+                <p>Theo dõi các từ hay trả lời sai và tiến độ Lặp lại ngắt quãng (Spaced Repetition)</p>
+            </div>
+
+            <!-- SRS Statistics Dashboard -->
+            <div class="srs-dashboard-grid">
+                <div class="srs-stat-card card-wrong">
+                    <div class="srs-stat-num" id="srs-count-wrong-num">0</div>
+                    <div class="srs-stat-title">📕 Từ hay trả lời sai</div>
+                    <div class="srs-stat-desc">Được ghi nhận từ Quiz & Games</div>
+                </div>
+                <div class="srs-stat-card card-due">
+                    <div class="srs-stat-num" id="srs-count-due-num">0</div>
+                    <div class="srs-stat-title">🔔 Đến hạn ôn tập hôm nay</div>
+                    <div class="srs-stat-desc">Thuật toán SM-2 nhắc nhở</div>
+                </div>
+                <div class="srs-stat-card card-mastered">
+                    <div class="srs-stat-num" id="srs-count-mastered-num">0</div>
+                    <div class="srs-stat-title">🌟 Cấp độ 5 (Thuần thục)</div>
+                    <div class="srs-stat-desc">Đã ghi nhớ sâu vào trí nhớ dài hạn</div>
+                </div>
+            </div>
+
+            <!-- Levels Distribution Bar -->
+            <div class="srs-levels-bar-wrap">
+                <div class="srs-levels-label">Phân bố cấp độ ghi nhớ SRS (Level 0 ➔ 5):</div>
+                <div class="srs-levels-track" id="srs-levels-track">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Action buttons in modal -->
+            <div class="srs-modal-actions-bar">
+                <button class="btn-srs-filter-act" id="btn-modal-filter-wrong">🎯 Chỉ học danh sách từ sai</button>
+                <button class="btn-srs-filter-act" id="btn-modal-filter-srs">🧠 Bắt đầu ôn SRS hôm nay</button>
+                <button class="btn-srs-filter-act btn-danger-soft" id="btn-clear-all-mistakes">🗑️ Xóa sạch sổ lỗi</button>
+                <button class="btn-srs-filter-act" id="btn-export-wrong-txt">📥 Xuất file Anki (.txt)</button>
+            </div>
+
+            <!-- List Preview -->
+            <div class="srs-preview-table-wrap">
+                <table class="srs-preview-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 50px;">STT</th>
+                            <th style="width: 25%;">Chữ Hán</th>
+                            <th style="width: 20%;">Pinyin</th>
+                            <th style="width: 35%;">Nghĩa</th>
+                            <th style="width: 20%;">Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody id="srs-modal-tbody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer>
