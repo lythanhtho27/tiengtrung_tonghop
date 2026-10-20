@@ -1908,9 +1908,9 @@
                         <div class="quiz-opt-box" id="box-quiz-format" style="${state.quizPlayType !== 'standard' ? 'grid-column: 1 / -1;' : ''}">
                             <label for="quiz-mode-select">Dạng bài thi:</label>
                             <select id="quiz-mode-select" class="custom-select">
-                                <option value="mix_no_audio" selected>📖 Hỗn hợp Đọc & Nghĩa (Không audio)</option>
+                                <option value="hz_to_mean" selected>🀄 Nhìn Chữ Hán ➔ Chọn Nghĩa Tiếng Việt</option>
+                                <option value="mix_no_audio" >📖 Hỗn hợp Đọc & Nghĩa (Không audio)</option>
                                 <option value="mix">🔀 Hỗn hợp toàn diện (Đọc, Nghĩa, Pinyin & Audio)</option>
-                                <option value="hz_to_mean">🀄 Nhìn Chữ Hán ➔ Chọn Nghĩa Tiếng Việt</option>
                                 <option value="mean_to_hz">🇻🇳 Nhìn Nghĩa ➔ Chọn Chữ Hán</option>
                                 <option value="hz_to_py">🔤 Nhìn Chữ Hán ➔ Chọn Pinyin & Thanh điệu</option>
                                 <option value="audio_to_hz">🎧 Nghe Âm Thanh ➔ Chọn Chữ Hán</option>
