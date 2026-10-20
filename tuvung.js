@@ -1783,6 +1783,11 @@
         return html;
     }
 
+    function cleanQuizMean(m) {
+        if (!m) return "";
+        return m.replace(/\s*[/|\\]\s*$/, "").trim();
+    }
+
     function buildQuizQuestion(targetWord, qType, pool) {
         if (qType === "hz_to_py") {
             const distractorsPy = generatePinyinDistractors(targetWord.py, pool);
@@ -2103,24 +2108,24 @@
         let promptLabel = "";
 
         if (q.type === "hz_to_mean") {
-            promptLabel = "Chọn nghĩa tiếng Việt đúng cho từ:";
+            promptLabel = "🎯 CHỌN NGHĨA TIẾNG VIỆT ĐÚNG CHO TỪ:";
             promptHtml = `<div class="quiz-q-prompt">${escapeHtml(q.word.hz)}</div>
                           <div class="quiz-q-sub">${escapeHtml(q.word.py)}</div>`;
         } else if (q.type === "mean_to_hz") {
-            promptLabel = "Chọn Chữ Hán tương ứng với nghĩa:";
-            promptHtml = `<div class="quiz-q-prompt mean-prompt">${escapeHtml(q.word.mean)}</div>
-                          <div class="quiz-q-sub" style="font-size:14px; color:#64748b;">${q.word.type ? escapeHtml(q.word.type) : ''}</div>`;
+            promptLabel = "📖 CHỌN CHỮ HÁN TƯƠNG ỨNG VỚI NGHĨA:";
+            promptHtml = `<div class="quiz-q-prompt mean-prompt">${escapeHtml(cleanQuizMean(q.word.mean))}</div>
+                          <div class="quiz-q-sub" style="font-size:16px; color:#64748b; font-weight:600;">${q.word.type ? escapeHtml(q.word.type) : ''}</div>`;
         } else if (q.type === "hz_to_py") {
-            promptLabel = "Chọn phiên âm Pinyin & Thanh điệu chính xác:";
+            promptLabel = "🔊 CHỌN PHIÊN ÂM PINYIN & THANH ĐIỆU CHÍNH XÁC:";
             promptHtml = `<div class="quiz-q-prompt">${escapeHtml(q.word.hz)}</div>
-                          <div class="quiz-q-sub" style="font-size:14.5px; color:#475569; margin-top:4px;">Nghĩa: <em>${escapeHtml(q.word.mean)}</em> ${q.word.type ? `(${escapeHtml(q.word.type)})` : ''}</div>`;
+                          <div class="quiz-q-sub" style="font-size:16px; color:#475569; margin-top:4px;">Nghĩa: <em>${escapeHtml(cleanQuizMean(q.word.mean))}</em> ${q.word.type ? `(${escapeHtml(q.word.type)})` : ''}</div>`;
         } else if (q.type === "audio_to_hz") {
-            promptLabel = "Nghe âm thanh và chọn Chữ Hán đúng:";
+            promptLabel = "🎧 NGHE ÂM THANH VÀ CHỌN CHỮ HÁN ĐÚNG:";
             promptHtml = `
-                <div style="margin: 15px 0;">
-                    <button class="btn-speak" style="width:68px; height:68px; font-size:30px;" id="btn-quiz-audio" title="Bấm để nghe lại">🔊</button>
+                <div style="margin: 12px 0;">
+                    <button class="btn-speak" style="width:72px; height:72px; font-size:32px;" id="btn-quiz-audio" title="Bấm để nghe lại">🔊</button>
                 </div>
-                <div class="quiz-q-sub">Nhấn loa để nghe lại</div>
+                <div class="quiz-q-sub" style="font-size:16px;">Nhấn loa để nghe lại</div>
             `;
             setTimeout(() => speakChinese(q.word.hz), 250);
         }
@@ -2128,58 +2133,93 @@
         const letters = ["A", "B", "C", "D"];
         const isStarred = state.starredWords.has(q.word.id);
 
-        // Header info by play type
-        let headerLeftHtml = "";
-        let headerRightHtml = "";
+        // Modern 3-Column HUD Header:
+        // Column 1: Progress (Circular Progress Ring for Standard, Lives for Survival, Timer for Time Attack)
+        let hudCol1Html = "";
         if (state.quizPlayType === "standard") {
-            headerLeftHtml = `<div>Câu hỏi <strong>${currentNum}</strong> / ${total}</div>`;
-            headerRightHtml = `
-                <div style="display:flex; align-items:center; gap:10px;">
-                    ${state.quizStreak >= 2 ? `<span class="quiz-hud-streak">🔥 x${state.quizStreak} Streak</span>` : ''}
-                    <div>Điểm: <strong style="color:var(--primary);">${state.quizScore}</strong></div>
+            hudCol1Html = `
+                <div class="quiz-hud-pill quiz-hud-prog" title="Tiến độ bài trắc nghiệm (${progressPercent}%)">
+                    <div class="quiz-circle-prog">
+                        <svg viewBox="0 0 36 36" class="circle-svg">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle-fill" stroke-dasharray="${progressPercent}, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <span class="circle-pct">${progressPercent}%</span>
+                    </div>
+                    <div class="quiz-prog-info">
+                        <span class="quiz-prog-label">CÂU HỎI</span>
+                        <span class="quiz-prog-val"><strong>${currentNum}</strong><span class="slash">/</span>${total}</span>
+                    </div>
                 </div>
             `;
         } else if (state.quizPlayType === "survival") {
-            headerLeftHtml = `<div class="quiz-hud-lives" title="Mạng còn lại: ${state.quizLives}/3">${renderLivesHtml(state.quizLives)}</div>`;
-            headerRightHtml = `
-                <div style="display:flex; align-items:center; gap:10px;">
-                    ${state.quizStreak >= 2 ? `<span class="quiz-hud-streak">🔥 x${state.quizStreak} Streak</span>` : ''}
-                    <div>Đã vượt: <strong style="color:#16a34a;">${state.quizScore}</strong> câu</div>
+            hudCol1Html = `
+                <div class="quiz-hud-pill quiz-hud-lives-box" title="Mạng còn lại: ${state.quizLives}/3">
+                    <span class="quiz-hud-label">MẠNG SỐNG</span>
+                    <div class="quiz-hud-lives">${renderLivesHtml(state.quizLives)}</div>
                 </div>
             `;
         } else if (state.quizPlayType === "time_attack") {
-            headerLeftHtml = `<div class="quiz-hud-time-attack">⏳ <strong id="quiz-hud-time-val">${state.quizTimeAttackRemaining}s</strong></div>`;
-            headerRightHtml = `
-                <div style="display:flex; align-items:center; gap:10px;">
-                    ${state.quizStreak >= 2 ? `<span class="quiz-hud-streak">🔥 x${state.quizStreak} Streak</span>` : ''}
-                    <div>Điểm: <strong style="color:#d97706;">${state.quizScore}</strong></div>
+            hudCol1Html = `
+                <div class="quiz-hud-pill quiz-hud-ta-box" title="Thời gian còn lại của vòng">
+                    <span class="quiz-hud-label">THỜI GIAN VÒNG</span>
+                    <div class="quiz-hud-time-attack">⏳ <strong id="quiz-hud-time-val">${state.quizTimeAttackRemaining}s</strong></div>
                 </div>
             `;
         }
 
-        // Countdown Bar
-        let countdownHtml = "";
+        // Column 2: Circular Countdown Timer Ring
+        let hudCol2Html = "";
         if (state.quizTimerSeconds > 0 && state.quizPlayType !== "time_attack") {
-            countdownHtml = `
-                <div class="quiz-countdown-wrap">
-                    <div class="quiz-countdown-fill" id="quiz-countdown-bar" style="width: 100%;"></div>
+            hudCol2Html = `
+                <div class="quiz-hud-timer-wrap" id="quiz-hud-timer-box" title="Thời gian còn lại: ${state.quizTimerSeconds}s">
+                    <div class="quiz-timer-ring">
+                        <svg viewBox="0 0 44 44" class="timer-svg">
+                            <circle class="timer-circle-bg" cx="22" cy="22" r="18" />
+                            <circle class="timer-circle-bar" id="quiz-timer-svg-bar" cx="22" cy="22" r="18" transform="rotate(-90 22 22)" />
+                        </svg>
+                        <div class="timer-sec-box">
+                            <span class="timer-sec-num" id="quiz-timer-sec-text">${state.quizTimerSeconds}</span>
+                            <span class="timer-sec-unit">s</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else if (state.quizPlayType !== "time_attack") {
+            hudCol2Html = `
+                <div class="quiz-hud-pill quiz-hud-zen" title="Chế độ không giới hạn thời gian">
+                    <span class="quiz-zen-icon">⏱️</span>
+                    <span class="quiz-zen-text">Tự do</span>
+                </div>
+            `;
+        } else {
+            hudCol2Html = `
+                <div class="quiz-hud-pill quiz-hud-prog" title="Câu số">
+                    <span class="quiz-prog-label">CÂU SỐ</span>
+                    <span class="quiz-prog-val"><strong>${currentNum}</strong></span>
                 </div>
             `;
         }
+
+        // Column 3: Score & Streak
+        let scoreLabel = state.quizPlayType === "survival" ? "ĐÃ VƯỢT" : "ĐIỂM SỐ";
+        let scoreColor = state.quizPlayType === "survival" ? "#16a34a" : (state.quizPlayType === "time_attack" ? "#d97706" : "var(--primary)");
+        let hudCol3Html = `
+            <div class="quiz-hud-pill quiz-hud-score">
+                ${state.quizStreak >= 2 ? `<span class="quiz-hud-streak" id="quiz-hud-streak">🔥 x${state.quizStreak}</span>` : '<span id="quiz-hud-streak"></span>'}
+                <div class="quiz-score-info">
+                    <span class="quiz-score-label">${scoreLabel}</span>
+                    <span class="quiz-score-val"><strong style="color:${scoreColor};">${state.quizScore}</strong></span>
+                </div>
+            </div>
+        `;
 
         playView.innerHTML = `
             <div class="quiz-header">
-                ${headerLeftHtml}
-                ${headerRightHtml}
+                ${hudCol1Html}
+                ${hudCol2Html}
+                ${hudCol3Html}
             </div>
-
-            ${state.quizPlayType === 'standard' ? `
-                <div class="quiz-progress-bar">
-                    <div class="quiz-progress-fill" style="width: ${progressPercent}%;"></div>
-                </div>
-            ` : ''}
-
-            ${countdownHtml}
 
             <div class="quiz-question-box">
                 <div class="quiz-q-top-row">
@@ -2195,11 +2235,11 @@
                 ${q.options.map((opt, i) => {
                     let contentHtml = "";
                     if (q.type === "hz_to_mean") {
-                        contentHtml = `<span class="ans-mean">${escapeHtml(opt.mean)}</span>`;
+                        contentHtml = `<span class="ans-mean">${escapeHtml(cleanQuizMean(opt.mean))}</span>`;
                     } else if (q.type === "hz_to_py") {
                         contentHtml = `
                             <div class="ans-hz-wrap" style="padding: 2px 0;">
-                                <span class="ans-py" style="font-size: 21px; font-weight: 700; color: #ea580c; letter-spacing: 0.5px;">${escapeHtml(opt.py)}</span>
+                                <span class="ans-py" style="font-size: 23px; font-weight: 700; color: #ea580c; letter-spacing: 0.5px;">${escapeHtml(opt.py)}</span>
                             </div>
                         `;
                     } else {
@@ -2260,10 +2300,12 @@
             });
         }
 
-        // Start countdown timer if enabled
+        // Start circular countdown timer if enabled
         if (state.quizTimerSeconds > 0 && state.quizPlayType !== "time_attack") {
             const totalMs = state.quizTimerSeconds * 1000;
             const startTime = Date.now();
+            const totalCircumference = 113.1;
+
             state.quizTimerInterval = setInterval(() => {
                 if (state.quizAnswered) {
                     clearInterval(state.quizTimerInterval);
@@ -2273,24 +2315,42 @@
                 const elapsed = Date.now() - startTime;
                 const remain = Math.max(0, totalMs - elapsed);
                 const percent = (remain / totalMs) * 100;
-                const bar = document.getElementById("quiz-countdown-bar");
-                if (bar) {
-                    bar.style.width = percent + "%";
+
+                const circleBar = document.getElementById("quiz-timer-svg-bar");
+                const secText = document.getElementById("quiz-timer-sec-text");
+                const timerBox = document.getElementById("quiz-hud-timer-box");
+
+                if (circleBar) {
+                    const offset = totalCircumference * (1 - (remain / totalMs));
+                    circleBar.style.strokeDashoffset = offset;
+
                     if (percent <= 25) {
-                        bar.className = "quiz-countdown-fill danger";
+                        circleBar.setAttribute("class", "timer-circle-bar danger");
+                        if (timerBox) timerBox.classList.add("danger");
                     } else if (percent <= 50) {
-                        bar.className = "quiz-countdown-fill warning";
+                        circleBar.setAttribute("class", "timer-circle-bar warning");
+                        if (timerBox) timerBox.classList.remove("danger");
+                    } else {
+                        circleBar.setAttribute("class", "timer-circle-bar");
+                        if (timerBox) timerBox.classList.remove("danger");
                     }
                 }
-                if (remain <= 3000 && remain > 200 && Math.floor(remain / 1000) !== Math.floor((remain + 80) / 1000)) {
+
+                if (secText) {
+                    const secRemain = Math.ceil(remain / 1000);
+                    secText.textContent = secRemain;
+                }
+
+                if (remain <= 3000 && remain > 200 && Math.floor(remain / 1000) !== Math.floor((remain + 60) / 1000)) {
                     if (typeof soundFX !== "undefined" && soundFX.tick) soundFX.tick();
                 }
+
                 if (remain <= 0) {
                     clearInterval(state.quizTimerInterval);
                     state.quizTimerInterval = null;
                     handleQuizTimeout(q);
                 }
-            }, 80);
+            }, 60);
         }
     }
 
@@ -2336,7 +2396,7 @@
             feedbackBox.className = "quiz-feedback show correct";
             feedbackBox.innerHTML = `
                 🎉 <strong>Chính xác!</strong> 
-                <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(question.correctWord.mean)}
+                <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
                 ${state.quizStreak >= 3 ? `<span style="margin-left:8px; font-weight:700; color:#ea580c;">🔥 Chuỗi x${state.quizStreak}!</span>` : ''}
             `;
         } else {
@@ -2351,7 +2411,7 @@
             feedbackBox.className = "quiz-feedback show wrong";
             feedbackBox.innerHTML = `
                 ❌ <strong>Chưa chính xác!</strong> Đáp án đúng: 
-                <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(question.correctWord.mean)}
+                <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
                 ${state.quizPlayType === 'survival' ? `<span style="margin-left:8px; font-weight:700; color:#dc2626;">(Mất 1 ❤️)</span>` : ''}
             `;
         }
@@ -2419,7 +2479,7 @@
         feedbackBox.className = "quiz-feedback show wrong";
         feedbackBox.innerHTML = `
             ⏰ <strong>Hết thời gian phản xạ!</strong> Đáp án đúng là: 
-            <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(question.correctWord.mean)}
+            <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
             ${state.quizPlayType === 'survival' ? `<span style="margin-left:8px; font-weight:700; color:#dc2626;">(Mất 1 ❤️)</span>` : ''}
         `;
 
