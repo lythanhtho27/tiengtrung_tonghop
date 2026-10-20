@@ -191,6 +191,9 @@
 
     <!-- FLOATING PODCAST PLAYER BAR (HANDS-FREE BACKGROUND AUDIO) -->
     <div id="podcast-player-bar" class="podcast-bar hidden">
+        <!-- Silent Audio Keeper for Android Background & Screen-Off Playback -->
+        <audio id="podcast-audio-keeper" loop preload="auto" src="data:audio/wav;base64,UklGRkQDAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YSADAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA=="></audio>
+
         <div class="podcast-inner">
             <div class="podcast-left">
                 <div class="podcast-disc">
@@ -225,10 +228,10 @@
                 <div class="podcast-settings-bar">
                     <button class="podcast-tool-btn" id="podcast-btn-mode" title="Chế độ lặp">🔁 Cả bài</button>
                     <button class="podcast-tool-btn" id="podcast-btn-speed" title="Tốc độ đọc">⚡ 1.0x</button>
-                    <button class="podcast-tool-btn" id="podcast-btn-timer" title="Hẹn giờ tắt (Sleep Timer)">⏱️ Tắt: Không</button>
+                    <button class="podcast-tool-btn" id="podcast-btn-timer" title="Hẹn giờ tắt (Sleep Timer)">⏱️ Hẹn giờ</button>
                     <button class="podcast-tool-btn" id="podcast-btn-options" title="Cài đặt phát âm thanh">⚙️ Tùy chọn</button>
-                    <button class="podcast-close-btn" id="podcast-btn-close" title="Đóng trình phát Podcast">✕</button>
                 </div>
+                <button class="podcast-close-btn" id="podcast-btn-close" title="Đóng trình phát Podcast">✕</button>
             </div>
         </div>
 
@@ -248,6 +251,10 @@
                     <input type="checkbox" id="pod-opt-read-ex" checked>
                     <span>Đọc câu ví dụ (nếu có)</span>
                 </label>
+                <label class="podcast-opt-item">
+                    <input type="checkbox" id="pod-opt-bg-mode" checked>
+                    <span>📱 Phát nền khi tắt màn hình (Android)</span>
+                </label>
                 <div class="podcast-opt-select-row">
                     <span>Khoảng nghỉ giữa các từ:</span>
                     <select id="pod-opt-pause">
@@ -257,6 +264,7 @@
                         <option value="3500">3.5 giây (Ngẫm sâu)</option>
                     </select>
                 </div>
+                <div class="podcast-bg-tip">💡 <strong>Mẹo Android:</strong> Tự động duy trì âm thanh & điều khiển trên màn hình khóa khi tắt màn hình hoặc chuyển sang ứng dụng khác.</div>
             </div>
         </div>
     </div>

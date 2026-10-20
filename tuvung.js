@@ -89,6 +89,7 @@
             repeatTimesZh: 2,
             readMeaning: true,
             readExample: true,
+            bgMode: true, // Android background & screen-off audio support
             pauseInterval: 1800,
             sleepTimer: 0,
             sleepEndTime: 0,
@@ -7045,6 +7046,13 @@
         if (bar) bar.classList.add("hidden");
         pausePodcast();
         state.podcast.active = false;
+        const bgKeeper = document.getElementById("podcast-audio-keeper");
+        if (bgKeeper && !bgKeeper.paused) {
+            bgKeeper.pause();
+        }
+        if ("mediaSession" in navigator) {
+            navigator.mediaSession.playbackState = "none";
+        }
     }
 
     function togglePodcastPlay() {
@@ -7061,6 +7069,13 @@
         if ("speechSynthesis" in window) {
             window.speechSynthesis.cancel();
         }
+        const bgKeeper = document.getElementById("podcast-audio-keeper");
+        if (bgKeeper && !bgKeeper.paused) {
+            bgKeeper.pause();
+        }
+        if ("mediaSession" in navigator) {
+            navigator.mediaSession.playbackState = "paused";
+        }
         const bar = document.getElementById("podcast-player-bar");
         if (bar) bar.classList.remove("playing");
         const playBtn = document.getElementById("podcast-btn-toggle");
@@ -7075,6 +7090,18 @@
         }
         if (state.podcast.list.length === 0) return;
         state.podcast.playing = true;
+
+        // Android background audio wake lock keeper
+        if (state.podcast.bgMode) {
+            const bgKeeper = document.getElementById("podcast-audio-keeper");
+            if (bgKeeper && bgKeeper.paused) {
+                bgKeeper.play().catch(e => console.log("Audio keeper play note:", e));
+            }
+        }
+        if ("mediaSession" in navigator) {
+            navigator.mediaSession.playbackState = "playing";
+        }
+
         const bar = document.getElementById("podcast-player-bar");
         if (bar) bar.classList.add("playing");
         const playBtn = document.getElementById("podcast-btn-toggle");
@@ -7139,17 +7166,29 @@
         if (playBtn) playBtn.textContent = "⏸️";
         if (tag) tag.textContent = "Đang đọc...";
 
-        // MediaSession support for LockScreen / Bluetooth controls
+        // Android background keeper audio trigger
+        if (state.podcast.bgMode) {
+            const bgKeeper = document.getElementById("podcast-audio-keeper");
+            if (bgKeeper && bgKeeper.paused) {
+                bgKeeper.play().catch(() => {});
+            }
+        }
+
+        // MediaSession support for Android LockScreen / Bluetooth controls
         if ("mediaSession" in navigator) {
+            navigator.mediaSession.playbackState = "playing";
+            const cleanMean = w.mean ? w.mean.replace(/[/\\].*$/, "").trim() : "Boya Chinese";
             navigator.mediaSession.metadata = new MediaMetadata({
                 title: `${w.hz} • ${w.py}`,
-                artist: w.mean,
-                album: `Boya Chinese Podcast (${state.podcast.index + 1}/${state.podcast.list.length})`
+                artist: cleanMean,
+                album: `Boya Podcast (${state.podcast.index + 1}/${state.podcast.list.length})`
             });
             navigator.mediaSession.setActionHandler("play", () => resumePodcast());
             navigator.mediaSession.setActionHandler("pause", () => pausePodcast());
             navigator.mediaSession.setActionHandler("nexttrack", () => podcastNext());
             navigator.mediaSession.setActionHandler("previoustrack", () => podcastPrev());
+            try { navigator.mediaSession.setActionHandler("seekforward", () => podcastNext()); } catch(e) {}
+            try { navigator.mediaSession.setActionHandler("seekbackward", () => podcastPrev()); } catch(e) {}
         }
 
         // Sequential Audio Flow
@@ -7221,10 +7260,10 @@
             modeBtn.addEventListener("click", () => {
                 if (state.podcast.repeatMode === "all") {
                     state.podcast.repeatMode = "one";
-                    modeBtn.textContent = "🔂 Lặp 1 từ";
+                    modeBtn.textContent = "🔂 1 từ";
                 } else if (state.podcast.repeatMode === "one") {
                     state.podcast.repeatMode = "shuffle";
-                    modeBtn.textContent = "🔀 Trộn ngẫu nhiên";
+                    modeBtn.textContent = "🔀 Trộn";
                 } else {
                     state.podcast.repeatMode = "all";
                     modeBtn.textContent = "🔁 Cả bài";
@@ -7287,6 +7326,24 @@
             });
         }
 
+        const cbBgMode = document.getElementById("pod-opt-bg-mode");
+        if (cbBgMode) {
+            cbBgMode.addEventListener("change", (e) => {
+                state.podcast.bgMode = e.target.checked;
+                const bgKeeper = document.getElementById("podcast-audio-keeper");
+                if (bgKeeper) {
+                    if (state.podcast.bgMode && state.podcast.playing) {
+                        bgKeeper.play().catch(() => {});
+                    } else if (!state.podcast.bgMode) {
+                        bgKeeper.pause();
+                    }
+                }
+                showToast(state.podcast.bgMode 
+                    ? "📱 Đã bật chế độ phát nền khi tắt màn hình (Android)" 
+                    : "Đã tắt chế độ phát nền");
+            });
+        }
+
         const selPause = document.getElementById("pod-opt-pause");
         if (selPause) {
             selPause.addEventListener("change", (e) => {
@@ -7301,19 +7358,19 @@
         const timerBtn = document.getElementById("podcast-btn-timer");
 
         if (minutes <= 0) {
-            if (timerBtn) timerBtn.textContent = "⏱️ Tắt: Không";
+            if (timerBtn) timerBtn.textContent = "⏱️ Hẹn giờ";
             showToast("Đã tắt hẹn giờ Sleep Timer");
             return;
         }
 
-        if (timerBtn) timerBtn.textContent = `⏱️ Tắt: ${minutes}p`;
+        if (timerBtn) timerBtn.textContent = `⏱️ ${minutes}p`;
         showToast(`Đã hẹn giờ: Tự động tắt sau ${minutes} phút 💤`);
         state.podcast.sleepEndTime = Date.now() + minutes * 60 * 1000;
 
         state.podcast.sleepTimerId = setTimeout(() => {
             pausePodcast();
             showToast("⏰ Đã đến giờ hẹn! Trình phát Podcast đã tạm dừng.");
-            if (timerBtn) timerBtn.textContent = "⏱️ Tắt: Không";
+            if (timerBtn) timerBtn.textContent = "⏱️ Hẹn giờ";
             state.podcast.sleepTimer = 0;
         }, minutes * 60 * 1000);
     }
