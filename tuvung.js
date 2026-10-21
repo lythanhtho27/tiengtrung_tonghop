@@ -39,6 +39,7 @@
         quizScore: 0,
         quizIncorrect: [],
         quizAnswered: false,
+        quizAutoTts: true,        // Enable / Disable auto reading pronunciation
         quizPlayType: "standard", // 'standard' | 'survival' | 'time_attack'
         quizTimerSeconds: 10,     // 10 | 5 | 0 (0 = no limit)
         quizAutoAdvance: true,    // auto advance after answer
@@ -134,6 +135,10 @@
             const savedSrs = localStorage.getItem("boya_srs_data");
             if (savedSrs) {
                 state.srsData = JSON.parse(savedSrs);
+            }
+            const savedQuizAutoTts = localStorage.getItem("boya_quiz_auto_tts");
+            if (savedQuizAutoTts !== null) {
+                state.quizAutoTts = (savedQuizAutoTts === "true");
             }
         } catch (e) {
             console.warn("Could not load from localStorage", e);
@@ -1932,11 +1937,15 @@
                             </select>
                         </div>
 
-                        <!-- Tự động chuyển câu -->
-                        <div class="quiz-opt-box" style="display:flex; align-items:center; margin-top:20px;">
+                        <!-- Tùy chọn Tự động chuyển câu & Tự động đọc phát âm -->
+                        <div class="quiz-opt-box" style="grid-column: 1 / -1; display:flex; flex-wrap:wrap; gap:16px; align-items:center; margin-top:10px; padding:12px 14px; background:#f8fafc; border-radius:10px; border:1px solid #e2e8f0;">
                             <label style="display:inline-flex; align-items:center; gap:8px; cursor:pointer; user-select:none; font-size:13px; font-weight:600; color:#334155; margin-bottom:0;">
                                 <input type="checkbox" id="quiz-auto-advance" ${state.quizAutoAdvance ? 'checked' : ''} style="width:16px; height:16px; accent-color:#0284c7;">
                                 <span>⏩ Tự động chuyển câu siêu tốc (sau 1s)</span>
+                            </label>
+                            <label style="display:inline-flex; align-items:center; gap:8px; cursor:pointer; user-select:none; font-size:13px; font-weight:600; color:#334155; margin-bottom:0;">
+                                <input type="checkbox" id="quiz-auto-tts" ${state.quizAutoTts ? 'checked' : ''} style="width:16px; height:16px; accent-color:#0284c7;">
+                                <span>🔊 Tự động đọc phát âm từ vựng (Auto-Speak)</span>
                             </label>
                         </div>
                     </div>
@@ -1987,9 +1996,12 @@
                 const modeVal = document.getElementById("quiz-mode-select").value;
                 const timerVal = document.getElementById("quiz-timer-select") ? parseInt(document.getElementById("quiz-timer-select").value, 10) : 10;
                 const autoAdv = document.getElementById("quiz-auto-advance") ? document.getElementById("quiz-auto-advance").checked : true;
+                const autoTts = document.getElementById("quiz-auto-tts") ? document.getElementById("quiz-auto-tts").checked : true;
 
                 state.quizTimerSeconds = timerVal;
                 state.quizAutoAdvance = autoAdv;
+                state.quizAutoTts = autoTts;
+                localStorage.setItem("boya_quiz_auto_tts", state.quizAutoTts);
 
                 startQuizSession(countVal, modeVal);
             });
@@ -2127,7 +2139,9 @@
                 </div>
                 <div class="quiz-q-sub" style="font-size:16px;">Nhấn loa để nghe lại</div>
             `;
-            setTimeout(() => speakChinese(q.word.hz), 250);
+            if (state.quizAutoTts) {
+                setTimeout(() => speakChinese(q.word.hz), 250);
+            }
         }
 
         const letters = ["A", "B", "C", "D"];
@@ -2201,15 +2215,21 @@
             `;
         }
 
-        // Column 3: Score & Streak
+        // Column 3: Score & Streak + Quick Auto-TTS Toggle Button
         let scoreLabel = state.quizPlayType === "survival" ? "ĐÃ VƯỢT" : "ĐIỂM SỐ";
         let scoreColor = state.quizPlayType === "survival" ? "#16a34a" : (state.quizPlayType === "time_attack" ? "#d97706" : "var(--primary)");
         let hudCol3Html = `
-            <div class="quiz-hud-pill quiz-hud-score">
-                ${state.quizStreak >= 2 ? `<span class="quiz-hud-streak" id="quiz-hud-streak">🔥 x${state.quizStreak}</span>` : '<span id="quiz-hud-streak"></span>'}
-                <div class="quiz-score-info">
-                    <span class="quiz-score-label">${scoreLabel}</span>
-                    <span class="quiz-score-val"><strong style="color:${scoreColor};">${state.quizScore}</strong></span>
+            <div class="quiz-hud-right">
+                <button type="button" class="quiz-hud-btn-tts ${state.quizAutoTts ? 'active' : ''}" id="quiz-btn-toggle-tts" title="${state.quizAutoTts ? 'Tự động đọc: ĐANG BẬT (Bấm để tắt)' : 'Tự động đọc: ĐANG TẮT (Bấm để bật)'}">
+                    <span class="quiz-tts-icon">${state.quizAutoTts ? '🔊' : '🔇'}</span>
+                    <span class="quiz-tts-label">${state.quizAutoTts ? 'Đọc: Bật' : 'Đọc: Tắt'}</span>
+                </button>
+                <div class="quiz-hud-pill quiz-hud-score">
+                    ${state.quizStreak >= 2 ? `<span class="quiz-hud-streak" id="quiz-hud-streak">🔥 x${state.quizStreak}</span>` : '<span id="quiz-hud-streak"></span>'}
+                    <div class="quiz-score-info">
+                        <span class="quiz-score-label">${scoreLabel}</span>
+                        <span class="quiz-score-val"><strong style="color:${scoreColor};">${state.quizScore}</strong></span>
+                    </div>
                 </div>
             </div>
         `;
@@ -2224,9 +2244,14 @@
             <div class="quiz-question-box">
                 <div class="quiz-q-top-row">
                     <div class="quiz-q-label">${promptLabel}</div>
-                    <button class="star-btn ${isStarred ? 'starred' : ''}" id="quiz-star-btn" title="Lưu vào từ quan trọng ★">
-                        ${isStarred ? '★' : '☆'}
-                    </button>
+                    <div class="quiz-q-actions" style="display:flex; align-items:center; gap:8px;">
+                        ${q.word && q.word.hz && q.type !== 'audio_to_hz' ? `
+                            <button class="quiz-btn-speak-q" id="quiz-q-speak-btn" title="Bấm nghe phát âm từ này">🔊</button>
+                        ` : ''}
+                        <button class="star-btn ${isStarred ? 'starred' : ''}" id="quiz-star-btn" title="Lưu vào từ quan trọng ★">
+                            ${isStarred ? '★' : '☆'}
+                        </button>
+                    </div>
                 </div>
                 ${promptHtml}
             </div>
@@ -2269,6 +2294,35 @@
                 </button>
             </div>
         `;
+
+        // Quick Auto-TTS Toggle Button in HUD
+        const ttsToggleBtn = document.getElementById("quiz-btn-toggle-tts");
+        if (ttsToggleBtn) {
+            ttsToggleBtn.addEventListener("click", () => {
+                state.quizAutoTts = !state.quizAutoTts;
+                localStorage.setItem("boya_quiz_auto_tts", state.quizAutoTts);
+                ttsToggleBtn.classList.toggle("active", state.quizAutoTts);
+                const icon = ttsToggleBtn.querySelector(".quiz-tts-icon");
+                const label = ttsToggleBtn.querySelector(".quiz-tts-label");
+                if (icon) icon.textContent = state.quizAutoTts ? "🔊" : "🔇";
+                if (label) label.textContent = state.quizAutoTts ? "Đọc: Bật" : "Đọc: Tắt";
+                ttsToggleBtn.title = state.quizAutoTts ? "Tự động đọc: ĐANG BẬT (Bấm để tắt)" : "Tự động đọc: ĐANG TẮT (Bấm để bật)";
+                
+                if (!state.quizAutoTts && "speechSynthesis" in window) {
+                    window.speechSynthesis.cancel();
+                }
+                
+                showToast(state.quizAutoTts ? "🔊 Đã BẬT tự động đọc phát âm" : "🔇 Đã TẮT tự động đọc phát âm");
+            });
+        }
+
+        // Manual Q speak button
+        const qSpeakBtn = document.getElementById("quiz-q-speak-btn");
+        if (qSpeakBtn && q.word && q.word.hz) {
+            qSpeakBtn.addEventListener("click", () => {
+                speakChinese(q.word.hz);
+            });
+        }
 
         // Star button in question
         const starBtn = document.getElementById("quiz-star-btn");
@@ -2372,8 +2426,10 @@
             state.quizSkills[question.type].total++;
         }
 
-        // Speak word
-        speakChinese(question.correctWord.hz);
+        // Speak word if auto TTS enabled
+        if (state.quizAutoTts) {
+            speakChinese(question.correctWord.hz);
+        }
 
         // Highlight answers
         playView.querySelectorAll(".ans-btn").forEach(btn => {
@@ -2397,8 +2453,11 @@
             feedbackBox.innerHTML = `
                 🎉 <strong>Chính xác!</strong> 
                 <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
+                <button type="button" class="quiz-feedback-speak-btn" id="quiz-fb-speak-btn" title="Nghe lại phát âm">🔊</button>
                 ${state.quizStreak >= 3 ? `<span style="margin-left:8px; font-weight:700; color:#ea580c;">🔥 Chuỗi x${state.quizStreak}!</span>` : ''}
             `;
+            const fbSpk = document.getElementById("quiz-fb-speak-btn");
+            if (fbSpk) fbSpk.onclick = () => speakChinese(question.correctWord.hz);
         } else {
             if (typeof soundFX !== "undefined" && soundFX.wrong) soundFX.wrong();
             state.quizStreak = 0;
@@ -2412,8 +2471,11 @@
             feedbackBox.innerHTML = `
                 ❌ <strong>Chưa chính xác!</strong> Đáp án đúng: 
                 <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
+                <button type="button" class="quiz-feedback-speak-btn" id="quiz-fb-speak-btn" title="Nghe lại phát âm">🔊</button>
                 ${state.quizPlayType === 'survival' ? `<span style="margin-left:8px; font-weight:700; color:#dc2626;">(Mất 1 ❤️)</span>` : ''}
             `;
+            const fbSpk = document.getElementById("quiz-fb-speak-btn");
+            if (fbSpk) fbSpk.onclick = () => speakChinese(question.correctWord.hz);
         }
 
         // Update streak display in HUD immediately
@@ -2480,8 +2542,11 @@
         feedbackBox.innerHTML = `
             ⏰ <strong>Hết thời gian phản xạ!</strong> Đáp án đúng là: 
             <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
+            <button type="button" class="quiz-feedback-speak-btn" id="quiz-fb-speak-btn" title="Nghe lại phát âm">🔊</button>
             ${state.quizPlayType === 'survival' ? `<span style="margin-left:8px; font-weight:700; color:#dc2626;">(Mất 1 ❤️)</span>` : ''}
         `;
+        const fbSpk = document.getElementById("quiz-fb-speak-btn");
+        if (fbSpk) fbSpk.onclick = () => speakChinese(question.correctWord.hz);
 
         const isGameOver = (state.quizPlayType === "survival" && state.quizLives <= 0) ||
                            (state.quizPlayType === "standard" && (state.quizCurrentIdx + 1) >= state.quizQuestions.length);
