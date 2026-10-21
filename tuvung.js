@@ -26,21 +26,24 @@
         fcList: [],
         fcIndex: 0,
         fcFlipped: false,
-        fcDirection: "hz_mean", // 'hz_mean' | 'mean_hz' | 'audio_hz'
+        fcDirection: "hz_mean", // 'hz_mean' | 'mean_hz' | 'audio_hz' | 'type_in'
         fcFilter: "all",        // 'all' | 'unmastered' | 'starred' | 'mastered'
         fcAutoPlay: false,
         fcAutoTts: true,
         fcSpeed: 2500,          // 1500, 2500, 4000
         fcAutoTimer: null,
+        fcTypeinChecked: false,
         
         // Quiz state
         quizQuestions: [],
         quizCurrentIdx: 0,
         quizScore: 0,
+        quizTotalPoints: 0,
+        quizSpeedStats: { fast: 0, medium: 0, slow: 0 },
         quizIncorrect: [],
         quizAnswered: false,
         quizAutoTts: true,        // Enable / Disable auto reading pronunciation
-        quizPlayType: "standard", // 'standard' | 'survival' | 'time_attack'
+        quizPlayType: "standard", // 'standard' | 'speed_gauntlet' | 'survival' | 'time_attack'
         quizTimerSeconds: 10,     // 10 | 5 | 0 (0 = no limit)
         quizAutoAdvance: true,    // auto advance after answer
         quizLives: 3,             // survival mode lives
@@ -50,6 +53,7 @@
         quizResponseTimes: [],    // in seconds
         quizSkills: {
             hz_to_mean: { correct: 0, total: 0 },
+            context_cloze: { correct: 0, total: 0 },
             mean_to_hz: { correct: 0, total: 0 },
             hz_to_py: { correct: 0, total: 0 },
             audio_to_hz: { correct: 0, total: 0 }
@@ -978,6 +982,43 @@
         return baseWords;
     }
 
+    // Pinyin & Hanzi normalization for Active Type-in Flashcard
+    function normalizePinyin(str) {
+        if (!str) return "";
+        return str
+            .toLowerCase()
+            .replace(/v/g, "u")
+            .replace(/ü/g, "u")
+            .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            .replace(/[1-5]/g, "")
+            .replace(/[^a-z0-9\u4e00-\u9fa5]/g, "");
+    }
+
+    // Extract an authentic Cloze Sentence from Boya vocab examples
+    function extractClozeSentence(word) {
+        if (!word || !word.examples || word.examples.length === 0) return null;
+        const hz = word.hz ? word.hz.replace(/[*#]/g, "") : "";
+        for (let ex of word.examples) {
+            const parts = ex.split(/[/|\n]/);
+            for (let part of parts) {
+                let p = part.trim();
+                p = p.replace(/^[①②③④⑤1-9]\s*/, '').replace(/^[A-B]:\s*/, '').trim();
+                if (p.includes('～') && p.length >= 6) {
+                    return {
+                        cloze: p.replace(/～/g, '【 _____ 】'),
+                        full: p.replace(/～/g, hz)
+                    };
+                } else if (hz && p.includes(hz) && p.length >= 6) {
+                    return {
+                        cloze: p.split(hz).join('【 _____ 】'),
+                        full: p
+                    };
+                }
+            }
+        }
+        return null;
+    }
+
     function setupFlashcardMode() {
         stopFcAutoPlay();
         state.fcList = getFlashcardWords();
@@ -987,7 +1028,7 @@
         renderFlashcardUI();
 
         // Tự động phát âm từ đầu tiên nếu bật auto-tts
-        if ((state.fcAutoTts || state.fcDirection === "audio_hz") && state.fcList.length > 0 && state.fcDirection !== "mean_hz") {
+        if ((state.fcAutoTts || state.fcDirection === "audio_hz") && state.fcList.length > 0 && state.fcDirection !== "mean_hz" && state.fcDirection !== "type_in") {
             speakChinese(state.fcList[state.fcIndex].hz);
         }
     }
@@ -1020,6 +1061,9 @@
                         </button>
                         <button class="fc-dir-btn ${state.fcDirection === 'audio_hz' ? 'active' : ''}" data-dir="audio_hz" title="Mặt trước chỉ nghe âm thanh ➔ Đoán chữ & lật xem">
                             🎧 Nghe ➔ Chữ Hán
+                        </button>
+                        <button class="fc-dir-btn ${state.fcDirection === 'type_in' ? 'active' : ''}" data-dir="type_in" title="Thử thách tự gõ Pinyin hoặc Chữ Hán để kiểm tra trí nhớ tuyệt đối">
+                            ✍️ Gõ từ (Type-in)
                         </button>
                     </div>
                 </div>
@@ -1192,6 +1236,39 @@
                     Nhấn thẻ hoặc phím [Space] để xem Chữ Hán & Nghĩa
                 </div>
             `;
+        } else if (state.fcDirection === "type_in") {
+            frontFaceContentHtml = `
+                <div class="card-top-info">
+                    <span class="fc-dir-badge fc-badge-typein">✍️ THỬ THÁCH GÕ TỪ (ACTIVE RECALL)</span>
+                    <button class="star-btn ${isStarred ? 'starred' : ''}" id="fc-star-btn" title="Gắn sao">
+                        ${isStarred ? '★' : '☆'}
+                    </button>
+                </div>
+                <div class="card-center fc-typein-center">
+                    <div class="fc-typein-meaning-prompt">${escapeHtml(cleanQuizMean(w.mean))}</div>
+                    ${w.type ? `<div class="fc-typein-type-badge">Từ loại: ${escapeHtml(w.type)}</div>` : ''}
+
+                    <div class="fc-typein-form">
+                        <div class="fc-typein-input-box">
+                            <input type="text" id="fc-typein-input" class="fc-typein-input" 
+                                   placeholder="Gõ Pinyin (vd: ni hao) hoặc Chữ Hán..." 
+                                   autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                            <button type="button" id="fc-typein-submit-btn" class="fc-typein-submit-btn" title="Kiểm tra (phím Enter)">↵</button>
+                        </div>
+                    </div>
+
+                    <div class="fc-typein-hint-toolbar">
+                        <button type="button" class="fc-typein-tool-btn" id="fc-typein-hint-letter" title="Gợi ý chữ cái đầu">💡 Chữ đầu</button>
+                        <button type="button" class="fc-typein-tool-btn" id="fc-typein-listen-btn" title="Nghe phát âm">🔊 Nghe</button>
+                        <button type="button" class="fc-typein-tool-btn" id="fc-typein-reveal-btn" title="Lật thẻ xem đáp án">👁️ Lật xem</button>
+                    </div>
+
+                    <div id="fc-typein-feedback" class="fc-typein-feedback hidden"></div>
+                </div>
+                <div class="card-hint">
+                    ${w.lesson_title ? `Bài ${w.lesson_num}: ${escapeHtml(w.lesson_title)} • ` : ''}Gõ xong nhấn Enter để kiểm tra
+                </div>
+            `;
         }
 
         container.innerHTML = `
@@ -1292,7 +1369,7 @@
                 state.fcFlipped = false;
                 renderFlashcardUI();
 
-                if ((state.fcAutoTts || state.fcDirection === "audio_hz") && state.fcList.length > 0 && state.fcDirection !== "mean_hz") {
+                if ((state.fcAutoTts || state.fcDirection === "audio_hz") && state.fcList.length > 0 && state.fcDirection !== "mean_hz" && state.fcDirection !== "type_in") {
                     speakChinese(state.fcList[state.fcIndex].hz);
                 }
             });
@@ -1359,10 +1436,122 @@
         const cardScene = document.getElementById("fc-scene");
         if (cardScene) {
             cardScene.addEventListener("click", (e) => {
-                if (e.target.closest(".btn-speak") || e.target.closest(".btn-fc-audio-big") || e.target.closest(".star-btn")) return;
+                if (e.target.closest(".btn-speak") || e.target.closest(".btn-fc-audio-big") || e.target.closest(".star-btn") ||
+                    e.target.closest(".fc-typein-center") || e.target.closest(".fc-typein-tool-btn") || e.target.closest("input")) return;
                 if (state.fcAutoPlay) stopFcAutoPlay();
                 toggleFlashcardFlip(w);
             });
+        }
+
+        // Active Type-in events
+        if (state.fcDirection === "type_in") {
+            state.fcTypeinChecked = false;
+            const input = document.getElementById("fc-typein-input");
+            const submitBtn = document.getElementById("fc-typein-submit-btn");
+            const hintBtn = document.getElementById("fc-typein-hint-letter");
+            const listenBtn = document.getElementById("fc-typein-listen-btn");
+            const revealBtn = document.getElementById("fc-typein-reveal-btn");
+
+            const checkAnswer = () => {
+                if (!input) return;
+                const val = input.value.trim();
+                const feedback = document.getElementById("fc-typein-feedback");
+                if (!val) {
+                    showToast("⚠️ Hãy nhập Pinyin hoặc Chữ Hán trước!");
+                    input.focus();
+                    return;
+                }
+
+                const normInput = normalizePinyin(val);
+                const normTargetPy = normalizePinyin(w.py);
+                const normTargetHz = normalizePinyin(w.hz);
+
+                const isExactHz = (val === w.hz || val.replace(/\s+/g, "") === w.hz.replace(/\s+/g, ""));
+                const isExactPyWithTones = (val.toLowerCase().replace(/\s+/g, "") === w.py.toLowerCase().replace(/\s+/g, ""));
+                const isNormalizedPy = (normInput === normTargetPy);
+
+                const isCorrect = isExactHz || isExactPyWithTones || isNormalizedPy;
+
+                if (feedback) {
+                    feedback.classList.remove("hidden", "correct", "wrong");
+                    if (isCorrect) {
+                        if (typeof soundFX !== "undefined" && soundFX.correct) soundFX.correct();
+                        feedback.classList.add("correct");
+                        let praise = (isExactHz || isExactPyWithTones) ? "🎉 Xuất sắc! Chuẩn 100%!" : "✓ Đúng phiên âm!";
+                        feedback.innerHTML = `
+                            <div class="fc-typein-fb-title">${praise}</div>
+                            <div class="fc-typein-fb-detail">
+                                <span class="fc-typein-hz-res">${escapeHtml(w.hz)}</span>
+                                <span class="fc-typein-py-res">[${escapeHtml(w.py)}]</span>
+                            </div>
+                            <div class="fc-typein-fb-next">Nhấn [Space] hoặc lật thẻ để đánh giá SRS ➔</div>
+                        `;
+                        speakChinese(w.hz);
+                        state.fcTypeinChecked = true;
+                    } else {
+                        if (typeof soundFX !== "undefined" && soundFX.wrong) soundFX.wrong();
+                        feedback.classList.add("wrong");
+                        feedback.innerHTML = `
+                            <div class="fc-typein-fb-title">❌ Chưa chính xác!</div>
+                            <div class="fc-typein-fb-diff">
+                                <div>Bạn gõ: <span class="diff-user">${escapeHtml(val)}</span></div>
+                                <div>Đáp án: <strong class="diff-correct">${escapeHtml(w.hz)}</strong> [${escapeHtml(w.py)}]</div>
+                            </div>
+                            <div class="fc-typein-fb-next">Nhấn Enter để lật thẻ xem chi tiết ➔</div>
+                        `;
+                        recordWrongWord(w.id, "typein");
+                        state.fcTypeinChecked = true;
+                    }
+                }
+            };
+
+            if (input) {
+                setTimeout(() => input.focus(), 150);
+                input.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter") {
+                        e.preventDefault();
+                        if (state.fcTypeinChecked) {
+                            toggleFlashcardFlip(w);
+                        } else {
+                            checkAnswer();
+                        }
+                    }
+                });
+            }
+
+            if (submitBtn) {
+                submitBtn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    checkAnswer();
+                });
+            }
+
+            if (hintBtn) {
+                hintBtn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    if (input && w.py) {
+                        const firstChar = w.py.trim().charAt(0);
+                        if (!input.value.startsWith(firstChar)) {
+                            input.value = firstChar;
+                        }
+                        input.focus();
+                    }
+                });
+            }
+
+            if (listenBtn) {
+                listenBtn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    speakChinese(w.hz);
+                });
+            }
+
+            if (revealBtn) {
+                revealBtn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    toggleFlashcardFlip(w);
+                });
+            }
         }
 
         const flipActionBtn = document.getElementById("fc-btn-flip-action");
@@ -1510,7 +1699,7 @@
             renderFlashcardUI();
 
             // Tự động phát âm khi chuyển thẻ
-            if ((state.fcAutoTts || state.fcDirection === "audio_hz") && state.fcDirection !== "mean_hz") {
+            if ((state.fcAutoTts || state.fcDirection === "audio_hz") && state.fcDirection !== "mean_hz" && state.fcDirection !== "type_in") {
                 const nextWord = state.fcList[state.fcIndex];
                 if (nextWord) speakChinese(nextWord.hz);
             }
@@ -1794,6 +1983,31 @@
     }
 
     function buildQuizQuestion(targetWord, qType, pool) {
+        if (qType === "context_cloze") {
+            const clozeData = extractClozeSentence(targetWord);
+            if (clozeData) {
+                const distractors = pool.filter(w => w.id !== targetWord.id && w.hz);
+                shuffleArray(distractors);
+                const options = [
+                    { id: targetWord.id, py: targetWord.py, hz: targetWord.hz, mean: targetWord.mean, type: targetWord.type },
+                    { id: distractors[0] ? distractors[0].id : "d0", py: distractors[0] ? distractors[0].py : "", hz: distractors[0] ? distractors[0].hz : "词", mean: distractors[0] ? distractors[0].mean : "", type: distractors[0] ? distractors[0].type : "" },
+                    { id: distractors[1] ? distractors[1].id : "d1", py: distractors[1] ? distractors[1].py : "", hz: distractors[1] ? distractors[1].hz : "字", mean: distractors[1] ? distractors[1].mean : "", type: distractors[1] ? distractors[1].type : "" },
+                    { id: distractors[2] ? distractors[2].id : "d2", py: distractors[2] ? distractors[2].py : "", hz: distractors[2] ? distractors[2].hz : "语", mean: distractors[2] ? distractors[2].mean : "", type: distractors[2] ? distractors[2].type : "" }
+                ];
+                shuffleArray(options);
+                return {
+                    word: targetWord,
+                    type: "context_cloze",
+                    clozeSentence: clozeData.cloze,
+                    fullSentence: clozeData.full,
+                    options: options,
+                    correctWord: targetWord
+                };
+            } else {
+                qType = "hz_to_mean";
+            }
+        }
+
         if (qType === "hz_to_py") {
             const distractorsPy = generatePinyinDistractors(targetWord.py, pool);
             const options = [
@@ -1893,6 +2107,9 @@
                             <button type="button" class="quiz-mode-pill ${state.quizPlayType === 'standard' ? 'active' : ''}" data-type="standard">
                                 🎯 Tiêu Chuẩn<br><small style="font-weight:400; font-size:11px; color:#64748b;">Làm theo số câu chọn</small>
                             </button>
+                            <button type="button" class="quiz-mode-pill ${state.quizPlayType === 'speed_gauntlet' ? 'active' : ''}" data-type="speed_gauntlet" title="Đấu trường tốc độ: 15 câu dồn dập 5 giây, nhân điểm thưởng x3 theo tốc độ phản xạ & chuỗi Combo">
+                                ⚡ Đấu Trường Tốc Độ<br><small style="font-weight:400; font-size:11px; color:#64748b;">15 câu • 5s • x3 Combo</small>
+                            </button>
                             <button type="button" class="quiz-mode-pill ${state.quizPlayType === 'survival' ? 'active' : ''}" data-type="survival">
                                 ❤️ Sinh Tồn (3 Mạng)<br><small style="font-weight:400; font-size:11px; color:#64748b;">Sai 3 câu là Game Over</small>
                             </button>
@@ -1919,6 +2136,7 @@
                             <label for="quiz-mode-select">Dạng bài thi:</label>
                             <select id="quiz-mode-select" class="custom-select">
                                 <option value="hz_to_mean" selected>🀄 Nhìn Chữ Hán ➔ Chọn Nghĩa Tiếng Việt</option>
+                                <option value="context_cloze">📖 Điền từ vào ngữ cảnh bài khóa (In-Context Cloze)</option>
                                 <option value="mix_no_audio" >📖 Hỗn hợp Đọc & Nghĩa (Không audio)</option>
                                 <option value="mix">🔀 Hỗn hợp toàn diện (Đọc, Nghĩa, Pinyin & Audio)</option>
                                 <option value="mean_to_hz">🇻🇳 Nhìn Nghĩa ➔ Chọn Chữ Hán</option>
@@ -1977,6 +2195,10 @@
                     if (countBox) countBox.style.display = "block";
                     if (timerBox) timerBox.style.display = "block";
                     if (formatBox) formatBox.style.gridColumn = "";
+                } else if (state.quizPlayType === "speed_gauntlet") {
+                    if (countBox) countBox.style.display = "none";
+                    if (timerBox) timerBox.style.display = "none";
+                    if (formatBox) formatBox.style.gridColumn = "1 / -1";
                 } else if (state.quizPlayType === "survival") {
                     if (countBox) countBox.style.display = "none";
                     if (timerBox) timerBox.style.display = "block";
@@ -2033,6 +2255,11 @@
         let totalQ = 20;
         if (state.quizPlayType === "standard") {
             totalQ = countVal === "all" ? pool.length : Math.min(parseInt(countVal, 10), pool.length);
+        } else if (state.quizPlayType === "speed_gauntlet") {
+            totalQ = Math.min(15, pool.length);
+            state.quizTimerSeconds = 5;
+            state.quizTotalPoints = 0;
+            state.quizSpeedStats = { fast: 0, medium: 0, slow: 0 };
         } else if (state.quizPlayType === "survival") {
             totalQ = Math.max(pool.length, 60);
         } else if (state.quizPlayType === "time_attack") {
@@ -2044,10 +2271,10 @@
             const targetWord = pool[i % pool.length];
             let qType = modeVal;
             if (modeVal === "mix") {
-                const types = ["hz_to_mean", "mean_to_hz", "hz_to_py", "audio_to_hz"];
+                const types = ["hz_to_mean", "context_cloze", "mean_to_hz", "hz_to_py", "audio_to_hz"];
                 qType = types[Math.floor(Math.random() * types.length)];
             } else if (modeVal === "mix_no_audio") {
-                const types = ["hz_to_mean", "mean_to_hz"];
+                const types = ["hz_to_mean", "context_cloze", "mean_to_hz"];
                 qType = types[Math.floor(Math.random() * types.length)];
             }
             state.quizQuestions.push(buildQuizQuestion(targetWord, qType, pool));
@@ -2094,8 +2321,8 @@
             return;
         }
 
-        // Check standard game over
-        if (state.quizPlayType === "standard" && state.quizCurrentIdx >= state.quizQuestions.length) {
+        // Check standard or speed gauntlet game over
+        if ((state.quizPlayType === "standard" || state.quizPlayType === "speed_gauntlet") && state.quizCurrentIdx >= state.quizQuestions.length) {
             renderQuizResults();
             return;
         }
@@ -2119,7 +2346,11 @@
         let promptHtml = "";
         let promptLabel = "";
 
-        if (q.type === "hz_to_mean") {
+        if (q.type === "context_cloze") {
+            promptLabel = "📖 CHỌN TỪ THÍCH HỢP ĐIỀN VÀO NGỮ CẢNH BÀI KHÓA:";
+            promptHtml = `<div class="quiz-q-prompt context-prompt">${escapeHtml(q.clozeSentence)}</div>
+                          <div class="quiz-q-sub" style="font-size:16px; color:#475569; margin-top:6px;">Gợi ý nghĩa từ cần điền: <strong style="color:#d97706;">${escapeHtml(cleanQuizMean(q.word.mean))}</strong> ${q.word.type ? `(${escapeHtml(q.word.type)})` : ''}</div>`;
+        } else if (q.type === "hz_to_mean") {
             promptLabel = "🎯 CHỌN NGHĨA TIẾNG VIỆT ĐÚNG CHO TỪ:";
             promptHtml = `<div class="quiz-q-prompt">${escapeHtml(q.word.hz)}</div>
                           <div class="quiz-q-sub">${escapeHtml(q.word.py)}</div>`;
@@ -2150,7 +2381,14 @@
         // Modern 3-Column HUD Header:
         // Column 1: Progress (Circular Progress Ring for Standard, Lives for Survival, Timer for Time Attack)
         let hudCol1Html = "";
-        if (state.quizPlayType === "standard") {
+        if (state.quizPlayType === "speed_gauntlet") {
+            hudCol1Html = `
+                <div class="quiz-hud-pill quiz-hud-speed-mode" title="Đấu trường tốc độ: 15 câu dồn dập">
+                    <span class="quiz-hud-label">VÒNG TỐC ĐỘ</span>
+                    <span class="quiz-prog-val"><strong>${currentNum}</strong><span class="slash">/</span>${total}</span>
+                </div>
+            `;
+        } else if (state.quizPlayType === "standard") {
             hudCol1Html = `
                 <div class="quiz-hud-pill quiz-hud-prog" title="Tiến độ bài trắc nghiệm (${progressPercent}%)">
                     <div class="quiz-circle-prog">
@@ -2216,8 +2454,14 @@
         }
 
         // Column 3: Score & Streak + Quick Auto-TTS Toggle Button
-        let scoreLabel = state.quizPlayType === "survival" ? "ĐÃ VƯỢT" : "ĐIỂM SỐ";
-        let scoreColor = state.quizPlayType === "survival" ? "#16a34a" : (state.quizPlayType === "time_attack" ? "#d97706" : "var(--primary)");
+        let scoreLabel = state.quizPlayType === "survival" ? "ĐÃ VƯỢT" : (state.quizPlayType === "speed_gauntlet" ? "ĐIỂM COMBO" : "ĐIỂM SỐ");
+        let scoreColor = state.quizPlayType === "survival" ? "#16a34a" : (state.quizPlayType === "speed_gauntlet" ? "#f59e0b" : (state.quizPlayType === "time_attack" ? "#d97706" : "var(--primary)"));
+        let scoreDisplayVal = state.quizPlayType === "speed_gauntlet" ? (state.quizTotalPoints || 0) : state.quizScore;
+        let streakMultiplier = state.quizStreak >= 8 ? "x3.0" : (state.quizStreak >= 5 ? "x2.0" : "x1.5");
+        let streakBadgeHtml = state.quizStreak >= 2 
+            ? `<span class="quiz-hud-streak combo-active" id="quiz-hud-streak">🔥 x${state.quizStreak} (${streakMultiplier})</span>`
+            : '<span id="quiz-hud-streak"></span>';
+
         let hudCol3Html = `
             <div class="quiz-hud-right">
                 <button type="button" class="quiz-hud-btn-tts ${state.quizAutoTts ? 'active' : ''}" id="quiz-btn-toggle-tts" title="${state.quizAutoTts ? 'Tự động đọc: ĐANG BẬT (Bấm để tắt)' : 'Tự động đọc: ĐANG TẮT (Bấm để bật)'}">
@@ -2225,10 +2469,10 @@
                     <span class="quiz-tts-label">${state.quizAutoTts ? 'Đọc: Bật' : 'Đọc: Tắt'}</span>
                 </button>
                 <div class="quiz-hud-pill quiz-hud-score">
-                    ${state.quizStreak >= 2 ? `<span class="quiz-hud-streak" id="quiz-hud-streak">🔥 x${state.quizStreak}</span>` : '<span id="quiz-hud-streak"></span>'}
+                    ${streakBadgeHtml}
                     <div class="quiz-score-info">
                         <span class="quiz-score-label">${scoreLabel}</span>
-                        <span class="quiz-score-val"><strong style="color:${scoreColor};">${state.quizScore}</strong></span>
+                        <span class="quiz-score-val"><strong style="color:${scoreColor};" id="quiz-hud-points-val">${scoreDisplayVal}</strong></span>
                     </div>
                 </div>
             </div>
@@ -2276,7 +2520,7 @@
                         `;
                     }
                     return `
-                        <button class="ans-btn ${q.type === 'mean_to_hz' || q.type === 'audio_to_hz' ? 'ans-btn-hz' : ''}" data-id="${opt.id}" data-idx="${i}">
+                        <button class="ans-btn ${q.type === 'mean_to_hz' || q.type === 'audio_to_hz' || q.type === 'context_cloze' ? 'ans-btn-hz' : ''}" data-id="${opt.id}" data-idx="${i}">
                             <span class="ans-letter">${letters[i]}</span>
                             <div class="ans-content">
                                 ${contentHtml}
@@ -2415,6 +2659,33 @@
         const reactionSec = (Date.now() - state.quizQuestionStartTime) / 1000;
         state.quizResponseTimes.push(reactionSec);
 
+        // Speed Multiplier & Streak Bonus
+        let speedMul = 1.0;
+        let speedBonusLabel = "👍 ĐÚNG x1";
+        if (reactionSec < 1.5) {
+            speedMul = 3.0;
+            speedBonusLabel = "⚡ THẦN TỐC x3";
+            if (!state.quizSpeedStats) state.quizSpeedStats = { fast: 0, medium: 0, slow: 0 };
+            state.quizSpeedStats.fast++;
+        } else if (reactionSec <= 3.0) {
+            speedMul = 2.0;
+            speedBonusLabel = "🎯 CHUẨN XÁC x2";
+            if (!state.quizSpeedStats) state.quizSpeedStats = { fast: 0, medium: 0, slow: 0 };
+            state.quizSpeedStats.medium++;
+        } else {
+            speedMul = 1.0;
+            speedBonusLabel = "👍 ĐÚNG x1";
+            if (!state.quizSpeedStats) state.quizSpeedStats = { fast: 0, medium: 0, slow: 0 };
+            state.quizSpeedStats.slow++;
+        }
+
+        let streakMul = 1.0;
+        if (state.quizStreak + 1 >= 8) streakMul = 3.0;
+        else if (state.quizStreak + 1 >= 5) streakMul = 2.0;
+        else if (state.quizStreak + 1 >= 3) streakMul = 1.5;
+
+        const pointsEarned = Math.round(100 * speedMul * streakMul);
+
         const selectedId = selectedBtn.dataset.id;
         const isCorrect = (selectedId === question.correctWord.id);
         const playView = document.getElementById("quiz-play-view");
@@ -2445,19 +2716,38 @@
             if (typeof soundFX !== "undefined" && soundFX.correct) soundFX.correct();
             state.quizScore++;
             state.quizStreak++;
+            state.quizTotalPoints = (state.quizTotalPoints || 0) + pointsEarned;
             recordCorrectWord(question.correctWord.id, "quiz");
             if (state.quizStreak > state.quizMaxStreak) state.quizMaxStreak = state.quizStreak;
             if (state.quizSkills[question.type]) state.quizSkills[question.type].correct++;
 
+            // Update points in HUD
+            const pointsElem = document.getElementById("quiz-hud-points-val");
+            if (pointsElem && state.quizPlayType === "speed_gauntlet") {
+                pointsElem.textContent = state.quizTotalPoints;
+            }
+
+            let clozeSentenceExtra = "";
+            let textToSpeak = question.correctWord.hz;
+            if (question.type === "context_cloze" && question.fullSentence) {
+                clozeSentenceExtra = `<div class="quiz-cloze-completed-sentence">"${escapeHtml(question.fullSentence)}"</div>`;
+                textToSpeak = question.fullSentence;
+            }
+
             feedbackBox.className = "quiz-feedback show correct";
             feedbackBox.innerHTML = `
                 🎉 <strong>Chính xác!</strong> 
+                <span class="speed-points-popup">+${pointsEarned}đ [${speedBonusLabel}]</span>
                 <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
+                ${clozeSentenceExtra}
                 <button type="button" class="quiz-feedback-speak-btn" id="quiz-fb-speak-btn" title="Nghe lại phát âm">🔊</button>
-                ${state.quizStreak >= 3 ? `<span style="margin-left:8px; font-weight:700; color:#ea580c;">🔥 Chuỗi x${state.quizStreak}!</span>` : ''}
+                ${state.quizStreak >= 3 ? `<span style="margin-left:8px; font-weight:700; color:#ea580c;">🔥 Chuỗi x${state.quizStreak} (x${streakMul})!</span>` : ''}
             `;
             const fbSpk = document.getElementById("quiz-fb-speak-btn");
-            if (fbSpk) fbSpk.onclick = () => speakChinese(question.correctWord.hz);
+            if (fbSpk) fbSpk.onclick = () => speakChinese(textToSpeak);
+            if (state.quizAutoTts && question.type === "context_cloze") {
+                speakChinese(textToSpeak);
+            }
         } else {
             if (typeof soundFX !== "undefined" && soundFX.wrong) soundFX.wrong();
             state.quizStreak = 0;
@@ -2485,7 +2775,7 @@
         }
 
         const isGameOver = (state.quizPlayType === "survival" && state.quizLives <= 0) ||
-                           (state.quizPlayType === "standard" && (state.quizCurrentIdx + 1) >= state.quizQuestions.length);
+                           ((state.quizPlayType === "standard" || state.quizPlayType === "speed_gauntlet") && (state.quizCurrentIdx + 1) >= state.quizQuestions.length);
 
         if (nextBtn) {
             if (isGameOver) {
@@ -2575,7 +2865,7 @@
         }
 
         state.quizCurrentIdx++;
-        if (state.quizPlayType === "standard") {
+        if (state.quizPlayType === "standard" || state.quizPlayType === "speed_gauntlet") {
             if (state.quizCurrentIdx >= state.quizQuestions.length) {
                 renderQuizResults();
             } else {
@@ -2637,6 +2927,7 @@
         // Skills breakdown
         const skillLabels = {
             hz_to_mean: "🀄 Nhìn Chữ Hán ➔ Nghĩa Tiếng Việt",
+            context_cloze: "📖 Điền Ngữ Cảnh Bài Khóa (In-Context)",
             mean_to_hz: "🇻🇳 Nhìn Nghĩa ➔ Chọn Chữ Hán",
             hz_to_py: "🔤 Nhớ Pinyin & Thanh Điệu",
             audio_to_hz: "🎧 Phản Xạ Bắt Âm Thanh"
@@ -2705,13 +2996,56 @@
         }
 
         let modeSublabel = "Chế độ Tiêu Chuẩn";
+        if (state.quizPlayType === "speed_gauntlet") modeSublabel = "Đấu Trường Tốc Độ";
         if (state.quizPlayType === "survival") modeSublabel = "Chế độ Sinh Tồn";
         if (state.quizPlayType === "time_attack") modeSublabel = "Cơn Lốc 60 Giây";
+
+        // Speed Gauntlet High Score & Rank
+        let speedSummaryHtml = "";
+        if (state.quizPlayType === "speed_gauntlet") {
+            const currentPoints = state.quizTotalPoints || (state.quizScore * 100);
+            const prevHighScore = parseInt(localStorage.getItem("boya_quiz_high_score") || "0", 10);
+            const isNewHigh = currentPoints > prevHighScore;
+            if (isNewHigh) {
+                localStorage.setItem("boya_quiz_high_score", currentPoints);
+            }
+            const displayHigh = Math.max(currentPoints, prevHighScore);
+
+            let rankBadge = "🌟 B-RANK: PHẢN XẠ TỐT";
+            let rankColor = "#2563eb";
+            if (currentPoints >= 3000 || (percent >= 85 && parseFloat(avgReaction) < 1.8)) {
+                rankBadge = "👑 S-RANK: PHẢN XẠ CỰC QUANG";
+                rankColor = "#ea580c";
+            } else if (currentPoints >= 1800 || percent >= 70) {
+                rankBadge = "🎖️ A-RANK: CAO THỦ PHẢN XẠ";
+                rankColor = "#16a34a";
+            }
+
+            badge = "⚡";
+            title = rankBadge;
+
+            speedSummaryHtml = `
+                <div class="speed-gauntlet-summary-card">
+                    <div class="speed-summary-rank" style="color:${rankColor};">${rankBadge}</div>
+                    <div class="speed-summary-points">
+                        <span class="speed-points-num">${currentPoints}</span>
+                        <span class="speed-points-label">ĐIỂM TỔNG</span>
+                    </div>
+                    ${isNewHigh ? `<div class="speed-new-record">🏆 KỶ LỤC ĐIỂM SỐ MỚI!</div>` : `<div class="speed-prev-record">Kỷ lục của bạn: ${displayHigh} điểm</div>`}
+                    <div class="speed-stats-mini-grid">
+                        <div class="speed-mini-stat">⚡ Thần tốc (&lt;1.5s): <strong>${(state.quizSpeedStats && state.quizSpeedStats.fast) || 0}</strong></div>
+                        <div class="speed-mini-stat">🎯 Chuẩn xác (&lt;3s): <strong>${(state.quizSpeedStats && state.quizSpeedStats.medium) || 0}</strong></div>
+                        <div class="speed-mini-stat">🔥 Chuỗi max: <strong>${state.quizMaxStreak || 0}</strong></div>
+                    </div>
+                </div>
+            `;
+        }
 
         resultView.innerHTML = `
             <div class="result-badge">${badge}</div>
             <h2>${title}</h2>
             <p style="color: var(--text-muted); font-size: 14px;">${modeSublabel} • Đã trả lời ${totalAnswered} câu hỏi</p>
+            ${speedSummaryHtml}
 
             <div class="quiz-score-circle" style="--percent: ${percent};">
                 <span class="score-num">${score}/${totalAnswered}</span>
@@ -2734,9 +3068,9 @@
                 </div>
                 <div class="quiz-stat-card">
                     <div class="quiz-stat-num" style="color:#10b981;">
-                        ${state.quizPlayType === 'survival' ? (state.quizLives > 0 ? `${state.quizLives} ❤️` : '0 ❤️') : (state.quizPlayType === 'time_attack' ? '60s' : `${totalAnswered} câu`)}
+                        ${state.quizPlayType === 'speed_gauntlet' ? `${state.quizTotalPoints || 0}đ` : (state.quizPlayType === 'survival' ? (state.quizLives > 0 ? `${state.quizLives} ❤️` : '0 ❤️') : (state.quizPlayType === 'time_attack' ? '60s' : `${totalAnswered} câu`))}
                     </div>
-                    <div class="quiz-stat-label">${modeSublabel}</div>
+                    <div class="quiz-stat-label">${state.quizPlayType === 'speed_gauntlet' ? 'Tổng Điểm Combo' : modeSublabel}</div>
                 </div>
             </div>
 

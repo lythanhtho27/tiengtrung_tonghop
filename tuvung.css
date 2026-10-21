@@ -5556,3 +5556,404 @@ footer {
     }
 }
 
+
+
+/* ==========================================================================
+   FEATURE 1: ACTIVE TYPE-IN FLASHCARD (THỬ THÁCH GÕ PINYIN / CHỮ HÁN CHỦ ĐỘNG)
+   ========================================================================== */
+.fc-badge-typein {
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.fc-typein-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 16px;
+    box-sizing: border-box;
+}
+
+.fc-typein-meaning-prompt {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-main, #0f172a);
+    line-height: 1.4;
+    text-align: center;
+    max-width: 520px;
+    margin-bottom: 8px;
+    word-break: break-word;
+}
+
+.fc-typein-type-badge {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6366f1;
+    background: #eef2ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 999px;
+    padding: 3px 12px;
+    margin-bottom: 18px;
+}
+
+.fc-typein-form {
+    width: 100%;
+    max-width: 440px;
+    margin-bottom: 12px;
+}
+
+.fc-typein-input-box {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.fc-typein-input-box:focus-within {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.18), 0 4px 14px rgba(15, 23, 42, 0.08);
+}
+
+.fc-typein-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+    padding: 12px 16px;
+    background: transparent;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.fc-typein-input::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.fc-typein-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 700;
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.fc-typein-submit-btn:hover {
+    background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+    transform: scale(1.04);
+}
+
+.fc-typein-submit-btn:active {
+    transform: scale(0.96);
+}
+
+.fc-typein-hint-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.fc-typein-tool-btn {
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.fc-typein-tool-btn:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+    border-color: #94a3b8;
+    transform: translateY(-1px);
+}
+
+.fc-typein-tool-btn:active {
+    transform: translateY(0);
+}
+
+.fc-typein-feedback {
+    width: 100%;
+    max-width: 440px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    animation: typeinPopIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-align: center;
+}
+
+@keyframes typeinPopIn {
+    0% { opacity: 0; transform: scale(0.92); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.fc-typein-feedback.correct {
+    background: #ecfdf5;
+    border: 1.5px solid #a7f3d0;
+    color: #065f46;
+}
+
+.fc-typein-feedback.wrong {
+    background: #fff1f2;
+    border: 1.5px solid #fecdd3;
+    color: #9f1239;
+}
+
+.fc-typein-fb-title {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.fc-typein-fb-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.fc-typein-hz-res {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 1px;
+}
+
+.fc-typein-py-res {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ea580c;
+}
+
+.fc-typein-fb-next {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.fc-typein-fb-diff {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    text-align: left;
+    display: inline-block;
+}
+
+.diff-user {
+    text-decoration: line-through;
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.diff-correct {
+    color: #16a34a;
+    font-size: 17px;
+}
+
+/* ==========================================================================
+   FEATURE 2: SPEED GAUNTLET & COMBO MULTIPLIER (ĐẤU TRƯỜNG PHẢN XẠ & COMBO)
+   ========================================================================== */
+.quiz-hud-speed-mode {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
+    border-color: #f59e0b !important;
+    color: #b45309 !important;
+    box-shadow: 0 2px 10px rgba(245, 158, 11, 0.18);
+}
+
+.quiz-hud-streak.combo-active {
+    background: linear-gradient(135deg, #ea580c 0%, #f59e0b 100%);
+    color: #ffffff !important;
+    padding: 3px 8px;
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.4);
+    animation: pulseComboStreak 1.2s infinite ease-in-out;
+}
+
+@keyframes pulseComboStreak {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+.speed-points-popup {
+    display: inline-block;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin: 0 6px;
+    box-shadow: 0 2px 6px rgba(217, 119, 6, 0.35);
+    letter-spacing: 0.3px;
+    vertical-align: middle;
+}
+
+.speed-gauntlet-summary-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 2px solid #fcd34d;
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin: 18px 0;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.12);
+    text-align: center;
+}
+
+.speed-summary-rank {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.speed-summary-points {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.speed-points-num {
+    font-size: 42px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+}
+
+.speed-points-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.speed-new-record {
+    display: inline-block;
+    background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 4px 14px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.35);
+    animation: pulseComboStreak 1.4s infinite ease-in-out;
+}
+
+.speed-prev-record {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 14px;
+}
+
+.speed-stats-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 14px;
+    border-top: 1px dashed #e2e8f0;
+}
+
+.speed-mini-stat {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 13px;
+    color: #475569;
+}
+
+.speed-mini-stat strong {
+    color: #1e293b;
+    font-size: 15px;
+}
+
+/* ==========================================================================
+   FEATURE 3: IN-CONTEXT CLOZE QUIZ (ĐIỀN TỪ VÀO NGỮ CẢNH BÀI KHÓA)
+   ========================================================================== */
+.context-prompt {
+    font-size: 22px !important;
+    line-height: 1.6 !important;
+    letter-spacing: 0.5px;
+    color: #1e293b;
+    padding: 10px 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-left: 4px solid #0284c7;
+    margin: 8px auto 12px auto;
+    max-width: 600px;
+    text-align: left !important;
+}
+
+.quiz-cloze-completed-sentence {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #f0fdf4;
+    border-radius: 8px;
+    border-left: 3px solid #22c55e;
+    font-size: 15px;
+    font-style: italic;
+    color: #166534;
+    line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+    .fc-typein-meaning-prompt {
+        font-size: 20px;
+    }
+    .fc-typein-input {
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+    .fc-typein-submit-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+    .speed-points-num {
+        font-size: 34px;
+    }
+    .speed-stats-mini-grid {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+    .context-prompt {
+        font-size: 18px !important;
+        padding: 8px 12px;
+    }
+}
