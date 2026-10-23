@@ -930,8 +930,8 @@
         if (soundBtn) {
             soundBtn.addEventListener("click", () => {
                 soundFX.enabled = !soundFX.enabled;
-                soundBtn.textContent = soundFX.enabled ? "🔊 Âm thanh" : "🔇 Tắt tiếng";
-                soundBtn.style.opacity = soundFX.enabled ? "1" : "0.7";
+                const icon = soundBtn.querySelector(".sdm-icon");
+                if (icon) icon.textContent = soundFX.enabled ? "🔊" : "🔇";
                 if (lblSoundStatus) {
                     lblSoundStatus.textContent = soundFX.enabled ? "Âm Thanh Hiệu Ứng: BẬT" : "Âm Thanh Hiệu Ứng: TẮT";
                 }
