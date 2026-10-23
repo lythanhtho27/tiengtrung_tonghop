@@ -3,191 +3,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ôn Tập Từ Vựng Tiếng Trung Boya (Trung Cấp 1 - 4)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Ôn Tập Từ Vựng Tiếng Trung Boya (Trung Cấp 1 - 4) • Boya Learning Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="tuvung.css">
 </head>
-<body>
+<body class="studio-body">
 
-    <!-- HEADER -->
-    <header class="app-header">
+    <!-- TOP APP HEADER (TINH GỌN & HIỆN ĐẠI) -->
+    <header class="app-header studio-header">
         <div class="header-inner">
-            <a href="index.html" class="header-brand">
-                <span class="brand-icon">🏮</span>
-                <div class="brand-title">
-                    <h1>Boya Chinese • Ôn Tập Từ Vựng</h1>
-                    <span>Giáo trình Tiếng Trung Boya Trung Cấp (Quyển 1 - 4)</span>
-                </div>
-            </a>
+            <!-- Left: Sidebar Toggle & Brand -->
+            <div class="header-left">
+                <button id="btn-toggle-sidebar" class="btn-sidebar-toggle" title="Đóng / Mở Danh sách bài học & Bộ lọc">
+                    <span class="bst-icon">☰</span>
+                    <span class="bst-text hide-sm">Danh mục bài</span>
+                </button>
+                <a href="index.html" class="header-brand">
+                    <span class="brand-icon">🏮</span>
+                    <div class="brand-title">
+                        <h1>Boya Chinese <span class="brand-badge">Trung Cấp 1–4</span></h1>
+                        <span class="brand-sub hide-md">54 bài học • 2.565 từ vựng ngữ cảnh</span>
+                    </div>
+                </a>
+            </div>
 
+            <!-- Center: Spotlight Search Bar (Ctrl + K) -->
+            <div class="header-center">
+                <div class="spotlight-search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="global-search-input" placeholder="Tìm kiếm nhanh từ vựng (Chữ Hán, Pinyin, nghĩa)...">
+                    <kbd class="kbd-shortcut hide-sm">Ctrl K</kbd>
+                    <button id="btn-clear-global-search" class="clear-search-btn hidden" title="Xóa tìm kiếm">✕</button>
+                </div>
+            </div>
+
+            <!-- Right: Stats & Quick Settings Popover -->
             <div class="header-actions">
-                <span class="badge-stat" id="stat-total-words">0 từ</span>
-                <span class="badge-stat star-stat" id="stat-starred-words">★ 0 đã lưu</span>
-                <button class="badge-stat wrong-stat-btn" id="stat-wrong-words" title="Nhấp xem danh sách từ bạn hay trả lời sai">📕 0 từ sai</button>
-                <button class="badge-stat srs-stat-btn" id="stat-srs-words" title="Nhấp xem các từ đến hạn ôn tập ngắt quãng (SRS) hôm nay">🧠 0 cần ôn SRS</button>
-                <button class="btn-home btn-podcast-header" id="btn-open-podcast" title="Nghe từ vựng thụ động rảnh tay (Hands-free Podcast)">🎧 Podcast Rảnh Tay</button>
-                <button class="btn-home" id="btn-toggle-sound" title="Bật/Tắt âm thanh hiệu ứng trò chơi">🔊 Âm thanh</button>
-                <a href="word_learning.html" class="btn-home" title="Chuyển sang Sổ tay Ghi nhớ & Luyện tập nhanh Từ vựng HSK 3.0">📚 Sổ Tay HSK 3.0</a>
-                <a href="index.html" class="btn-home">🏠 Trang Chủ</a>
+                <span class="badge-stat hide-lg" id="stat-total-words">2.565 từ</span>
+                <span class="badge-stat star-stat hide-sm" id="stat-starred-words">★ 0 đã lưu</span>
+
+                <button class="badge-stat wrong-stat-btn" id="stat-wrong-words" title="Nhấp xem danh sách từ bạn hay trả lời sai trong Quiz / Games">
+                    📕 <span class="stat-count-num">0</span> <span class="hide-xs">từ sai</span>
+                </button>
+
+                <button class="badge-stat srs-stat-btn" id="stat-srs-words" title="Nhấp xem các từ đến hạn ôn tập ngắt quãng (SRS) hôm nay">
+                    🧠 <span class="stat-count-num">0</span> <span class="hide-xs">cần ôn SRS</span>
+                </button>
+
+                <!-- Theme Sáng / Tối Switcher (1-Click Toggle) -->
+                <button id="btn-toggle-theme" class="btn-theme-toggle" title="Đổi giao diện Sáng / Tối (Alt + T)">
+                    <span class="theme-btn-icon" id="theme-btn-icon">🌙</span>
+                    <span class="theme-btn-label hide-xs" id="theme-btn-label">Tối</span>
+                </button>
+
+                <!-- Quick Settings Popover Menu (Gom Podcast, Âm thanh, Điều hướng) -->
+                <div class="settings-menu-wrapper" id="headerSettingsWrapper">
+                    <button id="btn-open-header-settings" class="btn-home settings-trigger-btn" title="Cài đặt & Tiện ích">
+                        ⚙️ <span class="hide-sm">Tiện ích</span> <span class="caret-down">▾</span>
+                    </button>
+                    <div class="settings-dropdown-menu hidden" id="headerSettingsDropdown">
+                        <div class="sdm-section-title">🎨 GIAO DIỆN CHỦ ĐỀ (THEMES)</div>
+                        <div class="theme-swatch-grid">
+                            <button class="tsg-item" data-set-theme="dark" title="Dạ Thạch (Dark)">
+                                <span class="tsg-icon">🌙</span>
+                                <span class="tsg-label">Dạ Thạch</span>
+                            </button>
+                            <button class="tsg-item" data-set-theme="light" title="Bạch Tuyết (Light)">
+                                <span class="tsg-icon">☀️</span>
+                                <span class="tsg-label">Bạch Tuyết</span>
+                            </button>
+                            <button class="tsg-item" data-set-theme="palace" title="Cố Cung Chu Sa">
+                                <span class="tsg-icon">🏮</span>
+                                <span class="tsg-label">Cố Cung</span>
+                            </button>
+                            <button class="tsg-item" data-set-theme="matcha" title="Trà Đạo Giấy Mộc">
+                                <span class="tsg-icon">🍵</span>
+                                <span class="tsg-label">Trà Đạo</span>
+                            </button>
+                            <button class="tsg-item" data-set-theme="cyberpunk" title="OLED Cyberpunk">
+                                <span class="tsg-icon">🌌</span>
+                                <span class="tsg-label">Cyberpunk</span>
+                            </button>
+                            <button class="tsg-item" data-set-theme="jiangnan" title="Giang Nam Khói Mây">
+                                <span class="tsg-icon">🌸</span>
+                                <span class="tsg-label">Giang Nam</span>
+                            </button>
+                        </div>
+
+                        <div class="sdm-divider"></div>
+
+                        <div class="sdm-section-title">🎧 ÂM THANH & PODCAST</div>
+                        <button class="sdm-item" id="btn-open-podcast">
+                            <span class="sdm-icon">📻</span>
+                            <div class="sdm-text">
+                                <strong>Podcast Rảnh Tay</strong>
+                                <span>Phát âm song ngữ chạy nền khi tắt màn hình</span>
+                            </div>
+                        </button>
+                        <button class="sdm-item" id="btn-toggle-sound">
+                            <span class="sdm-icon">🔊</span>
+                            <div class="sdm-text">
+                                <strong id="lbl-sound-status">Âm Thanh Hiệu Ứng: BẬT</strong>
+                                <span>Tiếng chuông trả lời đúng/sai khi chơi game</span>
+                            </div>
+                        </button>
+
+                        <div class="sdm-divider"></div>
+
+                        <div class="sdm-section-title">🚀 ĐIỀU HƯỚNG NHANH</div>
+                        <a href="word_learning.html" class="sdm-item">
+                            <span class="sdm-icon">📚</span>
+                            <div class="sdm-text">
+                                <strong>Sổ Tay HSK 3.0</strong>
+                                <span>Chuyển sang 368 bài HSK 1–9</span>
+                            </div>
+                        </a>
+                        <a href="index.html" class="sdm-item">
+                            <span class="sdm-icon">🏠</span>
+                            <div class="sdm-text">
+                                <strong>Về Trang Chủ</strong>
+                                <span>Trang tổng hợp giáo trình Boya</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- MAIN CONTAINER -->
-    <main class="main-wrapper">
+    <!-- 2-COLUMN BOYA LEARNING STUDIO WORKSPACE -->
+    <div class="studio-layout-container" id="studioLayoutContainer">
+        <!-- Mobile Drawer Backdrop -->
+        <div class="sidebar-backdrop hidden" id="sidebarBackdrop"></div>
 
-        <!-- CONTROLS & FILTERS -->
-        <section class="control-card">
-            <!-- Book Pills -->
-            <div class="book-selector">
-                <button class="book-btn active" data-book="all">
-                    <span>Toàn Bộ Giáo Trình</span>
-                    <span class="book-sub">54 bài • 2.565 từ</span>
-                </button>
-                <button class="book-btn" data-book="tc1">
-                    <span>📘 Trung Cấp 1</span>
-                    <span class="book-sub">16 bài • 540 từ</span>
-                </button>
-                <button class="book-btn" data-book="tc2">
-                    <span>📙 Trung Cấp 2</span>
-                    <span class="book-sub">16 bài • 762 từ</span>
-                </button>
-                <button class="book-btn" data-book="tc3">
-                    <span>📗 Trung Cấp 3</span>
-                    <span class="book-sub">12 bài • 623 từ</span>
-                </button>
-                <button class="book-btn" data-book="tc4">
-                    <span>📔 Trung Cấp 4</span>
-                    <span class="book-sub">10 bài • 640 từ</span>
-                </button>
+        <!-- CỘT TRÁI: SIDEBAR NAVIGATION DOCK (Chọn Quyển, Bài, Audio, Bộ Lọc) -->
+        <aside class="studio-sidebar" id="studioSidebar">
+            <div class="sidebar-top-bar">
+                <span class="stb-title">📑 Danh Mục Bài Học & Bộ Lọc</span>
+                <button class="stb-close-btn" id="btn-close-sidebar-mobile" title="Đóng danh mục">✕</button>
             </div>
 
-            <!-- Filters -->
-            <div class="filter-row">
-                <div class="filter-group">
-                    <label for="select-lesson">📖 Bài học:</label>
-                    <select id="select-lesson" class="custom-select">
+            <div class="sidebar-content-scroll">
+                <!-- 1. CHỌN QUYỂN GIÁO TRÌNH (BOOK SELECTOR) -->
+                <div class="sidebar-box">
+                    <div class="sb-label">📚 Chọn Giáo Trình Boya:</div>
+                    <div class="book-selector-sidebar book-selector">
+                        <button class="book-btn active" data-book="all">
+                            <span class="bb-title">Toàn Bộ Giáo Trình</span>
+                            <span class="book-sub">54 bài • 2.565 từ</span>
+                        </button>
+                        <button class="book-btn" data-book="tc1">
+                            <span class="bb-title">📘 Trung Cấp 1</span>
+                            <span class="book-sub">16 bài • 540 từ</span>
+                        </button>
+                        <button class="book-btn" data-book="tc2">
+                            <span class="bb-title">📙 Trung Cấp 2</span>
+                            <span class="book-sub">16 bài • 762 từ</span>
+                        </button>
+                        <button class="book-btn" data-book="tc3">
+                            <span class="bb-title">📗 Trung Cấp 3</span>
+                            <span class="book-sub">12 bài • 623 từ</span>
+                        </button>
+                        <button class="book-btn" data-book="tc4">
+                            <span class="bb-title">📔 Trung Cấp 4</span>
+                            <span class="book-sub">10 bài • 640 từ</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. CHỌN BÀI HỌC CỤ THỂ (LESSON SELECTOR) -->
+                <div class="sidebar-box">
+                    <div class="sb-label">📖 Chọn Bài Học:</div>
+                    <select id="select-lesson" class="custom-select studio-select">
                         <option value="all">Tất cả bài học</option>
                     </select>
                 </div>
 
-                <div class="filter-group" style="max-width: 220px;">
-                    <label for="select-type">🏷️ Từ loại:</label>
-                    <select id="select-type" class="custom-select">
+                <!-- 3. MINI AUDIO PLAYER CHO BÀI HỌC ĐANG CHỌN -->
+                <div class="sidebar-box audio-bar" id="lesson-audio-bar">
+                    <div class="audio-label" id="audio-lesson-title">🎧 Audio Từ Vựng:</div>
+                    <audio id="lesson-audio-player" controls preload="none"></audio>
+                </div>
+
+                <!-- 4. LỌC TỪ LOẠI & MỤC TIÊU ÔN TẬP -->
+                <div class="sidebar-box">
+                    <div class="sb-label">🏷️ Từ Loại & Mục Tiêu Ôn:</div>
+                    <select id="select-type" class="custom-select studio-select">
                         <option value="all">Tất cả từ loại</option>
                     </select>
+
+                    <div class="sidebar-filter-pills">
+                        <button class="btn-pill" id="btn-filter-starred" title="Chỉ hiển thị những từ bạn đã gắn sao">
+                            ★ Chỉ từ đã lưu
+                        </button>
+                        <button class="btn-pill btn-pill-wrong" id="btn-filter-wrong" title="Chỉ hiển thị các từ bạn hay trả lời sai trong Quiz / Games">
+                            📕 Sổ từ hay sai (<span id="count-filter-wrong">0</span>)
+                        </button>
+                        <button class="btn-pill btn-pill-srs" id="btn-filter-srs" title="Lọc các từ đến hạn ôn tập lặp lại ngắt quãng (SRS) hôm nay">
+                            🧠 Đến hạn ôn SRS (<span id="count-filter-srs">0</span>)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CỘT PHẢI: WORKSPACE CHÍNH (NỘI DUNG HỌC TẬP & CÔNG CỤ TƯƠNG TÁC) -->
+        <main class="studio-main-stage">
+            <!-- TOP STAGE BAR: SEGMENTED MODE TABS (Ghim cố định ở đỉnh workspace) -->
+            <div class="stage-nav-bar">
+                <!-- Unit Quick Indicator: Hiển thị bài đang học -->
+                <div class="stage-unit-info">
+                    <button id="btn-quick-toggle-side" class="icon-btn-toggle" title="Đóng/Mở Sidebar">☰</button>
+                    <div class="sui-text">
+                        <span class="sui-book-badge" id="active-book-badge">Toàn bộ</span>
+                        <h2 class="sui-heading" id="active-lesson-heading">Tất cả 54 bài học</h2>
+                    </div>
                 </div>
 
-                <button class="btn-pill" id="btn-filter-starred" title="Chỉ hiển thị những từ bạn đã gắn sao">
-                    ★ Chỉ từ đã lưu
-                </button>
-
-                <button class="btn-pill btn-pill-wrong" id="btn-filter-wrong" title="Chỉ hiển thị các từ bạn hay trả lời sai trong Quiz / Games">
-                    📕 Sổ từ hay sai (<span id="count-filter-wrong">0</span>)
-                </button>
-
-                <button class="btn-pill btn-pill-srs" id="btn-filter-srs" title="Lọc các từ đến hạn ôn tập lặp lại ngắt quãng (SRS) hôm nay">
-                    🧠 Đến hạn ôn SRS (<span id="count-filter-srs">0</span>)
-                </button>
-            </div>
-
-            <!-- Lesson Audio Bar -->
-            <div class="audio-bar" id="lesson-audio-bar">
-                <span class="audio-label" id="audio-lesson-title">🎧 Audio Từ Vựng:</span>
-                <audio id="lesson-audio-player" controls preload="none"></audio>
-            </div>
-        </section>
-
-        <!-- MODE TABS -->
-        <nav class="mode-tabs">
-            <button class="tab-btn active" data-mode="table">
-                📋 Bảng Từ Vựng
-            </button>
-            <button class="tab-btn" data-mode="flashcard">
-                🗂️ Flashcard 3D & SRS
-            </button>
-            <button class="tab-btn" data-mode="speech">
-                🎙️ Luyện Nói Speech AI
-            </button>
-            <button class="tab-btn" data-mode="quiz">
-                ✍️ Trắc Nghiệm Phản Xạ
-            </button>
-            <button class="tab-btn" data-mode="games">
-                🎮 Khu Trò Chơi (15 Chế Độ)
-            </button>
-        </nav>
-
-        <!-- TAB 1: BẢNG TỪ VỰNG -->
-        <section id="mode-table" class="tab-content active">
-            <div class="vocab-toolbar">
-                <div class="search-box">
-                    <span class="search-icon">🔍</span>
-                    <input type="text" id="vocab-search" placeholder="Tìm kiếm theo Chữ Hán, Pinyin hoặc nghĩa Tiếng Việt...">
-                </div>
-
-                <div class="toggle-group">
-                    <button class="toggle-btn" id="btn-toggle-pinyin" title="Ẩn/Hiện Pinyin để tự luyện đọc">
-                        👁️ Ẩn/Hiện Pinyin
+                <!-- Segmented Control Mode Tabs -->
+                <nav class="mode-tabs studio-mode-tabs" role="tablist">
+                    <button class="tab-btn active" data-mode="table">
+                        📋 <span class="tab-label">Bảng Từ Vựng</span> <span class="tab-count-badge" id="tab-badge-table">2.565 từ</span>
                     </button>
-                    <button class="toggle-btn" id="btn-toggle-mean" title="Ẩn/Hiện nghĩa để tự kiểm tra">
-                        👁️ Ẩn/Hiện Nghĩa
+                    <button class="tab-btn" data-mode="flashcard">
+                        🗂️ <span class="tab-label">Flashcard 3D & SRS</span>
                     </button>
-                </div>
+                    <button class="tab-btn" data-mode="speech">
+                        🎙️ <span class="tab-label">Luyện Nói AI</span>
+                    </button>
+                    <button class="tab-btn" data-mode="quiz">
+                        ✍️ <span class="tab-label">Trắc Nghiệm Phản Xạ</span>
+                    </button>
+                    <button class="tab-btn" data-mode="games">
+                        🎮 <span class="tab-label">Khu Trò Chơi (15 Chế Độ)</span>
+                    </button>
+                </nav>
             </div>
 
-            <div class="vocab-table-container" id="table-wrapper">
-                <table class="vocab-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 55px; text-align: center;">STT</th>
-                            <th style="width: 45px; text-align: center;">★</th>
-                            <th style="width: 23%;">Chữ Hán & Phát Âm</th>
-                            <th style="width: 17%;">Pinyin</th>
-                            <th style="width: 10%;">Từ loại</th>
-                            <th style="width: 33%;">Ý nghĩa & Ví dụ</th>
-                            <th style="width: 12%;">Bài & Trí Nhớ</th>
-                        </tr>
-                    </thead>
-                    <tbody id="vocab-tbody">
+            <!-- WORKSPACE CONTENT SCROLLABLE AREA -->
+            <div class="stage-scrollable-area" id="stageScrollArea">
+
+                <!-- TAB 1: BẢNG TỪ VỰNG & BENTO DASHBOARD WORKSTATION -->
+                <section id="mode-table" class="tab-content active">
+                    <div class="vocab-toolbar studio-toolbar">
+                        <div class="search-box">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" id="vocab-search" placeholder="Tìm kiếm theo Chữ Hán, Pinyin hoặc nghĩa Tiếng Việt...">
+                        </div>
+
+                        <div class="toggle-group">
+                            <!-- VIEW SWITCHER: BENTO WORKSTATION vs THẺ CARDS vs BẢNG TABLE -->
+                            <div class="view-mode-toggle" id="viewModeToggle" title="Chuyển chế độ xem">
+                                <button class="vmt-btn active" data-vmode="bento" id="btn-view-bento" title="Bento Dashboard: Học sâu từng từ ngữ cảnh, trực quan, không cần cuộn trang">🍱 Bento</button>
+                                <button class="vmt-btn" data-vmode="cards" id="btn-view-cards" title="Xem dạng Danh sách Thẻ cuộn">📜 Thẻ</button>
+                                <button class="vmt-btn" data-vmode="table" id="btn-view-table" title="Xem dạng Bảng tra cứu truyền thống">☰ Bảng</button>
+                            </div>
+
+                            <button class="ctrl-chip active" id="btn-toggle-tone-color" title="Bật/Tắt phân màu theo 4 thanh điệu tiếng Trung">
+                                🎨 Màu thanh điệu
+                            </button>
+
+                            <button class="ctrl-chip active" id="btn-toggle-pinyin" title="Ẩn/Hiện Pinyin để tự luyện đọc">
+                                👁️ Pinyin
+                            </button>
+
+                            <button class="ctrl-chip active" id="btn-toggle-mean" title="Ẩn/Hiện nghĩa để tự kiểm tra">
+                                🇻🇳 Nghĩa
+                            </button>
+
+                            <button class="ctrl-chip" id="btn-toggle-starred" title="Chỉ hiện từ bạn đã đánh dấu sao ★">
+                                ⭐ Đã lưu
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- VIEW 1: BENTO BOX WORKSTATION (MẶC ĐỊNH) -->
+                    <div class="bento-dashboard-grid" id="bentoDashboardGrid">
+                        <!-- Khối 1: Hero Word Inspector (Trọng tâm lớn bên trái) -->
+                        <div class="bento-card bento-hero-card" id="bentoHeroCard">
+                            <!-- Populated dynamically via renderBentoHeroWord() -->
+                        </div>
+
+                        <!-- Cột Phải: 2 Khối Bento Phụ -->
+                        <div class="bento-side-column">
+                            <!-- Khối 2: Stats & SRS Bài Học -->
+                            <div class="bento-card bento-stats-card" id="bentoStatsCard">
+                                <!-- Populated dynamically via renderBentoStatsCard() -->
+                            </div>
+
+                            <!-- Khối 3: Mẹo Nhớ & Cấu Trúc Chữ -->
+                            <div class="bento-card bento-mnemonic-card" id="bentoMnemonicCard">
+                                <!-- Populated dynamically via renderBentoMnemonicCard() -->
+                            </div>
+                        </div>
+
+                        <!-- Khối 4: Lưới Chip Tất Cả Từ Vựng Bài Học (Full Width ở dưới) -->
+                        <div class="bento-card bento-word-strip-card" id="bentoWordStripCard">
+                            <div class="bwsc-header">
+                                <div class="bwsc-title">
+                                    <span>📑 Danh Sách Từ Vựng Bài Học</span>
+                                    <span class="bwsc-count" id="bentoWordsCount">0 từ</span>
+                                </div>
+                                <span class="bwsc-hint hide-xs">💡 Bấm vào thẻ từ bất kỳ bên dưới để xem chi tiết ở Bảng Hero phía trên (Phím tắt: ◀ / ▶ trên bàn phím)</span>
+                            </div>
+                            <div class="bwsc-grid" id="bentoWordsGrid">
+                                <!-- Interactive Word Chips populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VIEW 2: CARDS GRID VIEW CONTAINER (Ẩn mặc định khi xem Bento) -->
+                    <div class="vocab-cards-grid hidden" id="vocab-cards-grid">
+                        <!-- Populated by JavaScript -->
+                    </div>
+
+                    <!-- VIEW 3: TABLE VIEW CONTAINER (Truyền thống, ẩn mặc định) -->
+                    <div class="vocab-table-container hidden" id="table-wrapper">
+                        <table class="vocab-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 55px; text-align: center;">STT</th>
+                                    <th style="width: 45px; text-align: center;">★</th>
+                                    <th style="width: 23%;">Chữ Hán & Phát Âm</th>
+                                    <th style="width: 17%;">Pinyin</th>
+                                    <th style="width: 10%;">Từ loại</th>
+                                    <th style="width: 33%;">Ý nghĩa & Ví dụ</th>
+                                    <th style="width: 12%;">Bài & Trí Nhớ</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vocab-tbody">
+                                <!-- Rendered by Javascript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-footer studio-footer">
+                        <span id="table-count-info">Đang tải từ vựng...</span>
+                        <span>💡 Nhấp vào biểu tượng 🔊 để nghe phát âm • Nhấp 🎙️ để luyện phát âm Speech AI</span>
+                    </div>
+                </section>
+
+                <!-- TAB 2: FLASHCARD 3D & SRS -->
+                <section id="mode-flashcard" class="tab-content">
+                    <div id="flashcard-container">
                         <!-- Rendered by Javascript -->
-                    </tbody>
-                </table>
-                <div class="table-footer">
-                    <span id="table-count-info">Đang tải từ vựng...</span>
-                    <span>💡 Nhấp vào biểu tượng 🔊 để nghe • Nhấp 🎙️ để luyện phát âm Speech AI</span>
-                </div>
-            </div>
-        </section>
+                    </div>
+                </section>
 
-        <!-- TAB 2: FLASHCARD 3D & SRS -->
-        <section id="mode-flashcard" class="tab-content">
-            <div id="flashcard-container">
-                <!-- Rendered by Javascript -->
-            </div>
-        </section>
+                <!-- TAB 3: LUYỆN NÓI SPEECH AI -->
+                <section id="mode-speech" class="tab-content">
+                    <div id="speech-container">
+                        <!-- Rendered by Javascript: Speech Studio -->
+                    </div>
+                </section>
 
-        <!-- TAB 3: LUYỆN NÓI SPEECH AI -->
-        <section id="mode-speech" class="tab-content">
-            <div id="speech-container">
-                <!-- Rendered by Javascript: Speech Studio -->
-            </div>
-        </section>
+                <!-- TAB 4: TRẮC NGHIỆM -->
+                <section id="mode-quiz" class="tab-content">
+                    <div id="quiz-container">
+                        <!-- Rendered by Javascript -->
+                    </div>
+                </section>
 
-        <!-- TAB 4: TRẮC NGHIỆM -->
-        <section id="mode-quiz" class="tab-content">
-            <div id="quiz-container">
-                <!-- Rendered by Javascript -->
-            </div>
-        </section>
+                <!-- TAB 5: KHU TRÒ CHƠI ÔN TẬP (GAME ZONE) -->
+                <section id="mode-games" class="tab-content">
+                    <div id="games-container">
+                        <!-- Rendered by Javascript: Game Hub or Active Game -->
+                    </div>
+                </section>
 
-        <!-- TAB 5: KHU TRÒ CHƠI ÔN TẬP (GAME ZONE) -->
-        <section id="mode-games" class="tab-content">
-            <div id="games-container">
-                <!-- Rendered by Javascript: Game Hub or Active Game -->
-            </div>
-        </section>
+                <!-- FOOTER IN STAGE SCROLLABLE -->
+                <footer class="studio-workspace-footer">
+                    <p>© Hệ Thống Học & Ôn Tập Tiếng Trung Boya Thông Minh (Boya Chinese I - IV)</p>
+                </footer>
 
-    </main>
+            </div>
+        </main>
+    </div>
 
     <!-- FLOATING PODCAST PLAYER BAR (HANDS-FREE BACKGROUND AUDIO) -->
     <div id="podcast-player-bar" class="podcast-bar hidden">
@@ -372,11 +565,6 @@
             </div>
         </div>
     </div>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>© Hệ Thống Học & Ôn Tập Tiếng Trung Boya Thông Minh (Boya Chinese I - IV)</p>
-    </footer>
 
     <!-- TOAST NOTIFICATION -->
     <div id="app-toast" class="toast-msg"></div>

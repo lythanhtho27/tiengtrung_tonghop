@@ -19,6 +19,8 @@
         typeFilter: "all",
         hidePinyin: false,
         hideMean: false,
+        vocabViewMode: "bento", // 'bento' | 'cards' | 'table'
+        bentoActiveWordIndex: 0,
         currentMode: "table", // 'table' | 'flashcard' | 'quiz' | 'games'
         activeGame: null,     // null | 'match' | 'tf' | 'scramble' | 'hunter'
         
@@ -322,6 +324,103 @@
         });
     }
 
+    // Pinyin Tone Coloring Helpers (Intelligent Syllable-Level Tone Detector)
+    function getToneFromPinyinSyllable(syllable) {
+        if (!syllable) return 0;
+        if (/[āēīōūǖ]/i.test(syllable)) return 1;
+        if (/[áéíóúǘ]/i.test(syllable)) return 2;
+        if (/[ǎěǐǒǔǚ]/i.test(syllable)) return 3;
+        if (/[àèìòùǜ]/i.test(syllable)) return 4;
+        return 0; // neutral tone
+    }
+
+    function formatPinyinWithToneColors(pinyinStr) {
+        if (!pinyinStr) return '';
+        const sylRegex = /([bcdfghjklmnpqrstwxyzBCDFGHJKLMNPQRSTWXYZ]*[aeiouvüāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]+(?:ng|n|r)?)(?=[bcdfghjklmnpqrstwxyzBCDFGHJKLMNPQRSTWXYZāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]|$)/gi;
+        const tokens = pinyinStr.split(/(\s+|'|,|·|\/|\(|\)|\.\.\.|\…)/);
+        return tokens.map(tok => {
+            if (!tok || /^\s+$/.test(tok) || /^['`,·\/\(\)\.\.\.\…]$/.test(tok)) return tok;
+            const syls = tok.match(sylRegex);
+            if (!syls || syls.join('') !== tok) {
+                const tone = getToneFromPinyinSyllable(tok);
+                return `<span class="py-syl tone-${tone}">${escapeHtml(tok)}</span>`;
+            }
+            return syls.map(s => {
+                const tone = getToneFromPinyinSyllable(s);
+                return `<span class="py-syl tone-${tone}">${escapeHtml(s)}</span>`;
+            }).join('');
+        }).join('');
+    }
+
+    // Boya Example Sentence Formatter (Replaces ～ with clean target word)
+    function formatBoyaExampleSentence(exText, targetWord) {
+        if (!exText) return { displayHtml: '', speakText: '' };
+        const cleanWord = targetWord ? targetWord.replace(/[（\(].*?[）\)]/g, '').trim() : '';
+        const displayHtml = escapeHtml(exText).replace(/[～~]/g, `<span class="target-hl">${escapeHtml(cleanWord || '～')}</span>`);
+        const speakText = exText.replace(/[～~]/g, cleanWord || '');
+        return { displayHtml, speakText };
+    }
+
+    // =========================================================================
+    // THEMES ENGINE (Dark, Light, Cố Cung, Trà Đạo, Cyberpunk, Giang Nam)
+    // =========================================================================
+    const THEMES_CONFIG = {
+        dark:      { label: 'Dạ Thạch', icon: '🌙' },
+        light:     { label: 'Bạch Tuyết', icon: '☀️' },
+        palace:    { label: 'Cố Cung', icon: '🏮' },
+        matcha:    { label: 'Trà Đạo', icon: '🍵' },
+        cyberpunk: { label: 'Cyberpunk', icon: '🌌' },
+        jiangnan:  { label: 'Giang Nam', icon: '🌸' }
+    };
+    const STORAGE_KEY_THEME = "boya_theme";
+
+    function initTheme() {
+        const savedTheme = localStorage.getItem(STORAGE_KEY_THEME) || 'dark';
+        applyTheme(savedTheme);
+    }
+
+    function applyTheme(themeKey) {
+        if (!THEMES_CONFIG[themeKey]) themeKey = 'dark';
+        state.currentTheme = themeKey;
+        try {
+            localStorage.setItem(STORAGE_KEY_THEME, themeKey);
+        } catch (e) {}
+
+        document.body.classList.remove('light-mode', 'theme-light', 'theme-dark', 'theme-palace', 'theme-matcha', 'theme-cyberpunk', 'theme-jiangnan');
+
+        if (themeKey === 'light') {
+            document.body.classList.add('light-mode', 'theme-light');
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else if (themeKey !== 'dark') {
+            document.body.classList.add(`theme-${themeKey}`);
+            document.documentElement.setAttribute('data-theme', themeKey);
+        } else {
+            document.body.classList.add('theme-dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        updateThemeUI(themeKey);
+    }
+
+    function toggleTheme() {
+        const next = state.currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(next);
+        showToast(`🎨 Giao diện: ${THEMES_CONFIG[next].label}`);
+    }
+
+    function updateThemeUI(themeKey) {
+        const config = THEMES_CONFIG[themeKey] || THEMES_CONFIG.dark;
+        const iconEl = document.getElementById('theme-btn-icon');
+        const labelEl = document.getElementById('theme-btn-label');
+        if (iconEl) iconEl.textContent = config.icon;
+        if (labelEl) labelEl.textContent = config.label;
+
+        document.querySelectorAll('.tsg-item').forEach(item => {
+            const itemTheme = item.getAttribute('data-set-theme');
+            item.classList.toggle('active', itemTheme === themeKey);
+        });
+    }
+
     // Toast helper
     function showToast(msg) {
         let toast = document.getElementById("app-toast");
@@ -412,6 +511,7 @@
     function initData() {
         loadStorage();
         initTTS();
+        initTheme();
 
         if (window.BOYA_VOCAB_DATA && window.BOYA_VOCAB_DATA.books) {
             state.books = window.BOYA_VOCAB_DATA.books;
@@ -437,7 +537,7 @@
         renderCurrentMode();
     }
 
-    // Header Stats
+    // Header Stats & Stage Indicators
     function updateHeaderStats() {
         const totalElem = document.getElementById("stat-total-words");
         const starElem = document.getElementById("stat-starred-words");
@@ -452,7 +552,11 @@
 
         // Sổ từ hay sai count
         const wrongCount = Object.keys(state.wrongWords).length;
-        if (wrongElem) wrongElem.textContent = `📕 ${wrongCount} từ sai`;
+        if (wrongElem) {
+            const numSpan = wrongElem.querySelector(".stat-count-num");
+            if (numSpan) numSpan.textContent = wrongCount;
+            else wrongElem.textContent = `📕 ${wrongCount} từ sai`;
+        }
         if (countWrongElem) countWrongElem.textContent = wrongCount;
 
         // SRS đến hạn count
@@ -463,63 +567,85 @@
                 srsDueCount++;
             }
         });
-        if (srsElem) srsElem.textContent = `🧠 ${srsDueCount} cần ôn SRS`;
+        if (srsElem) {
+            const numSpan = srsElem.querySelector(".stat-count-num");
+            if (numSpan) numSpan.textContent = srsDueCount;
+            else srsElem.textContent = `🧠 ${srsDueCount} cần ôn SRS`;
+        }
         if (countSrsElem) countSrsElem.textContent = srsDueCount;
-    }
 
-    // Get Filtered Words
-    function getFilteredWords() {
-        let words = state.allWords;
+        // Stage Nav Indicators
+        const tabBadgeTable = document.getElementById("tab-badge-table");
+        if (tabBadgeTable) tabBadgeTable.textContent = `${filtered.length} từ`;
 
-        // Filter by book
-        if (state.selectedBook !== "all") {
-            words = words.filter(w => w.book_id === state.selectedBook);
-        }
-
-        // Filter by lesson
-        if (state.selectedLesson !== "all") {
-            words = words.filter(w => {
-                const combinedId = `${w.book_id}_${w.lesson_num}`;
-                return combinedId === state.selectedLesson || `bai${w.lesson_num}` === state.selectedLesson;
-            });
-        }
-
-        // Filter by Starred
-        if (state.starredOnly) {
-            words = words.filter(w => state.starredWords.has(w.id));
-        }
-
-        // Filter by Wrong words (Sổ lỗi)
-        if (state.filterWrongOnly) {
-            words = words.filter(w => state.wrongWords[w.id] && state.wrongWords[w.id].count > 0);
-        }
-
-        // Filter by SRS due (Đến hạn ôn)
-        if (state.filterSrsDueOnly) {
-            const now = Date.now();
-            words = words.filter(w => state.srsData[w.id] && state.srsData[w.id].nextReview <= now);
-        }
-
-        // Filter by Type
-        if (state.typeFilter !== "all") {
-            if (state.typeFilter === "proper") {
-                words = words.filter(w => w.is_proper || (w.type && w.type.includes("专名")));
+        const activeBookBadge = document.getElementById("active-book-badge");
+        const activeLessonHeading = document.getElementById("active-lesson-heading");
+        if (activeBookBadge) {
+            if (state.selectedBook === "all") {
+                activeBookBadge.textContent = "Toàn bộ";
             } else {
-                words = words.filter(w => w.type && w.type.includes(state.typeFilter));
+                const b = state.books ? state.books.find(x => x.id === state.selectedBook) : null;
+                activeBookBadge.textContent = b ? b.name : state.selectedBook;
             }
         }
-
-        // Filter by Search
-        if (state.searchQuery) {
-            const q = state.searchQuery.toLowerCase().trim();
-            words = words.filter(w => 
-                (w.hz && w.hz.toLowerCase().includes(q)) ||
-                (w.py && w.py.toLowerCase().includes(q)) ||
-                (w.mean && w.mean.toLowerCase().includes(q))
-            );
+        if (activeLessonHeading) {
+            if (state.selectedLesson === "all") {
+                activeLessonHeading.textContent = state.selectedBook === "all" ? "Tất cả 54 bài học" : "Tất cả bài học trong quyển";
+            } else {
+                const [bId, lNum] = state.selectedLesson.split("_");
+                const b = state.books ? state.books.find(x => x.id === bId) : null;
+                const l = b ? b.lessons.find(x => x.lesson_num === parseInt(lNum, 10)) : null;
+                activeLessonHeading.textContent = l ? `${l.lesson_name}: ${l.title || ''}` : state.selectedLesson;
+            }
         }
+    }
 
-        return words;
+    // Get Filtered Words (Single-pass high performance filter)
+    function getFilteredWords() {
+        const q = state.searchQuery ? state.searchQuery.toLowerCase().trim() : null;
+        const now = state.filterSrsDueOnly ? Date.now() : 0;
+        const bookFilter = state.selectedBook;
+        const lessonFilter = state.selectedLesson;
+        const typeFilter = state.typeFilter;
+
+        return state.allWords.filter(w => {
+            // Filter by book
+            if (bookFilter !== "all" && w.book_id !== bookFilter) return false;
+
+            // Filter by lesson
+            if (lessonFilter !== "all") {
+                const combinedId = `${w.book_id}_${w.lesson_num}`;
+                if (combinedId !== lessonFilter && `bai${w.lesson_num}` !== lessonFilter) return false;
+            }
+
+            // Filter by Starred
+            if (state.starredOnly && !state.starredWords.has(w.id)) return false;
+
+            // Filter by Wrong words (Sổ lỗi)
+            if (state.filterWrongOnly && (!state.wrongWords[w.id] || state.wrongWords[w.id].count <= 0)) return false;
+
+            // Filter by SRS due (Đến hạn ôn)
+            if (state.filterSrsDueOnly && (!state.srsData[w.id] || state.srsData[w.id].nextReview > now)) return false;
+
+            // Filter by Type
+            if (typeFilter !== "all") {
+                if (typeFilter === "proper") {
+                    if (!w.is_proper && (!w.type || !w.type.includes("专名"))) return false;
+                } else {
+                    if (!w.type || !w.type.includes(typeFilter)) return false;
+                }
+            }
+
+            // Filter by Search
+            if (q) {
+                const matchHz = w.hz && w.hz.toLowerCase().includes(q);
+                const matchPy = w.py && w.py.toLowerCase().includes(q);
+                const matchMean = w.mean && w.mean.toLowerCase().includes(q);
+                if (!matchHz && !matchPy && !matchMean) return false;
+            }
+
+            return true;
+        });
     }
 
     // Populate Lesson Dropdown
@@ -720,15 +846,7 @@
         // Mode switch tabs
         document.querySelectorAll(".tab-btn").forEach(tab => {
             tab.addEventListener("click", () => {
-                document.querySelectorAll(".tab-btn").forEach(t => t.classList.remove("active"));
-                document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
-                
-                tab.classList.add("active");
-                state.currentMode = tab.dataset.mode;
-                const targetContent = document.getElementById(`mode-${state.currentMode}`);
-                if (targetContent) targetContent.classList.add("active");
-
-                renderCurrentMode();
+                switchMode(tab.dataset.mode);
             });
         });
 
@@ -739,7 +857,9 @@
                 state.hidePinyin = !state.hidePinyin;
                 togglePyBtn.classList.toggle("active", state.hidePinyin);
                 const tableWrap = document.getElementById("table-wrapper");
+                const cardsGrid = document.getElementById("vocab-cards-grid");
                 if (tableWrap) tableWrap.classList.toggle("hidden-pinyin", state.hidePinyin);
+                if (cardsGrid) cardsGrid.classList.toggle("hidden-pinyin", state.hidePinyin);
             });
         }
 
@@ -750,18 +870,218 @@
                 state.hideMean = !state.hideMean;
                 toggleMeanBtn.classList.toggle("active", state.hideMean);
                 const tableWrap = document.getElementById("table-wrapper");
+                const cardsGrid = document.getElementById("vocab-cards-grid");
                 if (tableWrap) tableWrap.classList.toggle("hidden-mean", state.hideMean);
+                if (cardsGrid) cardsGrid.classList.toggle("hidden-mean", state.hideMean);
             });
         }
 
+        // Toggle Tone Colors
+        const toneColorBtn = document.getElementById("btn-toggle-tone-color");
+        if (toneColorBtn) {
+            const savedNoTone = localStorage.getItem("boya_no_tone_colors") === "true";
+            if (savedNoTone) {
+                document.body.classList.add("no-tone-colors");
+                toneColorBtn.classList.remove("active");
+            }
+            toneColorBtn.addEventListener("click", () => {
+                const isNoTone = document.body.classList.toggle("no-tone-colors");
+                toneColorBtn.classList.toggle("active", !isNoTone);
+                try { localStorage.setItem("boya_no_tone_colors", isNoTone ? "true" : "false"); } catch (e) {}
+                showToast(!isNoTone ? "🎨 Đã bật màu 4 thanh điệu" : "Đã tắt màu thanh điệu (đơn sắc)");
+            });
+        }
+
+        // Toolbar Toggle Starred Only
+        const starredChipBtn = document.getElementById("btn-toggle-starred");
+        if (starredChipBtn) {
+            starredChipBtn.addEventListener("click", () => {
+                state.starredOnly = !state.starredOnly;
+                starredChipBtn.classList.toggle("active", state.starredOnly);
+                const sidebarStarBtn = document.getElementById("btn-filter-starred");
+                if (sidebarStarBtn) sidebarStarBtn.classList.toggle("active", state.starredOnly);
+                updateHeaderStats();
+                renderCurrentMode();
+                showToast(state.starredOnly ? "⭐ Đang lọc chỉ từ đã lưu sao" : "Hiển thị toàn bộ từ");
+            });
+        }
+
+        // Theme Switcher Buttons (1-Click Toggle & Swatch Grid)
+        const themeToggleBtn = document.getElementById("btn-toggle-theme");
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener("click", toggleTheme);
+        }
+
+        document.querySelectorAll(".tsg-item").forEach(item => {
+            item.addEventListener("click", () => {
+                const chosen = item.getAttribute("data-set-theme");
+                if (chosen) {
+                    applyTheme(chosen);
+                    const name = THEMES_CONFIG[chosen] ? THEMES_CONFIG[chosen].label : chosen;
+                    showToast(`🎨 Giao diện: ${name}`);
+                    toggleHeaderSettings(false);
+                }
+            });
+        });
+
         // Sound Toggle
         const soundBtn = document.getElementById("btn-toggle-sound");
+        const lblSoundStatus = document.getElementById("lbl-sound-status");
         if (soundBtn) {
             soundBtn.addEventListener("click", () => {
                 soundFX.enabled = !soundFX.enabled;
                 soundBtn.textContent = soundFX.enabled ? "🔊 Âm thanh" : "🔇 Tắt tiếng";
                 soundBtn.style.opacity = soundFX.enabled ? "1" : "0.7";
+                if (lblSoundStatus) {
+                    lblSoundStatus.textContent = soundFX.enabled ? "Âm Thanh Hiệu Ứng: BẬT" : "Âm Thanh Hiệu Ứng: TẮT";
+                }
                 showToast(soundFX.enabled ? "Đã bật hiệu ứng âm thanh 🔊" : "Đã tắt hiệu ứng âm thanh 🔇");
+            });
+        }
+
+        // View Switcher (Bento Workstation vs Cards Grid vs Table)
+        const btnViewBento = document.getElementById("btn-view-bento");
+        const btnViewCards = document.getElementById("btn-view-cards");
+        const btnViewTable = document.getElementById("btn-view-table");
+        const bentoGrid = document.getElementById("bentoDashboardGrid");
+        const cardsGrid = document.getElementById("vocab-cards-grid");
+        const tableWrap = document.getElementById("table-wrapper");
+
+        function setVocabViewMode(mode, shouldRender = true) {
+            if (!mode || (mode !== "bento" && mode !== "cards" && mode !== "table")) {
+                mode = "bento";
+            }
+            state.vocabViewMode = mode;
+            try { localStorage.setItem("boya_tv_view_mode", mode); } catch (e) {}
+            if (btnViewBento) btnViewBento.classList.toggle("active", mode === "bento");
+            if (btnViewCards) btnViewCards.classList.toggle("active", mode === "cards");
+            if (btnViewTable) btnViewTable.classList.toggle("active", mode === "table");
+            if (bentoGrid) bentoGrid.classList.toggle("hidden", mode !== "bento");
+            if (cardsGrid) cardsGrid.classList.toggle("hidden", mode !== "cards");
+            if (tableWrap) tableWrap.classList.toggle("hidden", mode !== "table");
+
+            if (shouldRender) {
+                renderTableMode();
+            }
+        }
+
+        if (btnViewBento) btnViewBento.addEventListener("click", () => setVocabViewMode("bento"));
+        if (btnViewCards) btnViewCards.addEventListener("click", () => setVocabViewMode("cards"));
+        if (btnViewTable) btnViewTable.addEventListener("click", () => setVocabViewMode("table"));
+
+        // Initialize saved view mode (Default: Bento Box Dashboard) - avoid double initial render
+        const initialViewMode = localStorage.getItem("boya_tv_view_mode") || "bento";
+        setVocabViewMode(initialViewMode, false);
+
+        // Studio Sidebar Drawer Toggles (Mobile & Desktop)
+        const btnToggleSide = document.getElementById("btn-toggle-sidebar");
+        const btnQuickToggle = document.getElementById("btn-quick-toggle-side");
+        const btnCloseSide = document.getElementById("btn-close-sidebar-mobile");
+        const backdrop = document.getElementById("sidebarBackdrop");
+        const sidebar = document.getElementById("studioSidebar");
+
+        function toggleSidebar() {
+            if (window.innerWidth <= 992) {
+                if (sidebar) sidebar.classList.toggle("open");
+                if (backdrop) backdrop.classList.toggle("hidden", !sidebar.classList.contains("open"));
+            } else {
+                if (sidebar) sidebar.classList.toggle("collapsed");
+            }
+        }
+
+        function closeMobileSidebar() {
+            if (sidebar) sidebar.classList.remove("open");
+            if (backdrop) backdrop.classList.add("hidden");
+        }
+
+        if (btnToggleSide) btnToggleSide.addEventListener("click", toggleSidebar);
+        if (btnQuickToggle) btnQuickToggle.addEventListener("click", toggleSidebar);
+        if (btnCloseSide) btnCloseSide.addEventListener("click", closeMobileSidebar);
+        if (backdrop) backdrop.addEventListener("click", closeMobileSidebar);
+
+        if (selectLesson) {
+            selectLesson.addEventListener("change", () => {
+                if (window.innerWidth <= 992) closeMobileSidebar();
+            });
+        }
+
+        // Spotlight Search (Ctrl+K or Cmd+K)
+        const globalSearch = document.getElementById("global-search-input");
+        const clearGlobalSearch = document.getElementById("btn-clear-global-search");
+        const vocabSearch = document.getElementById("vocab-search");
+
+        document.addEventListener("keydown", (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+                e.preventDefault();
+                if (globalSearch) {
+                    globalSearch.focus();
+                    globalSearch.select();
+                }
+            } else if (e.key === "Escape") {
+                if (document.activeElement === globalSearch) globalSearch.blur();
+                if (document.activeElement === vocabSearch) vocabSearch.blur();
+            }
+        });
+
+        if (globalSearch) {
+            let globalTimeout = null;
+            globalSearch.addEventListener("input", (e) => {
+                clearTimeout(globalTimeout);
+                const q = e.target.value;
+                if (clearGlobalSearch) clearGlobalSearch.classList.toggle("hidden", !q);
+                if (vocabSearch) vocabSearch.value = q;
+                globalTimeout = setTimeout(() => {
+                    state.searchQuery = q;
+                    if (state.currentMode !== "table") {
+                        switchMode("table");
+                    } else {
+                        updateHeaderStats();
+                        renderCurrentMode();
+                    }
+                }, 200);
+            });
+        }
+
+        if (clearGlobalSearch && globalSearch) {
+            clearGlobalSearch.addEventListener("click", () => {
+                globalSearch.value = "";
+                if (vocabSearch) vocabSearch.value = "";
+                state.searchQuery = "";
+                clearGlobalSearch.classList.add("hidden");
+                updateHeaderStats();
+                renderCurrentMode();
+            });
+        }
+
+        // Header Quick Settings Popover
+        const btnHeaderSettings = document.getElementById("btn-open-header-settings");
+        const dropdownHeaderSettings = document.getElementById("headerSettingsDropdown");
+        const wrapperHeaderSettings = document.getElementById("headerSettingsWrapper");
+
+        function toggleHeaderSettings(force) {
+            if (!dropdownHeaderSettings) return;
+            const isHidden = dropdownHeaderSettings.classList.contains("hidden");
+            const shouldShow = typeof force === "boolean" ? force : isHidden;
+            dropdownHeaderSettings.classList.toggle("hidden", !shouldShow);
+            if (wrapperHeaderSettings) wrapperHeaderSettings.classList.toggle("active", shouldShow);
+        }
+
+        if (btnHeaderSettings) {
+            btnHeaderSettings.addEventListener("click", (e) => {
+                e.stopPropagation();
+                toggleHeaderSettings();
+            });
+        }
+
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest("#headerSettingsWrapper")) {
+                toggleHeaderSettings(false);
+            }
+        });
+
+        if (btnOpenPodcast) {
+            btnOpenPodcast.addEventListener("click", () => {
+                toggleHeaderSettings(false);
             });
         }
 
@@ -769,9 +1089,27 @@
         window.addEventListener("keydown", handleKeydown);
     }
 
+    function switchMode(mode) {
+        if (!mode) return;
+        state.currentMode = mode;
+        const scrollArea = document.getElementById("stageScrollArea");
+        if (scrollArea) scrollArea.scrollTop = 0;
+        renderCurrentMode();
+    }
+
     function renderCurrentMode() {
         stopFcAutoPlay();
         clearGameTimers();
+        clearQuizTimers();
+
+        // Đồng bộ hóa trạng thái active của tab buttons và các section content
+        document.querySelectorAll(".studio-mode-tabs .tab-btn, .mode-tabs .tab-btn").forEach(t => {
+            t.classList.toggle("active", t.dataset.mode === state.currentMode);
+        });
+        document.querySelectorAll(".tab-content").forEach(c => {
+            c.classList.toggle("active", c.id === `mode-${state.currentMode}`);
+        });
+
         switch (state.currentMode) {
             case "table":
                 renderTableMode();
@@ -793,59 +1131,76 @@
     }
 
     // =========================================================================
-    // MODE 1: VOCABULARY TABLE
+    // MODE 1: VOCABULARY WORKSTATION (BENTO DASHBOARD / CARDS / TABLE)
     // =========================================================================
     function renderTableMode() {
-        const tbody = document.getElementById("vocab-tbody");
-        const countElem = document.getElementById("table-count-info");
-        if (!tbody) return;
-
         const words = getFilteredWords();
-        tbody.innerHTML = "";
-
+        const countElem = document.getElementById("table-count-info");
         if (countElem) {
             countElem.textContent = `Đang hiển thị ${words.length} / ${state.allWords.length} từ vựng`;
         }
 
         if (words.length === 0) {
-            tbody.innerHTML = `
-                <tr>
-                    <td colspan="7">
-                        <div class="empty-state">
-                            <div class="empty-icon">🔍</div>
-                            <div class="empty-title">Không tìm thấy từ vựng nào</div>
-                            <div class="empty-sub">Hãy thử đổi bộ lọc hoặc từ khóa tìm kiếm khác</div>
-                        </div>
-                    </td>
-                </tr>
-            `;
+            renderVocabEmptyStates();
             return;
         }
 
-        const fragment = document.createDocumentFragment();
+        // Lazy view rendering: ONLY render the currently active view!
+        if (state.vocabViewMode === "bento") {
+            renderBentoDashboard(words);
+        } else if (state.vocabViewMode === "table") {
+            renderTableView(words);
+        } else if (state.vocabViewMode === "cards") {
+            renderCardsView(words);
+        }
+    }
 
-        words.forEach((w, index) => {
-            const tr = document.createElement("tr");
+    function renderVocabEmptyStates() {
+        const bentoGrid = document.getElementById("bentoDashboardGrid");
+        const tbody = document.getElementById("vocab-tbody");
+        const cardsGrid = document.getElementById("vocab-cards-grid");
 
+        const emptyHtml = `
+            <div class="empty-state" style="grid-column: 1 / -1; padding: 40px 20px;">
+                <div class="empty-icon">🔍</div>
+                <div class="empty-title">Không tìm thấy từ vựng nào</div>
+                <div class="empty-sub">Hãy thử đổi giáo trình, bài học hoặc từ khóa tìm kiếm khác</div>
+            </div>
+        `;
+
+        if (bentoGrid) bentoGrid.innerHTML = emptyHtml;
+        if (tbody) {
+            tbody.innerHTML = `<tr><td colspan="7">${emptyHtml}</td></tr>`;
+        }
+        if (cardsGrid) cardsGrid.innerHTML = emptyHtml;
+    }
+
+    // High performance Table View with Event Delegation
+    function renderTableView(words) {
+        const tbody = document.getElementById("vocab-tbody");
+        if (!tbody) return;
+
+        const rowsHtml = words.map((w, index) => {
             const isStarred = state.starredWords.has(w.id);
             const isProper = w.is_proper || (w.type && w.type.includes("专名"));
 
-            // Examples HTML
             let examplesHtml = "";
             if (w.examples && w.examples.length > 0) {
                 examplesHtml = `
                     <div class="mean-examples">
-                        ${w.examples.map(ex => `
-                            <div class="example-item">
-                                <span>${escapeHtml(ex)}</span>
-                                <button class="btn-mini-speak" title="Nghe ví dụ" data-speak="${encodeURIComponent(ex)}">🔊</button>
-                            </div>
-                        `).join("")}
+                        ${w.examples.map(ex => {
+                            const fmt = formatBoyaExampleSentence(ex, w.hz);
+                            return `
+                                <div class="example-item">
+                                    <span>${fmt.displayHtml}</span>
+                                    <button class="btn-mini-speak" title="Nghe ví dụ" data-speak="${encodeURIComponent(fmt.speakText)}">🔊</button>
+                                </div>
+                            `;
+                        }).join("")}
                     </div>
                 `;
             }
 
-                        // Badges for Wrong & SRS
             const wrongInfo = state.wrongWords[w.id];
             let wrongBadgeHtml = "";
             if (wrongInfo && wrongInfo.count > 0) {
@@ -861,100 +1216,592 @@
                 srsBadgeHtml = `<span class="badge-srs-tag badge-srs-${srsInfo.level}" title="Cấp độ trí nhớ SRS: Level ${srsInfo.level}">Lv.${srsInfo.level}</span>`;
             }
 
-            tr.innerHTML = `
-                <td class="col-stt">${index + 1}</td>
-                <td class="col-star">
-                    <button class="star-btn ${isStarred ? 'starred' : ''}" title="${isStarred ? 'Bỏ lưu' : 'Đánh dấu từ quan trọng'}" data-id="${w.id}">
-                        ${isStarred ? '★' : '☆'}
-                    </button>
-                </td>
-                <td class="col-hz">
-                    <div class="hz-wrap">
-                        <span>${escapeHtml(w.hz)}</span>
-                        <div class="hz-actions">
-                            <button class="btn-speak" title="Nghe phát âm chuẩn" data-hz="${escapeHtml(w.hz)}">🔊</button>
-                            <button class="btn-mic-inline" title="Luyện phát âm Speech AI" data-mic-id="${w.id}">🎙️</button>
+            return `
+                <tr>
+                    <td class="col-stt">${index + 1}</td>
+                    <td class="col-star">
+                        <button class="star-btn ${isStarred ? 'starred' : ''}" title="${isStarred ? 'Bỏ lưu' : 'Đánh dấu từ quan trọng'}" data-id="${w.id}">
+                            ${isStarred ? '★' : '☆'}
+                        </button>
+                    </td>
+                    <td class="col-hz">
+                        <div class="hz-wrap">
+                            <span>${escapeHtml(w.hz)}</span>
+                            <div class="hz-actions">
+                                <button class="btn-speak" title="Nghe phát âm chuẩn" data-hz="${escapeHtml(w.hz)}">🔊</button>
+                                <button class="btn-mic-inline" title="Luyện phát âm Speech AI" data-mic-id="${w.id}">🎙️</button>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="col-py">${formatPinyinWithToneColors(w.py)}</td>
+                    <td class="col-type">
+                        <span class="type-badge ${isProper ? 'proper' : ''}">${escapeHtml(w.type || (isProper ? '专名' : ''))}</span>
+                    </td>
+                    <td class="col-mean">
+                        <div>${escapeHtml(w.mean)}</div>
+                        ${examplesHtml}
+                    </td>
+                    <td class="col-lesson">
+                        <div>${escapeHtml(w.book_name)} - B.${w.lesson_num}</div>
+                        <div style="display:flex; align-items:center; flex-wrap:wrap; gap:4px; margin-top:4px;">
+                            ${wrongBadgeHtml}
+                            ${srsBadgeHtml}
+                        </div>
+                    </td>
+                </tr>
+            `;
+        }).join("");
+
+        tbody.innerHTML = rowsHtml;
+
+        // Event delegation on tbody (attached only once)
+        if (!tbody._hasTableDelegation) {
+            tbody._hasTableDelegation = true;
+            tbody.addEventListener("click", (e) => {
+                const starBtn = e.target.closest(".star-btn");
+                if (starBtn) {
+                    e.stopPropagation();
+                    toggleStarWord(starBtn.dataset.id, starBtn);
+                    return;
+                }
+                const speakBtn = e.target.closest(".btn-speak");
+                if (speakBtn) {
+                    e.stopPropagation();
+                    speakChinese(speakBtn.dataset.hz);
+                    return;
+                }
+                const micBtn = e.target.closest(".btn-mic-inline");
+                if (micBtn) {
+                    e.stopPropagation();
+                    const w = state.allWords.find(x => x.id === micBtn.dataset.micId);
+                    if (w) openSpeechModal(w);
+                    return;
+                }
+                const rmWrongBtn = e.target.closest(".btn-remove-wrong-row");
+                if (rmWrongBtn) {
+                    e.stopPropagation();
+                    removeWrongWord(rmWrongBtn.dataset.removeWrong);
+                    return;
+                }
+                const miniBtn = e.target.closest(".btn-mini-speak");
+                if (miniBtn) {
+                    e.stopPropagation();
+                    speakChinese(decodeURIComponent(miniBtn.dataset.speak));
+                    return;
+                }
+            });
+        }
+    }
+
+    // High performance Cards View with Event Delegation
+    function renderCardsView(words) {
+        const cardsGrid = document.getElementById("vocab-cards-grid");
+        if (!cardsGrid) return;
+
+        const cardsHtml = words.map((w, index) => {
+            const isStarred = state.starredWords.has(w.id);
+            const isProper = w.is_proper || (w.type && w.type.includes("专名"));
+
+            const wrongInfo = state.wrongWords[w.id];
+            let wrongBadgeHtml = "";
+            if (wrongInfo && wrongInfo.count > 0) {
+                wrongBadgeHtml = `<span class="qmc-wrong-pill" title="Đã trả lời sai ${wrongInfo.count} lần">⚠️ Sai ${wrongInfo.count}l</span>`;
+            }
+
+            const srsInfo = state.srsData[w.id];
+            let srsBadgeHtml = "";
+            if (srsInfo && srsInfo.level !== undefined) {
+                srsBadgeHtml = `<span class="qmc-srs-pill" title="Trí nhớ SRS Level ${srsInfo.level}">🧠 SRS Lv.${srsInfo.level}</span>`;
+            }
+
+            const hasExamples = w.examples && w.examples.length > 0;
+            let examplesHtml = "";
+            if (hasExamples) {
+                examplesHtml = `
+                    <div class="qmc-collapsible-content" id="qmc-collapsible-${w.id}">
+                        <div class="qmc-examples">
+                            ${w.examples.map(ex => {
+                                const fmt = formatBoyaExampleSentence(ex, w.hz);
+                                return `
+                                    <div class="qmc-ex-item">
+                                        <div class="qmc-ex-hz">
+                                            <span>${fmt.displayHtml}</span>
+                                            <button type="button" class="ex-speak-btn" data-speak="${encodeURIComponent(fmt.speakText)}" title="Nghe phát âm câu ví dụ">🔊 Nghe</button>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join("")}
                         </div>
                     </div>
-                </td>
-                <td class="col-py">${escapeHtml(w.py)}</td>
-                <td class="col-type">
-                    <span class="type-badge ${isProper ? 'proper' : ''}">${escapeHtml(w.type || (isProper ? '专名' : ''))}</span>
-                </td>
-                <td class="col-mean">
-                    <div>${escapeHtml(w.mean)}</div>
-                    ${examplesHtml}
-                </td>
-                <td class="col-lesson">
-                    <div>${escapeHtml(w.book_name)} - B.${w.lesson_num}</div>
-                    <div style="display:flex; align-items:center; flex-wrap:wrap; gap:4px; margin-top:4px;">
-                        ${wrongBadgeHtml}
-                        ${srsBadgeHtml}
+                `;
+            }
+
+            return `
+                <div class="qm-word-card" id="boya-card-${w.id}" data-id="${w.id}">
+                    <div class="qmc-head">
+                        <div class="qmc-title-group">
+                            <span class="qmc-num">#${index + 1}</span>
+                            <span class="qmc-hz" data-hz="${escapeHtml(w.hz)}" title="Nhấn để nghe phát âm chuẩn">${escapeHtml(w.hz)}</span>
+                            <span class="qmc-py">${formatPinyinWithToneColors(w.py)}</span>
+                            ${w.type ? `<span class="qmc-pos ${isProper ? 'proper' : ''}">${escapeHtml(w.type)}</span>` : ''}
+                            <span class="qmc-book-badge">${escapeHtml(w.book_code || w.book_name)} • B.${w.lesson_num}</span>
+                            ${wrongBadgeHtml}
+                            ${srsBadgeHtml}
+                        </div>
+                        <div class="qmc-actions">
+                            ${hasExamples ? `
+                                <button type="button" class="qmc-icon-btn qmc-toggle-ex-btn" data-toggle-id="${w.id}" title="Gập/Mở câu ví dụ">
+                                    💬 ${w.examples.length} ví dụ <span class="ex-arrow">▴</span>
+                                </button>
+                            ` : ''}
+                            <button type="button" class="qmc-icon-btn qmc-speak-btn" data-hz="${escapeHtml(w.hz)}" title="Nghe phát âm chuẩn">🔊</button>
+                            <button type="button" class="qmc-icon-btn qmc-mic-btn btn-mic-inline" data-mic-id="${w.id}" title="Luyện phát âm Speech AI">🎙️</button>
+                            <button type="button" class="qmc-icon-btn qmc-star-btn ${isStarred ? 'starred' : ''}" data-id="${w.id}" title="${isStarred ? 'Bỏ lưu' : 'Lưu từ vựng'}">
+                                ${isStarred ? '⭐' : '☆'}
+                            </button>
+                        </div>
                     </div>
-                </td>
+
+                    <div class="qmc-meaning-box">
+                        <div class="qmc-meaning-vi">🇻🇳 ${escapeHtml(w.mean)}</div>
+                    </div>
+
+                    ${examplesHtml}
+                </div>
             `;
+        }).join("");
 
-            // Star click
-            const starBtn = tr.querySelector(".star-btn");
-            starBtn.addEventListener("click", () => {
-                toggleStarWord(w.id, starBtn);
-            });
+        cardsGrid.innerHTML = cardsHtml;
 
-            // Speak click
-            const speakBtn = tr.querySelector(".btn-speak");
-            speakBtn.addEventListener("click", () => {
-                speakChinese(w.hz);
-            });
-
-            // Speech AI Mic click
-            const micBtn = tr.querySelector(".btn-mic-inline");
-            if (micBtn) {
-                micBtn.addEventListener("click", (e) => {
+        // Event delegation on cardsGrid (attached only once)
+        if (!cardsGrid._hasCardsDelegation) {
+            cardsGrid._hasCardsDelegation = true;
+            cardsGrid.addEventListener("click", (e) => {
+                const starBtn = e.target.closest(".qmc-star-btn");
+                if (starBtn) {
                     e.stopPropagation();
-                    openSpeechModal(w);
-                });
-            }
-
-            // Remove wrong word click
-            const rmWrongBtn = tr.querySelector(".btn-remove-wrong-row");
-            if (rmWrongBtn) {
-                rmWrongBtn.addEventListener("click", (e) => {
+                    toggleStarWord(starBtn.dataset.id, starBtn);
+                    return;
+                }
+                const hzSpan = e.target.closest(".qmc-hz");
+                if (hzSpan) {
+                    speakChinese(hzSpan.dataset.hz);
+                    return;
+                }
+                const speakBtn = e.target.closest(".qmc-speak-btn");
+                if (speakBtn) {
                     e.stopPropagation();
-                    removeWrongWord(w.id);
-                });
-            }
-
-            // Mini speak click for examples
-            tr.querySelectorAll(".btn-mini-speak").forEach(miniBtn => {
-                miniBtn.addEventListener("click", () => {
-                    const textToSpeak = decodeURIComponent(miniBtn.dataset.speak);
-                    speakChinese(textToSpeak);
-                });
+                    speakChinese(speakBtn.dataset.hz);
+                    return;
+                }
+                const micBtn = e.target.closest(".btn-mic-inline");
+                if (micBtn) {
+                    e.stopPropagation();
+                    const w = state.allWords.find(x => x.id === micBtn.dataset.micId);
+                    if (w) openSpeechModal(w);
+                    return;
+                }
+                const toggleExBtn = e.target.closest(".qmc-toggle-ex-btn");
+                if (toggleExBtn) {
+                    e.stopPropagation();
+                    const card = toggleExBtn.closest(".qm-word-card");
+                    if (card) {
+                        const coll = card.querySelector(".qmc-collapsible-content");
+                        const arrow = toggleExBtn.querySelector(".ex-arrow");
+                        if (coll) {
+                            const isHidden = coll.classList.toggle("hidden");
+                            if (arrow) arrow.textContent = isHidden ? "▾" : "▴";
+                        }
+                    }
+                    return;
+                }
+                const miniBtn = e.target.closest(".ex-speak-btn");
+                if (miniBtn) {
+                    e.stopPropagation();
+                    speakChinese(decodeURIComponent(miniBtn.dataset.speak));
+                    return;
+                }
             });
+        }
+    }
 
-            fragment.appendChild(tr);
+    // =========================================================================
+    // BENTO BOX DASHBOARD WORKSTATION ENGINE
+    // =========================================================================
+    function renderBentoDashboard(words) {
+        const bentoGrid = document.getElementById("bentoDashboardGrid");
+        if (!bentoGrid) return;
+
+        if (!words) words = getFilteredWords();
+        if (words.length === 0) {
+            bentoGrid.innerHTML = `
+                <div class="empty-state" style="grid-column: 1 / -1; padding: 40px 20px;">
+                    <div class="empty-icon">🔍</div>
+                    <div class="empty-title">Không tìm thấy từ vựng nào</div>
+                    <div class="empty-sub">Hãy thử đổi giáo trình, bài học hoặc từ khóa tìm kiếm khác</div>
+                </div>
+            `;
+            return;
+        }
+
+        // Validate active word index
+        if (state.bentoActiveWordIndex >= words.length || state.bentoActiveWordIndex < 0) {
+            state.bentoActiveWordIndex = 0;
+        }
+
+        const currentWord = words[state.bentoActiveWordIndex];
+
+        // 1. Render Hero Card
+        renderBentoHeroWord(currentWord, words.length, state.bentoActiveWordIndex);
+
+        // 2. Render Stats Card
+        renderBentoStatsCard(words);
+
+        // 3. Render Mnemonic Card
+        renderBentoMnemonicCard(currentWord);
+
+        // 4. Render Word Strip (20-word grid)
+        renderBentoWordStrip(words);
+    }
+
+    function renderBentoHeroWord(w, totalWords, currentIdx) {
+        const heroEl = document.getElementById("bentoHeroCard");
+        if (!heroEl || !w) return;
+
+        const isStarred = state.starredWords.has(w.id);
+        const srsInfo = state.srsData[w.id];
+        const isSrs = srsInfo && srsInfo.level !== undefined;
+        const wrongInfo = state.wrongWords[w.id];
+        const hasWrong = wrongInfo && wrongInfo.count > 0;
+
+        // Examples section
+        let examplesHtml = "";
+        if (w.examples && w.examples.length > 0) {
+            examplesHtml = `
+                <div class="bhc-examples-section">
+                    <div class="bhes-title">
+                        <span>💬 CÂU VÍ DỤ NGỮ CẢNH (${w.examples.length} CÂU)</span>
+                    </div>
+                    <div class="bhes-list">
+                        ${w.examples.map((ex, i) => {
+                            const fmt = formatBoyaExampleSentence(ex, w.hz);
+                            return `
+                                <div class="bhes-item">
+                                    <div class="bhes-hz">
+                                        <strong style="color:var(--accent-primary); margin-right:6px;">${i + 1}.</strong>
+                                        <span>${fmt.displayHtml}</span>
+                                    </div>
+                                    <button type="button" class="ex-speak-btn" data-speak="${encodeURIComponent(fmt.speakText)}" title="Nghe câu ví dụ">🔊 Nghe</button>
+                                </div>
+                            `;
+                        }).join("")}
+                    </div>
+                </div>
+            `;
+        }
+
+        heroEl.innerHTML = `
+            <div class="bhc-header">
+                <div class="bhc-num-tag">#${currentIdx + 1} / ${totalWords}</div>
+                <div class="bhc-meta-tags">
+                    <span class="bhc-book-badge">${escapeHtml(w.book_code || w.book_name || 'Boya')} • B.${w.lesson_num || 1}</span>
+                    ${w.type ? `<span class="bhc-pos-badge">${escapeHtml(w.type)}</span>` : ''}
+                    ${isSrs ? `<span class="bhc-srs-badge">🧠 SRS Lv.${srsInfo.level}</span>` : ''}
+                    ${hasWrong ? `<span class="bhc-wrong-badge">⚠️ Đã sai ${wrongInfo.count} lần</span>` : ''}
+                </div>
+                <div class="bhc-quick-tools">
+                    <button type="button" class="bhc-tool-btn ${isStarred ? 'starred' : ''}" id="btnHeroStar" title="${isStarred ? 'Bỏ lưu sao' : 'Lưu từ vựng'}">
+                        ${isStarred ? '⭐' : '☆'}
+                    </button>
+                    <button type="button" class="bhc-tool-btn" id="btnHeroMic" title="Luyện phát âm Speech AI">
+                        🎙️
+                    </button>
+                </div>
+            </div>
+
+            <div class="bhc-body">
+                <div class="bhc-main-word-row">
+                    <div class="bhc-hz" id="heroHanziText" title="Nhấn để nghe phát âm">${escapeHtml(w.hz)}</div>
+                    <div class="bhc-py">${formatPinyinWithToneColors(w.py)}</div>
+                    <button type="button" class="bhc-speak-hero-btn" id="btnHeroSpeak">
+                        🔊 Nghe phát âm chuẩn
+                    </button>
+                </div>
+
+                <div class="bhc-meaning-box">
+                    <div class="bhc-meaning-vi">🇻🇳 ${escapeHtml(w.mean)}</div>
+                </div>
+
+                ${examplesHtml}
+            </div>
+
+            <div class="bhc-footer">
+                <button type="button" class="bhc-nav-btn" id="btnHeroPrev" ${currentIdx <= 0 ? 'disabled style="opacity:0.4;cursor:not-allowed;"' : ''}>
+                    ◀ Từ trước
+                </button>
+                <div class="bhc-counter">
+                    Từ <strong>${currentIdx + 1}</strong> / ${totalWords}
+                </div>
+                <button type="button" class="bhc-nav-btn" id="btnHeroNext" ${currentIdx >= totalWords - 1 ? 'disabled style="opacity:0.4;cursor:not-allowed;"' : ''}>
+                    Từ sau ▶
+                </button>
+            </div>
+        `;
+
+        // Bind Hero Events
+        const btnStar = heroEl.querySelector("#btnHeroStar");
+        if (btnStar) {
+            btnStar.addEventListener("click", () => {
+                toggleStarWord(w.id, btnStar);
+            });
+        }
+
+        const btnMic = heroEl.querySelector("#btnHeroMic");
+        if (btnMic) {
+            btnMic.addEventListener("click", () => openSpeechModal(w));
+        }
+
+        const btnSpeak = heroEl.querySelector("#btnHeroSpeak");
+        const hzText = heroEl.querySelector("#heroHanziText");
+        if (btnSpeak) btnSpeak.addEventListener("click", () => speakChinese(w.hz));
+        if (hzText) hzText.addEventListener("click", () => speakChinese(w.hz));
+
+        heroEl.querySelectorAll(".ex-speak-btn").forEach(miniBtn => {
+            miniBtn.addEventListener("click", () => {
+                const textToSpeak = decodeURIComponent(miniBtn.dataset.speak);
+                speakChinese(textToSpeak);
+            });
         });
 
-        tbody.appendChild(fragment);
+        const btnPrev = heroEl.querySelector("#btnHeroPrev");
+        if (btnPrev && currentIdx > 0) {
+            btnPrev.addEventListener("click", () => selectBentoWordByIndex(currentIdx - 1));
+        }
+
+        const btnNext = heroEl.querySelector("#btnHeroNext");
+        if (btnNext && currentIdx < totalWords - 1) {
+            btnNext.addEventListener("click", () => selectBentoWordByIndex(currentIdx + 1));
+        }
+    }
+
+    function renderBentoStatsCard(words) {
+        const statsEl = document.getElementById("bentoStatsCard");
+        if (!statsEl) return;
+
+        const totalWords = words.length;
+        let masteredCount = 0;
+        let wrongCount = 0;
+
+        words.forEach(w => {
+            if (state.masteredWords.has(w.id)) masteredCount++;
+            if (state.wrongWords[w.id] && state.wrongWords[w.id].count > 0) wrongCount++;
+        });
+
+        const pct = totalWords > 0 ? Math.round((masteredCount / totalWords) * 100) : 0;
+
+        statsEl.innerHTML = `
+            <div class="bsc-head">
+                <div class="bsc-title">📊 Tiến Độ Học Bài Này</div>
+                <span class="bsc-badge">${pct}% Thuộc</span>
+            </div>
+            <div class="bsc-progress-bar-wrap">
+                <div class="bsc-progress-bar-fill" style="width: ${pct}%"></div>
+            </div>
+            <div class="bsc-metrics-grid">
+                <div class="bsc-metric-item">
+                    <span class="bmi-val" style="color:var(--accent-primary);">${totalWords}</span>
+                    <span class="bmi-label">Tổng từ</span>
+                </div>
+                <div class="bsc-metric-item">
+                    <span class="bmi-val" style="color:var(--accent-emerald);">${masteredCount}</span>
+                    <span class="bmi-label">Đã thuộc</span>
+                </div>
+                <div class="bsc-metric-item">
+                    <span class="bmi-val" style="color:var(--danger);">${wrongCount}</span>
+                    <span class="bmi-label">Hay sai</span>
+                </div>
+            </div>
+            <div class="bsc-actions">
+                <button type="button" class="bsc-action-btn" id="btnBscFc" title="Chuyển sang Flashcard 3D">
+                    🗂️ Flashcard
+                </button>
+                <button type="button" class="bsc-action-btn" id="btnBscQuiz" title="Chuyển sang Trắc nghiệm phản xạ">
+                    ✍️ Trắc nghiệm
+                </button>
+                <button type="button" class="bsc-action-btn" id="btnBscPodcast" title="Mở phát thanh Podcast rảnh tay">
+                    📻 Podcast
+                </button>
+            </div>
+        `;
+
+        const btnFc = statsEl.querySelector("#btnBscFc");
+        if (btnFc) {
+            btnFc.addEventListener("click", () => switchMode("flashcard"));
+        }
+
+        const btnQuiz = statsEl.querySelector("#btnBscQuiz");
+        if (btnQuiz) {
+            btnQuiz.addEventListener("click", () => switchMode("quiz"));
+        }
+
+        const btnPod = statsEl.querySelector("#btnBscPodcast");
+        if (btnPod) {
+            btnPod.addEventListener("click", openPodcastPlayer);
+        }
+    }
+
+    function renderBentoMnemonicCard(w) {
+        const mnemEl = document.getElementById("bentoMnemonicCard");
+        if (!mnemEl || !w) return;
+
+        // Character breakdown for Hanzi
+        const chars = Array.from(w.hz || '');
+        const charsHtml = chars.map(c => `
+            <div class="bmc-rad-chip">
+                <span class="bmc-rad-char">${escapeHtml(c)}</span>
+                <button type="button" class="btn-mini-speak" data-speak="${encodeURIComponent(c)}" title="Nghe chữ này">🔊</button>
+            </div>
+        `).join('');
+
+        // Extract Boya Collocation or Example
+        let collocationsText = "";
+        if (w.examples && w.examples.length > 0) {
+            collocationsText = w.examples.slice(0, 2).map(ex => {
+                const fmt = formatBoyaExampleSentence(ex, w.hz);
+                return fmt.displayHtml;
+            }).join(' <span style="color:var(--border-color);margin:0 4px;">|</span> ');
+        }
+
+        mnemEl.innerHTML = `
+            <div class="bmc-head">
+                <div class="bmc-title">💡 Phân Tích & Mẹo Nhớ: “${escapeHtml(w.hz)}”</div>
+            </div>
+            <div class="bmc-radicals-row">
+                ${charsHtml}
+            </div>
+            <div class="bmc-story-card">
+                <div class="bmsc-tag">💡 Mẹo Ghi Nhớ Ngữ Cảnh:</div>
+                <div>Từ <strong>${escapeHtml(w.hz)}</strong> (${escapeHtml(w.py)}) mang nghĩa <em>"${escapeHtml(w.mean)}"</em>. Hãy liên kết phát âm và câu ví dụ để khắc sâu vào trí nhớ dài hạn.</div>
+            </div>
+            ${collocationsText ? `
+                <div class="bmc-collocations">
+                    <strong>🔗 Cụm từ hay gặp trong bài:</strong> ${collocationsText}
+                </div>
+            ` : ''}
+        `;
+
+        mnemEl.querySelectorAll(".btn-mini-speak").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                speakChinese(decodeURIComponent(btn.dataset.speak));
+            });
+        });
+    }
+
+    function renderBentoWordStrip(words) {
+        const gridEl = document.getElementById("bentoWordsGrid");
+        const countEl = document.getElementById("bentoWordsCount");
+        if (!gridEl) return;
+
+        if (countEl) countEl.textContent = `${words.length} từ`;
+
+        gridEl.innerHTML = words.map((w, idx) => {
+            const isActive = idx === state.bentoActiveWordIndex;
+            const isStar = state.starredWords.has(w.id);
+            const srsInfo = state.srsData[w.id];
+            const isLearned = state.masteredWords.has(w.id) || (srsInfo && srsInfo.level > 0);
+            const shortMean = (w.mean || '').length > 16 ? (w.mean || '').slice(0, 16) + '…' : (w.mean || '');
+
+            return `
+                <div class="bws-chip ${isActive ? 'active' : ''} ${isLearned ? 'is-learned' : ''}" data-idx="${idx}" data-id="${w.id}">
+                    <div class="bws-top">
+                        <span class="bws-num">#${idx + 1}</span>
+                        <span class="bws-star" style="${isStar ? '' : 'display:none;'}">⭐</span>
+                    </div>
+                    <div class="bws-hz">${escapeHtml(w.hz)}</div>
+                    <div class="bws-py">${formatPinyinWithToneColors(w.py)}</div>
+                    <div class="bws-vi" title="${escapeHtml(w.mean)}">${escapeHtml(shortMean)}</div>
+                </div>
+            `;
+        }).join("");
+
+        // Event delegation on gridEl (attached only once)
+        if (!gridEl._hasBentoDelegation) {
+            gridEl._hasBentoDelegation = true;
+            gridEl.addEventListener("click", (e) => {
+                const chip = e.target.closest(".bws-chip");
+                if (chip && chip.dataset.idx !== undefined) {
+                    const idx = parseInt(chip.dataset.idx, 10);
+                    selectBentoWordByIndex(idx);
+                }
+            });
+        }
+    }
+
+    function selectBentoWordByIndex(idx) {
+        const words = getFilteredWords();
+        if (words.length === 0) return;
+        if (idx < 0) idx = 0;
+        if (idx >= words.length) idx = words.length - 1;
+
+        state.bentoActiveWordIndex = idx;
+        const currentWord = words[idx];
+
+        // 1. Update Hero Card
+        renderBentoHeroWord(currentWord, words.length, idx);
+
+        // 2. Update Mnemonic Card
+        renderBentoMnemonicCard(currentWord);
+
+        // 3. Highlight active chip directly (O(1) instead of iterating all chips)
+        const prevActive = document.querySelector(".bws-chip.active");
+        if (prevActive) prevActive.classList.remove("active");
+        const nextActive = document.querySelector(`.bws-chip[data-idx="${idx}"]`);
+        if (nextActive) {
+            nextActive.classList.add("active");
+            nextActive.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+        }
     }
 
     function toggleStarWord(wordId, buttonElem) {
-        if (state.starredWords.has(wordId)) {
+        const isCurrentlyStarred = state.starredWords.has(wordId);
+        if (isCurrentlyStarred) {
             state.starredWords.delete(wordId);
-            if (buttonElem) {
-                buttonElem.classList.remove("starred");
-                buttonElem.textContent = "☆";
-            }
-            showToast("Đã bỏ đánh dấu từ");
+            showToast("Đã bỏ lưu từ ⭐");
         } else {
             state.starredWords.add(wordId);
-            if (buttonElem) {
-                buttonElem.classList.add("starred");
-                buttonElem.textContent = "★";
-            }
-            showToast("Đã lưu vào danh sách từ quan trọng ★");
+            showToast("Đã lưu vào danh sách từ quan trọng ⭐");
         }
+
+        // Sync all buttons for this word across Hero, card grid, and table
+        document.querySelectorAll(`.star-btn[data-id="${wordId}"], .qmc-star-btn[data-id="${wordId}"]`).forEach(btn => {
+            btn.classList.toggle("starred", !isCurrentlyStarred);
+            if (btn.classList.contains("qmc-star-btn")) {
+                btn.textContent = !isCurrentlyStarred ? "⭐" : "☆";
+                btn.title = !isCurrentlyStarred ? "Bỏ lưu từ" : "Lưu từ vựng";
+            } else {
+                btn.textContent = !isCurrentlyStarred ? "★" : "☆";
+                btn.title = !isCurrentlyStarred ? "Bỏ lưu" : "Đánh dấu từ quan trọng";
+            }
+        });
+
+        // Sync Hero Star button if currently showing this word
+        const heroStarBtn = document.getElementById("btnHeroStar");
+        const currentWords = getFilteredWords();
+        if (heroStarBtn && currentWords[state.bentoActiveWordIndex] && currentWords[state.bentoActiveWordIndex].id === wordId) {
+            heroStarBtn.classList.toggle("starred", !isCurrentlyStarred);
+            heroStarBtn.textContent = !isCurrentlyStarred ? "⭐" : "☆";
+            heroStarBtn.title = !isCurrentlyStarred ? "Bỏ lưu sao" : "Lưu từ vựng";
+        }
+
+        // Sync chip star icon
+        const chipStar = document.querySelector(`.bws-chip[data-id="${wordId}"] .bws-star`);
+        if (chipStar) {
+            chipStar.style.display = !isCurrentlyStarred ? "inline" : "none";
+        }
+
         saveStarred();
+        updateHeaderStats();
     }
 
     // =========================================================================
@@ -1171,9 +2018,18 @@
         let examplesBackHtml = "";
         if (w.examples && w.examples.length > 0) {
             examplesBackHtml = `
-                <div class="fc-examples">
-                    <div style="font-weight:600; margin-bottom:4px; font-size:12px; color:#64748b;">VÍ DỤ TRONG BÀI:</div>
-                    ${w.examples.map(ex => `<div>• ${escapeHtml(ex)}</div>`).join("")}
+                <div class="fc-examples-bento">
+                    <div class="fc-ex-bento-head">
+                        <span>📝 VÍ DỤ TRONG BÀI KHÓA</span>
+                    </div>
+                    <div class="fc-ex-bento-list">
+                        ${w.examples.map(ex => `
+                            <div class="fc-ex-bento-item">
+                                <span class="fc-ex-text">${escapeHtml(ex)}</span>
+                                <button type="button" class="fc-btn-ex-speak" data-speak="${encodeURIComponent(ex)}" title="Nghe câu ví dụ">🔊</button>
+                            </div>
+                        `).join("")}
+                    </div>
                 </div>
             `;
         }
@@ -1183,25 +2039,25 @@
         if (state.fcDirection === "hz_mean") {
             frontFaceContentHtml = `
                 <div class="card-top-info">
-                    <span>Nhấn thẻ hoặc phím [Space] để lật</span>
+                    <span class="fc-badge-book">${escapeHtml(w.book_name)} • Bài ${w.lesson_num}</span>
                     <button class="star-btn ${isStarred ? 'starred' : ''}" id="fc-star-btn" title="Gắn sao">
                         ${isStarred ? '★' : '☆'}
                     </button>
                 </div>
                 <div class="card-center">
                     <div class="fc-hanzi">${escapeHtml(w.hz)}</div>
-                    <button class="btn-speak" style="width:38px; height:38px; font-size:16px;" id="fc-front-speak" title="Nghe phát âm">🔊</button>
+                    <button class="fc-front-speak-btn" id="fc-front-speak" title="Nghe phát âm">🔊</button>
                     ${w.type ? `<span class="fc-type">${escapeHtml(w.type)}</span>` : ''}
-                    <div class="card-hint">Nhấp để xem Phiên âm & Nghĩa</div>
+                    <div class="card-hint">Nhấp thẻ hoặc phím [Space] để lật xem nghĩa</div>
                 </div>
                 <div class="card-hint">
-                    ${w.lesson_title ? `Bài ${w.lesson_num}: ${escapeHtml(w.lesson_title)}` : ''}
+                    ${w.lesson_title ? `${escapeHtml(w.lesson_title)}` : 'Boya Chinese'}
                 </div>
             `;
         } else if (state.fcDirection === "mean_hz") {
             frontFaceContentHtml = `
                 <div class="card-top-info">
-                    <span class="fc-dir-badge">💡 NGHĨA TIẾNG VIỆT</span>
+                    <span class="fc-badge-book">${escapeHtml(w.book_name)} • Bài ${w.lesson_num}</span>
                     <button class="star-btn ${isStarred ? 'starred' : ''}" id="fc-star-btn" title="Gắn sao">
                         ${isStarred ? '★' : '☆'}
                     </button>
@@ -1218,7 +2074,7 @@
         } else if (state.fcDirection === "audio_hz") {
             frontFaceContentHtml = `
                 <div class="card-top-info">
-                    <span class="fc-dir-badge">🎧 PHẢN XẠ ÂM THANH</span>
+                    <span class="fc-badge-book">${escapeHtml(w.book_name)} • Bài ${w.lesson_num}</span>
                     <button class="star-btn ${isStarred ? 'starred' : ''}" id="fc-star-btn" title="Gắn sao">
                         ${isStarred ? '★' : '☆'}
                     </button>
@@ -1292,18 +2148,20 @@
                             ${frontFaceContentHtml}
                         </div>
 
-                        <!-- MẶT SAU (GỌN GÀNG, KHÔNG BỊ TRÀN) -->
+                        <!-- MẶT SAU (BENTO SPLIT 2-TIER LAYOUT) -->
                         <div class="flashcard-face flashcard-back">
                             <div class="card-top-info">
-                                <span>${escapeHtml(w.book_name)} - Bài ${w.lesson_num}</span>
-                                <button class="btn-speak" style="width:34px; height:34px; font-size:15px;" id="fc-back-speak" title="Nghe phát âm">🔊</button>
+                                <span class="fc-badge-book">${escapeHtml(w.book_name)} • Bài ${w.lesson_num}</span>
+                                <button class="btn-speak fc-front-speak-btn" style="width:36px; height:36px; font-size:16px;" id="fc-back-speak" title="Nghe phát âm">🔊</button>
                             </div>
 
-                            <div class="card-center">
-                                <div class="fc-back-hz">${escapeHtml(w.hz)}</div>
-                                <div class="fc-pinyin">${escapeHtml(w.py)}</div>
-                                ${w.type ? `<span class="fc-type">${escapeHtml(w.type)}</span>` : ''}
-                                <div class="fc-mean">${escapeHtml(w.mean)}</div>
+                            <div class="card-center fc-back-bento-center">
+                                <div class="fc-back-tier-main">
+                                    <div class="fc-back-hz">${escapeHtml(w.hz)}</div>
+                                    <div class="fc-pinyin">${formatPinyinWithToneColors(w.py)}</div>
+                                    ${w.type ? `<span class="fc-type">${escapeHtml(w.type)}</span>` : ''}
+                                    <div class="fc-mean">${escapeHtml(w.mean)}</div>
+                                </div>
                                 ${examplesBackHtml}
                             </div>
 
@@ -1436,10 +2294,20 @@
         const cardScene = document.getElementById("fc-scene");
         if (cardScene) {
             cardScene.addEventListener("click", (e) => {
-                if (e.target.closest(".btn-speak") || e.target.closest(".btn-fc-audio-big") || e.target.closest(".star-btn") ||
-                    e.target.closest(".fc-typein-center") || e.target.closest(".fc-typein-tool-btn") || e.target.closest("input")) return;
+                if (e.target.closest(".btn-speak") || e.target.closest(".fc-front-speak-btn") || e.target.closest(".btn-fc-audio-big") || e.target.closest(".star-btn") ||
+                    e.target.closest(".fc-typein-center") || e.target.closest(".fc-typein-tool-btn") || e.target.closest("input") ||
+                    e.target.closest(".fc-btn-ex-speak")) return;
                 if (state.fcAutoPlay) stopFcAutoPlay();
                 toggleFlashcardFlip(w);
+            });
+
+            // Nghe câu ví dụ mặt sau
+            cardScene.querySelectorAll(".fc-btn-ex-speak").forEach(spkBtn => {
+                spkBtn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    const txt = decodeURIComponent(spkBtn.dataset.speak);
+                    speakChinese(txt);
+                });
             });
         }
 
@@ -1793,8 +2661,35 @@
     }
 
     function handleKeydown(e) {
+        // Global Theme Toggle Shortcut: Alt + T
+        if (e.altKey && (e.key === "t" || e.key === "T")) {
+            e.preventDefault();
+            toggleTheme();
+            return;
+        }
+
         // Không nhận phím tắt nếu đang nhập ô tìm kiếm hoặc chọn dropdown
         if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
+
+        // Phím tắt điều hướng trong chế độ Bento Workstation
+        if (state.currentMode === "table" && state.vocabViewMode === "bento") {
+            if (e.code === "ArrowLeft") {
+                e.preventDefault();
+                selectBentoWordByIndex(state.bentoActiveWordIndex - 1);
+                return;
+            } else if (e.code === "ArrowRight") {
+                e.preventDefault();
+                selectBentoWordByIndex(state.bentoActiveWordIndex + 1);
+                return;
+            } else if (e.code === "Space") {
+                e.preventDefault();
+                const words = getFilteredWords();
+                if (words[state.bentoActiveWordIndex]) {
+                    speakChinese(words[state.bentoActiveWordIndex].hz);
+                }
+                return;
+            }
+        }
 
         if (state.currentMode === "flashcard") {
             if (e.code === "Space") {
@@ -2353,7 +3248,7 @@
         } else if (q.type === "hz_to_mean") {
             promptLabel = "🎯 CHỌN NGHĨA TIẾNG VIỆT ĐÚNG CHO TỪ:";
             promptHtml = `<div class="quiz-q-prompt">${escapeHtml(q.word.hz)}</div>
-                          <div class="quiz-q-sub">${escapeHtml(q.word.py)}</div>`;
+                          <div class="quiz-q-sub">${formatPinyinWithToneColors(q.word.py)}</div>`;
         } else if (q.type === "mean_to_hz") {
             promptLabel = "📖 CHỌN CHỮ HÁN TƯƠNG ỨNG VỚI NGHĨA:";
             promptHtml = `<div class="quiz-q-prompt mean-prompt">${escapeHtml(cleanQuizMean(q.word.mean))}</div>
@@ -2508,20 +3403,22 @@
                     } else if (q.type === "hz_to_py") {
                         contentHtml = `
                             <div class="ans-hz-wrap" style="padding: 2px 0;">
-                                <span class="ans-py" style="font-size: 23px; font-weight: 700; color: #ea580c; letter-spacing: 0.5px;">${escapeHtml(opt.py)}</span>
+                                <span class="ans-py" style="font-size: 22px; font-weight: 700; letter-spacing: 0.5px;">${formatPinyinWithToneColors(opt.py)}</span>
                             </div>
                         `;
                     } else {
                         contentHtml = `
                             <div class="ans-hz-wrap">
                                 <span class="ans-hz">${escapeHtml(opt.hz)}</span>
-                                <span class="ans-py">${escapeHtml(opt.py)}</span>
+                                <span class="ans-py">${formatPinyinWithToneColors(opt.py)}</span>
                             </div>
                         `;
                     }
                     return `
                         <button class="ans-btn ${q.type === 'mean_to_hz' || q.type === 'audio_to_hz' || q.type === 'context_cloze' ? 'ans-btn-hz' : ''}" data-id="${opt.id}" data-idx="${i}">
-                            <span class="ans-letter">${letters[i]}</span>
+                            <div class="ans-badge-group">
+                                <span class="ans-letter">${letters[i]}</span>
+                            </div>
                             <div class="ans-content">
                                 ${contentHtml}
                             </div>
@@ -2738,7 +3635,7 @@
             feedbackBox.innerHTML = `
                 🎉 <strong>Chính xác!</strong> 
                 <span class="speed-points-popup">+${pointsEarned}đ [${speedBonusLabel}]</span>
-                <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
+                <strong>${escapeHtml(question.correctWord.hz)}</strong> [${formatPinyinWithToneColors(question.correctWord.py)}]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
                 ${clozeSentenceExtra}
                 <button type="button" class="quiz-feedback-speak-btn" id="quiz-fb-speak-btn" title="Nghe lại phát âm">🔊</button>
                 ${state.quizStreak >= 3 ? `<span style="margin-left:8px; font-weight:700; color:#ea580c;">🔥 Chuỗi x${state.quizStreak} (x${streakMul})!</span>` : ''}
@@ -2760,7 +3657,7 @@
             feedbackBox.className = "quiz-feedback show wrong";
             feedbackBox.innerHTML = `
                 ❌ <strong>Chưa chính xác!</strong> Đáp án đúng: 
-                <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
+                <strong>${escapeHtml(question.correctWord.hz)}</strong> [${formatPinyinWithToneColors(question.correctWord.py)}]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
                 <button type="button" class="quiz-feedback-speak-btn" id="quiz-fb-speak-btn" title="Nghe lại phát âm">🔊</button>
                 ${state.quizPlayType === 'survival' ? `<span style="margin-left:8px; font-weight:700; color:#dc2626;">(Mất 1 ❤️)</span>` : ''}
             `;
@@ -2903,6 +3800,35 @@
             reflexTitle = "🐢 Cần Rèn Thêm";
         }
 
+        // Rank Medals S, A, B, C Banner
+        let rankMedal = "🌟 B-RANK";
+        let rankClass = "rank-badge-b";
+        let rankTitle = "Nhớ Khá Tốt";
+        if (percent >= 95 || (percent >= 90 && parseFloat(avgReaction) <= 1.8)) {
+            rankMedal = "👑 S-RANK CỰC QUANG";
+            rankClass = "rank-badge-s";
+            rankTitle = "Phản Xạ Thần Sầu";
+        } else if (percent >= 80) {
+            rankMedal = "🎖️ A-RANK CAO THỦ";
+            rankClass = "rank-badge-a";
+            rankTitle = "Nắm Vững Từ Vựng";
+        } else if (percent >= 60) {
+            rankMedal = "🌟 B-RANK TIẾN BỘ";
+            rankClass = "rank-badge-b";
+            rankTitle = "Đã Nhớ Cơ Bản";
+        } else {
+            rankMedal = "💡 C-RANK CẦN RÈN";
+            rankClass = "rank-badge-c";
+            rankTitle = "Cần Tăng Cường Ôn";
+        }
+
+        const rankBannerHtml = `
+            <div class="quiz-rank-banner ${rankClass}">
+                <div class="quiz-rank-medal-badge">${rankMedal}</div>
+                <div class="quiz-rank-sub">${rankTitle} • Tốc độ trung bình: <strong>${avgReaction}s / câu</strong> (${reflexTitle})</div>
+            </div>
+        `;
+
         let badge = "🎉";
         let title = "Hoàn Thành Xuất Sắc!";
         if (state.quizPlayType === "survival" && state.quizLives <= 0) {
@@ -2984,7 +3910,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 8px 12px; border-radius: 8px; border: 1px solid #feb2b2;">
                                 <div>
                                     <strong style="font-size: 16px;">${escapeHtml(w.hz)}</strong> 
-                                    <span style="color: #e67e22; font-size: 13px;">${escapeHtml(w.py)}</span>: 
+                                    <span style="font-size: 13.5px; margin: 0 4px;">${formatPinyinWithToneColors(w.py)}</span>: 
                                     <span style="color: #4a5568; font-size: 13px;">${escapeHtml(w.mean)}</span>
                                 </div>
                                 <button class="btn-speak quiz-inc-speak" data-speak="${encodeURIComponent(w.hz)}" title="Nghe phát âm">🔊</button>
@@ -3045,6 +3971,7 @@
             <div class="result-badge">${badge}</div>
             <h2>${title}</h2>
             <p style="color: var(--text-muted); font-size: 14px;">${modeSublabel} • Đã trả lời ${totalAnswered} câu hỏi</p>
+            ${rankBannerHtml}
             ${speedSummaryHtml}
 
             <div class="quiz-score-circle" style="--percent: ${percent};">
