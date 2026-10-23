@@ -9,10 +9,12 @@
     'use strict';
 
     // ==================== STORAGE KEYS ====================
-    const STORAGE_KEY_PROGRESS = 'hsk_wl_json_progress_v2';
-    const STORAGE_KEY_THEME    = 'hsk_wl_json_theme_v2';
-    const STORAGE_KEY_SRS      = 'hsk_wl_srs_data_v2';
-    const STORAGE_KEY_GAMIFY   = 'hsk_wl_gamify_data_v2';
+    const STORAGE_KEY_PROGRESS   = 'hsk_wl_json_progress_v2';
+    const STORAGE_KEY_THEME      = 'hsk_wl_json_theme_v2';
+    const STORAGE_KEY_FONT       = 'hsk_wl_json_font_v2';
+    const STORAGE_KEY_TONE_COLOR = 'hsk_wl_json_tone_color_v2';
+    const STORAGE_KEY_SRS        = 'hsk_wl_srs_data_v2';
+    const STORAGE_KEY_GAMIFY     = 'hsk_wl_gamify_data_v2';
 
     // ==================== STATE ====================
     let state = {
@@ -30,6 +32,11 @@
         viewMode: localStorage.getItem('wl_view_mode') || 'compact',
         speakingAll: false,
         currentPdfPage: 9,
+
+        // Visual Theming & Typography State (Package 1)
+        currentTheme: 'dark',
+        hanziFont: 'calligraphy',  // 'calligraphy' | 'sans'
+        enableToneColors: true,
 
         // User progress persisted in localStorage
         doneUnits: {},             // { "q1_1": true }
@@ -155,6 +162,8 @@
     document.addEventListener('DOMContentLoaded', async () => {
         loadSavedProgress();
         initTheme();
+        initHanziFont();
+        initToneColors();
         renderGrammarModalTable();
         bindEvents();
 
@@ -1342,27 +1351,160 @@
         playPodcastCurrentStep();
     }
 
+    // ==================== VISUAL & THEMES SUITE (PACKAGE 1) ====================
+    const THEMES_CONFIG = {
+        dark:      { label: 'Dạ Thạch', icon: '🌙' },
+        light:     { label: 'Bạch Tuyết', icon: '☀️' },
+        palace:    { label: 'Cố Cung Chu Sa', icon: '🏮' },
+        matcha:    { label: 'Trà Đạo Giấy Mộc', icon: '🍵' },
+        cyberpunk: { label: 'OLED Cyberpunk', icon: '🌌' },
+        jiangnan:  { label: 'Giang Nam Khói Mây', icon: '🌸' }
+    };
+
     function initTheme() {
         const savedTheme = localStorage.getItem(STORAGE_KEY_THEME) || 'dark';
-        if (savedTheme === 'light') {
-            document.body.classList.add('light-mode');
+        applyTheme(savedTheme);
+    }
+
+    function applyTheme(themeKey) {
+        if (!THEMES_CONFIG[themeKey]) themeKey = 'dark';
+        state.currentTheme = themeKey;
+        try {
+            localStorage.setItem(STORAGE_KEY_THEME, themeKey);
+        } catch (e) {}
+
+        // Remove all theme classes first
+        document.body.classList.remove('light-mode', 'theme-light', 'theme-palace', 'theme-matcha', 'theme-cyberpunk', 'theme-jiangnan');
+
+        if (themeKey === 'light') {
+            document.body.classList.add('light-mode', 'theme-light');
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else if (themeKey !== 'dark') {
+            document.body.classList.add(`theme-${themeKey}`);
+            document.documentElement.setAttribute('data-theme', themeKey);
         } else {
-            document.body.classList.remove('light-mode');
+            document.documentElement.setAttribute('data-theme', 'dark');
         }
-        updateThemeBtnIcon();
+
+        updateThemePickerUI(themeKey);
     }
 
-    function toggleTheme() {
-        const isLight = document.body.classList.toggle('light-mode');
-        localStorage.setItem(STORAGE_KEY_THEME, isLight ? 'light' : 'dark');
-        updateThemeBtnIcon();
+    function updateThemePickerUI(themeKey) {
+        const config = THEMES_CONFIG[themeKey] || THEMES_CONFIG.dark;
+        const iconEl  = document.getElementById('themeBtnIcon');
+        const labelEl = document.getElementById('themeBtnLabel');
+        if (iconEl)  iconEl.textContent  = config.icon;
+        if (labelEl) labelEl.textContent = config.label;
+
+        document.querySelectorAll('.tdm-item, .tsg-item').forEach(item => {
+            const itemTheme = item.getAttribute('data-set-theme');
+            item.classList.toggle('active', itemTheme === themeKey);
+        });
     }
 
-    function updateThemeBtnIcon() {
-        const btn = document.getElementById('themeToggleBtn');
-        if (!btn) return;
-        const isLight = document.body.classList.contains('light-mode');
-        btn.textContent = isLight ? '🌙' : '☀️';
+    function toggleSettingsDropdown(forceState) {
+        const wrapper = document.getElementById('settingsMenuWrapper') || document.getElementById('themePickerWrapper');
+        const menu    = document.getElementById('settingsDropdownMenu') || document.getElementById('themeDropdownMenu');
+        if (!menu) return;
+        const isHidden = menu.classList.contains('hidden');
+        const shouldShow = typeof forceState === 'boolean' ? forceState : isHidden;
+        if (shouldShow) {
+            menu.classList.remove('hidden');
+            if (wrapper) wrapper.classList.add('active');
+        } else {
+            menu.classList.add('hidden');
+            if (wrapper) wrapper.classList.remove('active');
+        }
+    }
+
+    function toggleThemeDropdown(forceState) {
+        toggleSettingsDropdown(forceState);
+    }
+
+    function initHanziFont() {
+        const savedFont = localStorage.getItem(STORAGE_KEY_FONT) || 'calligraphy';
+        applyHanziFont(savedFont);
+    }
+
+    function applyHanziFont(fontKey) {
+        state.hanziFont = fontKey;
+        try {
+            localStorage.setItem(STORAGE_KEY_FONT, fontKey);
+        } catch (e) {}
+
+        const isCalligraphy = fontKey === 'calligraphy';
+        document.body.classList.toggle('font-calligraphy', isCalligraphy);
+        document.documentElement.setAttribute('data-font', fontKey);
+
+        const lbl = document.getElementById('lblHanziFont');
+        const btn = document.getElementById('btnToggleHanziFont');
+        if (lbl) {
+            lbl.textContent = isCalligraphy ? 'Khải Thể' : 'Chữ In';
+        }
+        if (btn) {
+            btn.classList.toggle('active', isCalligraphy);
+            btn.title = isCalligraphy 
+                ? 'Đang dùng: Thư pháp Khải Thể (Bấm để đổi sang Chữ In Hiện Đại)' 
+                : 'Đang dùng: Chữ In Hiện Đại (Bấm để đổi sang Thư pháp Khải Thể)';
+        }
+    }
+
+    function toggleHanziFont() {
+        const next = state.hanziFont === 'calligraphy' ? 'sans' : 'calligraphy';
+        applyHanziFont(next);
+        showToast(next === 'calligraphy' ? '✍️ Đã chuyển sang font Thư Pháp Khải Thể' : '🔤 Đã chuyển sang font Chữ In Hiện Đại', 2000);
+    }
+
+    function initToneColors() {
+        const saved = localStorage.getItem(STORAGE_KEY_TONE_COLOR);
+        const enabled = saved === null ? true : saved === 'true';
+        applyToneColors(enabled);
+    }
+
+    function applyToneColors(enabled) {
+        state.enableToneColors = enabled;
+        try {
+            localStorage.setItem(STORAGE_KEY_TONE_COLOR, enabled ? 'true' : 'false');
+        } catch (e) {}
+
+        document.body.classList.toggle('enable-tone-colors', enabled);
+
+        const btn = document.getElementById('btnToggleToneColor');
+        if (btn) {
+            btn.classList.toggle('active', enabled);
+            btn.title = enabled 
+                ? 'Màu thanh điệu: BẬT (Thanh 1: Lam, 2: Lục, 3: Cam, 4: Đỏ) - Bấm để Tắt' 
+                : 'Màu thanh điệu: TẮT - Bấm để BẬT';
+        }
+    }
+
+    function toggleToneColors() {
+        const next = !state.enableToneColors;
+        applyToneColors(next);
+        showToast(next ? '🎨 Đã BẬT phân màu 4 thanh điệu Pinyin' : '⚪ Đã TẮT phân màu thanh điệu', 2000);
+        if (state.studyMode === 'memory') {
+            const unitData = getCurrentUnitData();
+            if (unitData) renderMemoryPane(unitData);
+        }
+    }
+
+    function getToneFromPinyinSyllable(syllable) {
+        if (!syllable) return 0;
+        if (/[āēīōūǖ]/i.test(syllable)) return 1;
+        if (/[áéíóúǘ]/i.test(syllable)) return 2;
+        if (/[ǎěǐǒǔǚ]/i.test(syllable)) return 3;
+        if (/[àèìòùǜ]/i.test(syllable)) return 4;
+        return 0; // neutral tone
+    }
+
+    function formatPinyinWithToneColors(pinyinStr) {
+        if (!pinyinStr) return '';
+        const parts = pinyinStr.split(/(\s+|,|·|\/|\(|\))/);
+        return parts.map(part => {
+            if (/^\s+$/.test(part) || /^[,·\/\(\)]$/.test(part) || !part) return part;
+            const tone = getToneFromPinyinSyllable(part);
+            return `<span class="py-syl tone-${tone}">${escapeHtml(part)}</span>`;
+        }).join('');
     }
 
     // ==================== SIDEBAR DRAWER (MOBILE / TABLET / DESKTOP) ====================
@@ -1731,66 +1873,407 @@
         }
     }
 
-    // ==================== MODE 1: GHI NHỚ NHANH (目标词语 & 速记) ====================
+    // ==================== MODE 1: BENTO DASHBOARD TỪ VỰNG ====================
+    function setMemoryLayout(mode) {
+        state.memoryLayout = mode;
+        try {
+            localStorage.setItem('hsk_wl_memory_layout', mode);
+        } catch (e) {}
+
+        const bentoGrid   = document.getElementById('bentoDashboardGrid');
+        const classicList = document.getElementById('classicListContainer');
+        const btnBento    = document.getElementById('btnViewBento');
+        const btnClassic  = document.getElementById('btnViewClassic');
+
+        if (btnBento)   btnBento.classList.toggle('active', mode === 'bento');
+        if (btnClassic) btnClassic.classList.toggle('active', mode === 'classic');
+
+        if (mode === 'bento') {
+            if (bentoGrid)   bentoGrid.classList.remove('hidden');
+            if (classicList) classicList.classList.add('hidden');
+        } else {
+            if (bentoGrid)   bentoGrid.classList.add('hidden');
+            if (classicList) classicList.classList.remove('hidden');
+        }
+    }
+
     function renderMemoryPane(unitData) {
-        const gridEl = document.getElementById('targetWordsGrid');
-        const listEl = document.getElementById('quickMemoryList');
-        if (!gridEl || !listEl || !unitData) return;
-
+        if (!unitData) return;
         const words = unitData.target_words || [];
-
         const gQuery = state.globalSearchQuery.trim();
+
+        // If user is searching globally in this book
         if (gQuery) {
-            renderGlobalSearchInMemoryPane(gQuery, gridEl, listEl);
-            return;
+            const listEl = document.getElementById('quickMemoryList');
+            const gridEl = document.getElementById('bentoWordsGrid') || document.getElementById('targetWordsGrid');
+            if (listEl && gridEl) {
+                setMemoryLayout('classic');
+                renderGlobalSearchInMemoryPane(gQuery, gridEl, listEl);
+                return;
+            }
         }
 
+        // 1. Render Bento Dashboard View (Default modern workstation)
+        renderBentoDashboard(unitData);
+
+        // 2. Render Classic Scrollable List View (Secondary option)
+        renderClassicMemoryList(unitData);
+
+        // Apply saved layout mode (Default: 'bento')
+        const savedLayout = localStorage.getItem('hsk_wl_memory_layout') || 'bento';
+        setMemoryLayout(savedLayout);
+    }
+
+    function renderBentoDashboard(unitData) {
+        const words = unitData.target_words || [];
+        if (!words.length) return;
+
+        // Ensure activeWordNum is valid
+        if (!words.some(w => w.num === state.activeWordNum)) {
+            state.activeWordNum = words[0].num;
+        }
+
+        const currentWord = words.find(w => w.num === state.activeWordNum) || words[0];
+
+        // 1. Render Hero Word Inspector
+        renderBentoHeroWord(currentWord, words.length, unitData.unit);
+
+        // 2. Render Stats & SRS Card
+        renderBentoStatsCard(unitData);
+
+        // 3. Render Mnemonic Card
+        renderBentoMnemonicCard(currentWord);
+
+        // 4. Render 20-Word Interactive Strip
+        renderBentoWordStrip(words, unitData);
+    }
+
+    function renderBentoHeroWord(w, totalWords, unitNum) {
+        const heroEl = document.getElementById('bentoHeroCard');
+        if (!heroEl || !w) return;
+
+        const isStar = !!state.starredWords[w.id];
+        const srsInfo = state.srsData && state.srsData[w.id];
+        const isSrs = !!srsInfo;
+        const cleanHz = cleanHanziForTts(w.word);
+        const vData = getWordVisualData(w.word, w.meaning_vi || w.meaning_primary, w.meaning_en);
+        const showTrad = w.traditional && w.traditional !== w.word && !w.word.includes(w.traditional);
+        const conciseEn = formatConciseEnglish(w.meaning_en, w.meaning_vi);
+        const examples = w.examples || [];
+
+        const collocationsHtml = w.collocations
+            ? `<strong>🔗 Cụm từ hay gặp:</strong> ${escapeHtml(w.collocations)} ${w.collocations_pinyin ? `<span style="color:var(--text-muted);font-size:0.8rem;">(${formatPinyinWithToneColors(w.collocations_pinyin)})</span>` : ''}`
+            : '';
+
+        heroEl.innerHTML = `
+            <div class="bhc-header">
+                <div class="bhc-num-tag">#${w.num} / ${totalWords}</div>
+                <div class="bhc-meta-tags">
+                    <span class="bhc-icon" data-hero-mnemonic="${w.id}" title="Xem tranh minh họa & chiết tự">${vData.icon}</span>
+                    ${w.han_viet ? `<span class="bhc-hv-badge">Hán Việt: ${escapeHtml(w.han_viet.toUpperCase())}</span>` : ''}
+                    ${w.pos_full ? `<span class="bhc-pos-badge">${escapeHtml(w.pos_full)}</span>` : ''}
+                    ${isSrs ? `<span class="bhc-srs-badge">🧠 Hộp SRS ${srsInfo.box || 1}</span>` : ''}
+                </div>
+                <div class="bhc-quick-tools">
+                    <button class="bhc-tool-btn ${isStar ? 'starred' : ''}" id="btnHeroStar" title="${isStar ? 'Bỏ lưu sao' : 'Đánh dấu sao'}">
+                        ${isStar ? '⭐' : '☆'}
+                    </button>
+                    <button class="bhc-tool-btn" id="btnHeroSrs" title="${isSrs ? 'Gỡ khỏi Hộp SRS' : 'Thêm vào Hộp từ khó SRS'}">
+                        🧠
+                    </button>
+                    <button class="bhc-tool-btn" id="btnHeroMnemonic" title="Xem Chiết tự & Mẹo nhớ">
+                        🎨
+                    </button>
+                    <button class="bhc-tool-btn" id="btnHeroShadowing" title="Luyện nói AI (Shadowing)">
+                        🗣️
+                    </button>
+                </div>
+            </div>
+
+            <div class="bhc-body">
+                <div class="bhc-main-word-row">
+                    <div class="bhc-hz" id="heroWordHz" title="Nhấn để nghe phát âm">${escapeHtml(w.word)}</div>
+                    ${showTrad ? `<div class="bhc-trad" title="Chữ phồn thể">[${escapeHtml(w.traditional)}]</div>` : ''}
+                    <div class="bhc-py">${formatPinyinWithToneColors(w.pinyin)}</div>
+                    <button class="bhc-speak-hero-btn" id="btnHeroSpeak" title="Nghe phát âm chuẩn bản xứ">
+                        <span class="bshb-icon">🔊</span>
+                        <span class="bshb-label">Phát âm</span>
+                    </button>
+                </div>
+
+                <div class="bhc-meaning-box">
+                    <div class="bhc-meaning-vi">🇻🇳 ${escapeHtml(w.meaning_vi || w.meaning_primary || '')}</div>
+                    ${conciseEn ? `<div class="bhc-meaning-en">🇬🇧 ${escapeHtml(conciseEn)}</div>` : ''}
+                </div>
+
+                ${collocationsHtml ? `<div class="bhc-collocations">${collocationsHtml}</div>` : ''}
+
+                <!-- Examples Section -->
+                ${examples.length ? `
+                    <div class="bhc-examples-section">
+                        <div class="bhes-title">💬 Câu ví dụ trong ngữ cảnh (${examples.length}):</div>
+                        <div class="bhes-list">
+                            ${examples.map((ex, idx) => `
+                                <div class="bhes-item">
+                                    <div class="bhes-hz-row">
+                                        <span class="bhes-num">${idx + 1}.</span>
+                                        <span class="bhes-hz">${highlightTargetWord(ex.hz, w.word)}</span>
+                                        <button class="ex-speak-btn" data-speak="${escapeAttr(ex.hz)}" title="Nghe câu này">🔊</button>
+                                    </div>
+                                    <div class="bhes-py ${state.showPinyin ? '' : 'hidden'}">${formatPinyinWithToneColors(ex.py)}</div>
+                                    <div class="bhes-vn ${state.showMeaning ? '' : 'hidden'}">${escapeHtml(ex.vn)}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+            </div>
+
+            <div class="bhc-footer">
+                <button class="bhc-nav-btn" id="btnHeroPrevWord" ${w.num <= 1 ? 'disabled style="opacity:0.5"' : ''} title="Từ trước (Phím ←)">
+                    ◀ Từ trước
+                </button>
+                <div class="bhc-counter">Từ <strong>${w.num}</strong> / ${totalWords}</div>
+                <button class="bhc-nav-btn" id="btnHeroNextWord" ${w.num >= totalWords ? 'disabled style="opacity:0.5"' : ''} title="Từ sau (Phím →)">
+                    Từ sau ▶
+                </button>
+            </div>
+        `;
+
+        // Bind events for Hero Card
+        const btnSpeak = heroEl.querySelector('#btnHeroSpeak');
+        const hzText = heroEl.querySelector('#heroWordHz');
+        if (btnSpeak) btnSpeak.addEventListener('click', () => speakChinese(cleanHz, btnSpeak));
+        if (hzText) hzText.addEventListener('click', () => speakChinese(cleanHz, hzText));
+
+        const btnPrev = heroEl.querySelector('#btnHeroPrevWord');
+        const btnNext = heroEl.querySelector('#btnHeroNextWord');
+        if (btnPrev) btnPrev.addEventListener('click', () => selectBentoWordByNum(w.num - 1));
+        if (btnNext) btnNext.addEventListener('click', () => selectBentoWordByNum(w.num + 1));
+
+        const btnStar = heroEl.querySelector('#btnHeroStar');
+        if (btnStar) {
+            btnStar.addEventListener('click', () => {
+                if (state.starredWords[w.id]) delete state.starredWords[w.id];
+                else state.starredWords[w.id] = true;
+                saveProgress();
+                renderBentoHeroWord(w, totalWords, unitNum);
+                const stripChip = document.querySelector(`.bws-chip[data-bento-num="${w.num}"]`);
+                if (stripChip) {
+                    const top = stripChip.querySelector('.bws-top');
+                    if (top) {
+                        top.innerHTML = `<span class="bws-num">#${w.num}</span>${state.starredWords[w.id] ? '<span class="bws-star">⭐</span>' : ''}`;
+                    }
+                }
+            });
+        }
+
+        const btnSrs = heroEl.querySelector('#btnHeroSrs');
+        if (btnSrs) {
+            btnSrs.addEventListener('click', () => {
+                if (state.srsData && state.srsData[w.id]) {
+                    delete state.srsData[w.id];
+                    showToast('Đã xóa khỏi SRS', 'Đã bỏ theo dõi từ vựng này', 'ℹ️');
+                } else {
+                    addWordToSrs(w, 1);
+                    showToast('Đã thêm vào SRS', 'Từ đã được đưa vào Hộp 1 để ôn tập', '🧠');
+                }
+                saveProgress();
+                renderBentoHeroWord(w, totalWords, unitNum);
+                const unitData = getCurrentUnitData();
+                if (unitData) renderBentoStatsCard(unitData);
+            });
+        }
+
+        const btnMnem = heroEl.querySelector('#btnHeroMnemonic');
+        if (btnMnem) btnMnem.addEventListener('click', () => openMnemonicModal(w.id));
+
+        const btnShad = heroEl.querySelector('#btnHeroShadowing');
+        if (btnShad) {
+            btnShad.addEventListener('click', () => {
+                switchStudyMode('shadowing');
+                selectShadowingWordByText(cleanHz);
+            });
+        }
+
+        heroEl.querySelectorAll('.ex-speak-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const spk = btn.getAttribute('data-speak');
+                if (spk) speakChinese(spk, btn);
+            });
+        });
+    }
+
+    function renderBentoStatsCard(unitData) {
+        const statsEl = document.getElementById('bentoStatsCard');
+        if (!statsEl || !unitData) return;
+
+        const words = unitData.target_words || [];
+        const totalWords = words.length;
+        const uKey = `${state.activeBookId}_${unitData.unit}`;
+        const isUnitDone = !!state.doneUnits[uKey];
+
+        let srsCount = 0;
+        let starredCount = 0;
+        words.forEach(w => {
+            if (state.srsData && state.srsData[w.id]) srsCount++;
+            if (state.starredWords[w.id]) starredCount++;
+        });
+
+        // Calculate progress percentage
+        let pct = isUnitDone ? 100 : Math.min(95, Math.round(((totalWords - srsCount) / Math.max(1, totalWords)) * 75) + (starredCount > 0 ? 15 : 0));
+        if (pct < 0) pct = 0;
+
+        statsEl.innerHTML = `
+            <div class="bsc-head">
+                <div class="bsc-title">📊 Tiến Độ Bài ${unitData.unit}</div>
+                <span class="bsc-badge">${isUnitDone ? '✓ Hoàn thành' : `${pct}% Ghi nhớ`}</span>
+            </div>
+            <div class="bsc-progress-bar-wrap">
+                <div class="bsc-progress-bar-fill" style="width: ${pct}%"></div>
+            </div>
+            <div class="bsc-metrics-grid">
+                <div class="bsc-metric-item">
+                    <span class="bmi-val">${totalWords}</span>
+                    <span class="bmi-label">Tổng số từ</span>
+                </div>
+                <div class="bsc-metric-item">
+                    <span class="bmi-val" style="color:var(--accent-amber)">${starredCount}</span>
+                    <span class="bmi-label">Đã lưu ⭐</span>
+                </div>
+                <div class="bsc-metric-item">
+                    <span class="bmi-val" style="color:var(--accent-emerald)">${srsCount}</span>
+                    <span class="bmi-label">Cần ôn 🧠</span>
+                </div>
+            </div>
+            <div class="bsc-actions">
+                <button class="bsc-btn-quiz" id="btnBentoJumpQuiz" title="Kiểm tra phản xạ từ vựng của bài này">
+                    🎯 Vào Quiz Nhanh
+                </button>
+                <button class="bsc-btn-fc" id="btnBentoJumpFc" title="Ôn tập thẻ 3D bài này">
+                    🎴 Thẻ Flashcard
+                </button>
+            </div>
+        `;
+
+        const bQuiz = statsEl.querySelector('#btnBentoJumpQuiz');
+        const bFc = statsEl.querySelector('#btnBentoJumpFc');
+        if (bQuiz) {
+            bQuiz.addEventListener('click', () => {
+                switchStudyMode('games');
+                switchGamesSubMode('quiz');
+            });
+        }
+        if (bFc) {
+            bFc.addEventListener('click', () => {
+                switchStudyMode('flashcard');
+            });
+        }
+    }
+
+    function renderBentoMnemonicCard(w) {
+        const mnemEl = document.getElementById('bentoMnemonicCard');
+        if (!mnemEl || !w) return;
+
+        const vData = getWordVisualData(w.word, w.meaning_vi || w.meaning_primary, w.meaning_en);
+        const rads = vData.radicals || [];
+
+        const radsHtml = rads.length
+            ? rads.map(r => `
+                <div class="bmc-rad-chip">
+                    <span class="bmc-rad-char">${escapeHtml(r.r)}</span>
+                    <span>${escapeHtml(r.name)} (${escapeHtml(r.vi)})</span>
+                </div>
+              `).join('')
+            : `<span style="font-size:0.78rem;color:var(--text-muted)">Chữ đơn thể hoặc nét cơ bản</span>`;
+
+        mnemEl.innerHTML = `
+            <div class="bmc-head">
+                <div class="bmc-title">🎨 Chiết Tự: “${escapeHtml(w.word)}”</div>
+                <button class="bmc-expand-btn" id="btnBmcExpand" title="Mở sơ đồ chiết tự & gia đình từ">Phóng to ↗</button>
+            </div>
+            <div class="bmc-radicals-row">
+                ${radsHtml}
+            </div>
+            <div class="bmc-story-card">
+                <div class="bmsc-tag">💡 Mẹo Nhớ Hình Tượng:</div>
+                <div>${escapeHtml(vData.story || 'Chữ Hán tượng hình ghi nhớ qua cấu trúc bộ thủ và hình tượng truyền thống.')}</div>
+            </div>
+        `;
+
+        const btnExp = mnemEl.querySelector('#btnBmcExpand');
+        if (btnExp) btnExp.addEventListener('click', () => openMnemonicModal(w.id));
+    }
+
+    function renderBentoWordStrip(words, unitData) {
+        const gridEl = document.getElementById('bentoWordsGrid');
+        const countEl = document.getElementById('bentoWordsCount');
+        if (!gridEl) return;
+
+        if (countEl) countEl.textContent = `${words.length} từ`;
+
         gridEl.innerHTML = words.map(w => {
-            const isStar = !!state.starredWords[w.id];
             const isActive = w.num === state.activeWordNum;
-            const shortVi = truncateText(w.meaning_vi || w.meaning_primary || '', 26);
+            const isStar = !!state.starredWords[w.id];
+            const isSrs = state.srsData && !!state.srsData[w.id];
+            const shortVi = truncateText(w.meaning_vi || w.meaning_primary || '', 20);
 
             return `
-                <div class="tw-chip ${isActive ? 'active' : ''}"
-                     data-word-num="${w.num}"
-                     data-hanzi="${escapeAttr(cleanHanziForTts(w.word))}"
-                     title="Nhấn để nghe phát âm và nhảy tới thẻ giải nghĩa #${w.num}">
-                    <span class="tw-num">${w.num}</span>
-                    <div class="tw-chip-body">
-                        <div class="tw-chip-top">
-                            <span class="tw-hz">${escapeHtml(w.word)}</span>
-                            <span class="tw-py">${escapeHtml(w.pinyin)}</span>
-                            ${isStar ? '<span style="font-size:0.75rem;">⭐</span>' : ''}
-                        </div>
-                        <div class="tw-vi">${escapeHtml(shortVi)}</div>
+                <div class="bws-chip ${isActive ? 'active' : ''} ${isSrs ? 'is-learned' : ''}" data-bento-num="${w.num}">
+                    <div class="bws-top">
+                        <span class="bws-num">#${w.num}</span>
+                        ${isStar ? '<span class="bws-star">⭐</span>' : ''}
                     </div>
+                    <div class="bws-hz">${escapeHtml(w.word)}</div>
+                    <div class="bws-py">${formatPinyinWithToneColors(w.pinyin)}</div>
+                    <div class="bws-vi">${escapeHtml(shortVi)}</div>
                 </div>
             `;
         }).join('');
 
-        gridEl.querySelectorAll('.tw-chip').forEach(chip => {
+        gridEl.querySelectorAll('.bws-chip').forEach(chip => {
             chip.addEventListener('click', () => {
-                const num = parseInt(chip.getAttribute('data-word-num'), 10);
-                const hz  = chip.getAttribute('data-hanzi');
-                state.activeWordNum = num;
-
-                gridEl.querySelectorAll('.tw-chip').forEach(c => c.classList.remove('active'));
-                chip.classList.add('active');
-
-                if (hz) speakChinese(hz);
-
-                const card = document.getElementById(`qm-word-${num}`);
-                if (card) {
-                    document.querySelectorAll('.qm-word-card.highlight-flash').forEach(el => {
-                        el.classList.remove('highlight-flash');
-                    });
-                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    card.classList.add('highlight-flash');
-                    setTimeout(() => card.classList.remove('highlight-flash'), 2200);
-                }
+                const num = parseInt(chip.getAttribute('data-bento-num'), 10);
+                selectBentoWordByNum(num);
+                const wObj = words.find(item => item.num === num);
+                if (wObj) speakChinese(cleanHanziForTts(wObj.word), chip);
             });
         });
+    }
 
+    function selectBentoWordByNum(num) {
+        const unitData = getCurrentUnitData();
+        if (!unitData || !unitData.target_words) return;
+        const words = unitData.target_words;
+        const word = words.find(w => w.num === num);
+        if (!word) return;
+
+        state.activeWordNum = num;
+
+        // 1. Update Hero Word Card
+        renderBentoHeroWord(word, words.length, unitData.unit);
+
+        // 2. Update Mnemonic Card
+        renderBentoMnemonicCard(word);
+
+        // 3. Highlight chip in Word Strip
+        document.querySelectorAll('.bws-chip').forEach(chip => {
+            const cNum = parseInt(chip.getAttribute('data-bento-num'), 10);
+            chip.classList.toggle('active', cNum === num);
+        });
+
+        // 4. Scroll active chip into view horizontally if needed
+        const activeChip = document.querySelector(`.bws-chip[data-bento-num="${num}"]`);
+        if (activeChip) {
+            activeChip.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+    }
+
+    function renderClassicMemoryList(unitData) {
+        const listEl = document.getElementById('quickMemoryList');
+        if (!listEl || !unitData) return;
+
+        const words = unitData.target_words || [];
         const displayWords = state.onlyStarredWords
             ? words.filter(w => !!state.starredWords[w.id])
             : words;
@@ -1802,11 +2285,6 @@
 
         listEl.innerHTML = displayWords.map(w => renderQuickMemoryCardHtml(w, null)).join('');
         bindQuickMemoryCardEvents(listEl);
-
-        const btnCompact = document.getElementById('btnViewCompact');
-        const btnFull    = document.getElementById('btnViewFull');
-        if (btnCompact) btnCompact.classList.toggle('active', state.viewMode === 'compact');
-        if (btnFull)    btnFull.classList.toggle('active', state.viewMode === 'full');
     }
 
     function setViewMode(mode) {
@@ -1851,7 +2329,7 @@
         const collocationsHtml = w.collocations
             ? `<div class="qmc-collocations">
                    <strong>🔗 Cụm từ thường gặp:</strong> ${escapeHtml(w.collocations)}
-                   ${w.collocations_pinyin ? `<span style="color:var(--text-muted);font-size:0.78rem;"> (${escapeHtml(w.collocations_pinyin)})</span>` : ''}
+                   ${w.collocations_pinyin ? `<span style="color:var(--text-muted);font-size:0.78rem;"> (${formatPinyinWithToneColors(w.collocations_pinyin)})</span>` : ''}
                </div>`
             : '';
 
@@ -1864,7 +2342,7 @@
                                <span><strong>${idx + 1}.</strong> ${highlightTargetWord(ex.hz, w.word)}</span>
                                <button class="ex-speak-btn" data-speak="${escapeAttr(ex.hz)}" title="Nghe câu ví dụ">🔊</button>
                            </div>
-                           ${ex.py ? `<div class="qmc-ex-py ${state.showPinyin ? '' : 'hidden'}">${escapeHtml(ex.py)}</div>` : ''}
+                           ${ex.py ? `<div class="qmc-ex-py ${state.showPinyin ? '' : 'hidden'}">${formatPinyinWithToneColors(ex.py)}</div>` : ''}
                            ${ex.vn ? `<div class="qmc-ex-vn ${state.showMeaning ? '' : 'hidden'}">${escapeHtml(ex.vn)}</div>` : ''}
                        </div>
                    `).join('')}
@@ -1881,7 +2359,7 @@
                         </button>
                         <span class="qmc-hz" data-speak="${escapeAttr(cleanHz)}" title="Nhấn để nghe phát âm">${escapeHtml(w.word)}</span>
                         ${showTrad ? `<span class="qmc-trad" title="Chữ Phồn thể">[${escapeHtml(w.traditional)}]</span>` : ''}
-                        <span class="qmc-py">${escapeHtml(w.pinyin)}</span>
+                        <span class="qmc-py">${formatPinyinWithToneColors(w.pinyin)}</span>
                         ${w.pos_full ? `<span class="qmc-pos">${escapeHtml(w.pos_full)}</span>` : ''}
                         ${w.han_viet ? `<span class="qmc-hv">HV: ${escapeHtml(w.han_viet)}</span>` : ''}
                         ${isSrs ? `<span class="qmc-srs-pill" title="Từ khó trong Hộp ${srsInfo.box || 1} SRS">🧠 Hộp ${srsInfo.box || 1}</span>` : ''}
@@ -1990,7 +2468,7 @@
                 e.stopPropagation();
                 stopSpeakingAll();
                 const text = el.getAttribute('data-speak');
-                if (text) speakChinese(text);
+                if (text) speakChinese(text, el);
             });
         });
 
@@ -2760,7 +3238,7 @@
 
         if (backVis) backVis.textContent = vData.icon || '✨';
         if (backHz) backHz.textContent = w.word;
-        if (backPy) backPy.textContent = w.pinyin;
+        if (backPy) backPy.innerHTML = formatPinyinWithToneColors(w.pinyin);
         if (backMn) backMn.textContent = w.meaning_vi || w.meaning_primary || w.meaning_en;
 
         if (backHv) {
@@ -3488,7 +3966,7 @@
         if (vNum) vNum.textContent = `#${w.num}`;
         if (vAvatar) vAvatar.textContent = vData.icon;
         if (vHz) vHz.textContent = w.word;
-        if (vPy) vPy.textContent = w.pinyin;
+        if (vPy) vPy.innerHTML = formatPinyinWithToneColors(w.pinyin);
         if (vMn) vMn.textContent = w.meaning_vi || w.meaning_primary || w.meaning_en;
         if (vHv) {
             vHv.textContent = `Hán Việt: ${(w.han_viet || '').toUpperCase()} · Từ loại: ${w.pos_full || w.pos || 'Từ vựng'}`;
@@ -3588,13 +4066,29 @@
         return wordStr.split('|')[0].replace(/[0-9()（）]/g, '').trim();
     }
 
-    function speakChinese(text) {
+    function speakChinese(text, triggerEl) {
         if (!text || !('speechSynthesis' in window)) return;
         try {
             window.speechSynthesis.cancel();
             const utter = new SpeechSynthesisUtterance(text);
             utter.lang = 'zh-CN';
             utter.rate = 0.9;
+
+            if (triggerEl && triggerEl instanceof HTMLElement) {
+                triggerEl.classList.add('is-speaking');
+                const card = triggerEl.closest('.qm-word-card') || triggerEl.closest('.tw-chip');
+                if (card) card.classList.add('speaking-card');
+
+                const cleanup = () => {
+                    triggerEl.classList.remove('is-speaking');
+                    if (card) card.classList.remove('speaking-card');
+                };
+
+                utter.onend = cleanup;
+                utter.onerror = cleanup;
+                setTimeout(cleanup, Math.max(1600, text.length * 450));
+            }
+
             window.speechSynthesis.speak(utter);
         } catch (e) {
             console.warn('TTS error:', e);
@@ -3783,8 +4277,42 @@
     }
 
     function bindEvents() {
-        const themeBtn = document.getElementById('themeToggleBtn');
-        if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+        // Quick Settings Popover Menu & Theme Grid Toggle
+        const settingsBtn = document.getElementById('btnOpenSettings') || document.getElementById('themePickerBtn') || document.getElementById('themeToggleBtn');
+        if (settingsBtn) {
+            settingsBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleSettingsDropdown();
+            });
+        }
+
+        // Close settings dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('#settingsMenuWrapper') && !e.target.closest('#themePickerWrapper')) {
+                toggleSettingsDropdown(false);
+            }
+        });
+
+        // Theme option click handlers (both swatch grid .tsg-item and legacy .tdm-item)
+        document.querySelectorAll('.tsg-item, .tdm-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const chosen = item.getAttribute('data-set-theme');
+                if (chosen) {
+                    applyTheme(chosen);
+                    const name = THEMES_CONFIG[chosen] ? THEMES_CONFIG[chosen].label : chosen;
+                    showToast(`🎨 Đã đổi sang giao diện: ${name}`, 2000);
+                }
+            });
+        });
+
+        // Hanzi Font Switcher (Artistic Calligraphy <-> Modern Sans)
+        const fontBtn = document.getElementById('btnToggleHanziFont');
+        if (fontBtn) fontBtn.addEventListener('click', toggleHanziFont);
+
+        // Tone-based Color Switcher
+        const toneBtn = document.getElementById('btnToggleToneColor');
+        if (toneBtn) toneBtn.addEventListener('click', toggleToneColors);
 
         // Sidebar toggle & mobile drawer controls
         const sidebarBtn   = document.getElementById('toggleSidebarBtn');
@@ -3818,11 +4346,75 @@
             });
         }
 
-        // View Mode Switcher: Compact vs Full
-        const btnViewCompact = document.getElementById('btnViewCompact');
-        const btnViewFull    = document.getElementById('btnViewFull');
-        if (btnViewCompact) btnViewCompact.addEventListener('click', () => setViewMode('compact'));
-        if (btnViewFull)    btnViewFull.addEventListener('click', () => setViewMode('full'));
+        // Bento Dashboard Layout Switcher (Bento Grid vs Classic List)
+        const btnViewBento   = document.getElementById('btnViewBento');
+        const btnViewClassic = document.getElementById('btnViewClassic');
+        if (btnViewBento)   btnViewBento.addEventListener('click', () => setMemoryLayout('bento'));
+        if (btnViewClassic) btnViewClassic.addEventListener('click', () => setMemoryLayout('classic'));
+
+        // Global Keyboard Shortcuts (Spotlight Search, Unit Nav & Bento Mode)
+        document.addEventListener('keydown', (e) => {
+            // Spotlight Search Hotkey: Ctrl+K or Cmd+K
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                const gSearch = document.getElementById('globalWordSearch');
+                if (gSearch) {
+                    gSearch.focus();
+                    gSearch.select();
+                }
+                return;
+            }
+
+            // Escape to blur search
+            if (e.key === 'Escape' && document.activeElement && document.activeElement.id === 'globalWordSearch') {
+                document.activeElement.blur();
+                return;
+            }
+
+            // Don't trigger study shortcuts if typing in any input/textarea/select
+            if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return;
+
+            // Unit Quick Navigation: Alt + Left / Alt + Right
+            if (e.altKey && e.key === 'ArrowLeft') {
+                e.preventDefault();
+                goPrevUnit();
+                return;
+            }
+            if (e.altKey && e.key === 'ArrowRight') {
+                e.preventDefault();
+                goNextUnit();
+                return;
+            }
+
+            // Bento Mode Shortcuts (ArrowLeft, ArrowRight, Space for TTS)
+            if (state.studyMode === 'memory') {
+                const curLayout = state.memoryLayout || localStorage.getItem('hsk_wl_memory_layout') || 'bento';
+                if (curLayout === 'bento') {
+                    const unitData = getCurrentUnitData();
+                    if (!unitData || !unitData.target_words) return;
+                    const words = unitData.target_words;
+                    const total = words.length;
+
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        if (state.activeWordNum > 1) {
+                            selectBentoWordByNum(state.activeWordNum - 1);
+                        }
+                    } else if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        if (state.activeWordNum < total) {
+                            selectBentoWordByNum(state.activeWordNum + 1);
+                        }
+                    } else if (e.code === 'Space') {
+                        e.preventDefault();
+                        const curWord = words.find(w => w.num === state.activeWordNum);
+                        if (curWord) {
+                            speakChinese(cleanHanziForTts(curWord.word), document.getElementById('btnHeroSpeak'));
+                        }
+                    }
+                }
+            }
+        });
 
         // Close any open card more menus when clicking outside
         document.addEventListener('click', (e) => {
@@ -4050,6 +4642,7 @@
         const btnTogPod = document.getElementById('btnTogglePodcast');
         if (btnTogPod) {
             btnTogPod.addEventListener('click', () => {
+                toggleSettingsDropdown(false);
                 if (state.podcast.active) closePodcastPlayer();
                 else openPodcastPlayer();
             });
@@ -4335,7 +4928,10 @@
         const closeGrammar = document.getElementById('btnCloseGrammarModal');
         const modalGrammar = document.getElementById('grammarModal');
         if (btnGrammar && modalGrammar) {
-            btnGrammar.addEventListener('click', () => modalGrammar.classList.remove('hidden'));
+            btnGrammar.addEventListener('click', () => {
+                toggleSettingsDropdown(false);
+                modalGrammar.classList.remove('hidden');
+            });
         }
         if (closeGrammar && modalGrammar) {
             closeGrammar.addEventListener('click', () => modalGrammar.classList.add('hidden'));
@@ -4566,7 +5162,7 @@
         const sepLabel = document.getElementById('sepLabel');
 
         if (hzEl) hzEl.textContent = w.word;
-        if (pyEl) pyEl.textContent = w.pinyin;
+        if (pyEl) pyEl.innerHTML = formatPinyinWithToneColors(w.pinyin);
         if (vnEl) vnEl.textContent = w.meaning_vi || w.meaning_primary || '';
         if (posEl) posEl.textContent = w.pos_full || w.pos || 'Từ vựng';
         if (toneTipEl) toneTipEl.innerHTML = getToneGuidance(w.pinyin);
@@ -4582,7 +5178,7 @@
             const activeEx = examples[state.shadowing.targetExIndex];
             if (exBox) exBox.classList.remove('hidden');
             if (exHz) exHz.textContent = activeEx.hz;
-            if (exPy) exPy.textContent = activeEx.py;
+            if (exPy) exPy.innerHTML = formatPinyinWithToneColors(activeEx.py);
             if (exVn) exVn.textContent = activeEx.vn;
             if (sepCounter) sepCounter.textContent = `${state.shadowing.targetExIndex + 1}/${examples.length}`;
             if (sepLabel) sepLabel.textContent = `💬 Câu ví dụ đang luyện:`;
@@ -4590,7 +5186,7 @@
 
             // Teleprompter display in Recording Card
             if (stpHz) stpHz.textContent = activeEx.hz;
-            if (stpPy) stpPy.textContent = activeEx.py;
+            if (stpPy) stpPy.innerHTML = formatPinyinWithToneColors(activeEx.py);
             if (stpVn) stpVn.textContent = activeEx.vn;
             if (stpTypeBadge) stpTypeBadge.textContent = '💬 CÂU VÍ DỤ SHADOWING:';
             if (stpExNav) stpExNav.classList.toggle('hidden', examples.length <= 1);
@@ -4601,7 +5197,7 @@
 
             // Teleprompter display in Recording Card
             if (stpHz) stpHz.textContent = w.word;
-            if (stpPy) stpPy.textContent = w.pinyin;
+            if (stpPy) stpPy.innerHTML = formatPinyinWithToneColors(w.pinyin);
             if (stpVn) stpVn.textContent = w.meaning_vi || w.meaning_primary || '';
             if (stpTypeBadge) stpTypeBadge.textContent = '🔤 TỪ VỰNG MỤC TIÊU:';
             if (stpExNav) stpExNav.classList.add('hidden');

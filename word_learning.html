@@ -6,51 +6,124 @@
     <title>Giáo Trình Luyện & Nhớ Nhanh Từ Vựng HSK 3.0 (Cấp 1 – 9) | Dữ Liệu JSON</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600;700;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="word_learning.css">
 </head>
 <body>
-    <!-- Top Header -->
+    <!-- Top Header (Ultra-Clean & Modern) -->
     <header class="wl-header">
         <div class="wl-header-left">
             <a href="index.html" class="back-home-btn" title="Về Trang Chủ">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
+                <span class="home-icon">🏠</span>
                 <span class="hide-xs">Trang chủ</span>
             </a>
             <div class="brand-title">
                 <div class="brand-badge">HSK 3.0</div>
-                <h1>词汇速记速练手册 <span class="brand-sub">Sổ Tay Ghi Nhớ & Luyện Tập Nhanh Từ Vựng (11.092 Từ · 368 Bài)</span></h1>
+                <h1>词汇速记 <span class="brand-sub">Sổ Tay 1–9</span></h1>
             </div>
         </div>
 
         <div class="wl-header-Center">
             <div class="global-search-box">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
                 </svg>
-                <input type="text" id="globalWordSearch" placeholder="Tìm nhanh từ vựng trong quyển đang mở (Chữ Hán, Pinyin, nghĩa Việt)...">
+                <input type="text" id="globalWordSearch" placeholder="Tìm từ vựng trong sách (Chữ Hán, Pinyin, nghĩa)...">
+                <kbd class="search-kbd-hint hide-sm">Ctrl K</kbd>
                 <button id="clearGlobalSearch" class="clear-btn hidden" title="Xóa">✕</button>
             </div>
         </div>
 
         <div class="wl-header-right">
             <!-- Streak & Badges Widget -->
-            <button id="btnBadgesModal" class="action-pill streak-pill" title="Xem chuỗi ngày học, cấp độ & huy hiệu thành tích">
+            <button id="btnBadgesModal" class="action-pill streak-pill" title="Xem chuỗi ngày học & huy hiệu thành tích">
                 🔥 <span id="hdrStreakCount">1</span> ngày · <span id="hdrUserLevel">Lv.1</span>
             </button>
             <!-- SRS Quick Review Button -->
             <button id="btnSrsQuickReview" class="action-pill srs-pill" title="Hộp từ khó (Spaced Repetition) - Xem các từ cần ôn tập">
                 🧠 <span class="hide-sm">Từ khó</span> <span class="srs-count-badge" id="hdrSrsCount">0</span>
             </button>
-            <!-- Hands-free Podcast Mode Button -->
-            <button id="btnTogglePodcast" class="action-pill podcast-pill" title="Bật/Tắt Chế độ Nghe thụ động / Chạy nền (Hands-free Podcast)">
-                🎧 <span class="hide-sm">Podcast</span>
-            </button>
-            <button id="themeToggleBtn" class="icon-btn" title="Đổi giao diện Sáng / Tối">
-                ☀️
-            </button>
+
+            <!-- Quick Settings Popover Menu (Gom Theme, Font, Podcast, Ngữ pháp) -->
+            <div class="settings-menu-wrapper" id="settingsMenuWrapper">
+                <button id="btnOpenSettings" class="action-pill settings-pill" title="Cài đặt giao diện & công cụ học tập">
+                    ⚙️ <span class="hide-sm">Cài đặt</span> <span class="settings-caret">▾</span>
+                </button>
+                <div class="settings-dropdown-menu hidden" id="settingsDropdownMenu">
+                    <div class="sdm-section">
+                        <div class="sdm-sec-title">🎨 Giao Diện Chủ Đề (Themes)</div>
+                        <div class="theme-swatch-grid">
+                            <button class="tsg-item" data-set-theme="dark" title="Dạ Thạch (Dark)">
+                                <span class="tsg-icon">🌙</span>
+                                <span class="tsg-label">Dạ Thạch</span>
+                            </button>
+                            <button class="tsg-item" data-set-theme="light" title="Bạch Tuyết (Light)">
+                                <span class="tsg-icon">☀️</span>
+                                <span class="tsg-label">Bạch Tuyết</span>
+                            </button>
+                            <button class="tsg-item" data-set-theme="palace" title="Cố Cung Chu Sa">
+                                <span class="tsg-icon">🏮</span>
+                                <span class="tsg-label">Cố Cung</span>
+                            </button>
+                            <button class="tsg-item" data-set-theme="matcha" title="Trà Đạo Giấy Mộc">
+                                <span class="tsg-icon">🍵</span>
+                                <span class="tsg-label">Trà Đạo</span>
+                            </button>
+                            <button class="tsg-item" data-set-theme="cyberpunk" title="OLED Cyberpunk">
+                                <span class="tsg-icon">🌌</span>
+                                <span class="tsg-label">Cyberpunk</span>
+                            </button>
+                            <button class="tsg-item" data-set-theme="jiangnan" title="Giang Nam Khói Mây">
+                                <span class="tsg-icon">🌸</span>
+                                <span class="tsg-label">Giang Nam</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="sdm-divider"></div>
+
+                    <div class="sdm-section">
+                        <div class="sdm-sec-title">🛠️ Công Cụ & Kiểu Chữ</div>
+                        <div class="sdm-tools-list">
+                            <!-- Hanzi Font Switcher -->
+                            <button class="sdm-tool-row" id="btnToggleHanziFont">
+                                <div class="sdm-tool-info">
+                                    <span class="sdm-tool-icon">✍️</span>
+                                    <div>
+                                        <strong>Kiểu chữ Hán: <span id="lblHanziFont">Khải Thể</span></strong>
+                                        <div class="sdm-tool-sub">Thư pháp bút lông ↔ Chữ in hiện đại</div>
+                                    </div>
+                                </div>
+                                <span class="sdm-action-arrow">⇄</span>
+                            </button>
+
+                            <!-- Hands-free Podcast Toggle -->
+                            <button class="sdm-tool-row" id="btnTogglePodcast">
+                                <div class="sdm-tool-info">
+                                    <span class="sdm-tool-icon">🎧</span>
+                                    <div>
+                                        <strong>Podcast Nghe Thụ Động</strong>
+                                        <div class="sdm-tool-sub">Phát âm tự động song ngữ chạy nền</div>
+                                    </div>
+                                </div>
+                                <span class="sdm-action-arrow">▶</span>
+                            </button>
+
+                            <!-- Grammar Modal -->
+                            <button class="sdm-tool-row" id="btnGrammarModal">
+                                <div class="sdm-tool-info">
+                                    <span class="sdm-tool-icon">📖</span>
+                                    <div>
+                                        <strong>Ký hiệu ngữ pháp (abbr.)</strong>
+                                        <div class="sdm-tool-sub">Bảng tra cứu từ loại tiếng Trung</div>
+                                    </div>
+                                </div>
+                                <span class="sdm-action-arrow">↗</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -64,6 +137,12 @@
             <div class="sidebar-drawer-top">
                 <span class="sdt-label">📑 Danh sách Bài học (Units)</span>
                 <button class="sdt-close-btn" id="closeSidebarBtn" title="Đóng danh sách bài">✕ Đóng</button>
+            </div>
+
+            <!-- Book Selector Dropdown placed logically at the top of book unit list -->
+            <div class="sidebar-book-selector-box" id="sidebarBookSelectorBox">
+                <label for="bookSelectDropdown" class="sbsb-label">📚 Chọn Giáo Trình HSK:</label>
+                <select id="bookSelectDropdown" class="bsb-select" title="Chọn quyển sách HSK 3.0 để học"></select>
             </div>
 
             <div class="sidebar-book-summary" id="sidebarBookSummary">
@@ -92,37 +171,36 @@
 
         <!-- MAIN CONTENT PANEL: Pure JSON-Rendered Textbook Unit & Interactive Exercises -->
         <section class="wl-main-panel">
-            <!-- Unit Top Navigation & Mode Tabs -->
+            <!-- Unit Top Navigation & Mode Tabs (Clean & Ergonomic Segmented Control) -->
             <div class="unit-top-bar">
                 <div class="utb-left">
-                    <button id="toggleSidebarBtn" class="icon-btn-sm" title="Ẩn/Hiện danh sách bài học">
-                        ☰ <span class="btn-sidebar-label">Chọn bài</span>
+                    <button id="toggleSidebarBtn" class="icon-btn-sm" title="Mở danh sách tất cả bài học">
+                        ☰ <span class="btn-sidebar-label hide-xs">Bài</span>
                     </button>
-                    <div class="active-unit-title" id="activeUnitTitleArea" title="Nhấn để mở danh sách bài học">
-                        <span class="au-badge" id="activeUnitBadge">Bài 1</span>
-                        <h2 id="activeUnitHeading">爱 — 北边</h2>
+
+                    <!-- Unit Quick Pager: ◀ Bài 1 ▶ (Chuyển bài trực tiếp ngay tại tiêu đề) -->
+                    <div class="unit-quick-pager">
+                        <button class="uqp-nav-btn" id="btnPrevUnit" title="Bài trước (Phím Alt+←)">◀</button>
+                        <div class="active-unit-title" id="activeUnitTitleArea" title="Nhấn để mở danh sách bài học">
+                            <span class="au-badge" id="activeUnitBadge">Bài 1</span>
+                            <h2 id="activeUnitHeading">爱 — 北边</h2>
+                        </div>
+                        <button class="uqp-nav-btn" id="btnNextUnit" title="Bài tiếp theo (Phím Alt+→)">▶</button>
                     </div>
-                    <button class="top-speak-all-btn" id="btnSpeakAllTop" title="Phát âm lần lượt cả bài (Từ + Ví dụ) — Nhấn lại để Dừng bất kỳ lúc nào">
-                        <span class="tsa-icon">🔊</span>
-                        <span class="tsa-text">Đọc cả bài</span>
-                    </button>
-                    <!-- Book Selector Dropdown relocated here to save space & eliminate extra row -->
-                    <div class="utb-book-select-wrap" id="utbBookSelectWrap">
-                        <span class="bsb-icon">📚</span>
-                        <select id="bookSelectDropdown" class="bsb-select" title="Chọn quyển sách HSK 3.0 để học"></select>
-                    </div>
+
+                    <button class="star-unit-btn" id="btnToggleUnitStar" title="Đánh dấu sao bài học">☆</button>
                 </div>
 
-                <!-- Main Study Mode Switcher: 4 Clean Consolidated Pillars -->
-                <div class="study-mode-tabs">
+                <!-- Main Study Mode Switcher: Clean Segmented Control -->
+                <div class="study-mode-tabs" role="tablist">
                     <button class="sm-tab active" data-smode="memory" id="tabBtnMemory">
-                        📖 <span class="sm-tab-text">Học từ & Chiết tự</span> <span class="sm-count" id="lblTargetCount">20 từ</span>
+                        📖 <span class="sm-tab-text">Học từ</span> <span class="sm-count" id="lblTargetCount">20 từ</span>
                     </button>
                     <button class="sm-tab" data-smode="flashcard" id="tabBtnFlashcard">
-                        🎴 <span class="sm-tab-text">Flashcard Hình ảnh</span>
+                        🎴 <span class="sm-tab-text">Flashcard</span>
                     </button>
                     <button class="sm-tab" data-smode="games" id="tabBtnGames">
-                        🎮 <span class="sm-tab-text">Trò chơi & Luyện tập</span>
+                        🎮 <span class="sm-tab-text">Trò chơi & Quiz</span>
                     </button>
                     <button class="sm-tab" data-smode="shadowing" id="tabBtnShadowing">
                         🎙️ <span class="sm-tab-text">Luyện nói AI</span>
@@ -130,14 +208,13 @@
                 </div>
 
                 <div class="utb-right">
-                    <button class="mark-done-btn" id="btnToggleUnitDone" title="Đánh dấu hoàn thành bài học này">
-                        ☐ Đánh dấu Đã học
+                    <button class="top-speak-all-btn" id="btnSpeakAllTop" title="Phát âm lần lượt cả bài (Từ + Ví dụ) — Nhấn lại để Dừng">
+                        <span class="tsa-icon">🔊</span>
+                        <span class="tsa-text hide-sm">Đọc cả bài</span>
                     </button>
-                    <button class="star-unit-btn" id="btnToggleUnitStar" title="Đánh dấu sao bài học">☆</button>
-                    <div class="unit-prev-next">
-                        <button class="pg-btn" id="btnPrevUnit" title="Bài trước">◀ Bài trước</button>
-                        <button class="pg-btn" id="btnNextUnit" title="Bài tiếp theo">Bài sau ▶</button>
-                    </div>
+                    <button class="mark-done-btn" id="btnToggleUnitDone" title="Đánh dấu hoàn thành bài học này">
+                        ✓ <span class="hide-xs">Đã học</span>
+                    </button>
                 </div>
             </div>
 
@@ -145,59 +222,90 @@
             <div class="unit-stage-scroll" id="unitStageScroll">
 
                 <!-- =========================================================
-                     MODE 1: GHI NHỚ NHANH (目标词语 & 速记 — RENDERED FROM JSON)
+                     MODE 1: BENTO DASHBOARD TỪ VỰNG (BENTO WORKSTATION)
                      ========================================================= -->
                 <div class="smode-pane active" id="paneMemory">
-                    <!-- Target Words Box (◎ 目标词语 Từ vựng mục tiêu - Mặc định thu gọn) -->
-                    <div class="target-words-box" id="targetWordsBox">
-                        <div class="twb-header collapsed-head">
-                            <div class="twb-title">
-                                <span class="twb-icon">◎</span>
-                                <strong>目标词语</strong>
-                                <span>Bảng từ mục tiêu</span>
-                                <button class="ctrl-chip" id="btnCollapseTargetGrid" title="Thu gọn / Mở rộng bảng từ mục tiêu">
-                                    🔽 Xem bảng từ
-                                </button>
+                    <!-- Bento Toolbar -->
+                    <div class="bento-toolbar">
+                        <div class="bento-toolbar-left">
+                            <span class="btl-icon">🍱</span>
+                            <div class="btl-title-wrap">
+                                <strong>Bento Từ Vựng</strong>
+                                <span class="btl-sub hide-xs">Học sâu từng từ ngữ cảnh</span>
                             </div>
                         </div>
-                        <div class="twb-grid hidden" id="targetWordsGrid">
-                            <!-- 20 (or 60) clickable target word chips -->
+
+                        <div class="bento-toolbar-right">
+                            <!-- Switcher: Bento Dashboard vs Classic List -->
+                            <div class="view-mode-toggle" id="viewModeToggle" title="Chuyển chế độ xem">
+                                <button class="vmt-btn active" data-vmode="bento" id="btnViewBento" title="Bento Dashboard: Tập trung từng từ, trực quan, không cần cuộn trang">
+                                    🍱 Bento Grid
+                                </button>
+                                <button class="vmt-btn" data-vmode="classic" id="btnViewClassic" title="Danh sách cuộn: Xem dạng danh sách tất cả các thẻ">
+                                    📜 Danh sách
+                                </button>
+                            </div>
+
+                            <button class="ctrl-chip active" id="btnToggleToneColor" title="Bật/Tắt phân màu theo 4 thanh điệu tiếng Trung">
+                                🎨 Màu thanh điệu
+                            </button>
+
+                            <button class="ctrl-chip active" id="btnTogglePinyin" title="Ẩn/Hiện phiên âm Pinyin ở câu ví dụ">
+                                👁️ Pinyin ví dụ
+                            </button>
+
+                            <button class="ctrl-chip active" id="btnToggleMeaning" title="Ẩn/Hiện nghĩa tiếng Việt ở câu ví dụ">
+                                🇻🇳 Nghĩa ví dụ
+                            </button>
+
+                            <button class="ctrl-chip" id="btnFilterStarredWords" title="Chỉ hiện các từ bạn đã đánh dấu sao">
+                                ⭐ Đã lưu
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Quick Memory List (◎ 速记 Ghi nhớ từ vựng) -->
-                    <div class="quick-memory-section">
-                        <div class="qms-header">
-                            <div class="qms-header-left">
-                                <span class="twb-icon">◎</span>
-                                <strong>速记 · Danh sách từ vựng</strong>
+                    <!-- VIEW 1: BENTO BOX WORKSTATION (MẶC ĐỊNH) -->
+                    <div class="bento-dashboard-grid" id="bentoDashboardGrid">
+                        <!-- Khối 1: Hero Word Card (Trọng tâm lớn) -->
+                        <div class="bento-card bento-hero-card" id="bentoHeroCard">
+                            <!-- Populated dynamically via renderBentoHeroWord() -->
+                        </div>
+
+                        <!-- Cột phải: 2 Khối Bento Phụ -->
+                        <div class="bento-side-column">
+                            <!-- Khối 2: Tiến độ & SRS Hộp Trí Nhớ -->
+                            <div class="bento-card bento-stats-card" id="bentoStatsCard">
+                                <!-- Populated dynamically -->
                             </div>
-                            <div class="qms-toolbar">
-                                <div class="view-mode-toggle" id="viewModeToggle" title="Chuyển chế độ xem">
-                                    <button class="vmt-btn active" data-vmode="compact" id="btnViewCompact" title="Chế độ tinh gọn: Thẻ phẳng tối giản, bấm vào để mở ví dụ">
-                                        🌿 Tinh gọn
-                                    </button>
-                                    <button class="vmt-btn" data-vmode="full" id="btnViewFull" title="Chế độ chi tiết: Mở tất cả ví dụ và cụm từ">
-                                        📖 Chi tiết
-                                    </button>
+
+                            <!-- Khối 3: Chiết Tự & Mẹo Nhớ Nhanh -->
+                            <div class="bento-card bento-mnemonic-card" id="bentoMnemonicCard">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Khối 4: Băng Chuyền / Lưới 20 Từ Vựng Bài Học (Full Width ở dưới) -->
+                        <div class="bento-card bento-word-strip-card" id="bentoWordStripCard">
+                            <div class="bwsc-header">
+                                <div class="bwsc-title">
+                                    <span>📑 Danh Sách Từ Vựng Bài Học</span>
+                                    <span class="bwsc-count" id="bentoWordsCount">20 từ</span>
                                 </div>
-                                <button class="ctrl-chip active" id="btnTogglePinyin" title="Ẩn/Hiện phiên âm Pinyin ở câu ví dụ">
-                                    👁️ Pinyin ví dụ
-                                </button>
-                                <button class="ctrl-chip active" id="btnToggleMeaning" title="Ẩn/Hiện nghĩa tiếng Việt ở câu ví dụ">
-                                    🇻🇳 Nghĩa ví dụ
-                                </button>
-                                <button class="ctrl-chip" id="btnFilterStarredWords" title="Chỉ hiện các từ bạn đã đánh dấu sao">
-                                    ⭐ Đã lưu
-                                </button>
+                                <span class="bwsc-hint hide-xs">💡 Bấm vào thẻ từ bất kỳ bên dưới để xem chi tiết ở Bảng Hero phía trên</span>
                             </div>
-                        </div>
-                        <div class="qms-list" id="quickMemoryList">
-                            <!-- Populated dynamically from unit.target_words JSON -->
+                            <div class="bwsc-grid" id="bentoWordsGrid">
+                                <!-- Interactive Word Chips populated dynamically -->
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Bottom Quick Action Bar in Memory Mode -->
+                    <!-- VIEW 2: CLASSIC SCROLLABLE LIST (Tùy chọn phụ khi chuyển sang xem list cuộn) -->
+                    <div class="classic-list-container hidden" id="classicListContainer">
+                        <div class="qms-list" id="quickMemoryList">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
                     <!-- Bottom Quick Action Bar in Memory Mode -->
                     <div class="stage-bottom-cta">
                         <button class="btn-primary-action" id="btnGoToPracticeBottom">
