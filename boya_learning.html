@@ -66,8 +66,14 @@
         <aside class="boya-sidebar" id="boyaSidebar">
             <div class="sidebar-header">
                 <div class="sidebar-book-badge-wrap">
-                    <span class="sidebar-book-badge" id="sidebarBookBadge">Boya Chuẩn Trung Cấp 1</span>
+                    <div class="sidebar-book-select-wrap">
+                        <select id="sidebarBookSelect" class="sidebar-book-select" title="Đổi quyển giáo trình Boya">
+                            <!-- Populated dynamically via JS -->
+                        </select>
+                    </div>
                     <button class="btn-sidebar-close" id="sidebarCloseBtn" title="Đóng danh sách">✕</button>
+                </div>
+                <div class="sidebar-progress-info">
                     <span class="sidebar-progress-label" id="sidebarProgressLabel">0/16 Bài (0%)</span>
                 </div>
                 <div class="sidebar-progress-bar">

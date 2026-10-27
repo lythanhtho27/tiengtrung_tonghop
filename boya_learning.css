@@ -322,7 +322,48 @@ body.dark-mode .book-pill-btn:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 8px;
     margin-bottom: 8px;
+}
+
+.sidebar-book-select-wrap {
+    flex: 1;
+    min-width: 0;
+}
+
+.sidebar-book-select {
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: var(--radius-md);
+    background: var(--primary-light);
+    color: var(--primary-text);
+    border: 1px solid var(--primary-border);
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sidebar-book-select:focus {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    border-color: var(--primary);
+}
+
+body.dark-mode .sidebar-book-select {
+    background: rgba(37, 99, 235, 0.2);
+    color: #93c5fd;
+    border-color: rgba(37, 99, 235, 0.4);
+}
+
+.sidebar-progress-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
 }
 
 .sidebar-book-badge {
@@ -2407,20 +2448,23 @@ body.dark-mode .vc-py {
    ========================================================================== */
 @media (max-width: 768px) {
     :root {
-        --header-height: 54px;
+        --header-height: 94px;
         --player-height: 74px;
     }
 
     /* 1. Header Navigation */
     .boya-header {
-        height: var(--header-height);
-        padding: 0 10px;
-        gap: 6px;
+        height: auto;
+        min-height: var(--header-height);
+        padding: 6px 10px 4px 10px;
+        flex-wrap: wrap;
+        gap: 4px 0;
     }
 
     .header-left {
         gap: 8px;
-        flex-shrink: 0;
+        flex: 1;
+        height: 38px;
     }
 
     .header-btn-home {
@@ -2456,12 +2500,56 @@ body.dark-mode .vc-py {
         display: none;
     }
 
+    .header-right {
+        gap: 5px;
+        height: 38px;
+    }
+
+    /* 2. Menu Chọn Sách (Book Switcher Nav) trên Mobile */
     .book-pills-nav {
+        display: flex !important;
+        width: 100%;
+        order: 3;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 4px 2px 2px 2px;
+        gap: 6px;
+        background: transparent;
+        border: none;
+        border-top: 1px solid var(--border-color);
+        border-radius: 0;
+        margin-top: 2px;
+    }
+
+    .book-pills-nav::-webkit-scrollbar {
         display: none;
     }
 
-    .header-right {
+    .book-pill-btn {
+        padding: 5px 12px;
+        font-size: 12px;
+        border-radius: 20px;
+        background: var(--bg-subtle);
+        border: 1px solid var(--border-color);
+        color: var(--text-muted);
+        flex-shrink: 0;
         gap: 5px;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+    }
+
+    .book-pill-btn:hover {
+        background: var(--bg-subtle-hover);
+        color: var(--text-main);
+    }
+
+    .book-pill-btn.active {
+        background: var(--primary) !important;
+        color: #ffffff !important;
+        border-color: var(--primary) !important;
+        font-weight: 700;
+        box-shadow: 0 2px 6px rgba(37, 99, 235, 0.35);
     }
 
     .header-search-btn {

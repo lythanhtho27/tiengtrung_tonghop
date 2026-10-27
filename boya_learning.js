@@ -152,6 +152,7 @@
         dom.sidebarProgressFill = document.getElementById('sidebarProgressFill');
         dom.sidebarProgressLabel = document.getElementById('sidebarProgressLabel');
         dom.sidebarBookBadge = document.getElementById('sidebarBookBadge');
+        dom.sidebarBookSelect = document.getElementById('sidebarBookSelect');
         dom.boyaSidebar     = document.getElementById('boyaSidebar');
         dom.sidebarBackdrop = document.getElementById('sidebarBackdrop');
 
@@ -203,20 +204,35 @@
     }
 
     function renderBookSelector() {
-        if (!dom.bookPillsNav) return;
-        dom.bookPillsNav.innerHTML = window.BOYA_DATA.books.map(b => `
-            <button class="book-pill-btn ${b.id === state.activeBookId ? 'active' : ''}" data-book="${b.id}">
-                <span>${b.icon}</span>
-                <span>${b.name}</span>
-            </button>
-        `).join('');
+        if (dom.bookPillsNav) {
+            dom.bookPillsNav.innerHTML = window.BOYA_DATA.books.map(b => `
+                <button class="book-pill-btn ${b.id === state.activeBookId ? 'active' : ''}" data-book="${b.id}">
+                    <span>${b.icon}</span>
+                    <span>${b.name}</span>
+                </button>
+            `).join('');
 
-        dom.bookPillsNav.querySelectorAll('.book-pill-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const bookId = btn.getAttribute('data-book');
-                switchBook(bookId, 1, true);
+            dom.bookPillsNav.querySelectorAll('.book-pill-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const bookId = btn.getAttribute('data-book');
+                    switchBook(bookId, 1, true);
+                });
             });
-        });
+        }
+
+        // Render Sidebar Book Selector Dropdown
+        if (dom.sidebarBookSelect) {
+            dom.sidebarBookSelect.innerHTML = window.BOYA_DATA.books.map(b => `
+                <option value="${b.id}" ${b.id === state.activeBookId ? 'selected' : ''}>
+                    ${b.icon} ${b.name} (${b.chinese_name})
+                </option>
+            `).join('');
+
+            // Bind change listener only once
+            dom.sidebarBookSelect.onchange = (e) => {
+                switchBook(e.target.value, 1, true);
+            };
+        }
     }
 
     function switchBook(bookId, lessonNum = 1, scrollToTop = true) {
@@ -230,11 +246,22 @@
         document.documentElement.style.setProperty('--primary', book.color);
         document.documentElement.style.setProperty('--primary-hover', book.color_dark);
 
-        // Update Nav Pills Active state
+        // Update Nav Pills Active state and scroll into view
         if (dom.bookPillsNav) {
             dom.bookPillsNav.querySelectorAll('.book-pill-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('data-book') === bookId);
+                const isActive = btn.getAttribute('data-book') === bookId;
+                btn.classList.toggle('active', isActive);
+                if (isActive) {
+                    try {
+                        btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    } catch (e) {}
+                }
             });
+        }
+
+        // Sync Sidebar Book Select
+        if (dom.sidebarBookSelect) {
+            dom.sidebarBookSelect.value = bookId;
         }
 
         renderSidebar();
@@ -278,6 +305,7 @@
     function renderSidebar() {
         const book = getActiveBook();
         if (dom.sidebarBookBadge) dom.sidebarBookBadge.textContent = `${book.name} (${book.chinese_name})`;
+        if (dom.sidebarBookSelect) dom.sidebarBookSelect.value = book.id;
 
         // Calculate progress
         let doneCount = 0;
