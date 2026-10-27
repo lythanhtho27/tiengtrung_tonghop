@@ -1759,7 +1759,7 @@
         const nextActive = document.querySelector(`.bws-chip[data-idx="${idx}"]`);
         if (nextActive) {
             nextActive.classList.add("active");
-            nextActive.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            // nextActive.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
         }
     }
 
