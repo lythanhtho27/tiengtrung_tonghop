@@ -334,6 +334,26 @@ body.dark-mode .book-pill-btn:hover {
     color: var(--primary-text);
 }
 
+.btn-sidebar-close {
+    display: none;
+    border: 1px solid var(--border-color);
+    background: var(--bg-surface);
+    color: var(--text-muted);
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.btn-sidebar-close:hover {
+    color: var(--color-danger);
+    border-color: var(--color-danger);
+}
+
 .sidebar-progress-label {
     font-size: 11px;
     color: var(--text-muted);
@@ -858,7 +878,7 @@ body.dark-mode .book-pill-btn:hover {
 /* Chinese Text Formatting with Ruby */
 .chinese-text-content {
     font-family: var(--font-chinese);
-    font-size: 22px;
+    font-size: var(--reading-font-size, 22px);
     line-height: 2.2;
     color: var(--text-main);
     text-align: justify;
@@ -2382,21 +2402,633 @@ body.dark-mode .vc-py {
     background: var(--bg-subtle);
 }
 
+/* ==========================================================================
+   14. COMPREHENSIVE RESPONSIVE DESIGN (MOBILE & TABLETS)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .header-left .brand-sub { display: none; }
-    .book-pills-nav { display: none; }
-    .dock-left { width: 140px; }
-    .dock-right { display: none; }
-    .quiz-options-grid { grid-template-columns: 1fr; }
-    .reading-card { padding: 24px 20px; }
-    .chinese-text-content { font-size: 18px; line-height: 2; }
-    .mode-content-container { padding: 14px; }
-    .grammar-card-header { padding: 14px 16px; }
-    .grammar-card-body { padding: 16px; }
-    .grammar-formula-box { flex-direction: column; align-items: flex-start; gap: 6px; }
-    .lesson-top-banner { padding: 8px 14px; gap: 10px; }
-    .lesson-main-title { font-size: 16px; }
-    .mode-tabs-bar { padding: 0 8px; gap: 3px; }
-    .mode-tab-btn { padding: 8px 10px; font-size: 12px; gap: 5px; }
+    :root {
+        --header-height: 54px;
+        --player-height: 74px;
+    }
+
+    /* 1. Header Navigation */
+    .boya-header {
+        height: var(--header-height);
+        padding: 0 10px;
+        gap: 6px;
+    }
+
+    .header-left {
+        gap: 8px;
+        flex-shrink: 0;
+    }
+
+    .header-btn-home {
+        padding: 6px 9px;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: var(--radius-sm);
+    }
+
+    .header-btn-home .home-text {
+        display: none;
+    }
+
+    .brand-wrap {
+        gap: 6px;
+    }
+
+    .brand-icon {
+        font-size: 20px;
+    }
+
+    .brand-titles h1 {
+        font-size: 13.5px;
+        gap: 4px;
+    }
+
+    .brand-name {
+        white-space: nowrap;
+    }
+
+    .brand-titles .brand-badge,
+    .brand-titles .brand-sub {
+        display: none;
+    }
+
+    .book-pills-nav {
+        display: none;
+    }
+
+    .header-right {
+        gap: 5px;
+    }
+
+    .header-search-btn {
+        padding: 6px 9px;
+        border-radius: var(--radius-sm);
+    }
+
+    .header-search-btn .search-btn-text,
+    .header-search-btn kbd {
+        display: none;
+    }
+
+    .streak-pill {
+        padding: 6px 8px;
+        font-size: 11.5px;
+        border-radius: var(--radius-sm);
+    }
+
+    .streak-text-days {
+        display: none;
+    }
+
+    .theme-toggle-btn {
+        padding: 6px 8px;
+        font-size: 13px;
+        border-radius: var(--radius-sm);
+    }
+
+    /* 2. Drawer Sidebar */
+    .btn-sidebar-close {
+        display: inline-flex;
+    }
+
+    .boya-sidebar {
+        top: var(--header-height);
+        bottom: 0;
+        width: min(86vw, 320px);
+        z-index: 60;
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .sidebar-backdrop {
+        z-index: 59;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(2px);
+    }
+
+    /* 3. Lesson Top Banner */
+    .lesson-top-banner {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+        gap: 8px 10px;
+        padding: 8px 12px;
+    }
+
+    .ltb-left {
+        display: contents;
+    }
+
+    .btn-sidebar-toggle {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+        padding: 6px 11px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: var(--radius-md);
+        display: inline-flex;
+    }
+
+    .ltb-right {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+    }
+
+    .btn-mark-complete {
+        padding: 6px 11px;
+        font-size: 12px;
+        white-space: nowrap;
+        border-radius: var(--radius-md);
+    }
+
+    .ltb-left > div {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+    }
+
+    .lesson-meta-badge {
+        font-size: 10.5px;
+        gap: 6px;
+    }
+
+    .lesson-main-title {
+        font-size: 19px;
+        margin-top: 2px;
+        line-height: 1.25;
+    }
+
+    .lesson-subtitle {
+        font-size: 11px;
+        gap: 6px 10px;
+        margin-top: 3px;
+    }
+
+    /* 4. Study Mode Tabs */
+    .mode-tabs-bar {
+        padding: 0 8px;
+        gap: 3px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .mode-tabs-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mode-tab-btn {
+        flex-shrink: 0;
+        padding: 8px 11px;
+        font-size: 12.5px;
+        gap: 5px;
+    }
+
+    .tab-badge {
+        font-size: 10px;
+        padding: 1px 6px;
+    }
+
+    /* 5. Main Content Area */
+    .mode-content-container {
+        padding: 12px 10px 42px 10px;
+    }
+
+    /* 6. Reading Studio (Bài Khóa) */
+    .reading-toolbar {
+        padding: 8px 10px;
+        gap: 8px;
+        border-radius: var(--radius-md);
+        margin-bottom: 12px;
+    }
+
+    #btnQuickToVocab,
+    #btnQuickToGrammar {
+        display: none !important;
+    }
+
+    .rt-group {
+        width: 100%;
+        gap: 6px;
+    }
+
+    .rt-group:last-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .rt-btn {
+        padding: 5px 9px;
+        font-size: 11.5px;
+        border-radius: var(--radius-sm);
+    }
+
+    #selectFontFamily {
+        flex: 1;
+        min-width: 0;
+        padding: 5px 8px;
+        font-size: 11.5px;
+    }
+
+    .zoom-controls {
+        flex-shrink: 0;
+    }
+
+    .zoom-btn {
+        padding: 4px 8px;
+        font-size: 11.5px;
+    }
+
+    .zoom-label {
+        padding: 0 6px;
+        font-size: 10.5px;
+    }
+
+    .reading-card {
+        padding: 16px 12px;
+        border-radius: var(--radius-lg);
+        margin-bottom: 14px;
+    }
+
+    .reading-title-area {
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+    }
+
+    .reading-passage-title {
+        font-size: 19px;
+    }
+
+    .chinese-text-content {
+        font-size: clamp(16px, calc(var(--reading-font-size, 22px) * 0.78), 21px) !important;
+        line-height: 2 !important;
+        letter-spacing: 0.3px;
+        text-align: justify;
+    }
+
+    .chinese-text-content rt {
+        font-size: 11px;
+    }
+
+    .translation-section {
+        padding: 12px 14px;
+        border-radius: var(--radius-md);
+    }
+
+    .translation-line {
+        font-size: 13.5px;
+        line-height: 1.6;
+    }
+
+    /* 7. Bottom Audio Dock Player */
+    .boya-audio-dock {
+        height: auto;
+        min-height: 72px;
+        padding: 6px 10px calc(6px + env(safe-area-inset-bottom, 0px)) 10px;
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+        gap: 3px 8px;
+    }
+
+    .dock-timeline-row {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        width: 100%;
+        gap: 6px;
+        margin-bottom: 1px;
+    }
+
+    .dock-timeline-row .time-label {
+        font-size: 10px;
+        min-width: 26px;
+    }
+
+    .audio-scrubber-slider {
+        height: 3.5px;
+    }
+
+    .dock-left {
+        grid-column: 1;
+        grid-row: 2;
+        width: auto;
+        min-width: 0;
+        gap: 8px;
+    }
+
+    .dock-track-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        border-radius: 6px;
+    }
+
+    .dock-track-title {
+        font-size: 11.5px;
+        font-weight: 700;
+        max-width: 115px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .dock-track-sub {
+        display: none;
+    }
+
+    .dock-center {
+        grid-column: 2;
+        grid-row: 2;
+        max-width: none;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .dock-controls-row {
+        gap: 5px;
+    }
+
+    .btn-player-ctrl {
+        padding: 4px;
+        font-size: 11.5px;
+    }
+
+    .btn-player-ctrl.btn-play-pause {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .dock-right {
+        grid-column: 3;
+        grid-row: 2;
+        display: flex !important;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .speed-badge-btn {
+        padding: 3px 6px;
+        font-size: 10.5px;
+        border-radius: 5px;
+    }
+
+    #btnToggleAudioDock {
+        font-size: 11px;
+        padding: 3px;
+        margin-left: 0 !important;
+    }
+
+    .boya-audio-dock.is-collapsed {
+        min-height: 36px;
+        height: 36px;
+        padding: 3px 10px calc(3px + env(safe-area-inset-bottom, 0px)) 10px;
+        grid-template-rows: auto;
+    }
+
+    .boya-audio-dock.is-collapsed .dock-timeline-row {
+        display: none;
+    }
+
+    .boya-audio-dock.is-collapsed .dock-left {
+        grid-row: 1;
+    }
+
+    .boya-audio-dock.is-collapsed .dock-center {
+        grid-row: 1;
+    }
+
+    .boya-audio-dock.is-collapsed .dock-right {
+        grid-row: 1;
+    }
+
+    /* 8. Vocabulary Studio */
+    .vocab-actions-bar {
+        padding: 8px 10px;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .vab-left {
+        width: 100%;
+        gap: 6px;
+    }
+
+    .vab-search {
+        width: 100%;
+    }
+
+    .vab-type-filter {
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+        scrollbar-width: none;
+        padding-bottom: 2px;
+    }
+
+    .vab-type-filter::-webkit-scrollbar {
+        display: none;
+    }
+
+    .vocab-card {
+        padding: 10px 12px;
+        gap: 10px;
+        border-radius: var(--radius-md);
+    }
+
+    .vc-left {
+        gap: 8px;
+    }
+
+    .vc-num {
+        width: 22px;
+        height: 22px;
+        font-size: 10.5px;
+    }
+
+    .vc-main-word {
+        min-width: auto;
+    }
+
+    .vc-hz {
+        font-size: 19px;
+    }
+
+    .vc-py {
+        font-size: 12px;
+    }
+
+    .vc-meaning {
+        font-size: 13px;
+    }
+
+    .vc-example-item {
+        font-size: 12px;
+        padding: 3px 6px;
+    }
+
+    .btn-icon-round {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    /* 9. Grammar Studio */
+    .grammar-toolbar {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .grammar-toolbar-left {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .grammar-search-wrap {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .grammar-card-header {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .grammar-index-badge {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    .grammar-point-title {
+        font-size: 16px;
+    }
+
+    .grammar-card-body {
+        padding: 12px 10px;
+        gap: 12px;
+    }
+
+    .grammar-formula-box {
+        padding: 8px 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .grammar-formula-text {
+        font-size: 13.5px;
+    }
+
+    .grammar-explanation {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .example-zh {
+        font-size: 15px;
+    }
+
+    .example-pinyin {
+        font-size: 12px;
+    }
+
+    .example-vi {
+        font-size: 12.5px;
+    }
+
+    /* 10. Flashcards 3D */
+    .flashcard-stage {
+        height: clamp(230px, 38vh, 300px);
+        margin-bottom: 14px;
+    }
+
+    .fc-front-hz {
+        font-size: clamp(34px, 11vw, 48px);
+    }
+
+    .fc-bottom-nav {
+        gap: 8px;
+    }
+
+    /* 11. Quiz Hub & Match Game */
+    .quiz-card {
+        padding: 16px 12px;
+        border-radius: var(--radius-lg);
+    }
+
+    .quiz-options-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .match-game-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px;
+    }
+
+    .match-card {
+        padding: 10px 6px;
+        min-height: 52px;
+        font-size: 13.5px;
+    }
+
+    /* 12. Podcast Studio */
+    #podWordHz {
+        font-size: 38px !important;
+    }
+
+    #podWordPy {
+        font-size: 15px !important;
+    }
+
+    #podWordMean {
+        font-size: 14px !important;
+    }
+
+    /* 13. Search Dialog */
+    .search-modal-dialog {
+        width: 95%;
+        max-height: 82vh;
+        border-radius: var(--radius-lg);
+    }
+
+    .modal-search-input-wrap {
+        padding: 10px 14px;
+    }
+
+    .modal-search-input {
+        font-size: 14px;
+    }
+}
+
+/* Extra small devices (phones <= 380px) */
+@media (max-width: 380px) {
+    .brand-name {
+        display: none;
+    }
+
+    .dock-track-title {
+        max-width: 85px;
+    }
+
+    .lesson-main-title {
+        font-size: 17px;
+    }
+
+    .mode-tab-btn {
+        padding: 8px 8px;
+        font-size: 11.5px;
+    }
 }
 

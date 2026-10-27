@@ -365,8 +365,8 @@
         if (dom.btnMarkComplete) {
             dom.btnMarkComplete.classList.toggle('is-done', isDone);
             dom.btnMarkComplete.innerHTML = isDone 
-                ? '✓ Đã hoàn thành' 
-                : '○ Đánh dấu hoàn thành';
+                ? '✓ <span class="complete-btn-text">Đã hoàn thành</span>' 
+                : '○ <span class="complete-btn-text">Đánh dấu hoàn thành</span>';
         }
 
         // Update Tab Badges dynamically
@@ -513,7 +513,7 @@
 
                     <div class="chinese-text-content ${state.pinyinVisible ? '' : 'hide-pinyin'} font-${state.fontStyle}" 
                          id="chineseTextContent" 
-                         style="font-size: ${state.fontSize}px;">
+                         style="--reading-font-size: ${state.fontSize}px;">
                         ${processedHtml}
                     </div>
                 </div>
@@ -1831,6 +1831,10 @@
         const sidebarToggle = document.getElementById('sidebarToggleBtn');
         if (sidebarToggle) {
             sidebarToggle.addEventListener('click', toggleSidebar);
+        }
+        const sidebarClose = document.getElementById('sidebarCloseBtn');
+        if (sidebarClose) {
+            sidebarClose.addEventListener('click', closeSidebar);
         }
         if (dom.sidebarBackdrop) {
             dom.sidebarBackdrop.addEventListener('click', closeSidebar);

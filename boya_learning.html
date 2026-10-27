@@ -16,17 +16,17 @@
     <!-- 1. TOP APP HEADER -->
     <header class="boya-header">
         <div class="header-left">
-            <a href="index.html" class="header-btn" title="Về trang chủ chọn tài liệu">
+            <a href="index.html" class="header-btn header-btn-home" title="Về trang chủ chọn tài liệu">
                 <span>←</span>
-                <span>Trang Chủ</span>
+                <span class="home-text">Trang Chủ</span>
             </a>
 
             <div class="brand-wrap">
                 <span class="brand-icon">🏮</span>
                 <div class="brand-titles">
                     <h1>
-                        <span>Boya Chinese Master</span>
-                        <span class="brand-badge">Full Portal</span>
+                        <span class="brand-name">Boya Chinese</span>
+                        <span class="brand-badge">Full</span>
                     </h1>
                     <div class="brand-sub">Hệ Thống Học Giáo Trình Boya Toàn Diện (6 Quyển · 74 Bài · 2.674+ Từ Vựng)</div>
                 </div>
@@ -41,13 +41,13 @@
         <div class="header-right">
             <!-- Global Search Trigger -->
             <button class="header-search-btn" id="globalSearchBtn" title="Tìm kiếm bài học và từ vựng (Ctrl + K)">
-                <span>🔍 Tìm kiếm...</span>
+                <span class="search-btn-label">🔍 <span class="search-btn-text">Tìm kiếm...</span></span>
                 <kbd>Ctrl K</kbd>
             </button>
 
             <!-- Streak Pill -->
-            <div class="header-btn" style="cursor: default; font-weight: 700; color: #ea580c; background: var(--bg-surface);" title="Chuỗi ngày học tập liên tiếp">
-                🔥 <span id="hdrStreakCount">1</span> ngày
+            <div class="header-btn streak-pill" style="cursor: default; font-weight: 700; color: #ea580c; background: var(--bg-surface);" title="Chuỗi ngày học tập liên tiếp">
+                🔥 <span id="hdrStreakCount">1</span><span class="streak-text-days"> ngày</span>
             </div>
 
             <!-- Dark / Light Theme Toggle -->
@@ -67,6 +67,7 @@
             <div class="sidebar-header">
                 <div class="sidebar-book-badge-wrap">
                     <span class="sidebar-book-badge" id="sidebarBookBadge">Boya Chuẩn Trung Cấp 1</span>
+                    <button class="btn-sidebar-close" id="sidebarCloseBtn" title="Đóng danh sách">✕</button>
                     <span class="sidebar-progress-label" id="sidebarProgressLabel">0/16 Bài (0%)</span>
                 </div>
                 <div class="sidebar-progress-bar">
