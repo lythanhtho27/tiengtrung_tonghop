@@ -159,7 +159,7 @@
 
         dom.lessonMainTitle = document.getElementById('lessonMainTitle');
         dom.lessonMetaBadge = document.getElementById('lessonMetaBadge');
-        dom.lessonSubtitle  = document.getElementById('lessonSubtitle');
+        // dom.lessonSubtitle  = document.getElementById('lessonSubtitle');
         dom.btnMarkComplete = document.getElementById('btnMarkComplete');
 
         dom.modeTabs        = document.querySelectorAll('.mode-tab-btn');
@@ -379,14 +379,14 @@
         }
 
         if (dom.lessonMainTitle) dom.lessonMainTitle.textContent = lesson.title;
-        if (dom.lessonSubtitle) {
-            dom.lessonSubtitle.innerHTML = `
-                <span>📝 ${lesson.total_vocab} Từ vựng</span>
-                <span>📐 ${(lesson.grammar || []).length} Điểm ngữ pháp</span>
-                <span>🎧 ${lesson.readings.length} Phần bài đọc</span>
-                <span>📖 Sách: ${book.chinese_name}</span>
-            `;
-        }
+        // if (dom.lessonSubtitle) {
+        //     dom.lessonSubtitle.innerHTML = `
+        //         <span>📝 ${lesson.total_vocab} Từ vựng</span>
+        //         <span>📐 ${(lesson.grammar || []).length} Điểm ngữ pháp</span>
+        //         <span>🎧 ${lesson.readings.length} Phần bài đọc</span>
+        //         <span>📖 Sách: ${book.chinese_name}</span>
+        //     `;
+        // }
 
         // Complete Button state
         const lessonKey = `${book.id}_bai${lesson.lesson_num}`;
@@ -502,22 +502,7 @@
                             <button class="rt-btn audio-play-btn" id="btnPlayReadingAudio" data-audio="${reading.audio}" data-title="${book.name} - Bài ${lesson.lesson_num} (${reading.title})">
                                 🔊 Nghe Bài Này
                             </button>
-                        ` : ''}
-                        <button class="rt-btn ${state.pinyinVisible ? 'active' : ''}" id="btnTogglePinyin">
-                            👁️ Pinyin: ${state.pinyinVisible ? 'Bật' : 'Tắt'}
-                        </button>
-                        <button class="rt-btn ${state.transVisible ? 'active' : ''}" id="btnToggleTrans">
-                            🇻🇳 Bản Dịch: ${state.transVisible ? 'Hiện' : 'Ẩn'}
-                        </button>
-                        <button class="rt-btn ${state.clozeMode ? 'active' : ''}" id="btnToggleCloze" title="Ẩn bớt từ để tự luyện trí nhớ">
-                            🌫️ Ẩn Từ: ${state.clozeMode ? 'Bật' : 'Tắt'}
-                        </button>
-                        <button class="rt-btn" id="btnQuickToVocab" title="Xem danh sách từ vựng bài này" style="color:var(--primary); font-weight:700;">
-                            🏮 ${lesson.total_vocab} Từ Vựng ➔
-                        </button>
-                        <button class="rt-btn" id="btnQuickToGrammar" title="Xem các điểm ngữ pháp bài này" style="color:var(--primary); font-weight:700;">
-                            📐 ${(lesson.grammar || []).length} Ngữ Pháp ➔
-                        </button>
+                        ` : ''}                              
                     </div>
 
                     <div class="rt-group">
