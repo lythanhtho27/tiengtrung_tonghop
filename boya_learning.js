@@ -91,6 +91,7 @@
         renderBookSelector();
         switchBook(state.activeBookId, state.activeLessonNum, false);
         initAudioDock();
+        updatePinyinUI();
     });
 
     function loadPersistedData() {
@@ -587,12 +588,9 @@
         // Bind Pinyin Toggle
         const btnPinyin = document.getElementById('btnTogglePinyin');
         if (btnPinyin) {
-            btnPinyin.addEventListener('click', () => {
-                state.pinyinVisible = !state.pinyinVisible;
-                saveSettings();
-                renderReadingStudio();
-            });
+            btnPinyin.addEventListener('click', togglePinyin);
         }
+        updatePinyinUI();
 
         // Bind Translation Toggle
         const btnTrans = document.getElementById('btnToggleTrans');
@@ -665,6 +663,38 @@
                 if (text) speakChinese(text);
             });
         });
+    }
+
+    function togglePinyin() {
+        state.pinyinVisible = !state.pinyinVisible;
+        saveSettings();
+        updatePinyinUI();
+    }
+
+    function updatePinyinUI() {
+        // 1. Sync Sticky Tab Pinyin Button
+        const stickyBtn = document.getElementById('stickyTogglePinyin');
+        const stickyText = document.getElementById('stickyPinyinStatus');
+        if (stickyBtn) {
+            stickyBtn.classList.toggle('active', state.pinyinVisible);
+            stickyBtn.setAttribute('aria-pressed', state.pinyinVisible ? 'true' : 'false');
+        }
+        if (stickyText) {
+            stickyText.textContent = state.pinyinVisible ? 'Bật' : 'Tắt';
+        }
+
+        // 2. Sync Reading Toolbar Pinyin Button if present
+        const rtBtn = document.getElementById('btnTogglePinyin');
+        if (rtBtn) {
+            rtBtn.classList.toggle('active', state.pinyinVisible);
+            rtBtn.innerHTML = `👁️ Pinyin: ${state.pinyinVisible ? 'Bật' : 'Tắt'}`;
+        }
+
+        // 3. Smooth instantaneous toggle on Chinese text content without full re-render
+        const textContent = document.getElementById('chineseTextContent');
+        if (textContent) {
+            textContent.classList.toggle('hide-pinyin', !state.pinyinVisible);
+        }
     }
 
     function applyClozeFilter(html) {
@@ -1818,6 +1848,12 @@
             });
         }
 
+        // Sticky Tab Pinyin Toggle
+        const stickyPinyin = document.getElementById('stickyTogglePinyin');
+        if (stickyPinyin) {
+            stickyPinyin.addEventListener('click', togglePinyin);
+        }
+
         // Mode Navigation Tabs
         if (dom.modeTabs) {
             dom.modeTabs.forEach(btn => {
@@ -1901,9 +1937,7 @@
             // Pinyin Shortcut: 'p'
             if (e.key === 'p' || e.key === 'P') {
                 if (document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
-                    state.pinyinVisible = !state.pinyinVisible;
-                    saveSettings();
-                    if (state.activeMode === 'reading') renderReadingStudio();
+                    togglePinyin();
                 }
             }
         });

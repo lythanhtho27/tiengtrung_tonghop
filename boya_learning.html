@@ -123,34 +123,43 @@
                 </div>
             </div>
 
-            <!-- Mode Tabs Bar -->
-            <div class="mode-tabs-bar" role="tablist">
-                <button class="mode-tab-btn active" data-mode="reading" title="Xem Bài Khóa & Bản Dịch Song Ngữ">
-                    <span>📖</span>
-                    <span>Bài Khóa</span>
-                </button>
-                <button class="mode-tab-btn" data-mode="vocab" title="Học Từ Vựng, Loại Từ & Ví Dụ Thực Tế">
-                    <span>🏮</span>
-                    <span>Từ Vựng</span>
-                    <span class="tab-badge" id="tabBadgeVocab">0</span>
-                </button>
-                <button class="mode-tab-btn" data-mode="grammar" title="Học Cấu Trúc Ngữ Pháp & Điểm Ngôn Ngữ">
-                    <span>📐</span>
-                    <span>Ngữ Pháp</span>
-                    <span class="tab-badge" id="tabBadgeGrammar">0</span>
-                </button>
-                <button class="mode-tab-btn" data-mode="flashcard" title="Lật Thẻ Flashcard 3D Thông Minh">
-                    <span>🎴</span>
-                    <span>Flashcards</span>
-                </button>
-                <button class="mode-tab-btn" data-mode="quiz" title="Trắc Nghiệm & Trò Chơi Nối Từ">
-                    <span>🎯</span>
-                    <span>Luyện Tập</span>
-                </button>
-                <button class="mode-tab-btn" data-mode="podcast" title="Nghe Thụ Động Rảnh Tay">
-                    <span>🎧</span>
-                    <span>Podcast</span>
-                </button>
+            <!-- Mode Tabs Bar (Sticky Top with Fixed Pinyin Toggle) -->
+            <div class="mode-tabs-bar">
+                <div class="mode-tabs-list" role="tablist">
+                    <button class="mode-tab-btn active" data-mode="reading" title="Xem Bài Khóa & Bản Dịch Song Ngữ">
+                        <span>📖</span>
+                        <span>Bài Khóa</span>
+                    </button>
+                    <button class="mode-tab-btn" data-mode="vocab" title="Học Từ Vựng, Loại Từ & Ví Dụ Thực Tế">
+                        <span>🏮</span>
+                        <span>Từ Vựng</span>
+                        <span class="tab-badge" id="tabBadgeVocab">0</span>
+                    </button>
+                    <button class="mode-tab-btn" data-mode="grammar" title="Học Cấu Trúc Ngữ Pháp & Điểm Ngôn Ngữ">
+                        <span>📐</span>
+                        <span>Ngữ Pháp</span>
+                        <span class="tab-badge" id="tabBadgeGrammar">0</span>
+                    </button>
+                    <button class="mode-tab-btn" data-mode="flashcard" title="Lật Thẻ Flashcard 3D Thông Minh">
+                        <span>🎴</span>
+                        <span>Flashcards</span>
+                    </button>
+                    <button class="mode-tab-btn" data-mode="quiz" title="Trắc Nghiệm & Trò Chơi Nối Từ">
+                        <span>🎯</span>
+                        <span>Luyện Tập</span>
+                    </button>
+                    <button class="mode-tab-btn" data-mode="podcast" title="Nghe Thụ Động Rảnh Tay">
+                        <span>🎧</span>
+                        <span>Podcast</span>
+                    </button>
+                </div>
+
+                <div class="mode-tabs-actions">
+                    <button class="btn-tab-pinyin active" id="stickyTogglePinyin" title="Bật / Tắt phiên âm Pinyin (Phím P)">
+                        <span class="pinyin-icon">👁️</span>
+                        <span class="pinyin-label">Pinyin: <strong id="stickyPinyinStatus">Bật</strong></span>
+                    </button>
+                </div>
             </div>
 
             <!-- Dynamic Study Mode Content Container -->

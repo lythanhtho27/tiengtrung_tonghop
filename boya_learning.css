@@ -694,16 +694,34 @@ body.dark-mode .sidebar-book-select {
     top: 0;
     background: var(--bg-surface);
     border-bottom: 1px solid var(--border-color);
-    padding: 0 20px;
+    padding: 0 16px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    z-index: 30;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.mode-tabs-list {
+    flex: 1;
+    min-width: 0;
     display: flex;
     align-items: center;
     gap: 4px;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    z-index: 30;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
     scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mode-tabs-list::-webkit-scrollbar {
+    height: 3px;
+}
+.mode-tabs-list::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 9999px;
 }
 
 .mode-tab-btn {
@@ -722,6 +740,7 @@ body.dark-mode .sidebar-book-select {
     white-space: nowrap;
     border-radius: var(--radius-sm) var(--radius-sm) 0 0;
     user-select: none;
+    flex-shrink: 0;
 }
 
 .mode-tab-btn:hover {
@@ -749,6 +768,63 @@ body.dark-mode .sidebar-book-select {
 .mode-tab-btn.active .tab-badge {
     background: var(--primary);
     color: #ffffff;
+}
+
+/* Mode Tabs Actions (Fixed Sticky Pinyin Toggle) */
+.mode-tabs-actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding-left: 12px;
+    border-left: 1px solid var(--border-color);
+}
+
+.btn-tab-pinyin {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background: var(--bg-subtle);
+    color: var(--text-muted);
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.btn-tab-pinyin:hover {
+    background: var(--bg-subtle-hover);
+    color: var(--text-main);
+    border-color: var(--border-color-strong);
+}
+
+.btn-tab-pinyin.active {
+    background: var(--primary-light);
+    color: var(--primary);
+    border-color: var(--primary-border);
+    font-weight: 700;
+}
+
+.btn-tab-pinyin strong {
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 9999px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.btn-tab-pinyin.active strong {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
 }
 
 /* Mode Content Container - The ONLY area that scrolls */
@@ -2658,29 +2734,51 @@ body.dark-mode .vc-py {
         margin-top: 3px;
     }
 
-    /* 4. Study Mode Tabs */
+    /* 4. Study Mode Tabs & Fixed Pinyin Toggle */
     .mode-tabs-bar {
-        padding: 0 8px;
-        gap: 3px;
+        padding: 0 8px 0 10px;
+        gap: 6px;
+        overflow: visible;
+    }
+
+    .mode-tabs-list {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
+        gap: 3px;
+        padding-right: 2px;
     }
 
-    .mode-tabs-bar::-webkit-scrollbar {
+    .mode-tabs-list::-webkit-scrollbar {
         display: none;
     }
 
     .mode-tab-btn {
         flex-shrink: 0;
-        padding: 8px 11px;
-        font-size: 12.5px;
-        gap: 5px;
+        padding: 8px 10px;
+        font-size: 12px;
+        gap: 4px;
     }
 
     .tab-badge {
         font-size: 10px;
-        padding: 1px 6px;
+        padding: 1px 5px;
+    }
+
+    .mode-tabs-actions {
+        padding-left: 6px;
+    }
+
+    .btn-tab-pinyin {
+        padding: 5px 8px;
+        font-size: 11.5px;
+        gap: 4px;
+        border-radius: var(--radius-sm);
+    }
+
+    .btn-tab-pinyin strong {
+        font-size: 10px;
+        padding: 1px 4px;
     }
 
     /* 5. Main Content Area */
@@ -3117,6 +3215,11 @@ body.dark-mode .vc-py {
     .mode-tab-btn {
         padding: 8px 8px;
         font-size: 11.5px;
+    }
+
+    .btn-tab-pinyin {
+        padding: 4px 6px;
+        font-size: 10.5px;
     }
 }
 
