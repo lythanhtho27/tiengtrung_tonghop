@@ -22,7 +22,8 @@
         
         // Reading Options
         pinyinVisible: true,
-        transVisible: true,
+        transVisible: false,
+        readingLayout: 'interlinear', // 'interlinear' | 'standard'
         clozeMode: false,
         fontStyle: 'kaiti',        // 'kaiti' | 'heiti' | 'songti'
         fontSize: 22,
@@ -108,8 +109,10 @@
                 if (parsed.activeBookId) state.activeBookId = parsed.activeBookId;
                 if (parsed.fontSize) state.fontSize = parsed.fontSize;
                 if (parsed.fontStyle) state.fontStyle = parsed.fontStyle;
+                if (parsed.readingLayout) state.readingLayout = parsed.readingLayout;
                 if (parsed.pinyinVisible !== undefined) state.pinyinVisible = parsed.pinyinVisible;
-                if (parsed.transVisible !== undefined) state.transVisible = parsed.transVisible;
+                // Mặc định bản dịch luôn thu gọn để người học tự luyện đọc trước
+                state.transVisible = false;
             }
 
             // Streak check
@@ -139,6 +142,7 @@
                 activeBookId: state.activeBookId,
                 fontSize: state.fontSize,
                 fontStyle: state.fontStyle,
+                readingLayout: state.readingLayout,
                 pinyinVisible: state.pinyinVisible,
                 transVisible: state.transVisible
             };
@@ -463,6 +467,103 @@
     // ==========================================================================
     // 6. MODE 1: BÀI KHÓA (READING STUDIO)
     // ==========================================================================
+    function buildInterlinearReadingHtml(html, translations) {
+        if (!translations || translations.length === 0) {
+            return html;
+        }
+
+        // Split HTML into blocks based on <span class="block"
+        const blockMatches = [...html.matchAll(/<span class="block"[^>]*>/g)];
+        if (!blockMatches || blockMatches.length === 0) {
+            return html;
+        }
+
+        // Map translations by 【N】
+        const transMap = {};
+        translations.forEach((t) => {
+            const m = t.match(/^\s*【(\d+)】/);
+            if (m) {
+                transMap[parseInt(m[1], 10)] = t;
+            }
+        });
+
+        const rawBlocks = [];
+        for (let i = 0; i < blockMatches.length; i++) {
+            const start = blockMatches[i].index;
+            const end = (i + 1 < blockMatches.length) ? blockMatches[i + 1].index : html.length;
+            rawBlocks.push(html.slice(start, end).trim());
+        }
+
+        let seqTransIdx = 0;
+        const cardsHtml = rawBlocks.map((bHtml, bIdx) => {
+            const cleanText = bHtml.replace(/<[^>]+>/g, '').trim();
+            if (!cleanText) return '';
+
+            const isTitle = bHtml.includes('text-align: center') || (bHtml.includes('font-weight: bold') && bIdx === 0) || bHtml.includes('font-size: 26px') || bHtml.includes('font-size: 24px');
+            const isAttr = bHtml.includes('text-align: right') || cleanText.startsWith('（根据') || cleanText.startsWith('（选自') || cleanText.startsWith('(根据') || cleanText.startsWith('(选自');
+
+            let matchedTrans = null;
+            let paraLabel = '';
+
+            const mNum = cleanText.match(/【(\d+)】/);
+            if (mNum) {
+                const num = parseInt(mNum[1], 10);
+                paraLabel = `Đoạn ${num}`;
+                if (transMap[num]) {
+                    matchedTrans = transMap[num];
+                }
+            }
+
+            if (!matchedTrans && !isTitle && !isAttr) {
+                if (seqTransIdx < translations.length) {
+                    matchedTrans = translations[seqTransIdx];
+                    seqTransIdx++;
+                    paraLabel = `Đoạn ${seqTransIdx}`;
+                }
+            }
+
+            let cleanTransText = matchedTrans || '';
+            if (cleanTransText && mNum) {
+                cleanTransText = cleanTransText.replace(new RegExp(`^\\s*【${mNum[1]}】\\s*`), '');
+            } else if (cleanTransText) {
+                cleanTransText = cleanTransText.replace(/^\s*【\d+】\s*/, '');
+            }
+
+            if (isTitle) {
+                return `<div class="para-card is-title-card"><div class="para-chinese">${bHtml}</div></div>`;
+            }
+            if (isAttr) {
+                return `<div class="para-card is-attr-card"><div class="para-chinese">${bHtml}</div></div>`;
+            }
+
+            if (!matchedTrans) {
+                return `<div class="para-card"><div class="para-chinese">${bHtml}</div></div>`;
+            }
+
+            return `
+                <div class="para-card has-translation" data-para-idx="${bIdx}">
+                    <div class="para-chinese">
+                        ${bHtml}
+                    </div>
+                    <div class="para-translation ${state.transVisible ? '' : 'collapsed'}" data-para-idx="${bIdx}">
+                        <div class="pt-header" title="Nhấp để Ẩn / Hiện bản dịch đoạn này">
+                            <span class="pt-tag">🇻🇳 ${paraLabel || 'Bản dịch'}</span>
+                            <button class="btn-pt-toggle" type="button" title="Thu gọn / Mở rộng">
+                                <span class="pt-toggle-text">${state.transVisible ? 'Thu gọn' : 'Xem dịch'}</span>
+                                <span class="pt-toggle-icon">${state.transVisible ? '▴' : '▾'}</span>
+                            </button>
+                        </div>
+                        <div class="pt-content">
+                            ${cleanTransText}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('\n');
+
+        return cardsHtml;
+    }
+
     function renderReadingStudio() {
         const lesson = getActiveLesson();
         const book = getActiveBook();
@@ -492,6 +593,13 @@
             </div>
         ` : '';
 
+        let displayHtml = '';
+        if (state.readingLayout === 'interlinear') {
+            displayHtml = buildInterlinearReadingHtml(processedHtml, reading.translations || []);
+        } else {
+            displayHtml = processedHtml;
+        }
+
         dom.modeContainer.innerHTML = `
             <div class="reading-studio">
                 ${subBarHtml}
@@ -502,17 +610,29 @@
                             <button class="rt-btn audio-play-btn" id="btnPlayReadingAudio" data-audio="${reading.audio}" data-title="${book.name} - Bài ${lesson.lesson_num} (${reading.title})">
                                 🔊 Nghe Bài Này
                             </button>
-                        ` : ''}                              
+                        ` : ''}
+
+                        <!-- Toggle Translation Button -->
+                        <button class="rt-btn trans-toggle-btn ${state.transVisible ? 'active' : ''}" id="btnToggleTrans" title="Bật / Tắt hiển thị bản dịch (Phím T)">
+                            <span>🇻🇳</span>
+                            <span>Bản Dịch: <strong id="transStatusText">${state.transVisible ? 'Hiện' : 'Ẩn'}</strong></span>
+                        </button>
+
+                        <!-- Reading Layout Switcher -->
+                        <select class="rt-btn" id="selectReadingLayout" title="Bố cục hiển thị bản dịch">
+                            <option value="interlinear" ${state.readingLayout === 'interlinear' ? 'selected' : ''}>📝 Dịch xen kẽ từng đoạn</option>
+                            <option value="standard" ${state.readingLayout === 'standard' ? 'selected' : ''}>📄 Dịch ở cuối bài</option>
+                        </select>
                     </div>
 
                     <div class="rt-group">
-                        <select class="rt-btn" id="selectFontFamily">
+                        <select class="rt-btn" id="selectFontFamily" title="Kiểu chữ Hán">
                             <option value="kaiti" ${state.fontStyle === 'kaiti' ? 'selected' : ''}>Khải Thư (Chuẩn)</option>
                             <option value="heiti" ${state.fontStyle === 'heiti' ? 'selected' : ''}>Hán Thể Không Chân</option>
                             <option value="songti" ${state.fontStyle === 'songti' ? 'selected' : ''}>Tống Thể</option>
                         </select>
 
-                        <div class="zoom-controls">
+                        <div class="zoom-controls" title="Cỡ chữ">
                             <button class="zoom-btn" id="btnZoomOut">A-</button>
                             <span class="zoom-label">${state.fontSize}px</span>
                             <button class="zoom-btn" id="btnZoomIn">A+</button>
@@ -525,24 +645,40 @@
                         <h2 class="reading-passage-title">${reading.title}</h2>
                     </div>
 
-                    <div class="chinese-text-content ${state.pinyinVisible ? '' : 'hide-pinyin'} font-${state.fontStyle}" 
+                    <div class="chinese-text-content ${state.pinyinVisible ? '' : 'hide-pinyin'} font-${state.fontStyle} layout-${state.readingLayout}" 
                          id="chineseTextContent" 
                          style="--reading-font-size: ${state.fontSize}px;">
-                        ${processedHtml}
+                        ${displayHtml}
                     </div>
                 </div>
 
-                <div class="translation-section" id="translationSection" style="display: ${state.transVisible ? 'block' : 'none'};">
-                    <div class="translation-header">
-                        <span class="th-title">🇻🇳 Bản Dịch Tham Khảo</span>
-                        <span style="font-size: 12px; color: var(--text-muted);">${reading.translations.length} Đoạn dịch</span>
+                ${state.readingLayout === 'interlinear' ? `
+                    <div class="translation-section full-summary-section" id="translationSection">
+                        <div class="translation-header" id="fullTransToggleHeader" style="cursor: pointer; user-select: none;" title="Nhấp để Mở rộng / Thu gọn toàn bộ bản dịch">
+                            <span class="th-title">🇻🇳 Toàn Bộ Bản Dịch Tham Khảo</span>
+                            <span style="font-size: 13px; color: var(--primary); font-weight: 600;">
+                                ${reading.translations.length} Đoạn dịch <span id="fullTransIco">▾</span>
+                            </span>
+                        </div>
+                        <div class="translation-body" id="fullTransBody" style="display: none;">
+                            ${reading.translations.map((t, i) => `
+                                <div class="translation-line">${t}</div>
+                            `).join('')}
+                        </div>
                     </div>
-                    <div class="translation-body">
-                        ${reading.translations.map((t, i) => `
-                            <div class="translation-line">${t}</div>
-                        `).join('')}
+                ` : `
+                    <div class="translation-section" id="translationSection" style="display: ${state.transVisible ? 'block' : 'none'};">
+                        <div class="translation-header">
+                            <span class="th-title">🇻🇳 Bản Dịch Tham Khảo</span>
+                            <span style="font-size: 12px; color: var(--text-muted);">${reading.translations.length} Đoạn dịch</span>
+                        </div>
+                        <div class="translation-body">
+                            ${reading.translations.map((t, i) => `
+                                <div class="translation-line">${t}</div>
+                            `).join('')}
+                        </div>
                     </div>
-                </div>
+                `}
             </div>
         `;
 
@@ -577,16 +713,49 @@
         }
         updatePinyinUI();
 
-        // Bind Translation Toggle
+        // Bind Translation Toggle Button
         const btnTrans = document.getElementById('btnToggleTrans');
         if (btnTrans) {
-            btnTrans.addEventListener('click', () => {
-                state.transVisible = !state.transVisible;
+            btnTrans.addEventListener('click', toggleTranslation);
+        }
+        updateTranslationUI();
+
+        // Bind Reading Layout Switcher
+        const selLayout = document.getElementById('selectReadingLayout');
+        if (selLayout) {
+            selLayout.addEventListener('change', (e) => {
+                state.readingLayout = e.target.value;
                 saveSettings();
-                const sec = document.getElementById('translationSection');
-                if (sec) sec.style.display = state.transVisible ? 'block' : 'none';
-                btnTrans.classList.toggle('active', state.transVisible);
-                btnTrans.textContent = `🇻🇳 Bản Dịch: ${state.transVisible ? 'Hiện' : 'Ẩn'}`;
+                renderReadingStudio();
+            });
+        }
+
+        // Bind Individual Paragraph Translation Toggle (Accordion)
+        dom.modeContainer.querySelectorAll('.para-translation .pt-header').forEach(hdr => {
+            hdr.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const pt = hdr.closest('.para-translation');
+                if (pt) {
+                    const isCollapsed = pt.classList.toggle('collapsed');
+                    const txt = pt.querySelector('.pt-toggle-text');
+                    const ico = pt.querySelector('.pt-toggle-icon');
+                    if (txt) txt.textContent = isCollapsed ? 'Xem dịch' : 'Thu gọn';
+                    if (ico) ico.textContent = isCollapsed ? '▾' : '▴';
+                }
+            });
+        });
+
+        // Bind Full Summary Translation Toggle (in Interlinear mode)
+        const fullHdr = document.getElementById('fullTransToggleHeader');
+        if (fullHdr) {
+            fullHdr.addEventListener('click', () => {
+                const body = document.getElementById('fullTransBody');
+                const ico = document.getElementById('fullTransIco');
+                if (body) {
+                    const isHidden = body.style.display === 'none';
+                    body.style.display = isHidden ? 'block' : 'none';
+                    if (ico) ico.textContent = isHidden ? '▴' : '▾';
+                }
             });
         }
 
@@ -614,7 +783,7 @@
                 saveSettings();
                 const content = document.getElementById('chineseTextContent');
                 if (content) {
-                    content.className = `chinese-text-content ${state.pinyinVisible ? '' : 'hide-pinyin'} font-${state.fontStyle}`;
+                    content.className = `chinese-text-content ${state.pinyinVisible ? '' : 'hide-pinyin'} font-${state.fontStyle} layout-${state.readingLayout}`;
                 }
             });
         }
@@ -648,6 +817,45 @@
                 if (text) speakChinese(text);
             });
         });
+    }
+
+    function toggleTranslation() {
+        state.transVisible = !state.transVisible;
+        saveSettings();
+        updateTranslationUI();
+    }
+
+    function updateTranslationUI() {
+        const btnTrans = document.getElementById('btnToggleTrans');
+        if (btnTrans) {
+            btnTrans.classList.toggle('active', state.transVisible);
+            const st = btnTrans.querySelector('#transStatusText');
+            if (st) st.textContent = state.transVisible ? 'Hiện' : 'Ẩn';
+        }
+
+        // Update interlinear cards
+        const ptCards = dom.modeContainer ? dom.modeContainer.querySelectorAll('.para-translation') : [];
+        ptCards.forEach(pt => {
+            if (state.transVisible) {
+                pt.classList.remove('collapsed');
+                const txt = pt.querySelector('.pt-toggle-text');
+                const ico = pt.querySelector('.pt-toggle-icon');
+                if (txt) txt.textContent = 'Thu gọn';
+                if (ico) ico.textContent = '▴';
+            } else {
+                pt.classList.add('collapsed');
+                const txt = pt.querySelector('.pt-toggle-text');
+                const ico = pt.querySelector('.pt-toggle-icon');
+                if (txt) txt.textContent = 'Xem dịch';
+                if (ico) ico.textContent = '▾';
+            }
+        });
+
+        // In standard layout, toggle translationSection
+        const sec = document.getElementById('translationSection');
+        if (sec && state.readingLayout === 'standard') {
+            sec.style.display = state.transVisible ? 'block' : 'none';
+        }
     }
 
     function togglePinyin() {
@@ -1782,16 +1990,71 @@
             });
         }
 
-        // Collapse / Expand Audio Dock Toggle
+        // Collapse / Expand Audio Dock Toggle & Floating Pill Mode
         const btnToggleDock = document.getElementById('btnToggleAudioDock');
+        const btnPillToggle = document.getElementById('btnPillModeToggle');
         const audioDock = document.querySelector('.boya-audio-dock');
-        if (btnToggleDock && audioDock) {
-            btnToggleDock.addEventListener('click', () => {
-                const isCollapsed = audioDock.classList.toggle('is-collapsed');
-                btnToggleDock.textContent = isCollapsed ? '▴' : '▾';
-                btnToggleDock.title = isCollapsed ? 'Mở rộng trình phát nhạc' : 'Thu gọn trình phát nhạc';
-                document.documentElement.style.setProperty('--player-height', isCollapsed ? '38px' : '72px');
-            });
+
+        if (audioDock) {
+            // Restore saved pill mode (default: true for Floating Pill Player)
+            const savedPillMode = localStorage.getItem('boya_audio_pill_mode');
+            const isPill = savedPillMode === null ? true : savedPillMode === 'true';
+            if (isPill) {
+                audioDock.classList.add('mode-pill');
+                document.documentElement.style.setProperty('--player-height', '0px');
+                if (btnPillToggle) {
+                    btnPillToggle.title = 'Chuyển về Thanh đáy (Bottom Dock)';
+                    btnPillToggle.style.opacity = '1';
+                }
+            } else {
+                audioDock.classList.remove('mode-pill');
+                if (btnPillToggle) {
+                    btnPillToggle.title = 'Chuyển sang Viên thuốc nổi (Floating Pill)';
+                    btnPillToggle.style.opacity = '0.7';
+                }
+            }
+
+            // Restore saved collapsed state
+            const savedCollapsed = localStorage.getItem('boya_audio_dock_collapsed') === 'true';
+            if (savedCollapsed) {
+                audioDock.classList.add('is-collapsed');
+                if (btnToggleDock) {
+                    btnToggleDock.textContent = '▴';
+                    btnToggleDock.title = 'Mở rộng trình phát nhạc';
+                }
+                if (!isPill) {
+                    document.documentElement.style.setProperty('--player-height', '38px');
+                }
+            }
+
+            if (btnToggleDock) {
+                btnToggleDock.addEventListener('click', () => {
+                    const isCollapsed = audioDock.classList.toggle('is-collapsed');
+                    btnToggleDock.textContent = isCollapsed ? '▴' : '▾';
+                    btnToggleDock.title = isCollapsed ? 'Mở rộng trình phát nhạc' : 'Thu gọn trình phát nhạc';
+                    if (!audioDock.classList.contains('mode-pill')) {
+                        document.documentElement.style.setProperty('--player-height', isCollapsed ? '38px' : '72px');
+                    }
+                    localStorage.setItem('boya_audio_dock_collapsed', isCollapsed ? 'true' : 'false');
+                });
+            }
+
+            if (btnPillToggle) {
+                btnPillToggle.addEventListener('click', () => {
+                    const nowPill = audioDock.classList.toggle('mode-pill');
+                    if (nowPill) {
+                        document.documentElement.style.setProperty('--player-height', '0px');
+                        btnPillToggle.title = 'Chuyển về Thanh đáy (Bottom Dock)';
+                        btnPillToggle.style.opacity = '1';
+                    } else {
+                        const isCol = audioDock.classList.contains('is-collapsed');
+                        document.documentElement.style.setProperty('--player-height', isCol ? '38px' : '72px');
+                        btnPillToggle.title = 'Chuyển sang Viên thuốc nổi (Floating Pill)';
+                        btnPillToggle.style.opacity = '0.7';
+                    }
+                    localStorage.setItem('boya_audio_pill_mode', nowPill ? 'true' : 'false');
+                });
+            }
         }
     }
 
@@ -1923,6 +2186,12 @@
             if (e.key === 'p' || e.key === 'P') {
                 if (document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
                     togglePinyin();
+                }
+            }
+            // Translation Shortcut: 't'
+            if (e.key === 't' || e.key === 'T') {
+                if (document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+                    toggleTranslation();
                 }
             }
         });

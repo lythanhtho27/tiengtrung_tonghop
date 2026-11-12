@@ -1531,14 +1531,22 @@ body.no-tone-colors .py-syl {
 /* ==================== BENTO BOX DASHBOARD WORKSTATION ==================== */
 .bento-dashboard-grid {
     display: grid;
-    grid-template-columns: 1.55fr 1fr;
-    gap: 16px;
+    grid-template-columns: 1fr 380px;
+    gap: 18px;
     align-items: stretch;
     margin-bottom: 24px;
     width: 100%;
+    min-height: 520px;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1100px) {
+    .bento-dashboard-grid {
+        grid-template-columns: 1fr 320px;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 860px) {
     .bento-dashboard-grid {
         grid-template-columns: 1fr;
     }
@@ -1566,6 +1574,23 @@ body.no-tone-colors .py-syl {
     flex-direction: column;
     gap: 16px;
     border-top: 3.5px solid var(--accent-primary);
+    min-height: 520px;
+}
+
+.bhc-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.bhc-footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color);
 }
 
 .bhc-header {
@@ -2041,34 +2066,37 @@ body.no-tone-colors .py-syl {
     line-height: 1.45;
 }
 
-/* --- KHỐI 4: BĂNG CHUYỀN / LƯỚI TẤT CẢ TỪ VỰNG BÀI HỌC --- */
+/* --- CỘT PHẢI: DANH SÁCH TỪ VỰNG DỌC (SONG SONG VỚI TỪ VỰNG BÊN TRÁI) --- */
 .bento-word-strip-card {
-    grid-column: 1 / -1;
-    padding: 18px 20px;
+    padding: 16px 18px;
     display: flex;
     flex-direction: column;
     gap: 12px;
+    max-height: 620px;
+    height: 100%;
 }
 
 .bwsc-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .bwsc-title {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.96rem;
+    font-size: 0.95rem;
     font-weight: 800;
     color: var(--text-primary);
 }
 
 .bwsc-count {
-    font-size: 0.76rem;
+    font-size: 0.74rem;
     font-weight: 700;
     padding: 2px 7px;
     border-radius: 6px;
@@ -2077,36 +2105,40 @@ body.no-tone-colors .py-syl {
 }
 
 .bwsc-hint {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     color: var(--text-muted);
 }
 
 .bwsc-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
-    gap: 8px;
-    max-height: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex: 1;
     overflow-y: auto;
-    padding-right: 4px;
+    padding-right: 6px;
 }
 
 .bwsc-grid::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
 }
 .bwsc-grid::-webkit-scrollbar-thumb {
     background: var(--border-color);
     border-radius: 4px;
 }
+.bwsc-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
+}
 
+/* Vertical Word Item */
 .bws-chip {
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
-    padding: 8px 10px;
+    padding: 9px 12px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
     transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     user-select: none;
@@ -2114,36 +2146,32 @@ body.no-tone-colors .py-syl {
 
 .bws-chip:hover {
     border-color: var(--accent-primary);
-    transform: translateY(-2px);
+    transform: translateX(3px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .bws-chip.active {
     border-color: var(--accent-primary);
-    background: rgba(99, 102, 241, 0.16);
+    background: rgba(99, 102, 241, 0.15);
     box-shadow: 0 0 0 2px var(--accent-primary);
-    transform: translateY(-2px);
+    transform: translateX(4px);
 }
 
 .bws-chip.is-learned {
-    border-left: 3px solid var(--accent-emerald);
+    border-left: 3.5px solid var(--accent-emerald);
 }
 
-.bws-top {
+.bws-chip-main {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    font-size: 0.7rem;
-    color: var(--text-muted);
+    gap: 10px;
 }
 
 .bws-num {
+    font-size: 0.72rem;
     font-weight: 800;
-}
-
-.bws-star {
-    font-size: 0.78rem;
-    color: #fbbf24;
+    color: var(--text-muted);
+    min-width: 26px;
 }
 
 .bws-hz {
@@ -2151,24 +2179,46 @@ body.no-tone-colors .py-syl {
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--text-primary);
-    line-height: 1.2;
+    line-height: 1.15;
 }
 
 .bws-py {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     color: var(--accent-sky);
     font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+}
+
+.bws-type {
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: rgba(139, 92, 246, 0.14);
+    color: #c4b5fd;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+.bws-chip-sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-left: 36px;
 }
 
 .bws-vi {
-    font-size: 0.74rem;
-    color: var(--text-muted);
+    font-size: 0.78rem;
+    color: var(--text-secondary);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex: 1;
+}
+
+.bws-star {
+    font-size: 0.8rem;
+    color: #fbbf24;
+    flex-shrink: 0;
 }
 
 /* Vocabulary Table */

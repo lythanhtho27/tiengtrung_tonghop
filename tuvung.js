@@ -1454,13 +1454,7 @@
         // 1. Render Hero Card
         renderBentoHeroWord(currentWord, words.length, state.bentoActiveWordIndex);
 
-        // 2. Render Stats Card
-        renderBentoStatsCard(words);
-
-        // 3. Render Mnemonic Card
-        renderBentoMnemonicCard(currentWord);
-
-        // 4. Render Word Strip (20-word grid)
+        // 2. Render Vertical Word List (Cột Phải)
         renderBentoWordStrip(words);
     }
 
@@ -1710,17 +1704,19 @@
             const isStar = state.starredWords.has(w.id);
             const srsInfo = state.srsData[w.id];
             const isLearned = state.masteredWords.has(w.id) || (srsInfo && srsInfo.level > 0);
-            const shortMean = (w.mean || '').length > 16 ? (w.mean || '').slice(0, 16) + '…' : (w.mean || '');
 
             return `
                 <div class="bws-chip ${isActive ? 'active' : ''} ${isLearned ? 'is-learned' : ''}" data-idx="${idx}" data-id="${w.id}">
-                    <div class="bws-top">
+                    <div class="bws-chip-main">
                         <span class="bws-num">#${idx + 1}</span>
+                        <span class="bws-hz">${escapeHtml(w.hz)}</span>
+                        <span class="bws-py">${formatPinyinWithToneColors(w.py)}</span>
+                        ${w.type ? `<span class="bws-type">${escapeHtml(w.type)}</span>` : ''}
+                    </div>
+                    <div class="bws-chip-sub">
+                        <span class="bws-vi" title="${escapeHtml(w.mean)}">${escapeHtml(w.mean || '')}</span>
                         <span class="bws-star" style="${isStar ? '' : 'display:none;'}">⭐</span>
                     </div>
-                    <div class="bws-hz">${escapeHtml(w.hz)}</div>
-                    <div class="bws-py">${formatPinyinWithToneColors(w.py)}</div>
-                    <div class="bws-vi" title="${escapeHtml(w.mean)}">${escapeHtml(shortMean)}</div>
                 </div>
             `;
         }).join("");
@@ -1750,16 +1746,13 @@
         // 1. Update Hero Card
         renderBentoHeroWord(currentWord, words.length, idx);
 
-        // 2. Update Mnemonic Card
-        renderBentoMnemonicCard(currentWord);
-
-        // 3. Highlight active chip directly (O(1) instead of iterating all chips)
+        // 2. Highlight active chip directly and scroll into view smoothly
         const prevActive = document.querySelector(".bws-chip.active");
         if (prevActive) prevActive.classList.remove("active");
         const nextActive = document.querySelector(`.bws-chip[data-idx="${idx}"]`);
         if (nextActive) {
             nextActive.classList.add("active");
-            // nextActive.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            nextActive.scrollIntoView({ behavior: "smooth", block: "nearest" });
         }
     }
 
@@ -2673,11 +2666,11 @@
 
         // Phím tắt điều hướng trong chế độ Bento Workstation
         if (state.currentMode === "table" && state.vocabViewMode === "bento") {
-            if (e.code === "ArrowLeft") {
+            if (e.code === "ArrowLeft" || e.code === "ArrowUp") {
                 e.preventDefault();
                 selectBentoWordByIndex(state.bentoActiveWordIndex - 1);
                 return;
-            } else if (e.code === "ArrowRight") {
+            } else if (e.code === "ArrowRight" || e.code === "ArrowDown") {
                 e.preventDefault();
                 selectBentoWordByIndex(state.bentoActiveWordIndex + 1);
                 return;

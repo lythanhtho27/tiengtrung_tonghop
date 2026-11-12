@@ -829,7 +829,7 @@ body.dark-mode .sidebar-book-select {
 
 /* Mode Content Container - The ONLY area that scrolls */
 .mode-content-container {
-    padding: 20px 24px 64px 24px;
+    padding: 20px 24px 110px 24px;
     flex: 1;
     min-height: 0;
     overflow-y: auto;
@@ -1816,11 +1816,132 @@ body.dark-mode .vc-py {
     justify-content: space-between;
     padding: 0 24px;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.12);
-    transition: height 0.25s cubic-bezier(0.16, 1, 0.3, 1), padding 0.25s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Collapsed Mini-Dock State */
-.boya-audio-dock.is-collapsed {
+/* ==========================================================================
+   FLOATING MINI CAPSULE / PILL PLAYER MODE
+   ========================================================================== */
+.boya-audio-dock.mode-pill {
+    position: fixed;
+    bottom: 22px;
+    right: 28px;
+    left: auto;
+    width: auto;
+    max-width: min(540px, calc(100vw - 36px));
+    height: 52px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color-strong);
+    border-radius: 9999px;
+    padding: 0 16px 0 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28), 0 2px 6px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    gap: 12px;
+    z-index: 1000;
+}
+
+.boya-audio-dock.mode-pill .dock-left {
+    width: auto;
+    max-width: 170px;
+    gap: 10px;
+    flex-shrink: 1;
+}
+
+.boya-audio-dock.mode-pill .dock-track-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+    border-radius: 50%;
+}
+
+.boya-audio-dock.mode-pill .dock-track-title {
+    font-size: 12px;
+    max-width: 125px;
+}
+
+.boya-audio-dock.mode-pill .dock-track-sub {
+    display: none;
+}
+
+.boya-audio-dock.mode-pill .dock-center {
+    flex: 1;
+    max-width: 200px;
+    gap: 2px;
+}
+
+.boya-audio-dock.mode-pill .dock-controls-row {
+    gap: 8px;
+}
+
+.boya-audio-dock.mode-pill .btn-player-ctrl {
+    padding: 4px;
+    font-size: 11px;
+}
+
+.boya-audio-dock.mode-pill .btn-player-ctrl.btn-play-pause {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+}
+
+.boya-audio-dock.mode-pill .dock-timeline-row {
+    gap: 6px;
+}
+
+.boya-audio-dock.mode-pill .time-label {
+    font-size: 10px;
+    min-width: 28px;
+}
+
+.boya-audio-dock.mode-pill .audio-scrubber-slider {
+    height: 3px;
+}
+
+.boya-audio-dock.mode-pill .dock-right {
+    width: auto;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.boya-audio-dock.mode-pill .speed-badge-btn {
+    padding: 2px 6px;
+    font-size: 10.5px;
+    border-radius: 9999px;
+}
+
+.boya-audio-dock.mode-pill #btnPillModeToggle {
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 50%;
+}
+
+/* Micro Compact Sub-mode for Pill */
+.boya-audio-dock.mode-pill.is-collapsed {
+    height: 42px;
+    padding: 0 12px 0 10px;
+    gap: 8px;
+    max-width: 270px;
+}
+
+.boya-audio-dock.mode-pill.is-collapsed .dock-timeline-row,
+.boya-audio-dock.mode-pill.is-collapsed .dock-track-info,
+.boya-audio-dock.mode-pill.is-collapsed #btnAudioRewind,
+.boya-audio-dock.mode-pill.is-collapsed #btnAudioForward {
+    display: none;
+}
+
+.boya-audio-dock.mode-pill.is-collapsed .dock-left {
+    max-width: 36px;
+}
+
+.boya-audio-dock.mode-pill.is-collapsed .dock-center {
+    max-width: 40px;
+    flex: 0 0 auto;
+}
+
+/* Collapsed Mini-Dock State (Normal bottom bar) */
+.boya-audio-dock.is-collapsed:not(.mode-pill) {
     height: 38px;
     padding: 0 16px;
 }
@@ -2782,7 +2903,7 @@ body.dark-mode .vc-py {
 
     /* 5. Main Content Area */
     .mode-content-container {
-        padding: 12px 10px 42px 10px;
+        padding: 12px 10px 90px 10px;
     }
 
     /* 6. Reading Studio (Bài Khóa) */
@@ -2873,7 +2994,7 @@ body.dark-mode .vc-py {
     }
 
     /* 7. Bottom Audio Dock Player */
-    .boya-audio-dock {
+    .boya-audio-dock:not(.mode-pill) {
         height: auto;
         min-height: 72px;
         padding: 6px 10px calc(6px + env(safe-area-inset-bottom, 0px)) 10px;
@@ -2884,7 +3005,32 @@ body.dark-mode .vc-py {
         gap: 3px 8px;
     }
 
-    .dock-timeline-row {
+    .boya-audio-dock.mode-pill {
+        bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+        right: 12px;
+        left: 12px;
+        max-width: none;
+        width: auto;
+        height: 48px;
+        padding: 0 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .boya-audio-dock.mode-pill .dock-left {
+        max-width: 120px;
+    }
+
+    .boya-audio-dock.mode-pill .dock-track-title {
+        max-width: 85px;
+        font-size: 11px;
+    }
+
+    .boya-audio-dock.mode-pill .dock-center {
+        max-width: 130px;
+    }
+
+    .boya-audio-dock:not(.mode-pill) .dock-timeline-row {
         grid-column: 1 / -1;
         grid-row: 1;
         width: 100%;
@@ -2901,7 +3047,7 @@ body.dark-mode .vc-py {
         height: 3.5px;
     }
 
-    .dock-left {
+    .boya-audio-dock:not(.mode-pill) .dock-left {
         grid-column: 1;
         grid-row: 2;
         width: auto;
@@ -2929,7 +3075,7 @@ body.dark-mode .vc-py {
         display: none;
     }
 
-    .dock-center {
+    .boya-audio-dock:not(.mode-pill) .dock-center {
         grid-column: 2;
         grid-row: 2;
         max-width: none;
@@ -2952,7 +3098,7 @@ body.dark-mode .vc-py {
         font-size: 14px;
     }
 
-    .dock-right {
+    .boya-audio-dock:not(.mode-pill) .dock-right {
         grid-column: 3;
         grid-row: 2;
         display: flex !important;
@@ -2972,26 +3118,26 @@ body.dark-mode .vc-py {
         margin-left: 0 !important;
     }
 
-    .boya-audio-dock.is-collapsed {
+    .boya-audio-dock.is-collapsed:not(.mode-pill) {
         min-height: 36px;
         height: 36px;
         padding: 3px 10px calc(3px + env(safe-area-inset-bottom, 0px)) 10px;
         grid-template-rows: auto;
     }
 
-    .boya-audio-dock.is-collapsed .dock-timeline-row {
+    .boya-audio-dock.is-collapsed:not(.mode-pill) .dock-timeline-row {
         display: none;
     }
 
-    .boya-audio-dock.is-collapsed .dock-left {
+    .boya-audio-dock.is-collapsed:not(.mode-pill) .dock-left {
         grid-row: 1;
     }
 
-    .boya-audio-dock.is-collapsed .dock-center {
+    .boya-audio-dock.is-collapsed:not(.mode-pill) .dock-center {
         grid-row: 1;
     }
 
-    .boya-audio-dock.is-collapsed .dock-right {
+    .boya-audio-dock.is-collapsed:not(.mode-pill) .dock-right {
         grid-row: 1;
     }
 
@@ -3222,3 +3368,196 @@ body.dark-mode .vc-py {
     }
 }
 
+
+
+/* Hide nested legacy translation container inside reading content, since it is rendered in #translationSection */
+.chinese-text-content .translation-container,
+.chinese-text-content h2 {
+    display: none !important;
+}
+
+/* ==========================================================================
+   INTERLINEAR (PARAGRAPH-BY-PARAGRAPH) TRANSLATION STYLES
+   ========================================================================== */
+
+.chinese-text-content.layout-interlinear {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    line-height: normal;
+}
+
+.para-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    transition: all 0.25s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.para-card:hover {
+    border-color: #cbd5e1;
+    box-shadow: var(--shadow-sm);
+}
+
+body.dark-mode .para-card {
+    background: var(--bg-surface);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .para-card:hover {
+    border-color: #475569;
+}
+
+.para-card.is-title-card,
+.para-card.is-attr-card {
+    background: transparent;
+    border: none;
+    padding: 6px 0;
+    box-shadow: none;
+}
+
+.para-chinese {
+    font-size: var(--reading-font-size, 22px);
+    line-height: 2.2;
+    color: var(--text-main);
+    text-align: justify;
+    word-break: break-word;
+}
+
+/* Inline Paragraph Translation Block */
+.para-translation {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: var(--bg-subtle);
+    border-left: 3.5px solid var(--primary);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.para-translation .pt-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+}
+
+.para-translation .pt-tag {
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.para-translation .btn-pt-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: background 0.15s, color 0.15s;
+}
+
+.para-translation .btn-pt-toggle:hover {
+    background: var(--border-color);
+    color: var(--text-main);
+}
+
+.para-translation .pt-content {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-main);
+    opacity: 0.95;
+    font-family: var(--font-sans);
+    transition: opacity 0.2s ease;
+}
+
+/* Collapsed state: minimal pill */
+.para-translation.collapsed {
+    padding: 6px 14px;
+    background: var(--bg-subtle);
+    border-left: 3.5px solid transparent;
+    border-radius: 20px;
+    display: inline-flex;
+    width: auto;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.para-translation.collapsed:hover {
+    border-left-color: var(--primary);
+    background: var(--border-color);
+}
+
+.para-translation.collapsed .pt-content {
+    display: none;
+}
+
+.para-translation.collapsed .pt-tag {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.para-translation.collapsed .btn-pt-toggle {
+    color: var(--primary);
+    padding: 0 4px;
+}
+
+/* Translation toggle button in toolbar */
+.trans-toggle-btn.active {
+    background: var(--primary-light, #eff6ff);
+    color: var(--primary);
+    border-color: var(--primary);
+    font-weight: 600;
+}
+
+body.dark-mode .trans-toggle-btn.active {
+    background: #1e293b;
+    color: #60a5fa;
+    border-color: #3b82f6;
+}
+
+/* Full summary accordion in interlinear mode */
+.translation-section.full-summary-section {
+    margin-top: 30px;
+    border-style: dashed;
+}
+
+.translation-section.full-summary-section:hover {
+    border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .para-card {
+        padding: 14px 16px;
+        margin-bottom: 14px;
+    }
+
+    .para-chinese {
+        line-height: 2.0;
+    }
+
+    .para-translation {
+        padding: 10px 12px;
+        margin-top: 12px;
+    }
+
+    .para-translation .pt-content {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
