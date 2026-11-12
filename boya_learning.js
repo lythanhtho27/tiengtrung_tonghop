@@ -13,6 +13,7 @@
     const STORAGE_KEY_STARRED  = 'boya_learning_starred_words_v1';
     const STORAGE_KEY_THEME    = 'boya_learning_dark_mode_v1';
     const STORAGE_KEY_SETTINGS = 'boya_learning_settings_v1';
+    const STORAGE_KEY_SIDEBAR  = 'boya_learning_sidebar_collapsed';
 
     let state = {
         activeBookId: 'tc1',
@@ -93,6 +94,7 @@
         switchBook(state.activeBookId, state.activeLessonNum, false);
         initAudioDock();
         updatePinyinUI();
+        initSidebarState();
     });
 
     function loadPersistedData() {
@@ -2139,18 +2141,37 @@
             });
         }
 
-        // Sidebar Mobile Toggle
+        // Sidebar Desktop & Mobile Toggles
+        const hdrSidebarToggle = document.getElementById('hdrSidebarToggleBtn');
+        if (hdrSidebarToggle) {
+            hdrSidebarToggle.addEventListener('click', toggleSidebar);
+        }
         const sidebarToggle = document.getElementById('sidebarToggleBtn');
         if (sidebarToggle) {
             sidebarToggle.addEventListener('click', toggleSidebar);
         }
         const sidebarClose = document.getElementById('sidebarCloseBtn');
         if (sidebarClose) {
-            sidebarClose.addEventListener('click', closeSidebar);
+            sidebarClose.addEventListener('click', () => {
+                if (isMobileView()) {
+                    closeSidebar();
+                } else {
+                    toggleSidebar();
+                }
+            });
         }
         if (dom.sidebarBackdrop) {
             dom.sidebarBackdrop.addEventListener('click', closeSidebar);
         }
+
+        // Responsive resize listener
+        window.addEventListener('resize', () => {
+            if (isMobileView()) {
+                if (dom.boyaSidebar) dom.boyaSidebar.classList.remove('collapsed');
+            } else {
+                initSidebarState();
+            }
+        });
 
         // Search Modal Triggers
         const searchBtn = document.getElementById('globalSearchBtn');
@@ -2177,6 +2198,11 @@
                 e.preventDefault();
                 openSearchModal();
             }
+            // Cmd/Ctrl + B for sidebar toggle
+            if ((e.metaKey || e.ctrlKey) && (e.key === 'b' || e.key === 'B')) {
+                e.preventDefault();
+                toggleSidebar();
+            }
             // Escape closes modals
             if (e.key === 'Escape') {
                 closeSearchModal();
@@ -2197,15 +2223,55 @@
         });
     }
 
+    function isMobileView() {
+        return window.innerWidth <= 1024;
+    }
+
+    function initSidebarState() {
+        if (!isMobileView()) {
+            const savedCollapsed = localStorage.getItem(STORAGE_KEY_SIDEBAR) === 'true';
+            if (savedCollapsed && dom.boyaSidebar) {
+                dom.boyaSidebar.classList.add('collapsed');
+                updateSidebarToggleButtons(true);
+            }
+        }
+    }
+
     function toggleSidebar() {
         if (!dom.boyaSidebar) return;
-        const isOpen = dom.boyaSidebar.classList.toggle('open');
-        if (dom.sidebarBackdrop) dom.sidebarBackdrop.classList.toggle('active', isOpen);
+        if (isMobileView()) {
+            const isOpen = dom.boyaSidebar.classList.toggle('open');
+            if (dom.sidebarBackdrop) dom.sidebarBackdrop.classList.toggle('active', isOpen);
+        } else {
+            const isCollapsed = dom.boyaSidebar.classList.toggle('collapsed');
+            try {
+                localStorage.setItem(STORAGE_KEY_SIDEBAR, isCollapsed ? 'true' : 'false');
+            } catch (e) {}
+            updateSidebarToggleButtons(isCollapsed);
+            showToast(isCollapsed ? "◀ Đã thu gọn danh mục bài học" : "▶ Đã mở danh mục bài học");
+        }
     }
 
     function closeSidebar() {
-        if (dom.boyaSidebar) dom.boyaSidebar.classList.remove('open');
-        if (dom.sidebarBackdrop) dom.sidebarBackdrop.classList.remove('active');
+        if (!dom.boyaSidebar) return;
+        if (isMobileView()) {
+            dom.boyaSidebar.classList.remove('open');
+            if (dom.sidebarBackdrop) dom.sidebarBackdrop.classList.remove('active');
+        }
+    }
+
+    function updateSidebarToggleButtons(isCollapsed) {
+        const hdrBtn = document.getElementById('hdrSidebarToggleBtn');
+        const mainBtn = document.getElementById('sidebarToggleBtn');
+        const title = isCollapsed ? 'Mở danh mục bài học (Ctrl + B)' : 'Thu gọn danh mục bài học (Ctrl + B)';
+        if (hdrBtn) {
+            hdrBtn.classList.toggle('sidebar-collapsed', isCollapsed);
+            hdrBtn.title = title;
+        }
+        if (mainBtn) {
+            mainBtn.classList.toggle('sidebar-collapsed', isCollapsed);
+            mainBtn.title = title;
+        }
     }
 
     function openSearchModal() {

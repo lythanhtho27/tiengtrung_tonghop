@@ -252,6 +252,22 @@ body.dark-mode .book-pill-btn:hover {
     transition: all 0.2s ease;
 }
 
+.header-btn-sidebar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+}
+.header-btn-sidebar .bst-icon {
+    font-size: 13.5px;
+    line-height: 1;
+}
+@media (max-width: 1250px) {
+    .header-btn-sidebar .bst-text {
+        display: none;
+    }
+}
+
 .header-btn:hover {
     background: var(--bg-subtle-hover);
     color: var(--text-main);
@@ -309,8 +325,23 @@ body.dark-mode .book-pill-btn:hover {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: width 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+                min-width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.2s ease,
+                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 40;
+}
+
+/* Desktop Collapsed Sidebar */
+@media (min-width: 1025px) {
+    .boya-sidebar.collapsed {
+        width: 0 !important;
+        min-width: 0 !important;
+        overflow: hidden !important;
+        border-right: none !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
 }
 
 .sidebar-header {
@@ -376,7 +407,7 @@ body.dark-mode .sidebar-book-select {
 }
 
 .btn-sidebar-close {
-    display: none;
+    display: inline-flex;
     border: 1px solid var(--border-color);
     background: var(--bg-surface);
     color: var(--text-muted);
@@ -386,13 +417,15 @@ body.dark-mode .sidebar-book-select {
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
-    transition: all 0.2s;
+    font-size: 11px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
 }
 
 .btn-sidebar-close:hover {
-    color: var(--color-danger);
-    border-color: var(--color-danger);
+    color: var(--primary);
+    border-color: var(--primary);
+    background: var(--bg-subtle-hover);
 }
 
 .sidebar-progress-label {
@@ -612,14 +645,32 @@ body.dark-mode .sidebar-book-select {
 }
 
 .btn-sidebar-toggle {
-    display: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     border: 1px solid var(--border-color);
     background: var(--bg-subtle);
-    padding: 6px 10px;
+    padding: 6px 11px;
     border-radius: var(--radius-sm);
-    font-size: 13px;
+    font-size: 12.5px;
+    font-weight: 600;
     color: var(--text-muted);
     cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-sidebar-toggle:hover {
+    background: var(--bg-subtle-hover);
+    color: var(--text-main);
+    border-color: var(--primary);
+}
+
+.btn-sidebar-toggle.sidebar-collapsed,
+.header-btn-sidebar.sidebar-collapsed {
+    background: var(--primary-light);
+    color: var(--primary-text);
+    border-color: var(--primary-border);
 }
 
 .lesson-meta-badge {

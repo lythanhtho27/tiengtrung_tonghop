@@ -1886,13 +1886,15 @@
         const countStarred = baseWords.filter(w => state.starredWords.has(w.id)).length;
         const countMastered = baseWords.filter(w => state.masteredWords.has(w.id)).length;
 
-        // Toolbar HTML (3 dòng: Chiều học • Bộ lọc • Tự động phát)
+        // Toolbar HTML (Cột Setting Phụ)
         const toolbarHtml = `
-            <div class="fc-toolbar">
-                <!-- Dòng 1: Chiều học -->
-                <div class="fc-toolbar-row">
-                    <div class="fc-toolbar-group">
-                        <span class="fc-group-label">🔄 Chiều học:</span>
+            <aside class="fc-settings-sidebar">
+                <div class="fc-settings-title">⚙️ Cài đặt học thẻ</div>
+
+                <!-- Nhóm 1: Chiều học -->
+                <div class="fcs-section">
+                    <span class="fc-group-label">🔄 Chiều học:</span>
+                    <div class="fcs-btn-list">
                         <button class="fc-dir-btn ${state.fcDirection === 'hz_mean' ? 'active' : ''}" data-dir="hz_mean" title="Mặt trước Chữ Hán ➔ Mặt sau Nghĩa & Pinyin">
                             🔤 Chữ Hán ➔ Nghĩa
                         </button>
@@ -1908,10 +1910,10 @@
                     </div>
                 </div>
 
-                <!-- Dòng 2: Bộ lọc dứt điểm -->
-                <div class="fc-toolbar-row">
-                    <div class="fc-toolbar-group">
-                        <span class="fc-group-label">🎯 Bộ lọc:</span>
+                <!-- Nhóm 2: Bộ lọc dứt điểm -->
+                <div class="fcs-section">
+                    <span class="fc-group-label">🎯 Bộ lọc:</span>
+                    <div class="fcs-btn-list">
                         <button class="fc-filter-btn ${state.fcFilter === 'all' ? 'active' : ''}" data-filter="all">
                             Tất cả <span class="fc-count-badge">${countAll}</span>
                         </button>
@@ -1933,27 +1935,23 @@
                     </div>
                 </div>
 
-                <!-- Dòng 3: Tự Động Phát Hands-free & Tốc độ -->
-                <div class="fc-toolbar-row">
-                    <div class="fc-toolbar-group">
-                        <button class="fc-btn-autoplay ${state.fcAutoPlay ? 'running' : ''}" id="fc-btn-autoplay" title="Tự động lật và chuyển thẻ rảnh tay">
-                            ${state.fcAutoPlay ? '⏸ Dừng tự động' : '▶ Tự động phát (Hands-free)'}
-                        </button>
-                        <div class="fc-speed-picker">
-                            <span class="speed-label">⏱️ Tốc độ:</span>
-                            <button class="speed-btn ${state.fcSpeed === 4000 ? 'active' : ''}" data-speed="4000">4s (Chậm)</button>
-                            <button class="speed-btn ${state.fcSpeed === 2500 ? 'active' : ''}" data-speed="2500">2.5s (Vừa)</button>
-                            <button class="speed-btn ${state.fcSpeed === 1500 ? 'active' : ''}" data-speed="1500">1.5s (Nhanh)</button>
-                        </div>
+                <!-- Nhóm 3: Tự Động Phát Hands-free & Tốc độ -->
+                <div class="fcs-section">
+                    <span class="fc-group-label">⏱️ Tự động phát:</span>
+                    <button class="fc-btn-autoplay ${state.fcAutoPlay ? 'running' : ''}" id="fc-btn-autoplay" title="Tự động lật và chuyển thẻ rảnh tay">
+                        ${state.fcAutoPlay ? '⏸ Dừng tự động' : '▶ Tự động phát (Hands-free)'}
+                    </button>
+                    <div class="fc-speed-picker">
+                        <button class="speed-btn ${state.fcSpeed === 4000 ? 'active' : ''}" data-speed="4000">4s</button>
+                        <button class="speed-btn ${state.fcSpeed === 2500 ? 'active' : ''}" data-speed="2500">2.5s</button>
+                        <button class="speed-btn ${state.fcSpeed === 1500 ? 'active' : ''}" data-speed="1500">1.5s</button>
                     </div>
-                    <div class="fc-toolbar-group">
-                        <label class="fc-autotts-label" title="Tự động đọc âm thanh chuẩn mỗi khi chuyển hoặc lật thẻ">
-                            <input type="checkbox" id="fc-toggle-autotts" ${state.fcAutoTts ? 'checked' : ''}>
-                            <span>🔊 Tự động đọc</span>
-                        </label>
-                    </div>
+                    <label class="fc-autotts-label" title="Tự động đọc âm thanh chuẩn mỗi khi chuyển hoặc lật thẻ">
+                        <input type="checkbox" id="fc-toggle-autotts" ${state.fcAutoTts ? 'checked' : ''}>
+                        <span>🔊 Tự động đọc</span>
+                    </label>
                 </div>
-            </div>
+            </aside>
         `;
 
         // Khi danh sách rỗng trong bộ lọc hiện tại
@@ -2121,87 +2119,87 @@
         }
 
         container.innerHTML = `
-            <div class="flashcard-wrapper">
-                ${toolbarHtml}
+            <div class="flashcard-workspace-layout">
+                <!-- CỘT CHÍNH (TRỌNG TÂM LỚN): THẺ FLASHCARD 3D VÀ BẢNG ĐIỀU KHIỂN/LỰA CHỌN SRS -->
+                <div class="fc-main-stage">
+                    <div class="fc-meta">
+                        <div><strong>${escapeHtml(w.book_name)}</strong> • Bài ${w.lesson_num}: ${escapeHtml(w.lesson_title || '')}</div>
+                        <div>Thẻ <strong>${state.fcIndex + 1}</strong> / ${state.fcList.length} (${progressPercent}%)</div>
+                    </div>
 
-                <div class="fc-meta">
-                    <div><strong>${escapeHtml(w.book_name)}</strong> • Bài ${w.lesson_num}: ${escapeHtml(w.lesson_title || '')}</div>
-                    <div>Thẻ <strong>${state.fcIndex + 1}</strong> / ${state.fcList.length} (${progressPercent}%)</div>
-                </div>
+                    <div class="fc-progress-bar">
+                        <div class="fc-progress-fill" style="width: ${progressPercent}%;"></div>
+                    </div>
 
-                <div class="fc-progress-bar">
-                    <div class="fc-progress-fill" style="width: ${progressPercent}%;"></div>
-                </div>
-
-                <div class="flashcard-scene" id="fc-scene">
-                    <div class="flashcard ${state.fcFlipped ? 'flipped' : ''}" id="fc-card">
-                        
-                        <!-- MẶT TRƯỚC -->
-                        <div class="flashcard-face flashcard-front">
-                            ${frontFaceContentHtml}
-                        </div>
-
-                        <!-- MẶT SAU (BENTO SPLIT 2-TIER LAYOUT) -->
-                        <div class="flashcard-face flashcard-back">
-                            <div class="card-top-info">
-                                <span class="fc-badge-book">${escapeHtml(w.book_name)} • Bài ${w.lesson_num}</span>
-                                <button class="btn-speak fc-front-speak-btn" style="width:36px; height:36px; font-size:16px;" id="fc-back-speak" title="Nghe phát âm">🔊</button>
+                    <!-- THẺ FLASHCARD 3D (KÍCH THƯỚC TO RÕ) -->
+                    <div class="flashcard-scene" id="fc-scene">
+                        <div class="flashcard ${state.fcFlipped ? 'flipped' : ''}" id="fc-card">
+                            
+                            <!-- MẶT TRƯỚC -->
+                            <div class="flashcard-face flashcard-front">
+                                ${frontFaceContentHtml}
                             </div>
 
-                            <div class="card-center fc-back-bento-center">
-                                <div class="fc-back-tier-main">
-                                    <div class="fc-back-hz">${escapeHtml(w.hz)}</div>
-                                    <div class="fc-pinyin">${formatPinyinWithToneColors(w.py)}</div>
-                                    ${w.type ? `<span class="fc-type">${escapeHtml(w.type)}</span>` : ''}
-                                    <div class="fc-mean">${escapeHtml(w.mean)}</div>
+                            <!-- MẶT SAU (BENTO SPLIT 2-TIER LAYOUT) -->
+                            <div class="flashcard-face flashcard-back">
+                                <div class="card-top-info">
+                                    <span class="fc-badge-book">${escapeHtml(w.book_name)} • Bài ${w.lesson_num}</span>
+                                    <button class="btn-speak fc-front-speak-btn" style="width:36px; height:36px; font-size:16px;" id="fc-back-speak" title="Nghe phát âm">🔊</button>
                                 </div>
-                                ${examplesBackHtml}
+
+                                <div class="card-center fc-back-bento-center">
+                                    <div class="fc-back-tier-main">
+                                        <div class="fc-back-hz">${escapeHtml(w.hz)}</div>
+                                        <div class="fc-pinyin">${formatPinyinWithToneColors(w.py)}</div>
+                                        ${w.type ? `<span class="fc-type">${escapeHtml(w.type)}</span>` : ''}
+                                        <div class="fc-mean">${escapeHtml(w.mean)}</div>
+                                    </div>
+                                    ${examplesBackHtml}
+                                </div>
+
+                                <div class="card-hint">💡 Nhấp thẻ hoặc phím [Space] để lật lại</div>
                             </div>
 
-                            <div class="card-hint">💡 Nhấp thẻ hoặc phím [Space] để lật lại</div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- CONTROLS & SRS EVALUATION (ĐẶT BÊN DƯỚI THẺ, HOÀN TOÀN TÁCH BIỆT) -->
-                <div class="fc-controls-box">
-                    <!-- Hàng 1: Đánh giá SRS 4 cấp độ -->
-                    <div class="fc-srs-eval-bar">
-                        <span class="fc-srs-bar-label">🧠 Đánh giá trí nhớ (Spaced Repetition):</span>
-                        <div class="fc-srs-btn-row">
-                            <button class="fc-srs-btn fc-srs-btn-again" data-srs="again" title="Quên hoặc rất khó (Ôn lại ngay hôm nay) • Phím 1">🔴 Quên (+0d)</button>
-                            <button class="fc-srs-btn fc-srs-btn-hard" data-srs="hard" title="Nhớ tàm tạm (Ôn lại sau 1 ngày) • Phím 2">🟠 Khó (+1d)</button>
-                            <button class="fc-srs-btn fc-srs-btn-good" data-srs="good" title="Nhớ tốt (Ôn sau 3 - 7 ngày) • Phím 3">🟢 Tốt (+3~7d)</button>
-                            <button class="fc-srs-btn fc-srs-btn-easy" data-srs="easy" title="Rất dễ (Ôn sau 14 - 30 ngày) • Phím 4">🔵 Dễ (+14~30d)</button>
                         </div>
                     </div>
 
-                    <!-- Hàng 2: Điều hướng & Luyện phát âm Speech AI -->
-                    <div class="fc-nav-bar">
-                        <button class="fc-action-btn btn-prev" id="fc-btn-prev" ${state.fcIndex === 0 ? 'disabled' : ''}>
-                            ◀ Trước
-                        </button>
-                        <button class="fc-action-btn btn-flip-main" id="fc-btn-flip-action" title="Lật mặt thẻ (Space)">
-                            🔄 Lật thẻ [Space]
-                        </button>
-                        <button class="fc-action-mic-btn" id="fc-btn-mic" title="Luyện đọc bằng Speech AI">
-                            🎙️ Đọc thử với AI
-                        </button>
-                        <button class="fc-action-btn btn-next" id="fc-btn-next" ${state.fcIndex === state.fcList.length - 1 ? 'disabled' : ''}>
-                            Tiếp ▶
-                        </button>
+                    <!-- BẢNG LỰA CHỌN SRS VÀ ĐIỀU HƯỚNG (NẰM NGAY BÊN DƯỚI THẺ, TRONG CÙNG CỘT CHÍNH) -->
+                    <div class="fc-main-action-dock">
+                        <!-- Hàng 1: Đánh giá SRS 4 cấp độ -->
+                        <div class="fc-srs-eval-bar">
+                            <span class="fc-srs-bar-label">🧠 Đánh giá trí nhớ (SRS):</span>
+                            <div class="fc-srs-btn-row">
+                                <button class="fc-srs-btn fc-srs-btn-again" data-srs="again" title="Quên hoặc rất khó (Ôn lại ngay hôm nay) • Phím 1">🔴 Quên (+0d)</button>
+                                <button class="fc-srs-btn fc-srs-btn-hard" data-srs="hard" title="Nhớ tàm tạm (Ôn lại sau 1 ngày) • Phím 2">🟠 Khó (+1d)</button>
+                                <button class="fc-srs-btn fc-srs-btn-good" data-srs="good" title="Nhớ tốt (Ôn sau 3 - 7 ngày) • Phím 3">🟢 Tốt (+3~7d)</button>
+                                <button class="fc-srs-btn fc-srs-btn-easy" data-srs="easy" title="Rất dễ (Ôn sau 14 - 30 ngày) • Phím 4">🔵 Dễ (+14~30d)</button>
+                            </div>
+                        </div>
+
+                        <!-- Hàng 2: Điều hướng thẻ & Luyện đọc Speech AI -->
+                        <div class="fc-nav-bar">
+                            <button class="fc-action-btn btn-prev" id="fc-btn-prev" ${state.fcIndex === 0 ? 'disabled' : ''}>
+                                ◀ Trước
+                            </button>
+                            <button class="fc-action-btn btn-flip-main" id="fc-btn-flip-action" title="Lật mặt thẻ (Space)">
+                                🔄 Lật thẻ [Space]
+                            </button>
+                            <button class="fc-action-btn btn-next" id="fc-btn-next" ${state.fcIndex === state.fcList.length - 1 ? 'disabled' : ''}>
+                                Tiếp ▶
+                            </button>
+                            <button class="fc-action-mic-btn" id="fc-btn-mic" title="Luyện đọc bằng Speech AI">
+                                🎙️ Luyện đọc Speech AI
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="key-hints">
+                        Phím tắt: <kbd>Space</kbd> Lật • <kbd>← / →</kbd> Chuyển thẻ • <kbd>1 - 4</kbd> Chấm điểm SRS • <kbd>P</kbd> Tự động phát
                     </div>
                 </div>
 
-                <div class="fc-extra-actions">
-                    <button class="btn-pill" id="fc-btn-shuffle">🔀 Xáo trộn thẻ</button>
-                    <button class="btn-pill" id="fc-btn-reset">🔄 Về thẻ đầu tiên</button>
-                </div>
-
-                <div class="key-hints">
-                    Phím tắt: <kbd>Space</kbd> Lật thẻ • <kbd>←</kbd> Thẻ trước • <kbd>→</kbd> Thẻ sau • <kbd>1</kbd> Chưa nhớ • <kbd>2</kbd> Đã thuộc • <kbd>P</kbd> Tự động phát • <kbd>A</kbd> Nghe đọc
-                </div>
+                <!-- CỘT PHỤ (SETTING & TÙY CHỌN BÊN CẠNH): GỌN GÀNG, KHÔNG CHIẾM TRỌNG TÂM -->
+                ${toolbarHtml}
             </div>
         `;
 
