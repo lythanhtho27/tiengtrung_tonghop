@@ -26,6 +26,8 @@ word_learning/        Giáo trình HSK 3.0 (词汇速记速练手册)
   word_learning.html/.css/.js, hsk_book_data.js, json_data/quyen_*.js(.json)
 hsk_lotrinh/          Lộ trình từ vựng HSK 1–6 (SRS, đọc nhanh)
   hsk_lotrinh.html/.css/.js, hsk_vocab_data.js
+luyen_tap/            Luyện tập: sắp xếp câu (Việt→Trung), nghe – viết từ/câu, lấy từ đã học ở mọi trang
+  luyen_tap.html/.css/.js, lt_data.js, lt_data_wl.js (sinh tự động)
 anh_ngu_3/            Bài luyện tiếng Anh HUTECH (an3*.html), trang độc lập, không liên quan tiếng Trung
 shared/               Tài nguyên dùng chung giữa các trang (theme, progress, sync)
 tools/                Script sinh dữ liệu + dữ liệu nguồn
@@ -115,9 +117,28 @@ Không sửa tay các file dữ liệu sinh tự động. Sửa nguồn rồi ch
 |---|---|---|
 | `hsk_lotrinh/hsk_vocab_data.js` | `tools/word_list_data/HSK1-HSK6_full.xlsx` (sheet HSK1…HSK6, cột: STT, Từ mới, Phiên âm, Giải thích, Ví dụ, Phiên âm VD, Dịch) | `python tools/extract_hsk_vocab.py` (cần `openpyxl`, chạy từ đâu cũng được) |
 | `tuvung/vocab_data.js` / `.json` | `sach_boya/tc1.html` … `tc4.html` | `python tools/extract_vocab.py` ⚠️ Bản `vocab_data` hiện tại có vài chỗ đã được sửa tay (ví dụ câu ví dụ "精神～"). Chạy lại script sẽ mất các chỗ sửa đó, nên kiểm tra `git diff` trước khi giữ. |
+| `luyen_tap/lt_data.js`, `lt_data_wl.js` | `hsk_lotrinh/hsk_vocab_data.js` (câu ví dụ), `boya_learning/boya_data.json` (từ + câu ví dụ ngữ pháp), `word_learning/json_data/quyen_*.json` (câu ví dụ) | `python tools/build_luyen_tap.py` (cần `pypinyin`, `jieba`). Chạy lại sau khi đổi dữ liệu ở các trang kia. |
 | `boya_learning/boya_data.js` / `.json` (phần Cao cấp gc1/gc2) | `tools/scratch/gc_rebuild/gc1_L01.json` … `gc2_L10.json`: chép từ PDF `pdf/高级飞翔篇1.pdf`, `2.pdf`, mỗi bài một file (có thể tách `_part_*.json`) gồm từ vựng, bài đọc + bản dịch và ngữ pháp | Từ thư mục gốc: `python tools/scratch/gc_rebuild/build_gc_books.py` (sinh `tools/scratch/gc1_book.json`, `gc2_book.json`, tự thêm ruby pinyin và câu ví dụ, cần `pypinyin`), rồi `python tools/scratch/merge_all_books.py`. **Không chạy `super_enrich.py`** vì script này thêm từ bịa vào Cao cấp. Quy cách chép nằm trong `gc_rebuild/BRIEF.md`. |
 
 Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHONIOENCODING=utf-8` để tránh lỗi `UnicodeEncodeError` (cp1252). Các script khác trong `tools/scratch/` vẫn dùng đường dẫn cũ (trước khi chuyển thư mục), phải sửa trước khi chạy lại.
+
+## Luyện tập (`luyen_tap/`)
+
+- **Hai dạng bài** (theo yêu cầu người dùng: luyện nhớ bằng cách tự viết ra, không chỉ chọn đáp án):
+  - **Sắp xếp câu:** đọc nghĩa tiếng Việt, bấm các mảnh để ghép thành câu tiếng Trung. Có tùy chọn thêm 2 mảnh gây nhiễu.
+  - **Nghe – viết từ / câu:** nghe TTS rồi gõ chữ Hán bằng bộ gõ của máy. Enter đang soạn chữ (`isComposing`) không bị tính là nộp bài.
+- **Nguồn từ:** chỉ lấy từ đã học, bằng cách đọc thẻ SRS của các trang khác (không ghi vào đó):
+  - `hsk_lotrinh_v1.srs` (id `cấp-chữ`);
+  - `boya_learning_progress_v2.srs` và `boya_tv_srs` (id `tc1_3_5`);
+  - `hsk_wl_srs_v3` (id `L1-0001`, thẻ tự chứa hz/py/vi).
+  - Câu ví dụ ngữ pháp Boya thuộc về bài (`L:tc1_3`) và được dùng khi đã học ít nhất 1 từ của bài.
+  - Chưa học gì thì dùng chế độ "Luyện tự do" theo cấp HSK.
+- **Dữ liệu câu:** mỗi câu là `[chủ, "mảnh|mảnh", pinyin, nghĩa]`. Mảnh được tách sẵn: theo ranh giới từ của pinyin nếu pinyin viết theo từ, không thì dùng jieba. Dấu câu đóng dính vào mảnh trước.
+  - `lt_data_wl.js` (khoảng 1,8MB) chỉ nạp khi có thẻ HSK 3.0.
+- **Chọn câu:** ưu tiên từ đến hạn ôn, hay quên (`lapses`/`wrong`), nhận diện chậm (`rt`) và câu từng sai ở trang này.
+- **Trong phiên:** câu sai được hỏi lại một lần ở cuối phiên; điểm tính theo lần đầu. Dùng gợi ý thì không tính là đúng. Nút "Tôi đúng" dùng khi người học xếp hoặc viết theo cách khác cũng đúng.
+- **Key lưu:** `luyen_tap_v1` = `{settings, items{key:{w,c,t}}, types, days}`, được đồng bộ qua `sync.js`. Tóm tắt ghi qua `HocProgress("luyen_tap")`. Trang chủ có link trong mục "Công cụ bổ trợ".
+- **Test:** `window.__LT` để lộ `buildPool`, `sentencesFor`, `buildItems`, `startSession`, `state`, `session`.
 
 ## Lộ trình từ vựng HSK (`hsk_lotrinh/`)
 

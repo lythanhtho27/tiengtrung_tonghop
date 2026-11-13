@@ -3,7 +3,7 @@
    Mỗi trang gọi HocProgress.save("<trang>", {...}) mỗi khi tiến độ thay đổi.
    Trang chủ đọc bằng HocProgress.load("<trang>") / HocProgress.all().
 
-   Key localStorage: "hoc_summary_v1:<trang>"   (trang: hsk_lotrinh | boya_learning | tuvung | word_learning)
+   Key localStorage: "hoc_summary_v1:<trang>"   (trang: hsk_lotrinh | boya_learning | tuvung | word_learning | luyen_tap)
    Dữ liệu (mọi trường đều tùy chọn trừ at):
    {
      at: 1731470000000,                 // thời điểm cập nhật (ms), tự điền
@@ -20,7 +20,7 @@
 (function () {
     "use strict";
     var PREFIX = "hoc_summary_v1:";
-    var PAGES = ["hsk_lotrinh", "boya_learning", "tuvung", "word_learning"];
+    var PAGES = ["hsk_lotrinh", "boya_learning", "tuvung", "word_learning", "luyen_tap"];
     window.HocProgress = {
         save: function (page, data) {
             try {

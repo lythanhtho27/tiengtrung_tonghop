@@ -1,0 +1,151 @@
+/* Trang Luyện tập — dùng bảng màu chung shared/theme.css */
+:root {
+    --bg: var(--ui-bg);
+    --surface: var(--ui-surface);
+    --surface-2: var(--ui-surface-2);
+    --border: var(--ui-border);
+    --text: var(--ui-text);
+    --muted: var(--ui-muted);
+    --primary: var(--ui-primary);
+    --ok: var(--ui-success);
+    --ok-soft: var(--ui-success-soft);
+    --bad: var(--ui-danger);
+    --bad-soft: var(--ui-danger-soft);
+    --cn: var(--ui-font-cn);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--text); font-family: var(--ui-font-sans); font-size: 15px; line-height: 1.55; }
+button, input, select { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+.muted { color: var(--muted); }
+
+/* Thanh trên */
+.topbar { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
+.topbar-inner { max-width: 900px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+.back { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); display: grid; place-items: center; color: var(--text); text-decoration: none; font-size: 18px; flex: none; }
+.back:hover { border-color: var(--primary); }
+.brand { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+.brand strong { font-size: 17px; }
+.brand small { color: var(--muted); font-size: 12.5px; }
+.account-btn { margin-left: auto; height: 38px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); font-weight: 600; font-size: 14px; max-width: 170px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.account-btn:hover { border-color: var(--primary); }
+.ui-theme-toggle { flex: none; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 18px 16px 60px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--ui-radius-lg); padding: 18px; box-shadow: var(--ui-shadow-sm); margin-bottom: 16px; }
+.card h2 { font-size: 16px; margin: 0 0 12px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--primary); }
+
+/* Màn hình chính */
+.hero { display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.hero h1 { margin: 4px 0 6px; font-size: 22px; }
+.hero p { margin: 0; }
+.today { display: flex; gap: 10px; }
+.today div { background: var(--surface-2); border-radius: 12px; padding: 10px 14px; text-align: center; min-width: 92px; }
+.today b { display: block; font-size: 24px; line-height: 1.2; }
+.today span { font-size: 12.5px; color: var(--muted); }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid .card { margin-bottom: 0; }
+@media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+.opt { display: flex; gap: 10px; align-items: flex-start; padding: 10px; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 8px; cursor: pointer; }
+.opt:has(input:checked) { border-color: var(--primary); background: var(--ui-primary-soft); }
+.opt input { margin-top: 4px; accent-color: var(--primary); }
+.opt b { display: block; }
+.opt small { color: var(--muted); font-size: 13px; }
+.hint { font-size: 12.5px; color: var(--muted); margin: 8px 0 0; }
+.field { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+.field > span { font-weight: 600; font-size: 14px; }
+select { padding: 8px 10px; border-radius: 10px; border: 1px solid var(--ui-border-strong); background: var(--surface-2); max-width: 100%; }
+.seg { display: inline-flex; border: 1px solid var(--ui-border-strong); border-radius: 10px; overflow: hidden; }
+.seg button { border: 0; background: var(--surface); padding: 7px 12px; cursor: pointer; font-size: 14px; }
+.seg button + button { border-left: 1px solid var(--ui-border-strong); }
+.seg button.on { background: var(--primary); color: var(--ui-on-primary); }
+.check { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; margin-top: 8px; cursor: pointer; }
+.check input { margin-top: 4px; accent-color: var(--primary); }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0; }
+.btn { border: 1px solid var(--ui-border-strong); background: var(--surface); border-radius: 12px; padding: 10px 16px; cursor: pointer; font-weight: 600; font-size: 15px; }
+.btn:hover { border-color: var(--primary); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn-primary { background: var(--primary); border-color: transparent; color: var(--ui-on-primary); }
+.btn-primary:hover { background: var(--ui-primary-hover); }
+.btn-lg { padding: 13px 24px; font-size: 16px; }
+.btn-ghost { border-color: transparent; background: transparent; padding: 6px 10px; }
+.btn-sm { padding: 6px 12px; font-size: 14px; border-radius: 10px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+@media (max-width: 560px) { .stats { grid-template-columns: 1fr; } }
+.stat { background: var(--surface-2); border-radius: 12px; padding: 12px; }
+.stat b { display: block; font-size: 20px; }
+.stat span { font-size: 13px; color: var(--muted); }
+.stat .bar { height: 6px; background: var(--ui-surface-3); border-radius: 99px; margin-top: 8px; overflow: hidden; }
+.stat .bar i { display: block; height: 100%; background: var(--ok); }
+
+/* Phiên luyện */
+.session-top { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.progress { flex: 1; height: 8px; background: var(--ui-surface-3); border-radius: 99px; overflow: hidden; }
+.progress i { display: block; height: 100%; width: 0; background: var(--primary); transition: width .3s; }
+.prog-text { font-size: 14px; color: var(--muted); min-width: 48px; text-align: right; }
+.qcard { padding: 22px; }
+.qtype { font-size: 12.5px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: .05em; }
+.qprompt { font-size: 20px; font-weight: 600; margin: 8px 0 18px; }
+.qsrc { font-size: 12.5px; color: var(--muted); float: right; }
+
+/* Sắp xếp câu */
+.answer-line { min-height: 64px; border: 2px dashed var(--ui-border-strong); border-radius: 14px; padding: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; }
+.answer-line.empty::before { content: "Bấm các mảnh bên dưới theo đúng thứ tự…"; color: var(--muted); font-size: 14px; padding-left: 6px; }
+.answer-line.is-ok { border-style: solid; border-color: var(--ok); background: var(--ok-soft); }
+.answer-line.is-bad { border-style: solid; border-color: var(--bad); background: var(--bad-soft); }
+.bank { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; min-height: 48px; }
+.chip { font-family: var(--cn); font-size: 22px; padding: 6px 14px; border-radius: 12px; border: 1px solid var(--ui-border-strong); background: var(--surface-2); cursor: pointer; line-height: 1.4; position: relative; transition: transform .1s; }
+.chip:hover { border-color: var(--primary); transform: translateY(-1px); }
+.chip.used { visibility: hidden; }
+.chip .k { position: absolute; top: -7px; left: -7px; font-family: var(--ui-font-sans); font-size: 11px; background: var(--surface); border: 1px solid var(--border); border-radius: 99px; min-width: 18px; height: 18px; line-height: 16px; text-align: center; color: var(--muted); }
+.answer-line .chip { background: var(--surface); }
+.answer-line.is-ok .chip, .answer-line.is-bad .chip { cursor: default; }
+.tools { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.tools .spacer { flex: 1; }
+
+/* Nghe – viết */
+.listen { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; flex-wrap: wrap; }
+.big-play { width: 64px; height: 64px; border-radius: 50%; border: 0; background: var(--primary); color: var(--ui-on-primary); font-size: 26px; cursor: pointer; flex: none; }
+.big-play:hover { background: var(--ui-primary-hover); }
+.clue { font-size: 15px; color: var(--muted); }
+.clue b { color: var(--text); }
+.clue .py { color: var(--ui-pinyin); font-weight: 600; }
+.dict-input { width: 100%; font-family: var(--cn); font-size: 26px; padding: 12px 14px; border-radius: 12px; border: 2px solid var(--ui-border-strong); background: var(--surface-2); margin-bottom: 14px; }
+.dict-input:focus { outline: none; border-color: var(--primary); }
+.dict-input.is-ok { border-color: var(--ok); background: var(--ok-soft); }
+.dict-input.is-bad { border-color: var(--bad); background: var(--bad-soft); }
+
+/* Phản hồi sau khi trả lời */
+.feedback { margin-top: 16px; border-radius: 14px; padding: 14px 16px; }
+.feedback.ok { background: var(--ok-soft); }
+.feedback.bad { background: var(--bad-soft); }
+.feedback .verdict { font-weight: 700; margin-bottom: 6px; }
+.feedback.ok .verdict { color: var(--ok); }
+.feedback.bad .verdict { color: var(--bad); }
+.feedback .zh { font-family: var(--cn); font-size: 24px; line-height: 1.5; }
+.feedback .zh .miss { color: var(--bad); text-decoration: underline; text-decoration-thickness: 2px; }
+.feedback .zh .hit { color: var(--ok); }
+.feedback .py { color: var(--ui-pinyin); margin-top: 2px; }
+.feedback .vi { margin-top: 4px; }
+.feedback .yours { margin-top: 8px; font-size: 14px; color: var(--muted); }
+.feedback .yours span { font-family: var(--cn); font-size: 18px; color: var(--text); }
+.feedback .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.next-row { display: flex; justify-content: flex-end; margin-top: 14px; }
+kbd { font-family: inherit; font-size: 12px; border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 6px; padding: 0 5px; color: var(--muted); }
+
+/* Kết quả */
+.result-head { display: flex; gap: 18px; align-items: center; }
+.result-head h2 { font-size: 20px; margin: 0 0 4px; }
+.result-head p { margin: 0; }
+.score { width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; font-size: 26px; font-weight: 700; background: var(--ui-primary-soft); color: var(--primary); flex: none; }
+.mistakes { list-style: none; padding: 0; margin: 0; }
+.mistakes li { padding: 10px 0; border-top: 1px solid var(--border); }
+.mistakes li:first-child { border-top: 0; }
+.mistakes .zh { font-family: var(--cn); font-size: 20px; }
+.mistakes .py { color: var(--ui-pinyin); font-size: 14px; }
+.mistakes .vi { font-size: 14px; color: var(--muted); }
+.mistakes button { float: right; }
+
+.toast { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); background: var(--ui-text); color: var(--ui-bg); padding: 10px 16px; border-radius: 10px; font-size: 14px; z-index: 50; max-width: calc(100% - 32px); }

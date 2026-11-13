@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập · Sắp xếp câu & Nghe – viết</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/theme.css">
+    <script src="../shared/theme.js"></script>
+    <script src="../shared/sync.js"></script>
+    <link rel="stylesheet" href="luyen_tap.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="back" href="../index.html" title="Về trang chủ">←</a>
+            <div class="brand"><strong>Luyện tập</strong><small>Sắp xếp câu · Nghe – viết</small></div>
+            <button class="account-btn" data-hoc-account type="button">Đăng nhập</button>
+            <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Màn hình chính -->
+        <section id="home">
+            <div class="card hero">
+                <div>
+                    <div class="eyebrow">Phiên luyện hôm nay</div>
+                    <h1>Nhớ từ bằng cách tự viết ra</h1>
+                    <p class="muted" id="pool-note">Đang đọc tiến độ học…</p>
+                </div>
+                <div class="today">
+                    <div><b id="today-n">0</b><span>câu hôm nay</span></div>
+                    <div><b id="today-acc">–</b><span>đúng</span></div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h2>Dạng bài</h2>
+                    <label class="opt"><input type="checkbox" data-type="order" checked>
+                        <span><b>🧩 Sắp xếp câu</b><small>Đọc nghĩa tiếng Việt, ghép các mảnh thành câu tiếng Trung.</small></span></label>
+                    <label class="opt"><input type="checkbox" data-type="dword" checked>
+                        <span><b>🎧 Nghe – viết từ</b><small>Nghe phát âm, gõ chữ Hán của từ.</small></span></label>
+                    <label class="opt"><input type="checkbox" data-type="dsent" checked>
+                        <span><b>✍️ Nghe – viết câu</b><small>Nghe một câu ngắn, gõ lại cả câu bằng chữ Hán.</small></span></label>
+                    <p class="hint">Gõ chữ Hán bằng bộ gõ tiếng Trung của máy (Windows: thêm ngôn ngữ Tiếng Trung giản thể – Microsoft Pinyin; điện thoại: bàn phím Pinyin).</p>
+                </div>
+
+                <div class="card">
+                    <h2>Tùy chọn</h2>
+                    <div class="field">
+                        <span>Nguồn từ</span>
+                        <select id="opt-src">
+                            <option value="all">Tất cả từ đã học</option>
+                            <option value="hsk">Lộ trình HSK 1–6</option>
+                            <option value="boya">Giáo trình Boya</option>
+                            <option value="wl">Giáo trình HSK 3.0</option>
+                            <option value="free1">Luyện tự do: HSK 1</option>
+                            <option value="free2">Luyện tự do: HSK 2</option>
+                            <option value="free3">Luyện tự do: HSK 3</option>
+                            <option value="free4">Luyện tự do: HSK 4</option>
+                            <option value="free5">Luyện tự do: HSK 5</option>
+                            <option value="free6">Luyện tự do: HSK 6</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <span>Số câu mỗi phiên</span>
+                        <div class="seg" id="opt-count">
+                            <button data-v="10">10</button><button data-v="20">20</button><button data-v="30">30</button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <span>Tốc độ đọc</span>
+                        <div class="seg" id="opt-rate">
+                            <button data-v="0.7">Chậm</button><button data-v="0.9">Vừa</button><button data-v="1">Thường</button>
+                        </div>
+                    </div>
+                    <label class="check"><input type="checkbox" id="opt-distract"> Sắp xếp câu: thêm 2 mảnh gây nhiễu (khó hơn)</label>
+                    <label class="check"><input type="checkbox" id="opt-showpy"> Nghe – viết: hiện pinyin làm gợi ý ngay từ đầu</label>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary btn-lg" id="btn-start">▶ Bắt đầu luyện</button>
+                <button class="btn" id="btn-wrong" hidden>🔁 Luyện câu hay sai (<span id="wrong-n">0</span>)</button>
+            </div>
+
+            <div class="card">
+                <h2>Kết quả theo dạng bài</h2>
+                <div class="stats" id="stats"></div>
+            </div>
+        </section>
+
+        <!-- Phiên luyện -->
+        <section id="session" hidden>
+            <div class="session-top">
+                <button class="btn btn-ghost" id="btn-quit" title="Kết thúc phiên">✕</button>
+                <div class="progress"><i id="prog-bar"></i></div>
+                <span class="prog-text" id="prog-text">1/20</span>
+            </div>
+            <div class="card qcard" id="qcard"></div>
+        </section>
+
+        <!-- Kết quả -->
+        <section id="result" hidden>
+            <div class="card result-head">
+                <div class="score" id="res-score">0%</div>
+                <div>
+                    <h2 id="res-title">Hoàn thành!</h2>
+                    <p class="muted" id="res-sub"></p>
+                </div>
+            </div>
+            <div class="card" id="res-mistakes-card">
+                <h2>Câu cần xem lại</h2>
+                <ul class="mistakes" id="res-mistakes"></ul>
+            </div>
+            <div class="actions">
+                <button class="btn btn-primary" id="btn-again">▶ Luyện phiên mới</button>
+                <button class="btn" id="btn-redo" hidden>🔁 Luyện lại câu sai</button>
+                <button class="btn" id="btn-home">Về màn hình chính</button>
+            </div>
+        </section>
+    </main>
+
+    <div class="toast" id="toast" hidden></div>
+
+    <script src="../shared/progress.js"></script>
+    <script src="lt_data.js"></script>
+    <script src="luyen_tap.js"></script>
+</body>
+</html>
