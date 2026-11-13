@@ -531,12 +531,16 @@
         return book.lessons.find(l => l.lesson_num === state.activeLessonNum) || book.lessons[0];
     }
 
+    // Tên ngắn cho tab quyển trên header khi màn hình không đủ rộng (tên đầy đủ vẫn ở title)
+    const BOOK_SHORT_NAMES = { tc1: 'Chuẩn TC1', tc2: 'Chuẩn TC2', tc3: 'TC1', tc4: 'TC2', gc1: 'CC1', gc2: 'CC2' };
+
     function renderBookSelector() {
         if (dom.bookPillsNav) {
             dom.bookPillsNav.innerHTML = window.BOYA_DATA.books.map(b => `
-                <button class="book-pill-btn ${b.id === state.activeBookId ? 'active' : ''}" data-book="${b.id}">
+                <button class="book-pill-btn ${b.id === state.activeBookId ? 'active' : ''}" data-book="${b.id}" title="${escapeHtml(b.name)}">
                     <span>${b.icon}</span>
-                    <span>${escapeHtml(b.name)}</span>
+                    <span class="bp-full">${escapeHtml(b.name)}</span>
+                    <span class="bp-short">${escapeHtml(BOOK_SHORT_NAMES[b.id] || b.name)}</span>
                 </button>
             `).join('');
 

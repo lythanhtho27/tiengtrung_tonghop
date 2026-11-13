@@ -7565,3 +7565,49 @@ details.shad-tone-guide[open] summary.stg-head::after {
     .srs-item-row { flex-wrap: wrap; }
     .sir-right { justify-content: flex-start; }
 }
+
+
+/* ==========================================================================
+   THANH BÀI HỌC TRÊN MÀN HẸP (≤ 768px): 2 hàng rõ ràng
+   Hàng 1: ☰ · ◀ Bài N + tiêu đề ▶ · ☆ · 🔊      Hàng 2: 4 tab chia đều
+   (Trước đây thanh không xuống dòng nên khối bên trái bị ép còn 0px,
+   bộ chuyển bài biến mất và nút ☆ rơi xuống dòng riêng.)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .unit-top-bar {
+        flex-wrap: wrap;
+        row-gap: 6px;
+        column-gap: 6px;
+    }
+    .utb-left {
+        order: 1;
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+    .unit-quick-pager {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+    .unit-quick-pager .active-unit-title { flex: 1 1 auto; min-width: 0; }
+    #toggleSidebarBtn, .star-unit-btn { flex-shrink: 0; }
+    .utb-right {
+        order: 2;
+        flex: 0 0 auto;
+        gap: 6px;
+    }
+    .top-speak-all-btn { max-width: none; }
+    .study-mode-tabs {
+        order: 3;
+        flex: 1 1 100%;
+    }
+    .study-mode-tabs .sm-tab {
+        flex: 1 0 auto;
+        justify-content: center;
+    }
+}
+@media (max-width: 420px) {
+    .top-speak-all-btn .tsa-text { display: none; }   /* chỉ còn 🔊 để tiêu đề bài có chỗ */
+}

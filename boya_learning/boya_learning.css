@@ -744,7 +744,7 @@ html[data-theme="dark"] .sidebar-book-select {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    scrollbar-width: thin;
+    scrollbar-width: none; /* vẫn cuộn ngang được bằng chạm/trackpad, không hiện thanh cuộn */
     -webkit-overflow-scrolling: touch;
 }
 
@@ -4086,3 +4086,34 @@ html[data-theme="dark"] .sp-btn-stop { color: var(--ui-bg); }
     .brand-titles .brand-badge { display: none; }
 }
 .lp-step.is-next.is-current { outline: none; }
+
+
+/* ==========================================================================
+   HEADER GỌN: tên quyển đầy đủ chỉ vừa khi ≥ 2400px; nhỏ hơn dùng tên ngắn, nút chỉ còn biểu tượng
+   ========================================================================== */
+.book-pill-btn .bp-short { display: none; }
+.brand-titles h1 { white-space: nowrap; }
+.boya-header { gap: 12px; }
+.header-left, .header-right { flex-shrink: 0; }
+.book-pills-nav { flex: 0 1 auto; min-width: 0; }
+
+@media (max-width: 2400px) and (min-width: 769px) {
+    .brand-titles .brand-sub { display: none; }
+    .book-pill-btn .bp-full { display: none; }
+    .book-pill-btn .bp-short { display: inline; }
+    .book-pill-btn { padding: 6px 11px; }
+}
+@media (max-width: 1400px) and (min-width: 769px) {
+    .header-left { gap: 10px; }
+    .header-right { gap: 8px; }
+    .header-btn-sidebar .bst-text,
+    .header-btn-home .home-text,
+    .streak-text-days { display: none; }
+    .header-search-btn kbd { display: none; }
+    .mode-tab-btn { padding: 10px 11px; }
+}
+@media (max-width: 1150px) and (min-width: 769px) {
+    .brand-titles { display: none; }      /* chỉ giữ biểu tượng 🏮 */
+    .book-pill-btn { padding: 6px 9px; gap: 4px; }
+    .mode-tab-btn { padding: 10px 9px; gap: 5px; }
+}
