@@ -2332,6 +2332,11 @@
         const isSrs = !!srsInfo;
         const cleanHz = cleanHanziForTts(w.word);
         const vData = getWordVisualData(w.word, w.meaning_vi || w.meaning_primary, w.meaning_en);
+        // Vị trí trong bài (num là số thứ tự trong cả quyển: bài 2 bắt đầu từ 21)
+        const unitWords = (getCurrentUnitData() || {}).target_words || [];
+        const pos = Math.max(1, unitWords.findIndex(x => x.id === w.id) + 1);
+        const prevW = unitWords[pos - 2];
+        const nextW = unitWords[pos];
         const showTrad = w.traditional && w.traditional !== w.word && !w.word.includes(w.traditional);
         const conciseEn = formatConciseEnglish(w.meaning_en, w.meaning_vi);
         const examples = w.examples || [];
@@ -2342,7 +2347,7 @@
 
         heroEl.innerHTML = `
             <div class="bhc-header">
-                <div class="bhc-num-tag">#${w.num} / ${totalWords}</div>
+                <div class="bhc-num-tag" title="Từ số ${w.num} trong quyển">${pos} / ${totalWords}</div>
                 <div class="bhc-meta-tags">
                     <span class="bhc-icon" data-hero-mnemonic="${w.id}" title="Xem tranh minh họa & chiết tự">${vData.icon}</span>
                     ${w.han_viet ? `<span class="bhc-hv-badge">Hán Việt: ${escapeHtml(w.han_viet.toUpperCase())}</span>` : ''}
@@ -2405,11 +2410,11 @@
             </div>
 
             <div class="bhc-footer">
-                <button class="bhc-nav-btn" id="btnHeroPrevWord" ${w.num <= 1 ? 'disabled style="opacity:0.5"' : ''} title="Từ trước (Phím ←)">
+                <button class="bhc-nav-btn" id="btnHeroPrevWord" ${!prevW ? 'disabled style="opacity:0.5"' : ''} title="Từ trước (Phím ←)">
                     ◀ Từ trước
                 </button>
-                <div class="bhc-counter">Từ <strong>${w.num}</strong> / ${totalWords}</div>
-                <button class="bhc-nav-btn" id="btnHeroNextWord" ${w.num >= totalWords ? 'disabled style="opacity:0.5"' : ''} title="Từ sau (Phím →)">
+                <div class="bhc-counter">Từ <strong>${pos}</strong> / ${totalWords}</div>
+                <button class="bhc-nav-btn" id="btnHeroNextWord" ${!nextW ? 'disabled style="opacity:0.5"' : ''} title="Từ sau (Phím →)">
                     Từ sau ▶
                 </button>
             </div>
@@ -2423,8 +2428,8 @@
 
         const btnPrev = heroEl.querySelector('#btnHeroPrevWord');
         const btnNext = heroEl.querySelector('#btnHeroNextWord');
-        if (btnPrev) btnPrev.addEventListener('click', () => selectBentoWordByNum(w.num - 1));
-        if (btnNext) btnNext.addEventListener('click', () => selectBentoWordByNum(w.num + 1));
+        if (btnPrev && prevW) btnPrev.addEventListener('click', () => selectBentoWordByNum(prevW.num));
+        if (btnNext && nextW) btnNext.addEventListener('click', () => selectBentoWordByNum(nextW.num));
 
         const btnStar = heroEl.querySelector('#btnHeroStar');
         if (btnStar) {
@@ -5024,15 +5029,16 @@
                     const words = unitData.target_words;
                     const total = words.length;
 
+                    const curIdx = words.findIndex(w => w.num === state.activeWordNum);
                     if (e.key === 'ArrowLeft') {
                         e.preventDefault();
-                        if (state.activeWordNum > 1) {
-                            selectBentoWordByNum(state.activeWordNum - 1);
+                        if (curIdx > 0) {
+                            selectBentoWordByNum(words[curIdx - 1].num);
                         }
                     } else if (e.key === 'ArrowRight') {
                         e.preventDefault();
-                        if (state.activeWordNum < total) {
-                            selectBentoWordByNum(state.activeWordNum + 1);
+                        if (curIdx >= 0 && curIdx < total - 1) {
+                            selectBentoWordByNum(words[curIdx + 1].num);
                         }
                     } else if (e.code === 'Space') {
                         e.preventDefault();
@@ -5224,9 +5230,15 @@
         }
         const btnFcOpenList = document.getElementById('btnFcOpenList');
         if (btnFcOpenList && modalSrs) {
-            btnFcOpenList.addEventListener('click', () => {
+            btnFcOpenList.addEventListener('click', async () => {
                 renderSrsModal();
                 modalSrs.classList.remove('hidden');
+                // Thẻ chuyển từ Leitner chưa có chữ Hán: nạp quyển tương ứng rồi vẽ lại
+                const missing = Object.keys(state.srsData || {}).filter(id => !state.srsData[id].hz);
+                if (missing.length) {
+                    await ensureBooksForCardIds(missing);
+                    renderSrsModal();
+                }
             });
         }
         const srsBookFilter = document.getElementById('srsBookFilter');
@@ -5730,10 +5742,10 @@
         if (engineTag) {
             if (SpeechRec) {
                 engineTag.textContent = 'Web Speech AI: Sẵn sàng';
-                engineTag.style.color = '#34d399';
+                engineTag.style.color = 'var(--ui-success)';
             } else {
                 engineTag.textContent = 'Ghi âm & Đối chiếu: Sẵn sàng';
-                engineTag.style.color = '#38bdf8';
+                engineTag.style.color = 'var(--ui-pinyin)';
             }
         }
 

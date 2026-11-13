@@ -729,7 +729,7 @@
             || currentLessonId();
         if (startLesson) selectLesson(startLesson, false);
         const urlMode = params && params.get("mode");
-        if (urlMode && ["home", "table", "flashcard", "quiz", "games"].includes(urlMode)) state.currentMode = urlMode;
+        if (urlMode && ["home", "table", "flashcard", "quiz", "games", "speech"].includes(urlMode)) state.currentMode = urlMode;
 
         populateLessonFilter();
         populateTypeFilter();
@@ -1246,7 +1246,7 @@
 
         // Đồng bộ hóa trạng thái active của tab buttons và các section content
         document.querySelectorAll(".studio-mode-tabs .tab-btn, .mode-tabs .tab-btn").forEach(t => {
-            t.classList.toggle("active", t.dataset.mode === state.currentMode);
+            t.classList.toggle("active", t.dataset.mode === state.currentMode || (state.currentMode === "speech" && t.dataset.mode === "games"));
         });
         document.querySelectorAll(".tab-content").forEach(c => {
             c.classList.toggle("active", c.id === `mode-${state.currentMode}`);
@@ -2017,12 +2017,14 @@
                         <span>📝 VÍ DỤ TRONG BÀI KHÓA</span>
                     </div>
                     <div class="fc-ex-bento-list">
-                        ${w.examples.map(ex => `
+                        ${w.examples.map(ex => {
+                            const fmt = formatBoyaExampleSentence(ex, w.hz);
+                            return `
                             <div class="fc-ex-bento-item">
-                                <span class="fc-ex-text">${escapeHtml(ex)}</span>
-                                <button type="button" class="fc-btn-ex-speak" data-speak="${encodeURIComponent(ex)}" title="Nghe câu ví dụ">🔊</button>
-                            </div>
-                        `).join("")}
+                                <span class="fc-ex-text">${fmt.displayHtml}</span>
+                                <button type="button" class="fc-btn-ex-speak" data-speak="${encodeURIComponent(fmt.speakText)}" title="Nghe câu ví dụ">🔊</button>
+                            </div>`;
+                        }).join("")}
                     </div>
                 </div>
             `;
@@ -2361,9 +2363,8 @@
                                 <div>Bạn gõ: <span class="diff-user">${escapeHtml(val)}</span></div>
                                 <div>Đáp án: <strong class="diff-correct">${escapeHtml(w.hz)}</strong> [${escapeHtml(w.py)}]</div>
                             </div>
-                            <div class="fc-typein-fb-next">Nhấn Enter để lật thẻ xem chi tiết ➔</div>
+                            <div class="fc-typein-fb-next">Nhấn Enter để lật thẻ, rồi chấm “Quên” (phím 1) ➔</div>
                         `;
-                        state.fcTypeinWrong = true; // gợi ý chấm "Quên" khi lật thẻ
                         state.fcTypeinChecked = true;
                     }
                 }
@@ -3178,7 +3179,7 @@
                 if (timeElem) {
                     timeElem.textContent = `${state.quizTimeAttackRemaining}s`;
                     if (state.quizTimeAttackRemaining <= 10) {
-                        timeElem.style.color = "#dc2626";
+                        timeElem.style.color = "var(--ui-danger)";
                         if (typeof soundFX !== "undefined" && soundFX.tick) soundFX.tick();
                     }
                 }
@@ -3234,7 +3235,7 @@
         if (q.type === "context_cloze") {
             promptLabel = "📖 CHỌN TỪ THÍCH HỢP ĐIỀN VÀO NGỮ CẢNH BÀI KHÓA:";
             promptHtml = `<div class="quiz-q-prompt context-prompt">${escapeHtml(q.clozeSentence)}</div>
-                          <div class="quiz-q-sub" style="font-size:16px; color:#475569; margin-top:6px;">Gợi ý nghĩa từ cần điền: <strong style="color:#d97706;">${escapeHtml(cleanQuizMean(q.word.mean))}</strong> ${q.word.type ? `(${escapeHtml(q.word.type)})` : ''}</div>`;
+                          <div class="quiz-q-sub" style="font-size:16px; color:var(--ui-text-2); margin-top:6px;">Gợi ý nghĩa từ cần điền: <strong style="color:var(--ui-warning);">${escapeHtml(cleanQuizMean(q.word.mean))}</strong> ${q.word.type ? `(${escapeHtml(q.word.type)})` : ''}</div>`;
         } else if (q.type === "hz_to_mean") {
             promptLabel = "🎯 CHỌN NGHĨA TIẾNG VIỆT ĐÚNG CHO TỪ:";
             promptHtml = `<div class="quiz-q-prompt">${escapeHtml(q.word.hz)}</div>
@@ -3242,11 +3243,11 @@
         } else if (q.type === "mean_to_hz") {
             promptLabel = "📖 CHỌN CHỮ HÁN TƯƠNG ỨNG VỚI NGHĨA:";
             promptHtml = `<div class="quiz-q-prompt mean-prompt">${escapeHtml(cleanQuizMean(q.word.mean))}</div>
-                          <div class="quiz-q-sub" style="font-size:16px; color:#64748b; font-weight:600;">${q.word.type ? escapeHtml(q.word.type) : ''}</div>`;
+                          <div class="quiz-q-sub" style="font-size:16px; color:var(--ui-muted); font-weight:600;">${q.word.type ? escapeHtml(q.word.type) : ''}</div>`;
         } else if (q.type === "hz_to_py") {
             promptLabel = "🔊 CHỌN PHIÊN ÂM PINYIN & THANH ĐIỆU CHÍNH XÁC:";
             promptHtml = `<div class="quiz-q-prompt">${escapeHtml(q.word.hz)}</div>
-                          <div class="quiz-q-sub" style="font-size:16px; color:#475569; margin-top:4px;">Nghĩa: <em>${escapeHtml(cleanQuizMean(q.word.mean))}</em> ${q.word.type ? `(${escapeHtml(q.word.type)})` : ''}</div>`;
+                          <div class="quiz-q-sub" style="font-size:16px; color:var(--ui-text-2); margin-top:4px;">Nghĩa: <em>${escapeHtml(cleanQuizMean(q.word.mean))}</em> ${q.word.type ? `(${escapeHtml(q.word.type)})` : ''}</div>`;
         } else if (q.type === "audio_to_hz") {
             promptLabel = "🎧 NGHE ÂM THANH VÀ CHỌN CHỮ HÁN ĐÚNG:";
             promptHtml = `
@@ -3340,7 +3341,7 @@
 
         // Column 3: Score & Streak + Quick Auto-TTS Toggle Button
         let scoreLabel = state.quizPlayType === "survival" ? "ĐÃ VƯỢT" : (state.quizPlayType === "speed_gauntlet" ? "ĐIỂM COMBO" : "ĐIỂM SỐ");
-        let scoreColor = state.quizPlayType === "survival" ? "#16a34a" : (state.quizPlayType === "speed_gauntlet" ? "#f59e0b" : (state.quizPlayType === "time_attack" ? "#d97706" : "var(--primary)"));
+        let scoreColor = state.quizPlayType === "survival" ? "var(--ui-success)" : (state.quizPlayType === "standard" ? "var(--primary-text)" : "var(--ui-warning)");
         let scoreDisplayVal = state.quizPlayType === "speed_gauntlet" ? (state.quizTotalPoints || 0) : state.quizScore;
         let streakMultiplier = state.quizStreak >= 8 ? "x3.0" : (state.quizStreak >= 5 ? "x2.0" : "x1.5");
         let streakBadgeHtml = state.quizStreak >= 2 
@@ -3640,7 +3641,7 @@
                 <strong>${escapeHtml(question.correctWord.hz)}</strong> [${formatPinyinWithToneColors(question.correctWord.py)}]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
                 ${clozeSentenceExtra}
                 <button type="button" class="quiz-feedback-speak-btn" id="quiz-fb-speak-btn" title="Nghe lại phát âm">🔊</button>
-                ${state.quizStreak >= 3 ? `<span style="margin-left:8px; font-weight:700; color:#ea580c;">🔥 Chuỗi x${state.quizStreak} (x${streakMul})!</span>` : ''}
+                ${state.quizStreak >= 3 ? `<span style="margin-left:8px; font-weight:700; color:var(--ui-warning);">🔥 Chuỗi x${state.quizStreak} (x${streakMul})!</span>` : ''}
             `;
             const fbSpk = document.getElementById("quiz-fb-speak-btn");
             if (fbSpk) fbSpk.onclick = () => speakChinese(textToSpeak);
@@ -3661,7 +3662,7 @@
                 ❌ <strong>Chưa chính xác!</strong> Đáp án đúng: 
                 <strong>${escapeHtml(question.correctWord.hz)}</strong> [${formatPinyinWithToneColors(question.correctWord.py)}]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
                 <button type="button" class="quiz-feedback-speak-btn" id="quiz-fb-speak-btn" title="Nghe lại phát âm">🔊</button>
-                ${state.quizPlayType === 'survival' ? `<span style="margin-left:8px; font-weight:700; color:#dc2626;">(Mất 1 ❤️)</span>` : ''}
+                ${state.quizPlayType === 'survival' ? `<span style="margin-left:8px; font-weight:700; color:var(--ui-danger);">(Mất 1 ❤️)</span>` : ''}
             `;
             const fbSpk = document.getElementById("quiz-fb-speak-btn");
             if (fbSpk) fbSpk.onclick = () => speakChinese(question.correctWord.hz);
@@ -3730,9 +3731,9 @@
         feedbackBox.className = "quiz-feedback show wrong";
         feedbackBox.innerHTML = `
             ⏰ <strong>Hết thời gian phản xạ!</strong> Đáp án đúng là: 
-            <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:#ea580c; font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
+            <strong>${escapeHtml(question.correctWord.hz)}</strong> [<span style="color:var(--ui-warning); font-weight:700;">${escapeHtml(question.correctWord.py)}</span>]: ${escapeHtml(cleanQuizMean(question.correctWord.mean))}
             <button type="button" class="quiz-feedback-speak-btn" id="quiz-fb-speak-btn" title="Nghe lại phát âm">🔊</button>
-            ${state.quizPlayType === 'survival' ? `<span style="margin-left:8px; font-weight:700; color:#dc2626;">(Mất 1 ❤️)</span>` : ''}
+            ${state.quizPlayType === 'survival' ? `<span style="margin-left:8px; font-weight:700; color:var(--ui-danger);">(Mất 1 ❤️)</span>` : ''}
         `;
         const fbSpk = document.getElementById("quiz-fb-speak-btn");
         if (fbSpk) fbSpk.onclick = () => speakChinese(question.correctWord.hz);
@@ -3962,13 +3963,13 @@
             const displayHigh = Math.max(currentPoints, prevHighScore);
 
             let rankBadge = "🌟 B-RANK: PHẢN XẠ TỐT";
-            let rankColor = "#2563eb";
+            let rankColor = "var(--primary-text)";
             if (currentPoints >= 3000 || (percent >= 85 && parseFloat(avgReaction) < 1.8)) {
                 rankBadge = "👑 S-RANK: PHẢN XẠ CỰC QUANG";
-                rankColor = "#ea580c";
+                rankColor = "var(--ui-warning)";
             } else if (currentPoints >= 1800 || percent >= 70) {
                 rankBadge = "🎖️ A-RANK: CAO THỦ PHẢN XẠ";
-                rankColor = "#16a34a";
+                rankColor = "var(--ui-success)";
             }
 
             badge = "⚡";
@@ -4007,19 +4008,19 @@
             <!-- Stats 4 Cards Grid -->
             <div class="quiz-stats-grid">
                 <div class="quiz-stat-card">
-                    <div class="quiz-stat-num" style="color:var(--primary);">${score}/${totalAnswered}</div>
+                    <div class="quiz-stat-num" style="color:var(--primary-text);">${score}/${totalAnswered}</div>
                     <div class="quiz-stat-label">Chính Xác (${percent}%)</div>
                 </div>
                 <div class="quiz-stat-card">
-                    <div class="quiz-stat-num" style="color:#d97706;">${avgReaction}s</div>
+                    <div class="quiz-stat-num" style="color:var(--ui-warning);">${avgReaction}s</div>
                     <div class="quiz-stat-label">${reflexTitle}</div>
                 </div>
                 <div class="quiz-stat-card">
-                    <div class="quiz-stat-num" style="color:#ea580c;">x${state.quizMaxStreak}</div>
+                    <div class="quiz-stat-num" style="color:var(--ui-warning);">x${state.quizMaxStreak}</div>
                     <div class="quiz-stat-label">Chuỗi Đúng Kỷ Lục</div>
                 </div>
                 <div class="quiz-stat-card">
-                    <div class="quiz-stat-num" style="color:#10b981;">
+                    <div class="quiz-stat-num" style="color:var(--ui-success);">
                         ${state.quizPlayType === 'speed_gauntlet' ? `${state.quizTotalPoints || 0}đ` : (state.quizPlayType === 'survival' ? (state.quizLives > 0 ? `${state.quizLives} ❤️` : '0 ❤️') : (state.quizPlayType === 'time_attack' ? '60s' : `${totalAnswered} câu`))}
                     </div>
                     <div class="quiz-stat-label">${state.quizPlayType === 'speed_gauntlet' ? 'Tổng Điểm Combo' : modeSublabel}</div>
@@ -4461,7 +4462,7 @@
                     ${tiles.map(tile => `
                         <div class="match-tile" data-tile-id="${tile.id}" data-word-id="${tile.wordId}" data-type="${tile.type}">
                             ${tile.type === 'hz' 
-                                ? `<div class="tile-hz">${escapeHtml(tile.text)}</div><div style="font-size:13px; color:#e67e22; margin-top:4px; font-weight:600;">${escapeHtml(tile.subText)}</div>`
+                                ? `<div class="tile-hz">${escapeHtml(tile.text)}</div><div style="font-size:13px; color:var(--ui-warning); margin-top:4px; font-weight:600;">${escapeHtml(tile.subText)}</div>`
                                 : `<div class="tile-mean">${escapeHtml(tile.text)}</div>`
                             }
                         </div>
@@ -4591,7 +4592,7 @@
                     <button class="btn-back-hub" id="btn-game-back">← Khu trò chơi</button>
                     <div class="game-stats-group">
                         <div>Mạng: <span id="tf-lives-display" style="font-size:18px; letter-spacing:2px;">❤️❤️❤️</span></div>
-                        <div>Điểm: <strong id="tf-score-display" style="color:#e67e22;">0</strong></div>
+                        <div>Điểm: <strong id="tf-score-display" style="color:var(--ui-warning);">0</strong></div>
                         <div id="tf-combo-badge" class="tf-streak-badge" style="display:none;">🔥 Combo x0</div>
                         <div>Câu: <strong id="tf-prog-display">1 / ${totalQ}</strong></div>
                     </div>
@@ -4788,7 +4789,7 @@
             box.innerHTML = `
                 <div style="text-align: center; padding: 20px 10px;">
                     <div style="font-size: 56px; margin-bottom: 12px;">${isVictory ? '🏆' : '💥'}</div>
-                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: var(--ui-text); margin-bottom: 8px;">
                         ${isVictory ? 'Tuyệt Vời! Vượt Qua Thử Thách!' : 'Hết Mạng! Trò Chơi Kết Thúc'}
                     </h2>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
@@ -4796,17 +4797,17 @@
                     </p>
 
                     <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 30px; flex-wrap: wrap;">
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 22px; text-align: center;">
+                        <div style="background: var(--ui-surface-2); border: 1px solid var(--ui-border); border-radius: 12px; padding: 14px 22px; text-align: center;">
                             <div style="font-size: 13px; color: var(--text-muted);">Tổng Điểm</div>
-                            <div style="font-size: 28px; font-weight: 700; color: #e67e22;">${score}</div>
+                            <div style="font-size: 28px; font-weight: 700; color: var(--ui-warning);">${score}</div>
                         </div>
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 22px; text-align: center;">
+                        <div style="background: var(--ui-surface-2); border: 1px solid var(--ui-border); border-radius: 12px; padding: 14px 22px; text-align: center;">
                             <div style="font-size: 13px; color: var(--text-muted);">Combo Dài Nhất</div>
-                            <div style="font-size: 28px; font-weight: 700; color: #ea580c;">🔥 x${maxCombo}</div>
+                            <div style="font-size: 28px; font-weight: 700; color: var(--ui-warning);">🔥 x${maxCombo}</div>
                         </div>
-                        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 22px; text-align: center;">
+                        <div style="background: var(--ui-surface-2); border: 1px solid var(--ui-border); border-radius: 12px; padding: 14px 22px; text-align: center;">
                             <div style="font-size: 13px; color: var(--text-muted);">Số Câu Trả Lời</div>
-                            <div style="font-size: 28px; font-weight: 700; color: #2980b9;">${currentQIdx} / ${totalQ}</div>
+                            <div style="font-size: 28px; font-weight: 700; color: var(--primary-text);">${currentQIdx} / ${totalQ}</div>
                         </div>
                     </div>
 
@@ -4864,7 +4865,7 @@
                     <button class="btn-back-hub" id="btn-game-back">← Khu trò chơi</button>
                     <div class="game-stats-group">
                         <div>Tiến độ: <strong id="scramble-prog">1 / ${totalWords}</strong> từ</div>
-                        <div>Điểm: <strong id="scramble-score" style="color:#27ae60;">0</strong></div>
+                        <div>Điểm: <strong id="scramble-score" style="color:var(--ui-success);">0</strong></div>
                     </div>
                     <button class="btn-pill" id="btn-scramble-restart">🔄 Chơi ván mới</button>
                 </div>
@@ -4873,7 +4874,7 @@
                     <div class="scramble-prompt-box">
                         <div class="scramble-mean" id="scramble-mean">...</div>
                         <div class="scramble-py" id="scramble-py">...</div>
-                        <button class="btn-mini-speak" id="btn-scramble-speak" style="margin-top: 10px; font-size: 14px; font-weight: 600; color: #27ae60; background: none; border: none; cursor: pointer;">
+                        <button class="btn-mini-speak" id="btn-scramble-speak" style="margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--ui-success); background: none; border: none; cursor: pointer;">
                             🔊 Nghe phát âm
                         </button>
                     </div>
@@ -5072,25 +5073,25 @@
             box.innerHTML = `
                 <div style="text-align: center; padding: 20px 10px;">
                     <div style="font-size: 56px; margin-bottom: 12px;">🌟</div>
-                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: var(--ui-text); margin-bottom: 8px;">
                         Hoàn Thành Ván Xếp Từ Hán Tự!
                     </h2>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
                         Bạn đã ghép đúng <strong>${solvedWords.length} / ${totalWords}</strong> từ vựng!
                     </p>
 
-                    <div style="font-size: 32px; font-weight: 700; color: #27ae60; margin-bottom: 24px;">
+                    <div style="font-size: 32px; font-weight: 700; color: var(--ui-success); margin-bottom: 24px;">
                         ${score} Điểm
                     </div>
 
                     ${solvedWords.length > 0 ? `
-                        <div style="text-align: left; max-height: 200px; overflow-y: auto; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; margin-bottom: 24px;">
+                        <div style="text-align: left; max-height: 200px; overflow-y: auto; background: var(--ui-surface-2); border: 1px solid var(--ui-border); border-radius: 12px; padding: 14px; margin-bottom: 24px;">
                             ${solvedWords.map(w => `
-                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #f1f5f9;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--ui-border);">
                                     <div>
                                         <strong style="font-size: 17px;">${escapeHtml(w.hz)}</strong> 
-                                        <span style="color: #e67e22; font-size: 13px;">${escapeHtml(w.py)}</span>: 
-                                        <span style="color: #475569; font-size: 13px;">${escapeHtml(w.mean)}</span>
+                                        <span style="color: var(--ui-warning); font-size: 13px;">${escapeHtml(w.py)}</span>: 
+                                        <span style="color: var(--ui-text-2); font-size: 13px;">${escapeHtml(w.mean)}</span>
                                     </div>
                                     <button class="btn-speak scramble-item-speak" data-hz="${escapeHtml(w.hz)}">🔊</button>
                                 </div>
@@ -5154,7 +5155,7 @@
                     <button class="btn-back-hub" id="btn-game-back">← Khu trò chơi</button>
                     <div class="game-stats-group">
                         <div>Vòng: <strong id="hunter-prog">1 / ${totalRounds}</strong></div>
-                        <div>Điểm: <strong id="hunter-score" style="color:#8e44ad;">0</strong></div>
+                        <div>Điểm: <strong id="hunter-score" style="color:var(--primary-text);">0</strong></div>
                     </div>
                     <button class="btn-pill" id="btn-hunter-restart">🔄 Chơi ván mới</button>
                 </div>
@@ -5265,14 +5266,14 @@
             box.innerHTML = `
                 <div style="text-align: center; padding: 20px 10px;">
                     <div style="font-size: 56px; margin-bottom: 12px;">🎯</div>
-                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: var(--ui-text); margin-bottom: 8px;">
                         Hoàn Thành Vòng Bắt Chữ Theo Âm!
                     </h2>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
                         Bạn có đôi tai tiếng Trung rất tuyệt vời! Độ chính xác: <strong>${accuracy}%</strong>
                     </p>
 
-                    <div style="font-size: 36px; font-weight: 700; color: #8e44ad; margin-bottom: 28px;">
+                    <div style="font-size: 36px; font-weight: 700; color: var(--primary-text); margin-bottom: 28px;">
                         ${score} Điểm
                     </div>
 
@@ -5730,10 +5731,10 @@
                     feedbackZone.innerHTML = `
                         <div class="cloze-feedback-box">
                             <div style="flex:1;">
-                                <div style="font-weight:700; color: ${isCorrect ? '#059669' : '#dc2626'}; margin-bottom:4px;">
+                                <div style="font-weight:700; color: ${isCorrect ? 'var(--ui-success)' : 'var(--ui-danger)'}; margin-bottom:4px;">
                                     ${isCorrect ? '🎉 Chính xác!' : '❌ Chưa đúng!'} Đáp án đúng là: <strong>${escapeHtml(q.targetWord.hz)}</strong> (${escapeHtml(q.targetWord.py)})
                                 </div>
-                                <div style="font-size:13.5px; color:#475569;">
+                                <div style="font-size:13.5px; color:var(--ui-text-2);">
                                     Ý nghĩa từ: <em>${escapeHtml(q.targetWord.mean)}</em>
                                 </div>
                             </div>
@@ -5765,13 +5766,13 @@
             box.innerHTML = `
                 <div class="cloze-card" style="padding: 40px 20px;">
                     <div style="font-size: 56px; margin-bottom: 12px;">🎉</div>
-                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: var(--ui-text); margin-bottom: 8px;">
                         Hoàn Thành Thử Thách Điền Từ Bài Khóa!
                     </h2>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
                         Độ chính xác ngữ cảnh của bạn: <strong>${accuracy}%</strong>
                     </p>
-                    <div style="font-size: 38px; font-weight: 700; color: #2563eb; margin-bottom: 28px;">
+                    <div style="font-size: 38px; font-weight: 700; color: var(--primary-text); margin-bottom: 28px;">
                         ${score} Điểm
                     </div>
                     <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
@@ -5841,14 +5842,14 @@
 
             function renderBoard() {
                 box.innerHTML = `
-                    <div class="scramble-card" style="background:#ffffff; border-radius:var(--radius); padding:28px 24px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm); margin-bottom:20px;">
+                    <div class="scramble-card" style="background:var(--ui-surface); border-radius:var(--radius); padding:28px 24px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm); margin-bottom:20px;">
                         <p style="color:var(--text-muted); font-size:14px; margin-bottom:14px; text-align:center;">
                             💡 Nhấp vào các thẻ bên dưới để xếp vào khung câu theo đúng trật tự ngữ pháp tiếng Trung:
                         </p>
 
                         <!-- Khung câu đang xếp -->
                         <div class="scramble-slots-zone" id="scramble-slots">
-                            ${placedChunks.length === 0 ? `<span style="color:#94a3b8; font-size:15px; margin:auto;">(Chạm vào các khối từ bên dưới để đưa lên đây)</span>` : ''}
+                            ${placedChunks.length === 0 ? `<span style="color:var(--ui-muted); font-size:15px; margin:auto;">(Chạm vào các khối từ bên dưới để đưa lên đây)</span>` : ''}
                             ${placedChunks.map(c => `
                                 <div class="scramble-chip in-slot" data-id="${c.id}" title="Nhấp để trả về khay">
                                     <span>${escapeHtml(c.text)}</span>
@@ -5950,21 +5951,21 @@
                             speakChinese(q.answer);
 
                             resultZone.innerHTML = `
-                                <div class="cloze-feedback-box" style="margin-top:20px; border-left-color:#10b981; background:#ecfdf5;">
+                                <div class="cloze-feedback-box" style="margin-top:20px; border-left-color:var(--ui-success); background:var(--ui-success-soft);">
                                     <div style="flex:1;">
-                                        <div style="font-weight:700; color:#047857; margin-bottom:4px; font-size:16px;">
+                                        <div style="font-weight:700; color:var(--ui-success); margin-bottom:4px; font-size:16px;">
                                             🎉 Tuyệt vời! Bạn đã sắp xếp hoàn toàn chính xác!
                                         </div>
-                                        <div style="font-size:14px; color:#1e293b; margin-bottom:2px;">
+                                        <div style="font-size:14px; color:var(--ui-text); margin-bottom:2px;">
                                             ${escapeHtml(q.pinyin)}
                                         </div>
-                                        <div style="font-size:13.5px; color:#475569;">
+                                        <div style="font-size:13.5px; color:var(--ui-text-2);">
                                             Dịch nghĩa: <em>${escapeHtml(q.mean)}</em>
                                         </div>
                                     </div>
                                     <div style="display:flex; gap:8px;">
                                         <button class="btn-pill" id="btn-scramble-speak">🔊 Nghe câu</button>
-                                        <button class="btn-pill" id="btn-scramble-next" style="background:#10b981; color:#ffffff; border-color:#10b981;">Câu Tiếp Theo ▶</button>
+                                        <button class="btn-pill" id="btn-scramble-next" style="background:#10b981; color:#ffffff; border-color:var(--ui-success);">Câu Tiếp Theo ▶</button>
                                     </div>
                                 </div>
                             `;
@@ -5981,7 +5982,7 @@
                                 setTimeout(() => slotsZone.classList.remove("is-error"), 600);
                             }
                             resultZone.innerHTML = `
-                                <div style="margin-top:14px; text-align:center; color:#dc2626; font-weight:600; font-size:14px;">
+                                <div style="margin-top:14px; text-align:center; color:var(--ui-danger); font-weight:600; font-size:14px;">
                                     ❌ Trật tự câu chưa chính xác. Hãy nhấp thẻ để điều chỉnh lại hoặc bấm "💡 Gợi ý"!
                                 </div>
                             `;
@@ -6002,13 +6003,13 @@
             box.innerHTML = `
                 <div class="cloze-card" style="padding: 40px 20px;">
                     <div style="font-size: 56px; margin-bottom: 12px;">🏆</div>
-                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: var(--ui-text); margin-bottom: 8px;">
                         Hoàn Thành Thử Thách Xếp Câu!
                     </h2>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
                         Khả năng làm chủ cấu trúc câu tiếng Trung: <strong>${accuracy}%</strong>
                     </p>
-                    <div style="font-size: 38px; font-weight: 700; color: #7c3aed; margin-bottom: 28px;">
+                    <div style="font-size: 38px; font-weight: 700; color: var(--primary-text); margin-bottom: 28px;">
                         ${score} Điểm
                     </div>
                     <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
@@ -6085,7 +6086,7 @@
 
             const box = document.getElementById("colloc-box");
             box.innerHTML = `
-                <div style="background:#ffffff; border-radius:var(--radius); padding:28px 24px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm); margin-bottom:20px;">
+                <div style="background:var(--ui-surface); border-radius:var(--radius); padding:28px 24px; border:1px solid var(--border-color); box-shadow:var(--shadow-sm); margin-bottom:20px;">
                     <p style="color:var(--text-muted); font-size:14px; margin-bottom:18px; text-align:center;">
                         💡 Nhấp vào 1 từ ở cột trái, sau đó nhấp vào từ tương ứng ở cột phải để tạo thành cụm từ cố định:
                     </p>
@@ -6192,13 +6193,13 @@
             box.innerHTML = `
                 <div class="cloze-card" style="padding: 40px 20px;">
                     <div style="font-size: 56px; margin-bottom: 12px;">🌟</div>
-                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: var(--ui-text); margin-bottom: 8px;">
                         Hoàn Thành Thử Thách Nối Cụm Từ!
                     </h2>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
                         Bạn đã nắm rất vững các cụm từ phối hợp kinh điển của Boya Trung Cấp!
                     </p>
-                    <div style="font-size: 38px; font-weight: 700; color: #059669; margin-bottom: 28px;">
+                    <div style="font-size: 38px; font-weight: 700; color: var(--ui-success); margin-bottom: 28px;">
                         ${score} Điểm
                     </div>
                     <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
@@ -6280,7 +6281,7 @@
                                 <div class="syn-choice-btn" data-word="${word}">
                                     <div class="syn-hz">${escapeHtml(word)}</div>
                                     <div class="syn-py">${escapeHtml(noteObj.py || '')}</div>
-                                    <div style="font-size:12.5px; color:#64748b; margin-top:4px;">${escapeHtml(noteObj.role || '')}: ${escapeHtml(noteObj.hint || '')}</div>
+                                    <div style="font-size:12.5px; color:var(--ui-muted); margin-top:4px;">${escapeHtml(noteObj.role || '')}: ${escapeHtml(noteObj.hint || '')}</div>
                                 </div>
                             `;
                         }).join("")}
@@ -6328,12 +6329,12 @@
                         <div class="syn-explain-card">
                             <div class="syn-explain-title">
                                 <span>${isCorrect ? '🎉 Bạn chọn rất chuẩn xác!' : '❌ Chưa chính xác!'}</span>
-                                <span style="font-size:13px; font-weight:normal; color:#78350f;">(Đáp án đúng: <strong>${escapeHtml(q.correct)}</strong>)</span>
+                                <span style="font-size:13px; font-weight:normal; color:var(--ui-warning);">(Đáp án đúng: <strong>${escapeHtml(q.correct)}</strong>)</span>
                             </div>
                             <div class="syn-explain-text">
                                 ${escapeHtml(q.explain)}
                             </div>
-                            <div style="margin-top:10px; font-size:13.5px; color:#451a03; border-top:1px dashed #fde68a; padding-top:8px;">
+                            <div style="margin-top:10px; font-size:13.5px; color:#451a03; border-top:1px dashed color-mix(in srgb, var(--ui-warning) 40%, transparent); padding-top:8px;">
                                 🇻🇳 Bản dịch câu: <em>${escapeHtml(q.mean)}</em>
                             </div>
                             <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:14px;">
@@ -6361,13 +6362,13 @@
             box.innerHTML = `
                 <div class="cloze-card" style="padding: 40px 20px;">
                     <div style="font-size: 56px; margin-bottom: 12px;">⚖️</div>
-                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: var(--ui-text); margin-bottom: 8px;">
                         Hoàn Thành Thử Thách Phân Biệt Từ Gần Nghĩa!
                     </h2>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
                         Khả năng phân biệt sắc thái từ vựng: <strong>${accuracy}%</strong>
                     </p>
-                    <div style="font-size: 38px; font-weight: 700; color: #ea580c; margin-bottom: 28px;">
+                    <div style="font-size: 38px; font-weight: 700; color: var(--ui-warning); margin-bottom: 28px;">
                         ${score} Điểm
                     </div>
                     <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
@@ -6601,7 +6602,7 @@
             fuseBtn.addEventListener("click", () => {
                 if (!slot0Part || !slot1Part) {
                     feedbackZone.innerHTML = `
-                        <div style="text-align: center; color: #ef4444; font-weight: 600; margin-top: 14px;">
+                        <div style="text-align: center; color: var(--ui-danger); font-weight: 600; margin-top: 14px;">
                             ⚠️ Hãy chọn đủ 2 thành phần trước khi tiến hành luyện hóa!
                         </div>
                     `;
@@ -6626,18 +6627,18 @@
                     speakChinese(q.target);
 
                     feedbackZone.innerHTML = `
-                        <div class="cloze-feedback-box" style="margin-top: 24px; border-left-color: #10b981; background: #ecfdf5;">
+                        <div class="cloze-feedback-box" style="margin-top: 24px; border-left-color: var(--ui-success); background: var(--ui-success-soft);">
                             <div style="flex: 1;">
-                                <div style="font-weight: 700; color: #047857; margin-bottom: 6px; font-size: 16px;">
+                                <div style="font-weight: 700; color: var(--ui-success); margin-bottom: 6px; font-size: 16px;">
                                     🎉 Tuyệt vời! Chế tác thành công chữ: <strong style="font-size: 20px; font-family: KaiTi, serif;">${escapeHtml(q.target)}</strong> (${escapeHtml(q.pinyin)})
                                 </div>
-                                <div style="font-size: 14.5px; color: #1e293b; line-height: 1.5;">
+                                <div style="font-size: 14.5px; color: var(--ui-text); line-height: 1.5;">
                                     💡 <strong>Chiết tự ghi nhớ:</strong> ${escapeHtml(q.explain)}
                                 </div>
                             </div>
                             <div style="display: flex; gap: 8px; align-items: center;">
                                 <button class="btn-pill" id="btn-alchemy-speak">🔊 Nghe đọc</button>
-                                <button class="btn-pill" id="btn-alchemy-next" style="background: #10b981; color: #ffffff; border-color: #10b981;">Câu Tiếp Theo ▶</button>
+                                <button class="btn-pill" id="btn-alchemy-next" style="background: #10b981; color: #ffffff; border-color: var(--ui-success);">Câu Tiếp Theo ▶</button>
                             </div>
                         </div>
                     `;
@@ -6655,7 +6656,7 @@
                         setTimeout(() => crucible.classList.remove("shake-elem"), 500);
                     }
                     feedbackZone.innerHTML = `
-                        <div style="text-align: center; color: #ef4444; font-weight: 600; margin-top: 14px;">
+                        <div style="text-align: center; color: var(--ui-danger); font-weight: 600; margin-top: 14px;">
                             ❌ Hai thành phần này chưa tạo thành chữ <strong>${escapeHtml(q.mean)}</strong> (${escapeHtml(q.pinyin)}). Hãy nhấp vào ô để đổi thành phần khác!
                         </div>
                     `;
@@ -6672,13 +6673,13 @@
             box.innerHTML = `
                 <div class="cloze-card" style="padding: 40px 20px;">
                     <div style="font-size: 56px; margin-bottom: 12px;">🧪</div>
-                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: var(--ui-text); margin-bottom: 8px;">
                         Hoàn Thành Thử Thách Chế Tác Chữ Hán!
                     </h2>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">
                         Mức độ làm chủ cấu trúc bộ thủ: <strong>${accuracy}%</strong>
                     </p>
-                    <div style="font-size: 38px; font-weight: 700; color: #eab308; margin-bottom: 28px;">
+                    <div style="font-size: 38px; font-weight: 700; color: var(--ui-warning); margin-bottom: 28px;">
                         ${score} Điểm
                     </div>
                     <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
@@ -6770,7 +6771,7 @@
                         <span class="game-meta-badge">🐉 Nối Từ Tiếp Sức</span>
                         <span class="game-meta-badge" id="chain-lives-display">❤️❤️❤️</span>
                         <span class="game-meta-badge score-badge">Điểm: <strong id="chain-score">0</strong></span>
-                        <span class="game-meta-badge" id="chain-combo-badge" style="display:none; color:#ea580c; font-weight:700;">🔥 Combo x0</span>
+                        <span class="game-meta-badge" id="chain-combo-badge" style="display:none; color:var(--ui-warning); font-weight:700;">🔥 Combo x0</span>
                     </div>
                     <button class="btn-pill" id="btn-chain-restart">🔄 Chơi Lại</button>
                 </div>
@@ -6792,7 +6793,7 @@
                             Tìm từ vựng bắt đầu bằng chữ Hán:
                         </div>
                         <div class="chain-target-char" id="chain-target-char">?</div>
-                        <div style="font-size: 13px; color: #ea580c;" id="chain-target-hint">
+                        <div style="font-size: 13px; color: var(--ui-warning);" id="chain-target-hint">
                             Thời gian suy nghĩ: 12 giây!
                         </div>
                     </div>
@@ -7025,17 +7026,17 @@
             box.innerHTML = `
                 <div class="cloze-card" style="padding: 40px 20px;">
                     <div style="font-size: 56px; margin-bottom: 12px;">🐉</div>
-                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: var(--ui-text); margin-bottom: 8px;">
                         ${lives > 0 ? "Tuyệt Đỉnh Nối Từ Tiếp Sức!" : "Kết Thúc Lượt Chơi!"}
                     </h2>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 14px;">
                         Bạn đã tạo nên chuỗi Rồng gồm <strong>${chainHistory.length} từ vựng</strong> liên tiếp!
                     </p>
                     <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 24px;">
-                        <div>Combo lớn nhất: <strong style="color: #ea580c;">x${maxCombo}</strong></div>
+                        <div>Combo lớn nhất: <strong style="color: var(--ui-warning);">x${maxCombo}</strong></div>
                         <div>Mạng còn lại: <strong>${lives}/3</strong></div>
                     </div>
-                    <div style="font-size: 38px; font-weight: 700; color: #ea580c; margin-bottom: 28px;">
+                    <div style="font-size: 38px; font-weight: 700; color: var(--ui-warning); margin-bottom: 28px;">
                         ${score} Điểm
                     </div>
                     <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
@@ -7100,7 +7101,7 @@
                     <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px;">
                         ĐOÁN TỪ VỰNG 2 CHỮ HÁN TRONG 5 LƯỢT THỬ
                     </div>
-                    <div style="font-size: 13.5px; color: #64748b; margin-bottom: 16px;">
+                    <div style="font-size: 13.5px; color: var(--ui-muted); margin-bottom: 16px;">
                         🟩 <strong>Xanh lá</strong>: Đúng chữ & đúng vị trí &nbsp;|&nbsp; 🟨 <strong>Vàng</strong>: Có trong từ nhưng sai vị trí &nbsp;|&nbsp; ⬜ <strong>Xám</strong>: Không có trong từ
                     </div>
 
@@ -7109,7 +7110,7 @@
                         <button class="btn-pill" id="btn-wordle-hint" style="font-size: 13px; padding: 6px 16px;">
                             💡 Mở Gợi Ý Nghĩa Tiếng Việt
                         </button>
-                        <div id="wordle-hint-text" style="display:none; margin-top: 8px; font-size: 15px; font-weight: 600; color: #0284c7;">
+                        <div id="wordle-hint-text" style="display:none; margin-top: 8px; font-size: 15px; font-weight: 600; color: var(--primary-text);">
                             Nghĩa từ: <em>${escapeHtml(targetWord.mean)}</em>
                         </div>
                     </div>
@@ -7137,7 +7138,7 @@
                     <!-- Phím chức năng -->
                     <div style="display: flex; justify-content: center; gap: 12px; margin-top: 10px;">
                         <button class="btn-pill" id="btn-wordle-delete" style="font-weight: 700;">⌫ Xóa</button>
-                        <button class="btn-pill" id="btn-wordle-submit" style="background: #10b981; color: #ffffff; border-color: #10b981; font-weight: 700;">✓ Xác Nhận Đoán</button>
+                        <button class="btn-pill" id="btn-wordle-submit" style="background: #10b981; color: #ffffff; border-color: var(--ui-success); font-weight: 700;">✓ Xác Nhận Đoán</button>
                     </div>
 
                     <div id="wordle-solution-card"></div>
@@ -7282,21 +7283,21 @@
             if (!solutionCard) return;
 
             solutionCard.innerHTML = `
-                <div class="cloze-feedback-box" style="margin-top: 24px; border-left-color: ${isWin ? '#10b981' : '#ef4444'}; background: ${isWin ? '#ecfdf5' : '#fef2f2'};">
+                <div class="cloze-feedback-box" style="margin-top: 24px; border-left-color: ${isWin ? 'var(--ui-success)' : 'var(--ui-danger)'}; background: ${isWin ? 'var(--ui-success-soft)' : 'var(--ui-danger-soft)'};">
                     <div style="flex: 1;">
-                        <div style="font-weight: 700; color: ${isWin ? '#047857' : '#b91c1c'}; margin-bottom: 6px; font-size: 16px;">
+                        <div style="font-weight: 700; color: ${isWin ? 'var(--ui-success)' : 'var(--ui-danger)'}; margin-bottom: 6px; font-size: 16px;">
                             ${isWin ? '🎉 CHÚC MỪNG BẠN ĐÃ ĐOÁN ĐÚNG!' : '❌ HẾT LƯỢT THỬ! TỪ BÍ MẬT LÀ:'}
                         </div>
-                        <div style="font-size: 26px; font-family: KaiTi, serif; font-weight: 700; color: #0f172a; margin-bottom: 4px;">
-                            ${escapeHtml(targetWord.hz)} <span style="font-size: 16px; font-family: inherit; color: #ea580c; font-weight: 500;">(${escapeHtml(targetWord.py)})</span>
+                        <div style="font-size: 26px; font-family: KaiTi, serif; font-weight: 700; color: var(--ui-text); margin-bottom: 4px;">
+                            ${escapeHtml(targetWord.hz)} <span style="font-size: 16px; font-family: inherit; color: var(--ui-warning); font-weight: 500;">(${escapeHtml(targetWord.py)})</span>
                         </div>
-                        <div style="font-size: 14.5px; color: #334155;">
+                        <div style="font-size: 14.5px; color: var(--ui-text-2);">
                             Ý nghĩa: <strong>${escapeHtml(targetWord.mean)}</strong>
                         </div>
                     </div>
                     <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
                         <button class="btn-pill" id="btn-wordle-speak">🔊 Nghe đọc</button>
-                        <button class="btn-pill" id="btn-wordle-next" style="background: #10b981; color: #ffffff; border-color: #10b981;">Đoán Từ Tiếp Theo ▶</button>
+                        <button class="btn-pill" id="btn-wordle-next" style="background: #10b981; color: #ffffff; border-color: var(--ui-success);">Đoán Từ Tiếp Theo ▶</button>
                     </div>
                 </div>
             `;
@@ -7346,7 +7347,7 @@
                         <div class="player-hearts" id="boss-hearts">
                             ❤️❤️❤️
                         </div>
-                        <div id="boss-combo-tag" style="font-weight: 700; color: #f59e0b; font-size: 15px;"></div>
+                        <div id="boss-combo-tag" style="font-weight: 700; color: var(--ui-warning); font-size: 15px;"></div>
                     </div>
 
                     <div class="boss-status-box">
@@ -7363,7 +7364,7 @@
                     </div>
 
                     <div class="boss-question-card" id="boss-q-card">
-                        <div id="boss-q-header" style="font-size: 14px; color: #94a3b8; margin-bottom: 8px;">
+                        <div id="boss-q-header" style="font-size: 14px; color: var(--ui-muted); margin-bottom: 8px;">
                             CÂU HỎI TẤN CÔNG (Đáp nhanh dưới 3.5s để gây BẠO KÍCH!)
                         </div>
                         <div class="boss-q-prompt" id="boss-q-prompt">...</div>
@@ -7466,7 +7467,7 @@
 
             if (qType === 0) {
                 headerElem.textContent = "⚔️ TẤN CÔNG: Chọn nghĩa tiếng Việt của chữ Hán sau:";
-                promptHtml = `${escapeHtml(targetWord.hz)} <span style="font-size:20px; color:#f97316;">(${escapeHtml(targetWord.py)})</span>`;
+                promptHtml = `${escapeHtml(targetWord.hz)} <span style="font-size:20px; color:var(--ui-warning);">(${escapeHtml(targetWord.py)})</span>`;
                 choiceFormatter = (w) => escapeHtml(w.mean);
             } else if (qType === 1) {
                 headerElem.textContent = "⚔️ TẤN CÔNG: Chọn chữ Hán có phiên âm tương ứng:";
@@ -7585,7 +7586,7 @@
                     </div>
 
                     <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
-                        <button class="btn-pill" id="btn-boss-retry" style="background: #f59e0b; color: #ffffff; border-color: #f59e0b;">
+                        <button class="btn-pill" id="btn-boss-retry" style="background: #f59e0b; color: #ffffff; border-color: var(--ui-warning);">
                             ${isVictory ? "⚔️ Tái Đấu Ma Vương" : "🔥 Hồi Sinh & Đấu Lại"}
                         </button>
                         <button class="btn-pill" id="btn-boss-to-hub">🏠 Về Khu Trò Chơi</button>
@@ -7697,7 +7698,7 @@
 
                 <div class="wordsearch-card">
                     <div style="text-align: center; margin-bottom: 8px;">
-                        <h3 style="font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">
+                        <h3 style="font-size: 20px; font-weight: 700; color: var(--ui-text); margin-bottom: 4px;">
                             BÁT QUÁI TRẬN ĐỒ • TÌM CHỮ HÁN ẨN GIẤU
                         </h3>
                         <p style="font-size: 13.5px; color: var(--text-muted);">
@@ -7717,15 +7718,15 @@
 
                         <!-- Target Words Checklist -->
                         <div class="matrix-targets-box">
-                            <div style="font-size: 14.5px; font-weight: 700; color: #1e293b; margin-bottom: 14px; border-bottom: 1.5px solid #e2e8f0; padding-bottom: 8px;">
+                            <div style="font-size: 14.5px; font-weight: 700; color: var(--ui-text); margin-bottom: 14px; border-bottom: 1.5px solid var(--ui-border); padding-bottom: 8px;">
                                 🎯 4 Từ Vựng Cần Tìm:
                             </div>
                             <div id="ws-targets-list">
                                 ${placedWords.map((pw, idx) => `
                                     <div class="matrix-target-item" id="target-item-${idx}">
                                         <div>
-                                            <span style="font-weight: 700; color: #1e293b;" class="target-hz-text">【 ? ? 】</span>
-                                            <span style="font-size: 13.5px; color: #64748b; margin-left: 6px;">${escapeHtml(pw.word.mean)}</span>
+                                            <span style="font-weight: 700; color: var(--ui-text);" class="target-hz-text">【 ? ? 】</span>
+                                            <span style="font-size: 13.5px; color: var(--ui-muted); margin-left: 6px;">${escapeHtml(pw.word.mean)}</span>
                                         </div>
                                         <span class="target-check">⭕</span>
                                     </div>
@@ -7853,16 +7854,16 @@
             if (!victoryZone) return;
 
             victoryZone.innerHTML = `
-                <div class="cloze-feedback-box" style="margin-top: 24px; border-left-color: #10b981; background: #ecfdf5; text-align: center; flex-direction: column;">
+                <div class="cloze-feedback-box" style="margin-top: 24px; border-left-color: var(--ui-success); background: var(--ui-success-soft); text-align: center; flex-direction: column;">
                     <div style="font-size: 48px; margin-bottom: 8px;">🏆</div>
-                    <h3 style="font-size: 22px; font-weight: 700; color: #047857; margin-bottom: 6px;">
+                    <h3 style="font-size: 22px; font-weight: 700; color: var(--ui-success); margin-bottom: 6px;">
                         Chúc Mừng! Bạn Đã Phá Vỡ Bát Quái Trận Đồ!
                     </h3>
-                    <p style="color: #334155; font-size: 14.5px; margin-bottom: 16px;">
-                        Thời gian phá trận: <strong>${elapsedSec} giây</strong> &nbsp;|&nbsp; Tổng điểm: <strong style="color: #047857;">${score} Điểm</strong>
+                    <p style="color: var(--ui-text-2); font-size: 14.5px; margin-bottom: 16px;">
+                        Thời gian phá trận: <strong>${elapsedSec} giây</strong> &nbsp;|&nbsp; Tổng điểm: <strong style="color: var(--ui-success);">${score} Điểm</strong>
                     </p>
                     <div style="display: flex; justify-content: center; gap: 14px;">
-                        <button class="btn-pill" id="btn-ws-win-again" style="background: #10b981; color: #ffffff; border-color: #10b981;">🔄 Khiêu Chiến Ma Trận Mới</button>
+                        <button class="btn-pill" id="btn-ws-win-again" style="background: #10b981; color: #ffffff; border-color: var(--ui-success);">🔄 Khiêu Chiến Ma Trận Mới</button>
                         <button class="btn-pill" id="btn-ws-win-hub">🏠 Về Khu Trò Chơi</button>
                     </div>
                 </div>
@@ -7905,7 +7906,7 @@
                         <span class="game-meta-badge" id="fall-round-badge">Vòng: 1 / ${totalRounds}</span>
                         <span class="game-meta-badge" id="fall-lives-badge">❤️❤️❤️</span>
                         <span class="game-meta-badge score-badge">Điểm: <strong id="fall-score">0</strong></span>
-                        <span class="game-meta-badge" id="fall-combo-badge" style="display:none; color:#ea580c; font-weight:700;">🔥 Combo x0</span>
+                        <span class="game-meta-badge" id="fall-combo-badge" style="display:none; color:var(--ui-warning); font-weight:700;">🔥 Combo x0</span>
                     </div>
                     <button class="btn-pill" id="btn-fall-restart">🔄 Chơi Lại</button>
                 </div>
@@ -7913,7 +7914,7 @@
                 <div class="falling-card" id="falling-box">
                     <div class="falling-hud">
                         <div>BẦU TRỜI CHỮ HÁN • PHẢN XẠ ARCADE</div>
-                        <div id="fall-speed-tag" style="color: #38bdf8;">Tốc độ: 1.0x</div>
+                        <div id="fall-speed-tag" style="color: var(--ui-pinyin);">Tốc độ: 1.0x</div>
                     </div>
 
                     <div class="falling-arena" id="falling-arena">
@@ -7925,7 +7926,7 @@
                             <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 2px;">
                                 🎯 Bấm nổ bong bóng mang Chữ Hán có nghĩa:
                             </div>
-                            <div style="font-size: 20px; font-weight: 700; color: #0284c7;" id="fall-target-mean">
+                            <div style="font-size: 20px; font-weight: 700; color: var(--primary-text);" id="fall-target-mean">
                                 ...
                             </div>
                         </div>
@@ -8124,17 +8125,17 @@
             box.innerHTML = `
                 <div class="cloze-card" style="padding: 40px 20px;">
                     <div style="font-size: 56px; margin-bottom: 12px;">🪂</div>
-                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: var(--ui-text); margin-bottom: 8px;">
                         ${lives > 0 ? "Tuyệt Vời! Hoàn Thành Cơn Mưa Chữ Hán!" : "Hết Mạng! Trò Chơi Kết Thúc!"}
                     </h2>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 18px;">
                         Bạn đã chinh phục thành công <strong>${roundIdx} / ${totalRounds} vòng rơi chữ</strong>
                     </p>
                     <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 24px;">
-                        <div>Combo cao nhất: <strong style="color: #ea580c;">x${maxCombo}</strong></div>
+                        <div>Combo cao nhất: <strong style="color: var(--ui-warning);">x${maxCombo}</strong></div>
                         <div>Mạng còn lại: <strong>${Math.max(0, lives)} / 3</strong></div>
                     </div>
-                    <div style="font-size: 38px; font-weight: 700; color: #0284c7; margin-bottom: 28px;">
+                    <div style="font-size: 38px; font-weight: 700; color: var(--primary-text); margin-bottom: 28px;">
                         ${score} Điểm
                     </div>
                     <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
@@ -8209,13 +8210,13 @@
                     <!-- Tug-of-war Header -->
                     <div class="duel-tug-wrapper">
                         <div class="duel-competitors">
-                            <div class="duel-competitor" style="color: #2563eb;">
+                            <div class="duel-competitor" style="color: var(--primary-text);">
                                 <span>🧑‍🎓 BẠN</span>
-                                <span id="duel-player-tag" style="font-size: 12px; font-weight: normal; color: #64748b;">(Kéo về trái)</span>
+                                <span id="duel-player-tag" style="font-size: 12px; font-weight: normal; color: var(--ui-muted);">(Kéo về trái)</span>
                             </div>
-                            <div style="font-weight: 700; color: #64748b; font-size: 13px;">⚔️ ĐỐI KHÁNG KÉO CO ⚔️</div>
-                            <div class="duel-competitor" style="color: #dc2626;">
-                                <span id="duel-ai-tag" style="font-size: 12px; font-weight: normal; color: #64748b;">(Kéo về phải)</span>
+                            <div style="font-weight: 700; color: var(--ui-muted); font-size: 13px;">⚔️ ĐỐI KHÁNG KÉO CO ⚔️</div>
+                            <div class="duel-competitor" style="color: var(--ui-danger);">
+                                <span id="duel-ai-tag" style="font-size: 12px; font-weight: normal; color: var(--ui-muted);">(Kéo về phải)</span>
                                 <span>🤖 ĐỐI THỦ AI</span>
                             </div>
                         </div>
@@ -8234,7 +8235,7 @@
 
                     <!-- Target Word Prompt -->
                     <div class="duel-target-box">
-                        <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #86198f; margin-bottom: 6px;">
+                        <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-text); margin-bottom: 6px;">
                             HÃY TÌM TỪ TRÁI NGHĨA VỚI:
                         </div>
                         <div class="duel-target-hz" id="duel-target-hz">...</div>
@@ -8329,17 +8330,17 @@
                         updateTugUI();
 
                         feedbackZone.innerHTML = `
-                            <div class="cloze-feedback-box" style="margin-top: 20px; border-left-color: #10b981; background: #ecfdf5;">
+                            <div class="cloze-feedback-box" style="margin-top: 20px; border-left-color: var(--ui-success); background: var(--ui-success-soft);">
                                 <div style="flex: 1;">
-                                    <div style="font-weight: 700; color: #047857; margin-bottom: 4px; font-size: 16px;">
+                                    <div style="font-weight: 700; color: var(--ui-success); margin-bottom: 4px; font-size: 16px;">
                                         🎉 CHÍNH XÁC! Bạn đã kéo dây thêm +15%!
                                     </div>
-                                    <div style="font-size: 15px; color: #1e293b;">
-                                        💡 <strong>Cặp từ trái nghĩa:</strong> <strong style="font-family:KaiTi,serif; font-size:18px;">${escapeHtml(q.word)}</strong> (${escapeHtml(q.mean)}) ⇄ <strong style="font-family:KaiTi,serif; font-size:18px; color:#c026d3;">${escapeHtml(q.ant)}</strong> (${escapeHtml(q.antMean)})
+                                    <div style="font-size: 15px; color: var(--ui-text);">
+                                        💡 <strong>Cặp từ trái nghĩa:</strong> <strong style="font-family:KaiTi,serif; font-size:18px;">${escapeHtml(q.word)}</strong> (${escapeHtml(q.mean)}) ⇄ <strong style="font-family:KaiTi,serif; font-size:18px; color:var(--primary-text);">${escapeHtml(q.ant)}</strong> (${escapeHtml(q.antMean)})
                                     </div>
                                 </div>
                                 <div>
-                                    <button class="btn-pill" id="btn-duel-next" style="background: #10b981; color: #ffffff; border-color: #10b981;">Hiệp Tiếp Theo ▶</button>
+                                    <button class="btn-pill" id="btn-duel-next" style="background: #10b981; color: #ffffff; border-color: var(--ui-success);">Hiệp Tiếp Theo ▶</button>
                                 </div>
                             </div>
                         `;
@@ -8362,17 +8363,17 @@
                         updateTugUI();
 
                         feedbackZone.innerHTML = `
-                            <div class="cloze-feedback-box" style="margin-top: 20px; border-left-color: #ef4444; background: #fef2f2;">
+                            <div class="cloze-feedback-box" style="margin-top: 20px; border-left-color: var(--ui-danger); background: var(--ui-danger-soft);">
                                 <div style="flex: 1;">
-                                    <div style="font-weight: 700; color: #dc2626; margin-bottom: 4px; font-size: 16px;">
+                                    <div style="font-weight: 700; color: var(--ui-danger); margin-bottom: 4px; font-size: 16px;">
                                         ❌ CHƯA CHÍNH XÁC! AI đối thủ giật dây thêm +15%!
                                     </div>
-                                    <div style="font-size: 15px; color: #1e293b;">
-                                        Từ trái nghĩa đúng là: <strong style="font-family:KaiTi,serif; font-size:18px; color:#10b981;">${escapeHtml(q.ant)}</strong> (${escapeHtml(q.antPy)} - ${escapeHtml(q.antMean)})
+                                    <div style="font-size: 15px; color: var(--ui-text);">
+                                        Từ trái nghĩa đúng là: <strong style="font-family:KaiTi,serif; font-size:18px; color:var(--ui-success);">${escapeHtml(q.ant)}</strong> (${escapeHtml(q.antPy)} - ${escapeHtml(q.antMean)})
                                     </div>
                                 </div>
                                 <div>
-                                    <button class="btn-pill" id="btn-duel-next" style="background: #ef4444; color: #ffffff; border-color: #ef4444;">Hiệp Tiếp Theo ▶</button>
+                                    <button class="btn-pill" id="btn-duel-next" style="background: #ef4444; color: #ffffff; border-color: var(--ui-danger);">Hiệp Tiếp Theo ▶</button>
                                 </div>
                             </div>
                         `;
@@ -8402,7 +8403,7 @@
                     <div style="font-size: 56px; margin-bottom: 12px;">
                         ${isPlayerWin ? "🏆" : "🤖"}
                     </div>
-                    <h2 style="font-size: 24px; font-weight: 700; color: #1e293b; margin-bottom: 8px;">
+                    <h2 style="font-size: 24px; font-weight: 700; color: var(--ui-text); margin-bottom: 8px;">
                         ${isPlayerWin ? "CHIẾN THẮNG TRẬN KÉO CO ĐỐI LẬP!" : "AI ĐỐI THỦ ĐÃ KÉO NGÃ BẠN!"}
                     </h2>
                     <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
@@ -8410,7 +8411,7 @@
                             ? "Vốn từ trái nghĩa phong phú đã giúp bạn áp đảo hoàn toàn AI!" 
                             : "Hãy luyện tập thêm các cặp từ trái nghĩa để lấy lại phong độ nhé!"}
                     </p>
-                    <div style="font-size: 38px; font-weight: 700; color: #86198f; margin-bottom: 28px;">
+                    <div style="font-size: 38px; font-weight: 700; color: var(--primary-text); margin-bottom: 28px;">
                         ${score} Điểm
                     </div>
                     <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">

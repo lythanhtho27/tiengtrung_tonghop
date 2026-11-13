@@ -236,7 +236,10 @@
                 return { label: src.next, url: src.nextUrl };
             return { label: g.done ? `${g.label} · Bài ${g.done + 1}` : `${g.label} · Bài 1`, url: g.url };
         }
-        const actions = cur.gs.filter(g => g.done < g.total).map(g => {
+        // Mỗi loại (bài khóa Boya / từ vựng HSK) chỉ gợi ý nhóm chưa xong đầu tiên, vì các nhóm học theo thứ tự
+        const pending = cur.gs.filter(g => g.done < g.total);
+        const nextGroups = [pending.find(g => !g.isHsk), pending.find(g => g.isHsk)].filter(Boolean);
+        const actions = nextGroups.map(g => {
             const n = nextFor(g);
             return `<a class="btn ${g.isHsk ? "" : "btn-primary"}" href="${esc(n.url)}"><span>▶ ${esc(n.label)}</span><small>${g.isHsk ? "Từ vựng" : "Bài khóa"} · ${g.pct}%</small></a>`;
         });

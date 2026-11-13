@@ -18,13 +18,12 @@ index.html            Trang chủ: banner dẫn tới từng trang
 audio/                MP3 bài khóa Boya (Trung cap 1–4, Cao cap 1–2), DÙNG CHUNG (~613MB)
 boya_learning/        Boya Learning: bài khóa 6 quyển + audio + từ vựng
   boya_learning.html/.css/.js, boya_data.js (+ .json)
-sach_boya/            Sách Boya Trung cấp 1–4 bản đọc
+sach_boya/            Sách Boya TC1–4 bản đọc tĩnh (trùng nội dung boya_learning, không link từ trang chủ)
   tc1.html … tc4.html, script.js, style.css
 tuvung/               Ôn từ vựng Boya TC1–4 (flashcard, quiz, ghép thẻ)
   tuvung.html/.css/.js, vocab_data.js (+ .json)
 word_learning/        Giáo trình HSK 3.0 (词汇速记速练手册)
   word_learning.html/.css/.js, hsk_book_data.js, json_data/quyen_*.js(.json)
-  word_learning_book/*.pdf   ← KHÔNG có trong repo, phải copy tay
 hsk_lotrinh/          Lộ trình từ vựng HSK 1–6 (SRS, đọc nhanh)
   hsk_lotrinh.html/.css/.js, hsk_vocab_data.js
 anh_ngu_3/            Bài luyện tiếng Anh HUTECH (an3*.html), trang độc lập, không liên quan tiếng Trung
@@ -97,6 +96,50 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
 - **State (localStorage `hsk_lotrinh_v1`):** `{ settings, units, stages, unlocked, srs, days, speed, lastLevel }`. `save()` đồng thời ghi tóm tắt cho trang chủ (`writeSummary()`). Sáng/tối dùng `HocTheme`, không còn `settings.theme`. Khi thêm trường mới, nhớ thêm vào `DEFAULT_STATE`. Người dùng chuyển tiến độ giữa các máy bằng nút Xuất/Nhập JSON.
 - **Phát âm:** Web Speech API (`speechSynthesis`, giọng `zh-CN`).
 - **Lưu ý CSS:** không dùng `opacity: 0` trong `@keyframes` cho phần tử được hiện ra từ `hidden` / `display:none`. Từng có lỗi thẻ bị kẹt ở trạng thái trong suốt, vì vậy các animation `pop` và `fade` chỉ dùng `transform`.
+
+## Các trang học (sau đợt nâng cấp 11/2026)
+
+Ba trang dưới đây theo cùng một mô hình với `hsk_lotrinh`:
+- học theo bài, có ngưỡng điểm để qua bài;
+- ôn tập SM-2: `schedule()` và `ivLabel()` được chép từ `hsk_lotrinh.js`, mỗi trang giữ một bản riêng (không import);
+- đo tốc độ nhận diện `rt`;
+- ghi tóm tắt tiến độ qua `HocProgress`.
+
+Khi sửa logic SRS ở một trang, cân nhắc sửa đồng bộ ở các trang còn lại.
+
+### `boya_learning/` (6 quyển, 74 bài, 2.770 từ)
+- **Mỗi bài có 4 bước:** Từ vựng (lật hết flashcard) → Bài khóa (cuộn hết từng phần hoặc đọc xong một lượt tính giờ) → Ngữ pháp (xem hết các thẻ) → Kiểm tra.
+- **Hoàn thành bài:** chỉ khi bài kiểm tra đạt ≥ 80%. Bài kiểm tra có tối đa 12 câu từ vựng và 3 câu ngữ pháp; câu sai được hỏi lại; điểm tính theo lần trả lời đầu.
+- **Ôn tập:** "Ôn hôm nay" gom từ đến hạn của mọi quyển.
+- **Đọc bài khóa:** đọc tính giờ (chữ/phút, chỉ đếm chữ Hán), có nút nhại theo TTS, có chế độ "Che từ vựng".
+- **Streak:** chỉ tăng khi trong ngày làm ≥ 10 câu hoặc ôn ≥ 10 thẻ.
+- **URL:** `?book=<id>&lesson=<n>`, chấp nhận cả bí danh cc1/cc2.
+- **Key lưu:** `boya_learning_progress_v2` = `{v, lessons{fc,rd,gr,best,tries,done,doneAt,legacy}, srs, days, streak, reading}` và `boya_learning_settings_v1`. Key `v1` cũ chỉ đọc một lần để chuyển dữ liệu.
+- **Màu theo quyển:** JS đặt `--book: var(--ui-book-<id>)`, các màu `--primary-*` suy ra từ biến này.
+- **Ghi chú:** Chrome headless không phát sự kiện cuộn, nên test phải tự phát `scroll`.
+
+### `tuvung/` (Boya TC1–4, 54 bài, 2.565 từ)
+- **Tab:** Học tiếp (mặc định) / Flashcard & SRS / Quiz / Từ vựng / Thêm trò chơi.
+- **Hoàn thành bài:** khi quiz Tiêu chuẩn của bài đạt ≥ 85% (tối thiểu 10 câu) và mọi từ của bài đã có thẻ SRS.
+- **Giới hạn từ mới mỗi ngày:** 10–30 từ.
+- **Chỉ quiz Tiêu chuẩn và chấm flashcard được ghi vào SRS.** Các trò chơi và kiểu quiz khác không ghi.
+- **Trả lời sai:** chỉ hạ một bậc (`iv ≈ iv/ef`), không về 0.
+- **Trạng thái từ:** suy ra hoàn toàn từ SRS. "Sổ lỗi" là trường `wrong` của thẻ.
+- **Key lưu:**
+  - `boya_tv_srs`, `boya_tv_progress`, `boya_tv_settings`, `boya_tv_days`, `boya_tv_best`, `boya_starred_words`.
+  - Dữ liệu cũ được sao lưu vào `boya_tv_legacy_backup` rồi xóa: `boya_srs_data`, `boya_mastered_words`, `boya_unmastered_words`, `boya_wrong_words`, `boya_quiz_high_score`, `boya_theme`.
+- **URL:** `?lesson=tc1_3`.
+
+### `word_learning/` (HSK 3.0, 8 quyển, 368 bài, 11.092 từ, 20 từ/bài)
+- **Tab:** Học từ → Luyện tập (Kiểm tra từ vựng + Bài tập SGK) → Ôn tập → Trò chơi · Luyện nói.
+- **Hoàn thành bài:** khi Kiểm tra bài hoặc Bài tập SGK đạt ≥ 80%. Khi đó cả 20 từ của bài vào SRS. "Điền đáp án mẫu" không được tính.
+- **Học theo thứ tự:** `settings.sequential`, mặc định bật.
+- **Ôn tập:** "Ôn hôm nay" gộp mọi quyển.
+  - Mỗi thẻ SRS tự lưu chữ Hán, pinyin, nghĩa, quyển và bài, vì dữ liệu quyển được nạp lười (`json_data/quyen_*.js`).
+  - Khi ôn, trang nạp các quyển cần thiết để hiện câu ví dụ.
+- **Key lưu:** `hsk_wl_srs_v3` (thẻ SM-2) và `hsk_wl_json_progress_v2`. Key `hsk_wl_srs_data_v2` (Leitner cũ) chỉ đọc một lần để chuyển dữ liệu.
+- **URL:** `?book=q1&unit=3`.
+- **Ghi chú:** phần PDF đã bị gỡ hẳn, thư mục `word_learning_book/` không còn được dùng.
 
 ## Chạy và kiểm tra
 

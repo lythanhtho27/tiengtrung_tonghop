@@ -826,7 +826,7 @@
         if (state.activeMode !== 'reading') { stopTimedReading(true); stopShadow(); }
         if (state.activeMode !== 'quiz' && state.activeMode !== 'test') state.quiz = null;
         if (state.activeMode !== 'test') state.testStarted = false;
-        if (seenObserver) { seenObserver.disconnect(); seenObserver = null; }
+        sentinelCheck = null;
 
         switch (state.activeMode) {
             case 'reading': renderReadingStudio(); break;
@@ -842,24 +842,31 @@
     }
 
     // Theo dõi phần tử "đã xem tới cuối" (bài khóa, ngữ pháp)
-    let seenObserver = null;
+    // Kiểm tra bằng vị trí khi cuộn (mọi vùng cuộn) — đơn giản, chạy ổn trên mọi trình duyệt.
+    let sentinelCheck = null;
+    let sentinelTick = 0;
     function observeSentinels(onSeen) {
-        if (seenObserver) seenObserver.disconnect();
-        const els = dom.modeContainer.querySelectorAll('.seen-sentinel');
-        if (!els.length) return;
-        if (!('IntersectionObserver' in window)) {
-            els.forEach(el => onSeen(el));
-            return;
-        }
-        seenObserver = new IntersectionObserver(entries => {
-            entries.forEach(en => {
-                if (en.isIntersecting) {
-                    seenObserver && seenObserver.unobserve(en.target);
-                    onSeen(en.target);
+        const pending = new Set(dom.modeContainer.querySelectorAll('.seen-sentinel'));
+        if (!pending.size) { sentinelCheck = null; return; }
+        const check = () => {
+            const box = dom.modeContainer.getBoundingClientRect();
+            const bottom = Math.min(box.bottom, window.innerHeight);
+            pending.forEach(el => {
+                if (!el.isConnected) { pending.delete(el); return; }
+                const r = el.getBoundingClientRect();
+                if (r.width > 0 && r.top < bottom && r.bottom > box.top - 2) {
+                    pending.delete(el);
+                    onSeen(el);
                 }
             });
-        });
-        els.forEach(el => seenObserver.observe(el));
+            if (!pending.size && sentinelCheck === check) sentinelCheck = null;
+        };
+        sentinelCheck = check;
+        setTimeout(() => { if (sentinelCheck === check) check(); }, 400);
+    }
+    function onAnyScroll() {
+        if (!sentinelCheck || sentinelTick) return;
+        sentinelTick = setTimeout(() => { sentinelTick = 0; if (sentinelCheck) sentinelCheck(); }, 120);
     }
 
     // ==========================================================================
@@ -2004,7 +2011,7 @@
                 <div class="fc-step-note ${seenN >= all.length ? 'is-done' : ''}">
                     ${seenN >= all.length
                         ? `✓ Đã lật hết ${all.length} thẻ của bài — bước Từ vựng hoàn thành.`
-                        : `Bước 1 · Từ vựng: lật hết thẻ của bài để hoàn thành bước này — <b>${seenN}/${all.length}</b> thẻ.`}
+                        : `<span>Bước 1 · Từ vựng: lật hết thẻ của bài để hoàn thành bước này — <b>${seenN}/${all.length}</b> thẻ.</span>`}
                     <span class="fc-step-tip">Lật thẻ rồi tự chấm Quên / Khó / Nhớ / Dễ để lên lịch ôn.</span>
                 </div>
                 <div class="fc-meta-bar">
@@ -2246,7 +2253,7 @@
                 main: `<div class="qq-sentence">${escapeHtml(ex.zh)}</div>`,
                 optCn: false,
                 speak: ex.zh,
-                reveal: `<span class="qr-py">${escapeHtml(ex.pinyin || '')}</span>${g.structure ? `<div class="qr-sent">Cấu trúc: ${escapeHtml(g.structure)}</div>` : ''}`
+                reveal: `<span class="qr-py">${escapeHtml(ex.pinyin || '')}</span>${g.structure ? `<div class="qr-note">Cấu trúc: ${escapeHtml(g.structure)}</div>` : ''}`
             }, o);
         }).filter(Boolean);
     }
@@ -2667,12 +2674,12 @@
     function renderReviewStudio() {
         if (!state.review) state.review = { queue: dueIds(), flipped: false, done: 0 };
         const rv = state.review;
-        // bỏ các thẻ không còn đến hạn (đã ôn ở tab khác)
-        while (rv.queue.length && (!P.srs[rv.queue[0]] || P.srs[rv.queue[0]].due > Date.now() + 60000)) rv.queue.shift();
+        // bỏ thẻ không còn tồn tại; thẻ chấm "Quên" vẫn được hỏi lại trong phiên này
+        while (rv.queue.length && (!P.srs[rv.queue[0]] || !WORDS.has(rv.queue[0]))) rv.queue.shift();
 
         const backBtn = `<button class="rt-btn" id="btnReviewBack">← Về bài đang học</button>`;
         if (!rv.queue.length) {
-            const tomorrow = Object.keys(P.srs).filter(id => WORDS.has(id) && P.srs[id].due <= startOfDay() + 2 * DAY).length;
+            const tomorrow = Object.keys(P.srs).filter(id => WORDS.has(id) && P.srs[id].due < startOfDay() + 2 * DAY).length;
             const total = Object.keys(P.srs).filter(id => WORDS.has(id)).length;
             dom.modeContainer.innerHTML = `
                 <div class="review-studio">
@@ -3119,6 +3126,10 @@
     // 14. GLOBAL EVENT BINDINGS & SEARCH MODAL
     // ==========================================================================
     function bindGlobalEvents() {
+        // Theo dõi cuộn để tính "đã đọc/xem tới cuối" (bắt sự kiện cuộn của mọi vùng)
+        document.addEventListener('scroll', onAnyScroll, true);
+        window.addEventListener('resize', onAnyScroll);
+
         // Ôn hôm nay & thống kê
         const reviewBtn = document.getElementById('hdrReviewBtn');
         if (reviewBtn) reviewBtn.addEventListener('click', () => switchMode('review'));
@@ -3461,7 +3472,7 @@
                             <span style="font-size: 18px;">📐</span>
                             <div>
                                 <div style="font-weight: 700; color: var(--text-main); font-size: 14px;">${escapeHtml(r.grammar.point)}</div>
-                                <div style="font-size: 11px; color: var(--primary);">${escapeHtml(r.grammar.structure || r.grammar.pinyin || '')}</div>
+                                <div style="font-size: 11px; color: var(--primary-text);">${escapeHtml(r.grammar.structure || r.grammar.pinyin || '')}</div>
                             </div>
                         </div>
                         <span class="mri-tag is-grammar">Ngữ pháp • Bài ${r.lessonNum}</span>

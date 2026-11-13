@@ -120,7 +120,8 @@ body {
     padding: 6px 16px;
     gap: 12px;
     flex-shrink: 0;
-    z-index: 30;
+    position: relative;
+    z-index: 60;   /* trên thanh bài (z-index 40) để menu Cài đặt không bị che */
 }
 
 .wl-header-left {
@@ -1093,8 +1094,6 @@ body.enable-tone-colors .tone-0 {
     gap: 8px;
     flex-shrink: 0;
 }
-    gap: 8px;
-}
 
 .mark-done-btn {
     padding: 6px 12px;
@@ -1982,7 +1981,7 @@ body.enable-tone-colors .tone-0 {
 
 .ctrl-chip.speak-all-btn:hover {
     background: color-mix(in srgb, var(--ui-success) 30%, transparent);
-    color: #fff;
+    color: var(--ui-success);
 }
 
 .ctrl-chip.speak-all-btn.active {
@@ -3263,7 +3262,7 @@ body.enable-tone-colors .tone-0 {
     flex: 1.4;
     background: color-mix(in srgb, var(--ui-primary) 18%, transparent);
     border-color: var(--accent-primary);
-    color: #fff;
+    color: var(--wl-primary-text);
 }
 
 .mbn-btn.done-active {
@@ -4355,7 +4354,7 @@ body.enable-tone-colors .tone-0 {
 .qtype-btn.active {
     background: color-mix(in srgb, var(--ui-primary) 22%, transparent);
     border-color: var(--accent-primary);
-    color: #fff;
+    color: var(--wl-primary-text);
     box-shadow: 0 2px 8px color-mix(in srgb, var(--ui-primary) 20%, transparent);
 }
 
@@ -4716,8 +4715,9 @@ body.enable-tone-colors .tone-0 {
     font-weight: 800;
     padding: 2px 7px;
     border-radius: 5px;
-    background: var(--bg-tertiary);
-    color: var(--text-muted);
+    background: var(--ui-surface-2);
+    border: 1px solid var(--ui-border);
+    color: var(--ui-text-2);
 }
 
 .sir-remove-btn {
@@ -4755,7 +4755,7 @@ body.enable-tone-colors .tone-0 {
     backdrop-filter: blur(12px);
     border: 1px solid color-mix(in srgb, var(--ui-primary) 40%, transparent);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    color: #fff;
+    color: var(--ui-text);
     padding: 12px 16px;
     border-radius: 10px;
     display: flex;
@@ -6568,7 +6568,7 @@ details.shad-tone-guide[open] summary.stg-head::after {
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 8px;
-    color: #fff;
+    color: var(--ui-text);
 }
 
 .bubble-start-overlay p {
@@ -7549,7 +7549,17 @@ details.shad-tone-guide[open] summary.stg-head::after {
     font-weight: 700;
 }
 
+.fc-controls {
+    flex-wrap: wrap;
+}
+.fc-nav-btn,
+.fc-counter {
+    white-space: nowrap;
+}
+
 @media (max-width: 640px) {
+    .fc-controls .fc-nav-btn { flex: 1 1 auto; padding: 8px 10px; }
+    .fc-controls .fc-counter { order: -1; flex-basis: 100%; text-align: center; }
     .fc-rate-btn .frb-iv { font-size: 0.66rem; }
     .fc-srs-btn-group { gap: 5px; }
     .srs-item-row { flex-wrap: wrap; }
