@@ -9,7 +9,7 @@ Bộ trang web học tiếng Trung (giáo trình **Boya** và từ vựng **HSK*
 - Repo: `https://github.com/lythanhtho27/boya_web.git` (nhánh `main`)
 - **Chỉ có HTML/CSS/JS thuần, không có backend, không có bước build.** Mở trực tiếp file `.html` là chạy (cả qua `file://`). Phần PHP/MariaDB cũ đã bị xóa (vẫn còn trong lịch sử git), đừng thêm lại.
 - Dữ liệu được sinh sẵn thành file `.js` (gán vào `window.*`) để chạy được qua `file://`, vì `fetch` không hoạt động trên `file://`.
-- Tiến độ học lưu trong `localStorage`. Mỗi trang dùng key riêng.
+- Tiến độ học lưu trong `localStorage`. Mỗi trang dùng key riêng. Khi người dùng đăng nhập, `shared/sync.js` đồng bộ các key này lên Supabase (xem mục "Tài khoản & đồng bộ"). Đây là dịch vụ ngoài, không phải backend tự dựng.
 
 ## Cấu trúc thư mục
 
@@ -27,7 +27,7 @@ word_learning/        Giáo trình HSK 3.0 (词汇速记速练手册)
 hsk_lotrinh/          Lộ trình từ vựng HSK 1–6 (SRS, đọc nhanh)
   hsk_lotrinh.html/.css/.js, hsk_vocab_data.js
 anh_ngu_3/            Bài luyện tiếng Anh HUTECH (an3*.html), trang độc lập, không liên quan tiếng Trung
-shared/               Tài nguyên dùng chung giữa các trang (theme…)
+shared/               Tài nguyên dùng chung giữa các trang (theme, progress, sync)
 tools/                Script sinh dữ liệu + dữ liệu nguồn
   extract_hsk_vocab.py, extract_vocab.py, word_list_data/HSK1-HSK6_full.xlsx
   scratch/            Script xử lý một lần (OCR, kiểm tra, sửa dữ liệu), chỉ để tham khảo
@@ -51,6 +51,44 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
   - Phần tử có `[data-ui-theme-toggle]` tự thành nút đổi theme. Class `.ui-theme-toggle` tự hiện 🌙/☀️.
   - Các tab tự đồng bộ theme với nhau. **Không tạo thêm theme riêng cho từng trang.**
 - **`progress.js`**: `HocProgress.save(page, {...})` / `load(page)` / `all()`, key `hoc_summary_v1:<page>`. Mỗi trang ghi một bản tóm tắt tiến độ (`next`, `nextUrl` tính từ thư mục gốc, `due`, `learned`, `groups`), và trang chủ đọc các bản tóm tắt này để vẽ lộ trình. Định dạng chi tiết ở đầu file.
+- **`sync.js`**: tài khoản và đồng bộ tiến độ (xem mục dưới). Nạp đồng bộ trong `<head>` ngay sau `theme.js`, trước script của trang. Đã gắn vào 5 trang: `index`, `hsk_lotrinh`, `boya_learning`, `tuvung`, `word_learning`.
+
+## Tài khoản & đồng bộ (`shared/sync.js`, Supabase)
+
+- **Project:** `https://tlixkdkdfowlokgendgp.supabase.co`. Khóa `anon` công khai nằm trong `sync.js`; được phép để công khai vì quyền truy cập do RLS quyết định. **Không bao giờ** đưa khóa `service_role`/`secret` vào mã.
+- **Cách hoạt động:** gọi REST bằng XHR, không dùng thư viện ngoài, chạy được qua `file://`.
+  - `localStorage` vẫn là bộ nhớ chính.
+  - `sync.js` bọc `Storage.prototype.setItem/removeItem`. Khi ghi một key trong `SYNC_KEYS` (hoặc có tiền tố `hoc_summary_v1:`), key đó được đánh dấu bẩn (`hoc_sync_meta`) và đẩy lên sau 3 giây. Chưa đẩy được thì lần mở trang sau đẩy tiếp.
+  - Khi tải trang mà đã đăng nhập, file **tải về bằng XHR đồng bộ** trước khi trang khởi tạo, nên trang luôn đọc dữ liệu mới nhất. Lần tải trước cách dưới 10 giây thì bỏ qua.
+  - Quay lại tab sau hơn 1 phút: nếu máy khác có tiến độ mới thì hiện banner "Tải lại". Không tự ghi đè, vì trang đang giữ trạng thái trong bộ nhớ.
+- **Khi hai máy cùng sửa một key:** dùng `mergeValues()`.
+  - Hợp các khóa.
+  - Bản ghi con có mốc thời gian (thẻ SRS…) lấy bản mới hơn.
+  - Số lấy giá trị lớn hơn, boolean lấy OR, mảng giá trị đơn lấy hợp.
+- **Khi thêm key tiến độ mới ở một trang:** thêm key đó vào `SYNC_KEYS`. Không đồng bộ các tùy chọn giao diện vặt.
+- **Phiên đăng nhập** lưu ở `hoc_sync_session` (tự làm mới token). Phần tử có `[data-hoc-account]` tự thành nút tài khoản; trang chủ có nút này trên topbar.
+- **SQL tạo bảng** (chạy một lần trong Supabase → SQL Editor):
+  ```sql
+  create table if not exists public.progress (
+    user_id    uuid not null default auth.uid() references auth.users(id) on delete cascade,
+    key        text not null,
+    value      text not null,
+    updated_at timestamptz not null default now(),
+    primary key (user_id, key)
+  );
+  alter table public.progress enable row level security;
+  create policy "Xem tiến độ của mình"  on public.progress for select using (auth.uid() = user_id);
+  create policy "Thêm tiến độ của mình" on public.progress for insert with check (auth.uid() = user_id);
+  create policy "Sửa tiến độ của mình"  on public.progress for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
+  create policy "Xóa tiến độ của mình"  on public.progress for delete using (auth.uid() = user_id);
+  -- updated_at do máy chủ đặt mỗi lần ghi (không tin đồng hồ của từng máy)
+  create or replace function public.progress_touch() returns trigger language plpgsql as $$
+  begin new.updated_at := now(); return new; end $$;
+  drop trigger if exists progress_touch on public.progress;
+  create trigger progress_touch before insert or update on public.progress
+    for each row execute function public.progress_touch();
+  ```
+- **Supabase → Authentication → Email:** tắt "Confirm email", vì link xác nhận trỏ về `localhost`, không dùng được khi mở trang bằng file.
 
 ## Trang chủ (`index.html`): lộ trình 4 chặng
 

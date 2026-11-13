@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shared/theme.css">
     <script src="shared/theme.js"></script>
+    <script src="shared/sync.js"></script>
     <style>
         * { box-sizing: border-box; }
         html, body { margin: 0; }
@@ -34,7 +35,9 @@
         }
         .brand strong { display: block; font-size: 17px; }
         .brand small { color: var(--ui-muted); font-size: 12.5px; }
-        .topbar .ui-theme-toggle { margin-left: auto; }
+        .topbar .account-btn { margin-left: auto; height: 38px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--ui-border); background: var(--ui-surface); color: var(--ui-text); font: inherit; font-size: 14px; font-weight: 600; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .topbar .account-btn:hover { border-color: var(--ui-primary); }
+        .topbar .account-btn:not(.is-signed-in) { background: var(--ui-primary); color: var(--ui-on-primary); border-color: transparent; }
 
         .container { max-width: 1040px; margin: 0 auto; padding: 22px 16px 56px; }
         .card {
@@ -149,6 +152,7 @@
                 <span class="brand-mark">汉</span>
                 <span><strong>Học Tiếng Trung</strong><small>Từ vựng HSK + Giáo trình Boya · lộ trình 4 chặng</small></span>
             </div>
+            <button class="account-btn" data-hoc-account type="button">Đăng nhập</button>
             <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
         </div>
     </header>
