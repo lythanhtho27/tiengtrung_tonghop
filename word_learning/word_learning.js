@@ -208,6 +208,7 @@
 
     async function ensureBookDataLoaded(bookId) {
         if (window.HSK_BOOK_JSON[bookId]) {
+            hydrateSrsFromBook(bookId);   // quyển nạp sẵn bằng thẻ <script> (vd. quyển 1)
             return window.HSK_BOOK_JSON[bookId];
         }
         if (loadingBookPromises[bookId]) {
@@ -1102,9 +1103,12 @@
     }
 
     // Bổ sung thông tin hiển thị cho các thẻ thiếu (vd. thẻ chuyển từ Leitner) khi một quyển vừa nạp xong
+    const hydratedBooks = new Set();
     function hydrateSrsFromBook(bookId) {
+        if (hydratedBooks.has(bookId)) return;
         const idx = getBookWordIndex(bookId);
         if (!idx) return;
+        hydratedBooks.add(bookId);
         let changed = false;
         for (const [wid, c] of Object.entries(state.srsData || {})) {
             if (!idx[wid]) continue;
