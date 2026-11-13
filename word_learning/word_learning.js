@@ -9,19 +9,28 @@
     'use strict';
 
     // ==================== STORAGE KEYS ====================
-    const STORAGE_KEY_PROGRESS   = 'hsk_wl_json_progress_v2';
-    const STORAGE_KEY_THEME      = 'hsk_wl_json_theme_v2';
+    // Sáng/tối dùng chung: shared/theme.js (key "hoc_theme"). Key theme cũ 'hsk_wl_json_theme_v2' đã bỏ
+    // (được chuyển sang hoc_theme bằng script nhỏ trong <head>).
+    const STORAGE_KEY_PROGRESS   = 'hsk_wl_json_progress_v2';   // + settings, daily (thêm trường, vẫn tương thích)
     const STORAGE_KEY_FONT       = 'hsk_wl_json_font_v2';
     const STORAGE_KEY_TONE_COLOR = 'hsk_wl_json_tone_color_v2';
-    const STORAGE_KEY_SRS        = 'hsk_wl_srs_data_v2';
+    const STORAGE_KEY_SRS        = 'hsk_wl_srs_v3';              // SRS SM-2 (mới)
+    const STORAGE_KEY_SRS_OLD    = 'hsk_wl_srs_data_v2';         // SRS Leitner cũ — chỉ đọc để chuyển dữ liệu, không xóa
     const STORAGE_KEY_GAMIFY     = 'hsk_wl_gamify_data_v2';
+
+    // Lộ trình & SRS
+    const PASS_PCT = 80;            // bài hoàn thành khi kiểm tra / bài tập đạt ≥ 80%
+    const DAY_MS = 86400000;
+    const RELEARN_MS = 10 * 60000;  // từ sai: ôn lại sau 10 phút
+    const SLOW_MS = 3000;           // nhận diện chậm hơn 3 giây -> "từ chậm"
 
     // ==================== STATE ====================
     let state = {
         activeBookId: 'q1',
         activeUnitNum: 1,
         activeWordNum: 1,
-        studyMode: 'memory',       // 'memory' | 'practice' | 'flashcard' | 'pdf'
+        studyMode: 'memory',       // 'memory' | 'games' (Luyện tập) | 'flashcard' (Ôn tập) | 'extra' (Trò chơi · Luyện nói)
+        extraSubMode: 'bubble',    // 'bubble' | 'shadowing'
         unitFilter: 'all',         // 'all' | 'todo' | 'done' | 'star' | 'srs'
         unitSearchQuery: '',
         globalSearchQuery: '',
@@ -31,10 +40,8 @@
         targetGridCollapsed: true,
         viewMode: localStorage.getItem('wl_view_mode') || 'compact',
         speakingAll: false,
-        currentPdfPage: 9,
 
-        // Visual Theming & Typography State (Package 1)
-        currentTheme: 'dark',
+        // Kiểu chữ Hán & màu thanh điệu
         hanziFont: 'calligraphy',  // 'calligraphy' | 'sans'
         enableToneColors: true,
 
@@ -42,10 +49,14 @@
         doneUnits: {},             // { "q1_1": true }
         starredUnits: {},          // { "q1_1": true }
         starredWords: {},          // { "L1-0001": true }
-        practiceScores: {},        // { "q1_1": { score: 40, total: 45 } }
+        practiceScores: {},        // { "q1_1": { score: 40, total: 45 } }  (điểm cao nhất)
+        settings: { sequential: true },   // học theo thứ tự (khóa bài sau)
+        daily: { d: '', n: 0, r: 0 },     // hôm nay: từ mới / lượt ôn
 
-        // SRS Spaced Repetition (Leitner 5 boxes)
-        srsData: {},               // { [wordId]: { box, addedAt, nextDue, reviewCount } }
+        // SRS SM-2 cho mọi từ đã học, gộp mọi quyển
+        // { [wordId]: { ef, iv, reps, lapses, first, last, due, rt?, b: bookId, u: unitNum, hz, py, vi, pos } }
+        srsData: {},
+        practiceRevealed: false,   // đã bấm "Điền đáp án mẫu" -> không tính điểm
 
         // Gamification: Streak, XP, Level, Badges & Stats
         gamify: {
@@ -75,15 +86,18 @@
         practiceChecked: false,
 
         // Flashcard state
-        fcScope: 'unit',           // 'unit' | 'srs' | 'starred' | 'book'
-        fcFaceMode: 'visual',      // 'visual' | 'hz' | 'vi' | 'audio'
+        fcScope: 'due',            // 'due' | 'slow' | 'unit' | 'starred' | 'book'
+        fcBookFilter: 'all',       // lọc quyển cho 'due' / 'slow'
+        fcFaceMode: 'hz',          // 'visual' | 'hz' | 'vi' | 'audio'
+        fcShownAt: 0,              // thời điểm hiện mặt trước (đo tốc độ nhận diện)
+        fcFlipMs: null,
         fcAutoSpeak: true,
         fcDeck: [],
         fcIndex: 0,
         fcFlipped: false,
 
         // Games & Practice Hub state
-        gamesSubMode: 'bubble',    // 'bubble' | 'quiz' | 'practice'
+        gamesSubMode: 'quiz',      // 'quiz' | 'practice'
         bubbleGame: {
             isRunning: false,
             score: 0,
@@ -99,6 +113,11 @@
 
         // Quiz state
         quizType: 'hz_to_vn',      // 'hz_to_vn' | 'vn_to_hz' | 'audio_to_hz'
+        quizScope: 'test',         // 'test' (kiểm tra bài) | 'unit' | 'slow' | 'due'
+        quizPool: [],
+        quizTest: null,            // { deck, idx, correct, wrong:Set, rt:{} }
+        quizShownAt: 0,
+        quizAdvanceId: null,
         quizTimerEnabled: true,
         quizSoundEnabled: true,
         quizStreak: 0,
@@ -161,7 +180,6 @@
     // ==================== INITIALIZATION ====================
     document.addEventListener('DOMContentLoaded', async () => {
         loadSavedProgress();
-        initTheme();
         initHanziFont();
         initToneColors();
         renderGrammarModalTable();
@@ -176,6 +194,7 @@
 
         renderBookShelf();
         await selectBook(state.activeBookId, urlUnit || null);
+        scheduleSummarySave();
     });
 
     function getBookIndexMeta(bookId) {
@@ -227,9 +246,23 @@
         })();
 
         try {
-            return await loadingBookPromises[bookId];
+            const data = await loadingBookPromises[bookId];
+            hydrateSrsFromBook(bookId);
+            return data;
         } finally {
             delete loadingBookPromises[bookId];
+        }
+    }
+
+    // Nạp các quyển chứa những thẻ SRS cần hiển thị (dữ liệu từng quyển được nạp lười)
+    async function ensureBooksForCardIds(ids) {
+        const books = new Set();
+        ids.forEach(id => {
+            const c = state.srsData[id];
+            if (c && c.b && !window.HSK_BOOK_JSON[c.b]) books.add(c.b);
+        });
+        for (const b of books) {
+            try { await ensureBookDataLoaded(b); } catch (e) { console.warn(e); }
         }
     }
 
@@ -243,6 +276,8 @@
                 state.starredUnits   = parsed.starredUnits || {};
                 state.starredWords   = parsed.starredWords || {};
                 state.practiceScores = parsed.practiceScores || {};
+                state.settings       = Object.assign({ sequential: true }, parsed.settings || {});
+                if (parsed.daily) state.daily = parsed.daily;
                 if (parsed.lastBookId && getBookIndexMeta(parsed.lastBookId)) {
                     state.activeBookId = parsed.lastBookId;
                 }
@@ -251,11 +286,8 @@
                 }
             }
 
-            // Load SRS data
-            const rawSrs = localStorage.getItem(STORAGE_KEY_SRS);
-            if (rawSrs) {
-                state.srsData = JSON.parse(rawSrs) || {};
-            }
+            // SRS: đọc bản SM-2; nếu chưa có thì chuyển từ dữ liệu Leitner cũ
+            loadSrsData();
 
             // Load Gamification data
             const rawGamify = localStorage.getItem(STORAGE_KEY_GAMIFY);
@@ -294,6 +326,8 @@
                 starredUnits: state.starredUnits,
                 starredWords: state.starredWords,
                 practiceScores: state.practiceScores,
+                settings: state.settings,
+                daily: state.daily,
                 lastBookId: state.activeBookId,
                 lastUnitNum: state.activeUnitNum
             }));
@@ -303,6 +337,54 @@
         } catch (e) {
             console.warn('Không thể lưu tiến độ:', e);
         }
+        scheduleSummarySave();
+    }
+
+    // ---------- Tóm tắt tiến độ cho trang chủ (shared/progress.js) ----------
+    let summaryTimer = null;
+    function scheduleSummarySave() {
+        if (summaryTimer) clearTimeout(summaryTimer);
+        summaryTimer = setTimeout(saveSummary, 250);
+    }
+
+    function bookLabel(meta) {
+        return meta ? `HSK 3.0 · ${meta.title}` : '';
+    }
+
+    function saveSummary() {
+        summaryTimer = null;
+        if (!window.HocProgress || typeof HSK_BOOKS_INDEX === 'undefined') return;
+        const target = findContinueTarget();
+        const groups = {};
+        HSK_BOOKS_INDEX.forEach(b => {
+            groups[b.id] = { done: countDoneUnits(b), total: b.unit_count, label: bookLabel(b) };
+        });
+        const tMeta = target ? getBookIndexMeta(target.bookId) : null;
+        const td = todayStats();
+        HocProgress.save('word_learning', {
+            next: target ? `${bookLabel(tMeta)} · Bài ${target.unit}` : 'Đã hoàn thành mọi bài',
+            nextUrl: target
+                ? `word_learning/word_learning.html?book=${encodeURIComponent(target.bookId)}&unit=${target.unit}`
+                : 'word_learning/word_learning.html',
+            due: getDueCardIds('all').length,
+            learned: Object.keys(state.srsData || {}).length,
+            today: { n: td.n, r: td.r },
+            groups
+        });
+    }
+
+    function localDayKey(t) {
+        const d = new Date(t || Date.now());
+        return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    }
+    function todayStats() {
+        const k = localDayKey();
+        if (!state.daily || state.daily.d !== k) state.daily = { d: k, n: 0, r: 0 };
+        return state.daily;
+    }
+    function bumpDaily(field) {
+        const d = todayStats();
+        d[field] = (d[field] || 0) + 1;
     }
 
     // ==================== AUDIO SOUND FX ENGINE (WEB AUDIO API) ====================
@@ -432,12 +514,12 @@
         { id: 'b_fc_200', icon: '🃏', title: 'Chuyên Gia Flashcard', desc: 'Lật 200 lượt thẻ Flashcard', xp: 300 },
         { id: 'b_quiz_streak_5', icon: '🎯', title: 'Phản Xạ Nhạy Bén', desc: 'Đạt combo 5 câu Quiz đúng liên tiếp', xp: 100 },
         { id: 'b_quiz_streak_10', icon: '🏹', title: 'Xạ Thủ Bách Phát', desc: 'Đạt combo 10 câu Quiz đúng liên tiếp', xp: 300 },
-        { id: 'b_srs_first', icon: '🧠', title: 'Người Rèn Luyện', desc: 'Đưa từ vựng đầu tiên vào Hộp từ khó SRS', xp: 50 },
-        { id: 'b_srs_master_10', icon: '💎', title: 'Trí Nhớ Thép', desc: 'Đạt Hộp 5 (Thành thạo) cho 10 từ trong SRS', xp: 350 },
+        { id: 'b_srs_first', icon: '🧠', title: 'Người Rèn Luyện', desc: 'Có từ vựng đầu tiên trong lịch ôn tập', xp: 50 },
+        { id: 'b_srs_master_10', icon: '💎', title: 'Trí Nhớ Thép', desc: 'Có 10 từ đạt mức Thuộc (khoảng ôn ≥ 21 ngày)', xp: 350 },
         { id: 'b_podcast_fan', icon: '🎧', title: 'Thính Giả Chăm Chỉ', desc: 'Bật chế độ nghe thụ động Hands-free Podcast', xp: 60 },
         { id: 'b_voice_first', icon: '🎙️', title: 'Tiếng Nói Đầu Tiên', desc: 'Ghi âm và luyện phát âm từ vựng đầu tiên', xp: 60 },
         { id: 'b_voice_master', icon: '🌟', title: 'Bản Xứ Chuẩn Giọng', desc: 'Đạt điểm phát âm xuất sắc (>=85 điểm) với AI', xp: 150 },
-        { id: 'b_unit_master', icon: '🏆', title: 'Chinh Phục Bài Học', desc: 'Hoàn thành trọn vẹn cả 3 phần bài tập một bài học', xp: 150 }
+        { id: 'b_unit_master', icon: '🏆', title: 'Chinh Phục Bài Học', desc: 'Đạt 100% Kiểm tra bài hoặc Bài tập SGK của một bài', xp: 150 }
     ];
 
     function getLevelInfo(xp) {
@@ -951,64 +1033,270 @@
         };
     }
 
-    // ==================== SPACED REPETITION (SRS / LEITNER) ENGINE ====================
-    const SRS_INTERVALS_MS = {
-        1: 0,                   // Box 1: Immediate / today
-        2: 1 * 86400000,        // Box 2: 1 day
-        3: 3 * 86400000,        // Box 3: 3 days
-        4: 7 * 86400000,        // Box 4: 7 days
-        5: 14 * 86400000        // Box 5: 14 days (Mastered)
-    };
+    // ==================== LẶP LẠI NGẮT QUÃNG (SRS SM-2, GỘP MỌI QUYỂN) ====================
+    // Logic chép từ hsk_lotrinh.js (introduce / schedule / ivLabel / updateRT), không import.
+    // rating: 1 Quên · 2 Khó · 3 Nhớ · 4 Dễ. Hạn ôn (trừ "10 phút") làm tròn về đầu ngày.
+    function startOfDay(t) {
+        const d = new Date(t || Date.now());
+        d.setHours(0, 0, 0, 0);
+        return d.getTime();
+    }
 
-    function addToSrs(wordId, initialBox = 1) {
-        if (!state.srsData) state.srsData = {};
-        const existing = state.srsData[wordId];
-        const now = Date.now();
+    // Tìm quyển & bài chứa một từ theo ID ("L1-0001", "L7-2821"…) — dùng metadata nhẹ, không cần nạp quyển
+    function locateWordId(wordId) {
+        const m = /^L(\d+)-(\d+)$/.exec(wordId || '');
+        if (!m || typeof HSK_BOOKS_INDEX === 'undefined') return null;
+        const lv = parseInt(m[1], 10);
+        const num = parseInt(m[2], 10);
+        for (const b of HSK_BOOKS_INDEX) {
+            const sameLevel = b.level === lv || (lv >= 7 && b.level >= 7);
+            if (!sameLevel) continue;
+            const u = (b.units_index || []).find(x => num >= x.word_start && num <= x.word_end);
+            if (u) return { bookId: b.id, unit: getUnitNum(u) };
+        }
+        return null;
+    }
 
-        state.srsData[wordId] = {
-            wordId,
-            box: initialBox,
-            addedAt: existing ? existing.addedAt : now,
-            lastReviewed: now,
-            nextDue: now + (SRS_INTERVALS_MS[initialBox] || 0),
-            reviewCount: existing ? existing.reviewCount + 1 : 1
+    // Thông tin hiển thị lưu kèm thẻ, để ôn được cả khi quyển chưa nạp
+    function cardInfoFromWord(w) {
+        return {
+            hz: w.word || '',
+            py: w.pinyin || '',
+            vi: truncateText(w.meaning_vi || w.meaning_primary || w.meaning_en || '', 90),
+            pos: w.pos_full || w.pos || ''
         };
+    }
 
+    // Bảng tra từ theo ID cho từng quyển đã nạp
+    const bookWordIndex = {};
+    function getBookWordIndex(bookId) {
+        if (bookWordIndex[bookId]) return bookWordIndex[bookId];
+        const data = getLoadedBookData(bookId);
+        if (!data || !data.units) return null;
+        const idx = {};
+        data.units.forEach(u => (u.target_words || []).forEach(w => { idx[w.id] = { w, unit: u.unit }; }));
+        bookWordIndex[bookId] = idx;
+        return idx;
+    }
+
+    function findWordById(wordId) {
+        const c = state.srsData[wordId];
+        const loc = (c && c.b) ? { bookId: c.b } : locateWordId(wordId);
+        if (loc) {
+            const idx = getBookWordIndex(loc.bookId);
+            if (idx && idx[wordId]) return idx[wordId].w;
+        }
+        return null;
+    }
+
+    // Đối tượng từ để hiển thị (đầy đủ nếu quyển đã nạp, rút gọn từ thẻ nếu chưa)
+    function wordFromCard(wordId) {
+        const full = findWordById(wordId);
+        if (full) return full;
+        const c = state.srsData[wordId] || {};
+        return {
+            id: wordId, num: 0, word: c.hz || '？', pinyin: c.py || '', meaning_vi: c.vi || '',
+            meaning_primary: c.vi || '', meaning_en: '', pos_full: c.pos || '', pos: c.pos || '',
+            han_viet: '', traditional: '', examples: [], _book: c.b || ''
+        };
+    }
+
+    // Bổ sung thông tin hiển thị cho các thẻ thiếu (vd. thẻ chuyển từ Leitner) khi một quyển vừa nạp xong
+    function hydrateSrsFromBook(bookId) {
+        const idx = getBookWordIndex(bookId);
+        if (!idx) return;
+        let changed = false;
+        for (const [wid, c] of Object.entries(state.srsData || {})) {
+            if (!idx[wid]) continue;
+            if (!c.hz || !c.b) {
+                Object.assign(c, cardInfoFromWord(idx[wid].w));
+                c.b = bookId;
+                c.u = c.u || idx[wid].unit;
+                changed = true;
+            }
+        }
+        if (changed) persistSrs();
+    }
+
+    function persistSrs() {
+        try {
+            localStorage.setItem(STORAGE_KEY_SRS, JSON.stringify(state.srsData || {}));
+        } catch (e) {
+            console.warn('Không thể lưu dữ liệu ôn tập:', e);
+        }
+    }
+
+    function loadSrsData() {
+        const raw = localStorage.getItem(STORAGE_KEY_SRS);
+        if (raw) {
+            try { state.srsData = JSON.parse(raw) || {}; } catch (e) { state.srsData = {}; }
+            return;
+        }
+        const old = localStorage.getItem(STORAGE_KEY_SRS_OLD);
+        if (old) {
+            let parsed = {};
+            try { parsed = JSON.parse(old) || {}; } catch (e) { parsed = {}; }
+            state.srsData = migrateLeitnerSrs(parsed);
+            persistSrs();   // giữ nguyên key cũ, chỉ ghi thêm key mới
+            const n = Object.keys(state.srsData).length;
+            if (n) setTimeout(() => showToast('Đã chuyển dữ liệu ôn tập', `${n} từ trong Hộp từ khó cũ đã được chuyển sang lịch ôn mới.`, '🧠'), 600);
+        }
+    }
+
+    // Leitner 5 hộp (0/1/3/7/14 ngày) -> SM-2: giữ hạn ôn cũ, hộp quy ra khoảng cách (iv) & số lần nhớ (reps)
+    function migrateLeitnerSrs(oldData) {
+        const BOX_IV = { 1: 0, 2: 1, 3: 3, 4: 7, 5: 14 };
+        const out = {};
+        const now = Date.now();
+        for (const [wid, it] of Object.entries(oldData || {})) {
+            if (!it || typeof it !== 'object') continue;
+            const box = Math.min(5, Math.max(1, parseInt(it.box, 10) || 1));
+            const loc = locateWordId(wid);
+            out[wid] = {
+                ef: box === 1 ? 2.3 : 2.5,
+                iv: BOX_IV[box],
+                reps: box - 1,
+                lapses: 0,
+                first: it.addedAt || now,
+                last: it.lastReviewed || it.addedAt || now,
+                due: typeof it.nextDue === 'number' ? it.nextDue : now,
+                b: loc ? loc.bookId : '',
+                u: loc ? loc.unit : 0,
+                hz: '', py: '', vi: '', pos: ''
+            };
+        }
+        return out;
+    }
+
+    function newCardBase(w, bookId, unitNum) {
+        const now = Date.now();
+        const loc = bookId ? { bookId, unit: unitNum || 0 } : (locateWordId(w.id) || { bookId: w._book || '', unit: 0 });
+        return Object.assign({ ef: 2.5, iv: 0, reps: 0, lapses: 0, first: now, last: now, due: now,
+            b: loc.bookId, u: loc.unit }, cardInfoFromWord(w));
+    }
+
+    function noteWordLearned() {
+        bumpDaily('n');
+        state.gamify.stats.wordsLearned = (state.gamify.stats.wordsLearned || 0) + 1;
+    }
+
+    // Đưa từ vừa học vào lịch ôn: đúng ngay lần đầu -> 1 ngày, sai -> 10 phút.
+    // Từ đã có thẻ: trả lời sai thì kéo hạn ôn về trong 10 phút (không đổi khoảng cách).
+    function introduceWord(w, knewIt, bookId, unitNum) {
+        if (!w || !w.id) return false;
+        const c = state.srsData[w.id];
+        if (c) {
+            if (!knewIt) c.due = Math.min(c.due || Date.now(), Date.now() + RELEARN_MS);
+            if (!c.hz) Object.assign(c, cardInfoFromWord(w));
+            return false;
+        }
+        const card = newCardBase(w, bookId, unitNum);
+        card.iv = knewIt ? 1 : 0;
+        card.reps = knewIt ? 1 : 0;
+        card.due = knewIt ? startOfDay() + DAY_MS : Date.now() + RELEARN_MS;
+        state.srsData[w.id] = card;
+        noteWordLearned();
+        return true;
+    }
+
+    // Mọi từ của bài vào lịch ôn (gọi khi hoàn thành kiểm tra / bài tập)
+    function introduceUnitWords(unitData, wrongIds) {
+        if (!unitData || !unitData.target_words) return 0;
+        let added = 0;
+        unitData.target_words.forEach(w => {
+            if (introduceWord(w, !(wrongIds && wrongIds.has(w.id)), state.activeBookId, unitData.unit)) added++;
+        });
+        persistSrs();
+        updateSrsHeaderBadge();
+        checkBadgeUnlocks();
+        return added;
+    }
+
+    function scheduleCard(c, rating) {
+        const n = Object.assign({}, c);
+        n.last = Date.now();
+        if (rating === 1) {
+            n.reps = 0; n.lapses = (n.lapses || 0) + 1; n.ef = Math.max(1.3, (n.ef || 2.5) - 0.2);
+            n.iv = 0; n.due = Date.now() + RELEARN_MS;
+            return n;
+        }
+        const ef = c.ef || 2.5;
+        const civ = c.iv || 0;
+        let iv;
+        if (rating === 2) { iv = Math.max(1, Math.round(civ * 1.2)); n.ef = Math.max(1.3, ef - 0.15); }
+        else if (rating === 3) { iv = civ < 1 ? 1 : ((c.reps || 0) <= 1 ? Math.max(3, civ + 1) : Math.round(civ * ef)); }
+        else { iv = civ < 1 ? 3 : Math.round(Math.max(4, civ * ef * 1.3)); n.ef = ef + 0.15; }
+        n.iv = Math.min(iv, 365); n.reps = (c.reps || 0) + 1;
+        n.due = startOfDay() + n.iv * DAY_MS;
+        return n;
+    }
+
+    const NEW_CARD = { ef: 2.5, iv: 0, reps: 0 };
+    function srsIvLabel(c, rating) {
+        const n = scheduleCard(c || NEW_CARD, rating);
+        if (n.iv === 0) return '10 phút';
+        if (n.iv < 30) return n.iv + ' ngày';
+        if (n.iv < 365) return Math.round(n.iv / 30) + ' tháng';
+        return '1 năm';
+    }
+
+    // Chấm thẻ (Flashcard / ôn tập). Từ chưa có thẻ thì tạo thẻ mới rồi chấm.
+    function rateSrsWord(w, rating) {
+        const id = typeof w === 'string' ? w : (w && w.id);
+        if (!id) return;
+        let c = state.srsData[id];
+        if (!c) {
+            if (typeof w === 'string') return;
+            const loc = (w._book ? { bookId: w._book, unit: 0 } : null) || locateWordId(id);
+            c = newCardBase(w, loc ? loc.bookId : null, loc ? loc.unit : 0);
+            noteWordLearned();
+        }
+        const n = scheduleCard(c, rating);
+        if (n.iv >= 21 && (c.iv || 0) < 21) {
+            state.gamify.stats.srsMastered = (state.gamify.stats.srsMastered || 0) + 1;
+        }
+        state.srsData[id] = n;
+        bumpDaily('r');
+        if (rating >= 3) awardXp(rating === 4 ? 8 : 6, 'Ôn tập từ vựng');
         saveProgress();
         updateSrsHeaderBadge();
         checkBadgeUnlocks();
     }
 
-    function rateSrsWord(wordId, rating) {
-        if (!state.srsData) state.srsData = {};
-        const item = state.srsData[wordId] || { wordId, box: 1, reviewCount: 0 };
-        const now = Date.now();
-        let newBox = 1;
+    // Tốc độ nhận diện: trung bình trượt 0,6 cũ + 0,4 mới (ms), lưu ở thẻ (c.rt)
+    function updateRT(wordId, ms, ok) {
+        const c = state.srsData[wordId];
+        if (!c) return;
+        ms = Math.max(150, Math.min(ms, 15000));
+        if (!ok) ms = Math.max(ms, SLOW_MS + 500);   // trả lời sai = coi như chưa nhận diện được
+        c.rt = c.rt ? Math.round(c.rt * 0.6 + ms * 0.4) : Math.round(ms);
+    }
 
-        if (rating === 1) {
-            newBox = 1;
-        } else if (rating === 2) {
-            newBox = Math.max(1, Math.min(3, item.box));
-        } else if (rating === 3) {
-            newBox = Math.min(5, (item.box || 1) + 1);
-            if (newBox === 5 && item.box < 5) {
-                state.gamify.stats.srsMastered = (state.gamify.stats.srsMastered || 0) + 1;
-            }
-            awardXp(12, 'Ghi nhớ từ trong SRS');
-        }
+    function fmtSec(ms) { return (ms / 1000).toFixed(1).replace('.', ',') + 's'; }
 
-        state.srsData[wordId] = {
-            wordId,
-            box: newBox,
-            addedAt: item.addedAt || now,
-            lastReviewed: now,
-            nextDue: now + (SRS_INTERVALS_MS[newBox] || 0),
-            reviewCount: (item.reviewCount || 0) + 1
-        };
+    function fmtUntil(ms) {
+        if (ms <= 0) return 'bây giờ';
+        const min = Math.round(ms / 60000);
+        if (min < 60) return `${Math.max(1, min)} phút`;
+        const h = Math.round(ms / 3600000);
+        if (h < 24) return `${h} giờ`;
+        const d = Math.round(ms / DAY_MS);
+        if (d < 30) return `${d} ngày`;
+        return `${Math.round(d / 30)} tháng`;
+    }
 
-        saveProgress();
-        updateSrsHeaderBadge();
-        checkBadgeUnlocks();
+    function srsStatus(c) {
+        if (!c) return 'new';
+        if (c.iv >= 21) return 'mastered';
+        if (c.iv >= 7) return 'familiar';
+        return 'learning';
+    }
+    const SRS_STATUS_LABEL = { new: 'Chưa học', learning: 'Đang học', familiar: 'Quen', mastered: 'Thuộc' };
+
+    function srsBadgeText(c) {
+        if (!c) return 'Từ mới';
+        const left = (c.due || 0) - Date.now();
+        return left <= 0 ? 'Đến hạn ôn' : `Ôn sau ${fmtUntil(left)}`;
     }
 
     function removeWordFromSrs(wordId) {
@@ -1020,97 +1308,230 @@
         }
     }
 
-    function getSrsDueWords() {
-        const bookData = getLoadedBookData(state.activeBookId);
-        if (!bookData || !bookData.units) return [];
+    // Từ đến hạn của MỌI quyển (lọc theo quyển nếu cần), sắp theo hạn ôn
+    function getDueCardIds(bookFilter) {
         const now = Date.now();
-        const dueWords = [];
-
-        const wordMap = {};
-        bookData.units.forEach(u => {
-            (u.target_words || []).forEach(w => {
-                wordMap[w.id] = w;
-            });
-        });
-
-        for (const [wid, srsInfo] of Object.entries(state.srsData || {})) {
-            if (wordMap[wid] && srsInfo.nextDue <= now + 60000) {
-                dueWords.push(wordMap[wid]);
-            }
-        }
-        return dueWords;
+        return Object.keys(state.srsData || {})
+            .filter(id => {
+                const c = state.srsData[id];
+                return c && c.due <= now && (!bookFilter || bookFilter === 'all' || c.b === bookFilter);
+            })
+            .sort((a, b) => state.srsData[a].due - state.srsData[b].due);
     }
 
+    // Từ nhận diện chậm (rt ≥ 3s), chậm nhất trước
+    function getSlowCardIds(bookFilter) {
+        return Object.keys(state.srsData || {})
+            .filter(id => {
+                const c = state.srsData[id];
+                return c && c.rt >= SLOW_MS && (!bookFilter || bookFilter === 'all' || c.b === bookFilter);
+            })
+            .sort((a, b) => state.srsData[b].rt - state.srsData[a].rt);
+    }
+
+    // Thẻ thuộc quyển đang mở (dùng cho Podcast)
     function getAllSrsWordsForCurrentBook() {
-        const bookData = getLoadedBookData(state.activeBookId);
-        if (!bookData || !bookData.units) return [];
-        const srsWords = [];
-
-        const wordMap = {};
-        bookData.units.forEach(u => {
-            (u.target_words || []).forEach(w => {
-                wordMap[w.id] = w;
-            });
-        });
-
-        for (const [wid, srsInfo] of Object.entries(state.srsData || {})) {
-            if (wordMap[wid]) {
-                srsWords.push({ word: wordMap[wid], srs: srsInfo });
-            }
-        }
-        return srsWords;
+        const idx = getBookWordIndex(state.activeBookId);
+        if (!idx) return [];
+        return Object.keys(state.srsData || {})
+            .filter(id => idx[id])
+            .map(id => ({ word: idx[id].w, srs: state.srsData[id] }));
     }
 
     function updateSrsHeaderBadge() {
+        const due = getDueCardIds('all').length;
         const badge = document.getElementById('hdrSrsCount');
-        if (!badge) return;
-        const due = getSrsDueWords().length;
-        badge.textContent = due;
-        badge.classList.toggle('hidden', due === 0);
+        if (badge) {
+            badge.textContent = due;
+            badge.classList.toggle('hidden', due === 0);
+        }
+        const tabBadge = document.getElementById('lblTabDue');
+        if (tabBadge) {
+            tabBadge.textContent = due;
+            tabBadge.classList.toggle('hidden', due === 0);
+        }
     }
 
+    function fillBookFilterSelect(sel, value) {
+        if (!sel || typeof HSK_BOOKS_INDEX === 'undefined') return;
+        const counts = {};
+        Object.values(state.srsData || {}).forEach(c => { counts[c.b] = (counts[c.b] || 0) + 1; });
+        sel.innerHTML = `<option value="all">📚 Mọi quyển</option>` + HSK_BOOKS_INDEX.map(b =>
+            `<option value="${b.id}">${escapeHtml(b.title)}${counts[b.id] ? ` (${counts[b.id]} thẻ)` : ''}</option>`).join('');
+        sel.value = value || 'all';
+    }
+
+    // ==================== LỘ TRÌNH: HOÀN THÀNH BÀI, HỌC THEO THỨ TỰ, HỌC TIẾP ====================
+    function unitKeyOf(bookId, unitNum) { return `${bookId}_${unitNum}`; }
+    function isUnitDone(bookId, unitNum) { return !!state.doneUnits[unitKeyOf(bookId, unitNum)]; }
+    function countDoneUnits(meta) {
+        return (meta.units_index || []).filter(u => isUnitDone(meta.id, getUnitNum(u))).length;
+    }
+
+    // Bài bị khóa khi bật "học theo thứ tự", bài trước chưa đạt và bản thân bài chưa đạt
+    function getLockingUnit(bookId, unitNum) {
+        if (!state.settings || !state.settings.sequential) return null;
+        const meta = getBookIndexMeta(bookId);
+        if (!meta || !meta.units_index) return null;
+        const idx = meta.units_index.findIndex(u => getUnitNum(u) === unitNum);
+        if (idx <= 0) return null;
+        if (isUnitDone(bookId, unitNum)) return null;
+        const prev = getUnitNum(meta.units_index[idx - 1]);
+        return isUnitDone(bookId, prev) ? null : prev;
+    }
+    function isUnitLocked(bookId, unitNum) { return getLockingUnit(bookId, unitNum) !== null; }
+
+    // Bài chưa xong kế tiếp trong một quyển (tính từ bài fromUnit, rồi quay lại đầu quyển)
+    function findNextUnitInBook(bookId, fromUnit) {
+        const meta = getBookIndexMeta(bookId);
+        if (!meta || !meta.units_index || meta.id !== bookId) return null;
+        const list = meta.units_index.map(getUnitNum);
+        let start = list.indexOf(fromUnit);
+        if (start < 0) start = 0;
+        const order = list.slice(start).concat(list.slice(0, start));
+        for (const u of order) {
+            if (!isUnitDone(bookId, u) && !isUnitLocked(bookId, u)) return u;
+        }
+        return null;
+    }
+
+    // Đích "Học tiếp": bài chưa xong kế tiếp ở quyển đang học, hết thì sang các quyển sau
+    function findContinueTarget() {
+        if (typeof HSK_BOOKS_INDEX === 'undefined') return null;
+        const cur = state.activeBookId;
+        const u = findNextUnitInBook(cur, state.activeUnitNum);
+        if (u !== null) return { bookId: cur, unit: u };
+        const ids = HSK_BOOKS_INDEX.map(b => b.id);
+        const i = ids.indexOf(cur);
+        const order = ids.slice(i + 1).concat(ids.slice(0, Math.max(0, i)));
+        for (const b of order) {
+            const meta = getBookIndexMeta(b);
+            const first = meta && meta.units_index.length ? getUnitNum(meta.units_index[0]) : 1;
+            const nu = findNextUnitInBook(b, first);
+            if (nu !== null) return { bookId: b, unit: nu };
+        }
+        return null;
+    }
+
+    async function continueStudy() {
+        const t = findContinueTarget();
+        if (!t) {
+            showToast('Đã hoàn thành mọi bài!', 'Hãy tiếp tục ôn các từ đến hạn mỗi ngày.', '🏆');
+            return;
+        }
+        if (t.bookId !== state.activeBookId) {
+            await selectBook(t.bookId, t.unit);
+        } else if (t.unit !== state.activeUnitNum) {
+            selectUnit(t.unit);
+        }
+        switchStudyMode('memory');
+        const meta = getBookIndexMeta(t.bookId);
+        showToast('Học tiếp', `${bookLabel(meta)} · Bài ${t.unit}`, '▶');
+    }
+
+    // Chọn bài theo thao tác người dùng (tôn trọng khóa học theo thứ tự)
+    function trySelectUnit(unitNum) {
+        const lockBy = getLockingUnit(state.activeBookId, unitNum);
+        if (lockBy !== null) {
+            showToast('Bài đang khóa', `Hãy hoàn thành Bài ${lockBy} (đạt ≥ ${PASS_PCT}%) trước, hoặc tắt "Học theo thứ tự" trong Cài đặt.`, '🔒');
+            return false;
+        }
+        selectUnit(unitNum);
+        return true;
+    }
+
+    // Ghi kết quả kiểm tra / bài tập của bài đang mở: điểm cao nhất, mọi từ vào lịch ôn, đạt ≥ 80% thì hoàn thành
+    function recordUnitResult(unitData, score, total, wrongIds, source) {
+        const key = unitKeyOf(state.activeBookId, unitData.unit);
+        const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+        const prev = state.practiceScores[key];
+        const prevPct = prev && prev.total ? Math.round((prev.score / prev.total) * 100) : -1;
+        if (pct >= prevPct) state.practiceScores[key] = { score, total, src: source };
+
+        const added = introduceUnitWords(unitData, wrongIds);
+        const wasDone = !!state.doneUnits[key];
+        const passed = pct >= PASS_PCT;
+        if (passed && !wasDone) {
+            state.doneUnits[key] = true;
+            awardXp(40, 'Hoàn thành bài học');
+        }
+        if (pct === 100) unlockBadge('b_unit_master');
+        saveProgress();
+        updateUnitActionButtons();
+        const meta = getBookIndexMeta(state.activeBookId);
+        if (meta) {
+            renderSidebarSummary(meta);
+            renderUnitList(meta);
+            renderBookShelf();
+        }
+        renderBentoStatsCard(unitData);
+        return { pct, passed, newlyDone: passed && !wasDone, added };
+    }
+
+    let srsModalFilter = 'all';
     function renderSrsModal() {
         const modal = document.getElementById('srsModal');
         const boxesBar = document.getElementById('srsBoxesBar');
         const listEl = document.getElementById('srsWordList');
         if (!modal || !boxesBar || !listEl) return;
 
-        const allSrs = getAllSrsWordsForCurrentBook();
-        const boxCounts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
-        allSrs.forEach(item => {
-            const b = item.srs.box || 1;
-            boxCounts[b] = (boxCounts[b] || 0) + 1;
+        fillBookFilterSelect(document.getElementById('srsBookFilter'), srsModalFilter);
+        const now = Date.now();
+        const ids = Object.keys(state.srsData || {}).filter(id => srsModalFilter === 'all' || state.srsData[id].b === srsModalFilter);
+        const counts = { due: 0, learning: 0, familiar: 0, mastered: 0, slow: 0 };
+        ids.forEach(id => {
+            const c = state.srsData[id];
+            if (c.due <= now) counts.due++;
+            counts[srsStatus(c)]++;
+            if (c.rt >= SLOW_MS) counts.slow++;
         });
 
-        boxesBar.innerHTML = [1, 2, 3, 4, 5].map(b => `
-            <div class="srs-box-chip box-${b}" data-box-filter="${b}">
-                <div class="sbc-title">Hộp ${b}</div>
-                <div class="sbc-count">${boxCounts[b]}</div>
+        boxesBar.innerHTML = [
+            ['due', '🧠 Đến hạn', counts.due],
+            ['learning', 'Đang học', counts.learning],
+            ['familiar', 'Quen (≥ 7 ngày)', counts.familiar],
+            ['mastered', 'Thuộc (≥ 21 ngày)', counts.mastered],
+            ['slow', '🐢 Chậm (≥ 3s)', counts.slow]
+        ].map(([k, label, n]) => `
+            <div class="srs-box-chip st-${k}">
+                <div class="sbc-title">${label}</div>
+                <div class="sbc-count">${n}</div>
             </div>
         `).join('');
 
-        if (!allSrs.length) {
+        if (!ids.length) {
             listEl.innerHTML = `
                 <div class="empty-msg" style="padding:40px 16px;">
-                    🎉 Hộp từ khó của bạn hiện đang trống! Khi bạn làm sai câu hỏi hoặc bấm nút <strong>🧠 Cần ôn</strong> trên thẻ từ, các từ vựng sẽ tự động tập hợp về đây để bạn ôn tập ngắt quãng.
+                    Chưa có từ nào trong lịch ôn. Hãy học một bài rồi làm <strong>Kiểm tra bài</strong> hoặc <strong>Bài tập SGK</strong>:
+                    mọi từ của bài sẽ tự vào đây (từ đúng ôn sau 1 ngày, từ sai ôn sau 10 phút).
                 </div>
             `;
             return;
         }
 
-        listEl.innerHTML = allSrs.map(item => `
-            <div class="srs-item-row" id="srs-row-${item.word.id}">
+        const LIMIT = 300;
+        const sorted = ids.sort((a, b) => state.srsData[a].due - state.srsData[b].due);
+        const rows = sorted.slice(0, LIMIT).map(id => {
+            const c = state.srsData[id];
+            const meta = c.b ? getBookIndexMeta(c.b) : null;
+            const hz = c.hz || (findWordById(id) || {}).word || id;
+            return `
+            <div class="srs-item-row ${c.due <= now ? 'is-due' : ''}" id="srs-row-${id}">
                 <div class="sir-left">
-                    <span class="sir-hz" data-speak="${escapeAttr(cleanHanziForTts(item.word.word))}" title="Nhấn để nghe">${escapeHtml(item.word.word)}</span>
-                    <span class="sir-py">${escapeHtml(item.word.pinyin)}</span>
-                    <span class="sir-vn">${escapeHtml(item.word.meaning_vi || item.word.meaning_primary)}</span>
+                    <span class="sir-hz" data-speak="${escapeAttr(cleanHanziForTts(hz))}" title="Nhấn để nghe">${escapeHtml(hz)}</span>
+                    <span class="sir-py">${escapeHtml(c.py || '')}</span>
+                    <span class="sir-vn">${escapeHtml(c.vi || '')}</span>
                 </div>
-                <div style="display:flex;align-items:center;gap:8px;">
-                    <span class="sir-box-badge">Hộp ${item.srs.box || 1}</span>
-                    <button class="sir-remove-btn" data-remove-srs="${item.word.id}">Bỏ theo dõi</button>
+                <div class="sir-right">
+                    <span class="sir-meta">${meta ? escapeHtml(meta.title) : ''}${c.u ? ` · Bài ${c.u}` : ''}</span>
+                    ${c.rt ? `<span class="sir-rt ${c.rt >= SLOW_MS ? 'slow' : ''}" title="Tốc độ nhận diện trung bình">⏱ ${fmtSec(c.rt)}</span>` : ''}
+                    <span class="sir-box-badge">${escapeHtml(SRS_STATUS_LABEL[srsStatus(c)])} · ${escapeHtml(srsBadgeText(c))}</span>
+                    <button class="sir-remove-btn" data-remove-srs="${id}">Bỏ theo dõi</button>
                 </div>
-            </div>
-        `).join('');
+            </div>`;
+        }).join('');
+        listEl.innerHTML = rows + (sorted.length > LIMIT
+            ? `<div class="empty-msg">… và ${sorted.length - LIMIT} từ khác (chỉ hiện ${LIMIT} từ có hạn ôn gần nhất).</div>` : '');
 
         listEl.querySelectorAll('[data-speak]').forEach(el => {
             el.addEventListener('click', () => speakChinese(el.getAttribute('data-speak')));
@@ -1351,57 +1772,8 @@
         playPodcastCurrentStep();
     }
 
-    // ==================== VISUAL & THEMES SUITE (PACKAGE 1) ====================
-    const THEMES_CONFIG = {
-        dark:      { label: 'Dạ Thạch', icon: '🌙' },
-        light:     { label: 'Bạch Tuyết', icon: '☀️' },
-        palace:    { label: 'Cố Cung Chu Sa', icon: '🏮' },
-        matcha:    { label: 'Trà Đạo Giấy Mộc', icon: '🍵' },
-        cyberpunk: { label: 'OLED Cyberpunk', icon: '🌌' },
-        jiangnan:  { label: 'Giang Nam Khói Mây', icon: '🌸' }
-    };
-
-    function initTheme() {
-        const savedTheme = localStorage.getItem(STORAGE_KEY_THEME) || 'dark';
-        applyTheme(savedTheme);
-    }
-
-    function applyTheme(themeKey) {
-        if (!THEMES_CONFIG[themeKey]) themeKey = 'dark';
-        state.currentTheme = themeKey;
-        try {
-            localStorage.setItem(STORAGE_KEY_THEME, themeKey);
-        } catch (e) {}
-
-        // Remove all theme classes first
-        document.body.classList.remove('light-mode', 'theme-light', 'theme-palace', 'theme-matcha', 'theme-cyberpunk', 'theme-jiangnan');
-
-        if (themeKey === 'light') {
-            document.body.classList.add('light-mode', 'theme-light');
-            document.documentElement.setAttribute('data-theme', 'light');
-        } else if (themeKey !== 'dark') {
-            document.body.classList.add(`theme-${themeKey}`);
-            document.documentElement.setAttribute('data-theme', themeKey);
-        } else {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-
-        updateThemePickerUI(themeKey);
-    }
-
-    function updateThemePickerUI(themeKey) {
-        const config = THEMES_CONFIG[themeKey] || THEMES_CONFIG.dark;
-        const iconEl  = document.getElementById('themeBtnIcon');
-        const labelEl = document.getElementById('themeBtnLabel');
-        if (iconEl)  iconEl.textContent  = config.icon;
-        if (labelEl) labelEl.textContent = config.label;
-
-        document.querySelectorAll('.tdm-item, .tsg-item').forEach(item => {
-            const itemTheme = item.getAttribute('data-set-theme');
-            item.classList.toggle('active', itemTheme === themeKey);
-        });
-    }
-
+    // ==================== CÀI ĐẶT NHANH, KIỂU CHỮ & MÀU THANH ĐIỆU ====================
+    // Sáng/tối do shared/theme.js quản lý (nút [data-ui-theme-toggle] trên thanh đầu trang).
     function toggleSettingsDropdown(forceState) {
         const wrapper = document.getElementById('settingsMenuWrapper') || document.getElementById('themePickerWrapper');
         const menu    = document.getElementById('settingsDropdownMenu') || document.getElementById('themeDropdownMenu');
@@ -1415,10 +1787,6 @@
             menu.classList.add('hidden');
             if (wrapper) wrapper.classList.remove('active');
         }
-    }
-
-    function toggleThemeDropdown(forceState) {
-        toggleSettingsDropdown(forceState);
     }
 
     function initHanziFont() {
@@ -1452,7 +1820,7 @@
     function toggleHanziFont() {
         const next = state.hanziFont === 'calligraphy' ? 'sans' : 'calligraphy';
         applyHanziFont(next);
-        showToast(next === 'calligraphy' ? '✍️ Đã chuyển sang font Thư Pháp Khải Thể' : '🔤 Đã chuyển sang font Chữ In Hiện Đại', 2000);
+        showToast(next === 'calligraphy' ? 'Đã chuyển sang chữ Khải Thể' : 'Đã chuyển sang chữ in hiện đại', '', '✍️');
     }
 
     function initToneColors() {
@@ -1481,7 +1849,7 @@
     function toggleToneColors() {
         const next = !state.enableToneColors;
         applyToneColors(next);
-        showToast(next ? '🎨 Đã BẬT phân màu 4 thanh điệu Pinyin' : '⚪ Đã TẮT phân màu thanh điệu', 2000);
+        showToast(next ? 'Đã BẬT màu thanh điệu Pinyin' : 'Đã TẮT màu thanh điệu', '', '🎨');
         if (state.studyMode === 'memory') {
             const unitData = getCurrentUnitData();
             if (unitData) renderMemoryPane(unitData);
@@ -1576,18 +1944,16 @@
         const meta = getBookIndexMeta(bookId);
         if (!meta) return;
 
-        const dlBtn = document.getElementById('btnDownloadJson');
-        if (dlBtn && meta.json_file) {
-            dlBtn.href = meta.json_file;
-            dlBtn.setAttribute('download', meta.json_file.split('/').pop());
-        }
-
         const firstUnit = meta.units_index.length ? getUnitNum(meta.units_index[0]) : 1;
         const validUnits = new Set(meta.units_index.map(u => getUnitNum(u)));
         if (targetUnitNum && validUnits.has(targetUnitNum)) {
             state.activeUnitNum = targetUnitNum;
         } else if (!validUnits.has(state.activeUnitNum)) {
             state.activeUnitNum = firstUnit;
+        }
+        // Học theo thứ tự: bài đang khóa -> chuyển tới bài chưa xong kế tiếp được phép học
+        if (isUnitLocked(bookId, state.activeUnitNum)) {
+            state.activeUnitNum = findNextUnitInBook(bookId, firstUnit) || firstUnit;
         }
 
         renderBookShelf();
@@ -1614,7 +1980,7 @@
         const box = document.getElementById('sidebarBookSummary');
         if (!box) return;
 
-        const doneCount = (meta.units_index || []).filter(u => state.doneUnits[`${meta.id}_${getUnitNum(u)}`]).length;
+        const doneCount = countDoneUnits(meta);
         const pct = meta.unit_count > 0 ? Math.round((doneCount / meta.unit_count) * 100) : 0;
 
         box.innerHTML = `
@@ -1655,6 +2021,12 @@
         if (fullBook && fullBook.units) {
             fullBook.units.forEach(u => { unitMap[u.unit] = u; });
         }
+        // Các bài có từ đến hạn ôn (thẻ SRS tự lưu quyển & bài)
+        const now = Date.now();
+        const dueUnits = new Set();
+        Object.values(state.srsData || {}).forEach(c => {
+            if (c.b === meta.id && c.due <= now && c.u) dueUnits.add(c.u);
+        });
 
         const filtered = (meta.units_index || []).filter(u => {
             const uNum = getUnitNum(u);
@@ -1665,12 +2037,7 @@
             if (state.unitFilter === 'todo' && isDone) return false;
             if (state.unitFilter === 'done' && !isDone) return false;
             if (state.unitFilter === 'star' && !isStar) return false;
-            if (state.unitFilter === 'srs') {
-                const fullU = unitMap[uNum];
-                if (!fullU || !fullU.target_words) return false;
-                const hasSrs = fullU.target_words.some(w => !!state.srsData[w.id]);
-                if (!hasSrs) return false;
-            }
+            if (state.unitFilter === 'srs' && !dueUnits.has(uNum)) return false;
 
             if (!q) return true;
 
@@ -1707,13 +2074,15 @@
             const isDone = !!state.doneUnits[key];
             const isStar = !!state.starredUnits[key];
             const isActive = uNum === state.activeUnitNum;
+            const isLocked = isUnitLocked(meta.id, uNum);
             const scoreObj = state.practiceScores[key];
+            const scorePct = scoreObj && scoreObj.total ? Math.round((scoreObj.score / scoreObj.total) * 100) : null;
 
             return `
-                <div class="unit-item ${isActive ? 'active' : ''} ${isDone ? 'done' : ''}"
-                     data-unit-num="${uNum}">
+                <div class="unit-item ${isActive ? 'active' : ''} ${isDone ? 'done' : ''} ${isLocked ? 'locked' : ''}"
+                     data-unit-num="${uNum}" ${isLocked ? 'title="Bài đang khóa: hoàn thành bài trước (≥ 80%)"' : ''}>
                     <div class="ui-left">
-                        <span class="ui-num">${isDone ? '✓ ' : ''}Bài ${uNum}</span>
+                        <span class="ui-num">${isDone ? '✓ ' : (isLocked ? '🔒 ' : '')}Bài ${uNum}</span>
                         <div class="ui-info">
                             <div class="ui-range">${escapeHtml(u.range)}</div>
                             <div class="ui-py">${escapeHtml(startPy)} – ${escapeHtml(endPy)}</div>
@@ -1723,7 +2092,8 @@
                         <span class="ui-page">Từ ${u.word_start}–${u.word_end}</span>
                         <span style="font-size:0.72rem;">
                             ${isStar ? '⭐ ' : ''}
-                            ${scoreObj ? `<strong style="color:#34d399">${scoreObj.score}/${scoreObj.total}</strong>` : ''}
+                            ${dueUnits.has(uNum) ? '<span class="ui-due" title="Có từ đến hạn ôn">🧠</span> ' : ''}
+                            ${scorePct !== null ? `<strong class="ui-score ${scorePct >= PASS_PCT ? 'pass' : 'fail'}">${scorePct}%</strong>` : ''}
                         </span>
                     </div>
                 </div>
@@ -1733,8 +2103,7 @@
         listEl.querySelectorAll('.unit-item').forEach(el => {
             el.addEventListener('click', () => {
                 const uNum = parseInt(el.getAttribute('data-unit-num'), 10);
-                if (!isNaN(uNum)) {
-                    selectUnit(uNum);
+                if (!isNaN(uNum) && trySelectUnit(uNum)) {
                     if (isMobileOrTabletViewport()) {
                         closeMobileSidebar();
                     }
@@ -1754,6 +2123,7 @@
         stopSpeakingAll();
         state.activeUnitNum = unitNum;
         state.practiceChecked = false;
+        state.practiceRevealed = false;
         state.userAnswers = {
             sec1Pinyin: {},
             sec1Meaning: {},
@@ -1799,25 +2169,18 @@
 
         renderMemoryPane(unitData);
         renderPracticePane(unitData);
-        initFlashcardDeck();
-        if (state.studyMode === 'games') {
-            if (state.gamesSubMode === 'quiz') {
-                initReflexQuiz();
-            } else if (state.gamesSubMode === 'bubble' && state.bubbleGame.isRunning) {
-                spawnBubbleRound();
-            }
-        } else {
-            if (state.quizTimerId) {
-                clearInterval(state.quizTimerId);
-                state.quizTimerId = null;
-            }
-            if (state.bubbleGame && state.bubbleGame.isRunning) {
-                if (state.bubbleGame.timerId) clearInterval(state.bubbleGame.timerId);
-                state.bubbleGame.timerId = null;
-                state.bubbleGame.isRunning = false;
-            }
+        // Ôn hôm nay (gộp mọi quyển) không phụ thuộc bài đang mở: chỉ dựng lại bộ thẻ theo bài
+        if (['unit', 'book', 'starred'].includes(state.fcScope) || !state.fcDeck.length) initFlashcardDeck();
+        if (state.studyMode === 'games' && state.gamesSubMode === 'quiz') {
+            initReflexQuiz();
+        } else if (state.quizTimerId) {
+            clearInterval(state.quizTimerId);
+            state.quizTimerId = null;
         }
-        if (state.studyMode === 'shadowing') {
+        if (state.studyMode === 'extra' && state.extraSubMode === 'bubble' && state.bubbleGame.isRunning) {
+            spawnBubbleRound();
+        }
+        if (state.studyMode === 'extra' && state.extraSubMode === 'shadowing') {
             initShadowingStudio();
         } else {
             updateShadowingWordList();
@@ -1832,16 +2195,24 @@
         const isDone = !!state.doneUnits[key];
         const isStar = !!state.starredUnits[key];
 
+        // Không còn đánh dấu tay: bài xong khi kiểm tra / bài tập đạt ≥ 80%
+        const scoreObj = state.practiceScores[key];
+        const bestPct = scoreObj && scoreObj.total ? Math.round((scoreObj.score / scoreObj.total) * 100) : null;
         const btnDone = document.getElementById('btnToggleUnitDone');
         if (btnDone) {
             btnDone.classList.toggle('done', isDone);
-            btnDone.innerHTML = isDone ? '✓ Đã hoàn thành' : '☐ Đánh dấu Đã học';
+            btnDone.innerHTML = isDone
+                ? `✓ <span class="hide-xs">Đã đạt${bestPct !== null ? ` ${bestPct}%` : ''}</span>`
+                : `✍️ <span class="hide-xs">${bestPct !== null ? `Cao nhất ${bestPct}% · ` : ''}Kiểm tra bài</span>`;
+            btnDone.title = isDone
+                ? 'Bài đã hoàn thành (đạt ≥ 80%). Bấm để luyện lại.'
+                : 'Bài hoàn thành khi Kiểm tra bài hoặc Bài tập SGK đạt ≥ 80%. Bấm để làm kiểm tra.';
         }
 
         const mobDone = document.getElementById('mobToggleDone');
         if (mobDone) {
             mobDone.classList.toggle('done-active', isDone);
-            mobDone.innerHTML = isDone ? '✓ Học' : '☐ Học';
+            mobDone.innerHTML = isDone ? '✓ Đạt' : '✍️ Luyện';
         }
 
         const btnStar = document.getElementById('btnToggleUnitStar');
@@ -1972,13 +2343,13 @@
                     <span class="bhc-icon" data-hero-mnemonic="${w.id}" title="Xem tranh minh họa & chiết tự">${vData.icon}</span>
                     ${w.han_viet ? `<span class="bhc-hv-badge">Hán Việt: ${escapeHtml(w.han_viet.toUpperCase())}</span>` : ''}
                     ${w.pos_full ? `<span class="bhc-pos-badge">${escapeHtml(w.pos_full)}</span>` : ''}
-                    ${isSrs ? `<span class="bhc-srs-badge">🧠 Hộp SRS ${srsInfo.box || 1}</span>` : ''}
+                    ${isSrs ? `<span class="bhc-srs-badge">🧠 ${escapeHtml(srsBadgeText(srsInfo))}</span>` : ''}
                 </div>
                 <div class="bhc-quick-tools">
                     <button class="bhc-tool-btn ${isStar ? 'starred' : ''}" id="btnHeroStar" title="${isStar ? 'Bỏ lưu sao' : 'Đánh dấu sao'}">
                         ${isStar ? '⭐' : '☆'}
                     </button>
-                    <button class="bhc-tool-btn" id="btnHeroSrs" title="${isSrs ? 'Gỡ khỏi Hộp SRS' : 'Thêm vào Hộp từ khó SRS'}">
+                    <button class="bhc-tool-btn" id="btnHeroSrs" title="${isSrs ? 'Bỏ khỏi lịch ôn' : 'Thêm vào lịch ôn (ôn lại sau 10 phút)'}">
                         🧠
                     </button>
                     <button class="bhc-tool-btn" id="btnHeroMnemonic" title="Xem Chiết tự & Mẹo nhớ">
@@ -2073,12 +2444,13 @@
             btnSrs.addEventListener('click', () => {
                 if (state.srsData && state.srsData[w.id]) {
                     delete state.srsData[w.id];
-                    showToast('Đã xóa khỏi SRS', 'Đã bỏ theo dõi từ vựng này', 'ℹ️');
+                    showToast('Đã bỏ khỏi lịch ôn', 'Đã bỏ theo dõi từ vựng này', 'ℹ️');
                 } else {
-                    addWordToSrs(w, 1);
-                    showToast('Đã thêm vào SRS', 'Từ đã được đưa vào Hộp 1 để ôn tập', '🧠');
+                    introduceWord(w, false, state.activeBookId, state.activeUnitNum);
+                    showToast('Đã thêm vào lịch ôn', 'Từ sẽ đến hạn ôn sau 10 phút', '🧠');
                 }
                 saveProgress();
+                updateSrsHeaderBadge();
                 renderBentoHeroWord(w, totalWords, unitNum);
                 const unitData = getCurrentUnitData();
                 if (unitData) renderBentoStatsCard(unitData);
@@ -2121,13 +2493,15 @@
         });
 
         // Calculate progress percentage
-        let pct = isUnitDone ? 100 : Math.min(95, Math.round(((totalWords - srsCount) / Math.max(1, totalWords)) * 75) + (starredCount > 0 ? 15 : 0));
-        if (pct < 0) pct = 0;
+        // Tiến độ = tỉ lệ từ đã vào lịch ôn (đã học), bài đạt thì 100%
+        const scoreObj = state.practiceScores[uKey];
+        const bestPct = scoreObj && scoreObj.total ? Math.round((scoreObj.score / scoreObj.total) * 100) : null;
+        const pct = isUnitDone ? 100 : Math.round((srsCount / Math.max(1, totalWords)) * 100);
 
         statsEl.innerHTML = `
             <div class="bsc-head">
                 <div class="bsc-title">📊 Tiến Độ Bài ${unitData.unit}</div>
-                <span class="bsc-badge">${isUnitDone ? '✓ Hoàn thành' : `${pct}% Ghi nhớ`}</span>
+                <span class="bsc-badge ${isUnitDone ? 'is-done' : ''}">${isUnitDone ? '✓ Đã đạt' : (bestPct !== null ? `Cao nhất ${bestPct}%` : 'Chưa kiểm tra')}</span>
             </div>
             <div class="bsc-progress-bar-wrap">
                 <div class="bsc-progress-bar-fill" style="width: ${pct}%"></div>
@@ -2143,15 +2517,15 @@
                 </div>
                 <div class="bsc-metric-item">
                     <span class="bmi-val" style="color:var(--accent-emerald)">${srsCount}</span>
-                    <span class="bmi-label">Cần ôn 🧠</span>
+                    <span class="bmi-label">Đã vào lịch ôn</span>
                 </div>
             </div>
             <div class="bsc-actions">
-                <button class="bsc-btn-quiz" id="btnBentoJumpQuiz" title="Kiểm tra phản xạ từ vựng của bài này">
-                    🎯 Vào Quiz Nhanh
+                <button class="bsc-btn-quiz" id="btnBentoJumpQuiz" title="Kiểm tra từ vựng của bài (đạt ≥ 80% để hoàn thành)">
+                    ✍️ Kiểm tra bài
                 </button>
-                <button class="bsc-btn-fc" id="btnBentoJumpFc" title="Ôn tập thẻ 3D bài này">
-                    🎴 Thẻ Flashcard
+                <button class="bsc-btn-fc" id="btnBentoJumpFc" title="Lật thẻ các từ của bài này">
+                    🎴 Lật thẻ
                 </button>
             </div>
         `;
@@ -2159,15 +2533,10 @@
         const bQuiz = statsEl.querySelector('#btnBentoJumpQuiz');
         const bFc = statsEl.querySelector('#btnBentoJumpFc');
         if (bQuiz) {
-            bQuiz.addEventListener('click', () => {
-                switchStudyMode('games');
-                switchGamesSubMode('quiz');
-            });
+            bQuiz.addEventListener('click', startUnitTest);
         }
         if (bFc) {
-            bFc.addEventListener('click', () => {
-                switchStudyMode('flashcard');
-            });
+            bFc.addEventListener('click', () => openFlashcardScope('unit'));
         }
     }
 
@@ -2362,7 +2731,7 @@
                         <span class="qmc-py">${formatPinyinWithToneColors(w.pinyin)}</span>
                         ${w.pos_full ? `<span class="qmc-pos">${escapeHtml(w.pos_full)}</span>` : ''}
                         ${w.han_viet ? `<span class="qmc-hv">HV: ${escapeHtml(w.han_viet)}</span>` : ''}
-                        ${isSrs ? `<span class="qmc-srs-pill" title="Từ khó trong Hộp ${srsInfo.box || 1} SRS">🧠 Hộp ${srsInfo.box || 1}</span>` : ''}
+                        ${isSrs ? `<span class="qmc-srs-pill" title="Trong lịch ôn">🧠 ${escapeHtml(srsBadgeText(srsInfo))}</span>` : ''}
                     </div>
                     <div class="qmc-actions">
                         ${examples.length ? `
@@ -2382,7 +2751,7 @@
                                     🎨 ${vData.icon} Xem chiết tự & mẹo nhớ
                                 </button>
                                 <button class="qmm-item" data-srs-id="${w.id}">
-                                    ${isSrs ? `🧠 Hộp ${srsInfo.box || 1} (Gỡ khỏi SRS)` : '🧠 Thêm vào Hộp từ khó (SRS)'}
+                                    ${isSrs ? '🧠 Bỏ khỏi lịch ôn' : '🧠 Thêm vào lịch ôn'}
                                 </button>
                                 <button class="qmm-item" data-speak-word-ex="${w.num}">
                                     ▶️ Đọc từ kèm câu ví dụ
@@ -2504,10 +2873,11 @@
                 if (!wid) return;
                 if (state.srsData && state.srsData[wid]) {
                     delete state.srsData[wid];
-                    showToast('Đã bỏ theo dõi', 'Đã xóa từ khỏi Hộp từ khó SRS', 'ℹ️');
+                    showToast('Đã bỏ theo dõi', 'Đã xóa từ khỏi lịch ôn', 'ℹ️');
                 } else {
-                    addToSrs(wid, 1);
-                    showToast('🧠 Đã thêm vào Hộp SRS!', 'Từ này sẽ được lên lịch ôn ngắt quãng', '🧠');
+                    const wObj = findWordById(wid);
+                    if (wObj) introduceWord(wObj, false);
+                    showToast('Đã thêm vào lịch ôn', 'Từ sẽ đến hạn ôn sau 10 phút', '🧠');
                 }
                 saveProgress();
                 updateSrsHeaderBadge();
@@ -2546,7 +2916,7 @@
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.qmc-more-menu').forEach(m => m.classList.add('hidden'));
                 const uNum = parseInt(btn.getAttribute('data-jump-unit'), 10);
-                if (!isNaN(uNum)) {
+                if (!isNaN(uNum) && !isUnitLocked(state.activeBookId, uNum)) {
                     state.globalSearchQuery = '';
                     const gInput = document.getElementById('globalWordSearch');
                     const clearBtn = document.getElementById('clearGlobalSearch');
@@ -2883,13 +3253,15 @@
         });
     }
 
-    function checkPracticeAnswers() {
+    function checkPracticeAnswers(revealOnly) {
+        revealOnly = revealOnly === true;   // khi gắn vào nút, tham số đầu là sự kiện click
         const unitData = getCurrentUnitData();
         if (!unitData || !unitData.exercises) return;
 
         const ex = unitData.exercises;
         let score = 0;
         let total = 0;
+        const wrongIds = new Set();
 
         if (ex.section1 && ex.section1.questions) {
             ex.section1.questions.forEach(q => {
@@ -2927,7 +3299,7 @@
                 }
                 if (!pyOk || !mnOk) {
                     const targetWord = (unitData.target_words || []).find(w => w.num === q.word_num);
-                    if (targetWord) addToSrs(targetWord.id, 1);
+                    if (targetWord) wrongIds.add(targetWord.id);
                 }
             });
         }
@@ -2943,7 +3315,7 @@
                         score += 1;
                     } else {
                         const targetWord = (unitData.target_words || []).find(w => w.word === q.target_word);
-                        if (targetWord) addToSrs(targetWord.id, 1);
+                        if (targetWord) wrongIds.add(targetWord.id);
                     }
 
                     const slot = document.getElementById(`s2-slot-${key}`);
@@ -2983,7 +3355,7 @@
                     score += 1;
                 } else {
                     const targetWord = (unitData.target_words || []).find(w => w.word === q.target_word);
-                    if (targetWord) addToSrs(targetWord.id, 1);
+                    if (targetWord) wrongIds.add(targetWord.id);
                 }
 
                 const slot  = document.getElementById(`s3-slot-${q.q_num}`);
@@ -3024,31 +3396,24 @@
             scoreBadgeBottom.classList.remove('hidden');
         }
 
-        const unitKey = `${state.activeBookId}_${state.activeUnitNum}`;
-        state.practiceScores[unitKey] = { score, total };
-        if (pct >= 80) {
-            state.doneUnits[unitKey] = true;
-            updateUnitActionButtons();
+        if (revealOnly || state.practiceRevealed) {
+            if (!revealOnly) {
+                showToast('Không tính điểm', 'Bạn đã xem đáp án mẫu. Bấm "Làm lại" để làm và tính điểm.', 'ℹ️');
+            }
+            return;
         }
 
+        const res = recordUnitResult(unitData, score, total, wrongIds, 'sgk');
         if (score > 0) {
             awardXp(score * 2, 'Luyện tập bài tập');
-            playSoundEffect(pct >= 80 ? 'badge' : 'correct');
+            playSoundEffect(res.passed ? 'badge' : 'correct');
         } else {
             playSoundEffect('wrong');
         }
-        if (pct === 100) {
-            unlockBadge('b_unit_master');
-        }
-
-        saveProgress();
-        updateSrsHeaderBadge();
-
-        const meta = getBookIndexMeta(state.activeBookId);
-        if (meta) {
-            renderSidebarSummary(meta);
-            renderUnitList(meta);
-            renderBookShelf();
+        if (res.newlyDone) {
+            showToast('Hoàn thành bài!', `Đạt ${res.pct}%. Mọi từ của bài đã vào lịch ôn. Bấm "Học tiếp" để sang bài mới.`, '🏆');
+        } else if (!res.passed) {
+            showToast(`Đạt ${res.pct}%`, `Cần ≥ ${PASS_PCT}% để hoàn thành bài. Từ làm sai sẽ được ôn lại sau 10 phút.`, '✍️');
         }
     }
 
@@ -3076,11 +3441,13 @@
             });
         }
 
+        state.practiceRevealed = true;
         renderPracticePane(unitData);
-        checkPracticeAnswers();
+        checkPracticeAnswers(true);
     }
 
     function resetPracticeAnswers() {
+        state.practiceRevealed = false;
         state.userAnswers = {
             sec1Pinyin: {},
             sec1Meaning: {},
@@ -3091,21 +3458,18 @@
         if (unitData) renderPracticePane(unitData);
     }
 
-    // ==================== MODE 3: FLASHCARD 3D & REFLEX QUIZ (UPGRADED) ====================
+    // ==================== ÔN TẬP: FLASHCARD SM-2 (ÔN HÔM NAY GỘP MỌI QUYỂN) ====================
     function getWordsForScope(scope) {
         const bookData = getLoadedBookData(state.activeBookId);
         const unitData = getCurrentUnitData();
-        if (!bookData) return [];
 
-        if (scope === 'srs') {
-            const allWords = [];
-            (bookData.units || []).forEach(u => {
-                (u.target_words || []).forEach(w => {
-                    if (state.srsData && state.srsData[w.id]) allWords.push(w);
-                });
-            });
-            return allWords.length ? allWords : (unitData ? unitData.target_words : []);
+        if (scope === 'due' || scope === 'srs') {
+            return getDueCardIds(state.fcBookFilter).map(wordFromCard);
         }
+        if (scope === 'slow') {
+            return getSlowCardIds(state.fcBookFilter).map(wordFromCard);
+        }
+        if (!bookData) return [];
 
         if (scope === 'starred') {
             const allWords = [];
@@ -3128,11 +3492,63 @@
         return (unitData && unitData.target_words) ? [...unitData.target_words] : [];
     }
 
+    // Mở tab Ôn tập với một nguồn thẻ; 'due' / 'slow' nạp trước các quyển chứa thẻ để hiện đủ ví dụ
+    async function openFlashcardScope(scope) {
+        state.fcScope = scope;
+        const sel = document.getElementById('fcScopeSelect');
+        if (sel) sel.value = scope;
+        switchStudyMode('flashcard', { skipDeck: true });
+        if (scope === 'due' || scope === 'slow') {
+            const ids = scope === 'due' ? getDueCardIds(state.fcBookFilter) : getSlowCardIds(state.fcBookFilter);
+            await ensureBooksForCardIds(ids);
+        }
+        initFlashcardDeck();
+    }
+
     function initFlashcardDeck() {
         state.fcDeck = getWordsForScope(state.fcScope);
         state.fcIndex = 0;
         state.fcFlipped = false;
+        const filterWrap = document.getElementById('fcBookFilterWrap');
+        if (filterWrap) filterWrap.classList.toggle('hidden', !['due', 'slow', 'srs'].includes(state.fcScope));
         renderFlashcard();
+    }
+
+    function renderFlashcardEmpty(show) {
+        const empty = document.getElementById('fcEmptyState');
+        const cardEl = document.getElementById('fcCard3d');
+        const actions = document.getElementById('fcSrsActions');
+        const controls = document.querySelector('#paneFlashcard .fc-controls');
+        const progress = document.querySelector('#paneFlashcard .fc-progress-container');
+        [cardEl, actions, controls, progress].forEach(el => { if (el) el.classList.toggle('hidden', show); });
+        if (!empty) return;
+        empty.classList.toggle('hidden', !show);
+        if (!show) return;
+
+        let html;
+        if (state.fcScope === 'due' || state.fcScope === 'srs') {
+            const upcoming = Object.values(state.srsData || {})
+                .filter(c => state.fcBookFilter === 'all' || c.b === state.fcBookFilter)
+                .map(c => c.due).filter(d => d > Date.now()).sort((a, b) => a - b)[0];
+            const total = Object.keys(state.srsData || {}).length;
+            html = total
+                ? `<div class="fes-icon">🎉</div><h3>Đã ôn xong hôm nay!</h3>
+                   <p>${upcoming ? `Lần ôn kế tiếp: sau <strong>${fmtUntil(upcoming - Date.now())}</strong>.` : ''} Bạn đang theo dõi <strong>${total}</strong> từ.</p>`
+                : `<div class="fes-icon">🧠</div><h3>Chưa có từ nào cần ôn</h3>
+                   <p>Học một bài rồi làm <strong>Kiểm tra bài</strong>: mọi từ của bài sẽ vào lịch ôn tự động.</p>`;
+        } else if (state.fcScope === 'slow') {
+            html = `<div class="fes-icon">🐢</div><h3>Chưa có từ nhận diện chậm</h3>
+                    <p>Tốc độ nhận diện được đo khi bạn làm trắc nghiệm "Chữ ➔ Nghĩa" và lật thẻ có mặt trước là chữ Hán. Từ trung bình ≥ ${SLOW_MS / 1000} giây sẽ hiện ở đây.</p>`;
+        } else {
+            html = `<div class="fes-icon">📭</div><h3>Không có thẻ</h3><p>Nguồn thẻ này đang trống.</p>`;
+        }
+        empty.innerHTML = html + `
+            <div class="fes-actions">
+                <button class="btn-primary-action" data-fes="continue">▶ Học tiếp</button>
+                <button class="btn-secondary-action" data-fes="unit">🎴 Lật thẻ bài đang học</button>
+            </div>`;
+        empty.querySelector('[data-fes="continue"]').addEventListener('click', continueStudy);
+        empty.querySelector('[data-fes="unit"]').addEventListener('click', () => openFlashcardScope('unit'));
     }
 
     function renderFlashcard() {
@@ -3141,12 +3557,14 @@
         cardEl.classList.toggle('flipped', state.fcFlipped);
 
         if (!state.fcDeck.length) {
-            const frontHz = document.getElementById('fcFrontHanzi');
-            if (frontHz) frontHz.textContent = 'Trống';
+            renderFlashcardEmpty(true);
             return;
         }
+        renderFlashcardEmpty(false);
 
-        const w = state.fcDeck[state.fcIndex] || state.fcDeck[0];
+        if (state.fcIndex >= state.fcDeck.length) state.fcIndex = 0;
+        const w = state.fcDeck[state.fcIndex];
+        const card = state.srsData[w.id];
 
         // Header info
         const deckBadge = document.getElementById('fcDeckBadge');
@@ -3156,27 +3574,37 @@
         const counterEl = document.getElementById('fcCounter');
 
         if (deckBadge) {
-            const scopeLabels = { unit: `Bài ${state.activeUnitNum}`, srs: '🧠 Hộp SRS', starred: '⭐ Đã lưu', book: 'Toàn quyển' };
+            const scopeLabels = {
+                unit: `Bài ${state.activeUnitNum}`, due: `Còn ${state.fcDeck.length} thẻ đến hạn`, srs: `Còn ${state.fcDeck.length} thẻ đến hạn`,
+                slow: `🐢 ${state.fcDeck.length} từ chậm`, starred: '⭐ Đã lưu', book: 'Toàn quyển'
+            };
             deckBadge.textContent = scopeLabels[state.fcScope] || `Bài ${state.activeUnitNum}`;
         }
 
         if (srsBoxBadge) {
-            const srsInfo = state.srsData && state.srsData[w.id];
-            if (srsInfo) {
-                srsBoxBadge.textContent = `Hộp SRS ${srsInfo.box || 1}`;
-                srsBoxBadge.classList.remove('hidden');
-            } else {
-                srsBoxBadge.classList.add('hidden');
-            }
+            srsBoxBadge.textContent = card ? srsBadgeText(card) : 'Từ mới';
+            srsBoxBadge.classList.remove('hidden');
         }
 
-        if (numBadge) numBadge.textContent = `#${w.num}`;
+        if (numBadge) {
+            const meta = card && card.b ? getBookIndexMeta(card.b) : null;
+            numBadge.textContent = (['due', 'srs', 'slow'].includes(state.fcScope) && meta)
+                ? `${meta.title}${card.u ? ` · B${card.u}` : ''}`
+                : (w.num ? `#${w.num}` : '');
+        }
         if (counterEl) counterEl.textContent = `${state.fcIndex + 1} / ${state.fcDeck.length}`;
 
         if (progBar) {
             const pct = Math.round(((state.fcIndex + 1) / state.fcDeck.length) * 100);
             progBar.style.width = `${pct}%`;
         }
+
+        // Khoảng cách tới lần ôn sau cho từng mức đánh giá
+        document.querySelectorAll('[data-rate-iv]').forEach(el => {
+            el.textContent = srsIvLabel(card, parseInt(el.getAttribute('data-rate-iv'), 10));
+        });
+        const actions = document.getElementById('fcSrsActions');
+        if (actions) actions.classList.toggle('is-waiting', !state.fcFlipped);
 
         // Visual & Mnemonics Data
         const vData = getWordVisualData(w.word, w.meaning_vi || w.meaning_primary, w.meaning_en);
@@ -3217,13 +3645,17 @@
                 speakChinese(cleanHanziForTts(w.word));
             }
         } else {
-            // Default 'hz'
+            // Mặc định 'hz': đo thời gian từ lúc hiện chữ tới lúc lật thẻ
             if (frontHz) {
                 frontHz.textContent = w.word;
                 frontHz.style.fontSize = '3.1rem';
             }
             if (frontSub) frontSub.textContent = '';
             if (frontPos) frontPos.textContent = w.pos_full || w.pos || 'Từ vựng';
+        }
+        if (!state.fcFlipped) {
+            state.fcShownAt = performance.now();
+            state.fcFlipMs = null;
         }
 
         // Back Face Display
@@ -3271,15 +3703,25 @@
             const ex = (w.examples && w.examples[0]) ? w.examples[0] : null;
             backEx.innerHTML = ex
                 ? `<div><strong>${escapeHtml(ex.hz)}</strong></div>
-                   <div style="font-size:0.82rem;opacity:0.85">${escapeHtml(ex.py || '')}</div>
-                   <div style="font-size:0.84rem;margin-top:2px">${escapeHtml(ex.vn || '')}</div>`
-                : `<div>Cấp độ ${state.activeBookId.toUpperCase()}</div>`;
+                   <div class="fc-ex-py">${escapeHtml(ex.py || '')}</div>
+                   <div class="fc-ex-vn">${escapeHtml(ex.vn || '')}</div>`
+                : (card && card.rt ? `<div class="fc-ex-vn">⏱ Tốc độ nhận diện trung bình: ${fmtSec(card.rt)}</div>` : '');
         }
 
         // Auto speak on flip
         if (state.fcFlipped && state.fcAutoSpeak && state.fcFaceMode !== 'audio') {
             speakChinese(cleanHanziForTts(w.word));
         }
+    }
+
+    function flipFlashcard() {
+        if (!state.fcDeck.length) return;
+        if (!state.fcFlipped && state.fcShownAt) {
+            state.fcFlipMs = performance.now() - state.fcShownAt;
+        }
+        state.fcFlipped = !state.fcFlipped;
+        playSoundEffect('flip');
+        renderFlashcard();
     }
 
     function advanceFlashcard(delta = 1) {
@@ -3293,23 +3735,135 @@
         if (!state.fcDeck.length) return;
         const w = state.fcDeck[state.fcIndex];
         if (!w) return;
+        // Phải lật thẻ (tự nhớ lại) trước khi chấm
+        if (!state.fcFlipped) {
+            flipFlashcard();
+            return;
+        }
 
-        rateSrsWord(w.id, rating);
+        const flipMs = state.fcFlipMs;
+        rateSrsWord(w, rating);
+        if (state.fcFaceMode === 'hz' && flipMs) updateRT(w.id, flipMs, rating >= 2);
         state.gamify.stats.flashcardsFlipped = (state.gamify.stats.flashcardsFlipped || 0) + 1;
         checkBadgeUnlocks();
         saveProgress();
-
         playSoundEffect(rating === 1 ? 'wrong' : 'correct');
-        advanceFlashcard(1);
+
+        if (['due', 'srs'].includes(state.fcScope)) {
+            // Ôn hôm nay: thẻ đã chấm rời khỏi hàng; "Quên" thì xếp lại cuối hàng để gặp lại trong phiên
+            state.fcDeck.splice(state.fcIndex, 1);
+            if (rating === 1) state.fcDeck.push(w);
+            if (state.fcIndex >= state.fcDeck.length) state.fcIndex = 0;
+            state.fcFlipped = false;
+            renderFlashcard();
+        } else {
+            advanceFlashcard(1);
+        }
     }
 
-    // ==================== ENHANCED REFLEX QUIZ ====================
-    function initReflexQuiz() {
+    // ==================== LUYỆN TẬP: KIỂM TRA BÀI & TRẮC NGHIỆM (TÍNH GIỜ, ĐO TỐC ĐỘ) ====================
+    function isQuizActive() {
+        return state.studyMode === 'games' && state.gamesSubMode === 'quiz';
+    }
+
+    function shuffleArr(arr) {
+        const a = arr.slice();
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
+    function clearQuizTimers() {
+        if (state.quizTimerId) {
+            clearInterval(state.quizTimerId);
+            state.quizTimerId = null;
+        }
+        if (state.quizAdvanceId) {
+            clearTimeout(state.quizAdvanceId);
+            state.quizAdvanceId = null;
+        }
+    }
+
+    function showQuizResultBox(html) {
+        const box = document.getElementById('quizResultBox');
+        const qBox = document.getElementById('quizQuestionBox');
+        const opts = document.getElementById('quizOptions');
+        const bottom = document.querySelector('#subPaneQuiz .quiz-bottom-bar');
+        const show = !!html;
+        if (box) {
+            box.classList.toggle('hidden', !show);
+            box.innerHTML = html || '';
+        }
+        [qBox, opts, bottom].forEach(el => { if (el) el.classList.toggle('hidden', show); });
+        return box;
+    }
+
+    // Kiểm tra bài: mỗi từ của bài hỏi 1 lần, đạt ≥ 80% thì bài hoàn thành
+    function startUnitTest() {
+        state.quizScope = 'test';
+        const sel = document.getElementById('quizScopeSelect');
+        if (sel) sel.value = 'test';
+        switchStudyMode('games');
+        switchGamesSubMode('quiz');
+    }
+
+    async function startSlowPractice() {
+        state.quizScope = 'slow';
+        state.quizType = 'hz_to_vn';
+        document.querySelectorAll('.qtype-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-qtype') === 'hz_to_vn'));
+        const sel = document.getElementById('quizScopeSelect');
+        if (sel) sel.value = 'slow';
+        if (!state.quizTimerEnabled) {
+            state.quizTimerEnabled = true;
+            const btn = document.getElementById('btnQuizToggleTimer');
+            const lbl = document.getElementById('lblQuizTimerStatus');
+            if (btn) btn.classList.add('active');
+            if (lbl) lbl.textContent = 'BẬT';
+        }
+        await ensureBooksForCardIds(getSlowCardIds('all'));
+        switchStudyMode('games');
+        switchGamesSubMode('quiz');
+    }
+
+    async function initReflexQuiz() {
+        clearQuizTimers();
         state.quizCorrect = 0;
         state.quizTotal = 0;
         state.quizStreak = 0;
+        state.quizCurrentQ = null;
         updateQuizScoreUI();
         updateQuizStreakUI();
+        showQuizResultBox('');
+
+        const scope = state.quizScope;
+        if (scope === 'test') {
+            const unitData = getCurrentUnitData();
+            const words = (unitData && unitData.target_words) ? unitData.target_words : [];
+            state.quizTest = { deck: shuffleArr(words), idx: 0, correct: 0, wrong: new Set(), rt: {}, unit: unitData ? unitData.unit : 0 };
+            state.quizPool = words.slice();
+        } else {
+            state.quizTest = null;
+            if (scope === 'slow' || scope === 'due') {
+                const ids = scope === 'slow' ? getSlowCardIds('all') : getDueCardIds('all');
+                await ensureBooksForCardIds(ids);
+                state.quizPool = ids.map(wordFromCard);
+            } else {
+                state.quizPool = getWordsForScope('unit');
+            }
+        }
+        updateQuizTestProgress();
+
+        if (!state.quizPool.length) {
+            const msg = scope === 'slow'
+                ? `<div class="qrb-icon">🐢</div><h3>Chưa có từ nhận diện chậm</h3><p>Hãy làm trắc nghiệm "Chữ ➔ Nghĩa" hoặc ôn thẻ có mặt trước là chữ Hán. Từ có thời gian trung bình ≥ ${SLOW_MS / 1000}s sẽ được gom vào đây.</p>`
+                : (scope === 'due'
+                    ? `<div class="qrb-icon">🎉</div><h3>Không có từ đến hạn</h3><p>Bạn đã ôn hết từ đến hạn hôm nay.</p>`
+                    : `<div class="qrb-icon">📭</div><h3>Bài này chưa có từ vựng</h3>`);
+            showQuizResultBox(msg);
+            return;
+        }
         nextReflexQuizQuestion();
     }
 
@@ -3338,6 +3892,24 @@
         }
     }
 
+    function updateQuizTestProgress() {
+        const lbl = document.getElementById('quizTestProgress');
+        const wrap = document.getElementById('quizTestBarWrap');
+        const fill = document.getElementById('quizTestBar');
+        const t = state.quizTest;
+        if (t) {
+            const n = t.deck.length;
+            const cur = Math.min(t.idx + 1, n);
+            if (lbl) lbl.textContent = `Câu ${cur}/${n} · đúng ${t.correct}`;
+            if (wrap) wrap.classList.remove('hidden');
+            if (fill) fill.style.width = `${n ? Math.round((t.idx / n) * 100) : 0}%`;
+        } else {
+            const labels = { unit: 'Luyện tự do — không tính hoàn thành bài', slow: `🐢 ${state.quizPool.length} từ chậm · đo lại tốc độ`, due: `🧠 ${state.quizPool.length} từ đến hạn` };
+            if (lbl) lbl.textContent = labels[state.quizScope] || '';
+            if (wrap) wrap.classList.add('hidden');
+        }
+    }
+
     function startQuizTimer() {
         if (state.quizTimerId) {
             clearInterval(state.quizTimerId);
@@ -3348,7 +3920,7 @@
         const timerFill = document.getElementById('quizTimerFill');
         if (!timerWrap || !timerFill) return;
 
-        if (state.studyMode !== 'quiz' || !state.quizTimerEnabled) {
+        if (!isQuizActive() || !state.quizTimerEnabled) {
             timerWrap.classList.add('hidden');
             return;
         }
@@ -3360,7 +3932,7 @@
         timerFill.style.width = '100%';
 
         state.quizTimerId = setInterval(() => {
-            if (state.studyMode !== 'quiz' || state.quizAnswered) {
+            if (!isQuizActive() || state.quizAnswered) {
                 clearInterval(state.quizTimerId);
                 state.quizTimerId = null;
                 return;
@@ -3379,17 +3951,10 @@
     }
 
     function handleQuizTimeout() {
-        if (state.studyMode !== 'quiz' || state.quizAnswered) return;
-        state.quizAnswered = true;
-        state.quizTotal += 1;
-        state.quizStreak = 0;
-        updateQuizStreakUI();
-
-        playSoundEffect('wrong');
-
+        if (!isQuizActive() || state.quizAnswered || !state.quizCurrentQ) return;
         const target = state.quizCurrentQ.target;
-        addToSrs(target.id, 1);
-        showToast('⏱️ Hết giờ!', `Đáp án đúng là: “${target.word}” (${target.meaning_vi || target.meaning_primary})`, '⏰');
+        processQuizAnswer(false, 10000);
+        showToast('Hết giờ!', `Đáp án đúng là: “${target.word}” (${target.meaning_vi || target.meaning_primary})`, '⏰');
 
         const optsEl = document.getElementById('quizOptions');
         if (optsEl) {
@@ -3399,25 +3964,52 @@
                 }
             });
         }
-        updateQuizScoreUI();
+    }
+
+    // Đáp án nhiễu: ưu tiên từ cùng nhóm, thiếu thì lấy thêm từ bài/quyển đang mở
+    function pickDistractors(target, n) {
+        const seen = new Set([target.id]);
+        const tMean = (target.meaning_vi || target.meaning_primary || '').trim();
+        const out = [];
+        const sources = [state.quizPool, (getCurrentUnitData() || {}).target_words || []];
+        const bookData = getLoadedBookData(state.activeBookId);
+        if (bookData && bookData.units) {
+            sources.push(shuffleArr(bookData.units).slice(0, 6).flatMap(u => u.target_words || []));
+        }
+        for (const src of sources) {
+            for (const w of shuffleArr(src || [])) {
+                if (out.length >= n) return out;
+                if (!w || seen.has(w.id) || w.word === target.word) continue;
+                if ((w.meaning_vi || w.meaning_primary || '').trim() === tMean) continue;
+                seen.add(w.id);
+                out.push(w);
+            }
+        }
+        return out;
     }
 
     function nextReflexQuizQuestion() {
-        if (state.quizTimerId) {
-            clearInterval(state.quizTimerId);
-            state.quizTimerId = null;
+        clearQuizTimers();
+
+        let target;
+        const t = state.quizTest;
+        if (t) {
+            if (t.idx >= t.deck.length) {
+                finishUnitTest();
+                return;
+            }
+            target = t.deck[t.idx];
+        } else {
+            const pool = state.quizPool;
+            if (!pool.length) return;
+            const prevId = state.quizCurrentQ && state.quizCurrentQ.target ? state.quizCurrentQ.target.id : null;
+            const candidates = pool.length > 1 ? pool.filter(w => w.id !== prevId) : pool;
+            target = candidates[Math.floor(Math.random() * candidates.length)];
         }
+        updateQuizTestProgress();
 
-        const pool = state.fcDeck.length >= 4 ? state.fcDeck : getWordsForScope('unit');
-        if (!pool.length) return;
-
-        const target = pool[Math.floor(Math.random() * pool.length)];
-        const distractors = pool
-            .filter(w => w.id !== target.id)
-            .sort(() => Math.random() - 0.5)
-            .slice(0, 3);
-
-        const options = [target, ...distractors].sort(() => Math.random() - 0.5);
+        const distractors = pickDistractors(target, 3);
+        const options = shuffleArr([target, ...distractors]);
         state.quizCurrentQ = { target, options };
         state.quizAnswered = false;
 
@@ -3429,7 +4021,6 @@
         const letters = ['A', 'B', 'C', 'D'];
 
         if (state.quizType === 'vn_to_hz') {
-            // Prompt is Vietnamese meaning, options are Hanzi
             if (wordEl) {
                 wordEl.textContent = target.meaning_vi || target.meaning_primary;
                 wordEl.style.fontSize = '1.75rem';
@@ -3441,13 +4032,12 @@
                 optsEl.innerHTML = options.map((opt, idx) => `
                     <button class="quiz-opt-btn" data-quiz-id="${opt.id}" data-opt-letter="${letters[idx]}">
                         <span class="kbd-key">${letters[idx]}</span>
-                        <strong style="font-family:var(--font-cn);font-size:1.5rem;margin-left:4px;">${escapeHtml(opt.word)}</strong>
-                        <span style="color:var(--accent-sky);font-size:0.84rem;margin-left:6px;">(${escapeHtml(opt.pinyin)})</span>
+                        <strong class="qo-hz">${escapeHtml(opt.word)}</strong>
+                        <span class="qo-py">(${escapeHtml(opt.pinyin)})</span>
                     </button>
                 `).join('');
             }
         } else if (state.quizType === 'audio_to_hz') {
-            // Prompt is audio button, options are Hanzi
             if (wordEl) {
                 wordEl.textContent = '🎧';
                 wordEl.style.fontSize = '3.2rem';
@@ -3461,13 +4051,13 @@
                 optsEl.innerHTML = options.map((opt, idx) => `
                     <button class="quiz-opt-btn" data-quiz-id="${opt.id}" data-opt-letter="${letters[idx]}">
                         <span class="kbd-key">${letters[idx]}</span>
-                        <strong style="font-family:var(--font-cn);font-size:1.5rem;margin-left:4px;">${escapeHtml(opt.word)}</strong>
-                        <span style="color:var(--text-muted);font-size:0.82rem;margin-left:6px;">— ${escapeHtml(opt.meaning_vi || opt.meaning_primary)}</span>
+                        <strong class="qo-hz">${escapeHtml(opt.word)}</strong>
+                        <span class="qo-mean">— ${escapeHtml(opt.meaning_vi || opt.meaning_primary)}</span>
                     </button>
                 `).join('');
             }
         } else {
-            // Default 'hz_to_vn'
+            // 'hz_to_vn': nhận diện chữ Hán -> đo tốc độ nhận diện
             if (wordEl) {
                 wordEl.textContent = target.word;
                 wordEl.style.fontSize = '2.3rem';
@@ -3479,14 +4069,67 @@
                 optsEl.innerHTML = options.map((opt, idx) => `
                     <button class="quiz-opt-btn" data-quiz-id="${opt.id}" data-opt-letter="${letters[idx]}">
                         <span class="kbd-key">${letters[idx]}</span>
-                        <span style="margin-left:4px;">${escapeHtml(opt.meaning_vi || opt.meaning_primary || opt.meaning_en)}</span>
+                        <span class="qo-text">${escapeHtml(opt.meaning_vi || opt.meaning_primary || opt.meaning_en)}</span>
                     </button>
                 `).join('');
             }
         }
 
         bindQuizOptionEvents();
+        state.quizShownAt = performance.now();
         startQuizTimer();
+    }
+
+    // Ghi nhận một câu trả lời: điểm, SRS, tốc độ nhận diện
+    function processQuizAnswer(isCorrect, ms) {
+        const target = state.quizCurrentQ.target;
+        state.quizAnswered = true;
+        state.quizTotal += 1;
+        clearQuizTimers();
+        const measureRT = state.quizType === 'hz_to_vn';
+
+        if (isCorrect) {
+            state.quizCorrect += 1;
+            state.quizStreak += 1;
+            state.gamify.stats.quizzesCompleted = (state.gamify.stats.quizzesCompleted || 0) + 1;
+            state.gamify.stats.quizStreakBest = Math.max(state.gamify.stats.quizStreakBest || 0, state.quizStreak);
+            awardXp(10 + Math.min(20, state.quizStreak * 2), 'Trả lời đúng');
+        } else {
+            state.quizStreak = 0;
+        }
+
+        const t = state.quizTest;
+        if (t) {
+            // Kiểm tra bài: từ vào lịch ôn khi kết thúc bài kiểm tra
+            if (isCorrect) t.correct += 1;
+            else t.wrong.add(target.id);
+            if (measureRT) t.rt[target.id] = { ms, ok: isCorrect };
+            t.idx += 1;
+            updateQuizTestProgress();
+        } else {
+            const card = state.srsData[target.id];
+            if (state.quizScope === 'due' && card && card.due <= Date.now()) {
+                rateSrsWord(target, isCorrect ? 3 : 1);
+            } else {
+                introduceWord(target, isCorrect);
+            }
+            if (measureRT) updateRT(target.id, ms, isCorrect);
+            saveProgress();
+            updateSrsHeaderBadge();
+            if (!isCorrect) {
+                showToast('Sẽ ôn lại sau 10 phút', `“${target.word}” — ${target.meaning_vi || target.meaning_primary || ''}`, '🧠');
+            }
+        }
+        updateQuizScoreUI();
+        updateQuizStreakUI();
+
+        // Kiểm tra bài: trả lời đúng thì tự sang câu sau
+        if (t && isCorrect) {
+            state.quizAdvanceId = setTimeout(() => {
+                state.quizAdvanceId = null;
+                if (isQuizActive() && state.quizTest === t) nextReflexQuizQuestion();
+            }, 750);
+        }
     }
 
     function bindQuizOptionEvents() {
@@ -3497,74 +4140,86 @@
         optsEl.querySelectorAll('.quiz-opt-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 if (state.quizAnswered) return;
-                state.quizAnswered = true;
-                state.quizTotal += 1;
-
-                if (state.quizTimerId) {
-                    clearInterval(state.quizTimerId);
-                    state.quizTimerId = null;
-                }
-
-                const pickedId = btn.getAttribute('data-quiz-id');
-                const isCorrect = pickedId === target.id;
+                const ms = performance.now() - state.quizShownAt;
+                const isCorrect = btn.getAttribute('data-quiz-id') === target.id;
 
                 if (isCorrect) {
-                    state.quizCorrect += 1;
-                    state.quizStreak += 1;
                     btn.classList.add('correct');
                     playSoundEffect('correct');
                     speakChinese(cleanHanziForTts(target.word));
-
-                    state.gamify.stats.quizzesCompleted = (state.gamify.stats.quizzesCompleted || 0) + 1;
-                    state.gamify.stats.quizStreakBest = Math.max(state.gamify.stats.quizStreakBest || 0, state.quizStreak);
-
-                    const streakBonus = Math.min(20, state.quizStreak * 2);
-                    awardXp(10 + streakBonus, 'Trả lời Quiz đúng');
-
-                    if (state.srsData && state.srsData[target.id]) {
-                        rateSrsWord(target.id, 3);
-                    }
                 } else {
-                    state.quizStreak = 0;
                     btn.classList.add('wrong');
                     playSoundEffect('wrong');
-
                     optsEl.querySelectorAll('.quiz-opt-btn').forEach(b => {
-                        if (b.getAttribute('data-quiz-id') === target.id) {
-                            b.classList.add('correct');
-                        }
+                        if (b.getAttribute('data-quiz-id') === target.id) b.classList.add('correct');
                     });
-
-                    addToSrs(target.id, 1);
-                    showToast('Đã đưa vào Hộp từ khó', `Từ “${target.word}” đã được thêm vào SRS để bạn ôn lại!`, '🧠');
                 }
-
-                updateQuizScoreUI();
-                updateQuizStreakUI();
+                processQuizAnswer(isCorrect, ms);
             });
         });
     }
 
-    // ==================== STUDY MODE & GAMES HUB SWITCHER ====================
-    function switchStudyMode(mode) {
-        // Map legacy or shortcut sub-modes to 'games'
-        if (['quiz', 'practice', 'bubble'].includes(mode)) {
+    function finishUnitTest() {
+        const t = state.quizTest;
+        const unitData = getCurrentUnitData();
+        if (!t || !unitData) return;
+        clearQuizTimers();
+        const total = t.deck.length;
+        const res = recordUnitResult(unitData, t.correct, total, t.wrong, 'test');
+        Object.entries(t.rt).forEach(([id, r]) => updateRT(id, r.ms, r.ok));
+        persistSrs();
+        playSoundEffect(res.passed ? 'badge' : 'wrong');
+        state.quizTest = Object.assign({}, t, { finished: true });
+
+        const wrongWords = t.deck.filter(w => t.wrong.has(w.id));
+        const next = findContinueTarget();
+        const box = showQuizResultBox(`
+            <div class="qrb-icon">${res.passed ? '🏆' : '💪'}</div>
+            <h3>${res.passed ? 'Đạt! Bài đã hoàn thành' : 'Chưa đạt'} — ${res.pct}%</h3>
+            <p>Đúng <strong>${t.correct}/${total}</strong> từ. ${res.passed ? '' : `Cần ≥ ${PASS_PCT}% để hoàn thành bài. `}
+               Mọi từ của bài đã vào lịch ôn: từ đúng ôn sau 1 ngày, từ sai ôn sau 10 phút.</p>
+            ${wrongWords.length ? `<div class="qrb-wrong">${wrongWords.map(w => `
+                <span class="qrb-chip"><strong>${escapeHtml(w.word)}</strong> ${escapeHtml(w.pinyin)} — ${escapeHtml(truncateText(w.meaning_vi || w.meaning_primary || '', 40))}</span>`).join('')}</div>` : ''}
+            <div class="qrb-actions">
+                ${res.passed && next ? `<button class="btn-primary-action" data-qrb="next">▶ Học tiếp: Bài ${next.unit}${next.bookId !== state.activeBookId ? ' (' + escapeHtml(getBookIndexMeta(next.bookId).title) + ')' : ''}</button>` : ''}
+                <button class="${res.passed ? 'btn-secondary-action' : 'btn-primary-action'}" data-qrb="retry">🔁 Làm lại</button>
+                ${!res.passed ? `<button class="btn-secondary-action" data-qrb="learn">📖 Xem lại từ</button>` : ''}
+                <button class="btn-ghost-action" data-qrb="sgk">📝 Bài tập SGK</button>
+            </div>
+        `);
+        if (!box) return;
+        const on = (k, fn) => { const b = box.querySelector(`[data-qrb="${k}"]`); if (b) b.addEventListener('click', fn); };
+        on('next', continueStudy);
+        on('retry', initReflexQuiz);
+        on('learn', () => switchStudyMode('memory'));
+        on('sgk', () => switchGamesSubMode('practice'));
+    }
+
+    // ==================== CHUYỂN CHẾ ĐỘ HỌC ====================
+    // Luồng chính: Học từ (memory) → Luyện tập (games: kiểm tra bài + bài tập SGK) → Ôn tập (flashcard)
+    // Phụ: Trò chơi · Luyện nói (extra: bắn bong bóng + luyện nói)
+    function stopBubbleGameIfRunning() {
+        if (state.bubbleGame && state.bubbleGame.isRunning) {
+            if (state.bubbleGame.timerId) clearInterval(state.bubbleGame.timerId);
+            state.bubbleGame.timerId = null;
+            state.bubbleGame.isRunning = false;
+        }
+    }
+
+    function switchStudyMode(mode, opts) {
+        opts = opts || {};
+        // Tên cũ / lối tắt
+        if (mode === 'quiz' || mode === 'practice') {
             state.gamesSubMode = mode;
             mode = 'games';
+        } else if (mode === 'bubble' || mode === 'shadowing') {
+            state.extraSubMode = mode;
+            mode = 'extra';
         }
 
-        // Clean up active timers when leaving modes
-        if (state.studyMode === 'games' && mode !== 'games') {
-            if (state.quizTimerId) {
-                clearInterval(state.quizTimerId);
-                state.quizTimerId = null;
-            }
-            if (state.bubbleGame && state.bubbleGame.isRunning) {
-                if (state.bubbleGame.timerId) clearInterval(state.bubbleGame.timerId);
-                state.bubbleGame.timerId = null;
-                state.bubbleGame.isRunning = false;
-            }
-        }
+        // Dọn bộ đếm giờ khi rời chế độ
+        if (state.studyMode === 'games' && mode !== 'games') clearQuizTimers();
+        if (state.studyMode === 'extra' && mode !== 'extra') stopBubbleGameIfRunning();
 
         state.studyMode = mode;
         document.querySelectorAll('.sm-tab').forEach(tab => {
@@ -3574,25 +4229,16 @@
             pane.classList.remove('active');
         });
 
-        const map = {
-            memory: 'paneMemory',
-            flashcard: 'paneFlashcard',
-            games: 'paneGames',
-            shadowing: 'paneShadowing',
-            // Fallbacks for direct IDs
-            practice: 'paneGames',
-            quiz: 'paneGames',
-            bubble: 'paneGames'
-        };
+        const map = { memory: 'paneMemory', flashcard: 'paneFlashcard', games: 'paneGames', extra: 'paneExtra' };
         const targetPane = document.getElementById(map[mode]);
         if (targetPane) targetPane.classList.add('active');
 
         if (mode === 'flashcard') {
-            initFlashcardDeck();
+            if (!opts.skipDeck) initFlashcardDeck();
         } else if (mode === 'games') {
-            switchGamesSubMode(state.gamesSubMode || 'bubble');
-        } else if (mode === 'shadowing') {
-            initShadowingStudio();
+            switchGamesSubMode(state.gamesSubMode || 'quiz');
+        } else if (mode === 'extra') {
+            switchExtraSubMode(state.extraSubMode || 'bubble');
         }
 
         const stage = document.getElementById('unitStageScroll');
@@ -3600,42 +4246,37 @@
     }
 
     function switchGamesSubMode(subMode) {
-        // Cleanup when switching between game sub-panes
-        if (state.gamesSubMode === 'quiz' && subMode !== 'quiz' && state.quizTimerId) {
-            clearInterval(state.quizTimerId);
-            state.quizTimerId = null;
-        }
-        if (state.gamesSubMode === 'bubble' && subMode !== 'bubble' && state.bubbleGame.isRunning) {
-            if (state.bubbleGame.timerId) clearInterval(state.bubbleGame.timerId);
-            state.bubbleGame.timerId = null;
-            state.bubbleGame.isRunning = false;
-        }
-
+        if (subMode !== 'quiz' && subMode !== 'practice') subMode = 'quiz';
+        if (state.gamesSubMode === 'quiz' && subMode !== 'quiz') clearQuizTimers();
         state.gamesSubMode = subMode;
 
-        // Update sub-tabs
         document.querySelectorAll('.ghh-tab').forEach(tab => {
             tab.classList.toggle('active', tab.getAttribute('data-gsub') === subMode);
         });
-
-        // Update sub-panes
         document.querySelectorAll('.gsub-pane').forEach(pane => {
             pane.classList.remove('active');
         });
-
-        const map = {
-            bubble: 'subPaneBubble',
-            quiz: 'subPaneQuiz',
-            practice: 'subPanePractice'
-        };
-        const targetSubPane = document.getElementById(map[subMode]);
+        const targetSubPane = document.getElementById(subMode === 'quiz' ? 'subPaneQuiz' : 'subPanePractice');
         if (targetSubPane) targetSubPane.classList.add('active');
 
-        if (subMode === 'bubble') {
-            initBubbleGame();
-        } else if (subMode === 'quiz') {
-            initReflexQuiz();
-        }
+        if (subMode === 'quiz') initReflexQuiz();
+    }
+
+    function switchExtraSubMode(subMode) {
+        if (subMode !== 'bubble' && subMode !== 'shadowing') subMode = 'bubble';
+        if (state.extraSubMode === 'bubble' && subMode !== 'bubble') stopBubbleGameIfRunning();
+        state.extraSubMode = subMode;
+
+        document.querySelectorAll('.xsub-tab').forEach(tab => {
+            tab.classList.toggle('active', tab.getAttribute('data-xsub') === subMode);
+        });
+        const bubblePane = document.getElementById('subPaneBubble');
+        const shadPane = document.getElementById('paneShadowing');
+        if (bubblePane) bubblePane.classList.toggle('active', subMode === 'bubble');
+        if (shadPane) shadPane.classList.toggle('active', subMode === 'shadowing');
+
+        if (subMode === 'bubble') initBubbleGame();
+        else initShadowingStudio();
     }
 
     // ==================== WORD BUBBLE POP GAME CONTROLLER ====================
@@ -3871,7 +4512,7 @@
         if (sEl) sEl.textContent = state.bubbleGame.score;
         if (cEl) {
             cEl.textContent = `x${state.bubbleGame.combo}`;
-            cEl.style.color = (state.bubbleGame.combo >= 3) ? '#f59e0b' : 'inherit';
+            cEl.style.color = (state.bubbleGame.combo >= 3) ? 'var(--ui-warning)' : 'inherit';
         }
         if (lEl) {
             const lives = Math.max(0, state.bubbleGame.lives);
@@ -3879,7 +4520,7 @@
         }
         if (tEl) {
             tEl.textContent = `${Math.max(0, state.bubbleGame.timeLeft)}s`;
-            tEl.style.color = (state.bubbleGame.timeLeft <= 10) ? '#ef4444' : 'inherit';
+            tEl.style.color = (state.bubbleGame.timeLeft <= 10) ? 'var(--ui-danger)' : 'inherit';
         }
     }
 
@@ -3932,16 +4573,7 @@
             const found = state.fcDeck.find(w => w.id === wordId);
             if (found) return found;
         }
-        const bMeta = getLoadedBookData(state.activeBookId);
-        if (bMeta && bMeta.units) {
-            for (const u of bMeta.units) {
-                if (u.target_words) {
-                    const found = u.target_words.find(w => w.id === wordId);
-                    if (found) return found;
-                }
-            }
-        }
-        return null;
+        return findWordById(wordId);
     }
 
     function openMnemonicModal(wordId) {
@@ -4250,7 +4882,7 @@
         const meta = getBookIndexMeta(state.activeBookId);
         if (!meta || !meta.units_index) return;
         const idx = meta.units_index.findIndex(u => getUnitNum(u) === state.activeUnitNum);
-        if (idx > 0) selectUnit(getUnitNum(meta.units_index[idx - 1]));
+        if (idx > 0) trySelectUnit(getUnitNum(meta.units_index[idx - 1]));
     }
 
     function goNextUnit() {
@@ -4258,22 +4890,17 @@
         if (!meta || !meta.units_index) return;
         const idx = meta.units_index.findIndex(u => getUnitNum(u) === state.activeUnitNum);
         if (idx >= 0 && idx < meta.units_index.length - 1) {
-            selectUnit(getUnitNum(meta.units_index[idx + 1]));
+            trySelectUnit(getUnitNum(meta.units_index[idx + 1]));
         }
     }
 
-    function toggleCurrentUnitDone() {
-        const key = `${state.activeBookId}_${state.activeUnitNum}`;
-        if (state.doneUnits[key]) delete state.doneUnits[key];
-        else state.doneUnits[key] = true;
+    function setSequential(on) {
+        state.settings.sequential = !!on;
         saveProgress();
-        updateUnitActionButtons();
         const meta = getBookIndexMeta(state.activeBookId);
-        if (meta) {
-            renderSidebarSummary(meta);
-            renderUnitList(meta);
-            renderBookShelf();
-        }
+        if (meta) renderUnitList(meta);
+        showToast(on ? 'Đã bật học theo thứ tự' : 'Đã tắt học theo thứ tự',
+            on ? `Bài sau mở khi bài trước đạt ≥ ${PASS_PCT}%.` : 'Bạn có thể học bất kỳ bài nào.', on ? '🔒' : '🔓');
     }
 
     function bindEvents() {
@@ -4293,18 +4920,16 @@
             }
         });
 
-        // Theme option click handlers (both swatch grid .tsg-item and legacy .tdm-item)
-        document.querySelectorAll('.tsg-item, .tdm-item').forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const chosen = item.getAttribute('data-set-theme');
-                if (chosen) {
-                    applyTheme(chosen);
-                    const name = THEMES_CONFIG[chosen] ? THEMES_CONFIG[chosen].label : chosen;
-                    showToast(`🎨 Đã đổi sang giao diện: ${name}`, 2000);
-                }
-            });
-        });
+        // Học theo thứ tự (khóa bài sau tới khi bài trước đạt ≥ 80%)
+        const chkSeq = document.getElementById('chkSequential');
+        if (chkSeq) {
+            chkSeq.checked = !!state.settings.sequential;
+            chkSeq.addEventListener('change', () => setSequential(chkSeq.checked));
+        }
+
+        // Luồng chính trên thanh đầu trang
+        const btnContinue = document.getElementById('btnContinueStudy');
+        if (btnContinue) btnContinue.addEventListener('click', continueStudy);
 
         // Hanzi Font Switcher (Artistic Calligraphy <-> Modern Sans)
         const fontBtn = document.getElementById('btnToggleHanziFont');
@@ -4477,8 +5102,8 @@
         // Unit Done, Star & Prev/Next (Desktop + Mobile Sticky Bar)
         const btnDone = document.getElementById('btnToggleUnitDone');
         const mobDone = document.getElementById('mobToggleDone');
-        if (btnDone) btnDone.addEventListener('click', toggleCurrentUnitDone);
-        if (mobDone) mobDone.addEventListener('click', toggleCurrentUnitDone);
+        if (btnDone) btnDone.addEventListener('click', startUnitTest);
+        if (mobDone) mobDone.addEventListener('click', startUnitTest);
 
         const btnStar = document.getElementById('btnToggleUnitStar');
         if (btnStar) {
@@ -4505,8 +5130,10 @@
         // Bottom CTAs in Memory Mode
         const btnGoPrac = document.getElementById('btnGoToPracticeBottom');
         const btnGoFc   = document.getElementById('btnGoToFlashcardBottom');
-        if (btnGoPrac) btnGoPrac.addEventListener('click', () => switchStudyMode('practice'));
-        if (btnGoFc)   btnGoFc.addEventListener('click', () => switchStudyMode('flashcard'));
+        const btnGoNext = document.getElementById('btnGoToNextUnitBottom');
+        if (btnGoPrac) btnGoPrac.addEventListener('click', startUnitTest);
+        if (btnGoFc)   btnGoFc.addEventListener('click', () => openFlashcardScope('unit'));
+        if (btnGoNext) btnGoNext.addEventListener('click', continueStudy);
 
         // Master Speak All Words in Unit controls (Sticky Top & Mobile Bottom)
         const btnSpeakAllTop = document.getElementById('btnSpeakAllTop');
@@ -4519,7 +5146,7 @@
             btnTogglePy.addEventListener('click', () => {
                 state.showPinyin = !state.showPinyin;
                 btnTogglePy.classList.toggle('active', state.showPinyin);
-                document.querySelectorAll('.qmc-ex-py').forEach(el => {
+                document.querySelectorAll('.qmc-ex-py, .bhes-py').forEach(el => {
                     el.classList.toggle('hidden', !state.showPinyin);
                 });
             });
@@ -4530,7 +5157,7 @@
             btnToggleMn.addEventListener('click', () => {
                 state.showMeaning = !state.showMeaning;
                 btnToggleMn.classList.toggle('active', state.showMeaning);
-                document.querySelectorAll('.qmc-ex-vn').forEach(el => {
+                document.querySelectorAll('.qmc-ex-vn, .bhes-vn').forEach(el => {
                     el.classList.toggle('hidden', !state.showMeaning);
                 });
             });
@@ -4583,10 +5210,26 @@
         const btnSrsHeader = document.getElementById('btnSrsQuickReview');
         const modalSrs = document.getElementById('srsModal');
         const closeSrs = document.getElementById('btnCloseSrsModal');
-        if (btnSrsHeader && modalSrs) {
+        if (btnSrsHeader) {
             btnSrsHeader.addEventListener('click', () => {
+                state.fcBookFilter = 'all';
+                const bf = document.getElementById('fcBookFilter');
+                if (bf) bf.value = 'all';
+                openFlashcardScope('due');
+            });
+        }
+        const btnFcOpenList = document.getElementById('btnFcOpenList');
+        if (btnFcOpenList && modalSrs) {
+            btnFcOpenList.addEventListener('click', () => {
                 renderSrsModal();
                 modalSrs.classList.remove('hidden');
+            });
+        }
+        const srsBookFilter = document.getElementById('srsBookFilter');
+        if (srsBookFilter) {
+            srsBookFilter.addEventListener('change', () => {
+                srsModalFilter = srsBookFilter.value || 'all';
+                renderSrsModal();
             });
         }
         if (closeSrs && modalSrs) {
@@ -4605,36 +5248,27 @@
         if (btnStartSrsFc) {
             btnStartSrsFc.addEventListener('click', () => {
                 if (modalSrs) modalSrs.classList.add('hidden');
-                switchStudyMode('flashcard');
-                state.fcScope = 'srs';
-                const fcScopeSel = document.getElementById('fcScopeSelect');
-                if (fcScopeSel) fcScopeSel.value = 'srs';
-                initFlashcardDeck();
+                state.fcBookFilter = srsModalFilter;
+                const bf = document.getElementById('fcBookFilter');
+                if (bf) bf.value = srsModalFilter;
+                openFlashcardScope('due');
             });
         }
         if (btnStartSrsQz) {
             btnStartSrsQz.addEventListener('click', () => {
                 if (modalSrs) modalSrs.classList.add('hidden');
-                switchStudyMode('quiz');
-                state.fcScope = 'srs';
-                const fcScopeSel = document.getElementById('fcScopeSelect');
-                if (fcScopeSel) fcScopeSel.value = 'srs';
-                initReflexQuiz();
+                state.quizScope = 'due';
+                const qs = document.getElementById('quizScopeSelect');
+                if (qs) qs.value = 'due';
+                switchStudyMode('games');
+                switchGamesSubMode('quiz');
             });
         }
         if (btnClearSrs) {
+            // Nút thứ 3 nay là "Luyện từ chậm" (trắc nghiệm tính giờ 10s, đo lại tốc độ nhận diện)
             btnClearSrs.addEventListener('click', () => {
-                let cleared = 0;
-                for (const [wid, info] of Object.entries(state.srsData || {})) {
-                    if (info.box >= 5) {
-                        delete state.srsData[wid];
-                        cleared += 1;
-                    }
-                }
-                saveProgress();
-                updateSrsHeaderBadge();
-                renderSrsModal();
-                showToast('Đã dọn dẹp Hộp SRS', `Đã xóa ${cleared} từ đã ghi nhớ thành thạo (Hộp 5).`, '🧹');
+                if (modalSrs) modalSrs.classList.add('hidden');
+                startSlowPractice();
             });
         }
 
@@ -4701,10 +5335,16 @@
         // Mode 3 Flashcard Controls
         const fcScopeSel = document.getElementById('fcScopeSelect');
         if (fcScopeSel) {
-            fcScopeSel.addEventListener('change', () => {
-                state.fcScope = fcScopeSel.value;
-                initFlashcardDeck();
-                initReflexQuiz();
+            fcScopeSel.value = state.fcScope;
+            fcScopeSel.addEventListener('change', () => openFlashcardScope(fcScopeSel.value));
+        }
+        const fcBookFilter = document.getElementById('fcBookFilter');
+        if (fcBookFilter) {
+            fillBookFilterSelect(fcBookFilter, state.fcBookFilter);
+            fcBookFilter.addEventListener('focus', () => fillBookFilterSelect(fcBookFilter, state.fcBookFilter));
+            fcBookFilter.addEventListener('change', () => {
+                state.fcBookFilter = fcBookFilter.value || 'all';
+                openFlashcardScope(state.fcScope);
             });
         }
 
@@ -4727,18 +5367,13 @@
         if (fcCard) {
             fcCard.addEventListener('click', (e) => {
                 if (e.target.closest('.fc-audio-btn')) return;
-                state.fcFlipped = !state.fcFlipped;
-                playSoundEffect('flip');
-                renderFlashcard();
+                flipFlashcard();
             });
         }
 
-        const btnFcRateHard = document.getElementById('btnFcRateHard');
-        const btnFcRateMed  = document.getElementById('btnFcRateMed');
-        const btnFcRateEasy = document.getElementById('btnFcRateEasy');
-        if (btnFcRateHard) btnFcRateHard.addEventListener('click', () => handleFlashcardRate(1));
-        if (btnFcRateMed)  btnFcRateMed.addEventListener('click', () => handleFlashcardRate(2));
-        if (btnFcRateEasy) btnFcRateEasy.addEventListener('click', () => handleFlashcardRate(3));
+        document.querySelectorAll('.fc-rate-btn[data-rate]').forEach(btn => {
+            btn.addEventListener('click', () => handleFlashcardRate(parseInt(btn.getAttribute('data-rate'), 10)));
+        });
 
         const btnFcSpeakF = document.getElementById('btnFcSpeakFront');
         const btnFcSpeakB = document.getElementById('btnFcSpeakBack');
@@ -4774,6 +5409,14 @@
             });
         });
 
+        const quizScopeSel = document.getElementById('quizScopeSelect');
+        if (quizScopeSel) {
+            quizScopeSel.addEventListener('change', () => {
+                state.quizScope = quizScopeSel.value || 'test';
+                initReflexQuiz();
+            });
+        }
+
         const btnTogTimer = document.getElementById('btnQuizToggleTimer');
         const lblTimer = document.getElementById('lblQuizTimerStatus');
         if (btnTogTimer) {
@@ -4808,7 +5451,14 @@
         }
         const btnNextQuiz = document.getElementById('btnNextQuizQ');
         if (btnNextQuiz) {
-            btnNextQuiz.addEventListener('click', nextReflexQuizQuestion);
+            btnNextQuiz.addEventListener('click', () => {
+                // Kiểm tra bài: phải trả lời câu hiện tại trước khi sang câu sau
+                if (state.quizTest && !state.quizAnswered) {
+                    showToast('Chọn một đáp án', 'Hãy trả lời câu này trước khi sang câu tiếp theo.', 'ℹ️');
+                    return;
+                }
+                nextReflexQuizQuestion();
+            });
         }
 
         // Global Keyboard Shortcuts
@@ -4819,9 +5469,7 @@
             if (state.studyMode === 'flashcard') {
                 if (e.code === 'Space') {
                     e.preventDefault();
-                    state.fcFlipped = !state.fcFlipped;
-                    playSoundEffect('flip');
-                    renderFlashcard();
+                    flipFlashcard();
                 } else if (e.code === 'ArrowLeft') {
                     e.preventDefault();
                     advanceFlashcard(-1);
@@ -4834,11 +5482,13 @@
                     handleFlashcardRate(2);
                 } else if (e.key === '3') {
                     handleFlashcardRate(3);
+                } else if (e.key === '4') {
+                    handleFlashcardRate(4);
                 } else if (e.key === 'r' || e.key === 'R') {
                     const w = state.fcDeck[state.fcIndex];
                     if (w) speakChinese(cleanHanziForTts(w.word));
                 }
-            } else if (state.studyMode === 'quiz') {
+            } else if (isQuizActive()) {
                 if (['a', 'b', 'c', 'd', 'A', 'B', 'C', 'D'].includes(e.key)) {
                     const letter = e.key.toUpperCase();
                     const btn = document.querySelector(`.quiz-opt-btn[data-opt-letter="${letter}"]`);
@@ -4849,7 +5499,7 @@
                     const btn = document.querySelector(`.quiz-opt-btn[data-opt-letter="${letter}"]`);
                     if (btn) btn.click();
                 } else if (e.code === 'Enter') {
-                    if (state.quizAnswered) nextReflexQuizQuestion();
+                    if (state.quizAnswered && !(state.quizTest && state.quizTest.finished)) nextReflexQuizQuestion();
                 } else if (e.key === 'r' || e.key === 'R') {
                     const btnQuizSpeak = document.getElementById('btnQuizSpeak');
                     if (btnQuizSpeak) btnQuizSpeak.click();
@@ -4859,11 +5509,17 @@
 
 
 
-        // ==================== GAMES HUB & BUBBLE POP EVENTS ====================
+        // ==================== LUYỆN TẬP / TRÒ CHƠI: TAB CON ====================
         document.querySelectorAll('.ghh-tab').forEach(tab => {
             tab.addEventListener('click', () => {
                 const sub = tab.getAttribute('data-gsub');
                 if (sub) switchGamesSubMode(sub);
+            });
+        });
+        document.querySelectorAll('.xsub-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const sub = tab.getAttribute('data-xsub');
+                if (sub) switchExtraSubMode(sub);
             });
         });
 
@@ -4902,6 +5558,10 @@
             btnBrmSwitchQuiz.addEventListener('click', () => {
                 const modal = document.getElementById('bpopResultModal');
                 if (modal) modal.classList.add('hidden');
+                state.quizScope = 'unit';
+                const qs = document.getElementById('quizScopeSelect');
+                if (qs) qs.value = 'unit';
+                switchStudyMode('games');
                 switchGamesSubMode('quiz');
             });
         }

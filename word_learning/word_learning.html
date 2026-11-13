@@ -6,14 +6,32 @@
     <title>Giáo Trình Luyện & Nhớ Nhanh Từ Vựng HSK 3.0 (Cấp 1 – 9) | Dữ Liệu JSON</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600;700;900&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700;900&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bảng màu chung + chế độ sáng/tối (nạp đồng bộ để không chớp màu) -->
+    <link rel="stylesheet" href="../shared/theme.css">
+    <script src="../shared/theme.js"></script>
+    <script>
+        // Chuyển theme cũ của trang (6 theme) sang sáng/tối dùng chung — chỉ chạy 1 lần
+        (function () {
+            try {
+                var OLD = 'hsk_wl_json_theme_v2';
+                var old = localStorage.getItem(OLD);
+                if (old !== null) {
+                    if (!localStorage.getItem('hoc_theme') && window.HocTheme) {
+                        HocTheme.set(/^(light|matcha|jiangnan)$/.test(old) ? 'light' : 'dark');
+                    }
+                    localStorage.removeItem(OLD);
+                }
+            } catch (e) {}
+        })();
+    </script>
     <link rel="stylesheet" href="word_learning.css">
 </head>
 <body>
     <!-- Top Header (Ultra-Clean & Modern) -->
     <header class="wl-header">
         <div class="wl-header-left">
-            <a href="index.html" class="back-home-btn" title="Về Trang Chủ">
+            <a href="../index.html" class="back-home-btn" title="Về Trang Chủ">
                 <span class="home-icon">🏠</span>
                 <span class="hide-xs">Trang chủ</span>
             </a>
@@ -35,48 +53,38 @@
         </div>
 
         <div class="wl-header-right">
+            <!-- Luồng chính: Học tiếp → Ôn hôm nay -->
+            <button id="btnContinueStudy" class="action-pill continue-pill" title="Tới bài kế tiếp chưa hoàn thành">
+                ▶ <span class="hide-xs">Học tiếp</span>
+            </button>
+            <button id="btnSrsQuickReview" class="action-pill srs-pill" title="Ôn các từ đến hạn hôm nay (gộp mọi quyển)">
+                🧠 <span class="hide-sm">Ôn hôm nay</span> <span class="srs-count-badge" id="hdrSrsCount">0</span>
+            </button>
             <!-- Streak & Badges Widget -->
             <button id="btnBadgesModal" class="action-pill streak-pill" title="Xem chuỗi ngày học & huy hiệu thành tích">
-                🔥 <span id="hdrStreakCount">1</span> ngày · <span id="hdrUserLevel">Lv.1</span>
+                🔥 <span id="hdrStreakCount">1</span><span class="hide-sm"> ngày · <span id="hdrUserLevel">Lv.1</span></span>
             </button>
-            <!-- SRS Quick Review Button -->
-            <button id="btnSrsQuickReview" class="action-pill srs-pill" title="Hộp từ khó (Spaced Repetition) - Xem các từ cần ôn tập">
-                🧠 <span class="hide-sm">Từ khó</span> <span class="srs-count-badge" id="hdrSrsCount">0</span>
-            </button>
+            <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
 
-            <!-- Quick Settings Popover Menu (Gom Theme, Font, Podcast, Ngữ pháp) -->
+            <!-- Cài đặt nhanh: thứ tự học, kiểu chữ, podcast, ngữ pháp -->
             <div class="settings-menu-wrapper" id="settingsMenuWrapper">
-                <button id="btnOpenSettings" class="action-pill settings-pill" title="Cài đặt giao diện & công cụ học tập">
+                <button id="btnOpenSettings" class="action-pill settings-pill" title="Cài đặt & công cụ học tập">
                     ⚙️ <span class="hide-sm">Cài đặt</span> <span class="settings-caret">▾</span>
                 </button>
                 <div class="settings-dropdown-menu hidden" id="settingsDropdownMenu">
                     <div class="sdm-section">
-                        <div class="sdm-sec-title">🎨 Giao Diện Chủ Đề (Themes)</div>
-                        <div class="theme-swatch-grid">
-                            <button class="tsg-item" data-set-theme="dark" title="Dạ Thạch (Dark)">
-                                <span class="tsg-icon">🌙</span>
-                                <span class="tsg-label">Dạ Thạch</span>
-                            </button>
-                            <button class="tsg-item" data-set-theme="light" title="Bạch Tuyết (Light)">
-                                <span class="tsg-icon">☀️</span>
-                                <span class="tsg-label">Bạch Tuyết</span>
-                            </button>
-                            <button class="tsg-item" data-set-theme="palace" title="Cố Cung Chu Sa">
-                                <span class="tsg-icon">🏮</span>
-                                <span class="tsg-label">Cố Cung</span>
-                            </button>
-                            <button class="tsg-item" data-set-theme="matcha" title="Trà Đạo Giấy Mộc">
-                                <span class="tsg-icon">🍵</span>
-                                <span class="tsg-label">Trà Đạo</span>
-                            </button>
-                            <button class="tsg-item" data-set-theme="cyberpunk" title="OLED Cyberpunk">
-                                <span class="tsg-icon">🌌</span>
-                                <span class="tsg-label">Cyberpunk</span>
-                            </button>
-                            <button class="tsg-item" data-set-theme="jiangnan" title="Giang Nam Khói Mây">
-                                <span class="tsg-icon">🌸</span>
-                                <span class="tsg-label">Giang Nam</span>
-                            </button>
+                        <div class="sdm-sec-title">📚 Lộ trình học</div>
+                        <div class="sdm-tools-list">
+                            <label class="sdm-tool-row sdm-check-row" for="chkSequential">
+                                <div class="sdm-tool-info">
+                                    <span class="sdm-tool-icon">🔒</span>
+                                    <div>
+                                        <strong>Học theo thứ tự</strong>
+                                        <div class="sdm-tool-sub">Khóa bài sau tới khi bài trước đạt ≥ 80%</div>
+                                    </div>
+                                </div>
+                                <input type="checkbox" id="chkSequential" checked>
+                            </label>
                         </div>
                     </div>
 
@@ -159,7 +167,7 @@
                     <button class="uf-pill" data-filter="todo">Chưa học</button>
                     <button class="uf-pill" data-filter="done">✓ Đã học</button>
                     <button class="uf-pill" data-filter="star">⭐ Lưu</button>
-                    <button class="uf-pill" data-filter="srs" title="Các bài có từ khó trong Hộp lặp lại ngắt quãng SRS">🧠 Cần ôn</button>
+                    <button class="uf-pill" data-filter="srs" title="Các bài có từ đến hạn ôn">🧠 Đến hạn</button>
                 </div>
             </div>
 
@@ -196,14 +204,14 @@
                     <button class="sm-tab active" data-smode="memory" id="tabBtnMemory">
                         📖 <span class="sm-tab-text">Học từ</span> <span class="sm-count" id="lblTargetCount">20 từ</span>
                     </button>
-                    <button class="sm-tab" data-smode="flashcard" id="tabBtnFlashcard">
-                        🎴 <span class="sm-tab-text">Flashcard</span>
-                    </button>
                     <button class="sm-tab" data-smode="games" id="tabBtnGames">
-                        🎮 <span class="sm-tab-text">Trò chơi & Quiz</span>
+                        ✍️ <span class="sm-tab-text">Luyện tập</span>
                     </button>
-                    <button class="sm-tab" data-smode="shadowing" id="tabBtnShadowing">
-                        🎙️ <span class="sm-tab-text">Luyện nói AI</span>
+                    <button class="sm-tab" data-smode="flashcard" id="tabBtnFlashcard">
+                        🧠 <span class="sm-tab-text">Ôn tập</span> <span class="sm-count sm-due hidden" id="lblTabDue">0</span>
+                    </button>
+                    <button class="sm-tab sm-tab-extra" data-smode="extra" id="tabBtnExtra">
+                        🎲 <span class="sm-tab-text">Trò chơi · Luyện nói</span>
                     </button>
                 </div>
 
@@ -212,8 +220,8 @@
                         <span class="tsa-icon">🔊</span>
                         <span class="tsa-text hide-sm">Đọc cả bài</span>
                     </button>
-                    <button class="mark-done-btn" id="btnToggleUnitDone" title="Đánh dấu hoàn thành bài học này">
-                        ✓ <span class="hide-xs">Đã học</span>
+                    <button class="mark-done-btn" id="btnToggleUnitDone" title="Bài hoàn thành khi Kiểm tra bài hoặc Bài tập SGK đạt ≥ 80%">
+                        ☐ <span class="hide-xs">Chưa đạt</span>
                     </button>
                 </div>
             </div>
@@ -309,13 +317,13 @@
                     <!-- Bottom Quick Action Bar in Memory Mode -->
                     <div class="stage-bottom-cta">
                         <button class="btn-primary-action" id="btnGoToPracticeBottom">
-                            🎮 Chuyển sang Trò chơi & Luyện tập ➔
+                            ✍️ Học xong → Kiểm tra bài này
                         </button>
                         <button class="btn-secondary-action" id="btnGoToFlashcardBottom">
-                            🎴 Ôn tập bằng Flashcard Hình ảnh
+                            🎴 Lật thẻ từ của bài
                         </button>
-                        <button class="btn-ghost-action" id="btnGoToBubbleBottom">
-                            🫧 Chơi game Bắn bong bóng
+                        <button class="btn-ghost-action" id="btnGoToNextUnitBottom">
+                            ▶ Học tiếp
                         </button>
                     </div>
                 </div>
@@ -328,22 +336,26 @@
                         <div class="fc-panel-card">
                             <div class="fc-panel-head">
                                 <div class="fph-title-wrap">
-                                    <h3>🎴 Flashcard Hình Ảnh & Chiết Tự</h3>
+                                    <h3>🧠 Ôn tập ngắt quãng</h3>
                                     <span class="fc-deck-badge" id="fcDeckBadge">Bài 1</span>
                                 </div>
                                 <div class="fc-head-tools">
                                     <div class="fc-scope-wrap">
                                         <select id="fcScopeSelect" title="Chọn nguồn từ vựng để lật thẻ">
-                                            <option value="unit">Từ vựng Bài đang học</option>
-                                            <option value="srs">🧠 Hộp từ khó (SRS cần ôn)</option>
-                                            <option value="starred">Từ vựng Đã lưu sao (⭐)</option>
-                                            <option value="book">Toàn bộ Quyển này</option>
+                                            <option value="due">🧠 Ôn hôm nay (đến hạn)</option>
+                                            <option value="slow">🐢 Từ nhận diện chậm</option>
+                                            <option value="unit">📖 Từ vựng bài đang học</option>
+                                            <option value="starred">⭐ Từ đã lưu sao</option>
+                                            <option value="book">📚 Toàn bộ quyển này</option>
                                         </select>
+                                    </div>
+                                    <div class="fc-scope-wrap" id="fcBookFilterWrap">
+                                        <select id="fcBookFilter" title="Lọc theo quyển"></select>
                                     </div>
                                     <div class="fc-face-mode-wrap">
                                         <select id="fcFaceModeSelect" title="Chọn mặt trước hiển thị">
-                                            <option value="visual" selected>🖼️ Mặt trước: Hình ảnh minh họa</option>
-                                            <option value="hz">Mặt trước: Chữ Hán</option>
+                                            <option value="hz" selected>Mặt trước: Chữ Hán</option>
+                                            <option value="visual">🖼️ Mặt trước: Hình ảnh minh họa</option>
                                             <option value="vi">Mặt trước: Nghĩa tiếng Việt</option>
                                             <option value="audio">Mặt trước: Chỉ Nghe âm</option>
                                         </select>
@@ -356,11 +368,14 @@
                                 <div class="fc-progress-fill" id="fcDeckProgressBar"></div>
                             </div>
 
+                            <!-- Hết thẻ cần ôn -->
+                            <div class="fc-empty-state hidden" id="fcEmptyState"></div>
+
                             <!-- 3D Card Stage with Visual Badges -->
                             <div class="fc-card-3d" id="fcCard3d">
                                 <div class="fc-face fc-front">
                                     <span class="fc-badge" id="fcWordNumBadge">#1</span>
-                                    <span class="fc-srs-box-badge hidden" id="fcSrsBoxBadge">Hộp SRS 1</span>
+                                    <span class="fc-srs-box-badge hidden" id="fcSrsBoxBadge">Mới</span>
                                     <button class="fc-audio-btn" id="btnFcSpeakFront" title="Nghe phát âm">🔊</button>
                                     
                                     <div class="fc-visual-icon" id="fcFrontVisual">❤️</div>
@@ -391,18 +406,21 @@
                                 </div>
                             </div>
 
-                            <!-- SRS Leitner Rating Buttons -->
+                            <!-- Đánh giá SM-2: Quên / Khó / Nhớ / Dễ, kèm khoảng cách tới lần ôn sau -->
                             <div class="fc-srs-actions" id="fcSrsActions">
-                                <span class="fc-srs-label">Đánh giá khả năng nhớ:</span>
+                                <span class="fc-srs-label">Bạn nhớ từ này thế nào? (lật thẻ trước khi chấm)</span>
                                 <div class="fc-srs-btn-group">
-                                    <button class="fc-rate-btn rate-hard" id="btnFcRateHard" title="Phím 1: Chưa nhớ - Chuyển về Hộp 1 để ôn lại ngay">
-                                        ❌ Chưa nhớ <span class="kbd-key">1</span>
+                                    <button class="fc-rate-btn rate-again" data-rate="1" title="Phím 1">
+                                        <span class="frb-name">Quên</span><span class="frb-iv" data-rate-iv="1">10 phút</span>
                                     </button>
-                                    <button class="fc-rate-btn rate-med" id="btnFcRateMed" title="Phím 2: Khó nhớ - Đưa vào Hộp 2">
-                                        🤔 Khó nhớ <span class="kbd-key">2</span>
+                                    <button class="fc-rate-btn rate-hard" data-rate="2" title="Phím 2">
+                                        <span class="frb-name">Khó</span><span class="frb-iv" data-rate-iv="2">1 ngày</span>
                                     </button>
-                                    <button class="fc-rate-btn rate-easy" id="btnFcRateEasy" title="Phím 3: Đã nhớ tốt - Tăng Hộp SRS & nhận +XP">
-                                        ✅ Đã nhớ <span class="kbd-key">3</span>
+                                    <button class="fc-rate-btn rate-good" data-rate="3" title="Phím 3">
+                                        <span class="frb-name">Nhớ</span><span class="frb-iv" data-rate-iv="3">1 ngày</span>
+                                    </button>
+                                    <button class="fc-rate-btn rate-easy" data-rate="4" title="Phím 4">
+                                        <span class="frb-name">Dễ</span><span class="frb-iv" data-rate-iv="4">3 ngày</span>
                                     </button>
                                 </div>
                             </div>
@@ -411,7 +429,8 @@
                             <div class="fc-controls">
                                 <button class="fc-nav-btn" id="btnFcPrev" title="Phím Mũi tên Trái">◀ Từ trước</button>
                                 <span class="fc-counter" id="fcCounter">1 / 20</span>
-                                <button class="fc-nav-btn" id="btnFcShuffle" title="Trộn ngẫu nhiên thứ tự thẻ">🔀 Trộn thẻ</button>
+                                <button class="fc-nav-btn" id="btnFcShuffle" title="Trộn ngẫu nhiên thứ tự thẻ">🔀 Trộn</button>
+                                <button class="fc-nav-btn" id="btnFcOpenList" title="Xem danh sách mọi thẻ ôn tập">📋 Danh sách thẻ</button>
                                 <button class="fc-nav-btn" id="btnFcNext" title="Phím Mũi tên Phải">Từ sau ▶</button>
                             </div>
 
@@ -421,7 +440,7 @@
                                     <span>🔊 Tự đọc khi lật thẻ</span>
                                 </label>
                                 <div class="fc-shortcuts-pill hide-sm">
-                                    ⌨️ <strong>Space</strong>: Lật · <strong>← / →</strong>: Trước / Sau · <strong>1, 2, 3</strong>: Đánh giá
+                                    ⌨️ <strong>Space</strong>: Lật · <strong>← / →</strong>: Trước / Sau · <strong>1–4</strong>: Quên / Khó / Nhớ / Dễ
                                 </div>
                             </div>
                         </div>
@@ -433,23 +452,150 @@
                      Consolidates: 1. Bubble Pop Game, 2. Reflex Quiz, 3. Textbook Practice
                      ========================================================= -->
                 <div class="smode-pane" id="paneGames">
-                    <!-- Sub-Navigation Bar for Games Hub -->
+                    <!-- Luyện tập: Kiểm tra từ vựng (tính điểm) + Bài tập SGK -->
                     <div class="games-hub-header">
                         <div class="ghh-tabs">
-                            <button class="ghh-tab active" data-gsub="bubble" id="btnGsubBubble">
-                                🫧 Bắn bong bóng từ vựng
-                            </button>
-                            <button class="ghh-tab" data-gsub="quiz" id="btnGsubQuiz">
-                                🎯 Trắc nghiệm phản xạ
+                            <button class="ghh-tab active" data-gsub="quiz" id="btnGsubQuiz">
+                                🎯 Kiểm tra từ vựng
                             </button>
                             <button class="ghh-tab" data-gsub="practice" id="btnGsubPractice">
-                                ✍️ Bài tập SGK (速练)
+                                📝 Bài tập SGK (速练)
                             </button>
+                        </div>
+                        <div class="ghh-note">Bài được tính <strong>hoàn thành</strong> khi Kiểm tra bài hoặc Bài tập SGK đạt <strong>≥ 80%</strong>. Mọi từ của bài sẽ vào lịch ôn.</div>
+                    </div>
+
+                    <!-- SUB-PANE 2: REFLEX QUIZ -->
+                    <div class="gsub-pane active" id="subPaneQuiz">
+                        <div class="quiz-workspace">
+                            <div class="fc-panel-card quiz-panel-card">
+                                <div class="fc-panel-head">
+                                    <div class="quiz-head-left">
+                                        <h3>🎯 Kiểm tra từ vựng</h3>
+                                        <div class="quiz-streak-badge hidden" id="quizStreakBadge">
+                                            🔥 Combo: <strong id="quizStreakCount">0</strong> liên tiếp!
+                                        </div>
+                                    </div>
+                                    <div class="quiz-score-pill">
+                                        Đúng: <strong id="quizScore">0</strong> / <span id="quizTotal">0</span>
+                                        <span class="quiz-acc-rate" id="quizAccRate">(0%)</span>
+                                    </div>
+                                </div>
+
+                                <!-- Chế độ: kiểm tra bài (tính điểm) / luyện tự do / từ chậm / đến hạn -->
+                                <div class="quiz-scope-bar">
+                                    <select id="quizScopeSelect" title="Chọn chế độ luyện">
+                                        <option value="test" selected>✅ Kiểm tra bài (mỗi từ 1 câu, đạt ≥ 80%)</option>
+                                        <option value="unit">🔁 Luyện tự do từ của bài</option>
+                                        <option value="slow">🐢 Luyện từ nhận diện chậm (mọi quyển)</option>
+                                        <option value="due">🧠 Từ đến hạn ôn (mọi quyển)</option>
+                                    </select>
+                                    <span class="quiz-test-progress" id="quizTestProgress"></span>
+                                </div>
+                                <div class="quiz-test-bar" id="quizTestBarWrap"><div class="quiz-test-fill" id="quizTestBar"></div></div>
+
+                                <!-- Quiz Type Switcher Pills -->
+                                <div class="quiz-types-bar">
+                                    <button class="qtype-btn active" data-qtype="hz_to_vn">🔤 Chữ ➔ Nghĩa</button>
+                                    <button class="qtype-btn" data-qtype="vn_to_hz">🇻🇳 Nghĩa ➔ Chữ</button>
+                                    <button class="qtype-btn" data-qtype="audio_to_hz">🎧 Nghe ➔ Chữ</button>
+                                </div>
+
+                                <!-- Quiz Settings & Timer Bar -->
+                                <div class="quiz-tools-bar">
+                                    <button class="qtool-btn active" id="btnQuizToggleTimer" title="Bật/Tắt đếm ngược 10 giây mỗi câu">
+                                        ⏱️ 10s: <strong id="lblQuizTimerStatus">BẬT</strong>
+                                    </button>
+                                    <button class="qtool-btn active" id="btnQuizToggleSound" title="Bật/Tắt âm thanh thông báo">
+                                        🔔 Âm thanh: <strong id="lblQuizSoundStatus">BẬT</strong>
+                                    </button>
+                                    <button class="qtool-btn" id="btnQuizResetScore" title="Đặt lại điểm số">
+                                        🔄 Làm mới
+                                    </button>
+                                </div>
+
+                                <!-- Countdown Bar -->
+                                <div class="quiz-timer-wrap" id="quizTimerWrap">
+                                    <div class="quiz-timer-fill" id="quizTimerFill"></div>
+                                </div>
+
+                                <!-- Kết quả kiểm tra bài -->
+                                <div class="quiz-result-box hidden" id="quizResultBox"></div>
+
+                                <!-- Question Prompt Box -->
+                                <div class="quiz-question-box" id="quizQuestionBox">
+                                    <div class="qq-word" id="quizPromptWord">爱</div>
+                                    <div class="qq-pinyin" id="quizPromptPinyin">ài · đ.</div>
+                                    <button class="qq-audio" id="btnQuizSpeak">🔊 Nghe phát âm</button>
+                                </div>
+
+                                <!-- 4 Multiple Choice Options with keyboard shortcuts A, B, C, D -->
+                                <div class="quiz-options" id="quizOptions">
+                                    <!-- 4 options populated dynamically -->
+                                </div>
+
+                                <div class="quiz-bottom-bar">
+                                    <span class="quiz-kbd-hint hide-sm">Phím tắt: Bấm <strong>A, B, C, D</strong> hoặc <strong>1, 2, 3, 4</strong> để chọn</span>
+                                    <button class="btn-primary-action" id="btnNextQuizQ">Câu tiếp theo ➔</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- SUB-PANE 1: BUBBLE POP GAME -->
-                    <div class="gsub-pane active" id="subPaneBubble">
+                    <!-- SUB-PANE 3: TEXTBOOK PRACTICE -->
+                    <div class="gsub-pane" id="subPanePractice">
+                        <div class="practice-banner">
+                            <div class="pb-left">
+                                <div class="pb-title">◎ 速练 · Luyện Tập Nhanh — <span id="pracBannerUnit">Bài 1</span></div>
+                                <p class="pb-desc">Làm trực tiếp 3 phần bài tập từ dữ liệu JSON của bài học và bấm <strong>Chấm điểm & Xem đáp án</strong> để kiểm tra kết quả ngay.</p>
+                            </div>
+                            <div class="pb-actions">
+                                <div class="score-badge hidden" id="practiceScoreBadge">Điểm: 0 / 45</div>
+                                <button class="btn-primary-action" id="btnCheckPractice">🎯 Chấm điểm & Xem đáp án</button>
+                                <button class="btn-secondary-action" id="btnShowPracticeAnswers">👁️ Điền đáp án mẫu</button>
+                                <button class="btn-ghost-action" id="btnResetPractice">🔄 Làm lại</button>
+                            </div>
+                        </div>
+
+                        <!-- Section I: Matching Pinyin & Meaning -->
+                        <div class="exercise-block" id="exSection1">
+                            <!-- Rendered from unit.exercises.section1 -->
+                        </div>
+
+                        <!-- Section II: Fill in the blank (4 groups x 5 sentences) -->
+                        <div class="exercise-block" id="exSection2">
+                            <!-- Rendered from unit.exercises.section2 -->
+                        </div>
+
+                        <!-- Section III: Multiple Choice Sentence Completion -->
+                        <div class="exercise-block" id="exSection3">
+                            <!-- Rendered from unit.exercises.section3 -->
+                        </div>
+
+                        <!-- Bottom Practice Grading Bar (so mobile/tablet users don't need to scroll back up) -->
+                        <div class="practice-bottom-bar">
+                            <div class="score-badge hidden" id="practiceScoreBadgeBottom">Điểm: 0 / 45</div>
+                            <button class="btn-primary-action" id="btnCheckPracticeBottom">🎯 Chấm điểm & Xem đáp án</button>
+                            <button class="btn-secondary-action" id="btnShowPracticeAnswersBottom">👁️ Điền đáp án mẫu</button>
+                            <button class="btn-ghost-action" id="btnResetPracticeBottom">🔄 Làm lại</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =========================================================
+                     MODE 5: LUYỆN NÓI & PHÁT ÂM TƯƠNG TÁC (VOICE & SHADOWING STUDIO)
+                     ========================================================= -->
+                <div class="smode-pane" id="paneExtra">
+                    <div class="games-hub-header">
+                        <div class="ghh-tabs">
+                            <button class="xsub-tab active" data-xsub="bubble">🫧 Bắn bong bóng</button>
+                            <button class="xsub-tab" data-xsub="shadowing">🎙️ Luyện nói AI</button>
+                        </div>
+                        <div class="ghh-note">Phần thêm để luyện vui — không tính vào hoàn thành bài.</div>
+                    </div>
+
+                    <!-- TRÒ CHƠI: BẮN BONG BÓNG -->
+                    <div class="xsub-pane active" id="subPaneBubble">
                         <div class="bubble-game-wrapper" id="bubbleGameWrapper">
                             <div class="bpop-hud">
                                 <div class="bpop-prompt-card">
@@ -532,119 +678,14 @@
                                     </div>
                                     <div class="brm-actions">
                                         <button class="btn-primary-action" id="btnBrmPlayAgain">🔄 Chơi lại</button>
-                                        <button class="btn-secondary-action" id="btnBrmSwitchQuiz">🎯 Sang Trắc Nghiệm</button>
+                                        <button class="btn-secondary-action" id="btnBrmSwitchQuiz">🎯 Sang trắc nghiệm</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- SUB-PANE 2: REFLEX QUIZ -->
-                    <div class="gsub-pane" id="subPaneQuiz">
-                        <div class="quiz-workspace">
-                            <div class="fc-panel-card quiz-panel-card">
-                                <div class="fc-panel-head">
-                                    <div class="quiz-head-left">
-                                        <h3>🎯 Trắc Nghiệm Phản Xạ</h3>
-                                        <div class="quiz-streak-badge hidden" id="quizStreakBadge">
-                                            🔥 Combo: <strong id="quizStreakCount">0</strong> liên tiếp!
-                                        </div>
-                                    </div>
-                                    <div class="quiz-score-pill">
-                                        Đúng: <strong id="quizScore">0</strong> / <span id="quizTotal">0</span>
-                                        <span class="quiz-acc-rate" id="quizAccRate">(0%)</span>
-                                    </div>
-                                </div>
-
-                                <!-- Quiz Type Switcher Pills -->
-                                <div class="quiz-types-bar">
-                                    <button class="qtype-btn active" data-qtype="hz_to_vn">🔤 Chữ ➔ Nghĩa</button>
-                                    <button class="qtype-btn" data-qtype="vn_to_hz">🇻🇳 Nghĩa ➔ Chữ</button>
-                                    <button class="qtype-btn" data-qtype="audio_to_hz">🎧 Nghe ➔ Chữ</button>
-                                </div>
-
-                                <!-- Quiz Settings & Timer Bar -->
-                                <div class="quiz-tools-bar">
-                                    <button class="qtool-btn active" id="btnQuizToggleTimer" title="Bật/Tắt đếm ngược 10 giây mỗi câu">
-                                        ⏱️ 10s: <strong id="lblQuizTimerStatus">BẬT</strong>
-                                    </button>
-                                    <button class="qtool-btn active" id="btnQuizToggleSound" title="Bật/Tắt âm thanh thông báo">
-                                        🔔 Âm thanh: <strong id="lblQuizSoundStatus">BẬT</strong>
-                                    </button>
-                                    <button class="qtool-btn" id="btnQuizResetScore" title="Đặt lại điểm số">
-                                        🔄 Làm mới
-                                    </button>
-                                </div>
-
-                                <!-- Countdown Bar -->
-                                <div class="quiz-timer-wrap" id="quizTimerWrap">
-                                    <div class="quiz-timer-fill" id="quizTimerFill"></div>
-                                </div>
-
-                                <!-- Question Prompt Box -->
-                                <div class="quiz-question-box" id="quizQuestionBox">
-                                    <div class="qq-word" id="quizPromptWord">爱</div>
-                                    <div class="qq-pinyin" id="quizPromptPinyin">ài · đ.</div>
-                                    <button class="qq-audio" id="btnQuizSpeak">🔊 Nghe phát âm</button>
-                                </div>
-
-                                <!-- 4 Multiple Choice Options with keyboard shortcuts A, B, C, D -->
-                                <div class="quiz-options" id="quizOptions">
-                                    <!-- 4 options populated dynamically -->
-                                </div>
-
-                                <div class="quiz-bottom-bar">
-                                    <span class="quiz-kbd-hint hide-sm">Phím tắt: Bấm <strong>A, B, C, D</strong> hoặc <strong>1, 2, 3, 4</strong> để chọn</span>
-                                    <button class="btn-primary-action" id="btnNextQuizQ">Câu tiếp theo ➔</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SUB-PANE 3: TEXTBOOK PRACTICE -->
-                    <div class="gsub-pane" id="subPanePractice">
-                        <div class="practice-banner">
-                            <div class="pb-left">
-                                <div class="pb-title">◎ 速练 · Luyện Tập Nhanh — <span id="pracBannerUnit">Bài 1</span></div>
-                                <p class="pb-desc">Làm trực tiếp 3 phần bài tập từ dữ liệu JSON của bài học và bấm <strong>Chấm điểm & Xem đáp án</strong> để kiểm tra kết quả ngay.</p>
-                            </div>
-                            <div class="pb-actions">
-                                <div class="score-badge hidden" id="practiceScoreBadge">Điểm: 0 / 45</div>
-                                <button class="btn-primary-action" id="btnCheckPractice">🎯 Chấm điểm & Xem đáp án</button>
-                                <button class="btn-secondary-action" id="btnShowPracticeAnswers">👁️ Điền đáp án mẫu</button>
-                                <button class="btn-ghost-action" id="btnResetPractice">🔄 Làm lại</button>
-                            </div>
-                        </div>
-
-                        <!-- Section I: Matching Pinyin & Meaning -->
-                        <div class="exercise-block" id="exSection1">
-                            <!-- Rendered from unit.exercises.section1 -->
-                        </div>
-
-                        <!-- Section II: Fill in the blank (4 groups x 5 sentences) -->
-                        <div class="exercise-block" id="exSection2">
-                            <!-- Rendered from unit.exercises.section2 -->
-                        </div>
-
-                        <!-- Section III: Multiple Choice Sentence Completion -->
-                        <div class="exercise-block" id="exSection3">
-                            <!-- Rendered from unit.exercises.section3 -->
-                        </div>
-
-                        <!-- Bottom Practice Grading Bar (so mobile/tablet users don't need to scroll back up) -->
-                        <div class="practice-bottom-bar">
-                            <div class="score-badge hidden" id="practiceScoreBadgeBottom">Điểm: 0 / 45</div>
-                            <button class="btn-primary-action" id="btnCheckPracticeBottom">🎯 Chấm điểm & Xem đáp án</button>
-                            <button class="btn-secondary-action" id="btnShowPracticeAnswersBottom">👁️ Điền đáp án mẫu</button>
-                            <button class="btn-ghost-action" id="btnResetPracticeBottom">🔄 Làm lại</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- =========================================================
-                     MODE 5: LUYỆN NÓI & PHÁT ÂM TƯƠNG TÁC (VOICE & SHADOWING STUDIO)
-                     ========================================================= -->
-                <div class="smode-pane" id="paneShadowing">
+                <div class="xsub-pane" id="paneShadowing">
                     <div class="shad-workspace">
                         <!-- Top Shadowing Toolbar -->
                         <div class="shad-toolbar">
@@ -836,6 +877,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
 
             <!-- Mobile / Tablet Sticky Bottom Unit Bar -->
@@ -847,7 +889,7 @@
                 <button class="mbn-btn mbn-speak-all-btn" id="mobBtnSpeakAll" title="Đọc cả bài / Dừng đọc">
                     🔊 Đọc
                 </button>
-                <button class="mbn-btn" id="mobToggleDone" title="Đánh dấu đã học bài này">☐ Học</button>
+                <button class="mbn-btn" id="mobToggleDone" title="Luyện tập / kiểm tra bài này">✍️ Luyện</button>
                 <button class="mbn-btn" id="mobNextUnit" title="Bài tiếp theo">Sau ▶</button>
             </nav>
         </section>
@@ -1079,20 +1121,21 @@
                 <div class="mhead-title">
                     <span class="mhead-icon">🧠</span>
                     <div>
-                        <h3>Hộp Từ Khó & Lặp Lại Ngắt Quãng (Spaced Repetition System)</h3>
-                        <p class="mhead-sub">Các từ bạn đánh dấu khó, hay làm sai hoặc đã đến hạn cần ôn lại theo thuật toán ghi nhớ Leitner</p>
+                        <h3>Danh sách thẻ ôn tập (lặp lại ngắt quãng SM-2)</h3>
+                        <p class="mhead-sub">Mọi từ đã học ở tất cả các quyển. Từ đúng ngay lần đầu ôn sau 1 ngày, từ sai ôn sau 10 phút; khoảng cách giãn dần khi bạn nhớ tốt.</p>
                     </div>
                 </div>
                 <button class="clear-btn" id="btnCloseSrsModal">✕</button>
             </div>
             <div class="modal-body srs-modal-body">
                 <div class="srs-boxes-bar" id="srsBoxesBar">
-                    <!-- 5 Leitner Boxes summary chips -->
+                    <!-- Thống kê theo trạng thái -->
                 </div>
                 <div class="srs-actions-toolbar">
-                    <button class="btn-primary-action" id="btnStartSrsFlashcard">🎴 Ôn tập bằng Flashcard ngay</button>
-                    <button class="btn-secondary-action" id="btnStartSrsQuiz">🎯 Kiểm tra bằng Quiz ngay</button>
-                    <button class="btn-ghost-action" id="btnClearMasteredSrs">🧹 Xóa các từ đã nhớ kỹ</button>
+                    <select id="srsBookFilter" class="srs-book-filter" title="Lọc theo quyển"></select>
+                    <button class="btn-primary-action" id="btnStartSrsFlashcard">🎴 Ôn từ đến hạn</button>
+                    <button class="btn-secondary-action" id="btnStartSrsQuiz">🎯 Trắc nghiệm từ đến hạn</button>
+                    <button class="btn-ghost-action" id="btnClearMasteredSrs">🐢 Luyện từ chậm</button>
                 </div>
                 <div class="srs-word-list" id="srsWordList">
                     <!-- List of current SRS words -->
@@ -1105,6 +1148,7 @@
     <div class="wl-toast-container" id="toastContainer"></div>
 
     <!-- Load Lightweight Index Metadata + Default Book 1 Data -->
+    <script src="../shared/progress.js"></script>
     <script src="hsk_book_data.js"></script>
     <script src="json_data/quyen_1.js"></script>
     <script src="word_learning.js"></script>

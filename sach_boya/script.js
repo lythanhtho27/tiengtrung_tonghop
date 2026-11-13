@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ==========================================================================
 function initBookTheme() {
     let bookNumber = 1;
-    let bookName = "Trung Cấp 1";
+    let bookName = "Chuẩn Trung Cấp 1"; // tên giống Boya Learning (tc1, tc2 = Chuẩn Trung cấp; tc3, tc4 = Trung cấp 冲刺)
     let bookLessons = 16;
     let bookWords = "540 từ";
     let bookColor = "#2563eb";
@@ -53,19 +53,19 @@ function initBookTheme() {
 
     if (currentFileName.includes("tc2")) {
         bookNumber = 2;
-        bookName = "Trung Cấp 2";
+        bookName = "Chuẩn Trung Cấp 2";
         bookLessons = 16;
         bookWords = "762 từ";
         bookColor = "#ea580c";
     } else if (currentFileName.includes("tc3")) {
         bookNumber = 3;
-        bookName = "Trung Cấp 3";
+        bookName = "Trung Cấp 1";
         bookLessons = 12;
         bookWords = "623 từ";
         bookColor = "#059669";
     } else if (currentFileName.includes("tc4")) {
         bookNumber = 4;
-        bookName = "Trung Cấp 4";
+        bookName = "Trung Cấp 2";
         bookLessons = 10;
         bookWords = "640 từ";
         bookColor = "#7c3aed";
@@ -93,7 +93,7 @@ function injectAppHeader(bookInfo) {
     header.className = "app-header";
     header.innerHTML = `
         <div class="header-inner">
-            <a href="index.html" class="header-brand">
+            <a href="../index.html" class="header-brand">
                 <span class="brand-icon">🏮</span>
                 <div class="brand-title">
                     <h1>Boya Chinese • ${bookInfo.name}</h1>
@@ -109,12 +109,13 @@ function injectAppHeader(bookInfo) {
             </nav>
 
             <div class="header-actions">
-                <a href="tuvung.html" class="header-btn vocab-link" title="Đến trung tâm ôn tập từ vựng & chơi trò chơi">
+                <a href="../tuvung/tuvung.html" class="header-btn vocab-link" title="Đến trung tâm ôn tập từ vựng & chơi trò chơi">
                     🏮 Ôn Từ Vựng
                 </a>
-                <a href="index.html" class="header-btn" title="Về trang chọn quyển">
+                <a href="../index.html" class="header-btn" title="Về trang chủ">
                     🏠 Trang Chủ
                 </a>
+                <button class="header-btn ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
             </div>
         </div>
     `;
@@ -232,7 +233,7 @@ function initLessonAudioButtons(bookInfo) {
         // Bài Khóa Audio Button & Thanh tiện ích bài đọc
         const baiKhoaContainer = document.getElementById(`${blockId}-baikhoa`);
         if (baiKhoaContainer && !baiKhoaContainer.querySelector(".lesson-actions-bar")) {
-            const audioPathKhoa = `audio/${bookFolder}/第${paddedLesson}课 Bai Khoa.mp3`;
+            const audioPathKhoa = `../audio/${bookFolder}/第${paddedLesson}课 Bai Khoa.mp3`;
 
             const oldAudioBtn = baiKhoaContainer.querySelector(".play-audio-btn");
             if (oldAudioBtn) oldAudioBtn.remove();
@@ -255,7 +256,7 @@ function initLessonAudioButtons(bookInfo) {
         // Từ Vựng Audio Button
         const tuVungContainer = document.getElementById(`${blockId}-tuvung`);
         if (tuVungContainer && !tuVungContainer.querySelector(".play-audio-btn")) {
-            const audioPathVung = `audio/${bookFolder}/第${paddedLesson}课 Tu Vung.mp3`;
+            const audioPathVung = `../audio/${bookFolder}/第${paddedLesson}课 Tu Vung.mp3`;
             const btnVung = document.createElement("button");
             btnVung.className = "play-audio-btn";
             btnVung.setAttribute("data-audio", audioPathVung);
@@ -268,7 +269,7 @@ function initLessonAudioButtons(bookInfo) {
         if (bookInfo.number === 3 || bookInfo.number === 4) {
             const docThemContainer = document.getElementById(`${blockId}-docthem`);
             if (docThemContainer && !docThemContainer.querySelector(".lesson-actions-bar")) {
-                const audioPathDocThem = `audio/${bookFolder}/第${paddedLesson}课 Doc Them.mp3`;
+                const audioPathDocThem = `../audio/${bookFolder}/第${paddedLesson}课 Doc Them.mp3`;
 
                 const oldDocThemBtn = docThemContainer.querySelector(".play-audio-btn");
                 if (oldDocThemBtn) oldDocThemBtn.remove();
@@ -324,7 +325,8 @@ function initGlobalAudioPlayer() {
 
         if (audioSrc && player && globalAudio) {
             if (nowPlayingText) nowPlayingText.textContent = "Đang phát: " + audioTitle;
-            globalAudio.src = audioSrc;
+            // đường dẫn trong HTML tính từ thư mục gốc ("audio/..."), trang nằm trong sach_boya/
+            globalAudio.src = /^audio\//.test(audioSrc) ? "../" + audioSrc : audioSrc;
 
             player.classList.add("show");
             document.body.classList.add("audio-playing");

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="dark">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/theme.css">
+    <script src="../shared/theme.js"></script>
     <link rel="stylesheet" href="hsk_lotrinh.css">
 </head>
 <body>
@@ -28,7 +30,7 @@
             </nav>
             <div class="topbar-right">
                 <span class="streak-pill" id="streak-pill" title="Chuỗi ngày học liên tục">🔥 <b>0</b></span>
-                <button class="icon-btn" id="btn-theme" title="Đổi giao diện sáng / tối">🌓</button>
+                <button class="icon-btn ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
             </div>
         </div>
     </header>
@@ -234,6 +236,7 @@
 
     <div class="toast" id="toast" hidden></div>
 
+    <script src="../shared/progress.js"></script>
     <script src="hsk_vocab_data.js"></script>
     <script src="hsk_lotrinh.js"></script>
 </body>

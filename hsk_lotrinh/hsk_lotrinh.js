@@ -90,7 +90,7 @@
 
     // ---------------------------------------------------------------- Lưu trữ
     const DEFAULT_STATE = {
-        settings: { goal: 20, speak: true, rate: 0.8, dir: "mix", free: false, theme: "dark" },
+        settings: { goal: 20, speak: true, rate: 0.8, dir: "mix", free: false },
         units: {},     // key -> { done, best, stars, at }
         stages: {},    // key -> { done, best, at }
         unlocked: {},  // level -> true (mở khóa cấp thủ công)
@@ -113,6 +113,29 @@
     function save() {
         try { localStorage.setItem(STORE_KEY, JSON.stringify(S)); }
         catch (e) { toast("Không lưu được tiến độ (bộ nhớ trình duyệt bị chặn)"); }
+        writeSummary();
+    }
+    // Tóm tắt tiến độ cho trang chủ (shared/progress.js)
+    function writeSummary() {
+        if (!window.HocProgress) return;
+        try {
+            const nx = nextStep();
+            const groups = {};
+            for (let lv = 1; lv <= 6; lv++) {
+                const L = LEVELS[lv];
+                groups["hsk" + lv] = { done: L.units.filter(unitDone).length, total: L.units.length, unit: "bài", label: "HSK " + lv,
+                    learned: L.words.filter(w => S.srs[w.id]).length, words: L.words.length };
+            }
+            const d = S.days[dayKey()] || {};
+            HocProgress.save("hsk_lotrinh", {
+                next: nx ? (nx.type === "unit" ? `HSK ${nx.u.level} · Bài ${nx.u.n + 1}` : `HSK ${nx.st.level} · Kiểm tra chặng ${nx.st.n + 1}`) : "",
+                nextUrl: "hsk_lotrinh/hsk_lotrinh.html" + (nx ? "?level=" + (nx.type === "unit" ? nx.u.level : nx.st.level) : ""),
+                due: dueIds().length,
+                learned: learnedCount(),
+                today: { n: d.n || 0, r: d.r || 0 },
+                groups,
+            });
+        } catch (e) { console.warn("Không ghi được tóm tắt tiến độ", e); }
     }
     function today() {
         const k = dayKey();
@@ -254,9 +277,6 @@
     function toast(msg) {
         const t = $("toast"); t.textContent = msg; t.hidden = false;
         clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 2600);
-    }
-    function applyTheme() {
-        document.documentElement.setAttribute("data-theme", S.settings.theme);
     }
     function showView(v) {
         document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.view === v));
@@ -1167,7 +1187,7 @@
                     if (!o || typeof o.srs !== "object") throw new Error("sai định dạng");
                     if (!confirm("Nhập tiến độ sẽ thay thế toàn bộ tiến độ hiện tại. Tiếp tục?")) return;
                     S = Object.assign(JSON.parse(JSON.stringify(DEFAULT_STATE)), o, { settings: Object.assign({}, DEFAULT_STATE.settings, o.settings || {}) });
-                    save(); applyTheme(); renderSettings(); refreshHeader(); toast("Đã nhập tiến độ");
+                    save(); renderSettings(); refreshHeader(); toast("Đã nhập tiến độ");
                 } catch (err) { toast("File không hợp lệ"); }
                 e.target.value = "";
             };
@@ -1175,8 +1195,7 @@
         };
         $("btn-reset").onclick = () => {
             if (!confirm("Xóa TOÀN BỘ tiến độ học? Không thể hoàn tác.")) return;
-            const theme = S.settings.theme;
-            S = JSON.parse(JSON.stringify(DEFAULT_STATE)); S.settings.theme = theme;
+            S = JSON.parse(JSON.stringify(DEFAULT_STATE));
             save(); renderSettings(); refreshHeader(); toast("Đã xóa tiến độ");
         };
     }
@@ -1218,9 +1237,16 @@
             document.querySelector(".container").innerHTML = `<div class="card"><h2>Không tải được dữ liệu</h2><p>Thiếu file hsk_vocab_data.js. Chạy <code>python extract_hsk_vocab.py</code> để tạo lại.</p></div>`;
             return;
         }
-        applyTheme();
+        // Chuyển cài đặt theme cũ sang theme chung (chỉ khi người dùng chưa chọn ở trang khác)
+        if (S.settings.theme) {
+            let has = false; try { has = !!localStorage.getItem("hoc_theme"); } catch (e) {}
+            if (!has && window.HocTheme) HocTheme.set(S.settings.theme);
+            delete S.settings.theme; save();
+        }
+        // Link thẳng tới một cấp: hsk_lotrinh.html?level=3
+        const qLevel = +new URLSearchParams(location.search).get("level");
+        if (qLevel >= 1 && qLevel <= 6) S.lastLevel = qLevel;
         $("tabs").onclick = e => { const b = e.target.closest(".tab"); if (b) showView(b.dataset.view); };
-        $("btn-theme").onclick = () => { S.settings.theme = S.settings.theme === "dark" ? "light" : "dark"; applyTheme(); save(); };
         $("ss-close").onclick = () => closeSession();
         $("btn-start-review").onclick = startReview;
         $("btn-weak").onclick = () => startFreeQuiz(weakWords(), "Ôn từ hay sai", ["hanzi", "meaning", "listen", "cloze"]);
@@ -1238,6 +1264,7 @@
         $("dict-list").onclick = e => { const r = e.target.closest(".drow"); if (r) openWordModal(BY_ID.get(r.dataset.id)); };
         bindSettings();
         renderPath();
+        writeSummary(); // cập nhật số từ đến hạn cho trang chủ mỗi lần mở trang
     }
     init();
 })();

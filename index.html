@@ -3,392 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ Thống Giáo Trình Tiếng Trung Boya</title>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Lộ Trình Học Tiếng Trung</title>
+    <meta name="description" content="Lộ trình học tiếng Trung 4 chặng: từ vựng HSK 1–6 kết hợp giáo trình Boya Trung cấp – Cao cấp.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared/theme.css">
+    <script src="shared/theme.js"></script>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; }
         body {
-            font-family: "PingFang SC", "Work Sans", "Microsoft YaHei", sans-serif;
-            background-color: #f4f7f6;
-            color: #2c3e50;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
+            background: var(--ui-bg); color: var(--ui-text);
+            font-family: var(--ui-font-sans); font-size: 15px; line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
         }
-        
-        /* KHUNG CHỨA CHÍNH */
-        .container {
-            width: 100%;
-            max-width: 1000px;
-            text-align: center;
-            padding: 20px 0;
-        }
+        a { color: inherit; text-decoration: none; }
+        h1, h2, h3 { margin: 0; line-height: 1.25; }
+        p { margin: 0.35em 0; }
+        .muted { color: var(--ui-muted); }
 
-        /* TIÊU ĐỀ CHÍNH */
-        header {
-            margin-bottom: 40px;
+        /* Thanh trên */
+        .topbar { border-bottom: 1px solid var(--ui-border); background: var(--ui-surface); }
+        .topbar-inner { max-width: 1040px; margin: 0 auto; padding: 12px 16px; display: flex; align-items: center; gap: 12px; }
+        .brand { display: flex; align-items: center; gap: 10px; }
+        .brand-mark {
+            width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; flex-shrink: 0;
+            background: linear-gradient(135deg, #dc2626, #f59e0b); color: #fff;
+            font-family: var(--ui-font-cn); font-size: 23px; font-weight: 700;
         }
-        header h1 {
-            font-size: 32px;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-        header p {
-            font-size: 16px;
-            color: #7f8c8d;
-        }
-        header .divider {
-            width: 80px;
-            height: 4px;
-            background-color: #1abc9c;
-            margin: 15px auto 0 auto;
-            border-radius: 2px;
-        }
+        .brand strong { display: block; font-size: 17px; }
+        .brand small { color: var(--ui-muted); font-size: 12.5px; }
+        .topbar .ui-theme-toggle { margin-left: auto; }
 
-        /* BỐ CỤC LƯỚI CHỨA 4 QUYỂN BÀI HỌC */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            width: 100%;
-        }
-
-        /* THẺ CARD CHO TỪNG QUYỂN */
+        .container { max-width: 1040px; margin: 0 auto; padding: 22px 16px 56px; }
         .card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 35px 20px;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border-top: 5px solid transparent;
+            background: var(--ui-surface); border: 1px solid var(--ui-border); border-radius: var(--ui-radius-lg);
+            padding: 20px; box-shadow: var(--ui-shadow-sm);
         }
+        .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ui-muted); }
+        .section-title { font-size: 19px; margin: 30px 0 12px; }
 
-        /* ĐỊNH DẠNG MÀU SẮC ĐỘC LẬP THEO TỪNG QUYỂN */
-        .card-tc1 { border-top-color: #2980b9; } /* Xanh Dương */
-        .card-tc2 { border-top-color: #d35400; } /* Cam Sẫm */
-        .card-tc3 { border-top-color: #27ae60; } /* Xanh Lá */
-        .card-tc4 { border-top-color: #8e44ad; } /* Tím */
+        /* Nút */
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px; justify-content: center;
+            padding: 10px 16px; border-radius: 10px; font-weight: 600; font-size: 14.5px;
+            border: 1px solid var(--ui-border); background: var(--ui-surface); color: var(--ui-text);
+            transition: border-color var(--ui-transition), transform var(--ui-transition), background var(--ui-transition);
+        }
+        .btn:hover { border-color: var(--ui-primary); transform: translateY(-1px); }
+        .btn-primary { background: var(--ui-primary); border-color: var(--ui-primary); color: var(--ui-on-primary); }
+        .btn-primary:hover { background: var(--ui-primary-hover); }
+        .btn small { font-weight: 500; opacity: 0.85; }
 
-        /* HIỆU ỨNG DI CHUỘT (HOVER) */
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        /* Tiếp tục học */
+        .hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; }
+        .hero-main h1 { font-size: 24px; margin: 4px 0 6px; }
+        .stage-progress { display: flex; align-items: center; gap: 10px; margin: 12px 0 16px; }
+        .bar { flex: 1; height: 8px; border-radius: 99px; background: var(--ui-surface-3); overflow: hidden; }
+        .bar i { display: block; height: 100%; border-radius: 99px; background: var(--c, var(--ui-primary)); }
+        .hero-actions { display: flex; flex-direction: column; gap: 8px; }
+        .hero-actions .btn { justify-content: space-between; text-align: left; }
+        .review-list { list-style: none; margin: 10px 0 0; padding: 0; }
+        .review-list li { border-top: 1px dashed var(--ui-border); }
+        .review-list li:first-child { border-top: 0; }
+        .review-list a { display: flex; justify-content: space-between; align-items: center; padding: 9px 2px; gap: 10px; }
+        .review-list a:hover { color: var(--ui-primary); }
+        .due-badge {
+            min-width: 30px; padding: 1px 9px; border-radius: 99px; font-weight: 700; font-size: 13px; text-align: center;
+            background: var(--ui-danger-soft); color: var(--ui-danger);
         }
-        .card-tc1:hover { background-color: #f0f7fc; }
-        .card-tc2:hover { background-color: #fdf5ef; }
-        .card-tc3:hover { background-color: #f4faf6; }
-        .card-tc4:hover { background-color: #f9f5fc; }
+        .due-badge.zero { background: var(--ui-success-soft); color: var(--ui-success); }
+        .review-total { font-size: 28px; font-weight: 700; }
 
-        /* BIỂU TƯỢNG TRÊN CARD */
-        .card .icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
+        /* Lộ trình 4 chặng */
+        .stages { display: flex; flex-direction: column; gap: 14px; position: relative; }
+        .stage { display: grid; grid-template-columns: 54px 1fr; gap: 14px; }
+        .stage-num {
+            width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center;
+            font-size: 20px; font-weight: 700; background: var(--ui-surface-3); color: var(--ui-text-2);
+            position: relative; z-index: 1;
         }
-        .card:hover .icon {
-            transform: scale(1.15);
+        .stage.current .stage-num { background: var(--ui-primary); color: var(--ui-on-primary); box-shadow: 0 0 0 5px var(--ui-primary-soft); }
+        .stage.done .stage-num { background: var(--ui-success-soft); color: var(--ui-success); }
+        .stage:not(:last-child) .stage-num::after {
+            content: ""; position: absolute; top: 58px; left: 26px; width: 2px; height: calc(100% + 40px);
+            background: var(--ui-border-strong); z-index: -1;
         }
+        .stage .card { padding: 16px 18px; }
+        .stage.current .card { border-color: var(--ui-primary); box-shadow: 0 0 0 1px var(--ui-primary), var(--ui-shadow); }
+        .stage-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+        .stage-head h3 { font-size: 18px; }
+        .stage-head h3 small { font-weight: 500; color: var(--ui-muted); font-size: 14px; margin-left: 4px; }
+        .tag { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 99px; white-space: nowrap; }
+        .tag-current { background: var(--ui-primary-soft); color: var(--ui-primary); }
+        .tag-done { background: var(--ui-success-soft); color: var(--ui-success); }
+        .tracks { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 12px; }
+        .track {
+            --c: var(--ui-primary);
+            display: flex; flex-direction: column; gap: 6px; padding: 12px 14px; border-radius: 12px;
+            background: var(--ui-surface-2); border: 1px solid var(--ui-border); border-left: 4px solid var(--c);
+            transition: border-color var(--ui-transition), transform var(--ui-transition);
+        }
+        .track:hover { border-color: var(--c); transform: translateY(-1px); }
+        .track-top { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+        .track-kind { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c); }
+        .track-name { font-weight: 700; }
+        .track-meta { font-size: 12.5px; color: var(--ui-muted); }
+        .track .bar { flex: none; height: 6px; }
 
-        /* TIÊU ĐỀ VÀ THÔNG TIN TỪNG QUYỂN */
-        .card h2 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #2c3e50;
-        }
-        .card .sub-title {
-            font-size: 13px;
-            color: #95a5a6;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-        
-        /* NÚT VÀO HỌC */
-        .card .enter-btn {
-            padding: 8px 20px;
-            font-size: 13px;
-            font-weight: bold;
-            color: #ffffff;
-            border-radius: 20px;
-            transition: background 0.2s;
-            margin-top: auto; /* Đẩy nút xuống sát đáy card */
-        }
-        .card-tc1 .enter-btn { background-color: #2980b9; }
-        .card-tc2 .enter-btn { background-color: #d35400; }
-        .card-tc3 .enter-btn { background-color: #27ae60; }
-        .card-tc4 .enter-btn { background-color: #8e44ad; }
+        /* Thói quen hằng ngày */
+        .routine { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .routine .card { padding: 16px; }
+        .routine b { display: block; margin-bottom: 2px; }
+        .routine .time { font-size: 12.5px; font-weight: 700; color: var(--ui-primary); }
 
-        .card-tc1:hover .enter-btn { background-color: #3498db; }
-        .card-tc2:hover .enter-btn { background-color: #e67e22; }
-        .card-tc3:hover .enter-btn { background-color: #2ecc71; }
-        .card-tc4:hover .enter-btn { background-color: #9b59b6; }
+        /* Công cụ bổ trợ */
+        .tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+        .tool { display: flex; gap: 14px; align-items: flex-start; transition: border-color var(--ui-transition); }
+        .tool:hover { border-color: var(--ui-primary); }
+        .tool-ic { font-size: 28px; line-height: 1; }
+        .tool h3 { font-size: 16px; }
+        .tool p { font-size: 13.5px; color: var(--ui-muted); }
+        .tool .due-badge { margin-left: auto; align-self: center; }
 
-        /* BANNER ÔN TẬP TỪ VỰNG */
-        .vocab-banner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: linear-gradient(135deg, #1e293b 0%, #2980b9 100%);
-            color: #ffffff;
-            padding: 22px 28px;
-            border-radius: 16px;
-            text-decoration: none;
-            box-shadow: 0 8px 25px rgba(41, 128, 185, 0.25);
-            transition: all 0.3s ease;
-            text-align: left;
-            margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .vocab-banner:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 35px rgba(41, 128, 185, 0.35);
-        }
-        .banner-content {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-        .banner-icon {
-            font-size: 42px;
-            line-height: 1;
-        }
-        .banner-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .banner-badge {
-            font-size: 11px;
-            background: #e74c3c;
-            color: #ffffff;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-        .banner-desc {
-            font-size: 13px;
-            color: #e2e8f0;
-            line-height: 1.4;
-        }
-        .banner-action-btn {
-            background: #ffffff;
-            color: #2980b9;
-            font-weight: 700;
-            font-size: 13px;
-            padding: 10px 22px;
-            border-radius: 25px;
-            white-space: nowrap;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: all 0.2s ease;
-        }
-        .vocab-banner:hover .banner-action-btn {
-            background: #f1f5f9;
-            transform: scale(1.05);
-        }
+        footer { text-align: center; color: var(--ui-muted); font-size: 13px; margin-top: 36px; }
 
-        /* BANNER SỔ TAY GHI NHỚ & LUYỆN TẬP NHANH TỪ VỰNG HSK 3.0 (9 CẤP) */
-        .hsk-handbook-banner {
-            background: linear-gradient(135deg, #311042 0%, #6366f1 55%, #0ea5e9 100%);
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.28);
-            margin-bottom: 30px;
+        @media (max-width: 820px) {
+            .hero { grid-template-columns: 1fr; }
+            .routine { grid-template-columns: 1fr; }
         }
-        .hsk-handbook-banner:hover {
-            box-shadow: 0 14px 35px rgba(99, 102, 241, 0.4);
-        }
-        .hsk-handbook-banner .banner-action-btn {
-            color: #4f46e5;
-        }
-        .hsk-handbook-banner .banner-badge-alt {
-            font-size: 11px;
-            background: #10b981;
-            color: #ffffff;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        /* PHẦN FOOTER */
-        footer {
-            margin-top: 50px;
-            font-size: 13px;
-            color: #bdc3c7;
-        }
-
-        /* ĐIỆN THOẠI & TABLET: CHUYỂN THÀNH 2 CỘT HOẶC 1 CỘT TRÁNH NÁT CHỮ */
-        @media (max-width: 850px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            .vocab-banner {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-            .banner-action-btn {
-                align-self: flex-end;
-            }
-        }
-        @media (max-width: 480px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
-            header h1 {
-                font-size: 26px;
-            }
-            .banner-content {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
+        @media (max-width: 520px) {
+            .stage { grid-template-columns: 40px 1fr; gap: 10px; }
+            .stage-num { width: 40px; height: 40px; font-size: 16px; }
+            .stage:not(:last-child) .stage-num::after { top: 44px; left: 19px; }
+            .card { padding: 16px; }
+            .hero-main h1 { font-size: 21px; }
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <header>
-            <h1>Hệ Thống Giáo Trình Boya Chinese</h1>
-            <p>Vui lòng lựa chọn quyển giáo trình bạn muốn tham gia học tập</p>
-            <div class="divider"></div>
-        </header>
-
-        <!-- BANNER NỀN TẢNG HỌC TOÀN DIỆN GIÁO TRÌNH BOYA (MỚI) -->
-        <a href="boya_learning.html" class="vocab-banner boya-master-banner" style="margin-bottom: 18px; background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #06b6d4 100%); box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);">
-            <div class="banner-content">
-                <div class="banner-icon">🏮</div>
-                <div>
-                    <div class="banner-title">
-                        <span>Cổng Học Toàn Diện Giáo Trình Boya (Boya Chinese Master)</span>
-                        <span class="banner-badge" style="background: #10b981;">Nền Tảng Mới</span>
-                        <span class="banner-badge" style="background: #f59e0b;">6 Quyển · 74 Bài</span>
-                    </div>
-                    <div class="banner-desc">
-                        Tích hợp trọn vẹn 6 sách PDF gốc (Chuẩn Trung Cấp 1-2, Trung Cấp 1-2, Cao Cấp 1-2) • Đọc bài khóa & bản dịch song ngữ • 2.674+ từ vựng chi tiết • Ngữ pháp & Điểm ngữ âm • Flashcard 3D • Trắc nghiệm phản xạ • Ghép thẻ • 150 Audio tracks chuẩn Bắc Kinh
-                    </div>
-                </div>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand">
+                <span class="brand-mark">汉</span>
+                <span><strong>Học Tiếng Trung</strong><small>Từ vựng HSK + Giáo trình Boya · lộ trình 4 chặng</small></span>
             </div>
-            <div class="banner-action-btn" style="color: #1e40af;">
-                Vào Học Toàn Diện ➔
+            <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="card hero-main" id="hero-main"></div>
+            <div class="card">
+                <div class="eyebrow">Ôn tập hôm nay</div>
+                <div class="review-total" id="review-total">0 từ</div>
+                <p class="muted" id="review-note">Ôn các từ đến hạn trước khi học bài mới.</p>
+                <ul class="review-list" id="review-list"></ul>
             </div>
-        </a>
+        </section>
 
-        <!-- BANNER ÔN TẬP TỪ VỰNG TỔNG HỢP BOYA -->
-        <a href="tuvung.html" class="vocab-banner" style="margin-bottom: 18px;">
-            <div class="banner-content">
-                <div class="banner-icon">🏮</div>
-                <div>
-                    <div class="banner-title">
-                        <span>Trung Tâm Ôn Tập Từ Vựng Tổng Hợp Boya</span>
-                        <span class="banner-badge">2.565 Từ</span>
-                    </div>
-                    <div class="banner-desc">
-                        Bao gồm toàn bộ từ vựng TC 1 - 4 • Flashcards 3D • Trắc nghiệm phản xạ • Ghép thẻ • Phát âm chuẩn
-                    </div>
-                </div>
-            </div>
-            <div class="banner-action-btn">
-                Luyện Tập Ngay ➔
-            </div>
-        </a>
+        <h2 class="section-title">Lộ trình 4 chặng</h2>
+        <div class="stages" id="stages"></div>
 
-        <!-- BANNER LỘ TRÌNH TỪ VỰNG HSK 1-6 -->
-        <a href="hsk_lotrinh.html" class="vocab-banner" style="margin-bottom: 18px; background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 50%, #f59e0b 100%); box-shadow: 0 8px 25px rgba(220, 38, 38, 0.35);">
-            <div class="banner-content">
-                <div class="banner-icon">🗺️</div>
-                <div>
-                    <div class="banner-title">
-                        <span>Lộ Trình Từ Vựng HSK 1 – 6</span>
-                        <span class="banner-badge">5.002 Từ</span>
-                    </div>
-                    <div class="banner-desc">
-                        Học theo bài nhỏ • Luyện tập &amp; kiểm tra chặng • Ôn tập lặp lại ngắt quãng • Kế hoạch học mỗi ngày
-                    </div>
-                </div>
-            </div>
-            <div class="banner-action-btn">
-                Bắt Đầu Lộ Trình ➔
-            </div>
-        </a>
-
-        <!-- BANNER GIÁO TRÌNH MỚI: SỔ TAY GHI NHỚ & LUYỆN TẬP NHANH TỪ VỰNG HSK 3.0 -->
-        <a href="word_learning.html" class="vocab-banner hsk-handbook-banner">
-            <div class="banner-content">
-                <div class="banner-icon">📚</div>
-                <div>
-                    <div class="banner-title">
-                        <span>Giáo Trình Luyện & Nhớ Nhanh Từ Vựng HSK 3.0 (词汇速记速练手册)</span>
-                        <span class="banner-badge">Cấp 1 – Cấp 7–9</span>
-                        <span class="banner-badge-alt">329 Bài • 7 Sách PDF</span>
-                    </div>
-                    <div class="banner-desc">
-                        Đọc sách PDF theo từng Bài (Quyển 1, 3, 4, 5, 6, 7–9 Thượng/Hạ) • Chế độ Song Song (Lý thuyết + Bài tập 速练) • Phiếu làm bài tương tác • Tra cứu hơn 5.300 từ vựng & Flashcard
-                    </div>
-                </div>
-            </div>
-            <div class="banner-action-btn">
-                Mở Giáo Trình ➔
-            </div>
-        </a>
-
-        <div class="grid-container">
-            
-            <a href="tc1.html" class="card card-tc1">
-                <div class="icon">📘</div>
-                <h2>Trung Cấp 1</h2>
-                <div class="sub-title">Boya Chinese I</div>
-                <div class="enter-btn">Vào Học</div>
-            </a>
-
-            <a href="tc2.html" class="card card-tc2">
-                <div class="icon">📙</div>
-                <h2>Trung Cấp 2</h2>
-                <div class="sub-title">Boya Chinese II</div>
-                <div class="enter-btn">Vào Học</div>
-            </a>
-
-            <a href="tc3.html" class="card card-tc3">
-                <div class="icon">📗</div>
-                <h2>Trung Cấp 3</h2>
-                <div class="sub-title">Boya Chinese III</div>
-                <div class="enter-btn">Vào Học</div>
-            </a>
-
-            <a href="tc4.html" class="card card-tc4">
-                <div class="icon">📔</div>
-                <h2>Trung Cấp 4</h2>
-                <div class="sub-title">Boya Chinese IV</div>
-                <div class="enter-btn">Vào Học</div>
-            </a>
-
+        <h2 class="section-title">Mỗi ngày 30–45 phút</h2>
+        <div class="routine">
+            <div class="card"><span class="time">① 5–10 phút</span><b>Ôn tập đến hạn</b><p class="muted">Ôn hết các từ đến hạn ở khung "Ôn tập hôm nay" trước, để không quên những gì đã học.</p></div>
+            <div class="card"><span class="time">② 15–20 phút</span><b>Học bài mới</b><p class="muted">Một bài từ vựng HSK và/hoặc một bài khóa Boya của chặng hiện tại. Làm bài kiểm tra cho đến khi đạt.</p></div>
+            <div class="card"><span class="time">③ 5–10 phút</span><b>Đọc nhanh</b><p class="muted">Luyện Đọc nhanh các từ nhận diện chậm, hoặc đọc lại bài khóa đã học có tính giờ và tắt pinyin.</p></div>
         </div>
 
-        <footer>
-            <p>© Hộp Công Cụ Luyện Nghe & Học Tiếng Trung Thông Minh</p>
-        </footer>
-    </div>
+        <h2 class="section-title">Công cụ bổ trợ</h2>
+        <div class="tools" id="tools"></div>
 
+        <footer>Tiến độ được lưu trong trình duyệt này. Xuất hoặc nhập tiến độ trong phần Cài đặt của từng trang.</footer>
+    </main>
+
+    <script src="shared/progress.js"></script>
+    <script>
+    (function () {
+        "use strict";
+        // Tổng số bài của từng nhóm (dùng khi trang con chưa ghi tóm tắt tiến độ)
+        const DEFAULTS = {
+            hsk1: { label: "HSK 1", total: 15, words: 149 }, hsk2: { label: "HSK 2", total: 15, words: 150 },
+            hsk3: { label: "HSK 3", total: 30, words: 295 }, hsk4: { label: "HSK 4", total: 40, words: 600 },
+            hsk5: { label: "HSK 5", total: 65, words: 1295 }, hsk6: { label: "HSK 6", total: 126, words: 2513 },
+            tc1: { label: "Chuẩn Trung cấp 1", total: 16, words: 540 }, tc2: { label: "Chuẩn Trung cấp 2", total: 16, words: 762 },
+            tc3: { label: "Trung cấp 1", total: 12, words: 623 }, tc4: { label: "Trung cấp 2", total: 10, words: 640 },
+            gc1: { label: "Cao cấp 1", total: 10 }, gc2: { label: "Cao cấp 2", total: 10 },
+        };
+        const STAGES = [
+            { title: "Nền tảng", sub: "HSK 1–3", desc: "Khoảng 600 từ cơ bản, đọc được câu đơn giản. Mỗi ngày học 10–20 từ theo bài, ôn tập đều đặn.",
+              tracks: ["hsk1", "hsk2", "hsk3"] },
+            { title: "Trung cấp nền", sub: "Boya Chuẩn Trung cấp + HSK 4", desc: "Bắt đầu đọc bài khóa có audio và học ngữ pháp, song song với từ vựng HSK 4.",
+              tracks: ["tc1", "tc2", "hsk4"] },
+            { title: "Trung cấp nâng cao", sub: "Boya Trung cấp + HSK 5", desc: "Bài khóa dài hơn, nhiều chủ đề xã hội. Tập đọc nhanh, đọc lại không pinyin.",
+              tracks: ["tc3", "tc4", "hsk5"] },
+            { title: "Cao cấp", sub: "Boya Cao cấp + HSK 6", desc: "Văn bản nghị luận, thành ngữ, từ vựng học thuật. Mục tiêu: đọc hiểu báo chí.",
+              tracks: ["gc1", "gc2", "hsk6"] },
+        ];
+        const P = window.HocProgress ? HocProgress.all() : {};
+        const hsk = P.hsk_lotrinh || {}, boya = P.boya_learning || {};
+        const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+        const fmt = n => Number(n || 0).toLocaleString("vi-VN");
+
+        function group(key) {
+            const isHsk = key.startsWith("hsk");
+            const src = (isHsk ? hsk.groups : boya.groups) || {};
+            const g = Object.assign({}, DEFAULTS[key], src[key] || {});
+            g.key = key; g.isHsk = isHsk;
+            g.done = Math.min(g.done || 0, g.total || 0);
+            g.pct = g.total ? Math.round(g.done / g.total * 100) : 0;
+            g.color = isHsk ? `var(--ui-hsk-${key.slice(3)})` : `var(--ui-book-${key})`;
+            g.url = isHsk ? `hsk_lotrinh/hsk_lotrinh.html?level=${key.slice(3)}` : `boya_learning/boya_learning.html?book=${key}`;
+            return g;
+        }
+        const stages = STAGES.map((s, i) => {
+            const gs = s.tracks.map(group);
+            const done = gs.reduce((a, g) => a + g.done, 0), total = gs.reduce((a, g) => a + (g.total || 0), 0);
+            return Object.assign({}, s, { n: i + 1, gs, pct: total ? Math.round(done / total * 100) : 0, complete: total > 0 && done >= total });
+        });
+        let curIdx = stages.findIndex(s => !s.complete);
+        if (curIdx < 0) curIdx = stages.length - 1;
+        const cur = stages[curIdx];
+
+        // ----- Tiếp tục học
+        function nextFor(g) {
+            // bước tiếp theo trong nhóm: dùng gợi ý của trang con nếu nó thuộc nhóm này
+            const src = g.isHsk ? hsk : boya;
+            if (src.next && src.nextUrl && (g.isHsk ? src.nextUrl.indexOf("level=" + g.key.slice(3)) >= 0 : src.nextUrl.indexOf("book=" + g.key) >= 0))
+                return { label: src.next, url: src.nextUrl };
+            return { label: g.done ? `${g.label} · Bài ${g.done + 1}` : `${g.label} · Bài 1`, url: g.url };
+        }
+        const actions = cur.gs.filter(g => g.done < g.total).map(g => {
+            const n = nextFor(g);
+            return `<a class="btn ${g.isHsk ? "" : "btn-primary"}" href="${esc(n.url)}"><span>▶ ${esc(n.label)}</span><small>${g.isHsk ? "Từ vựng" : "Bài khóa"} · ${g.pct}%</small></a>`;
+        });
+        const started = Object.values(P).some(Boolean);
+        document.getElementById("hero-main").innerHTML = `
+            <div class="eyebrow">${started ? "Tiếp tục học" : "Bắt đầu từ đây"} · Chặng ${cur.n}/4</div>
+            <h1>${esc(cur.title)} <span class="muted" style="font-weight:500;font-size:16px">${esc(cur.sub)}</span></h1>
+            <p class="muted">${esc(cur.desc)}</p>
+            <div class="stage-progress"><div class="bar"><i style="width:${cur.pct}%"></i></div><b>${cur.pct}%</b></div>
+            <div class="hero-actions">${actions.join("") || `<span class="muted">🎉 Bạn đã hoàn thành toàn bộ lộ trình!</span>`}</div>
+            ${curIdx === 0 && !started ? `<p class="muted" style="margin-top:12px;font-size:13.5px">Đã có nền tảng? Chọn thẳng chặng phù hợp ở lộ trình bên dưới.</p>` : ""}`;
+
+        // ----- Ôn tập hôm nay
+        const REVIEW = [
+            { key: "hsk_lotrinh", name: "Từ vựng HSK", url: "hsk_lotrinh/hsk_lotrinh.html" },
+            { key: "boya_learning", name: "Từ vựng & bài khóa Boya", url: "boya_learning/boya_learning.html" },
+            { key: "tuvung", name: "Ôn từ vựng Boya TC1–4", url: "tuvung/tuvung.html" },
+            { key: "word_learning", name: "Giáo trình HSK 3.0", url: "word_learning/word_learning.html" },
+        ].filter(r => P[r.key]);
+        const totalDue = REVIEW.reduce((a, r) => a + (P[r.key].due || 0), 0);
+        document.getElementById("review-total").textContent = fmt(totalDue) + " từ";
+        document.getElementById("review-note").textContent = !REVIEW.length
+            ? "Chưa có từ nào trong lịch ôn. Hãy học bài đầu tiên của chặng hiện tại."
+            : totalDue ? "Ôn các từ đến hạn trước khi học bài mới." : "Đã ôn hết từ đến hạn hôm nay. Tuyệt vời!";
+        document.getElementById("review-list").innerHTML = REVIEW.map(r => {
+            const d = P[r.key].due || 0;
+            return `<li><a href="${r.url}"><span>${r.name}</span><span class="due-badge ${d ? "" : "zero"}">${d ? fmt(d) : "✓"}</span></a></li>`;
+        }).join("");
+
+        // ----- Lộ trình
+        document.getElementById("stages").innerHTML = stages.map((s, i) => {
+            const state = s.complete ? "done" : i === curIdx ? "current" : "";
+            return `<div class="stage ${state}">
+                <div class="stage-num">${s.complete ? "✓" : s.n}</div>
+                <div class="card">
+                    <div class="stage-head">
+                        <div><h3>Chặng ${s.n} · ${esc(s.title)} <small>${esc(s.sub)}</small></h3><p class="muted">${esc(s.desc)}</p></div>
+                        ${state === "current" ? `<span class="tag tag-current">Đang học · ${s.pct}%</span>` : state === "done" ? `<span class="tag tag-done">Hoàn thành</span>` : s.pct ? `<span class="tag tag-current">${s.pct}%</span>` : ""}
+                    </div>
+                    <div class="tracks">${s.gs.map(g => `
+                        <a class="track" href="${g.url}" style="--c:${g.color}">
+                            <div class="track-top"><span class="track-kind">${g.isHsk ? "Từ vựng" : "Giáo trình Boya"}</span><span class="track-meta">${g.pct}%</span></div>
+                            <span class="track-name">${esc(g.label)}</span>
+                            <div class="bar"><i style="width:${g.pct}%"></i></div>
+                            <span class="track-meta">${g.done}/${g.total} bài${g.words ? ` · ${fmt(g.words)} từ` : ""}</span>
+                        </a>`).join("")}
+                    </div>
+                </div>
+            </div>`;
+        }).join("");
+
+        // ----- Công cụ bổ trợ
+        const TOOLS = [
+            { key: "tuvung", ic: "🏮", name: "Ôn từ vựng Boya TC1–4", url: "tuvung/tuvung.html",
+              desc: "2.565 từ của 4 quyển Trung cấp: flashcard, trắc nghiệm, luyện nói, trò chơi. Dùng để ôn thêm từ của bài khóa đã học." },
+            { key: "word_learning", ic: "📚", name: "Giáo trình từ vựng HSK 3.0", url: "word_learning/word_learning.html",
+              desc: "Chuẩn HSK mới (9 cấp): 8 quyển · 368 bài · 11.092 từ. Dùng để tham khảo, hoặc học tiếp lên cấp 7–9 sau khi xong lộ trình." },
+        ];
+        document.getElementById("tools").innerHTML = TOOLS.map(t => {
+            const d = P[t.key] ? P[t.key].due || 0 : 0;
+            return `<a class="card tool" href="${t.url}"><span class="tool-ic">${t.ic}</span>
+                <span><h3>${t.name}</h3><p>${t.desc}</p></span>
+                ${d ? `<span class="due-badge" title="Từ đến hạn ôn">${fmt(d)}</span>` : ""}</a>`;
+        }).join("");
+    })();
+    </script>
 </body>
 </html>

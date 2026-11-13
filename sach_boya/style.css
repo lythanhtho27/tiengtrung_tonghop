@@ -5,21 +5,17 @@
    ========================================================================== */
 
 :root {
-    /* Base Color Tokens */
-    --primary: #2563eb;
-    --primary-hover: #1d4ed8;
-    --primary-light: #eff6ff;
-    --primary-border: #bfdbfe;
-    --primary-gradient: linear-gradient(135deg, #1d4ed8, #3b82f6);
-    --accent: #d97706;
-    --bg-page: #f8fafc;
-    --bg-card: #ffffff;
-    --text-main: #0f172a;
-    --text-muted: #64748b;
-    --border-color: #e2e8f0;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.07);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+    /* Ánh xạ sang bảng màu chung (shared/theme.css); sáng/tối do shared/theme.js điều khiển */
+    --primary: var(--ui-book-tc1);
+    --accent: var(--ui-warning);
+    --bg-page: var(--ui-bg);
+    --bg-card: var(--ui-surface);
+    --text-main: var(--ui-text);
+    --text-muted: var(--ui-muted);
+    --border-color: var(--ui-border);
+    --shadow-sm: var(--ui-shadow-sm);
+    --shadow-md: var(--ui-shadow);
+    --shadow-lg: var(--ui-shadow-lg);
     --radius-sm: 8px;
     --radius: 14px;
     --radius-lg: 20px;
@@ -32,45 +28,20 @@
    BOOK-SPECIFIC THEMES (Auto-applied by script.js)
    ========================================================================== */
 
-/* 📘 Trung Cấp 1: Ocean Blue */
-body.book-tc1 {
-    --primary: #2563eb;
-    --primary-hover: #1d4ed8;
-    --primary-light: #eff6ff;
-    --primary-border: #bfdbfe;
-    --primary-gradient: linear-gradient(135deg, #1d4ed8, #3b82f6);
-    --accent: #d97706;
+/* Biến phái sinh phải định nghĩa trên body (nơi body.book-tcN đổi --primary),
+   nếu để ở :root chúng sẽ luôn tính theo màu Quyển 1 */
+body {
+    --primary-hover: color-mix(in srgb, var(--primary) 82%, #000);
+    --primary-light: color-mix(in srgb, var(--primary) 10%, var(--ui-surface));
+    --primary-border: color-mix(in srgb, var(--primary) 35%, var(--ui-surface));
+    --primary-gradient: linear-gradient(135deg, var(--primary-hover), var(--primary));
 }
 
-/* 📙 Trung Cấp 2: Amber Terracotta */
-body.book-tc2 {
-    --primary: #ea580c;
-    --primary-hover: #c2410c;
-    --primary-light: #fff7ed;
-    --primary-border: #fed7aa;
-    --primary-gradient: linear-gradient(135deg, #c2410c, #f97316);
-    --accent: #2563eb;
-}
-
-/* 📗 Trung Cấp 3: Emerald Jade */
-body.book-tc3 {
-    --primary: #059669;
-    --primary-hover: #047857;
-    --primary-light: #ecfdf5;
-    --primary-border: #a7f3d0;
-    --primary-gradient: linear-gradient(135deg, #047857, #10b981);
-    --accent: #d97706;
-}
-
-/* 📔 Trung Cấp 4: Royal Amethyst */
-body.book-tc4 {
-    --primary: #7c3aed;
-    --primary-hover: #6d28d9;
-    --primary-light: #f5f3ff;
-    --primary-border: #ddd6fe;
-    --primary-gradient: linear-gradient(135deg, #6d28d9, #8b5cf6);
-    --accent: #ea580c;
-}
+/* Màu theo quyển lấy từ bảng màu chung (giống Boya Learning) */
+body.book-tc1 { --primary: var(--ui-book-tc1); }
+body.book-tc2 { --primary: var(--ui-book-tc2); --accent: var(--ui-book-tc1); }
+body.book-tc3 { --primary: var(--ui-book-tc3); }
+body.book-tc4 { --primary: var(--ui-book-tc4); --accent: var(--ui-book-tc2); }
 
 /* ==========================================================================
    BASE RESET & BODY
@@ -117,7 +88,7 @@ body {
    TOP APP HEADER (NAVIGATION & BRANDING)
    ========================================================================== */
 .app-header {
-    background: rgba(255, 255, 255, 0.94);
+    background: color-mix(in srgb, var(--ui-surface) 94%, transparent);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
@@ -169,7 +140,7 @@ body {
 .book-pill-nav {
     display: flex;
     align-items: center;
-    background: #f1f5f9;
+    background: var(--ui-surface-2);
     padding: 4px;
     border-radius: 30px;
     gap: 3px;
@@ -184,13 +155,13 @@ body {
     font-size: 12.5px;
     font-weight: 600;
     text-decoration: none;
-    color: #475569;
+    color: var(--ui-text-2);
     transition: var(--transition);
 }
 
 .book-pill-nav a:hover {
     color: var(--text-main);
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--ui-surface-3);
 }
 
 .book-pill-nav a.active {
@@ -215,8 +186,8 @@ body {
     font-weight: 600;
     text-decoration: none;
     border: 1px solid var(--border-color);
-    background: #ffffff;
-    color: #334155;
+    background: var(--bg-card);
+    color: var(--ui-text-2);
     cursor: pointer;
     transition: var(--transition);
 }
@@ -232,11 +203,11 @@ body {
     background: var(--primary-gradient);
     color: #ffffff;
     border: none;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--primary) 25%, transparent);
 }
 
 .header-btn.vocab-link:hover {
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--primary) 35%, transparent);
     color: #ffffff;
 }
 
@@ -244,7 +215,7 @@ body {
    READER TOOLBAR (PINYIN, FONT ZOOM, TRANSLATION TOGGLE)
    ========================================================================== */
 .reader-toolbar {
-    background: #ffffff;
+    background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius);
     padding: 10px 16px;
@@ -279,9 +250,9 @@ body {
     border-radius: 8px;
     font-size: 13px;
     font-weight: 600;
-    background: #f8fafc;
+    background: var(--ui-surface-2);
     border: 1px solid var(--border-color);
-    color: #334155;
+    color: var(--ui-text-2);
     cursor: pointer;
     transition: var(--transition);
 }
@@ -304,7 +275,7 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     overflow: hidden;
-    background: #ffffff;
+    background: var(--bg-card);
 }
 
 .zoom-btn {
@@ -314,7 +285,7 @@ body {
     font-size: 13px;
     font-weight: 700;
     cursor: pointer;
-    color: #334155;
+    color: var(--ui-text-2);
     transition: background 0.2s ease;
 }
 
@@ -336,7 +307,7 @@ body {
    MAIN MENU (LESSON PICKER: BÀI 1 / BÀI 2...)
    ========================================================================== */
 .lesson-nav-card {
-    background: #ffffff;
+    background: var(--bg-card);
     border-radius: var(--radius);
     padding: 16px;
     border: 1px solid var(--border-color);
@@ -390,9 +361,9 @@ body {
     cursor: pointer;
     font-weight: 700;
     font-size: 13px;
-    color: #475569;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    color: var(--ui-text-2);
+    background: var(--ui-surface-2);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     line-height: 1.25;
     transition: var(--transition);
@@ -411,7 +382,7 @@ body {
     background: var(--primary-gradient);
     color: #ffffff;
     border-color: transparent;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--primary) 30%, transparent);
     transform: translateY(-2px);
 }
 
@@ -423,11 +394,11 @@ body {
     align-items: stretch;
     width: 100%;
     margin-bottom: 22px;
-    background-color: #f1f5f9;
+    background-color: var(--ui-surface-2);
     border-radius: 12px;
     padding: 5px;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border-color);
     overflow-x: auto;
     gap: 6px;
 }
@@ -443,7 +414,7 @@ body {
     cursor: pointer;
     font-weight: 600;
     font-size: 14.5px;
-    color: #64748b;
+    color: var(--text-muted);
     border-radius: 8px;
     border: none;
     border-bottom: none;
@@ -454,12 +425,12 @@ body {
 }
 
 .sub-btn:hover:not(.active) {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: var(--ui-surface-3);
     color: var(--text-main);
 }
 
 .sub-btn.active {
-    background-color: #ffffff;
+    background-color: var(--bg-card);
     color: var(--primary);
     font-weight: 700;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -495,7 +466,7 @@ body {
    LESSON TITLE & HEADER BANNER
    ========================================================================== */
 .lesson-title-card {
-    background: #ffffff;
+    background: var(--bg-card);
     border-radius: var(--radius);
     padding: 24px;
     margin-bottom: 22px;
@@ -529,7 +500,7 @@ body {
     text-align: left;
     font-size: 28px;
     font-weight: 700;
-    color: #0f172a;
+    color: var(--text-main);
     line-height: 1.25;
     margin: 0;
     letter-spacing: 0.5px;
@@ -538,7 +509,7 @@ body {
 /* Support legacy standalone .lesson-title if not wrapped */
 h1.lesson-title {
     text-align: center;
-    color: #0f172a;
+    color: var(--text-main);
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 24px;
@@ -594,9 +565,9 @@ h2 {
     font-family: var(--chinese-font, "KaiTi", "STKaiti", "Kaiti SC", "楷体", "楷体_GB2312", "Noto Serif SC", "SimSun", "Songti SC", serif);
     font-size: var(--chinese-font-size, 24px);
     font-weight: 400; /* Nét thanh mảnh chuẩn sách giáo khoa, không bị đậm/béo nét */
-    color: #1e293b; /* Màu mực đen than dịu mắt, không gắt */
+    color: var(--text-main); /* Màu mực đen than dịu mắt, không gắt */
     line-height: var(--chinese-line-height, 2.6);
-    background: #ffffff;
+    background: var(--bg-card);
     padding: 36px 40px;
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
@@ -699,7 +670,7 @@ body.hide-pinyin rt {
    TRANSLATION CONTAINER (VIETNAMESE)
    ========================================================================== */
 .translation-container {
-    background-color: #fbfcfe;
+    background-color: var(--ui-surface-2);
     padding: 26px 30px;
     border-radius: var(--radius);
     border: 1px solid var(--border-color);
@@ -707,7 +678,7 @@ body.hide-pinyin rt {
     font-size: 16px;
     line-height: 1.8;
     box-shadow: var(--shadow-sm);
-    color: #334155;
+    color: var(--ui-text-2);
     transition: var(--transition);
 }
 
@@ -735,7 +706,7 @@ body.hide-pinyin rt {
 .vocab-table {
     width: 100%;
     border-collapse: collapse;
-    background: #ffffff;
+    background: var(--bg-card);
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
@@ -774,7 +745,7 @@ body.hide-pinyin rt {
     font-size: 26px !important;
     font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
     font-weight: 700;
-    color: #0f172a;
+    color: var(--text-main);
     line-height: 1.25;
     letter-spacing: 0.5px;
     display: inline-flex;
@@ -804,7 +775,7 @@ body.hide-pinyin rt {
 }
 
 .vocab-py {
-    color: #d97706;
+    color: var(--ui-warning);
     font-weight: 600;
     font-size: 16.5px;
 }
@@ -813,15 +784,15 @@ body.hide-pinyin rt {
     display: inline-block;
     padding: 3px 8px;
     border-radius: 6px;
-    background: #f1f5f9;
-    color: #475569;
+    background: var(--ui-surface-2);
+    color: var(--ui-text-2);
     font-size: 13px;
     font-weight: 600;
     font-style: normal;
 }
 
 .vocab-mean {
-    color: #1e293b;
+    color: var(--text-main);
     line-height: 1.6;
     font-size: 15.5px;
 }
@@ -829,10 +800,10 @@ body.hide-pinyin rt {
 .vocab-example {
     display: block;
     font-size: 14.5px;
-    color: #64748b;
+    color: var(--text-muted);
     margin-top: 6px;
     padding-left: 10px;
-    border-left: 2px solid #cbd5e1;
+    border-left: 2px solid var(--border-color);
     line-height: 1.6;
 }
 
@@ -1041,13 +1012,13 @@ body.audio-playing .floating-dock {
 
 /* Pinyin toggle button in dock */
 .dock-btn-pinyin {
-    background: #ffffff;
-    color: #1e293b;
-    border-color: #cbd5e1;
+    background: var(--bg-card);
+    color: var(--text-main);
+    border-color: var(--ui-border-strong);
 }
 
 .dock-btn-pinyin:hover {
-    background: #f8fafc;
+    background: var(--ui-surface-2);
     border-color: var(--primary);
     color: var(--primary);
 }
@@ -1055,9 +1026,9 @@ body.audio-playing .floating-dock {
 /* State when Pinyin is hidden (Distinct amber warning look) */
 .dock-btn-pinyin.pinyin-hidden,
 body.hide-pinyin .dock-btn-pinyin {
-    background: #fffbeb;
+    background: var(--ui-warning-soft);
     border-color: #f59e0b;
-    color: #b45309;
+    color: var(--ui-warning);
     box-shadow: 0 4px 18px rgba(245, 158, 11, 0.28);
 }
 
@@ -1111,7 +1082,7 @@ body.hide-pinyin .dock-btn-pinyin .dock-key-tag {
     align-items: center;
     gap: 8px;
     padding: 10px 16px;
-    background: #ffffff;
+    background: var(--bg-card);
     color: var(--text-main);
     border: 1.5px solid var(--border-color);
     border-radius: 8px;
@@ -1129,9 +1100,9 @@ body.hide-pinyin .dock-btn-pinyin .dock-key-tag {
 
 body.hide-pinyin .action-toggle-pinyin-btn,
 .action-toggle-pinyin-btn.pinyin-hidden {
-    background: #fffbeb;
+    background: var(--ui-warning-soft);
     border-color: #f59e0b;
-    color: #b45309;
+    color: var(--ui-warning);
 }
 
 /* ==========================================================================
@@ -1176,7 +1147,7 @@ footer.app-footer {
     color: var(--text-muted);
     font-size: 13.5px;
     border-top: 1px solid var(--border-color);
-    background: #ffffff;
+    background: var(--bg-card);
     margin-top: 40px;
 }
 
@@ -1310,8 +1281,8 @@ footer.app-footer {
 
 .disappear-blank .blank-slot {
     display: inline-block;
-    background: #fef3c7;
-    color: #b45309;
+    background: var(--ui-warning-soft);
+    color: var(--ui-warning);
     border: 1.5px dashed #f59e0b;
     border-radius: 6px;
     padding: 2px 10px;
@@ -1324,9 +1295,9 @@ footer.app-footer {
 }
 
 .disappear-blank:hover .blank-slot {
-    background: #fde68a;
-    border-color: #d97706;
-    color: #92400e;
+    background: color-mix(in srgb, var(--ui-warning) 28%, var(--ui-surface));
+    border-color: var(--ui-warning);
+    color: var(--ui-warning);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(217, 119, 6, 0.25);
 }
@@ -1347,8 +1318,8 @@ footer.app-footer {
 .disappear-helper-bar {
     max-width: 1000px;
     margin: -10px auto 20px auto;
-    background: linear-gradient(135deg, #fffbeb, #fef3c7);
-    border: 1px solid #fde68a;
+    background: var(--ui-warning-soft);
+    border: 1px solid color-mix(in srgb, var(--ui-warning) 45%, transparent);
     border-radius: var(--radius);
     padding: 10px 18px;
     display: flex;
@@ -1362,7 +1333,7 @@ footer.app-footer {
 
 .disappear-stat {
     font-size: 13.5px;
-    color: #92400e;
+    color: var(--ui-warning);
     font-weight: 500;
 }
 
@@ -1374,9 +1345,9 @@ footer.app-footer {
 }
 
 .disappear-sub-btn {
-    background: #ffffff;
-    border: 1px solid #fcd34d;
-    color: #b45309;
+    background: var(--bg-card);
+    border: 1px solid color-mix(in srgb, var(--ui-warning) 45%, transparent);
+    color: var(--ui-warning);
     padding: 6px 14px;
     border-radius: 6px;
     font-size: 12.5px;
@@ -1387,9 +1358,24 @@ footer.app-footer {
 }
 
 .disappear-sub-btn:hover {
-    background: #fef3c7;
+    background: var(--ui-warning-soft);
     border-color: #f59e0b;
-    color: #78350f;
+    color: var(--ui-warning);
     transform: translateY(-1px);
     box-shadow: 0 2px 6px rgba(245, 158, 11, 0.2);
 }
+
+/* ==========================================================================
+   GHI ĐÈ MÀU INLINE TRONG tc*.html
+   Các file sách có nhiều style="" với màu cố định (bảng màu flat-UI cũ). Ánh xạ về biến
+   để đúng màu quyển và đọc được ở chế độ tối.
+   ========================================================================== */
+[style*="color: #2c3e50"], [style*="color:#2c3e50"] { color: var(--text-main) !important; }
+[style*="color: #2980b9"], [style*="color:#2980b9"] { color: var(--primary) !important; }
+[style*="solid #2980b9"] { border-color: var(--primary) !important; }
+[style*="color: #7f8c8d"], [style*="color:#7f8c8d"], [style*="color: #888"], [style*="color:#888"] { color: var(--text-muted) !important; }
+[style*="color: #d35400"], [style*="color:#d35400"] { color: var(--ui-warning) !important; }
+[style*="background: #f9f9f9"], [style*="background:#f9f9f9"] { background: var(--ui-surface-2) !important; }
+
+/* Nút đổi sáng/tối trong header */
+.header-btn.ui-theme-toggle { width: 38px; height: 38px; padding: 0; }

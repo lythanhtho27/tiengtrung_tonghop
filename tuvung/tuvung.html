@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ôn Tập Từ Vựng Tiếng Trung Boya (Trung Cấp 1 - 4) • Boya Learning Studio</title>
+    <title>Ôn Từ Vựng Boya Trung Cấp 1–4</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700;900&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/theme.css">
+    <script src="../shared/theme.js"></script>
+    <script>
+        // Chuyển chế độ màu cũ của trang (key "boya_theme", có 6 theme) sang chế độ sáng/tối dùng chung
+        (function () {
+            try {
+                var old = localStorage.getItem("boya_theme");
+                if (old !== null) {
+                    if (!localStorage.getItem("hoc_theme")) HocTheme.set(old === "light" ? "light" : "dark");
+                    localStorage.removeItem("boya_theme");
+                }
+            } catch (e) {}
+        })();
+    </script>
     <link rel="stylesheet" href="tuvung.css">
 </head>
 <body class="studio-body">
@@ -20,7 +34,7 @@
                     <span class="bst-icon">☰</span>
                     <span class="bst-text hide-sm">Danh mục bài</span>
                 </button>
-                <a href="index.html" class="header-brand">
+                <a href="../index.html" class="header-brand">
                     <span class="brand-icon">🏮</span>
                     <div class="brand-title">
                         <h1>Boya Chinese <span class="brand-badge">Trung Cấp 1–4</span></h1>
@@ -41,22 +55,11 @@
 
             <!-- Right: Stats & Quick Settings Popover -->
             <div class="header-actions">
-                <span class="badge-stat hide-lg" id="stat-total-words">2.565 từ</span>
-                <span class="badge-stat star-stat hide-sm" id="stat-starred-words">★ 0 đã lưu</span>
-
-                <button class="badge-stat wrong-stat-btn" id="stat-wrong-words" title="Nhấp xem danh sách từ bạn hay trả lời sai trong Quiz / Games">
-                    📕 <span class="stat-count-num">0</span> <span class="hide-xs">từ sai</span>
+                <button class="badge-stat srs-stat-btn" id="stat-srs-words" title="Trung tâm ôn tập: từ đến hạn, sổ lỗi, từ chậm">
+                    🧠 <span class="stat-count-num">0</span> <span class="hide-xs">đến hạn</span>
                 </button>
 
-                <button class="badge-stat srs-stat-btn" id="stat-srs-words" title="Nhấp xem các từ đến hạn ôn tập ngắt quãng (SRS) hôm nay">
-                    🧠 <span class="stat-count-num">0</span> <span class="hide-xs">cần ôn SRS</span>
-                </button>
-
-                <!-- Theme Sáng / Tối Switcher (1-Click Toggle) -->
-                <button id="btn-toggle-theme" class="btn-theme-toggle" title="Đổi giao diện Sáng / Tối (Alt + T)">
-                    <span class="theme-btn-icon" id="theme-btn-icon">🌙</span>
-                    <span class="theme-btn-label hide-xs" id="theme-btn-label">Tối</span>
-                </button>
+                <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối (Alt + T)" aria-label="Đổi giao diện sáng / tối"></button>
 
                 <!-- Quick Settings Popover Menu (Gom Podcast, Âm thanh, Điều hướng) -->
                 <div class="settings-menu-wrapper" id="headerSettingsWrapper">
@@ -64,33 +67,21 @@
                         ⚙️ <span class="hide-sm">Tiện ích</span> <span class="caret-down">▾</span>
                     </button>
                     <div class="settings-dropdown-menu hidden" id="headerSettingsDropdown">
-                        <div class="sdm-section-title">🎨 GIAO DIỆN CHỦ ĐỀ (THEMES)</div>
-                        <div class="theme-swatch-grid">
-                            <button class="tsg-item" data-set-theme="dark" title="Dạ Thạch (Dark)">
-                                <span class="tsg-icon">🌙</span>
-                                <span class="tsg-label">Dạ Thạch</span>
-                            </button>
-                            <button class="tsg-item" data-set-theme="light" title="Bạch Tuyết (Light)">
-                                <span class="tsg-icon">☀️</span>
-                                <span class="tsg-label">Bạch Tuyết</span>
-                            </button>
-                            <button class="tsg-item" data-set-theme="palace" title="Cố Cung Chu Sa">
-                                <span class="tsg-icon">🏮</span>
-                                <span class="tsg-label">Cố Cung</span>
-                            </button>
-                            <button class="tsg-item" data-set-theme="matcha" title="Trà Đạo Giấy Mộc">
-                                <span class="tsg-icon">🍵</span>
-                                <span class="tsg-label">Trà Đạo</span>
-                            </button>
-                            <button class="tsg-item" data-set-theme="cyberpunk" title="OLED Cyberpunk">
-                                <span class="tsg-icon">🌌</span>
-                                <span class="tsg-label">Cyberpunk</span>
-                            </button>
-                            <button class="tsg-item" data-set-theme="jiangnan" title="Giang Nam Khói Mây">
-                                <span class="tsg-icon">🌸</span>
-                                <span class="tsg-label">Giang Nam</span>
-                            </button>
-                        </div>
+                        <div class="sdm-section-title">🗓️ LỘ TRÌNH</div>
+                        <label class="sdm-item sdm-select-row">
+                            <span class="sdm-icon">🆕</span>
+                            <div class="sdm-text">
+                                <strong>Từ mới mỗi ngày</strong>
+                                <span>Mỗi ngày ôn từ đến hạn trước, rồi mới học từ mới</span>
+                            </div>
+                            <select id="select-daily-new" class="custom-select">
+                                <option value="10">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                                <option value="25">25</option>
+                                <option value="30">30</option>
+                            </select>
+                        </label>
 
                         <div class="sdm-divider"></div>
 
@@ -113,14 +104,14 @@
                         <div class="sdm-divider"></div>
 
                         <div class="sdm-section-title">🚀 ĐIỀU HƯỚNG NHANH</div>
-                        <a href="word_learning.html" class="sdm-item">
+                        <a href="../word_learning/word_learning.html" class="sdm-item">
                             <span class="sdm-icon">📚</span>
                             <div class="sdm-text">
                                 <strong>Sổ Tay HSK 3.0</strong>
                                 <span>Chuyển sang 368 bài HSK 1–9</span>
                             </div>
                         </a>
-                        <a href="index.html" class="sdm-item">
+                        <a href="../index.html" class="sdm-item">
                             <span class="sdm-icon">🏠</span>
                             <div class="sdm-text">
                                 <strong>Về Trang Chủ</strong>
@@ -189,20 +180,23 @@
 
                 <!-- 4. LỌC TỪ LOẠI & MỤC TIÊU ÔN TẬP -->
                 <div class="sidebar-box">
-                    <div class="sb-label">🏷️ Từ Loại & Mục Tiêu Ôn:</div>
+                    <div class="sb-label">🏷️ Từ loại & mục tiêu ôn:</div>
                     <select id="select-type" class="custom-select studio-select">
                         <option value="all">Tất cả từ loại</option>
                     </select>
 
                     <div class="sidebar-filter-pills">
-                        <button class="btn-pill" id="btn-filter-starred" title="Chỉ hiển thị những từ bạn đã gắn sao">
-                            ★ Chỉ từ đã lưu
+                        <button class="btn-pill" data-focus="starred" title="Chỉ hiện những từ bạn đã gắn sao">
+                            ★ Đã lưu (<span id="count-filter-starred">0</span>)
                         </button>
-                        <button class="btn-pill btn-pill-wrong" id="btn-filter-wrong" title="Chỉ hiển thị các từ bạn hay trả lời sai trong Quiz / Games">
-                            📕 Sổ từ hay sai (<span id="count-filter-wrong">0</span>)
+                        <button class="btn-pill btn-pill-wrong" data-focus="wrong" title="Từ hay sai: tự vào khi trả lời sai, tự ra sau 3 lần đúng liên tiếp">
+                            📕 Sổ lỗi (<span id="count-filter-wrong">0</span>)
                         </button>
-                        <button class="btn-pill btn-pill-srs" id="btn-filter-srs" title="Lọc các từ đến hạn ôn tập lặp lại ngắt quãng (SRS) hôm nay">
-                            🧠 Đến hạn ôn SRS (<span id="count-filter-srs">0</span>)
+                        <button class="btn-pill btn-pill-srs" data-focus="due" title="Từ đến hạn ôn hôm nay (SRS)">
+                            🧠 Đến hạn (<span id="count-filter-srs">0</span>)
+                        </button>
+                        <button class="btn-pill btn-pill-slow" data-focus="slow" title="Từ nhận diện chậm hơn 3 giây">
+                            🐢 Từ chậm (<span id="count-filter-slow">0</span>)
                         </button>
                     </div>
                 </div>
@@ -224,20 +218,20 @@
 
                 <!-- Segmented Control Mode Tabs -->
                 <nav class="mode-tabs studio-mode-tabs" role="tablist">
-                    <button class="tab-btn active" data-mode="table">
-                        📋 <span class="tab-label">Bảng Từ Vựng</span> <span class="tab-count-badge" id="tab-badge-table">2.565 từ</span>
+                    <button class="tab-btn tab-primary active" data-mode="home">
+                        🚀 <span class="tab-label">Học tiếp</span>
                     </button>
                     <button class="tab-btn" data-mode="flashcard">
-                        🗂️ <span class="tab-label">Flashcard 3D & SRS</span>
-                    </button>
-                    <button class="tab-btn" data-mode="speech">
-                        🎙️ <span class="tab-label">Luyện Nói AI</span>
+                        🗂️ <span class="tab-label">Flashcard & SRS</span>
                     </button>
                     <button class="tab-btn" data-mode="quiz">
-                        ✍️ <span class="tab-label">Trắc Nghiệm Phản Xạ</span>
+                        ✍️ <span class="tab-label">Quiz</span>
                     </button>
-                    <button class="tab-btn" data-mode="games">
-                        🎮 <span class="tab-label">Khu Trò Chơi (15 Chế Độ)</span>
+                    <button class="tab-btn" data-mode="table">
+                        📋 <span class="tab-label">Từ vựng</span> <span class="tab-count-badge" id="tab-badge-table">0 từ</span>
+                    </button>
+                    <button class="tab-btn tab-more" data-mode="games">
+                        🎮 <span class="tab-label">Thêm trò chơi</span>
                     </button>
                 </nav>
             </div>
@@ -245,8 +239,13 @@
             <!-- WORKSPACE CONTENT SCROLLABLE AREA -->
             <div class="stage-scrollable-area" id="stageScrollArea">
 
-                <!-- TAB 1: BẢNG TỪ VỰNG & BENTO DASHBOARD WORKSTATION -->
-                <section id="mode-table" class="tab-content active">
+                <!-- TAB: HỌC TIẾP (LỘ TRÌNH THEO BÀI) -->
+                <section id="mode-home" class="tab-content active">
+                    <div id="home-container"></div>
+                </section>
+
+                <!-- TAB: BẢNG TỪ VỰNG & BENTO -->
+                <section id="mode-table" class="tab-content">
                     <div class="vocab-toolbar studio-toolbar">
                         <div class="search-box">
                             <span class="search-icon">🔍</span>
@@ -273,9 +272,6 @@
                                 🇻🇳 Nghĩa
                             </button>
 
-                            <button class="ctrl-chip" id="btn-toggle-starred" title="Chỉ hiện từ bạn đã đánh dấu sao ★">
-                                ⭐ Đã lưu
-                            </button>
                         </div>
                     </div>
 
@@ -362,7 +358,7 @@
 
                 <!-- FOOTER IN STAGE SCROLLABLE -->
                 <footer class="studio-workspace-footer">
-                    <p>© Hệ Thống Học & Ôn Tập Tiếng Trung Boya Thông Minh (Boya Chinese I - IV)</p>
+                    <p>Ôn từ vựng Boya Trung cấp 1–4 • tiến độ lưu trên trình duyệt này</p>
                 </footer>
 
             </div>
@@ -494,43 +490,41 @@
         <div class="speech-modal-box srs-modal-large">
             <button class="modal-close-btn" id="srs-modal-close">✕</button>
             <div class="speech-modal-header">
-                <h3>🧠 Trung Tâm Quản Lý Trí Nhớ & Sổ Tay Từ Khó</h3>
-                <p>Theo dõi các từ hay trả lời sai và tiến độ Lặp lại ngắt quãng (Spaced Repetition)</p>
+                <h3>🧠 Trung tâm ôn tập</h3>
+                <p>Lịch ôn SRS (SM-2), sổ lỗi và từ nhận diện chậm — tất cả suy ra từ một nguồn dữ liệu</p>
             </div>
 
-            <!-- SRS Statistics Dashboard -->
             <div class="srs-dashboard-grid">
-                <div class="srs-stat-card card-wrong">
-                    <div class="srs-stat-num" id="srs-count-wrong-num">0</div>
-                    <div class="srs-stat-title">📕 Từ hay trả lời sai</div>
-                    <div class="srs-stat-desc">Được ghi nhận từ Quiz & Games</div>
-                </div>
                 <div class="srs-stat-card card-due">
                     <div class="srs-stat-num" id="srs-count-due-num">0</div>
-                    <div class="srs-stat-title">🔔 Đến hạn ôn tập hôm nay</div>
-                    <div class="srs-stat-desc">Thuật toán SM-2 nhắc nhở</div>
+                    <div class="srs-stat-title">🔔 Đến hạn hôm nay</div>
+                </div>
+                <div class="srs-stat-card card-wrong">
+                    <div class="srs-stat-num" id="srs-count-wrong-num">0</div>
+                    <div class="srs-stat-title">📕 Sổ lỗi</div>
+                </div>
+                <div class="srs-stat-card card-slow">
+                    <div class="srs-stat-num" id="srs-count-slow-num">0</div>
+                    <div class="srs-stat-title">🐢 Từ chậm (&gt; 3s)</div>
                 </div>
                 <div class="srs-stat-card card-mastered">
                     <div class="srs-stat-num" id="srs-count-mastered-num">0</div>
-                    <div class="srs-stat-title">🌟 Cấp độ 5 (Thuần thục)</div>
-                    <div class="srs-stat-desc">Đã ghi nhớ sâu vào trí nhớ dài hạn</div>
+                    <div class="srs-stat-title">🌟 Thuộc lâu (≥ 21 ngày)</div>
                 </div>
             </div>
 
-            <!-- Levels Distribution Bar -->
             <div class="srs-levels-bar-wrap">
-                <div class="srs-levels-label">Phân bố cấp độ ghi nhớ SRS (Level 0 ➔ 5):</div>
-                <div class="srs-levels-track" id="srs-levels-track">
-                    <!-- Populated by JS -->
-                </div>
+                <div class="srs-levels-label">Trạng thái 2.565 từ:</div>
+                <div class="srs-levels-track" id="srs-levels-track"></div>
+                <div class="srs-levels-legend" id="srs-levels-legend"></div>
             </div>
 
-            <!-- Action buttons in modal -->
             <div class="srs-modal-actions-bar">
-                <button class="btn-srs-filter-act" id="btn-modal-filter-wrong">🎯 Chỉ học danh sách từ sai</button>
-                <button class="btn-srs-filter-act" id="btn-modal-filter-srs">🧠 Bắt đầu ôn SRS hôm nay</button>
-                <button class="btn-srs-filter-act btn-danger-soft" id="btn-clear-all-mistakes">🗑️ Xóa sạch sổ lỗi</button>
-                <button class="btn-srs-filter-act" id="btn-export-wrong-txt">📥 Xuất file Anki (.txt)</button>
+                <button class="btn-srs-filter-act" id="btn-modal-filter-srs">🧠 Ôn từ đến hạn</button>
+                <button class="btn-srs-filter-act" id="btn-modal-filter-wrong">📕 Ôn sổ lỗi</button>
+                <button class="btn-srs-filter-act" id="btn-modal-slow">🐢 Luyện từ chậm</button>
+                <button class="btn-srs-filter-act" id="btn-export-wrong-txt">📥 Xuất sổ lỗi (Anki .txt)</button>
+                <button class="btn-srs-filter-act btn-danger-soft" id="btn-clear-all-mistakes">🗑️ Dọn sổ lỗi</button>
             </div>
 
             <!-- List Preview -->
@@ -538,11 +532,11 @@
                 <table class="srs-preview-table">
                     <thead>
                         <tr>
-                            <th style="width: 50px;">STT</th>
-                            <th style="width: 25%;">Chữ Hán</th>
-                            <th style="width: 20%;">Pinyin</th>
-                            <th style="width: 35%;">Nghĩa</th>
-                            <th style="width: 20%;">Trạng thái</th>
+                            <th class="col-w-stt">STT</th>
+                            <th>Chữ Hán</th>
+                            <th>Pinyin</th>
+                            <th>Nghĩa</th>
+                            <th class="col-w-status">Trạng thái</th>
                         </tr>
                     </thead>
                     <tbody id="srs-modal-tbody">
@@ -557,6 +551,7 @@
     <div id="app-toast" class="toast-msg"></div>
 
     <!-- SCRIPTS -->
+    <script src="../shared/progress.js"></script>
     <script src="vocab_data.js"></script>
     <script src="tuvung.js"></script>
 </body>

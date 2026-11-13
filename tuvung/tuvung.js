@@ -14,14 +14,13 @@
         allWords: [],
         selectedBook: "all",
         selectedLesson: "all",
-        starredOnly: false,
         searchQuery: "",
         typeFilter: "all",
         hidePinyin: false,
         hideMean: false,
         vocabViewMode: "bento", // 'bento' | 'cards' | 'table'
         bentoActiveWordIndex: 0,
-        currentMode: "table", // 'table' | 'flashcard' | 'quiz' | 'games'
+        currentMode: "home", // 'home' | 'table' | 'flashcard' | 'quiz' | 'games' | 'speech'
         activeGame: null,     // null | 'match' | 'tf' | 'scramble' | 'hunter'
         
         // Flashcard state
@@ -29,7 +28,7 @@
         fcIndex: 0,
         fcFlipped: false,
         fcDirection: "hz_mean", // 'hz_mean' | 'mean_hz' | 'audio_hz' | 'type_in'
-        fcFilter: "all",        // 'all' | 'unmastered' | 'starred' | 'mastered'
+        fcFilter: "all",        // 'all' | 'due' | 'new' | 'learning' | 'mastered' | 'wrong' | 'starred' | 'custom'
         fcAutoPlay: false,
         fcAutoTts: true,
         fcSpeed: 2500,          // 1500, 2500, 4000
@@ -72,18 +71,22 @@
         gameTimer: null,
         gameSeconds: 0,
         
-        // Storage
+        // Lưu trữ: một nguồn duy nhất là thẻ SRS (srs) + danh sách gắn sao
         starredWords: new Set(),
-        masteredWords: new Set(),
-        unmasteredWords: new Set(),
-
-        // Sổ tay từ hay sai (Mistake Notebook)
-        wrongWords: {}, // { [wordId]: { count: number, lastWrong: timestamp, sources: string[] } }
-        filterWrongOnly: false,
-
-        // Lặp lại ngắt quãng SRS (Spaced Repetition System)
-        srsData: {}, // { [wordId]: { level: number (0-5), intervalDays: number, nextReview: timestamp, lastReviewed: timestamp } }
-        filterSrsDueOnly: false,
+        // { [wordId]: { ef, iv, reps, lapses, due, first, last, streak, wrong, rt } }
+        //   iv: khoảng cách (ngày), due: hạn ôn (ms), wrong: điểm "sổ lỗi" (>0 là đang trong sổ lỗi),
+        //   streak: số lần đúng liên tiếp, rt: thời gian nhận diện trung bình trượt (ms)
+        srs: {},
+        progress: {},   // { [lessonId]: { quizBest, done, at } }
+        settings: { dailyNew: 15, lastLesson: null },
+        days: {},       // { "YYYY-MM-DD": { n: từ mới, r: lượt ôn } }
+        best: {},       // điểm cao nhất theo kiểu chơi quiz
+        // Bộ lọc mục tiêu (sidebar): 'all' | 'starred' | 'wrong' | 'due' | 'slow'
+        focusFilter: "all",
+        fcCustomList: null, // danh sách thẻ tạm (phiên "Học tiếp" hoặc ôn từ sai sau quiz)
+        fcCustomLabel: "",
+        fcRequeue: {},      // số lần thẻ bị "Quên" được đưa lại vào cuối phiên
+        fcShownAt: 0,
 
         // Hands-free Podcast Player
         podcast: {
@@ -119,159 +122,397 @@
         }
     };
 
-    // Load LocalStorage Data
+    // =========================================================================
+    // LƯU TRỮ & SRS (SM-2) — MỘT NGUỒN DỮ LIỆU DUY NHẤT
+    // =========================================================================
+    const KEY = {
+        srs: "boya_tv_srs",             // thẻ SRS theo từ
+        progress: "boya_tv_progress",   // tiến độ từng bài { lessonId: { quizBest, done, at } }
+        settings: "boya_tv_settings",   // { dailyNew, lastLesson }
+        days: "boya_tv_days",           // thống kê theo ngày { "YYYY-MM-DD": { n, r } }
+        best: "boya_tv_best",           // điểm cao nhất theo kiểu chơi quiz
+        starred: "boya_starred_words",  // giữ nguyên key cũ
+        legacy: "boya_tv_legacy_backup" // bản sao dữ liệu cũ trước khi chuyển đổi
+    };
+    const LEGACY_KEYS = ["boya_srs_data", "boya_mastered_words", "boya_unmastered_words", "boya_wrong_words", "boya_quiz_high_score"];
+    const DAY = 86400000;
+    const SLOW_MS = 3000;          // nhận diện chậm hơn 3 giây -> "từ chậm"
+    const PASS_LESSON = 85;        // quiz của bài đạt ≥ 85% mới tính là xong bài
+    const RELEARN_MS = 10 * 60000; // thẻ bị Quên: ôn lại sau 10 phút
+    const RATING = { again: 1, hard: 2, good: 3, easy: 4 };
+
+    function readJSON(key, fallback) {
+        try {
+            const raw = localStorage.getItem(key);
+            return raw ? JSON.parse(raw) : fallback;
+        } catch (e) { return fallback; }
+    }
+    function writeJSON(key, val) {
+        try { localStorage.setItem(key, JSON.stringify(val)); }
+        catch (e) { console.warn("Không lưu được " + key, e); }
+    }
+    function startOfDay(t) { const d = t ? new Date(t) : new Date(); d.setHours(0, 0, 0, 0); return d.getTime(); }
+    function dayKey(t) {
+        const d = t ? new Date(t) : new Date();
+        return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+    }
+
+    // Chuyển dữ liệu cũ (5 cơ chế lưu chồng chéo) sang thẻ SRS mới — chạy một lần, không làm mất tiến độ
+    function migrateLegacy() {
+        let hasLegacy = false;
+        LEGACY_KEYS.forEach(k => { if (localStorage.getItem(k) !== null) hasLegacy = true; });
+        if (!hasLegacy) return;
+
+        const oldSrs = readJSON("boya_srs_data", {}) || {};
+        const oldMastered = readJSON("boya_mastered_words", []) || [];
+        const oldUnmastered = readJSON("boya_unmastered_words", []) || [];
+        const oldWrong = readJSON("boya_wrong_words", {}) || {};
+        const oldHigh = parseInt(localStorage.getItem("boya_quiz_high_score") || "0", 10) || 0;
+        const now = Date.now();
+        const today0 = startOfDay();
+        const srs = readJSON(KEY.srs, {}) || {};
+        const blank = () => ({ ef: 2.5, iv: 0, reps: 0, lapses: 0, due: now, first: now, last: now, streak: 0, wrong: 0 });
+
+        // 1. Thẻ SRS bậc thang cũ: level 0–5, intervalDays, nextReview
+        Object.keys(oldSrs).forEach(id => {
+            const o = oldSrs[id] || {};
+            if (srs[id]) return;
+            const lvl = Math.max(0, Math.min(5, parseInt(o.level, 10) || 0));
+            const iv = lvl === 0 ? 0 : Math.max(1, parseInt(o.intervalDays, 10) || 1);
+            srs[id] = Object.assign(blank(), {
+                ef: 2.5, iv: iv, reps: lvl,
+                due: typeof o.nextReview === "number" ? o.nextReview : now,
+                first: o.lastReviewed || now, last: o.lastReviewed || now
+            });
+        });
+        // 2. Từ "đã thuộc" cũ -> thẻ có khoảng cách dài (rải hạn ôn 14–30 ngày để không dồn một ngày)
+        oldMastered.forEach((id, i) => {
+            const c = srs[id] || blank();
+            if (c.iv < 21) {
+                c.iv = 30; c.reps = Math.max(c.reps, 4); c.ef = Math.max(c.ef, 2.5);
+                c.due = today0 + (14 + (i % 17)) * DAY;
+            }
+            srs[id] = c;
+        });
+        // 3. Từ "chưa nhớ" cũ -> thẻ đang học, đến hạn ngay
+        oldUnmastered.forEach(id => {
+            if (!srs[id]) srs[id] = blank();
+        });
+        // 4. Sổ từ sai cũ -> số lần quên (lapses) + điểm sổ lỗi (tối đa 3)
+        Object.keys(oldWrong).forEach(id => {
+            const cnt = (oldWrong[id] && parseInt(oldWrong[id].count, 10)) || 0;
+            if (cnt <= 0) return;
+            const c = srs[id] || blank();
+            c.lapses = (c.lapses || 0) + cnt;
+            c.wrong = Math.min(3, cnt);
+            if (oldWrong[id].lastWrong) c.last = Math.max(c.last || 0, oldWrong[id].lastWrong);
+            srs[id] = c;
+        });
+        writeJSON(KEY.srs, srs);
+
+        if (oldHigh > 0) {
+            const best = readJSON(KEY.best, {}) || {};
+            best.speed_gauntlet = Math.max(best.speed_gauntlet || 0, oldHigh);
+            writeJSON(KEY.best, best);
+        }
+        // Giữ một bản sao dữ liệu cũ để có thể khôi phục thủ công nếu cần
+        const backup = { at: now };
+        LEGACY_KEYS.forEach(k => { backup[k] = localStorage.getItem(k); });
+        writeJSON(KEY.legacy, backup);
+        LEGACY_KEYS.forEach(k => { try { localStorage.removeItem(k); } catch (e) {} });
+    }
+
     function loadStorage() {
+        try { migrateLegacy(); } catch (e) { console.warn("Không chuyển được dữ liệu cũ", e); }
+        state.srs = readJSON(KEY.srs, {}) || {};
+        state.progress = readJSON(KEY.progress, {}) || {};
+        state.settings = Object.assign({ dailyNew: 15, lastLesson: null }, readJSON(KEY.settings, {}) || {});
+        state.settings.dailyNew = Math.max(10, Math.min(30, parseInt(state.settings.dailyNew, 10) || 15));
+        state.days = readJSON(KEY.days, {}) || {};
+        state.best = readJSON(KEY.best, {}) || {};
+        state.starredWords = new Set(readJSON(KEY.starred, []) || []);
+        const savedQuizAutoTts = localStorage.getItem("boya_quiz_auto_tts");
+        if (savedQuizAutoTts !== null) state.quizAutoTts = (savedQuizAutoTts === "true");
+    }
+
+    function saveSrs() {
+        writeJSON(KEY.srs, state.srs);
+        writeJSON(KEY.days, pruneDays(state.days));
+        updateHeaderStats();
+        saveSummary();
+    }
+    function saveProgress() { writeJSON(KEY.progress, state.progress); saveSummary(); }
+    function saveSettings() { writeJSON(KEY.settings, state.settings); }
+    function saveBest() { writeJSON(KEY.best, state.best); }
+    function saveStarred() { writeJSON(KEY.starred, Array.from(state.starredWords)); updateHeaderStats(); }
+    function pruneDays(days) {
+        const keys = Object.keys(days).sort();
+        while (keys.length > 60) delete days[keys.shift()];
+        return days;
+    }
+    function today() {
+        const k = dayKey();
+        if (!state.days[k]) state.days[k] = { n: 0, r: 0 };
+        return state.days[k];
+    }
+
+    // ---- Trạng thái suy ra từ SRS
+    function wordStatus(id) {
+        const c = state.srs[id];
+        if (!c) return "new";
+        if (c.iv >= 21) return "mastered";
+        if (c.iv >= 7) return "familiar";
+        return "learning";
+    }
+    const STATUS_LABEL = { new: "Mới", learning: "Đang học", familiar: "Đã quen", mastered: "Thuộc lâu" };
+    function isDue(id, now) { const c = state.srs[id]; return !!c && c.due <= (now || Date.now()); }
+    function isWrong(id) { const c = state.srs[id]; return !!c && (c.wrong || 0) > 0; }
+    function isSlow(id) { const c = state.srs[id]; return !!c && (c.rt || 0) >= SLOW_MS; }
+    function dueWords(pool) {
+        const now = Date.now();
+        return (pool || state.allWords).filter(w => isDue(w.id, now)).sort((a, b) => state.srs[a.id].due - state.srs[b.id].due);
+    }
+    function statusBadgeHtml(id, extraClass) {
+        const st = wordStatus(id);
+        const c = state.srs[id];
+        const due = c && c.due <= Date.now();
+        return `<span class="st-badge st-${st} ${extraClass || ''}" title="${STATUS_LABEL[st]}${c ? ' • khoảng cách ' + c.iv + ' ngày' : ''}">${STATUS_LABEL[st]}${due ? ' • đến hạn' : ''}</span>`;
+    }
+    function wrongBadgeHtml(id) {
+        const c = state.srs[id];
+        if (!c || !(c.wrong > 0)) return "";
+        return `<span class="wrong-badge" title="Trong sổ lỗi • đã quên ${c.lapses || 0} lần • đúng 3 lần liên tiếp để giảm">📕 ${c.lapses || c.wrong}</span>`;
+    }
+
+    // ---- SM-2 rút gọn (giống hsk_lotrinh) — rating: 1 Quên, 2 Khó, 3 Nhớ, 4 Dễ
+    function newCard() {
+        const now = Date.now();
+        return { ef: 2.5, iv: 0, reps: 0, lapses: 0, due: now, first: now, last: now, streak: 0, wrong: 0 };
+    }
+    function schedule(c, rating) {
+        const n = Object.assign({}, c);
+        n.last = Date.now();
+        if (rating === 1) {
+            n.reps = 0; n.lapses = (n.lapses || 0) + 1; n.ef = Math.max(1.3, n.ef - 0.2);
+            n.iv = 0; n.due = Date.now() + RELEARN_MS;
+            return n;
+        }
+        let iv;
+        if (rating === 2) { iv = Math.max(1, Math.round(c.iv * 1.2)); n.ef = Math.max(1.3, n.ef - 0.15); }
+        else if (rating === 3) { iv = c.iv < 1 ? 1 : (c.reps <= 1 ? Math.max(3, c.iv + 1) : Math.round(c.iv * c.ef)); }
+        else { iv = c.iv < 1 ? 3 : Math.round(Math.max(4, c.iv * c.ef * 1.3)); n.ef = n.ef + 0.15; }
+        n.iv = Math.min(iv, 365); n.reps = (c.reps || 0) + 1;
+        n.due = startOfDay() + n.iv * DAY;
+        return n;
+    }
+    function ivText(iv) {
+        if (iv === 0) return "10 phút";
+        if (iv < 30) return iv + " ngày";
+        if (iv < 365) return Math.round(iv / 30) + " tháng";
+        return "1 năm";
+    }
+    function ivLabel(id, rating) {
+        return ivText(schedule(state.srs[id] || newCard(), rating).iv);
+    }
+    // Ghi nhận đúng/sai cho sổ lỗi: sai -> +1; đúng 3 lần liên tiếp -> -1
+    function trackMistake(c, ok) {
+        if (ok) {
+            c.streak = (c.streak || 0) + 1;
+            if (c.wrong > 0 && c.streak >= 3) { c.wrong--; c.streak = 0; }
+        } else {
+            c.streak = 0;
+            c.wrong = Math.min(5, (c.wrong || 0) + 1);
+        }
+    }
+    // Chấm thẻ flashcard (nguồn chính ghi vào SRS). Trả về thẻ mới.
+    function rateWord(id, rating) {
+        if (!id) return null;
+        const existed = !!state.srs[id];
+        const before = state.srs[id] || newCard();
+        const wasLearned = existed && (before.reps > 0 || before.iv > 0);
+        const n = schedule(before, rating);
+        if (rating === 1) {
+            if (wasLearned) trackMistake(n, false); // từ mới chưa biết thì không tính là "lỗi"
+            else n.streak = 0;
+        } else {
+            trackMistake(n, true);
+        }
+        state.srs[id] = n;
+        const d = today();
+        if (!existed) d.n++; else d.r++;
+        saveSrs();
+        checkLessonDoneFor(id);
+        return n;
+    }
+    // Kết quả từ quiz chính thức: đúng -> nếu đến hạn thì coi như "Nhớ"; sai -> chỉ hạ 1 bậc (không về 0)
+    function quizResult(id, ok) {
+        if (!id) return;
+        const now = Date.now();
+        let c = state.srs[id];
+        const d = today();
+        if (!c) {
+            c = newCard();
+            if (ok) { c.iv = 1; c.reps = 1; c.due = startOfDay() + DAY; }
+            else { c.due = now + RELEARN_MS; }
+            d.n++;
+        } else if (ok) {
+            if (c.due <= now) { c = Object.assign(schedule(c, 3), { streak: c.streak, wrong: c.wrong }); d.r++; }
+            trackMistake(c, true);
+        } else {
+            c = Object.assign({}, c);
+            c.lapses = (c.lapses || 0) + 1;
+            c.ef = Math.max(1.3, c.ef - 0.15);
+            c.reps = Math.max(0, (c.reps || 0) - 1);
+            c.iv = c.iv > 1 ? Math.max(1, Math.round(c.iv / c.ef)) : 0;
+            c.due = c.iv === 0 ? now + RELEARN_MS : Math.min(c.due, startOfDay() + DAY);
+            c.last = now;
+            trackMistake(c, false);
+            d.r++;
+        }
+        state.srs[id] = c;
+        saveSrs();
+        checkLessonDoneFor(id);
+    }
+    // Đánh dấu thủ công "cần ôn" (nút trong Luyện nói): đưa vào sổ lỗi và cho đến hạn ngay
+    function markForReview(id) {
+        if (!id) return;
+        const c = state.srs[id] ? Object.assign({}, state.srs[id]) : newCard();
+        if (!state.srs[id]) today().n++;
+        c.wrong = Math.max(1, c.wrong || 0);
+        c.streak = 0;
+        c.due = Math.min(c.due, Date.now());
+        state.srs[id] = c;
+        saveSrs();
+    }
+    function clearMistake(id) {
+        if (state.srs[id] && state.srs[id].wrong > 0) {
+            state.srs[id].wrong = 0;
+            state.srs[id].streak = 0;
+            saveSrs();
+            return true;
+        }
+        return false;
+    }
+    // ---- Thời gian phản ứng (trung bình trượt), lưu trong thẻ SRS: c.rt (ms)
+    function updateRT(id, ms, ok) {
+        const c = state.srs[id];
+        if (!c) return;
+        ms = Math.max(150, Math.min(ms, 15000));
+        if (!ok) ms = Math.max(ms, SLOW_MS + 500); // trả lời sai = coi như chưa nhận diện được
+        c.rt = c.rt ? Math.round(c.rt * 0.6 + ms * 0.4) : Math.round(ms);
+    }
+    function fmtSec(ms) { return (ms / 1000).toFixed(1).replace(".", ",") + "s"; }
+
+    // =========================================================================
+    // LỘ TRÌNH THEO BÀI
+    // =========================================================================
+    function lessonId(w) { return `${w.book_id}_${w.lesson_num}`; }
+    function allLessons() {
+        const out = [];
+        state.books.forEach(b => b.lessons.forEach(l => out.push({ id: `${b.id}_${l.lesson_num}`, book: b, lesson: l })));
+        return out;
+    }
+    function findLesson(id) { return allLessons().find(x => x.id === id) || null; }
+    function lessonWords(id) { return state.allWords.filter(w => lessonId(w) === id); }
+    function lessonStats(id) {
+        const words = lessonWords(id);
+        let seen = 0, mastered = 0;
+        words.forEach(w => {
+            const c = state.srs[w.id];
+            if (c) { seen++; if (c.iv >= 21) mastered++; }
+        });
+        const p = state.progress[id] || {};
+        return { total: words.length, seen: seen, mastered: mastered, quizBest: p.quizBest || 0, done: !!p.done };
+    }
+    function lessonLabel(id) {
+        const L = findLesson(id);
+        return L ? `${L.book.name} · ${L.lesson.lesson_name}` : id;
+    }
+    function checkLessonDone(id) {
+        const st = lessonStats(id);
+        if (!st.done && st.total > 0 && st.seen >= st.total && st.quizBest >= PASS_LESSON) {
+            state.progress[id] = Object.assign({}, state.progress[id], { done: true, at: Date.now() });
+            saveProgress();
+            showToast(`🎉 Hoàn thành ${lessonLabel(id)}!`);
+            return true;
+        }
+        return false;
+    }
+    function checkLessonDoneFor(wordId) {
+        const w = wordById(wordId);
+        if (w) checkLessonDone(lessonId(w));
+    }
+    // Bài đang học = bài đầu tiên (theo thứ tự giáo trình) chưa xong
+    function currentLessonId() {
+        const L = allLessons().find(x => !(state.progress[x.id] && state.progress[x.id].done));
+        return L ? L.id : null;
+    }
+    function newWordsLeftToday() {
+        return Math.max(0, state.settings.dailyNew - (today().n || 0));
+    }
+    // Từ mới tiếp theo theo thứ tự bài, bắt đầu từ bài đang học
+    function nextNewWords(limit) {
+        const out = [];
+        if (limit <= 0) return out;
+        const lessons = allLessons();
+        const cur = currentLessonId();
+        let start = Math.max(0, lessons.findIndex(x => x.id === cur));
+        for (let i = start; i < lessons.length && out.length < limit; i++) {
+            if (state.progress[lessons[i].id] && state.progress[lessons[i].id].done) continue;
+            const ws = lessonWords(lessons[i].id).filter(w => !state.srs[w.id]);
+            for (let j = 0; j < ws.length && out.length < limit; j++) out.push(ws[j]);
+            if (out.length > 0) break; // chỉ lấy từ mới trong một bài mỗi phiên để học trọn từng bài
+        }
+        return out;
+    }
+    // Kế hoạch "Học tiếp": ôn từ đến hạn trước, rồi từ mới theo thứ tự bài
+    function buildStudyPlan() {
+        const due = dueWords();
+        const fresh = nextNewWords(newWordsLeftToday());
+        return { due: due, fresh: fresh };
+    }
+    // Gợi ý bước tiếp theo cho nút "Học tiếp"
+    function nextStep() {
+        const plan = buildStudyPlan();
+        const cur = currentLessonId();
+        if (plan.due.length || plan.fresh.length) {
+            return { kind: "study", plan: plan, lesson: plan.fresh.length ? lessonId(plan.fresh[0]) : cur };
+        }
+        if (cur) {
+            const st = lessonStats(cur);
+            if (st.seen >= st.total && st.quizBest < PASS_LESSON) return { kind: "quiz", lesson: cur };
+            if (st.seen < st.total) return { kind: "limit", lesson: cur };
+        }
+        return { kind: cur ? "limit" : "finished", lesson: cur };
+    }
+
+    // Tóm tắt tiến độ cho trang chủ (shared/progress.js)
+    function saveSummary() {
+        if (!window.HocProgress || !state.books.length) return;
         try {
-            const savedStarred = localStorage.getItem("boya_starred_words");
-            if (savedStarred) {
-                state.starredWords = new Set(JSON.parse(savedStarred));
-            }
-            const savedMastered = localStorage.getItem("boya_mastered_words");
-            if (savedMastered) {
-                state.masteredWords = new Set(JSON.parse(savedMastered));
-            }
-            const savedUnmastered = localStorage.getItem("boya_unmastered_words");
-            if (savedUnmastered) {
-                state.unmasteredWords = new Set(JSON.parse(savedUnmastered));
-            }
-            const savedWrong = localStorage.getItem("boya_wrong_words");
-            if (savedWrong) {
-                state.wrongWords = JSON.parse(savedWrong);
-            }
-            const savedSrs = localStorage.getItem("boya_srs_data");
-            if (savedSrs) {
-                state.srsData = JSON.parse(savedSrs);
-            }
-            const savedQuizAutoTts = localStorage.getItem("boya_quiz_auto_tts");
-            if (savedQuizAutoTts !== null) {
-                state.quizAutoTts = (savedQuizAutoTts === "true");
-            }
-        } catch (e) {
-            console.warn("Could not load from localStorage", e);
-        }
+            const groups = {};
+            state.books.forEach(b => {
+                const done = b.lessons.filter(l => state.progress[`${b.id}_${l.lesson_num}`] && state.progress[`${b.id}_${l.lesson_num}`].done).length;
+                groups[b.id] = { done: done, total: b.lessons.length, label: b.name };
+            });
+            const cur = currentLessonId();
+            const learned = state.allWords.filter(w => state.srs[w.id]).length;
+            const t = today();
+            window.HocProgress.save("tuvung", {
+                next: cur ? `Từ vựng ${lessonLabel(cur)}` : "Đã xong toàn bộ giáo trình",
+                nextUrl: "tuvung/tuvung.html" + (cur ? "?lesson=" + encodeURIComponent(cur) : ""),
+                due: dueWords().length,
+                learned: learned,
+                today: { n: t.n || 0, r: t.r || 0 },
+                groups: groups
+            });
+        } catch (e) { console.warn(e); }
     }
 
-    function saveWrongWords() {
-        try {
-            localStorage.setItem("boya_wrong_words", JSON.stringify(state.wrongWords));
-            updateHeaderStats();
-        } catch (e) {
-            console.warn("Could not save wrongWords to localStorage", e);
-        }
-    }
-
-    function saveSrsData() {
-        try {
-            localStorage.setItem("boya_srs_data", JSON.stringify(state.srsData));
-            updateHeaderStats();
-        } catch (e) {
-            console.warn("Could not save srsData to localStorage", e);
-        }
-    }
-
-    function recordWrongWord(wordId, source = "quiz") {
-        if (!wordId) return;
-        if (!state.wrongWords[wordId]) {
-            state.wrongWords[wordId] = { count: 0, lastWrong: 0, sources: [] };
-        }
-        state.wrongWords[wordId].count += 1;
-        state.wrongWords[wordId].lastWrong = Date.now();
-        if (!state.wrongWords[wordId].sources.includes(source)) {
-            state.wrongWords[wordId].sources.push(source);
-        }
-
-        // Hạ cấp SRS khi làm sai: về level 0 và cần ôn lại ngay hôm nay
-        if (state.srsData[wordId]) {
-            state.srsData[wordId].level = 0;
-            state.srsData[wordId].intervalDays = 0;
-            state.srsData[wordId].nextReview = Date.now() + 10 * 60 * 1000;
-        }
-        saveWrongWords();
-        saveSrsData();
-    }
-
-    function recordCorrectWord(wordId, source = "quiz") {
-        if (!wordId) return;
-        if (state.srsData[wordId] && state.srsData[wordId].level === 0) {
-            state.srsData[wordId].level = 1;
-            state.srsData[wordId].intervalDays = 1;
-            state.srsData[wordId].nextReview = Date.now() + 86400000;
-            saveSrsData();
-        }
-    }
-
-    function removeWrongWord(wordId) {
-        if (state.wrongWords[wordId]) {
-            delete state.wrongWords[wordId];
-            saveWrongWords();
-            showToast("Đã xóa từ khỏi sổ tay lỗi sai! 🎉");
-            if (state.filterWrongOnly) {
-                renderCurrentMode();
-            }
-        }
-    }
-
-    function assessWordSrs(wordId, quality) {
-        if (!wordId) return;
-        const currLevel = state.srsData[wordId] ? (state.srsData[wordId].level || 0) : 0;
-        let newLevel = 0;
-        let intervalDays = 0;
-
-        if (quality === "again") {
-            newLevel = 0;
-            intervalDays = 0;
-            recordWrongWord(wordId, "srs");
-            showToast("🔴 SRS: Quên (Cấp 0 - Cần ôn lại ngay hôm nay)");
-        } else if (quality === "hard") {
-            newLevel = Math.max(1, currLevel);
-            intervalDays = 1;
-            showToast("🟠 SRS: Khó (Cấp " + newLevel + " - Ôn lại sau 1 ngày)");
-        } else if (quality === "good") {
-            newLevel = Math.min(5, currLevel + 1);
-            const intervals = [1, 3, 7, 14, 30];
-            intervalDays = intervals[newLevel - 1] || 3;
-            showToast("🟢 SRS: Nhớ tốt! (Cấp " + newLevel + " - Ôn sau " + intervalDays + " ngày)");
-        } else if (quality === "easy") {
-            newLevel = Math.min(5, currLevel + 2);
-            const intervals = [3, 7, 14, 30, 60];
-            intervalDays = intervals[Math.min(4, newLevel - 1)] || 7;
-            showToast("🔵 SRS: Xuất sắc! (Cấp " + newLevel + " - Ôn sau " + intervalDays + " ngày)");
-        }
-
-        const nextReview = Date.now() + intervalDays * 86400000;
-        state.srsData[wordId] = {
-            level: newLevel,
-            intervalDays: intervalDays,
-            nextReview: nextReview,
-            lastReviewed: Date.now()
-        };
-        saveSrsData();
-    }
-
-    function saveStarred() {
-        try {
-            localStorage.setItem("boya_starred_words", JSON.stringify(Array.from(state.starredWords)));
-            updateHeaderStats();
-        } catch (e) {
-            console.warn("Could not save starred to localStorage", e);
-        }
-    }
-
-    function saveMastered() {
-        try {
-            localStorage.setItem("boya_mastered_words", JSON.stringify(Array.from(state.masteredWords)));
-            updateHeaderStats();
-        } catch (e) {
-            console.warn("Could not save mastered to localStorage", e);
-        }
-    }
-
-    function saveUnmastered() {
-        try {
-            localStorage.setItem("boya_unmastered_words", JSON.stringify(Array.from(state.unmasteredWords)));
-        } catch (e) {
-            console.warn("Could not save unmastered to localStorage", e);
-        }
+    let WORD_INDEX = null;
+    function wordById(id) {
+        if (!WORD_INDEX) { WORD_INDEX = new Map(); state.allWords.forEach(w => WORD_INDEX.set(w.id, w)); }
+        return WORD_INDEX.get(id) || null;
     }
 
     // Text-to-Speech (TTS)
@@ -362,63 +603,13 @@
     }
 
     // =========================================================================
-    // THEMES ENGINE (Dark, Light, Cố Cung, Trà Đạo, Cyberpunk, Giang Nam)
+    // SÁNG / TỐI: dùng chung shared/theme.js (HocTheme). Nút đổi có [data-ui-theme-toggle].
     // =========================================================================
-    const THEMES_CONFIG = {
-        dark:      { label: 'Dạ Thạch', icon: '🌙' },
-        light:     { label: 'Bạch Tuyết', icon: '☀️' },
-        palace:    { label: 'Cố Cung', icon: '🏮' },
-        matcha:    { label: 'Trà Đạo', icon: '🍵' },
-        cyberpunk: { label: 'Cyberpunk', icon: '🌌' },
-        jiangnan:  { label: 'Giang Nam', icon: '🌸' }
-    };
-    const STORAGE_KEY_THEME = "boya_theme";
-
-    function initTheme() {
-        const savedTheme = localStorage.getItem(STORAGE_KEY_THEME) || 'dark';
-        applyTheme(savedTheme);
-    }
-
-    function applyTheme(themeKey) {
-        if (!THEMES_CONFIG[themeKey]) themeKey = 'dark';
-        state.currentTheme = themeKey;
-        try {
-            localStorage.setItem(STORAGE_KEY_THEME, themeKey);
-        } catch (e) {}
-
-        document.body.classList.remove('light-mode', 'theme-light', 'theme-dark', 'theme-palace', 'theme-matcha', 'theme-cyberpunk', 'theme-jiangnan');
-
-        if (themeKey === 'light') {
-            document.body.classList.add('light-mode', 'theme-light');
-            document.documentElement.setAttribute('data-theme', 'light');
-        } else if (themeKey !== 'dark') {
-            document.body.classList.add(`theme-${themeKey}`);
-            document.documentElement.setAttribute('data-theme', themeKey);
-        } else {
-            document.body.classList.add('theme-dark');
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-
-        updateThemeUI(themeKey);
-    }
-
     function toggleTheme() {
-        const next = state.currentTheme === 'light' ? 'dark' : 'light';
-        applyTheme(next);
-        showToast(`🎨 Giao diện: ${THEMES_CONFIG[next].label}`);
-    }
-
-    function updateThemeUI(themeKey) {
-        const config = THEMES_CONFIG[themeKey] || THEMES_CONFIG.dark;
-        const iconEl = document.getElementById('theme-btn-icon');
-        const labelEl = document.getElementById('theme-btn-label');
-        if (iconEl) iconEl.textContent = config.icon;
-        if (labelEl) labelEl.textContent = config.label;
-
-        document.querySelectorAll('.tsg-item').forEach(item => {
-            const itemTheme = item.getAttribute('data-set-theme');
-            item.classList.toggle('active', itemTheme === themeKey);
-        });
+        if (window.HocTheme) {
+            const t = window.HocTheme.toggle();
+            showToast(t === "dark" ? "🌙 Giao diện tối" : "☀️ Giao diện sáng");
+        }
     }
 
     // Toast helper
@@ -511,7 +702,6 @@
     function initData() {
         loadStorage();
         initTTS();
-        initTheme();
 
         if (window.BOYA_VOCAB_DATA && window.BOYA_VOCAB_DATA.books) {
             state.books = window.BOYA_VOCAB_DATA.books;
@@ -530,49 +720,65 @@
             });
         });
 
+        // Mặc định mở bài đang học (hoặc bài trong URL ?lesson=tc1_3 / bài mở lần trước), không mở cả 2.565 từ
+        let params = null;
+        try { params = new URLSearchParams(location.search); } catch (e) {}
+        const urlLesson = params && params.get("lesson");
+        const startLesson = (urlLesson && findLesson(urlLesson) && urlLesson)
+            || (state.settings.lastLesson && findLesson(state.settings.lastLesson) && state.settings.lastLesson)
+            || currentLessonId();
+        if (startLesson) selectLesson(startLesson, false);
+        const urlMode = params && params.get("mode");
+        if (urlMode && ["home", "table", "flashcard", "quiz", "games"].includes(urlMode)) state.currentMode = urlMode;
+
         populateLessonFilter();
         populateTypeFilter();
         bindEvents();
         updateHeaderStats();
         renderCurrentMode();
+        saveSummary();
     }
 
-    // Header Stats & Stage Indicators
-    function updateHeaderStats() {
-        const totalElem = document.getElementById("stat-total-words");
-        const starElem = document.getElementById("stat-starred-words");
-        const wrongElem = document.getElementById("stat-wrong-words");
-        const srsElem = document.getElementById("stat-srs-words");
-        const countWrongElem = document.getElementById("count-filter-wrong");
-        const countSrsElem = document.getElementById("count-filter-srs");
-        const filtered = getFilteredWords();
-
-        if (totalElem) totalElem.textContent = `${filtered.length} từ`;
-        if (starElem) starElem.textContent = `★ ${state.starredWords.size} đã lưu`;
-
-        // Sổ từ hay sai count
-        const wrongCount = Object.keys(state.wrongWords).length;
-        if (wrongElem) {
-            const numSpan = wrongElem.querySelector(".stat-count-num");
-            if (numSpan) numSpan.textContent = wrongCount;
-            else wrongElem.textContent = `📕 ${wrongCount} từ sai`;
+    // Chọn một bài (lessonId dạng "tc1_3"); đồng bộ nút quyển & danh sách bài
+    function selectLesson(id, rerender) {
+        const L = findLesson(id);
+        if (!L) return;
+        state.selectedBook = L.book.id;
+        state.selectedLesson = id;
+        state.bentoActiveWordIndex = 0;
+        state.settings.lastLesson = id;
+        saveSettings();
+        document.querySelectorAll(".book-btn").forEach(b => b.classList.toggle("active", b.dataset.book === L.book.id));
+        if (rerender !== false) {
+            populateLessonFilter();
+            updateHeaderStats();
+            renderCurrentMode();
         }
-        if (countWrongElem) countWrongElem.textContent = wrongCount;
+    }
 
-        // SRS đến hạn count
+    // Số liệu ở header & sidebar — mọi con số đều suy ra từ thẻ SRS (một nguồn duy nhất)
+    function updateHeaderStats() {
+        const srsElem = document.getElementById("stat-srs-words");
+        const filtered = getFilteredWords();
         const now = Date.now();
-        let srsDueCount = 0;
-        Object.keys(state.srsData).forEach(wId => {
-            if (state.srsData[wId].nextReview <= now) {
-                srsDueCount++;
-            }
+        let due = 0, wrong = 0, slow = 0;
+        state.allWords.forEach(w => {
+            const c = state.srs[w.id];
+            if (!c) return;
+            if (c.due <= now) due++;
+            if (c.wrong > 0) wrong++;
+            if ((c.rt || 0) >= SLOW_MS) slow++;
         });
         if (srsElem) {
             const numSpan = srsElem.querySelector(".stat-count-num");
-            if (numSpan) numSpan.textContent = srsDueCount;
-            else srsElem.textContent = `🧠 ${srsDueCount} cần ôn SRS`;
+            if (numSpan) numSpan.textContent = due;
+            srsElem.classList.toggle("has-due", due > 0);
         }
-        if (countSrsElem) countSrsElem.textContent = srsDueCount;
+        const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+        setText("count-filter-starred", state.starredWords.size);
+        setText("count-filter-wrong", wrong);
+        setText("count-filter-srs", due);
+        setText("count-filter-slow", slow);
 
         // Stage Nav Indicators
         const tabBadgeTable = document.getElementById("tab-badge-table");
@@ -581,6 +787,7 @@
         const activeBookBadge = document.getElementById("active-book-badge");
         const activeLessonHeading = document.getElementById("active-lesson-heading");
         if (activeBookBadge) {
+            activeBookBadge.dataset.book = state.selectedBook;
             if (state.selectedBook === "all") {
                 activeBookBadge.textContent = "Toàn bộ";
             } else {
@@ -600,34 +807,24 @@
         }
     }
 
-    // Get Filtered Words (Single-pass high performance filter)
+    // Lọc từ theo quyển / bài / mục tiêu / từ loại / tìm kiếm
     function getFilteredWords() {
         const q = state.searchQuery ? state.searchQuery.toLowerCase().trim() : null;
-        const now = state.filterSrsDueOnly ? Date.now() : 0;
+        const now = Date.now();
         const bookFilter = state.selectedBook;
         const lessonFilter = state.selectedLesson;
         const typeFilter = state.typeFilter;
+        const focus = state.focusFilter;
 
         return state.allWords.filter(w => {
-            // Filter by book
             if (bookFilter !== "all" && w.book_id !== bookFilter) return false;
+            if (lessonFilter !== "all" && `${w.book_id}_${w.lesson_num}` !== lessonFilter) return false;
 
-            // Filter by lesson
-            if (lessonFilter !== "all") {
-                const combinedId = `${w.book_id}_${w.lesson_num}`;
-                if (combinedId !== lessonFilter && `bai${w.lesson_num}` !== lessonFilter) return false;
-            }
+            if (focus === "starred" && !state.starredWords.has(w.id)) return false;
+            if (focus === "wrong" && !isWrong(w.id)) return false;
+            if (focus === "due" && !isDue(w.id, now)) return false;
+            if (focus === "slow" && !isSlow(w.id)) return false;
 
-            // Filter by Starred
-            if (state.starredOnly && !state.starredWords.has(w.id)) return false;
-
-            // Filter by Wrong words (Sổ lỗi)
-            if (state.filterWrongOnly && (!state.wrongWords[w.id] || state.wrongWords[w.id].count <= 0)) return false;
-
-            // Filter by SRS due (Đến hạn ôn)
-            if (state.filterSrsDueOnly && (!state.srsData[w.id] || state.srsData[w.id].nextReview > now)) return false;
-
-            // Filter by Type
             if (typeFilter !== "all") {
                 if (typeFilter === "proper") {
                     if (!w.is_proper && (!w.type || !w.type.includes("专名"))) return false;
@@ -636,14 +833,12 @@
                 }
             }
 
-            // Filter by Search
             if (q) {
                 const matchHz = w.hz && w.hz.toLowerCase().includes(q);
                 const matchPy = w.py && w.py.toLowerCase().includes(q);
                 const matchMean = w.mean && w.mean.toLowerCase().includes(q);
                 if (!matchHz && !matchPy && !matchMean) return false;
             }
-
             return true;
         });
     }
@@ -717,7 +912,7 @@
             if (book) {
                 const lesson = book.lessons.find(l => l.lesson_num === lessonNum);
                 if (lesson && lesson.audio) {
-                    audioElem.src = lesson.audio;
+                    audioElem.src = "../" + lesson.audio; // dữ liệu lưu đường dẫn tính từ thư mục gốc
                     if (audioLabel) {
                         audioLabel.textContent = `🎧 Nghe Audio Từ Vựng: ${book.name} - ${lesson.lesson_name} (${lesson.title || ''})`;
                     }
@@ -752,64 +947,22 @@
         if (selectLesson) {
             selectLesson.addEventListener("change", (e) => {
                 state.selectedLesson = e.target.value;
+                state.bentoActiveWordIndex = 0;
+                if (state.selectedLesson !== "all") { state.settings.lastLesson = state.selectedLesson; saveSettings(); }
                 updateAudioBar();
                 updateHeaderStats();
                 renderCurrentMode();
             });
         }
 
-        // Starred toggle filter
-        const starToggleBtn = document.getElementById("btn-filter-starred");
-        if (starToggleBtn) {
-            starToggleBtn.addEventListener("click", () => {
-                state.starredOnly = !state.starredOnly;
-                starToggleBtn.classList.toggle("active", state.starredOnly);
-                updateHeaderStats();
-                renderCurrentMode();
-            });
-        }
+        // Bộ lọc mục tiêu (một lựa chọn): tất cả / đã lưu / sổ lỗi / đến hạn / từ chậm
+        document.querySelectorAll("[data-focus]").forEach(btn => {
+            btn.addEventListener("click", () => setFocusFilter(btn.dataset.focus === state.focusFilter ? "all" : btn.dataset.focus));
+        });
 
-        // Wrong words toggle filter
-        const wrongFilterBtn = document.getElementById("btn-filter-wrong");
-        if (wrongFilterBtn) {
-            wrongFilterBtn.addEventListener("click", () => {
-                state.filterWrongOnly = !state.filterWrongOnly;
-                wrongFilterBtn.classList.toggle("active", state.filterWrongOnly);
-                if (state.filterWrongOnly) {
-                    state.filterSrsDueOnly = false;
-                    const srsBtn = document.getElementById("btn-filter-srs");
-                    if (srsBtn) srsBtn.classList.remove("active");
-                }
-                updateHeaderStats();
-                renderCurrentMode();
-            });
-        }
-
-        // SRS due words toggle filter
-        const srsFilterBtn = document.getElementById("btn-filter-srs");
-        if (srsFilterBtn) {
-            srsFilterBtn.addEventListener("click", () => {
-                state.filterSrsDueOnly = !state.filterSrsDueOnly;
-                srsFilterBtn.classList.toggle("active", state.filterSrsDueOnly);
-                if (state.filterSrsDueOnly) {
-                    state.filterWrongOnly = false;
-                    const wrongBtn = document.getElementById("btn-filter-wrong");
-                    if (wrongBtn) wrongBtn.classList.remove("active");
-                }
-                updateHeaderStats();
-                renderCurrentMode();
-            });
-        }
-
-        // Header click to open SRS / Mistake Manager Modal
-        const statWrongBtn = document.getElementById("stat-wrong-words");
-        if (statWrongBtn) {
-            statWrongBtn.addEventListener("click", () => openSrsMistakeModal("wrong"));
-        }
+        // Header: mở Trung tâm ôn tập (SRS & sổ lỗi)
         const statSrsBtn = document.getElementById("stat-srs-words");
-        if (statSrsBtn) {
-            statSrsBtn.addEventListener("click", () => openSrsMistakeModal("srs"));
-        }
+        if (statSrsBtn) statSrsBtn.addEventListener("click", () => openSrsMistakeModal());
 
         // Header click to open / toggle Podcast Player
         const btnOpenPodcast = document.getElementById("btn-open-podcast");
@@ -892,37 +1045,17 @@
             });
         }
 
-        // Toolbar Toggle Starred Only
-        const starredChipBtn = document.getElementById("btn-toggle-starred");
-        if (starredChipBtn) {
-            starredChipBtn.addEventListener("click", () => {
-                state.starredOnly = !state.starredOnly;
-                starredChipBtn.classList.toggle("active", state.starredOnly);
-                const sidebarStarBtn = document.getElementById("btn-filter-starred");
-                if (sidebarStarBtn) sidebarStarBtn.classList.toggle("active", state.starredOnly);
-                updateHeaderStats();
-                renderCurrentMode();
-                showToast(state.starredOnly ? "⭐ Đang lọc chỉ từ đã lưu sao" : "Hiển thị toàn bộ từ");
+        // Giới hạn từ mới mỗi ngày (10–30)
+        const dailySel = document.getElementById("select-daily-new");
+        if (dailySel) {
+            dailySel.value = String(state.settings.dailyNew);
+            dailySel.addEventListener("change", () => {
+                state.settings.dailyNew = Math.max(10, Math.min(30, parseInt(dailySel.value, 10) || 15));
+                saveSettings();
+                showToast(`Giới hạn từ mới: ${state.settings.dailyNew} từ/ngày`);
+                if (state.currentMode === "home") renderHome();
             });
         }
-
-        // Theme Switcher Buttons (1-Click Toggle & Swatch Grid)
-        const themeToggleBtn = document.getElementById("btn-toggle-theme");
-        if (themeToggleBtn) {
-            themeToggleBtn.addEventListener("click", toggleTheme);
-        }
-
-        document.querySelectorAll(".tsg-item").forEach(item => {
-            item.addEventListener("click", () => {
-                const chosen = item.getAttribute("data-set-theme");
-                if (chosen) {
-                    applyTheme(chosen);
-                    const name = THEMES_CONFIG[chosen] ? THEMES_CONFIG[chosen].label : chosen;
-                    showToast(`🎨 Giao diện: ${name}`);
-                    toggleHeaderSettings(false);
-                }
-            });
-        });
 
         // Sound Toggle
         const soundBtn = document.getElementById("btn-toggle-sound");
@@ -1089,8 +1222,17 @@
         window.addEventListener("keydown", handleKeydown);
     }
 
+    function setFocusFilter(f) {
+        state.focusFilter = f || "all";
+        document.querySelectorAll("[data-focus]").forEach(b => b.classList.toggle("active", b.dataset.focus === state.focusFilter));
+        state.bentoActiveWordIndex = 0;
+        updateHeaderStats();
+        renderCurrentMode();
+    }
+
     function switchMode(mode) {
         if (!mode) return;
+        if (mode !== "flashcard") { state.fcCustomList = null; if (state.fcFilter === "custom") state.fcFilter = "all"; }
         state.currentMode = mode;
         const scrollArea = document.getElementById("stageScrollArea");
         if (scrollArea) scrollArea.scrollTop = 0;
@@ -1111,6 +1253,9 @@
         });
 
         switch (state.currentMode) {
+            case "home":
+                renderHome();
+                break;
             case "table":
                 renderTableMode();
                 break;
@@ -1201,20 +1346,8 @@
                 `;
             }
 
-            const wrongInfo = state.wrongWords[w.id];
-            let wrongBadgeHtml = "";
-            if (wrongInfo && wrongInfo.count > 0) {
-                wrongBadgeHtml = `<span class="badge-wrong-count" title="Đã trả lời sai ${wrongInfo.count} lần">⚠️ Sai ${wrongInfo.count}l</span>`;
-                if (state.filterWrongOnly) {
-                    wrongBadgeHtml += `<button class="btn-remove-wrong-row" data-remove-wrong="${w.id}" title="Xóa khỏi sổ lỗi">✕</button>`;
-                }
-            }
-
-            const srsInfo = state.srsData[w.id];
-            let srsBadgeHtml = "";
-            if (srsInfo && srsInfo.level !== undefined) {
-                srsBadgeHtml = `<span class="badge-srs-tag badge-srs-${srsInfo.level}" title="Cấp độ trí nhớ SRS: Level ${srsInfo.level}">Lv.${srsInfo.level}</span>`;
-            }
+            const wrongBadge = wrongBadgeHtml(w.id);
+            const srsBadgeHtml = statusBadgeHtml(w.id);
 
             return `
                 <tr>
@@ -1243,9 +1376,9 @@
                     </td>
                     <td class="col-lesson">
                         <div>${escapeHtml(w.book_name)} - B.${w.lesson_num}</div>
-                        <div style="display:flex; align-items:center; flex-wrap:wrap; gap:4px; margin-top:4px;">
-                            ${wrongBadgeHtml}
+                        <div class="badge-row">
                             ${srsBadgeHtml}
+                            ${wrongBadge}
                         </div>
                     </td>
                 </tr>
@@ -1277,12 +1410,6 @@
                     if (w) openSpeechModal(w);
                     return;
                 }
-                const rmWrongBtn = e.target.closest(".btn-remove-wrong-row");
-                if (rmWrongBtn) {
-                    e.stopPropagation();
-                    removeWrongWord(rmWrongBtn.dataset.removeWrong);
-                    return;
-                }
                 const miniBtn = e.target.closest(".btn-mini-speak");
                 if (miniBtn) {
                     e.stopPropagation();
@@ -1302,17 +1429,8 @@
             const isStarred = state.starredWords.has(w.id);
             const isProper = w.is_proper || (w.type && w.type.includes("专名"));
 
-            const wrongInfo = state.wrongWords[w.id];
-            let wrongBadgeHtml = "";
-            if (wrongInfo && wrongInfo.count > 0) {
-                wrongBadgeHtml = `<span class="qmc-wrong-pill" title="Đã trả lời sai ${wrongInfo.count} lần">⚠️ Sai ${wrongInfo.count}l</span>`;
-            }
-
-            const srsInfo = state.srsData[w.id];
-            let srsBadgeHtml = "";
-            if (srsInfo && srsInfo.level !== undefined) {
-                srsBadgeHtml = `<span class="qmc-srs-pill" title="Trí nhớ SRS Level ${srsInfo.level}">🧠 SRS Lv.${srsInfo.level}</span>`;
-            }
+            const wrongBadge = wrongBadgeHtml(w.id);
+            const srsBadgeHtml = statusBadgeHtml(w.id);
 
             const hasExamples = w.examples && w.examples.length > 0;
             let examplesHtml = "";
@@ -1344,9 +1462,9 @@
                             <span class="qmc-hz" data-hz="${escapeHtml(w.hz)}" title="Nhấn để nghe phát âm chuẩn">${escapeHtml(w.hz)}</span>
                             <span class="qmc-py">${formatPinyinWithToneColors(w.py)}</span>
                             ${w.type ? `<span class="qmc-pos ${isProper ? 'proper' : ''}">${escapeHtml(w.type)}</span>` : ''}
-                            <span class="qmc-book-badge">${escapeHtml(w.book_code || w.book_name)} • B.${w.lesson_num}</span>
-                            ${wrongBadgeHtml}
+                            <span class="qmc-book-badge" data-book="${w.book_id}">${escapeHtml(w.book_code || w.book_name)} • B.${w.lesson_num}</span>
                             ${srsBadgeHtml}
+                            ${wrongBadge}
                         </div>
                         <div class="qmc-actions">
                             ${hasExamples ? `
@@ -1463,10 +1581,7 @@
         if (!heroEl || !w) return;
 
         const isStarred = state.starredWords.has(w.id);
-        const srsInfo = state.srsData[w.id];
-        const isSrs = srsInfo && srsInfo.level !== undefined;
-        const wrongInfo = state.wrongWords[w.id];
-        const hasWrong = wrongInfo && wrongInfo.count > 0;
+        const card = state.srs[w.id];
 
         // Examples section
         let examplesHtml = "";
@@ -1482,7 +1597,7 @@
                             return `
                                 <div class="bhes-item">
                                     <div class="bhes-hz">
-                                        <strong style="color:var(--accent-primary); margin-right:6px;">${i + 1}.</strong>
+                                        <strong class="bhes-num">${i + 1}.</strong>
                                         <span>${fmt.displayHtml}</span>
                                     </div>
                                     <button type="button" class="ex-speak-btn" data-speak="${encodeURIComponent(fmt.speakText)}" title="Nghe câu ví dụ">🔊 Nghe</button>
@@ -1498,10 +1613,11 @@
             <div class="bhc-header">
                 <div class="bhc-num-tag">#${currentIdx + 1} / ${totalWords}</div>
                 <div class="bhc-meta-tags">
-                    <span class="bhc-book-badge">${escapeHtml(w.book_code || w.book_name || 'Boya')} • B.${w.lesson_num || 1}</span>
+                    <span class="bhc-book-badge" data-book="${w.book_id}">${escapeHtml(w.book_code || w.book_name || 'Boya')} • B.${w.lesson_num || 1}</span>
                     ${w.type ? `<span class="bhc-pos-badge">${escapeHtml(w.type)}</span>` : ''}
-                    ${isSrs ? `<span class="bhc-srs-badge">🧠 SRS Lv.${srsInfo.level}</span>` : ''}
-                    ${hasWrong ? `<span class="bhc-wrong-badge">⚠️ Đã sai ${wrongInfo.count} lần</span>` : ''}
+                    ${statusBadgeHtml(w.id)}
+                    ${wrongBadgeHtml(w.id)}
+                    ${card && card.rt ? `<span class="rt-badge ${card.rt >= SLOW_MS ? 'slow' : ''}" title="Thời gian nhận diện trung bình">⏱ ${fmtSec(card.rt)}</span>` : ''}
                 </div>
                 <div class="bhc-quick-tools">
                     <button type="button" class="bhc-tool-btn ${isStarred ? 'starred' : ''}" id="btnHeroStar" title="${isStarred ? 'Bỏ lưu sao' : 'Lưu từ vựng'}">
@@ -1530,13 +1646,13 @@
             </div>
 
             <div class="bhc-footer">
-                <button type="button" class="bhc-nav-btn" id="btnHeroPrev" ${currentIdx <= 0 ? 'disabled style="opacity:0.4;cursor:not-allowed;"' : ''}>
+                <button type="button" class="bhc-nav-btn" id="btnHeroPrev" ${currentIdx <= 0 ? 'disabled' : ''}>
                     ◀ Từ trước
                 </button>
                 <div class="bhc-counter">
                     Từ <strong>${currentIdx + 1}</strong> / ${totalWords}
                 </div>
-                <button type="button" class="bhc-nav-btn" id="btnHeroNext" ${currentIdx >= totalWords - 1 ? 'disabled style="opacity:0.4;cursor:not-allowed;"' : ''}>
+                <button type="button" class="bhc-nav-btn" id="btnHeroNext" ${currentIdx >= totalWords - 1 ? 'disabled' : ''}>
                     Từ sau ▶
                 </button>
             </div>
@@ -1578,120 +1694,6 @@
         }
     }
 
-    function renderBentoStatsCard(words) {
-        const statsEl = document.getElementById("bentoStatsCard");
-        if (!statsEl) return;
-
-        const totalWords = words.length;
-        let masteredCount = 0;
-        let wrongCount = 0;
-
-        words.forEach(w => {
-            if (state.masteredWords.has(w.id)) masteredCount++;
-            if (state.wrongWords[w.id] && state.wrongWords[w.id].count > 0) wrongCount++;
-        });
-
-        const pct = totalWords > 0 ? Math.round((masteredCount / totalWords) * 100) : 0;
-
-        statsEl.innerHTML = `
-            <div class="bsc-head">
-                <div class="bsc-title">📊 Tiến Độ Học Bài Này</div>
-                <span class="bsc-badge">${pct}% Thuộc</span>
-            </div>
-            <div class="bsc-progress-bar-wrap">
-                <div class="bsc-progress-bar-fill" style="width: ${pct}%"></div>
-            </div>
-            <div class="bsc-metrics-grid">
-                <div class="bsc-metric-item">
-                    <span class="bmi-val" style="color:var(--accent-primary);">${totalWords}</span>
-                    <span class="bmi-label">Tổng từ</span>
-                </div>
-                <div class="bsc-metric-item">
-                    <span class="bmi-val" style="color:var(--accent-emerald);">${masteredCount}</span>
-                    <span class="bmi-label">Đã thuộc</span>
-                </div>
-                <div class="bsc-metric-item">
-                    <span class="bmi-val" style="color:var(--danger);">${wrongCount}</span>
-                    <span class="bmi-label">Hay sai</span>
-                </div>
-            </div>
-            <div class="bsc-actions">
-                <button type="button" class="bsc-action-btn" id="btnBscFc" title="Chuyển sang Flashcard 3D">
-                    🗂️ Flashcard
-                </button>
-                <button type="button" class="bsc-action-btn" id="btnBscQuiz" title="Chuyển sang Trắc nghiệm phản xạ">
-                    ✍️ Trắc nghiệm
-                </button>
-                <button type="button" class="bsc-action-btn" id="btnBscPodcast" title="Mở phát thanh Podcast rảnh tay">
-                    📻 Podcast
-                </button>
-            </div>
-        `;
-
-        const btnFc = statsEl.querySelector("#btnBscFc");
-        if (btnFc) {
-            btnFc.addEventListener("click", () => switchMode("flashcard"));
-        }
-
-        const btnQuiz = statsEl.querySelector("#btnBscQuiz");
-        if (btnQuiz) {
-            btnQuiz.addEventListener("click", () => switchMode("quiz"));
-        }
-
-        const btnPod = statsEl.querySelector("#btnBscPodcast");
-        if (btnPod) {
-            btnPod.addEventListener("click", openPodcastPlayer);
-        }
-    }
-
-    function renderBentoMnemonicCard(w) {
-        const mnemEl = document.getElementById("bentoMnemonicCard");
-        if (!mnemEl || !w) return;
-
-        // Character breakdown for Hanzi
-        const chars = Array.from(w.hz || '');
-        const charsHtml = chars.map(c => `
-            <div class="bmc-rad-chip">
-                <span class="bmc-rad-char">${escapeHtml(c)}</span>
-                <button type="button" class="btn-mini-speak" data-speak="${encodeURIComponent(c)}" title="Nghe chữ này">🔊</button>
-            </div>
-        `).join('');
-
-        // Extract Boya Collocation or Example
-        let collocationsText = "";
-        if (w.examples && w.examples.length > 0) {
-            collocationsText = w.examples.slice(0, 2).map(ex => {
-                const fmt = formatBoyaExampleSentence(ex, w.hz);
-                return fmt.displayHtml;
-            }).join(' <span style="color:var(--border-color);margin:0 4px;">|</span> ');
-        }
-
-        mnemEl.innerHTML = `
-            <div class="bmc-head">
-                <div class="bmc-title">💡 Phân Tích & Mẹo Nhớ: “${escapeHtml(w.hz)}”</div>
-            </div>
-            <div class="bmc-radicals-row">
-                ${charsHtml}
-            </div>
-            <div class="bmc-story-card">
-                <div class="bmsc-tag">💡 Mẹo Ghi Nhớ Ngữ Cảnh:</div>
-                <div>Từ <strong>${escapeHtml(w.hz)}</strong> (${escapeHtml(w.py)}) mang nghĩa <em>"${escapeHtml(w.mean)}"</em>. Hãy liên kết phát âm và câu ví dụ để khắc sâu vào trí nhớ dài hạn.</div>
-            </div>
-            ${collocationsText ? `
-                <div class="bmc-collocations">
-                    <strong>🔗 Cụm từ hay gặp trong bài:</strong> ${collocationsText}
-                </div>
-            ` : ''}
-        `;
-
-        mnemEl.querySelectorAll(".btn-mini-speak").forEach(btn => {
-            btn.addEventListener("click", (e) => {
-                e.stopPropagation();
-                speakChinese(decodeURIComponent(btn.dataset.speak));
-            });
-        });
-    }
-
     function renderBentoWordStrip(words) {
         const gridEl = document.getElementById("bentoWordsGrid");
         const countEl = document.getElementById("bentoWordsCount");
@@ -1702,11 +1704,11 @@
         gridEl.innerHTML = words.map((w, idx) => {
             const isActive = idx === state.bentoActiveWordIndex;
             const isStar = state.starredWords.has(w.id);
-            const srsInfo = state.srsData[w.id];
-            const isLearned = state.masteredWords.has(w.id) || (srsInfo && srsInfo.level > 0);
+            const st = wordStatus(w.id);
+            const isLearned = st !== "new";
 
             return `
-                <div class="bws-chip ${isActive ? 'active' : ''} ${isLearned ? 'is-learned' : ''}" data-idx="${idx}" data-id="${w.id}">
+                <div class="bws-chip ${isActive ? 'active' : ''} ${isLearned ? 'is-learned st-' + st : ''}" data-idx="${idx}" data-id="${w.id}">
                     <div class="bws-chip-main">
                         <span class="bws-num">#${idx + 1}</span>
                         <span class="bws-hz">${escapeHtml(w.hz)}</span>
@@ -1800,26 +1802,35 @@
     // =========================================================================
     // MODE 2: FLASHCARDS 3D (ĐẢO CHIỀU, BỘ LỌC DỨT ĐIỂM, TỰ ĐỘNG PHÁT RẢNH TAY)
     // =========================================================================
+    // Bộ lọc thẻ — mọi trạng thái suy ra từ SRS
+    const FC_FILTERS = [
+        { key: "all", label: "Tất cả" },
+        { key: "due", label: "🧠 Đến hạn", test: w => isDue(w.id) },
+        { key: "new", label: "🆕 Chưa học", test: w => !state.srs[w.id] },
+        { key: "learning", label: "📖 Đang học", test: w => { const s = wordStatus(w.id); return s === "learning" || s === "familiar"; } },
+        { key: "mastered", label: "✅ Thuộc lâu", test: w => wordStatus(w.id) === "mastered" },
+        { key: "wrong", label: "📕 Sổ lỗi", test: w => isWrong(w.id) },
+        { key: "starred", label: "★ Đã lưu", test: w => state.starredWords.has(w.id) }
+    ];
     function getFlashcardWords() {
+        if (state.fcFilter === "custom" && state.fcCustomList) return state.fcCustomList.slice();
         const baseWords = getFilteredWords();
-        if (state.fcFilter === "unmastered") {
-            const explicitlyUnmastered = baseWords.filter(w => state.unmasteredWords.has(w.id));
-            if (explicitlyUnmastered.length > 0) {
-                return explicitlyUnmastered;
-            }
-            // Fallback nếu chưa đánh dấu từ nào: lấy các từ chưa thuộc
-            return baseWords.filter(w => !state.masteredWords.has(w.id));
-        } else if (state.fcFilter === "starred") {
-            return baseWords.filter(w => state.starredWords.has(w.id));
-        } else if (state.fcFilter === "mastered") {
-            return baseWords.filter(w => state.masteredWords.has(w.id));
-        } else if (state.fcFilter === "wrong") {
-            return baseWords.filter(w => state.wrongWords[w.id] && state.wrongWords[w.id].count > 0);
-        } else if (state.fcFilter === "srs") {
-            const now = Date.now();
-            return baseWords.filter(w => state.srsData[w.id] && state.srsData[w.id].nextReview <= now);
-        }
-        return baseWords;
+        const f = FC_FILTERS.find(x => x.key === state.fcFilter);
+        if (!f || !f.test) return baseWords;
+        const list = baseWords.filter(f.test);
+        if (state.fcFilter === "due") list.sort((a, b) => state.srs[a.id].due - state.srs[b.id].due);
+        return list;
+    }
+    // Bắt đầu phiên flashcard với danh sách cho trước (Học tiếp / ôn từ sai sau quiz)
+    function startCustomFlashcards(words, label) {
+        state.fcCustomList = words.slice();
+        state.fcCustomLabel = label || "Phiên học";
+        state.fcFilter = "custom";
+        state.fcRequeue = {};
+        state.currentMode = "flashcard";
+        const scrollArea = document.getElementById("stageScrollArea");
+        if (scrollArea) scrollArea.scrollTop = 0;
+        renderCurrentMode();
     }
 
     // Pinyin & Hanzi normalization for Active Type-in Flashcard
@@ -1861,7 +1872,9 @@
 
     function setupFlashcardMode() {
         stopFcAutoPlay();
+        if (state.fcFilter === "custom" && !state.fcCustomList) state.fcFilter = "all";
         state.fcList = getFlashcardWords();
+        state.fcRequeue = {};
         state.fcIndex = 0;
         state.fcFlipped = false;
 
@@ -1878,13 +1891,13 @@
         if (!container) return;
 
         const baseWords = getFilteredWords();
-        const countAll = baseWords.length;
-        const explicitlyUnmastered = baseWords.filter(w => state.unmasteredWords.has(w.id));
-        const countUnmastered = explicitlyUnmastered.length > 0 
-            ? explicitlyUnmastered.length 
-            : baseWords.filter(w => !state.masteredWords.has(w.id)).length;
-        const countStarred = baseWords.filter(w => state.starredWords.has(w.id)).length;
-        const countMastered = baseWords.filter(w => state.masteredWords.has(w.id)).length;
+        const filterBtnsHtml = (state.fcCustomList ? `
+                        <button class="fc-filter-btn ${state.fcFilter === 'custom' ? 'active' : ''}" data-filter="custom">
+                            🚀 ${escapeHtml(state.fcCustomLabel)} <span class="fc-count-badge">${state.fcCustomList.length}</span>
+                        </button>` : '') + FC_FILTERS.map(f => `
+                        <button class="fc-filter-btn ${state.fcFilter === f.key ? 'active' : ''}" data-filter="${f.key}">
+                            ${f.label} <span class="fc-count-badge">${f.test ? baseWords.filter(f.test).length : baseWords.length}</span>
+                        </button>`).join("");
 
         // Toolbar HTML (Cột Setting Phụ)
         const toolbarHtml = `
@@ -1913,25 +1926,7 @@
                 <!-- Nhóm 2: Bộ lọc dứt điểm -->
                 <div class="fcs-section">
                     <span class="fc-group-label">🎯 Bộ lọc:</span>
-                    <div class="fcs-btn-list">
-                        <button class="fc-filter-btn ${state.fcFilter === 'all' ? 'active' : ''}" data-filter="all">
-                            Tất cả <span class="fc-count-badge">${countAll}</span>
-                        </button>
-                        <button class="fc-filter-btn btn-filter-unmastered ${state.fcFilter === 'unmastered' ? 'active' : ''}" data-filter="unmastered" title="Chỉ ôn những từ chưa nhớ hoặc cần ôn lại">
-                            ❌ Chưa nhớ <span class="fc-count-badge">${countUnmastered}</span>
-                        </button>
-                        <button class="fc-filter-btn btn-filter-starred ${state.fcFilter === 'starred' ? 'active' : ''}" data-filter="starred" title="Chỉ ôn những từ bạn đã gắn sao ★">
-                            ★ Đã lưu <span class="fc-count-badge">${countStarred}</span>
-                        </button>
-                        <button class="fc-filter-btn btn-filter-mastered ${state.fcFilter === 'mastered' ? 'active' : ''}" data-filter="mastered" title="Chỉ xem lại những từ đã thuộc">
-                            ✓ Đã thuộc <span class="fc-count-badge">${countMastered}</span>
-                        </button>
-                        <button class="fc-filter-btn btn-pill-wrong ${state.fcFilter === 'wrong' ? 'active' : ''}" data-filter="wrong" title="Chỉ ôn những từ bạn hay trả lời sai">
-                            📕 Hay sai <span class="fc-count-badge">${baseWords.filter(w => state.wrongWords[w.id] && state.wrongWords[w.id].count > 0).length}</span>
-                        </button>
-                        <button class="fc-filter-btn btn-pill-srs ${state.fcFilter === 'srs' ? 'active' : ''}" data-filter="srs" title="Lọc các từ đến hạn ôn tập SRS hôm nay">
-                            🧠 SRS đến hạn <span class="fc-count-badge">${baseWords.filter(w => state.srsData[w.id] && state.srsData[w.id].nextReview <= Date.now()).length}</span>
-                        </button>
+                    <div class="fcs-btn-list">${filterBtnsHtml}
                     </div>
                 </div>
 
@@ -1959,18 +1954,22 @@
             let emptyIcon = "🗂️";
             let emptyTitle = "Không có từ vựng nào trong danh sách hiện tại";
             let emptySub = "Hãy chọn bài học khác hoặc bỏ bớt bộ lọc.";
-            if (state.fcFilter === "unmastered") {
+            if (state.fcFilter === "due" || state.fcFilter === "custom") {
                 emptyIcon = "🎉";
-                emptyTitle = "Tuyệt vời! Không còn từ nào trong danh sách Chưa nhớ 👏";
-                emptySub = "Bạn đã thuộc hết các từ hoặc chưa đánh dấu từ nào là Chưa nhớ. Hãy bấm nút ❌ Chưa nhớ khi lật thẻ để gom từ khó vào đây!";
+                emptyTitle = "Không còn thẻ nào đến hạn ôn";
+                emptySub = "Bạn đã ôn xong phần hôm nay. Quay lại tab “Học tiếp” để học từ mới.";
+            } else if (state.fcFilter === "wrong") {
+                emptyIcon = "🎉";
+                emptyTitle = "Sổ lỗi đang trống";
+                emptySub = "Từ trả lời sai trong quiz hoặc bị chấm “Quên” sẽ tự vào đây, và tự ra khỏi sổ sau 3 lần đúng liên tiếp.";
             } else if (state.fcFilter === "starred") {
                 emptyIcon = "★";
                 emptyTitle = "Chưa có từ vựng nào được gắn sao ★";
                 emptySub = "Bấm vào biểu tượng ngôi sao trên mỗi thẻ hoặc trong bảng từ vựng để lưu các từ quan trọng.";
             } else if (state.fcFilter === "mastered") {
                 emptyIcon = "✅";
-                emptyTitle = "Chưa có từ vựng nào được đánh dấu Đã thuộc";
-                emptySub = "Hãy học các thẻ và bấm ✅ Đã thuộc khi bạn đã ghi nhớ từ vựng nhé!";
+                emptyTitle = "Chưa có từ nào thuộc lâu (khoảng cách ôn ≥ 21 ngày)";
+                emptySub = "Chấm “Nhớ”/“Dễ” đều đặn, khoảng cách ôn sẽ tăng dần.";
             }
 
             container.innerHTML = `
@@ -1982,6 +1981,7 @@
                         <div class="empty-sub">${emptySub}</div>
                         <div class="fc-empty-action">
                             <button class="btn-pill" id="btn-fc-reset-filter">📖 Xem tất cả từ</button>
+                            <button class="btn-pill btn-pill-primary" id="btn-fc-go-home">🚀 Về Học tiếp</button>
                         </div>
                     </div>
                 </div>
@@ -1991,12 +1991,15 @@
             if (resetFilterBtn) {
                 resetFilterBtn.addEventListener("click", () => {
                     state.fcFilter = "all";
+                    state.fcCustomList = null;
                     state.fcList = getFlashcardWords();
                     state.fcIndex = 0;
                     state.fcFlipped = false;
                     renderFlashcardUI();
                 });
             }
+            const goHomeBtn = document.getElementById("btn-fc-go-home");
+            if (goHomeBtn) goHomeBtn.addEventListener("click", () => switchMode("home"));
             return;
         }
 
@@ -2056,7 +2059,7 @@
                 <div class="card-center">
                     <div class="fc-mean-front">${escapeHtml(w.mean)}</div>
                     ${w.type ? `<span class="fc-type">Từ loại: ${escapeHtml(w.type)}</span>` : ''}
-                    <div class="card-hint" style="margin-top:10px;">🤔 Tự nhớ xem Chữ Hán & Pinyin là gì rồi lật thẻ kiểm tra</div>
+                    <div class="card-hint card-hint-gap">🤔 Tự nhớ xem Chữ Hán & Pinyin là gì rồi lật thẻ kiểm tra</div>
                 </div>
                 <div class="card-hint">
                     Nhấn thẻ hoặc phím [Space] để xem Chữ Hán & Pinyin
@@ -2123,7 +2126,7 @@
                 <!-- CỘT CHÍNH (TRỌNG TÂM LỚN): THẺ FLASHCARD 3D VÀ BẢNG ĐIỀU KHIỂN/LỰA CHỌN SRS -->
                 <div class="fc-main-stage">
                     <div class="fc-meta">
-                        <div><strong>${escapeHtml(w.book_name)}</strong> • Bài ${w.lesson_num}: ${escapeHtml(w.lesson_title || '')}</div>
+                        <div><strong>${escapeHtml(w.book_name)}</strong> • Bài ${w.lesson_num}: ${escapeHtml(w.lesson_title || '')} ${statusBadgeHtml(w.id)} ${state.fcRequeue[w.id] ? '<span class="st-badge st-relearn">Ôn lại trong phiên</span>' : ''}</div>
                         <div>Thẻ <strong>${state.fcIndex + 1}</strong> / ${state.fcList.length} (${progressPercent}%)</div>
                     </div>
 
@@ -2144,7 +2147,7 @@
                             <div class="flashcard-face flashcard-back">
                                 <div class="card-top-info">
                                     <span class="fc-badge-book">${escapeHtml(w.book_name)} • Bài ${w.lesson_num}</span>
-                                    <button class="btn-speak fc-front-speak-btn" style="width:36px; height:36px; font-size:16px;" id="fc-back-speak" title="Nghe phát âm">🔊</button>
+                                    <button class="btn-speak fc-front-speak-btn fc-back-speak-btn" id="fc-back-speak" title="Nghe phát âm">🔊</button>
                                 </div>
 
                                 <div class="card-center fc-back-bento-center">
@@ -2167,12 +2170,12 @@
                     <div class="fc-main-action-dock">
                         <!-- Hàng 1: Đánh giá SRS 4 cấp độ -->
                         <div class="fc-srs-eval-bar">
-                            <span class="fc-srs-bar-label">🧠 Đánh giá trí nhớ (SRS):</span>
+                            <span class="fc-srs-bar-label">🧠 Bạn nhớ từ này thế nào? (lần ôn tới)</span>
                             <div class="fc-srs-btn-row">
-                                <button class="fc-srs-btn fc-srs-btn-again" data-srs="again" title="Quên hoặc rất khó (Ôn lại ngay hôm nay) • Phím 1">🔴 Quên (+0d)</button>
-                                <button class="fc-srs-btn fc-srs-btn-hard" data-srs="hard" title="Nhớ tàm tạm (Ôn lại sau 1 ngày) • Phím 2">🟠 Khó (+1d)</button>
-                                <button class="fc-srs-btn fc-srs-btn-good" data-srs="good" title="Nhớ tốt (Ôn sau 3 - 7 ngày) • Phím 3">🟢 Tốt (+3~7d)</button>
-                                <button class="fc-srs-btn fc-srs-btn-easy" data-srs="easy" title="Rất dễ (Ôn sau 14 - 30 ngày) • Phím 4">🔵 Dễ (+14~30d)</button>
+                                <button class="fc-srs-btn fc-srs-btn-again" data-srs="again" title="Quên • ôn lại sau ${ivLabel(w.id, 1)} và lặp lại cuối phiên • Phím 1">Quên <small>${ivLabel(w.id, 1)}</small></button>
+                                <button class="fc-srs-btn fc-srs-btn-hard" data-srs="hard" title="Khó • ôn lại sau ${ivLabel(w.id, 2)} • Phím 2">Khó <small>${ivLabel(w.id, 2)}</small></button>
+                                <button class="fc-srs-btn fc-srs-btn-good" data-srs="good" title="Nhớ • ôn lại sau ${ivLabel(w.id, 3)} • Phím 3">Nhớ <small>${ivLabel(w.id, 3)}</small></button>
+                                <button class="fc-srs-btn fc-srs-btn-easy" data-srs="easy" title="Dễ • ôn lại sau ${ivLabel(w.id, 4)} • Phím 4">Dễ <small>${ivLabel(w.id, 4)}</small></button>
                             </div>
                         </div>
 
@@ -2205,6 +2208,8 @@
 
         attachFlashcardToolbarEvents();
         attachFlashcardCardEvents(w);
+        state.fcShownAt = Date.now();
+        state.fcFlipAt = 0;
     }
 
     function attachFlashcardToolbarEvents() {
@@ -2358,7 +2363,7 @@
                             </div>
                             <div class="fc-typein-fb-next">Nhấn Enter để lật thẻ xem chi tiết ➔</div>
                         `;
-                        recordWrongWord(w.id, "typein");
+                        state.fcTypeinWrong = true; // gợi ý chấm "Quên" khi lật thẻ
                         state.fcTypeinChecked = true;
                     }
                 }
@@ -2453,77 +2458,12 @@
         const btnNext = document.getElementById("fc-btn-next");
         if (btnNext) btnNext.addEventListener("click", () => moveFlashcard(1));
 
-        // Nút Chưa nhớ (❌) & Đã thuộc (✅)
-        const btnHard = document.getElementById("fc-btn-hard");
-        if (btnHard) {
-            btnHard.addEventListener("click", () => {
-                if (state.fcAutoPlay) stopFcAutoPlay();
-                state.unmasteredWords.add(w.id);
-                state.masteredWords.delete(w.id);
-                saveMastered();
-                saveUnmastered();
-                showToast("Đã ghi nhận: Cần ôn lại từ này ❌");
-                moveFlashcard(1);
-            });
-        }
-
-        const btnEasy = document.getElementById("fc-btn-easy");
-        if (btnEasy) {
-            btnEasy.addEventListener("click", () => {
-                if (state.fcAutoPlay) stopFcAutoPlay();
-                state.masteredWords.add(w.id);
-                state.unmasteredWords.delete(w.id);
-                saveMastered();
-                saveUnmastered();
-                showToast("Xuất sắc! Đã thuộc từ này 🎉");
-
-                // Nếu đang ở bộ lọc "Chưa nhớ", loại từ này ra khỏi danh sách đang ôn
-                if (state.fcFilter === "unmastered") {
-                    state.fcList = getFlashcardWords();
-                    if (state.fcIndex >= state.fcList.length) {
-                        state.fcIndex = Math.max(0, state.fcList.length - 1);
-                    }
-                    state.fcFlipped = false;
-                    renderFlashcardUI();
-                } else {
-                    moveFlashcard(1);
-                }
-            });
-        }
-
-        // Xáo trộn thẻ
-        const btnShuffle = document.getElementById("fc-btn-shuffle");
-        if (btnShuffle) {
-            btnShuffle.addEventListener("click", () => {
-                if (state.fcAutoPlay) stopFcAutoPlay();
-                shuffleArray(state.fcList);
-                state.fcIndex = 0;
-                state.fcFlipped = false;
-                renderFlashcardUI();
-                showToast("Đã xáo trộn thứ tự các thẻ!");
-            });
-        }
-
-        // Về đầu
-        const btnReset = document.getElementById("fc-btn-reset");
-        if (btnReset) {
-            btnReset.addEventListener("click", () => {
-                if (state.fcAutoPlay) stopFcAutoPlay();
-                state.fcIndex = 0;
-                state.fcFlipped = false;
-                renderFlashcardUI();
-            });
-        }
-
-        // Flashcard SRS Assessment buttons
+        // Chấm điểm SRS (SM-2). "Quên" -> đưa thẻ lại cuối phiên (tối đa 3 lần/thẻ)
         document.querySelectorAll(".fc-srs-btn").forEach(btn => {
             btn.addEventListener("click", (e) => {
                 e.stopPropagation();
                 if (state.fcAutoPlay) stopFcAutoPlay();
-                const quality = btn.dataset.srs;
-                assessWordSrs(w.id, quality);
-                state.fcFlipped = false;
-                moveFlashcard(1);
+                gradeFlashcard(w, RATING[btn.dataset.srs] || 3);
             });
         });
 
@@ -2538,7 +2478,49 @@
         }
     }
 
+    function gradeFlashcard(w, rating) {
+        const n = rateWord(w.id, rating);
+        // Đo thời gian nhận diện khi mặt trước là chữ Hán (từ lúc hiện thẻ tới khi lật)
+        if (state.fcDirection === "hz_mean" && state.fcFlipAt && state.fcShownAt) {
+            updateRT(w.id, state.fcFlipAt - state.fcShownAt, rating >= 3);
+            saveSrs();
+        }
+        if (rating === 1) {
+            const k = state.fcRequeue[w.id] || 0;
+            if (k < 3) {
+                state.fcRequeue[w.id] = k + 1;
+                state.fcList.push(w); // hàng ôn lại ngay trong phiên
+            }
+        }
+        showToast(rating === 1 ? `Quên — sẽ hỏi lại cuối phiên (ôn lại sau ${ivText(n.iv)})` : `Lần ôn tới: sau ${ivText(n.iv)}`);
+        state.fcFlipped = false;
+        if (state.fcIndex < state.fcList.length - 1) {
+            moveFlashcard(1);
+        } else {
+            renderFlashcardDone();
+        }
+    }
+
+    function renderFlashcardDone() {
+        const container = document.getElementById("flashcard-container");
+        if (!container) return;
+        const plan = buildStudyPlan();
+        container.innerHTML = `
+            <div class="empty-state fc-done-card">
+                <div class="empty-icon">🎉</div>
+                <div class="empty-title">Xong ${state.fcList.length} thẻ!</div>
+                <div class="empty-sub">Còn <strong>${plan.due.length}</strong> từ đến hạn • có thể học thêm <strong>${plan.fresh.length}</strong> từ mới hôm nay.</div>
+                <div class="fc-empty-action">
+                    <button class="btn-pill btn-pill-primary" id="btn-fc-done-home">🚀 Về Học tiếp</button>
+                    <button class="btn-pill" id="btn-fc-done-quiz">✍️ Làm quiz bài này</button>
+                </div>
+            </div>`;
+        document.getElementById("btn-fc-done-home").addEventListener("click", () => switchMode("home"));
+        document.getElementById("btn-fc-done-quiz").addEventListener("click", () => switchMode("quiz"));
+    }
+
     function toggleFlashcardFlip(w) {
+        if (!state.fcFlipped && !state.fcFlipAt) state.fcFlipAt = Date.now();
         state.fcFlipped = !state.fcFlipped;
         const card = document.getElementById("fc-card");
         if (card) card.classList.toggle("flipped", state.fcFlipped);
@@ -2961,6 +2943,22 @@
         };
     }
 
+    const PLAY_TYPE_LABEL = { standard: "Tiêu chuẩn", speed_gauntlet: "Tốc độ", survival: "Sinh tồn", time_attack: "60 giây" };
+    const PLAY_TYPE_UNIT = { standard: "%", speed_gauntlet: " điểm", survival: " câu", time_attack: " câu" };
+    function bestScoresHtml() {
+        const keys = Object.keys(PLAY_TYPE_LABEL).filter(k => state.best[k]);
+        if (!keys.length) return "";
+        return "🏆 Kỷ lục: " + keys.map(k => `${PLAY_TYPE_LABEL[k]} <strong>${state.best[k]}${PLAY_TYPE_UNIT[k]}</strong>`).join(" • ");
+    }
+    function scopeLabel() {
+        let label;
+        if (state.selectedLesson !== "all") label = lessonLabel(state.selectedLesson);
+        else if (state.selectedBook !== "all") { const b = state.books.find(x => x.id === state.selectedBook); label = b ? b.name : state.selectedBook; }
+        else label = "Toàn bộ giáo trình";
+        const focusLabel = { starred: "từ đã lưu", wrong: "sổ lỗi", due: "từ đến hạn", slow: "từ chậm" }[state.focusFilter];
+        return focusLabel ? `${label} • ${focusLabel}` : label;
+    }
+
     function setupQuizMode() {
         clearQuizTimers();
         const container = document.getElementById("quiz-container");
@@ -2981,28 +2979,27 @@
         container.innerHTML = `
             <div class="quiz-wrapper">
                 <div class="quiz-setup-card" id="quiz-setup-view">
-                    <h2>🎯 Luyện Tập Trắc Nghiệm Phản Xạ</h2>
-                    <p>Ngân hàng câu hỏi hiện tại: <strong>${words.length} từ vựng</strong> đang chọn</p>
+                    <h2>✍️ Quiz từ vựng</h2>
+                    <p>Phạm vi: <strong>${escapeHtml(scopeLabel())}</strong> • ${words.length} từ</p>
+                    ${state.selectedLesson !== "all" ? `<p class="quiz-lesson-note">Quiz <em>Tiêu chuẩn</em> của một bài, đạt ≥ ${PASS_LESSON}% (tối thiểu ${Math.min(10, words.length)} câu) sẽ được tính vào tiến độ bài. Điểm tốt nhất hiện tại: <strong>${(state.progress[state.selectedLesson] || {}).quizBest || 0}%</strong></p>` : ''}
 
-                    <!-- Chọn Chế Độ Chơi (Play Type) -->
-                    <div style="text-align: left; margin-bottom: 20px;">
-                        <label style="display:block; font-size:13px; font-weight:700; color:#334155; margin-bottom:6px;">
-                            🎮 Chế độ thử thách:
-                        </label>
+                    <div class="quiz-mode-block">
+                        <label class="quiz-mode-label">Kiểu chơi:</label>
                         <div class="quiz-mode-pills" id="quiz-play-type-group">
                             <button type="button" class="quiz-mode-pill ${state.quizPlayType === 'standard' ? 'active' : ''}" data-type="standard">
-                                🎯 Tiêu Chuẩn<br><small style="font-weight:400; font-size:11px; color:#64748b;">Làm theo số câu chọn</small>
+                                🎯 Tiêu chuẩn<small>Ghi vào SRS & tiến độ bài</small>
                             </button>
-                            <button type="button" class="quiz-mode-pill ${state.quizPlayType === 'speed_gauntlet' ? 'active' : ''}" data-type="speed_gauntlet" title="Đấu trường tốc độ: 15 câu dồn dập 5 giây, nhân điểm thưởng x3 theo tốc độ phản xạ & chuỗi Combo">
-                                ⚡ Đấu Trường Tốc Độ<br><small style="font-weight:400; font-size:11px; color:#64748b;">15 câu • 5s • x3 Combo</small>
+                            <button type="button" class="quiz-mode-pill ${state.quizPlayType === 'speed_gauntlet' ? 'active' : ''}" data-type="speed_gauntlet">
+                                ⚡ Tốc độ<small>15 câu • 5s • giải trí</small>
                             </button>
                             <button type="button" class="quiz-mode-pill ${state.quizPlayType === 'survival' ? 'active' : ''}" data-type="survival">
-                                ❤️ Sinh Tồn (3 Mạng)<br><small style="font-weight:400; font-size:11px; color:#64748b;">Sai 3 câu là Game Over</small>
+                                ❤️ Sinh tồn<small>3 mạng • giải trí</small>
                             </button>
                             <button type="button" class="quiz-mode-pill ${state.quizPlayType === 'time_attack' ? 'active' : ''}" data-type="time_attack">
-                                ⚡ Cơn Lốc 60 Giây<br><small style="font-weight:400; font-size:11px; color:#64748b;">Đua tốc độ trong 1 phút</small>
+                                ⏳ 60 giây<small>Đua thời gian • giải trí</small>
                             </button>
                         </div>
+                        <div class="quiz-best-row">${bestScoresHtml()}</div>
                     </div>
 
                     <div class="quiz-options-grid">
@@ -3042,23 +3039,23 @@
                         </div>
 
                         <!-- Tùy chọn Tự động chuyển câu & Tự động đọc phát âm -->
-                        <div class="quiz-opt-box" style="grid-column: 1 / -1; display:flex; flex-wrap:wrap; gap:16px; align-items:center; margin-top:10px; padding:12px 14px; background:#f8fafc; border-radius:10px; border:1px solid #e2e8f0;">
-                            <label style="display:inline-flex; align-items:center; gap:8px; cursor:pointer; user-select:none; font-size:13px; font-weight:600; color:#334155; margin-bottom:0;">
-                                <input type="checkbox" id="quiz-auto-advance" ${state.quizAutoAdvance ? 'checked' : ''} style="width:16px; height:16px; accent-color:#0284c7;">
-                                <span>⏩ Tự động chuyển câu siêu tốc (sau 1s)</span>
+                        <div class="quiz-opt-box quiz-opt-toggles">
+                            <label class="quiz-check">
+                                <input type="checkbox" id="quiz-auto-advance" ${state.quizAutoAdvance ? 'checked' : ''}>
+                                <span>⏩ Tự động chuyển câu</span>
                             </label>
-                            <label style="display:inline-flex; align-items:center; gap:8px; cursor:pointer; user-select:none; font-size:13px; font-weight:600; color:#334155; margin-bottom:0;">
-                                <input type="checkbox" id="quiz-auto-tts" ${state.quizAutoTts ? 'checked' : ''} style="width:16px; height:16px; accent-color:#0284c7;">
-                                <span>🔊 Tự động đọc phát âm từ vựng (Auto-Speak)</span>
+                            <label class="quiz-check">
+                                <input type="checkbox" id="quiz-auto-tts" ${state.quizAutoTts ? 'checked' : ''}>
+                                <span>🔊 Tự động đọc phát âm</span>
                             </label>
                         </div>
                     </div>
 
-                    <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">
-                        💡 <em>Mẹo phản xạ: Dùng phím số <strong>1, 2, 3, 4</strong> hoặc phím chữ <strong>A, B, C, D</strong> để chọn đáp án và phím <strong>Space/Enter</strong> để chuyển câu nhanh!</em>
+                    <div class="quiz-tip">
+                        💡 Phím <strong>1–4</strong> hoặc <strong>A–D</strong> để chọn đáp án, <strong>Space/Enter</strong> để chuyển câu.
                     </div>
 
-                    <button class="btn-start-quiz" id="btn-start-quiz">Bắt Đầu Thử Thách 🚀</button>
+                    <button class="btn-start-quiz" id="btn-start-quiz">Bắt đầu 🚀</button>
                 </div>
 
                 <div class="quiz-play-card" id="quiz-play-view"></div>
@@ -3130,8 +3127,10 @@
         state.quizMaxStreak = 0;
         state.quizResponseTimes = [];
         state.quizLives = 3;
+        state.quizReviewOnly = false;
         state.quizSkills = {
             hz_to_mean: { correct: 0, total: 0 },
+            context_cloze: { correct: 0, total: 0 },
             mean_to_hz: { correct: 0, total: 0 },
             hz_to_py: { correct: 0, total: 0 },
             audio_to_hz: { correct: 0, total: 0 }
@@ -3540,6 +3539,18 @@
         }
     }
 
+    // Chỉ quiz "Tiêu chuẩn" (quiz chính thức) mới ghi vào SRS. Các kiểu chơi giải trí chỉ đo thời gian phản ứng.
+    function isOfficialQuiz() { return state.quizPlayType === "standard"; }
+    function recordQuizAnswer(question, ok, ms) {
+        const id = question.correctWord.id;
+        if (isOfficialQuiz()) quizResult(id, ok);
+        // Thời gian nhận diện: chỉ đo ở câu có mặt trước là chữ Hán
+        if (question.type === "hz_to_mean" || question.type === "hz_to_py") {
+            updateRT(id, ms, ok);
+            writeJSON(KEY.srs, state.srs);
+        }
+    }
+
     function handleAnswerSelection(selectedBtn, question) {
         clearQuizTimers();
         state.quizAnswered = true;
@@ -3605,7 +3616,7 @@
             state.quizScore++;
             state.quizStreak++;
             state.quizTotalPoints = (state.quizTotalPoints || 0) + pointsEarned;
-            recordCorrectWord(question.correctWord.id, "quiz");
+            recordQuizAnswer(question, true, reactionSec * 1000);
             if (state.quizStreak > state.quizMaxStreak) state.quizMaxStreak = state.quizStreak;
             if (state.quizSkills[question.type]) state.quizSkills[question.type].correct++;
 
@@ -3640,7 +3651,7 @@
             if (typeof soundFX !== "undefined" && soundFX.wrong) soundFX.wrong();
             state.quizStreak = 0;
             state.quizIncorrect.push(question.correctWord);
-            recordWrongWord(question.correctWord.id, "quiz");
+            recordQuizAnswer(question, false, reactionSec * 1000);
             if (state.quizPlayType === "survival") {
                 state.quizLives--;
             }
@@ -3704,7 +3715,7 @@
 
         state.quizStreak = 0;
         state.quizIncorrect.push(question.correctWord);
-        recordWrongWord(question.correctWord.id, "quiz");
+        recordQuizAnswer(question, false, reactionSec * 1000);
         if (state.quizPlayType === "survival") {
             state.quizLives--;
         }
@@ -3774,6 +3785,35 @@
         const totalAnswered = state.quizResponseTimes.length || 1;
         const score = state.quizScore;
         const percent = Math.round((score / totalAnswered) * 100);
+
+        // Điểm cao nhất tách theo kiểu chơi
+        const bestVal = state.quizPlayType === "speed_gauntlet" ? (state.quizTotalPoints || 0)
+            : (state.quizPlayType === "standard" ? percent : score);
+        const prevBest = state.best[state.quizPlayType] || 0;
+        if (bestVal > prevBest && state.quizResponseTimes.length > 0 && !state.quizReviewOnly) { state.best[state.quizPlayType] = bestVal; saveBest(); }
+
+        // Tiến độ bài: chỉ quiz Tiêu chuẩn trên đúng một bài, không lọc thêm
+        let lessonNoteHtml = "";
+        const lessonQuiz = isOfficialQuiz() && state.selectedLesson !== "all" && state.focusFilter === "all"
+            && state.typeFilter === "all" && !state.searchQuery && !state.quizReviewOnly;
+        if (lessonQuiz) {
+            const lid = state.selectedLesson;
+            const need = Math.min(10, lessonWords(lid).length);
+            if (state.quizResponseTimes.length >= need) {
+                const p = state.progress[lid] || {};
+                if (percent > (p.quizBest || 0)) {
+                    state.progress[lid] = Object.assign({}, p, { quizBest: percent, at: Date.now() });
+                    saveProgress();
+                }
+                checkLessonDone(lid);
+                const st = lessonStats(lid);
+                lessonNoteHtml = st.done
+                    ? `<div class="quiz-lesson-result ok">✅ Đã xong ${escapeHtml(lessonLabel(lid))}. <button class="btn-pill btn-pill-primary" id="btn-quiz-next-lesson">🚀 Học tiếp</button></div>`
+                    : `<div class="quiz-lesson-result">${escapeHtml(lessonLabel(lid))}: quiz tốt nhất <strong>${st.quizBest}%</strong> (cần ≥ ${PASS_LESSON}%) • đã học <strong>${st.seen}/${st.total}</strong> từ</div>`;
+            } else {
+                lessonNoteHtml = `<div class="quiz-lesson-result">Cần làm ít nhất ${need} câu để tính vào tiến độ bài.</div>`;
+            }
+        }
 
         // Average reaction time
         const avgReaction = state.quizResponseTimes.length > 0
@@ -3887,22 +3927,18 @@
         let incorrectHtml = "";
         if (uniqueIncorrect.length > 0) {
             incorrectHtml = `
-                <div style="text-align: left; margin-top: 25px; padding: 20px; background: #fff5f5; border-radius: 12px; border: 1px solid #fed7d7;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
-                        <h3 style="font-size: 15px; color: #c53030; margin:0;">
-                            Các từ cần ôn lại (${uniqueIncorrect.length} từ):
-                        </h3>
-                        <button class="btn-push-unmastered" id="btn-quiz-send-to-unmastered">
-                            📥 Gom ${uniqueIncorrect.length} câu sai vào Flashcard Chưa Nhớ (❌)
-                        </button>
+                <div class="quiz-incorrect-box">
+                    <div class="quiz-incorrect-head">
+                        <h3>Các từ cần ôn lại (${uniqueIncorrect.length} từ)</h3>
+                        <button class="btn-push-unmastered" id="btn-quiz-send-to-unmastered">🗂️ Ôn ${uniqueIncorrect.length} từ sai bằng Flashcard</button>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 8px; max-height: 240px; overflow-y: auto;">
+                    <div class="quiz-incorrect-list">
                         ${uniqueIncorrect.map(w => `
-                            <div style="display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 8px 12px; border-radius: 8px; border: 1px solid #feb2b2;">
+                            <div class="quiz-incorrect-item">
                                 <div>
-                                    <strong style="font-size: 16px;">${escapeHtml(w.hz)}</strong> 
-                                    <span style="font-size: 13.5px; margin: 0 4px;">${formatPinyinWithToneColors(w.py)}</span>: 
-                                    <span style="color: #4a5568; font-size: 13px;">${escapeHtml(w.mean)}</span>
+                                    <strong class="qi-hz">${escapeHtml(w.hz)}</strong>
+                                    <span class="qi-py">${formatPinyinWithToneColors(w.py)}</span>:
+                                    <span class="qi-mean">${escapeHtml(w.mean)}</span>
                                 </div>
                                 <button class="btn-speak quiz-inc-speak" data-speak="${encodeURIComponent(w.hz)}" title="Nghe phát âm">🔊</button>
                             </div>
@@ -3921,11 +3957,8 @@
         let speedSummaryHtml = "";
         if (state.quizPlayType === "speed_gauntlet") {
             const currentPoints = state.quizTotalPoints || (state.quizScore * 100);
-            const prevHighScore = parseInt(localStorage.getItem("boya_quiz_high_score") || "0", 10);
+            const prevHighScore = prevBest;
             const isNewHigh = currentPoints > prevHighScore;
-            if (isNewHigh) {
-                localStorage.setItem("boya_quiz_high_score", currentPoints);
-            }
             const displayHigh = Math.max(currentPoints, prevHighScore);
 
             let rankBadge = "🌟 B-RANK: PHẢN XẠ TỐT";
@@ -3962,6 +3995,7 @@
             <div class="result-badge">${badge}</div>
             <h2>${title}</h2>
             <p style="color: var(--text-muted); font-size: 14px;">${modeSublabel} • Đã trả lời ${totalAnswered} câu hỏi</p>
+            ${lessonNoteHtml}
             ${rankBannerHtml}
             ${speedSummaryHtml}
 
@@ -3997,7 +4031,7 @@
 
             <div class="result-actions">
                 <button class="btn-pill" id="btn-quiz-retry">🔄 Làm Lại Bài Này</button>
-                ${uniqueIncorrect.length > 0 ? `<button class="btn-pill" id="btn-quiz-review-wrong" style="background:#fee2e2; color:#dc2626; border-color:#fca5a5;">⚠️ Chỉ Ôn Lại Các Câu Sai (${uniqueIncorrect.length})</button>` : ''}
+                ${uniqueIncorrect.length > 0 ? `<button class="btn-pill btn-pill-danger" id="btn-quiz-review-wrong">⚠️ Chỉ Ôn Lại Các Câu Sai (${uniqueIncorrect.length})</button>` : ''}
                 <button class="btn-pill" id="btn-quiz-new-config">⚙️ Cài Đặt Mới</button>
             </div>
         `;
@@ -4012,19 +4046,9 @@
 
         // Push to Flashcard button
         const sendBtn = document.getElementById("btn-quiz-send-to-unmastered");
-        if (sendBtn) {
-            sendBtn.addEventListener("click", () => {
-                uniqueIncorrect.forEach(w => {
-                    state.unmasteredWords.add(w.id);
-                    state.masteredWords.delete(w.id);
-                });
-                saveUnmastered();
-                saveMastered();
-                showToast(`Đã đưa ${uniqueIncorrect.length} từ vào danh sách Chưa Nhớ ❌ của Flashcard!`);
-                sendBtn.disabled = true;
-                sendBtn.innerHTML = "✅ Đã gom vào Flashcard Chưa Nhớ";
-            });
-        }
+        if (sendBtn) sendBtn.addEventListener("click", () => startCustomFlashcards(uniqueIncorrect, "Từ sai trong quiz"));
+        const nextLessonBtn = document.getElementById("btn-quiz-next-lesson");
+        if (nextLessonBtn) nextLessonBtn.addEventListener("click", () => goNextStep());
 
         // Retry
         document.getElementById("btn-quiz-retry").addEventListener("click", () => {
@@ -4057,8 +4081,10 @@
                 state.quizStreak = 0;
                 state.quizMaxStreak = 0;
                 state.quizResponseTimes = [];
+                state.quizReviewOnly = true; // ôn câu sai: không tính vào tiến độ bài / kỷ lục
                 state.quizSkills = {
                     hz_to_mean: { correct: 0, total: 0 },
+                    context_cloze: { correct: 0, total: 0 },
                     mean_to_hz: { correct: 0, total: 0 },
                     hz_to_py: { correct: 0, total: 0 },
                     audio_to_hz: { correct: 0, total: 0 }
@@ -4115,22 +4141,49 @@
         container.innerHTML = `
             <div class="game-zone-wrapper">
                 <div class="game-hub-header">
-                    <h2>🎮 Khu Luyện Tập & Trò Chơi Ôn Tập (15 Chế Độ Toàn Diện)</h2>
-                    <p>Kho từ hiện tại: <strong>${wordCount} từ</strong> (theo phạm vi bộ lọc đang chọn). Hãy chọn thử thách yêu thích để bắt đầu!</p>
+                    <h2>🎮 Thêm trò chơi & luyện tập</h2>
+                    <p>Phạm vi: <strong>${escapeHtml(scopeLabel())}</strong> • ${wordCount} từ. Trò chơi chỉ để giải trí, <strong>không ghi vào lịch ôn SRS</strong>.</p>
                 </div>
 
-                <!-- PHẦN 1: ĐẤU TRÍ & THỬ THÁCH ĐẶC BIỆT (RPG & PUZZLE) -->
-                <div class="game-hub-section-title">
+                <details class="game-hub-group" open>
+                    <summary class="game-hub-section-title"><span class="hub-sec-icon">🎙️</span><span>Luyện nói & nghe</span></summary>
+                    <div class="game-hub-grid">
+                        <div class="game-card-item game-card-speech" data-game="speech">
+                            <div class="game-card-top">
+                                <span class="game-card-icon">🎙️</span>
+                                <span class="game-card-badge">Speech AI</span>
+                            </div>
+                            <div class="game-card-title">Luyện phát âm</div>
+                            <div class="game-card-desc">Đọc to từng từ, trình duyệt nhận giọng và chấm điểm phát âm.</div>
+                            <button class="game-card-btn">Luyện ngay ▶</button>
+                        </div>
+                        <div class="game-card-item game-card-podcast" data-game="podcast">
+                            <div class="game-card-top">
+                                <span class="game-card-icon">📻</span>
+                                <span class="game-card-badge">Rảnh tay</span>
+                            </div>
+                            <div class="game-card-title">Podcast từ vựng</div>
+                            <div class="game-card-desc">Phát âm song ngữ lần lượt từng từ, nghe được khi tắt màn hình.</div>
+                            <button class="game-card-btn">Mở ▶</button>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="game-hub-group">
+
+                    <summary class="game-hub-section-title">
                     <span class="hub-sec-icon">⚔️</span>
                     <span>Đấu Trí & Thử Thách Đặc Biệt (RPG & Câu Đố)</span>
-                </div>
+
+                    </summary>
+
                 <div class="game-hub-grid">
                     <div class="game-card-item game-card-boss" data-game="boss">
                         <div class="game-card-top">
                             <span class="game-card-icon">⚔️</span>
                             <span class="game-card-badge badge-hot">Siêu Hot • RPG</span>
                         </div>
-                        <div class="game-card-title">1. Đấu Boss Từ Vựng (Boss Battle)</div>
+                        <div class="game-card-title">Đấu Boss Từ Vựng (Boss Battle)</div>
                         <div class="game-card-desc">Chiến đấu với Ma Vương Quên Lãng (1000 HP). Trả lời thần tốc gây sát thương bạo kích và bảo vệ 3 mạng sống!</div>
                         <button class="game-card-btn">Chiến Ngay ▶</button>
                     </div>
@@ -4140,7 +4193,7 @@
                             <span class="game-card-icon">🟩</span>
                             <span class="game-card-badge badge-hot">Mới • Giải Đố</span>
                         </div>
-                        <div class="game-card-title">2. Wordle Chữ Hán (Hanzi Wordle)</div>
+                        <div class="game-card-title">Wordle Chữ Hán (Hanzi Wordle)</div>
                         <div class="game-card-desc">Đoán từ vựng 2 chữ Hán bí mật trong 5 lượt thử với ô xanh, vàng, xám và gợi ý Pinyin, nghĩa tiếng Việt.</div>
                         <button class="game-card-btn">Đoán Ngay ▶</button>
                     </div>
@@ -4150,7 +4203,7 @@
                             <span class="game-card-icon">🕵️</span>
                             <span class="game-card-badge badge-hot">Mới • Ma Trận</span>
                         </div>
-                        <div class="game-card-title">3. Bát Quái Trận Đồ (Word Search)</div>
+                        <div class="game-card-title">Bát Quái Trận Đồ (Word Search)</div>
                         <div class="game-card-desc">Ma trận chữ Hán 7x7 ẩn giấu 4 từ vựng mục tiêu. Quét mắt nhận diện và giải phóng các từ vựng bí mật!</div>
                         <button class="game-card-btn">Tìm Kiếm ▶</button>
                     </div>
@@ -4160,7 +4213,7 @@
                             <span class="game-card-icon">🎭</span>
                             <span class="game-card-badge badge-hot">Mới • Kéo Co</span>
                         </div>
-                        <div class="game-card-title">4. Đấu Trường Đối Lập (Antonym Duel)</div>
+                        <div class="game-card-title">Đấu Trường Đối Lập (Antonym Duel)</div>
                         <div class="game-card-desc">Kéo co kịch tính! Bắn trúng từ TRÁI NGHĨA để giật dây chiến thắng về phía bạn trước AI đối thủ.</div>
                         <button class="game-card-btn">Kéo Co ▶</button>
                     </div>
@@ -4170,7 +4223,7 @@
                             <span class="game-card-icon">🧪</span>
                             <span class="game-card-badge">Bộ Thủ Chiết Tự</span>
                         </div>
-                        <div class="game-card-title">5. Chế Tác Chữ Hán (Radical Alchemy)</div>
+                        <div class="game-card-title">Chế Tác Chữ Hán (Radical Alchemy)</div>
                         <div class="game-card-desc">Ghép các bộ thủ và thành phần biểu âm rời rạc thành chữ Hán hoàn chỉnh. Nhớ sâu cấu trúc chữ Hán!</div>
                         <button class="game-card-btn">Chế Tác ▶</button>
                     </div>
@@ -4180,24 +4233,28 @@
                             <span class="game-card-icon">🐉</span>
                             <span class="game-card-badge">Phản Xạ 12s</span>
                         </div>
-                        <div class="game-card-title">6. Nối Từ Tiếp Sức (Word Chain)</div>
+                        <div class="game-card-title">Nối Từ Tiếp Sức (Word Chain)</div>
                         <div class="game-card-desc">Lấy chữ cuối của từ trước làm chữ đầu của từ sau trong 12 giây phản xạ. Kéo dài chuỗi rồng từ vựng!</div>
                         <button class="game-card-btn">Nối Từ ▶</button>
                     </div>
                 </div>
+                </details>
 
-                <!-- PHẦN 2: BÀI KHÓA, NGỮ PHÁP & CỤM TỪ THỰC CHIẾN -->
-                <div class="game-hub-section-title" style="margin-top: 28px;">
+                <details class="game-hub-group">
+
+                    <summary class="game-hub-section-title">
                     <span class="hub-sec-icon">📖</span>
                     <span>Luyện Bài Khóa, Ngữ Pháp & Cụm Từ Thực Chiến (Boya HSK)</span>
-                </div>
+
+                    </summary>
+
                 <div class="game-hub-grid">
                     <div class="game-card-item game-card-cloze" data-game="cloze">
                         <div class="game-card-top">
                             <span class="game-card-icon">🧩</span>
                             <span class="game-card-badge">Bài Khóa</span>
                         </div>
-                        <div class="game-card-title">7. Điền Từ Bài Khóa (Cloze Test)</div>
+                        <div class="game-card-title">Điền Từ Bài Khóa (Cloze Test)</div>
                         <div class="game-card-desc">Thử thách điền từ vựng còn thiếu vào câu trích thực tế từ bài khóa và câu ví dụ để nhớ ngữ cảnh.</div>
                         <button class="game-card-btn">Luyện Ngay ▶</button>
                     </div>
@@ -4207,7 +4264,7 @@
                             <span class="game-card-icon">🔤</span>
                             <span class="game-card-badge">Ngữ Pháp HSK</span>
                         </div>
-                        <div class="game-card-title">8. Sắp Xếp Trật Tự Câu (Sentence Scramble)</div>
+                        <div class="game-card-title">Sắp Xếp Trật Tự Câu (Sentence Scramble)</div>
                         <div class="game-card-desc">Ghép các khối từ rời rạc thành câu hoàn chỉnh đúng chuẩn ngữ pháp tiếng Trung (dạng bài thi HSK 4-5).</div>
                         <button class="game-card-btn">Luyện Ngay ▶</button>
                     </div>
@@ -4217,7 +4274,7 @@
                             <span class="game-card-icon">🔗</span>
                             <span class="game-card-badge">Cụm Cố Định</span>
                         </div>
-                        <div class="game-card-title">9. Nối Cụm Từ Phối Hợp (Collocation Matching)</div>
+                        <div class="game-card-title">Nối Cụm Từ Phối Hợp (Collocation Matching)</div>
                         <div class="game-card-desc">Nối các cặp Động từ – Danh từ, Tính từ – Danh từ kinh điển trong bài học (như 克服困难, 珍惜时间...).</div>
                         <button class="game-card-btn">Luyện Ngay ▶</button>
                     </div>
@@ -4227,24 +4284,28 @@
                             <span class="game-card-icon">⚖️</span>
                             <span class="game-card-badge">Biện Tích</span>
                         </div>
-                        <div class="game-card-title">10. Phân Biệt Từ Gần Nghĩa (Synonyms Drill)</div>
+                        <div class="game-card-title">Phân Biệt Từ Gần Nghĩa (Synonyms Drill)</div>
                         <div class="game-card-desc">Chọn từ chính xác nhất giữa các cặp từ dễ nhầm lẫn (như 满足 vs 满意, 珍惜 vs 爱惜) kèm lời giải sư phạm chi tiết!</div>
                         <button class="game-card-btn">Luyện Ngay ▶</button>
                     </div>
                 </div>
+                </details>
 
-                <!-- PHẦN 3: PHẢN XẠ TỪ VỰNG, TRÍ NHỚ & ÂM THANH -->
-                <div class="game-hub-section-title" style="margin-top: 28px;">
+                <details class="game-hub-group">
+
+                    <summary class="game-hub-section-title">
                     <span class="hub-sec-icon">⚡</span>
                     <span>Phản Xạ Từ Vựng, Trí Nhớ & Âm Thanh</span>
-                </div>
+
+                    </summary>
+
                 <div class="game-hub-grid">
                     <div class="game-card-item game-card-falling" data-game="falling">
                         <div class="game-card-top">
                             <span class="game-card-icon">🪂</span>
                             <span class="game-card-badge badge-hot">Mới • Arcade</span>
                         </div>
-                        <div class="game-card-title">11. Hứng Chữ Rơi (Falling Words)</div>
+                        <div class="game-card-title">Hứng Chữ Rơi (Falling Words)</div>
                         <div class="game-card-desc">Bong bóng chữ Hán rơi từ bầu trời đêm! Bấm nổ đúng bong bóng mục tiêu trước khi chạm đất.</div>
                         <button class="game-card-btn">Hứng Ngay ▶</button>
                     </div>
@@ -4254,7 +4315,7 @@
                             <span class="game-card-icon">🃏</span>
                             <span class="game-card-badge">Trí Nhớ & Ghép Đôi</span>
                         </div>
-                        <div class="game-card-title">12. Ghép Cặp Thẻ (Card Matching)</div>
+                        <div class="game-card-title">Ghép Cặp Thẻ (Card Matching)</div>
                         <div class="game-card-desc">Lật và ghép các cặp Chữ Hán với Nghĩa Tiếng Việt tương ứng nhanh nhất có thể.</div>
                         <button class="game-card-btn">Chơi Ngay ▶</button>
                     </div>
@@ -4264,7 +4325,7 @@
                             <span class="game-card-icon">⚡</span>
                             <span class="game-card-badge">Tốc Độ Cao</span>
                         </div>
-                        <div class="game-card-title">13. Đúng Hay Sai? (Speed Rush)</div>
+                        <div class="game-card-title">Đúng Hay Sai? (Speed Rush)</div>
                         <div class="game-card-desc">Chữ Hán và Nghĩa có khớp nhau không? Phản xạ 5 giây, bảo vệ 3 mạng sống và tích chuỗi combo!</div>
                         <button class="game-card-btn">Chơi Ngay ▶</button>
                     </div>
@@ -4274,7 +4335,7 @@
                             <span class="game-card-icon">🧩</span>
                             <span class="game-card-badge">Tái Tạo Chữ Hán</span>
                         </div>
-                        <div class="game-card-title">14. Xếp Từ Hán Tự (Word Builder)</div>
+                        <div class="game-card-title">Xếp Từ Hán Tự (Word Builder)</div>
                         <div class="game-card-desc">Sắp xếp các ký tự Hán tự bị xáo trộn vào đúng vị trí để tạo thành từ vựng hoàn chỉnh.</div>
                         <button class="game-card-btn">Chơi Ngay ▶</button>
                     </div>
@@ -4284,18 +4345,21 @@
                             <span class="game-card-icon">🎯</span>
                             <span class="game-card-badge">Luyện Nghe Phản Xạ</span>
                         </div>
-                        <div class="game-card-title">15. Bắt Chữ Theo Âm (Audio Hunter)</div>
+                        <div class="game-card-title">Bắt Chữ Theo Âm (Audio Hunter)</div>
                         <div class="game-card-desc">Lắng nghe phát âm chuẩn và nhanh tay chọn trúng Chữ Hán chính xác trong 6 mục tiêu!</div>
                         <button class="game-card-btn">Chơi Ngay ▶</button>
                     </div>
                 </div>
+                </details>
             </div>
         `;
 
         container.querySelectorAll(".game-card-item").forEach(card => {
             card.addEventListener("click", () => {
                 const gameType = card.dataset.game;
-                if (gameType === "boss") startBossBattle();
+                if (gameType === "speech") switchMode("speech");
+                else if (gameType === "podcast") openPodcastPlayer();
+                else if (gameType === "boss") startBossBattle();
                 else if (gameType === "wordle") startHanziWordle();
                 else if (gameType === "wordsearch") startHanziWordSearch();
                 else if (gameType === "antonym") startAntonymDuel();
@@ -8883,13 +8947,11 @@
 
             if (evalRes.score >= 85) {
                 soundFX.correct();
-                recordCorrectWord(state.speech.targetWord.id, "speech");
                 if (typeof onSuccessCallback === "function") {
                     onSuccessCallback();
                 }
             } else {
                 soundFX.wrong();
-                recordWrongWord(state.speech.targetWord.id, "speech");
             }
         };
 
@@ -8950,8 +9012,8 @@
         if (addWrongBtn) {
             addWrongBtn.addEventListener("click", () => {
                 if (state.speech.targetWord) {
-                    recordWrongWord(state.speech.targetWord.id, "speech_manual");
-                    showToast("Đã thêm từ vào Sổ tay từ hay sai! 📕");
+                    markForReview(state.speech.targetWord.id);
+                    showToast("📕 Đã đánh dấu cần ôn (vào sổ lỗi, đến hạn ngay)");
                 }
             });
         }
@@ -9097,8 +9159,8 @@
         const addWrongBtn = document.getElementById("studio-btn-add-wrong");
         if (addWrongBtn) {
             addWrongBtn.addEventListener("click", () => {
-                recordWrongWord(w.id, "speech_studio");
-                showToast("Đã thêm từ vào Sổ tay từ hay sai! 📕");
+                markForReview(w.id);
+                showToast("📕 Đã đánh dấu cần ôn (vào sổ lỗi, đến hạn ngay)");
             });
         }
     }
@@ -9143,14 +9205,12 @@
 
             if (evalRes.score >= 85) {
                 soundFX.correct();
-                recordCorrectWord(state.speech.targetWord.id, "speech_studio");
                 setTimeout(() => {
                     state.speech.studioIndex = (state.speech.studioIndex + 1) % state.speech.studioList.length;
                     renderSpeechStudio();
                 }, 1600);
             } else {
                 soundFX.wrong();
-                recordWrongWord(state.speech.targetWord.id, "speech_studio");
             }
         };
 
@@ -9165,12 +9225,11 @@
     }
 
     // =========================================================================
-    // MODULE C: SRS & MISTAKE MANAGER MODAL (QUẢN LÝ SỔ TAY TỪ SAI & SRS)
+    // MODULE C: TRUNG TÂM ÔN TẬP (SRS, SỔ LỖI, TỪ CHẬM) — số liệu suy ra từ thẻ SRS
     // =========================================================================
-    function openSrsMistakeModal(initialTab = "wrong") {
+    function openSrsMistakeModal() {
         const modal = document.getElementById("srs-mistake-modal");
         if (!modal) return;
-
         modal.classList.remove("hidden");
         initSrsModalEvents();
         renderSrsModalContent();
@@ -9181,80 +9240,71 @@
         if (modal) modal.classList.add("hidden");
     }
 
+    function wrongWordsList() {
+        return state.allWords.filter(w => isWrong(w.id))
+            .sort((a, b) => (state.srs[b.id].wrong - state.srs[a.id].wrong) || ((state.srs[b.id].lapses || 0) - (state.srs[a.id].lapses || 0)));
+    }
+    function slowWordsList() {
+        return state.allWords.filter(w => isSlow(w.id)).sort((a, b) => state.srs[b.id].rt - state.srs[a.id].rt);
+    }
+
     function renderSrsModalContent() {
-        const wrongKeys = Object.keys(state.wrongWords);
-        const wrongCount = wrongKeys.length;
-
         const now = Date.now();
-        let dueCount = 0;
-        let masteredCount = 0;
-        const levelCounts = { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
-
-        Object.keys(state.srsData).forEach(wId => {
-            const info = state.srsData[wId];
-            const lvl = info.level || 0;
-            if (levelCounts[lvl] !== undefined) levelCounts[lvl]++;
-            if (info.nextReview <= now) dueCount++;
-            if (lvl === 5) masteredCount++;
+        const counts = { new: 0, learning: 0, familiar: 0, mastered: 0 };
+        let due = 0;
+        state.allWords.forEach(w => {
+            counts[wordStatus(w.id)]++;
+            if (isDue(w.id, now)) due++;
         });
-
-        const cntWrong = document.getElementById("srs-count-wrong-num");
-        const cntDue = document.getElementById("srs-count-due-num");
-        const cntMastered = document.getElementById("srs-count-mastered-num");
-
-        if (cntWrong) cntWrong.textContent = wrongCount;
-        if (cntDue) cntDue.textContent = dueCount;
-        if (cntMastered) cntMastered.textContent = masteredCount;
+        const wrongList = wrongWordsList();
+        const slowList = slowWordsList();
+        const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+        setText("srs-count-due-num", due);
+        setText("srs-count-wrong-num", wrongList.length);
+        setText("srs-count-mastered-num", counts.mastered);
+        setText("srs-count-slow-num", slowList.length);
 
         const track = document.getElementById("srs-levels-track");
         if (track) {
-            const totalSrs = Object.keys(state.srsData).length || 1;
-            const colors = ["#cbd5e1", "#fdba74", "#fde047", "#86efac", "#a5b4fc", "#eab308"];
-            track.innerHTML = [0, 1, 2, 3, 4, 5].map(lvl => {
-                const count = levelCounts[lvl] || 0;
-                const pct = Math.round((count / totalSrs) * 100);
-                return `<div class="srs-track-seg" style="width:${pct}%; background:${colors[lvl]};" title="Cấp ${lvl}: ${count} từ (${pct}%)"></div>`;
+            const total = state.allWords.length || 1;
+            track.innerHTML = ["new", "learning", "familiar", "mastered"].map(st => {
+                const pct = (counts[st] / total) * 100;
+                return `<div class="srs-track-seg seg-${st}" style="width:${pct.toFixed(2)}%" title="${STATUS_LABEL[st]}: ${counts[st]} từ"></div>`;
             }).join("");
+        }
+        const legend = document.getElementById("srs-levels-legend");
+        if (legend) {
+            legend.innerHTML = ["new", "learning", "familiar", "mastered"].map(st =>
+                `<span class="srs-legend-item"><i class="seg-${st}"></i>${STATUS_LABEL[st]}: <strong>${counts[st]}</strong></span>`).join("");
         }
 
         const tbody = document.getElementById("srs-modal-tbody");
         if (!tbody) return;
-
-        if (wrongCount === 0) {
-            tbody.innerHTML = `
-                <tr>
-                    <td colspan="5" style="text-align:center; padding:30px; color:#64748b;">
-                        🎉 Chúc mừng bạn! Sổ tay từ sai hiện đang trống rỗng. Hãy tiếp tục làm bài tập để duy trì thành tích nhé!
-                    </td>
-                </tr>
-            `;
+        if (wrongList.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="5" class="srs-empty-cell">🎉 Sổ lỗi đang trống. Từ trả lời sai sẽ tự vào đây và tự ra khỏi sổ sau 3 lần đúng liên tiếp.</td></tr>`;
             return;
         }
-
-        const wrongList = state.allWords.filter(w => state.wrongWords[w.id]);
         tbody.innerHTML = wrongList.map((w, idx) => {
-            const info = state.wrongWords[w.id];
-            const srs = state.srsData[w.id];
+            const c = state.srs[w.id];
             return `
                 <tr>
                     <td>${idx + 1}</td>
-                    <td><strong>${escapeHtml(w.hz)}</strong></td>
-                    <td style="color:#0284c7;">${escapeHtml(w.py)}</td>
+                    <td><strong class="srs-hz">${escapeHtml(w.hz)}</strong></td>
+                    <td class="srs-py">${formatPinyinWithToneColors(w.py)}</td>
                     <td>${escapeHtml(w.mean)}</td>
                     <td>
-                        <span class="badge-wrong-count">Sai ${info.count} lần</span>
-                        ${srs ? `<span class="badge-srs-tag badge-srs-${srs.level}">Lv.${srs.level}</span>` : ''}
-                        <button class="btn-remove-wrong-row" data-remove-modal="${w.id}" title="Xóa từ khỏi sổ lỗi">✕</button>
+                        ${statusBadgeHtml(w.id)}
+                        <span class="wrong-badge" title="Đã quên ${c.lapses || 0} lần • cần ${3 - (c.streak || 0)} lần đúng liên tiếp nữa để giảm">📕 ${c.lapses || c.wrong}</span>
+                        <button class="btn-remove-wrong-row" data-remove-modal="${w.id}" title="Bỏ khỏi sổ lỗi">✕</button>
                     </td>
-                </tr>
-            `;
+                </tr>`;
         }).join("");
 
         tbody.querySelectorAll("[data-remove-modal]").forEach(btn => {
             btn.addEventListener("click", () => {
-                const wId = btn.dataset.removeModal;
-                removeWrongWord(wId);
+                if (clearMistake(btn.dataset.removeModal)) showToast("Đã bỏ từ khỏi sổ lỗi");
                 renderSrsModalContent();
+                if (state.focusFilter === "wrong") renderCurrentMode();
             });
         });
     }
@@ -9263,73 +9313,246 @@
     function initSrsModalEvents() {
         if (srsModalEventsBound) return;
         srsModalEventsBound = true;
+        const on = (id, fn) => { const el = document.getElementById(id); if (el) el.addEventListener("click", fn); };
 
-        const closeBtn = document.getElementById("srs-modal-close");
-        if (closeBtn) closeBtn.addEventListener("click", closeSrsMistakeModal);
+        on("srs-modal-close", closeSrsMistakeModal);
+        on("btn-modal-filter-srs", () => {
+            closeSrsMistakeModal();
+            const list = dueWords();
+            if (!list.length) { showToast("Không có từ nào đến hạn ôn 🎉"); return; }
+            startCustomFlashcards(list, "Từ đến hạn");
+        });
+        on("btn-modal-filter-wrong", () => {
+            closeSrsMistakeModal();
+            const list = wrongWordsList();
+            if (!list.length) { showToast("Sổ lỗi đang trống 🎉"); return; }
+            startCustomFlashcards(list, "Sổ lỗi");
+        });
+        on("btn-modal-slow", () => {
+            closeSrsMistakeModal();
+            if (!slowWordsList().length) { showToast("Chưa có từ chậm (thời gian nhận diện > 3 giây)"); return; }
+            practiceSlowWords();
+        });
+        on("btn-clear-all-mistakes", () => {
+            if (confirm("Bỏ toàn bộ từ ra khỏi sổ lỗi? (Lịch ôn SRS vẫn được giữ nguyên)")) {
+                state.allWords.forEach(w => { const c = state.srs[w.id]; if (c) { c.wrong = 0; c.streak = 0; } });
+                saveSrs();
+                renderSrsModalContent();
+                showToast("Đã dọn sổ lỗi 🧹");
+            }
+        });
+        on("btn-export-wrong-txt", () => {
+            const wrongList = wrongWordsList();
+            if (wrongList.length === 0) { showToast("Không có từ nào để xuất file!"); return; }
+            const lines = wrongList.map(w => `${w.hz}\t${w.py}\t${w.mean.replace(/[\r\n]/g, " ")}\t${w.book_name} Bài ${w.lesson_num}`);
+            const blob = new Blob([lines.join("\n")], { type: "text/plain;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `boya_so_loi_anki_${new Date().toISOString().slice(0, 10)}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast("Đã xuất file Anki (.txt) 📥");
+        });
+    }
 
-        const filterWrongBtn = document.getElementById("btn-modal-filter-wrong");
-        if (filterWrongBtn) {
-            filterWrongBtn.addEventListener("click", () => {
-                closeSrsMistakeModal();
-                state.filterWrongOnly = true;
-                state.filterSrsDueOnly = false;
-                const pillWrong = document.getElementById("btn-filter-wrong");
-                if (pillWrong) pillWrong.classList.add("active");
-                const pillSrs = document.getElementById("btn-filter-srs");
-                if (pillSrs) pillSrs.classList.remove("active");
-                updateHeaderStats();
-                renderCurrentMode();
-                showToast("🎯 Đã chuyển sang chế độ: Chỉ học Sổ tay từ hay sai!");
-            });
+    // Luyện "từ chậm": lọc từ có thời gian nhận diện > 3 giây trên toàn giáo trình rồi mở quiz Chữ Hán ➔ Nghĩa
+    function practiceSlowWords() {
+        state.selectedBook = "all";
+        state.selectedLesson = "all";
+        document.querySelectorAll(".book-btn").forEach(b => b.classList.toggle("active", b.dataset.book === "all"));
+        populateLessonFilter();
+        state.quizPlayType = "standard";
+        setFocusFilter("slow");
+        switchMode("quiz");
+        const sel = document.getElementById("quiz-mode-select");
+        if (sel) sel.value = "hz_to_mean";
+        showToast(`🐢 Luyện ${slowWordsList().length} từ chậm (> 3 giây)`);
+    }
+
+    // =========================================================================
+    // TAB "HỌC TIẾP": LỘ TRÌNH THEO BÀI + KẾ HOẠCH HÔM NAY
+    // =========================================================================
+    function goNextStep() {
+        const step = nextStep();
+        if (step.kind === "study") {
+            if (step.lesson && step.plan.fresh.length) selectLesson(step.lesson, false);
+            populateLessonFilter();
+            updateHeaderStats();
+            const list = step.plan.due.concat(step.plan.fresh);
+            const label = step.plan.fresh.length
+                ? (step.plan.due.length ? `Ôn ${step.plan.due.length} + ${step.plan.fresh.length} từ mới` : `${step.plan.fresh.length} từ mới`)
+                : `Ôn ${step.plan.due.length} từ đến hạn`;
+            startCustomFlashcards(list, label);
+        } else if (step.kind === "quiz") {
+            selectLesson(step.lesson, false);
+            state.focusFilter = "all";
+            document.querySelectorAll("[data-focus]").forEach(b => b.classList.toggle("active", b.dataset.focus === "all"));
+            state.quizPlayType = "standard";
+            populateLessonFilter();
+            switchMode("quiz");
+            showToast(`✍️ Làm quiz ${lessonLabel(step.lesson)} (cần ≥ ${PASS_LESSON}%)`);
+        } else if (step.kind === "limit") {
+            showToast(`Đã đủ ${state.settings.dailyNew} từ mới hôm nay. Ôn lại hoặc làm quiz nhé!`);
+            if (step.lesson) { selectLesson(step.lesson, false); populateLessonFilter(); }
+            switchMode("quiz");
+        } else {
+            showToast("🎉 Bạn đã hoàn thành toàn bộ giáo trình!");
+        }
+    }
+
+    function renderHome() {
+        const el = document.getElementById("home-container");
+        if (!el) return;
+        const step = nextStep();
+        const plan = step.plan || buildStudyPlan();
+        const t = today();
+        const cur = currentLessonId();
+        const focusId = state.selectedLesson !== "all" ? state.selectedLesson : cur;
+        const curStats = focusId ? lessonStats(focusId) : null;
+        const learned = state.allWords.filter(w => state.srs[w.id]).length;
+        const slowCount = slowWordsList().length;
+
+        let ctaTitle, ctaSub, ctaBtn;
+        if (step.kind === "study") {
+            ctaTitle = plan.due.length && plan.fresh.length ? `Ôn ${plan.due.length} từ đến hạn, rồi học ${plan.fresh.length} từ mới`
+                : plan.due.length ? `Ôn ${plan.due.length} từ đến hạn` : `Học ${plan.fresh.length} từ mới`;
+            ctaSub = plan.fresh.length ? `Từ mới lấy theo thứ tự bài: ${escapeHtml(lessonLabel(lessonId(plan.fresh[0])))}` : "Ôn trước, học mới sau — giữ trí nhớ chắc chắn.";
+            ctaBtn = "▶ Học tiếp";
+        } else if (step.kind === "quiz") {
+            ctaTitle = `Làm quiz ${escapeHtml(lessonLabel(step.lesson))}`;
+            ctaSub = `Đã học đủ từ của bài. Đạt ≥ ${PASS_LESSON}% để hoàn thành bài (tốt nhất hiện tại: ${lessonStats(step.lesson).quizBest}%).`;
+            ctaBtn = "✍️ Làm quiz bài";
+        } else if (step.kind === "limit") {
+            ctaTitle = "Đã đủ từ mới hôm nay 👏";
+            ctaSub = `Giới hạn ${state.settings.dailyNew} từ mới/ngày. Có thể làm quiz để củng cố, hoặc tăng giới hạn bên dưới.`;
+            ctaBtn = "✍️ Làm quiz";
+        } else {
+            ctaTitle = "Hoàn thành toàn bộ giáo trình 🎉";
+            ctaSub = "Tiếp tục ôn các từ đến hạn mỗi ngày để giữ trí nhớ.";
+            ctaBtn = "🔁 Ôn tập";
         }
 
-        const filterSrsBtn = document.getElementById("btn-modal-filter-srs");
-        if (filterSrsBtn) {
-            filterSrsBtn.addEventListener("click", () => {
-                closeSrsMistakeModal();
-                state.filterSrsDueOnly = true;
-                state.filterWrongOnly = false;
-                const pillSrs = document.getElementById("btn-filter-srs");
-                if (pillSrs) pillSrs.classList.add("active");
-                const pillWrong = document.getElementById("btn-filter-wrong");
-                if (pillWrong) pillWrong.classList.remove("active");
-                updateHeaderStats();
-                renderCurrentMode();
-                showToast("🧠 Đã lọc danh sách: Các từ đến hạn ôn SRS hôm nay!");
-            });
-        }
+        const booksHtml = state.books.map(b => {
+            const lessons = b.lessons.map(l => {
+                const id = `${b.id}_${l.lesson_num}`;
+                const st = lessonStats(id);
+                const pct = st.total ? Math.round(st.seen / st.total * 100) : 0;
+                const cls = (st.done ? "done" : (id === cur ? "current" : (st.seen ? "started" : ""))) + (id === focusId ? " selected" : "");
+                return `
+                    <button type="button" class="path-lesson ${cls}" data-lesson="${id}" title="${escapeHtml(l.lesson_name)}: ${escapeHtml(l.title || '')} • đã học ${st.seen}/${st.total} từ • quiz tốt nhất ${st.quizBest}%">
+                        <span class="pl-num">${st.done ? "✓" : l.lesson_num}</span>
+                        <span class="pl-bar"><i style="width:${pct}%"></i></span>
+                    </button>`;
+            }).join("");
+            const done = b.lessons.filter(l => state.progress[`${b.id}_${l.lesson_num}`] && state.progress[`${b.id}_${l.lesson_num}`].done).length;
+            return `
+                <div class="path-book" data-book="${b.id}">
+                    <div class="path-book-head">
+                        <span class="path-book-name">${escapeHtml(b.name)}</span>
+                        <span class="path-book-count">${done}/${b.lessons.length} bài xong</span>
+                    </div>
+                    <div class="path-lessons">${lessons}</div>
+                </div>`;
+        }).join("");
 
-        const clearBtn = document.getElementById("btn-clear-all-mistakes");
-        if (clearBtn) {
-            clearBtn.addEventListener("click", () => {
-                if (confirm("Bạn có chắc chắn muốn xóa toàn bộ danh sách từ trong Sổ tay lỗi sai không?")) {
-                    state.wrongWords = {};
-                    saveWrongWords();
-                    renderSrsModalContent();
-                    showToast("Đã dọn sạch sổ lỗi sai! 🧹");
-                }
-            });
-        }
+        el.innerHTML = `
+            <div class="home-wrap">
+                <section class="home-cta">
+                    <div class="home-cta-text">
+                        <div class="home-cta-kicker">${cur ? "Bài đang học: " + escapeHtml(lessonLabel(cur)) : "Lộ trình Boya TC1–4"}</div>
+                        <h2>${ctaTitle}</h2>
+                        <p>${ctaSub}</p>
+                    </div>
+                    <button type="button" class="home-cta-btn" id="btn-home-next">${ctaBtn}</button>
+                </section>
 
-        const exportBtn = document.getElementById("btn-export-wrong-txt");
-        if (exportBtn) {
-            exportBtn.addEventListener("click", () => {
-                const wrongList = state.allWords.filter(w => state.wrongWords[w.id]);
-                if (wrongList.length === 0) {
-                    showToast("Không có từ nào để xuất file!");
-                    return;
-                }
-                const lines = wrongList.map(w => `${w.hz}\t${w.py}\t${w.mean.replace(/[\r\n]/g, " ")}\t${w.book_name} Bài ${w.lesson_num}`);
-                const blob = new Blob([lines.join("\n")], { type: "text/plain;charset=utf-8" });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement("a");
-                a.href = url;
-                a.download = `boya_wrong_words_anki_${new Date().toISOString().slice(0, 10)}.txt`;
-                a.click();
-                URL.revokeObjectURL(url);
-                showToast("Đã xuất file Anki Deck (.txt) thành công! 📥");
-            });
-        }
+                <section class="home-stats">
+                    <div class="home-stat"><span class="hs-num">${plan.due.length}</span><span class="hs-label">Đến hạn ôn</span></div>
+                    <div class="home-stat"><span class="hs-num">${t.n || 0}<small>/${state.settings.dailyNew}</small></span><span class="hs-label">Từ mới hôm nay</span></div>
+                    <div class="home-stat"><span class="hs-num">${t.r || 0}</span><span class="hs-label">Lượt ôn hôm nay</span></div>
+                    <div class="home-stat"><span class="hs-num">${learned}<small>/${state.allWords.length}</small></span><span class="hs-label">Từ đã học</span></div>
+                </section>
+
+                ${curStats ? `
+                <section class="home-lesson">
+                    <div class="hl-head">
+                        <strong>${escapeHtml(lessonLabel(focusId))}</strong>
+                        <span>${escapeHtml((findLesson(focusId).lesson.title) || "")}</span>
+                        ${curStats.done ? '<span class="st-badge st-mastered">Đã xong</span>' : (focusId === cur ? '<span class="st-badge st-learning">Đang học</span>' : '')}
+                    </div>
+                    <div class="hl-steps">
+                        <div class="hl-step ${curStats.seen >= curStats.total ? "ok" : ""}">
+                            <span class="hl-step-title">1. Học hết từ của bài</span>
+                            <span class="hl-step-val">${curStats.seen}/${curStats.total} từ</span>
+                            <span class="hl-bar"><i style="width:${curStats.total ? Math.round(curStats.seen / curStats.total * 100) : 0}%"></i></span>
+                        </div>
+                        <div class="hl-step ${curStats.quizBest >= PASS_LESSON ? "ok" : ""}">
+                            <span class="hl-step-title">2. Quiz bài ≥ ${PASS_LESSON}%</span>
+                            <span class="hl-step-val">Tốt nhất ${curStats.quizBest}%</span>
+                            <span class="hl-bar"><i style="width:${Math.min(100, curStats.quizBest)}%"></i></span>
+                        </div>
+                    </div>
+                    <div class="hl-actions">
+                        <button type="button" class="btn-pill" data-home-act="table">📋 Xem từ của bài</button>
+                        <button type="button" class="btn-pill" data-home-act="flashcard">🗂️ Flashcard bài này</button>
+                        <button type="button" class="btn-pill" data-home-act="quiz">✍️ Quiz bài này</button>
+                    </div>
+                </section>` : ""}
+
+                <section class="home-tools">
+                    <button type="button" class="home-tool" data-home-act="due" ${plan.due.length ? "" : "disabled"}>🧠 Chỉ ôn từ đến hạn <strong>${plan.due.length}</strong></button>
+                    <button type="button" class="home-tool" data-home-act="wrong">📕 Sổ lỗi <strong>${wrongWordsList().length}</strong></button>
+                    <button type="button" class="home-tool" data-home-act="slow" ${slowCount ? "" : "disabled"}>🐢 Luyện từ chậm (&gt; 3s) <strong>${slowCount}</strong></button>
+                    <label class="home-tool home-daily">
+                        <span>🆕 Từ mới mỗi ngày</span>
+                        <select id="home-daily-new">
+                            ${[10, 15, 20, 25, 30].map(n => `<option value="${n}" ${n === state.settings.dailyNew ? "selected" : ""}>${n} từ</option>`).join("")}
+                        </select>
+                    </label>
+                </section>
+
+                <section class="home-path">
+                    <div class="home-section-title">🗺️ Lộ trình theo bài <small>Nhấn vào một bài để mở</small></div>
+                    ${booksHtml}
+                    <div class="path-legend">
+                        <span><i class="lg-done"></i>Đã xong</span>
+                        <span><i class="lg-current"></i>Đang học</span>
+                        <span><i class="lg-started"></i>Đã bắt đầu</span>
+                        <span><i class="lg-todo"></i>Chưa học</span>
+                    </div>
+                </section>
+            </div>`;
+
+        const btnNext = document.getElementById("btn-home-next");
+        if (btnNext) btnNext.addEventListener("click", goNextStep);
+        el.querySelectorAll(".path-lesson").forEach(btn => btn.addEventListener("click", () => {
+            selectLesson(btn.dataset.lesson, false);
+            populateLessonFilter();
+            updateHeaderStats();
+            renderHome();
+            showToast(`Đã chọn ${lessonLabel(btn.dataset.lesson)}`);
+        }));
+        el.querySelectorAll("[data-home-act]").forEach(btn => btn.addEventListener("click", () => {
+            const act = btn.dataset.homeAct;
+            if (act === "table" || act === "quiz" || act === "flashcard") {
+                if (state.selectedLesson === "all" && focusId) { selectLesson(focusId, false); populateLessonFilter(); }
+                if (act === "quiz") state.quizPlayType = "standard";
+                if (act === "flashcard") state.fcFilter = "all";
+                switchMode(act);
+            }
+            else if (act === "due") startCustomFlashcards(dueWords(), "Từ đến hạn");
+            else if (act === "wrong") openSrsMistakeModal();
+            else if (act === "slow") practiceSlowWords();
+        }));
+        const dailySel = document.getElementById("home-daily-new");
+        if (dailySel) dailySel.addEventListener("change", () => {
+            state.settings.dailyNew = parseInt(dailySel.value, 10) || 15;
+            saveSettings();
+            const other = document.getElementById("select-daily-new");
+            if (other) other.value = String(state.settings.dailyNew);
+            renderHome();
+        });
     }
 
 })();

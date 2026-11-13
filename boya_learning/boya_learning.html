@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Bảng màu & theme dùng chung (nạp đồng bộ để không chớp màu) -->
+    <link rel="stylesheet" href="../shared/theme.css">
+    <script src="../shared/theme.js"></script>
     <!-- Main Style -->
     <link rel="stylesheet" href="boya_learning.css">
 </head>
@@ -21,7 +24,7 @@
                 <span class="bst-text">Danh mục bài</span>
             </button>
 
-            <a href="index.html" class="header-btn header-btn-home" title="Về trang chủ chọn tài liệu">
+            <a href="../index.html" class="header-btn header-btn-home" title="Về trang chủ chọn tài liệu">
                 <span>←</span>
                 <span class="home-text">Trang Chủ</span>
             </a>
@@ -33,7 +36,7 @@
                         <span class="brand-name">Boya Chinese</span>
                         <span class="brand-badge">Full</span>
                     </h1>
-                    <div class="brand-sub">Hệ Thống Học Giáo Trình Boya Toàn Diện (6 Quyển · 74 Bài · 2.674+ Từ Vựng)</div>
+                    <div class="brand-sub">Hệ Thống Học Giáo Trình Boya Toàn Diện (6 Quyển · 74 Bài · 2.770 Từ Vựng)</div>
                 </div>
             </div>
         </div>
@@ -50,10 +53,16 @@
                 <kbd>Ctrl K</kbd>
             </button>
 
-            <!-- Streak Pill -->
-            <div class="header-btn streak-pill" style="cursor: default; font-weight: 700; color: #ea580c; background: var(--bg-surface);" title="Chuỗi ngày học tập liên tiếp">
-                🔥 <span id="hdrStreakCount">1</span><span class="streak-text-days"> ngày</span>
-            </div>
+            <!-- Ôn hôm nay: từ đến hạn của mọi bài, mọi quyển -->
+            <button class="header-btn review-btn" id="hdrReviewBtn" title="Ôn hôm nay: các từ đến hạn ôn tập (mọi bài, mọi quyển)">
+                🔁 <span class="review-btn-text">Ôn hôm nay</span>
+                <span class="review-count" id="hdrDueCount" hidden>0</span>
+            </button>
+
+            <!-- Streak Pill: bấm để xem thống kê theo ngày -->
+            <button class="header-btn streak-pill" id="hdrStreakBtn" title="Chuỗi ngày học thật (≥ 10 câu hoặc 10 thẻ/ngày) · bấm để xem thống kê">
+                🔥 <span id="hdrStreakCount">0</span><span class="streak-text-days"> ngày</span>
+            </button>
 
             <!-- Dark / Light Theme Toggle -->
             <button class="header-btn theme-toggle-btn" id="themeToggleBtn" title="Chuyển chế độ Sáng / Tối">
@@ -121,39 +130,44 @@
                     </div>
                 </div>
 
-                <div class="ltb-right">
-                    <button class="btn-mark-complete" id="btnMarkComplete">
-                        ○ Đánh dấu hoàn thành
-                    </button>
+                <div class="ltb-right" id="lessonStatusArea">
+                    <!-- Trạng thái bài: x/4 bước hoặc Hoàn thành -->
                 </div>
             </div>
+
+            <!-- Lộ trình 4 bước của bài: Từ vựng → Bài khóa → Ngữ pháp → Kiểm tra -->
+            <div class="lesson-path" id="lessonPath"></div>
 
             <!-- Mode Tabs Bar (Sticky Top with Fixed Pinyin Toggle) -->
             <div class="mode-tabs-bar">
                 <div class="mode-tabs-list" role="tablist">
-                    <button class="mode-tab-btn active" data-mode="reading" title="Xem Bài Khóa & Bản Dịch Song Ngữ">
-                        <span>📖</span>
-                        <span>Bài Khóa</span>
-                    </button>
-                    <button class="mode-tab-btn" data-mode="vocab" title="Học Từ Vựng, Loại Từ & Ví Dụ Thực Tế">
+                    <button class="mode-tab-btn" data-mode="vocab" title="Danh sách từ vựng, loại từ & ví dụ">
                         <span>🏮</span>
                         <span>Từ Vựng</span>
                         <span class="tab-badge" id="tabBadgeVocab">0</span>
                     </button>
-                    <button class="mode-tab-btn" data-mode="grammar" title="Học Cấu Trúc Ngữ Pháp & Điểm Ngôn Ngữ">
+                    <button class="mode-tab-btn" data-mode="flashcard" title="Lật thẻ & chấm Quên/Khó/Nhớ/Dễ (bước 1)">
+                        <span>🎴</span>
+                        <span>Flashcards</span>
+                    </button>
+                    <button class="mode-tab-btn" data-mode="reading" title="Bài khóa song ngữ, đọc tính giờ, nghe-nhại (bước 2)">
+                        <span>📖</span>
+                        <span>Bài Khóa</span>
+                    </button>
+                    <button class="mode-tab-btn" data-mode="grammar" title="Cấu trúc ngữ pháp & điểm ngôn ngữ (bước 3)">
                         <span>📐</span>
                         <span>Ngữ Pháp</span>
                         <span class="tab-badge" id="tabBadgeGrammar">0</span>
                     </button>
-                    <button class="mode-tab-btn" data-mode="flashcard" title="Lật Thẻ Flashcard 3D Thông Minh">
-                        <span>🎴</span>
-                        <span>Flashcards</span>
-                    </button>
-                    <button class="mode-tab-btn" data-mode="quiz" title="Trắc Nghiệm & Trò Chơi Nối Từ">
+                    <button class="mode-tab-btn" data-mode="quiz" title="Trắc nghiệm, nghe chọn từ, ghép cặp">
                         <span>🎯</span>
                         <span>Luyện Tập</span>
                     </button>
-                    <button class="mode-tab-btn" data-mode="podcast" title="Nghe Thụ Động Rảnh Tay">
+                    <button class="mode-tab-btn" data-mode="test" title="Bài kiểm tra cuối bài: đạt ≥ 80% để hoàn thành bài (bước 4)">
+                        <span>🏁</span>
+                        <span>Kiểm Tra</span>
+                    </button>
+                    <button class="mode-tab-btn" data-mode="podcast" title="Nghe thụ động rảnh tay">
                         <span>🎧</span>
                         <span>Podcast</span>
                     </button>
@@ -206,10 +220,10 @@
             <button class="speed-badge-btn" id="btnSpeedToggle" title="Điều chỉnh tốc độ phát âm thanh">
                 1.0x
             </button>
-            <button class="btn-player-ctrl" id="btnPillModeToggle" title="Chuyển chế độ Viên thuốc nổi (Floating Pill) / Thanh đáy" style="font-size: 13px; margin-left: 4px;">
+            <button class="btn-player-ctrl dock-mini-btn" id="btnPillModeToggle" title="Chuyển chế độ Viên thuốc nổi (Floating Pill) / Thanh đáy">
                 💊
             </button>
-            <button class="btn-player-ctrl" id="btnToggleAudioDock" title="Thu gọn / Mở rộng trình phát nhạc" style="font-size: 14px; margin-left: 4px;">
+            <button class="btn-player-ctrl dock-mini-btn" id="btnToggleAudioDock" title="Thu gọn / Mở rộng trình phát nhạc">
                 ▾
             </button>
         </div>
@@ -219,9 +233,9 @@
     <div class="modal-backdrop" id="searchModal">
         <div class="search-modal-dialog">
             <div class="modal-search-input-wrap">
-                <span style="font-size: 18px;">🔍</span>
+                <span class="modal-search-ico">🔍</span>
                 <input type="text" class="modal-search-input" id="modalSearchInput" placeholder="Tìm theo chữ Hán, Pinyin, nghĩa tiếng Việt hoặc số bài...">
-                <kbd style="font-size: 11px; background: var(--bg-subtle); padding: 2px 6px; border-radius: 4px; color: var(--text-muted);">ESC</kbd>
+                <kbd class="modal-kbd">ESC</kbd>
             </div>
             <div class="modal-results-list" id="modalResultsList">
                 <!-- Search results injected here -->
@@ -229,8 +243,20 @@
         </div>
     </div>
 
-    <!-- 5. SCRIPTS: FAST DIRECT DATA + APP LOGIC -->
+    <!-- 5. MODAL THỐNG KÊ THEO NGÀY -->
+    <div class="modal-backdrop" id="statsModal">
+        <div class="search-modal-dialog stats-dialog" role="dialog" aria-label="Thống kê học tập">
+            <div class="stats-head">
+                <span>📊 Thống kê học tập</span>
+                <button class="btn-icon-round" data-close-stats title="Đóng (Esc)">✕</button>
+            </div>
+            <div class="stats-body" id="statsBody"></div>
+        </div>
+    </div>
+
+    <!-- 6. SCRIPTS: FAST DIRECT DATA + APP LOGIC -->
     <script src="boya_data.js"></script>
+    <script src="../shared/progress.js"></script>
     <script src="boya_learning.js"></script>
 
 </body>
