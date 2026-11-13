@@ -1,6 +1,6 @@
 /**
  * BOYA LEARNING PLATFORM - BOYA_LEARNING.JS
- * Quản trị toàn bộ logic học Boya (6 Quyển · 74 Bài · 2.770 Từ):
+ * Quản trị toàn bộ logic học Boya (6 Quyển · 74 Bài · 4.472 Từ):
  * lộ trình 4 bước mỗi bài, bài kiểm tra cuối bài, ôn tập ngắt quãng (SM-2),
  * đọc tính giờ, audio, flashcard, luyện tập, podcast.
  */
@@ -3384,7 +3384,7 @@
         const q = query.trim().toLowerCase();
 
         if (!q) {
-            const totV = window.BOYA_DATA?.total_vocab || 2770;
+            const totV = window.BOYA_DATA?.total_vocab || 4472;
             const totL = window.BOYA_DATA?.total_lessons || 74;
             dom.modalResultsList.innerHTML = `
                 <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 13px;">

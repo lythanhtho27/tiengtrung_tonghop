@@ -1,0 +1,982 @@
+{
+ "book": "gc1",
+ "lesson_num": 5,
+ "title": "内部招标",
+ "pages": [
+  94,
+  113
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "招标",
+   "py": "zhāo biāo",
+   "pos": "",
+   "zh": "商业活动中，对重大项目公布标准和条件，招人承包或买卖。",
+   "en": "invite tenders; invite bids",
+   "hv": "CHIÊU TIÊU",
+   "vi": "mời thầu, gọi thầu",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "边界",
+   "py": "biānjiè",
+   "pos": "名",
+   "zh": "国与国、地区与地区之间的界限。",
+   "en": "boundary; border",
+   "hv": "BIÊN GIỚI",
+   "vi": "biên giới, ranh giới",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "清晰",
+   "py": "qīngxī",
+   "pos": "形",
+   "zh": "清楚。(清晰——清楚)",
+   "en": "",
+   "hv": "THANH TÍCH",
+   "vi": "rõ ràng, rõ nét",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "睦邻",
+   "py": "mùlín",
+   "pos": "动",
+   "zh": "同邻居或邻国友好相处。",
+   "en": "",
+   "hv": "MỤC LÂN",
+   "vi": "hòa thuận với láng giềng",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "狼烟四起",
+   "py": "lángyān sì qǐ",
+   "pos": "",
+   "zh": "狼烟：古代用燃烧狼粪时升起的烟作为报警的信号，借指战火。狼烟四起的意思是四处都有报警的烽火，指边疆不平靖。",
+   "en": "",
+   "hv": "LANG YÊN TỨ KHỞI",
+   "vi": "khói lửa nổi khắp nơi, chiến sự liên miên",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "争斗",
+   "py": "zhēngdòu",
+   "pos": "动",
+   "zh": "对立的一方力求战胜另一方。(争斗——斗争)",
+   "en": "",
+   "hv": "TRANH ĐẤU",
+   "vi": "tranh giành, đấu đá",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "稿件",
+   "py": "gǎojiàn",
+   "pos": "名",
+   "zh": "尚未发布或发表的文书或文字、图画等作品。",
+   "en": "",
+   "hv": "CẢO KIỆN",
+   "vi": "bản thảo",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "复信",
+   "py": "fùxìn",
+   "pos": "名",
+   "zh": "答复的信。",
+   "en": "",
+   "hv": "PHÚC TÍN",
+   "vi": "thư trả lời, thư hồi âm",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "平日里",
+   "py": "píngrìlǐ",
+   "pos": "名",
+   "zh": "平时，一般的日子。",
+   "en": "",
+   "hv": "BÌNH NHẬT LÍ",
+   "vi": "ngày thường",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "代劳",
+   "py": "dàiláo",
+   "pos": "动",
+   "zh": "(请人)代替自己办事。",
+   "en": "",
+   "hv": "ĐẠI LAO",
+   "vi": "làm thay, làm hộ",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "携带",
+   "py": "xiédài",
+   "pos": "动",
+   "zh": "随身带着。",
+   "en": "",
+   "hv": "HUỀ ĐỚI",
+   "vi": "mang theo",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "巴结",
+   "py": "bājie",
+   "pos": "动",
+   "zh": "讨好，奉承。",
+   "en": "",
+   "hv": "BA KẾT",
+   "vi": "nịnh nọt, lấy lòng",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "相安无事",
+   "py": "xiāng'ān wúshì",
+   "pos": "",
+   "zh": "平安相处，没有冲突。",
+   "en": "",
+   "hv": "TƯƠNG AN VÔ SỰ",
+   "vi": "sống yên ổn với nhau, không xảy ra chuyện gì",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "天长日久",
+   "py": "tiān cháng rì jiǔ",
+   "pos": "",
+   "zh": "时间长，日子久。",
+   "en": "",
+   "hv": "THIÊN TRƯỜNG NHẬT CỬU",
+   "vi": "lâu ngày, ngày qua tháng lại",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "耐烦",
+   "py": "nàifán",
+   "pos": "形",
+   "zh": "不急躁；不怕麻烦。",
+   "en": "",
+   "hv": "NẠI PHIỀN",
+   "vi": "kiên nhẫn, chịu khó (不耐烦: mất kiên nhẫn)",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "气哼哼",
+   "py": "qìhēnghēng",
+   "pos": "形",
+   "zh": "形容生气发怒的样子。",
+   "en": "",
+   "hv": "KHÍ HANH HANH",
+   "vi": "hầm hầm tức giận",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "排队",
+   "py": "pái duì",
+   "pos": "",
+   "zh": "一个挨一个按次序排列成行。",
+   "en": "",
+   "hv": "BÀI ĐỘI",
+   "vi": "xếp hàng",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "挨(训)",
+   "py": "ái(xùn)",
+   "pos": "动",
+   "zh": "受到（训斥）。",
+   "en": "",
+   "hv": "AI (HUẤN)",
+   "vi": "bị (mắng)",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "消气",
+   "py": "xiāo qì",
+   "pos": "",
+   "zh": "平息怒气。",
+   "en": "",
+   "hv": "TIÊU KHÍ",
+   "vi": "hết giận, nguôi giận",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "讨好",
+   "py": "tǎohǎo",
+   "pos": "动",
+   "zh": "为了取得别人的欢心或称赞而迎合别人。",
+   "en": "",
+   "hv": "THẢO HẢO",
+   "vi": "lấy lòng, chiều lòng",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "雇",
+   "py": "gù",
+   "pos": "动",
+   "zh": "出钱让别人给自己做事。",
+   "en": "",
+   "hv": "CỐ",
+   "vi": "thuê (người)",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "小时工",
+   "py": "xiǎoshígōng",
+   "pos": "名",
+   "zh": "按小时收钱的临时工，多做家庭服务工作。",
+   "en": "",
+   "hv": "TIỂU THỜI CÔNG",
+   "vi": "người giúp việc theo giờ",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "磨人",
+   "py": "mórén",
+   "pos": "动",
+   "zh": "折磨人。",
+   "en": "",
+   "hv": "MA NHÂN",
+   "vi": "hành người, làm khổ người ta",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "快活",
+   "py": "kuàihuo",
+   "pos": "形",
+   "zh": "高兴。",
+   "en": "",
+   "hv": "KHOÁI HOẠT",
+   "vi": "vui vẻ, phấn khởi",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "出血",
+   "py": "chū xiě",
+   "pos": "",
+   "zh": "比喻为他人拿出钱或拿出东西。",
+   "en": "",
+   "hv": "XUẤT HUYẾT",
+   "vi": "chịu chi, bỏ tiền ra",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "这么着",
+   "py": "zhèmezhe",
+   "pos": "代",
+   "zh": "这样，指示动作或情况。",
+   "en": "",
+   "hv": "GIÁ MA TRƯỚC",
+   "vi": "thế này, như thế này",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "承包",
+   "py": "chéngbāo",
+   "pos": "动",
+   "zh": "接受工程、订货或其他生产经营活动并负责完成。",
+   "en": "",
+   "hv": "THỪA BAO",
+   "vi": "nhận khoán, bao thầu",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "合算",
+   "py": "hésuàn",
+   "pos": "形",
+   "zh": "花的人力物力较少而收效较大。",
+   "en": "",
+   "hv": "HỢP TOÁN",
+   "vi": "có lời, đáng, hời",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "赚",
+   "py": "zhuàn",
+   "pos": "动",
+   "zh": "获得利润。",
+   "en": "",
+   "hv": "TRÁM",
+   "vi": "kiếm (tiền), lãi",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "小金库",
+   "py": "xiǎojīnkù",
+   "pos": "名",
+   "zh": "指在单位财务以外另立账目的公款。",
+   "en": "",
+   "hv": "TIỂU KIM KHỐ",
+   "vi": "quỹ riêng, quỹ đen",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "管不着",
+   "py": "guǎnbuzháo",
+   "pos": "",
+   "zh": "不能过问某事；没有资格或权力指责或制止某事。",
+   "en": "",
+   "hv": "QUẢN BẤT TRƯỚC",
+   "vi": "không quản được, không có quyền xen vào",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "开价",
+   "py": "kāi jià",
+   "pos": "",
+   "zh": "说出价格；要价。",
+   "en": "",
+   "hv": "KHAI GIÁ",
+   "vi": "ra giá, hét giá",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "慎重",
+   "py": "shènzhòng",
+   "pos": "形",
+   "zh": "谨慎认真。",
+   "en": "",
+   "hv": "THẬN TRỌNG",
+   "vi": "thận trọng",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "黑",
+   "py": "hēi",
+   "pos": "形",
+   "zh": "坏；狠毒。",
+   "en": "",
+   "hv": "HẮC",
+   "vi": "đen tối, ác, (giá) cắt cổ",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "乐意",
+   "py": "lèyì",
+   "pos": "动",
+   "zh": "愿意。",
+   "en": "",
+   "hv": "LẠC Ý",
+   "vi": "vui lòng, bằng lòng",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "可惜",
+   "py": "kěxī",
+   "pos": "副",
+   "zh": "令人惋惜。(可惜——惋惜)",
+   "en": "",
+   "hv": "KHẢ TÍCH",
+   "vi": "tiếc là, đáng tiếc",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "自个儿",
+   "py": "zìgěr",
+   "pos": "代",
+   "zh": "自己。",
+   "en": "",
+   "hv": "TỰ CÁ NHI",
+   "vi": "tự mình",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "绝望",
+   "py": "juéwàng",
+   "pos": "动",
+   "zh": "希望断绝；毫无希望。(绝望——失望)",
+   "en": "",
+   "hv": "TUYỆT VỌNG",
+   "vi": "tuyệt vọng",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "杀(出)",
+   "py": "shā(chū)",
+   "pos": "动",
+   "zh": "冲（出），闯（出）。",
+   "en": "",
+   "hv": "SÁT (XUẤT)",
+   "vi": "xông ra, lao ra",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "匹",
+   "py": "pǐ",
+   "pos": "量",
+   "zh": "用于马等。",
+   "en": "",
+   "hv": "THẤT",
+   "vi": "con (lượng từ cho ngựa)",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "黑马",
+   "py": "hēimǎ",
+   "pos": "名",
+   "zh": "比喻在比赛或选举等活动中出人意料获胜的竞争者。",
+   "en": "a dark horse",
+   "hv": "HẮC MÃ",
+   "vi": "ngựa ô (nhân tố bất ngờ)",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "见义勇为",
+   "py": "jiàn yì yǒng wéi",
+   "pos": "",
+   "zh": "看到正义的事情勇敢地去做。",
+   "en": "",
+   "hv": "KIẾN NGHĨA DŨNG VI",
+   "vi": "thấy việc nghĩa thì hăng hái làm",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "甭",
+   "py": "béng",
+   "pos": "副",
+   "zh": "不用，不要，表示不需要或劝阻。",
+   "en": "",
+   "hv": "BẰNG",
+   "vi": "khỏi, không cần",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "凡事",
+   "py": "fánshì",
+   "pos": "",
+   "zh": "不论什么事情。",
+   "en": "",
+   "hv": "PHÀM SỰ",
+   "vi": "bất cứ việc gì, mọi việc",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "竞争",
+   "py": "jìngzhēng",
+   "pos": "动",
+   "zh": "为了自己方面的利益而跟别人争胜。",
+   "en": "",
+   "hv": "CẠNH TRANH",
+   "vi": "cạnh tranh",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "当仁不让",
+   "py": "dāng rén bú ràng",
+   "pos": "",
+   "zh": "指遇到应该做的事，积极主动地去做，不退让。",
+   "en": "",
+   "hv": "ĐƯƠNG NHÂN BẤT NHƯỢNG",
+   "vi": "việc đáng làm thì không nhường ai",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "差事",
+   "py": "chāishi",
+   "pos": "名",
+   "zh": "被派去做的事情。",
+   "en": "",
+   "hv": "SAI SỰ",
+   "vi": "việc được giao, phần việc",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "降价",
+   "py": "jiàng jià",
+   "pos": "",
+   "zh": "降低原来的定价。",
+   "en": "",
+   "hv": "GIÁNG GIÁ",
+   "vi": "hạ giá, giảm giá",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "干脆",
+   "py": "gāncuì",
+   "pos": "形",
+   "zh": "直截了当；爽快。",
+   "en": "",
+   "hv": "CAN THÚY",
+   "vi": "dứt khoát, thẳng thắn",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "眨",
+   "py": "zhǎ",
+   "pos": "动",
+   "zh": "（眼睛）闭上又立刻睁开。",
+   "en": "",
+   "hv": "TRÁT",
+   "vi": "chớp (mắt)",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "逡巡",
+   "py": "qūnxún",
+   "pos": "动",
+   "zh": "犹豫不决，徘徊不前，比喻眼光向四周来回察看。",
+   "en": "",
+   "hv": "THUÂN TUẦN",
+   "vi": "đảo mắt nhìn quanh",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "擀面杖",
+   "py": "gǎnmiànzhàng",
+   "pos": "名",
+   "zh": "擀面用的木棍儿。",
+   "en": "rolling pin",
+   "hv": "CÁN DIỆN TRƯỢNG",
+   "vi": "cây cán bột",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "定音",
+   "py": "dìng yīn",
+   "pos": "",
+   "zh": "比喻对某件事情做出最后的评价或决断。",
+   "en": "",
+   "hv": "ĐỊNH ÂM",
+   "vi": "chốt hạ, quyết định cuối cùng",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "鹬蚌相争，渔翁得利",
+   "py": "yù bàng xiāng zhēng, yúwēng dé lì",
+   "pos": "",
+   "zh": "蚌张开壳晒太阳，鹬去啄它，被蚌壳夹住了嘴，两方面都不肯相让。渔翁来了，把两个都捉住了。比喻双方争持不下，让第三方得了好处。",
+   "en": "",
+   "hv": "DUẬT BẠNG TƯƠNG TRANH, NGƯ ÔNG ĐẮC LỢI",
+   "vi": "trai cò đánh nhau, ngư ông đắc lợi",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "君子",
+   "py": "jūnzǐ",
+   "pos": "名",
+   "zh": "指人格高尚的人。",
+   "en": "",
+   "hv": "QUÂN TỬ",
+   "vi": "người quân tử",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "忙不迭",
+   "py": "mángbùdié",
+   "pos": "副",
+   "zh": "急忙；连忙。",
+   "en": "",
+   "hv": "MANG BẤT ĐIỆT",
+   "vi": "vội vàng, cuống quýt",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "改口",
+   "py": "gǎi kǒu",
+   "pos": "",
+   "zh": "改变自己原来说话的内容或语气。",
+   "en": "",
+   "hv": "CẢI KHẨU",
+   "vi": "đổi giọng, nói lại",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "退缩",
+   "py": "tuìsuō",
+   "pos": "动",
+   "zh": "向后退，向后缩。",
+   "en": "",
+   "hv": "THOÁI SÚC",
+   "vi": "chùn bước, lùi bước",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "包",
+   "py": "bāo",
+   "pos": "动",
+   "zh": "把整个任务承担下来，负责完成。",
+   "en": "",
+   "hv": "BAO",
+   "vi": "bao (trọn), nhận làm hết",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "瞅",
+   "py": "chǒu",
+   "pos": "动",
+   "zh": "看。",
+   "en": "",
+   "hv": "THU",
+   "vi": "nhìn, liếc",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "垄断",
+   "py": "lǒngduàn",
+   "pos": "动",
+   "zh": "把持或独占（多指商业方面）。",
+   "en": "",
+   "hv": "LŨNG ĐOẠN",
+   "vi": "độc quyền, lũng đoạn",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "封锁",
+   "py": "fēngsuǒ",
+   "pos": "动",
+   "zh": "用强制手段使跟外界断绝联系。",
+   "en": "",
+   "hv": "PHONG TỎA",
+   "vi": "phong tỏa, ngăn chặn",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "正当",
+   "py": "zhèngdàng",
+   "pos": "形",
+   "zh": "符合法律要求或情理的。",
+   "en": "",
+   "hv": "CHÍNH ĐÁNG",
+   "vi": "chính đáng",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "气壮山河",
+   "py": "qì zhuàng shān hé",
+   "pos": "",
+   "zh": "形容气概像高山大河那样雄伟豪迈。",
+   "en": "",
+   "hv": "KHÍ TRÁNG SƠN HÀ",
+   "vi": "khí thế hào hùng như núi sông",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "悲壮",
+   "py": "bēizhuàng",
+   "pos": "形",
+   "zh": "悲哀而雄壮；悲哀而壮烈。",
+   "en": "",
+   "hv": "BI TRÁNG",
+   "vi": "bi tráng",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "无偿",
+   "py": "wúcháng",
+   "pos": "形",
+   "zh": "没有报酬的；不要代价的。",
+   "en": "",
+   "hv": "VÔ THƯỜNG",
+   "vi": "không công, miễn phí",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "一如既往",
+   "py": "yì rú jì wǎng",
+   "pos": "",
+   "zh": "完全和过去一样。",
+   "en": "",
+   "hv": "NHẤT NHƯ KÍ VÃNG",
+   "vi": "vẫn như trước đây",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "一辈子",
+   "py": "yíbèizi",
+   "pos": "名",
+   "zh": "一生。",
+   "en": "",
+   "hv": "NHẤT BỐI TỬ",
+   "vi": "cả đời",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "悻悻",
+   "py": "xìngxìng",
+   "pos": "形",
+   "zh": "失意的样子。",
+   "en": "",
+   "hv": "HÃNH HÃNH",
+   "vi": "hậm hực, cụt hứng",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "醒",
+   "py": "xǐng",
+   "pos": "动",
+   "zh": "指做某些面食时，和（huó）好面团后，放一会儿，使面团软硬均匀。",
+   "en": "",
+   "hv": "TỈNH",
+   "vi": "ủ (bột)",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "过头",
+   "py": "guò tóu",
+   "pos": "",
+   "zh": "超过限度；过分。",
+   "en": "",
+   "hv": "QUÁ ĐẦU",
+   "vi": "quá mức, quá đà",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "内部招标",
+   "paragraphs": [
+    "第一部分",
+    "我家有三口人，先生、儿子和我。仿佛三个边界清晰的小国，相处还好，基本上友好睦邻；但也时时狼烟四起，争斗不已。",
+    "我因为写作，就有了许多需上邮局的活儿，比如和编辑部往来的稿件，给读者寄的书或是复信等等。平日里都是先生代劳，用书包携带了去，回来后我就巴结地向他道声辛苦，倒也相安无事。但天长日久了，他终于不耐烦起来。",
+    "那是一个星期天，我正预备包饺子。他气哼哼地从邮局回来了，对我说：“排了半天的队，还挨了一顿训。这真不是人干的活儿。”",
+    "我说：“先喝口水，消消气。”",
+    "他说：“少来讨好我。今后我不干这活儿了。”",
+    "我说：“那可怎么办呢？又不能为这事雇个小时工。”",
+    "他说：“雇也没人干。这事太磨人。”",
+    "我说：“那也不一定。重赏之下必有勇夫。”",
+    "先生快活起来说：“这么说你打算为这件事出点血了？这么着吧，你说说每个月准备出多少钱，我看看承包了是不是合算。赚的钱进我的小金库，你管不着。”",
+    "我说：“行啊。好商量。你先开个价吧。”",
+    "先生很慎重地想了想说：“每月500元。”",
+    "我惊叫：“真够黑的啦！咱家哪有那么多的钱？”",
+    "他摇着头说：“就这我还不乐意干呢！可惜别无分店。”",
+    "我说：“那我自个儿干得了，还给咱家省了这笔钱。”",
+    "第二部分",
+    "绝望中突然杀出一匹小黑马，儿子见义勇为地说：“妈，这事就交给我吧。甭500了，每月400块钱就行。”",
+    "我说：“好好，凡事有了竞争就好。”",
+    "先生当仁不让地说：“儿子你不要抢我的差事。现在我宣布降价，每月300元就干了。”",
+    "我朝儿子说：“你呢？什么态度？”",
+    "到底是少年人干脆，他眼睛都不眨地说：“200。我每月200块钱就行了。”",
+    "我逡巡四周说：“怎么样？还有更低的吗？”说着拿起擀面杖，预备一枚敲下去定音。",
+    "先生忙对儿子说：“咱俩不能鹬蚌相争，让你妈渔翁得利。”",
+    "儿子不为所动，坚持说：“君子一诺千金。”",
+    "我说：“咱们就这么定了吧？”",
+    "先生忙不迭地改口说：“我变了，变每月100了。100就行。”",
+    "儿子毫不退缩，说：“那我50。每月50块钱，我把我妈的信都包发了。怎么样？”",
+    "我微笑地瞅着先生，说：“看来任何事情都不能搞垄断封锁，所以要有反不正当竞争法。”",
+    "先生气壮山河地站起来，悲壮地说：“我现在宣布，发信不要钱了。反正我以前也是无偿服务，今后就一如既往罢了。一个人做点好事并不难，一辈子都做好事也不难。”",
+    "儿子在一旁悻悻地说：“妈，现在要想把您招的标从我爸手里抢回来，只有倒找给您钱了。”",
+    "我说：“儿子，这事你就让给你爸了吧。以后我要是有时间，尽量争取自己上邮局。现在你们知道下一步最重要的事是什么吗？”",
+    "父子俩一齐说：“是什么呀？”",
+    "我说：“包饺子啊！吵了这么长的时间，面都醒过头了！”说着把擀面杖重重敲下。",
+    "（作者：毕淑敏，选自《毕淑敏作品集》，有改动）"
+   ],
+   "translations": [
+    "Phần một",
+    "Nhà tôi có ba người: chồng tôi, con trai và tôi. Giống như ba nước nhỏ biên giới rõ ràng, sống với nhau cũng khá ổn, về cơ bản là láng giềng hữu hảo; nhưng cũng thường xuyên khói lửa nổi lên bốn phía, tranh giành không dứt.",
+    "Vì viết văn nên tôi có rất nhiều việc phải ra bưu điện, chẳng hạn bản thảo gửi qua gửi lại với ban biên tập, sách gửi cho độc giả hay thư hồi âm, v.v. Ngày thường đều do chồng tôi làm hộ, anh bỏ vào cặp mang đi, khi về tôi lại lấy lòng nói với anh một tiếng \"vất vả rồi\", thế mà cũng yên ổn vô sự. Nhưng ngày qua tháng lại, cuối cùng anh cũng bắt đầu mất kiên nhẫn.",
+    "Hôm đó là một ngày chủ nhật, tôi đang chuẩn bị gói sủi cảo. Anh hầm hầm từ bưu điện trở về, nói với tôi: \"Xếp hàng mất nửa ngày, lại còn bị mắng một trận. Đây đúng là việc không phải dành cho người làm.\"",
+    "Tôi nói: \"Uống ngụm nước trước đã, cho nguôi giận.\"",
+    "Anh nói: \"Đừng có lấy lòng tôi. Từ nay tôi không làm việc này nữa.\"",
+    "Tôi nói: \"Thế thì biết làm sao đây? Lại không thể vì việc này mà thuê một người làm theo giờ.\"",
+    "Anh nói: \"Có thuê cũng chẳng ai làm. Việc này hành người quá.\"",
+    "Tôi nói: \"Cũng chưa chắc. Trọng thưởng ắt có người dũng cảm.\"",
+    "Chồng tôi vui hẳn lên, nói: \"Nói vậy là em định chịu chi một ít cho việc này rồi hả? Thế này nhé, em nói xem mỗi tháng định bỏ ra bao nhiêu tiền, anh xem nhận khoán có hời không. Tiền kiếm được sẽ vào quỹ riêng của anh, em không được quản.\"",
+    "Tôi nói: \"Được thôi. Dễ thương lượng mà. Anh ra giá trước đi.\"",
+    "Chồng tôi rất thận trọng suy nghĩ một lúc rồi nói: \"Mỗi tháng 500 tệ.\"",
+    "Tôi kêu lên kinh ngạc: \"Đúng là cắt cổ quá đi! Nhà mình lấy đâu ra nhiều tiền như thế?\"",
+    "Anh lắc đầu nói: \"Giá đó anh còn chẳng muốn làm đâu! Tiếc là chỉ có một tiệm, không có chi nhánh nào khác.\"",
+    "Tôi nói: \"Vậy thì em tự làm cho xong, lại còn tiết kiệm cho nhà mình khoản tiền này.\"",
+    "Phần hai",
+    "Đang lúc tuyệt vọng thì bỗng nhiên xông ra một chú ngựa ô nhỏ, con trai tôi hăng hái ra tay nghĩa hiệp nói: \"Mẹ, việc này cứ giao cho con. Khỏi 500, mỗi tháng 400 đồng là được.\"",
+    "Tôi nói: \"Tốt lắm, việc gì có cạnh tranh là tốt rồi.\"",
+    "Chồng tôi không chịu nhường, nói: \"Con trai, con đừng tranh việc của bố. Bây giờ bố tuyên bố hạ giá, mỗi tháng 300 tệ là bố làm.\"",
+    "Tôi quay sang con trai nói: \"Còn con? Thái độ thế nào?\"",
+    "Rốt cuộc vẫn là tuổi trẻ dứt khoát, nó mắt cũng không chớp mà nói: \"200. Mỗi tháng con lấy 200 đồng là được rồi.\"",
+    "Tôi đảo mắt nhìn quanh nói: \"Thế nào? Còn ai trả giá thấp hơn không?\" Vừa nói vừa cầm cây cán bột lên, chuẩn bị gõ xuống một cái để chốt hạ.",
+    "Chồng tôi vội nói với con trai: \"Hai bố con mình không thể trai cò đánh nhau để mẹ con làm ngư ông đắc lợi.\"",
+    "Con trai không hề lay chuyển, kiên quyết nói: \"Quân tử nhất ngôn nặng tựa nghìn vàng.\"",
+    "Tôi nói: \"Vậy chúng ta quyết định thế nhé?\"",
+    "Chồng tôi vội vàng đổi giọng: \"Anh đổi rồi, đổi thành mỗi tháng 100. 100 là được.\"",
+    "Con trai không chút chùn bước, nói: \"Vậy con 50. Mỗi tháng 50 đồng, con bao hết việc gửi thư cho mẹ. Thế nào?\"",
+    "Tôi mỉm cười nhìn chồng, nói: \"Xem ra việc gì cũng không thể độc quyền, bưng bít được, cho nên mới cần có Luật chống cạnh tranh không lành mạnh.\"",
+    "Chồng tôi đứng dậy với khí thế hào hùng như núi sông, bi tráng nói: \"Bây giờ anh tuyên bố, gửi thư không lấy tiền nữa. Dù sao trước đây anh cũng phục vụ không công, từ nay cứ như trước là được. Một người làm chút việc tốt không khó, cả đời làm việc tốt cũng không khó.\"",
+    "Con trai đứng bên cạnh hậm hực nói: \"Mẹ ơi, bây giờ muốn giành lại gói thầu mẹ mời từ tay bố, chỉ còn cách con trả ngược tiền cho mẹ thôi.\"",
+    "Tôi nói: \"Con trai, việc này con cứ nhường cho bố đi. Sau này nếu có thời gian, mẹ sẽ cố gắng tự mình ra bưu điện. Bây giờ hai bố con có biết việc quan trọng nhất tiếp theo là gì không?\"",
+    "Hai bố con đồng thanh: \"Là gì vậy?\"",
+    "Tôi nói: \"Gói sủi cảo chứ còn gì! Cãi nhau lâu như thế, bột ủ quá rồi!\" Vừa nói vừa gõ mạnh cây cán bột xuống.",
+    "(Tác giả: Tất Thục Mẫn, trích từ \"Tuyển tập tác phẩm Tất Thục Mẫn\", có sửa đổi)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "找啊找",
+   "paragraphs": [
+    "世界上恐怕再也没有比我母亲花费在找东西上的时间更多的人了。她每天都在找，就是不能物归原位。出门前等候她找钥匙和钱包，已是我的必修课。每每我总是想起一则小故事，说是一位先生在携太太出门前总要等候她进行很长时间的化妆，后来他索性把这个时间用来读书，终于成为一个大学问家。每想到此，我便有些后悔，若是我把等候母亲找钥匙和钱包的时间也用来读书的话，说不定也“学富五车”了。",
+    "偏偏我是一个急性子，多少次建议她物归原位终不见成效之后，我便失去了耐心。于是，我便在正式起身出门前的十分钟或二十分钟，就造声势说该走了，待她找完出门前的几样，我才起身整理自己——这样就可以从从容容任她去找了。",
+    "平时，母亲找的东西真是太多了。",
+    "护肤霜在碗橱里出现，一点不新鲜。我不用盘问就能做出这样的推理：母亲在卫生间洗完脸擦着护肤霜，这时厨房的烧水壶叫了起来，水开了，母亲奔过去关火，然后打开碗柜取水杯沏茶，这样，护肤霜就顺手留在碗柜里了。顺理成章。",
+    "有一次周末，母亲找眼镜（这是她每天都要找的东西之一），因为她没有眼镜几乎什么也看不清，于是便发动我和哥哥帮她找。我们找遍全家所有的角落，枕边、床下、被子里、沙发靠垫后边乃至所有的抽屉，当然没有忽略厨房的碗柜和卫生间的洗脸池，但眼镜终不见踪影。我和哥哥一边叫着“共产党藏的东西谁也找不到”，一边灰下心来。哥哥心里着急，口干舌燥，就打开冰箱拿冰镇水喝，结果他一打开冰箱门就叫起来：眼镜在冰箱里呢。原来，母亲一个小时前从冰箱里取出一包冷冻海鲜，准备晚饭吃，她摘下眼镜阅读口袋上面的说明书，顺手就把眼镜放在冰箱里，阅读完了，一关冰箱门，潇洒地走开，眼镜就这样被冷藏起来。",
+    "家里的眼药水、指甲刀、计算器、辞典、电视遥控器等等也是常找之物。好在母亲知道我就怕帮她找东西，便很少要我帮忙。经常是她一个人默默地找着什么，一点也不急的样子。我看见她的身影在房间里穿梭（suō），找着什么，也习以为常，不再问她找什么，继续自己的事情。母亲也不询问我，只是不慌不忙地径自找着，或者读一会儿书，找一会儿，慢慢喝一杯水，再找一会儿，心里踏踏实实，无一丝焦虑烦躁。母亲常说，一辈子的磨难早已练就了她的耐心。她甚至还说，有东西要找的日子是多么充实啊！",
+    "母亲在我身边磨磨蹭（cèng）蹭地找东西的历史已记不清有多少年。现在，这已经成为我的一种最为熟悉和亲切的生活背景，这个背景得以使这个家像个家。如果有一天，家里像军营一般井井有条，要用什么就直接到位地即刻取来，没有了母亲不慌不忙地找这找那的背景，我会不习惯的，我的心里会如同长了荒草一般浮躁不安。",
+    "（作者：陈染，选自《我们能否与生活和解》）"
+   ],
+   "translations": [
+    "Trên đời này có lẽ không còn ai tốn nhiều thời gian vào việc tìm đồ hơn mẹ tôi. Ngày nào bà cũng tìm, chỉ là không thể để đồ về đúng chỗ cũ. Trước khi ra khỏi nhà, chờ mẹ tìm chìa khóa và ví đã trở thành \"môn bắt buộc\" của tôi. Mỗi lần như thế tôi lại nhớ đến một câu chuyện nhỏ: có một ông, mỗi lần đưa vợ ra ngoài đều phải chờ bà trang điểm rất lâu, về sau ông dứt khoát dùng khoảng thời gian ấy để đọc sách, cuối cùng trở thành một học giả lớn. Mỗi khi nghĩ đến đây tôi lại có chút hối tiếc, giá như tôi cũng dùng thời gian chờ mẹ tìm chìa khóa và ví để đọc sách thì biết đâu cũng đã \"học rộng năm xe\" rồi.",
+    "Khổ nỗi tôi lại là người nóng tính, sau bao lần khuyên mẹ để đồ về chỗ cũ mà rốt cuộc chẳng thấy hiệu quả, tôi mất hết kiên nhẫn. Thế là, mười hay hai mươi phút trước khi thực sự đứng dậy ra cửa, tôi đã làm ầm lên rằng đến giờ đi rồi, đợi mẹ tìm xong mấy thứ cần mang theo, tôi mới đứng dậy sửa soạn — như vậy có thể thong thả mặc cho mẹ tìm.",
+    "Ngày thường, những thứ mẹ phải tìm thật sự quá nhiều.",
+    "Kem dưỡng da xuất hiện trong tủ chén, chẳng có gì lạ. Không cần tra hỏi, tôi cũng có thể suy luận thế này: mẹ rửa mặt xong trong nhà vệ sinh, đang thoa kem dưỡng thì ấm nước trong bếp reo lên, nước sôi, mẹ chạy vội tới tắt bếp, rồi mở tủ chén lấy cốc pha trà, thế là tiện tay để luôn lọ kem trong tủ chén. Hợp tình hợp lý.",
+    "Có một lần vào cuối tuần, mẹ tìm kính (đây là một trong những thứ ngày nào bà cũng phải tìm), vì không có kính thì bà gần như chẳng nhìn rõ gì, thế là bà huy động tôi và anh trai tìm giúp. Chúng tôi lục khắp mọi ngóc ngách trong nhà, bên gối, gầm giường, trong chăn, sau đệm tựa sofa cho đến tất cả các ngăn kéo, dĩ nhiên không bỏ sót tủ chén trong bếp và bồn rửa mặt trong nhà vệ sinh, nhưng chiếc kính vẫn biệt tăm. Tôi và anh trai vừa kêu lên \"đồ Đảng Cộng sản giấu thì chẳng ai tìm ra\", vừa nản lòng. Anh trai sốt ruột, miệng khô lưỡi đắng, bèn mở tủ lạnh lấy nước lạnh uống, kết quả vừa mở cửa tủ lạnh anh đã kêu lên: kính ở trong tủ lạnh này. Hóa ra, một tiếng trước mẹ lấy từ tủ lạnh ra một gói hải sản đông lạnh định nấu bữa tối, bà tháo kính để đọc hướng dẫn trên bao bì, tiện tay đặt kính vào tủ lạnh, đọc xong thì đóng cửa tủ lạnh, ung dung bước đi, thế là chiếc kính bị \"ướp lạnh\".",
+    "Thuốc nhỏ mắt, cái bấm móng tay, máy tính, từ điển, điều khiển ti vi... trong nhà cũng là những thứ thường phải tìm. May mà mẹ biết tôi sợ nhất là giúp bà tìm đồ nên hiếm khi nhờ tôi. Thường thì bà một mình lặng lẽ tìm thứ gì đó, chẳng có vẻ gì vội vã. Tôi thấy bóng mẹ đi qua đi lại trong phòng tìm kiếm, cũng đã quen rồi, không hỏi bà tìm gì nữa, cứ tiếp tục việc của mình. Mẹ cũng không hỏi tôi, chỉ thong thả tự mình tìm, hoặc đọc sách một lúc, tìm một lúc, chậm rãi uống một cốc nước, rồi lại tìm một lúc, lòng thanh thản, không chút lo âu bực bội. Mẹ thường nói, những gian truân cả một đời đã sớm rèn cho bà tính nhẫn nại. Bà thậm chí còn nói, những ngày có đồ để tìm thật là đầy đặn biết bao!",
+    "Mẹ chậm rãi lục tìm đồ bên cạnh tôi đã bao nhiêu năm, tôi cũng không nhớ nổi nữa. Giờ đây, điều đó đã trở thành một phông nền cuộc sống quen thuộc và thân thương nhất với tôi, chính phông nền ấy khiến ngôi nhà này ra dáng một mái nhà. Nếu có một ngày, trong nhà ngăn nắp như doanh trại quân đội, cần gì là lấy ngay được đúng chỗ, không còn phông nền mẹ thong thả tìm cái này cái kia nữa, tôi sẽ không quen, lòng tôi sẽ bồn chồn bất an như mọc đầy cỏ dại.",
+    "(Tác giả: Trần Nhiễm, trích từ \"Chúng ta có thể làm hòa với cuộc sống không\")"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "争斗不已 —— 不已 (không thôi, không dứt)",
+   "structure": "动词/形容词（双音节）+ 不已",
+   "explanation": "不已 nghĩa là \"không ngừng, cứ tiếp diễn mãi\". Đặt sau động từ hoặc tính từ (thường hai âm tiết, chỉ trạng thái tâm lý, cảm xúc) để biểu thị trạng thái đó kéo dài không dứt. Ví dụ: 兴奋不已 (phấn khích mãi), 激动不已, 烦恼不已, 吵闹不已, 惊叹不已, 赞叹不已, 大笑不已, 悲伤不已, 唏嘘不已. Mang sắc thái văn viết.",
+   "examples": [
+    {
+     "zh": "但也时时狼烟四起，争斗不已。",
+     "vi": "Nhưng cũng thường xuyên khói lửa nổi lên bốn phía, tranh giành không dứt."
+    }
+   ]
+  },
+  {
+   "point": "这么说 (nói vậy thì, vậy là)",
+   "structure": "这么说（来），+ 推测/结论",
+   "explanation": "这么说 biểu thị dựa vào ý của đối phương để suy đoán rồi nói ra kết luận của mình, hoặc dùng điều mình suy đoán để hỏi lại đối phương nhằm xác nhận. Liên hệ: 这么说来 có ý nghĩa và cách dùng cơ bản giống 这么说.",
+   "examples": [
+    {
+     "zh": "这么说你打算为这件事出点血了？",
+     "vi": "Nói vậy là em định chịu chi một ít cho việc này rồi hả?"
+    },
+    {
+     "zh": "A：我是个英国小说迷，刚买的英文原版的书，两天就看完了。B：这么说你的英文水平相当高啊，真让人佩服！",
+     "vi": "A: Tôi mê tiểu thuyết Anh, cuốn sách nguyên bản tiếng Anh vừa mua, hai ngày là đọc xong. B: Nói vậy thì trình độ tiếng Anh của bạn khá cao đấy, thật đáng nể!"
+    },
+    {
+     "zh": "A：小丽这个女孩儿真不错，性格温柔文静，又聪明又漂亮，谁要是成了她的男朋友，那就幸福死了。B：这么说，你一定是爱上她了吧？赶快采取行动吧！",
+     "vi": "A: Cô bé Tiểu Lệ thật tuyệt, tính tình dịu dàng điềm đạm, vừa thông minh vừa xinh đẹp, ai mà làm bạn trai cô ấy thì hạnh phúc chết mất. B: Nói vậy thì chắc chắn cậu đã phải lòng cô ấy rồi nhỉ? Mau hành động đi!"
+    }
+   ]
+  },
+  {
+   "point": "别无分店 —— 别无 (không có ... khác)",
+   "structure": "别无 + 名词/动词（双音节）",
+   "explanation": "别 là phó từ, nghĩa là \"khác, ngoài ra\". 别无 nghĩa là \"không có cái khác, ngoài ra không có\". Ví dụ: 别无选择 (không còn lựa chọn nào khác), 别无退路, 别无所求, 别无所长, 别无爱好, 别无办法, 别无二致 (không khác gì nhau), 别无要求, 别无优点, 别无特长. Liên hệ: 别有…… nghĩa là \"có ... khác, riêng\": 别有用心 (có ý đồ khác không thể nói ra), 别有风味, 别有情趣, 别有特色, 别有天地 / 别有洞天 (có một cảnh giới khác), 别有一番滋味 (có một cảm giác đặc biệt khác).",
+   "examples": [
+    {
+     "zh": "就这我还不乐意干呢！可惜别无分店。",
+     "vi": "Giá đó anh còn chẳng muốn làm đâu! Tiếc là chỉ có một tiệm, không có chi nhánh khác."
+    }
+   ]
+  },
+  {
+   "point": "眼睛都不眨 (mắt cũng không chớp, không chút do dự)",
+   "structure": "眼睛都不眨（地）+ 动词",
+   "explanation": "Hình dung dáng vẻ không hề do dự, thái độ rất quả quyết (thường làm trạng ngữ hoặc đứng trước động từ).",
+   "examples": [
+    {
+     "zh": "到底是少年人干脆，他眼睛都不眨地说：“200。我每月200块钱就行了。”",
+     "vi": "Rốt cuộc vẫn là tuổi trẻ dứt khoát, nó mắt cũng không chớp mà nói: \"200. Mỗi tháng con lấy 200 đồng là được rồi.\""
+    },
+    {
+     "zh": "他非常喜欢逛书店，遇到喜欢的书，不管多贵，掏钱时眼睛都不眨。",
+     "vi": "Anh ấy rất thích dạo hiệu sách, gặp cuốn thích thì dù đắt mấy, lúc móc tiền ra mắt cũng không chớp."
+    },
+    {
+     "zh": "我问他能不能帮我的忙，他眼睛都不眨就同意了。",
+     "vi": "Tôi hỏi anh ấy có giúp tôi được không, anh ấy không chút do dự liền đồng ý."
+    },
+    {
+     "zh": "看到有人落水了，他眼睛都不眨地马上跳下去救人。",
+     "vi": "Thấy có người rơi xuống nước, anh ấy không chút chần chừ lập tức nhảy xuống cứu."
+    }
+   ]
+  },
+  {
+   "point": "毫不 (không hề, không chút nào)",
+   "structure": "毫不 + 形容词/动词；毫无 + 名词",
+   "explanation": "毫不 + tính từ/động từ nghĩa là \"một chút cũng không\": 毫不犹豫, 毫不后悔, 毫不奇怪, 毫不在乎, 毫不在意, 毫不生气, 毫不畏惧, 毫不喜欢, 毫不担心, 毫不关心, 毫不珍惜, 毫不同情. Liên hệ: 毫无 + danh từ nghĩa là \"một chút cũng không có\": 毫无意义, 毫无反应, 毫无道理, 毫无准备, 毫无办法, 毫无特色, 毫无感情, 毫无变化, 毫无消息, 毫无表情, 毫无声息, 毫无经验. Sau 毫不 và 毫无 thường là từ hai âm tiết.",
+   "examples": [
+    {
+     "zh": "儿子毫不退缩，说：“那我50。”",
+     "vi": "Con trai không chút chùn bước, nói: \"Vậy con 50.\""
+    }
+   ]
+  },
+  {
+   "point": "醒过头 —— 动/形 + 过头 (quá mức)",
+   "structure": "动词/形容词 + 过头",
+   "explanation": "Biểu thị động tác, hành vi hoặc mức độ đã vượt quá giới hạn và chừng mực thích hợp. Với động từ: 睡过头 (ngủ quên/ngủ quá giờ), 洗过头, 夸过头, 喝过头, 玩过头, 吃过头, 煮过头, 保护过头, 照顾过头, 管理过头, 运动过头, 休息过头, 爱护过头. Với tính từ: 好过头, 长过头, 软过头, 甜过头, 热情过头, 厉害过头, 聪明过头, 高兴过头, 小心过头, 紧张过头, 劳累过头, 悲伤过头, 疲劳过头.",
+   "examples": [
+    {
+     "zh": "吵了这么长的时间，面都醒过头了！",
+     "vi": "Cãi nhau lâu như thế, bột ủ quá rồi!"
+    }
+   ]
+  }
+ ]
+}

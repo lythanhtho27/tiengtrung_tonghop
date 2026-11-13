@@ -1,0 +1,1066 @@
+{
+ "book": "gc1",
+ "lesson_num": 4,
+ "title": "沙漠里的奇怪现象",
+ "pages": [
+  74,
+  93
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "亲身",
+   "py": "qīnshēn",
+   "pos": "形",
+   "zh": "自己直接的（经验、感受等）。(亲身——亲自)",
+   "en": "",
+   "hv": "THÂN THÂN",
+   "vi": "tự thân, chính mình (trải qua)",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "统",
+   "py": "tǒng",
+   "pos": "副",
+   "zh": "总起来；总括；全部。",
+   "en": "",
+   "hv": "THỐNG",
+   "vi": "đều, tất cả, nhất loạt",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "火热",
+   "py": "huǒrè",
+   "pos": "形",
+   "zh": "像火一样热。",
+   "en": "",
+   "hv": "HỎA NHIỆT",
+   "vi": "nóng như lửa",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "荒凉",
+   "py": "huāngliáng",
+   "pos": "形",
+   "zh": "人烟少；冷清。",
+   "en": "",
+   "hv": "HOANG LƯƠNG",
+   "vi": "hoang vắng, hoang vu",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "走兽",
+   "py": "zǒushòu",
+   "pos": "名",
+   "zh": "泛指兽类。",
+   "en": "beast",
+   "hv": "TẨU THÚ",
+   "vi": "thú vật, muông thú",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "举目",
+   "py": "jǔmù",
+   "pos": "动",
+   "zh": "抬起眼睛（看）。",
+   "en": "",
+   "hv": "CỬ MỤC",
+   "vi": "ngước mắt (nhìn)",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "循(着)",
+   "py": "xún(zhe)",
+   "pos": "动",
+   "zh": "遵守；依照；沿袭。",
+   "en": "",
+   "hv": "TUẦN (TRƯỚC)",
+   "vi": "men theo, dựa theo",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "流动",
+   "py": "liúdòng",
+   "pos": "动",
+   "zh": "移动。",
+   "en": "",
+   "hv": "LƯU ĐỘNG",
+   "vi": "di chuyển, chuyển động",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "脚印",
+   "py": "jiǎoyìn",
+   "pos": "名",
+   "zh": "脚踏过的痕迹。",
+   "en": "",
+   "hv": "CƯỚC ẤN",
+   "vi": "dấu chân",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "迷路",
+   "py": "mí lù",
+   "pos": "",
+   "zh": "迷失道路。",
+   "en": "",
+   "hv": "MÊ LỘ",
+   "vi": "lạc đường",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "地质",
+   "py": "dìzhì",
+   "pos": "名",
+   "zh": "地壳的成分和结构。",
+   "en": "structure of composition of the Earth's crust; geology",
+   "hv": "ĐỊA CHẤT",
+   "vi": "địa chất",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "离奇",
+   "py": "líqí",
+   "pos": "形",
+   "zh": "不平常；出人意料。",
+   "en": "",
+   "hv": "LY KỲ",
+   "vi": "ly kỳ, kỳ lạ",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "阻挡",
+   "py": "zǔdǎng",
+   "pos": "动",
+   "zh": "阻止；拦住。",
+   "en": "",
+   "hv": "TRỞ ĐÁNG",
+   "vi": "ngăn cản, cản trở",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "行进",
+   "py": "xíngjìn",
+   "pos": "动",
+   "zh": "向前行走（多用于队伍）。",
+   "en": "",
+   "hv": "HÀNH TIẾN",
+   "vi": "tiến lên, hành quân",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "缘故",
+   "py": "yuángù",
+   "pos": "名",
+   "zh": "原因。也作原故。(缘故——原因)",
+   "en": "",
+   "hv": "DUYÊN CỐ",
+   "vi": "nguyên cớ, duyên cớ",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "和尚",
+   "py": "héshang",
+   "pos": "名",
+   "zh": "出家修行的男佛教徒。",
+   "en": "",
+   "hv": "HÒA THƯỢNG",
+   "vi": "nhà sư, hòa thượng",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "不胜",
+   "py": "búshèng",
+   "pos": "动",
+   "zh": "承受不了；不能忍受。",
+   "en": "",
+   "hv": "BẤT THẮNG",
+   "vi": "không chịu nổi",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "开小差",
+   "py": "kāi xiǎochāi",
+   "pos": "",
+   "zh": "军人私自脱离队伍逃跑，也泛指擅自离开岗位。",
+   "en": "",
+   "hv": "KHAI TIỂU SAI",
+   "vi": "đào ngũ, bỏ trốn; tự ý bỏ vị trí",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "单枪匹马",
+   "py": "dān qiāng pǐ mǎ",
+   "pos": "",
+   "zh": "指单独行动，没有别人帮助。也说匹马单枪。",
+   "en": "",
+   "hv": "ĐƠN THƯƠNG THẤT MÃ",
+   "vi": "đơn thương độc mã",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "随从",
+   "py": "suícóng",
+   "pos": "动",
+   "zh": "跟随（领导）。",
+   "en": "",
+   "hv": "TÙY TÙNG",
+   "vi": "đi theo, tùy tùng",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "神话",
+   "py": "shénhuà",
+   "pos": "名",
+   "zh": "关于神仙或神化的古代英雄的故事。",
+   "en": "myth; fairy tale",
+   "hv": "THẦN THOẠI",
+   "vi": "thần thoại",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "骆驼",
+   "py": "luòtuo",
+   "pos": "名",
+   "zh": "",
+   "en": "camel",
+   "hv": "LẠC ĐÀ",
+   "vi": "lạc đà",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "困苦",
+   "py": "kùnkǔ",
+   "pos": "形",
+   "zh": "（生活上）艰难痛苦。",
+   "en": "",
+   "hv": "KHỐN KHỔ",
+   "vi": "khốn khổ, gian khổ",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "魔鬼",
+   "py": "móguǐ",
+   "pos": "名",
+   "zh": "宗教或神话中指迷惑人、害人性命的鬼怪。",
+   "en": "devil; demon",
+   "hv": "MA QUỶ",
+   "vi": "ma quỷ",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "确",
+   "py": "què",
+   "pos": "副",
+   "zh": "确实；的确。",
+   "en": "",
+   "hv": "XÁC",
+   "vi": "quả thực, đích thực",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "作怪",
+   "py": "zuòguài",
+   "pos": "动",
+   "zh": "指鬼怪害人，比喻坏人或坏思想捣乱，起破坏作用。",
+   "en": "",
+   "hv": "TÁC QUÁI",
+   "vi": "quấy phá, tác oai tác quái",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "光怪陆离",
+   "py": "guāngguài lùlí",
+   "pos": "",
+   "zh": "形容现象奇异、色彩繁杂。",
+   "en": "",
+   "hv": "QUANG QUÁI LỤC LY",
+   "vi": "kỳ dị muôn màu, quái lạ sặc sỡ",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "渴不可耐",
+   "py": "kě bù kě nài",
+   "pos": "",
+   "zh": "形容人口干，想喝水已经到了无法忍耐的地步。",
+   "en": "",
+   "hv": "KHÁT BẤT KHẢ NẠI",
+   "vi": "khát không chịu nổi",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "蓄",
+   "py": "xù",
+   "pos": "动",
+   "zh": "储存；积蓄。",
+   "en": "",
+   "hv": "SÚC",
+   "vi": "chứa, tích trữ",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "碧蓝",
+   "py": "bìlán",
+   "pos": "形",
+   "zh": "青蓝色。",
+   "en": "",
+   "hv": "BÍCH LAM",
+   "vi": "xanh biếc",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "欢天喜地",
+   "py": "huān tiān xǐ dì",
+   "pos": "",
+   "zh": "形容非常欢喜。",
+   "en": "",
+   "hv": "HOAN THIÊN HỈ ĐỊA",
+   "vi": "vui mừng hớn hở",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "蔚蓝",
+   "py": "wèilán",
+   "pos": "形",
+   "zh": "像晴朗的天空的颜色。",
+   "en": "",
+   "hv": "ÚY LAM",
+   "vi": "xanh thẳm, xanh da trời",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "可望而不可即",
+   "py": "kě wàng ér bù kě jí",
+   "pos": "",
+   "zh": "只能够望见而不能够接近，形容看来可以实现而实际难以实现。",
+   "en": "",
+   "hv": "KHẢ VỌNG NHI BẤT KHẢ TỨC",
+   "vi": "nhìn thấy mà không với tới được",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "法宝",
+   "py": "fǎbǎo",
+   "pos": "名",
+   "zh": "比喻用起来特别有效的工具、方法或经验。",
+   "en": "",
+   "hv": "PHÁP BẢO",
+   "vi": "pháp bảo, bí quyết (công cụ, cách thức hữu hiệu)",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "初叶",
+   "py": "chūyè",
+   "pos": "名",
+   "zh": "（一个世纪或一个朝代）最初一段时期。",
+   "en": "",
+   "hv": "SƠ DIỆP",
+   "vi": "đầu (thế kỷ, triều đại)",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "戳穿",
+   "py": "chuōchuān",
+   "pos": "动",
+   "zh": "说破；揭穿。",
+   "en": "",
+   "hv": "TRẠC XUYÊN",
+   "vi": "vạch trần, bóc trần",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "殖民地",
+   "py": "zhímíndì",
+   "pos": "名",
+   "zh": "指一个国家在国外侵占并大批移民居住的地区。在资本主义时期，指被资本主义国家剥夺了政治、经济的独立权力，并受它管辖的地区或国家。",
+   "en": "colony",
+   "hv": "THỰC DÂN ĐỊA",
+   "vi": "thuộc địa",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "极为",
+   "py": "jíwéi",
+   "pos": "副",
+   "zh": "非常（语气庄重）。",
+   "en": "",
+   "hv": "CỰC VI",
+   "vi": "vô cùng, hết sức",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "酷热",
+   "py": "kùrè",
+   "pos": "形",
+   "zh": "（天气）极热。",
+   "en": "",
+   "hv": "KHỐC NHIỆT",
+   "vi": "nóng gay gắt, nóng như thiêu",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "折光",
+   "py": "zhéguāng",
+   "pos": "动",
+   "zh": "（物质）使通过的光线发生折射。",
+   "en": "(of water, glass, etc.) refract light",
+   "hv": "CHIẾT QUANG",
+   "vi": "khúc xạ ánh sáng",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "反射",
+   "py": "fǎnshè",
+   "pos": "动",
+   "zh": "声波或光波在传播过程中遇到障碍或与原来媒质不同的媒质面而返回。",
+   "en": "reflect",
+   "hv": "PHẢN XẠ",
+   "vi": "phản xạ",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "错觉",
+   "py": "cuòjué",
+   "pos": "名",
+   "zh": "由于某种原因引起的对客观事物的不正确的知觉。",
+   "en": "",
+   "hv": "THÁC GIÁC",
+   "vi": "ảo giác, nhận thức sai",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "乔木",
+   "py": "qiáomù",
+   "pos": "名",
+   "zh": "树干高大，主干和分枝有明显的区别的木本植物，如松、柏、杨、白桦等。",
+   "en": "arbor; tall tree",
+   "hv": "KIỀU MỘC",
+   "vi": "cây thân gỗ cao",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "栽",
+   "py": "zāi",
+   "pos": "动",
+   "zh": "栽种。",
+   "en": "",
+   "hv": "TÀI",
+   "vi": "trồng",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "映",
+   "py": "yìng",
+   "pos": "动",
+   "zh": "因光线照射而显出物体的形象。",
+   "en": "",
+   "hv": "ÁNH",
+   "vi": "phản chiếu, in bóng",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "汪洋",
+   "py": "wāngyáng",
+   "pos": "形",
+   "zh": "形容水势浩大的样子。",
+   "en": "",
+   "hv": "UÔNG DƯƠNG",
+   "vi": "mênh mông (nước)",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "顷",
+   "py": "qǐng",
+   "pos": "量",
+   "zh": "1顷=66667平方米。",
+   "en": "",
+   "hv": "KHOẢNH",
+   "vi": "khoảnh (đơn vị diện tích ruộng đất)",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "若是",
+   "py": "ruòshì",
+   "pos": "连",
+   "zh": "如果；如果是。",
+   "en": "",
+   "hv": "NHƯỢC THỊ",
+   "vi": "nếu, nếu như",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "地平线",
+   "py": "dìpíngxiàn",
+   "pos": "名",
+   "zh": "向水平方向望去，天跟地交界的线。",
+   "en": "",
+   "hv": "ĐỊA BÌNH TUYẾN",
+   "vi": "đường chân trời",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "寻常",
+   "py": "xúncháng",
+   "pos": "形",
+   "zh": "平常。(寻常——平常)",
+   "en": "",
+   "hv": "TẦM THƯỜNG",
+   "vi": "bình thường",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "岛屿",
+   "py": "dǎoyǔ",
+   "pos": "名",
+   "zh": "岛（总称）。",
+   "en": "",
+   "hv": "ĐẢO DỰ",
+   "vi": "đảo, hải đảo",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "统统",
+   "py": "tǒngtǒng",
+   "pos": "副",
+   "zh": "通通。",
+   "en": "",
+   "hv": "THỐNG THỐNG",
+   "vi": "tất cả, hết thảy",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "空中楼阁",
+   "py": "kōngzhōng lóugé",
+   "pos": "",
+   "zh": "指海市蜃楼，多用来比喻虚幻的事物或脱离实际的理论、计划等。",
+   "en": "",
+   "hv": "KHÔNG TRUNG LÂU CÁC",
+   "vi": "lâu đài trên không; viển vông",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "海市蜃楼",
+   "py": "hǎishì shènlóu",
+   "pos": "",
+   "zh": "大气中由于光线的折射作用而形成的一种自然现象。常用来比喻虚幻的事物。",
+   "en": "mirage; flyaway",
+   "hv": "HẢI THỊ THẬN LÂU",
+   "vi": "ảo ảnh, ảo cảnh",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "向来",
+   "py": "xiànglái",
+   "pos": "副",
+   "zh": "从来；一向。",
+   "en": "",
+   "hv": "HƯỚNG LAI",
+   "vi": "xưa nay, từ trước đến nay",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "鸣",
+   "py": "míng",
+   "pos": "动",
+   "zh": "发出声音；使发出声音。",
+   "en": "",
+   "hv": "MINH",
+   "vi": "kêu, vang lên",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "设",
+   "py": "shè",
+   "pos": "动",
+   "zh": "设立；布置。",
+   "en": "",
+   "hv": "THIẾT",
+   "vi": "đặt, thiết lập",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "呈",
+   "py": "chéng",
+   "pos": "动",
+   "zh": "具有（某种形式）；呈现（某种颜色、状态）。",
+   "en": "",
+   "hv": "TRÌNH",
+   "vi": "có (hình dạng), hiện ra",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "凹形",
+   "py": "āoxíng",
+   "pos": "名",
+   "zh": "低于周围的形状。",
+   "en": "",
+   "hv": "AO HÌNH",
+   "vi": "hình lõm",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "泉水",
+   "py": "quánshuǐ",
+   "pos": "名",
+   "zh": "从地下流出来的水。",
+   "en": "",
+   "hv": "TUYỀN THỦY",
+   "vi": "nước suối, nước mạch",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "涌",
+   "py": "yǒng",
+   "pos": "动",
+   "zh": "水或云气冒出。",
+   "en": "",
+   "hv": "DŨNG",
+   "vi": "phun trào, tuôn ra",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "崇拜",
+   "py": "chóngbài",
+   "pos": "动",
+   "zh": "尊敬钦佩。(崇拜——崇敬)",
+   "en": "",
+   "hv": "SÙNG BÁI",
+   "vi": "sùng bái, tôn thờ",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "聚会",
+   "py": "jùhuì",
+   "pos": "动",
+   "zh": "（人）会合；聚集。",
+   "en": "",
+   "hv": "TỤ HỘI",
+   "vi": "tụ họp",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "翻滚",
+   "py": "fāngǔn",
+   "pos": "动",
+   "zh": "来回翻身打滚儿；翻转滚动。",
+   "en": "",
+   "hv": "PHIÊN CỔN",
+   "vi": "lăn lộn, lăn tròn",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "轰隆隆",
+   "py": "hōnglōnglōng",
+   "pos": "拟声",
+   "zh": "形容雷声、爆炸声、机器声等。",
+   "en": "",
+   "hv": "OANH LONG LONG",
+   "vi": "ầm ầm, ùng oàng",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "巨响",
+   "py": "jùxiǎng",
+   "pos": "名",
+   "zh": "很大的响声。",
+   "en": "",
+   "hv": "CỰ HƯỞNG",
+   "vi": "tiếng động lớn",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "打雷",
+   "py": "dǎ léi",
+   "pos": "",
+   "zh": "指云层放电时发出巨大响声。",
+   "en": "",
+   "hv": "ĐẢ LÔI",
+   "vi": "sấm sét, sấm nổ",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "行走",
+   "py": "xíngzǒu",
+   "pos": "动",
+   "zh": "走。",
+   "en": "",
+   "hv": "HÀNH TẨU",
+   "vi": "đi, đi lại",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "石英",
+   "py": "shíyīng",
+   "pos": "名",
+   "zh": "一种矿物。",
+   "en": "quartz",
+   "hv": "THẠCH ANH",
+   "vi": "thạch anh",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "吹拂",
+   "py": "chuīfú",
+   "pos": "动",
+   "zh": "（微风）掠过；拂拭。",
+   "en": "",
+   "hv": "XUY PHẤT",
+   "vi": "(gió) thổi qua, mơn man",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "走动",
+   "py": "zǒudòng",
+   "pos": "动",
+   "zh": "行走而使身体活动。",
+   "en": "",
+   "hv": "TẨU ĐỘNG",
+   "vi": "đi lại, di chuyển",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "摩擦",
+   "py": "mócā",
+   "pos": "动",
+   "zh": "物体和物体紧密接触，来回移动。",
+   "en": "",
+   "hv": "MA SÁT",
+   "vi": "cọ xát, ma sát",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "古人",
+   "py": "gǔrén",
+   "pos": "名",
+   "zh": "泛指古代的人。",
+   "en": "",
+   "hv": "CỔ NHÂN",
+   "vi": "người xưa",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "怪异",
+   "py": "guàiyì",
+   "pos": "形",
+   "zh": "奇异。(怪异——奇怪)",
+   "en": "",
+   "hv": "QUÁI DỊ",
+   "vi": "kỳ lạ, quái dị",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "沙漠里的奇怪现象",
+   "paragraphs": [
+    "第一部分",
+    "古代亲身到过沙漠的人，如晋僧法显、唐僧玄奘，统把沙漠说得十分可怕，人们对它也就产生了深刻的印象。晋法显著《佛国记》说沙漠有很多恶鬼和火热的风，人一遇见就要死亡。沙漠是这样荒凉，空中看不见一只飞鸟，地上看不到一只走兽。举目远看尽是沙，弄得人认不出路，只是循着从前死人死马的骨头向前走。玄奘《大唐西域记》卷十二也说：东行入大流沙，沙被风吹永远流动着，过去人马走踏的脚印，不久就为沙所盖，所以人多迷路。",
+    "沙漠真像法显和玄奘所说的那样可怕么？解放以来，我们的地质部、石油部、中国科学院的工作人员已经好几次横穿新疆塔克拉玛干大戈壁，并没有什么鬼怪离奇的东西阻挡了他们的行进，这是什么缘故呢？",
+    "试想法显出发时只有七个和尚结队同行，而走了不久，就有人不胜其苦开了小差，有人病死途中，最后只留下他一人。唐玄奘也是单枪匹马深入大戈壁，所谓孙行者、猪八戒、沙和尚等随从人员，那是《西游记》小说中的神话。那时既无大队骆驼带了大量清水食品跟上来，更谈不到汽车和飞机来支援，当然就十分困苦了。",
+    "沙漠里真有魔鬼吗？在那时人们的知识水平看起来，确像是有魔鬼在作怪。但是人们掌握了自然规律以后，便可把这种光怪陆离的现象说清楚。光怪陆离的现象在大戈壁夏天日中是常见的事。当人们旅行得渴不可耐的时候，忽然看见一个很大的湖，里面蓄着碧蓝的清水。看来并不很远，但当人们欢天喜地似的向湖面奔去的时候，这蔚蓝的湖却总有那么一个距离，所谓“可望而不可即”。阿拉伯人是对沙漠广有经验的民族，阿拉伯语中称这一现象为“魔鬼的海”。这一魔鬼的法宝到了19世纪的初叶，才被法国数学家和水利工程师孟奇所戳穿。",
+    "第二部分",
+    "孟奇随拿破仑所领军队到埃及去和英国争夺殖民地，当时法国士兵在沙漠中见到这“魔鬼的海”极为惊奇，就去问孟奇。孟奇深深思考以后，指出这是因为沙漠中地面被太阳晒得酷热，贴近地面一层空气温度就比上面一两米的温度高许多。这样由于光线折光和反射的影响，人们产生了一个错觉，空中的乔木看来好像倒栽在地上，蔚蓝的天空倒映在地上，便看成是汪洋万顷的湖面了。若是近地面的空气温度下面低而上层高，短距离内相差7—8度，像在真的海边地区有时所遇见的那样，那便可把地平线下寻常所见不到的岛屿、人物统统倒映到天空中，成为空中楼阁，又叫做海市蜃楼。中国向来形容这类现象为“光怪陆离”四个字是确有道理的。",
+    "在沙漠里边不但光线会作怪，声音也会作怪。唐玄奘相信这是魔鬼在迷惑人，直到如今，住在沙漠中的人们，却也还有相信的。群众把会发出声音的沙地称为“鸣沙”。在现宁夏回族自治区中卫县靠黄河有一个地方叫鸣沙山，即在今日沙汶头地方，科学院和铁道部等机关在此设有一个治沙站，站的后面便是腾格里沙漠。沙漠在此处已紧逼黄河河岸，沙高约一百米，沙坡面南坐北，中呈凹形，有很多泉水涌出。此沙向来是人们崇拜的对象，据说，每逢夏历端阳节，男男女女便在山上聚会，然后纷纷顺着山坡翻滚下来。这时候沙子便发出轰隆隆的巨响，像打雷一样。两年前我和五六个同志曾经走到鸣沙山顶上慢慢下来，果然听到隆隆之声，好像远处汽车在行走似的。据说，只要沙漠面部的沙子是细沙而干燥，含有大部分石英，被太阳晒得火热后，经风的吹拂或人马的走动，沙粒移动摩擦起来便会发出声音，这便是鸣沙。古人说“见怪不怪，其怪自败”，沙漠里的一切怪异现象，其实都是可以用科学道理来说明的。",
+    "（作者：竺可桢，选自《语文课外阅读》（第五册），有改动）"
+   ],
+   "translations": [
+    "Phần một",
+    "Những người thời xưa từng tự mình đến sa mạc, như nhà sư Pháp Hiển đời Tấn, nhà sư Huyền Trang đời Đường, đều tả sa mạc vô cùng đáng sợ, nên người đời cũng có ấn tượng sâu sắc về nó. Trong \"Phật quốc ký\", Pháp Hiển đời Tấn viết rằng sa mạc có rất nhiều ác quỷ và những cơn gió nóng như lửa, người gặp phải là chết. Sa mạc hoang vu đến mức trên trời không thấy một cánh chim, dưới đất không thấy một con thú. Ngước mắt nhìn xa chỉ toàn là cát, khiến người ta không nhận ra đường, chỉ có thể lần theo xương người chết, ngựa chết từ trước mà đi tới. Quyển mười hai \"Đại Đường Tây Vực ký\" của Huyền Trang cũng viết: đi về phía đông vào vùng cát chảy lớn, cát bị gió thổi luôn luôn di chuyển, dấu chân người ngựa đi qua chẳng bao lâu đã bị cát vùi lấp, vì thế người ta thường lạc đường.",
+    "Sa mạc có thật đáng sợ như Pháp Hiển và Huyền Trang nói không? Từ sau giải phóng, cán bộ của Bộ Địa chất, Bộ Dầu mỏ và Viện Khoa học Trung Quốc đã nhiều lần băng qua đại sa mạc Taklamakan ở Tân Cương, mà chẳng có thứ ma quỷ kỳ quái nào cản bước tiến của họ cả. Đó là vì cớ gì?",
+    "Thử nghĩ xem, khi Pháp Hiển lên đường chỉ có bảy nhà sư kết đoàn đi cùng, vậy mà đi chưa được bao lâu đã có người không chịu nổi gian khổ mà bỏ trốn, có người bệnh chết dọc đường, cuối cùng chỉ còn lại một mình ông. Đường Huyền Trang cũng đơn thương độc mã tiến sâu vào đại sa mạc; còn cái gọi là những người đi theo như Tôn Hành Giả, Trư Bát Giới, Sa Hòa Thượng thì đó là chuyện thần thoại trong tiểu thuyết \"Tây du ký\". Thời ấy vừa không có đoàn lạc đà lớn chở theo nhiều nước sạch, lương thực, lại càng không nói đến ô tô, máy bay tiếp ứng, đương nhiên là vô cùng gian khổ.",
+    "Trong sa mạc thật sự có ma quỷ ư? Xét theo trình độ hiểu biết của người thời ấy, quả thực giống như có ma quỷ đang tác quái. Nhưng khi con người đã nắm được quy luật tự nhiên, thì có thể giải thích rõ ràng những hiện tượng kỳ dị muôn màu ấy. Những hiện tượng kỳ lạ như thế là chuyện thường gặp vào giữa trưa mùa hè trên đại sa mạc. Khi người lữ hành khát đến không chịu nổi, bỗng thấy một hồ nước rất lớn, chứa đầy nước trong xanh biếc. Trông có vẻ không xa lắm, nhưng khi người ta mừng rỡ hớn hở chạy về phía mặt hồ, thì cái hồ xanh thẳm ấy lại luôn cách một khoảng như thế — đúng là \"nhìn thấy mà không với tới được\". Người Ả Rập là dân tộc giàu kinh nghiệm về sa mạc, trong tiếng Ả Rập gọi hiện tượng này là \"biển của ma quỷ\". Pháp bảo này của ma quỷ mãi đến đầu thế kỷ 19 mới bị nhà toán học kiêm kỹ sư thủy lợi người Pháp Monge vạch trần.",
+    "Phần hai",
+    "Monge theo đội quân do Napoléon chỉ huy sang Ai Cập tranh giành thuộc địa với nước Anh. Khi ấy binh lính Pháp nhìn thấy \"biển của ma quỷ\" này giữa sa mạc thì vô cùng kinh ngạc, bèn đến hỏi Monge. Sau khi suy nghĩ kỹ, Monge chỉ ra rằng đó là do mặt đất trong sa mạc bị mặt trời nung nóng gay gắt, lớp không khí sát mặt đất có nhiệt độ cao hơn nhiều so với lớp ở trên cao một hai mét. Như vậy, do ảnh hưởng của sự khúc xạ và phản xạ ánh sáng, con người sinh ra ảo giác: cây cao trên không trông như mọc ngược dưới đất, bầu trời xanh thẳm in ngược xuống mặt đất, thế là nhìn thành mặt hồ mênh mông vạn khoảnh. Nếu nhiệt độ không khí gần mặt đất ở dưới thấp mà ở trên cao, trong một khoảng cách ngắn chênh nhau 7–8 độ, như đôi khi gặp ở vùng ven biển thật, thì có thể khiến những hòn đảo, người và vật bình thường không thấy được dưới đường chân trời đều in ngược hết lên bầu trời, thành lâu đài trên không, còn gọi là \"hải thị thận lâu\". Người Trung Quốc xưa nay vẫn dùng bốn chữ \"quang quái lục ly\" để tả loại hiện tượng này, quả thật là có lý.",
+    "Trong sa mạc, không chỉ ánh sáng biết tác quái, mà âm thanh cũng biết tác quái. Đường Huyền Trang tin rằng đó là ma quỷ đang mê hoặc con người; cho đến tận bây giờ, người sống trong sa mạc vẫn còn có kẻ tin như vậy. Dân chúng gọi những bãi cát phát ra âm thanh là \"cát hát\" (minh sa). Ở huyện Trung Vệ, khu tự trị dân tộc Hồi Ninh Hạ ngày nay, sát bên Hoàng Hà có một nơi gọi là núi Minh Sa, tức vùng Sa Văn Đầu hiện nay; Viện Khoa học và Bộ Đường sắt cùng một số cơ quan khác đã đặt ở đây một trạm chống sa mạc hóa, phía sau trạm chính là sa mạc Tengger. Ở chỗ này, sa mạc đã áp sát bờ Hoàng Hà, cồn cát cao khoảng một trăm mét, sườn cát quay mặt về nam, tựa lưng về bắc, ở giữa lõm xuống, có nhiều mạch nước phun lên. Cồn cát này xưa nay vẫn là đối tượng được người ta tôn thờ. Nghe nói cứ đến tết Đoan Dương theo âm lịch, trai gái lại tụ họp trên núi, rồi lần lượt lăn theo sườn núi xuống. Lúc đó cát liền phát ra tiếng ầm ầm vang dội như sấm nổ. Hai năm trước, tôi cùng năm sáu đồng chí từng đi lên đỉnh núi Minh Sa rồi từ từ đi xuống, quả nhiên nghe thấy tiếng ầm ầm, giống như xe ô tô đang chạy ở đằng xa. Nghe nói chỉ cần cát trên mặt sa mạc là cát mịn và khô, chứa phần lớn là thạch anh, sau khi bị mặt trời nung nóng, gặp gió thổi qua hoặc người ngựa đi lại, các hạt cát di chuyển cọ xát vào nhau sẽ phát ra âm thanh — đó chính là cát hát. Người xưa nói: \"Thấy chuyện lạ mà không cho là lạ, thì cái lạ tự tan\". Mọi hiện tượng kỳ quái trong sa mạc, thực ra đều có thể dùng đạo lý khoa học để giải thích.",
+    "(Tác giả: Trúc Khả Trinh, trích từ \"Ngữ văn đọc thêm ngoài giờ\" (Tập năm), có sửa đổi)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "北京街头行车一乐",
+   "paragraphs": [
+    "在北京的马路上开车，景致美不胜收。无论是外地人还是北京人，也无论是乘客还是司机，都可以尽情欣赏。可是有一景，也有一乐，被大多数人忽略了。这也许是司机们的专利，录此备忘，或可供列位茶余饭后“笑一笑，十年少”。",
+    "北京街头，车实在是多。车多司机也多。司机多，其中的新手更是不少。新手上路，难免紧张，他们都希望“老司机”关照点儿。这在汽车后风挡玻璃上有充分的表现。",
+    "“新手”：简洁，明快。您看着办吧。",
+    "“新手请多关照”：直白，坦然，诚恳。谁不都得让着他点儿？",
+    "“新新手”：程度等于新新人类？大约昨天才从驾校出来。",
+    "“超级新手”：调侃（tiáokǎn）。闹不清这位是比新手技术高，还是比新手技术低，反正你对他客气点儿好。",
+    "“才拿本”：清楚地告诉你，是这么回事，驾驶证还没焐（wù）热。",
+    "还有一些就是和车有关的了：",
+    "“磨合”：有的是真磨合，有的是用磨合掩盖自己的手潮。原谅他吧。",
+    "“No kiss”：别亲我。友好也是保持距离。追尾的滋味儿不怎么好。",
+    "“人老车老请多关照”：是真的，司机五十多，车是三型伏尔加，希望不是挺大。同情他吧。",
+    "“快换车了”：是一辆菲亚特126P，请相信他吧。多真诚，是怕您着急，自己无所谓。",
+    "“离远点儿，我哥是大奔”：小狂。一辆拉达，攀了个远亲。多少有那么一点儿狐假虎威。",
+    "最经典的是一辆崭新的小奥拓后风挡玻璃上的浪漫：",
+    "“长大了就是卡迪拉克”：自信，有志气，宣言书。别嫌它小，看它多有朝气。",
+    "都说北京人多幽默，在北京街头开车，不时有些这样的“趣儿”，疲劳少了许多。",
+    "（作者：郭正方，选自《北京晚报》，有改动）"
+   ],
+   "translations": [
+    "Lái xe trên đường phố Bắc Kinh, cảnh sắc đẹp không kể xiết. Dù là người nơi khác hay người Bắc Kinh, dù là hành khách hay tài xế, ai cũng có thể thỏa thích ngắm nhìn. Thế nhưng có một cảnh, cũng là một thú vui, lại bị phần lớn mọi người bỏ qua. Đây có lẽ là \"đặc quyền\" của cánh tài xế; xin ghi lại để nhớ, may ra có thể giúp các vị lúc trà dư tửu hậu \"cười một cái, trẻ ra mười tuổi\".",
+    "Đường phố Bắc Kinh xe cộ thật là nhiều. Xe nhiều thì tài xế cũng nhiều. Tài xế nhiều, trong đó tay lái mới lại càng không ít. Tay lái mới ra đường khó tránh khỏi căng thẳng, họ đều mong các \"tài xế lão luyện\" nhường nhịn chiếu cố một chút. Điều này được thể hiện đầy đủ trên kính chắn gió phía sau xe.",
+    "\"Tay lái mới\": ngắn gọn, rõ ràng. Anh liệu mà xử nhé.",
+    "\"Tay lái mới, mong được chiếu cố\": thẳng thắn, thản nhiên, thành khẩn. Ai mà chẳng phải nhường anh ta một chút?",
+    "\"Tay lái mới tinh\": mức độ ngang với \"thế hệ mới mới\"? Chắc hôm qua mới ra khỏi trường dạy lái.",
+    "\"Siêu tay lái mới\": trêu chọc. Chẳng rõ vị này tay nghề cao hơn tay lái mới hay còn kém hơn tay lái mới, dù sao bạn cứ khách khí với anh ta một chút thì hơn.",
+    "\"Vừa mới có bằng\": nói rõ cho bạn biết sự tình là thế này: bằng lái còn chưa kịp ủ ấm.",
+    "Còn có một số câu thì liên quan đến chính chiếc xe:",
+    "\"Đang chạy rô-đa\": có người là chạy rô-đa thật, có người lấy rô-đa để che giấu tay lái non của mình. Thôi tha thứ cho anh ta.",
+    "\"No kiss\": đừng hôn tôi. Thân thiện cũng phải giữ khoảng cách. Cảm giác bị đâm từ phía sau chẳng dễ chịu gì.",
+    "\"Người già xe cũ, mong được chiếu cố\": là thật đấy, tài xế ngoài năm mươi, xe là chiếc Volga đời thứ ba, hy vọng chẳng còn mấy. Thương cảm cho ông ấy đi.",
+    "\"Sắp đổi xe rồi\": là một chiếc Fiat 126P, hãy tin anh ấy đi. Chân thành biết bao, là sợ bạn sốt ruột, chứ bản thân anh ấy thì chẳng sao.",
+    "\"Tránh xa ra, anh tôi là Mercedes đấy\": hơi ngông. Một chiếc Lada đi bám víu họ hàng xa. Ít nhiều có chút cáo mượn oai hùm.",
+    "Kinh điển nhất là câu lãng mạn trên kính sau của một chiếc Alto nhỏ mới tinh:",
+    "\"Lớn lên sẽ thành Cadillac\": tự tin, có chí khí, một bản tuyên ngôn. Đừng chê nó nhỏ, xem nó tràn trề sức sống biết bao.",
+    "Ai cũng bảo người Bắc Kinh hài hước; lái xe trên phố Bắc Kinh, thỉnh thoảng lại gặp những \"thú vui\" như thế, mệt mỏi cũng vơi đi nhiều.",
+    "(Tác giả: Quách Chính Phương, trích từ \"Bắc Kinh vãn báo\", có sửa đổi)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "亲身 (tự mình, đích thân trải qua)",
+   "structure": "亲身 + 动词（经历/体验/感受……）",
+   "explanation": "亲身 là tính từ, chỉ (kinh nghiệm, cảm nhận…) do chính mình trực tiếp trải qua. Liên hệ (链接): 亲自, 亲眼, 亲耳, 亲口, 亲手 đều là phó từ, biểu thị chính mình trực tiếp làm việc đó (tự mình, tận mắt, tận tai, chính miệng, tự tay).",
+   "examples": [
+    {
+     "zh": "古代亲身到过沙漠的人，……",
+     "vi": "Những người thời xưa từng tự mình đến sa mạc, …"
+    },
+    {
+     "zh": "我亲身经历过大地震，现在想起来，那真是一个可怕的梦。",
+     "vi": "Tôi từng tự mình trải qua trận động đất lớn, bây giờ nghĩ lại, đó thật là một cơn ác mộng."
+    },
+    {
+     "zh": "黄山的风景非常独特。百闻不如一见，你去亲身体验一下就知道了。",
+     "vi": "Phong cảnh Hoàng Sơn vô cùng độc đáo. Trăm nghe không bằng một thấy, bạn tự mình đến trải nghiệm sẽ biết."
+    },
+    {
+     "zh": "以前只是在书上看过日全食的奇观，这次我终于亲眼看到了。",
+     "vi": "Trước đây chỉ thấy kỳ quan nhật thực toàn phần trong sách, lần này cuối cùng tôi đã được tận mắt chứng kiến."
+    },
+    {
+     "zh": "老板亲口告诉我，不仅要提升我的工资，还要提升我的职位。",
+     "vi": "Ông chủ chính miệng nói với tôi rằng không chỉ tăng lương mà còn thăng chức cho tôi."
+    }
+   ]
+  },
+  {
+   "point": "统/统统 (đều, tất cả, hết thảy)",
+   "structure": "（多个事物）+ 统/统统 + 动词",
+   "explanation": "统/统统 là phó từ, nghĩa là “通通；全部” (tất cả, toàn bộ). Đối tượng được bổ nghĩa là nhiều sự vật, đứng trước “统统”. Phân biệt 统 — 统统: sau “统” thường là từ đơn âm tiết, sau “统统” thường là từ song âm tiết; “统” dùng nhiều trong văn viết, “统统” dùng nhiều trong khẩu ngữ; phạm vi dùng của “统统” rộng hơn “统”.",
+   "examples": [
+    {
+     "zh": "古代亲身到过沙漠的人，如晋僧法显、唐僧玄奘，统把沙漠说得十分可怕。",
+     "vi": "Những người xưa từng tự mình đến sa mạc như sư Pháp Hiển đời Tấn, sư Huyền Trang đời Đường, đều tả sa mạc vô cùng đáng sợ."
+    },
+    {
+     "zh": "那便可把地平线下寻常所见不到的岛屿、人物统统倒映到天空中……",
+     "vi": "Thì có thể khiến những hòn đảo, người vật bình thường không thấy được dưới đường chân trời đều in ngược hết lên bầu trời…"
+    },
+    {
+     "zh": "副词、介词、连词、助词等统称虚词。",
+     "vi": "Phó từ, giới từ, liên từ, trợ từ… được gọi chung là hư từ."
+    },
+    {
+     "zh": "他成天笑眯眯的，仿佛天底下的烦恼、忧愁，统统跟他无关。",
+     "vi": "Anh ta suốt ngày cười tít mắt, như thể mọi phiền não, âu sầu trên đời đều chẳng liên quan gì đến mình."
+    },
+    {
+     "zh": "他把老师的话统统忘到了脑后。",
+     "vi": "Nó quên sạch lời thầy dặn ra sau đầu."
+    }
+   ]
+  },
+  {
+   "point": "为/被……所…… (bị… (làm gì))",
+   "structure": "为/被 + 名词 + 所 + 动词/动词短语",
+   "explanation": "Tạo thành câu bị động, phần lớn dùng trong văn viết. “为” là giới từ, tương đương “被”. Động từ phải là động từ cập vật. Nói chung, nếu động từ đa âm tiết thì “所” có thể dùng hoặc không; nếu động từ đơn âm tiết thì bắt buộc phải có “所”. Động từ dùng được trong cấu trúc này không nhiều, chủ yếu có: song âm tiết — 吸引, 鼓舞, 感动, 尊敬, 战胜, 克服, 控制, 采纳, 驱使, 证明, 发现, 欺骗, 泄露, 误解, 暴露, 迷惑, 拥护…; đơn âm tiết — 笑, 阻, 迫, 动, 知…",
+   "examples": [
+    {
+     "zh": "过去人马走踏的脚印，不久就为沙所盖。",
+     "vi": "Dấu chân người ngựa đi qua, chẳng bao lâu đã bị cát vùi lấp."
+    },
+    {
+     "zh": "这一魔鬼的法宝到了19世纪的初叶，才被法国数学家和水利工程师孟奇所戳穿。",
+     "vi": "Pháp bảo này của ma quỷ mãi đến đầu thế kỷ 19 mới bị nhà toán học kiêm kỹ sư thủy lợi người Pháp Monge vạch trần."
+    },
+    {
+     "zh": "对于京剧我是外行，所说的话不免为内行（所）笑话。",
+     "vi": "Về kinh kịch tôi là người ngoại đạo, những gì tôi nói khó tránh bị người trong nghề chê cười."
+    },
+    {
+     "zh": "在调查情况时，必须不为表面现象（所）迷惑。",
+     "vi": "Khi điều tra tình hình, nhất định không được để hiện tượng bề ngoài làm mê hoặc."
+    },
+    {
+     "zh": "这支登山队在途中被风雪所阻。",
+     "vi": "Đội leo núi này bị gió tuyết cản trở giữa đường."
+    }
+   ]
+  },
+  {
+   "point": "所谓 (cái gọi là)",
+   "structure": "所谓 + “引语”/名词",
+   "explanation": "所谓 là tính từ, dùng để dẫn lại lời của người khác (từ ngữ được dẫn thường đặt trong ngoặc kép), nghĩa là “điều được nói đến”. Ngoài ra, “所谓” còn có thể chỉ cái mà một số người gọi như thế, hàm ý không thừa nhận, không khẳng định (sắc thái mỉa mai, hoài nghi).",
+   "examples": [
+    {
+     "zh": "所谓孙行者、猪八戒、沙和尚等随从人员，那是《西游记》小说中的神话。",
+     "vi": "Cái gọi là những người đi theo như Tôn Hành Giả, Trư Bát Giới, Sa Hòa Thượng, đó là chuyện thần thoại trong tiểu thuyết “Tây du ký”."
+    },
+    {
+     "zh": "看来并不很远，但当人们欢天喜地似的向湖面奔去的时候，这蔚蓝的湖却总有那么一个距离，所谓“可望而不可即”。",
+     "vi": "Trông có vẻ không xa lắm, nhưng khi người ta hớn hở chạy về phía mặt hồ thì cái hồ xanh thẳm ấy lại luôn cách một khoảng, đúng là cái gọi là “nhìn thấy mà không với tới được”."
+    },
+    {
+     "zh": "古人所谓的“天下”，实在小得可怜。",
+     "vi": "Cái “thiên hạ” mà người xưa nói đến, thực ra nhỏ đến đáng thương."
+    },
+    {
+     "zh": "难道这就是他们所谓的“艺术”？",
+     "vi": "Chẳng lẽ đây chính là cái mà họ gọi là “nghệ thuật”?"
+    },
+    {
+     "zh": "所谓“阳春白雪”，就是指那些高深的、不够通俗的文学艺术。",
+     "vi": "Cái gọi là “dương xuân bạch tuyết” chính là chỉ những tác phẩm văn học nghệ thuật cao siêu, không đủ bình dân."
+    }
+   ]
+  },
+  {
+   "point": "称X为Y / 把X称为Y (gọi X là Y)",
+   "structure": "称 X 为 Y ＝ 把 X 称为 Y",
+   "explanation": "“称” là động từ, nghĩa là “gọi; xưng hô”. “称X为Y” và “把X称为Y” có nghĩa giống nhau, đều là “gọi X là Y” (把X叫做Y). Nhưng khi X khá dài thì thường dùng “把X称为Y”.",
+   "examples": [
+    {
+     "zh": "阿拉伯语中称这一现象为“魔鬼的海”。",
+     "vi": "Trong tiếng Ả Rập gọi hiện tượng này là “biển của ma quỷ”."
+    },
+    {
+     "zh": "群众把会发出声音的沙地称为“鸣沙”。",
+     "vi": "Dân chúng gọi những bãi cát phát ra âm thanh là “cát hát”."
+    },
+    {
+     "zh": "中国人把孕育了中华文明的黄河称为“母亲河”。",
+     "vi": "Người Trung Quốc gọi Hoàng Hà, nơi thai nghén nền văn minh Trung Hoa, là “sông Mẹ”."
+    },
+    {
+     "zh": "他总是热心帮助别人，同学们都称他为“活雷锋”。",
+     "vi": "Anh ấy luôn nhiệt tình giúp đỡ người khác, bạn học đều gọi anh là “Lôi Phong sống”."
+    },
+    {
+     "zh": "中国人认为黄帝和炎帝是中华民族的始祖，因此中国人把自己称为“炎黄子孙”。",
+     "vi": "Người Trung Quốc cho rằng Hoàng Đế và Viêm Đế là thủy tổ của dân tộc Trung Hoa, vì vậy người Trung Quốc tự gọi mình là “con cháu Viêm Hoàng”."
+    }
+   ]
+  },
+  {
+   "point": "极为 (vô cùng, hết sức)",
+   "structure": "极为 + 双音节形容词/动词",
+   "explanation": "极为 là phó từ, nghĩa là “非常” (rất, vô cùng); thuộc văn viết, ngữ khí trang trọng. Có thể trực tiếp bổ nghĩa cho tính từ và động từ đa âm tiết, thường không thêm trợ từ kết cấu “地”. Ví dụ: 极为重视/严重/郑重/严谨/牢靠/巧妙/离奇/荒凉/严肃/恐慌/负责/不满/优美/感人/珍贵/恰当/认真/浓郁/危险/仔细/满意. Liên hệ 1: 极 — phó từ, nghĩa giống “极为” nhưng dùng cả trong khẩu ngữ lẫn văn viết; bổ nghĩa được cho từ song âm tiết lẫn đơn âm tiết (如“车开得极慢”); phía sau có thể thêm “不”, “能” (如“极不满意”, “极能说明问题”); có thể làm bổ ngữ (如“高兴极了”). Liên hệ 2: 极其 — phó từ, biểu thị rất, cực kỳ; cách dùng giống “极为”, các ví dụ của “极为” ở trên đều có thể thay bằng “极其”.",
+   "examples": [
+    {
+     "zh": "当时法国士兵在沙漠中见到这“魔鬼的海”极为惊奇，就去问孟奇。",
+     "vi": "Khi ấy binh lính Pháp thấy “biển của ma quỷ” này giữa sa mạc thì vô cùng kinh ngạc, bèn đến hỏi Monge."
+    }
+   ]
+  },
+  {
+   "point": "向来 (xưa nay, từ trước đến nay)",
+   "structure": "向来 + 动词短语/形容词短语/小句",
+   "explanation": "向来 là phó từ, nghĩa là “从来”, biểu thị từ trước đến nay đều như vậy. Phía sau có thể là cụm động từ, cụm tính từ hoặc câu nhỏ, cũng có thể là một động từ, tính từ song âm tiết đứng riêng. Thường dùng để biểu thị hành vi theo thói quen hoặc để đánh giá con người.",
+   "examples": [
+    {
+     "zh": "中国向来形容这类现象为“光怪陆离”四个字是确有道理的。",
+     "vi": "Người Trung Quốc xưa nay dùng bốn chữ “quang quái lục ly” để tả loại hiện tượng này, quả thật có lý."
+    },
+    {
+     "zh": "我向来主张孩子应该从小就学习干家务活儿。",
+     "vi": "Tôi xưa nay vẫn chủ trương trẻ con nên học làm việc nhà từ nhỏ."
+    },
+    {
+     "zh": "李教授做事向来严谨认真。",
+     "vi": "Giáo sư Lý làm việc xưa nay luôn nghiêm cẩn, chu đáo."
+    },
+    {
+     "zh": "跟爷爷下棋向来我输。",
+     "vi": "Chơi cờ với ông thì xưa nay toàn là tôi thua."
+    }
+   ]
+  }
+ ]
+}

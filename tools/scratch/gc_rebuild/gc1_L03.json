@@ -1,0 +1,1055 @@
+{
+ "book": "gc1",
+ "lesson_num": 3,
+ "title": "一诺千金",
+ "pages": [
+  53,
+  73
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "一诺千金",
+   "py": "yí nuò qiān jīn",
+   "pos": "",
+   "zh": "形容说话算数，所许诺言信实可靠。也说“千金一诺”。",
+   "en": "",
+   "hv": "NHẤT NẶC THIÊN KIM",
+   "vi": "một lời hứa đáng ngàn vàng; nói là giữ lời",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "孕妇",
+   "py": "yùnfù",
+   "pos": "名",
+   "zh": "怀孕的妇女。",
+   "en": "pregnant woman",
+   "hv": "DỰNG PHỤ",
+   "vi": "phụ nữ mang thai",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "腹部",
+   "py": "fùbù",
+   "pos": "名",
+   "zh": "肚子。",
+   "en": "belly; abdomen",
+   "hv": "PHÚC BỘ",
+   "vi": "bụng",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "隆起",
+   "py": "lóngqǐ",
+   "pos": "动",
+   "zh": "鼓起来，凸出。",
+   "en": "",
+   "hv": "LONG KHỞI",
+   "vi": "nhô lên, phình lên",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "蹒跚",
+   "py": "pánshān",
+   "pos": "形",
+   "zh": "走路缓慢、摇摆的样子。",
+   "en": "",
+   "hv": "BÀN SAN",
+   "vi": "lặc lè, chậm chạp lắc lư (dáng đi)",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "完毕",
+   "py": "wánbì",
+   "pos": "动",
+   "zh": "结束。(完毕——完结)",
+   "en": "",
+   "hv": "HOÀN TẤT",
+   "vi": "xong, kết thúc",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "额",
+   "py": "é",
+   "pos": "名",
+   "zh": "额头，脑门儿。",
+   "en": "forehead",
+   "hv": "NGẠCH",
+   "vi": "trán",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "新生",
+   "py": "xīnshēng",
+   "pos": "形",
+   "zh": "刚产生的；刚出现的。",
+   "en": "",
+   "hv": "TÂN SINH",
+   "vi": "mới sinh, mới ra đời",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "为难",
+   "py": "wéinán",
+   "pos": "形",
+   "zh": "感到难以应付。(为难——难为)",
+   "en": "",
+   "hv": "VI NAN",
+   "vi": "khó xử, lúng túng",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "难堪",
+   "py": "nánkān",
+   "pos": "形",
+   "zh": "不好意思。",
+   "en": "",
+   "hv": "NAN KHAM",
+   "vi": "ngượng ngùng, khó xử",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "归还",
+   "py": "guīhuán",
+   "pos": "动",
+   "zh": "把借来的钱或物还给原主。",
+   "en": "",
+   "hv": "QUY HOÀN",
+   "vi": "trả lại (đồ, tiền đã mượn)",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "责怪",
+   "py": "zéguài",
+   "pos": "动",
+   "zh": "责备、埋怨。",
+   "en": "",
+   "hv": "TRÁCH QUÁI",
+   "vi": "trách móc, oán trách",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "信用",
+   "py": "xìnyòng",
+   "pos": "名",
+   "zh": "能够履行跟人约定的事情而取得的信任。",
+   "en": "",
+   "hv": "TÍN DỤNG",
+   "vi": "chữ tín, uy tín",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "恍惚",
+   "py": "huǎnghū",
+   "pos": "形",
+   "zh": "神志不清；精神不集中。",
+   "en": "",
+   "hv": "HOẢNG HỐT",
+   "vi": "bần thần, lơ đãng, mơ màng",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "淌",
+   "py": "tǎng",
+   "pos": "动",
+   "zh": "往下流。",
+   "en": "",
+   "hv": "THẢNG",
+   "vi": "chảy (xuống), nhỏ giọt",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "攥",
+   "py": "zuàn",
+   "pos": "动",
+   "zh": "握。",
+   "en": "",
+   "hv": "TOẢN",
+   "vi": "nắm chặt",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "哑",
+   "py": "yǎ",
+   "pos": "形",
+   "zh": "嗓子干涩发不出声音，或发音低而不清楚。",
+   "en": "",
+   "hv": "Á",
+   "vi": "khàn (giọng)",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "戏法",
+   "py": "xìfǎ",
+   "pos": "名",
+   "zh": "魔术。",
+   "en": "magic; conjuring trick",
+   "hv": "HÍ PHÁP",
+   "vi": "trò ảo thuật",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "患",
+   "py": "huàn",
+   "pos": "动",
+   "zh": "得（病）。",
+   "en": "",
+   "hv": "HOẠN",
+   "vi": "mắc (bệnh)",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "如期",
+   "py": "rúqī",
+   "pos": "副",
+   "zh": "按照期限。",
+   "en": "",
+   "hv": "NHƯ KỲ",
+   "vi": "đúng hạn",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "借款",
+   "py": "jièkuǎn",
+   "pos": "名",
+   "zh": "借用的钱。",
+   "en": "",
+   "hv": "TÁ KHOẢN",
+   "vi": "khoản tiền vay, tiền mượn",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "拂晓",
+   "py": "fúxiǎo",
+   "pos": "名",
+   "zh": "天快亮的时候。",
+   "en": "",
+   "hv": "PHẤT HIỂU",
+   "vi": "rạng sáng, tảng sáng",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "攒",
+   "py": "zǎn",
+   "pos": "动",
+   "zh": "积聚；储蓄。",
+   "en": "",
+   "hv": "TOÀN",
+   "vi": "dành dụm, gom góp",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "乏",
+   "py": "fá",
+   "pos": "形",
+   "zh": "疲倦。",
+   "en": "",
+   "hv": "PHẠP",
+   "vi": "mệt mỏi",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "酣睡",
+   "py": "hānshuì",
+   "pos": "动",
+   "zh": "熟睡。",
+   "en": "",
+   "hv": "HAM THỤY",
+   "vi": "ngủ say",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "为何",
+   "py": "wèihé",
+   "pos": "副",
+   "zh": "为什么。",
+   "en": "",
+   "hv": "VỊ HÀ",
+   "vi": "vì sao, tại sao",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "十万火急",
+   "py": "shíwàn huǒjí",
+   "pos": "",
+   "zh": "形容事情紧急到了极点。",
+   "en": "",
+   "hv": "THẬP VẠN HỎA CẤP",
+   "vi": "khẩn cấp vô cùng, gấp gáp hết mức",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "唯一",
+   "py": "wéiyī",
+   "pos": "形",
+   "zh": "只有一个；独一无二。",
+   "en": "",
+   "hv": "DUY NHẤT",
+   "vi": "duy nhất",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "震撼",
+   "py": "zhènhàn",
+   "pos": "动",
+   "zh": "震动；摇撼。",
+   "en": "",
+   "hv": "CHẤN HÁM",
+   "vi": "làm rung động, chấn động",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "绵长",
+   "py": "miáncháng",
+   "pos": "形",
+   "zh": "延续很长。",
+   "en": "",
+   "hv": "MIÊN TRƯỜNG",
+   "vi": "dài lâu, kéo dài",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "深切",
+   "py": "shēnqiè",
+   "pos": "形",
+   "zh": "深刻而切实。",
+   "en": "",
+   "hv": "THÂM THIẾT",
+   "vi": "sâu sắc, thấm thía",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "奔腾",
+   "py": "bēnténg",
+   "pos": "动",
+   "zh": "跳跃着奔跑。",
+   "en": "",
+   "hv": "BÔN ĐẰNG",
+   "vi": "cuồn cuộn, sục sôi (như ngựa phi)",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "遗忘",
+   "py": "yíwàng",
+   "pos": "动",
+   "zh": "忘记。",
+   "en": "",
+   "hv": "DI VONG",
+   "vi": "quên lãng",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "相处",
+   "py": "xiāngchǔ",
+   "pos": "动",
+   "zh": "彼此接触来往，互相对待。",
+   "en": "",
+   "hv": "TƯƠNG XỬ",
+   "vi": "ở cùng nhau, chung đụng, đối xử với nhau",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "源头",
+   "py": "yuántóu",
+   "pos": "名",
+   "zh": "水发源的地方。",
+   "en": "",
+   "hv": "NGUYÊN ĐẦU",
+   "vi": "ngọn nguồn, khởi nguồn",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "牢靠",
+   "py": "láokào",
+   "pos": "形",
+   "zh": "稳妥可靠。",
+   "en": "",
+   "hv": "LAO KHÁO",
+   "vi": "vững chắc, đáng tin cậy",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "内涵",
+   "py": "nèihán",
+   "pos": "名",
+   "zh": "一个概念所包含的内容。",
+   "en": "intention",
+   "hv": "NỘI HÀM",
+   "vi": "nội hàm, ý nghĩa bên trong",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "是否",
+   "py": "shìfǒu",
+   "pos": "副",
+   "zh": "是不是。",
+   "en": "",
+   "hv": "THỊ PHỦ",
+   "vi": "có phải… hay không, liệu có",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "郑重",
+   "py": "zhèngzhòng",
+   "pos": "形",
+   "zh": "严肃认真。",
+   "en": "",
+   "hv": "TRỊNH TRỌNG",
+   "vi": "trịnh trọng, nghiêm túc",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "诚挚",
+   "py": "chéngzhì",
+   "pos": "形",
+   "zh": "诚恳真挚。",
+   "en": "",
+   "hv": "THÀNH CHÍ",
+   "vi": "chân thành, thành khẩn",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "严谨",
+   "py": "yánjǐn",
+   "pos": "形",
+   "zh": "严密谨慎。",
+   "en": "",
+   "hv": "NGHIÊM CẨN",
+   "vi": "nghiêm cẩn, chặt chẽ cẩn thận",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "磊落",
+   "py": "lěiluò",
+   "pos": "形",
+   "zh": "（心地）正大光明。",
+   "en": "",
+   "hv": "LỖI LẠC",
+   "vi": "quang minh chính đại, ngay thẳng",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "落地生根",
+   "py": "luò dì shēng gēn",
+   "pos": "",
+   "zh": "植物的种子落地以后扎根生长。文中比喻说话算数，说到做到。",
+   "en": "",
+   "hv": "LẠC ĐỊA SINH CĂN",
+   "vi": "rơi xuống đất là bén rễ; (ví) nói được làm được",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "一言既出，驷马难追",
+   "py": "yì yán jì chū, sì mǎ nán zhuī",
+   "pos": "",
+   "zh": "一句话说出了口，就是套四匹马的车也追不回，形容话说出之后，无法再收回。",
+   "en": "",
+   "hv": "NHẤT NGÔN KÝ XUẤT, TỨ MÃ NAN TRUY",
+   "vi": "một lời đã nói ra, bốn ngựa khó đuổi kịp (lời nói ra không rút lại được)",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "准则",
+   "py": "zhǔnzé",
+   "pos": "名",
+   "zh": "言论、行动等所依据的原则。",
+   "en": "",
+   "hv": "CHUẨN TẮC",
+   "vi": "chuẩn mực, nguyên tắc",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "含义",
+   "py": "hányì",
+   "pos": "名",
+   "zh": "（词句等）所包含的意义。",
+   "en": "",
+   "hv": "HÀM NGHĨA",
+   "vi": "hàm nghĩa, ý nghĩa",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "正气",
+   "py": "zhèngqì",
+   "pos": "名",
+   "zh": "光明正大的作风或风气；刚正的气节。",
+   "en": "",
+   "hv": "CHÍNH KHÍ",
+   "vi": "chính khí, khí tiết ngay thẳng",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "大千世界",
+   "py": "dàqiān shìjiè",
+   "pos": "",
+   "zh": "指广阔无边的世界。",
+   "en": "",
+   "hv": "ĐẠI THIÊN THẾ GIỚI",
+   "vi": "thế giới bao la rộng lớn",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "随意",
+   "py": "suí yì",
+   "pos": "",
+   "zh": "任凭自己的意思。(随意——随便)",
+   "en": "",
+   "hv": "TÙY Ý",
+   "vi": "tùy ý, tùy tiện",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "许诺",
+   "py": "xǔnuò",
+   "pos": "动",
+   "zh": "答应。",
+   "en": "",
+   "hv": "HỨA NẶC",
+   "vi": "hứa hẹn",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "兑现",
+   "py": "duìxiàn",
+   "pos": "动",
+   "zh": "比喻实现诺言。",
+   "en": "",
+   "hv": "ĐOÁI HIỆN",
+   "vi": "thực hiện (lời hứa), giữ lời",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "失信",
+   "py": "shī xìn",
+   "pos": "",
+   "zh": "答应别人的事没有做，失去信用。",
+   "en": "",
+   "hv": "THẤT TÍN",
+   "vi": "thất tín, sai hẹn",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "戏言",
+   "py": "xìyán",
+   "pos": "名",
+   "zh": "随便说说并不当真的话。",
+   "en": "",
+   "hv": "HÍ NGÔN",
+   "vi": "lời nói đùa",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "打折扣",
+   "py": "dǎ zhékòu",
+   "pos": "",
+   "zh": "比喻不完全按规定的、已承认的或已答应的来做。",
+   "en": "",
+   "hv": "ĐẢ CHIẾT KHẤU",
+   "vi": "giảm giá trị; làm không trọn như đã hứa",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "看轻",
+   "py": "kànqīng",
+   "pos": "动",
+   "zh": "不重视。",
+   "en": "",
+   "hv": "KHÁN KHINH",
+   "vi": "coi thường, xem nhẹ",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "倦怠",
+   "py": "juàndài",
+   "pos": "形",
+   "zh": "疲乏困倦。",
+   "en": "",
+   "hv": "QUYỆN ĐÃI",
+   "vi": "mệt mỏi, chán chường",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "袭",
+   "py": "xí",
+   "pos": "动",
+   "zh": "袭击；侵袭。",
+   "en": "",
+   "hv": "TẬP",
+   "vi": "ập đến, tấn công",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "心头",
+   "py": "xīntóu",
+   "pos": "名",
+   "zh": "心上，心里。",
+   "en": "",
+   "hv": "TÂM ĐẦU",
+   "vi": "trong lòng",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "潦倒",
+   "py": "liáodǎo",
+   "pos": "形",
+   "zh": "情绪低落；不如意。",
+   "en": "",
+   "hv": "LIÊU ĐẢO",
+   "vi": "sa sút, thất thế, chán nản",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "逊色",
+   "py": "xùnsè",
+   "pos": "形",
+   "zh": "差；不好。",
+   "en": "",
+   "hv": "TỐN SẮC",
+   "vi": "kém cỏi, thua kém, mờ nhạt",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "罕见",
+   "py": "hǎnjiàn",
+   "pos": "形",
+   "zh": "难得见到，很少见到。",
+   "en": "",
+   "hv": "HÃN KIẾN",
+   "vi": "hiếm thấy",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "倾盆大雨",
+   "py": "qīng pén dà yǔ",
+   "pos": "",
+   "zh": "大雨像从盆里泼出来一样。比喻雨下得非常大。",
+   "en": "",
+   "hv": "KHUYNH BỒN ĐẠI VŨ",
+   "vi": "mưa như trút nước",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "风雨无阻",
+   "py": "fēngyǔ wú zǔ",
+   "pos": "",
+   "zh": "事情不因刮风下雨而受阻，照常进行。",
+   "en": "",
+   "hv": "PHONG VŨ VÔ TRỞ",
+   "vi": "mưa gió cũng không ngăn được",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "瑟瑟",
+   "py": "sèsè",
+   "pos": "形",
+   "zh": "形容发抖的样子。",
+   "en": "",
+   "hv": "SẮT SẮT",
+   "vi": "run rẩy, run lẩy bẩy",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "帘",
+   "py": "lián",
+   "pos": "名",
+   "zh": "有遮掩作用的东西。",
+   "en": "(hanging) screen; curtain",
+   "hv": "LIÊM",
+   "vi": "rèm, màn",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "白茫茫",
+   "py": "báimángmáng",
+   "pos": "形",
+   "zh": "形容云、雾、雪、大水等白得一望无边。",
+   "en": "",
+   "hv": "BẠCH MANG MANG",
+   "vi": "trắng xóa mênh mông",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "固执",
+   "py": "gùzhi",
+   "pos": "形",
+   "zh": "（性情或态度）古板执著，不肯变通。(固执——顽固)",
+   "en": "",
+   "hv": "CỐ CHẤP",
+   "vi": "cố chấp, khăng khăng",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "击掌",
+   "py": "jīzhǎng",
+   "pos": "动",
+   "zh": "双方互相拍击手掌，表示对所立誓言永不反悔，或表示鼓励、庆贺等。",
+   "en": "",
+   "hv": "KÍCH CHƯỞNG",
+   "vi": "đập tay (vào nhau)",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "坦荡",
+   "py": "tǎndàng",
+   "pos": "形",
+   "zh": "形容心地纯洁，胸怀宽阔。",
+   "en": "",
+   "hv": "THẢN ĐÃNG",
+   "vi": "thẳng thắn, cởi mở, trong sáng",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "无愧",
+   "py": "wúkuì",
+   "pos": "动",
+   "zh": "没有什么可以惭愧的地方。(无愧——不愧)",
+   "en": "",
+   "hv": "VÔ QUÝ",
+   "vi": "không hổ thẹn",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "目睹",
+   "py": "mùdǔ",
+   "pos": "动",
+   "zh": "亲眼看到。",
+   "en": "",
+   "hv": "MỤC ĐỔ",
+   "vi": "tận mắt chứng kiến",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "升华",
+   "py": "shēnghuá",
+   "pos": "动",
+   "zh": "比喻事物的提高和精炼。",
+   "en": "",
+   "hv": "THĂNG HOA",
+   "vi": "thăng hoa",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "区区",
+   "py": "qūqū",
+   "pos": "形",
+   "zh": "（数量）少；（人或事物）不重要。",
+   "en": "",
+   "hv": "KHU KHU",
+   "vi": "nhỏ nhoi, cỏn con",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "畏惧",
+   "py": "wèijù",
+   "pos": "动",
+   "zh": "害怕。",
+   "en": "",
+   "hv": "ÚY CỤ",
+   "vi": "sợ hãi, e sợ",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "看重",
+   "py": "kànzhòng",
+   "pos": "动",
+   "zh": "很看得起；看得很重要。",
+   "en": "",
+   "hv": "KHÁN TRỌNG",
+   "vi": "coi trọng",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "开脱",
+   "py": "kāituō",
+   "pos": "动",
+   "zh": "解除（罪名）；推卸（对过失应负的责任）。",
+   "en": "",
+   "hv": "KHAI THOÁT",
+   "vi": "chạy tội, thoái thác (trách nhiệm)",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "腾",
+   "py": "téng",
+   "pos": "动",
+   "zh": "使空出时间、空间、人力等。",
+   "en": "",
+   "hv": "ĐẰNG",
+   "vi": "dành ra, thu xếp (thời gian, chỗ)",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "一诺千金",
+   "paragraphs": [
+    "第一部分",
+    "我做女孩时曾遇上一个男生开口问我借钱，而且张口就是借两元钱，在当时，这相当于我两个月的零花钱。我有些犹豫，因为人人都知道那男生家很贫穷，他母亲仿佛是个职业孕妇，每年都为他生一个弟弟或妹妹。她留给大家的形象不外乎两种：一是腹部隆起行走蹒跚；另一种是刚生产完毕，额上扎着布条抱着新生婴儿坐在家门口晒太阳。",
+    "我的为难令那男生难堪，他低下头，说那钱有急用，又说保证五天内归还。我不知怎么来拒绝他，只得把钱借给了他。",
+    "时间一天一天过去，到了第五天，男生竟没来上学。整个白天，我都在心里责怪他，骂他不守信用，恍恍惚惚的总想哭上一通。",
+    "夜里快要睡觉时忽然听到窗外有人叫我，打开窗，只见窗外站着那个男生，他的脸上淌着汗，手紧紧攥着拳头，哑着喉咙说：“看我变戏法！”他把拳头搁在窗台上，然后突然松开，手心里像开了花似的展开两元钱的纸币。",
+    "我惊喜地叫起来，他也快活地笑了，仿佛我们共同办成了一件事，让一块悬着的石头落了地。他反复说：“我是从旱桥奔过来的。”",
+    "后来，从那男生的获奖作文中知道，他当时借钱是急着给患低血糖的母亲买葡萄糖，为了如期归还借款，他天天夜里到北站附近的旱桥下帮菜家推菜。到了第五天拂晓他终于攒足了两元钱，乏极了，就倒在桥洞中熟睡，没料到竟酣睡了一个白天和黄昏。醒来后他就开始狂奔，所有的路人都猜不透这个少年为何十万火急地穿行在夜色中。",
+    "那是我和那男生的唯一的一次交往，但它给我留下的震撼却是绵长深切的。以后再看到“优秀”、“守信用”之类的字眼，总会联系上他，因为他身上奔腾着一种感人的一诺千金的精神。",
+    "那个男生后来据说果然成就了一番事业，也许他早已遗忘了我们相处的这一段，可我总觉得那是他走向成功的源头。",
+    "第二部分",
+    "一诺千金看来只是一种作风，一种实在，一种牢靠，可它的内涵涉及对世界是否郑重。诚挚、严谨的人做人做事自然磊落，落地生根，一言既出，驷马难追。那种准则的含义已超出了本身，而带着光彩的人类理想和精神、正气在其中。",
+    "然而处在大千世界，有着太多随意许诺，却从不兑现的人。那种人较之于一诺千金的人似乎活得轻松，可惜，这种情景不会长久，一个人失信多了，他的诺言也就被当成戏言，大打折扣，全面降价，且不说别人会怎样看轻他，就是他自己，那种无聊、倦怠都会渐渐袭上心头。人一沾上那种潦倒的气味，做人的光彩就会大为逊色。",
+    "去年秋天的一个傍晚，天降大雨，那是场罕见的倾盆大雨，我打着伞去车站接一个朋友，我们曾约定，风雨无阻。我在车站久等也没见朋友露面，倒是看到一个少年，没带伞，抱着肩瑟瑟地站在车牌边守候。我把伞伸过去，他感激地说谢谢，告诉我说，他也是在这儿等一个朋友。车一辆一辆开过，雨在伞边上形成一道道雨帘，天地间白茫茫的，怎么也不见我们所盼望的人。我对少年说，他们也许不会来了，可少年固执地摇摇头。又来了一辆车，突然，车上跳下一个少年，无比欢欣地叫了一声。伞下的少年一下蹿了出去，两个人热烈地击掌问候，那份快乐是如此坦荡无愧，相互的欣赏流淌在那一击中，让目睹那画面的我感到一种灵魂的升华。",
+    "我终于未能等到我的那份欣喜，当我失望而归，却在家接到朋友的电话。她说雨实在太大，所以……我想说，当时约定时为何要说风雨无阻，完全可以说大雨取消。既然已说了风雨无阻，区区风雨又何足畏惧。不过，我什么也没说，只是轻轻地挂断了电话。因为对于并不怎么看重诺言的人，她会找出一千条为自己开脱的理由，而我，更爱腾出时间想想那两个相会在暴雨中的少年。",
+    "（作者：秦文君，选自《语文课外阅读》（第五册））"
+   ],
+   "translations": [
+    "Phần một",
+    "Hồi còn là một cô bé, tôi từng gặp một cậu bạn trai mở lời hỏi vay tiền tôi, mà vừa mở miệng đã đòi vay hai đồng; thời ấy, số tiền đó bằng tiền tiêu vặt hai tháng của tôi. Tôi hơi do dự, vì ai cũng biết nhà cậu ấy rất nghèo, mẹ cậu dường như là một \"thai phụ chuyên nghiệp\", năm nào cũng sinh thêm cho cậu một đứa em trai hoặc em gái. Hình ảnh bà để lại trong mắt mọi người chẳng ngoài hai kiểu: một là bụng nhô cao, đi lại lặc lè; hai là vừa sinh nở xong, trán quấn dải vải, ôm đứa trẻ sơ sinh ngồi trước cửa nhà phơi nắng.",
+    "Vẻ khó xử của tôi khiến cậu ấy ngượng ngùng; cậu cúi đầu, nói số tiền ấy cần dùng gấp, lại hứa chắc chắn trong năm ngày sẽ trả. Tôi không biết phải từ chối thế nào, đành cho cậu mượn.",
+    "Thời gian trôi qua từng ngày, đến ngày thứ năm, cậu ấy lại không đến trường. Suốt cả ngày hôm đó, trong lòng tôi cứ trách móc cậu, mắng cậu không giữ chữ tín, người cứ bần thần, chỉ muốn khóc một trận cho hả.",
+    "Đêm ấy, lúc sắp đi ngủ, tôi bỗng nghe ngoài cửa sổ có người gọi mình. Mở cửa sổ ra, chỉ thấy cậu bạn ấy đứng bên ngoài, mặt đầm đìa mồ hôi, tay nắm chặt thành nắm đấm, giọng khàn khàn nói: \"Xem tớ làm ảo thuật này!\" Cậu đặt nắm tay lên bậu cửa sổ rồi bất ngờ xòe ra, trong lòng bàn tay như nở hoa, hiện ra tờ giấy bạc hai đồng.",
+    "Tôi mừng rỡ reo lên, cậu cũng vui vẻ cười, như thể hai đứa vừa cùng nhau làm xong một việc lớn, khiến tảng đá treo lơ lửng trong lòng cuối cùng cũng rơi xuống đất. Cậu cứ nhắc đi nhắc lại: \"Tớ chạy một mạch từ cầu cạn tới đây đấy.\"",
+    "Về sau, qua bài văn đoạt giải của cậu ấy, tôi mới biết lúc đó cậu vay tiền là để gấp gáp mua đường glucose cho người mẹ bị hạ đường huyết. Để trả nợ đúng hạn, đêm nào cậu cũng đến dưới chân cầu cạn gần ga Bắc giúp người bán rau đẩy xe rau. Đến rạng sáng ngày thứ năm, cuối cùng cậu cũng gom đủ hai đồng, mệt rã rời, liền nằm vật ra ngủ say trong gầm cầu, không ngờ ngủ một mạch hết cả ban ngày lẫn hoàng hôn. Tỉnh dậy, cậu lập tức chạy như bay; không người qua đường nào đoán được vì sao cậu thiếu niên ấy lại hối hả xuyên qua màn đêm gấp gáp đến thế.",
+    "Đó là lần duy nhất tôi và cậu bạn ấy có qua lại với nhau, nhưng sự rung động nó để lại trong tôi thì sâu sắc và dài lâu. Về sau, mỗi lần thấy những chữ như \"ưu tú\", \"giữ chữ tín\", tôi lại liên tưởng đến cậu, bởi trong con người cậu cuồn cuộn một tinh thần \"nhất nặc thiên kim\" — một lời hứa đáng ngàn vàng — thật cảm động.",
+    "Nghe nói về sau cậu ấy quả nhiên đã làm nên sự nghiệp. Có lẽ cậu đã quên từ lâu quãng thời gian chúng tôi quen biết ấy, nhưng tôi luôn cảm thấy đó chính là khởi nguồn cho con đường thành công của cậu.",
+    "Phần hai",
+    "\"Nhất nặc thiên kim\" xem ra chỉ là một tác phong, một sự thực thà, một sự đáng tin cậy, nhưng nội hàm của nó liên quan đến việc người ta có nghiêm túc với thế giới hay không. Người chân thành, nghiêm cẩn thì sống và làm việc tự nhiên quang minh lỗi lạc, nói được làm được, một lời đã nói ra thì bốn ngựa cũng khó đuổi theo. Ý nghĩa của chuẩn mực ấy đã vượt ra ngoài bản thân nó, mang trong mình lý tưởng, tinh thần và chính khí rạng ngời của con người.",
+    "Thế nhưng sống giữa thế giới bao la này, có quá nhiều người tùy tiện hứa hẹn mà chẳng bao giờ giữ lời. Loại người ấy so với người trọng lời hứa dường như sống nhẹ nhõm hơn; tiếc thay, cảnh ấy chẳng kéo dài được lâu. Một người thất tín nhiều lần thì lời hứa của anh ta cũng bị coi như lời nói đùa, giảm giá trị trầm trọng, mất giá toàn diện. Chưa nói người khác sẽ coi thường anh ta thế nào, ngay chính bản thân anh ta, cảm giác vô vị, chán chường cũng sẽ dần dần ập đến trong lòng. Con người một khi đã nhiễm cái mùi sa sút ấy, thì vẻ rạng rỡ làm người sẽ mờ nhạt đi rất nhiều.",
+    "Một chiều tối mùa thu năm ngoái, trời đổ mưa lớn, đó là một trận mưa như trút nước hiếm thấy. Tôi che ô ra bến xe đón một người bạn, chúng tôi đã hẹn nhau: mưa gió cũng không thay đổi. Tôi đợi ở bến rất lâu vẫn không thấy bạn xuất hiện, lại thấy một cậu thiếu niên không mang ô, ôm vai run lẩy bẩy đứng chờ bên biển báo xe. Tôi đưa ô sang che cho cậu, cậu cảm kích nói cảm ơn, rồi kể với tôi rằng cậu cũng đang đợi một người bạn ở đây. Xe cứ chiếc này nối chiếc kia chạy qua, nước mưa chảy thành từng tấm rèm quanh mép ô, trời đất trắng xóa mênh mông, mà người chúng tôi mong đợi thì mãi không thấy đâu. Tôi bảo cậu thiếu niên rằng có lẽ họ sẽ không đến nữa, nhưng cậu cương quyết lắc đầu. Lại một chiếc xe nữa tới, bỗng từ trên xe nhảy xuống một cậu thiếu niên, reo lên một tiếng vui mừng khôn tả. Cậu đứng dưới ô vụt lao ra, hai người hăng hái đập tay chào nhau. Niềm vui ấy thật thẳng thắn, không chút hổ thẹn; sự trân trọng dành cho nhau tuôn chảy trong cái đập tay ấy, khiến tôi — người tận mắt chứng kiến cảnh tượng — cảm thấy tâm hồn mình như được thăng hoa.",
+    "Rốt cuộc tôi vẫn không đợi được niềm vui của riêng mình. Khi tôi thất vọng trở về, thì ở nhà lại nhận được điện thoại của bạn. Cô ấy nói mưa to quá, nên là… Tôi muốn nói: lúc hẹn sao lại nói \"mưa gió cũng không ngăn được\", hoàn toàn có thể nói \"mưa lớn thì hủy\". Đã nói mưa gió không ngăn được rồi, thì chút mưa gió cỏn con có gì đáng sợ đâu. Nhưng tôi chẳng nói gì cả, chỉ khẽ gác máy. Bởi với người vốn chẳng mấy coi trọng lời hứa, cô ấy sẽ tìm ra cả nghìn lý do để bào chữa cho mình; còn tôi, tôi thích dành thời gian nghĩ về hai cậu thiếu niên gặp nhau trong cơn mưa bão kia hơn.",
+    "(Tác giả: Tần Văn Quân, trích từ \"Ngữ văn đọc thêm ngoài giờ\" (Tập năm))"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "四十年的等待",
+   "paragraphs": [
+    "故事发生在1949年5月5日。",
+    "这天下着大雨，而且风势猛劲，上海的黄浦江上浊浪滚滚，好像一锅煮开了的水，正在沸腾。北京路口的外滩码头上挤满了人，招商局开往台湾的复兴轮即将启碇（dìng），人们都争先恐后地抢着登船。人群中一对青年男女正拥在一起殷殷道别，工程师王宝华是交通大学的高材生，他的未婚妻李玉洁在中西女中教英文。宝华与玉洁自小邻居，一同住在愚园路的梅村里。李家妈妈到王家去串门子，总带着玉洁一起去，王家妈妈便对玉洁说道：“大囡（nān，方言，小孩儿），叫王家阿哥带你出去买东西吃。”于是宝华便拉着玉洁的手，带她到街口老大房买陈皮梅给她吃。宝华从小就会照顾大囡。玉洁对王家阿哥也只有佩服的份，她在学校里解不出的算术难题，宝华瞄一眼就知道答案了。还是很小的时候，宝华8岁吧，玉洁才6岁，有一天，两个小人儿蹲在梅村院子里的蔷薇花架下玩儿泥巴。宝华对玉洁说道：“大囡，你阿要（方言，要不要）做我的家子婆（方言，妻子）？”玉洁搓着一双小泥手，笑嘻嘻地答道：“好咯。”两个小人儿都不懂“家子婆”是什么意思，宝华听厨子阿福赶着阿福嫂叫她“家子婆”，而且叫得很亲热。宝华与玉洁原本已经订好7月28日结婚的，请帖都写好了，在梅陇镇酒家请喜酒。可是宝华的公司突然决定全部搬到台湾去，宝华挨到最后汽笛都鸣了三声才肯上船，分手前他对玉洁说道：“大囡，你等我，我7月一定回来，我们结婚。”玉洁在大雨中撑着伞，望着复兴轮开出江口，渐渐消失在烟雨中。天黑了，她还是不肯离去。玉洁脸上雨水和着泪水，湿淋淋的。",
+    "那是最后一班从上海开往台湾的轮船。复兴轮有去无回，那条航线骤然中断……",
+    "四十年后的1989年5月15日，在兰州，这个故事有了新的续篇。",
+    "西北的春天姗姗来迟，校园里的杨柳刚刚才抽条，这天的阳光分外灿烂，风吹在身上也是暖融融的。兰州大学的大礼堂里挤满了学生与教职员，都在听从台湾来的石化专家作专题演讲。演讲精彩，气氛热烈。专家被学生包围了半天，走出大礼堂时，人群中一位白发萧萧的老妇人迎向他蹒跚走来，站在他跟前叫了一声：“王家阿哥！”老妇人看见专家满脸惊愕，说道：“我是大囡，你不认得了，刚才我听了他们介绍才认出你来的。”那天晚上在旅馆里，王宝华执着李玉洁的手，两人抢着讲话，一边讲一边哭，又一边笑，讲到天亮，讲到正午。玉洁告诉宝华，他离开后的前几年，每个星期天她都到外滩江边去守望，明知他回不来了，可是她那颗心总被那滚滚而去的江水牵系着，牵到那远处的海角天涯。1957年她来到兰州，一直在兰州大学当一名文书职员。退休至今，已有十年。玉洁幽幽地说道：“你叫我等你，我等你一直等到今天。”说着，玉洁掩面痛哭起来。宝华掏出手帕忙着替玉洁拭泪，握握她的手，拍拍她的背，抚着她那一头颤动的白发叫道：“大囡，大囡——”他告诉她，他在台湾，朝朝暮暮，没有一天不思念她，他也为她守身守到如今，还没娶妻。她替他织的那条枣红色围巾，他一直带在身边，年年拿出来围在脖子上，直到围巾磨穿了一个大洞，还珍藏在箱底，舍不得丢弃。这几年，台湾开放探亲，他来过内地不下十几次，到处寻找她，走遍大江南北，远到黑龙江去。总算天可怜见，让他们两人在兰州不期相逢。玉洁听着愈哭愈厉害，停不下来，宝华急得直摇她的肩膀，哄着她说道：“大囡，莫哭了，你听着，我们马上结婚，阿哥讨你做家子婆，阿好？”玉洁抬起头，泪眼模糊地望着宝华，半晌，突然噗嗤（pūchī）一声破涕为笑，指着宝华说道：“阿哥，你看你，怎么搞的，头发掉得一根也不剩了？”宝华怔了一下，腼腆（miǎntiǎn）地摸摸他那光秃秃的脑袋，也跟着不胜唏嘘（xīxū）地笑了起来。",
+    "这年7月28日，王宝华和李玉洁终于完成婚事，喜酒仍旧请在上海梅陇镇酒家，旧日交大及中西的老同学、老同事都来参加，场面热闹感人。这场婚礼，宝华与玉洁两人足足等了四十年。",
+    "（作者：白先勇，选自《故事会》）"
+   ],
+   "translations": [
+    "Câu chuyện xảy ra vào ngày 5 tháng 5 năm 1949.",
+    "Hôm ấy trời mưa to, gió lại thổi dữ dội, trên sông Hoàng Phố ở Thượng Hải sóng đục cuồn cuộn, như một nồi nước đang sôi sùng sục. Bến tàu Bến Thượng Hải ở đầu đường Bắc Kinh chật ních người, con tàu Phục Hưng của Cục Chiêu Thương chạy đi Đài Loan sắp nhổ neo, ai nấy tranh nhau chen lên tàu. Giữa đám đông có một đôi nam nữ trẻ đang ôm nhau tha thiết từ biệt. Kỹ sư Vương Bảo Hoa là sinh viên xuất sắc của Đại học Giao thông, vị hôn thê của anh là Lý Ngọc Khiết dạy tiếng Anh ở trường nữ trung học Trung Tây. Bảo Hoa và Ngọc Khiết là hàng xóm từ nhỏ, cùng sống trong ngõ Mai Thôn trên đường Ngu Viên. Mỗi lần mẹ nhà họ Lý sang nhà họ Vương chơi, bà đều dẫn Ngọc Khiết theo, mẹ nhà họ Vương liền bảo Ngọc Khiết: \"Đại Nam (nān, tiếng địa phương, nghĩa là bé con) này, bảo anh Vương dẫn con đi mua đồ ăn nhé.\" Thế là Bảo Hoa nắm tay Ngọc Khiết, dẫn cô đến tiệm Lão Đại Phòng ở đầu phố mua ô mai trần bì cho cô ăn. Từ nhỏ Bảo Hoa đã biết chăm sóc Đại Nam. Còn Ngọc Khiết thì đối với anh Vương chỉ có phần khâm phục; những bài toán khó ở trường cô giải không ra, Bảo Hoa chỉ liếc qua là biết đáp án. Hồi còn rất nhỏ, Bảo Hoa chừng 8 tuổi, Ngọc Khiết mới 6 tuổi, một hôm hai đứa nhỏ ngồi xổm dưới giàn hoa tường vi trong sân Mai Thôn nghịch đất. Bảo Hoa nói với Ngọc Khiết: \"Đại Nam, em có muốn (tiếng địa phương: có muốn không) làm 'gia tử bà' (tiếng địa phương: vợ) của anh không?\" Ngọc Khiết xoa xoa đôi bàn tay nhỏ lấm bùn, cười hì hì đáp: \"Được ạ.\" Cả hai đứa trẻ đều chẳng hiểu \"gia tử bà\" nghĩa là gì; Bảo Hoa chỉ nghe anh đầu bếp A Phúc cứ gọi chị A Phúc là \"gia tử bà\", mà gọi rất thân mật. Bảo Hoa và Ngọc Khiết vốn đã định cưới vào ngày 28 tháng 7, thiệp mời cũng đã viết xong, tiệc cưới đặt ở tửu gia Mai Lũng Trấn. Nhưng công ty của Bảo Hoa bỗng quyết định chuyển toàn bộ sang Đài Loan; Bảo Hoa nấn ná đến khi còi tàu rúc lên lần thứ ba mới chịu lên tàu. Trước khi chia tay, anh nói với Ngọc Khiết: \"Đại Nam, em đợi anh, tháng 7 anh nhất định về, chúng ta sẽ cưới nhau.\" Ngọc Khiết che ô đứng giữa mưa to, nhìn tàu Phục Hưng ra khỏi cửa sông, dần dần khuất vào màn mưa khói. Trời tối rồi, cô vẫn không chịu rời đi. Trên mặt Ngọc Khiết, nước mưa hòa lẫn nước mắt, ướt đẫm.",
+    "Đó là chuyến tàu cuối cùng từ Thượng Hải đi Đài Loan. Tàu Phục Hưng một đi không trở lại, tuyến đường biển ấy đột ngột bị cắt đứt…",
+    "Bốn mươi năm sau, ngày 15 tháng 5 năm 1989, tại Lan Châu, câu chuyện này có thêm đoạn tiếp theo.",
+    "Mùa xuân miền Tây Bắc đến muộn màng, hàng dương liễu trong sân trường mới vừa đâm chồi nảy nhánh. Hôm ấy nắng rực rỡ lạ thường, gió thổi vào người cũng ấm áp dễ chịu. Hội trường lớn của Đại học Lan Châu chật kín sinh viên và cán bộ giảng viên, tất cả đang nghe một chuyên gia hóa dầu từ Đài Loan đến thuyết trình chuyên đề. Bài thuyết trình đặc sắc, không khí sôi nổi. Chuyên gia bị sinh viên vây quanh hồi lâu; khi ông bước ra khỏi hội trường, giữa đám đông có một bà cụ tóc bạc phơ chậm chạp bước về phía ông, đứng trước mặt ông gọi một tiếng: \"Anh Vương!\" Thấy vị chuyên gia mặt đầy kinh ngạc, bà cụ nói: \"Em là Đại Nam đây, anh không nhận ra nữa rồi, vừa nãy em nghe người ta giới thiệu mới nhận ra anh đấy.\" Tối hôm đó trong khách sạn, Vương Bảo Hoa nắm tay Lý Ngọc Khiết, hai người tranh nhau nói, vừa nói vừa khóc, rồi lại vừa cười, nói đến sáng, nói đến tận trưa. Ngọc Khiết kể với Bảo Hoa rằng mấy năm đầu sau khi anh đi, chủ nhật nào cô cũng ra bờ sông ở Bến Thượng Hải ngóng trông; biết rõ anh không về được nữa, nhưng trái tim cô vẫn cứ bị dòng nước cuồn cuộn trôi đi kia níu kéo, kéo đến tận chân trời góc biển xa xăm. Năm 1957 cô đến Lan Châu, làm nhân viên văn thư ở Đại học Lan Châu suốt từ đó. Nghỉ hưu đến nay đã được mười năm. Ngọc Khiết buồn bã nói: \"Anh bảo em đợi anh, em đã đợi anh mãi cho đến hôm nay.\" Nói rồi, Ngọc Khiết úp mặt khóc nức nở. Bảo Hoa lấy khăn tay ra vội lau nước mắt cho cô, nắm tay cô, vỗ lưng cô, vuốt mái tóc bạc đang run run của cô mà gọi: \"Đại Nam, Đại Nam ơi——\" Anh kể với cô, ở Đài Loan, sớm sớm chiều chiều, không ngày nào anh không nhớ cô; anh cũng giữ mình vì cô đến tận bây giờ, vẫn chưa lấy vợ. Chiếc khăn quàng màu đỏ táo cô đan cho anh, anh luôn mang bên mình, năm nào cũng lấy ra quàng lên cổ, đến khi khăn mòn thủng một lỗ to, anh vẫn cất kỹ dưới đáy rương, không nỡ vứt đi. Mấy năm nay, Đài Loan cho phép về thăm thân, anh đã về đại lục không dưới mười mấy lần, tìm cô khắp nơi, đi khắp Nam Bắc, xa đến tận Hắc Long Giang. Rốt cuộc trời cũng thương, cho hai người tình cờ gặp lại ở Lan Châu. Ngọc Khiết nghe vậy càng khóc dữ hơn, không sao nín được, Bảo Hoa cuống quýt lay vai cô, dỗ dành: \"Đại Nam, đừng khóc nữa, em nghe này, chúng ta cưới ngay, anh cưới em làm 'gia tử bà', được không?\" Ngọc Khiết ngẩng đầu, đôi mắt nhòa lệ nhìn Bảo Hoa, hồi lâu bỗng \"phì\" một tiếng, nín khóc bật cười, chỉ vào Bảo Hoa nói: \"Anh ơi, anh xem anh kìa, làm sao thế, tóc rụng chẳng còn sợi nào?\" Bảo Hoa sững người một chút, ngượng ngùng sờ cái đầu trọc lốc của mình, rồi cũng bùi ngùi cười theo.",
+    "Ngày 28 tháng 7 năm ấy, Vương Bảo Hoa và Lý Ngọc Khiết cuối cùng cũng thành hôn, tiệc cưới vẫn đặt ở tửu gia Mai Lũng Trấn ở Thượng Hải; bạn học cũ, đồng nghiệp cũ ở Đại học Giao thông và trường Trung Tây ngày trước đều đến dự, cảnh tượng náo nhiệt mà cảm động. Đám cưới này, Bảo Hoa và Ngọc Khiết đã đợi tròn bốn mươi năm.",
+    "(Tác giả: Bạch Tiên Dũng, trích từ tạp chí \"Cố sự hội\")"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "不外乎 (không ngoài, chẳng qua là)",
+   "structure": "A 不外乎 B（几种/几项）",
+   "explanation": "不外乎 là động từ, cũng nói “不外”, nghĩa là “không vượt ra ngoài một phạm vi nào đó”, dùng để nêu ra phạm vi giới hạn của sự vật, tình hình.",
+   "examples": [
+    {
+     "zh": "她留给大家的形象不外乎两种：……",
+     "vi": "Hình ảnh bà để lại cho mọi người chẳng ngoài hai kiểu: …"
+    },
+    {
+     "zh": "她喜欢看的小说不外乎就是言情和武侠，别的她不感兴趣。",
+     "vi": "Tiểu thuyết cô ấy thích đọc chẳng ngoài truyện tình cảm và võ hiệp, những thứ khác cô không hứng thú."
+    },
+    {
+     "zh": "老师们开会讨论的话题不外乎上课的方法、学生的情况什么的。",
+     "vi": "Chủ đề các thầy cô họp bàn chẳng ngoài phương pháp giảng dạy, tình hình học sinh, v.v."
+    },
+    {
+     "zh": "常常去游泳馆的人不外乎小王、小李、小张他们几个。",
+     "vi": "Người hay đi bể bơi chẳng ngoài mấy người Tiểu Vương, Tiểu Lý, Tiểu Trương."
+    }
+   ]
+  },
+  {
+   "point": "之类 (loại như, những thứ như)",
+   "structure": "A、B（、C）之类（的 + 名词）",
+   "explanation": "之类 nghĩa là “người hoặc sự vật cùng một loại như…”, đặt sau phần liệt kê để chỉ những thứ thuộc cùng loại đó.",
+   "examples": [
+    {
+     "zh": "以后再看到“优秀”、“守信用”之类的字眼，……",
+     "vi": "Về sau mỗi khi thấy những chữ như “ưu tú”, “giữ chữ tín”, …"
+    },
+    {
+     "zh": "由于弦的振动而发音的乐器叫弦乐器，如琵琶、二胡、提琴之类。",
+     "vi": "Nhạc cụ phát âm nhờ dây rung gọi là nhạc cụ dây, như tỳ bà, nhị hồ, vĩ cầm…"
+    },
+    {
+     "zh": "像保护环境、保护动物之类的问题，早已成为全世界共同关心的热点问题了。",
+     "vi": "Những vấn đề như bảo vệ môi trường, bảo vệ động vật từ lâu đã trở thành vấn đề nóng cả thế giới cùng quan tâm."
+    },
+    {
+     "zh": "对唐诗、宋词之类的作品，她都非常喜欢，常常背诵。",
+     "vi": "Những tác phẩm như thơ Đường, từ Tống, cô ấy đều rất thích, thường xuyên ngâm đọc."
+    }
+   ]
+  },
+  {
+   "point": "是否 (có… hay không)",
+   "structure": "是否 + 动词/形容词",
+   "explanation": "是否 là phó từ, nghĩa là “是不是” (có phải/có… hay không), phía sau có thể là động từ hoặc tính từ; mang sắc thái văn viết. Phân biệt 是否 — 是不是: nghĩa giống nhau, nhưng sau “是不是” có thể đi với thành phần danh từ, còn “是否” thì không. Ví dụ trong các câu “那个人是不是小王？/这里是不是鼓楼大街？/那本书是不是你的？” đều không thể thay “是不是” bằng “是否”.",
+   "examples": [
+    {
+     "zh": "可它的内涵涉及到对世界是否郑重。",
+     "vi": "Nhưng nội hàm của nó liên quan đến việc có nghiêm túc với thế giới hay không."
+    },
+    {
+     "zh": "这篇毕业论文是否能够通过，主要要看文章的内容和写作水平。",
+     "vi": "Luận văn tốt nghiệp này có qua được hay không chủ yếu phải xem nội dung và trình độ viết."
+    },
+    {
+     "zh": "如果你跟朋友闹矛盾了，你首先应该反省一下自己，看看自己是否有什么做得不好的地方。",
+     "vi": "Nếu bạn mâu thuẫn với bạn bè, trước hết nên tự xét lại mình, xem bản thân có chỗ nào làm chưa tốt không."
+    },
+    {
+     "zh": "一种理论是否准确，要经过客观事实的检验，而不是某个人说了算。",
+     "vi": "Một lý thuyết có chính xác hay không phải được kiểm nghiệm qua thực tế khách quan, chứ không phải do một người nào đó quyết định."
+    }
+   ]
+  },
+  {
+   "point": "大打折扣 — 大 (rất, nhiều; mức độ sâu, phạm vi rộng)",
+   "structure": "大 + 动词/动词性词组，如：大打折扣、大有希望、大吃一惊",
+   "explanation": "大 là phó từ, biểu thị mức độ sâu, phạm vi rộng. Thường gặp trong các tổ hợp cố định: 大有余地, 大有问题, 大有作为 (có thể phát huy đầy đủ tác dụng), 大有人在 (số người rất nhiều), 大有希望, 大有文章 (ví có nhiều điều ẩn chứa đáng chú ý, suy nghĩ), 大吃一惊, 大打出手 (đánh người hung dữ hoặc đánh nhau), 大发慈悲 (lấy lòng từ bi thương xót đối đãi người), 大发雷霆 (ví nổi giận lôi đình), 大惑不解 (rất nghi hoặc, không hiểu), 大失所望 (rất thất vọng), 大显身手 (thể hiện đầy đủ tài năng), 大煞风景 (phá hỏng cảnh đẹp hoặc ví làm mất hứng), 大错特错.",
+   "examples": [
+    {
+     "zh": "他的诺言也就被当成戏言，大打折扣，全面降价。",
+     "vi": "Lời hứa của anh ta cũng bị coi như lời nói đùa, mất giá trị trầm trọng, mất giá toàn diện."
+    }
+   ]
+  },
+  {
+   "point": "且不说……，就是……也/都…… (chưa nói…, ngay cả… cũng…)",
+   "structure": "且不说 A，就是 B 也/都……",
+   "explanation": "Cũng nói “别说（不要说）……，就是……也/都……”, nghĩa là tạm chưa bàn đến một tình huống thông thường mà ai cũng biết hoặc vốn nên như vậy, mà lùi một bước để nói rằng trong một tình huống đặc biệt nào đó, kết quả cũng vẫn như thế. Sau “就是” nêu ra tình huống khác với phía trước, không thông thường. “且不说” cũng có thể nói thành “且不论”, “且不谈”, “且不讲”…",
+   "examples": [
+    {
+     "zh": "且不说别人会怎样看轻他，就是他自己，那种无聊、倦怠都会渐渐袭上心头。",
+     "vi": "Chưa nói người khác sẽ coi thường anh ta thế nào, ngay chính anh ta, cảm giác vô vị, chán chường cũng sẽ dần ập đến trong lòng."
+    },
+    {
+     "zh": "他的作品且不说在中国，就是在世界上也是很有影响的。",
+     "vi": "Tác phẩm của ông ấy, chưa nói ở Trung Quốc, ngay cả trên thế giới cũng rất có ảnh hưởng."
+    },
+    {
+     "zh": "她天生丽质，且不说穿名牌时装，就是穿很普通的衣服都显得楚楚动人。",
+     "vi": "Cô ấy đẹp trời sinh, chưa nói mặc đồ hiệu, ngay cả mặc quần áo bình thường cũng trông duyên dáng động lòng người."
+    },
+    {
+     "zh": "王风是个非常喜欢动物的人，且不说小猫小狗这些可爱的动物，就是不太好看的动物他都喜欢。",
+     "vi": "Vương Phong là người rất thích động vật, chưa nói những con vật dễ thương như mèo con chó con, ngay cả những con không đẹp lắm anh ấy cũng thích."
+    }
+   ]
+  },
+  {
+   "point": "大为逊色 — 大为 (rất, vô cùng)",
+   "structure": "大为 + 动词/形容词（双音节），如：大为逊色、大为高兴",
+   "explanation": "大为 là phó từ, biểu thị mức độ sâu, phạm vi lớn; thường đi với từ hai âm tiết: 大为提高, 大为高兴, 大为愤怒, 大为改观, 大为失望, 大为吃惊, 大为难过, 大为生气, 大为满意, 大为降低, 大为丰富, 大为感兴趣, 大为赞赏.",
+   "examples": [
+    {
+     "zh": "人一沾上那种潦倒的气味，做人的光彩就会大为逊色。",
+     "vi": "Con người một khi nhiễm cái mùi sa sút ấy, vẻ rạng rỡ làm người sẽ mờ nhạt đi rất nhiều."
+    }
+   ]
+  },
+  {
+   "point": "何足畏惧 — 何足 (đâu đáng, có gì đáng)",
+   "structure": "何足 + 动词（畏惧/挂齿/称道……）",
+   "explanation": "何 là đại từ nghi vấn, biểu thị câu hỏi tu từ (phản vấn); 足 nghĩa là đáng. 何足畏惧 = không đáng sợ. Liên hệ (链接): 不足为奇 — không có gì lạ; 无足轻重 — không quan trọng; 微不足道 — nhỏ bé không đáng nhắc tới.",
+   "examples": [
+    {
+     "zh": "区区风雨又何足畏惧。",
+     "vi": "Chút mưa gió cỏn con thì có gì đáng sợ."
+    },
+    {
+     "zh": "A：大夫，感谢你治好了我多年的老毛病，可以说你给了我第二次生命。B：哪里哪里。区区小事，何足挂齿！",
+     "vi": "A: Bác sĩ, cảm ơn ông đã chữa khỏi bệnh cũ bao năm của tôi, có thể nói ông đã cho tôi cuộc sống thứ hai. B: Đâu có đâu có. Chuyện nhỏ thôi, có đáng gì mà nhắc!"
+    },
+    {
+     "zh": "王先生，您太过奖了。我只是个初学者，各方面都还有待提高，区区一篇习作，何足称道！",
+     "vi": "Anh Vương, anh quá khen rồi. Tôi chỉ là người mới học, mọi mặt còn phải nâng cao, một bài tập viết nhỏ nhoi, có gì đáng khen đâu!"
+    }
+   ]
+  }
+ ]
+}

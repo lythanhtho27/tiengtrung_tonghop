@@ -1,0 +1,1202 @@
+{
+ "book": "gc2",
+ "lesson_num": 8,
+ "title": "辛亥革命与我",
+ "pages": [
+  191,
+  214
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "羸弱",
+   "py": "léiruò",
+   "pos": "形",
+   "zh": "〈书〉瘦弱。",
+   "en": "",
+   "hv": "LUY NHƯỢC",
+   "vi": "gầy yếu, ốm yếu",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "额角",
+   "py": "éjiǎo",
+   "pos": "名",
+   "zh": "额的两旁。",
+   "en": "frontal eminence",
+   "hv": "NGẠCH GIÁC",
+   "vi": "hai bên trán, góc trán",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "垂",
+   "py": "chuí",
+   "pos": "动",
+   "zh": "东西的一头向下。",
+   "en": "",
+   "hv": "THÙY",
+   "vi": "rủ xuống, buông xuống",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "盈",
+   "py": "yíng",
+   "pos": "动",
+   "zh": "满；充满。",
+   "en": "",
+   "hv": "DOANH",
+   "vi": "đầy, đủ",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "卷曲",
+   "py": "juǎnqū",
+   "pos": "形",
+   "zh": "弯曲。",
+   "en": "",
+   "hv": "QUYỂN KHÚC",
+   "vi": "quăn, xoăn",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "辫子",
+   "py": "biànzi",
+   "pos": "名",
+   "zh": "把头发分股交叉编成的条条儿。",
+   "en": "plait; braid; pigtail",
+   "hv": "BIỆN TỬ",
+   "vi": "bím tóc, đuôi sam",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "投考",
+   "py": "tóukǎo",
+   "pos": "动",
+   "zh": "报名参加考试。",
+   "en": "",
+   "hv": "ĐẦU KHẢO",
+   "vi": "dự thi, thi vào",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "风潮",
+   "py": "fēngcháo",
+   "pos": "名",
+   "zh": "指群众为迫使当局接受某种要求或改变某种措施而采取的各种集体行动。",
+   "en": "",
+   "hv": "PHONG TRÀO",
+   "vi": "phong trào phản đối, làn sóng đấu tranh",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "监督",
+   "py": "jiāndū",
+   "pos": "名",
+   "zh": "做监督工作的人。本文中指中学校长。",
+   "en": "",
+   "hv": "GIÁM ĐỐC",
+   "vi": "giám đốc (hiệu trưởng trường trung học thời xưa)",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "当局",
+   "py": "dāngjú",
+   "pos": "名",
+   "zh": "指政府、党派、学校中的领导者。",
+   "en": "",
+   "hv": "ĐƯƠNG CỤC",
+   "vi": "nhà cầm quyền, ban lãnh đạo",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "安分",
+   "py": "ānfèn",
+   "pos": "形",
+   "zh": "规矩（ju）老实，守本分。",
+   "en": "",
+   "hv": "AN PHẬN",
+   "vi": "an phận, ngoan ngoãn",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "欺侮",
+   "py": "qīwǔ",
+   "pos": "动",
+   "zh": "欺负。",
+   "en": "",
+   "hv": "KHI VŨ",
+   "vi": "bắt nạt, ức hiếp",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "都市",
+   "py": "dūshì",
+   "pos": "名",
+   "zh": "大城市。",
+   "en": "",
+   "hv": "ĐÔ THỊ",
+   "vi": "đô thị, thành phố lớn",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "资格",
+   "py": "zīgé",
+   "pos": "名",
+   "zh": "从事某种活动所应具备的条件、身份等；由从事某种工作或活动的时间长短所形成的身份。（资格——资历）",
+   "en": "seniority",
+   "hv": "TƯ CÁCH",
+   "vi": "tư cách; thâm niên",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "抵抗",
+   "py": "dǐkàng",
+   "pos": "动",
+   "zh": "用力量制止对方的进攻。",
+   "en": "",
+   "hv": "ĐỂ KHÁNG",
+   "vi": "chống cự, kháng cự",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "动摇",
+   "py": "dòngyáo",
+   "pos": "动",
+   "zh": "不稳固；不坚定。（动摇——摇动）",
+   "en": "",
+   "hv": "ĐỘNG DAO",
+   "vi": "lung lay, dao động",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "行刺",
+   "py": "xíngcì",
+   "pos": "动",
+   "zh": "（用武器）暗杀。",
+   "en": "assassinate",
+   "hv": "HÀNH THÍCH",
+   "vi": "hành thích, ám sát",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "女侠",
+   "py": "nǚxiá",
+   "pos": "名",
+   "zh": "女侠客。旧时把有功夫、讲义气、肯舍己助人的人称为侠客。",
+   "en": "",
+   "hv": "NỮ HIỆP",
+   "vi": "nữ hiệp",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "斩首",
+   "py": "zhǎnshǒu",
+   "pos": "动",
+   "zh": "杀头。",
+   "en": "",
+   "hv": "TRẢM THỦ",
+   "vi": "chém đầu",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "情形",
+   "py": "qíngxing",
+   "pos": "名",
+   "zh": "事物呈现出来的样子。（情形——情况）",
+   "en": "",
+   "hv": "TÌNH HÌNH",
+   "vi": "cảnh tượng, tình hình",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "志士",
+   "py": "zhìshì",
+   "pos": "名",
+   "zh": "有坚决意志和节操的人。",
+   "en": "person of ideals and integrity",
+   "hv": "CHÍ SĨ",
+   "vi": "chí sĩ",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "反感",
+   "py": "fǎngǎn",
+   "pos": "名",
+   "zh": "反对或不满的情绪。",
+   "en": "",
+   "hv": "PHẢN CẢM",
+   "vi": "sự phản cảm, bất bình",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "种族",
+   "py": "zhǒngzú",
+   "pos": "名",
+   "zh": "人种。",
+   "en": "race",
+   "hv": "CHỦNG TỘC",
+   "vi": "chủng tộc",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "推翻",
+   "py": "tuīfān",
+   "pos": "动",
+   "zh": "用武力打垮（kuǎ）旧的政权，使局势彻底改变。",
+   "en": "",
+   "hv": "THÔI PHIÊN",
+   "vi": "lật đổ",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "牺牲",
+   "py": "xīshēng",
+   "pos": "动",
+   "zh": "为了正义的目的舍弃自己的生命。（牺牲——献身）",
+   "en": "",
+   "hv": "HY SINH",
+   "vi": "hy sinh",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "兴味",
+   "py": "xìngwèi",
+   "pos": "名",
+   "zh": "兴趣。",
+   "en": "",
+   "hv": "HỨNG VỊ",
+   "vi": "hứng thú",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "外间",
+   "py": "wàijiān",
+   "pos": "名",
+   "zh": "〈书〉外界；社会上。",
+   "en": "",
+   "hv": "NGOẠI GIAN",
+   "vi": "bên ngoài, xã hội",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "敬仰",
+   "py": "jìngyǎng",
+   "pos": "动",
+   "zh": "敬重仰慕。",
+   "en": "",
+   "hv": "KÍNH NGƯỠNG",
+   "vi": "kính ngưỡng, ngưỡng mộ",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "郁积",
+   "py": "yùjī",
+   "pos": "动",
+   "zh": "心里不舒畅，积聚了很多不好的情绪不能发泄。",
+   "en": "",
+   "hv": "UẤT TÍCH",
+   "vi": "dồn nén, uất ức tích tụ",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "相率",
+   "py": "xiāngshuài",
+   "pos": "副",
+   "zh": "一个接着一个。",
+   "en": "",
+   "hv": "TƯƠNG SUẤT",
+   "vi": "lần lượt kéo nhau, người này theo người kia",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "仿效",
+   "py": "fǎngxiào",
+   "pos": "动",
+   "zh": "模仿（别人的方法、式样等）。",
+   "en": "",
+   "hv": "PHỎNG HIỆU",
+   "vi": "bắt chước, noi theo",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "压迫",
+   "py": "yāpò",
+   "pos": "动",
+   "zh": "用权力或势力强制别人服从。",
+   "en": "",
+   "hv": "ÁP BÁCH",
+   "vi": "áp bức, chèn ép",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "光头",
+   "py": "guāngtóu",
+   "pos": "名",
+   "zh": "剃光的头；没有头发的头；秃头。",
+   "en": "",
+   "hv": "QUANG ĐẦU",
+   "vi": "đầu trọc",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "堂兄",
+   "py": "tángxiōng",
+   "pos": "名",
+   "zh": "同祖父或同曾祖父的哥哥。",
+   "en": "",
+   "hv": "ĐƯỜNG HUYNH",
+   "vi": "anh họ (bên nội)",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "告知",
+   "py": "gàozhī",
+   "pos": "动",
+   "zh": "告诉使知道。",
+   "en": "",
+   "hv": "CÁO TRI",
+   "vi": "báo cho biết",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "着慌",
+   "py": "zháohuāng",
+   "pos": "动",
+   "zh": "着急；慌张。",
+   "en": "",
+   "hv": "TRỨ HOẢNG",
+   "vi": "cuống lên, hoảng hốt",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "申斥",
+   "py": "shēnchì",
+   "pos": "动",
+   "zh": "斥责（多用于对下属）。",
+   "en": "",
+   "hv": "THÂN XÍCH",
+   "vi": "quở trách, khiển trách",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "引",
+   "py": "yǐn",
+   "pos": "动",
+   "zh": "引用；用别人说过的话（包括书面材料）或做过的事作为根据。",
+   "en": "",
+   "hv": "DẪN",
+   "vi": "dẫn, trích dẫn",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "侮弄",
+   "py": "wǔnòng",
+   "pos": "动",
+   "zh": "侮辱，嘲弄。",
+   "en": "",
+   "hv": "VŨ LỘNG",
+   "vi": "trêu chọc, làm nhục",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "取笑",
+   "py": "qǔxiào",
+   "pos": "动",
+   "zh": "开玩笑；嘲笑。",
+   "en": "",
+   "hv": "THỦ TIẾU",
+   "vi": "chế giễu, trêu cười",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "吞声饮泪",
+   "py": "tūn shēng yǐn lèi",
+   "pos": "",
+   "zh": "〈书〉吞声：哭泣不敢出声。饮泪：泪流满面，流入嘴里。形容悲哀到了极点而不能公开发泄。",
+   "en": "",
+   "hv": "THÔN THANH ẨM LỆ",
+   "vi": "nuốt hận nuốt nước mắt, khóc thầm",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "不单",
+   "py": "bùdān",
+   "pos": "连",
+   "zh": "不仅，不但。表示递进关系，常与“也”“还”“而且”等连用。",
+   "en": "",
+   "hv": "BẤT ĐƠN",
+   "vi": "không chỉ, chẳng những",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "把戏",
+   "py": "bǎxì",
+   "pos": "名",
+   "zh": "杂技。",
+   "en": "",
+   "hv": "BẢ HÍ",
+   "vi": "trò đùa, trò tiêu khiển",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "自恃",
+   "py": "zìshì",
+   "pos": "动",
+   "zh": "依仗；靠着。",
+   "en": "",
+   "hv": "TỰ THỊ",
+   "vi": "cậy, ỷ vào",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "拳头",
+   "py": "quántou",
+   "pos": "名",
+   "zh": "手指向内弯曲合拢的手。",
+   "en": "fist",
+   "hv": "QUYỀN ĐẦU",
+   "vi": "nắm đấm",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "准许",
+   "py": "zhǔnxǔ",
+   "pos": "动",
+   "zh": "同意人的要求。（准许——允许）",
+   "en": "",
+   "hv": "CHUẨN HỨA",
+   "vi": "cho phép, chuẩn y",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "依旧",
+   "py": "yījiù",
+   "pos": "副",
+   "zh": "依然；照旧。",
+   "en": "",
+   "hv": "Y CỰU",
+   "vi": "vẫn như cũ",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "捉拿",
+   "py": "zhuōná",
+   "pos": "动",
+   "zh": "捉（犯人）。",
+   "en": "",
+   "hv": "TRÓC NÃ",
+   "vi": "truy bắt, tróc nã",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "风声",
+   "py": "fēngshēng",
+   "pos": "名",
+   "zh": "指传播出来的消息。",
+   "en": "",
+   "hv": "PHONG THANH",
+   "vi": "tin đồn, phong thanh",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "正法",
+   "py": "zhèngfǎ",
+   "pos": "动",
+   "zh": "依法执行死刑。",
+   "en": "",
+   "hv": "CHÍNH PHÁP",
+   "vi": "xử tử theo pháp luật",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "瓜皮帽子",
+   "py": "guāpí màozi",
+   "pos": "",
+   "zh": "像半个西瓜皮形状的旧式便帽，一般用六块黑缎子或绒（róng）布连缀（zhuì）制成。",
+   "en": "",
+   "hv": "QUA BÌ MẠO TỬ",
+   "vi": "mũ quả dưa (mũ chỏm)",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "威风",
+   "py": "wēifēng",
+   "pos": "形",
+   "zh": "有声势；有气派。",
+   "en": "",
+   "hv": "UY PHONG",
+   "vi": "oai phong, oai vệ",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "伤寒症",
+   "py": "shānghánzhèng",
+   "pos": "名",
+   "zh": "中医指外感发热的病，特指发热、恶寒无汗、头痛项僵的病。另外也指由伤寒杆菌引起的急性肠道传染病，也叫肠伤寒（typhoid fever）。",
+   "en": "typhoid fever",
+   "hv": "THƯƠNG HÀN CHỨNG",
+   "vi": "bệnh thương hàn",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "不省人事",
+   "py": "bù xǐng rén shì",
+   "pos": "",
+   "zh": "失去知觉。",
+   "en": "",
+   "hv": "BẤT TỈNH NHÂN SỰ",
+   "vi": "bất tỉnh nhân sự",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "不堪",
+   "py": "bùkān",
+   "pos": "副",
+   "zh": "表示程度深。",
+   "en": "",
+   "hv": "BẤT KHAM",
+   "vi": "hết sức, vô cùng (mức độ sâu)",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "好比",
+   "py": "hǎobǐ",
+   "pos": "动",
+   "zh": "好像；可以比作；类似于。",
+   "en": "",
+   "hv": "HẢO TỶ",
+   "vi": "giống như, ví như",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "深秋",
+   "py": "shēnqiū",
+   "pos": "名",
+   "zh": "秋季的末期。",
+   "en": "",
+   "hv": "THÂM THU",
+   "vi": "cuối thu",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "时光",
+   "py": "shíguāng",
+   "pos": "名",
+   "zh": "时间；时期；日子。",
+   "en": "",
+   "hv": "THỜI QUANG",
+   "vi": "thời gian, khoảng thời gian",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "响应",
+   "py": "xiǎngyìng",
+   "pos": "动",
+   "zh": "回声相应。比喻用言语行动表示赞同、支持某种号召或倡议。",
+   "en": "",
+   "hv": "HƯỞNG ỨNG",
+   "vi": "hưởng ứng",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "声浪",
+   "py": "shēnglàng",
+   "pos": "名",
+   "zh": "指许多人呼喊的声音。",
+   "en": "",
+   "hv": "THANH LÃNG",
+   "vi": "làn sóng âm thanh, tiếng hô vang",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "县城",
+   "py": "xiànchéng",
+   "pos": "名",
+   "zh": "县行政机关所在的城镇。",
+   "en": "",
+   "hv": "HUYỆN THÀNH",
+   "vi": "thị trấn huyện lỵ",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "寂静",
+   "py": "jìjìng",
+   "pos": "形",
+   "zh": "没有声音；很静。",
+   "en": "",
+   "hv": "TỊCH TĨNH",
+   "vi": "yên ắng, tĩnh mịch",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "白旗",
+   "py": "báiqí",
+   "pos": "名",
+   "zh": "战争中表示投降的旗子。",
+   "en": "",
+   "hv": "BẠCH KỲ",
+   "vi": "cờ trắng (đầu hàng)",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "病榻",
+   "py": "bìngtà",
+   "pos": "名",
+   "zh": "病人的床铺。",
+   "en": "",
+   "hv": "BỆNH THÁP",
+   "vi": "giường bệnh",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "天下",
+   "py": "tiānxià",
+   "pos": "名",
+   "zh": "指中国或世界。",
+   "en": "",
+   "hv": "THIÊN HẠ",
+   "vi": "thiên hạ",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "消除",
+   "py": "xiāochú",
+   "pos": "动",
+   "zh": "使不存在；除去不利的事物。",
+   "en": "",
+   "hv": "TIÊU TRỪ",
+   "vi": "xua tan, loại bỏ",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "闷气",
+   "py": "mènqì",
+   "pos": "名",
+   "zh": "积聚在心里没有发泄的怨恨或愤怒。",
+   "en": "",
+   "hv": "MUỘN KHÍ",
+   "vi": "nỗi bực bội, uất ức",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "忖",
+   "py": "cǔn",
+   "pos": "动",
+   "zh": "细想；仔细考虑。",
+   "en": "",
+   "hv": "THỐN",
+   "vi": "ngẫm nghĩ, suy tính",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "新生",
+   "py": "xīnshēng",
+   "pos": "名",
+   "zh": "新生命。",
+   "en": "",
+   "hv": "TÂN SINH",
+   "vi": "sự tái sinh, cuộc đời mới",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "快活",
+   "py": "kuàihuo",
+   "pos": "形",
+   "zh": "愉快；快乐。",
+   "en": "",
+   "hv": "KHOÁI HOẠT",
+   "vi": "vui sướng, khoan khoái",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "光复",
+   "py": "guāngfù",
+   "pos": "动",
+   "zh": "恢复（已亡的国家）；收回（失去的领土）。",
+   "en": "",
+   "hv": "QUANG PHỤC",
+   "vi": "quang phục, giành lại",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "国事",
+   "py": "guóshì",
+   "pos": "名",
+   "zh": "国家大事。",
+   "en": "",
+   "hv": "QUỐC SỰ",
+   "vi": "việc nước",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "佣妇",
+   "py": "yōngfù",
+   "pos": "名",
+   "zh": "旧时指女佣，即女仆。",
+   "en": "older female servant",
+   "hv": "DONG PHỤ",
+   "vi": "bà giúp việc, người ở",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "景象",
+   "py": "jǐngxiàng",
+   "pos": "名",
+   "zh": "现象；状况。",
+   "en": "",
+   "hv": "CẢNH TƯỢNG",
+   "vi": "cảnh tượng",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "许可",
+   "py": "xǔkě",
+   "pos": "动",
+   "zh": "准许；容许。",
+   "en": "",
+   "hv": "HỨA KHẢ",
+   "vi": "cho phép",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "奇异",
+   "py": "qíyì",
+   "pos": "形",
+   "zh": "奇怪；惊异。",
+   "en": "",
+   "hv": "KỲ DỊ",
+   "vi": "kỳ lạ",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "变象",
+   "py": "biànxiàng",
+   "pos": "名",
+   "zh": "变化的社会现象。",
+   "en": "",
+   "hv": "BIẾN TƯỢNG",
+   "vi": "cảnh biến đổi",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "标题",
+   "py": "biāotí",
+   "pos": "名",
+   "zh": "标明文章、作品等内容的简短语句。",
+   "en": "title; heading",
+   "hv": "TIÊU ĐỀ",
+   "vi": "tiêu đề, tít báo",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "登载",
+   "py": "dēngzǎi",
+   "pos": "动",
+   "zh": "（新闻、文章等）在报刊上印出。",
+   "en": "",
+   "hv": "ĐĂNG TẢI",
+   "vi": "đăng tải",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "委实",
+   "py": "wěishí",
+   "pos": "副",
+   "zh": "〈书〉实在。",
+   "en": "",
+   "hv": "ỦY THỰC",
+   "vi": "thật sự, quả thực",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "阖",
+   "py": "hé",
+   "pos": "形",
+   "zh": "合；全。",
+   "en": "",
+   "hv": "HẠP",
+   "vi": "cả, toàn bộ",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "折回",
+   "py": "zhéhuí",
+   "pos": "动",
+   "zh": "半路返回。",
+   "en": "",
+   "hv": "CHIẾT HỒI",
+   "vi": "quay trở lại (giữa đường)",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "气力",
+   "py": "qìlì",
+   "pos": "名",
+   "zh": "力气。",
+   "en": "",
+   "hv": "KHÍ LỰC",
+   "vi": "sức lực",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "逊位",
+   "py": "xùnwèi",
+   "pos": "动",
+   "zh": "让出帝王的位子。",
+   "en": "",
+   "hv": "TỐN VỊ",
+   "vi": "thoái vị",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "就职",
+   "py": "jiù zhí",
+   "pos": "",
+   "zh": "正式到任，多指较高的职位。",
+   "en": "",
+   "hv": "TỰU CHỨC",
+   "vi": "nhậm chức",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "吉日",
+   "py": "jírì",
+   "pos": "名",
+   "zh": "吉利的日子。",
+   "en": "",
+   "hv": "CÁT NHẬT",
+   "vi": "ngày lành",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "主张",
+   "py": "zhǔzhāng",
+   "pos": "动",
+   "zh": "对于如何行动持有某种见解。",
+   "en": "",
+   "hv": "CHỦ TRƯƠNG",
+   "vi": "chủ trương, giữ quan điểm",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "奇耻大辱",
+   "py": "qí chǐ dà rǔ",
+   "pos": "名",
+   "zh": "极大的耻辱。",
+   "en": "",
+   "hv": "KỲ SỈ ĐẠI NHỤC",
+   "vi": "nỗi nhục lớn",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "秃头",
+   "py": "tūtóu",
+   "pos": "名",
+   "zh": "头发脱光或剃光的头；头发脱光的人。",
+   "en": "",
+   "hv": "THỐC ĐẦU",
+   "vi": "đầu hói, đầu trọc",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "至今",
+   "py": "zhìjīn",
+   "pos": "副",
+   "zh": "到今天；直到现在（某种状况仍然没多大变化）。",
+   "en": "",
+   "hv": "CHÍ KIM",
+   "vi": "đến nay",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "辛亥革命与我",
+   "paragraphs": [
+    "第一部分",
+    "从小的时候，我是一个多么羸弱的孩子啊。记得在中学生时代，我的身体又矮又瘦，显出额角格外地阔大，站起来全身失去了支点。又因为小时候多病，头发又黄短，在额后垂着长不盈尺的卷曲的辫子，恰像一条猪尾巴，老是给身材高大的同学们，当作开玩笑的资料。",
+    "是在一九一一年的春间，我的父亲送我去投考绍兴府中学堂。那时绍兴是革命伟人的产生地，绍兴府中学堂是以闹风潮著名的学校。府中学堂的监督（中学校长当时称监督）一年中总得换过两个。据说当时学校当局怕事，以身材短小作为录取新生的标准，以为人小是一定不会闹风潮的。而我却是全校中生得最短小的一个，所以便被录取了（这还是最近听鲁迅先生——当时绍兴府中学堂的监督——说的，以前我还不知道）。学校当局的眼光是不错的。我在府中学堂，是最安分的一个学生，不但不会闹风潮，连同学们的欺侮嘲笑，我也从不敢反抗。我是一个多么羸弱的孩子啊！又是第一次离开家庭，进都市的学校里。初进校的新生，照例是要受老资格的同学的欺侮的；又何况许多同学们，一个个长得又高又大，我自然只好忍受一切，始终抱着“不抵抗主义”了。",
+    "这时候离开武昌起义，不过半年，清室的统治，已开始动摇。绍兴的革命伟人徐锡麟，行刺恩铭不过是前二三年的事。我们时常经过绍兴府城的轩亭口，不免回想到“鉴湖女侠”秋瑾斩首的情形。因此青年的中学生，给神秘的革命情绪笼罩着。我说“神秘的”，是因为当时的青年不像现在的青年那样，有明白的政治社会意识。不过因为清廷惨杀革命志士，引起了强烈的反感，又因受当时报纸民主思想，种族思想的影响，所以觉得非革命推翻清室不可，而且觉得非牺牲生命去革命不可。当时，我和同学们最感兴味的是谈革命。虽然学校当局恐惹起外间的注意，劝学生们勿谈政治，但是我们都把革命问题，看作比校课更有兴味。有几位教师，是曾经参加过同盟会的，我们都特别对他们表示敬仰。",
+    "第二部分",
+    "到了那年四五月间，这郁积在青年人心头的革命情绪，是非表现不可了。而表现的方式，却是剪辫子。说也奇怪，因为有一二个同学剪去辫子；大家相率仿效，剪发竟成了一时的流行病。虽然学校当局为避免外面的压迫，劝告学生勿剪辫子，但是一大部分的学生却都变成了光头。我的堂兄在府中学堂里，他也是首先剪去辫子的一个，他的家庭知道了这事，告知我的父亲，父亲着慌了，连忙来一信，叫我万勿剪辫子。我便写信去要求，我的父亲又来信，申斥了一顿，引了“身体发肤，受之父母”的大道理。其实我知道我的父亲并不反对剪辫子，不过因为当时清廷压迫甚严，凡是剪去辫子的人，往往被称作革命党，捉去便杀头。父亲是怕我发生意外罢了。",
+    "究竟我是一个羸弱的孩子。我没有反抗父亲的勇气，只好暂时把辫子留着，但是因此我却付出了重大的代价。我被同学们当作侮弄的对象。“猪尾巴”变成了我的代名字。自然同学中留着辫子的还多着，但是他们是“大人”，没有人敢取笑，而我却只好吞声饮泪，独自受着高大的同学们的欺侮。不单是剪发的同学们，扭住我的小辫子，当作把戏，连那些和我一样留着辫子的同学们，因为自恃拳头大，也称我叫“猪尾巴”，这是多么难受的侮辱啊。",
+    "这一年暑假，我是拖着小辫子回到家里，但要求父亲下学期转学到别处，为的是不愿受“猪尾巴”之辱，不然父亲便应该准许我剪发。可是这两个要求，都被父亲拒绝了。暑假过后，我只好依旧拖辫子进绍兴府中学堂去。",
+    "可是这时候情形却不同了。捉拿革命党的风声忽然十分紧急起来，许多人因为剪辫子，都被捉了去正法。因此本来已剪掉发辫的同学们，都在瓜皮帽子底下，装着一根假辫子回到校里。我心里虽然暗暗得意，觉得剪发的同学们，实在也不见得比我更英雄些，但是另一方面我却更深切地感到“猪尾巴”之辱。他们虽然装了假辫子，比“猪尾巴”到底威风些啊！",
+    "第三部分",
+    "秋季开学以后，不到十天，我就病倒在床上了。我的病是伤寒症，热度很高。人们雇了划船，把我送回两百里路外的家乡。当我到家的时候，已不省人事，我的父亲、祖母，一家人都忧急得不堪。这一病就病了整整四个月，中间有两个月不吃东西，瘦得只剩了皮包骨头。医生都说希望很少了，后来总算是慢慢救活来。这以后的生命，好比中了航空头奖，可以说是意外得来的。",
+    "快到深秋的时光，我的病已过了危险的时期。中国近代史上一个重要的阶段到来了。武昌起义以后，各省纷纷响应。不到几天，革命的声浪，震破我们这个小县城里的寂静的空气。有人说杭州城已挂着白旗了，有人说革命党已占领绍兴了。这些消息马上就传到我的病榻旁。父亲来和我说，满清大概是要推翻了，外间已经有许多人剪掉辫子，天下应该是汉人的天下了。",
+    "在病榻中躺了三个月的我，正没法消除闷气，听了这样的惊人消息，自然喜之不尽。我正自忖着，我这回虽生了一次大病，但我是得到了“新生”了。我至少可以剪掉了辫子，不再受“猪尾巴”之辱。我是多么快活啊。",
+    "那时我听到革命军光复各地的消息，感情的兴奋，不是文字所能形容的。遇到来看我的人，我都和他们谈论国事。甚至一个不懂事的佣妇来我房里的时候，我也要问她外面变成了什么景象，街上有没有挂白旗。我恨不得立刻跳起来，去看看这大转变后的新世界，满足我的兴奋的好奇的心情。",
+    "我再三向父亲要报纸看，父亲却不许可。医生说我的身体还是十分虚弱，看书看报是应该绝对禁止的。但是在病床上，整日夜闭目想象外部世界的奇异变象，想象报纸上用大字标题登载着的惊人新闻，我委实是不能忍耐了。有一天，阖家人正在午饭的时候，我的房里没有人。我从病床上奋力爬起身，一步一歪地走到了病室对面我父亲的书室里。我在桌上偷了一份《时报》，就折回到病室里。还没有回到床上，我已昏迷不省人事了。待母亲进房来的时候看见我晕倒在地上，手中拿着一份《时报》，全家都着急起来。忙扶我到床上，请了医生来，总算又把我救过来了。但是以后就绝对不许我看报，而且不让我一个人在房里。",
+    "又过了一个多月，我的病算是完全好了，只是瘦弱，没有气力。一九一二年的一月一日，清廷逊位，孙中山在南京就临时大总统职。我的父亲本也是“新党”，到这时他再不犹豫了。他选定了一个吉日，叫了理发师来，替阖家男子剪发。父亲是第一个剪去辫子。自然这一回父亲不再主张“身体发肤，受之父母”的大道理。",
+    "那时我已经能从床上起来，准备在我的父亲叔父之后，剪掉我的小辫子。但是当我起来照了一下镜子，发现那我认为奇耻大辱的猪尾巴，早已不见了。原来一场大病，把我的几根又短又黄的头发，脱得干干净净，我已成了一个秃头。因此直到了最后，我还是没有机会表现我的发辫的革命。我相信我一生没有比这一件事失望更大的。",
+    "至今回想，我是一个多么羸弱的孩子啊。",
+    "（作者：胡愈之　选自《中国现代散文精华》，人民文学出版社）"
+   ],
+   "translations": [
+    "Phần một",
+    "Từ thuở nhỏ, tôi đã là một đứa trẻ ốm yếu biết bao. Nhớ hồi học trung học, người tôi vừa thấp vừa gầy, khiến vầng trán trông rộng khác thường, đứng lên thì cả người như mất điểm tựa. Lại vì hồi nhỏ hay đau ốm, tóc vừa vàng vừa ngắn, sau gáy rủ một bím tóc xoăn dài chưa đầy một thước, trông hệt như cái đuôi lợn, lúc nào cũng bị các bạn học to cao lấy làm đề tài trêu chọc.",
+    "Đó là vào mùa xuân năm 1911, cha tôi đưa tôi đi thi vào trường Trung học phủ Thiệu Hưng. Khi ấy Thiệu Hưng là nơi sản sinh các vĩ nhân cách mạng, trường Trung học phủ Thiệu Hưng là ngôi trường nổi tiếng hay nổi phong trào phản đối. Giám đốc của trường (hiệu trưởng trung học thời ấy gọi là giám đốc) mỗi năm thế nào cũng phải thay hai người. Nghe nói ban lãnh đạo nhà trường khi đó sợ phiền phức, lấy vóc người nhỏ thấp làm tiêu chuẩn tuyển học sinh mới, cho rằng người nhỏ thì nhất định không gây phong trào. Mà tôi lại là đứa thấp bé nhất trường, nên được tuyển (chuyện này mãi gần đây tôi mới nghe ông Lỗ Tấn — giám đốc trường Trung học phủ Thiệu Hưng khi ấy — kể lại, trước kia tôi không hề biết). Con mắt của ban lãnh đạo nhà trường quả không sai. Ở trường Trung học phủ, tôi là học sinh an phận nhất, chẳng những không gây phong trào, ngay cả khi bị bạn học bắt nạt chế giễu, tôi cũng chưa bao giờ dám chống lại. Tôi là một đứa trẻ ốm yếu biết bao! Lại là lần đầu xa gia đình, vào học trường ở đô thị. Học sinh mới vào trường theo lệ đều phải chịu sự bắt nạt của những bạn có thâm niên; huống hồ nhiều bạn học ai nấy đều to cao, tự nhiên tôi chỉ đành nhẫn nhịn tất cả, trước sau giữ “chủ nghĩa không chống cự”.",
+    "Lúc ấy cách cuộc khởi nghĩa Vũ Xương chưa đầy nửa năm, sự thống trị của hoàng triều nhà Thanh đã bắt đầu lung lay. Việc nhà cách mạng vĩ đại của Thiệu Hưng là Từ Tích Lân hành thích Ân Minh mới chỉ là chuyện hai ba năm trước. Chúng tôi thường đi qua Hiên Đình Khẩu trong phủ thành Thiệu Hưng, không khỏi nhớ lại cảnh “nữ hiệp Giám Hồ” Thu Cẩn bị chém đầu. Vì thế đám học sinh trung học trẻ tuổi bị bao trùm bởi một thứ cảm xúc cách mạng thần bí. Tôi nói “thần bí” là vì thanh niên khi ấy không như thanh niên bây giờ, có ý thức chính trị xã hội rõ ràng. Chỉ có điều vì triều đình nhà Thanh tàn sát các chí sĩ cách mạng, gây nên sự phản cảm mạnh mẽ, lại chịu ảnh hưởng của tư tưởng dân chủ, tư tưởng chủng tộc trên báo chí đương thời, nên cảm thấy không làm cách mạng lật đổ nhà Thanh thì không được, hơn nữa cảm thấy không hy sinh tính mạng để làm cách mạng thì không được. Khi ấy, điều tôi và các bạn hứng thú nhất là bàn chuyện cách mạng. Dù ban lãnh đạo nhà trường sợ gây chú ý với bên ngoài, khuyên học sinh chớ bàn chính trị, nhưng chúng tôi đều coi vấn đề cách mạng thú vị hơn bài vở ở trường. Có mấy vị thầy từng tham gia Đồng Minh Hội, chúng tôi đều đặc biệt tỏ lòng kính ngưỡng họ.",
+    "Phần hai",
+    "Đến khoảng tháng tư tháng năm năm ấy, cảm xúc cách mạng dồn nén trong lòng thanh niên đã đến lúc không thể không bộc lộ. Mà cách bộc lộ lại là cắt bím tóc. Nói cũng lạ, chỉ vì có một hai bạn cắt bím, mọi người lần lượt bắt chước theo, cắt tóc bỗng thành một thứ “bệnh dịch” thời thượng. Tuy ban lãnh đạo nhà trường vì muốn tránh sức ép bên ngoài mà khuyên học sinh chớ cắt bím, nhưng phần lớn học sinh vẫn thành đầu trọc. Anh họ tôi học ở trường Trung học phủ, anh cũng là một trong những người cắt bím đầu tiên; gia đình anh biết chuyện, báo cho cha tôi, cha tôi cuống lên, vội gửi ngay một lá thư dặn tôi tuyệt đối không được cắt bím. Tôi bèn viết thư xin, cha tôi lại gửi thư mắng cho một trận, viện dẫn đạo lý lớn “thân thể tóc da là nhận từ cha mẹ”. Thật ra tôi biết cha tôi không hề phản đối việc cắt bím, chẳng qua vì khi ấy triều đình nhà Thanh đàn áp rất gắt gao, hễ ai cắt bím thường bị gọi là đảng cách mạng, bắt được là chém đầu. Cha chỉ sợ tôi gặp chuyện bất trắc mà thôi.",
+    "Rốt cuộc tôi vẫn là một đứa trẻ ốm yếu. Tôi không có can đảm chống lại cha, đành tạm giữ lại bím tóc, nhưng vì thế tôi phải trả một cái giá đắt. Tôi bị các bạn học lấy làm đối tượng trêu chọc. “Đuôi lợn” trở thành biệt danh của tôi. Đương nhiên trong lớp số người còn để bím vẫn nhiều, nhưng họ là “người lớn”, chẳng ai dám cười họ, còn tôi chỉ đành nuốt nước mắt khóc thầm, một mình chịu sự bắt nạt của những bạn to cao. Không chỉ những bạn đã cắt tóc túm lấy bím tóc nhỏ của tôi làm trò đùa, ngay cả những bạn cũng để bím như tôi, vì cậy nắm đấm to, cũng gọi tôi là “đuôi lợn”, đó là nỗi nhục khó chịu biết bao.",
+    "Kỳ nghỉ hè năm ấy, tôi kéo theo bím tóc nhỏ về nhà, xin cha cho học kỳ sau chuyển sang trường khác, vì không muốn chịu cái nhục “đuôi lợn”, nếu không thì cha phải cho phép tôi cắt tóc. Nhưng cả hai yêu cầu đều bị cha từ chối. Nghỉ hè xong, tôi đành vẫn kéo theo bím tóc vào trường Trung học phủ Thiệu Hưng.",
+    "Nhưng lúc này tình hình đã khác. Tin đồn truy bắt đảng cách mạng bỗng trở nên hết sức căng thẳng, nhiều người vì cắt bím mà bị bắt đem đi xử tử. Vì thế những bạn vốn đã cắt bím đều đội mũ quả dưa, gắn một bím tóc giả để trở lại trường. Trong lòng tôi tuy thầm đắc ý, thấy những bạn cắt tóc kia thật ra cũng chẳng anh hùng hơn tôi là bao, nhưng mặt khác tôi lại càng thấm thía nỗi nhục “đuôi lợn”. Họ tuy gắn bím giả, nhưng dù sao vẫn oai hơn “đuôi lợn” chứ!",
+    "Phần ba",
+    "Mùa thu khai giảng chưa được mười ngày, tôi đã ngã bệnh nằm liệt giường. Tôi mắc bệnh thương hàn, sốt rất cao. Người ta thuê thuyền chèo đưa tôi về quê cách đó hai trăm dặm. Khi về đến nhà, tôi đã bất tỉnh nhân sự, cha tôi, bà nội tôi, cả nhà lo lắng sốt ruột vô cùng. Trận ốm ấy kéo dài tròn bốn tháng, trong đó có hai tháng không ăn được gì, gầy chỉ còn da bọc xương. Thầy thuốc đều nói hy vọng rất mong manh, sau rốt cũng dần dần cứu sống được. Mạng sống từ đó về sau giống như trúng giải độc đắc xổ số hàng không, có thể nói là của trời cho bất ngờ.",
+    "Gần cuối thu, bệnh tôi đã qua thời kỳ nguy hiểm. Một giai đoạn quan trọng trong lịch sử cận đại Trung Quốc đã đến. Sau khởi nghĩa Vũ Xương, các tỉnh lần lượt hưởng ứng. Chưa được mấy ngày, làn sóng cách mạng đã phá tan bầu không khí tĩnh mịch của huyện lỵ nhỏ bé chúng tôi. Có người nói thành Hàng Châu đã treo cờ trắng, có người nói đảng cách mạng đã chiếm Thiệu Hưng. Những tin tức ấy lập tức truyền đến bên giường bệnh của tôi. Cha đến nói với tôi rằng nhà Mãn Thanh có lẽ sắp bị lật đổ, bên ngoài đã có rất nhiều người cắt bím, thiên hạ hẳn sẽ là thiên hạ của người Hán.",
+    "Tôi đã nằm trên giường bệnh ba tháng, đang không sao xua được nỗi bực bội, nghe tin động trời ấy, tự nhiên mừng khôn xiết. Tôi đang thầm nghĩ, lần này tuy mắc một trận ốm nặng, nhưng tôi đã được “tái sinh”. Ít nhất tôi có thể cắt bỏ bím tóc, không còn chịu cái nhục “đuôi lợn” nữa. Tôi vui sướng biết bao.",
+    "Khi ấy nghe tin quân cách mạng giành lại các nơi, nỗi phấn khích trong lòng không bút nào tả xiết. Gặp ai đến thăm, tôi cũng cùng họ bàn chuyện quốc sự. Thậm chí khi một bà giúp việc chẳng hiểu chuyện gì vào phòng, tôi cũng hỏi bà bên ngoài đã thành cảnh tượng gì, ngoài phố có treo cờ trắng hay không. Tôi chỉ mong lập tức nhảy dậy, đi xem thế giới mới sau cuộc đại biến chuyển này, thỏa mãn tâm trạng phấn khích và tò mò của mình.",
+    "Tôi nhiều lần xin cha cho xem báo, nhưng cha không cho. Thầy thuốc nói cơ thể tôi còn rất yếu, đọc sách đọc báo là điều tuyệt đối phải cấm. Nhưng nằm trên giường bệnh, suốt ngày đêm nhắm mắt tưởng tượng những biến đổi kỳ lạ của thế giới bên ngoài, tưởng tượng những tin tức động trời đăng với tít chữ lớn trên báo, tôi quả thật không sao chịu nổi nữa. Một hôm, cả nhà đang ăn trưa, trong phòng tôi không có ai. Tôi gắng sức bò dậy khỏi giường bệnh, bước từng bước xiêu vẹo sang thư phòng của cha đối diện phòng bệnh. Tôi lấy trộm một tờ “Thời báo” trên bàn rồi quay về phòng bệnh. Chưa kịp về đến giường, tôi đã ngất lịm bất tỉnh nhân sự. Đến khi mẹ vào phòng thấy tôi ngất trên sàn, tay cầm tờ “Thời báo”, cả nhà đều cuống lên. Vội đỡ tôi lên giường, mời thầy thuốc đến, rốt cuộc lại cứu được tôi. Nhưng từ đó tuyệt đối không cho tôi đọc báo nữa, và cũng không để tôi ở một mình trong phòng.",
+    "Lại hơn một tháng nữa trôi qua, bệnh tôi coi như khỏi hẳn, chỉ còn gầy yếu, không có sức. Ngày 1 tháng 1 năm 1912, triều đình nhà Thanh thoái vị, Tôn Trung Sơn nhậm chức Đại tổng thống lâm thời ở Nam Kinh. Cha tôi vốn cũng là người “tân đảng”, đến lúc này ông không còn do dự nữa. Ông chọn một ngày lành, gọi thợ cắt tóc đến cắt tóc cho toàn bộ đàn ông trong nhà. Cha là người đầu tiên cắt bím. Đương nhiên lần này cha không còn viện đến đạo lý lớn “thân thể tóc da là nhận từ cha mẹ” nữa.",
+    "Khi ấy tôi đã có thể rời giường, chuẩn bị theo sau cha và chú để cắt bỏ bím tóc nhỏ của mình. Nhưng khi tôi đứng dậy soi gương, mới phát hiện cái đuôi lợn mà tôi coi là nỗi nhục lớn ấy đã biến mất từ lâu. Thì ra trận ốm nặng đã làm mấy sợi tóc vừa ngắn vừa vàng của tôi rụng sạch sành sanh, tôi đã thành một kẻ đầu trọc. Vì thế cho đến tận cùng, tôi vẫn không có cơ hội thể hiện cuộc “cách mạng bím tóc” của mình. Tôi tin rằng cả đời tôi không có việc gì thất vọng hơn chuyện này.",
+    "Đến nay nghĩ lại, tôi quả là một đứa trẻ ốm yếu biết bao.",
+    "(Tác giả: Hồ Dũ Chi, trích từ “Tinh hoa tản văn hiện đại Trung Quốc”, NXB Văn học Nhân dân)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "沙漠玫瑰的开放",
+   "paragraphs": [
+    "历史对于价值判断的影响，好像非常清楚。鉴往知来，认识过去才能预测未来，这话都已经说烂了。我不太用成语，所以试试另外一种说法。",
+    "一个朋友从以色列（Israel）来，给我带来了一朵沙漠玫瑰。沙漠里没有玫瑰，但是这个植物的名字叫做沙漠玫瑰。拿在手里，是一蓬干草，真正枯萎、干的、死掉的草，这样一把，很难看。但是他要我看说明书。说明书告诉我，这个沙漠玫瑰其实是一种地衣，有点像松枝的形状。你把它整个泡在水里，第8天它会完全复活；把水拿掉的话，它又会渐渐地干掉，枯干如沙。把它再藏个一年两年，然后哪一天再泡在水里，它又会复活。这就是沙漠玫瑰。",
+    "好，我就把这一团枯干的草，用一只大玻璃碗盛着，注满了清水放在那儿。从那一天开始，我跟我两个宝贝儿子，就每天去探看沙漠玫瑰怎么样了。第一天去看它，没有动静，还是一把枯草浸在水里头；第二天去看的时候发现，它有一个中心，这个中心已经从里头往外头稍稍舒展松了，而且有一点绿的感觉，还不是颜色；第三天再去看，那个绿的模糊的感觉已经实实在在是一种绿的颜色，松枝的绿色，散发出潮湿青苔的气味，虽然边缘还是干死的。它把自己张开，已经让我们看出了它真有玫瑰形的图案。每一天，它核心的绿意就往外扩展一寸。我们每天给它加清水，到了有一天，那个绿已经渐渐延伸到它所有的手指，层层舒展开来。",
+    "第八天，当我们去看沙漠玫瑰的时候，刚好我们一个邻居也在，他就跟着我们一起到厨房里去看。这一天，展现在我们眼前的是完整的、丰润饱满、复活了的沙漠玫瑰！我们三个疯狂地大叫出声，因为太快乐了，我们看到一朵尽情开放的浓绿的沙漠玫瑰。",
+    "这个邻居在旁边很奇怪地说，不就一把杂草，你们干吗呀？",
+    "我愣住了。",
+    "是啊，在他的眼中，它不是玫瑰，它是地衣啊！你说，地衣再美，能美到哪里去呢？他看到的就是一把挺难看、气味潮湿的低等植物，搁在一个大碗里；也就是说，他看到的是现象的本身定在那一个时刻，是孤立的，而我们所看到的是现象和现象背后一点一滴的线索，辗转曲折、千丝万缕的来历。",
+    "于是，这个东西在我们的价值判断里，它的美是惊天动地的，它的复活过程就是宇宙洪荒初始的惊骇演出。我们能够对它欣赏，只有一个原因：我们知道它的起点在哪里。知不知道这个起点，就形成我们和邻居之间价值判断的南辕北辙。",
+    "不必说鉴往知来，我只想告诉你沙漠玫瑰的故事罢了。对于任何东西、现象、问题、人、事件，如果不认识它的过去，你如何理解它的现在到底代表什么意义？不理解它的现在，又何从判断它的未来？",
+    "对于历史我是一个非常愚笨的、非常晚熟的学生。40岁之后，才发觉自己的不足。以前我只看孤立的现象，就是说，沙漠玫瑰放在这里，很酷，我要改变你，因为我要一朵真正的芬芳的玫瑰。40岁之后，发现了历史，知道了沙漠玫瑰一路是怎么过来的，我的兴趣不再是直接的评判，而在于你给我一个东西、一个事件、一个现象，我希望知道这个事情在更大的坐标里头，横的跟纵的，它到底是在哪一个位置上？在我不知道这个横的和纵的坐标之前，对不起，我不敢对这个事情评判。",
+    "历史就是让你知道，沙漠玫瑰有它特定的起点，没有一个现象是孤立存在的。",
+    "（作者：龙应台　选自龙应台《百年思索》，南海出版公司）"
+   ],
+   "translations": [
+    "Ảnh hưởng của lịch sử đối với việc phán đoán giá trị dường như rất rõ ràng. “Ôn cũ biết mới”, hiểu quá khứ mới đoán được tương lai — câu này đã bị nói đến nhàm. Tôi không hay dùng thành ngữ, nên thử một cách nói khác.",
+    "Một người bạn từ Israel đến, mang cho tôi một bông hồng sa mạc. Sa mạc thì không có hoa hồng, nhưng loài thực vật này tên là hồng sa mạc. Cầm trong tay, đó là một nắm cỏ khô, thứ cỏ thật sự héo úa, khô khốc, chết hẳn, một nắm như thế, rất khó coi. Nhưng anh bảo tôi đọc tờ hướng dẫn. Tờ hướng dẫn cho biết, hồng sa mạc thực ra là một loại địa y, hình dáng hơi giống cành thông. Bạn ngâm cả nó vào nước, đến ngày thứ 8 nó sẽ hồi sinh hoàn toàn; nếu bỏ nước đi, nó lại dần dần khô héo, khô như cát. Cất nó đi thêm một hai năm, rồi một ngày nào đó lại ngâm vào nước, nó lại hồi sinh. Đó chính là hồng sa mạc.",
+    "Được thôi, tôi bèn đặt nắm cỏ khô ấy vào một chiếc bát thủy tinh lớn, đổ đầy nước trong rồi để đó. Từ hôm ấy, tôi cùng hai cậu con trai cưng ngày nào cũng đến xem hồng sa mạc ra sao. Ngày đầu đến xem, chẳng có động tĩnh gì, vẫn là một nắm cỏ khô ngâm trong nước; ngày thứ hai đến xem thì phát hiện nó có một tâm điểm, tâm điểm ấy đã hơi giãn lỏng từ trong ra ngoài, lại có chút cảm giác xanh, nhưng chưa thành màu; ngày thứ ba đến xem, cái cảm giác xanh mơ hồ ấy đã thực sự là một màu xanh, màu xanh của cành thông, tỏa ra mùi rêu ẩm, dù mép ngoài vẫn còn khô chết. Nó tự xòe mình ra, đã cho chúng tôi thấy nó quả thật có hoa văn hình bông hồng. Mỗi ngày, màu xanh ở lõi nó lại lan ra thêm một tấc. Ngày nào chúng tôi cũng thêm nước trong cho nó, cho đến một hôm, màu xanh ấy đã dần lan tới mọi “ngón tay” của nó, từng lớp từng lớp xòe ra.",
+    "Ngày thứ tám, khi chúng tôi đến xem hồng sa mạc, vừa hay có một người hàng xóm ở đó, anh bèn theo chúng tôi vào bếp xem. Hôm ấy, hiện ra trước mắt chúng tôi là một bông hồng sa mạc trọn vẹn, căng tràn mơn mởn, đã hồi sinh! Ba chúng tôi hét lên như điên, vì quá đỗi vui sướng, chúng tôi thấy một bông hồng sa mạc xanh thẫm đang nở bung hết mình.",
+    "Người hàng xóm đứng bên cạnh lấy làm lạ nói: chẳng qua là một nắm cỏ dại, các người làm gì thế?",
+    "Tôi sững người.",
+    "Phải rồi, trong mắt anh ta, nó không phải hoa hồng, nó là địa y! Bạn xem, địa y có đẹp đến mấy thì đẹp được đến đâu? Thứ anh ta thấy chỉ là một nắm thực vật bậc thấp khá khó coi, mùi ẩm mốc, đặt trong một chiếc bát lớn; nói cách khác, thứ anh ta thấy là bản thân hiện tượng dừng lại ở khoảnh khắc ấy, là cô lập, còn thứ chúng tôi thấy là hiện tượng cùng những manh mối từng chút một đằng sau nó, là lai lịch quanh co khúc khuỷu, chằng chịt muôn mối.",
+    "Thế là, trong sự phán đoán giá trị của chúng tôi, vẻ đẹp của vật ấy thật kinh thiên động địa, quá trình hồi sinh của nó chính là một màn trình diễn kinh hãi thuở hồng hoang khai thiên lập địa. Chúng tôi có thể thưởng thức nó chỉ vì một lý do: chúng tôi biết điểm khởi đầu của nó ở đâu. Biết hay không biết điểm khởi đầu ấy đã tạo nên sự khác biệt một trời một vực trong phán đoán giá trị giữa chúng tôi và người hàng xóm.",
+    "Chẳng cần nói “ôn cũ biết mới”, tôi chỉ muốn kể cho bạn câu chuyện hồng sa mạc mà thôi. Với bất cứ đồ vật, hiện tượng, vấn đề, con người, sự kiện nào, nếu không hiểu quá khứ của nó, làm sao bạn hiểu được hiện tại của nó rốt cuộc mang ý nghĩa gì? Không hiểu hiện tại của nó, thì lấy đâu ra căn cứ để phán đoán tương lai của nó?",
+    "Với lịch sử, tôi là một học trò rất ngốc nghếch, rất chậm trưởng thành. Sau tuổi 40 mới nhận ra sự thiếu sót của mình. Trước đây tôi chỉ nhìn hiện tượng cô lập, nghĩa là, hồng sa mạc đặt ở đây, rất ngầu, tôi muốn thay đổi nó, vì tôi muốn có một bông hồng thật sự thơm ngát. Sau tuổi 40, tôi phát hiện ra lịch sử, biết được hồng sa mạc đã đi qua chặng đường thế nào, hứng thú của tôi không còn là phán xét trực tiếp, mà là khi bạn đưa cho tôi một đồ vật, một sự kiện, một hiện tượng, tôi muốn biết việc ấy trong một hệ tọa độ lớn hơn, cả chiều ngang lẫn chiều dọc, rốt cuộc nằm ở vị trí nào? Trước khi tôi biết hệ tọa độ ngang dọc ấy, xin lỗi, tôi không dám phán xét việc đó.",
+    "Lịch sử chính là để bạn biết rằng hồng sa mạc có điểm khởi đầu riêng của nó, không có hiện tượng nào tồn tại cô lập.",
+    "(Tác giả: Long Ứng Đài, trích từ “Trăm năm suy ngẫm” của Long Ứng Đài, Công ty xuất bản Nam Hải)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "给 + (danh từ/đại từ) + động từ (bị, bởi — câu bị động)",
+   "structure": "主语 + 给 + (名词/代词) + 动词结构",
+   "explanation": "“给” là giới từ, dẫn ra chủ thể phát ra động tác, nghĩa gần với “叫、让、被” (bị, bởi). Khi không cần nhấn mạnh chủ thể của động tác thì danh từ hoặc đại từ sau “给” có thể lược bỏ. Trong bài: “老是给身材高大的同学们，当作开玩笑的资料。” (luôn bị các bạn to cao lấy làm trò đùa).",
+   "examples": [
+    {
+     "zh": "老是给身材高大的同学们，当作开玩笑的资料。",
+     "vi": "Lúc nào cũng bị những bạn học to cao lấy làm đề tài trêu chọc."
+    },
+    {
+     "zh": "外边的衣服给（大风）刮跑了。",
+     "vi": "Quần áo phơi bên ngoài bị (gió lớn) thổi bay mất rồi."
+    },
+    {
+     "zh": "我忘了带伞，结果全身都给（雨）淋湿了。",
+     "vi": "Tôi quên mang ô, kết quả cả người bị (mưa) ướt sũng."
+    },
+    {
+     "zh": "你这么帮他，他反而害你，他的良心是不是给狗吃了？",
+     "vi": "Bạn giúp hắn như vậy mà hắn lại hại bạn, lương tâm hắn bị chó ăn mất rồi sao?"
+    }
+   ]
+  },
+  {
+   "point": "何况 (huống hồ, huống chi)",
+   "structure": "理由1，何况 + 理由2，结论",
+   "explanation": "“何况” là liên từ, dùng ở phân câu sau để bổ sung hoặc thêm vào một lý do tiến thêm một bước, sau đó nêu kết luận. Tương đương “况且”, thường dùng phối hợp với “又”, “也”, “还”.",
+   "examples": [
+    {
+     "zh": "初进校的新生，照例是要受老资格的同学的欺侮的；又何况许多同学们，一个个长得又高又大，我自然只好忍受一切，始终抱着“不抵抗主义”了。",
+     "vi": "Học sinh mới vào trường theo lệ đều bị các bạn cũ bắt nạt; huống hồ nhiều bạn ai nấy đều to cao, tự nhiên tôi chỉ đành chịu đựng tất cả, trước sau giữ “chủ nghĩa không chống cự”."
+    },
+    {
+     "zh": "咱们家不好找，何况舅舅又是我们的长辈，我们无论如何得去车站接一下他，不接说不过去。",
+     "vi": "Nhà mình khó tìm, huống hồ cậu lại là bậc trên, dù thế nào chúng ta cũng phải ra ga đón cậu, không đón thì không phải phép."
+    },
+    {
+     "zh": "大庆和丽娜的兴趣、差别很大，何况双方家长也不赞同他们交往，所以说分手就分手了。",
+     "vi": "Sở thích của Đại Khánh và Lệ Na khác nhau rất nhiều, huống chi bố mẹ hai bên cũng không tán thành họ qua lại, nên nói chia tay là chia tay."
+    },
+    {
+     "zh": "她本来心就软，见人有难一定尽量帮忙，何况现在蹲在角落里的还是一个孤苦无助的孩子，她很自然地走了过去。",
+     "vi": "Cô vốn mềm lòng, thấy ai gặp khó khăn nhất định cố hết sức giúp đỡ, huống hồ người đang ngồi co ro trong góc lại là một đứa trẻ côi cút không nơi nương tựa, cô rất tự nhiên bước tới."
+    }
+   ]
+  },
+  {
+   "point": "甚 (rất, hết sức — văn viết)",
+   "structure": "甚 + tính từ/động từ đơn âm tiết：甚严 / 甚好 / 甚少",
+   "explanation": "“甚” là phó từ, biểu thị mức độ rất cao, tương đương “很”, “非常”. Không dùng trong câu so sánh. Mang sắc thái văn ngôn, chủ yếu dùng trong văn viết, có thể bổ nghĩa cho tính từ hoặc động từ đơn âm tiết. Ví dụ: 关系甚密 (quan hệ rất thân), 方法甚好, 品行甚佳, 兴致甚浓, 感情甚笃 (tình cảm rất sâu đậm), 进步甚快, 收效甚微 (hiệu quả rất ít), 知者甚少, 评价甚低, 久无音讯，甚念 (lâu không tin tức, rất nhớ).",
+   "examples": [
+    {
+     "zh": "不过因为当时清廷压迫甚严……",
+     "vi": "Chẳng qua vì lúc bấy giờ triều đình nhà Thanh đàn áp rất gắt gao…"
+    },
+    {
+     "zh": "关系甚密 / 方法甚好 / 品行甚佳 / 兴致甚浓",
+     "vi": "Quan hệ rất thân / phương pháp rất tốt / phẩm hạnh rất tốt / hứng thú rất cao"
+    },
+    {
+     "zh": "感情甚笃 / 进步甚快 / 收效甚微 / 知者甚少 / 评价甚低",
+     "vi": "Tình cảm rất sâu đậm / tiến bộ rất nhanh / hiệu quả rất ít / người biết rất ít / đánh giá rất thấp"
+    },
+    {
+     "zh": "久无音讯，甚念。",
+     "vi": "Lâu rồi không có tin tức, rất nhớ."
+    }
+   ]
+  },
+  {
+   "point": "不单 (không chỉ, chẳng những)",
+   "structure": "不单 A，也/还/而且 B；不单 A，连……也……；不单 A，就是……也……",
+   "explanation": "“不单” là liên từ, biểu thị quan hệ tăng tiến. Dùng ở vế trước để nêu một tầng ý; vế sau thường dùng “也”, “还”, “而且”… dẫn ra ý tiến thêm một bước; có khi dùng “连……也……”, “就是……也……” thì ý tăng tiến mạnh hơn. Trong khẩu ngữ “不单” cũng có thể nói “不单单”. Liên hệ: phạm vi dùng của “不但” rộng hơn “不单”; các cách dùng trên của “不单” thì “不但” đều có, nhưng “不单” không có hai cách dùng sau của “不但”: ① “不但不/没有……，反而/反倒/相反……” (như: 这样做不但不能解决矛盾，反而会增加矛盾); ② “不但” đi với “而且” nối từ ngữ (như: 不但可以而且一定能实现这个愿望). Ngoài ra, “不单” nói được thành “不单单”, còn “不但” không nói được thành “不但但”.",
+   "examples": [
+    {
+     "zh": "不单是剪发的同学们，扭住我的小辫子，当作把戏，连那些和我一样留着辫子的同学们，因为自恃拳头大，也称我叫“猪尾巴”，这是多么难受的侮辱啊。",
+     "vi": "Không chỉ những bạn đã cắt tóc túm lấy bím tóc nhỏ của tôi làm trò đùa, ngay cả những bạn cũng để bím như tôi, vì cậy nắm đấm to, cũng gọi tôi là “đuôi lợn”, đó là nỗi nhục khó chịu biết bao."
+    },
+    {
+     "zh": "孙行者神通广大，不单会变鸟兽虫鱼，也会变庙宇。",
+     "vi": "Tôn Hành Giả thần thông quảng đại, chẳng những biến được thành chim muông sâu cá, mà còn biến được cả thành đền miếu."
+    },
+    {
+     "zh": "辛亥革命不单推翻了清朝的统治，而且结束了中国两千年的封建君主专制制度。",
+     "vi": "Cách mạng Tân Hợi không chỉ lật đổ sự thống trị của nhà Thanh mà còn chấm dứt chế độ quân chủ chuyên chế phong kiến hai nghìn năm ở Trung Quốc."
+    },
+    {
+     "zh": "你提到的这几部电影，我爸爸不单没看过，恐怕连听都没听说过。",
+     "vi": "Mấy bộ phim bạn nhắc tới, bố tôi chẳng những chưa xem, e rằng nghe cũng chưa từng nghe nói."
+    },
+    {
+     "zh": "不单单小孩儿爱玩电脑游戏，大人也爱玩。",
+     "vi": "Không chỉ trẻ con thích chơi trò chơi điện tử, người lớn cũng thích chơi."
+    }
+   ]
+  },
+  {
+   "point": "不堪 (hết sức, vô cùng; không chịu nổi)",
+   "structure": "tính từ song âm tiết mang nghĩa tiêu cực + 不堪；不堪 + động từ",
+   "explanation": "“不堪” là phó từ, dùng sau tính từ song âm tiết mang nghĩa tiêu cực làm bổ ngữ, biểu thị mức độ sâu (vô cùng, hết sức). Ví dụ: 拥挤不堪 (chật chội vô cùng), 破旧不堪, 混乱不堪, 污秽不堪, 痛苦不堪, 疲惫不堪, 狼狈不堪. Liên hệ: “不堪” còn có thể bổ nghĩa cho động từ, biểu thị không thể chịu đựng hoặc không cách nào gánh nổi, như: 不堪入耳 (nghe không lọt tai), 不堪设想 (không dám tưởng tượng), 不堪回首 (không dám nhìn lại), 不堪一击 (không chịu nổi một đòn), 不堪烦扰 (không chịu nổi phiền nhiễu).",
+   "examples": [
+    {
+     "zh": "我的父亲、祖母，一家人都忧急得不堪。",
+     "vi": "Cha tôi, bà nội tôi, cả nhà đều lo lắng sốt ruột vô cùng."
+    },
+    {
+     "zh": "拥挤不堪 / 破旧不堪 / 混乱不堪 / 污秽不堪",
+     "vi": "Chật chội vô cùng / cũ nát hết sức / hỗn loạn vô cùng / dơ bẩn hết sức"
+    },
+    {
+     "zh": "痛苦不堪 / 疲惫不堪 / 狼狈不堪",
+     "vi": "Đau khổ vô cùng / mệt mỏi rã rời / thảm hại hết sức"
+    },
+    {
+     "zh": "不堪入耳 / 不堪设想 / 不堪回首 / 不堪一击 / 不堪烦扰",
+     "vi": "Nghe không lọt tai / không dám tưởng tượng / không dám nhìn lại / không chịu nổi một đòn / không chịu nổi phiền nhiễu"
+    }
+   ]
+  }
+ ]
+}

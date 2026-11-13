@@ -77,7 +77,7 @@ Không sửa tay các file dữ liệu sinh tự động. Sửa nguồn rồi ch
 |---|---|---|
 | `hsk_lotrinh/hsk_vocab_data.js` | `tools/word_list_data/HSK1-HSK6_full.xlsx` (sheet HSK1…HSK6, cột: STT, Từ mới, Phiên âm, Giải thích, Ví dụ, Phiên âm VD, Dịch) | `python tools/extract_hsk_vocab.py` (cần `openpyxl`, chạy từ đâu cũng được) |
 | `tuvung/vocab_data.js` / `.json` | `sach_boya/tc1.html` … `tc4.html` | `python tools/extract_vocab.py` ⚠️ Bản `vocab_data` hiện tại có vài chỗ đã được sửa tay (ví dụ câu ví dụ "精神～"). Chạy lại script sẽ mất các chỗ sửa đó, nên kiểm tra `git diff` trước khi giữ. |
-| `boya_learning/boya_data.js` / `.json` | `tools/scratch/gc1_book.json`, `gc2_book.json` | Từ thư mục gốc: `python tools/scratch/merge_all_books.py`, rồi `python tools/scratch/super_enrich.py` (cần `pypinyin`) |
+| `boya_learning/boya_data.js` / `.json` (phần Cao cấp gc1/gc2) | `tools/scratch/gc_rebuild/gc1_L01.json` … `gc2_L10.json`: chép từ PDF `pdf/高级飞翔篇1.pdf`, `2.pdf`, mỗi bài một file (có thể tách `_part_*.json`) gồm từ vựng, bài đọc + bản dịch và ngữ pháp | Từ thư mục gốc: `python tools/scratch/gc_rebuild/build_gc_books.py` (sinh `tools/scratch/gc1_book.json`, `gc2_book.json`, tự thêm ruby pinyin và câu ví dụ, cần `pypinyin`), rồi `python tools/scratch/merge_all_books.py`. **Không chạy `super_enrich.py`** vì script này thêm từ bịa vào Cao cấp. Quy cách chép nằm trong `gc_rebuild/BRIEF.md`. |
 
 Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHONIOENCODING=utf-8` để tránh lỗi `UnicodeEncodeError` (cp1252). Các script khác trong `tools/scratch/` vẫn dùng đường dẫn cũ (trước khi chuyển thư mục), phải sửa trước khi chạy lại.
 
@@ -107,7 +107,7 @@ Ba trang dưới đây theo cùng một mô hình với `hsk_lotrinh`:
 
 Khi sửa logic SRS ở một trang, cân nhắc sửa đồng bộ ở các trang còn lại.
 
-### `boya_learning/` (6 quyển, 74 bài, 2.770 từ)
+### `boya_learning/` (6 quyển, 74 bài, 4.472 từ)
 - **Mỗi bài có 4 bước:** Từ vựng (lật hết flashcard) → Bài khóa (cuộn hết từng phần hoặc đọc xong một lượt tính giờ) → Ngữ pháp (xem hết các thẻ) → Kiểm tra.
 - **Hoàn thành bài:** chỉ khi bài kiểm tra đạt ≥ 80%. Bài kiểm tra có tối đa 12 câu từ vựng và 3 câu ngữ pháp; câu sai được hỏi lại; điểm tính theo lần trả lời đầu.
 - **Ôn tập:** "Ôn hôm nay" gom từ đến hạn của mọi quyển.

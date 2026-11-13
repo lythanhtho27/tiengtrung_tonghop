@@ -1,0 +1,876 @@
+{
+ "book": "gc1",
+ "lesson_num": 1,
+ "title": "父亲的谜语",
+ "pages": [
+  13,
+  32
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "谜语",
+   "py": "míyǔ",
+   "pos": "名",
+   "zh": "供人猜测某个事物或文字的语句。",
+   "en": "riddle",
+   "hv": "MÊ NGỮ",
+   "vi": "câu đố",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "夏日",
+   "py": "xiàrì",
+   "pos": "名",
+   "zh": "夏天。",
+   "en": "",
+   "hv": "HẠ NHẬT",
+   "vi": "ngày hè, mùa hè",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "笼罩",
+   "py": "lǒngzhào",
+   "pos": "动",
+   "zh": "像笼子似的罩在上面。",
+   "en": "to envelop; to shroud",
+   "hv": "LUNG TRÁO",
+   "vi": "bao phủ, bao trùm",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "笑眯眯",
+   "py": "xiàomīmī",
+   "pos": "形",
+   "zh": "形容眯着眼睛微笑的样子。",
+   "en": "",
+   "hv": "TIẾU MỊ MỊ",
+   "vi": "cười tít mắt",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "悠悠",
+   "py": "yōuyōu",
+   "pos": "形",
+   "zh": "从容悠闲的样子。",
+   "en": "leisurely; unhurriedly",
+   "hv": "DU DU",
+   "vi": "thong thả, khoan thai",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "眨巴",
+   "py": "zhǎba",
+   "pos": "动",
+   "zh": "眨。",
+   "en": "to blink",
+   "hv": "TRÁT BA",
+   "vi": "chớp (mắt)",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "星斗",
+   "py": "xīngdǒu",
+   "pos": "名",
+   "zh": "星（总称）。",
+   "en": "",
+   "hv": "TINH ĐẨU",
+   "vi": "sao trời, tinh tú",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "苦苦",
+   "py": "kǔkǔ",
+   "pos": "副",
+   "zh": "竭力，一再地。",
+   "en": "",
+   "hv": "KHỔ KHỔ",
+   "vi": "khổ công, ra sức",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "谜底",
+   "py": "mídǐ",
+   "pos": "名",
+   "zh": "谜语的答案。",
+   "en": "",
+   "hv": "MÊ ĐỂ",
+   "vi": "lời giải câu đố",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "盯",
+   "py": "dīng",
+   "pos": "动",
+   "zh": "把视线集中在一点上；注视。",
+   "en": "",
+   "hv": "ĐINH",
+   "vi": "nhìn chằm chằm",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "深邃",
+   "py": "shēnsuì",
+   "pos": "形",
+   "zh": "形容很深；深奥。（深邃——深刻）",
+   "en": "",
+   "hv": "THÂM THÚY",
+   "vi": "sâu thẳm",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "苦思冥想",
+   "py": "kǔ sī míng xiǎng",
+   "pos": "",
+   "zh": "深沉地思索。也说冥思苦索或冥思苦想。",
+   "en": "",
+   "hv": "KHỔ TƯ MINH TƯỞNG",
+   "vi": "vắt óc suy nghĩ",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "脑瓜子",
+   "py": "nǎoguāzi",
+   "pos": "名",
+   "zh": "脑袋，也说脑瓜儿。",
+   "en": "",
+   "hv": "NÃO QUA TỬ",
+   "vi": "cái đầu (khẩu ngữ)",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "发涨",
+   "py": "fāzhàng",
+   "pos": "动",
+   "zh": "本课指（头部）充血，比喻不清醒。也说头昏脑涨。",
+   "en": "",
+   "hv": "PHÁT TRƯỚNG",
+   "vi": "căng (đầu), choáng váng",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "给予",
+   "py": "jǐyǔ",
+   "pos": "动",
+   "zh": "给（gěi）。也作给与。",
+   "en": "",
+   "hv": "CẤP DỮ",
+   "vi": "dành cho, đưa ra",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "提示",
+   "py": "tíshì",
+   "pos": "动",
+   "zh": "把对方没有想到或想不到的提出来，引起对方注意。（提示——提醒）",
+   "en": "",
+   "hv": "ĐỀ THỊ",
+   "vi": "gợi ý",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "得意",
+   "py": "déyì",
+   "pos": "形",
+   "zh": "称心如意；感到非常满意。（得意——满意）",
+   "en": "",
+   "hv": "ĐẮC Ý",
+   "vi": "đắc ý, hớn hở",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "妹子",
+   "py": "mèizi",
+   "pos": "名",
+   "zh": "本课指女孩儿。",
+   "en": "",
+   "hv": "MUỘI TỬ",
+   "vi": "bé gái",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "凑",
+   "py": "còu",
+   "pos": "动",
+   "zh": "接近。",
+   "en": "",
+   "hv": "THẤU",
+   "vi": "xích lại gần, ghé sát",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "饱经忧患",
+   "py": "bǎo jīng yōuhuàn",
+   "pos": "",
+   "zh": "经历过很多困苦患难。",
+   "en": "",
+   "hv": "BÃO KINH ƯU HOẠN",
+   "vi": "trải qua nhiều gian truân",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "老头子",
+   "py": "lǎotóuzi",
+   "pos": "名",
+   "zh": "年老的男子。",
+   "en": "",
+   "hv": "LÃO ĐẦU TỬ",
+   "vi": "ông già",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "伙伴",
+   "py": "huǒbàn",
+   "pos": "名",
+   "zh": "同伴；共同参加某种组织或从事某种活动的人。",
+   "en": "",
+   "hv": "HỎA BẠN",
+   "vi": "bạn bè, bạn đồng hành",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "噘",
+   "py": "juē",
+   "pos": "动",
+   "zh": "翘起（嘴唇）。",
+   "en": "to stick up",
+   "hv": "QUYẾT",
+   "vi": "bĩu (môi), chu (miệng)",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "眉头",
+   "py": "méitóu",
+   "pos": "名",
+   "zh": "两眉附近的地方。",
+   "en": "",
+   "hv": "MI ĐẦU",
+   "vi": "chân mày",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "烦恼",
+   "py": "fánnǎo",
+   "pos": "形",
+   "zh": "烦闷苦恼。（烦恼——苦恼）",
+   "en": "",
+   "hv": "PHIỀN NÃO",
+   "vi": "phiền muộn",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "忧愁",
+   "py": "yōuchóu",
+   "pos": "形",
+   "zh": "因遭遇困难或不如意的事而苦闷。",
+   "en": "",
+   "hv": "ƯU SẦU",
+   "vi": "buồn rầu, lo âu",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "洋娃娃",
+   "py": "yángwáwa",
+   "pos": "名",
+   "zh": "儿童玩具，模仿外国小孩儿的相貌、服饰做成的小人儿。",
+   "en": "",
+   "hv": "DƯƠNG OA OA",
+   "vi": "búp bê",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "蝴蝶结",
+   "py": "húdiéjié",
+   "pos": "名",
+   "zh": "形状像蝴蝶的结子。",
+   "en": "bowknot",
+   "hv": "HỒ ĐIỆP KẾT",
+   "vi": "nơ con bướm",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "鹿",
+   "py": "lù",
+   "pos": "名",
+   "zh": "",
+   "en": "deer",
+   "hv": "LỘC",
+   "vi": "con hươu",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "铅笔刀",
+   "py": "qiānbǐdāo",
+   "pos": "名",
+   "zh": "削铅笔用的刀。",
+   "en": "",
+   "hv": "DUYÊN BÚT ĐAO",
+   "vi": "dao gọt bút chì",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "引",
+   "py": "yǐn",
+   "pos": "动",
+   "zh": "惹。",
+   "en": "",
+   "hv": "DẪN",
+   "vi": "khiến, làm cho",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "抹",
+   "py": "mǒ",
+   "pos": "动",
+   "zh": "擦。",
+   "en": "",
+   "hv": "MẠT",
+   "vi": "lau, xóa",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "全然",
+   "py": "quánrán",
+   "pos": "副",
+   "zh": "完全地。",
+   "en": "",
+   "hv": "TOÀN NHIÊN",
+   "vi": "hoàn toàn",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "陡然",
+   "py": "dǒurán",
+   "pos": "副",
+   "zh": "突然。",
+   "en": "",
+   "hv": "ĐẨU NHIÊN",
+   "vi": "bỗng nhiên, đột nhiên",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "黯淡",
+   "py": "àndàn",
+   "pos": "形",
+   "zh": "（光线）昏暗；（前途）不光明；（色彩）不鲜明。",
+   "en": "",
+   "hv": "ẢM ĐẠM",
+   "vi": "mờ nhạt, u ám",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "涩",
+   "py": "sè",
+   "pos": "形",
+   "zh": "像明矾或不熟的柿子那样使舌头感到麻木干燥的味道。",
+   "en": "puckery; astringent",
+   "hv": "SÁP",
+   "vi": "chát",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "欺负",
+   "py": "qīfu",
+   "pos": "动",
+   "zh": "用蛮横无理的手段侵犯、压迫或侮辱。",
+   "en": "",
+   "hv": "KHI PHỤ",
+   "vi": "bắt nạt, ức hiếp",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "委屈",
+   "py": "wěiqu",
+   "pos": "形",
+   "zh": "受到不应该有的指责或待遇，心里难过。",
+   "en": "",
+   "hv": "ỦY KHUẤT",
+   "vi": "tủi thân, oan ức",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "吧嗒",
+   "py": "bādā",
+   "pos": "拟声",
+   "zh": "形容液体滴落的声音。",
+   "en": "",
+   "hv": "BA ĐÁP",
+   "vi": "lã chã, tí tách (tiếng nước nhỏ giọt)",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "满心",
+   "py": "mǎnxīn",
+   "pos": "副",
+   "zh": "整个心里（充满某种情绪）。",
+   "en": "",
+   "hv": "MÃN TÂM",
+   "vi": "đầy lòng, cả tấm lòng",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "无法",
+   "py": "wúfǎ",
+   "pos": "副",
+   "zh": "没有办法。",
+   "en": "",
+   "hv": "VÔ PHÁP",
+   "vi": "không cách nào",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "开释",
+   "py": "kāishì",
+   "pos": "动",
+   "zh": "摆脱，排解（忧愁、烦恼等）；释放（被拘禁的人）。",
+   "en": "to set free (a prisoner); to release",
+   "hv": "KHAI THÍCH",
+   "vi": "giải tỏa (nỗi buồn); phóng thích",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "甩",
+   "py": "shuǎi",
+   "pos": "动",
+   "zh": "挥动。",
+   "en": "",
+   "hv": "SUẤT",
+   "vi": "hất, vung",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "小子",
+   "py": "xiǎozi",
+   "pos": "名",
+   "zh": "男孩儿。",
+   "en": "",
+   "hv": "TIỂU TỬ",
+   "vi": "thằng nhóc, cậu trai",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "无论如何",
+   "py": "wúlùn rúhé",
+   "pos": "",
+   "zh": "表示不管条件怎样变化，结果始终不变。",
+   "en": "",
+   "hv": "VÔ LUẬN NHƯ HÀ",
+   "vi": "dù thế nào đi nữa",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "手心",
+   "py": "shǒuxīn",
+   "pos": "名",
+   "zh": "手掌的中心部分。",
+   "en": "",
+   "hv": "THỦ TÂM",
+   "vi": "lòng bàn tay",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "遥远",
+   "py": "yáoyuǎn",
+   "pos": "形",
+   "zh": "很远。",
+   "en": "",
+   "hv": "DAO VIỄN",
+   "vi": "xa xôi",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "有限",
+   "py": "yǒuxiàn",
+   "pos": "形",
+   "zh": "数量不多，程度不高。",
+   "en": "",
+   "hv": "HỮU HẠN",
+   "vi": "có hạn",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "忧郁",
+   "py": "yōuyù",
+   "pos": "形",
+   "zh": "忧伤，愁闷。（忧郁——忧愁）",
+   "en": "",
+   "hv": "ƯU UẤT",
+   "vi": "u buồn, u uất",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "独生女",
+   "py": "dúshēngnǚ",
+   "pos": "名",
+   "zh": "亲生的唯一的女儿。",
+   "en": "",
+   "hv": "ĐỘC SINH NỮ",
+   "vi": "con gái một",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "浑浊",
+   "py": "húnzhuó",
+   "pos": "形",
+   "zh": "（水，空气等）含有杂质，不清洁，不新鲜。",
+   "en": "",
+   "hv": "HỒN TRỌC",
+   "vi": "đục, vẩn đục",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "表情",
+   "py": "biǎoqíng",
+   "pos": "名",
+   "zh": "表现在面部或姿态上的思想感情。",
+   "en": "",
+   "hv": "BIỂU TÌNH",
+   "vi": "vẻ mặt, nét mặt",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "开口",
+   "py": "kāi kǒu",
+   "pos": "",
+   "zh": "张开嘴说话。",
+   "en": "",
+   "hv": "KHAI KHẨU",
+   "vi": "mở miệng, lên tiếng",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "孝敬",
+   "py": "xiàojìng",
+   "pos": "动",
+   "zh": "孝顺尊敬长辈；把物品献给尊长，表示敬意。",
+   "en": "",
+   "hv": "HIẾU KÍNH",
+   "vi": "hiếu kính, biếu (bề trên)",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "邮筒",
+   "py": "yóutǒng",
+   "pos": "名",
+   "zh": "信筒。",
+   "en": "postbox",
+   "hv": "BƯU ĐỒNG",
+   "vi": "hòm thư",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "荒诞",
+   "py": "huāngdàn",
+   "pos": "形",
+   "zh": "极不真实；极不近情理。",
+   "en": "fantastic; absurd; incredible",
+   "hv": "HOANG ĐẢN",
+   "vi": "hoang đường",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "假如",
+   "py": "jiǎrú",
+   "pos": "连",
+   "zh": "如果。",
+   "en": "",
+   "hv": "GIẢ NHƯ",
+   "vi": "nếu như, giả sử",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "嘲笑",
+   "py": "cháoxiào",
+   "pos": "动",
+   "zh": "用言辞笑话对方。（嘲笑——讥笑）",
+   "en": "",
+   "hv": "TRÀO TIẾU",
+   "vi": "chế giễu, cười nhạo",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "孝心",
+   "py": "xiàoxīn",
+   "pos": "名",
+   "zh": "孝顺的心意。",
+   "en": "filial sentiments; filial devotion",
+   "hv": "HIẾU TÂM",
+   "vi": "lòng hiếu thảo",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "父亲的谜语",
+   "paragraphs": [
+    "第一部分",
+    "小时候，父亲最爱教我猜谜语。",
+    "父亲有很多谜语。夏日的晚上，坐在星光笼罩着的院子里，最有趣的事是猜父亲的谜语。父亲笑眯眯地看着我，悠悠地念着他的谜语。我眨巴着眼睛，仰头对着那满天的星斗苦苦地寻找，谜底藏在哪里呢？再盯着父亲的眼睛瞧，觉得他那双笑眯眯的小眼睛也和夜空一样深邃、神秘。当我苦思冥想，觉得小脑瓜子发涨的时候，父亲便会给予巧妙的提示，直到我得意地叫起来，他也“嘿嘿”地笑了。",
+    "渐渐地，父亲的谜语很少能够难倒我了。只有一条谜语我猜不出。",
+    "“晚上关箱子，早上开箱子，箱子里面有镜子，镜子里面有个细妹子。”",
+    "我想了半天想不出，问父亲：“怎么镜子里面有个细妹子呢？”",
+    "父亲笑着说：“你再听呀——”他把眼睛合上，“晚上关箱子，”又把眼睛睁开，“早上开箱子，”父亲把眼睛凑近我，“箱子里面有镜子，你仔细看看，镜子里是不是有个细妹子？”",
+    "我叫起来：“是眼睛，是眼睛。”",
+    "父亲说：“对。这是爸爸的眼睛。”",
+    "我问：“那我的眼睛又该怎么说呢？”",
+    "“晚上关箱子，早上开箱子，箱子里面有镜子，镜子里面有——”父亲摸摸饱经忧患而早白了的头发，说：“有个老头子。”",
+    "我把这个谜语拿去考小伙伴们，把最后一句改成“镜子里有个小狗子”，也像父亲那样把眼睛一张一合地去启发他们。",
+    "每当我噘起了嘴，皱着眉头，一副烦恼忧愁的样子时，父亲便念起“关箱子，开箱子”，笑眯眯的眼睛一张一合，然后问我：“镜子里面有个什么呢？”我不作声，他便猜：“巧克力？大苹果？洋娃娃？蝴蝶结？花裙子？有小鹿的铅笔刀……”我小小的心总会被其中某样东西引得高兴起来。父亲将他们“变”出来时，我问他：“你怎么就猜得出我镜子里面是什么呢？”父亲的眼睛神神秘秘，仿佛可以给我变出许许多多快乐和光明。",
+    "第二部分",
+    "可后来有一次父亲猜不出了。因为我长大了，心里有扇小门儿悄悄地开了。一个影子从眼睛投到了心里，抹也抹不掉，可影子“他”却全然不知。陡然觉得父亲带给我的光明黯淡了，我心里只对那个人说：“没有你呀，我就是黑暗。”父亲做的饭菜也不香了，涩涩地咽不下去。父亲问：“谁欺负我们的细妹子了？”我忽然觉得委屈得不行，眼泪吧嗒吧嗒掉下来。父亲逗我：“千根线，万根线，落到地上看不见。细妹子的眼睛下雨啦。”可我觉得满心都是无法开释的烦恼，一甩头跑进自己的房子里。父亲跟过来，拍拍我的头，问我：“怎么啦？”我嚷道：“我要死啦！”父亲笑了起来，说：“你小小年纪就说要死，爸爸这么老了，还想活100岁呢。哦哦哦，一定是有一件东西你很喜欢，又不肯跟爸爸说，对不对？好，我来猜一猜。”",
+    "父亲数了好多东西，自然都不是我所要的。我怎么能告诉父亲，镜子里面有了个“臭小子”呢？因为父亲是无论如何不能将那颗心变到我的手心的。父亲继续在猜，可他还是猜不出来。我感到和父亲一下子遥远起来，原来父亲的力量也是有限的。我对父亲说：“你猜不中的，也变不出来，这回得靠我自己。”父亲笑眯眯的眼睛一下子变得那样忧郁。",
+    "有一天，我告诉父亲我要离开家，跟着那个人到离家很远的地方去。我是父亲的独生女，父亲老了，我应该留在他身边，我也舍不得离开父亲，可是我没有办法。父亲静静地听我说，浑浊的眼睛里什么表情也没有。半天才开口：“我知道有一天你要走的，女大不中留啊。”临走的时候，他又说：“要是他待你不好，你就回家来。”",
+    "可是他待我很好，我和他在一起是那么幸福，幸福得常常以为世界上只有两个人。给父亲写信，也总是说我很快乐很快乐。有一次记起父亲的生日，想着要孝敬一下他老人家，便写信问父亲需要什么，说不管他要什么，女儿都会想尽办法“变”出来的。信投进邮筒后，我忽然生出一个荒诞的想法：假如父亲跟我要太阳、月亮，我也能“变”给他吗？当然父亲绝对不会跟我要这些的，我却因此嘲笑起自己的孝心来。猜一猜，父亲会要什么呢？",
+    "父亲来信了，我急急忙忙地拆开，只有四行字：",
+    "“晚上关箱子，",
+    "早上开箱子，",
+    "箱子里面有镜子，",
+    "镜子里面有个细妹子。”",
+    "那是父亲的眼睛，我怎么会猜不出呢？",
+    "（作者：刘蕊（ruǐ），选自《读者》，有改动）"
+   ],
+   "translations": [
+    "Phần một",
+    "Hồi nhỏ, cha tôi thích nhất là dạy tôi giải câu đố.",
+    "Cha có rất nhiều câu đố. Những tối mùa hè, ngồi trong khoảng sân ngập ánh sao, điều thú vị nhất là đoán câu đố của cha. Cha cười tít mắt nhìn tôi, thong thả đọc câu đố của mình. Tôi chớp chớp mắt, ngửa đầu lên bầu trời đầy sao mà khổ công tìm kiếm: lời giải nấp ở đâu nhỉ? Rồi tôi lại chăm chăm nhìn vào mắt cha, thấy đôi mắt nhỏ cười tít ấy cũng sâu thẳm, bí ẩn như bầu trời đêm. Khi tôi vắt óc suy nghĩ đến mức cái đầu nhỏ như căng ra, cha lại khéo léo gợi ý cho tôi, cho đến khi tôi đắc ý reo lên, cha cũng cười “hì hì”.",
+    "Dần dần, câu đố của cha hiếm khi làm khó được tôi nữa. Chỉ có một câu đố là tôi không đoán ra.",
+    "“Tối thì đóng hòm, sáng thì mở hòm, trong hòm có gương, trong gương có một bé gái.”",
+    "Tôi nghĩ mãi không ra, bèn hỏi cha: “Sao trong gương lại có một bé gái ạ?”",
+    "Cha cười nói: “Con nghe lại nhé——” Cha nhắm mắt lại: “Tối thì đóng hòm,” rồi mở mắt ra: “sáng thì mở hòm,” cha ghé sát mắt lại gần tôi: “trong hòm có gương, con nhìn kỹ xem, trong gương có phải có một bé gái không?”",
+    "Tôi reo lên: “Là đôi mắt, là đôi mắt!”",
+    "Cha nói: “Đúng rồi. Đây là đôi mắt của bố.”",
+    "Tôi hỏi: “Thế còn mắt con thì phải nói thế nào ạ?”",
+    "“Tối thì đóng hòm, sáng thì mở hòm, trong hòm có gương, trong gương có——” Cha xoa mái tóc đã sớm bạc vì trải bao gian truân, nói: “có một ông già.”",
+    "Tôi đem câu đố này đi đố lũ bạn nhỏ, sửa câu cuối thành “trong gương có một chú cún con”, rồi cũng như cha, mở mắt nhắm mắt để gợi ý cho chúng.",
+    "Mỗi khi tôi bĩu môi, nhíu mày, ra vẻ phiền muộn buồn rầu, cha lại đọc “đóng hòm, mở hòm”, đôi mắt cười tít mở ra nhắm lại, rồi hỏi tôi: “Trong gương có gì nào?” Tôi không nói gì, cha liền đoán: “Sô-cô-la? Quả táo to? Búp bê? Nơ con bướm? Váy hoa? Dao gọt bút chì có hình chú hươu nhỏ……” Trái tim bé bỏng của tôi thế nào cũng bị một thứ trong số đó làm cho vui lên. Khi cha “biến” chúng ra, tôi hỏi cha: “Sao bố lại đoán được trong gương của con có gì thế?” Đôi mắt cha đầy vẻ bí ẩn, dường như có thể biến ra cho tôi thật nhiều niềm vui và ánh sáng.",
+    "Phần hai",
+    "Nhưng về sau có một lần cha không đoán ra nữa. Bởi tôi đã lớn, trong lòng có một cánh cửa nhỏ khẽ mở ra. Một bóng hình từ đôi mắt rọi vào tim, xóa thế nào cũng không xóa được, vậy mà cái bóng ấy – “anh ấy” – lại hoàn toàn không hay biết. Bỗng nhiên tôi thấy ánh sáng cha mang lại cho mình trở nên mờ nhạt, trong lòng chỉ nói với người ấy: “Không có anh, em chỉ là bóng tối.” Cơm canh cha nấu cũng chẳng còn thơm, chát đắng nuốt không trôi. Cha hỏi: “Ai bắt nạt bé gái của chúng ta thế?” Tôi bỗng thấy tủi thân vô cùng, nước mắt rơi lã chã. Cha trêu tôi: “Nghìn sợi chỉ, vạn sợi chỉ, rơi xuống đất chẳng thấy đâu. Mắt bé gái đổ mưa rồi.” Nhưng tôi thấy cả lòng đầy những phiền muộn không sao giải tỏa, hất đầu chạy vào phòng mình. Cha theo vào, vỗ vỗ đầu tôi, hỏi: “Sao thế con?” Tôi gào lên: “Con muốn chết đi cho rồi!” Cha bật cười, nói: “Con bé tí đã nói chuyện chết, bố già thế này rồi mà còn muốn sống đến trăm tuổi đấy. À à à, chắc là có món gì con rất thích mà lại không chịu nói với bố, đúng không? Được, để bố đoán thử xem.”",
+    "Cha kể ra biết bao thứ, dĩ nhiên chẳng thứ nào là thứ tôi muốn. Làm sao tôi có thể nói với cha rằng trong gương đã có một “thằng nhóc đáng ghét” chứ? Bởi dù thế nào cha cũng không thể biến trái tim ấy vào lòng bàn tay tôi. Cha vẫn tiếp tục đoán, nhưng vẫn không đoán ra. Tôi chợt thấy mình với cha bỗng xa cách hẳn, thì ra sức mạnh của cha cũng có hạn. Tôi nói với cha: “Bố không đoán trúng đâu, cũng không biến ra được đâu, lần này con phải tự dựa vào mình thôi.” Đôi mắt cười tít của cha bỗng chốc trở nên u buồn đến thế.",
+    "Một ngày nọ, tôi nói với cha rằng tôi sẽ rời nhà, theo người ấy đến một nơi rất xa. Tôi là con gái một của cha, cha đã già, lẽ ra tôi phải ở bên cha, tôi cũng chẳng nỡ rời xa cha, nhưng tôi không còn cách nào khác. Cha lặng lẽ nghe tôi nói, đôi mắt đục mờ chẳng biểu lộ cảm xúc gì. Hồi lâu cha mới mở lời: “Bố biết sẽ có ngày con đi mà, con gái lớn không giữ được trong nhà.” Lúc tôi sắp đi, cha lại nói: “Nếu nó đối xử không tốt với con, con cứ về nhà.”",
+    "Nhưng anh ấy đối xử với tôi rất tốt, tôi ở bên anh ấy hạnh phúc biết bao, hạnh phúc đến mức thường ngỡ trên đời chỉ có hai người. Viết thư cho cha, tôi cũng luôn nói rằng mình rất vui, rất vui. Có lần nhớ đến sinh nhật cha, muốn biếu cụ một chút gì đó, tôi bèn viết thư hỏi cha cần gì, nói rằng dù cha muốn gì, con gái cũng sẽ tìm mọi cách “biến” ra. Thư bỏ vào hòm thư rồi, tôi bỗng nảy ra một ý nghĩ hoang đường: nếu cha đòi tôi mặt trời, mặt trăng, liệu tôi có “biến” ra cho cha được không? Đương nhiên cha tuyệt đối sẽ không đòi tôi những thứ ấy, vậy mà tôi lại vì thế mà tự cười nhạo lòng hiếu thảo của mình. Thử đoán xem, cha sẽ đòi gì nhỉ?",
+    "Thư cha gửi đến, tôi vội vàng bóc ra, chỉ có bốn dòng chữ:",
+    "“Tối thì đóng hòm,",
+    "sáng thì mở hòm,",
+    "trong hòm có gương,",
+    "trong gương có một bé gái.”",
+    "Đó là đôi mắt của cha, sao tôi lại không đoán ra được chứ?",
+    "(Tác giả: Lưu Nhụy, trích từ tạp chí “Độc giả”, có chỉnh sửa)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "胡萝卜、鸡蛋和咖啡",
+   "paragraphs": [
+    "一天，女儿满腹牢骚地向父亲抱怨起生活的艰难。",
+    "父亲是一位著名的厨师。他平静地听完女儿的抱怨后，微微一笑，把女儿带进了厨房。父亲往三只同样大小的锅里倒进了一样多的水，然后将一根大大的胡萝卜放进了第一只锅里，将一个鸡蛋放进了第二只锅里，又将一把咖啡豆放进了第三只锅里，最后他把三只锅放到火力一样大的三个炉子上烧。",
+    "女儿站在一边，疑惑地望着父亲，弄不清他的用意。",
+    "20分钟后，父亲关掉了火，让女儿拿来两个盘子和一个杯子。父亲将煮好的胡萝卜和鸡蛋分别放进了两个盘子里，然后将咖啡豆煮出的咖啡倒进了杯子。他指着盘子和杯子问女儿：“孩子，说说看，你见到了什么？”",
+    "女儿回答说：“还能有什么？当然是胡萝卜、鸡蛋和咖啡了。”",
+    "父亲说：“你不妨碰碰它们，看看有什么变化。”",
+    "女儿拿起一把叉子碰了碰胡萝卜，发现胡萝卜已经变得很软。她又拿起鸡蛋，感觉到了蛋壳（ké）的坚硬。她在桌子上把蛋壳敲破，仔细地用手摸了摸里面的蛋白。然后她又端起杯子，喝了一口里面的咖啡。做完这些以后，女儿开始回答父亲的问题：“这个盘子里是一根已经变得很软的胡萝卜；那个盘子里是一个壳很硬，蛋白也已经凝固了的鸡蛋；杯子里则是香味浓郁、口感很好的咖啡。”说完，她不解地问父亲：“亲爱的爸爸，您为什么要问我这么简单的问题？”",
+    "父亲严肃地看着女儿说：“你看见的这三样东西是在一样大的锅里，一样多的水里，一样大的火上和用一样多的时间煮过的。可它们的反应却迥（jiǒng）然不同。胡萝卜生的时候是硬的，煮完后却变得那么软，甚至都快烂了；生鸡蛋是那样的脆弱，蛋壳一碰就会碎，可是煮过后连蛋白都变硬了；咖啡豆没煮之前也是很硬的，虽然煮了一会儿就变软了，但它的香气和味道却融进水里变成了可口的咖啡。”",
+    "父亲说完之后接着问女儿：“你像它们之中的哪一个？”",
+    "现在，女儿更是有些摸不着头脑了，只是怔（zhēng）怔地看着父亲，不知如何回答。",
+    "父亲接着说：“我想问你的是，面对生活的煎熬，你是像胡萝卜那样变得软弱无力，还是像鸡蛋那样变硬变强，抑或像一把咖啡豆，身受损而不堕其志，无论环境多么恶劣，都向四周散发出香气，用美好的感情感染周围所有的人？简而言之，你应该成为生活道路上的强者，让你自己和周围的一切变得更好，更漂亮，更有意义。”",
+    "（作者：[土耳其]谢布内姆·蒂尔凯希，陈竹冰译，选自《世界新闻报》）"
+   ],
+   "translations": [
+    "Một hôm, cô con gái đầy bụng bực dọc than phiền với cha về nỗi gian nan của cuộc sống.",
+    "Người cha là một đầu bếp nổi tiếng. Ông bình thản nghe con gái than thở xong, mỉm cười, rồi dẫn con vào bếp. Ông đổ lượng nước bằng nhau vào ba chiếc nồi to như nhau, sau đó bỏ một củ cà rốt thật to vào nồi thứ nhất, một quả trứng gà vào nồi thứ hai, lại bỏ một nắm hạt cà phê vào nồi thứ ba, cuối cùng ông đặt ba chiếc nồi lên ba cái bếp có lửa to như nhau mà đun.",
+    "Cô con gái đứng một bên, ngờ vực nhìn cha, không hiểu ông định làm gì.",
+    "Hai mươi phút sau, người cha tắt lửa, bảo con gái mang đến hai cái đĩa và một cái cốc. Ông lần lượt để cà rốt và trứng đã luộc vào hai đĩa, rồi rót cà phê nấu từ hạt cà phê vào cốc. Ông chỉ vào đĩa và cốc hỏi con: “Con à, nói thử xem, con thấy gì?”",
+    "Cô con gái đáp: “Còn có gì nữa đâu ạ? Đương nhiên là cà rốt, trứng gà và cà phê rồi.”",
+    "Người cha nói: “Con cứ thử chạm vào chúng xem, xem có gì thay đổi.”",
+    "Cô con gái cầm chiếc nĩa chạm vào củ cà rốt, thấy nó đã mềm nhũn. Cô lại cầm quả trứng lên, cảm nhận được độ cứng của vỏ trứng. Cô gõ vỡ vỏ trứng trên mặt bàn, dùng tay sờ kỹ lòng trắng bên trong. Sau đó cô lại bưng cốc lên, uống một ngụm cà phê. Làm xong những việc ấy, cô bắt đầu trả lời câu hỏi của cha: “Đĩa này là một củ cà rốt đã mềm nhũn; đĩa kia là một quả trứng vỏ rất cứng, lòng trắng cũng đã đông lại; còn trong cốc là cà phê thơm nồng, vị rất ngon.” Nói xong, cô khó hiểu hỏi cha: “Bố yêu quý, sao bố lại hỏi con câu hỏi đơn giản như vậy?”",
+    "Người cha nghiêm nghị nhìn con gái nói: “Ba thứ con thấy đều được nấu trong nồi to như nhau, lượng nước như nhau, lửa to như nhau và trong thời gian như nhau. Thế nhưng phản ứng của chúng lại khác hẳn nhau. Cà rốt lúc sống thì cứng, nấu xong lại mềm đến thế, thậm chí sắp nát; trứng sống thì mỏng manh như vậy, vỏ chạm vào là vỡ, nhưng luộc xong thì đến lòng trắng cũng cứng lại; hạt cà phê trước khi nấu cũng rất cứng, tuy nấu một lúc thì mềm đi, nhưng hương thơm và vị của nó lại hòa vào nước, trở thành ly cà phê thơm ngon.”",
+    "Nói xong, người cha hỏi tiếp con gái: “Con giống thứ nào trong số chúng?”",
+    "Lúc này, cô con gái càng thêm mù mờ chẳng hiểu gì, chỉ ngây người nhìn cha, không biết trả lời ra sao.",
+    "Người cha nói tiếp: “Điều bố muốn hỏi con là, đứng trước sự giày vò của cuộc sống, con sẽ như củ cà rốt trở nên mềm yếu bất lực, hay như quả trứng trở nên cứng rắn mạnh mẽ, hay như nắm hạt cà phê, thân dù bị tổn hại mà chí không suy sụp, dù hoàn cảnh khắc nghiệt đến đâu vẫn tỏa hương ra bốn phía, dùng tình cảm tốt đẹp lan tỏa đến mọi người xung quanh? Nói tóm lại, con nên trở thành người mạnh mẽ trên đường đời, khiến bản thân và mọi thứ xung quanh trở nên tốt đẹp hơn, đẹp đẽ hơn, ý nghĩa hơn.”",
+    "(Tác giả: Şebnem Tilkeşi [Thổ Nhĩ Kỳ], Trần Trúc Băng dịch, trích từ “Thế giới Tân văn báo”)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "给予 (cho, dành cho – văn viết)",
+   "structure": "给予 + động từ song âm tiết (给予支持 / 给予帮助…)",
+   "explanation": "给予 là động từ, thuộc văn viết, nghĩa là “cho”. Phía sau thường đi với động từ hai âm tiết làm tân ngữ: 给予支持 (ủng hộ), 给予帮助 (giúp đỡ), 给予鼓励 (khích lệ), 给予同情 (cảm thông), 给予答复 (trả lời), 给予表扬 (khen ngợi), 给予严厉的批评 (phê bình nghiêm khắc), 给予高度的评价 (đánh giá cao)…",
+   "examples": [
+    {
+     "zh": "父亲便会给予巧妙的提示。",
+     "vi": "Cha liền khéo léo gợi ý cho tôi."
+    },
+    {
+     "zh": "给予特殊的照顾",
+     "vi": "dành cho sự chăm sóc đặc biệt"
+    },
+    {
+     "zh": "给予高度的评价",
+     "vi": "dành cho sự đánh giá cao"
+    }
+   ]
+  },
+  {
+   "point": "一……一…… (vừa… vừa…, lúc… lúc…)",
+   "structure": "一 + V1 + 一 + V2 (V1, V2 đơn âm tiết, nghĩa đối nhau)",
+   "explanation": "Đặt trước hai động từ đơn âm tiết có nghĩa đối nhau, biểu thị hai hành động phối hợp nhịp nhàng với nhau hoặc hai động tác luân phiên diễn ra: 一问一答, 一唱一和, 一起一落, 一张一弛. Mở rộng: “一……一……” còn đặt trước các phương vị từ, tính từ… có nghĩa trái ngược để biểu thị sự tương ứng hoặc đối lập: 一左一右, 一前一后, 一南一北, 一长一短, 一胖一瘦, 一大一小.",
+   "examples": [
+    {
+     "zh": "也像父亲那样把眼睛一张一合地去启发他们。",
+     "vi": "Cũng như cha, mở mắt nhắm mắt để gợi ý cho chúng."
+    },
+    {
+     "zh": "一问一答 / 一唱一和 / 一起一落 / 一张一弛",
+     "vi": "một hỏi một đáp / kẻ xướng người họa / lúc lên lúc xuống / lúc căng lúc chùng"
+    },
+    {
+     "zh": "一左一右 / 一前一后 / 一南一北 / 一胖一瘦",
+     "vi": "một trái một phải / một trước một sau / một nam một bắc / một béo một gầy"
+    }
+   ]
+  },
+  {
+   "point": "一副…… (một bộ / một vẻ…)",
+   "structure": "一副 + đồ vật (thành đôi, thành bộ) / vẻ mặt, dáng vẻ",
+   "explanation": "副 là lượng từ; danh từ đi kèm có thể là đồ vật (thường thành đôi, thành bộ) hoặc vẻ mặt, nét mặt: 一副眼镜 (một cặp kính), 一副对联 (một đôi câu đối), 一副手套 (một đôi găng tay), 一副象棋 (một bộ cờ tướng), 一副笑脸 (một gương mặt tươi cười), 一副冷面孔 (bộ mặt lạnh lùng), 一副严肃的表情 (vẻ mặt nghiêm nghị), 一副神秘的样子 (vẻ bí ẩn).",
+   "examples": [
+    {
+     "zh": "一副忧愁烦恼的样子",
+     "vi": "một vẻ buồn rầu phiền muộn"
+    },
+    {
+     "zh": "一副眼镜 / 一副对联 / 一副手套",
+     "vi": "một cặp kính / một đôi câu đối / một đôi găng tay"
+    },
+    {
+     "zh": "一副严肃的表情 / 一副神秘的样子",
+     "vi": "vẻ mặt nghiêm nghị / vẻ bí ẩn"
+    }
+   ]
+  },
+  {
+   "point": "V也V不…… (có… cũng không…, … mãi cũng không…)",
+   "structure": "Động từ1 + 也 + Động từ1 + 不 + Động từ2 / Tính từ",
+   "explanation": "Cấu trúc lặp lại động từ với 也 và bổ ngữ khả năng phủ định, mang nghĩa “即使……也……” (dù có… cũng không…): dù cố làm hành động đó thì cũng không đạt được kết quả.",
+   "examples": [
+    {
+     "zh": "抹也抹不掉。",
+     "vi": "Xóa thế nào cũng không xóa được."
+    },
+    {
+     "zh": "在这儿睡也睡不好，玩儿也玩儿不好，我想回去了。",
+     "vi": "Ở đây ngủ cũng không ngon, chơi cũng chẳng vui, tôi muốn về rồi."
+    },
+    {
+     "zh": "果园里的苹果多极了，摘也摘不完。",
+     "vi": "Táo trong vườn nhiều vô kể, hái mãi cũng không hết."
+    },
+    {
+     "zh": "我拦也拦不住，只好让他进去了。",
+     "vi": "Tôi cản thế nào cũng không cản được, đành để anh ta vào."
+    }
+   ]
+  },
+  {
+   "point": "陡然 (bỗng nhiên, đột nhiên)",
+   "structure": "陡然 + động từ / cụm động từ",
+   "explanation": "陡然 là phó từ, thuộc văn viết, nghĩa là “突然” (đột nhiên), thường bổ nghĩa cho động từ hoặc cụm động từ.",
+   "examples": [
+    {
+     "zh": "陡然觉得父亲带给我的光明黯淡了。",
+     "vi": "Bỗng nhiên tôi thấy ánh sáng cha mang lại cho mình trở nên mờ nhạt."
+    },
+    {
+     "zh": "她的脸色陡然变成了灰黄，死了似的。",
+     "vi": "Sắc mặt cô ấy đột nhiên tái xám, như người chết."
+    },
+    {
+     "zh": "人们常常在意想不到的时候陡然冒出一个想法，而这个想法往往会改变一个人的一生。",
+     "vi": "Người ta thường bất chợt nảy ra một ý nghĩ vào lúc không ngờ tới, và ý nghĩ ấy nhiều khi thay đổi cả cuộc đời một con người."
+    },
+    {
+     "zh": "大楼里陡然响起一声爆炸声，几乎所有的住户都被震醒了。",
+     "vi": "Trong tòa nhà bỗng vang lên một tiếng nổ, hầu như mọi hộ dân đều bị đánh thức."
+    }
+   ]
+  },
+  {
+   "point": "中 (zhōng: hợp, thích hợp để…)",
+   "structure": "中 + động từ đơn âm tiết (中听 / 中用 / 中看 / 中吃)",
+   "explanation": "中 là động từ, nghĩa là “适合于，宜于” (thích hợp với, phù hợp để). Phía sau 中 thường là động từ đơn âm tiết: 中听 (nghe lọt tai), 中用 (dùng được), 中看 (đẹp mắt), 不中用 (vô dụng), 中看不中吃 (đẹp mà không ngon), 中看不中用 (đẹp mà không dùng được), 中看不中穿 (đẹp mà mặc không được).",
+   "examples": [
+    {
+     "zh": "女大不中留啊。",
+     "vi": "Con gái lớn không giữ được trong nhà."
+    },
+    {
+     "zh": "中听 / 中用 / 中看 / 不中用",
+     "vi": "lọt tai / dùng được / đẹp mắt / vô dụng"
+    },
+    {
+     "zh": "中看不中吃 / 中看不中用 / 中看不中穿",
+     "vi": "đẹp mà không ngon / đẹp mà không dùng được / đẹp mà mặc không được"
+    }
+   ]
+  }
+ ]
+}

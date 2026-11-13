@@ -1,0 +1,1410 @@
+{
+ "book": "gc2",
+ "lesson_num": 7,
+ "title": "面容",
+ "pages": [
+  168,
+  190
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "具",
+   "py": "jù",
+   "pos": "动",
+   "zh": "有，具有。",
+   "en": "",
+   "hv": "CỤ",
+   "vi": "có, mang",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "部位",
+   "py": "bùwèi",
+   "pos": "名",
+   "zh": "位置。",
+   "en": "",
+   "hv": "BỘ VỊ",
+   "vi": "bộ phận, vị trí (trên cơ thể)",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "锁定",
+   "py": "suǒdìng",
+   "pos": "动",
+   "zh": "确定目标。",
+   "en": "",
+   "hv": "TỎA ĐỊNH",
+   "vi": "nhắm vào, cố định (mục tiêu)",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "膝盖",
+   "py": "xīgài",
+   "pos": "名",
+   "zh": "大腿和小腿相连的前部关节。",
+   "en": "knee",
+   "hv": "TẤT CÁI",
+   "vi": "đầu gối",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "巴掌",
+   "py": "bāzhang",
+   "pos": "名",
+   "zh": "手掌。",
+   "en": "palm; hand",
+   "hv": "BA CHƯỞNG",
+   "vi": "bàn tay",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "指纹",
+   "py": "zhǐwén",
+   "pos": "名",
+   "zh": "手指肚上皮肤的纹理。",
+   "en": "loops and whorls on a finger; fingerprint",
+   "hv": "CHỈ VĂN",
+   "vi": "vân tay",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "精确",
+   "py": "jīngquè",
+   "pos": "形",
+   "zh": "非常准确。",
+   "en": "",
+   "hv": "TINH XÁC",
+   "vi": "chính xác",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "情感",
+   "py": "qínggǎn",
+   "pos": "名",
+   "zh": "对外界刺激肯定或否定的心理反应，如喜欢、愤怒、悲伤、恐惧、爱慕、厌恶等。",
+   "en": "",
+   "hv": "TÌNH CẢM",
+   "vi": "tình cảm, cảm xúc",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "流露",
+   "py": "liúlù",
+   "pos": "动",
+   "zh": "（意思、感情）不自觉地表现出来。",
+   "en": "",
+   "hv": "LƯU LỘ",
+   "vi": "bộc lộ, toát ra",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "隐约可辨",
+   "py": "yǐnyuē kě biàn",
+   "pos": "",
+   "zh": "看或听不太清楚，但还可以分辨。",
+   "en": "",
+   "hv": "ẨN ƯỚC KHẢ BIỆN",
+   "vi": "mờ nhạt nhưng vẫn nhận ra được",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "占据",
+   "py": "zhànjù",
+   "pos": "动",
+   "zh": "处在（某种地位或情况）。",
+   "en": "",
+   "hv": "CHIẾM CỨ",
+   "vi": "chiếm giữ",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "焦点",
+   "py": "jiāodiǎn",
+   "pos": "名",
+   "zh": "比喻事情或道理引人注意的集中点。",
+   "en": "",
+   "hv": "TIÊU ĐIỂM",
+   "vi": "tiêu điểm",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "忧郁",
+   "py": "yōuyù",
+   "pos": "形",
+   "zh": "忧伤，愁闷。",
+   "en": "",
+   "hv": "ƯU UẤT",
+   "vi": "u uất, u buồn",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "眉梢",
+   "py": "méishāo",
+   "pos": "名",
+   "zh": "眉毛的末尾部分。",
+   "en": "the tip of the brow",
+   "hv": "MI SAO",
+   "vi": "đuôi lông mày",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "傲慢",
+   "py": "àomàn",
+   "pos": "形",
+   "zh": "轻视别人，对人没有礼貌。（傲慢——骄傲）",
+   "en": "",
+   "hv": "NGẠO MẠN",
+   "vi": "ngạo mạn",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "鼻尖",
+   "py": "bíjiān",
+   "pos": "名",
+   "zh": "鼻子末端最突出的部分。",
+   "en": "tip of the nose",
+   "hv": "TỊ TIÊM",
+   "vi": "chóp mũi",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "清苦",
+   "py": "qīngkǔ",
+   "pos": "形",
+   "zh": "贫困穷苦。",
+   "en": "",
+   "hv": "THANH KHỔ",
+   "vi": "thanh bần, nghèo khổ",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "面颊",
+   "py": "miànjiá",
+   "pos": "名",
+   "zh": "脸蛋。",
+   "en": "cheek",
+   "hv": "DIỆN GIÁP",
+   "vi": "gò má",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "前额",
+   "py": "qián'é",
+   "pos": "名",
+   "zh": "指头的前部、脸的上方。",
+   "en": "forehead",
+   "hv": "TIỀN NGẠCH",
+   "vi": "vầng trán",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "仁厚",
+   "py": "rénhòu",
+   "pos": "形",
+   "zh": "仁爱宽厚。",
+   "en": "",
+   "hv": "NHÂN HẬU",
+   "vi": "nhân hậu",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "下巴",
+   "py": "xiàba",
+   "pos": "名",
+   "zh": "脸的下颌部。",
+   "en": "chin",
+   "hv": "HẠ BA",
+   "vi": "cằm",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "千言万语",
+   "py": "qiān yán wàn yǔ",
+   "pos": "",
+   "zh": "形容话语非常多。",
+   "en": "",
+   "hv": "THIÊN NGÔN VẠN NGỮ",
+   "vi": "muôn vàn lời nói",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "嘴角",
+   "py": "zuǐjiǎo",
+   "pos": "名",
+   "zh": "上下唇两边相连的部分。",
+   "en": "corners of the mouth",
+   "hv": "CHỦY GIÁC",
+   "vi": "khóe miệng",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "何（时、处）",
+   "py": "hé",
+   "pos": "代",
+   "zh": "什么。",
+   "en": "",
+   "hv": "HÀ",
+   "vi": "gì, nào (khi nào, nơi nào)",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "袭",
+   "py": "xí",
+   "pos": "动",
+   "zh": "侵入并袭击。课文中比喻心里产生（某种感觉）。",
+   "en": "",
+   "hv": "TẬP",
+   "vi": "ập đến, tràn đến (cảm xúc)",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "心头",
+   "py": "xīntóu",
+   "pos": "名",
+   "zh": "心上，心里。",
+   "en": "",
+   "hv": "TÂM ĐẦU",
+   "vi": "trong lòng",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "片刻",
+   "py": "piànkè",
+   "pos": "名",
+   "zh": "极短的时间，一会儿。",
+   "en": "",
+   "hv": "PHIẾN KHẮC",
+   "vi": "chốc lát",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "恍惚",
+   "py": "huǎnghū",
+   "pos": "形",
+   "zh": "神志不清，精神不集中。",
+   "en": "",
+   "hv": "HOẢNG HỐT",
+   "vi": "ngẩn ngơ, mơ màng",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "宁静",
+   "py": "níngjìng",
+   "pos": "形",
+   "zh": "（环境、心情）安静。（宁静——安静）",
+   "en": "",
+   "hv": "NINH TĨNH",
+   "vi": "yên tĩnh, tĩnh lặng",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "侧面",
+   "py": "cèmiàn",
+   "pos": "名",
+   "zh": "旁边的一面（区别于“正面”）。",
+   "en": "side; flank; aspect",
+   "hv": "TRẮC DIỆN",
+   "vi": "mặt nghiêng, góc nghiêng",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "蓦然",
+   "py": "mòrán",
+   "pos": "副",
+   "zh": "突然，猛然。（蓦然——突然）",
+   "en": "",
+   "hv": "MẠCH NHIÊN",
+   "vi": "bỗng nhiên, chợt",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "合影",
+   "py": "héyǐng",
+   "pos": "名",
+   "zh": "若干人在一起照的相。",
+   "en": "group photo",
+   "hv": "HỢP ẢNH",
+   "vi": "ảnh chụp chung",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "群体",
+   "py": "qúntǐ",
+   "pos": "名",
+   "zh": "由个体组成的整体。",
+   "en": "",
+   "hv": "QUẦN THỂ",
+   "vi": "tập thể, nhóm",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "默默",
+   "py": "mòmò",
+   "pos": "形",
+   "zh": "不说话，不出声。",
+   "en": "",
+   "hv": "MẶC MẶC",
+   "vi": "lặng lẽ, im lặng",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "凝视",
+   "py": "níngshì",
+   "pos": "动",
+   "zh": "专心地看。",
+   "en": "",
+   "hv": "NGƯNG THỊ",
+   "vi": "nhìn chăm chú",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "久久",
+   "py": "jiǔjiǔ",
+   "pos": "形",
+   "zh": "很久，许久。",
+   "en": "",
+   "hv": "CỬU CỬU",
+   "vi": "rất lâu, mãi",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "梦绕魂牵",
+   "py": "mèng rào hún qiān",
+   "pos": "",
+   "zh": "形容思念非常迫切。",
+   "en": "",
+   "hv": "MỘNG NHIỄU HỒN KHIÊN",
+   "vi": "nhớ nhung da diết, mong nhớ khôn nguôi",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "相貌",
+   "py": "xiàngmào",
+   "pos": "名",
+   "zh": "人的面部的样子。",
+   "en": "",
+   "hv": "TƯỚNG MẠO",
+   "vi": "tướng mạo, diện mạo",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "重塑",
+   "py": "chóngsù",
+   "pos": "动",
+   "zh": "重新塑造。",
+   "en": "",
+   "hv": "TRÙNG TỐ",
+   "vi": "nhào nặn lại, tái tạo",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "镂刻",
+   "py": "lòukè",
+   "pos": "动",
+   "zh": "雕刻。课文中比喻产生深刻的影响。",
+   "en": "",
+   "hv": "LŨ KHẮC",
+   "vi": "chạm khắc, khắc sâu",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "盛年",
+   "py": "shèngnián",
+   "pos": "名",
+   "zh": "〈书〉壮年，三四十岁的年纪。",
+   "en": "",
+   "hv": "THỊNH NIÊN",
+   "vi": "tuổi tráng niên",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "胸怀",
+   "py": "xiōnghuái",
+   "pos": "名",
+   "zh": "指人的抱负和气量。",
+   "en": "",
+   "hv": "HUNG HOÀI",
+   "vi": "tấm lòng, hoài bão",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "人世间",
+   "py": "rénshìjiān",
+   "pos": "名",
+   "zh": "人间，世界上。",
+   "en": "",
+   "hv": "NHÂN THẾ GIAN",
+   "vi": "cõi đời, nhân gian",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "精品",
+   "py": "jīngpǐn",
+   "pos": "名",
+   "zh": "精良的物品。",
+   "en": "",
+   "hv": "TINH PHẨM",
+   "vi": "tinh phẩm, tác phẩm tinh xảo",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "顶多",
+   "py": "dǐngduō",
+   "pos": "副",
+   "zh": "最高的限度、程度。",
+   "en": "",
+   "hv": "ĐỈNH ĐA",
+   "vi": "nhiều lắm là, cùng lắm",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "阅历",
+   "py": "yuèlì",
+   "pos": "名",
+   "zh": "亲身见过、听过或做过，经历。",
+   "en": "",
+   "hv": "DUYỆT LỊCH",
+   "vi": "từng trải, trải nghiệm",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "整容",
+   "py": "zhěng róng",
+   "pos": "",
+   "zh": "修饰容貌，特指通过手术改变容貌。",
+   "en": "",
+   "hv": "CHỈNH DUNG",
+   "vi": "sửa sắc đẹp, chỉnh dung nhan",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "特使",
+   "py": "tèshǐ",
+   "pos": "名",
+   "zh": "国家临时派遣的担任特殊任务的外交代表。",
+   "en": "special envoy",
+   "hv": "ĐẶC SỨ",
+   "vi": "đặc sứ",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "威武",
+   "py": "wēiwǔ",
+   "pos": "形",
+   "zh": "雄壮，有气势。",
+   "en": "",
+   "hv": "UY VŨ",
+   "vi": "uy vũ, oai phong",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "震慑",
+   "py": "zhènshè",
+   "pos": "动",
+   "zh": "震动使害怕。",
+   "en": "",
+   "hv": "CHẤN NHIẾP",
+   "vi": "làm khiếp sợ, uy hiếp",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "崔",
+   "py": "Cuī",
+   "pos": "名",
+   "zh": "姓。",
+   "en": "",
+   "hv": "THÔI",
+   "vi": "họ Thôi",
+   "proper": true
+  },
+  {
+   "n": 52,
+   "hz": "假扮",
+   "py": "jiǎbàn",
+   "pos": "动",
+   "zh": "为了使人错认而装扮成跟本人不同的另一种人或另一个人。",
+   "en": "",
+   "hv": "GIẢ BAN",
+   "vi": "giả trang, đóng giả",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "卫士",
+   "py": "wèishì",
+   "pos": "名",
+   "zh": "担任保卫工作的人，卫兵。",
+   "en": "bodyguard",
+   "hv": "VỆ SĨ",
+   "vi": "vệ sĩ",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "下人",
+   "py": "xiàrén",
+   "pos": "名",
+   "zh": "仆人。",
+   "en": "servant",
+   "hv": "HẠ NHÂN",
+   "vi": "người hầu",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "奉命",
+   "py": "fèngmìng",
+   "pos": "动",
+   "zh": "接受使命，遵守命令。",
+   "en": "",
+   "hv": "PHỤNG MỆNH",
+   "vi": "vâng lệnh",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "优雅",
+   "py": "yōuyǎ",
+   "pos": "形",
+   "zh": "优美高雅。",
+   "en": "",
+   "hv": "ƯU NHÃ",
+   "vi": "tao nhã, thanh lịch",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "展现",
+   "py": "zhǎnxiàn",
+   "pos": "动",
+   "zh": "显现出，展示。",
+   "en": "",
+   "hv": "TRIỂN HIỆN",
+   "vi": "thể hiện, phô bày",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "剧艺",
+   "py": "jùyì",
+   "pos": "名",
+   "zh": "戏剧艺术。",
+   "en": "",
+   "hv": "KỊCH NGHỆ",
+   "vi": "nghệ thuật sân khấu",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "难能可贵",
+   "py": "nán néng kě guì",
+   "pos": "",
+   "zh": "做到一般人或一般情况下很难或不能做到的事，因此值得宝贵，值得重视。",
+   "en": "",
+   "hv": "NAN NĂNG KHẢ QUÝ",
+   "vi": "đáng quý vì khó làm được",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "奶油小生",
+   "py": "nǎiyóu xiǎoshēng",
+   "pos": "",
+   "zh": "指相貌好看但缺少男子汉气质的男青年。",
+   "en": "",
+   "hv": "NÃI DU TIỂU SINH",
+   "vi": "chàng trai bảnh bao nhưng thiếu nam tính, \"công tử bột\"",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "帝王",
+   "py": "dìwáng",
+   "pos": "名",
+   "zh": "指君主国的最高统治者。",
+   "en": "emperor",
+   "hv": "ĐẾ VƯƠNG",
+   "vi": "đế vương",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "城府",
+   "py": "chéngfǔ",
+   "pos": "",
+   "zh": "比喻待人处世的心机。",
+   "en": "",
+   "hv": "THÀNH PHỦ",
+   "vi": "sự thâm trầm, mưu sâu (trong lòng)",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "纯情",
+   "py": "chúnqíng",
+   "pos": "形",
+   "zh": "感情或爱情纯洁真挚。",
+   "en": "",
+   "hv": "THUẦN TÌNH",
+   "vi": "ngây thơ, trong trắng (tình cảm)",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "娼妓",
+   "py": "chāngjì",
+   "pos": "名",
+   "zh": "妓女。",
+   "en": "prostitute",
+   "hv": "XƯỚNG KỸ",
+   "vi": "kỹ nữ",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "红尘",
+   "py": "hóngchén",
+   "pos": "名",
+   "zh": "指繁华的社会，泛指人世间。",
+   "en": "",
+   "hv": "HỒNG TRẦN",
+   "vi": "hồng trần, cõi đời",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "沧桑",
+   "py": "cāngsāng",
+   "pos": "名",
+   "zh": "沧海桑田。比喻世事变化很大。",
+   "en": "",
+   "hv": "THƯƠNG TANG",
+   "vi": "bể dâu, thăng trầm",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "不易",
+   "py": "búyì",
+   "pos": "",
+   "zh": "不容易。",
+   "en": "",
+   "hv": "BẤT DỊ",
+   "vi": "không dễ",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "鱼尾纹",
+   "py": "yúwěiwén",
+   "pos": "名",
+   "zh": "人的眼角与鬓角之间的像鱼尾的皱纹。",
+   "en": "crow's feet",
+   "hv": "NGƯ VĨ VĂN",
+   "vi": "nếp nhăn đuôi mắt (vết chân chim)",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "抬头纹",
+   "py": "táitóuwén",
+   "pos": "名",
+   "zh": "前额上的皱纹。",
+   "en": "wrinkles on one's forehead",
+   "hv": "ĐÀI ĐẦU VĂN",
+   "vi": "nếp nhăn trên trán",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "巧言令色",
+   "py": "qiǎo yán lìng sè",
+   "pos": "",
+   "zh": "指用花言巧语和假装和善来讨好别人。",
+   "en": "",
+   "hv": "XẢO NGÔN LỆNH SẮC",
+   "vi": "lời ngon tiếng ngọt, mặt mày giả lả",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "薄厉",
+   "py": "bólì",
+   "pos": "形",
+   "zh": "课文中指说话刻薄，严厉无情。",
+   "en": "",
+   "hv": "BẠC LỆ",
+   "vi": "cay nghiệt, gay gắt",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "好学",
+   "py": "hàoxué",
+   "pos": "形",
+   "zh": "喜欢学习。",
+   "en": "",
+   "hv": "HIẾU HỌC",
+   "vi": "hiếu học",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "深邃",
+   "py": "shēnsuì",
+   "pos": "形",
+   "zh": "深奥，深刻。（深邃——深奥）",
+   "en": "",
+   "hv": "THÂM THÚY",
+   "vi": "sâu thẳm, thâm thúy",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "心浮气躁",
+   "py": "xīn fú qì zào",
+   "pos": "",
+   "zh": "心里轻浮急躁，不踏实。",
+   "en": "",
+   "hv": "TÂM PHÙ KHÍ TÁO",
+   "vi": "nôn nóng, bồn chồn không yên",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "面部",
+   "py": "miànbù",
+   "pos": "名",
+   "zh": "脸。",
+   "en": "",
+   "hv": "DIỆN BỘ",
+   "vi": "khuôn mặt",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "舒展",
+   "py": "shūzhǎn",
+   "pos": "形",
+   "zh": "不卷缩，不皱。",
+   "en": "",
+   "hv": "THƯ TRIỂN",
+   "vi": "giãn ra, thư thái",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "和谐",
+   "py": "héxié",
+   "pos": "形",
+   "zh": "配合得适当和匀称。",
+   "en": "",
+   "hv": "HÒA HÀI",
+   "vi": "hài hòa",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "遮掩",
+   "py": "zhēyǎn",
+   "pos": "动",
+   "zh": "遮挡，挡住。",
+   "en": "",
+   "hv": "GIÀ YỂM",
+   "vi": "che giấu, che đậy",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "顺理成章",
+   "py": "shùn lǐ chéng zhāng",
+   "pos": "",
+   "zh": "形容写文章或做事条理清楚。",
+   "en": "",
+   "hv": "THUẬN LÝ THÀNH CHƯƠNG",
+   "vi": "hợp lẽ tự nhiên, theo lẽ thường",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "以貌相人",
+   "py": "yǐ mào xiàng rén",
+   "pos": "",
+   "zh": "课文中的意思是根据相貌来观察人、判断人。",
+   "en": "",
+   "hv": "DĨ MẠO TƯỚNG NHÂN",
+   "vi": "trông mặt mà bắt hình dong",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "心宽体胖",
+   "py": "xīn kuān tǐ pán",
+   "pos": "",
+   "zh": "因为心胸开阔、舒畅而身体外貌安详。",
+   "en": "",
+   "hv": "TÂM KHOAN THỂ BÀN",
+   "vi": "lòng thanh thản thì thân thể khoan thai (lòng rộng người béo)",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "即便",
+   "py": "jíbiàn",
+   "pos": "连",
+   "zh": "即使。",
+   "en": "",
+   "hv": "TỨC TIỆN",
+   "vi": "dù cho, cho dù",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "演变",
+   "py": "yǎnbiàn",
+   "pos": "动",
+   "zh": "发展变化（指时间比较长的）。",
+   "en": "",
+   "hv": "DIỄN BIẾN",
+   "vi": "diễn biến, biến đổi",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "追溯",
+   "py": "zhuīsù",
+   "pos": "动",
+   "zh": "逆流而上，向江河发源处走。比喻探索事物的由来。",
+   "en": "",
+   "hv": "TRUY TỐ",
+   "vi": "truy nguyên, lần về nguồn gốc",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "相关",
+   "py": "xiāngguān",
+   "pos": "动",
+   "zh": "彼此关连。",
+   "en": "",
+   "hv": "TƯƠNG QUAN",
+   "vi": "liên quan",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "孩童",
+   "py": "háitóng",
+   "pos": "名",
+   "zh": "孩子，儿童。",
+   "en": "",
+   "hv": "HÀI ĐỒNG",
+   "vi": "trẻ con, nhi đồng",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "养子",
+   "py": "yǎngzǐ",
+   "pos": "名",
+   "zh": "指领养的儿子。",
+   "en": "",
+   "hv": "DƯỠNG TỬ",
+   "vi": "con nuôi",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "养母",
+   "py": "yǎngmǔ",
+   "pos": "名",
+   "zh": "指抚养自己的非生身母亲。",
+   "en": "",
+   "hv": "DƯỠNG MẪU",
+   "vi": "mẹ nuôi",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "爱徒",
+   "py": "àitú",
+   "pos": "名",
+   "zh": "师傅喜欢的徒弟。",
+   "en": "",
+   "hv": "ÁI ĐỒ",
+   "vi": "đồ đệ cưng",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "高师",
+   "py": "gāoshī",
+   "pos": "名",
+   "zh": "此处指高明的师傅。",
+   "en": "",
+   "hv": "CAO SƯ",
+   "vi": "thầy giỏi, cao thủ",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "佞臣",
+   "py": "nìngchén",
+   "pos": "名",
+   "zh": "善于使用花言巧语奉承皇帝的大臣。",
+   "en": "",
+   "hv": "NỊNH THẦN",
+   "vi": "nịnh thần",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "暴君",
+   "py": "bàojūn",
+   "pos": "名",
+   "zh": "凶恶残暴的君主。",
+   "en": "",
+   "hv": "BẠO QUÂN",
+   "vi": "bạo chúa",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "相近",
+   "py": "xiāngjìn",
+   "pos": "形",
+   "zh": "近似，差不多。",
+   "en": "",
+   "hv": "TƯƠNG CẬN",
+   "vi": "gần giống",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "相仿",
+   "py": "xiāngfǎng",
+   "pos": "形",
+   "zh": "相似，大致相同。",
+   "en": "",
+   "hv": "TƯƠNG PHẢNG",
+   "vi": "tương tự, na ná",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "易于",
+   "py": "yìyú",
+   "pos": "形",
+   "zh": "容易……。",
+   "en": "",
+   "hv": "DỊ VU",
+   "vi": "dễ (làm gì)",
+   "proper": false
+  },
+  {
+   "n": 96,
+   "hz": "感染",
+   "py": "gǎnrǎn",
+   "pos": "动",
+   "zh": "通过语言或行为引起别人相同的思想感情。",
+   "en": "",
+   "hv": "CẢM NHIỄM",
+   "vi": "lây lan (cảm xúc), truyền cảm",
+   "proper": false
+  },
+  {
+   "n": 97,
+   "hz": "朝夕相处",
+   "py": "zhāoxī xiāngchǔ",
+   "pos": "",
+   "zh": "天天在一起。",
+   "en": "",
+   "hv": "TRIÊU TỊCH TƯƠNG XỬ",
+   "vi": "sớm tối bên nhau",
+   "proper": false
+  },
+  {
+   "n": 98,
+   "hz": "两两相对",
+   "py": "liǎngliǎng xiāng duì",
+   "pos": "",
+   "zh": "两个人两个人地互相面对。",
+   "en": "",
+   "hv": "LƯỠNG LƯỠNG TƯƠNG ĐỐI",
+   "vi": "từng đôi đối diện nhau",
+   "proper": false
+  },
+  {
+   "n": 99,
+   "hz": "同一",
+   "py": "tóngyī",
+   "pos": "形",
+   "zh": "一致，统一。",
+   "en": "",
+   "hv": "ĐỒNG NHẤT",
+   "vi": "đồng nhất, giống nhau",
+   "proper": false
+  },
+  {
+   "n": 100,
+   "hz": "情不自禁",
+   "py": "qíng bú zì jīn",
+   "pos": "",
+   "zh": "抑制不住自己的感情。",
+   "en": "",
+   "hv": "TÌNH BẤT TỰ CẤM",
+   "vi": "không kìm được lòng",
+   "proper": false
+  },
+  {
+   "n": 101,
+   "hz": "曲线",
+   "py": "qūxiàn",
+   "pos": "名",
+   "zh": "轮廓线，人或事物及其某一部位边缘的线条。",
+   "en": "sth., esp. a human body, or part of it having the shape of a curve",
+   "hv": "KHÚC TUYẾN",
+   "vi": "đường cong",
+   "proper": false
+  },
+  {
+   "n": 102,
+   "hz": "褪色",
+   "py": "tuì shǎi",
+   "pos": "",
+   "zh": "原先的颜色逐渐变淡或消失。",
+   "en": "",
+   "hv": "THỐI SẮC",
+   "vi": "phai màu",
+   "proper": false
+  },
+  {
+   "n": 103,
+   "hz": "黝黑",
+   "py": "yǒuhēi",
+   "pos": "形",
+   "zh": "（皮肤）黑。",
+   "en": "",
+   "hv": "DỮU HẮC",
+   "vi": "đen sạm",
+   "proper": false
+  },
+  {
+   "n": 104,
+   "hz": "健壮",
+   "py": "jiànzhuàng",
+   "pos": "形",
+   "zh": "强壮健康。（健壮——健康）",
+   "en": "",
+   "hv": "KIỆN TRÁNG",
+   "vi": "khỏe mạnh, cường tráng",
+   "proper": false
+  },
+  {
+   "n": 105,
+   "hz": "朴拙",
+   "py": "pǔzhuō",
+   "pos": "形",
+   "zh": "朴实、纯真而不灵巧。",
+   "en": "",
+   "hv": "PHÁC CHUYẾT",
+   "vi": "chất phác, mộc mạc vụng về",
+   "proper": false
+  },
+  {
+   "n": 106,
+   "hz": "清澈",
+   "py": "qīngchè",
+   "pos": "形",
+   "zh": "清而透明。",
+   "en": "",
+   "hv": "THANH TRIỆT",
+   "vi": "trong veo",
+   "proper": false
+  },
+  {
+   "n": 107,
+   "hz": "略",
+   "py": "lüè",
+   "pos": "副",
+   "zh": "略微，稍微。",
+   "en": "",
+   "hv": "LƯỢC",
+   "vi": "hơi, một chút",
+   "proper": false
+  },
+  {
+   "n": 108,
+   "hz": "呆滞",
+   "py": "dāizhì",
+   "pos": "形",
+   "zh": "迟钝，不灵活。",
+   "en": "",
+   "hv": "NGAI TRỆ",
+   "vi": "đờ đẫn, ngây dại",
+   "proper": false
+  },
+  {
+   "n": 109,
+   "hz": "新近",
+   "py": "xīnjìn",
+   "pos": "名",
+   "zh": "不久以前的一段时期，最近。",
+   "en": "",
+   "hv": "TÂN CẬN",
+   "vi": "gần đây",
+   "proper": false
+  },
+  {
+   "n": 110,
+   "hz": "纤弱",
+   "py": "xiānruò",
+   "pos": "形",
+   "zh": "纤细而柔弱。",
+   "en": "",
+   "hv": "TIÊM NHƯỢC",
+   "vi": "mảnh mai yếu ớt",
+   "proper": false
+  },
+  {
+   "n": 111,
+   "hz": "精巧",
+   "py": "jīngqiǎo",
+   "pos": "形",
+   "zh": "精细巧妙。",
+   "en": "",
+   "hv": "TINH XẢO",
+   "vi": "tinh xảo, xinh xắn",
+   "proper": false
+  },
+  {
+   "n": 112,
+   "hz": "进逼",
+   "py": "jìnbī",
+   "pos": "动",
+   "zh": "向前逼近。",
+   "en": "",
+   "hv": "TIẾN BỨC",
+   "vi": "dồn ép, lấn tới (sắc sảo)",
+   "proper": false
+  },
+  {
+   "n": 113,
+   "hz": "矫饰",
+   "py": "jiǎoshì",
+   "pos": "形",
+   "zh": "故意造作来掩饰。",
+   "en": "",
+   "hv": "KIỂU SỨC",
+   "vi": "màu mè, kiểu cách",
+   "proper": false
+  },
+  {
+   "n": 114,
+   "hz": "肉体",
+   "py": "ròutǐ",
+   "pos": "名",
+   "zh": "人的身体（区别于“精神”）。",
+   "en": "",
+   "hv": "NHỤC THỂ",
+   "vi": "thể xác",
+   "proper": false
+  },
+  {
+   "n": 115,
+   "hz": "定格",
+   "py": "dìnggé",
+   "pos": "动",
+   "zh": "原意指影视片的活动画面停止在某一个固定的画面上。课文中指人的容貌固定在脸上。",
+   "en": "",
+   "hv": "ĐỊNH CÁCH",
+   "vi": "đóng khung, định hình",
+   "proper": false
+  },
+  {
+   "n": 116,
+   "hz": "符号",
+   "py": "fúhào",
+   "pos": "名",
+   "zh": "记号，标记。",
+   "en": "symbol; mark; sign",
+   "hv": "PHÙ HIỆU",
+   "vi": "ký hiệu, biểu tượng",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "面容",
+   "paragraphs": [
+    "第一部分",
+    "在开口说话之前，我们总会盯一眼来人的脸。面容是人最具个性的身体部位，因此各种证件照片上都锁定面容，而不是一个膝盖或一个巴掌。面容当然不会比指纹更精确地记录差异，但面容比指纹多了一份情感的流露，多了一份隐约可辨的文化和历史，于是总在我们的记忆中占据焦点位置。忧郁的目光，欢乐的眉梢，傲慢的鼻尖，清苦的面颊，智慧的前额，仁厚的下巴，守住了千言万语的嘴角……总是不知何时突然袭上心头，让我们生出片刻的恍惚。在谁也没有注意的时候，一个宁静的侧面，一个惊讶的蓦然回头，一个藏在合影群体角落里的默默凝视，都可能会让我们久久地梦绕魂牵：如今你在何处？",
+    "面容的浮现和消失组成了我们的人生。“见面”成了我们人生的一个又一个开始。美国总统林肯说过：过了四十岁，一个人就应该对自己的相貌负责。林肯看到了人生经历将会重塑面容，发现了心理一直在悄悄镂刻着生理的秘密。比较一下俄国作家契诃夫少年和盛年的照片，比较一下印度领袖甘地少年和盛年的照片，我们的确看到了智慧和胸怀是如何在面容上生长，最后成为人世间美的精品。少年顶多有漂亮，盛年才有美。生活阅历一直在进行悄悄的整容。《世说新语》上记录着这样一个著名的传说：魏王曹操当年要接见匈奴特使，担心自己面貌不够威武，不足以震慑来使，便让一个姓崔的人假扮魏王，而自己持刀于床头假扮卫士。接见完以后，下人奉命去询问来使对魏王的印象。不料客人说：魏王确实优雅，“然床头捉刀人，此乃英雄也”！",
+    "第二部分",
+    "这样看来，要想在自己的脸上展现其他人的阅历，还真不是一件容易的事。这就是剧艺演员难能可贵的原因。一个奶油小生要演出帝王的胸中城府，一个纯情少女要演出娼妓的红尘沧桑，该是多么的不易。人们说：多笑者必多鱼尾纹，多愁者必多抬头纹，巧言令色使嘴皮薄厉，好学深思使目光深邃，心浮气躁会使面部肌肉紧张而混乱，气定神闲会使面部肌肉舒展而和谐。如此等等，如何遮掩得住？这样，有时候我们可能会顺理成章地以貌相人，比如依据“心宽体胖”的经验，相信“体胖”者必然“心宽”。其实，“体胖”一类现象可能还有更多的原因，即便在后天演变这一方面，也还可以追溯出更多相关条件。我在孩童时代就发现过夫妻越长越像，对同学们那里好几对父母的面容相似十分奇怪，总觉得他们是兄妹。我后来还发现养子与养母越长越像的情况，爱徒与高师越长越像的情况，佞臣与暴君越长越像的情况，这才知道他们的面容相近，首先是由于他们的表情相仿。表情是易于互相感染和模仿的。朝夕相处的人，两两相对如同镜前自照，也许会下意识地追求自我同一，情不自禁地复制对方的笑容。在一段足够的时间以后，他们就免不了会有相似的某一种皱纹，某一块较为发达的肌肉，某一个器官的轮廓曲线——这当然不是不可以想象的事情。",
+    "如果我们放开眼光，甚至可以发现一个时代则常常批量产生着面容。在我一张褪色的老照片里，我们可以发现大部分女知青共有的黝黑、健壮、朴拙、目光清澈但略有一点呆滞；在我女儿新近拍下的一张照片里，我们也可以发现当代大部分女白领的纤弱、精巧、活泼、目光进逼但略有一点矫饰。我们可以知道，面容是可以繁殖的，是表情感染后的肉体定格。这种繁殖其实一直在更大的范围内进行。",
+    "从这个意义上来说，面容不仅仅属于个人，而且也属于社会，成为人们文化符号体系中的一部分。",
+    "（作者：韩少功　选自《文汇报》）"
+   ],
+   "translations": [
+    "Phần một",
+    "Trước khi mở lời, ta luôn liếc nhìn khuôn mặt của người đối diện. Khuôn mặt là bộ phận mang đậm cá tính nhất trên cơ thể con người, vì thế ảnh trên mọi loại giấy tờ đều nhắm vào khuôn mặt, chứ không phải một cái đầu gối hay một bàn tay. Khuôn mặt tất nhiên không ghi lại sự khác biệt chính xác bằng vân tay, nhưng khuôn mặt hơn vân tay ở chỗ có thêm sự bộc lộ của tình cảm, có thêm một lớp văn hóa và lịch sử mờ nhạt mà vẫn nhận ra được, vì thế nó luôn chiếm vị trí tiêu điểm trong ký ức của chúng ta. Ánh mắt u buồn, đuôi mày vui tươi, chóp mũi ngạo mạn, gò má khắc khổ, vầng trán thông tuệ, chiếc cằm nhân hậu, khóe miệng giữ lại muôn vàn lời chưa nói… luôn chẳng biết từ lúc nào bỗng ùa về trong lòng, khiến ta ngẩn ngơ trong chốc lát. Vào lúc chẳng ai để ý, một góc nghiêng tĩnh lặng, một cái ngoảnh đầu bất chợt đầy kinh ngạc, một ánh nhìn lặng lẽ ẩn trong góc tấm ảnh chụp chung, đều có thể khiến ta nhớ nhung khôn nguôi: giờ đây người ở nơi nào?",
+    "Sự hiện lên và mất đi của những khuôn mặt làm nên đời người. “Gặp mặt” trở thành hết khởi đầu này đến khởi đầu khác trong đời ta. Tổng thống Mỹ Lincoln từng nói: qua tuổi bốn mươi, mỗi người phải chịu trách nhiệm về diện mạo của chính mình. Lincoln đã thấy rằng trải nghiệm đời người sẽ nhào nặn lại khuôn mặt, đã phát hiện ra bí mật rằng tâm lý vẫn luôn lặng lẽ chạm khắc lên thể chất. Thử so sánh ảnh thời niên thiếu và thời tráng niên của nhà văn Nga Chekhov, so sánh ảnh thời niên thiếu và thời tráng niên của lãnh tụ Ấn Độ Gandhi, ta quả thực thấy được trí tuệ và tấm lòng đã lớn lên trên khuôn mặt như thế nào, để rồi trở thành tinh phẩm của cái đẹp chốn nhân gian. Tuổi thiếu niên cùng lắm chỉ có vẻ xinh xắn, đến tuổi tráng niên mới có cái đẹp. Sự từng trải trong cuộc sống luôn âm thầm “chỉnh sửa dung nhan”. Sách “Thế thuyết tân ngữ” chép một giai thoại nổi tiếng: năm ấy Ngụy vương Tào Tháo phải tiếp sứ giả đặc biệt của Hung Nô, lo dung mạo mình không đủ oai vũ, không đủ khiến sứ giả nể sợ, bèn cho một người họ Thôi đóng giả Ngụy vương, còn mình cầm đao đứng đầu giường giả làm vệ sĩ. Tiếp kiến xong, người hầu vâng lệnh đi hỏi sứ giả cảm nhận về Ngụy vương. Không ngờ vị khách nói: Ngụy vương quả thật tao nhã, “nhưng người cầm đao đứng đầu giường kia mới đúng là anh hùng”!",
+    "Phần hai",
+    "Xem ra, muốn thể hiện trên khuôn mặt mình sự từng trải của người khác quả thật chẳng phải việc dễ. Đó chính là lý do vì sao diễn viên sân khấu đáng quý. Một chàng “công tử bột” phải diễn ra sự thâm trầm trong lòng của bậc đế vương, một thiếu nữ ngây thơ phải diễn ra nỗi bể dâu hồng trần của kỹ nữ, thật khó biết bao. Người ta nói: người hay cười ắt nhiều vết chân chim, người hay sầu ắt nhiều nếp nhăn trên trán, lời ngon tiếng ngọt mặt mày giả lả khiến môi mỏng mà cay nghiệt, ham học suy nghĩ sâu khiến ánh mắt sâu thẳm, nôn nóng bồn chồn khiến cơ mặt căng thẳng và rối loạn, điềm tĩnh thong dong khiến cơ mặt giãn ra và hài hòa. Những điều như thế, làm sao che giấu nổi? Vì vậy, đôi khi ta có thể rất tự nhiên mà trông mặt bắt hình dong, chẳng hạn dựa vào kinh nghiệm “lòng rộng thì người béo” mà tin rằng người “béo” ắt “lòng rộng”. Thật ra, hiện tượng như “người béo” có thể còn nhiều nguyên nhân khác, cho dù chỉ xét về mặt biến đổi do hậu thiên, cũng còn có thể truy ra nhiều điều kiện liên quan hơn. Từ thuở nhỏ tôi đã phát hiện vợ chồng càng sống càng giống nhau; tôi rất lấy làm lạ khi thấy mấy cặp cha mẹ của các bạn học có khuôn mặt giống nhau, cứ ngỡ họ là anh em. Sau này tôi còn phát hiện con nuôi và mẹ nuôi càng lớn càng giống nhau, đồ đệ cưng và thầy giỏi càng ngày càng giống nhau, nịnh thần và bạo chúa càng ngày càng giống nhau, lúc ấy mới biết khuôn mặt họ gần giống nhau trước hết là do nét biểu cảm của họ tương tự. Biểu cảm vốn dễ lây sang nhau và dễ bắt chước. Những người sớm tối bên nhau, đối diện nhau như soi gương, có lẽ sẽ vô thức theo đuổi sự đồng nhất với chính mình, không kìm được mà sao chép nụ cười của đối phương. Sau một khoảng thời gian đủ dài, họ khó tránh khỏi có chung một kiểu nếp nhăn nào đó, một khối cơ khá phát triển nào đó, đường nét đường cong của một bộ phận nào đó — điều này đương nhiên không phải là không thể tưởng tượng được.",
+    "Nếu mở rộng tầm nhìn, ta thậm chí có thể phát hiện một thời đại thường sản sinh khuôn mặt hàng loạt. Trong một tấm ảnh cũ đã phai màu của tôi, ta có thể thấy nét chung của phần lớn các nữ thanh niên trí thức: đen sạm, khỏe mạnh, chất phác, ánh mắt trong veo nhưng hơi có phần đờ đẫn; trong một tấm ảnh con gái tôi mới chụp gần đây, ta cũng có thể thấy nét của phần lớn các nữ nhân viên văn phòng thời nay: mảnh mai, xinh xắn, hoạt bát, ánh mắt sắc sảo lấn tới nhưng hơi có phần kiểu cách. Ta có thể biết rằng, khuôn mặt có thể sinh sôi, đó là sự định hình trên thể xác sau khi biểu cảm lây lan. Sự sinh sôi này thực ra vẫn luôn diễn ra trên một phạm vi rộng lớn hơn.",
+    "Xét theo ý nghĩa đó, khuôn mặt không chỉ thuộc về cá nhân mà còn thuộc về xã hội, trở thành một phần trong hệ thống ký hiệu văn hóa của con người.",
+    "(Tác giả: Hàn Thiếu Công, trích từ báo “Văn Hối”)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "林肯的以脸识人",
+   "paragraphs": [
+    "有一次，林肯总统的朋友向他推荐了一位年约四十而且极有才华的人。林肯约见了这位先生后，却迟迟没有下文。",
+    "介绍人觉得很纳闷，就去请教林肯是何原因。林肯说：“我不喜欢他的脸，因为他的脸充满了骄傲和自负。”",
+    "林肯又说：“一个人到了四十岁以后，应该为自己的这张脸负责。”",
+    "有人会说，林肯的识人之法也太刁钻了，怎么能凭一个人的脸就判定这个人的优劣呢？笔者却以为，林肯在知人识人方面，堪称慧眼独具。",
+    "人们常说，身体发肤，受之父母。不是吗？生物学、遗传学都告诉我们，一个人的身体外貌，是父母遗传的结果，脸也不例外。一个人的脸，是父亲的“克隆”还是母亲的翻版，是父母优点的荟萃还是父母缺点的集合，我们无法选择，一切由遗传说了算。一个人的脸不仅仅由眼睛眉毛鼻子嘴巴皮肤等组织和部件构成，脸部的表情，也应该视为脸的一个组成部分，而且是至关重要的一个组成部分。一个正常的人，脸上的表情完全由他本人控制，是本人的“势力范围”。是哭还是笑，是愁眉苦脸还是喜笑颜开，是阳光灿烂还是阴云密布，是嘻嘻哈哈还是一本正经，是和蔼可亲还是凶神恶煞，是如沐春风还是冷若冰霜，是呆板还是生动，是丰富还是单调，是真诚还是虚伪，这都是本人自己的事，而不能完全归之于遗传了。从某种程度上来说，人的表情还是人内心世界的“屏幕”，一个人心里想什么，能从他脸上的表情中看出来，而一个人的心地为人，也是能从脸上的表情中映现出来的。在很多时候，我们甚至可以说“脸如其人”。如此说来，一个人，特别是一个成年人，就应该对他的脸负责。",
+    "一个心地单纯的人，表情往往浪漫透明；一个真诚善良的人，表情往往亲切爽朗；一个阅历丰富的人，表情往往坚毅深沉；一个老谋深算的人，往往一脸的莫测高深，不动声色的表情，让人看了不知是云里还是雾里；一个骄傲自大唯我独尊的人，眼光很高，看人的时候常常越过对方的头顶，鼻子常常不屑地耸动，嘴角下撇流露出一丝鄙夷，总之，他的脸上会有掩饰不住的自负与骄傲！林肯以脸识人，正显示他善于见微知著，有一双洞察世人世事的“火眼金睛”。",
+    "（作者：张峰　选自《公关世界》）"
+   ],
+   "translations": [
+    "Có lần, bạn của Tổng thống Lincoln giới thiệu với ông một người khoảng bốn mươi tuổi và rất có tài. Lincoln gặp người đó xong lại mãi chẳng có hồi âm gì.",
+    "Người giới thiệu thấy rất khó hiểu, bèn đến hỏi Lincoln vì lý do gì. Lincoln nói: “Tôi không thích khuôn mặt anh ta, vì khuôn mặt ấy đầy vẻ kiêu ngạo và tự phụ.”",
+    "Lincoln lại nói: “Một người sau tuổi bốn mươi phải chịu trách nhiệm về khuôn mặt này của mình.”",
+    "Có người sẽ bảo, cách nhìn người của Lincoln cũng quá oái oăm, sao có thể chỉ dựa vào khuôn mặt một người mà phán định người đó tốt hay xấu? Nhưng người viết lại cho rằng, về mặt hiểu người, biết người, Lincoln quả thật xứng đáng là người có con mắt tinh tường hiếm có.",
+    "Người ta thường nói, thân thể tóc da là nhận từ cha mẹ. Chẳng phải sao? Sinh vật học, di truyền học đều cho ta biết, ngoại hình cơ thể của một người là kết quả di truyền từ cha mẹ, khuôn mặt cũng không ngoại lệ. Khuôn mặt một người là bản “sao chép” của cha hay bản in lại của mẹ, là nơi hội tụ ưu điểm hay tập hợp khuyết điểm của cha mẹ, ta không thể lựa chọn, tất cả đều do di truyền quyết định. Nhưng khuôn mặt một người không chỉ cấu thành từ các mô và bộ phận như mắt, lông mày, mũi, miệng, da…, mà biểu cảm trên mặt cũng nên được xem là một phần của khuôn mặt, hơn nữa là một phần vô cùng quan trọng. Một người bình thường thì biểu cảm trên mặt hoàn toàn do chính người đó điều khiển, đó là “phạm vi thế lực” của bản thân họ. Khóc hay cười, mặt ủ mày chau hay tươi cười hớn hở, rạng rỡ như nắng hay u ám như mây đen, cười cợt bông đùa hay nghiêm trang đứng đắn, hiền hòa dễ gần hay hung thần ác sát, ấm áp như gió xuân hay lạnh lùng như băng giá, cứng nhắc hay sinh động, phong phú hay đơn điệu, chân thành hay giả dối, đó đều là việc của chính bản thân, không thể hoàn toàn đổ cho di truyền được nữa. Ở một mức độ nào đó, biểu cảm của con người còn là “màn hình” của thế giới nội tâm: một người trong lòng nghĩ gì có thể nhìn ra từ nét mặt, còn tâm địa và cách làm người của một người cũng có thể phản chiếu qua nét mặt. Nhiều khi, ta thậm chí có thể nói “mặt nào người nấy”. Nói như vậy thì một người, nhất là người đã trưởng thành, phải chịu trách nhiệm về khuôn mặt của mình.",
+    "Một người tâm hồn đơn thuần thì nét mặt thường lãng mạn, trong sáng; một người chân thành lương thiện thì nét mặt thường thân thiết, cởi mở; một người từng trải thì nét mặt thường kiên nghị, trầm tĩnh; một người mưu sâu kế hiểm thì thường mang vẻ mặt khó dò, biểu cảm không để lộ chút gì, khiến người ta nhìn vào mà như lạc trong mây mù; một người kiêu căng tự đại, coi mình là nhất thì mắt để trên trán, khi nhìn người thường nhìn vượt qua đỉnh đầu đối phương, mũi thường phập phồng khinh khỉnh, khóe miệng trễ xuống lộ ra chút khinh miệt, tóm lại, trên mặt anh ta sẽ có vẻ tự phụ và kiêu ngạo không sao che giấu nổi! Lincoln nhìn mặt mà biết người, chính là cho thấy ông giỏi nhìn cái nhỏ mà biết cái lớn, có đôi “hỏa nhãn kim tinh” thấu suốt người đời và việc đời.",
+    "(Tác giả: Trương Phong, trích từ tạp chí “Thế giới Quan hệ công chúng”)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "何 (gì, nào, đâu — văn viết)",
+   "structure": "何 + từ đơn âm tiết：何时 / 何处 / 何人 / 何地 / 何物 / 何故",
+   "explanation": "何 là đại từ nghi vấn, nghĩa là “什么” (gì) hoặc “哪里” (đâu). Chủ yếu dùng trong văn viết, thường kết hợp với từ đơn âm tiết để tạo thành 何时 (khi nào), 何处 (nơi nào), 何人 (ai), 何地 (ở đâu), 何物 (vật gì), 何方 (phương nào), 何故 (vì cớ gì). Trong bài: “……总是不知何时突然袭上心头……”, “如今你在何处？”",
+   "examples": [
+    {
+     "zh": "……总是不知何时突然袭上心头……",
+     "vi": "…luôn chẳng biết từ lúc nào bỗng ùa về trong lòng…"
+    },
+    {
+     "zh": "如今你在何处？",
+     "vi": "Giờ đây người ở nơi nào?"
+    },
+    {
+     "zh": "不知从何时开始，一个小女孩变成了大姑娘。",
+     "vi": "Chẳng biết từ bao giờ, cô bé con đã trở thành thiếu nữ."
+    },
+    {
+     "zh": "你是在何时何地何种情况下发现这一现象的？",
+     "vi": "Bạn phát hiện ra hiện tượng này vào lúc nào, ở đâu, trong hoàn cảnh nào?"
+    },
+    {
+     "zh": "这件事到底是何人所为，我们一定要调查清楚。",
+     "vi": "Việc này rốt cuộc là do ai làm, chúng ta nhất định phải điều tra cho rõ."
+    }
+   ]
+  },
+  {
+   "point": "顶多 (nhiều lắm là, cùng lắm là)",
+   "structure": "顶多 + (是/有/再…) + số lượng / mức độ",
+   "explanation": "顶多 là phó từ, biểu thị giới hạn, mức độ cao nhất (ước đoán); cũng nói là “最多”. Trong bài: “少年顶多有漂亮，盛年才有美。” (Tuổi thiếu niên cùng lắm chỉ có vẻ xinh đẹp, đến tuổi tráng niên mới có cái đẹp).",
+   "examples": [
+    {
+     "zh": "少年顶多有漂亮，盛年才有美。",
+     "vi": "Tuổi thiếu niên cùng lắm chỉ có nét xinh xắn, phải đến tuổi tráng niên mới có cái đẹp."
+    },
+    {
+     "zh": "这个会议顶多再有一个小时就结束了。",
+     "vi": "Cuộc họp này nhiều lắm là một tiếng nữa sẽ kết thúc."
+    },
+    {
+     "zh": "他以前在军队里顶多是个中尉，肯定不会是将军。",
+     "vi": "Trước đây trong quân đội anh ta cùng lắm là trung úy, chắc chắn không thể là tướng."
+    }
+   ]
+  },
+  {
+   "point": "以貌相人 (trông mặt mà bắt hình dong) — cấu trúc 以 + A + 动 + B",
+   "structure": "以 + danh từ/tính từ đơn âm 1 + động từ đơn âm + danh từ/tính từ đơn âm 2",
+   "explanation": "以貌相人: trong bài nghĩa là căn cứ vào tướng mạo để quan sát, phán đoán con người. Dạng gốc là thành ngữ “以貌取人”: dựa vào vẻ ngoài để đánh giá tốt xấu của người khác hoặc quyết định thái độ đối xử, mang nghĩa xấu. “以 + từ đơn âm 1 + động từ đơn âm + từ đơn âm 2” là một cấu trúc cố định trong tiếng Hán; thường gặp còn có: 以次充好 (lấy hàng kém giả làm hàng tốt), 以德报怨 (lấy ân đức báo oán), 以己度人 (lấy bụng ta suy bụng người), 以假乱真 (lấy giả làm thật), 以理服人 (lấy lý lẽ thuyết phục người), 以偏概全 (lấy bộ phận khái quát toàn thể), 以权谋私 (lợi dụng chức quyền mưu lợi riêng), 以身试法 (đem thân thử pháp luật), 以身殉职 (hi sinh vì nhiệm vụ), 以身作则 (lấy mình làm gương), 以一当十 (một người địch mười).",
+   "examples": [
+    {
+     "zh": "这样，有时候我们可能会顺理成章地以貌相人……",
+     "vi": "Vì thế, đôi khi chúng ta có thể rất tự nhiên mà trông mặt bắt hình dong…"
+    },
+    {
+     "zh": "以德报怨（用恩德回报别人的怨恨）",
+     "vi": "Lấy đức báo oán (dùng ân đức đáp lại sự oán hận của người khác)"
+    },
+    {
+     "zh": "以己度人（用自己的想法去衡量或猜测别人）",
+     "vi": "Lấy bụng ta suy bụng người (dùng suy nghĩ của mình để đo lường hay đoán người khác)"
+    },
+    {
+     "zh": "以偏概全（用局部来概况全体）",
+     "vi": "Lấy bộ phận để khái quát toàn thể (vơ đũa cả nắm)"
+    },
+    {
+     "zh": "以身作则（用自己的行动作为榜样）",
+     "vi": "Lấy mình làm gương (dùng hành động của bản thân làm tấm gương)"
+    }
+   ]
+  }
+ ]
+}

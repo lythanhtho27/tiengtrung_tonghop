@@ -1,0 +1,1712 @@
+{
+ "book": "gc2",
+ "lesson_num": 3,
+ "title": "人在风中",
+ "pages": [
+  65,
+  92
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "沾亲带故",
+   "py": "zhān qīn dài gù",
+   "pos": "",
+   "zh": "多少有点儿亲戚、朋友、老熟人之类的关系（跟“非亲非故”相对）。",
+   "en": "",
+   "hv": "TRIÊM THÂN ĐỚI CỐ",
+   "vi": "có chút họ hàng, quen biết",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "妙龄",
+   "py": "miàolíng",
+   "pos": "名",
+   "zh": "女子的青春时期。",
+   "en": "",
+   "hv": "DIỆU LINH",
+   "vi": "tuổi xuân (của con gái)",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "飘然而至",
+   "py": "piāorán ér zhì",
+   "pos": "",
+   "zh": "轻快而迅速地来到。",
+   "en": "",
+   "hv": "PHIÊU NHIÊN NHI CHÍ",
+   "vi": "nhẹ nhàng mà đến",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "去世",
+   "py": "qùshì",
+   "pos": "动",
+   "zh": "（成年人）死去，逝世。",
+   "en": "",
+   "hv": "KHỨ THẾ",
+   "vi": "qua đời",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "心中",
+   "py": "xīnzhōng",
+   "pos": "名",
+   "zh": "心里。",
+   "en": "",
+   "hv": "TÂM TRUNG",
+   "vi": "trong lòng",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "泛起",
+   "py": "fànqǐ",
+   "pos": "动",
+   "zh": "产生。",
+   "en": "",
+   "hv": "PHIẾM KHỞI",
+   "vi": "dâng lên, trào lên",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "追思",
+   "py": "zhuīsī",
+   "pos": "动",
+   "zh": "追想怀念，回想思念。",
+   "en": "",
+   "hv": "TRUY TƯ",
+   "vi": "tưởng nhớ, hồi tưởng",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "惆怅",
+   "py": "chóuchàng",
+   "pos": "形",
+   "zh": "伤感，失意。",
+   "en": "",
+   "hv": "TRÙ TRƯỚNG",
+   "vi": "buồn bã, ngậm ngùi",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "装束",
+   "py": "zhuāngshù",
+   "pos": "动",
+   "zh": "打扮。",
+   "en": "",
+   "hv": "TRANG THÚC",
+   "vi": "ăn mặc, trang phục",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "时髦",
+   "py": "shímáo",
+   "pos": "形",
+   "zh": "形容人的装饰、衣着或其他事物入时，符合潮流。",
+   "en": "",
+   "hv": "THỜI MAO",
+   "vi": "thời thượng, mốt",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "发型",
+   "py": "fàxíng",
+   "pos": "名",
+   "zh": "头发的样式。",
+   "en": "",
+   "hv": "PHÁT HÌNH",
+   "vi": "kiểu tóc",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "脐",
+   "py": "qí",
+   "pos": "名",
+   "zh": "肚脐。",
+   "en": "navel; belly button",
+   "hv": "TỀ",
+   "vi": "rốn",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "触目惊心",
+   "py": "chù mù jīng xīn",
+   "pos": "",
+   "zh": "看到某种严重的情况而引起内心的震动。",
+   "en": "",
+   "hv": "XÚC MỤC KINH TÂM",
+   "vi": "nhìn thấy mà giật mình",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "征集",
+   "py": "zhēngjí",
+   "pos": "动",
+   "zh": "用公告或口头通知的方式收集。",
+   "en": "",
+   "hv": "TRƯNG TẬP",
+   "vi": "thu thập, kêu gọi gửi (bài)",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "文集",
+   "py": "wénjí",
+   "pos": "名",
+   "zh": "把某人的作品汇集起来编成的书。",
+   "en": "",
+   "hv": "VĂN TẬP",
+   "vi": "tuyển tập văn",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "附录",
+   "py": "fùlù",
+   "pos": "名",
+   "zh": "附在正文后面与正文有关的文章或参考资料。",
+   "en": "",
+   "hv": "PHỤ LỤC",
+   "vi": "phụ lục",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "谈吐",
+   "py": "tántǔ",
+   "pos": "名",
+   "zh": "指谈话时的措辞和态度。",
+   "en": "",
+   "hv": "ĐÀM THỔ",
+   "vi": "cách ăn nói",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "得体",
+   "py": "détǐ",
+   "pos": "形",
+   "zh": "（言语、行动等）合适，恰当。",
+   "en": "",
+   "hv": "ĐẮC THỂ",
+   "vi": "đúng mực, phù hợp",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "就算",
+   "py": "jiùsuàn",
+   "pos": "连",
+   "zh": "即使。",
+   "en": "",
+   "hv": "TỰU TOÁN",
+   "vi": "cho dù, dẫu cho",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "推敲",
+   "py": "tuīqiāo",
+   "pos": "动",
+   "zh": "反复思考、琢磨。",
+   "en": "",
+   "hv": "THÔI XAO",
+   "vi": "cân nhắc, suy xét kỹ",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "眼影",
+   "py": "yǎnyǐng",
+   "pos": "名",
+   "zh": "一种用于眼部的化妆品。",
+   "en": "eye-shadow",
+   "hv": "NHÃN ẢNH",
+   "vi": "phấn mắt",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "灰晶",
+   "py": "huījīng",
+   "pos": "形",
+   "zh": "一种有晶莹光泽的灰色。",
+   "en": "",
+   "hv": "HÔI TINH",
+   "vi": "màu xám ánh kim",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "唇膏",
+   "py": "chúngāo",
+   "pos": "名",
+   "zh": "口红。",
+   "en": "lipstick",
+   "hv": "THẦN CAO",
+   "vi": "son môi",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "面容",
+   "py": "miànróng",
+   "pos": "名",
+   "zh": "脸的长相，容貌。",
+   "en": "",
+   "hv": "DIỆN DUNG",
+   "vi": "dung mạo, gương mặt",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "别扭",
+   "py": "bièniu",
+   "pos": "形",
+   "zh": "不顺心；难对付。",
+   "en": "",
+   "hv": "BIỆT NỮU",
+   "vi": "khó chịu, gượng gạo",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "借题发挥",
+   "py": "jiè tí fāhuī",
+   "pos": "",
+   "zh": "借谈论另一个题目来表达自己真正的意思。",
+   "en": "",
+   "hv": "TÁ ĐỀ PHÁT HUY",
+   "vi": "mượn chuyện để nói ý mình",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "俏",
+   "py": "qiào",
+   "pos": "形",
+   "zh": "（女子）好看，漂亮。",
+   "en": "",
+   "hv": "TIẾU",
+   "vi": "xinh xắn, duyên dáng",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "酷",
+   "py": "kù",
+   "pos": "形",
+   "zh": "英语中“cool”的音译。",
+   "en": "",
+   "hv": "KHỐC",
+   "vi": "ngầu, “cool”",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "时尚",
+   "py": "shíshàng",
+   "pos": "名",
+   "zh": "正在流行的，被人们喜爱的事物。",
+   "en": "",
+   "hv": "THỜI THƯỢNG",
+   "vi": "thời trang, mốt",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "顺风",
+   "py": "shùn fēng",
+   "pos": "",
+   "zh": "行进的方向跟风向相同。",
+   "en": "",
+   "hv": "THUẬN PHONG",
+   "vi": "xuôi gió",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "逆风",
+   "py": "nì fēng",
+   "pos": "",
+   "zh": "行进的方向跟风向不同。",
+   "en": "",
+   "hv": "NGHỊCH PHONG",
+   "vi": "ngược gió",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "免不了",
+   "py": "miǎnbuliǎo",
+   "pos": "动",
+   "zh": "不可避免；难免。",
+   "en": "",
+   "hv": "MIỄN BẤT LIỄU",
+   "vi": "không tránh khỏi",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "出神",
+   "py": "chū shén",
+   "pos": "",
+   "zh": "因精神过度集中而发呆。",
+   "en": "",
+   "hv": "XUẤT THẦN",
+   "vi": "ngẩn người, xuất thần",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "清纯",
+   "py": "qīngchún",
+   "pos": "形",
+   "zh": "清秀纯洁。（清纯——纯洁）",
+   "en": "",
+   "hv": "THANH THUẦN",
+   "vi": "trong sáng, thuần khiết",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "尝试",
+   "py": "chángshì",
+   "pos": "动",
+   "zh": "试，试验。",
+   "en": "",
+   "hv": "THƯỜNG THÍ",
+   "vi": "thử",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "乃至",
+   "py": "nǎizhì",
+   "pos": "连",
+   "zh": "甚至。也说“乃至于”。（乃至——甚至）",
+   "en": "",
+   "hv": "NÃI CHÍ",
+   "vi": "thậm chí, cho đến",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "毒品",
+   "py": "dúpǐn",
+   "pos": "名",
+   "zh": "",
+   "en": "narcotics",
+   "hv": "ĐỘC PHẨM",
+   "vi": "ma túy",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "人生",
+   "py": "rénshēng",
+   "pos": "名",
+   "zh": "人的一生；人的生存和生活。",
+   "en": "",
+   "hv": "NHÂN SINH",
+   "vi": "đời người",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "体验",
+   "py": "tǐyàn",
+   "pos": "动",
+   "zh": "通过实践来认识周围的事物；亲身经历。（体验——体味、体验——体会）",
+   "en": "",
+   "hv": "THỂ NGHIỆM",
+   "vi": "trải nghiệm",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "跻身",
+   "py": "jīshēn",
+   "pos": "动",
+   "zh": "登上，使自己上升到（行列、位置等）。",
+   "en": "",
+   "hv": "TÊ THÂN",
+   "vi": "chen chân vào, bước vào (hàng ngũ)",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "竭诚",
+   "py": "jiéchéng",
+   "pos": "副",
+   "zh": "竭尽忠诚；全心全意。",
+   "en": "",
+   "hv": "KIỆT THÀNH",
+   "vi": "hết lòng, tận tình",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "忠告",
+   "py": "zhōnggào",
+   "pos": "名",
+   "zh": "诚恳地劝告对方的话。",
+   "en": "",
+   "hv": "TRUNG CÁO",
+   "vi": "lời khuyên chân thành",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "童贞",
+   "py": "tóngzhēn",
+   "pos": "名",
+   "zh": "指没有经过性生活的人所保持的贞操。",
+   "en": "virginity",
+   "hv": "ĐỒNG TRINH",
+   "vi": "trinh tiết",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "品尝",
+   "py": "pǐncháng",
+   "pos": "动",
+   "zh": "尝试（滋味）。",
+   "en": "",
+   "hv": "PHẨM THƯỜNG",
+   "vi": "nếm thử",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "轻微",
+   "py": "qīngwēi",
+   "pos": "形",
+   "zh": "不重的，程度浅的。",
+   "en": "",
+   "hv": "KHINH VI",
+   "vi": "nhẹ, không đáng kể",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "大麻",
+   "py": "dàmá",
+   "pos": "名",
+   "zh": "一种毒品。",
+   "en": "hemp; marijuana",
+   "hv": "ĐẠI MA",
+   "vi": "cần sa",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "在世为人",
+   "py": "zài shì wéi rén",
+   "pos": "",
+   "zh": "在这个世界上做人处世。",
+   "en": "",
+   "hv": "TẠI THẾ VI NHÂN",
+   "vi": "làm người ở đời",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "底线",
+   "py": "dǐxiàn",
+   "pos": "名",
+   "zh": "原意是指球类运动场地两端的界限。比喻最低的、最基本的限度。",
+   "en": "",
+   "hv": "ĐỂ TUYẾN",
+   "vi": "giới hạn cuối cùng, ranh giới tối thiểu",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "白领",
+   "py": "báilǐng",
+   "pos": "名",
+   "zh": "指现代社会在企业中从事脑力劳动的人员。",
+   "en": "",
+   "hv": "BẠCH LĨNH",
+   "vi": "dân văn phòng, “cổ cồn trắng”",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "型",
+   "py": "xíng",
+   "pos": "名",
+   "zh": "类型。",
+   "en": "",
+   "hv": "HÌNH",
+   "vi": "kiểu, loại",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "差异",
+   "py": "chāyì",
+   "pos": "名",
+   "zh": "差别，不相同。",
+   "en": "",
+   "hv": "SAI DỊ",
+   "vi": "khác biệt",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "望去",
+   "py": "wàngqù",
+   "pos": "动",
+   "zh": "看上去。",
+   "en": "",
+   "hv": "VỌNG KHỨ",
+   "vi": "trông có vẻ, nhìn qua",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "透亮",
+   "py": "tòuliàng",
+   "pos": "形",
+   "zh": "明白。",
+   "en": "",
+   "hv": "THẤU LƯỢNG",
+   "vi": "sáng suốt, hiểu rõ",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "哲理",
+   "py": "zhélǐ",
+   "pos": "名",
+   "zh": "关于宇宙和人生的道理。",
+   "en": "philosophic theory",
+   "hv": "TRIẾT LÝ",
+   "vi": "triết lý",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "启示",
+   "py": "qǐshì",
+   "pos": "动",
+   "zh": "启发提示，使有所领悟。",
+   "en": "",
+   "hv": "KHẢI THỊ",
+   "vi": "gợi mở, khai sáng",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "衣橱（柜）",
+   "py": "yīchú（guì）",
+   "pos": "名",
+   "zh": "放衣服的柜子。",
+   "en": "wardrobe",
+   "hv": "Y TRÙ (QUỸ)",
+   "vi": "tủ quần áo",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "质地",
+   "py": "zhìdì",
+   "pos": "名",
+   "zh": "某种材料的结构的性质。",
+   "en": "quality of a material",
+   "hv": "CHẤT ĐỊA",
+   "vi": "chất liệu, chất vải",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "绝迹",
+   "py": "juéjì",
+   "pos": "动",
+   "zh": "消失了，完全不出现。",
+   "en": "",
+   "hv": "TUYỆT TÍCH",
+   "vi": "biến mất hẳn, tuyệt tích",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "裤腿",
+   "py": "kùtuǐ",
+   "pos": "名",
+   "zh": "裤子穿在两腿上的筒状部分。",
+   "en": "",
+   "hv": "KHỐ THOÁI",
+   "vi": "ống quần",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "灰白",
+   "py": "huībái",
+   "pos": "形",
+   "zh": "浅灰色。",
+   "en": "",
+   "hv": "HÔI BẠCH",
+   "vi": "bạc màu, xám nhạt",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "腰围",
+   "py": "yāowéi",
+   "pos": "名",
+   "zh": "腰部周围的长度。",
+   "en": "",
+   "hv": "YÊU VI",
+   "vi": "vòng eo",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "容下",
+   "py": "róngxià",
+   "pos": "动",
+   "zh": "包含，容纳。",
+   "en": "",
+   "hv": "DUNG HẠ",
+   "vi": "chứa được, vừa",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "当下",
+   "py": "dāngxià",
+   "pos": "名",
+   "zh": "现在，当前。",
+   "en": "",
+   "hv": "ĐƯƠNG HẠ",
+   "vi": "hiện tại, bây giờ",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "遗弃",
+   "py": "yíqì",
+   "pos": "动",
+   "zh": "抛弃，丢弃。",
+   "en": "",
+   "hv": "DI KHÍ",
+   "vi": "vứt bỏ",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "羞涩",
+   "py": "xiūsè",
+   "pos": "形",
+   "zh": "因难为情而态度不自然。（羞涩——羞怯）",
+   "en": "",
+   "hv": "TU SÁP",
+   "vi": "e thẹn, ngượng ngùng",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "初恋",
+   "py": "chūliàn",
+   "pos": "名",
+   "zh": "第一次恋爱。",
+   "en": "",
+   "hv": "SƠ LUYẾN",
+   "vi": "mối tình đầu",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "见证",
+   "py": "jiànzhèng",
+   "pos": "动",
+   "zh": "当场看见，可以作证。",
+   "en": "",
+   "hv": "KIẾN CHỨNG",
+   "vi": "chứng kiến",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "沐浴",
+   "py": "mùyù",
+   "pos": "动",
+   "zh": "洗澡，比喻沉浸在某种环境中。",
+   "en": "",
+   "hv": "MỘC DỤC",
+   "vi": "tắm; đắm mình (trong)",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "世俗",
+   "py": "shìsú",
+   "pos": "名",
+   "zh": "社会上的一般习俗。",
+   "en": "",
+   "hv": "THẾ TỤC",
+   "vi": "thế tục, phong tục đời thường",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "军绿",
+   "py": "jūnlǜ",
+   "pos": "形",
+   "zh": "军队专用的绿色。",
+   "en": "",
+   "hv": "QUÂN LỤC",
+   "vi": "màu xanh lính",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "苗条",
+   "py": "miáotiao",
+   "pos": "形",
+   "zh": "指女性的身材细长柔美。",
+   "en": "",
+   "hv": "MIÊU ĐIỀU",
+   "vi": "thon thả, mảnh mai",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "九牛二虎之力",
+   "py": "jiǔ niú èr hǔ zhī lì",
+   "pos": "",
+   "zh": "比喻很大的力量。",
+   "en": "",
+   "hv": "CỬU NGƯU NHỊ HỔ CHI LỰC",
+   "vi": "sức chín trâu hai hổ, rất nhiều công sức",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "讨",
+   "py": "tǎo",
+   "pos": "动",
+   "zh": "索取，请求。",
+   "en": "",
+   "hv": "THẢO",
+   "vi": "xin, đòi",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "到手",
+   "py": "dào shǒu",
+   "pos": "",
+   "zh": "拿到手，获得。",
+   "en": "",
+   "hv": "ĐÁO THỦ",
+   "vi": "có được, vào tay",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "国防绿",
+   "py": "guófánglǜ",
+   "pos": "形",
+   "zh": "即“军绿”，军队在服装、器物上使用的一种绿色。",
+   "en": "",
+   "hv": "QUỐC PHÒNG LỤC",
+   "vi": "màu xanh quốc phòng",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "军用",
+   "py": "jūnyòng",
+   "pos": "形",
+   "zh": "军事上使用的。",
+   "en": "",
+   "hv": "QUÂN DỤNG",
+   "vi": "quân dụng",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "水壶",
+   "py": "shuǐhú",
+   "pos": "名",
+   "zh": "一种装水的器具。",
+   "en": "canteen",
+   "hv": "THỦY HỒ",
+   "vi": "bình nước",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "强劲",
+   "py": "qiángjìng",
+   "pos": "形",
+   "zh": "强有力的。",
+   "en": "",
+   "hv": "CƯỜNG KÌNH",
+   "vi": "mạnh mẽ",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "风行",
+   "py": "fēngxíng",
+   "pos": "动",
+   "zh": "普遍流行。（风行——流行）",
+   "en": "",
+   "hv": "PHONG HÀNH",
+   "vi": "thịnh hành",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "置身于",
+   "py": "zhìshēn yú",
+   "pos": "",
+   "zh": "把自己放在，存身于。",
+   "en": "",
+   "hv": "TRÍ THÂN VU",
+   "vi": "đặt mình vào, ở trong",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "审美",
+   "py": "shěnměi",
+   "pos": "动",
+   "zh": "领会事物或艺术品的美。",
+   "en": "",
+   "hv": "THẨM MỸ",
+   "vi": "thẩm mỹ, cảm thụ cái đẹp",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "潮流",
+   "py": "cháoliú",
+   "pos": "名",
+   "zh": "比喻社会或事物发展的趋势。",
+   "en": "",
+   "hv": "TRIỀU LƯU",
+   "vi": "trào lưu",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "昂奋",
+   "py": "ángfèn",
+   "pos": "形",
+   "zh": "（精神）振奋，（情绪）高涨。",
+   "en": "",
+   "hv": "NGANG PHẤN",
+   "vi": "hăng hái, phấn chấn",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "置备",
+   "py": "zhìbèi",
+   "pos": "动",
+   "zh": "购买（设备、用具等）。",
+   "en": "",
+   "hv": "TRÍ BỊ",
+   "vi": "sắm sửa, mua sắm",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "沉浸",
+   "py": "chénjìn",
+   "pos": "动",
+   "zh": "比喻处于某种境界或思想活动中。",
+   "en": "",
+   "hv": "TRẦM TẨM",
+   "vi": "đắm chìm",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "溢美之词",
+   "py": "yì měi zhī cí",
+   "pos": "",
+   "zh": "过分夸奖的话语。",
+   "en": "",
+   "hv": "DẬT MỸ CHI TỪ",
+   "vi": "lời khen quá mức",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "开度",
+   "py": "kāidù",
+   "pos": "名",
+   "zh": "开口的宽度。",
+   "en": "",
+   "hv": "KHAI ĐỘ",
+   "vi": "độ mở, độ loe",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "极为",
+   "py": "jíwéi",
+   "pos": "副",
+   "zh": "表示程度达到极点。",
+   "en": "",
+   "hv": "CỰC VI",
+   "vi": "cực kỳ",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "夸张",
+   "py": "kuāzhāng",
+   "pos": "形",
+   "zh": "夸大事物某个方面的特点。（夸张——夸大）",
+   "en": "",
+   "hv": "KHOA TRƯƠNG",
+   "vi": "khoa trương, cường điệu",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "大摇大摆",
+   "py": "dà yáo dà bǎi",
+   "pos": "",
+   "zh": "形容走路挺神气、满不在乎的样子。",
+   "en": "",
+   "hv": "ĐẠI DAO ĐẠI BÃI",
+   "vi": "nghênh ngang",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "提携",
+   "py": "tíxié",
+   "pos": "动",
+   "zh": "对后辈、晚辈在事业上照顾扶持。",
+   "en": "",
+   "hv": "ĐỀ HUỀ",
+   "vi": "dìu dắt, nâng đỡ",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "前辈",
+   "py": "qiánbèi",
+   "pos": "名",
+   "zh": "年长的、资历深的人。",
+   "en": "",
+   "hv": "TIỀN BỐI",
+   "vi": "tiền bối, bậc đàn anh",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "感念",
+   "py": "gǎnniàn",
+   "pos": "动",
+   "zh": "因为感激或感动而思念。",
+   "en": "",
+   "hv": "CẢM NIỆM",
+   "vi": "nhớ ơn, cảm kích nhớ đến",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "女郎",
+   "py": "nǚláng",
+   "pos": "名",
+   "zh": "指年轻的女性。",
+   "en": "",
+   "hv": "NỮ LANG",
+   "vi": "cô gái trẻ",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "眼神",
+   "py": "yǎnshén",
+   "pos": "名",
+   "zh": "眼睛的神态。",
+   "en": "",
+   "hv": "NHÃN THẦN",
+   "vi": "ánh mắt",
+   "proper": false
+  },
+  {
+   "n": 96,
+   "hz": "凸现",
+   "py": "tūxiàn",
+   "pos": "动",
+   "zh": "明显地表现出来。",
+   "en": "",
+   "hv": "ĐỘT HIỆN",
+   "vi": "hiện rõ, lộ rõ",
+   "proper": false
+  },
+  {
+   "n": 97,
+   "hz": "诧异",
+   "py": "chàyì",
+   "pos": "形",
+   "zh": "觉得十分奇怪。",
+   "en": "",
+   "hv": "SÁ DỊ",
+   "vi": "kinh ngạc, lấy làm lạ",
+   "proper": false
+  },
+  {
+   "n": 98,
+   "hz": "不快",
+   "py": "búkuài",
+   "pos": "形",
+   "zh": "不愉快。",
+   "en": "",
+   "hv": "BẤT KHOÁI",
+   "vi": "không vui",
+   "proper": false
+  },
+  {
+   "n": 99,
+   "hz": "浮现",
+   "py": "fúxiàn",
+   "pos": "动",
+   "zh": "（过去经历的事情）再次在脑子里显现。",
+   "en": "",
+   "hv": "PHÙ HIỆN",
+   "vi": "hiện lên (trong đầu)",
+   "proper": false
+  },
+  {
+   "n": 100,
+   "hz": "就此",
+   "py": "jiùcǐ",
+   "pos": "副",
+   "zh": "就在此时或此地。",
+   "en": "",
+   "hv": "TỰU THỬ",
+   "vi": "ngay lúc đó, từ đó",
+   "proper": false
+  },
+  {
+   "n": 101,
+   "hz": "吱声",
+   "py": "zī shēng",
+   "pos": "",
+   "zh": "北方方言。指作声，说话。",
+   "en": "",
+   "hv": "CHI THANH",
+   "vi": "lên tiếng, hé răng",
+   "proper": false
+  },
+  {
+   "n": 102,
+   "hz": "抗拒",
+   "py": "kàngjù",
+   "pos": "动",
+   "zh": "抵抗和拒绝。",
+   "en": "",
+   "hv": "KHÁNG CỰ",
+   "vi": "chống lại, cưỡng lại",
+   "proper": false
+  },
+  {
+   "n": 103,
+   "hz": "毋庸",
+   "py": "wúyōng",
+   "pos": "副",
+   "zh": "不用，不必。",
+   "en": "",
+   "hv": "VÔ DUNG",
+   "vi": "không cần, khỏi phải",
+   "proper": false
+  },
+  {
+   "n": 104,
+   "hz": "成因",
+   "py": "chéngyīn",
+   "pos": "名",
+   "zh": "形成的原因。",
+   "en": "",
+   "hv": "THÀNH NHÂN",
+   "vi": "nguyên nhân hình thành",
+   "proper": false
+  },
+  {
+   "n": 105,
+   "hz": "预示",
+   "py": "yùshì",
+   "pos": "动",
+   "zh": "预先显示。",
+   "en": "",
+   "hv": "DỰ THỊ",
+   "vi": "báo trước",
+   "proper": false
+  },
+  {
+   "n": 106,
+   "hz": "凝固",
+   "py": "nínggù",
+   "pos": "动",
+   "zh": "比喻固定不变，停滞。",
+   "en": "",
+   "hv": "NGƯNG CỐ",
+   "vi": "đông cứng, bất biến",
+   "proper": false
+  },
+  {
+   "n": 107,
+   "hz": "多变",
+   "py": "duōbiàn",
+   "pos": "动",
+   "zh": "常常变化。",
+   "en": "",
+   "hv": "ĐA BIẾN",
+   "vi": "hay thay đổi",
+   "proper": false
+  },
+  {
+   "n": 108,
+   "hz": "预料",
+   "py": "yùliào",
+   "pos": "动",
+   "zh": "事先推测。",
+   "en": "",
+   "hv": "DỰ LIỆU",
+   "vi": "dự đoán, lường trước",
+   "proper": false
+  },
+  {
+   "n": 109,
+   "hz": "降临",
+   "py": "jiànglín",
+   "pos": "动",
+   "zh": "来到。",
+   "en": "",
+   "hv": "GIÁNG LÂM",
+   "vi": "ập đến, giáng xuống",
+   "proper": false
+  },
+  {
+   "n": 110,
+   "hz": "微颤",
+   "py": "wēichàn",
+   "pos": "动",
+   "zh": "轻微地抖动。",
+   "en": "",
+   "hv": "VI CHIẾN",
+   "vi": "rung nhẹ",
+   "proper": false
+  },
+  {
+   "n": 111,
+   "hz": "劲风",
+   "py": "jìngfēng",
+   "pos": "名",
+   "zh": "强而有力的风。",
+   "en": "",
+   "hv": "KÌNH PHONG",
+   "vi": "gió mạnh",
+   "proper": false
+  },
+  {
+   "n": 112,
+   "hz": "相当于",
+   "py": "xiāngdāngyú",
+   "pos": "动",
+   "zh": "（数量、价值、条件、情形等）两方面差不多。",
+   "en": "",
+   "hv": "TƯƠNG ĐƯƠNG VU",
+   "vi": "tương đương với",
+   "proper": false
+  },
+  {
+   "n": 113,
+   "hz": "效应",
+   "py": "xiàoyìng",
+   "pos": "名",
+   "zh": "某个人物的言行或某种事物的发生、发展所引起的反应和效果。",
+   "en": "",
+   "hv": "HIỆU ỨNG",
+   "vi": "hiệu ứng",
+   "proper": false
+  },
+  {
+   "n": 114,
+   "hz": "轻飘",
+   "py": "qīngpiāo",
+   "pos": "动",
+   "zh": "轻轻飘动。",
+   "en": "",
+   "hv": "KHINH PHIÊU",
+   "vi": "bay nhẹ, phất phơ",
+   "proper": false
+  },
+  {
+   "n": 115,
+   "hz": "诡谲",
+   "py": "guǐjué",
+   "pos": "形",
+   "zh": "奇异多变。",
+   "en": "",
+   "hv": "QUỶ QUYỆT",
+   "vi": "kỳ dị khó lường",
+   "proper": false
+  },
+  {
+   "n": 116,
+   "hz": "穿着",
+   "py": "chuānzhuó",
+   "pos": "名",
+   "zh": "衣着，装束。",
+   "en": "",
+   "hv": "XUYÊN TRƯỚC",
+   "vi": "cách ăn mặc",
+   "proper": false
+  },
+  {
+   "n": 117,
+   "hz": "饮食",
+   "py": "yǐnshí",
+   "pos": "动",
+   "zh": "吃东西和喝东西。",
+   "en": "",
+   "hv": "ẨM THỰC",
+   "vi": "ăn uống",
+   "proper": false
+  },
+  {
+   "n": 118,
+   "hz": "俗世",
+   "py": "súshì",
+   "pos": "名",
+   "zh": "普通人生活的世界（区别于佛教的世界）。",
+   "en": "",
+   "hv": "TỤC THẾ",
+   "vi": "cõi đời, thế tục",
+   "proper": false
+  },
+  {
+   "n": 119,
+   "hz": "无可责备",
+   "py": "wú kě zébèi",
+   "pos": "",
+   "zh": "没有什么可以责备的。",
+   "en": "",
+   "hv": "VÔ KHẢ TRÁCH BỊ",
+   "vi": "không có gì đáng trách",
+   "proper": false
+  },
+  {
+   "n": 120,
+   "hz": "甚或",
+   "py": "shènhuò",
+   "pos": "副",
+   "zh": "甚至。",
+   "en": "",
+   "hv": "THẬM HOẶC",
+   "vi": "thậm chí",
+   "proper": false
+  },
+  {
+   "n": 121,
+   "hz": "有助于",
+   "py": "yǒuzhùyú",
+   "pos": "动",
+   "zh": "（对某人、某事）有帮助。",
+   "en": "",
+   "hv": "HỮU TRỢ VU",
+   "vi": "có ích cho, giúp ích cho",
+   "proper": false
+  },
+  {
+   "n": 122,
+   "hz": "提升",
+   "py": "tíshēng",
+   "pos": "动",
+   "zh": "提高。",
+   "en": "",
+   "hv": "ĐỀ THĂNG",
+   "vi": "nâng cao",
+   "proper": false
+  },
+  {
+   "n": 123,
+   "hz": "情趣",
+   "py": "qíngqù",
+   "pos": "名",
+   "zh": "情调趣味。",
+   "en": "",
+   "hv": "TÌNH THÚ",
+   "vi": "hứng thú, thú vị",
+   "proper": false
+  },
+  {
+   "n": 124,
+   "hz": "良性",
+   "py": "liángxìng",
+   "pos": "形",
+   "zh": "能产生好的结果的。",
+   "en": "",
+   "hv": "LƯƠNG TÍNH",
+   "vi": "lành mạnh, tích cực",
+   "proper": false
+  },
+  {
+   "n": 125,
+   "hz": "宣泄",
+   "py": "xuānxiè",
+   "pos": "动",
+   "zh": "舒散、吐露（心中的郁闷）。",
+   "en": "",
+   "hv": "TUYÊN TIẾT",
+   "vi": "giải tỏa, trút bỏ",
+   "proper": false
+  },
+  {
+   "n": 126,
+   "hz": "夕阳",
+   "py": "xīyáng",
+   "pos": "名",
+   "zh": "傍晚的太阳。",
+   "en": "",
+   "hv": "TỊCH DƯƠNG",
+   "vi": "mặt trời lặn, hoàng hôn",
+   "proper": false
+  },
+  {
+   "n": 127,
+   "hz": "作伴",
+   "py": "zuò bàn",
+   "pos": "",
+   "zh": "当陪伴的人。",
+   "en": "",
+   "hv": "TÁC BẠN",
+   "vi": "làm bạn, bầu bạn",
+   "proper": false
+  },
+  {
+   "n": 128,
+   "hz": "活力",
+   "py": "huólì",
+   "pos": "名",
+   "zh": "旺盛的生命力。",
+   "en": "",
+   "hv": "HOẠT LỰC",
+   "vi": "sức sống",
+   "proper": false
+  },
+  {
+   "n": 129,
+   "hz": "关爱",
+   "py": "guān'ài",
+   "pos": "动",
+   "zh": "关怀爱护。",
+   "en": "",
+   "hv": "QUAN ÁI",
+   "vi": "quan tâm yêu thương",
+   "proper": false
+  },
+  {
+   "n": 130,
+   "hz": "底层",
+   "py": "dǐcéng",
+   "pos": "名",
+   "zh": "泛指事物最下面的部分。",
+   "en": "",
+   "hv": "ĐỂ TẦNG",
+   "vi": "tầng dưới cùng, đáy",
+   "proper": false
+  },
+  {
+   "n": 131,
+   "hz": "深思",
+   "py": "shēnsī",
+   "pos": "动",
+   "zh": "深刻地思考。",
+   "en": "",
+   "hv": "THÂM TƯ",
+   "vi": "suy ngẫm sâu sắc",
+   "proper": false
+  },
+  {
+   "n": 132,
+   "hz": "体味",
+   "py": "tǐwèi",
+   "pos": "动",
+   "zh": "仔细体会。",
+   "en": "",
+   "hv": "THỂ VỊ",
+   "vi": "nghiền ngẫm, cảm nhận",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "人在风中",
+   "paragraphs": [
+    "第一部分",
+    "一位沾亲带故的妙龄少女，飘然而至，来拜访我。我想起她的祖父，当年待我极好，却已去世八九年了，心中不禁泛起阵阵追思与惆怅。和她交谈中，我注意到她装束十分时髦，发型是“男孩不哭”式，短而乱；上衫是“阿妹心情”式，紧而露脐；特别令我感到触目惊心的，是她脚上所穿的“姐妹贝贝”式松糕鞋。她来，是为了征集纪念祖父的文章，以便收进就要出版的她祖父的一种文集里，作为附录。她的谈吐，倒颇得体。但跟她谈话时，总不能不望着她，就算不去推敲她的服装，她那涂着淡蓝眼影、灰晶唇膏的面容，也使我越来越感到别扭。事情谈得差不多了，她随便问到我的健康，我忍不住借题发挥说：“生理上没大问题，心理上问题多多。也许是我老了吧，比如说，像你这样的打扮，是为了俏，还是为了‘酷’？总欣赏不来。我也知道，这是一种时尚。可你为什么就非得让时尚裹挟着走呢？”",
+    "少女听了我的批评，依然微笑着，客气地说：“时尚是风。无论顺风还是逆风，人总免不了在风中生活。”少女告辞而去，剩下我独自倚在沙发上出神。本想“三娘教子”，没想到却成了“子教三娘”。",
+    "前些天，也是一位沾亲带故的妙龄少女，飘然而至，来拜访我。她的装束打扮，倒颇清纯。但她说起最近的一些想法，比如尝试性解放，乃至毒品，以便“丰富人生体验”，跻身“新新人类”等等，我便竭诚地给她提出了几条忠告，包括要珍惜自己的童贞，无论如何不能去“品尝”哪怕是所谓最“轻微”的如大麻那样的毒品……都是我认定的在世为人的基本道德与行为底线。她后来给我来电话，说感谢我对她的爱护。",
+    "第二部分",
+    "妙龄少女很多，即使同是城市白领型的，看来差异也很大。那看去清纯的，却正处在可能失纯的边缘。那望去扮“酷”的，倒心里透亮，不但并不需要我的忠告，反过来还给我以哲理启示。",
+    "几天后整理衣橱，忽然在最底下，发现了几条旧裤子。一条毛蓝布的裤子，是40年前我最心爱的，那种蓝颜色与那种质地的裤子现在已经绝迹；它的裤腿中前部已经磨得灰白，腰围也绝对不能容下当下的我，可是我为什么一直没有遗弃它？它使我回想起羞涩的初恋，同时，它也见证着我生命在那一阶段里所沐浴过的世俗之风。一条还是八成新的绿军裤，腰围很肥，并不符合30年前我那还很苗条的身材，我回想起，那是我费了九牛二虎之力，才讨到手的。那时“国防绿”的军帽、军服、军裤乃至军用水壶，都强劲风行，我怎能置身于那审美潮流之外？还有两条喇叭裤，是20年前，在一种昂奋的心情里置备的；那时我已经38岁，却沉浸在“青年作家”的溢美之词里，记得还曾穿着喇叭开度极为夸张的那一条，大摇大摆地拜访过那位提携我的前辈，也就是，如今穿松糕鞋来我家，征集我对他的感念的那位妙龄少女的祖父；仔细回忆时，那前辈望着我的喇叭裤腿的眼神，凸现着诧异与不快，重新浮现在了我的眼前，只是，当时他大概忍住了涌到嘴边的批评，没有就此吱声。",
+    "第三部分",
+    "人在风中。风来不可抗拒，有时也毋庸抗拒。风有成因。风既起，风便有风的道理。有时也无所谓道理。风就是风，它来了，也就预示着它将去。凝固的东西就不是风。风总是多变的。风既看得见，也看不见。预报要来的风，可能总也没来。没预料到的风，却会突然降临。遥远的地球那边一只蝴蝶翅膀的微颤，可能在我们这里刮起一阵劲风。费很大力气扇起的风，却可能只相当于蝴蝶翅膀一颤的效应。风是单纯的、轻飘的，却又是诡谲的、沉重的。人有时应该顺风而行，有时应该逆风而抗。像穿着打扮，饮食习惯，兴趣爱好，在这些俗世生活的一般范畴里，顺风追风，不但无可责备，甚或还有助于提升生活情趣，对年轻的生命来说，更可能是多余精力的良性宣泄。有的风，属于刚升起的太阳；有的风，专与夕阳做伴。好风，给人生带来活力；恶风，给人生带来灾难。像我这样经风多多的人，对妙龄人提出些警惕恶风的忠告，是一种关爱，也算是一种责任吧。但不能有那样的盲目自信，即认定自己的眼光判断总是对的。有的风，其实无所谓好与恶，只不过是一阵风，让它吹过去就是了。于是又想起了我衣柜底层的喇叭裤，我为什么再不穿它？接着又想起了那老前辈的眼光，以及他的终于并没有为喇叭裤吱声。无论前辈，还是妙龄青年，他们对风的态度，都有值得我一再深思体味的地方。",
+    "（作者：刘心武　选自《人在风中》，作家出版社）"
+   ],
+   "translations": [
+    "Phần một",
+    "Một thiếu nữ đang tuổi xuân thì, có chút họ hàng quen biết với tôi, nhẹ nhàng ghé đến thăm. Tôi nhớ tới ông nội cô, người năm xưa đối đãi với tôi rất tốt, nay đã qua đời tám chín năm, trong lòng bất giác dâng lên từng đợt tưởng nhớ và ngậm ngùi. Trong lúc trò chuyện, tôi để ý thấy cô ăn mặc vô cùng thời thượng: tóc theo kiểu “Con trai không khóc”, ngắn mà rối; áo kiểu “Tâm trạng em gái”, bó sát và hở rốn; điều khiến tôi giật mình nhất là đôi giày đế bánh bông lan kiểu “Chị em Bối Bối” cô đang đi. Cô đến là để xin bài viết tưởng niệm ông nội, nhằm đưa vào phần phụ lục của một tuyển tập văn của ông sắp xuất bản. Cách ăn nói của cô lại khá đúng mực. Nhưng khi nói chuyện với cô, tôi không thể không nhìn cô; cho dù chẳng xét nét gì đến quần áo, thì gương mặt tô phấn mắt xanh nhạt, son môi xám ánh kim kia cũng khiến tôi ngày càng thấy khó chịu. Việc bàn gần xong, cô tiện miệng hỏi thăm sức khỏe tôi, tôi không nhịn được bèn mượn chuyện mà nói: “Về sinh lý thì chẳng có vấn đề gì lớn, còn về tâm lý thì nhiều vấn đề lắm. Có lẽ tôi già rồi chăng, chẳng hạn như cách ăn mặc như cháu đây, là để cho xinh, hay là để cho ‘ngầu’? Tôi thật chẳng thưởng thức nổi. Tôi cũng biết đó là một thứ thời thượng. Nhưng sao cháu cứ nhất thiết phải để thời thượng cuốn mình đi như vậy?”",
+    "Cô gái nghe tôi phê bình, vẫn mỉm cười, lễ phép nói: “Thời thượng là gió. Dù xuôi gió hay ngược gió, con người rốt cuộc không tránh khỏi sống trong gió.” Cô chào rồi ra về, để lại mình tôi ngồi tựa trên sofa thẫn thờ. Vốn định “mẹ dạy con”, nào ngờ lại thành “con dạy mẹ”.",
+    "Mấy hôm trước, cũng có một thiếu nữ tuổi xuân thì có chút họ hàng quen biết nhẹ nhàng ghé đến thăm tôi. Cách ăn mặc của cô lại khá trong sáng. Nhưng cô kể về một số suy nghĩ gần đây, chẳng hạn thử “giải phóng tình dục”, thậm chí thử ma túy, để “làm phong phú trải nghiệm cuộc đời”, để chen chân vào hàng ngũ “thế hệ mới mới” v.v., thế là tôi hết lòng đưa ra cho cô mấy lời khuyên, trong đó có việc phải biết giữ gìn trinh tiết của mình, dù thế nào cũng không được “nếm thử” ma túy, dù là loại được gọi là “nhẹ” nhất như cần sa… đó đều là những chuẩn mực đạo đức và giới hạn hành vi cơ bản để làm người ở đời mà tôi tin chắc. Sau đó cô gọi điện cho tôi, nói cảm ơn tôi đã quan tâm che chở cô.",
+    "Phần hai",
+    "Thiếu nữ tuổi xuân thì thì nhiều, cho dù cùng là kiểu dân văn phòng thành thị, xem ra cũng khác nhau rất xa. Người trông có vẻ trong sáng, lại đang đứng bên bờ có thể đánh mất sự trong sáng. Người trông như cố tỏ ra “ngầu”, lại trong lòng sáng suốt, chẳng những không cần lời khuyên của tôi, ngược lại còn đem đến cho tôi một gợi mở mang tính triết lý.",
+    "Mấy hôm sau dọn tủ quần áo, bỗng ở tận dưới đáy tôi tìm thấy mấy chiếc quần cũ. Một chiếc quần vải lam lông là thứ tôi yêu quý nhất bốn mươi năm trước; loại quần màu xanh ấy và chất vải ấy nay đã tuyệt tích; phần trước ống quần đã sờn bạc, vòng eo cũng tuyệt đối không vừa với tôi bây giờ, vậy mà sao tôi vẫn mãi không vứt bỏ nó? Nó khiến tôi nhớ lại mối tình đầu e ấp, đồng thời cũng là chứng nhân cho những làn gió thế tục mà đời tôi từng đắm mình trong giai đoạn ấy. Một chiếc quần lính màu xanh còn mới tám phần, vòng eo rất rộng, chẳng hợp với vóc dáng còn rất mảnh khảnh của tôi ba mươi năm trước; tôi nhớ lại, đó là thứ tôi phải tốn sức chín trâu hai hổ mới xin được. Hồi đó mũ lính, áo lính, quần lính, thậm chí cả bình nước quân dụng màu “xanh quốc phòng” đều thịnh hành mạnh mẽ, tôi sao có thể đứng ngoài trào lưu thẩm mỹ ấy? Còn có hai chiếc quần ống loe, sắm từ hai mươi năm trước trong một tâm trạng hăng hái; khi ấy tôi đã 38 tuổi mà vẫn đắm chìm trong những lời tán dương “nhà văn trẻ”, nhớ là còn từng mặc chiếc có ống loe cực kỳ khoa trương ấy, nghênh ngang đến thăm vị tiền bối từng dìu dắt tôi, tức là ông nội của cô thiếu nữ hôm nay đi giày đế bánh bông lan đến nhà tôi xin bài viết về lòng biết ơn của tôi với ông; khi nhớ kỹ lại, ánh mắt vị tiền bối nhìn ống quần loe của tôi, lộ rõ vẻ ngạc nhiên và không vui, lại hiện về trước mắt tôi, chỉ là khi ấy có lẽ ông đã nén lại lời phê bình đã trào lên tới miệng, không hề lên tiếng về chuyện đó.",
+    "Phần ba",
+    "Con người sống trong gió. Gió đến thì không thể cưỡng lại, có khi cũng chẳng cần cưỡng lại. Gió có nguyên do của nó. Gió đã nổi lên thì gió có lý lẽ của gió. Có khi cũng chẳng có lý lẽ gì. Gió chỉ là gió, nó đến cũng là báo trước rằng nó sẽ đi. Thứ gì đông cứng lại thì không phải là gió. Gió luôn biến đổi. Gió vừa nhìn thấy được, lại vừa không nhìn thấy được. Cơn gió được dự báo sẽ đến, có khi mãi chẳng đến. Cơn gió không lường trước, lại có thể bất ngờ ập tới. Một cái rung nhẹ của đôi cánh bướm ở tận bên kia trái đất xa xôi, có thể làm nổi lên một trận gió mạnh ở chỗ chúng ta. Cơn gió phải tốn rất nhiều sức mới quạt lên được, lại có thể chỉ tương đương hiệu ứng một cái rung cánh bướm. Gió đơn thuần, nhẹ bẫng, mà lại khó lường, nặng nề. Con người có lúc nên thuận gió mà đi, có lúc nên ngược gió mà chống. Như chuyện ăn mặc, thói quen ăn uống, sở thích, trong những phạm vi bình thường của cuộc sống thế tục này, thuận gió đuổi theo gió chẳng những không có gì đáng trách, thậm chí còn giúp nâng cao thú vị cuộc sống; với những sinh mệnh trẻ trung, có khi còn là cách giải tỏa lành mạnh cho nguồn năng lượng dư thừa. Có những cơn gió thuộc về mặt trời vừa mọc; có những cơn gió chỉ chuyên bầu bạn với hoàng hôn. Gió lành mang lại sức sống cho đời người; gió dữ mang lại tai họa cho đời người. Người từng trải nhiều gió như tôi, đưa ra cho người trẻ đôi lời khuyên cảnh giác với gió dữ, là một sự quan tâm, cũng coi như một trách nhiệm. Nhưng không được tự tin mù quáng, tức là cho rằng con mắt phán đoán của mình luôn luôn đúng. Có những cơn gió thực ra chẳng có gì gọi là tốt hay xấu, chỉ là một cơn gió, cứ để nó thổi qua là được. Thế là tôi lại nhớ đến chiếc quần ống loe dưới đáy tủ, vì sao tôi không mặc nó nữa? Rồi lại nhớ đến ánh mắt của vị lão tiền bối ấy, và việc cuối cùng ông đã không lên tiếng vì chiếc quần ống loe. Dù là bậc tiền bối hay lớp thanh niên tuổi xuân, thái độ của họ đối với gió đều có những điều đáng để tôi suy ngẫm, nghiền ngẫm mãi.",
+    "(Tác giả: Lưu Tâm Vũ, trích từ “Con người trong gió”, Nhà xuất bản Tác Gia)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "简单的道理",
+   "paragraphs": [
+    "有一个人去应聘工作，随手将走廊上的纸屑捡起来，放进了垃圾桶，被路过的口试官看到了，他因此得到了这份工作。",
+    "原来获得赏识很简单，养成好习惯就可以了。",
+    "有个小弟在脚踏车店当学徒。有人送来一辆坏了的脚踏车，小弟除了将车修好，还把车子擦拭得漂亮如新，其他学徒笑他多此一举。车主将脚踏车领回去的第二天，小弟被挖到他的公司上班。",
+    "原来出人头地很简单，吃点亏就可以了。",
+    "有个小孩对母亲说：“妈妈，你今天好漂亮。”母亲问：“为什么？”小孩说：“因为妈妈今天没有生气。”",
+    "原来拥有漂亮很简单，只要不生气就可以了。",
+    "有个牧场主人，叫他孩子每天在牧场上辛勤工作，朋友对他说：“你不需要让孩子如此辛苦，农作物一样会长得很好的。”牧场主人回答说：“我不是在培养农作物，我是在培养我的孩子。”",
+    "原来培养孩子很简单，让他吃点苦头就可以了。",
+    "有一个网球教练对学生说：“如果一个网球掉进草堆里，应该如何找？”有人答：“从草堆中心线开始找。”有人答：“从草堆的最凹处开始找。”有人答：“从草最长的地方开始找。”教练宣布正确答案：“按部就班地从草地的一头，搜寻到草地的另一头。”",
+    "原来寻找成功的方法很简单，从一数到十不要跳过就可以了。",
+    "有一家商店经常灯火通明，有人问：“你们店里用什么牌子的灯管？那么耐用。”店主回答说：“我们的灯管也常常坏，只是我们坏了就换而已。”",
+    "原来保持明亮的方法很简单，只要常常更换就可以了。",
+    "住在田里的青蛙对住在路边的青蛙说：“你这里太危险，搬来跟我住吧！”路边的青蛙说：“我已经习惯了，懒得搬了。”几天后，田里的青蛙去探望路边的青蛙，却发现它已被车轧死，暴尸在马路上。",
+    "原来掌握命运的方法很简单，远离懒惰就可以了。",
+    "有一只小鸡破壳而出的时候，刚好有只乌龟经过，从此以后小鸡就背着蛋壳过了一生。",
+    "原来脱离沉重的负荷很简单，放弃固执和成见就可以了。",
+    "有几个小孩很想当天使，上帝给他们一人一个烛台，叫他们保持烛台光亮。结果几天过去了，上帝没有来，几乎所有的小孩都不再擦拭那烛台。有一天上帝突然造访，很多人的烛台上都蒙上了厚厚的灰尘。只有一个小孩，大家都叫他笨小孩，因为上帝没来他也每天擦拭，结果这个笨小孩成了天使。",
+    "原来当天使很简单，只要实实在在去做就可以了。",
+    "有头小猪向神请求做他的门徒，神欣然答应。这时刚好有一头小牛由泥沼里爬出来，浑身都是泥。神对小猪说：“去帮他洗洗身子吧！”小猪诧异地答道：“我是神的门徒，怎么能去伺候那脏兮兮的小牛呢？”神说：“你不去伺候别人，别人怎会知道你是我的门徒呢？”",
+    "原来要变成神很简单，只要真心付出就可以了。",
+    "有一支淘金队伍在沙漠中行走，大家步履沉重，痛苦不堪，只有一个人快乐地走着。别人问：“你为何如此惬意？”他笑着说：“因为我带的东西最少。”",
+    "原来快乐很简单，拥有少一点就可以了。",
+    "人生的光彩在哪里？",
+    "早上醒来，光彩在脸上，充满笑容地迎接未来。",
+    "到了中午，光彩在腰上，挺直腰杆活在当下。",
+    "到了晚上，光彩在脚上，脚踏实地地做好自己。",
+    "原来人生也很简单，只要懂得“珍惜、知足、感恩”，你就拥有了生命的光彩。",
+    "（作者：佚名　选自《读者》）"
+   ],
+   "translations": [
+    "Có một người đi xin việc, tiện tay nhặt mẩu giấy vụn trên hành lang bỏ vào thùng rác, được vị giám khảo phỏng vấn đi ngang qua nhìn thấy, nhờ thế mà anh ta có được công việc này.",
+    "Hóa ra được người khác coi trọng rất đơn giản, chỉ cần tập thành thói quen tốt là được.",
+    "Có một cậu bé học việc ở tiệm xe đạp. Có người mang đến một chiếc xe đạp hỏng, cậu không chỉ sửa xong xe mà còn lau chùi nó sáng đẹp như mới, những người học việc khác cười cậu làm chuyện thừa thãi. Ngày hôm sau khi chủ xe lấy xe về, cậu bé được mời về làm ở công ty của ông.",
+    "Hóa ra muốn hơn người rất đơn giản, chịu thiệt một chút là được.",
+    "Có đứa bé nói với mẹ: “Mẹ ơi, hôm nay mẹ đẹp quá.” Mẹ hỏi: “Vì sao thế?” Đứa bé đáp: “Vì hôm nay mẹ không giận.”",
+    "Hóa ra muốn đẹp rất đơn giản, chỉ cần không nổi giận là được.",
+    "Có một ông chủ trang trại bắt con mình ngày ngày làm việc vất vả trên trang trại, bạn ông nói: “Anh không cần bắt con vất vả như thế, cây trồng vẫn sẽ mọc tốt thôi.” Ông chủ trang trại đáp: “Tôi không phải đang vun trồng cây cối, tôi đang vun trồng con tôi.”",
+    "Hóa ra dạy dỗ con cái rất đơn giản, để nó nếm chút khổ là được.",
+    "Có một huấn luyện viên quần vợt hỏi học trò: “Nếu một quả bóng rơi vào đám cỏ thì nên tìm thế nào?” Có người đáp: “Tìm từ đường giữa đám cỏ.” Có người đáp: “Tìm từ chỗ trũng nhất của đám cỏ.” Có người đáp: “Tìm từ chỗ cỏ mọc dài nhất.” Huấn luyện viên công bố đáp án đúng: “Lần lượt từng bước, tìm từ đầu này bãi cỏ sang đầu kia.”",
+    "Hóa ra cách tìm đến thành công rất đơn giản, đếm từ một đến mười, đừng bỏ qua số nào là được.",
+    "Có một cửa hàng lúc nào cũng đèn đuốc sáng trưng, có người hỏi: “Cửa hàng các anh dùng bóng đèn hiệu gì mà bền thế?” Chủ cửa hàng đáp: “Bóng đèn của chúng tôi cũng hay hỏng, chỉ có điều hỏng là chúng tôi thay ngay thôi.”",
+    "Hóa ra cách giữ cho luôn sáng sủa rất đơn giản, chỉ cần thường xuyên thay mới là được.",
+    "Con ếch sống ngoài ruộng nói với con ếch sống ven đường: “Chỗ cậu nguy hiểm quá, dọn sang ở với tớ đi!” Con ếch ven đường nói: “Tớ quen rồi, lười dọn lắm.” Mấy hôm sau, ếch ngoài ruộng đến thăm ếch ven đường, thì thấy nó đã bị xe cán chết, xác phơi giữa đường.",
+    "Hóa ra cách nắm giữ vận mệnh rất đơn giản, tránh xa sự lười biếng là được.",
+    "Có một chú gà con khi vừa phá vỏ chui ra thì đúng lúc có một con rùa đi ngang qua, từ đó về sau chú gà con cõng vỏ trứng trên lưng suốt cả đời.",
+    "Hóa ra thoát khỏi gánh nặng rất đơn giản, từ bỏ sự cố chấp và định kiến là được.",
+    "Có mấy đứa trẻ rất muốn làm thiên thần, Thượng đế cho mỗi đứa một cây chân nến, bảo chúng giữ cho chân nến sáng bóng. Kết quả mấy ngày trôi qua, Thượng đế không đến, gần như tất cả lũ trẻ đều không lau chân nến nữa. Một hôm Thượng đế bất ngờ ghé thăm, chân nến của nhiều đứa đã phủ một lớp bụi dày. Chỉ có một đứa trẻ mà ai cũng gọi là đứa ngốc, vì Thượng đế không đến nó vẫn ngày ngày lau chùi, kết quả đứa trẻ ngốc ấy đã trở thành thiên thần.",
+    "Hóa ra làm thiên thần rất đơn giản, chỉ cần làm một cách chân thật, đến nơi đến chốn là được.",
+    "Có một chú lợn con xin thần cho làm môn đồ, thần vui vẻ nhận lời. Đúng lúc ấy có một chú bê con từ đầm lầy bò lên, khắp người toàn bùn. Thần bảo lợn con: “Đi giúp nó tắm rửa đi!” Lợn con ngạc nhiên đáp: “Con là môn đồ của thần, sao lại đi hầu hạ con bê bẩn thỉu kia được?” Thần nói: “Con không đi phục vụ người khác thì người khác sao biết con là môn đồ của ta?”",
+    "Hóa ra muốn trở thành thần rất đơn giản, chỉ cần thật lòng cho đi là được.",
+    "Có một đoàn người đi đãi vàng băng qua sa mạc, ai nấy bước chân nặng nề, khổ sở không chịu nổi, chỉ có một người vui vẻ bước đi. Người khác hỏi: “Sao anh lại thảnh thơi thế?” Anh cười nói: “Vì tôi mang ít đồ nhất.”",
+    "Hóa ra hạnh phúc rất đơn giản, sở hữu ít đi một chút là được.",
+    "Ánh hào quang của đời người ở đâu?",
+    "Sáng thức dậy, hào quang ở trên gương mặt, rạng rỡ nụ cười đón chào tương lai.",
+    "Đến trưa, hào quang ở nơi thắt lưng, thẳng lưng sống trọn hiện tại.",
+    "Đến tối, hào quang ở dưới chân, vững vàng thực tế làm tốt chính mình.",
+    "Hóa ra đời người cũng rất đơn giản, chỉ cần hiểu được “trân trọng, biết đủ, biết ơn”, bạn sẽ có được ánh hào quang của sinh mệnh.",
+    "(Tác giả: khuyết danh, trích từ tạp chí “Độc giả”)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "就算……也/还…… (cho dù… cũng…)",
+   "structure": "就算 + 假设的极端情况，也/还 + 结果",
+   "explanation": "就算 là liên từ, nghĩa như “即使”, biểu thị nhượng bộ giả định. Trong mẫu câu “就算……也/还……”, vế “就算” nêu ra một tình huống giả định cực đoan, còn “也/还” cho biết dù trong tình huống ấy thì kết quả vẫn giống như trong tình huống bình thường. Liên hệ: các mẫu câu có nghĩa và cách dùng tương tự gồm 即使……也、即便……也、就是……也、哪怕……也、纵然……也、纵使……也.",
+   "examples": [
+    {
+     "zh": "就算不去推敲她的服装，她那涂着淡蓝眼影、灰晶唇膏的面容，也使我越来越感到别扭。",
+     "vi": "Cho dù chẳng xét nét đến quần áo của cô, thì gương mặt tô phấn mắt xanh nhạt, son xám ánh kim ấy cũng khiến tôi ngày càng khó chịu."
+    },
+    {
+     "zh": "就算是下雨天或刮风天，王林也会想办法做各种运动，锻炼身体。",
+     "vi": "Cho dù trời mưa hay trời gió, Vương Lâm cũng tìm cách tập đủ môn thể thao để rèn luyện thân thể."
+    },
+    {
+     "zh": "他的行为伤透了她的心，就算他亲口向她说出请求原谅的话，还是不能挽回她的芳心。",
+     "vi": "Hành động của anh đã làm cô đau lòng tột cùng, cho dù anh có tự miệng xin cô tha thứ, vẫn không thể níu kéo lại trái tim cô."
+    }
+   ]
+  },
+  {
+   "point": "多多 (nhiều, rất nhiều; hãy… nhiều)",
+   "structure": "名词/动词/形容词 + 多多；多多 + 动词",
+   "explanation": "多多 đặt sau danh từ, động từ hoặc tính từ, biểu thị ý “rất nhiều”. Liên hệ: trong mẫu “多多 + động từ”, 多多 dùng như phó từ, có tác dụng nhấn mạnh (hãy… nhiều vào).",
+   "examples": [
+    {
+     "zh": "生理上没大问题，心理上问题多多。",
+     "vi": "Về sinh lý thì không có vấn đề gì lớn, còn về tâm lý thì nhiều vấn đề lắm."
+    },
+    {
+     "zh": "大学毕业以后，我得找工作、找房子、找对象，还得照顾身体不好的父母，哎呀，真是麻烦多多呀！",
+     "vi": "Tốt nghiệp đại học xong, tôi phải tìm việc, tìm nhà, tìm người yêu, lại còn phải chăm sóc bố mẹ sức khỏe kém, trời ơi, thật là lắm phiền phức!"
+    },
+    {
+     "zh": "衷心祝愿你在新的一年里幸福多多，快乐多多，成功多多！",
+     "vi": "Chân thành chúc bạn năm mới thật nhiều hạnh phúc, thật nhiều niềm vui, thật nhiều thành công!"
+    },
+    {
+     "zh": "我是新来的，以后请大家多多关照！",
+     "vi": "Tôi là người mới đến, mong mọi người chiếu cố nhiều cho!"
+    },
+    {
+     "zh": "出院以后，要多多注意自己的身体健康，别再让老毛病重犯。",
+     "vi": "Sau khi ra viện, phải chú ý nhiều đến sức khỏe của mình, đừng để bệnh cũ tái phát nữa."
+    }
+   ]
+  },
+  {
+   "point": "……不来 (không… nổi, không… được)",
+   "structure": "动词 + 不来 = 动词 + 不了",
+   "explanation": "“động từ + 不来” tương đương “động từ + 不了”, biểu thị không làm nổi, không quen hoặc không có khả năng làm việc đó (như 学不来、吃不来、欣赏不来).",
+   "examples": [
+    {
+     "zh": "……总欣赏不来。",
+     "vi": "…tôi thật chẳng thưởng thức nổi."
+    },
+    {
+     "zh": "现在年轻人中流行一种叫做“街舞”的舞蹈，动作活泼好看，就是难度太大，我可学不来。",
+     "vi": "Hiện nay trong giới trẻ đang thịnh hành một điệu nhảy gọi là “nhảy đường phố”, động tác sôi nổi đẹp mắt, chỉ có điều độ khó quá cao, tôi học không nổi."
+    },
+    {
+     "zh": "四川火锅又辣又麻，我这个北方人实在吃不来。",
+     "vi": "Lẩu Tứ Xuyên vừa cay vừa tê, người phương Bắc như tôi thật sự ăn không quen."
+    }
+   ]
+  },
+  {
+   "point": "免不了 (không tránh khỏi)",
+   "structure": "免不了 + 动词/小句；免不了 + 要/会/得 + 动词",
+   "explanation": "免不了 là động từ, nghĩa là không tránh được, không có cách nào tránh. Có thể mang động từ hoặc mệnh đề làm tân ngữ; trước động từ thường dùng các từ như “要”, “会”, “得”. Phần nhiều dùng trong khẩu ngữ.",
+   "examples": [
+    {
+     "zh": "……，人总免不了在风中生活。",
+     "vi": "…, con người rốt cuộc không tránh khỏi sống trong gió."
+    },
+    {
+     "zh": "在一个家庭中生活，吵架这种事免不了。",
+     "vi": "Sống trong một gia đình, chuyện cãi nhau là không tránh khỏi."
+    },
+    {
+     "zh": "到国外去生活和学习，免不了会遇到各种各样的困难。",
+     "vi": "Ra nước ngoài sống và học tập, không tránh khỏi gặp đủ thứ khó khăn."
+    },
+    {
+     "zh": "过年过节的时候，免不了得给家里的孩子们送一些礼物。",
+     "vi": "Dịp lễ Tết, không tránh khỏi phải tặng quà cho bọn trẻ trong nhà."
+    }
+   ]
+  },
+  {
+   "point": "八成 (tám phần; rất có thể)",
+   "structure": "八成 + 形容词（八成新）；八成 + 动词（推测）",
+   "explanation": "八成 tức là tám phần mười; “几成” tức là mấy phần mười. “八成” còn có thể làm phó từ: “八成 + động từ” biểu thị suy đoán với mức độ chắc chắn khá cao, nghĩa là “rất có thể”. Liên hệ: (1) động từ + (了) + (八)成: 明白了八成、猜出了七成、写出来九成、学会了五成、掌握了六成、看懂了九成、成功了九成; (2) (八)成 + danh từ: 八成的把握、九成的希望、七成的可能性.",
+   "examples": [
+    {
+     "zh": "一条还是八成新的绿军裤……",
+     "vi": "Một chiếc quần lính màu xanh còn mới tám phần…"
+    },
+    {
+     "zh": "现在有一个流行的观点，就是吃饭吃七成饱对健康有好处",
+     "vi": "Hiện có một quan điểm phổ biến là ăn cơm no bảy phần thì tốt cho sức khỏe."
+    },
+    {
+     "zh": "我喜欢把鸡蛋煮到九成熟的时候就吃，这样口感比较好。",
+     "vi": "Tôi thích luộc trứng chín chín phần là ăn ngay, như thế ăn ngon hơn."
+    },
+    {
+     "zh": "好久没有看到他，他八成已经离开这里了。",
+     "vi": "Lâu lắm không thấy anh ta, có lẽ anh ta đã rời khỏi đây rồi."
+    },
+    {
+     "zh": "这只猫成天躲在暗处睡觉，一点儿精神都没有，八成是病了。",
+     "vi": "Con mèo này suốt ngày trốn vào chỗ tối ngủ, chẳng có chút tinh thần nào, chắc là bị ốm rồi."
+    }
+   ]
+  },
+  {
+   "point": "就此 (ngay lúc đó/tại đó; từ đây)",
+   "structure": "就此 + 动词（告别/罢休/结束……）",
+   "explanation": "就此 là phó từ, nghĩa là ngay tại nơi này hoặc ngay lúc này; thường đi với các động từ như 告别、罢休、结束、停止、分手、改变、放弃.",
+   "examples": [
+    {
+     "zh": "只是，当时他大概忍住了涌到嘴边的批评，没有就此吱声。",
+     "vi": "Chỉ là khi ấy có lẽ ông đã nén lại lời phê bình trào lên tới miệng, không lên tiếng về chuyện đó."
+    },
+    {
+     "zh": "就此告别 / 就此罢休 / 就此结束",
+     "vi": "từ biệt tại đây / chịu thôi từ đây / kết thúc tại đây"
+    },
+    {
+     "zh": "就此停止 / 就此分手 / 就此改变 / 就此放弃",
+     "vi": "dừng lại tại đây / chia tay từ đây / thay đổi từ đó / bỏ cuộc từ đây"
+    }
+   ]
+  },
+  {
+   "point": "无可…… (không có gì có thể…)",
+   "structure": "无可 + 双音节动词（无可责备、无可奈何……）",
+   "explanation": "无可 nghĩa là “không có gì có thể…”, đứng trước động từ hai âm tiết tạo thành cụm cố định, ví dụ 无可非议 (không thể chê trách), 无可比拟 (không gì sánh bằng), 无可奉告 (miễn bình luận), 无可厚非 (không đáng trách nhiều), 无可救药 (hết thuốc chữa), 无可讳言 (không thể chối cãi), 无可奈何 (đành chịu), 无可争辩 (không thể tranh cãi), 无可置疑 (không thể nghi ngờ), 无可挽回 (không thể cứu vãn).",
+   "examples": [
+    {
+     "zh": "顺风追风，不但无可责备，甚或还有助于提升生活情趣……",
+     "vi": "Thuận gió đuổi theo gió, chẳng những không có gì đáng trách, thậm chí còn giúp nâng cao thú vị cuộc sống…"
+    },
+    {
+     "zh": "无可非议 / 无可比拟 / 无可奉告 / 无可厚非 / 无可救药",
+     "vi": "không thể chê trách / không gì sánh bằng / miễn bình luận / không đáng trách nhiều / hết thuốc chữa"
+    },
+    {
+     "zh": "无可讳言 / 无可奈何 / 无可争辩 / 无可置疑 / 无可挽回",
+     "vi": "không thể chối cãi / đành bất lực / không thể tranh cãi / không thể nghi ngờ / không thể cứu vãn"
+    }
+   ]
+  }
+ ]
+}

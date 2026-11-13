@@ -1,0 +1,1584 @@
+{
+ "book": "gc2",
+ "lesson_num": 9,
+ "title": "无为·逍遥·不设防",
+ "pages": [
+  215,
+  248
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "无为",
+   "py": "wúwéi",
+   "pos": "动",
+   "zh": "课文中指不做（某些事情）。",
+   "en": "",
+   "hv": "VÔ VI",
+   "vi": "vô vi, không làm (những việc nào đó)",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "逍遥",
+   "py": "xiāoyáo",
+   "pos": "形",
+   "zh": "无拘无束，自由自在。",
+   "en": "",
+   "hv": "TIÊU DAO",
+   "vi": "tiêu dao, tự do tự tại",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "设防",
+   "py": "shèfáng",
+   "pos": "动",
+   "zh": "比喻心存戒备。",
+   "en": "",
+   "hv": "THIẾT PHÒNG",
+   "vi": "đề phòng, phòng bị",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "启迪",
+   "py": "qǐdí",
+   "pos": "动",
+   "zh": "启发；开导。",
+   "en": "",
+   "hv": "KHẢI ĐỊCH",
+   "vi": "gợi mở, khai sáng",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "无效",
+   "py": "wúxiào",
+   "pos": "动",
+   "zh": "没有效果。",
+   "en": "",
+   "hv": "VÔ HIỆU",
+   "vi": "vô hiệu, không có hiệu quả",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "无益",
+   "py": "wúyì",
+   "pos": "动",
+   "zh": "没有好处。",
+   "en": "",
+   "hv": "VÔ ÍCH",
+   "vi": "vô ích, không có lợi",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "无味",
+   "py": "wúwèi",
+   "pos": "形",
+   "zh": "没有趣味。",
+   "en": "",
+   "hv": "VÔ VỊ",
+   "vi": "vô vị, nhạt nhẽo",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "无聊",
+   "py": "wúliáo",
+   "pos": "形",
+   "zh": "精神没有寄托而烦闷；使人感到没意思而产生厌烦。",
+   "en": "",
+   "hv": "VÔ LIÊU",
+   "vi": "buồn chán; vô vị, nhảm nhí",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "有害",
+   "py": "yǒuhài",
+   "pos": "动",
+   "zh": "对（人或物）有坏处。",
+   "en": "",
+   "hv": "HỮU HẠI",
+   "vi": "có hại",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "有愧",
+   "py": "yǒukuì",
+   "pos": "动",
+   "zh": "有惭愧的地方。",
+   "en": "",
+   "hv": "HỮU QUÝ",
+   "vi": "hổ thẹn, có điều đáng xấu hổ",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "忌妒",
+   "py": "jìdu",
+   "pos": "动",
+   "zh": "因别人比自己强而心怀怨恨。",
+   "en": "",
+   "hv": "KỴ ĐỐ",
+   "vi": "ghen tị, đố kỵ",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "旁人",
+   "py": "pángrén",
+   "pos": "名",
+   "zh": "别人；当事人以外的人。",
+   "en": "",
+   "hv": "BÀNG NHÂN",
+   "vi": "người khác, người ngoài",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "无谓",
+   "py": "wúwèi",
+   "pos": "形",
+   "zh": "没有意义和价值。",
+   "en": "",
+   "hv": "VÔ VỊ",
+   "vi": "vô nghĩa, vô ích",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "争执",
+   "py": "zhēngzhí",
+   "pos": "动",
+   "zh": "争论中各执己见，互不相让。",
+   "en": "",
+   "hv": "TRANH CHẤP",
+   "vi": "tranh cãi, tranh chấp",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "庸人自扰",
+   "py": "yōng rén zì rǎo",
+   "pos": "",
+   "zh": "指本来没有问题却认为大有问题，自找麻烦，自寻苦恼。",
+   "en": "",
+   "hv": "DUNG NHÂN TỰ NHIỄU",
+   "vi": "lo bò trắng răng, tự chuốc phiền não",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "得失",
+   "py": "déshī",
+   "pos": "名",
+   "zh": "得到的和失去的。",
+   "en": "",
+   "hv": "ĐẮC THẤT",
+   "vi": "được và mất, hơn thiệt",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "大话",
+   "py": "dàhuà",
+   "pos": "名",
+   "zh": "虚夸不实的话。",
+   "en": "",
+   "hv": "ĐẠI THOẠI",
+   "vi": "lời nói khoác",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "自吹自擂",
+   "py": "zì chuī zì léi",
+   "pos": "",
+   "zh": "自己吹喇叭，自己擂鼓。比喻自我吹嘘。",
+   "en": "",
+   "hv": "TỰ XUY TỰ LÔI",
+   "vi": "tự khoe khoang, mèo khen mèo dài đuôi",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "咋咋呼呼",
+   "py": "zhāzhahūhū",
+   "pos": "动",
+   "zh": "口语，意思是张扬；吹嘘，夸耀。",
+   "en": "",
+   "hv": "TẠC TẠC HÔ HÔ",
+   "vi": "la lối om sòm, khoa trương",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "装腔作势",
+   "py": "zhuāng qiāng zuò shì",
+   "pos": "",
+   "zh": "为了惹人注意或借以吓人，故意装出某种腔调，做出某种姿态。含贬义。",
+   "en": "",
+   "hv": "TRANG XOANG TÁC THẾ",
+   "vi": "làm bộ làm tịch, ra vẻ",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "论证",
+   "py": "lùnzhèng",
+   "pos": "动",
+   "zh": "论述并证明。",
+   "en": "expound and prove",
+   "hv": "LUẬN CHỨNG",
+   "vi": "luận chứng, lập luận chứng minh",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "小圈子",
+   "py": "xiǎoquānzi",
+   "pos": "名",
+   "zh": "指为了私利而结合在一起的小团伙。",
+   "en": "a small circle of people; a small clique",
+   "hv": "TIỂU KHUYÊN TỬ",
+   "vi": "bè nhóm nhỏ, phe cánh",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "吱吱喳喳",
+   "py": "zhīzhichāchā",
+   "pos": "形",
+   "zh": "模拟杂乱细碎的说话声。",
+   "en": "",
+   "hv": "CHI CHI TRA TRA",
+   "vi": "líu ríu, xì xào",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "连篇累牍",
+   "py": "lián piān lěi dú",
+   "pos": "",
+   "zh": "形容文字太多，篇幅太长。",
+   "en": "",
+   "hv": "LIÊN THIÊN LŨY ĐỘC",
+   "vi": "dài dòng văn tự, tràng giang đại hải",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "空话",
+   "py": "kōnghuà",
+   "pos": "名",
+   "zh": "没有内容或不切实际的话；不准备实现的承诺。",
+   "en": "",
+   "hv": "KHÔNG THOẠI",
+   "vi": "lời nói suông",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "虚话",
+   "py": "xūhuà",
+   "pos": "名",
+   "zh": "不实在的话。",
+   "en": "",
+   "hv": "HƯ THOẠI",
+   "vi": "lời nói hão, lời không thật",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "包办代替",
+   "py": "bāobàn dàitì",
+   "pos": "",
+   "zh": "不顾当事人或有关人意愿，自行帮别人处理事情。",
+   "en": "",
+   "hv": "BAO BIỆN ĐẠI THẾ",
+   "vi": "ôm đồm làm thay (người khác)",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "一厢情愿",
+   "py": "yìxiāng qíngyuàn",
+   "pos": "",
+   "zh": "只从自己的主观愿望出发，不考虑对方是否同意或客观条件是否允许。",
+   "en": "",
+   "hv": "NHẤT SƯƠNG TÌNH NGUYỆN",
+   "vi": "mong muốn đơn phương, chủ quan một phía",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "付出",
+   "py": "fùchū",
+   "pos": "动",
+   "zh": "交出。",
+   "en": "",
+   "hv": "PHÓ XUẤT",
+   "vi": "bỏ ra, bỏ công sức",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "力戒",
+   "py": "lìjiè",
+   "pos": "动",
+   "zh": "尽力防止或去除。",
+   "en": "",
+   "hv": "LỰC GIỚI",
+   "vi": "hết sức tránh, ra sức phòng tránh",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "虚妄",
+   "py": "xūwàng",
+   "pos": "形",
+   "zh": "没有事实根据的；不合乎情理的。",
+   "en": "",
+   "hv": "HƯ VỌNG",
+   "vi": "hư ảo, viển vông",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "有为",
+   "py": "yǒuwéi",
+   "pos": "形",
+   "zh": "有作为。",
+   "en": "",
+   "hv": "HỮU VI",
+   "vi": "có tác dụng, làm nên việc",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "语",
+   "py": "yǔ",
+   "pos": "动",
+   "zh": "书面语，“说”的意思。",
+   "en": "",
+   "hv": "NGỮ",
+   "vi": "nói (văn viết)",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "前提",
+   "py": "qiántí",
+   "pos": "名",
+   "zh": "事物产生或发展的先决条件。",
+   "en": "",
+   "hv": "TIỀN ĐỀ",
+   "vi": "tiền đề, điều kiện tiên quyết",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "养生",
+   "py": "yǎngshēng",
+   "pos": "动",
+   "zh": "保养身体，增强生命力。",
+   "en": "",
+   "hv": "DƯỠNG SINH",
+   "vi": "dưỡng sinh",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "要义",
+   "py": "yàoyì",
+   "pos": "名",
+   "zh": "关键内容或重要道理。",
+   "en": "",
+   "hv": "YẾU NGHĨA",
+   "vi": "ý nghĩa cốt yếu, điều cốt lõi",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "低级趣味",
+   "py": "dījí qùwèi",
+   "pos": "",
+   "zh": "低下、庸俗的兴趣或情趣。",
+   "en": "",
+   "hv": "ĐÊ CẤP THÚ VỊ",
+   "vi": "thú vui tầm thường, thấp kém",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "鸡毛蒜皮",
+   "py": "jīmáo suànpí",
+   "pos": "",
+   "zh": "比喻无关紧要的小事或毫无价值的东西。",
+   "en": "",
+   "hv": "KÊ MAO TOÁN BÌ",
+   "vi": "chuyện vụn vặt, lông gà vỏ tỏi",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "蝇营狗苟",
+   "py": "yíng yíng gǒu gǒu",
+   "pos": "",
+   "zh": "像苍蝇一样飞来飞去，像狗那样摇尾乞怜。比喻不择手段地到处钻营，追名逐利，苟且求安。",
+   "en": "",
+   "hv": "DĂNG DOANH CẨU CẨU",
+   "vi": "luồn cúi bợ đỡ, xu danh trục lợi bất chấp thủ đoạn",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "境界",
+   "py": "jìngjiè",
+   "pos": "名",
+   "zh": "事物所达到的程度或表现出来的状况。",
+   "en": "",
+   "hv": "CẢNH GIỚI",
+   "vi": "cảnh giới, tầm mức",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "自卫",
+   "py": "zìwèi",
+   "pos": "动",
+   "zh": "自己保卫自己。",
+   "en": "",
+   "hv": "TỰ VỆ",
+   "vi": "tự vệ",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "自尊",
+   "py": "zìzūn",
+   "pos": "形",
+   "zh": "自己尊重自己。",
+   "en": "",
+   "hv": "TỰ TÔN",
+   "vi": "tự trọng",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "哲人",
+   "py": "zhérén",
+   "pos": "名",
+   "zh": "智慧超群的人。",
+   "en": "sage; philosopher",
+   "hv": "TRIẾT NHÂN",
+   "vi": "bậc hiền triết",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "豁达",
+   "py": "huòdá",
+   "pos": "形",
+   "zh": "胸怀开阔；性格爽朗。",
+   "en": "",
+   "hv": "KHOÁT ĐẠT",
+   "vi": "khoáng đạt, rộng lượng",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "耐性",
+   "py": "nàixìng",
+   "pos": "名",
+   "zh": "不急躁、不厌烦的心情。",
+   "en": "",
+   "hv": "NẠI TÍNH",
+   "vi": "tính nhẫn nại, sự kiên nhẫn",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "清明",
+   "py": "qīngmíng",
+   "pos": "形",
+   "zh": "（心里）清楚明白。",
+   "en": "",
+   "hv": "THANH MINH",
+   "vi": "sáng suốt, minh mẫn",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "沉稳",
+   "py": "chénwěn",
+   "pos": "形",
+   "zh": "沉着、稳重。",
+   "en": "",
+   "hv": "TRẦM ỔN",
+   "vi": "điềm tĩnh, chín chắn",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "幽默",
+   "py": "yōumò",
+   "pos": "形",
+   "zh": "言谈举止诙谐风趣而意味深长。",
+   "en": "humour",
+   "hv": "U MẶC",
+   "vi": "hài hước",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "纵横",
+   "py": "zònghéng",
+   "pos": "动",
+   "zh": "往来奔驰，毫无阻拦。",
+   "en": "",
+   "hv": "TUNG HOÀNH",
+   "vi": "tung hoành, ngang dọc",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "开阔",
+   "py": "kāikuò",
+   "pos": "形",
+   "zh": "广阔；宽阔。",
+   "en": "",
+   "hv": "KHAI KHOÁT",
+   "vi": "rộng mở, khoáng đạt",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "联想",
+   "py": "liánxiǎng",
+   "pos": "动",
+   "zh": "由某人、某事或某概念引发而想到相关的人、事或概念。",
+   "en": "",
+   "hv": "LIÊN TƯỞNG",
+   "vi": "liên tưởng",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "遥遥",
+   "py": "yáoyáo",
+   "pos": "形",
+   "zh": "形容距离遥远或时间长久。",
+   "en": "",
+   "hv": "DAO DAO",
+   "vi": "xa xôi, xa vời vợi",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "迢迢",
+   "py": "tiáotiáo",
+   "pos": "形",
+   "zh": "形容路途遥远。",
+   "en": "",
+   "hv": "THIỀU THIỀU",
+   "vi": "xa xăm, dằng dặc",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "昭昭",
+   "py": "zhāozhāo",
+   "pos": "形",
+   "zh": "明白；明显。",
+   "en": "",
+   "hv": "CHIÊU CHIÊU",
+   "vi": "rõ ràng, sáng tỏ",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "萧萧",
+   "py": "xiāoxiāo",
+   "pos": "形",
+   "zh": "模拟风雨声、落叶声、马叫声等。",
+   "en": "",
+   "hv": "TIÊU TIÊU",
+   "vi": "xào xạc, vi vu (tiếng gió, lá rơi, ngựa hí)",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "淼淼",
+   "py": "miǎomiǎo",
+   "pos": "形",
+   "zh": "大水辽阔无边。",
+   "en": "",
+   "hv": "MIỂU MIỂU",
+   "vi": "mênh mông (sông nước)",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "骄骄",
+   "py": "jiāojiāo",
+   "pos": "形",
+   "zh": "骄傲的样子。",
+   "en": "",
+   "hv": "KIÊU KIÊU",
+   "vi": "vẻ kiêu hãnh",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "袅袅",
+   "py": "niǎoniǎo",
+   "pos": "形",
+   "zh": "（烟气）回旋上升的样子；纤长柔软的东西随风摇摆的样子；形容声音绵延不绝。",
+   "en": "",
+   "hv": "NIỂU NIỂU",
+   "vi": "lượn lờ, uyển chuyển; (âm thanh) văng vẳng",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "沉浮",
+   "py": "chénfú",
+   "pos": "动",
+   "zh": "起伏升降。常比喻社会或个人的起落盛衰。",
+   "en": "",
+   "hv": "TRẦM PHÙ",
+   "vi": "chìm nổi, thăng trầm",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "全方位",
+   "py": "quánfāngwèi",
+   "pos": "名",
+   "zh": "事物的各个方面；各个方向和位置。",
+   "en": "",
+   "hv": "TOÀN PHƯƠNG VỊ",
+   "vi": "toàn diện, mọi phương diện",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "各色",
+   "py": "gèsè",
+   "pos": "形",
+   "zh": "各种各样的。",
+   "en": "",
+   "hv": "CÁC SẮC",
+   "vi": "đủ loại, muôn màu muôn vẻ",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "物种",
+   "py": "wùzhǒng",
+   "pos": "名",
+   "zh": "具有一定形态特征和生理特征，并占有一定自然分布区的生物类群，是生物分类的基本单位。",
+   "en": "species",
+   "hv": "VẬT CHỦNG",
+   "vi": "loài (sinh vật)",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "得以",
+   "py": "déyǐ",
+   "pos": "动",
+   "zh": "能够；可以。书面语。",
+   "en": "",
+   "hv": "ĐẮC DĨ",
+   "vi": "có thể, nhờ đó mà được",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "获取",
+   "py": "huòqǔ",
+   "pos": "动",
+   "zh": "取得；得到。",
+   "en": "",
+   "hv": "HOẠCH THỦ",
+   "vi": "giành được, thu được",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "超越",
+   "py": "chāoyuè",
+   "pos": "动",
+   "zh": "超过；越过。",
+   "en": "",
+   "hv": "SIÊU VIỆT",
+   "vi": "vượt qua, siêu việt",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "感知",
+   "py": "gǎnzhī",
+   "pos": "动",
+   "zh": "客观事物通过感觉器官在人脑中的直接反映。",
+   "en": "",
+   "hv": "CẢM TRI",
+   "vi": "cảm nhận, tri giác",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "狭隘",
+   "py": "xiá'ài",
+   "pos": "形",
+   "zh": "（气度、见识）不宽广宏大。",
+   "en": "",
+   "hv": "HIỆP ẢI",
+   "vi": "hẹp hòi, thiển cận",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "偏执",
+   "py": "piānzhí",
+   "pos": "形",
+   "zh": "偏激而固执、任性。",
+   "en": "",
+   "hv": "THIÊN CHẤP",
+   "vi": "cố chấp, cực đoan",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "穴洞",
+   "py": "xuédòng",
+   "pos": "名",
+   "zh": "洞窟，窟窿。",
+   "en": "cave; den; hole",
+   "hv": "HUYỆT ĐỘNG",
+   "vi": "hang động, hang hốc",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "新奇",
+   "py": "xīnqí",
+   "pos": "形",
+   "zh": "新颖特别。",
+   "en": "",
+   "hv": "TÂN KỲ",
+   "vi": "mới lạ",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "懒汉",
+   "py": "lǎnhàn",
+   "pos": "名",
+   "zh": "指懒惰的男人。",
+   "en": "",
+   "hv": "LÃN HÁN",
+   "vi": "kẻ lười biếng",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "阴谋家",
+   "py": "yīnmóujiā",
+   "pos": "名",
+   "zh": "善于使用阴谋诡计的人。",
+   "en": "schemer; intriguer; conspirator",
+   "hv": "ÂM MƯU GIA",
+   "vi": "kẻ âm mưu, kẻ mưu mô",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "暗箭",
+   "py": "ànjiàn",
+   "pos": "名",
+   "zh": "比喻暗中攻击、陷害别人的阴谋诡计。",
+   "en": "an arrow shot from hiding-an attack by a hidden enemy; a stab in the back",
+   "hv": "ÁM TIỄN",
+   "vi": "tên bắn lén, đòn đánh lén",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "陷阱",
+   "py": "xiànjǐng",
+   "pos": "名",
+   "zh": "比喻陷害人的圈套。",
+   "en": "pitfall; pit; trap; snare",
+   "hv": "HÃM TỈNH",
+   "vi": "cạm bẫy",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "坦荡",
+   "py": "tǎndàng",
+   "pos": "形",
+   "zh": "形容心地纯洁，胸怀宽阔。",
+   "en": "",
+   "hv": "THẢN ĐÃNG",
+   "vi": "thẳng thắn, quang minh lỗi lạc",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "一惊一乍",
+   "py": "yì jīng yí zhà",
+   "pos": "",
+   "zh": "形容对本不足为奇的事情过分惊讶的样子。",
+   "en": "",
+   "hv": "NHẤT KINH NHẤT SẠ",
+   "vi": "hốt hoảng, giật mình thon thót (vì chuyện không đáng)",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "提心吊胆",
+   "py": "tí xīn diào dǎn",
+   "pos": "",
+   "zh": "形容担心害怕，安不下心来。",
+   "en": "",
+   "hv": "ĐỀ TÂM ĐIẾU ĐẢM",
+   "vi": "nơm nớp lo sợ, thấp thỏm",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "陷入",
+   "py": "xiànrù",
+   "pos": "动",
+   "zh": "落入（不利的境地）。",
+   "en": "",
+   "hv": "HÃM NHẬP",
+   "vi": "rơi vào, sa vào",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "人事纠纷",
+   "py": "rénshì jiūfēn",
+   "pos": "",
+   "zh": "人际关系方面的不容易解决的矛盾。",
+   "en": "",
+   "hv": "NHÂN SỰ CỦ PHÂN",
+   "vi": "mâu thuẫn, xích mích giữa người với người",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "恩恩怨怨",
+   "py": "ēn'ēnyuànyuàn",
+   "pos": "名",
+   "zh": "恩德和仇怨（多偏指仇怨）。",
+   "en": "",
+   "hv": "ÂN ÂN OÁN OÁN",
+   "vi": "ân oán, thù oán",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "抠抠搜搜",
+   "py": "kōukousuōsuō",
+   "pos": "形",
+   "zh": "该花的钱舍不得花；小气，不大方。",
+   "en": "",
+   "hv": "KHU KHU SƯU SƯU",
+   "vi": "keo kiệt, bủn xỉn",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "嘀嘀咕咕",
+   "py": "dídigūgū",
+   "pos": "动",
+   "zh": "私下里小声说话。",
+   "en": "",
+   "hv": "ĐÍCH ĐÍCH CÔ CÔ",
+   "vi": "thì thầm, xì xào",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "至多",
+   "py": "zhìduō",
+   "pos": "副",
+   "zh": "表示最大的限度。",
+   "en": "",
+   "hv": "CHÍ ĐA",
+   "vi": "nhiều nhất, cùng lắm",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "蚊虫",
+   "py": "wénchóng",
+   "pos": "名",
+   "zh": "即蚊子。",
+   "en": "mosquito",
+   "hv": "VĂN TRÙNG",
+   "vi": "con muỗi",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "嗡嗡",
+   "py": "wēngwēng",
+   "pos": "象",
+   "zh": "模拟蜜蜂等昆虫飞动或机器发动的声音。",
+   "en": "",
+   "hv": "ÔNG ÔNG",
+   "vi": "vo ve, ù ù",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "叮",
+   "py": "dīng",
+   "pos": "动",
+   "zh": "（蚊子等）用中空的针形口器吸（血液）。",
+   "en": "",
+   "hv": "ĐINH",
+   "vi": "(muỗi) đốt, chích",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "火热",
+   "py": "huǒrè",
+   "pos": "形",
+   "zh": "像火一样炽热。",
+   "en": "",
+   "hv": "HỎA NHIỆT",
+   "vi": "nóng bỏng, nồng nhiệt",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "配",
+   "py": "pèi",
+   "pos": "动",
+   "zh": "够得上；相当。",
+   "en": "",
+   "hv": "PHỐI",
+   "vi": "xứng đáng, đáng",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "处之",
+   "py": "chǔzhī",
+   "pos": "动",
+   "zh": "对待；处理。",
+   "en": "",
+   "hv": "XỬ CHI",
+   "vi": "đối xử, ứng xử (với việc đó)",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "积",
+   "py": "jī",
+   "pos": "动",
+   "zh": "逐渐聚集。",
+   "en": "",
+   "hv": "TÍCH",
+   "vi": "tích lũy, tích góp",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "信条",
+   "py": "xìntiáo",
+   "pos": "名",
+   "zh": "信守的原则。",
+   "en": "article of creed; creed; precept",
+   "hv": "TÍN ĐIỀU",
+   "vi": "tín điều, nguyên tắc sống",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "枚",
+   "py": "méi",
+   "pos": "量",
+   "zh": "多用于较小的片状物或某些武器。",
+   "en": "",
+   "hv": "MAI",
+   "vi": "chiếc, cái (lượng từ cho vật nhỏ)",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "核心",
+   "py": "héxīn",
+   "pos": "名",
+   "zh": "事物的主要部分或中心。",
+   "en": "nucleus; core; kernel",
+   "hv": "HẠCH TÂM",
+   "vi": "cốt lõi, hạt nhân",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "弱点",
+   "py": "ruòdiǎn",
+   "pos": "名",
+   "zh": "不足的地方。",
+   "en": "",
+   "hv": "NHƯỢC ĐIỂM",
+   "vi": "nhược điểm, điểm yếu",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "苟且",
+   "py": "gǒuqiě",
+   "pos": "形",
+   "zh": "不正当的。",
+   "en": "",
+   "hv": "CẨU THẢ",
+   "vi": "bất chính, không đứng đắn",
+   "proper": false
+  },
+  {
+   "n": 96,
+   "hz": "不轨",
+   "py": "bùguǐ",
+   "pos": "形",
+   "zh": "行为或想法越出法度之外。",
+   "en": "",
+   "hv": "BẤT QUỸ",
+   "vi": "bất chính, phạm pháp",
+   "proper": false
+  },
+  {
+   "n": 97,
+   "hz": "非礼",
+   "py": "fēilǐ",
+   "pos": "动",
+   "zh": "违背礼法；不讲礼貌。",
+   "en": "",
+   "hv": "PHI LỄ",
+   "vi": "trái lễ, vô lễ",
+   "proper": false
+  },
+  {
+   "n": 98,
+   "hz": "奈何",
+   "py": "nàihé",
+   "pos": "动",
+   "zh": "怎么办；怎样对待。",
+   "en": "",
+   "hv": "NẠI HÀ",
+   "vi": "làm gì được, làm sao (đối phó)",
+   "proper": false
+  },
+  {
+   "n": 99,
+   "hz": "题字",
+   "py": "tízì",
+   "pos": "动",
+   "zh": "为表示纪念或勉励而写上字。",
+   "en": "",
+   "hv": "ĐỀ TỰ",
+   "vi": "đề chữ",
+   "proper": false
+  },
+  {
+   "n": 100,
+   "hz": "撰",
+   "py": "zhuàn",
+   "pos": "动",
+   "zh": "写作。",
+   "en": "",
+   "hv": "SOẠN",
+   "vi": "soạn, viết",
+   "proper": false
+  },
+  {
+   "n": 101,
+   "hz": "箴言",
+   "py": "zhēnyán",
+   "pos": "名",
+   "zh": "规劝告诫的话。",
+   "en": "admonition; exhortation; maxim",
+   "hv": "CHÂM NGÔN",
+   "vi": "châm ngôn, lời răn",
+   "proper": false
+  },
+  {
+   "n": 102,
+   "hz": "机灵",
+   "py": "jīling",
+   "pos": "形",
+   "zh": "聪明伶俐；灵活机智。",
+   "en": "",
+   "hv": "CƠ LINH",
+   "vi": "lanh lợi, khôn khéo",
+   "proper": false
+  },
+  {
+   "n": 103,
+   "hz": "收效",
+   "py": "shōuxiào",
+   "pos": "动",
+   "zh": "收到成效。",
+   "en": "",
+   "hv": "THU HIỆU",
+   "vi": "đạt hiệu quả, có tác dụng",
+   "proper": false
+  },
+  {
+   "n": 104,
+   "hz": "鼓噪",
+   "py": "gǔzào",
+   "pos": "动",
+   "zh": "原指出战时击鼓呐喊，以壮声威；现指喧嚷、起哄。",
+   "en": "",
+   "hv": "CỔ TÁO",
+   "vi": "ồn ào, làm rùm beng",
+   "proper": false
+  },
+  {
+   "n": 105,
+   "hz": "小术",
+   "py": "xiǎoshù",
+   "pos": "名",
+   "zh": "指微小的技能。",
+   "en": "",
+   "hv": "TIỂU THUẬT",
+   "vi": "mẹo vặt, thủ thuật nhỏ",
+   "proper": false
+  },
+  {
+   "n": 106,
+   "hz": "雕虫小技",
+   "py": "diāo chóng xiǎo jì",
+   "pos": "",
+   "zh": "像雕刻鸟虫书（秦代的一种字体）一样的技能。比喻微不足道的技能。",
+   "en": "",
+   "hv": "ĐIÊU TRÙNG TIỂU KỸ",
+   "vi": "tài mọn, kỹ năng vặt vãnh",
+   "proper": false
+  },
+  {
+   "n": 107,
+   "hz": "小利",
+   "py": "xiǎolì",
+   "pos": "名",
+   "zh": "微小的利益。",
+   "en": "",
+   "hv": "TIỂU LỢI",
+   "vi": "lợi nhỏ, món lợi vặt",
+   "proper": false
+  },
+  {
+   "n": 108,
+   "hz": "贻笑大方",
+   "py": "yíxiào dàfāng",
+   "pos": "",
+   "zh": "让内行见笑。",
+   "en": "",
+   "hv": "DI TIẾU ĐẠI PHƯƠNG",
+   "vi": "làm trò cười cho người thạo nghề",
+   "proper": false
+  },
+  {
+   "n": 109,
+   "hz": "言行不一",
+   "py": "yán xíng bù yī",
+   "pos": "",
+   "zh": "言语和行为不一致。",
+   "en": "",
+   "hv": "NGÔN HÀNH BẤT NHẤT",
+   "vi": "nói một đằng làm một nẻo",
+   "proper": false
+  },
+  {
+   "n": 110,
+   "hz": "当场",
+   "py": "dāngchǎng",
+   "pos": "副",
+   "zh": "在事情发生的当时和当地。",
+   "en": "",
+   "hv": "ĐƯƠNG TRƯỜNG",
+   "vi": "ngay tại chỗ",
+   "proper": false
+  },
+  {
+   "n": 111,
+   "hz": "出丑",
+   "py": "chū chǒu",
+   "pos": "",
+   "zh": "显露出丑态；丢面子。",
+   "en": "",
+   "hv": "XUẤT XỬU",
+   "vi": "bẽ mặt, làm trò cười",
+   "proper": false
+  },
+  {
+   "n": 112,
+   "hz": "徒",
+   "py": "tú",
+   "pos": "副",
+   "zh": "表示此外没有别的。",
+   "en": "",
+   "hv": "ĐỒ",
+   "vi": "chỉ, chỉ có (để lại)",
+   "proper": false
+  },
+  {
+   "n": 113,
+   "hz": "笑柄",
+   "py": "xiàobǐng",
+   "pos": "名",
+   "zh": "可以用来取笑的话语、行为或事情。",
+   "en": "",
+   "hv": "TIẾU BÍNH",
+   "vi": "trò cười, cái cớ để chê cười",
+   "proper": false
+  },
+  {
+   "n": 114,
+   "hz": "不伦不类",
+   "py": "bù lún bú lèi",
+   "pos": "",
+   "zh": "既不像这一类，也不像那一类。形容不像样子或不合规范。",
+   "en": "",
+   "hv": "BẤT LUÂN BẤT LOẠI",
+   "vi": "chẳng ra thể thống gì, dở dở ương ương",
+   "proper": false
+  },
+  {
+   "n": 115,
+   "hz": "孤家寡人",
+   "py": "gū jiā guǎ rén",
+   "pos": "",
+   "zh": "指脱离群众、孤立无助的人。",
+   "en": "",
+   "hv": "CÔ GIA QUẢ NHÂN",
+   "vi": "kẻ cô độc, đơn độc không ai giúp",
+   "proper": false
+  },
+  {
+   "n": 116,
+   "hz": "自嘲",
+   "py": "zìcháo",
+   "pos": "动",
+   "zh": "自我嘲笑。",
+   "en": "",
+   "hv": "TỰ TRÀO",
+   "vi": "tự giễu, tự trào",
+   "proper": false
+  },
+  {
+   "n": 117,
+   "hz": "真诚",
+   "py": "zhēnchéng",
+   "pos": "形",
+   "zh": "真心诚意；不虚伪。",
+   "en": "",
+   "hv": "CHÂN THÀNH",
+   "vi": "chân thành",
+   "proper": false
+  },
+  {
+   "n": 118,
+   "hz": "唬人",
+   "py": "hǔrén",
+   "pos": "动",
+   "zh": "吓唬人。",
+   "en": "",
+   "hv": "HỔ NHÂN",
+   "vi": "dọa người, hù dọa",
+   "proper": false
+  },
+  {
+   "n": 119,
+   "hz": "风言风语",
+   "py": "fēng yán fēng yǔ",
+   "pos": "",
+   "zh": "私下议论、暗中流传的没有根据或恶意中伤的话。",
+   "en": "",
+   "hv": "PHONG NGÔN PHONG NGỮ",
+   "vi": "lời đồn đại, lời ra tiếng vào",
+   "proper": false
+  },
+  {
+   "n": 120,
+   "hz": "气怒",
+   "py": "qìnù",
+   "pos": "形",
+   "zh": "生气。",
+   "en": "",
+   "hv": "KHÍ NỘ",
+   "vi": "tức giận",
+   "proper": false
+  },
+  {
+   "n": 121,
+   "hz": "动不动",
+   "py": "dòngbudòng",
+   "pos": "副",
+   "zh": "表示容易发生某种情况或行动。常用于口语。",
+   "en": "",
+   "hv": "ĐỘNG BẤT ĐỘNG",
+   "vi": "hơi một tí là, động một chút là",
+   "proper": false
+  },
+  {
+   "n": 122,
+   "hz": "自哀自叹",
+   "py": "zì āi zì tàn",
+   "pos": "",
+   "zh": "自己哀愁，自己叹息。",
+   "en": "",
+   "hv": "TỰ AI TỰ THÁN",
+   "vi": "than thân trách phận",
+   "proper": false
+  },
+  {
+   "n": 123,
+   "hz": "千千万万",
+   "py": "qiānqiānwànwàn",
+   "pos": "形",
+   "zh": "形容数量非常多。",
+   "en": "",
+   "hv": "THIÊN THIÊN VẠN VẠN",
+   "vi": "hàng nghìn hàng vạn, vô số",
+   "proper": false
+  },
+  {
+   "n": 124,
+   "hz": "友人",
+   "py": "yǒurén",
+   "pos": "名",
+   "zh": "友好人士；朋友。",
+   "en": "",
+   "hv": "HỮU NHÂN",
+   "vi": "bạn bè",
+   "proper": false
+  },
+  {
+   "n": 125,
+   "hz": "攻破",
+   "py": "gōngpò",
+   "pos": "动",
+   "zh": "攻下；突破（防线、堡垒等）。",
+   "en": "",
+   "hv": "CÔNG PHÁ",
+   "vi": "công phá, phá vỡ",
+   "proper": false
+  },
+  {
+   "n": 126,
+   "hz": "防线",
+   "py": "fángxiàn",
+   "pos": "名",
+   "zh": "由一连串的防御工事构成的防守地带。",
+   "en": "line of defence",
+   "hv": "PHÒNG TUYẾN",
+   "vi": "phòng tuyến",
+   "proper": false
+  },
+  {
+   "n": 127,
+   "hz": "好意",
+   "py": "hǎoyì",
+   "pos": "名",
+   "zh": "良好的愿望或心意。",
+   "en": "",
+   "hv": "HẢO Ý",
+   "vi": "ý tốt, thiện ý",
+   "proper": false
+  },
+  {
+   "n": 128,
+   "hz": "小人",
+   "py": "xiǎorén",
+   "pos": "名",
+   "zh": "人格低下卑劣的人。",
+   "en": "",
+   "hv": "TIỂU NHÂN",
+   "vi": "kẻ tiểu nhân",
+   "proper": false
+  },
+  {
+   "n": 129,
+   "hz": "得逞",
+   "py": "déchěng",
+   "pos": "动",
+   "zh": "实现；达到目的（含贬义）。",
+   "en": "",
+   "hv": "ĐẮC SÍNH",
+   "vi": "đạt được ý đồ (xấu)",
+   "proper": false
+  },
+  {
+   "n": 130,
+   "hz": "不悔",
+   "py": "bùhuǐ",
+   "pos": "动",
+   "zh": "不后悔。",
+   "en": "",
+   "hv": "BẤT HỐI",
+   "vi": "không hối hận",
+   "proper": false
+  }
+ ],
+ "grammar": [
+  {
+   "point": "……有所不为才能有所为 (有所: có phần, có (làm) ở mức nhất định)",
+   "structure": "有所 + động từ song âm tiết（有所提高/有所不为）；无所 + động từ（无所不能）",
+   "explanation": "有所 là động từ, biểu thị có ở một mức độ nhất định; phía sau thường là động từ song âm tiết, ví dụ: 有所保留 (có phần giữ lại), 有所提高, 有所下降, 有所增长, 有所准备, 有所减轻, 有所改观, 有所改善, 有所发展, 有所进步, 有所了解, 有所耳闻, 有所好转. \"有所不为才能有所为\": có những việc không làm thì mới làm nên được việc. Liên hệ (链接): 无所 biểu thị không có, dùng trong một số kết hợp cố định: 无所不包 (không gì không bao hàm), 无所不能 (không gì không làm được), 无所不为 (việc gì cũng dám làm), 无所事事 (không có việc gì làm), 无所适从 (không biết theo ai, không biết làm sao), 无所畏惧 (không sợ gì cả), 无所用心 (chẳng để tâm suy nghĩ gì), 无所作为 (không làm nên trò trống gì), 无所不在 (không đâu không có).",
+   "examples": [
+    {
+     "zh": "无为就是把有限的精力时间节省下来，才可能做一点事，也就是——有为，有所不为才能有所为。",
+     "vi": "Vô vi là dồn tiết kiệm sức lực và thời gian có hạn, mới có thể làm được chút việc, tức là — hữu vi: có điều không làm thì mới có điều làm được."
+    },
+    {
+     "zh": "有所提高 / 有所下降 / 有所准备 / 有所了解 / 有所好转",
+     "vi": "có phần nâng cao / có phần giảm xuống / có chuẩn bị phần nào / hiểu biết phần nào / có phần chuyển biến tốt"
+    },
+    {
+     "zh": "无所不能 / 无所事事 / 无所适从 / 无所畏惧 / 无所作为",
+     "vi": "không gì không làm được / không có việc gì làm / không biết theo đường nào / không sợ hãi gì / không làm nên trò trống gì"
+    }
+   ]
+  },
+  {
+   "point": "……从而得以获取一种开阔感，自由感，超越感 (得以: nhờ đó mà có thể, được)",
+   "structure": "得以 + động từ (cụm động từ / câu)",
+   "explanation": "得以 là động từ, nghĩa là có thể, được (nhờ điều kiện nào đó mà thực hiện được). Từ này không dùng độc lập và không có dạng phủ định. Cách dùng thường gặp: 得以 + động từ (cụm động từ hoặc câu ngắn), mang sắc thái văn viết. Các kết hợp thường gặp: 得以解决, 得以发表, 得以获取, 得以治疗, 得以改变, 得以成功, 得以进步, 得以学会, 得以考取, 得以好转, 得以休息, 得以保证, 得以掌握, 得以控制, 得以建成, 得以召开, 得以生还, 得以提高, 得以增长, 得以健康成长, 得以快速发展.",
+   "examples": [
+    {
+     "zh": "把大自然，神州大地，各色人等，各色物种，各色事件视为审美的对象，视为人生的大舞台，从而得以获取一种开阔感，自由感，超越感。",
+     "vi": "Coi thiên nhiên, đất Thần Châu, đủ hạng người, đủ loài vật, đủ mọi sự việc là đối tượng thẩm mỹ, là sân khấu lớn của đời người, nhờ đó mà có được cảm giác rộng mở, tự do và siêu thoát."
+    },
+    {
+     "zh": "多亏父母的支持和朋友们的帮助，使我多年的理想得以实现。",
+     "vi": "Nhờ sự ủng hộ của cha mẹ và sự giúp đỡ của bạn bè, lý tưởng bao năm của tôi mới được thực hiện."
+    },
+    {
+     "zh": "这次的工作得以圆满完成，主要应该归功于全体参与成员的全心投入和无私付出。",
+     "vi": "Công việc lần này được hoàn thành tốt đẹp, chủ yếu là nhờ sự tận tâm và cống hiến vô tư của toàn bộ thành viên tham gia."
+    },
+    {
+     "zh": "老师的仔细讲解，使我们得以详细了解中国的地理特点。",
+     "vi": "Sự giảng giải tỉ mỉ của thầy giúp chúng tôi hiểu được cặn kẽ đặc điểm địa lý của Trung Quốc."
+    }
+   ]
+  },
+  {
+   "point": "可惜，只配逍遥处之的事情还是太多太多了 (处之: đối xử, ứng xử với việc đó)",
+   "structure": "Tính từ/phó từ hai âm tiết + 处之（坦然处之、冷静处之）",
+   "explanation": "处之: đối xử, ứng xử với một tình huống nào đó. 逍遥处之: đối diện với tình huống đó một cách thong dong, không câu nệ, tự do tự tại. Các kết hợp: 安然处之 (bình thản đối mặt), 淡然处之 (thản nhiên đối mặt), 断然处之 (dứt khoát xử lý), 坦然处之 (thản nhiên, thẳng thắn đối mặt), 漠然处之 (lạnh nhạt, thờ ơ), 泰然处之 (điềm nhiên), 悠然处之 (ung dung), 积极处之, 消极处之, 冷静处之, 谨慎处之, 小心处之, 大胆处之, 认真处之, 乐观处之.",
+   "examples": [
+    {
+     "zh": "可惜，只配逍遥处之的事情还是太多太多了。",
+     "vi": "Tiếc thay, những việc chỉ đáng để ung dung tiêu dao mà đối xử vẫn còn quá nhiều, quá nhiều."
+    },
+    {
+     "zh": "安然处之 / 坦然处之 / 泰然处之 / 冷静处之 / 乐观处之",
+     "vi": "bình thản đối mặt / thản nhiên đối mặt / điềm nhiên đối mặt / bình tĩnh xử lý / lạc quan đối mặt"
+    }
+   ]
+  },
+  {
+   "point": "……露出尾巴，徒留笑柄 (徒: chỉ, chỉ có)",
+   "structure": "徒 + động từ đơn âm tiết（徒留、徒有、徒增）；徒然 + động từ song âm tiết",
+   "explanation": "徒 là phó từ, biểu thị ngoài điều này ra không có gì khác, tương đương \"只\", \"仅仅\" (chỉ). Thông thường sau \"徒\" là một động từ đơn âm tiết; mang sắc thái văn viết rất rõ. Liên hệ (链接): 徒然 nghĩa giống \"徒\", tức là chỉ, chỉ là, nhưng cách dùng hơi khác: sau \"徒然\" thường là động từ song âm tiết.",
+   "examples": [
+    {
+     "zh": "设防就要装腔作势，言行不一，当场出丑，露出尾巴，徒留笑柄。",
+     "vi": "Đề phòng thì phải làm bộ làm tịch, nói một đằng làm một nẻo, bẽ mặt ngay tại chỗ, lòi đuôi ra, chỉ để lại trò cười."
+    },
+    {
+     "zh": "他虽然很有名，但我今天看了他的演出，觉得他演技平平，徒有虚名而已。",
+     "vi": "Anh ta tuy rất nổi tiếng, nhưng hôm nay xem anh ta diễn, tôi thấy diễn xuất bình thường, chỉ có hư danh mà thôi."
+    },
+    {
+     "zh": "你这样唉声叹气的，只能让自己徒生烦恼，丝毫解决不了问题。",
+     "vi": "Cậu cứ than ngắn thở dài thế này chỉ khiến mình thêm phiền não, chẳng giải quyết được chút vấn đề nào."
+    },
+    {
+     "zh": "忙了一场，没有什么结果，徒留遗憾。",
+     "vi": "Bận rộn một phen mà chẳng có kết quả gì, chỉ để lại tiếc nuối."
+    },
+    {
+     "zh": "想得太多徒然给自己增添烦恼。走吧，咱们一起出去转转。",
+     "vi": "Nghĩ nhiều quá chỉ tự chuốc thêm phiền não thôi. Đi nào, chúng mình cùng ra ngoài dạo một vòng."
+    }
+   ]
+  },
+  {
+   "point": "……终于不伦不类，孤家寡人 (不A不B)",
+   "structure": "不A不B（不多不少、不中不西、不清不楚、不见不散）",
+   "explanation": "Dạng \"不A不B\" có bốn trường hợp: (1) A, B là tính từ đơn âm tiết nghĩa trái ngược nhau, biểu thị vừa phải, vừa đúng: 不多不少, 不大不小, 不高不矮, 不软不硬, 不胖不瘦, 不快不慢, 不咸不淡, 不深不浅, 不长不短. (2) A, B phần nhiều là danh từ hoặc động từ đơn âm tiết nghĩa đối lập, biểu thị trạng thái lưng chừng khiến người ta không hài lòng; cũng có thể nói \"A不A B不B\" (trừ \"不尴不尬\"): 不中不西, 不土不洋, 不人不鬼, 不男不女, 不三不四 (không đứng đắn, không ra gì), 不死不活, 不尴不尬 (rất khó xử). (3) A, B là động từ hoặc tính từ đơn âm tiết nghĩa gần nhau, biểu thị \"既不……也不……\" (vừa không… cũng không…), có ý nhấn mạnh: 不清不楚, 不明不白, 不干不净, 不骄不躁, 不吃不喝, 不言不语, 不卑不亢 (không tự ti cũng không kiêu ngạo), 不管不顾, 不即不离 (không gần cũng không xa), 不偏不倚 (công bằng, không thiên vị), 不屈不挠 (kiên cường bất khuất), 不声不响, 不痛不痒 (không đúng chỗ hiểm yếu), 不闻不问 (thờ ơ), 不折不扣 (trọn vẹn, đích thực), 不知不觉. (4) A, B phần nhiều là động từ đơn âm tiết, \"不A\" là điều kiện của \"不B\", biểu thị \"如果不……就不……\" (nếu không… thì không…): 不学不会, 不干不行, 不见不散, 不破不立 (không phá bỏ cái cũ thì không xây được cái mới), 不醉不休 (chưa say chưa thôi). \"不伦不类\": chẳng ra loại này cũng chẳng ra loại kia, không ra thể thống gì.",
+   "examples": [
+    {
+     "zh": "设防就要戴上假面，拒真正的友人于千里之外，终于不伦不类，孤家寡人。",
+     "vi": "Đề phòng thì phải đeo mặt nạ, đẩy những người bạn thật lòng ra xa ngàn dặm, rốt cuộc chẳng ra thể thống gì, thành kẻ cô độc."
+    },
+    {
+     "zh": "不多不少、不大不小、不高不矮、不胖不瘦、不快不慢",
+     "vi": "không nhiều không ít, không to không nhỏ, không cao không thấp, không béo không gầy, không nhanh không chậm (vừa phải)"
+    },
+    {
+     "zh": "不中不西、不土不洋、不三不四、不死不活、不尴不尬",
+     "vi": "chẳng Trung chẳng Tây, chẳng quê chẳng tây, chẳng ra gì, dở sống dở chết, rất khó xử"
+    },
+    {
+     "zh": "不清不楚、不卑不亢、不偏不倚、不屈不挠、不闻不问",
+     "vi": "mập mờ không rõ, không tự ti cũng không kiêu ngạo, không thiên vị, kiên cường bất khuất, thờ ơ không đoái hoài"
+    },
+    {
+     "zh": "不学不会、不见不散、不破不立、不醉不休",
+     "vi": "không học thì không biết, không gặp không về, không phá thì không lập, chưa say chưa thôi"
+    }
+   ]
+  },
+  {
+   "point": "……都是一无所长，毫无自信的结果…… (一无: hoàn toàn không có)",
+   "structure": "一无 + 所 + động từ / 一无是处",
+   "explanation": "一无: hoàn toàn không có, không có chút nào. \"一无所长\": không có sở trường gì cả. Các kết hợp: 一无是处 (chẳng có điểm nào đúng/tốt), 一无所知 (không biết gì cả), 一无所有 (không có gì cả, trắng tay), 一无所得 (chẳng được gì), 一无所获 (không thu hoạch được gì), 一无所见 (chẳng thấy gì).",
+   "examples": [
+    {
+     "zh": "自吹自擂，自哀自叹，自急自闹，都是一无所长，毫无自信的结果，都实在让人笑话。",
+     "vi": "Tự khoe khoang, tự than thở, tự sốt ruột làm ầm, đều là kết quả của việc chẳng có sở trường gì, hoàn toàn thiếu tự tin, thật khiến người ta chê cười."
+    },
+    {
+     "zh": "一无是处 / 一无所知 / 一无所有 / 一无所获 / 一无所见",
+     "vi": "chẳng có gì tốt / không biết gì cả / trắng tay / chẳng thu được gì / chẳng thấy gì"
+    }
+   ]
+  },
+  {
+   "point": "……，得大于失，虽失犹得，…… (虽A犹B: tuy A mà vẫn như B)",
+   "structure": "虽A犹B（虽失犹得、虽败犹荣、虽死犹生）",
+   "explanation": "虽A犹B: biểu thị tuy A nhưng như thể B. \"虽失犹得\": tuy có mất mát nhưng như thể vẫn được. Các ví dụ: 虽败犹荣 (tuy thua nhưng vẫn vẻ vang), 虽死犹生 (tuy chết mà như vẫn sống), 虽胜犹败 (tuy thắng mà như thua), 虽得犹失 (tuy được mà như mất), 虽成犹败 (tuy thành công mà như thất bại), 虽丑犹美 (tuy xấu xí mà như đẹp đẽ).",
+   "examples": [
+    {
+     "zh": "当然有。然而，从长远来说，得大于失，虽失犹得，不设防仍然是我的始终不悔的信条。",
+     "vi": "Đương nhiên là có. Thế nhưng, về lâu dài mà nói, được nhiều hơn mất, tuy mất mà như được, không đề phòng vẫn là tín điều suốt đời không hối tiếc của tôi."
+    },
+    {
+     "zh": "虽败犹荣 / 虽死犹生 / 虽胜犹败 / 虽得犹失 / 虽丑犹美",
+     "vi": "tuy thua mà vẫn vẻ vang / tuy chết mà như còn sống / tuy thắng mà như thua / tuy được mà như mất / tuy xấu mà như đẹp"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1332 @@
+{
+ "book": "gc1",
+ "lesson_num": 9,
+ "title": "人生就是与困境周旋",
+ "pages": [
+  171,
+  194
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "困境",
+   "py": "kùnjìng",
+   "pos": "名",
+   "zh": "困难的处境。",
+   "en": "",
+   "hv": "KHỐN CẢNH",
+   "vi": "cảnh khốn khó, nghịch cảnh",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "周旋",
+   "py": "zhōuxuán",
+   "pos": "动",
+   "zh": "应付；较量。",
+   "en": "",
+   "hv": "CHU TOÀN",
+   "vi": "đương đầu, xoay xở; đọ sức",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "难免",
+   "py": "nánmiǎn",
+   "pos": "形",
+   "zh": "不容易避免。",
+   "en": "",
+   "hv": "NAN MIỄN",
+   "vi": "khó tránh khỏi",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "苦恼",
+   "py": "kǔnǎo",
+   "pos": "形",
+   "zh": "痛苦烦恼。",
+   "en": "",
+   "hv": "KHỔ NÃO",
+   "vi": "phiền muộn, khổ sở",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "困惑",
+   "py": "kùnhuò",
+   "pos": "形",
+   "zh": "感到不解，不知道该怎么办。",
+   "en": "",
+   "hv": "KHỐN HOẶC",
+   "vi": "băn khoăn, bối rối",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "与生俱来",
+   "py": "yǔ shēng jù lái",
+   "pos": "",
+   "zh": "从生下来就有；天生。",
+   "en": "",
+   "hv": "DỮ SINH CÂU LAI",
+   "vi": "bẩm sinh, có từ khi sinh ra",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "岂",
+   "py": "qǐ",
+   "pos": "副",
+   "zh": "表示反问，难道。",
+   "en": "",
+   "hv": "KHỞI",
+   "vi": "lẽ nào, há",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "困阻",
+   "py": "kùnzǔ",
+   "pos": "名",
+   "zh": "困难和阻碍。",
+   "en": "",
+   "hv": "KHỐN TRỞ",
+   "vi": "khó khăn trở ngại",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "内心世界",
+   "py": "nèixīn shìjiè",
+   "pos": "",
+   "zh": "指心里头。",
+   "en": "",
+   "hv": "NỘI TÂM THẾ GIỚI",
+   "vi": "thế giới nội tâm",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "浩瀚无边",
+   "py": "hàohàn wúbiān",
+   "pos": "",
+   "zh": "形容广大或繁多。",
+   "en": "",
+   "hv": "HẠO HÃN VÔ BIÊN",
+   "vi": "mênh mông vô bờ",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "指望",
+   "py": "zhǐwàng",
+   "pos": "动",
+   "zh": "期待，盼望。",
+   "en": "",
+   "hv": "CHỈ VỌNG",
+   "vi": "trông mong, kỳ vọng",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "一蹴而就",
+   "py": "yí cù ér jiù",
+   "pos": "",
+   "zh": "踏一步就成功。形容事情很容易，一下子就能完成。",
+   "en": "",
+   "hv": "NHẤT XÚC NHI TỰU",
+   "vi": "một bước là xong, làm một lần là thành",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "敞开",
+   "py": "chǎngkāi",
+   "pos": "动",
+   "zh": "大开；打开。",
+   "en": "",
+   "hv": "SƯỞNG KHAI",
+   "vi": "mở rộng, mở toang",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "心扉",
+   "py": "xīnfēi",
+   "pos": "名",
+   "zh": "指人的内心。",
+   "en": "",
+   "hv": "TÂM PHI",
+   "vi": "cánh cửa lòng, nội tâm",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "坦诚",
+   "py": "tǎnchéng",
+   "pos": "形",
+   "zh": "坦率诚恳。（坦诚——坦然）",
+   "en": "",
+   "hv": "THẢN THÀNH",
+   "vi": "thẳng thắn chân thành",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "触动",
+   "py": "chùdòng",
+   "pos": "动",
+   "zh": "因某种刺激而引起（感情变化、回忆等）。",
+   "en": "",
+   "hv": "XÚC ĐỘNG",
+   "vi": "chạm đến, khơi gợi (cảm xúc, ký ức)",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "心灵",
+   "py": "xīnlíng",
+   "pos": "名",
+   "zh": "指内心、精神、思想等。",
+   "en": "heart; soul; spirit",
+   "hv": "TÂM LINH",
+   "vi": "tâm hồn, tâm linh",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "过时",
+   "py": "guòshí",
+   "pos": "形",
+   "zh": "过去流行现在已经不流行。",
+   "en": "",
+   "hv": "QUÁ THỜI",
+   "vi": "lỗi thời",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "开端",
+   "py": "kāiduān",
+   "pos": "名",
+   "zh": "起头，开头。",
+   "en": "",
+   "hv": "KHAI ĐOAN",
+   "vi": "khởi đầu, mở đầu",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "封闭",
+   "py": "fēngbì",
+   "pos": "动",
+   "zh": "严密盖住、关住或堵住等，使不能通行或随便打开。",
+   "en": "",
+   "hv": "PHONG BẾ",
+   "vi": "đóng kín, khép kín",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "障碍",
+   "py": "zhàng'ài",
+   "pos": "名",
+   "zh": "阻挡前进的东西。",
+   "en": "obstacle; obstruction; barrier",
+   "hv": "CHƯỚNG NGẠI",
+   "vi": "trở ngại, chướng ngại",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "境界",
+   "py": "jìngjiè",
+   "pos": "名",
+   "zh": "事物达到的程度或表现出来的情况。",
+   "en": "",
+   "hv": "CẢNH GIỚI",
+   "vi": "cảnh giới, tầm mức",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "宣泄",
+   "py": "xuānxiè",
+   "pos": "动",
+   "zh": "把心中的烦恼尽情表达出来。",
+   "en": "",
+   "hv": "TUYÊN TIẾT",
+   "vi": "trút bỏ, giãi bày (nỗi lòng)",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "倾听",
+   "py": "qīngtīng",
+   "pos": "动",
+   "zh": "细心地听取。",
+   "en": "",
+   "hv": "KHUYNH THÍNH",
+   "vi": "lắng nghe",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "小号手",
+   "py": "xiǎohàoshǒu",
+   "pos": "名",
+   "zh": "吹小号的人。小号：trumpet。",
+   "en": "",
+   "hv": "TIỂU HIỆU THỦ",
+   "vi": "người thổi kèn trumpet",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "未婚妻",
+   "py": "wèihūnqī",
+   "pos": "名",
+   "zh": "已与某男子订婚尚未结婚的女子，是该男子的未婚妻。",
+   "en": "",
+   "hv": "VỊ HÔN THÊ",
+   "vi": "vị hôn thê",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "沙场",
+   "py": "shāchǎng",
+   "pos": "名",
+   "zh": "指战场。",
+   "en": "",
+   "hv": "SA TRƯỜNG",
+   "vi": "sa trường, chiến trường",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "漂泊",
+   "py": "piāobó",
+   "pos": "动",
+   "zh": "比喻流落在外，四处流浪。（漂泊——漂流）",
+   "en": "",
+   "hv": "PHIÊU BẠC",
+   "vi": "phiêu bạt, lưu lạc",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "孤独",
+   "py": "gūdú",
+   "pos": "形",
+   "zh": "独自一个人；孤单。（孤独——孤单）",
+   "en": "",
+   "hv": "CÔ ĐỘC",
+   "vi": "cô độc, cô đơn",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "陪伴",
+   "py": "péibàn",
+   "pos": "动",
+   "zh": "随同做伴。",
+   "en": "",
+   "hv": "BỒI BẠN",
+   "vi": "bầu bạn, đi cùng",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "凄婉",
+   "py": "qīwǎn",
+   "pos": "形",
+   "zh": "（声音）悲伤而婉转。",
+   "en": "",
+   "hv": "THÊ UYỂN",
+   "vi": "(âm thanh) bi thương uyển chuyển, ai oán",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "悲凉",
+   "py": "bēiliáng",
+   "pos": "形",
+   "zh": "悲哀凄凉。",
+   "en": "",
+   "hv": "BI LƯƠNG",
+   "vi": "bi thương thê lương",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "哀伤",
+   "py": "āishāng",
+   "pos": "形",
+   "zh": "悲伤。",
+   "en": "",
+   "hv": "AI THƯƠNG",
+   "vi": "buồn thương, đau buồn",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "老掉牙",
+   "py": "lǎodiàoyá",
+   "pos": "形",
+   "zh": "形容事物、言论等陈旧过时。",
+   "en": "",
+   "hv": "LÃO ĐIỆU NHA",
+   "vi": "cũ rích, nhàm chán",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "无非",
+   "py": "wúfēi",
+   "pos": "副",
+   "zh": "只，不外乎。",
+   "en": "",
+   "hv": "VÔ PHI",
+   "vi": "chẳng qua là, không ngoài",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "才智",
+   "py": "cáizhì",
+   "pos": "名",
+   "zh": "才能和智慧。",
+   "en": "",
+   "hv": "TÀI TRÍ",
+   "vi": "tài trí",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "俗",
+   "py": "sú",
+   "pos": "形",
+   "zh": "庸俗。",
+   "en": "",
+   "hv": "TỤC",
+   "vi": "tầm thường, dung tục",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "白头偕老",
+   "py": "bái tóu xié lǎo",
+   "pos": "",
+   "zh": "夫妻共同生活到老。",
+   "en": "",
+   "hv": "BẠCH ĐẦU GIAI LÃO",
+   "vi": "bạc đầu giai lão, sống với nhau đến già",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "不同凡响",
+   "py": "bù tóng fán xiǎng",
+   "pos": "",
+   "zh": "形容事物（多指文艺作品等）不平凡。",
+   "en": "",
+   "hv": "BẤT ĐỒNG PHÀM HƯỞNG",
+   "vi": "phi thường, khác thường",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "结尾",
+   "py": "jiéwěi",
+   "pos": "名",
+   "zh": "结束的阶段。",
+   "en": "ending; winding-up stage",
+   "hv": "KẾT VĨ",
+   "vi": "phần kết, đoạn kết",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "不落俗套",
+   "py": "bú luò sú tào",
+   "pos": "",
+   "zh": "（多指文章或艺术等）有独创风格，与众不同。",
+   "en": "",
+   "hv": "BẤT LẠC TỤC SÁO",
+   "vi": "không rập khuôn, không theo lối mòn",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "身世",
+   "py": "shēnshì",
+   "pos": "名",
+   "zh": "指人生的经历、遭遇（多指不幸的）。",
+   "en": "",
+   "hv": "THÂN THẾ",
+   "vi": "thân thế, cảnh ngộ",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "日复一日",
+   "py": "rì fù yí rì",
+   "pos": "",
+   "zh": "一天又一天。",
+   "en": "",
+   "hv": "NHẬT PHỤC NHẤT NHẬT",
+   "vi": "ngày qua ngày",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "围拢",
+   "py": "wéilǒng",
+   "pos": "动",
+   "zh": "从四周向某个地方聚拢。",
+   "en": "",
+   "hv": "VI LŨNG",
+   "vi": "vây quanh, xúm lại",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "默默",
+   "py": "mòmò",
+   "pos": "副",
+   "zh": "不说话；不出声。",
+   "en": "",
+   "hv": "MẶC MẶC",
+   "vi": "lặng lẽ, im lặng",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "低沉",
+   "py": "dīchén",
+   "pos": "形",
+   "zh": "（声音）低。",
+   "en": "",
+   "hv": "ĐÊ TRẦM",
+   "vi": "(âm thanh) trầm thấp",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "凄凉",
+   "py": "qīliáng",
+   "pos": "形",
+   "zh": "寂寞冷落（多形容环境或景物，也指内心）。",
+   "en": "",
+   "hv": "THÊ LƯƠNG",
+   "vi": "thê lương, lạnh lẽo",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "欢快",
+   "py": "huānkuài",
+   "pos": "形",
+   "zh": "欢乐轻快。",
+   "en": "",
+   "hv": "HOAN KHOÁI",
+   "vi": "vui tươi, rộn ràng",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "嘹亮",
+   "py": "liáoliàng",
+   "pos": "形",
+   "zh": "（声音）清晰响亮。",
+   "en": "",
+   "hv": "LIÊU LƯỢNG",
+   "vi": "(âm thanh) vang dội, trong trẻo",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "生气勃勃",
+   "py": "shēngqì bóbó",
+   "pos": "",
+   "zh": "形容充满活力。",
+   "en": "",
+   "hv": "SINH KHÍ BỘT BỘT",
+   "vi": "tràn đầy sức sống",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "最终",
+   "py": "zuìzhōng",
+   "pos": "副",
+   "zh": "最后。（最终——最后）",
+   "en": "",
+   "hv": "TỐI CHUNG",
+   "vi": "cuối cùng",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "抵挡",
+   "py": "dǐdǎng",
+   "pos": "动",
+   "zh": "挡住压力；抵抗。",
+   "en": "",
+   "hv": "ĐỂ ĐÁNG",
+   "vi": "chống đỡ, chống lại",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "永恒",
+   "py": "yǒnghéng",
+   "pos": "形",
+   "zh": "永远不变。（永恒——永远）",
+   "en": "",
+   "hv": "VĨNH HẰNG",
+   "vi": "vĩnh hằng, mãi mãi",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "输血",
+   "py": "shū xuè",
+   "pos": "",
+   "zh": "把健康人的血液或血液的组成部分用一定的装置输送到病人体内。比喻从外部给予财力、物力、人力等方面的帮助。",
+   "en": "",
+   "hv": "THÂU HUYẾT",
+   "vi": "truyền máu; (ví) tiếp sức từ bên ngoài",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "后者",
+   "py": "hòuzhě",
+   "pos": "名",
+   "zh": "指前面提到的两件事或两个人中的后一件或后一个。",
+   "en": "",
+   "hv": "HẬU GIẢ",
+   "vi": "cái sau, người sau (trong hai cái đã nêu)",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "救助",
+   "py": "jiùzhù",
+   "pos": "动",
+   "zh": "拯救和援助。",
+   "en": "",
+   "hv": "CỨU TRỢ",
+   "vi": "cứu giúp, cứu trợ",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "快慰",
+   "py": "kuàiwèi",
+   "pos": "形",
+   "zh": "痛快而感到安慰；欣慰。",
+   "en": "",
+   "hv": "KHOÁI ÚY",
+   "vi": "vui mừng an ủi, hả lòng",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "降临",
+   "py": "jiànglín",
+   "pos": "动",
+   "zh": "来到。",
+   "en": "",
+   "hv": "GIÁNG LÂM",
+   "vi": "đến, ập đến",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "敬重",
+   "py": "jìngzhòng",
+   "pos": "动",
+   "zh": "恭敬尊重。",
+   "en": "",
+   "hv": "KÍNH TRỌNG",
+   "vi": "kính trọng",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "滚蛋",
+   "py": "gǔn dàn",
+   "pos": "",
+   "zh": "离开；走开（斥责或骂人的话）。",
+   "en": "",
+   "hv": "CỔN ĐẢN",
+   "vi": "cút đi",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "没趣",
+   "py": "méiqù",
+   "pos": "形",
+   "zh": "没有面子；难堪。",
+   "en": "",
+   "hv": "MỘT THÚ",
+   "vi": "mất mặt, bẽ bàng",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "对手",
+   "py": "duìshǒu",
+   "pos": "名",
+   "zh": "竞赛的对方，多指本领、水平不相上下的。",
+   "en": "",
+   "hv": "ĐỐI THỦ",
+   "vi": "đối thủ",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "锤炼",
+   "py": "chuíliàn",
+   "pos": "动",
+   "zh": "磨炼。",
+   "en": "",
+   "hv": "CHÙY LUYỆN",
+   "vi": "tôi luyện, rèn giũa",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "高手",
+   "py": "gāoshǒu",
+   "pos": "名",
+   "zh": "技能特别高明的人。",
+   "en": "",
+   "hv": "CAO THỦ",
+   "vi": "cao thủ",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "点名",
+   "py": "diǎn míng",
+   "pos": "",
+   "zh": "指出具体的人名。",
+   "en": "",
+   "hv": "ĐIỂM DANH",
+   "vi": "chỉ đích danh, điểm mặt",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "从中",
+   "py": "cóngzhōng",
+   "pos": "副",
+   "zh": "在其间；在其中。",
+   "en": "",
+   "hv": "TÒNG TRUNG",
+   "vi": "từ trong đó",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "获益",
+   "py": "huò yì",
+   "pos": "",
+   "zh": "得到好处。",
+   "en": "",
+   "hv": "HOẠCH ÍCH",
+   "vi": "được lợi, thu được lợi ích",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "增添",
+   "py": "zēngtiān",
+   "pos": "动",
+   "zh": "添加；加多。",
+   "en": "",
+   "hv": "TĂNG THIÊM",
+   "vi": "tăng thêm",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "明摆着",
+   "py": "míngbǎizhe",
+   "pos": "动",
+   "zh": "明显地摆在眼前，容易看得清楚。",
+   "en": "",
+   "hv": "MINH BÃI TRƯỚC",
+   "vi": "rõ rành rành, hiển nhiên",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "接纳",
+   "py": "jiēnà",
+   "pos": "动",
+   "zh": "接受。",
+   "en": "",
+   "hv": "TIẾP NẠP",
+   "vi": "tiếp nhận, chấp nhận",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "发慌",
+   "py": "fā huāng",
+   "pos": "",
+   "zh": "因害怕、着急或虚弱而心神不定。",
+   "en": "",
+   "hv": "PHÁT HOẢNG",
+   "vi": "hoảng hốt, cuống lên",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "狰狞",
+   "py": "zhēngníng",
+   "pos": "形",
+   "zh": "（面目）凶恶。",
+   "en": "",
+   "hv": "TRANH NANH",
+   "vi": "dữ tợn, hung ác",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "面目",
+   "py": "miànmù",
+   "pos": "名",
+   "zh": "相貌。",
+   "en": "",
+   "hv": "DIỆN MỤC",
+   "vi": "diện mạo, bộ mặt",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "呗",
+   "py": "bei",
+   "pos": "助",
+   "zh": "表示事实或道理明显，容易了解。也指勉强同意。",
+   "en": "",
+   "hv": "BÁI",
+   "vi": "thôi, chứ sao (trợ từ)",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "吓唬",
+   "py": "xiàhu",
+   "pos": "动",
+   "zh": "使害怕。",
+   "en": "",
+   "hv": "HÁCH HỔ",
+   "vi": "dọa, hù dọa",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "坦然",
+   "py": "tǎnrán",
+   "pos": "形",
+   "zh": "形容心里平静，没有担心、紧张或害怕。",
+   "en": "",
+   "hv": "THẢN NHIÊN",
+   "vi": "thản nhiên, bình thản",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "借助",
+   "py": "jièzhù",
+   "pos": "动",
+   "zh": "靠别的人或事物的帮助。",
+   "en": "",
+   "hv": "TÁ TRỢ",
+   "vi": "nhờ vào, mượn",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "恐慌",
+   "py": "kǒnghuāng",
+   "pos": "形",
+   "zh": "因担忧、害怕而紧张不安。（恐慌——惊慌）（恐慌——恐怖）",
+   "en": "",
+   "hv": "KHỦNG HOẢNG",
+   "vi": "hoảng sợ, hoang mang",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "伤害",
+   "py": "shānghài",
+   "pos": "动",
+   "zh": "使身体组织或思想感情等受到损害。",
+   "en": "",
+   "hv": "THƯƠNG HẠI",
+   "vi": "làm tổn thương, gây hại",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "强行",
+   "py": "qiángxíng",
+   "pos": "副",
+   "zh": "用强制的方式进行。（强行——强制）",
+   "en": "",
+   "hv": "CƯỠNG HÀNH",
+   "vi": "cưỡng ép, cố sức (làm)",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "牛角尖",
+   "py": "niújiǎojiān",
+   "pos": "名",
+   "zh": "比喻无法解决的问题或不值得研究的小问题。",
+   "en": "",
+   "hv": "NGƯU GIÁC TIÊM",
+   "vi": "ngõ cụt, sừng trâu (vấn đề bế tắc)",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "别有洞天",
+   "py": "bié yǒu dòngtiān",
+   "pos": "",
+   "zh": "另有一种境界，形容景物等非常吸引人。",
+   "en": "",
+   "hv": "BIỆT HỮU ĐỘNG THIÊN",
+   "vi": "một thế giới khác hẳn, cảnh giới mới lạ",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "地狱",
+   "py": "dìyù",
+   "pos": "名",
+   "zh": "某些宗教指人死后灵魂受苦的地方。",
+   "en": "hell; inferno",
+   "hv": "ĐỊA NGỤC",
+   "vi": "địa ngục",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "天堂",
+   "py": "tiāntáng",
+   "pos": "名",
+   "zh": "某些宗教指人死后灵魂居住的永享幸福的地方。",
+   "en": "paradise; heaven",
+   "hv": "THIÊN ĐƯỜNG",
+   "vi": "thiên đường",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "他人",
+   "py": "tārén",
+   "pos": "代",
+   "zh": "别人。",
+   "en": "",
+   "hv": "THA NHÂN",
+   "vi": "người khác",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "医药",
+   "py": "yīyào",
+   "pos": "名",
+   "zh": "医疗和药品。",
+   "en": "",
+   "hv": "Y DƯỢC",
+   "vi": "thuốc men, y dược",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "熟食",
+   "py": "shúshí",
+   "pos": "名",
+   "zh": "经过加工做熟的食品，特指做熟以备日后食用的肉食。",
+   "en": "",
+   "hv": "THỤC THỰC",
+   "vi": "đồ ăn chín",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "下酒",
+   "py": "xià jiǔ",
+   "pos": "",
+   "zh": "就着菜把酒喝下去。",
+   "en": "",
+   "hv": "HẠ TỬU",
+   "vi": "nhắm rượu, đưa cay",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "付出",
+   "py": "fùchū",
+   "pos": "动",
+   "zh": "交出（钱款、代价等）。",
+   "en": "",
+   "hv": "PHÓ XUẤT",
+   "vi": "bỏ ra, cống hiến",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "改换",
+   "py": "gǎihuàn",
+   "pos": "动",
+   "zh": "改掉原来的，换成另外的。",
+   "en": "",
+   "hv": "CẢI HOÁN",
+   "vi": "thay đổi, đổi sang",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "注",
+   "py": "zhù",
+   "pos": "动",
+   "zh": "以细而连续的水流灌。",
+   "en": "",
+   "hv": "CHÚ",
+   "vi": "rót, đổ đầy",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "逃避",
+   "py": "táobì",
+   "pos": "动",
+   "zh": "躲开不愿意或不敢接触的事物。",
+   "en": "",
+   "hv": "ĐÀO TỊ",
+   "vi": "trốn tránh",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "整天",
+   "py": "zhěngtiān",
+   "pos": "",
+   "zh": "从早到晚，完整的一天。",
+   "en": "",
+   "hv": "CHỈNH THIÊN",
+   "vi": "cả ngày, suốt ngày",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "顺眼",
+   "py": "shùnyǎn",
+   "pos": "形",
+   "zh": "看着舒服。",
+   "en": "",
+   "hv": "THUẬN NHÃN",
+   "vi": "vừa mắt, thuận mắt",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "交加",
+   "py": "jiāojiā",
+   "pos": "动",
+   "zh": "（两种事物）同时出现或同时加在一个人身上。",
+   "en": "",
+   "hv": "GIAO GIA",
+   "vi": "cùng ập đến, đan xen",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "人生就是与困境周旋",
+   "paragraphs": [
+    "第一部分",
+    "困境不可能被消灭",
+    "同是生活在这个世界上，谁的生活中都难免有些艰难，谁心里都难免有些苦恼和困惑。甚至可以这样说，艰难和困惑就是生命本身，这是与生俱来的，甚至终生不能消灭的，否则人生岂不就太简单了？",
+    "设想一下，要是有一天生活中的困难都被消灭干净了，人生实在也就没什么意思了；就像下棋，什么困阻都没有你还下的什么劲儿？内心世界比外部世界要复杂得多，认识内心世界比认识外部世界要困难得多。心理的问题浩瀚无边，别指望一蹴而就即可解决所有我们心里的迷惑。那么指望什么呢？我想，人们能够坐在一起敞开心扉，坦诚地说一说我们的困惑，大胆地看一看平时不敢触动的某些心灵的角落，这就是最好的办法。心里的困惑存在一天，这办法就不会过时。就是说，一切具体的心理治疗方法，都要由这样的开端来引出。自我封闭是心理治疗的最大障碍。",
+    "与人交流达到新境界",
+    "困境不可能没有，艰难不可能彻底消灭，但是人与人之间的交流、沟通、宣泄与倾听，却可能使人获得一种新的生活态度，或说达到一种新境界。什么新境界？我先讲个童话，《小号手的故事》。战争结束了，有个年轻号手最后离开战场回家。他日夜思念着的未婚妻已同别人结婚，因为家乡早已流传着他战死沙场的消息。年轻号手痛苦之极，便离开家乡，四处漂泊。孤独的路上，陪伴他的只有那把小号，他便吹响小号，号声凄婉悲凉。有一天，他走到一个国家，国王听见了他的号声，叫人把他唤来，问，你的号声为什么这样哀伤？号手便把自己的故事讲给国王听。国王听了非常同情……看到这儿我就要放下了，心说又是个老掉牙的故事，接下来无非是国王很喜欢这个年轻号手，而且看他才智不俗，就把女儿嫁给了他，最后呢，肯定是他与公主白头偕老，过着幸福的生活。",
+    "可是我猜错了，这个故事不同凡响的地方就在于它的结尾。这个国王不落俗套，他下了一道命令，请全国的人都来听这号手讲他自己的身世，让所有的人都来听那号手的哀伤。日复一日，年轻人不断地讲，人们不断地听，只要那号声一响，人们便围拢他，默默地听。这样，不知从什么时候开始，他的号声已经不再那么低沉、凄凉了。又不知从什么时候起，那号声变得欢快、嘹亮，变得生气勃勃了。",
+    "所谓新境界，我想至少有两方面。一是认识了爱的重要；二是困境不可能没有，最终能够抵挡它的是人间的爱意。什么爱意呢？是那个国王把自己的女儿嫁给小号手呢，还是告诉他，困境是永恒的，只有镇静地面对它？应该说都是，但前一种是暂时的输血，后一种是帮你恢复起自己的造血能力。后者是根本的救助，它不求一时的快慰和满足，也不相信因为好运降临从此困境就不会再找到你，它是说：困境来了，大家跟你在一起，但谁也不能让困境消灭，每个人必须自己鼓起勇气，镇静地面对它。",
+    "第二部分",
+    "我敬重我的病",
+    "有一回，有个记者问我：你对你的病是什么态度？我想了半天也找不出一个恰当的词，好像说什么也不对，说什么也没用；最后我说：是敬重。这决不是说我多么喜欢它，但是你说什么呢？讨厌它吗？恨它吗？求求它快滚蛋？一点用也没有，除了自讨没趣，就是自寻烦恼。但你要是敬重它，把它看做是一个强大的对手，是命运对你的锤炼，就像是个九段高手点名要跟你下一盘棋，这虽然有点无可奈何的味道，但你却能从中获益，从中增添智慧，比如说逼着你把生命的意义看得明白。一边是自寻烦恼，一边是增添智慧，选择什么不是明摆着的吗？",
+    "所以，对困境先要对它说“是”，接纳它，然后试试跟它周旋，输了也是赢。再比如说死亡，你一听见它就着急、生气、发慌，它肯定就会以更加狰狞的面目来找你了；你要是镇静地看它呢，它其实也平常。死，什么样儿？就像你没出生时那样儿呗。死，不过是在你活着的时候吓唬吓唬你，谁想它想得发抖了，谁就输了；谁想它想得坦然镇定了，谁就赢了。当然不能骗自己，其实这件事你想骗也骗不了。但要是你先就对它说“不”，固执地对它说“不”，它就不能伤害你了。其实所有的困境，包括死，都是借助你自己的这种恐慌来伤害你的。",
+    "爱需要自己去建立",
+    "千万别把自己封闭起来，你要强行使自己走出去，不光是身体走出屋子去，思想和心情也要走出去，走出一种牛角尖去，然后你肯定会发现别有洞天。我写过，地狱和天堂都在人间，地狱和天堂是人对生命，以及对他人的不同态度罢了。友谊、爱，以及敞开自己的心灵，是最好的医药。",
+    "但是，爱，或者友谊，不是一种熟食，买回来切切就能下酒了；爱和友谊，要你去建立，要你亲身投入进去，在你付出的同时你得到，而且你必定已经改换了一种心情，有了一种新的生活态度。",
+    "其实，人这一生能得到什么呢？只有过程，只有注满在这个过程中的心情。所以，一定要注满好心情。你要是逃避困境——但困境可并不躲开你，你要是封闭自己，你要总是整天看什么都不顺眼，你要是不在爱和友谊之中，而是在愁恨交加之中，你想你能有什么好心情呢？其实，爱、友谊、快乐，都是一种智慧。",
+    "（作者：史铁生，选自《北京青年报》，有删节）"
+   ],
+   "translations": [
+    "Phần một",
+    "Nghịch cảnh không thể bị tiêu diệt",
+    "Cùng sống trên thế giới này, cuộc sống của ai cũng khó tránh khỏi đôi chút gian nan, trong lòng ai cũng khó tránh khỏi ít nhiều phiền muộn và băn khoăn. Thậm chí có thể nói rằng, gian nan và băn khoăn chính là bản thân sự sống, là thứ có từ khi sinh ra, thậm chí suốt đời không thể xóa bỏ; nếu không thì đời người há chẳng phải quá đơn giản sao?",
+    "Thử nghĩ xem, nếu một ngày nào đó mọi khó khăn trong cuộc sống đều bị quét sạch, thì đời người thực ra cũng chẳng còn ý nghĩa gì nữa; cũng như chơi cờ, nếu chẳng có chút trắc trở nào thì còn chơi làm gì cho mất công? Thế giới nội tâm phức tạp hơn thế giới bên ngoài nhiều, hiểu được thế giới nội tâm khó hơn hiểu thế giới bên ngoài nhiều. Những vấn đề tâm lý mênh mông vô bờ, đừng trông mong một bước là giải quyết được hết mọi mê muội trong lòng chúng ta. Vậy thì trông mong vào điều gì? Tôi nghĩ, người ta có thể ngồi lại với nhau, mở rộng cánh cửa lòng, thẳng thắn nói ra những băn khoăn của mình, mạnh dạn nhìn vào những góc khuất tâm hồn mà ngày thường không dám chạm tới — đó chính là cách tốt nhất. Chừng nào trong lòng còn băn khoăn, chừng ấy cách này vẫn chưa lỗi thời. Nghĩa là, mọi phương pháp trị liệu tâm lý cụ thể đều phải bắt đầu từ một khởi điểm như thế. Tự khép kín mình là trở ngại lớn nhất của trị liệu tâm lý.",
+    "Giao lưu với người khác để đạt đến cảnh giới mới",
+    "Nghịch cảnh không thể không có, gian nan không thể xóa bỏ triệt để, nhưng sự giao lưu, thấu hiểu, giãi bày và lắng nghe giữa người với người lại có thể giúp ta có được một thái độ sống mới, hay nói cách khác là đạt tới một cảnh giới mới. Cảnh giới mới gì? Trước hết tôi kể một câu chuyện cổ tích, \"Chuyện người lính thổi kèn\". Chiến tranh kết thúc, có một người lính kèn trẻ là người cuối cùng rời chiến trường trở về nhà. Vị hôn thê mà anh ngày đêm thương nhớ đã kết hôn với người khác, vì ở quê từ lâu đã đồn rằng anh tử trận nơi sa trường. Chàng lính kèn trẻ đau khổ tột cùng, bèn rời bỏ quê hương, phiêu bạt khắp nơi. Trên con đường cô độc, bầu bạn với anh chỉ có cây kèn trumpet ấy; anh liền thổi kèn, tiếng kèn ai oán thê lương. Một ngày nọ, anh đến một đất nước, nhà vua nghe tiếng kèn của anh, cho người gọi anh đến và hỏi: Sao tiếng kèn của ngươi lại buồn thương đến thế? Người lính kèn bèn kể câu chuyện của mình cho nhà vua nghe. Nhà vua nghe xong vô cùng thương cảm... Đọc đến đây tôi đã định bỏ xuống, thầm nghĩ lại là một câu chuyện cũ rích, tiếp theo chẳng qua là nhà vua rất quý chàng lính kèn trẻ, lại thấy anh tài trí hơn người nên gả công chúa cho anh, rồi cuối cùng hẳn là anh và công chúa bạc đầu giai lão, sống cuộc đời hạnh phúc.",
+    "Nhưng tôi đã đoán sai, chỗ phi thường của câu chuyện này lại nằm ở đoạn kết. Nhà vua này không đi theo lối mòn, ngài ban một mệnh lệnh, mời người dân cả nước đến nghe người lính kèn kể về thân thế của mình, để tất cả mọi người đến nghe nỗi buồn thương của anh. Ngày qua ngày, chàng trai không ngừng kể, mọi người không ngừng nghe; hễ tiếng kèn ấy vang lên là mọi người lại xúm quanh anh, lặng lẽ lắng nghe. Cứ thế, chẳng biết từ lúc nào, tiếng kèn của anh không còn trầm buồn, thê lương như trước nữa. Rồi lại chẳng biết từ khi nào, tiếng kèn ấy trở nên vui tươi, vang vọng, tràn đầy sức sống.",
+    "Cái gọi là cảnh giới mới, tôi nghĩ ít nhất có hai mặt. Một là nhận ra tầm quan trọng của tình yêu thương; hai là nghịch cảnh không thể không có, thứ cuối cùng có thể chống chọi lại nó là tình thương giữa người với người. Tình thương nào? Là việc nhà vua gả công chúa cho chàng lính kèn, hay là nói với anh rằng nghịch cảnh là vĩnh hằng, chỉ có bình tĩnh đối mặt với nó? Phải nói là cả hai, nhưng cách trước là truyền máu tạm thời, còn cách sau là giúp anh khôi phục khả năng tự tạo máu của chính mình. Cách sau mới là sự cứu giúp tận gốc; nó không cầu niềm vui, sự thỏa mãn nhất thời, cũng không tin rằng vì vận may ập đến mà từ đó nghịch cảnh sẽ không tìm đến anh nữa; nó nói rằng: nghịch cảnh đến rồi, mọi người ở bên anh, nhưng không ai có thể khiến nghịch cảnh biến mất, mỗi người đều phải tự mình lấy hết can đảm, bình tĩnh đối mặt với nó.",
+    "Phần hai",
+    "Tôi kính trọng căn bệnh của tôi",
+    "Có lần, một phóng viên hỏi tôi: Anh có thái độ thế nào với căn bệnh của mình? Tôi nghĩ mãi mà không tìm ra được một từ thích hợp, dường như nói gì cũng không đúng, nói gì cũng vô ích; cuối cùng tôi nói: là kính trọng. Điều này tuyệt nhiên không có nghĩa là tôi thích nó đến mức nào, nhưng bạn bảo phải nói gì đây? Ghét nó ư? Hận nó ư? Van xin nó mau cút đi ư? Chẳng có tác dụng gì cả, không phải tự chuốc lấy bẽ bàng thì cũng là tự rước lấy phiền não. Nhưng nếu bạn kính trọng nó, coi nó là một đối thủ mạnh, là sự tôi luyện mà số phận dành cho bạn, giống như một cao thủ cửu đẳng chỉ đích danh muốn cùng bạn chơi một ván cờ, thì tuy điều này có chút vị bất lực, nhưng bạn lại có thể thu được lợi ích từ đó, thêm trí tuệ từ đó, chẳng hạn như bị buộc phải nhìn thấu ý nghĩa của sinh mệnh. Một bên là tự chuốc phiền não, một bên là tăng thêm trí tuệ, chọn bên nào chẳng phải đã rõ rành rành sao?",
+    "Vì vậy, với nghịch cảnh, trước hết phải nói \"vâng\" với nó, chấp nhận nó, rồi thử đương đầu với nó, có thua cũng là thắng. Lại ví như cái chết, vừa nghe đến nó bạn đã cuống lên, tức giận, hoảng hốt, thì chắc chắn nó sẽ tìm đến bạn với bộ mặt càng dữ tợn hơn; còn nếu bạn bình tĩnh nhìn nó, thì thực ra nó cũng bình thường thôi. Chết là thế nào? Thì cũng như lúc bạn chưa sinh ra ấy thôi. Cái chết chẳng qua là dọa dẫm bạn khi bạn còn sống; ai nghĩ về nó mà run rẩy thì người ấy thua; ai nghĩ về nó mà thản nhiên bình tĩnh thì người ấy thắng. Đương nhiên không thể tự lừa dối mình, thực ra chuyện này bạn có muốn lừa cũng không lừa được. Nhưng nếu ngay từ đầu bạn đã nói \"không\" với nó, cứ khăng khăng nói \"không\" với nó, thì nó chẳng thể làm hại bạn. Thực ra mọi nghịch cảnh, kể cả cái chết, đều mượn chính nỗi hoảng sợ ấy của bạn để làm tổn thương bạn.",
+    "Tình yêu thương phải tự mình xây đắp",
+    "Đừng bao giờ khép kín bản thân, bạn phải gắng ép mình bước ra ngoài, không chỉ là thân thể bước ra khỏi căn phòng, mà tư tưởng và tâm trạng cũng phải bước ra, bước ra khỏi cái ngõ cụt, rồi chắc chắn bạn sẽ phát hiện ra một thế giới hoàn toàn khác. Tôi từng viết: địa ngục và thiên đường đều ở chốn nhân gian, địa ngục và thiên đường chẳng qua chỉ là những thái độ khác nhau của con người đối với sinh mệnh và đối với người khác mà thôi. Tình bạn, tình yêu, và việc mở rộng tâm hồn mình, chính là liều thuốc tốt nhất.",
+    "Nhưng tình yêu, hay tình bạn, không phải là món đồ ăn chín, mua về thái ra là có thể nhắm rượu ngay được; tình yêu và tình bạn đòi hỏi bạn phải xây đắp, đòi hỏi bạn phải tự mình dấn thân vào, trong lúc bạn cho đi thì đồng thời bạn cũng nhận lại, và chắc chắn bạn đã đổi sang một tâm trạng khác, có được một thái độ sống mới.",
+    "Thực ra, con người cả một đời có thể có được gì đây? Chỉ có quá trình, chỉ có tâm trạng rót đầy trong quá trình ấy. Vì vậy, nhất định phải rót đầy tâm trạng tốt. Nếu bạn trốn tránh nghịch cảnh — nhưng nghịch cảnh nào có tránh bạn — nếu bạn khép kín bản thân, nếu bạn suốt ngày nhìn cái gì cũng thấy chướng mắt, nếu bạn không sống trong tình yêu và tình bạn mà sống giữa sầu muộn và oán hận đan xen, thì bạn nghĩ mình có thể có tâm trạng tốt được sao? Thực ra, tình yêu, tình bạn, niềm vui, đều là một loại trí tuệ.",
+    "(Tác giả: Sử Thiết Sinh, trích từ \"Bắc Kinh Thanh niên báo\", có lược bớt)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "幽默少年的一天",
+   "paragraphs": [
+    "吉雷·米勒起床了，做好早餐的妈妈对他说：“昨晚你睡得好吗？亲爱的小宝贝？”",
+    "“不知道，妈妈，因为我睡着了。”",
+    "“妈妈，有一件事差点忘了，”正要上学的米勒说，“今天我们学校有一个小小的家长会，老师叫你务必去参加。”",
+    "“什么叫做小小的家长会？”",
+    "“就是只有老师和你两个人开会的意思。”",
+    "原来，米勒在学校闯了祸，老师要找他妈妈谈谈，他不敢直言相告，便编出所谓“小小家长会”的说法。",
+    "在上学的路上，米勒想起身上没了零花钱，这时，刚好有一个似曾相识的大人走过来，米勒迎上去说：“早上好，叔叔，你可不可以给我5块钱，让我和我的家人团聚？”",
+    "“好吧，你的家人在哪儿？”",
+    "“他们在下一个站台旁的槟榔店里。”",
+    "在植物课上，老师问：“这种水果什么时候采摘最好？”",
+    "米勒的同学举了手，但站起来时却不知该怎么回答，用求援的眼神望着米勒。",
+    "“主人不在的时候。”米勒大声告诉同桌。",
+    "同学们听了拍手称快，老师便点米勒的名，让他回答下一个问题：“防止食物坏掉的最好方法是什么？聪明的米勒。”",
+    "“吃掉。”米勒说。",
+    "“哈哈——哈哈——”教室里又爆发出一片欢叫声。米勒成了他们的答题英雄。",
+    "这样类似的回答，几乎在每一堂课上都发生。在米勒的带动下，同学们都学会了积极回答问题。例如：",
+    "“不能冷冻的液体是什么？”“热水。”",
+    "“为什么自由女神像站在纽约港口？”“因为她不能坐下来。”",
+    "“17世纪的科学家有什么共同特性？”“他们都死了。”",
+    "在体育活动时，米勒跑到老师那儿说：“我哥哥的帽子丢了。”",
+    "老师问他：“你哥哥的帽子丢了，你哭什么？”",
+    "“它丢的时候是我戴着的。”",
+    "放学前，米勒来到一个女同学面前：“下午你用不用水彩？可不可以借给我用？”",
+    "那女孩说：“对不起，米勒，下午我要用。”",
+    "“那好，你就没有时间用网球拍了，我向你借网球拍好了。”",
+    "回到家里，米勒伤心极了：“妈妈，我把梯子弄倒了。”",
+    "妈妈安慰他说：“没有关系，去告诉爸爸把它扶起来就好了，孩子。”",
+    "“但是，爸爸本来是在梯子顶上的。”",
+    "吃晚餐的时候，隔壁那个破嗓子的声音又传来了。",
+    "“你为什么说真希望他去电视上唱？你不是被他烦死了吗？”",
+    "“是啊。”米勒说，“如果他是在电视上唱，我就可以马上关掉。”",
+    "睡觉前，米勒同哥哥玩时打破了花瓶，哥哥很害怕，米勒却说：“看我的。”",
+    "米勒跑到大厅，告诉正在看电视的妈妈：“我和哥哥发明了一种方法，妈妈，你十几年来，一直担心那个花瓶，从今以后你再不用担心了。”",
+    "“什么方法？”",
+    "“这是一个秘密。”说完，米勒跑进了卧房。",
+    "（摘自《读者》，有改动）"
+   ],
+   "translations": [
+    "Jerry Miller thức dậy, mẹ cậu đã làm xong bữa sáng, hỏi cậu: \"Tối qua con ngủ có ngon không, cục cưng của mẹ?\"",
+    "\"Con không biết, mẹ ạ, vì con ngủ mất rồi.\"",
+    "\"Mẹ ơi, có một việc con suýt quên,\" Miller sắp đi học nói, \"hôm nay trường con có một buổi họp phụ huynh nho nhỏ, cô giáo bảo mẹ nhất định phải đến dự.\"",
+    "\"Họp phụ huynh nho nhỏ là thế nào?\"",
+    "\"Tức là chỉ có cô giáo và mẹ, hai người họp với nhau thôi.\"",
+    "Thì ra Miller gây chuyện ở trường, cô giáo muốn gặp mẹ cậu nói chuyện, cậu không dám nói thẳng, bèn bịa ra cái gọi là \"họp phụ huynh nho nhỏ\".",
+    "Trên đường đến trường, Miller nhớ ra trong người không còn tiền tiêu vặt, đúng lúc ấy có một người lớn trông quen quen đi tới, Miller chạy lại đón và nói: \"Chào buổi sáng chú, chú có thể cho cháu 5 đồng để cháu được đoàn tụ với gia đình không ạ?\"",
+    "\"Được thôi, gia đình cháu ở đâu?\"",
+    "\"Họ ở trong tiệm cau cạnh trạm xe tiếp theo ạ.\"",
+    "Trong giờ học thực vật, cô giáo hỏi: \"Loại quả này hái lúc nào là tốt nhất?\"",
+    "Một bạn cùng lớp của Miller giơ tay, nhưng khi đứng dậy lại không biết trả lời thế nào, bèn đưa mắt cầu cứu nhìn Miller.",
+    "\"Lúc chủ vườn vắng nhà.\" Miller nói to với bạn cùng bàn.",
+    "Cả lớp nghe xong vỗ tay khoái chí, cô giáo liền gọi tên Miller, bảo cậu trả lời câu hỏi tiếp theo: \"Cách tốt nhất để thức ăn không bị hỏng là gì? Miller thông minh.\"",
+    "\"Ăn hết đi ạ.\" Miller nói.",
+    "\"Ha ha — ha ha —\" Cả lớp lại bùng lên một tràng reo cười. Miller trở thành người hùng trả lời câu hỏi của các bạn.",
+    "Những câu trả lời tương tự như thế xảy ra gần như trong mọi tiết học. Được Miller dẫn dắt, các bạn trong lớp đều học được cách tích cực trả lời câu hỏi. Chẳng hạn:",
+    "\"Chất lỏng nào không thể làm đông lạnh?\" \"Nước nóng.\"",
+    "\"Vì sao tượng Nữ thần Tự do đứng ở cảng New York?\" \"Vì bà ấy không ngồi xuống được.\"",
+    "\"Các nhà khoa học thế kỷ 17 có đặc điểm chung gì?\" \"Họ đều chết cả rồi.\"",
+    "Trong giờ hoạt động thể dục, Miller chạy đến chỗ thầy giáo nói: \"Mũ của anh trai em bị mất rồi.\"",
+    "Thầy hỏi cậu: \"Mũ của anh trai em mất, sao em lại khóc?\"",
+    "\"Lúc nó bị mất là em đang đội ạ.\"",
+    "Trước giờ tan học, Miller đến trước mặt một bạn nữ: \"Chiều nay cậu có dùng màu nước không? Cho tớ mượn được không?\"",
+    "Cô bé ấy nói: \"Xin lỗi Miller, chiều nay tớ phải dùng.\"",
+    "\"Thế thì được, vậy cậu sẽ không có thời gian dùng vợt tennis, tớ mượn cậu cây vợt tennis vậy.\"",
+    "Về đến nhà, Miller buồn rầu hết sức: \"Mẹ ơi, con làm đổ cái thang rồi.\"",
+    "Mẹ an ủi cậu: \"Không sao đâu con, đi bảo bố dựng nó lên là được, con ạ.\"",
+    "\"Nhưng mà bố đang ở trên đỉnh thang mà mẹ.\"",
+    "Lúc ăn tối, giọng hát khàn đặc của ông hàng xóm lại vọng sang.",
+    "\"Sao con lại bảo thật mong ông ấy lên ti-vi hát? Chẳng phải con bị ông ấy làm phiền chết đi được sao?\"",
+    "\"Đúng thế ạ,\" Miller nói, \"nếu ông ấy hát trên ti-vi thì con có thể tắt ngay.\"",
+    "Trước khi đi ngủ, Miller chơi với anh trai thì làm vỡ chiếc bình hoa, anh trai rất sợ, Miller lại nói: \"Xem em đây.\"",
+    "Miller chạy ra phòng khách, nói với mẹ đang xem ti-vi: \"Con với anh đã nghĩ ra một cách, mẹ ơi, mười mấy năm nay mẹ lúc nào cũng lo cho cái bình hoa ấy, từ nay về sau mẹ không cần lo nữa đâu.\"",
+    "\"Cách gì thế?\"",
+    "\"Đó là một bí mật.\" Nói xong, Miller chạy vào phòng ngủ.",
+    "(Trích từ \"Độc giả\", có sửa đổi)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "难免 (khó tránh khỏi)",
+   "structure": "难免 + V；是难免的；在所难免；难免的 + N",
+   "explanation": "难免 là hình dung từ, nghĩa là \"không dễ tránh được\". Chủ yếu đứng trước động từ; cũng hay nói \"是难免的\", \"在所难免\"; khi bổ nghĩa cho danh từ phải thêm \"的\". Liên hệ 1 — 未免: phó từ, biểu thị không tán thành với một tình huống nào đó, thiên về đánh giá, giọng khá nhẹ nhàng, uyển chuyển, thường đi với \"有点儿、有些、太、过于\" (khỏi phải nói là hơi…, có phần…). Liên hệ 2 — 不免: phó từ, nghĩa là \"không tránh khỏi\", biểu thị vì nguyên nhân nào đó mà dẫn đến kết quả không lý tưởng; thường dùng ở vế sau, chỉ bổ nghĩa cho động từ, hình dung từ đa âm tiết ở dạng khẳng định.",
+   "examples": [
+    {
+     "zh": "同是生活在这个世界上，谁的生活中都难免有些艰难，……",
+     "vi": "Cùng sống trên thế giới này, cuộc sống của ai cũng khó tránh khỏi ít nhiều gian nan…"
+    },
+    {
+     "zh": "考试的时候粗心大意，就难免会出现错误。",
+     "vi": "Lúc thi mà cẩu thả thì khó tránh khỏi mắc lỗi."
+    },
+    {
+     "zh": "犯错误是难免的，关键是发现犯错误以后要及时改正。",
+     "vi": "Mắc lỗi là điều khó tránh, quan trọng là phát hiện ra lỗi rồi thì phải kịp thời sửa chữa."
+    },
+    {
+     "zh": "这篇文章内容不错，只是对于我们的报纸来说，篇幅未免太长了。",
+     "vi": "Bài viết này nội dung khá hay, chỉ có điều đối với tờ báo của chúng tôi thì độ dài có phần quá dài."
+    },
+    {
+     "zh": "今年我买了电脑和汽车，花了很多钱，手头不免有些紧张。",
+     "vi": "Năm nay tôi mua máy tính và ô tô, tốn nhiều tiền, nên khó tránh khỏi hơi túng thiếu."
+    }
+   ]
+  },
+  {
+   "point": "岂 (lẽ nào, há)",
+   "structure": "岂 + 可/能/敢/是…？(phủ định)；岂 + 不/非/不是…？(khẳng định)",
+   "explanation": "岂 là phó từ, nghĩa là \"难道; 哪; 怎么\" (lẽ nào, sao lại), chủ yếu dùng trong văn viết. Dùng trong câu khẳng định mang ngữ khí phản vấn, thường đi với \"可、能、敢、是\", biểu thị phủ định; dùng trong câu phủ định mang ngữ khí phản vấn, thường đi với \"不、非、不是\", biểu thị khẳng định.",
+   "examples": [
+    {
+     "zh": "否则人生岂不就太简单了？",
+     "vi": "Nếu không thì đời người há chẳng phải quá đơn giản sao?"
+    },
+    {
+     "zh": "对我来说，信誉像生命一样重要。做人岂可失信于人？",
+     "vi": "Với tôi, chữ tín quan trọng như sinh mạng. Làm người sao có thể thất tín với người khác?"
+    },
+    {
+     "zh": "环境被破坏了，需要很长时间才能恢复，岂是十天半月就能解决的？",
+     "vi": "Môi trường bị phá hoại cần rất lâu mới hồi phục được, há phải chuyện mười ngày nửa tháng là giải quyết xong?"
+    },
+    {
+     "zh": "这样做岂不是更好？",
+     "vi": "Làm như vậy há chẳng phải tốt hơn sao?"
+    },
+    {
+     "zh": "英语没有学好还想去考博士，岂非白日做梦？",
+     "vi": "Tiếng Anh chưa học tốt mà đã muốn thi tiến sĩ, há chẳng phải nằm mơ giữa ban ngày?"
+    }
+   ]
+  },
+  {
+   "point": "形容词 + 之极 (cực kỳ, … vô cùng)",
+   "structure": "Adj + 之极",
+   "explanation": "\"Hình dung từ + 之极\" biểu thị mức độ rất sâu, rất cao (… đến cực điểm, vô cùng …).",
+   "examples": [
+    {
+     "zh": "年轻号手痛苦之极，便离开家乡，四处漂泊。",
+     "vi": "Chàng lính kèn trẻ đau khổ tột cùng, bèn rời quê hương, phiêu bạt khắp nơi."
+    },
+    {
+     "zh": "这场时装表演中的模特漂亮之极，让人大过眼瘾。",
+     "vi": "Các người mẫu trong buổi trình diễn thời trang này đẹp vô cùng, khiến người xem được một phen mãn nhãn."
+    },
+    {
+     "zh": "我小时候住过的那个村庄偏僻之极，连汽车都不通。",
+     "vi": "Ngôi làng hồi nhỏ tôi sống hẻo lánh cực kỳ, đến ô tô cũng không vào được."
+    },
+    {
+     "zh": "狗是一种聪明之极的动物，是人类的好朋友、好帮手。",
+     "vi": "Chó là loài vật vô cùng thông minh, là bạn tốt, trợ thủ đắc lực của con người."
+    }
+   ]
+  },
+  {
+   "point": "无非 (chẳng qua là, không ngoài)",
+   "structure": "无非 + (是) …",
+   "explanation": "无非 là phó từ, biểu thị không vượt ra ngoài phạm vi mà người nói đã xác định, tương đương \"只不过、不外乎\" (chẳng qua chỉ là, không ngoài). Thường dùng khi muốn nói giảm, nói nhẹ sự việc.",
+   "examples": [
+    {
+     "zh": "接下来无非是国王很喜欢这个年轻号手，……",
+     "vi": "Tiếp theo chẳng qua là nhà vua rất quý chàng lính kèn trẻ…"
+    },
+    {
+     "zh": "我说这些话，无非是想提醒你一下，没有别的意思。",
+     "vi": "Tôi nói những lời này chẳng qua là muốn nhắc nhở anh một chút, không có ý gì khác."
+    },
+    {
+     "zh": "她所谓的幸福无非是吃好玩好罢了。",
+     "vi": "Cái gọi là hạnh phúc của cô ấy chẳng qua chỉ là ăn ngon chơi vui mà thôi."
+    },
+    {
+     "zh": "男人们在一起，无非谈些运动、饮食之类的内容。",
+     "vi": "Đàn ông ngồi với nhau thì cũng chỉ bàn chuyện thể thao, ăn uống các kiểu."
+    },
+    {
+     "zh": "我对这个节目没什么兴趣，每次无非请几个明星一起做做游戏、开开玩笑而已。",
+     "vi": "Tôi chẳng hứng thú gì với chương trình này, lần nào cũng chỉ mời vài ngôi sao đến chơi trò chơi, đùa giỡn mà thôi."
+    }
+   ]
+  },
+  {
+   "point": "从中 (từ trong đó)",
+   "structure": "从中 + V",
+   "explanation": "从中 là phó từ, nghĩa là \"ở giữa, trong đó\" — từ trong sự việc/quá trình đó (mà thu được, rút ra…).",
+   "examples": [
+    {
+     "zh": "这虽然有点无可奈何的味道，但你却能从中获益，从中增添智慧，……",
+     "vi": "Điều này tuy có chút vị bất lực, nhưng bạn lại có thể thu được lợi ích từ đó, thêm trí tuệ từ đó…"
+    },
+    {
+     "zh": "他擅自挪用公款去做自己的生意，从中谋取暴利。",
+     "vi": "Hắn tự ý biển thủ công quỹ để làm ăn riêng, từ đó kiếm lời bất chính."
+    },
+    {
+     "zh": "上次谈恋爱失败后，他从中吸取了教训，这次就有经验多了。",
+     "vi": "Sau lần yêu đương thất bại trước, anh ấy đã rút ra bài học, lần này có kinh nghiệm hơn nhiều."
+    },
+    {
+     "zh": "要学好一个国家的语言，必须了解那个国家的文化，因为我们可以从中知道很多事情的来龙去脉。",
+     "vi": "Muốn học giỏi ngôn ngữ của một nước thì phải hiểu văn hóa nước đó, vì từ đó ta biết được đầu đuôi ngọn ngành của nhiều sự việc."
+    }
+   ]
+  },
+  {
+   "point": "交加 (cùng ập đến, đan xen)",
+   "structure": "N1N2 + 交加 (风雨交加 / 贫病交加 / 惊喜交加…)",
+   "explanation": "交加 là động từ, chỉ hai sự vật cùng xuất hiện hoặc cùng lúc đè lên một người. Thường dùng trong văn viết. Ví dụ: 风雪交加, 风雨交加, 雷电交加, 贫困交加, 悲喜交加, 喜忧交加, 爱恨交加, 贫病交加, 惊喜交加…",
+   "examples": [
+    {
+     "zh": "你要是不在爱和友谊之中，而是在愁恨交加之中，你想你能有什么好心情呢？",
+     "vi": "Nếu bạn không sống trong tình yêu và tình bạn mà sống giữa sầu muộn và oán hận đan xen, bạn nghĩ mình có thể có tâm trạng tốt được sao?"
+    },
+    {
+     "zh": "窗外风雨交加，小王一杯清茶一本书，悠然自得地享受着这雨中的周末。",
+     "vi": "Ngoài cửa sổ mưa gió dập dồn, Tiểu Vương với một tách trà, một cuốn sách, thong thả tận hưởng ngày cuối tuần trong mưa."
+    },
+    {
+     "zh": "他原来是个百万富翁，自从开始吸毒以后，很快就把财富耗尽了，最后在贫病交加之中离开了这个世界。",
+     "vi": "Anh ta vốn là triệu phú, từ khi bắt đầu hút chích thì nhanh chóng tiêu sạch của cải, cuối cùng rời bỏ cõi đời trong cảnh vừa nghèo vừa bệnh."
+    },
+    {
+     "zh": "得知自己中了大奖，老李惊喜交加，半天都不敢相信这是真的。",
+     "vi": "Biết mình trúng giải lớn, ông Lý vừa kinh ngạc vừa mừng rỡ, mãi không dám tin đó là sự thật."
+    }
+   ]
+  }
+ ]
+}

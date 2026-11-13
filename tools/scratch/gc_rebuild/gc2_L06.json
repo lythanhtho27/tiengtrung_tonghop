@@ -1,0 +1,1277 @@
+{
+ "book": "gc2",
+ "lesson_num": 6,
+ "title": "球迷种种",
+ "pages": [
+  143,
+  167
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "热火朝天",
+   "py": "rè huǒ cháo tiān",
+   "pos": "",
+   "zh": "形容场面、情绪或气氛热烈高涨。",
+   "en": "",
+   "hv": "NHIỆT HỎA TRIỀU THIÊN",
+   "vi": "sôi nổi, rần rần khí thế",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "看客",
+   "py": "kànkè",
+   "pos": "名",
+   "zh": "〈方〉观众，多指看热闹的人。",
+   "en": "",
+   "hv": "KHÁN KHÁCH",
+   "vi": "người xem, khán giả (xem náo nhiệt)",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "斗殴",
+   "py": "dòu'ōu",
+   "pos": "动",
+   "zh": "互相打架。",
+   "en": "",
+   "hv": "ĐẤU ẨU",
+   "vi": "đánh nhau, ẩu đả",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "游行",
+   "py": "yóuxíng",
+   "pos": "动",
+   "zh": "广大群众为了庆祝、纪念、示威等目的在街上结队而行。",
+   "en": "",
+   "hv": "DU HÀNH",
+   "vi": "diễu hành, tuần hành",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "骂街",
+   "py": "mà jiē",
+   "pos": "",
+   "zh": "不指明对象当众漫骂。",
+   "en": "",
+   "hv": "MẠ NHAI",
+   "vi": "chửi đổng giữa phố",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "破裂",
+   "py": "pòliè",
+   "pos": "动",
+   "zh": "双方的感情、关系等遭破坏而分裂。(破裂——分裂)",
+   "en": "",
+   "hv": "PHÁ LIỆT",
+   "vi": "đổ vỡ, tan vỡ",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "拘留",
+   "py": "jūliú",
+   "pos": "动",
+   "zh": "公安或司法机关依法对某些人在一定时间内限制其自由。",
+   "en": "",
+   "hv": "CÂU LƯU",
+   "vi": "tạm giữ, câu lưu",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "坐牢",
+   "py": "zuòláo",
+   "pos": "",
+   "zh": "被关在监狱里。",
+   "en": "",
+   "hv": "TỌA LAO",
+   "vi": "ngồi tù",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "庆功",
+   "py": "qìnggōng",
+   "pos": "动",
+   "zh": "为成功的事而庆贺。",
+   "en": "",
+   "hv": "KHÁNH CÔNG",
+   "vi": "mừng công",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "大牌",
+   "py": "dàpái",
+   "pos": "形",
+   "zh": "指水平高、实力强的或名气大的。",
+   "en": "",
+   "hv": "ĐẠI BÀI",
+   "vi": "hàng đầu, nổi tiếng, ngôi sao",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "满腹怅然",
+   "py": "mǎn fù chàngrán",
+   "pos": "",
+   "zh": "心中充满失望的情绪。",
+   "en": "",
+   "hv": "MÃN PHÚC TRƯỚNG NHIÊN",
+   "vi": "lòng đầy thất vọng, buồn bã",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "烦",
+   "py": "fán",
+   "pos": "动",
+   "zh": "厌烦；厌恶。",
+   "en": "",
+   "hv": "PHIỀN",
+   "vi": "chán ngán, phát ngán",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "痴迷",
+   "py": "chīmí",
+   "pos": "形",
+   "zh": "沉迷；入迷。",
+   "en": "",
+   "hv": "SI MÊ",
+   "vi": "mê mẩn, say mê",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "正经",
+   "py": "zhèngjing",
+   "pos": "形",
+   "zh": "正式；正规；合格。",
+   "en": "",
+   "hv": "CHÍNH KINH",
+   "vi": "chính thức, đàng hoàng (thực thụ)",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "兴衰",
+   "py": "xīngshuāi",
+   "pos": "名",
+   "zh": "兴盛和衰亡。",
+   "en": "",
+   "hv": "HƯNG SUY",
+   "vi": "thịnh suy",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "相干",
+   "py": "xiānggān",
+   "pos": "动",
+   "zh": "互相关联；彼此牵连。(相干——相关)",
+   "en": "",
+   "hv": "TƯƠNG CAN",
+   "vi": "liên quan, dính dáng",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "波动",
+   "py": "bōdòng",
+   "pos": "动",
+   "zh": "起伏不定。",
+   "en": "",
+   "hv": "BA ĐỘNG",
+   "vi": "dao động, biến động",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "功利",
+   "py": "gōnglì",
+   "pos": "名",
+   "zh": "效能和利益。",
+   "en": "",
+   "hv": "CÔNG LỢI",
+   "vi": "lợi ích, vụ lợi",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "类型",
+   "py": "lèixíng",
+   "pos": "名",
+   "zh": "根据事物的性质、特点分成的类。",
+   "en": "",
+   "hv": "LOẠI HÌNH",
+   "vi": "loại, kiểu",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "天生",
+   "py": "tiānshēng",
+   "pos": "形",
+   "zh": "天然生成。",
+   "en": "",
+   "hv": "THIÊN SINH",
+   "vi": "bẩm sinh, trời sinh",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "里巷",
+   "py": "lǐxiàng",
+   "pos": "名",
+   "zh": "街巷；胡同。",
+   "en": "",
+   "hv": "LÝ HẠNG",
+   "vi": "ngõ xóm, ngõ hẻm",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "诸如此类",
+   "py": "zhūrú cǐlèi",
+   "pos": "",
+   "zh": "用于承接上文，意思是还有许多像这一类的。",
+   "en": "",
+   "hv": "CHƯ NHƯ THỬ LOẠI",
+   "vi": "những chuyện tương tự như thế",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "有限",
+   "py": "yǒuxiàn",
+   "pos": "形",
+   "zh": "有一定限度。",
+   "en": "",
+   "hv": "HỮU HẠN",
+   "vi": "có hạn",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "要命",
+   "py": "yàomìng",
+   "pos": "动",
+   "zh": "使人陷于困境，难于忍受和应付。",
+   "en": "",
+   "hv": "YẾU MỆNH",
+   "vi": "chết người, gay go (khó chịu nổi)",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "旁观者",
+   "py": "pángguānzhě",
+   "pos": "名",
+   "zh": "身在局外的人；从旁观察的人。",
+   "en": "",
+   "hv": "BÀNG QUAN GIẢ",
+   "vi": "người ngoài cuộc, người đứng xem",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "放声",
+   "py": "fàngshēng",
+   "pos": "副",
+   "zh": "放开喉咙；大声。",
+   "en": "",
+   "hv": "PHÓNG THANH",
+   "vi": "cất tiếng thật to, thả giọng",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "纵情",
+   "py": "zòngqíng",
+   "pos": "副",
+   "zh": "尽情。",
+   "en": "",
+   "hv": "TÚNG TÌNH",
+   "vi": "thoả thích, hết mình",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "莫大",
+   "py": "mòdà",
+   "pos": "形",
+   "zh": "没有更大于此的；最大的。",
+   "en": "",
+   "hv": "MẠC ĐẠI",
+   "vi": "lớn lao nhất, vô cùng lớn",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "氛围",
+   "py": "fēnwéi",
+   "pos": "名",
+   "zh": "周围的气氛和情调。",
+   "en": "",
+   "hv": "PHÂN VI",
+   "vi": "bầu không khí",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "次要",
+   "py": "cìyào",
+   "pos": "形",
+   "zh": "不太重要的。",
+   "en": "",
+   "hv": "THỨ YẾU",
+   "vi": "thứ yếu",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "惹事",
+   "py": "rě shì",
+   "pos": "",
+   "zh": "引起麻烦或祸害。",
+   "en": "",
+   "hv": "NHẠ SỰ",
+   "vi": "gây chuyện, gây rắc rối",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "由头",
+   "py": "yóutou",
+   "pos": "名",
+   "zh": "可作为借口的事。多用于口语。",
+   "en": "",
+   "hv": "DO ĐẦU",
+   "vi": "cái cớ",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "倘若",
+   "py": "tǎngruò",
+   "pos": "连",
+   "zh": "如果。",
+   "en": "",
+   "hv": "THẢNG NHƯỢC",
+   "vi": "nếu như",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "番",
+   "py": "fān",
+   "pos": "量",
+   "zh": "回；次；遍。",
+   "en": "",
+   "hv": "PHIÊN",
+   "vi": "lần, lượt, trận",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "若",
+   "py": "ruò",
+   "pos": "连",
+   "zh": "〈书〉如果；假如。",
+   "en": "",
+   "hv": "NHƯỢC",
+   "vi": "nếu",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "通",
+   "py": "tòng",
+   "pos": "量",
+   "zh": "用于动作。",
+   "en": "",
+   "hv": "THÔNG",
+   "vi": "trận, hồi (lượng từ cho động tác)",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "下意识",
+   "py": "xiàyìshí",
+   "pos": "名",
+   "zh": "心理学上指由一定条件引起的不知不觉的心理活动。也叫潜（qián）意识。",
+   "en": "",
+   "hv": "HẠ Ý THỨC",
+   "vi": "tiềm thức, vô thức",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "没准",
+   "py": "méizhǔnr",
+   "pos": "动",
+   "zh": "不一定；说不定。",
+   "en": "",
+   "hv": "MỘT CHUẨN",
+   "vi": "không chừng, biết đâu",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "挥动",
+   "py": "huīdòng",
+   "pos": "动",
+   "zh": "挥舞。",
+   "en": "",
+   "hv": "HUY ĐỘNG",
+   "vi": "vung, phất",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "呐喊",
+   "py": "nàhǎn",
+   "pos": "动",
+   "zh": "大声喊叫助威。",
+   "en": "",
+   "hv": "NỘT HẢM",
+   "vi": "hò hét cổ vũ",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "矿泉水",
+   "py": "kuàngquánshuǐ",
+   "pos": "名",
+   "zh": "含有较多对人体有益的矿物质的地下水。",
+   "en": "mineral water",
+   "hv": "KHOÁNG TUYỀN THỦY",
+   "vi": "nước khoáng",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "亦",
+   "py": "yì",
+   "pos": "副",
+   "zh": "〈书〉也；也是。",
+   "en": "",
+   "hv": "DIỆC",
+   "vi": "cũng",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "顿",
+   "py": "dùn",
+   "pos": "副",
+   "zh": "立刻；忽然。",
+   "en": "",
+   "hv": "ĐỐN",
+   "vi": "lập tức, bỗng chốc",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "私下里",
+   "py": "sīxiàlǐ",
+   "pos": "副",
+   "zh": "背地里。也说私下。",
+   "en": "",
+   "hv": "TƯ HẠ LÝ",
+   "vi": "thầm, trong bụng, riêng tư",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "口哨",
+   "py": "kǒushào",
+   "pos": "名",
+   "zh": "双唇合拢，中间留一小孔或把手指插在口内，使气流通过而发出的像口哨的声音。",
+   "en": "",
+   "hv": "KHẨU TIẾU",
+   "vi": "tiếng huýt sáo",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "唯一",
+   "py": "wéiyī",
+   "pos": "形",
+   "zh": "单一的；独一无二的。",
+   "en": "",
+   "hv": "DUY NHẤT",
+   "vi": "duy nhất",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "倘",
+   "py": "tǎng",
+   "pos": "连",
+   "zh": "倘若；假如。",
+   "en": "",
+   "hv": "THẢNG",
+   "vi": "nếu, giả như",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "非常",
+   "py": "fēicháng",
+   "pos": "形",
+   "zh": "异乎寻常的；特殊的。",
+   "en": "",
+   "hv": "PHI THƯỜNG",
+   "vi": "bất thường, đặc biệt",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "煽动",
+   "py": "shāndòng",
+   "pos": "动",
+   "zh": "鼓动（别人去做坏事）。",
+   "en": "",
+   "hv": "PHIẾN ĐỘNG",
+   "vi": "kích động, xúi giục",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "极端",
+   "py": "jíduān",
+   "pos": "名",
+   "zh": "事物达到的顶点。",
+   "en": "",
+   "hv": "CỰC ĐOAN",
+   "vi": "cực đoan, thái cực",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "附庸风雅",
+   "py": "fùyōng fēngyǎ",
+   "pos": "",
+   "zh": "为了装点门面而结交名士，从事有关文化的活动。",
+   "en": "",
+   "hv": "PHỤ DUNG PHONG NHÃ",
+   "vi": "học đòi phong nhã, làm sang",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "大款",
+   "py": "dàkuǎn",
+   "pos": "名",
+   "zh": "指拥有大量金钱的人。",
+   "en": "",
+   "hv": "ĐẠI KHOẢN",
+   "vi": "đại gia, người lắm tiền",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "字画",
+   "py": "zìhuà",
+   "pos": "名",
+   "zh": "指书法和国画。",
+   "en": "",
+   "hv": "TỰ HỌA",
+   "vi": "tranh chữ, thư hoạ",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "精装",
+   "py": "jīngzhuāng",
+   "pos": "形",
+   "zh": "书籍的精美的装订，一般指封面是硬壳的，区别于“平装”。",
+   "en": "",
+   "hv": "TINH TRANG",
+   "vi": "bìa cứng, đóng bìa đẹp",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "剥离",
+   "py": "bōlí",
+   "pos": "动",
+   "zh": "（组织、皮层、覆盖物等）脱落；分开。",
+   "en": "",
+   "hv": "BÁC LY",
+   "vi": "tách ra, bóc tách",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "出类拔萃",
+   "py": "chū lèi bá cuì",
+   "pos": "",
+   "zh": "形容超出同类之上。也说出类拔群、出群拔萃。",
+   "en": "",
+   "hv": "XUẤT LOẠI BẠT TỤY",
+   "vi": "xuất chúng, nổi trội",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "红火",
+   "py": "hónghuǒ",
+   "pos": "形",
+   "zh": "（长势）茂盛；（事业）兴旺；（气氛）热烈。",
+   "en": "",
+   "hv": "HỒNG HỎA",
+   "vi": "rầm rộ, thịnh vượng, sôi động",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "文人",
+   "py": "wénrén",
+   "pos": "名",
+   "zh": "读书人，多指会做诗文的读书人。",
+   "en": "",
+   "hv": "VĂN NHÂN",
+   "vi": "văn nhân, người cầm bút",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "谈资",
+   "py": "tánzī",
+   "pos": "名",
+   "zh": "谈话的资料。",
+   "en": "",
+   "hv": "ĐÀM TƯ",
+   "vi": "đề tài để bàn tán",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "风雅",
+   "py": "fēngyǎ",
+   "pos": "形",
+   "zh": "文雅，不粗俗。",
+   "en": "",
+   "hv": "PHONG NHÃ",
+   "vi": "phong nhã, tao nhã",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "花团锦簇",
+   "py": "huā tuán jǐn cù",
+   "pos": "",
+   "zh": "形容五彩缤纷、十分华丽的形象。",
+   "en": "",
+   "hv": "HOA ĐOÀN CẨM THỐC",
+   "vi": "hoa lệ rực rỡ, bóng bẩy",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "战略",
+   "py": "zhànlüè",
+   "pos": "名",
+   "zh": "指导战争全局的计划和策略，比喻决定全局的策略。",
+   "en": "",
+   "hv": "CHIẾN LƯỢC",
+   "vi": "chiến lược",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "战术",
+   "py": "zhànshù",
+   "pos": "名",
+   "zh": "进行战斗的原则和方法，比喻解决局部问题的方法。",
+   "en": "",
+   "hv": "CHIẾN THUẬT",
+   "vi": "chiến thuật",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "好斗",
+   "py": "hàodòu",
+   "pos": "动",
+   "zh": "喜欢争斗。",
+   "en": "",
+   "hv": "HIẾU ĐẤU",
+   "vi": "hiếu chiến, thích tranh đấu",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "凡是",
+   "py": "fánshì",
+   "pos": "副",
+   "zh": "总括一定范围里的一切。",
+   "en": "",
+   "hv": "PHÀM THỊ",
+   "vi": "phàm là, hễ là",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "阵营",
+   "py": "zhènyíng",
+   "pos": "名",
+   "zh": "为了共同的利益和目标而联合起来进行斗争的集团。",
+   "en": "",
+   "hv": "TRẬN DOANH",
+   "vi": "phe, trận tuyến",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "不单",
+   "py": "bùdān",
+   "pos": "副",
+   "zh": "不只；不仅仅。",
+   "en": "",
+   "hv": "BẤT ĐƠN",
+   "vi": "không chỉ",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "蟋蟀",
+   "py": "xīshuài",
+   "pos": "名",
+   "zh": "昆虫，身体黑褐色，触角很长，后腿粗大，善于跳跃。也叫促织，有的地区叫蛐蛐儿。",
+   "en": "",
+   "hv": "TẤT SUẤT",
+   "vi": "con dế",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "激烈",
+   "py": "jīliè",
+   "pos": "形",
+   "zh": "（动作、言论等）剧烈。(激烈——剧烈——强烈——猛烈)",
+   "en": "",
+   "hv": "KÍCH LIỆT",
+   "vi": "kịch liệt, quyết liệt",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "壮阔",
+   "py": "zhuàngkuò",
+   "pos": "形",
+   "zh": "宏伟；宏大。",
+   "en": "",
+   "hv": "TRÁNG KHOÁT",
+   "vi": "hùng tráng, rộng lớn",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "来劲",
+   "py": "láijìn",
+   "pos": "形",
+   "zh": "使人振奋。",
+   "en": "",
+   "hv": "LAI KÌNH",
+   "vi": "hăng hái, phấn khích",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "爆发",
+   "py": "bàofā",
+   "pos": "动",
+   "zh": "（力量、情绪等）忽然发作；（事变）突然发生。",
+   "en": "",
+   "hv": "BẠO PHÁT",
+   "vi": "bùng nổ",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "局势",
+   "py": "júshì",
+   "pos": "名",
+   "zh": "（政治、军事等）一个时期内的发展情况。",
+   "en": "",
+   "hv": "CỤC THẾ",
+   "vi": "cục diện, tình hình",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "兴致",
+   "py": "xìngzhì",
+   "pos": "名",
+   "zh": "情趣，兴趣。(兴致——兴趣)",
+   "en": "",
+   "hv": "HỨNG TRÍ",
+   "vi": "hứng thú",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "驻足一观",
+   "py": "zhù zú yì guān",
+   "pos": "",
+   "zh": "停下脚步看一看。",
+   "en": "",
+   "hv": "TRÚ TÚC NHẤT QUAN",
+   "vi": "dừng chân xem một chút",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "狂热",
+   "py": "kuángrè",
+   "pos": "形",
+   "zh": "一时所激起的极度热情。",
+   "en": "",
+   "hv": "CUỒNG NHIỆT",
+   "vi": "cuồng nhiệt",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "寄托",
+   "py": "jìtuō",
+   "pos": "动",
+   "zh": "托付；把理想、希望、感情等放在（某人或某种事物上）。",
+   "en": "",
+   "hv": "KÝ THÁC",
+   "vi": "gửi gắm",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "错过",
+   "py": "cuòguò",
+   "pos": "动",
+   "zh": "失去（时机、对象）。",
+   "en": "",
+   "hv": "THÁC QUÁ",
+   "vi": "bỏ lỡ",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "原本",
+   "py": "yuánběn",
+   "pos": "副",
+   "zh": "原来；本来。",
+   "en": "",
+   "hv": "NGUYÊN BẢN",
+   "vi": "vốn dĩ",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "一无所长",
+   "py": "yī wú suǒ cháng",
+   "pos": "",
+   "zh": "没有一点儿专长或长处。",
+   "en": "",
+   "hv": "NHẤT VÔ SỞ TRƯỜNG",
+   "vi": "chẳng có sở trường gì",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "成就",
+   "py": "chéngjiù",
+   "pos": "动",
+   "zh": "完成（多指事业）。",
+   "en": "",
+   "hv": "THÀNH TỰU",
+   "vi": "làm nên, thành đạt",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "不甘",
+   "py": "bùgān",
+   "pos": "动",
+   "zh": "不甘心；不情愿。",
+   "en": "",
+   "hv": "BẤT CAM",
+   "vi": "không cam lòng",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "情谊",
+   "py": "qíngyì",
+   "pos": "名",
+   "zh": "相互间的感情和友谊。",
+   "en": "",
+   "hv": "TÌNH NGHỊ",
+   "vi": "tình nghĩa, tình bạn",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "支点",
+   "py": "zhīdiǎn",
+   "pos": "名",
+   "zh": "比喻事物的中心或关键。",
+   "en": "",
+   "hv": "CHI ĐIỂM",
+   "vi": "điểm tựa",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "致敬",
+   "py": "zhìjìng",
+   "pos": "动",
+   "zh": "向人敬礼或表示敬意。",
+   "en": "",
+   "hv": "TRÍ KÍNH",
+   "vi": "bày tỏ lòng kính trọng, chào",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "加倍",
+   "py": "jiābèi",
+   "pos": "副",
+   "zh": "泛指程度比原来深得多。",
+   "en": "",
+   "hv": "GIA BỘI",
+   "vi": "gấp bội, hơn hẳn",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "纯粹",
+   "py": "chúncuì",
+   "pos": "副",
+   "zh": "单纯地；完全；一点也不错。",
+   "en": "",
+   "hv": "THUẦN TÚY",
+   "vi": "thuần tuý, hoàn toàn",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "消遣",
+   "py": "xiāoqiǎn",
+   "pos": "动",
+   "zh": "用自己感觉愉快的事来度过空闲时间；消闲解闷。",
+   "en": "",
+   "hv": "TIÊU KHIỂN",
+   "vi": "tiêu khiển, giải trí",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "纸上谈兵",
+   "py": "zhǐ shàng tán bīng",
+   "pos": "",
+   "zh": "在文字上谈用兵策略，比喻不联系实际情况，空发议论。",
+   "en": "",
+   "hv": "CHỈ THƯỢNG ĐÀM BINH",
+   "vi": "bàn binh trên giấy, lý thuyết suông",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "篇幅",
+   "py": "piānfú",
+   "pos": "名",
+   "zh": "文章的长短。",
+   "en": "",
+   "hv": "THIÊN PHÚC",
+   "vi": "độ dài bài viết",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "列举",
+   "py": "lièjǔ",
+   "pos": "动",
+   "zh": "一个一个地举出来。",
+   "en": "",
+   "hv": "LIỆT CỬ",
+   "vi": "liệt kê, kể ra",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "热诚",
+   "py": "rèchéng",
+   "pos": "形",
+   "zh": "热情诚恳。",
+   "en": "",
+   "hv": "NHIỆT THÀNH",
+   "vi": "nhiệt thành",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "包容",
+   "py": "bāoróng",
+   "pos": "动",
+   "zh": "容纳。",
+   "en": "",
+   "hv": "BAO DUNG",
+   "vi": "bao dung, dung nạp",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "形形色色",
+   "py": "xíngxíngsèsè",
+   "pos": "形",
+   "zh": "各种各样；形容事物种类繁多。",
+   "en": "",
+   "hv": "HÌNH HÌNH SẮC SẮC",
+   "vi": "muôn hình muôn vẻ",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "富于",
+   "py": "fùyú",
+   "pos": "动",
+   "zh": "充分具有某种能力、特性等。",
+   "en": "",
+   "hv": "PHÚ Ư",
+   "vi": "giàu, đầy (tính chất gì)",
+   "proper": false
+  },
+  {
+   "n": 96,
+   "hz": "魅力",
+   "py": "mèilì",
+   "pos": "名",
+   "zh": "特别吸引人、感动人的力量（多用于积极方面，说明美好的、值得倾慕的人或事物）。",
+   "en": "",
+   "hv": "MỊ LỰC",
+   "vi": "sức hấp dẫn, sức quyến rũ",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "球迷种种",
+   "paragraphs": [
+    "第一部分",
+    "有时候觉得球迷是世上最有趣的一群人。人家打得热火朝天，你只不过是个看客，你倒是坐一边急得又是喊又是唱又是跳的，甚至吵架甚至斗殴甚至游行骂街，弄得不好还婚姻破裂还拘留坐牢。球员们或庆功或分钱或同京都大牌的女歌星们对唱卡拉OK时，你却是满腹怅然，不停地回想那个球是怎么踢进的或是那个球怎么就没踢进，为了你脑子里想不通的那个球，你几天都吃睡不香，见人便谈，直谈得认识你的人都烦了你，拿你当了“足球祥林嫂”。而实际上，真甩给你一个球，你抬脚迎上，多半会是球没踢着，倒把鞋踢飞了。可你却对足球的痴迷远比人家正经打球的人还胜过一千倍。那一切胜败兴衰又与你有什么相干呢？想来想去都找不出与你有关系之处，任何一场球赛的比分都不会因你的存在或不存在而有所波动，更谈不上改变。",
+    "正是因为没有什么功利，大家才都说球迷最可爱。但球迷却是有很多类型的，不是人人都是真正的球迷。",
+    "球迷之第一种是喜欢热闹型。有一种人是天生就喜欢看热闹的。他不光喜欢看球，而是什么热闹都喜欢看，夫妻吵架，小孩斗殴，里巷里狗追得鸡鸭乱跑以及街上的车祸、菜场的叫骂，诸如此类，他都是热情的观众。但生活中的热闹总是有限，而最要命的是这些热闹很难有让旁观者喝彩的机会。于是足球赛便给这类人提供了极好的场地。再没有比足球赛更大的热闹了，人多时间长且不说，还可以由人放声地叫喊和狂呼。对于一个好看热闹的人来说，能在这种可以纵情欢乐的热闹场所待上一两个小时，真是人生莫大的快乐，这种氛围远比足球本身有意思得多。至于球赢球输便全是次要的了。我觉得球迷中最大量的是这样一种类型的人。这一类型的人因为是为自己快乐而来，所以一般看球都不会惹事，也可以说是属于安全型球迷。",
+    "球迷之第二种是情绪宣泄型。人有情绪是非常需要宣泄的。但宣泄情绪也需要由头和场合。倘若宣泄得不是地方，那只会更加倒霉，比方把火撒在老婆头上或是在公车上狂笑一番，其结果都不太妙。但若到球场上去，情况就不一样了。放开嗓子乱喊一通，对中看不中用的球员骂上几句（下意识里没准是为给自己气受的领导准备的话），或是挥动着小旗子呐喊数声，手里若有个矿泉水瓶亦冒险扔它出去，球赛结束时，顿觉浑身轻松。私下里觉得已经把该骂领导的话都骂出去了或是把自己该欢呼的口号也喊出去了，于是内心变得平静舒服。吹着口哨回家时，深觉这种好心情是足球给的。其实，很可能连哪个队赢了哪个队输了、唯一一个进球是谁进的也没记住。这类球迷人数不少，倘碰上非常情况和有人煽动，容易走极端，烧汽车、追打球员，诸如此类的事都敢干——谁让他进球场前心里就有情绪呢？惹上他还能不疯狂？",
+    "第二部分",
+    "球迷之第三种是附庸风雅型。这跟一些当官的或大款喜欢字画、喜欢买精装书放在客厅里一样，只是把看足球当做一种时髦，仿佛当了球迷，便可以将自己从同类人中剥离出来，显得出类拔萃了一些。这类人在足球不红火时，一定不是球迷。所以我说他们所爱好的本不是足球，而是时髦。这类人中相当多的是文人。这些文人可能也不看什么球，只是看看球报上的消息，知道几个球星的名字，供聊天时做谈资。风雅程度高一点的，还喜欢写点关于足球的文章。虽说对球事只知皮毛，倒也能把文章写得花团锦簇，让人觉得国际足球形势和赛场上的战略战术都在这些文人掌握之中，而不在足球官员和足球教练手上。这的确是文人最大的本事。",
+    "球迷之第四种是战争爱好型，也可以说是好斗型。这群人对于凡是分为两大阵营相竞争的东西都有兴趣，比方斗鸡斗蟋蟀斗牛以及蚂蚁打架以及两人下棋以及战争电影，诸如此类，不单只爱看足球。对这种“争斗”，场面越是激烈壮阔他们越来劲，我总怀疑他们是一群盼望着世界大战再次爆发的人。只是现在的世界局势全都朝着和平的方向发展，他们也只好将好战之兴致全都放在了足球上。因为在和平时期，最大的、最激烈的并且可以让他们自在而合法驻足一观的“战争”似乎只有足球。于是他们全都成了狂热的球迷。",
+    "球迷之第五种是生命寄托型。有些人一生什么事业都没有，或是因为错过机会，或是原本就一无所长。他们无法成就自己，但心又有所不甘，总想为自己找到一个寄托之地。于是足球在他们眼前出现了。他们把少年时代留着准备成就事业的热情和精力，全都投入到足球里去了。足球使他们感到生活的乐趣，感到自己的价值，感到人间的情谊，于是足球就成为他们生命的支点。当然，再也没有比当球迷更省事的事了。不费力气（至少是不费自己不想费的力气），又可以看球（自己本来就爱看），还能有低水平的足球爱好者向他们欢呼致敬。一想到玩都能玩出一片天地来，他们实在感到满足，于是更加加倍地热爱足球。如果没有足球，他们会觉得人生真是无趣。",
+    "球迷类型有很多很多，如纯粹消遣型、纸上谈兵型等等，篇幅所限，无法一一列举。但要说的是，真正的球迷其实并不很多。好在不管是因为什么去看球，足球却总是热诚地欢迎人们成为球迷，并且愿意自己的球迷包容形形色色的人，因为只有这样，球迷队伍才能更加有趣，更加富于魅力。",
+    "（作者：方方　选自《方方散文》，浙江文艺出版社）"
+   ],
+   "translations": [
+    "Phần một",
+    "Có lúc tôi thấy cổ động viên bóng đá là đám người thú vị nhất trên đời. Người ta đá rần rần khí thế, anh chẳng qua chỉ là kẻ đứng xem, vậy mà anh lại ngồi một bên sốt ruột đến mức vừa hò vừa hát vừa nhảy, thậm chí cãi nhau, thậm chí đánh nhau, thậm chí kéo nhau diễu hành chửi đổng ngoài phố, không khéo còn tan vỡ hôn nhân, bị tạm giữ, phải ngồi tù. Khi các cầu thủ hoặc mừng công, hoặc chia tiền thưởng, hoặc song ca karaoke với các nữ ca sĩ hạng sao ở kinh đô, thì anh lại lòng đầy buồn bã, không ngừng nghĩ lại xem quả bóng ấy đã được sút vào thế nào, hay quả bóng kia sao lại không vào, vì quả bóng mà đầu óc anh nghĩ mãi không thông ấy, anh mấy ngày liền ăn không ngon ngủ không yên, gặp ai cũng kể, kể đến mức những người quen anh đều phát ngán, coi anh như một “bà Tường Lâm của làng bóng đá”. Mà trên thực tế, nếu thật sự có ai chuyền cho anh một quả bóng, anh nhấc chân đón lấy, thì phần nhiều là chẳng chạm được bóng mà chiếc giày lại văng mất. Thế nhưng nỗi mê bóng đá của anh lại hơn cả nghìn lần những người đá bóng thực thụ. Mọi chuyện thắng thua thịnh suy ấy thì liên quan gì đến anh chứ? Nghĩ tới nghĩ lui cũng chẳng tìm ra chỗ nào dính dáng đến anh; tỉ số của bất kỳ trận đấu nào cũng chẳng vì anh có mặt hay không mà dao động chút nào, càng không nói đến chuyện thay đổi.",
+    "Chính vì chẳng có chút vụ lợi nào nên mọi người mới đều nói cổ động viên là đáng yêu nhất. Nhưng cổ động viên lại có nhiều loại, không phải ai cũng là cổ động viên thực thụ.",
+    "Loại cổ động viên thứ nhất là kiểu thích náo nhiệt. Có một kiểu người bẩm sinh đã thích xem náo nhiệt. Anh ta không chỉ thích xem bóng đá mà chuyện náo nhiệt gì cũng thích xem: vợ chồng cãi nhau, trẻ con đánh nhau, chó trong ngõ đuổi gà vịt chạy tán loạn, cho đến tai nạn xe ngoài phố, tiếng chửi bới ở chợ, những chuyện tương tự như thế, anh ta đều là khán giả nhiệt tình. Nhưng chuyện náo nhiệt trong cuộc sống bao giờ cũng có hạn, mà gay go nhất là những chuyện náo nhiệt ấy hiếm khi cho người đứng xem cơ hội hò reo cổ vũ. Thế là trận bóng đá đã cung cấp cho loại người này một sân chơi tuyệt vời. Không có gì náo nhiệt hơn một trận bóng đá: người đông, thời gian dài thì khỏi phải nói, lại còn được tha hồ gào thét, reo hò hết cỡ. Với một người thích xem náo nhiệt, được ở lại một hai tiếng đồng hồ trong một nơi náo nhiệt có thể vui chơi thoả thích như thế quả là niềm vui lớn lao nhất đời, bầu không khí ấy thú vị hơn bản thân trận bóng nhiều. Còn thắng hay thua thì hoàn toàn là thứ yếu. Tôi nghĩ trong giới cổ động viên, đông nhất là kiểu người này. Kiểu người này vì đến để mua vui cho bản thân nên thường xem bóng không gây chuyện, cũng có thể nói là thuộc loại cổ động viên an toàn.",
+    "Loại cổ động viên thứ hai là kiểu xả cảm xúc. Con người có cảm xúc thì rất cần được giải toả. Nhưng giải toả cảm xúc cũng cần có cớ và có chỗ. Nếu xả không đúng chỗ thì chỉ càng thêm xui xẻo, chẳng hạn trút giận lên đầu vợ hay cười như điên trên xe buýt, kết quả đều chẳng hay ho gì. Nhưng nếu ra sân bóng thì khác hẳn. Cứ thả cổ họng mà la hét một trận, chửi vài câu những cầu thủ trông thì được mà dùng chẳng được (trong tiềm thức không chừng đó là những lời dành cho vị lãnh đạo hay làm mình tức), hoặc phất lá cờ nhỏ hò hét vài tiếng, nếu trong tay có chai nước khoáng cũng liều ném nó ra, đến khi trận đấu kết thúc liền thấy toàn thân nhẹ nhõm. Trong bụng thấy như đã chửi hết những lời đáng chửi lãnh đạo, hay đã hô hết những khẩu hiệu mình đáng được reo hò, thế là lòng trở nên bình thản dễ chịu. Huýt sáo trên đường về nhà, anh ta thấm thía rằng tâm trạng tốt này là do bóng đá mang lại. Thật ra, rất có thể ngay cả đội nào thắng đội nào thua, bàn thắng duy nhất do ai ghi anh ta cũng chẳng nhớ. Loại cổ động viên này không ít, nếu gặp tình huống bất thường và có kẻ kích động thì dễ đi đến cực đoan, đốt xe, đuổi đánh cầu thủ, những chuyện như thế đều dám làm — ai bảo trước khi vào sân trong lòng anh ta đã sẵn bực bội? Đụng đến anh ta thì sao mà không phát cuồng cho được?",
+    "Phần hai",
+    "Loại cổ động viên thứ ba là kiểu học đòi phong nhã. Cũng giống như một số quan chức hay đại gia thích tranh chữ, thích mua sách bìa cứng bày trong phòng khách, họ chỉ coi việc xem bóng đá là một thứ mốt, như thể làm cổ động viên là có thể tách mình ra khỏi đám người cùng loại, tỏ ra có phần xuất chúng. Những người này khi bóng đá không còn thịnh thì chắc chắn chẳng phải cổ động viên. Vì vậy tôi nói thứ họ yêu thích vốn không phải bóng đá mà là cái mốt. Trong số này khá nhiều người là văn nhân. Những văn nhân ấy có khi chẳng xem trận nào, chỉ đọc tin trên báo bóng đá, biết tên vài ngôi sao để làm đề tài lúc tán gẫu. Người phong nhã hơn chút nữa còn thích viết vài bài về bóng đá. Tuy về chuyện bóng đá chỉ biết sơ sơ bề ngoài, nhưng họ vẫn viết được những bài văn hoa mỹ rực rỡ, khiến người ta tưởng tình hình bóng đá thế giới và chiến lược chiến thuật trên sân đều nằm trong tay những văn nhân này chứ không phải trong tay các quan chức hay huấn luyện viên bóng đá. Đó quả thật là bản lĩnh lớn nhất của văn nhân.",
+    "Loại cổ động viên thứ tư là kiểu yêu chiến tranh, cũng có thể gọi là kiểu hiếu chiến. Nhóm người này hứng thú với bất cứ thứ gì chia làm hai phe cạnh tranh nhau, chẳng hạn chọi gà, chọi dế, đấu bò, rồi kiến đánh nhau, rồi hai người đánh cờ, rồi phim chiến tranh, những thứ tương tự như thế, chứ không chỉ thích xem bóng đá. Với kiểu “tranh đấu” này, cảnh tượng càng quyết liệt hoành tráng thì họ càng hăng, tôi luôn ngờ rằng họ là đám người mong ngóng thế chiến lại nổ ra lần nữa. Chỉ có điều tình hình thế giới bây giờ đều đang phát triển theo hướng hoà bình, họ đành dồn hết hứng thú hiếu chiến của mình vào bóng đá. Bởi vì trong thời bình, “cuộc chiến” lớn nhất, quyết liệt nhất mà lại có thể để họ thoải mái và hợp pháp dừng chân xem dường như chỉ có bóng đá. Thế là họ đều trở thành những cổ động viên cuồng nhiệt.",
+    "Loại cổ động viên thứ năm là kiểu gửi gắm cuộc đời. Có những người cả đời chẳng làm nên sự nghiệp gì, hoặc vì lỡ mất cơ hội, hoặc vốn dĩ chẳng có sở trường gì. Họ không thể tự làm nên điều gì, nhưng trong lòng lại không cam tâm, luôn muốn tìm cho mình một chốn để gửi gắm. Thế là bóng đá xuất hiện trước mắt họ. Họ dồn hết nhiệt huyết và sức lực để dành từ thời niên thiếu nhằm gây dựng sự nghiệp vào bóng đá. Bóng đá khiến họ cảm nhận được niềm vui sống, giá trị của bản thân, tình nghĩa giữa người với người, thế là bóng đá trở thành điểm tựa của đời họ. Đương nhiên, không có gì nhàn hơn làm cổ động viên. Chẳng tốn sức (ít ra là không tốn sức vào việc mình không muốn), lại được xem bóng (thứ mình vốn đã thích), còn có những người mê bóng đá trình độ thấp hơn reo hò bày tỏ lòng kính phục. Nghĩ đến chuyện chơi mà cũng chơi ra được một khoảng trời riêng, họ thật sự mãn nguyện, thế là càng yêu bóng đá gấp bội. Nếu không có bóng đá, họ sẽ thấy đời thật vô vị.",
+    "Các kiểu cổ động viên còn rất rất nhiều, như kiểu thuần tiêu khiển, kiểu bàn binh trên giấy, v.v., do khuôn khổ bài viết có hạn nên không thể kể ra hết. Nhưng điều cần nói là cổ động viên thực thụ thật ra không nhiều. May thay, dù người ta đi xem bóng vì lý do gì, bóng đá vẫn luôn nhiệt thành chào đón mọi người trở thành cổ động viên, và sẵn lòng để đội ngũ cổ động viên của mình dung nạp đủ mọi hạng người, bởi chỉ có như vậy, đội ngũ cổ động viên mới càng thú vị, càng giàu sức hấp dẫn.",
+    "(Tác giả: Phương Phương, trích từ “Tản văn Phương Phương”, Nhà xuất bản Văn nghệ Chiết Giang)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "我也说了假话",
+   "paragraphs": [
+    "我一个朋友说，一个人一天到晚都在说假话，我说不信。他说：“你别不信，你可以留心一下你一天所说的话，肯定能证明我说得没错。”我听从了朋友的话，第二天便开始留心起自己的话来。",
+    "这天早晨我还在床上睡觉，老婆打了我一下，说：“快起来——”我揉了揉睡眼看了看挂在墙上的钟，7点了，虽然知道很晚了，但我没立即起床，而是伸了伸懒腰，极不情愿地说：“就起床呀，还早嘛。”我意识到我已经说了第一句假话。",
+    "起了床便去漱（shù）口洗脸，然后上街买菜。一个汉子的蒜薹（suàntái）很好，我便上前去买，问了价后我觉得贵了些，便还价。汉子就说：“不要图便宜，我的菜好。”我心里想，你的菜不好我会买你的吗？但嘴里不能这么说，而是说：“好什么好，王婆卖瓜自卖自夸。”",
+    "买了菜便去上班。路上有人冲我笑，还说：“你好！”我没有反应，对方于是又说：“你不认识我啦？”这话提醒了我，于是在认识和不认识中反复揣摩，结果是他认错了人，我不认识他，但我没有这么说，而是说：“认识认识。”",
+    "不一会儿，到了办公室，一位女同事在办公室对着小镜子搽胭脂（yānzhi）描眉毛，见了我，她问我她化的妆好看不好看。其实很难看的，但我不能这么说，我笑了笑，说：“不错，挺好看，挺好看。”",
+    "接下来被领导喊到小会议室开会评先进，老李小孙都够资格，但领导偏说才调来不久的大赵好，问我怎么样。领导已经拍了板，我又能再说什么，不如索性来个顺水推舟，说：“行，可以。”",
+    "回家的路上碰到了老婆，便一路同行。路上看见一个姑娘容貌姣好还打扮得体。老婆见了好看的女子从来都不顺眼，当即说：“你看那女的神气的样子，其实有什么好神气的，难看死了。”我心里说，人家一点也不难看，但嘴里不敢这么说，就说：“是不太好看。”",
+    "一路无话，回到家做午饭吃午饭，吃了饭睡午觉，一觉醒来，早已到了上班时间，急急忙忙赶到单位，还是迟到了。主任很严肃地问我怎么来迟了，是不是又睡午觉了。事实如此，我还是矢口否认：“中午没睡觉，帮朋友去办事耽搁了。”",
+    "下班回家的路上，碰到了那个声称每个人都在讲假话的朋友，他又大谈真话与谎言，说有时讲谎话也并不是坏事，而赤裸裸（luǒ）地讲真话没有掩饰，一不小心就让人难堪。他说在谎话和真话之间，他情愿选择谎言，说完后他又问我：“你怎么看待谎言？”我的反应是立刻冲朋友摇头，我说：“这怎么行，不能说谎。”",
+    "到家后不久见儿子哭哭啼啼地回来了，一看，儿子被人打出鼻血了，于是我怒气冲冲牵了儿子要去教训那个打儿子的人。才走几步，忽见我的领导也牵一小儿走来，见了我，领导指了指我说：“原来是小谈你的儿子打了我的儿子，你看看，我儿子被你儿子弄得一身邋遢（lātā）。”我本该为我儿子鸣不平，说我儿子还被你儿子打得鼻子出血了呢，但我没这么说。我用手在儿子屁股上拍了两下，还骂：“好你个兔崽（zǎi）子，怎么打人。”",
+    "说过，赔礼道歉再牵了儿子走开去，心里到底不是滋味，看看旁边无人，恨恨地骂了自己一句：“我才是兔崽子。”",
+    "话一出口，我忽然意识到，我这一天唯独说了这一句真话，但这话没有别人听到。",
+    "（作者：谈笑　选自《读者》）"
+   ],
+   "translations": [
+    "Một người bạn tôi nói, con người ta từ sáng đến tối đều nói dối, tôi bảo không tin. Anh ấy nói: “Cậu đừng không tin, cậu có thể để ý những lời mình nói trong một ngày, chắc chắn sẽ chứng minh được tôi nói không sai.” Tôi nghe theo lời bạn, ngày hôm sau liền bắt đầu để ý đến lời nói của chính mình.",
+    "Sáng hôm ấy tôi vẫn đang ngủ trên giường, vợ đập tôi một cái, nói: “Dậy mau —” Tôi dụi dụi đôi mắt ngái ngủ nhìn chiếc đồng hồ treo tường, đã 7 giờ rồi. Tuy biết là đã muộn, nhưng tôi không dậy ngay mà vươn vai một cái, cực kỳ miễn cưỡng nói: “Dậy giờ á, còn sớm mà.” Tôi nhận ra mình đã nói câu nói dối đầu tiên.",
+    "Dậy rồi tôi đi súc miệng rửa mặt, sau đó ra phố mua rau. Ngồng tỏi của một anh chàng rất ngon, tôi bèn đến mua; hỏi giá xong thấy hơi đắt, tôi liền mặc cả. Anh ta bảo: “Đừng ham rẻ, rau của tôi tốt mà.” Trong bụng tôi nghĩ, rau anh không tốt thì tôi mua của anh làm gì? Nhưng miệng không thể nói thế, mà lại bảo: “Tốt cái gì mà tốt, mèo khen mèo dài đuôi.”",
+    "Mua rau xong tôi đi làm. Trên đường có người cười với tôi, còn nói: “Chào anh!” Tôi không phản ứng gì, người kia bèn nói tiếp: “Anh không nhận ra tôi à?” Câu ấy nhắc tôi, thế là tôi cứ ngẫm đi ngẫm lại giữa quen và không quen, kết quả là anh ta nhận nhầm người, tôi không quen anh ta, nhưng tôi không nói thế mà lại bảo: “Quen chứ, quen chứ.”",
+    "Chẳng mấy chốc đã đến văn phòng, một cô đồng nghiệp đang soi gương nhỏ đánh phấn má, kẻ lông mày, thấy tôi, cô hỏi lớp trang điểm của cô có đẹp không. Thật ra rất xấu, nhưng tôi không thể nói thế, tôi cười cười, nói: “Được đấy, đẹp lắm, đẹp lắm.”",
+    "Tiếp đó tôi bị lãnh đạo gọi vào phòng họp nhỏ để họp bình xét chiến sĩ thi đua. Lão Lý, Tiểu Tôn đều đủ tư cách, nhưng lãnh đạo lại cứ khen Đại Triệu mới chuyển đến chưa lâu là tốt, rồi hỏi ý tôi thế nào. Lãnh đạo đã quyết rồi, tôi còn nói gì được nữa, chi bằng dứt khoát thuận nước đẩy thuyền, nói: “Được, được ạ.”",
+    "Trên đường về nhà tôi gặp vợ, bèn cùng đi. Trên đường thấy một cô gái dung mạo xinh xắn lại ăn mặc đúng mực. Vợ tôi thấy phụ nữ đẹp xưa nay đều chướng mắt, liền nói ngay: “Anh xem cái vẻ vênh váo của cô ta kìa, thật ra có gì mà vênh váo, xấu chết đi được.” Trong bụng tôi nói, người ta chẳng xấu chút nào, nhưng miệng không dám nói thế, đành bảo: “Ừ, không đẹp lắm.”",
+    "Suốt dọc đường không nói gì, về đến nhà nấu cơm trưa, ăn cơm trưa, ăn xong đi ngủ trưa, một giấc tỉnh dậy đã quá giờ làm từ lâu, vội vội vàng vàng chạy đến cơ quan, vẫn bị muộn. Chủ nhiệm rất nghiêm khắc hỏi tôi sao đến muộn, có phải lại ngủ trưa không. Sự thật đúng là như vậy, nhưng tôi vẫn một mực chối: “Trưa nay tôi không ngủ, đi giúp bạn làm chút việc nên bị chậm trễ.”",
+    "Trên đường tan làm về nhà, tôi gặp người bạn từng tuyên bố ai cũng nói dối. Anh ấy lại bàn tán say sưa về lời thật và lời dối, nói rằng đôi khi nói dối cũng chẳng phải chuyện xấu, còn nói thật trắng trợn không chút che đậy thì sơ ý một chút là khiến người ta khó xử. Anh ấy nói giữa lời dối và lời thật, anh ấy thà chọn lời dối; nói xong anh lại hỏi tôi: “Cậu nhìn nhận chuyện nói dối thế nào?” Phản ứng của tôi là lập tức lắc đầu với bạn, tôi nói: “Thế sao được, không được nói dối.”",
+    "Về đến nhà được một lúc thì thấy con trai khóc lóc trở về, nhìn ra mới biết nó bị người ta đánh chảy máu mũi, thế là tôi giận đùng đùng dắt con đi định dạy cho kẻ đánh con mình một bài học. Mới đi được mấy bước, bỗng thấy lãnh đạo của tôi cũng dắt một đứa bé đi tới. Thấy tôi, lãnh đạo chỉ vào tôi nói: “Hoá ra là con trai cậu Đàm đánh con trai tôi, cậu xem xem, con tôi bị con cậu làm cho bẩn thỉu cả người.” Lẽ ra tôi phải bênh vực con mình, nói rằng con tôi cũng bị con ông đánh chảy máu mũi đấy thôi, nhưng tôi không nói vậy. Tôi lấy tay phát vào mông con hai cái, còn mắng: “Cái thằng ranh con này, sao lại đánh người ta.”",
+    "Nói xong, tôi xin lỗi rối rít rồi dắt con đi, trong lòng rốt cuộc vẫn chẳng dễ chịu gì; nhìn quanh không có ai, tôi hằn học mắng mình một câu: “Mình mới là thằng ranh con.”",
+    "Lời vừa thốt ra, tôi bỗng nhận ra, cả ngày hôm nay tôi chỉ nói đúng một câu thật này, nhưng câu này lại chẳng có ai nghe thấy.",
+    "(Tác giả: Đàm Tiếu, trích từ tạp chí “Độc giả”)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "多半 (phần nhiều, rất có thể)",
+   "structure": "多半 + 动词/会……",
+   "explanation": "“多半” là phó từ. Ở đây biểu thị sự ước đoán về tình huống, tương đương “大概” (có lẽ), “很有可能” (rất có thể). Liên hệ: “多半” còn có nghĩa “quá nửa số lượng”, “phần lớn” (大半).",
+   "examples": [
+    {
+     "zh": "你抬脚迎上，多半会是球没踢着，倒把鞋踢飞了。",
+     "vi": "Anh nhấc chân đón lấy, phần nhiều là chẳng chạm được bóng mà chiếc giày lại văng mất."
+    },
+    {
+     "zh": "借书证找了半天也没找到，多半在图书馆里丢了。",
+     "vi": "Tìm thẻ thư viện mãi không thấy, chắc là đánh rơi trong thư viện rồi."
+    },
+    {
+     "zh": "你派他去办这件事，多半会是事情没办成，倒把钱都花光了。",
+     "vi": "Anh cử cậu ta đi làm việc này, rất có thể việc thì chẳng xong mà tiền lại tiêu sạch."
+    },
+    {
+     "zh": "过了立秋，天气多半会变得凉爽起来。",
+     "vi": "Qua tiết Lập thu, thời tiết phần nhiều sẽ trở nên mát mẻ."
+    },
+    {
+     "zh": "游览八达岭长城的多半是外地人。",
+     "vi": "Người đi tham quan Vạn Lý Trường Thành ở Bát Đạt Lĩnh phần lớn là người nơi khác."
+    }
+   ]
+  },
+  {
+   "point": "有所 (có phần, ít nhiều)",
+   "structure": "有 + 所 + 动词（双音节）",
+   "explanation": "Cấu trúc 有 + 所 + động từ: “所 + động từ” làm tân ngữ cho “有”, nghĩa là “có (ít nhiều) sự ...”, dùng nhiều trong văn viết. Ví dụ: 有所发明, 有所创造, 有所增长, 有所提高, 有所准备, 有所作为 (làm nên chuyện), 若有所思 (dường như đang suy nghĩ), 心有所属 (lòng đã có người), 各有所长 (mỗi người một sở trường), 日有所思，夜有所梦 (ngày nghĩ gì đêm mơ nấy), 有所不甘, 有所不为才能有所为 (có bỏ qua một số việc mới tập trung làm được việc khác), 有所失必有所得 (có mất ắt có được).",
+   "examples": [
+    {
+     "zh": "任何一场球赛的比分都不会因你的存在或不存在而有所波动，更谈不上改变。",
+     "vi": "Tỉ số của bất kỳ trận đấu nào cũng chẳng vì anh có mặt hay không mà dao động chút nào, càng không nói đến chuyện thay đổi."
+    }
+   ]
+  },
+  {
+   "point": "诸如此类 (những thứ tương tự như thế)",
+   "structure": "A、B、C，诸如此类，（都/无非是）……",
+   "explanation": "“诸如此类” nghĩa là “còn nhiều thứ giống loại này”, “những sự vật tương tự như thế”; “诸” nghĩa là “nhiều”. Dùng để tiếp nối phần trên, phía trước cần liệt kê hai ba mục, và thường kết hợp với các từ như “就是”, “都”, “不外乎”, “无非是”.",
+   "examples": [
+    {
+     "zh": "夫妻吵架，小孩斗殴，里巷里狗追得鸡鸭乱跑以及街上的车祸、菜场的叫骂，诸如此类，他都是热情的观众。",
+     "vi": "Vợ chồng cãi nhau, trẻ con đánh nhau, chó trong ngõ đuổi gà vịt chạy tán loạn, cho đến tai nạn xe ngoài phố, tiếng chửi bới ở chợ, những chuyện tương tự như thế, anh ta đều là khán giả nhiệt tình."
+    },
+    {
+     "zh": "打球、跑步、爬山，诸如此类，都是有益健康的运动。",
+     "vi": "Chơi bóng, chạy bộ, leo núi, những môn như thế đều là vận động có lợi cho sức khoẻ."
+    },
+    {
+     "zh": "节日的公园里，有说相声的，有演杂技的，诸如此类，不胜枚举。",
+     "vi": "Công viên ngày lễ có người diễn tấu nói, có người biểu diễn xiếc, đủ thứ như thế, kể không xuể."
+    },
+    {
+     "zh": "他所谓的生活享受，无非是看演出、喝红酒、打高尔夫和诸如此类的事。",
+     "vi": "Cái gọi là hưởng thụ cuộc sống của anh ta chẳng qua là xem biểu diễn, uống rượu vang, chơi golf và những việc tương tự."
+    },
+    {
+     "zh": "那个孩子的房间里堆满了漫画书、变形金刚、玩具车和诸如此类的东西。",
+     "vi": "Phòng đứa bé ấy chất đầy truyện tranh, người máy biến hình, ô tô đồ chơi và những thứ tương tự."
+    }
+   ]
+  },
+  {
+   "point": "且不说 (tạm chưa nói, chưa kể)",
+   "structure": "X且不说 / 且不说X，还/光是/单是……",
+   "explanation": "“且不说” là cụm quen dùng; “且” là phó từ biểu thị tạm thời. “且不说” nghĩa là “tạm chưa nói”, biểu thị nhượng bộ, thường dùng trong khung “X且不说，还/光是/单是……”. “X且不说” nói chung cũng có thể nói “且不说X”. Nếu X là câu khá dài hoặc là “它” thì thường đặt sau “且不说”.",
+   "examples": [
+    {
+     "zh": "再没有比足球赛更大的热闹了，人多时间长且不说，还可以由人放声地叫喊和狂呼。",
+     "vi": "Không có gì náo nhiệt hơn trận bóng đá: người đông, thời gian dài thì khỏi phải nói, lại còn được tha hồ gào thét reo hò."
+    },
+    {
+     "zh": "我认为这个地方不适合人类居住，别的且不说/且不说别的，光是水质就过不了关。",
+     "vi": "Tôi cho rằng nơi này không thích hợp cho con người sinh sống, chưa nói chuyện khác, riêng chất lượng nước đã không đạt."
+    },
+    {
+     "zh": "这款笔记本电脑真是漂亮，功能齐全且不说/且不说功能齐全，单是外形就让我动心了。",
+     "vi": "Mẫu máy tính xách tay này đẹp thật, chưa nói đến chức năng đầy đủ, chỉ riêng kiểu dáng đã khiến tôi xiêu lòng."
+    },
+    {
+     "zh": "今年公司形势喜人，产量大幅度提高且不说/且不说产量大幅度提高，单是产品的品种就增加了不少。",
+     "vi": "Năm nay tình hình công ty rất khả quan, chưa kể sản lượng tăng mạnh, riêng chủng loại sản phẩm đã tăng lên không ít."
+    },
+    {
+     "zh": "任务重，且不说它，问题是时间太紧，恐怕我们难以满足您的要求。",
+     "vi": "Nhiệm vụ nặng thì tạm không nói, vấn đề là thời gian quá gấp, e rằng chúng tôi khó đáp ứng yêu cầu của ông."
+    }
+   ]
+  },
+  {
+   "point": "私下里 (thầm, sau lưng, riêng tư)",
+   "structure": "私下里 + 动词（短语）",
+   "explanation": "“私下里” là phó từ, nghĩa là “sau lưng, ngấm ngầm” hoặc “tự mình tiến hành, không thông qua cơ quan liên quan hay quần chúng”. Liên hệ: “私下” về cơ bản giống “私下里”, nhưng “私下” thường chỉ dùng trước động từ.",
+   "examples": [
+    {
+     "zh": "私下里觉得已经把该骂领导的话都骂出去了或是把自己该欢呼的口号也喊出去了。",
+     "vi": "Trong bụng thấy như đã chửi hết những lời đáng chửi lãnh đạo, hay đã hô hết những khẩu hiệu mình đáng được reo hò."
+    },
+    {
+     "zh": "在人面前时父亲好像毫不担忧，私下里他常常暗自叹息。",
+     "vi": "Trước mặt mọi người cha dường như chẳng chút lo âu, nhưng lúc riêng tư ông thường âm thầm thở dài."
+    },
+    {
+     "zh": "姐妹俩私下里商量好了，父母结婚二十周年纪念日那天，要给他们一个大大的惊喜。",
+     "vi": "Hai chị em đã bàn riêng với nhau, vào ngày kỷ niệm 20 năm ngày cưới của bố mẹ sẽ dành cho họ một bất ngờ thật lớn."
+    },
+    {
+     "zh": "这件事他不想闹到法庭上去，想私下里解决。",
+     "vi": "Việc này anh ấy không muốn làm to đến toà án, muốn giải quyết riêng với nhau."
+    }
+   ]
+  },
+  {
+   "point": "一一 (lần lượt từng cái một)",
+   "structure": "一一 + 动词（短语）",
+   "explanation": "“一一” là phó từ, nghĩa là “逐个” (từng cái), “一个一个地” (lần lượt từng người/từng việc). Biểu thị động tác, hành vi lần lượt xảy ra; phía sau là động từ hoặc cụm động từ.",
+   "examples": [
+    {
+     "zh": "篇幅所限，无法一一列举。",
+     "vi": "Do khuôn khổ bài viết có hạn, không thể kể ra hết từng cái một."
+    },
+    {
+     "zh": "总理跟大家一一握手以后，便问起了农民的生产和生活情况。",
+     "vi": "Sau khi lần lượt bắt tay mọi người, thủ tướng liền hỏi thăm tình hình sản xuất và đời sống của nông dân."
+    },
+    {
+     "zh": "临行前妈妈嘱咐了好些话，我都一一记在心里。",
+     "vi": "Trước lúc lên đường mẹ dặn dò rất nhiều, tôi đều ghi nhớ từng lời."
+    },
+    {
+     "zh": "等其他观众都一一离去以后，他才从座位上站起身来。",
+     "vi": "Đợi các khán giả khác lần lượt ra về hết, anh ấy mới đứng dậy khỏi chỗ ngồi."
+    },
+    {
+     "zh": "因为时间关系，今天我们主要说一说销售问题，其他方面就不一一细说了。",
+     "vi": "Vì thời gian có hạn, hôm nay chúng ta chủ yếu bàn về vấn đề tiêu thụ, các mặt khác sẽ không nói chi tiết từng phần."
+    }
+   ]
+  }
+ ]
+}

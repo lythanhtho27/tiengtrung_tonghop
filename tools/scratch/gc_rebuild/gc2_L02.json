@@ -1,0 +1,1497 @@
+{
+ "book": "gc2",
+ "lesson_num": 2,
+ "title": "那年那月那狗",
+ "pages": [
+  37,
+  64
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "携",
+   "py": "xié",
+   "pos": "动",
+   "zh": "随身带着。",
+   "en": "",
+   "hv": "HUỀ",
+   "vi": "dẫn theo, mang theo",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "行医",
+   "py": "xíng yī",
+   "pos": "",
+   "zh": "从事医生的活动（多指个人经营的）。",
+   "en": "",
+   "hv": "HÀNH Y",
+   "vi": "hành nghề y",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "郎中",
+   "py": "lángzhōng",
+   "pos": "名",
+   "zh": "〈方〉中医医生。",
+   "en": "",
+   "hv": "LANG TRUNG",
+   "vi": "thầy lang, thầy thuốc Đông y",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "最为",
+   "py": "zuìwéi",
+   "pos": "副",
+   "zh": "用在双音节形容词前，意思是“最”。（最为——最）",
+   "en": "",
+   "hv": "TỐI VI",
+   "vi": "nhất",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "宠爱",
+   "py": "chǒng'ài",
+   "pos": "动",
+   "zh": "（上对下）喜爱；娇纵偏爱。",
+   "en": "",
+   "hv": "SỦNG ÁI",
+   "vi": "cưng chiều",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "长孙",
+   "py": "zhǎngsūn",
+   "pos": "名",
+   "zh": "长子的长子，现在也指排行最大的孙子。",
+   "en": "",
+   "hv": "TRƯỞNG TÔN",
+   "vi": "cháu đích tôn, cháu trai trưởng",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "出诊",
+   "py": "chū zhěn",
+   "pos": "",
+   "zh": "多指医生到病人家里去给病人治病。",
+   "en": "",
+   "hv": "XUẤT CHẨN",
+   "vi": "đi khám bệnh tại nhà",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "绝无仅有",
+   "py": "jué wú jǐn yǒu",
+   "pos": "",
+   "zh": "非常少有。",
+   "en": "",
+   "hv": "TUYỆT VÔ CẬN HỮU",
+   "vi": "độc nhất vô nhị, cực hiếm",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "物件",
+   "py": "wùjiàn",
+   "pos": "名",
+   "zh": "泛指成件的东西；物品。",
+   "en": "",
+   "hv": "VẬT KIỆN",
+   "vi": "đồ vật",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "留声机",
+   "py": "liúshēngjī",
+   "pos": "名",
+   "zh": "把唱片上的声音放出来的机器。",
+   "en": "phonograph",
+   "hv": "LƯU THANH CƠ",
+   "vi": "máy hát đĩa",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "光可鉴人",
+   "py": "guāng kě jiàn rén",
+   "pos": "",
+   "zh": "东西很亮，可以照见人影。",
+   "en": "",
+   "hv": "QUANG KHẢ GIÁM NHÂN",
+   "vi": "bóng loáng soi được bóng người",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "唱片",
+   "py": "chàngpiàn",
+   "pos": "名",
+   "zh": "用虫胶、塑料等制成的圆盘，表面有记录声音变化的螺旋槽纹（luóxuán cáowén），可以用唱机把所录的声音重放出来。",
+   "en": "record; disc",
+   "hv": "XƯỚNG PHIẾN",
+   "vi": "đĩa hát",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "鬈毛",
+   "py": "quánmáo",
+   "pos": "名",
+   "zh": "弯曲的毛。",
+   "en": "",
+   "hv": "QUYỀN MAO",
+   "vi": "lông xoăn",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "犬",
+   "py": "quǎn",
+   "pos": "名",
+   "zh": "狗。",
+   "en": "",
+   "hv": "KHUYỂN",
+   "vi": "chó",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "稀罕",
+   "py": "xīhan",
+   "pos": "形",
+   "zh": "稀奇。少见的（稀罕——稀奇）",
+   "en": "",
+   "hv": "HI HÃN",
+   "vi": "hiếm lạ",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "轰动",
+   "py": "hōngdòng",
+   "pos": "动",
+   "zh": "同时惊动很多人。",
+   "en": "",
+   "hv": "OANH ĐỘNG",
+   "vi": "gây xôn xao, chấn động",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "奔走相告",
+   "py": "bēn zǒu xiāng gào",
+   "pos": "",
+   "zh": "奔跑着互相转告。",
+   "en": "",
+   "hv": "BÔN TẨU TƯƠNG CÁO",
+   "vi": "chạy đi báo tin cho nhau",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "娇小",
+   "py": "jiāoxiǎo",
+   "pos": "形",
+   "zh": "娇嫩小巧。",
+   "en": "",
+   "hv": "KIỀU TIỂU",
+   "vi": "nhỏ nhắn xinh xắn",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "雌性",
+   "py": "cíxìng",
+   "pos": "名",
+   "zh": "生物两性之一，能产生卵（luǎn）子。",
+   "en": "",
+   "hv": "THƯ TÍNH",
+   "vi": "giống cái",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "雄性",
+   "py": "xióngxìng",
+   "pos": "名",
+   "zh": "生物两性之一，能产生精子。",
+   "en": "",
+   "hv": "HÙNG TÍNH",
+   "vi": "giống đực",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "接二连三",
+   "py": "jiē èr lián sān",
+   "pos": "",
+   "zh": "一个接着一个，形容接连不断。",
+   "en": "",
+   "hv": "TIẾP NHỊ LIÊN TAM",
+   "vi": "liên tiếp, nối nhau",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "徘徊",
+   "py": "páihuái",
+   "pos": "动",
+   "zh": "在一个地方来回地走。",
+   "en": "",
+   "hv": "BỒI HỒI",
+   "vi": "đi đi lại lại, quanh quẩn",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "吠",
+   "py": "fèi",
+   "pos": "动",
+   "zh": "（狗）叫。",
+   "en": "",
+   "hv": "PHỆ",
+   "vi": "(chó) sủa",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "粗壮",
+   "py": "cūzhuàng",
+   "pos": "形",
+   "zh": "（人体）粗实而健壮；（物体）粗大而结实。",
+   "en": "",
+   "hv": "THÔ TRÁNG",
+   "vi": "to khỏe, chắc nịch",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "爪子",
+   "py": "zhuǎzi",
+   "pos": "名",
+   "zh": "动物的有尖甲的脚。",
+   "en": "",
+   "hv": "TRẢO TỬ",
+   "vi": "móng vuốt",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "蹿",
+   "py": "cuān",
+   "pos": "动",
+   "zh": "向上或向前跳。",
+   "en": "",
+   "hv": "THOÁN",
+   "vi": "nhảy vọt, phóng lên",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "墙头",
+   "py": "qiángtóu",
+   "pos": "名",
+   "zh": "墙的上部或顶端。",
+   "en": "",
+   "hv": "TƯỜNG ĐẦU",
+   "vi": "đầu tường, mép tường",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "扒",
+   "py": "bā",
+   "pos": "动",
+   "zh": "抓着可依附的东西。",
+   "en": "",
+   "hv": "BÁT",
+   "vi": "bám, cào",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "呜咽",
+   "py": "wūyè",
+   "pos": "动",
+   "zh": "低声哭泣。",
+   "en": "",
+   "hv": "Ô YẾT",
+   "vi": "rên rỉ, nức nở",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "归罪",
+   "py": "guīzuì",
+   "pos": "动",
+   "zh": "把罪过归于（某个人或集体）。",
+   "en": "",
+   "hv": "QUY TỘI",
+   "vi": "đổ tội, đổ lỗi",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "日渐",
+   "py": "rìjiàn",
+   "pos": "副",
+   "zh": "一天一天慢慢地。",
+   "en": "",
+   "hv": "NHẬT TIỆM",
+   "vi": "ngày một, dần dần",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "破损",
+   "py": "pòsǔn",
+   "pos": "形",
+   "zh": "残破损坏。",
+   "en": "",
+   "hv": "PHÁ TỔN",
+   "vi": "hư hỏng, sứt mẻ",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "沟壑",
+   "py": "gōuhè",
+   "pos": "名",
+   "zh": "山沟；坑。",
+   "en": "",
+   "hv": "CÂU HÁC",
+   "vi": "rãnh, hố",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "纵横",
+   "py": "zònghéng",
+   "pos": "形",
+   "zh": "形容横竖交错的样子。",
+   "en": "",
+   "hv": "TUNG HOÀNH",
+   "vi": "ngang dọc chằng chịt",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "憎恨",
+   "py": "zēnghèn",
+   "pos": "动",
+   "zh": "厌恶痛恨。",
+   "en": "",
+   "hv": "TĂNG HẬN",
+   "vi": "căm ghét",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "行善",
+   "py": "xíng shàn",
+   "pos": "",
+   "zh": "做善事。",
+   "en": "",
+   "hv": "HÀNH THIỆN",
+   "vi": "làm việc thiện",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "惩罚",
+   "py": "chéngfá",
+   "pos": "动",
+   "zh": "严厉地处罚。",
+   "en": "",
+   "hv": "TRỪNG PHẠT",
+   "vi": "trừng phạt",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "麻袋",
+   "py": "mádài",
+   "pos": "名",
+   "zh": "用粗麻布做的袋子。",
+   "en": "",
+   "hv": "MA ĐẠI",
+   "vi": "bao tải",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "叮嘱",
+   "py": "dīngzhǔ",
+   "pos": "动",
+   "zh": "再三嘱咐。",
+   "en": "",
+   "hv": "ĐINH CHÚC",
+   "vi": "dặn dò",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "车夫",
+   "py": "chēfū",
+   "pos": "名",
+   "zh": "旧时指以推车、拉车、赶兽力车或驾驶汽车为职业的人。",
+   "en": "",
+   "hv": "XA PHU",
+   "vi": "người đánh xe",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "赶集",
+   "py": "gǎn jí",
+   "pos": "",
+   "zh": "到集市上买卖货物。",
+   "en": "",
+   "hv": "CẢN TẬP",
+   "vi": "đi chợ phiên",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "任凭",
+   "py": "rènpíng",
+   "pos": "动",
+   "zh": "听凭；由别人任意去做。",
+   "en": "",
+   "hv": "NHẬM BẰNG",
+   "vi": "mặc cho, tùy ý",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "摆布",
+   "py": "bǎibù",
+   "pos": "动",
+   "zh": "操纵；支配（别人行动）。",
+   "en": "",
+   "hv": "BÃI BỐ",
+   "vi": "sắp đặt, điều khiển",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "闷闷不乐",
+   "py": "mènmèn bú lè",
+   "pos": "",
+   "zh": "因有不如意的事而心里不快活。",
+   "en": "",
+   "hv": "MUỘN MUỘN BẤT LẠC",
+   "vi": "buồn rầu không vui",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "淡忘",
+   "py": "dànwàng",
+   "pos": "动",
+   "zh": "印象逐渐淡漠以至于忘记。",
+   "en": "",
+   "hv": "ĐẠM VONG",
+   "vi": "quên dần",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "拥有",
+   "py": "yōngyǒu",
+   "pos": "动",
+   "zh": "领有；具有（大量的土地、人口、财产等）。",
+   "en": "",
+   "hv": "ỦNG HỮU",
+   "vi": "có, sở hữu",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "飘荡",
+   "py": "piāodàng",
+   "pos": "动",
+   "zh": "随风飘动或随波浮动。",
+   "en": "",
+   "hv": "PHIÊU ĐÃNG",
+   "vi": "lan tỏa, phảng phất",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "腋",
+   "py": "yè",
+   "pos": "名",
+   "zh": "腋窝。上肢和肩膀连接处靠底下的部分，呈窝状。",
+   "en": "",
+   "hv": "DỊCH",
+   "vi": "nách",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "鲜红",
+   "py": "xiānhóng",
+   "pos": "形",
+   "zh": "鲜艳的红色。",
+   "en": "",
+   "hv": "TIÊN HỒNG",
+   "vi": "đỏ tươi",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "对联",
+   "py": "duìlián",
+   "pos": "名",
+   "zh": "写在纸上、布上或刻在竹子上、木头上、柱子上的对偶语句。",
+   "en": "",
+   "hv": "ĐỐI LIÊN",
+   "vi": "câu đối",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "咯吱",
+   "py": "gēzhī",
+   "pos": "拟声",
+   "zh": "踩雪的声音。",
+   "en": "",
+   "hv": "CÁC CHI",
+   "vi": "lạo xạo, kẽo kẹt (tiếng giẫm tuyết)",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "一刹那",
+   "py": "yíchànà",
+   "pos": "名",
+   "zh": "极短的时间。",
+   "en": "",
+   "hv": "NHẤT SÁT NA",
+   "vi": "trong khoảnh khắc",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "身躯",
+   "py": "shēnqū",
+   "pos": "名",
+   "zh": "身体；身材。",
+   "en": "",
+   "hv": "THÂN KHU",
+   "vi": "thân hình",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "蜷缩",
+   "py": "quánsuō",
+   "pos": "动",
+   "zh": "弯曲收缩。",
+   "en": "",
+   "hv": "QUYỀN SÚC",
+   "vi": "cuộn tròn, co quắp",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "脚印",
+   "py": "jiǎoyìn",
+   "pos": "名",
+   "zh": "脚踩过的痕迹。",
+   "en": "",
+   "hv": "CƯỚC ẤN",
+   "vi": "dấu chân",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "相间",
+   "py": "xiāngjiàn",
+   "pos": "动",
+   "zh": "（事物和事物）一个隔着一个。",
+   "en": "",
+   "hv": "TƯƠNG GIÁN",
+   "vi": "xen kẽ nhau",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "衬托",
+   "py": "chèntuō",
+   "pos": "动",
+   "zh": "为了使事物突出，用另一些事物放在一起来陪衬或对照。",
+   "en": "",
+   "hv": "SẤN THÁC",
+   "vi": "làm nền, tôn lên",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "越发",
+   "py": "yuèfā",
+   "pos": "副",
+   "zh": "更加。",
+   "en": "",
+   "hv": "VIỆT PHÁT",
+   "vi": "càng thêm",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "抹布",
+   "py": "mābù",
+   "pos": "名",
+   "zh": "擦器物用的布块等。",
+   "en": "",
+   "hv": "MẠT BỐ",
+   "vi": "giẻ lau",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "焕发",
+   "py": "huànfā",
+   "pos": "动",
+   "zh": "光彩四射；振作。",
+   "en": "",
+   "hv": "HOÁN PHÁT",
+   "vi": "bừng sáng, rạng rỡ",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "活蹦乱跳",
+   "py": "huó bèng luàn tiào",
+   "pos": "",
+   "zh": "欢蹦乱跳。形容健康、活泼、生命力旺盛。",
+   "en": "",
+   "hv": "HOẠT BẶNG LOẠN KHIÊU",
+   "vi": "nhảy nhót tung tăng",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "摇头摆尾",
+   "py": "yáo tóu bǎi wěi",
+   "pos": "",
+   "zh": "指动物摆动头、尾的样子。",
+   "en": "",
+   "hv": "DAO ĐẦU BÃI VĨ",
+   "vi": "lắc đầu vẫy đuôi",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "轻车熟路",
+   "py": "qīng chē shú lù",
+   "pos": "",
+   "zh": "驾着轻便的车在熟路上走，比喻对情况熟悉做起来容易。",
+   "en": "",
+   "hv": "KHINH XA THỤC LỘ",
+   "vi": "quen đường quen lối",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "残废",
+   "py": "cánfèi",
+   "pos": "动",
+   "zh": "四肢或双目等丧失一部分或者全部的机能。",
+   "en": "",
+   "hv": "TÀN PHẾ",
+   "vi": "tàn phế, tật nguyền",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "伤痕",
+   "py": "shānghén",
+   "pos": "名",
+   "zh": "伤疤。也指物体受损害后留下的痕迹。",
+   "en": "",
+   "hv": "THƯƠNG NGẤN",
+   "vi": "vết thương, vết sẹo",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "黄鼠狼",
+   "py": "huángshǔláng",
+   "pos": "名",
+   "zh": "哺乳动物，身体细长，四肢短，尾蓬松，背部棕灰色。昼伏夜出，主要捕食鼠类，有时也吃家禽。是一种毛皮兽，尾毛可制毛笔。也叫黄鼬（yòu）。",
+   "en": "yellow weasel",
+   "hv": "HOÀNG THỬ LANG",
+   "vi": "con chồn vàng",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "卡",
+   "py": "qiǎ",
+   "pos": "动",
+   "zh": "夹在中间，不能活动。",
+   "en": "",
+   "hv": "TẠP",
+   "vi": "kẹp, mắc kẹt",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "惊诧",
+   "py": "jīngchà",
+   "pos": "动",
+   "zh": "惊讶诧异。",
+   "en": "",
+   "hv": "KINH SÁ",
+   "vi": "kinh ngạc",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "思忖",
+   "py": "sīcǔn",
+   "pos": "动",
+   "zh": "〈书〉考虑，思索。",
+   "en": "",
+   "hv": "TƯ THỐN",
+   "vi": "suy tính, cân nhắc",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "善良",
+   "py": "shànliáng",
+   "pos": "形",
+   "zh": "心地纯洁端正，没有恶意。",
+   "en": "",
+   "hv": "THIỆN LƯƠNG",
+   "vi": "lương thiện, hiền lành",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "逾越",
+   "py": "yúyuè",
+   "pos": "动",
+   "zh": "超过，越过。",
+   "en": "",
+   "hv": "DU VIỆT",
+   "vi": "vượt qua",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "天堑",
+   "py": "tiānqiàn",
+   "pos": "名",
+   "zh": "天然形成的隔断交通的大沟。",
+   "en": "",
+   "hv": "THIÊN TIỆM",
+   "vi": "hào sâu thiên nhiên, chướng ngại tự nhiên",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "倔",
+   "py": "jué",
+   "pos": "形",
+   "zh": "性子直，态度生硬。",
+   "en": "",
+   "hv": "QUẬT",
+   "vi": "bướng bỉnh",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "丢弃",
+   "py": "diūqì",
+   "pos": "动",
+   "zh": "扔掉；抛弃。",
+   "en": "",
+   "hv": "ĐÂU KHÍ",
+   "vi": "vứt bỏ",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "较劲",
+   "py": "jiàojìn",
+   "pos": "动",
+   "zh": "作对；闹别扭；对着干。",
+   "en": "",
+   "hv": "GIẢO KÌNH",
+   "vi": "đối đầu, ganh đua",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "精灵",
+   "py": "jīnglíng",
+   "pos": "形",
+   "zh": "〈方〉机警聪明；机灵。",
+   "en": "",
+   "hv": "TINH LINH",
+   "vi": "lanh lợi",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "抗争",
+   "py": "kàngzhēng",
+   "pos": "动",
+   "zh": "对抗；斗争。",
+   "en": "",
+   "hv": "KHÁNG TRANH",
+   "vi": "đấu tranh, chống lại",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "畏惧",
+   "py": "wèijù",
+   "pos": "动",
+   "zh": "害怕。",
+   "en": "",
+   "hv": "ÚY CỤ",
+   "vi": "sợ hãi, e sợ",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "情愿",
+   "py": "qíngyuàn",
+   "pos": "动",
+   "zh": "真心愿意。",
+   "en": "",
+   "hv": "TÌNH NGUYỆN",
+   "vi": "bằng lòng, cam tâm",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "风驰电掣",
+   "py": "fēng chí diàn chè",
+   "pos": "",
+   "zh": "像刮风闪电似的；形容非常迅速，一闪而过。",
+   "en": "",
+   "hv": "PHONG TRÌ ĐIỆN XIẾT",
+   "vi": "nhanh như gió cuốn chớp giật",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "鬼使神差",
+   "py": "guǐ shǐ shén chāi",
+   "pos": "",
+   "zh": "有些原先没想做的事情，好像有鬼神暗中支配一样，不由自主地就做了。比喻事情的发生完全出乎意外。也说神差鬼使。",
+   "en": "",
+   "hv": "QUỶ SỬ THẦN SAI",
+   "vi": "ma xui quỷ khiến",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "徒步",
+   "py": "túbù",
+   "pos": "动",
+   "zh": "步行。",
+   "en": "",
+   "hv": "ĐỒ BỘ",
+   "vi": "đi bộ",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "叩",
+   "py": "kòu",
+   "pos": "动",
+   "zh": "敲；打。",
+   "en": "",
+   "hv": "KHẤU",
+   "vi": "gõ (cửa)",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "生怕",
+   "py": "shēngpà",
+   "pos": "动",
+   "zh": "生恐；很怕。",
+   "en": "",
+   "hv": "SINH PHẠ",
+   "vi": "chỉ sợ, e rằng",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "传达室",
+   "py": "chuándáshì",
+   "pos": "名",
+   "zh": "单位门口管理登记和引导来宾的地方。",
+   "en": "",
+   "hv": "TRUYỀN ĐẠT THẤT",
+   "vi": "phòng thường trực",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "手电",
+   "py": "shǒudiàn",
+   "pos": "名",
+   "zh": "利用干电池做电源的小型筒状照明用具。也叫手电筒、电筒或电棒。",
+   "en": "",
+   "hv": "THỦ ĐIỆN",
+   "vi": "đèn pin",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "冷漠",
+   "py": "lěngmò",
+   "pos": "形",
+   "zh": "（对人或事物）冷淡；不关心。（冷漠——冷淡）",
+   "en": "",
+   "hv": "LÃNH MẠC",
+   "vi": "lạnh lùng, thờ ơ",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "交加",
+   "py": "jiāojiā",
+   "pos": "动",
+   "zh": "两种事物同时出现。",
+   "en": "",
+   "hv": "GIAO GIA",
+   "vi": "cùng ập đến, đan xen",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "茅草窝",
+   "py": "máocǎowō",
+   "pos": "名",
+   "zh": "用草做的鸟兽住的地方。",
+   "en": "",
+   "hv": "MAO THẢO OA",
+   "vi": "ổ cỏ tranh",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "末了",
+   "py": "mòliǎo",
+   "pos": "名",
+   "zh": "最后。",
+   "en": "",
+   "hv": "MẠT LIỄU",
+   "vi": "cuối cùng, sau rốt",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "步履蹒跚",
+   "py": "bùlǚ pánshān",
+   "pos": "",
+   "zh": "行走时迈步缓慢，摇摆不稳。",
+   "en": "",
+   "hv": "BỘ LÝ BÀN SAN",
+   "vi": "bước đi tập tễnh, loạng choạng",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "忍饥挨饿",
+   "py": "rěn jī ái è",
+   "pos": "",
+   "zh": "忍受饥饿。",
+   "en": "",
+   "hv": "NHẪN CƠ AI NGẠ",
+   "vi": "chịu đói chịu khát",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "抑或",
+   "py": "yìhuò",
+   "pos": "连",
+   "zh": "〈书〉表示选择关系，相当于“或者”。",
+   "en": "",
+   "hv": "ỨC HOẶC",
+   "vi": "hay là, hoặc",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "果真",
+   "py": "guǒzhēn",
+   "pos": "副",
+   "zh": "果然。",
+   "en": "",
+   "hv": "QUẢ CHÂN",
+   "vi": "quả thật",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "东奔西走",
+   "py": "dōng bēn xī zǒu",
+   "pos": "",
+   "zh": "形容到处奔走或为达到目的而到处活动。",
+   "en": "",
+   "hv": "ĐÔNG BÔN TÂY TẨU",
+   "vi": "chạy ngược chạy xuôi",
+   "proper": false
+  },
+  {
+   "n": 96,
+   "hz": "防备",
+   "py": "fángbèi",
+   "pos": "动",
+   "zh": "预防；戒备。",
+   "en": "",
+   "hv": "PHÒNG BỊ",
+   "vi": "đề phòng",
+   "proper": false
+  },
+  {
+   "n": 97,
+   "hz": "奋力",
+   "py": "fènlì",
+   "pos": "动",
+   "zh": "竭尽全力。",
+   "en": "",
+   "hv": "PHẤN LỰC",
+   "vi": "dốc sức",
+   "proper": false
+  },
+  {
+   "n": 98,
+   "hz": "执着",
+   "py": "zhízhuó",
+   "pos": "形",
+   "zh": "泛指始终如一地坚持不变。也作执著。",
+   "en": "",
+   "hv": "CHẤP TRƯỚC",
+   "vi": "kiên trì, bền bỉ",
+   "proper": false
+  },
+  {
+   "n": 99,
+   "hz": "承受",
+   "py": "chéngshòu",
+   "pos": "动",
+   "zh": "接受；忍受。",
+   "en": "",
+   "hv": "THỪA THỤ",
+   "vi": "chịu đựng",
+   "proper": false
+  },
+  {
+   "n": 100,
+   "hz": "苦难",
+   "py": "kǔnàn",
+   "pos": "名",
+   "zh": "痛苦和灾难。",
+   "en": "",
+   "hv": "KHỔ NẠN",
+   "vi": "khổ nạn, đau khổ",
+   "proper": false
+  },
+  {
+   "n": 101,
+   "hz": "不良",
+   "py": "bùliáng",
+   "pos": "形",
+   "zh": "不好的；不善的。",
+   "en": "",
+   "hv": "BẤT LƯƠNG",
+   "vi": "không tốt",
+   "proper": false
+  },
+  {
+   "n": 102,
+   "hz": "举动",
+   "py": "jǔdòng",
+   "pos": "名",
+   "zh": "动作；行动。（举动——行动）",
+   "en": "",
+   "hv": "CỬ ĐỘNG",
+   "vi": "hành động, cử chỉ",
+   "proper": false
+  },
+  {
+   "n": 103,
+   "hz": "认定",
+   "py": "rèndìng",
+   "pos": "动",
+   "zh": "确定地认为。",
+   "en": "",
+   "hv": "NHẬN ĐỊNH",
+   "vi": "tin chắc, khẳng định",
+   "proper": false
+  },
+  {
+   "n": 104,
+   "hz": "灵性",
+   "py": "língxìng",
+   "pos": "名",
+   "zh": "天生的灵气，聪明。",
+   "en": "",
+   "hv": "LINH TÍNH",
+   "vi": "linh tính, sự thông minh",
+   "proper": false
+  },
+  {
+   "n": 105,
+   "hz": "身影",
+   "py": "shēnyǐng",
+   "pos": "名",
+   "zh": "身体的影子或轮廓。",
+   "en": "",
+   "hv": "THÂN ẢNH",
+   "vi": "bóng dáng",
+   "proper": false
+  },
+  {
+   "n": 106,
+   "hz": "相依为命",
+   "py": "xiāng yī wéi mìng",
+   "pos": "",
+   "zh": "指互相依靠着生活下去。",
+   "en": "",
+   "hv": "TƯƠNG Y VI MỆNH",
+   "vi": "nương tựa vào nhau mà sống",
+   "proper": false
+  },
+  {
+   "n": 107,
+   "hz": "确切",
+   "py": "quèqiè",
+   "pos": "形",
+   "zh": "准确；恰当。（确切——确实）",
+   "en": "",
+   "hv": "XÁC THIẾT",
+   "vi": "chính xác, xác đáng",
+   "proper": false
+  },
+  {
+   "n": 108,
+   "hz": "倔强",
+   "py": "juéjiàng",
+   "pos": "形",
+   "zh": "（性情）刚强不屈。也作倔犟。",
+   "en": "",
+   "hv": "QUẬT CƯỜNG",
+   "vi": "cứng cỏi, ương bướng",
+   "proper": false
+  },
+  {
+   "n": 109,
+   "hz": "老泪纵横",
+   "py": "lǎo lèi zònghéng",
+   "pos": "",
+   "zh": "形容年纪大的人伤心哭泣，泪流满面的样子。",
+   "en": "",
+   "hv": "LÃO LỆ TUNG HOÀNH",
+   "vi": "già nua nước mắt giàn giụa",
+   "proper": false
+  },
+  {
+   "n": 110,
+   "hz": "最终",
+   "py": "zuìzhōng",
+   "pos": "副",
+   "zh": "终归；到底。",
+   "en": "",
+   "hv": "TỐI CHUNG",
+   "vi": "cuối cùng",
+   "proper": false
+  },
+  {
+   "n": 111,
+   "hz": "献身",
+   "py": "xiànshēn",
+   "pos": "动",
+   "zh": "贡献出自己的全部精力或生命。",
+   "en": "",
+   "hv": "HIẾN THÂN",
+   "vi": "hiến thân, hy sinh",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "那年那月那狗",
+   "paragraphs": [
+    "第一部分",
+    "那是1950年夏天，爷爷服从了组织的安排，携奶奶到北京工作。当时只有5岁的父亲随了太爷爷生活在这个叫做大河的村子。太爷爷在当地行医，是个远近闻名的好郎中，父亲是他最为宠爱的长孙。太爷爷为了哄孙子高兴，经常趁出诊的机会不知从哪里弄来些当地绝无仅有的物件送给父亲玩儿，诸如会唱戏的留声机和光可鉴人的唱片、能写字画画的小黑板和彩色粉笔、伏天里躺上去又光滑又凉快的竹子床和竹子躺椅，还有就是这只长得像小鬈毛狮子一样的小犬。说它也算稀罕物，是因为当地家家喂养的看门护院的土狗都长得一个模样，人们认为狗就应该长成那样。当这只小狗被太爷爷带回村子时，几乎轰动了全村。家家的孩子奔走相告，挤在院子里看“耍狮子”。",
+    "现在，父亲回忆起来说那狗应该属于西施或京巴这类娇小可爱的玩赏犬。它没有名字，父亲依了它的长相管它叫“小狮子”。",
+    "当谷物成熟的秋天到来时，小狮子长大了。小狮子是条雌性犬，村子里远远近近的雄性土狗开始接二连三地往太爷爷家跑。它们有的在门外不停地徘徊，不停地狂吠；有的用粗壮的爪子把木头院门抓出了道道深沟；有的一次次蹿上高高的墙头，扒落了墙头的砖瓦；还有的整夜地呜咽低吼……这样的情况终日不绝。太爷爷开始厌恶小狮子，打心眼里厌恶，他把这些日子的不安宁归罪于小狮子的日渐成熟，尤其是当他修补破损的墙头和沟壑纵横的院门时就更加憎恨小狮子。一辈子行医行善的太爷爷想出了最为残酷的惩罚小狮子的办法，那就是把它远远地扔掉，让它找不到家门。",
+    "冬天就要到来了，太爷爷和村里的人们都在为过冬做准备。没隔几天，就有村子里的人赶着马车到50多里地以外的小火车站拉煤。",
+    "一个深秋的早晨，太爷爷瞒了父亲，把小狮子装在一条麻袋里，松松地扎了口，放到马车上，叮嘱车夫“扔得越远越好”。小狮子并不知道主人不喜欢它了，不想要它了，以为又要带它去赶集，兴高采烈地，乖乖地任凭主人摆布。",
+    "第二部分",
+    "年幼的父亲在没有了小狮子的日子里过得闷闷不乐，时间久了，就渐渐淡忘了。他又不断拥有了新的稀罕物。",
+    "一个雪后的清晨，该是腊月二十八吧，满村飘荡着年食的甜香。太爷爷腋下夹着一卷写好的鲜红的对联，踩着厚厚的积雪，咯吱咯吱地走到院门口。推开院门的一刹那，太爷爷惊呆了。他分明看到一团小小的身躯蜷缩在积雪上，身后是一串深深的小脚印。那本来黄白相间的皮毛已经看不出颜色，在白雪的衬托下，越发灰黑，像一团用脏了的抹布。见到太爷爷，小狮子的眼睛一下子焕发了光彩，活蹦乱跳、摇头摆尾地扑了上来，终于到家了！它轻车熟路地跑进屋向每一个家庭成员打招呼。一跑进来，太爷爷才发现，它的一条后腿残废了，从留下的伤痕可以看出，那是被夹黄鼠狼的夹子卡断的。太爷爷在惊诧小狮子的顽强生命力的同时，依然厌恶它，这次是因为它瘸。于是，太爷爷在思忖着下次应该把它丢得更远。",
+    "太爷爷毕竟是善良的，他没有立即丢掉它，把它好好养了起来。两个多月后，春天来了，当村子里的狗开始闹春的时候，太爷爷再次决定扔掉小狮子。这回是托一位串远门的亲戚，把它带到80多里地的外村，到那里去要渡过一条河。太爷爷一定认为，那条河是小狮子不可逾越的天堑。然而，一个多月后，小狮子又回来了。",
+    "太爷爷有股子倔劲儿，他不相信小狮子居然扔不掉。以后，他又把小狮子丢弃了三回，一次比一次扔得远，可小狮子找回家的时间一次比一次短，它好像在和这个倔老头较劲，不断用它的忠诚和精灵与命运抗争，而每次的胜利者必定是小狮子。我始终想不明白，也无法知道，它到底经历了怎样的过程，一次次实现着“回家”的信念。",
+    "1954年，又是一个夏天，太爷爷要带9岁的父亲转到北京上学，并在北京住上半年。临走，太爷爷决定把小狮子带上火车，中途停车时丢掉。父亲畏惧太爷爷，虽然心中不情愿，也不敢反对。",
+    "火车风驰电掣般开出两站地，半夜临时停车时，太爷爷再次丢弃了小狮子，太爷爷坚信这回它再也不能回家了，就是鬼使神差回了家也会吃闭门羹。",
+    "第三部分",
+    "半年后，太爷爷带着放寒假的父亲回老家过年。傍晚下的火车，那时候没有汽车，没有自行车，完全靠徒步，要赶100多里地。天越走越黑，越来越冷。已经走到下半夜了，父亲又冷又饿，实在走不动了。这时，恰巧路过一所乡村小学。太爷爷决定带父亲到学校过夜，等天亮再走。爷孙俩刚刚走近小学校，就听到大门里有狗在狂叫。太爷爷边叩门，边护住父亲，生怕父亲被狗咬伤。一位看传达室的老人出来开门，门刚开了条缝，就从里面蹿出一条狗，跳着叫着扑向太爷爷和父亲。它没有扑咬，而是像久别重逢的老朋友一样在爷孙俩的脚边绕来绕去，摇头摆尾，激动万分。待传达室的老人用手电照亮，爷孙俩看清了，居然是小狮子！它依然不记得主人对它的冷漠和残酷，依然不在乎主人是否喜欢它。",
+    "传达室的老人说，小狮子是在半个多月前一个风雪交加的夜晚，在小学校的门口捡到的，它又饿又冷，已经不能动了，蜷缩在茅草窝里。捡回来后，喂了水和食，很快就精神起来，还能看院门了。末了，老人一声叹息：“小命活得真艰难啊！”",
+    "我不敢想象，也想象不出，小狮子是怎样拖着一条残腿，步履蹒跚、忍饥挨饿地奔走在寻找家园、寻找主人的路上。我在想，抑或它果真又回了家，可怎么也找不到主人，没有主人的房子，还是家吗？它不得不东奔西走，苦苦寻觅着那个温暖的地方，那是它的天堂啊！在这个过程中，它是不是还要防备其他野兽的袭击，是不是还要奋力游过河湖，是不是还要躲避人类的追打啊！它多么执着、多么辛苦啊！而它所承受的这些苦难，全部缘于我们人类的一个不良的想法，一个轻易的举动，这是多么的不公平啊！",
+    "这回太爷爷一句话也没说。他认定了小狮子扔不得，它有灵性。",
+    "第二天天刚亮，爷孙俩谢过传达室的老人，上路了，在他们的身后，多了一个小小的、活泼且有些蹒跚的身影。",
+    "后来，父亲到北京上学。太爷爷和小狮子依然生活在那个农家小院里，相依为命。",
+    "再以后，确切地说，该是4年以后，北京的一家医学研究所到村子里收狗，要大家积极支持祖国的医学研究。虽然太爷爷一辈子行医，懂得医学对人类生存的重要，但当小狮子再次被装入麻袋时，这位一生倔强的老人像送别亲人那样，禁不住老泪纵横。他知道，这回，小狮子是真的回不来了。",
+    "小狮子最终献身于祖国的医学事业。",
+    "（作者：张蕾　选自《人与动物的故事》，金城出版社　有删节）"
+   ],
+   "translations": [
+    "Phần một",
+    "Đó là mùa hè năm 1950, ông nội tôi chấp hành sự phân công của tổ chức, đưa bà nội lên Bắc Kinh công tác. Cha tôi khi ấy mới 5 tuổi, ở lại sống với ông cố tại ngôi làng tên là Đại Hà này. Ông cố hành nghề y ở địa phương, là một thầy lang giỏi nổi tiếng gần xa, và cha tôi là đứa cháu đích tôn được ông cưng chiều nhất. Để dỗ cháu vui, ông cố thường nhân những lần đi khám bệnh tại nhà, chẳng biết kiếm từ đâu về những món đồ độc nhất vô nhị ở vùng này cho cha tôi chơi, chẳng hạn như chiếc máy hát biết hát hí khúc cùng những đĩa hát bóng loáng soi được bóng người, chiếc bảng đen nhỏ với phấn màu để viết chữ vẽ tranh, chiếc giường tre và ghế nằm bằng tre nằm lên vừa trơn láng vừa mát rượi trong những ngày tam phục, và còn có chú chó nhỏ trông như một con sư tử lông xoăn tí hon này. Nói nó cũng là của hiếm, là vì chó ta mà nhà nhà ở đây nuôi để giữ cửa trông nhà đều giống hệt nhau, người ta cho rằng chó thì phải trông như thế. Khi chú chó nhỏ này được ông cố mang về làng, gần như cả làng xôn xao. Trẻ con nhà nào cũng chạy đi báo tin cho nhau, chen chúc trong sân xem “múa sư tử”.",
+    "Bây giờ nhớ lại, cha tôi nói con chó ấy hẳn thuộc loại chó cảnh nhỏ nhắn đáng yêu như chó Shih Tzu hay chó Bắc Kinh. Nó không có tên, cha tôi dựa vào hình dáng của nó mà gọi nó là “Sư Tử Con”.",
+    "Khi mùa thu lúa chín đến, Sư Tử Con đã lớn. Sư Tử Con là chó cái, những con chó ta đực khắp gần xa trong làng bắt đầu nối nhau kéo đến nhà ông cố. Có con cứ quanh quẩn ngoài cửa, sủa inh ỏi không ngừng; có con dùng móng vuốt to khỏe cào cánh cổng gỗ thành từng rãnh sâu; có con hết lần này đến lần khác phóng lên đầu tường cao, cào rơi cả gạch ngói; lại có con suốt đêm rên rỉ gầm gừ… Tình trạng ấy diễn ra suốt ngày không dứt. Ông cố bắt đầu ghét Sư Tử Con, ghét tận đáy lòng, ông đổ tội cho sự trưởng thành ngày một rõ của Sư Tử Con về những ngày bất an này, nhất là khi phải sửa lại bức tường sứt mẻ và cánh cổng đầy vết cào chằng chịt thì ông càng căm ghét Sư Tử Con hơn. Ông cố cả đời làm thầy thuốc, làm việc thiện, đã nghĩ ra cách trừng phạt Sư Tử Con tàn nhẫn nhất, đó là vứt nó đi thật xa, để nó không tìm được đường về nhà.",
+    "Mùa đông sắp đến, ông cố và người trong làng đều đang chuẩn bị qua đông. Chẳng mấy ngày lại có người trong làng đánh xe ngựa đến ga tàu nhỏ cách hơn 50 dặm để chở than.",
+    "Một buổi sáng cuối thu, ông cố giấu cha tôi, bỏ Sư Tử Con vào một chiếc bao tải, buộc lỏng miệng bao, đặt lên xe ngựa, dặn người đánh xe “vứt càng xa càng tốt”. Sư Tử Con nào biết chủ đã không còn thích nó, không muốn nuôi nó nữa, nó tưởng lại được dẫn đi chợ phiên, nên hớn hở ngoan ngoãn mặc cho chủ sắp đặt.",
+    "Phần hai",
+    "Cha tôi khi còn nhỏ sống những ngày vắng Sư Tử Con trong buồn bã, lâu dần rồi cũng quên đi. Cậu lại liên tục có thêm những món đồ hiếm lạ mới.",
+    "Một buổi sáng sau trận tuyết, chắc là ngày hai mươi tám tháng Chạp, khắp làng phảng phất hương thơm ngọt ngào của món ăn ngày Tết. Ông cố kẹp dưới nách một cuộn câu đối đỏ tươi đã viết xong, giẫm lên lớp tuyết dày, lạo xạo bước ra cổng. Khoảnh khắc đẩy cổng ra, ông cố sững sờ. Ông thấy rõ ràng một thân hình nhỏ bé cuộn tròn trên tuyết, phía sau là một chuỗi dấu chân nhỏ in sâu. Bộ lông vốn vàng trắng xen kẽ giờ đã chẳng còn nhận ra màu, trên nền tuyết trắng càng trông xám đen, như một mớ giẻ lau bẩn. Thấy ông cố, mắt Sư Tử Con lập tức sáng rực lên, nó nhảy nhót tung tăng, lắc đầu vẫy đuôi nhào tới — cuối cùng cũng về đến nhà rồi! Nó quen đường quen lối chạy vào nhà chào từng thành viên trong gia đình. Nó vừa chạy vào, ông cố mới phát hiện một chân sau của nó đã tàn phế, nhìn vết thương còn lại có thể thấy đó là bị bẫy kẹp chồn kẹp gãy. Ông cố vừa kinh ngạc trước sức sống mãnh liệt của Sư Tử Con, vừa vẫn ghét nó, lần này là vì nó què. Thế là ông cố lại tính toán lần sau phải vứt nó đi xa hơn nữa.",
+    "Dù sao ông cố cũng là người hiền lành, ông không vứt nó đi ngay mà nuôi nấng nó tử tế. Hơn hai tháng sau, mùa xuân đến, khi lũ chó trong làng bắt đầu động đực, ông cố lại quyết định vứt bỏ Sư Tử Con. Lần này ông nhờ một người họ hàng đi xa mang nó đến một làng khác cách hơn 80 dặm, muốn đến đó phải vượt qua một con sông. Ông cố hẳn tin rằng con sông ấy là hào sâu mà Sư Tử Con không thể vượt qua. Thế nhưng, hơn một tháng sau, Sư Tử Con lại trở về.",
+    "Ông cố có cái tính bướng bỉnh, ông không tin Sư Tử Con lại không vứt đi được. Sau đó, ông lại vứt bỏ Sư Tử Con thêm ba lần, lần sau vứt xa hơn lần trước, nhưng thời gian Sư Tử Con tìm về nhà thì lần sau ngắn hơn lần trước; nó như đang so kè với ông già bướng bỉnh này, không ngừng dùng lòng trung thành và sự lanh lợi của mình để chống lại số phận, và lần nào kẻ chiến thắng cũng là Sư Tử Con. Tôi mãi không hiểu nổi, cũng không cách nào biết được, rốt cuộc nó đã trải qua những gì để hết lần này đến lần khác thực hiện niềm tin “về nhà”.",
+    "Năm 1954, lại một mùa hè, ông cố phải đưa cha tôi khi ấy 9 tuổi chuyển lên Bắc Kinh đi học, và ở Bắc Kinh nửa năm. Trước lúc đi, ông cố quyết định mang Sư Tử Con lên tàu hỏa, đến khi tàu dừng giữa đường thì bỏ nó lại. Cha tôi sợ ông cố, tuy trong lòng không muốn nhưng cũng không dám phản đối.",
+    "Tàu hỏa lao vun vút như gió cuốn chớp giật qua hai ga, nửa đêm tàu dừng tạm, ông cố lại bỏ Sư Tử Con xuống; ông tin chắc lần này nó không thể nào về nhà được nữa, mà có ma xui quỷ khiến về được đến nhà thì cũng chỉ gặp cửa đóng then cài.",
+    "Phần ba",
+    "Nửa năm sau, ông cố dẫn cha tôi đang nghỉ đông về quê ăn Tết. Xuống tàu lúc chiều tối, thời đó không có ô tô, không có xe đạp, hoàn toàn phải đi bộ, đường còn hơn 100 dặm. Càng đi trời càng tối, càng lúc càng lạnh. Đã đi đến quá nửa đêm, cha tôi vừa lạnh vừa đói, thật sự không đi nổi nữa. Lúc ấy vừa may đi ngang một trường tiểu học ở làng quê. Ông cố quyết định đưa cha tôi vào trường nghỉ qua đêm, đợi trời sáng mới đi tiếp. Hai ông cháu vừa đến gần trường thì nghe trong cổng có chó sủa dữ dội. Ông cố vừa gõ cổng, vừa che chở cho cha tôi, chỉ sợ cha tôi bị chó cắn. Một ông lão trông phòng thường trực ra mở cổng, cổng vừa hé một khe, từ bên trong đã vọt ra một con chó, vừa nhảy vừa sủa lao về phía ông cố và cha tôi. Nó không vồ cắn mà như một người bạn cũ lâu ngày gặp lại, quấn quýt quanh chân hai ông cháu, lắc đầu vẫy đuôi, vô cùng xúc động. Đợi ông lão thường trực rọi đèn pin, hai ông cháu nhìn rõ — thì ra là Sư Tử Con! Nó vẫn chẳng nhớ gì sự lạnh lùng và tàn nhẫn của chủ đối với nó, vẫn chẳng màng chủ có thích nó hay không.",
+    "Ông lão thường trực kể, Sư Tử Con được ông nhặt ở cổng trường vào một đêm mưa tuyết gió rét hơn nửa tháng trước, nó vừa đói vừa lạnh, đã không cử động nổi, cuộn tròn trong ổ cỏ tranh. Nhặt về rồi, cho uống nước, cho ăn, nó nhanh chóng khỏe lại, còn giữ cổng được nữa. Cuối cùng, ông lão thở dài một tiếng: “Cái mạng nhỏ này sống thật gian nan!”",
+    "Tôi không dám tưởng tượng, cũng không tưởng tượng nổi, Sư Tử Con đã lê một chân tàn tật, bước đi tập tễnh, chịu đói chịu rét mà rong ruổi trên con đường tìm về nhà, tìm chủ như thế nào. Tôi nghĩ, hay là nó quả thật đã về đến nhà, nhưng tìm thế nào cũng không thấy chủ — ngôi nhà không có chủ thì còn là nhà nữa không? Nó đành phải chạy ngược chạy xuôi, khổ sở kiếm tìm nơi ấm áp ấy, đó là thiên đường của nó! Trong quá trình ấy, phải chăng nó còn phải đề phòng sự tấn công của thú hoang, phải chăng còn phải dốc sức bơi qua sông hồ, phải chăng còn phải trốn tránh sự truy đuổi đánh đập của con người! Nó kiên trì biết bao, vất vả biết bao! Mà tất cả những khổ nạn nó phải gánh chịu đều bắt nguồn từ một ý nghĩ không tốt, một hành động hời hợt của con người chúng ta, thật bất công biết bao!",
+    "Lần này ông cố không nói một lời. Ông đã tin chắc Sư Tử Con không thể vứt bỏ được, nó có linh tính.",
+    "Hôm sau trời vừa sáng, hai ông cháu cảm ơn ông lão thường trực rồi lên đường; phía sau họ có thêm một bóng dáng nhỏ bé, hoạt bát mà hơi tập tễnh.",
+    "Sau đó, cha tôi lên Bắc Kinh đi học. Ông cố và Sư Tử Con vẫn sống trong khoảnh sân nhỏ nhà nông ấy, nương tựa vào nhau.",
+    "Rồi về sau nữa, nói chính xác là khoảng 4 năm sau, một viện nghiên cứu y học ở Bắc Kinh về làng thu mua chó, kêu gọi mọi người tích cực ủng hộ công cuộc nghiên cứu y học của tổ quốc. Tuy ông cố cả đời làm thầy thuốc, hiểu được tầm quan trọng của y học đối với sự sống còn của loài người, nhưng khi Sư Tử Con lại một lần nữa bị bỏ vào bao tải, ông lão cả đời cứng cỏi ấy như tiễn biệt người thân, không kìm được nước mắt giàn giụa. Ông biết, lần này, Sư Tử Con thật sự không thể trở về nữa.",
+    "Sư Tử Con cuối cùng đã hiến thân cho sự nghiệp y học của tổ quốc.",
+    "(Tác giả: Trương Lôi, trích từ “Những câu chuyện về con người và động vật”, NXB Kim Thành, có lược bớt)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "维他命M",
+   "paragraphs": [
+    "几年前，我在《新体育》杂志社工作。杂志社搞了一次优秀运动员的评选活动，请来一位台湾商人赞助。活动结束后的宴会上，恰巧我和这位台湾商人坐在一起。闲谈时，问起她为什么在内地能迅速打开局面，生意越做越红火，她对我坦率地说了这样一句话：“全靠维他命M。”起初，我没有听明白，后来我恍然大悟（huǎngrán dàwù）。她说的这个维他命M，指的是英文MONEY（钱）。",
+    "我知道这是她自己的切肤经验，含有委婉的批评。我们刚刚进入社会转型期，穷惯了、穷怕了的人们，极容易染上金钱至上的毛病，火到猪头烂，钱到公事办，会在许多地方成为一道公式，她的维他命M方才可能成为她闯荡内地的一张畅通无阻的通行证。但她的这句话让我听得不舒服，总觉得她所说的这个维他命M，很像是市场上盖在生猪屁股上的龙胆紫的徽印（huīyìn），印在刚刚发展的城市和我们的脸上，有些不大光彩。这多少有些像本该往脸上抹润肤霜（rùnfūshuāng），却偏偏抹上了开塞露（kāisāilù）一样。",
+    "可是，你能说她讲得没有一点道理吗？金钱的确在许多方面改变着我们的生命，渗（shèn）透进我们一些人的道德血液中，要不怎么解释腐败蔓延，后门成风，假货盛行，甚至为了赚钱可以伤天害理地制造掺有甲醇（chún）的毒酒置人于死地？维他命M确实成了好东西，成了生命攸（yōu）关、不可须臾（yú）相离的宝贝，颇有些“喝令三山五岳开道，我来啦”的气势与气魄（pò）。",
+    "前几天，一位朋友也这样对我说：我们的生活其实缺少不了一种维他命M。我以为他说的维他命M，依然指的是MONEY。他笑着摇摇头说：“你不是喜欢音乐吗？”我明白了他说的维他命M是MUSIC（音乐）。他的维他命M立刻让我又想起几年前那位台湾商人的维他命M。同样是维他命M，所指的竟是如此不一样。",
+    "对于一个刚刚解决了温饱的民族来讲，似乎钱要比音乐更重要一些。我们的发展，我们的房子、汽车、公路、学校、牛奶……乃至我们的几百万人口的脱贫，哪一样不需要钱？我们的音乐只要有一些流行的歌星在蹦跶（bèngda）就可以了，而交响乐似乎离我们还有些遥远，我们的国家歌剧院的建设也暂时没有建五星级宾馆重要。黑格尔（Hegel）说过：“音乐是进入更高的知识世界的唯一的、非物质的方法。”我知道我的这位朋友的这些牢骚（láosāo），但我更知道他在这里所说的维他命M并不仅仅指音乐，还包括着精神在内的一切那些非物质的东西。一个国家、一个民族，乃至一个城市、一个家庭建设，所需要的是多种维他命的滋养。离开了前一种维他命M（MONEY）自然是不行的；离开了后一种维他命M（MUSIC）同样也是不行的。偏食，难免畸（jī）形，不是过于消瘦，就是容易过于肥胖。我们刚刚翻身跃下精神万能的骏马，很容易一下子蹿上金钱万能的列车。这两者都非常可能让我们产生风驰电掣的幻觉，以为都是在飞奔向前。如今，精神已经很容易被弃之如屣（xǐ），看不见又摸不着，而看得见摸得着的金钱，自然就容易越来越被我们奉为神明。",
+    "客观地讲，两种维他命M，我们其实都是非常需要的，因为眼下这两样东西我们都很缺少。只是，我们别让前一种维他命M威风凛凛（lǐn）不可一世，把它揣（chuāi）在衣袋里或放在该放的地方就是了。纵是精神已经不再万能，但缺乏精神的滋养，失去精神的支柱，再多的钱也无法使得我们真正富有和强盛起来。",
+    "（作者：肖复兴　选自《读者》）"
+   ],
+   "translations": [
+    "Mấy năm trước, tôi làm việc ở tòa soạn tạp chí “Thể dục mới”. Tạp chí tổ chức một đợt bình chọn vận động viên xuất sắc, mời một nữ doanh nhân Đài Loan tài trợ. Tại bữa tiệc sau khi kết thúc hoạt động, tình cờ tôi ngồi cạnh vị doanh nhân ấy. Lúc chuyện phiếm, tôi hỏi vì sao bà có thể nhanh chóng mở ra cục diện ở đại lục, làm ăn ngày càng phát đạt, bà thẳng thắn nói với tôi một câu: “Hoàn toàn nhờ vitamin M.” Lúc đầu tôi không hiểu, về sau mới chợt vỡ lẽ. Cái vitamin M bà nói chính là chữ MONEY (tiền) trong tiếng Anh.",
+    "Tôi biết đây là kinh nghiệm thấm thía của chính bà, hàm chứa một lời phê bình uyển chuyển. Chúng ta vừa bước vào thời kỳ chuyển đổi xã hội, những người đã quen nghèo, sợ nghèo rất dễ nhiễm căn bệnh coi đồng tiền là trên hết; “lửa đến thì đầu heo nhừ, tiền đến thì việc công xong” ở nhiều nơi đã thành một công thức, nên vitamin M của bà mới có thể trở thành tấm giấy thông hành giúp bà bôn ba ở đại lục mà không gặp trở ngại gì. Nhưng câu nói ấy khiến tôi nghe không thoải mái, cứ thấy cái vitamin M bà nói rất giống con dấu màu tím gentian đóng lên mông heo ở chợ, in lên những thành phố vừa mới phát triển và lên mặt chúng ta, chẳng vẻ vang gì. Điều này ít nhiều giống như lẽ ra phải thoa kem dưỡng da lên mặt, thì lại cứ thoa thuốc thụt hậu môn vậy.",
+    "Thế nhưng, bạn có thể nói lời bà ấy chẳng có chút lý nào không? Đồng tiền quả thật đang thay đổi cuộc sống của chúng ta trên nhiều phương diện, thấm vào dòng máu đạo đức của một số người trong chúng ta; nếu không thì giải thích thế nào về chuyện tham nhũng lan tràn, đi cửa sau thành thói, hàng giả tràn lan, thậm chí vì kiếm tiền mà thất đức đến mức sản xuất rượu độc pha methanol đẩy người ta vào chỗ chết? Vitamin M quả thật đã trở thành thứ tốt, thành bảo bối liên quan đến sinh mệnh, không thể rời xa dù chỉ một khắc, rất có khí thế và khí phách của câu “Quát bảo tam sơn ngũ nhạc mở đường, ta đến đây”.",
+    "Mấy hôm trước, một người bạn cũng nói với tôi như vậy: cuộc sống của chúng ta thật ra không thể thiếu một loại vitamin M. Tôi tưởng vitamin M anh nói vẫn là MONEY. Anh cười lắc đầu: “Chẳng phải anh thích âm nhạc sao?” Tôi hiểu ra vitamin M anh nói là MUSIC (âm nhạc). Vitamin M của anh lập tức khiến tôi nhớ lại vitamin M của vị doanh nhân Đài Loan mấy năm trước. Cùng là vitamin M, mà điều chúng chỉ lại khác nhau đến thế.",
+    "Đối với một dân tộc vừa mới giải quyết được cái ăn cái mặc, dường như tiền quan trọng hơn âm nhạc một chút. Sự phát triển của chúng ta, nhà cửa, xe cộ, đường sá, trường học, sữa… cho đến việc thoát nghèo của mấy triệu người, thứ nào mà không cần tiền? Âm nhạc của chúng ta chỉ cần có vài ngôi sao ca nhạc thịnh hành nhảy nhót là đủ, còn nhạc giao hưởng dường như vẫn còn xa vời, việc xây nhà hát opera quốc gia tạm thời cũng không quan trọng bằng xây khách sạn năm sao. Hegel từng nói: “Âm nhạc là phương pháp duy nhất, phi vật chất để bước vào thế giới tri thức cao hơn.” Tôi biết những lời than phiền ấy của bạn tôi, nhưng tôi càng biết vitamin M anh nói ở đây không chỉ là âm nhạc, mà bao gồm tất cả những thứ phi vật chất, kể cả tinh thần. Một quốc gia, một dân tộc, cho đến việc xây dựng một thành phố, một gia đình, đều cần sự nuôi dưỡng của nhiều loại vitamin. Thiếu loại vitamin M thứ nhất (MONEY) dĩ nhiên không được; thiếu loại vitamin M thứ hai (MUSIC) cũng không được. Ăn lệch thì khó tránh dị dạng, không gầy gò quá mức thì cũng dễ béo phì quá mức. Chúng ta vừa mới xoay mình nhảy xuống khỏi con tuấn mã “tinh thần vạn năng”, rất dễ một bước phóng lên đoàn tàu “đồng tiền vạn năng”. Cả hai đều rất có thể khiến chúng ta sinh ra ảo giác vun vút như gió cuốn chớp giật, tưởng rằng mình đang lao nhanh về phía trước. Ngày nay, tinh thần đã rất dễ bị vứt bỏ như đôi dép rách, vì nó không nhìn thấy, không sờ được; còn đồng tiền nhìn thấy, sờ được, tự nhiên dễ ngày càng được chúng ta tôn thờ như thần thánh.",
+    "Nói một cách khách quan, cả hai loại vitamin M chúng ta thật ra đều rất cần, vì hiện nay cả hai thứ ấy chúng ta đều đang thiếu. Chỉ có điều, chúng ta đừng để loại vitamin M thứ nhất oai phong lẫm liệt, coi trời bằng vung; hãy cất nó vào túi áo hoặc để nó ở đúng chỗ của nó là được. Dù tinh thần không còn vạn năng nữa, nhưng thiếu sự nuôi dưỡng của tinh thần, mất đi chỗ dựa tinh thần, thì tiền nhiều đến đâu cũng không thể khiến chúng ta thật sự giàu có và hùng mạnh.",
+    "(Tác giả: Tiêu Phục Hưng, trích từ “Độc giả”)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "于 (đối với, hướng về; ở, tại)",
+   "structure": "动词 + 于 + 名词性成分",
+   "explanation": "Giới từ, dùng trong văn viết. Trong câu này “于” biểu thị đối tượng, mang nghĩa “đối với, hướng về”. Đặt sau động từ, phía sau thường là thành phần danh từ. Các kết hợp thường gặp: 有求于（人）(có việc cần nhờ người), 忠于（职守）(trung thành với cương vị), 有利于 (có lợi cho), 适用于 (áp dụng cho), 不满足于（现状）(không thỏa mãn với hiện trạng), 不习惯于 (không quen với), 不要苛求于（别人）(đừng đòi hỏi khắt khe với người khác), 有感于 (có cảm xúc trước).",
+   "examples": [
+    {
+     "zh": "他把这些日子的不安宁归罪于小狮子的日渐成熟。",
+     "vi": "Ông đổ tội cho sự trưởng thành ngày một rõ của Sư Tử Con về những ngày bất an này."
+    },
+    {
+     "zh": "有求于人",
+     "vi": "có việc phải nhờ cậy người khác"
+    },
+    {
+     "zh": "忠于职守",
+     "vi": "trung thành với chức trách"
+    },
+    {
+     "zh": "有利于北京队",
+     "vi": "có lợi cho đội Bắc Kinh"
+    },
+    {
+     "zh": "适用于各种场合",
+     "vi": "thích hợp cho mọi trường hợp"
+    }
+   ]
+  },
+  {
+   "point": "日渐 (ngày một, ngày càng)",
+   "structure": "日渐 + 双音节动词/形容词",
+   "explanation": "Phó từ, nghĩa là “từng ngày từng ngày, dần dần”. Phía sau là động từ hoặc tính từ hai âm tiết. Mang sắc thái văn viết. Các kết hợp thường gặp: 日渐进步, 日渐减少, 日渐增多, 日渐紧张, 日渐忙碌, 日渐消瘦, 日渐衰老, 日渐炎热, 日渐密切, 日渐好转, 日渐提高, 日渐长大.",
+   "examples": [
+    {
+     "zh": "他把这些日子的不安宁归罪于小狮子的日渐成熟。",
+     "vi": "Ông đổ tội cho sự trưởng thành ngày một rõ của Sư Tử Con về những ngày bất an này."
+    },
+    {
+     "zh": "日渐消瘦",
+     "vi": "ngày một gầy đi"
+    },
+    {
+     "zh": "日渐衰老",
+     "vi": "ngày càng già yếu"
+    },
+    {
+     "zh": "日渐好转",
+     "vi": "ngày một khá lên"
+    }
+   ]
+  },
+  {
+   "point": "任凭 (mặc cho, tùy; dù cho)",
+   "structure": "任凭 + 人（名词/代词）（+ 动词）；任凭……也/都……",
+   "explanation": "Động từ, nghĩa là “mặc cho, để mặc”; phía sau thường là danh từ hoặc đại từ chỉ người. Liên hệ: “任凭” còn có thể làm liên từ, nghĩa tương đương “无论, 不论” (bất kể, dù), vế sau thường có “也, 都”.",
+   "examples": [
+    {
+     "zh": "小狮子并不知道主人不喜欢它了，不想要它了，以为又要带它去赶集，兴高采烈地，乖乖地任凭主人摆布。",
+     "vi": "Sư Tử Con nào biết chủ đã không còn thích nó, không muốn nuôi nó nữa, tưởng lại được dẫn đi chợ phiên, nên hớn hở ngoan ngoãn mặc cho chủ sắp đặt."
+    },
+    {
+     "zh": "要去要留，任凭你们，反正我的主意不变。",
+     "vi": "Đi hay ở tùy các anh, dù sao ý tôi cũng không đổi."
+    },
+    {
+     "zh": "如果有半点虚假，任凭你们惩罚。",
+     "vi": "Nếu có nửa điểm gian dối, mặc các anh trừng phạt."
+    },
+    {
+     "zh": "任凭那个推销员怎么巧舌如簧地推销，我也不动心。",
+     "vi": "Mặc cho người bán hàng ấy chào mời khéo léo đến đâu, tôi cũng không động lòng."
+    },
+    {
+     "zh": "任凭他多有钱，我也不嫁给他。",
+     "vi": "Dù anh ta giàu đến đâu, tôi cũng không lấy anh ta."
+    }
+   ]
+  },
+  {
+   "point": "越发 (càng thêm, càng)",
+   "structure": "越发 + 双音节形容词/其他短语",
+   "explanation": "Phó từ, nghĩa là “càng thêm, hơn nữa”. Phía sau thường là tính từ hai âm tiết hoặc cụm từ khác. Liên hệ: chỗ nào dùng “越发” đều có thể thay bằng “更加”; nhưng khi “更加” dùng để so sánh hai sự vật, như “他比妹妹更加用功”, thì không thể thay bằng “越发”.",
+   "examples": [
+    {
+     "zh": "那本来黄白相间的皮毛已经看不出颜色，在白雪的衬托下，越发灰黑。",
+     "vi": "Bộ lông vốn vàng trắng xen kẽ giờ đã chẳng còn nhận ra màu, trên nền tuyết trắng càng trông xám đen."
+    },
+    {
+     "zh": "小燕站在一群身材高大的小伙子中间，显得越发娇小。",
+     "vi": "Tiểu Yến đứng giữa một đám thanh niên cao lớn, càng trông nhỏ nhắn."
+    },
+    {
+     "zh": "战争爆发以后，市民们的生活越发困难了。",
+     "vi": "Sau khi chiến tranh nổ ra, đời sống của người dân thành phố càng khó khăn hơn."
+    },
+    {
+     "zh": "了解人生的意义以后，他越发热爱生活了。",
+     "vi": "Sau khi hiểu ý nghĩa cuộc đời, anh ấy càng yêu cuộc sống hơn."
+    },
+    {
+     "zh": "动完手术以后，他的记忆力越发不如从前了。",
+     "vi": "Sau ca phẫu thuật, trí nhớ của ông ấy càng kém hơn trước."
+    }
+   ]
+  },
+  {
+   "point": "动词 + 上 + 数量词语 (đạt tới một số lượng nhất định)",
+   "structure": "动词 + 上 + 数量词语；动词 + 不上 + 数量词语",
+   "explanation": "Biểu thị đạt tới một số lượng nhất định. Thường có thể lược “上” mà không ảnh hưởng nghĩa cả câu. Một số ít tính từ cũng có cách dùng này (大上两倍). Liên hệ: “动词 + 不上 + 数量词语” có nghĩa tương đương “动词 + 不了 + 数量词语” (không … nổi bao nhiêu).",
+   "examples": [
+    {
+     "zh": "太爷爷要带9岁的父亲转到北京上学，并在北京住上半年。",
+     "vi": "Ông cố phải đưa cha tôi 9 tuổi chuyển lên Bắc Kinh đi học, và ở Bắc Kinh nửa năm."
+    },
+    {
+     "zh": "最近忙着准备毕业论文，每天只能睡上四五个小时。",
+     "vi": "Dạo này bận chuẩn bị luận văn tốt nghiệp, mỗi ngày chỉ ngủ được bốn năm tiếng."
+    },
+    {
+     "zh": "我们俩没说上几句话车就开了。",
+     "vi": "Hai chúng tôi chưa nói được mấy câu thì xe đã chạy."
+    },
+    {
+     "zh": "扩建后的体育馆比现在的规模应该再大上两倍。",
+     "vi": "Nhà thi đấu sau khi mở rộng phải lớn hơn quy mô hiện nay gấp hai lần nữa."
+    },
+    {
+     "zh": "这家饭馆的饺子大得像包子，吃不上几个就饱了。",
+     "vi": "Sủi cảo quán này to như bánh bao, ăn chưa được mấy cái đã no."
+    }
+   ]
+  },
+  {
+   "point": "生怕 (chỉ sợ, e rằng)",
+   "structure": "生怕 + 动词性宾语",
+   "explanation": "Động từ, nghĩa là “chỉ sợ, rất lo”, biểu thị sự lo lắng, nghi ngại. Lưu ý: trước “生怕” không được thêm từ phủ định; phía sau thường mang tân ngữ là động từ/cụm động từ.",
+   "examples": [
+    {
+     "zh": "太爷爷边叩门，边护住父亲，生怕父亲被狗咬伤。",
+     "vi": "Ông cố vừa gõ cổng, vừa che chở cho cha tôi, chỉ sợ cha tôi bị chó cắn."
+    },
+    {
+     "zh": "小张努力紧跟着队伍前边的人，生怕掉了队。",
+     "vi": "Tiểu Trương cố bám sát người phía trước, chỉ sợ bị tụt lại khỏi đoàn."
+    },
+    {
+     "zh": "开学的第一天，她生怕迟到，所以一大早就起床了。",
+     "vi": "Ngày đầu khai giảng, cô ấy sợ đến muộn nên dậy từ sáng sớm."
+    },
+    {
+     "zh": "李明把论文又修改了一遍，生怕导师不满意。",
+     "vi": "Lý Minh lại sửa luận văn thêm một lượt, chỉ sợ thầy hướng dẫn không hài lòng."
+    },
+    {
+     "zh": "生怕坏人跑了，他们在后边紧紧追赶。",
+     "vi": "Sợ kẻ xấu chạy mất, họ bám sát đuổi theo phía sau."
+    }
+   ]
+  },
+  {
+   "point": "抑或 (hay là, hoặc là)",
+   "structure": "A 抑或 B；A、B……抑或 C；无论/不管……抑或……",
+   "explanation": "Liên từ, nối từ ngữ hoặc vế câu, biểu thị quan hệ lựa chọn, tương đương “或者”, dùng trong văn viết. Khi nối hai thành phần thì đặt ở giữa; khi nối nhiều thành phần thì đặt trước thành phần cuối cùng. Còn có thể dùng trong cụm từ hoặc vế câu mang tính bao quát mở đầu bằng “无论”, “不管”…",
+   "examples": [
+    {
+     "zh": "抑或它果真又回了家，可怎么也找不到主人，没有主人的房子，还是家吗？",
+     "vi": "Hay là nó quả thật đã về đến nhà, nhưng tìm thế nào cũng không thấy chủ — ngôi nhà không có chủ thì còn là nhà nữa không?"
+    },
+    {
+     "zh": "赞成抑或反对，你都应该明确表态。",
+     "vi": "Tán thành hay phản đối, anh đều nên bày tỏ rõ ràng."
+    },
+    {
+     "zh": "窗外一棵树，路边一朵花，天上一块云，抑或远处一座山，都能让他有所领悟。",
+     "vi": "Một cái cây ngoài cửa sổ, một bông hoa bên đường, một đám mây trên trời, hay một ngọn núi đằng xa, đều có thể khiến anh ấy ngộ ra điều gì đó."
+    },
+    {
+     "zh": "这种舞蹈，无论是现代派青年，抑或是传统观念较强的老人，都喜闻乐见。",
+     "vi": "Điệu múa này, dù là thanh niên theo trường phái hiện đại hay người già có quan niệm truyền thống, đều thích xem."
+    },
+    {
+     "zh": "不管在绍兴酒的故乡，还是长白参的故乡，抑或景德镇瓷器的故乡，摄影家所倾注的都是普通百姓浓郁的感情。",
+     "vi": "Dù ở quê hương rượu Thiệu Hưng, quê hương sâm Trường Bạch hay quê hương gốm sứ Cảnh Đức Trấn, điều nhiếp ảnh gia dồn tâm huyết vào đều là tình cảm đậm đà của người dân bình thường."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1064 @@
+{
+ "book": "gc1",
+ "lesson_num": 2,
+ "title": "请按……",
+ "pages": [
+  33,
+  53
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "搭乘",
+   "py": "dāchéng",
+   "pos": "动",
+   "zh": "乘坐（车、船、飞机等）。",
+   "en": "",
+   "hv": "ĐÁP THỪA",
+   "vi": "đi, đáp (xe, tàu, máy bay)",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "讯息",
+   "py": "xùnxī",
+   "pos": "名",
+   "zh": "信息、消息。",
+   "en": "",
+   "hv": "TẤN TỨC",
+   "vi": "thông tin, tin tức",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "致电",
+   "py": "zhì diàn",
+   "pos": "",
+   "zh": "给某人打电话或发电报。",
+   "en": "",
+   "hv": "TRÍ ĐIỆN",
+   "vi": "gọi điện (đến)",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "班机",
+   "py": "bānjī",
+   "pos": "名",
+   "zh": "有固定的航线并按排定的时间起飞的飞机。",
+   "en": "airliner; flight",
+   "hv": "BAN CƠ",
+   "vi": "chuyến bay",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "按钮",
+   "py": "ànniǔ",
+   "pos": "名",
+   "zh": "电器或其他设备上用手按的起开关调节、控制作用的部件。",
+   "en": "push button",
+   "hv": "ÁN NỮU",
+   "vi": "nút bấm",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "不必",
+   "py": "búbì",
+   "pos": "副",
+   "zh": "表示事理上或情理上不需要。（不必——未必）",
+   "en": "",
+   "hv": "BẤT TẤT",
+   "vi": "không cần",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "架",
+   "py": "jià",
+   "pos": "量",
+   "zh": "主要用于机器、飞机、钢琴等。",
+   "en": "",
+   "hv": "GIÁ",
+   "vi": "chiếc (máy móc, máy bay)",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "省却",
+   "py": "shěngquè",
+   "pos": "动",
+   "zh": "节省。",
+   "en": "",
+   "hv": "TỈNH KHƯỚC",
+   "vi": "bớt được, tiết kiệm",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "实惠",
+   "py": "shíhuì",
+   "pos": "形",
+   "zh": "有实际的好处。（实惠——优惠）",
+   "en": "",
+   "hv": "THỰC HUỆ",
+   "vi": "thiết thực, có lợi",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "固定",
+   "py": "gùdìng",
+   "pos": "形",
+   "zh": "不变动或不移动的。",
+   "en": "",
+   "hv": "CỐ ĐỊNH",
+   "vi": "cố định",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "风气",
+   "py": "fēngqì",
+   "pos": "名",
+   "zh": "社会上或某个集体中流行的爱好或习惯。",
+   "en": "",
+   "hv": "PHONG KHÍ",
+   "vi": "trào lưu, thói quen chung",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "订阅",
+   "py": "dìngyuè",
+   "pos": "动",
+   "zh": "预先付款订购报纸、期刊等。",
+   "en": "",
+   "hv": "ĐÍNH DUYỆT",
+   "vi": "đặt mua (báo, tạp chí)",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "故",
+   "py": "gù",
+   "pos": "连",
+   "zh": "所以。",
+   "en": "",
+   "hv": "CỐ",
+   "vi": "cho nên, vì vậy",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "追究",
+   "py": "zhuījiū",
+   "pos": "动",
+   "zh": "追问（根由）；追查（原因、责任等）。",
+   "en": "",
+   "hv": "TRUY CỨU",
+   "vi": "truy hỏi, truy cứu",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "宇宙",
+   "py": "yǔzhòu",
+   "pos": "名",
+   "zh": "包括地球及其他一切天体的无限空间。",
+   "en": "the universe; the cosmos",
+   "hv": "VŨ TRỤ",
+   "vi": "vũ trụ",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "发行",
+   "py": "fāxíng",
+   "pos": "动",
+   "zh": "发出新印制的货币、债券或新出版的书刊、新制作的电影等。",
+   "en": "",
+   "hv": "PHÁT HÀNH",
+   "vi": "phát hành",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "编辑",
+   "py": "biānjí",
+   "pos": "动",
+   "zh": "对资料或现成的作品进行整理、加工。",
+   "en": "",
+   "hv": "BIÊN TẬP",
+   "vi": "biên tập",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "尽快",
+   "py": "jǐnkuài",
+   "pos": "副",
+   "zh": "尽量加快。",
+   "en": "",
+   "hv": "TẬN KHOÁI",
+   "vi": "càng sớm càng tốt",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "介意",
+   "py": "jièyì",
+   "pos": "动",
+   "zh": "把不愉快的事情记在心里；在意。（介意——在意）",
+   "en": "",
+   "hv": "GIỚI Ý",
+   "vi": "để bụng, bận tâm",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "细节",
+   "py": "xìjié",
+   "pos": "名",
+   "zh": "细小的环节或情节。",
+   "en": "",
+   "hv": "TẾ TIẾT",
+   "vi": "chi tiết",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "计较",
+   "py": "jìjiào",
+   "pos": "动",
+   "zh": "计算比较。",
+   "en": "",
+   "hv": "KẾ GIẢO",
+   "vi": "so đo, tính toán",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "扼要",
+   "py": "èyào",
+   "pos": "形",
+   "zh": "抓住重要的内容。",
+   "en": "",
+   "hv": "ÁCH YẾU",
+   "vi": "ngắn gọn, súc tích",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "寒暄",
+   "py": "hánxuān",
+   "pos": "动",
+   "zh": "见面时谈天气冷暖之类的应酬话。",
+   "en": "",
+   "hv": "HÀN HUYÊN",
+   "vi": "hỏi han xã giao",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "虚伪",
+   "py": "xūwěi",
+   "pos": "形",
+   "zh": "不真实；不实在；做假。（虚伪——虚假）",
+   "en": "",
+   "hv": "HƯ NGỤY",
+   "vi": "giả dối",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "公众",
+   "py": "gōngzhòng",
+   "pos": "名",
+   "zh": "社会上大多数的人；大众。",
+   "en": "",
+   "hv": "CÔNG CHÚNG",
+   "vi": "công chúng",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "值班",
+   "py": "zhí bān",
+   "pos": "",
+   "zh": "在规定的时间担任工作。",
+   "en": "to be on duty",
+   "hv": "TRỰC BAN",
+   "vi": "trực, trực ban",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "住宅",
+   "py": "zhùzhái",
+   "pos": "名",
+   "zh": "住房（多指规模较大的）。",
+   "en": "",
+   "hv": "TRÚ TRẠCH",
+   "vi": "nhà ở",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "偶然",
+   "py": "ǒurán",
+   "pos": "形",
+   "zh": "事理上不一定要发生而发生的；超出一般规律的。",
+   "en": "",
+   "hv": "NGẪU NHIÊN",
+   "vi": "ngẫu nhiên, tình cờ",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "失误",
+   "py": "shīwù",
+   "pos": "动",
+   "zh": "由于疏忽或水平不高而造成差错。",
+   "en": "",
+   "hv": "THẤT NGỘ",
+   "vi": "sơ suất, nhầm lẫn",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "幽默",
+   "py": "yōumò",
+   "pos": "形",
+   "zh": "有趣或可笑而又意味深长。",
+   "en": "",
+   "hv": "U MẶC",
+   "vi": "hài hước",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "心理学家",
+   "py": "xīnlǐxuéjiā",
+   "pos": "名",
+   "zh": "研究心理现象客观规律的科学家。",
+   "en": "",
+   "hv": "TÂM LÝ HỌC GIA",
+   "vi": "nhà tâm lý học",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "沟通",
+   "py": "gōutōng",
+   "pos": "动",
+   "zh": "使两方能通连，多指交流思想、感情、协调关系等。",
+   "en": "",
+   "hv": "CÂU THÔNG",
+   "vi": "giao tiếp, trao đổi",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "寂寞",
+   "py": "jìmò",
+   "pos": "形",
+   "zh": "孤单冷清。",
+   "en": "",
+   "hv": "TỊCH MỊCH",
+   "vi": "cô đơn, quạnh hiu",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "诧异",
+   "py": "chàyì",
+   "pos": "形",
+   "zh": "觉得十分奇怪。",
+   "en": "",
+   "hv": "SÁ DỊ",
+   "vi": "kinh ngạc, lấy làm lạ",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "好不",
+   "py": "hǎobù",
+   "pos": "副",
+   "zh": "表示程度深，相当于“很”、“多么”的意思。",
+   "en": "",
+   "hv": "HẢO BẤT",
+   "vi": "thật là, biết bao",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "涉及",
+   "py": "shèjí",
+   "pos": "动",
+   "zh": "牵涉到；关联到。",
+   "en": "",
+   "hv": "THIỆP CẬP",
+   "vi": "liên quan đến",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "隐私",
+   "py": "yǐnsī",
+   "pos": "名",
+   "zh": "不愿告人的或不愿公开的个人的事。",
+   "en": "privacy",
+   "hv": "ẨN TƯ",
+   "vi": "chuyện riêng tư",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "作答",
+   "py": "zuòdá",
+   "pos": "动",
+   "zh": "做出回答。",
+   "en": "",
+   "hv": "TÁC ĐÁP",
+   "vi": "trả lời",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "突兀",
+   "py": "tūwù",
+   "pos": "形",
+   "zh": "突然发生，出乎意外。（突兀——突然）",
+   "en": "",
+   "hv": "ĐỘT NGỘT",
+   "vi": "đột ngột, bất ngờ",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "居然",
+   "py": "jūrán",
+   "pos": "副",
+   "zh": "表示出乎意料。",
+   "en": "",
+   "hv": "CƯ NHIÊN",
+   "vi": "vậy mà, lại (ngoài dự liệu)",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "轻率",
+   "py": "qīngshuài",
+   "pos": "形",
+   "zh": "（说话做事）随随便便，没有经过慎重考虑。",
+   "en": "",
+   "hv": "KHINH SUẤT",
+   "vi": "khinh suất, hấp tấp",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "荧光屏",
+   "py": "yíngguāngpíng",
+   "pos": "名",
+   "zh": "电视或电脑的屏幕。",
+   "en": "viewing screen",
+   "hv": "HUỲNH QUANG BÌNH",
+   "vi": "màn hình",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "单身",
+   "py": "dānshēn",
+   "pos": "动",
+   "zh": "没有家属或不跟家属在一起生活。",
+   "en": "",
+   "hv": "ĐƠN THÂN",
+   "vi": "sống độc thân",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "沉闷",
+   "py": "chénmèn",
+   "pos": "形",
+   "zh": "（天气、气氛等）使人感到沉重而烦闷。",
+   "en": "",
+   "hv": "TRẦM MUỘN",
+   "vi": "nặng nề, buồn tẻ",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "彷徨",
+   "py": "pánghuáng",
+   "pos": "动",
+   "zh": "走来走去，犹豫不决，不知往哪个方向去。",
+   "en": "",
+   "hv": "BÀNG HOÀNG",
+   "vi": "hoang mang, do dự",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "渴望",
+   "py": "kěwàng",
+   "pos": "动",
+   "zh": "迫切地希望。",
+   "en": "",
+   "hv": "KHÁT VỌNG",
+   "vi": "khao khát",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "惊惶",
+   "py": "jīnghuáng",
+   "pos": "形",
+   "zh": "因害怕而慌张。",
+   "en": "",
+   "hv": "KINH HOÀNG",
+   "vi": "hoảng hốt",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "徒步",
+   "py": "túbù",
+   "pos": "副",
+   "zh": "步行。",
+   "en": "",
+   "hv": "ĐỒ BỘ",
+   "vi": "đi bộ",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "涕",
+   "py": "tì",
+   "pos": "名",
+   "zh": "眼泪。",
+   "en": "",
+   "hv": "THẾ",
+   "vi": "nước mắt",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "作为",
+   "py": "zuòwéi",
+   "pos": "名",
+   "zh": "所作所为；行为。",
+   "en": "",
+   "hv": "TÁC VI",
+   "vi": "việc làm, hành vi (làm nên trò trống)",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "分手",
+   "py": "fēn shǒu",
+   "pos": "",
+   "zh": "指结束恋爱关系或夫妻关系。",
+   "en": "",
+   "hv": "PHÂN THỦ",
+   "vi": "chia tay",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "梦境",
+   "py": "mèngjìng",
+   "pos": "名",
+   "zh": "梦中经历的情景。",
+   "en": "",
+   "hv": "MỘNG CẢNH",
+   "vi": "cảnh trong mơ, giấc mơ",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "叹气",
+   "py": "tàn qì",
+   "pos": "",
+   "zh": "心里感到不痛快而呼出长气，发出声音。",
+   "en": "",
+   "hv": "THÁN KHÍ",
+   "vi": "thở dài",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "谈何容易",
+   "py": "tánhé róngyì",
+   "pos": "",
+   "zh": "说起来容易做起来难，表示事情做起来并不像说的那样简单。",
+   "en": "",
+   "hv": "ĐÀM HÀ DUNG DỊ",
+   "vi": "nói thì dễ (làm mới khó)",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "早已",
+   "py": "zǎoyǐ",
+   "pos": "副",
+   "zh": "很早已经；早就。",
+   "en": "",
+   "hv": "TẢO DĨ",
+   "vi": "từ lâu đã, sớm đã",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "亦",
+   "py": "yì",
+   "pos": "副",
+   "zh": "也（表示同样）；也是。",
+   "en": "",
+   "hv": "DIỆC",
+   "vi": "cũng",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "如梦初醒",
+   "py": "rú mèng chū xǐng",
+   "pos": "",
+   "zh": "好像刚从梦中醒过来，形容刚刚从糊涂、错误的境地中觉醒过来。",
+   "en": "",
+   "hv": "NHƯ MỘNG SƠ TỈNH",
+   "vi": "như vừa tỉnh mộng",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "枯燥",
+   "py": "kūzào",
+   "pos": "形",
+   "zh": "单调，没有趣味。",
+   "en": "",
+   "hv": "KHÔ TÁO",
+   "vi": "khô khan, tẻ nhạt",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "奄奄一息",
+   "py": "yǎnyǎn yì xī",
+   "pos": "",
+   "zh": "形容气息微弱。",
+   "en": "",
+   "hv": "YỂM YỂM NHẤT TỨC",
+   "vi": "thoi thóp",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "独自",
+   "py": "dúzì",
+   "pos": "副",
+   "zh": "自己一个人。",
+   "en": "",
+   "hv": "ĐỘC TỰ",
+   "vi": "một mình",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "身不由己",
+   "py": "shēn bù yóu jǐ",
+   "pos": "",
+   "zh": "自己控制不了自己的行为。",
+   "en": "",
+   "hv": "THÂN BẤT DO KỶ",
+   "vi": "không tự chủ được",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "题材",
+   "py": "tícái",
+   "pos": "名",
+   "zh": "构成文学和艺术作品的材料。",
+   "en": "subject matter; theme",
+   "hv": "ĐỀ TÀI",
+   "vi": "đề tài",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "局势",
+   "py": "júshì",
+   "pos": "名",
+   "zh": "（政治、军事等）一个时期内的发展情况。",
+   "en": "",
+   "hv": "CỤC THẾ",
+   "vi": "tình hình, cục diện",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "股票",
+   "py": "gǔpiào",
+   "pos": "名",
+   "zh": "用来表示股份的证券。",
+   "en": "share; stock",
+   "hv": "CỔ PHIẾU",
+   "vi": "cổ phiếu",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "走势",
+   "py": "zǒushì",
+   "pos": "名",
+   "zh": "事物发展的动向。",
+   "en": "",
+   "hv": "TẨU THẾ",
+   "vi": "xu thế, chiều hướng",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "过分",
+   "py": "guòfèn",
+   "pos": "形",
+   "zh": "（说话、做事）超过一定的程度或限度。",
+   "en": "",
+   "hv": "QUÁ PHẬN",
+   "vi": "quá đáng",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "鼓",
+   "py": "gǔ",
+   "pos": "动",
+   "zh": "发动；振奋。",
+   "en": "",
+   "hv": "CỔ",
+   "vi": "lấy (can đảm), khích lệ",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "摆脱",
+   "py": "bǎituō",
+   "pos": "动",
+   "zh": "脱离（各种不利的情况）。",
+   "en": "",
+   "hv": "BÃI THOÁT",
+   "vi": "thoát khỏi",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "迷惑",
+   "py": "míhuò",
+   "pos": "形",
+   "zh": "辨不清是非，不清楚。（迷惑——困惑）",
+   "en": "",
+   "hv": "MÊ HOẶC",
+   "vi": "bối rối, hoang mang",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "精密",
+   "py": "jīngmì",
+   "pos": "形",
+   "zh": "精确细密。",
+   "en": "",
+   "hv": "TINH MẬT",
+   "vi": "tinh vi, chính xác",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "唏",
+   "py": "xī",
+   "pos": "",
+   "zh": "叹息。",
+   "en": "",
+   "hv": "HI",
+   "vi": "chà, ôi (tiếng thở than)",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "更换",
+   "py": "gēnghuàn",
+   "pos": "动",
+   "zh": "变换；替换。",
+   "en": "",
+   "hv": "CANH HOÁN",
+   "vi": "thay đổi, thay",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "此刻",
+   "py": "cǐkè",
+   "pos": "名",
+   "zh": "这时候。",
+   "en": "",
+   "hv": "THỬ KHẮC",
+   "vi": "lúc này",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "请按……",
+   "paragraphs": [
+    "第一部分",
+    "事情不知道是从何时开始的，江世平有一日打电话到航空公司询问父母搭乘的飞机何时由温哥华抵港，听到了以下讯息。",
+    "“多谢你致电华东航空公司。假如你想知道今日班机抵港时间，请按403；假如你想知道班机离境号码，请按228……”世平用的正是按钮号码，她把这个录音讯息听到一半已经忘记问班机抵港时间该按什么号码，只得重听一次，才按403。她听到录音带说：“自温哥华抵港的第838班机抵港时间为13：00，自多伦多……”",
+    "世平挂断电话。真好，以后人与人不必再打交道，只需布置一架机器，省却人工，既方便又实惠，反正答案是固定的，错不了。",
+    "过了一阵子，这种风气渐渐流行。世平订阅的一本杂志没收到，故发电追究，电话接通，也是录音带的声音：“这是《宇宙》杂志社，如果你找的是发行部，请按223；如果找编辑部，请按225；如果找订阅部，请按226……”",
+    "世平按226。",
+    "“请将你的电话号码及讯息留下，我们会尽快答复你。”",
+    "世平连忙说：“我的电话是13448，我没收到9月份的《宇宙》杂志，请补寄。”",
+    "当日下午，《宇宙》杂志由专人送上。",
+    "同许多人相反，世平不介意与机器说话，她是一个办事的人，很多时候不动感情，也谈不上喜恶，只要可以迅速达到目的，一切细节都不计较。",
+    "与录音机谈话简单扼要，省却寒暄问候，口不对心的虚伪。",
+    "近日几乎每家公司都设有这种服务，特别是在周末或公众假期，值班的通常是机器。",
+    "世平没想到私人住宅的电话也会有这样的装置。",
+    "完全是偶然，世平拨电话给好友丘珠英，可是一时失误，按错一个号码，她听到录音机说：“这是55573……”",
+    "珠英的号码是55576，世平刚想挂断，忽然听到录音机说：“假如你找余仁邦，请按1；假如你找余仁乐，请按2；假如你拨错号码，请按3。”",
+    "世平笑起来，太幽默了，她很想试试，按下了3。",
+    "录音机里的男声愉快地说：“其实心理学家说，打错电话是因为心里急着想与同伴沟通，可见你是一个寂寞的人。如果我说对了，请按4；如果我说错了，请按5。”",
+    "世平诧异，这余家两兄弟好不奇怪，竟想出这种游戏来。",
+    "她按5，“啊，你不寂寞？好极了，那是信心的表现。刚才的问题涉及到隐私，你仍肯作答，可见你活泼大方……”",
+    "世平听到这里，忽觉突兀，挂断电话。",
+    "真的，陌生人的电话录音问她是否寂寞，她居然作答，太轻率了。",
+    "第二部分",
+    "她终于找到了丘珠英，但是珠英不在家，只得到“请留下电话号码与口讯，我会尽快答复你”的标准答案。",
+    "傍晚回电来了，世平的电话设有来电显示，那意思是，电话铃一响，一个小小的荧光屏会显示来电者的电话号码，那么，世平可以选择听与不听。",
+    "世平觉得单身女子需要这样的设备。",
+    "见是珠英，便拿起听筒，与她谈了几句。",
+    "珠英说：“生活沉闷极了，对前途十分彷徨，渴望爱人与被爱。”",
+    "又道：“昨夜做梦，有急事，在马路边用公用电话，拨了三四遍，不是打不通就是无人接，惊惶极了，终于徒步跑回家，有人忽然拉住我，说愿意帮我忙，我感激流涕。”",
+    "世平问：“那人是你男友区和平吗？”",
+    "“不，他哪里有作为，梦中救我的是陌生人。”",
+    "“珠英，你还是与区某分手吧，梦境已说明一切。”",
+    "珠英长长地叹了一口气，“唉，谈何容易，我最怕寂寞。”",
+    "世平心一动。",
+    "“你是一个寂寞的人吗？如果我说对了，请按4。”",
+    "对方也可能有来电显示，早已记录了她的电话号码及登记电话的姓名。",
+    "她固然知道他们是余氏兄弟，他们也许亦知道她叫江世平。",
+    "“世平，世平，你还在那一头吗？”珠英直叫她。",
+    "“在，在，”世平如梦初醒，“最近精神不大好。”",
+    "“不是疲倦，我们都给枯燥的生活害得奄奄一息。”",
+    "世平同意，她挂了电话。",
+    "她独自在客厅坐了一会儿，忽然身不由己，重拨55573。",
+    "电话录音并没有从头开始。录音这样说：“你是江世平小姐吧？欢迎你致电余宅，假如你想多聊几句，请按6，如果只是好奇，请按7。”",
+    "世平按6。“你想谈何种题材？假如要讲中东局势，请按8；美国股票走势，请按9；人类感情问题，请按10……”",
+    "世平按10。“很好很好，有关父母与子女问题，请按11；有关男女感情，请按12……”",
+    "世平按12。“啊，我们开始谈私人问题了。如果你觉得过分，请按13；如不，请按14。”",
+    "世平又鼓起勇气按14。“如果你想摆脱一段感情，请按15；如果你渴望爱人与被爱，请按16。”",
+    "世平迷惑了，这余氏兄弟到底是什么人？他们竟设计了如此精密的录音设备，世平忍不住按下16。",
+    "“假如你目前已有爱人，请按17；无，则按18。”",
+    "世平按18。因是通过电话与录音机器谈话，世平不觉得危险。唏，有什么事，最多更换电话号码好了，此刻她真需要有人陪她聊聊。",
+    "“如果你愿意约我余仁邦，请按19；如果你选择我弟弟余仁乐，请按20；如果你不愿意与任何一人见面，请按21。”",
+    "世平笑了，她轻轻按下19。",
+    "（作者：亦舒，选自《广州文艺》，有改动）"
+   ],
+   "translations": [
+    "Phần một",
+    "Chẳng biết chuyện bắt đầu từ bao giờ. Một hôm Giang Thế Bình gọi điện đến hãng hàng không hỏi xem chuyến bay mà bố mẹ cô đi từ Vancouver khi nào đến Hồng Kông, và nghe được thông báo sau đây.",
+    "“Cảm ơn quý khách đã gọi đến hãng hàng không Hoa Đông. Nếu quý khách muốn biết giờ đến Hồng Kông của các chuyến bay hôm nay, xin bấm 403; nếu muốn biết số hiệu chuyến bay khởi hành, xin bấm 228……” Thế Bình dùng đúng loại điện thoại bấm nút, nghe đoạn tin nhắn ghi âm mới được một nửa cô đã quên mất muốn hỏi giờ hạ cánh thì phải bấm số nào, đành nghe lại một lần nữa rồi mới bấm 403. Cô nghe băng ghi âm nói: “Chuyến bay số 838 từ Vancouver đến Hồng Kông lúc 13 giờ 00, từ Toronto……”",
+    "Thế Bình cúp máy. Thật hay, sau này người với người chẳng cần giao thiệp nữa, chỉ cần đặt một cái máy, bớt được nhân công, vừa tiện lại vừa lợi, dù sao câu trả lời cũng cố định, chẳng sai được.",
+    "Một thời gian sau, trào lưu này dần dần thịnh hành. Một cuốn tạp chí Thế Bình đặt mua không nhận được, vì vậy cô gọi điện hỏi cho ra lẽ. Điện thoại được nối, cũng là giọng băng ghi âm: “Đây là tòa soạn tạp chí ‘Vũ Trụ’, nếu quý khách cần gặp bộ phận phát hành, xin bấm 223; nếu cần gặp ban biên tập, xin bấm 225; nếu cần gặp bộ phận đặt mua, xin bấm 226……”",
+    "Thế Bình bấm 226.",
+    "“Xin để lại số điện thoại và lời nhắn, chúng tôi sẽ trả lời quý khách sớm nhất có thể.”",
+    "Thế Bình vội nói: “Số điện thoại của tôi là 13448, tôi chưa nhận được tạp chí ‘Vũ Trụ’ số tháng 9, xin gửi bù cho tôi.”",
+    "Chiều hôm đó, tạp chí “Vũ Trụ” được người chuyên trách mang đến tận nơi.",
+    "Trái với nhiều người, Thế Bình không ngại nói chuyện với máy móc. Cô là người của công việc, nhiều khi chẳng động lòng, cũng chẳng có gì gọi là thích hay ghét, chỉ cần nhanh chóng đạt được mục đích thì mọi chi tiết đều không so đo.",
+    "Nói chuyện với máy ghi âm thì đơn giản, gọn gàng, bớt được những lời hỏi han xã giao và sự giả dối nói một đằng nghĩ một nẻo.",
+    "Gần đây hầu như công ty nào cũng có dịch vụ này, nhất là vào cuối tuần hay ngày nghỉ lễ, kẻ trực ban thường là máy móc.",
+    "Thế Bình không ngờ điện thoại nhà riêng cũng có thiết bị như vậy.",
+    "Hoàn toàn là tình cờ: Thế Bình gọi cho bạn thân Khâu Châu Anh, nhưng nhất thời sơ ý bấm nhầm một số, cô nghe máy ghi âm nói: “Đây là số 55573……”",
+    "Số của Châu Anh là 55576. Thế Bình vừa định cúp máy thì bỗng nghe máy ghi âm nói: “Nếu bạn tìm Dư Nhân Bang, xin bấm 1; nếu bạn tìm Dư Nhân Lạc, xin bấm 2; nếu bạn gọi nhầm số, xin bấm 3.”",
+    "Thế Bình bật cười, hài hước quá, cô rất muốn thử, bèn bấm số 3.",
+    "Giọng nam trong máy ghi âm vui vẻ nói: “Thật ra các nhà tâm lý học nói rằng gọi nhầm điện thoại là vì trong lòng nóng lòng muốn trò chuyện với người khác, đủ thấy bạn là một người cô đơn. Nếu tôi nói đúng, xin bấm 4; nếu tôi nói sai, xin bấm 5.”",
+    "Thế Bình kinh ngạc, hai anh em nhà họ Dư này thật là kỳ lạ, lại nghĩ ra được trò chơi như vậy.",
+    "Cô bấm 5. “À, bạn không cô đơn ư? Tuyệt quá, đó là biểu hiện của sự tự tin. Câu hỏi vừa rồi động đến chuyện riêng tư mà bạn vẫn chịu trả lời, đủ thấy bạn hoạt bát, cởi mở……”",
+    "Nghe đến đây, Thế Bình chợt thấy đường đột, bèn cúp máy.",
+    "Thật thế, máy ghi âm điện thoại của một người lạ hỏi cô có cô đơn không, vậy mà cô lại trả lời, quá khinh suất.",
+    "Phần hai",
+    "Cuối cùng cô cũng gọi được cho Khâu Châu Anh, nhưng Châu Anh không có nhà, chỉ nhận được câu trả lời chuẩn mực: “Xin để lại số điện thoại và lời nhắn, tôi sẽ trả lời bạn sớm nhất có thể.”",
+    "Chạng vạng thì có điện thoại gọi lại. Điện thoại của Thế Bình có chức năng hiển thị số gọi đến, nghĩa là chuông vừa reo, một màn hình nhỏ sẽ hiện số điện thoại của người gọi, như vậy Thế Bình có thể chọn nghe hay không nghe.",
+    "Thế Bình cảm thấy phụ nữ sống độc thân cần có thiết bị như thế.",
+    "Thấy là Châu Anh, cô liền nhấc ống nghe, nói chuyện với bạn vài câu.",
+    "Châu Anh nói: “Cuộc sống buồn tẻ quá, mình rất hoang mang về tương lai, khao khát được yêu và được yêu.”",
+    "Rồi lại nói: “Đêm qua mình nằm mơ, có việc gấp, dùng điện thoại công cộng bên đường, bấm ba bốn lần, không phải không gọi được thì cũng chẳng có ai nghe, hoảng hốt vô cùng, cuối cùng phải chạy bộ về nhà. Bỗng có người kéo mình lại, nói sẵn lòng giúp mình, mình cảm động rơi nước mắt.”",
+    "Thế Bình hỏi: “Người đó là bạn trai cậu, Âu Hòa Bình à?”",
+    "“Không, anh ta làm nên trò trống gì đâu, người cứu mình trong mơ là một người lạ.”",
+    "“Châu Anh, cậu nên chia tay anh chàng họ Âu ấy đi, giấc mơ đã nói lên tất cả rồi.”",
+    "Châu Anh thở dài một hơi thật dài: “Haizz, nói thì dễ lắm, mình sợ nhất là cô đơn.”",
+    "Lòng Thế Bình khẽ động.",
+    "“Bạn là một người cô đơn phải không? Nếu tôi nói đúng, xin bấm 4.”",
+    "Bên kia có lẽ cũng có chức năng hiển thị số gọi đến, đã sớm ghi lại số điện thoại của cô và tên người đăng ký thuê bao.",
+    "Cô dĩ nhiên biết họ là anh em nhà họ Dư, còn họ có lẽ cũng biết cô tên là Giang Thế Bình.",
+    "“Thế Bình, Thế Bình, cậu còn ở đầu dây đấy không?” Châu Anh gọi mãi.",
+    "“Còn, còn,” Thế Bình như vừa tỉnh mộng, “dạo này tinh thần mình không tốt lắm.”",
+    "“Không phải mệt mỏi đâu, chúng ta đều bị cuộc sống tẻ nhạt hành hạ đến thoi thóp rồi.”",
+    "Thế Bình đồng ý, rồi cúp máy.",
+    "Cô ngồi một mình trong phòng khách một lúc, bỗng nhiên không tự chủ được, bấm lại số 55573.",
+    "Đoạn ghi âm không phát lại từ đầu. Máy ghi âm nói thế này: “Cô là cô Giang Thế Bình phải không? Hoan nghênh cô gọi đến nhà họ Dư. Nếu cô muốn trò chuyện thêm vài câu, xin bấm 6; nếu chỉ là tò mò, xin bấm 7.”",
+    "Thế Bình bấm 6. “Cô muốn nói về đề tài gì? Nếu muốn bàn về tình hình Trung Đông, xin bấm 8; xu hướng chứng khoán Mỹ, xin bấm 9; vấn đề tình cảm con người, xin bấm 10……”",
+    "Thế Bình bấm 10. “Rất tốt, rất tốt. Về vấn đề cha mẹ và con cái, xin bấm 11; về tình cảm nam nữ, xin bấm 12……”",
+    "Thế Bình bấm 12. “À, chúng ta bắt đầu nói chuyện riêng tư rồi. Nếu cô thấy quá đáng, xin bấm 13; nếu không, xin bấm 14.”",
+    "Thế Bình lại lấy hết can đảm bấm 14. “Nếu cô muốn thoát khỏi một mối tình, xin bấm 15; nếu cô khao khát được yêu và được yêu, xin bấm 16.”",
+    "Thế Bình bối rối, anh em nhà họ Dư này rốt cuộc là người thế nào? Họ lại thiết kế được một hệ thống ghi âm tinh vi đến vậy. Thế Bình không kìm được, bấm số 16.",
+    "“Nếu hiện giờ cô đã có người yêu, xin bấm 17; chưa có, thì bấm 18.”",
+    "Thế Bình bấm 18. Vì là nói chuyện với máy ghi âm qua điện thoại nên Thế Bình không thấy nguy hiểm. Chà, có chuyện gì thì cùng lắm đổi số điện thoại là xong, lúc này cô thật sự cần có người trò chuyện cùng.",
+    "“Nếu cô muốn hẹn gặp tôi, Dư Nhân Bang, xin bấm 19; nếu cô chọn em trai tôi, Dư Nhân Lạc, xin bấm 20; nếu cô không muốn gặp ai cả, xin bấm 21.”",
+    "Thế Bình mỉm cười, khẽ bấm số 19.",
+    "(Tác giả: Diệc Thư, trích từ tạp chí “Văn nghệ Quảng Châu”, có chỉnh sửa)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "心爱的",
+   "paragraphs": [
+    "一直不知道他是怎么爱上她的。",
+    "他最喜欢像个孩子般趴在她怀里，脸颊（jiá）紧贴着她的胸脯，侧耳聆听她心跳的声音。",
+    "“侧耳聆听她心跳的声音”，这是她大一时写的诗；她从小就觉得自己的心跳特别快，有时候运动稍微激烈些，心脏就好像要从嘴里跳出来似的；即使渐渐长大，仍然是只要爬上两层楼，就仿佛听到自己心跳的声音，碰痛碰痛。",
+    "碰痛碰痛，她抚着剧烈跳动的胸口询问双亲，爸爸低头叹气，妈妈又流了一脸的泪。",
+    "终于知道自己有先天性心脏病时，她也流了一脸的泪。但后来就坚强了，不再怕病床、怕高悬的点滴瓶、怕护士的白口罩，有时候还能平静地看仪器上自己心跳的起伏，不知道什么时候会变成死寂的横线。",
+    "上帝大约没有把她收回去的意思；30岁那年，终于等到了愿意把心捐给她的人。手术前晚她哭了一整夜，哭湿了白被单和枕头。她哭自己终于重新拾回了生命，也哭那个失去生命却救了她的人。",
+    "她只知道是个和自己同年龄的女子，结过婚，猝（cù）死于一场车祸；无从表达对那人的感激，她剪存了报道她换心手术的新闻，上面并列着她们两人的照片。",
+    "然后他就出现了。起初他在病房踟蹰（chíchú），她还以为是记者，后来却成了常来聊天的访客。在百无聊赖的病中，她常为了期待他而忙着在病床上梳妆；初恋的喜悦强烈地冲击着她，毕竟由于自己生来脆弱的心，她连接吻也不曾。",
+    "这一次她可以放心地吻了：别人的心在自己胸腔里规律地跳动着。她的心跳不再强烈，十分安稳，她真的“放心”了，将半跪的他紧拥在胸前，她答应了婚事。",
+    "但她仍然不知道为什么会有人爱她，自己不过是个残缺的人，依旧虚弱的身子，胸前永远的疤痕……他竟然毫不嫌弃地，热烈地爱着。每次她追问原因，他总是笑而不答，也许历经沧桑的人感情比较内敛（liǎn）吧，她知道他曾有过一次婚姻，但很快失去。",
+    "她不知道的是他藏在衣柜底层的小盒子，她在偶然间发现，好奇地打开时，看见他的旧结婚照，含笑的新娘看来好面熟，好像……她凛（lǐn）然一惊，匆忙找出收存的换心剪报，不待比对，就知道是同一个人，那个把心捐给她的女子。",
+    "那颗心正在她胸中剧烈地跳着，碰痛碰痛。",
+    "（作者：苦苓，摘自中国青少年新世纪读书网www.cnread.net）"
+   ],
+   "translations": [
+    "Chẳng bao giờ biết anh đã yêu cô như thế nào.",
+    "Anh thích nhất là nằm sấp trong lòng cô như một đứa trẻ, má áp chặt vào ngực cô, nghiêng tai lắng nghe tiếng tim cô đập.",
+    "“Nghiêng tai lắng nghe tiếng tim cô đập” – đó là câu thơ cô viết hồi năm nhất đại học. Từ nhỏ cô đã thấy tim mình đập rất nhanh, có lúc vận động hơi mạnh một chút là tim như muốn nhảy ra khỏi miệng; dù dần lớn lên, vẫn cứ chỉ cần leo hai tầng lầu là như nghe thấy tiếng tim mình đập, thình thịch thình thịch.",
+    "Thình thịch thình thịch, cô ôm lấy lồng ngực đang đập dữ dội hỏi cha mẹ, bố cúi đầu thở dài, mẹ lại nước mắt đầm đìa.",
+    "Khi cuối cùng biết mình bị bệnh tim bẩm sinh, cô cũng khóc đầm đìa. Nhưng về sau cô trở nên mạnh mẽ, không còn sợ giường bệnh, sợ chai truyền dịch treo cao, sợ chiếc khẩu trang trắng của y tá, có khi còn bình thản nhìn nhịp tim mình lên xuống trên máy, không biết lúc nào sẽ biến thành một đường thẳng lặng câm chết chóc.",
+    "Thượng đế có lẽ chưa có ý định mang cô đi; năm ba mươi tuổi, cuối cùng cô cũng đợi được người sẵn lòng hiến tim cho mình. Đêm trước ca phẫu thuật cô khóc suốt đêm, nước mắt thấm ướt cả tấm ga trắng và chiếc gối. Cô khóc vì cuối cùng mình đã nhặt lại được sự sống, cũng khóc cho người đã mất đi sự sống mà cứu cô.",
+    "Cô chỉ biết đó là một người phụ nữ cùng tuổi với mình, đã từng kết hôn, đột ngột qua đời trong một vụ tai nạn xe; không biết làm sao bày tỏ lòng biết ơn với người ấy, cô cắt giữ bản tin đưa tin về ca thay tim của mình, trên đó có ảnh hai người đặt cạnh nhau.",
+    "Rồi anh xuất hiện. Thoạt đầu anh cứ ngập ngừng quanh phòng bệnh, cô còn tưởng là phóng viên, về sau anh lại thành vị khách thường đến trò chuyện. Trong những ngày ốm đau buồn chán vô vị, cô thường vì mong đợi anh mà tất bật chải chuốt trên giường bệnh; niềm vui của mối tình đầu dâng trào mãnh liệt trong cô, bởi vì trái tim yếu ớt bẩm sinh, cô thậm chí chưa từng hôn ai.",
+    "Lần này cô có thể yên tâm mà hôn: trái tim của người khác đang đập đều đặn trong lồng ngực mình. Nhịp tim cô không còn dữ dội nữa, rất bình ổn, cô thật sự đã “yên lòng”, ôm chặt anh đang quỳ một gối vào ngực, nhận lời cầu hôn.",
+    "Nhưng cô vẫn không hiểu vì sao lại có người yêu mình, bản thân chẳng qua là một người khiếm khuyết, thân thể vẫn yếu ớt, vết sẹo vĩnh viễn trước ngực…… vậy mà anh không hề chê bai, yêu cô nồng nhiệt. Mỗi lần cô gặng hỏi lý do, anh đều cười mà không đáp, có lẽ người từng trải bao thăng trầm thì tình cảm thường kín đáo chăng; cô biết anh từng có một cuộc hôn nhân, nhưng đã sớm mất đi.",
+    "Điều cô không biết là chiếc hộp nhỏ anh giấu dưới đáy tủ quần áo. Cô tình cờ phát hiện ra, tò mò mở ra thì thấy tấm ảnh cưới cũ của anh, cô dâu đang mỉm cười trông quen quá, giống như…… Cô rùng mình kinh hãi, vội vàng tìm tờ báo cắt về ca thay tim đã cất giữ, chưa cần so sánh, cô đã biết đó là cùng một người – người phụ nữ đã hiến trái tim cho cô.",
+    "Trái tim ấy đang đập dữ dội trong lồng ngực cô, thình thịch thình thịch.",
+    "(Tác giả: Khổ Linh, trích từ trang Đọc sách Thế kỷ mới cho thanh thiếu niên Trung Quốc www.cnread.net)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "谈不上 (chẳng đến mức, không thể nói là)",
+   "structure": "谈不上 / 说不上 + danh từ / cụm từ; khẳng định: 谈得上 / 说得上",
+   "explanation": "谈不上 cũng có thể nói thành 说不上, nghĩa là vì điều kiện chưa đủ hoặc không đáng tin cậy nên không cần nhắc tới hoặc không đáng nhắc tới (chưa đến mức ấy). Mở rộng: 谈得上 / 说得上 là dạng khẳng định của 谈不上 / 说不上, trong thực tế thường dùng 说得上. Phân biệt: 说不上 còn có nghĩa “vì hiểu biết, nhận thức không rõ nên không nói ra được”, còn 谈不上 không có nghĩa này.",
+   "examples": [
+    {
+     "zh": "她是一个办事的人，很多时候不动感情，也谈不上喜恶。",
+     "vi": "Cô là người của công việc, nhiều khi chẳng động lòng, cũng chẳng có gì gọi là thích hay ghét."
+    },
+    {
+     "zh": "这孩子谈不上很聪明，但他做什么都非常认真、努力，从来都是老师眼中的好学生。",
+     "vi": "Đứa trẻ này chẳng thể gọi là thông minh lắm, nhưng làm gì cũng rất nghiêm túc, chăm chỉ, luôn là học sinh giỏi trong mắt thầy cô."
+    },
+    {
+     "zh": "这个地方虽然说不上是风景名胜，但也是个有山有水的好地方。",
+     "vi": "Nơi này tuy chưa thể gọi là danh lam thắng cảnh, nhưng cũng là một chốn tốt có núi có sông."
+    },
+    {
+     "zh": "《哈利·波特》的作者真说得上是一位很有才华的女作家。",
+     "vi": "Tác giả của “Harry Potter” thật sự đáng gọi là một nữ nhà văn rất có tài."
+    },
+    {
+     "zh": "我也说不上是北京好还是老家好，反正各有各的好。",
+     "vi": "Tôi cũng chẳng nói được là Bắc Kinh tốt hay quê nhà tốt, dù sao mỗi nơi có cái hay riêng."
+    }
+   ]
+  },
+  {
+   "point": "好不 (thật là, biết bao)",
+   "structure": "好不 + tính từ song âm tiết / động từ tâm lý",
+   "explanation": "好不 là phó từ. Cấu trúc “好不 + một số tính từ song âm tiết / động từ chỉ hoạt động tâm lý” biểu thị mức độ rất cao, kèm ngữ khí cảm thán. Lúc này “好不” đều có thể thay bằng “好”, nghĩa đều là khẳng định. Mở rộng: 好容易 / 好不容易 là trường hợp đặc biệt, đều mang nghĩa phủ định: “好容易才找到他” và “好不容易才找到他” đều có nghĩa “rất khó khăn mới tìm được anh ấy”.",
+   "examples": [
+    {
+     "zh": "世平诧异，这余家两兄弟好不奇怪，竟想出这种游戏来。",
+     "vi": "Thế Bình kinh ngạc, hai anh em nhà họ Dư thật là kỳ lạ, lại nghĩ ra trò chơi như vậy."
+    },
+    {
+     "zh": "这个市场很有人气，熙熙攘攘，摩肩接踵，好不（好）热闹。",
+     "vi": "Khu chợ này rất đông khách, người qua kẻ lại chen vai thích cánh, thật là náo nhiệt."
+    },
+    {
+     "zh": "相处了一年的男朋友离她而去，令她好不（好）伤心。",
+     "vi": "Người bạn trai quen nhau một năm rời bỏ cô, khiến cô đau lòng biết bao."
+    }
+   ]
+  },
+  {
+   "point": "不是A就是B (không phải A thì là B)",
+   "structure": "不是 + A + 就是 + B (A, B cùng loại: danh từ / tính từ / động từ / phân câu)",
+   "explanation": "Câu phức biểu thị quan hệ lựa chọn: trong hai khả năng chắc chắn có một là sự thật; hoặc dùng để liệt kê sự việc nhằm minh họa một tình huống. A, B là danh từ, tính từ hay động từ cùng loại, cũng thường là phân câu. Mở rộng: 不是A而是B là câu phức quan hệ song song, có hai nghĩa: (a) so sánh một việc hoặc hai mặt của một việc, trọng tâm là phần “而是”; (b) phủ định A, khẳng định B, trọng tâm cũng là B. Phân biệt: “不是研究古代文学的，而是研究现代文学的” khẳng định chắc chắn là nghiên cứu văn học hiện đại; còn “不是……，就是……” thì không xác định được là gì, có thể là cổ đại cũng có thể là hiện đại.",
+   "examples": [
+    {
+     "zh": "在马路边用公用电话，拨了三四遍，不是打不通就是无人接。",
+     "vi": "Dùng điện thoại công cộng bên đường, bấm ba bốn lần, không phải không gọi được thì là không ai nghe."
+    },
+    {
+     "zh": "小王去旅游的地方不是云南就是广西，我记不清楚了。",
+     "vi": "Nơi Tiểu Vương đi du lịch không phải Vân Nam thì là Quảng Tây, tôi không nhớ rõ."
+    },
+    {
+     "zh": "最近的天气真糟糕，不是刮风就是下大雨。",
+     "vi": "Thời tiết dạo này thật tệ, không gió to thì mưa lớn."
+    },
+    {
+     "zh": "周末在家里，妈妈不是洗衣服就是打扫房间，比平时还要辛苦。",
+     "vi": "Cuối tuần ở nhà, mẹ không giặt quần áo thì dọn dẹp nhà cửa, còn vất vả hơn ngày thường."
+    },
+    {
+     "zh": "李教授不是研究中国古代文学的，而是研究中国现代文学的。",
+     "vi": "Giáo sư Lý không nghiên cứu văn học cổ đại Trung Quốc mà nghiên cứu văn học hiện đại Trung Quốc."
+    }
+   ]
+  },
+  {
+   "point": "如此 (như thế, đến vậy)",
+   "structure": "如此 + tính từ / động từ (song âm tiết); 如此之 + tính từ đơn âm tiết",
+   "explanation": "如此 nghĩa là “这样” (như thế). Cấu trúc “如此 + tính từ / động từ” biểu thị mức độ cao. Tính từ hoặc động từ được 如此 bổ nghĩa thường là song âm tiết hoặc đa âm tiết; nếu là tính từ đơn âm tiết thì phía trước thường thêm chữ “之” cho đủ âm tiết (如此之好).",
+   "examples": [
+    {
+     "zh": "他们竟设计了如此精密的录音设备。",
+     "vi": "Họ lại thiết kế được một hệ thống ghi âm tinh vi đến vậy."
+    },
+    {
+     "zh": "想不到海底的世界竟是如此有趣，以前我们对这里的了解太少了。",
+     "vi": "Không ngờ thế giới dưới đáy biển lại thú vị đến thế, trước đây chúng ta hiểu biết về nơi này quá ít."
+    },
+    {
+     "zh": "朋友们对我如此关心，真使我感动。",
+     "vi": "Bạn bè quan tâm đến tôi như vậy, thật khiến tôi cảm động."
+    },
+    {
+     "zh": "桂林漓江的风景是如此迷人，以至于大家都流连忘返，乐不思蜀了。",
+     "vi": "Phong cảnh sông Ly ở Quế Lâm đẹp mê hồn đến nỗi ai nấy đều lưu luyến quên về, vui đến quên cả nhà."
+    },
+    {
+     "zh": "作为一个外国人，他的书法如此之好，是大家始料未及的。",
+     "vi": "Là một người nước ngoài mà thư pháp của anh ấy đẹp đến vậy, thật là điều mọi người không ngờ tới."
+    }
+   ]
+  }
+ ]
+}

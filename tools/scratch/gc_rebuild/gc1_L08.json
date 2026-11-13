@@ -1,0 +1,1106 @@
+{
+ "book": "gc1",
+ "lesson_num": 8,
+ "title": "随感二则",
+ "pages": [
+  152,
+  170
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "行",
+   "py": "háng",
+   "pos": "名",
+   "zh": "行业。",
+   "en": "trade; profession",
+   "hv": "HÀNG",
+   "vi": "nghề, ngành nghề",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "状元",
+   "py": "zhuàngyuan",
+   "pos": "名",
+   "zh": "科举考试第一名的称号。比喻在本行业中成绩最好或成就最高的人。",
+   "en": "",
+   "hv": "TRẠNG NGUYÊN",
+   "vi": "trạng nguyên; người giỏi nhất trong nghề",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "出人头地",
+   "py": "chū rén tóu dì",
+   "pos": "",
+   "zh": "超出一般人；高人一等。",
+   "en": "",
+   "hv": "XUẤT NHÂN ĐẦU ĐỊA",
+   "vi": "hơn người, nổi trội",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "顶尖",
+   "py": "dǐngjiān",
+   "pos": "形",
+   "zh": "达到最高水平的。",
+   "en": "",
+   "hv": "ĐỈNH TIÊM",
+   "vi": "đỉnh cao, hàng đầu",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "劝勉",
+   "py": "quànmiǎn",
+   "pos": "动",
+   "zh": "劝导并勉励。",
+   "en": "",
+   "hv": "KHUYẾN MIỄN",
+   "vi": "khuyên nhủ, khích lệ",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "岗位",
+   "py": "gǎngwèi",
+   "pos": "名",
+   "zh": "原指军警守卫时所站的位置，现泛指职位。",
+   "en": "",
+   "hv": "CƯƠNG VỊ",
+   "vi": "cương vị, vị trí công tác",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "一味",
+   "py": "yíwèi",
+   "pos": "副",
+   "zh": "单纯地；总是。",
+   "en": "",
+   "hv": "NHẤT VỊ",
+   "vi": "một mực, cứ khăng khăng",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "犹",
+   "py": "yóu",
+   "pos": "动",
+   "zh": "如同。",
+   "en": "",
+   "hv": "DO",
+   "vi": "giống như",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "大王",
+   "py": "dàwáng",
+   "pos": "名",
+   "zh": "本课指垄断某种经济事业的人。",
+   "en": "",
+   "hv": "ĐẠI VƯƠNG",
+   "vi": "ông vua (trong một ngành kinh doanh)",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "钢铁",
+   "py": "gāngtiě",
+   "pos": "名",
+   "zh": "钢和铁的合称，有时专指钢。",
+   "en": "iron and steel; steel",
+   "hv": "CƯƠNG THIẾT",
+   "vi": "gang thép, sắt thép",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "馄饨",
+   "py": "húntun",
+   "pos": "名",
+   "zh": "面食，用薄面片包馅儿，通常是煮熟后带汤吃。",
+   "en": "wonton",
+   "hv": "HỒN ĐỘN",
+   "vi": "hoành thánh",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "煤油",
+   "py": "méiyóu",
+   "pos": "名",
+   "zh": "从石油中分馏或裂化出来的油。挥发性比柴油高，比汽油低。可用作燃料。",
+   "en": "kerosene",
+   "hv": "MÔI DU",
+   "vi": "dầu hoả",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "坎坷多舛",
+   "py": "kǎnkě duō chuǎn",
+   "pos": "",
+   "zh": "人生的道路高低不平，有很多不幸。舛：不平。",
+   "en": "",
+   "hv": "KHẢM KHA ĐA SUYỄN",
+   "vi": "gập ghềnh lắm trắc trở",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "投身",
+   "py": "tóushēn",
+   "pos": "动",
+   "zh": "献身出力。",
+   "en": "",
+   "hv": "ĐẦU THÂN",
+   "vi": "dấn thân",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "行当",
+   "py": "hángdang",
+   "pos": "名",
+   "zh": "行业。",
+   "en": "",
+   "hv": "HÀNG ĐƯƠNG",
+   "vi": "nghề, nghề nghiệp",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "埋头",
+   "py": "máitóu",
+   "pos": "动",
+   "zh": "专心，下功夫。",
+   "en": "",
+   "hv": "MAI ĐẦU",
+   "vi": "vùi đầu, chuyên tâm",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "受戒",
+   "py": "shòu jiè",
+   "pos": "",
+   "zh": "佛教用语，在一定的宗教仪式下接受戒律。",
+   "en": "",
+   "hv": "THỤ GIỚI",
+   "vi": "thụ giới",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "遂",
+   "py": "suì",
+   "pos": "副",
+   "zh": "就；于是。",
+   "en": "",
+   "hv": "TOẠI",
+   "vi": "bèn, liền",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "唉声叹气",
+   "py": "āi shēng tàn qì",
+   "pos": "",
+   "zh": "因伤感、烦闷或痛苦而发出叹息的声音。",
+   "en": "",
+   "hv": "AI THANH THÁN KHÍ",
+   "vi": "than ngắn thở dài",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "谆谆",
+   "py": "zhūnzhūn",
+   "pos": "形",
+   "zh": "形容恳切教导。",
+   "en": "",
+   "hv": "TRUÂN TRUÂN",
+   "vi": "ân cần, tận tình (dạy bảo)",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "告诫",
+   "py": "gàojiè",
+   "pos": "动",
+   "zh": "警告劝诫（多用于上级对下级或长辈对晚辈）。",
+   "en": "",
+   "hv": "CÁO GIỚI",
+   "vi": "răn bảo, khuyên răn",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "子弟",
+   "py": "zǐdì",
+   "pos": "名",
+   "zh": "指同一家族中年轻的后辈或同辈。",
+   "en": "",
+   "hv": "TỬ ĐỆ",
+   "vi": "con em",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "用心",
+   "py": "yòngxīn",
+   "pos": "名",
+   "zh": "怀着的某种念头。",
+   "en": "",
+   "hv": "DỤNG TÂM",
+   "vi": "dụng ý, ý định",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "安分守己",
+   "py": "ānfèn shǒujǐ",
+   "pos": "",
+   "zh": "规矩老实，不做超出本分的事。",
+   "en": "",
+   "hv": "AN PHẬN THỦ KỶ",
+   "vi": "an phận thủ thường",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "无可奈何",
+   "py": "wúkě nàihé",
+   "pos": "",
+   "zh": "没有办法；没有办法可想。",
+   "en": "",
+   "hv": "VÔ KHẢ NẠI HÀ",
+   "vi": "bất lực, đành chịu",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "乐趣",
+   "py": "lèqù",
+   "pos": "名",
+   "zh": "使人感到快乐的趣味。",
+   "en": "",
+   "hv": "LẠC THÚ",
+   "vi": "niềm vui, thú vui",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "完满",
+   "py": "wánmǎn",
+   "pos": "形",
+   "zh": "没有缺欠；圆满。（完满——完美——完备）",
+   "en": "",
+   "hv": "HOÀN MÃN",
+   "vi": "trọn vẹn, viên mãn",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "无上",
+   "py": "wúshàng",
+   "pos": "形",
+   "zh": "没有更高的，最高。",
+   "en": "",
+   "hv": "VÔ THƯỢNG",
+   "vi": "tối cao, vô thượng",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "敬业",
+   "py": "jìngyè",
+   "pos": "动",
+   "zh": "专心致力于学业或工作。",
+   "en": "",
+   "hv": "KÍNH NGHIỆP",
+   "vi": "tận tâm với nghề",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "教导",
+   "py": "jiàodǎo",
+   "pos": "动",
+   "zh": "教育指导。",
+   "en": "",
+   "hv": "GIÁO ĐẠO",
+   "vi": "dạy bảo",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "步武",
+   "py": "bùwǔ",
+   "pos": "动",
+   "zh": "跟着别人的脚步走。比喻效法。武：脚步。",
+   "en": "",
+   "hv": "BỘ VŨ",
+   "vi": "theo bước, noi theo",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "踪迹",
+   "py": "zōngjì",
+   "pos": "名",
+   "zh": "行动所留的痕迹。",
+   "en": "",
+   "hv": "TUNG TÍCH",
+   "vi": "dấu vết, tung tích",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "丝毫",
+   "py": "sīháo",
+   "pos": "形",
+   "zh": "极小或很少；一点儿。",
+   "en": "",
+   "hv": "TI HÀO",
+   "vi": "mảy may, chút xíu",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "恨意",
+   "py": "hènyì",
+   "pos": "名",
+   "zh": "后悔的感觉。",
+   "en": "",
+   "hv": "HẬN Ý",
+   "vi": "nỗi ân hận",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "嫌",
+   "py": "xián",
+   "pos": "动",
+   "zh": "厌恶；不满意。",
+   "en": "",
+   "hv": "HIỀM",
+   "vi": "chê, ghét bỏ",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "贫",
+   "py": "pín",
+   "pos": "形",
+   "zh": "穷。",
+   "en": "",
+   "hv": "BẦN",
+   "vi": "nghèo",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "乞丐",
+   "py": "qǐgài",
+   "pos": "名",
+   "zh": "靠向人要饭要钱维持生活的人。",
+   "en": "beggar",
+   "hv": "KHẤT CÁI",
+   "vi": "người ăn xin",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "拄",
+   "py": "zhǔ",
+   "pos": "动",
+   "zh": "用拐杖等顶住地面支撑身体。",
+   "en": "",
+   "hv": "TRỤ",
+   "vi": "chống (gậy)",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "杖",
+   "py": "zhàng",
+   "pos": "名",
+   "zh": "拐杖；手杖。",
+   "en": "",
+   "hv": "TRƯỢNG",
+   "vi": "cây gậy",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "钵",
+   "py": "bō",
+   "pos": "名",
+   "zh": "盛饭、水等的器具，形状像盆而较小。",
+   "en": "",
+   "hv": "BÁT",
+   "vi": "cái bát (bát khất thực)",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "求乞",
+   "py": "qiúqǐ",
+   "pos": "动",
+   "zh": "请求人家救济；讨饭。",
+   "en": "",
+   "hv": "CẦU KHẤT",
+   "vi": "xin ăn",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "寸步不离",
+   "py": "cùn bù bù lí",
+   "pos": "",
+   "zh": "形容相处和睦，感情深厚。寸步：指极短的距离。",
+   "en": "",
+   "hv": "THỐN BỘ BẤT LY",
+   "vi": "không rời nửa bước",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "跟随",
+   "py": "gēnsuí",
+   "pos": "动",
+   "zh": "跟。",
+   "en": "",
+   "hv": "CÂN TUỲ",
+   "vi": "đi theo",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "残羹剩炙",
+   "py": "cán gēng shèng zhì",
+   "pos": "",
+   "zh": "吃剩下的菜汤和饭食。",
+   "en": "",
+   "hv": "TÀN CANH THẶNG CHÍCH",
+   "vi": "cơm thừa canh cặn",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "去处",
+   "py": "qùchù",
+   "pos": "名",
+   "zh": "场所；地方。",
+   "en": "",
+   "hv": "KHỨ XỨ",
+   "vi": "nơi chốn, chỗ",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "趋",
+   "py": "qū",
+   "pos": "",
+   "zh": "快走。",
+   "en": "",
+   "hv": "XU",
+   "vi": "rảo bước tới",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "就",
+   "py": "jiù",
+   "pos": "",
+   "zh": "凑近；靠近。",
+   "en": "",
+   "hv": "TỰU",
+   "vi": "đến gần, sáp lại",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "义气",
+   "py": "yìqi",
+   "pos": "名",
+   "zh": "为了朋友而不顾自己的勇气、精神。",
+   "en": "",
+   "hv": "NGHĨA KHÍ",
+   "vi": "nghĩa khí",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "信赖",
+   "py": "xìnlài",
+   "pos": "动",
+   "zh": "信任并依靠。（信赖——信任——相信）",
+   "en": "",
+   "hv": "TÍN LẠI",
+   "vi": "tin cậy",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "儿歌",
+   "py": "érgē",
+   "pos": "名",
+   "zh": "为儿童创作的、适合儿童唱的歌谣。",
+   "en": "children's song",
+   "hv": "NHI CA",
+   "vi": "đồng dao, bài hát thiếu nhi",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "乌鸦",
+   "py": "wūyā",
+   "pos": "名",
+   "zh": "",
+   "en": "crow",
+   "hv": "Ô NHA",
+   "vi": "con quạ",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "歌词",
+   "py": "gēcí",
+   "pos": "名",
+   "zh": "歌曲中的词句。",
+   "en": "",
+   "hv": "CA TỪ",
+   "vi": "lời bài hát",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "孝",
+   "py": "xiào",
+   "pos": "",
+   "zh": "尽心供养长辈，听长辈的话。",
+   "en": "",
+   "hv": "HIẾU",
+   "vi": "hiếu thảo",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "打食",
+   "py": "dǎ shí",
+   "pos": "",
+   "zh": "（鸟兽）到窝外寻找食物。",
+   "en": "",
+   "hv": "ĐẢ THỰC",
+   "vi": "kiếm mồi",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "藉",
+   "py": "jiè",
+   "pos": "动",
+   "zh": "同“借”，假托。",
+   "en": "",
+   "hv": "TẠ",
+   "vi": "mượn, nhờ",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "反哺",
+   "py": "fǎnbǔ",
+   "pos": "动",
+   "zh": "传说乌鸦小的时候，母亲打食喂养它，等小乌鸦长大后，反过来打食喂养母亲。比喻子女长大奉养父母。",
+   "en": "",
+   "hv": "PHẢN BỘ",
+   "vi": "mớm mồi đền đáp; (ví) con cái phụng dưỡng cha mẹ",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "人性",
+   "py": "rénxìng",
+   "pos": "名",
+   "zh": "人所具有的区别于一般动物的感情和理性。",
+   "en": "normal human feelings",
+   "hv": "NHÂN TÍNH",
+   "vi": "nhân tính",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "回想",
+   "py": "huíxiǎng",
+   "pos": "动",
+   "zh": "想过去的事。（回想——回忆）",
+   "en": "",
+   "hv": "HỒI TƯỞNG",
+   "vi": "nhớ lại, hồi tưởng",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "心酸",
+   "py": "xīnsuān",
+   "pos": "形",
+   "zh": "心中悲痛；伤心。",
+   "en": "",
+   "hv": "TÂM TOAN",
+   "vi": "chua xót, đau lòng",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "美誉",
+   "py": "měiyù",
+   "pos": "名",
+   "zh": "赞扬的话；美好的名声。",
+   "en": "good name; good reputation",
+   "hv": "MỸ DỰ",
+   "vi": "tiếng tốt, danh thơm",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "享",
+   "py": "xiǎng",
+   "pos": "动",
+   "zh": "享受。",
+   "en": "",
+   "hv": "HƯỞNG",
+   "vi": "hưởng",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "无独有偶",
+   "py": "wú dú yǒu ǒu",
+   "pos": "",
+   "zh": "虽然罕见，但是不止一个，还有一个可以成对儿（多用于贬义）。",
+   "en": "",
+   "hv": "VÔ ĐỘC HỮU NGẪU",
+   "vi": "không chỉ có một, có đôi có cặp",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "延",
+   "py": "yán",
+   "pos": "",
+   "zh": "聘请；邀请。",
+   "en": "",
+   "hv": "DIÊN",
+   "vi": "mời",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "宾客",
+   "py": "bīnkè",
+   "pos": "名",
+   "zh": "客人（总称）。",
+   "en": "",
+   "hv": "TÂN KHÁCH",
+   "vi": "khách khứa",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "照例",
+   "py": "zhàolì",
+   "pos": "副",
+   "zh": "按照惯例。",
+   "en": "",
+   "hv": "CHIẾU LỆ",
+   "vi": "theo lệ thường",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "敝",
+   "py": "bì",
+   "pos": "",
+   "zh": "破烂；破旧。",
+   "en": "",
+   "hv": "TỆ",
+   "vi": "rách nát, cũ nát",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "安然",
+   "py": "ānrán",
+   "pos": "形",
+   "zh": "平静；安定。",
+   "en": "",
+   "hv": "AN NHIÊN",
+   "vi": "thản nhiên, bình thản",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "妪",
+   "py": "yù",
+   "pos": "",
+   "zh": "年老的女人。",
+   "en": "",
+   "hv": "ẨU",
+   "vi": "bà lão",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "佣妇",
+   "py": "yōngfù",
+   "pos": "名",
+   "zh": "女佣。",
+   "en": "housemaid; housekeeper",
+   "hv": "DONG PHỤ",
+   "vi": "người hầu gái, ô-sin",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "侧面",
+   "py": "cèmiàn",
+   "pos": "名",
+   "zh": "旁边的一面（跟“正面”相对）。",
+   "en": "side; flank",
+   "hv": "TRẮC DIỆN",
+   "vi": "mặt bên; (ở bài) gián tiếp",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "乃",
+   "py": "nǎi",
+   "pos": "副",
+   "zh": "文言词，表示判断，相当于“是、就是、实在是”。",
+   "en": "",
+   "hv": "NÃI",
+   "vi": "là, chính là",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "生母",
+   "py": "shēngmǔ",
+   "pos": "名",
+   "zh": "生身母亲。",
+   "en": "",
+   "hv": "SINH MẪU",
+   "vi": "mẹ đẻ",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "体面",
+   "py": "tǐmiàn",
+   "pos": "名",
+   "zh": "体统；面子；身份。",
+   "en": "",
+   "hv": "THỂ DIỆN",
+   "vi": "thể diện",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "奉",
+   "py": "fèng",
+   "pos": "动",
+   "zh": "给，献给（多指对上级或长辈）。",
+   "en": "",
+   "hv": "PHỤNG",
+   "vi": "dâng, bưng (mời)",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "而已",
+   "py": "éryǐ",
+   "pos": "助",
+   "zh": "罢了。",
+   "en": "",
+   "hv": "NHI DĨ",
+   "vi": "mà thôi",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "言过其实",
+   "py": "yán guò qí shí",
+   "pos": "",
+   "zh": "说话过分，不符合实际。",
+   "en": "",
+   "hv": "NGÔN QUÁ KỲ THỰC",
+   "vi": "nói quá sự thật",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "谬论",
+   "py": "miùlùn",
+   "pos": "名",
+   "zh": "荒唐错误的言论。",
+   "en": "",
+   "hv": "MẬU LUẬN",
+   "vi": "luận điệu sai lầm",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "随感二则",
+   "paragraphs": [
+    "第一部分",
+    "吃一行，恨一行",
+    "“三百六十行，行行出状元。”这是说职业不分上下，每一行范围之内一个人只要努力，不愁不能出人头地做到顶尖的位置。这也是劝勉人各就岗位奋斗向上，不要一味地“这山望着那山高”。究竟行还是有高低，犹山之有高低。状元与状元不同。西瓜大王不能与钢铁大王比，馄饨大王也不能和煤油大王比。",
+    "每一行都有它的艰难困苦，其发展的路常是坎坷多舛的。投身到任何一个行当，只好埋头苦干。有人只看见和尚吃馒头，没看见和尚受戒，遂生羡慕别人之心。以为自己这一行只有苦没有乐，不但自己唉声叹气，恨自己选错了行，还会谆谆告诫他的子弟千万别再做这一行。这叫做“吃一行，恨一行”。",
+    "造出“吃一行恨一行”这句话的人，其用心可能是劝勉大家安分守己，但是这句话也道出了无数人的无可奈何的心情。其实干一行应该爱一行才对。因为没有一行没有乐趣，至少一件工作之完满的完成便是无上乐趣。很多知道敬业的人不但自己满足于他的行当，而且教导他的子弟步武他的踪迹，被人称为“克绍箕裘”，其间没有丝毫恨意。",
+    "第二部分",
+    "子不嫌母丑，狗不嫌家贫",
+    "狗是很聪明的动物，但不太聪明。乞丐拄着一根杖，提着一个钵，沿门求乞，一条瘦狗寸步不离地跟随着他。得到一些残羹剩炙，人与狗分而食之。但是狗不会离开他，不会看到较好的去处便去趋就，所以说狗不算太聪明，虽然它有那么一分义气。",
+    "在儿女的眼光里，母亲应该是最美最可爱最可信赖最该受感激的一个人。人有丑的，母亲没有丑的。母亲可以老，但不会丑。从前有一首很流行的儿歌《乌鸦歌》，记得歌词是这样的：“乌鸦乌鸦对我叫，乌鸦真真孝。乌鸦老了不能飞，对着小鸦啼。小鸦朝朝打食归，打食归来先喂母。‘母亲从前喂过我！’”这是藉乌鸦反哺来劝孝的歌，但是最后一句“母亲从前喂过我”实在非常动人，没有失去人性的人回想起“母亲从前喂过我”，再听了这句歌词，恐怕没有不心酸的。每个人大概都会为了他的母亲而感觉骄傲，谁会嫌他的母亲丑？",
+    "“子不嫌母丑，狗不嫌家贫”，话没有错。不过嫌贫爱富恐怕是人之常情，不嫌家贫这份美誉恐怕要让狗来独享下去。子嫌母丑的例子也不是没有。我就知道有两个例子，无独有偶。有两位受过所谓“高等教育”的人，家里延见宾客，照例有两位衣服破敝的老妇捧茶出来，主人不予介绍，客人也就安然受之，以为那个老妪必是佣妇。久之才从侧面打听出来那老妪乃主人之生母。主人嫌其老丑，有失体面，认为见不得人，使之奉茶，废物利用而已。",
+    "狗不嫌家贫，并未言过其实。子不嫌母丑，对越来越多的人有变为谬论的可能。",
+    "（作者：梁实秋，选自《梁实秋散文选》，有改动）"
+   ],
+   "translations": [
+    "Phần một",
+    "Làm nghề nào, ghét nghề nấy",
+    "“Ba trăm sáu mươi nghề, nghề nào cũng có trạng nguyên.” Câu này nói rằng nghề nghiệp không phân cao thấp, trong phạm vi mỗi nghề, chỉ cần một người chịu nỗ lực thì chẳng lo không thể vượt lên trên người khác mà đạt tới vị trí hàng đầu. Đây cũng là lời khuyên nhủ mọi người hãy ở đúng cương vị của mình mà phấn đấu vươn lên, đừng một mực “đứng núi này trông núi nọ”. Nhưng rốt cuộc nghề vẫn có cao có thấp, cũng như núi có cao có thấp. Trạng nguyên với trạng nguyên cũng khác nhau. Ông vua dưa hấu không thể so với ông vua sắt thép, ông vua hoành thánh cũng không thể so với ông vua dầu hoả.",
+    "Nghề nào cũng có nỗi gian nan khốn khó riêng, con đường phát triển của nó thường gập ghềnh lắm trắc trở. Đã dấn thân vào bất cứ nghề nào thì cũng chỉ còn cách vùi đầu làm lụng vất vả. Có người chỉ thấy nhà sư ăn bánh bao mà không thấy nhà sư thụ giới, bèn nảy lòng ghen tị với người khác. Họ cho rằng nghề của mình chỉ có khổ chẳng có vui, không những bản thân than ngắn thở dài, hận mình chọn nhầm nghề, mà còn ân cần răn dạy con em mình nhất định đừng làm nghề này nữa. Đó gọi là “làm nghề nào, ghét nghề nấy”.",
+    "Người đặt ra câu “làm nghề nào ghét nghề nấy”, dụng ý có thể là khuyên mọi người an phận thủ thường, nhưng câu nói này cũng nói lên tâm trạng bất lực của vô số người. Thực ra làm nghề nào thì nên yêu nghề nấy mới phải. Bởi vì không có nghề nào là không có niềm vui, ít nhất thì việc hoàn thành trọn vẹn một công việc đã là niềm vui tột bậc. Nhiều người biết tận tâm với nghề không những bản thân hài lòng với nghề của mình mà còn dạy con em noi theo dấu chân mình, được người đời gọi là “nối nghiệp cha ông”, trong đó không hề có chút ân hận nào.",
+    "Phần hai",
+    "Con không chê mẹ xấu, chó không chê nhà nghèo",
+    "Chó là loài vật rất thông minh, nhưng không thông minh lắm. Người ăn mày chống một cây gậy, cầm một chiếc bát, đi xin từng nhà, một con chó gầy theo sát anh ta không rời nửa bước. Xin được ít cơm thừa canh cặn, người và chó chia nhau mà ăn. Thế nhưng con chó không bỏ anh ta, không thấy chỗ nào khá hơn là chạy theo, vì vậy mới nói chó không hẳn là quá thông minh, dù nó có được chút nghĩa khí như thế.",
+    "Trong mắt con cái, mẹ phải là người đẹp nhất, đáng yêu nhất, đáng tin cậy nhất và đáng được biết ơn nhất. Người thì có kẻ xấu, chứ mẹ thì không có ai xấu. Mẹ có thể già, nhưng không thể xấu. Ngày trước có một bài đồng dao rất phổ biến tên là “Bài ca con quạ”, tôi nhớ lời hát thế này: “Quạ ơi quạ kêu với tôi, quạ thật là hiếu thảo. Quạ già rồi không bay được, kêu với quạ con. Quạ con sáng sáng kiếm mồi về, kiếm mồi về trước mớm cho mẹ. ‘Mẹ ngày xưa đã mớm cho con!’” Đây là bài hát mượn chuyện quạ mớm mồi đền đáp để khuyên người ta hiếu thảo, nhưng câu cuối “Mẹ ngày xưa đã mớm cho con” thật vô cùng cảm động; người chưa đánh mất nhân tính khi nhớ lại “mẹ ngày xưa đã nuôi mình”, rồi nghe câu hát ấy, e rằng không ai không thấy chua xót. Có lẽ ai cũng cảm thấy tự hào về mẹ mình, ai lại chê mẹ mình xấu?",
+    "“Con không chê mẹ xấu, chó không chê nhà nghèo”, câu ấy không sai. Có điều chê nghèo ham giàu e rằng là lẽ thường tình của con người, cái tiếng tốt “không chê nhà nghèo” e là phải để cho loài chó độc hưởng mãi thôi. Chuyện con chê mẹ xấu cũng không phải là không có. Tôi biết hai ví dụ, chẳng phải chỉ có một. Có hai người từng được hưởng cái gọi là “giáo dục đại học”, mỗi khi ở nhà tiếp khách, theo lệ thường có hai bà lão quần áo cũ rách bưng trà ra, chủ nhà không hề giới thiệu, khách cũng thản nhiên đón nhận, cho rằng bà lão kia hẳn là người giúp việc. Lâu dần, nghe ngóng gián tiếp mới biết bà lão ấy chính là mẹ đẻ của chủ nhà. Chủ nhà chê mẹ già xấu, làm mất thể diện, cho là không thể ra mắt người khác, bắt mẹ bưng trà, chẳng qua là tận dụng đồ bỏ đi mà thôi.",
+    "Chó không chê nhà nghèo, quả không phải là nói quá. Còn con không chê mẹ xấu, đối với ngày càng nhiều người, có khả năng biến thành một luận điệu sai lầm.",
+    "(Tác giả: Lương Thực Thu, trích từ “Tuyển tập tản văn Lương Thực Thu”, có sửa đổi)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "拾荒的母亲",
+   "paragraphs": [
+    "谁都知道市场部经理罗小姐的妈妈是一个捡破烂的。公司里几乎所有人都见过她拖着一只沾满污垢（gòu）的白色蛇皮袋沿着街边的垃圾箱翻找可以回收的垃圾。",
+    "我们都困惑，以罗小姐今天的身份和地位，怎么忍心让老人干如此卑贱受苦的活儿。平日里，罗小姐总是板着面孔，不苟（gǒu）言笑，对下属严厉得几乎不近人情。因此，我们都确认是罗小姐不孝顺，自己生活好了就不管老人。甚至，有同事亲眼在街上看见罗小姐对着她母亲发怒，老人被斥得战战兢兢地流着泪。",
+    "我们能原谅一个35岁还待字闺中的老女人性情暴躁怪异，却不能原谅她虐（nuè）待老人，那老人还是自己的母亲。",
+    "罗小姐成了坏女人的代表。",
+    "为了惩治这个坏女人，我们决定给她一点儿颜色瞧瞧，也替她母亲出这口恶气。没有人会听从这样一位上司的命令，不管她说什么，我们都当耳边风，在她面前装疯卖傻。有人还把蜘蛛放在她那把舒适的大班椅上，任她怎么惊叫，怎么拿着文件夹又打又跳，都没有人进去帮她。她知道是被人捉弄了，恨恨地关上办公室的门，拉上百叶窗——一个恶毒的女人只配和一只蜘蛛在一起。",
+    "这是告诉她什么叫众怒难犯。难不成她会把全市场部的人都炒了？她还背不起害公司停止运作的罪名。",
+    "突然有一天，坏女人向公司请了一个月的假。我们都觉得她是怕了我们，或是知道自己没有办法领导好下属而准备引咎辞职。",
+    "公司里少了坏女人，连空气都豁（huò）然清朗起来。",
+    "一个星期六，我因为一些小感冒去找我那位当医生的好友。在医院的走廊里，我看到坏女人斜靠在单人病房的椅子上，闭着眼，头发凌乱。",
+    "我问医生朋友，她来做什么——我曾在他面前痛斥我有位不良上司，所以他对这个坏女人也略有所闻。",
+    "“就是她呀？她母亲上个星期发生车祸，现在还昏迷不醒。”",
+    "都是坏女人置老人于不顾的后果！我马上又痛恨起她来。",
+    "朋友却又告诉我，她从她母亲被送进医院那一天起，天天都陪在医院里没离开过。",
+    "“现在才来做孝女，平常怎么不对老人好一点儿？”",
+    "又经过那间病房时，我决定去看看老人。",
+    "坏女人见了我，连忙理了理两鬓的碎发，脸上露出一星儿笑。我从来没有见过她这个样子：不修边幅，面容憔悴，根本看不到往日里的孤清和高傲。我已经从朋友那儿了解了老人的病情，所以没有再问。",
+    "坏女人削了个苹果，递给我。我没有接，却问：“就你一个人在这儿？”她点点头，又放下苹果。我又问：“你没有其他亲人了？”",
+    "坏女人告诉我，她父亲在她念大学的时候去世了，是她母亲含辛茹苦供她念书。大学毕业后，她来到这个城市工作，然后，才从家乡把母亲接来。",
+    "“我知道你们都很讨厌我。”她继续说。",
+    "我听到了一个动人的爱情故事，是她母亲的。",
+    "罗小姐出生在一个很偏远的小山村里，父母亲都没念过几天书。直到罗小姐小学毕业，父母亲觉得不能让女儿像自己一样一辈子困在这穷乡僻壤里，于是把家里的地和房子都卖了，凑了点钱把女儿送到城里念书。",
+    "父母亲没有多少见识，找不到工作，于是背着女儿靠拾垃圾过日子。那时罗小姐一直住在学校里，她一直以为父母亲在别的地方工作，只是星期天才来学校看看她，塞给她一些生活费。",
+    "一直到她考上大学，突然接到她母亲打来的电话，说父亲躺在医院里，想要见她。她才得知这一切——她这几年的学费竟然都是父母亲起早贪黑地拾破烂得来的。",
+    "父亲走了，罗小姐随母亲到他们一直居住的地方，那只是一个小搭棚，冬天过风，夏天闷气。父亲就是在这种环境下病倒的。",
+    "罗小姐坚决不让母亲再逗留在这种恶劣的地方，她为母亲租了一间小屋，自己四处找兼职解决她及母亲的生活费，一再叮嘱母亲不能再拾破烂。",
+    "如今，母亲是盼来了女儿的好日子，却越来越思念丈夫，想着他辛辛苦苦了一辈子，却等不到女儿出头之日。日子过得越好，思念就越深。她怀念与丈夫餐风宿雨的日子，虽然苦，却苦得有滋味，苦得心甘情愿。",
+    "所以，母亲重新背起蛇皮袋，一路拾荒，一路回忆与父亲相依为命的日子。罗小姐也曾坚决不让母亲这样做，可母亲含着泪说：“我是享到福了，可是这一切都没有你父亲的气味，甚至连一张照片都没有留下。我怕越老越糊涂，怕哪天老得忘了你父亲的样子。而在街上，我每捡起一张纸，一个汽水罐，就会想起你父亲在身后用蛇皮袋子接着。这一天里，我们从不分开，拾满了，就回去，拾不满，就继续走。”母亲答应她，她并不是真的要靠拾荒过日子，拾到的东西，她把它们都送给了别的拾荒者。",
+    "罗小姐也不忍心再阻止母亲了。",
+    "罗小姐哭了，她也许没有想到自己会在下属面前掉眼泪，还说了这么一些话，可她憋（biē）得太久了，也憋得太难受了。",
+    "我也哭了，一半是因为听到了一个如此感人的故事，一半是因为内疚。我们曾那样自以为是地认为她是一个坏女人，还千方百计地想着如何伤害她。",
+    "我没经罗小姐同意就把真相告诉了同事。",
+    "我们只能靠在工作上的合作来弥补以前的过错，凡事多做一点，让她能多有一些时间来照顾她的母亲，和她自己的春天。",
+    "（作者：苏梅华，选自《青年时代》，有改动）"
+   ],
+   "translations": [
+    "Ai cũng biết mẹ của cô La, trưởng phòng thị trường, là một người nhặt ve chai. Gần như cả công ty đều từng thấy bà kéo một chiếc bao tải dứa trắng bám đầy cáu bẩn, lần theo các thùng rác ven đường bới tìm những thứ có thể tái chế.",
+    "Chúng tôi đều thắc mắc, với thân phận và địa vị hiện nay của cô La, sao cô lại nỡ để mẹ già làm công việc hèn mọn khổ cực như vậy. Ngày thường, cô La lúc nào cũng mặt lạnh như tiền, chẳng mấy khi cười nói, nghiêm khắc với cấp dưới đến mức gần như bất cận nhân tình. Vì thế, chúng tôi đều khẳng định cô La bất hiếu, bản thân sống sung sướng rồi thì mặc kệ mẹ già. Thậm chí có đồng nghiệp tận mắt thấy cô La nổi giận với mẹ ngoài phố, bà cụ bị mắng đến run rẩy rơi nước mắt.",
+    "Chúng tôi có thể tha thứ cho một bà cô 35 tuổi vẫn chưa chồng mà tính tình nóng nảy kỳ quái, nhưng không thể tha thứ cho việc cô ta ngược đãi người già, mà người già đó lại là mẹ ruột của mình.",
+    "Cô La trở thành hình mẫu của “người đàn bà xấu”.",
+    "Để trừng trị người đàn bà xấu này, chúng tôi quyết định cho cô ta biết tay, cũng là trút giận thay cho mẹ cô. Không ai chịu nghe lệnh một cấp trên như vậy, dù cô nói gì, chúng tôi cũng coi như gió thoảng bên tai, trước mặt cô thì giả điên giả dại. Có người còn thả nhện lên chiếc ghế giám đốc êm ái của cô, mặc cho cô thét lên kinh hãi, cầm tập hồ sơ vừa đập vừa nhảy, cũng chẳng ai vào giúp. Cô biết mình bị trêu chọc, tức tối đóng sập cửa phòng làm việc, kéo rèm lá xuống — một người đàn bà độc ác chỉ đáng ở cùng một con nhện.",
+    "Đây là để cho cô biết thế nào là “chớ chọc giận số đông”. Lẽ nào cô ta sa thải cả phòng thị trường? Cô ta cũng không gánh nổi tội làm công ty ngừng hoạt động.",
+    "Bỗng một ngày, người đàn bà xấu xin công ty nghỉ phép một tháng. Chúng tôi đều nghĩ cô ta sợ chúng tôi rồi, hoặc biết mình không thể lãnh đạo nổi cấp dưới nên chuẩn bị nhận lỗi từ chức.",
+    "Công ty vắng người đàn bà xấu, đến không khí cũng bỗng trở nên trong lành thoáng đãng.",
+    "Một ngày thứ Bảy, tôi bị cảm nhẹ nên đi tìm người bạn thân làm bác sĩ. Ở hành lang bệnh viện, tôi thấy người đàn bà xấu ngồi tựa nghiêng trên chiếc ghế trong một phòng bệnh đơn, nhắm mắt, đầu tóc rối bời.",
+    "Tôi hỏi người bạn bác sĩ cô ta đến làm gì — tôi từng kịch liệt chê trách trước mặt anh rằng mình có một cấp trên tồi tệ, nên anh cũng đã nghe phong thanh về người đàn bà xấu này.",
+    "“Là cô ấy à? Mẹ cô ấy tuần trước gặp tai nạn xe, đến giờ vẫn hôn mê chưa tỉnh.”",
+    "Đều là hậu quả của việc người đàn bà xấu bỏ mặc mẹ già! Tôi lập tức lại căm ghét cô ta.",
+    "Nhưng bạn tôi lại kể rằng từ hôm mẹ cô được đưa vào viện, ngày nào cô cũng ở bệnh viện túc trực, chưa từng rời đi.",
+    "“Bây giờ mới làm con hiếu thảo, ngày thường sao không đối xử tốt với mẹ hơn một chút?”",
+    "Lần sau đi ngang phòng bệnh ấy, tôi quyết định vào thăm bà cụ.",
+    "Người đàn bà xấu thấy tôi, vội vàng vuốt lại mấy sợi tóc lòa xòa hai bên mai, trên mặt thoáng một nụ cười. Tôi chưa bao giờ thấy cô như thế: chẳng chải chuốt, gương mặt tiều tụy, hoàn toàn không còn vẻ lạnh lùng cao ngạo ngày thường. Tôi đã biết bệnh tình của bà cụ qua bạn mình nên không hỏi thêm.",
+    "Người đàn bà xấu gọt một quả táo đưa cho tôi. Tôi không nhận mà hỏi: “Chỉ có mình chị ở đây sao?” Cô gật đầu, lại đặt quả táo xuống. Tôi lại hỏi: “Chị không còn người thân nào khác à?”",
+    "Người đàn bà xấu kể với tôi rằng bố cô mất khi cô đang học đại học, là mẹ cô ngậm đắng nuốt cay nuôi cô ăn học. Tốt nghiệp đại học, cô đến thành phố này làm việc, rồi mới đón mẹ từ quê lên.",
+    "“Tôi biết các anh chị đều rất ghét tôi.” Cô nói tiếp.",
+    "Tôi được nghe một câu chuyện tình cảm động, câu chuyện của mẹ cô.",
+    "Cô La sinh ra ở một bản núi nhỏ rất hẻo lánh, bố mẹ đều chẳng được học hành mấy ngày. Đến khi cô La tốt nghiệp tiểu học, bố mẹ cảm thấy không thể để con gái giống mình cả đời bị giam chân nơi thâm sơn cùng cốc này, bèn bán hết ruộng đất và nhà cửa, gom góp chút tiền đưa con gái lên thành phố đi học.",
+    "Bố mẹ chẳng hiểu biết bao nhiêu, không tìm được việc làm, bèn giấu con gái sống bằng nghề nhặt rác. Khi ấy cô La luôn ở nội trú, cô cứ ngỡ bố mẹ làm việc ở nơi khác, chỉ chủ nhật mới đến trường thăm cô, dúi cho cô ít tiền sinh hoạt.",
+    "Mãi đến khi cô đỗ đại học, bỗng nhận được điện thoại của mẹ, nói bố đang nằm viện, muốn gặp cô. Lúc ấy cô mới biết tất cả — học phí mấy năm qua của cô hóa ra đều do bố mẹ dậy sớm thức khuya nhặt ve chai mà có.",
+    "Bố mất, cô La theo mẹ về nơi họ vẫn ở bấy lâu, đó chỉ là một túp lều nhỏ, mùa đông gió lùa, mùa hè ngột ngạt. Bố cô đã ngã bệnh trong hoàn cảnh như thế.",
+    "Cô La kiên quyết không để mẹ ở lại nơi tồi tệ ấy thêm nữa, cô thuê cho mẹ một căn phòng nhỏ, bản thân đi khắp nơi tìm việc làm thêm để lo chi phí sinh hoạt cho mình và mẹ, nhiều lần dặn dò mẹ không được đi nhặt ve chai nữa.",
+    "Giờ đây, mẹ đã đợi được những ngày tốt đẹp của con gái, nhưng lại càng ngày càng nhớ chồng, nghĩ đến ông vất vả cả đời mà không đợi được ngày con gái nên người. Cuộc sống càng tốt đẹp, nỗi nhớ càng sâu. Bà nhớ những ngày cùng chồng dãi gió dầm mưa, tuy khổ nhưng khổ mà có vị, khổ mà cam lòng.",
+    "Vì thế, mẹ lại khoác lên chiếc bao tải dứa, vừa đi nhặt ve chai, vừa hồi tưởng những ngày cùng chồng nương tựa vào nhau mà sống. Cô La cũng từng kiên quyết không cho mẹ làm vậy, nhưng mẹ rưng rưng nói: “Mẹ được hưởng phúc rồi, nhưng tất cả những thứ này đều không có hơi hướng của bố con, thậm chí đến một tấm ảnh cũng chẳng để lại. Mẹ sợ càng già càng lẫn, sợ có ngày già đến mức quên mất dáng vẻ bố con. Còn ở ngoài phố, mỗi lần mẹ nhặt một tờ giấy, một vỏ lon nước ngọt, là lại nhớ đến bố con đứng phía sau cầm bao tải đỡ lấy. Suốt cả ngày, hai bố mẹ chẳng bao giờ rời nhau, nhặt đầy thì về, chưa đầy thì đi tiếp.” Mẹ hứa với cô, bà không thật sự sống nhờ nhặt ve chai, những thứ nhặt được, bà đều đem cho những người nhặt ve chai khác.",
+    "Cô La cũng không nỡ ngăn mẹ nữa.",
+    "Cô La khóc, có lẽ cô không ngờ mình lại rơi nước mắt trước mặt cấp dưới, còn nói ra những lời như thế, nhưng cô đã nén chịu quá lâu, nén đến quá khó chịu rồi.",
+    "Tôi cũng khóc, một nửa vì được nghe một câu chuyện cảm động đến vậy, một nửa vì áy náy. Chúng tôi từng tự cho mình là đúng mà nghĩ cô là một người đàn bà xấu, còn tìm trăm phương nghìn kế để làm hại cô.",
+    "Không đợi cô La đồng ý, tôi đã kể sự thật cho các đồng nghiệp.",
+    "Chúng tôi chỉ có thể dựa vào sự hợp tác trong công việc để bù đắp lỗi lầm trước đây, việc gì cũng làm thêm một chút, để cô có thêm thời gian chăm sóc mẹ, và chăm sóc mùa xuân của chính mình.",
+    "(Tác giả: Tô Mai Hoa, trích từ tạp chí “Thanh niên thời đại”, có sửa đổi)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "只要X，（就）不愁Y (chỉ cần X thì chẳng lo Y)",
+   "structure": "只要X，（就）不愁＋否定词＋Y",
+   "explanation": "“只要X，(就)不愁Y”: có điều kiện X thì không cần lo Y. Trước “不愁” có thể thêm “就”, sau “不愁” thường là từ phủ định. Mở rộng (链接) so với “只要……，就……”: trong “只要X，不愁Y”, Y là việc khiến người ta lo lắng, sau “不愁” thường có từ phủ định; còn “只要……，就……” không có hạn chế này. Ví dụ câu “只要他同意，我就去” thì không thể dùng “不愁”.",
+   "examples": [
+    {
+     "zh": "每一行范围之内一个人只要努力，不愁不能出人头地做到顶尖的位置。",
+     "vi": "Trong phạm vi mỗi nghề, chỉ cần một người chịu nỗ lực thì chẳng lo không thể vượt lên đạt tới vị trí hàng đầu."
+    },
+    {
+     "zh": "只要你下功夫，（就）不愁学不会。",
+     "vi": "Chỉ cần bạn chịu bỏ công sức thì chẳng lo học không được."
+    },
+    {
+     "zh": "只要调动起大家的积极性，（就）不愁完不成任务。",
+     "vi": "Chỉ cần khơi dậy được tính tích cực của mọi người thì chẳng lo không hoàn thành nhiệm vụ."
+    },
+    {
+     "zh": "只要工资高，工作环境好，（就）不愁没人来应聘。",
+     "vi": "Chỉ cần lương cao, môi trường làm việc tốt thì chẳng lo không có người đến ứng tuyển."
+    }
+   ]
+  },
+  {
+   "point": "一味 (một mực, cứ khăng khăng)",
+   "structure": "一味（地）＋动词短语",
+   "explanation": "“一味” là phó từ, nghĩa là “đơn thuần, chỉ một cách”, biểu thị không đoái hoài đến điều kiện và tình hình khách quan, cố chấp giữ một cách làm nào đó mà không chịu thay đổi. Phần nhiều mang nghĩa xấu (贬义).",
+   "examples": [
+    {
+     "zh": "不要一味地“这山望着那山高”。",
+     "vi": "Đừng một mực “đứng núi này trông núi nọ”."
+    },
+    {
+     "zh": "他批评了那些一味守旧的人。",
+     "vi": "Ông phê phán những người một mực bảo thủ."
+    },
+    {
+     "zh": "养花不能一味浇水，还得注意施肥、松土、剪枝。",
+     "vi": "Trồng hoa không thể chỉ biết tưới nước, còn phải chú ý bón phân, xới đất, tỉa cành."
+    },
+    {
+     "zh": "从前只一味地责备孩子，让他们代我们负起责任，却未免是可耻的。",
+     "vi": "Trước đây chỉ một mực trách mắng con cái, bắt chúng gánh trách nhiệm thay chúng ta, thật khó tránh khỏi đáng hổ thẹn."
+    },
+    {
+     "zh": "他一味地固执己见，怎么能得到别人的支持呢？",
+     "vi": "Anh ta cứ khăng khăng cố chấp ý mình, sao có thể được người khác ủng hộ?"
+    }
+   ]
+  },
+  {
+   "point": "分 (lượng từ: phần, mức độ)",
+   "structure": "一／三／七／几＋分＋名词/形容词",
+   "explanation": "“分” là lượng từ, biểu thị mức độ hoặc tỷ lệ (phần mười) của sự vật hay hành vi. Thường dùng sau các số từ như “一、三、七” hoặc “几”. Ví dụ: 七分优点，三分缺点; 七分功劳，三分过失; 三分像人，七分像鬼; 一分耕耘，一分收获; 有一分热，发一分光; 几分相似; 几分失落; 几分尴尬.",
+   "examples": [
+    {
+     "zh": "所以说狗不算太聪明，虽然它有那么一分义气。",
+     "vi": "Vì vậy mới nói chó không hẳn là quá thông minh, dù nó có được chút nghĩa khí như thế."
+    },
+    {
+     "zh": "七分优点，三分缺点／七分功劳，三分过失",
+     "vi": "bảy phần ưu điểm, ba phần khuyết điểm / bảy phần công, ba phần lỗi"
+    },
+    {
+     "zh": "三分像人，七分像鬼／一分耕耘，一分收获",
+     "vi": "ba phần giống người, bảy phần giống ma / một phần cày cấy, một phần thu hoạch"
+    },
+    {
+     "zh": "有一分热，发一分光／几分相似／几分失落／几分尴尬",
+     "vi": "có một phần nhiệt thì toả một phần sáng / có phần giống nhau / phần nào hụt hẫng / có chút lúng túng"
+    }
+   ]
+  },
+  {
+   "point": "照例 (theo lệ thường)",
+   "structure": "照例（地）＋动词短语",
+   "explanation": "“照例” là phó từ, nghĩa là theo lệ cũ, tức làm theo cách làm quen thuộc hoặc lẽ thường. Hành vi sau “照例” chính là cách làm quen thuộc hoặc lẽ thường, đôi khi phía trước có nêu bối cảnh. Có thể thêm “地”. Thường bổ nghĩa cho cụm động từ.",
+   "examples": [
+    {
+     "zh": "有两位受过所谓“高等教育”的人，家里延见宾客，照例有两位衣服破敝的老妇捧茶出来……",
+     "vi": "Có hai người từng được hưởng cái gọi là “giáo dục đại học”, mỗi khi ở nhà tiếp khách, theo lệ thường có hai bà lão quần áo cũ rách bưng trà ra…"
+    },
+    {
+     "zh": "十一月下旬的一天，叔齐照例一早起了床，要练太极拳。",
+     "vi": "Một ngày cuối tháng Mười một, Thúc Tề như thường lệ dậy từ sớm để tập Thái cực quyền."
+    },
+    {
+     "zh": "又是一个闷热的早晨，安然照例比我早起。",
+     "vi": "Lại một buổi sáng oi bức, An Nhiên như thường lệ dậy sớm hơn tôi."
+    },
+    {
+     "zh": "午饭后，小赵照例睡午觉去了。",
+     "vi": "Ăn trưa xong, Tiểu Triệu như thường lệ đi ngủ trưa."
+    },
+    {
+     "zh": "除夕晚上，北方人一般都照例地包饺子。",
+     "vi": "Tối giao thừa, người miền Bắc thường theo lệ gói sủi cảo."
+    }
+   ]
+  },
+  {
+   "point": "不予 (không cho, không chịu)",
+   "structure": "不予＋双音节动词（解释／考虑／通报／理睬／答复／批准）",
+   "explanation": "“予” là động từ, nghĩa là “cho”; ở bài 6 đã học cách dùng khẳng định của nó, bài này học dạng phủ định “不予”. Các kết hợp thường gặp: 不予解释, 不予考虑, 不予通报, 不予理睬, 不予答复, 不予批准…",
+   "examples": [
+    {
+     "zh": "照例有两位衣服破敝的老妇捧茶出来，主人不予介绍，客人也就安然受之……",
+     "vi": "Theo lệ có hai bà lão quần áo cũ rách bưng trà ra, chủ nhà không giới thiệu, khách cũng thản nhiên đón nhận…"
+    },
+    {
+     "zh": "关于这个问题我们反映了多次，但有关部门不予理睬。",
+     "vi": "Về vấn đề này chúng tôi đã phản ánh nhiều lần, nhưng cơ quan liên quan không thèm đoái hoài."
+    },
+    {
+     "zh": "你们的要求公司根本不予考虑。",
+     "vi": "Yêu cầu của các anh, công ty hoàn toàn không xem xét."
+    }
+   ]
+  },
+  {
+   "point": "V/A＋不得 (không thể, không được)",
+   "structure": "动词/形容词＋不得（＋宾语）",
+   "explanation": "“不得” dùng sau động từ hoặc tính từ, biểu thị không thể, không được phép hoặc không thích hợp. (1) Có loại không mang tân ngữ: 说不得, 去不得, 要不得, 摸不得, 使不得, 拿不得, 学不得, 动弹不得, 错不得, 马虎不得, 哭笑不得, 放松不得, 凑合不得, 糊涂不得, 得罪不得. (2) Có loại mang tân ngữ: 见不得人, 远水救不得近火, 来不得半点虚假.",
+   "examples": [
+    {
+     "zh": "主人嫌其老丑，有失体面，认为见不得人……",
+     "vi": "Chủ nhà chê mẹ già xấu, làm mất thể diện, cho là không thể ra mắt người khác…"
+    },
+    {
+     "zh": "说不得／去不得／要不得／摸不得／使不得／动弹不得／错不得／马虎不得／哭笑不得",
+     "vi": "không nói được / không đi được / không thể chấp nhận / không được sờ / không được đâu / không nhúc nhích được / không được sai / không được qua loa / dở khóc dở cười"
+    },
+    {
+     "zh": "见不得人／远水救不得近火／来不得半点虚假",
+     "vi": "không dám ra mặt / nước xa không cứu được lửa gần / không được có chút giả dối nào"
+    }
+   ]
+  }
+ ]
+}

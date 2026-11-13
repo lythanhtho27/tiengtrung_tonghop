@@ -34,7 +34,7 @@ master["total_books"] = len(new_books)
 master["total_lessons"] = total_lessons
 master["total_vocab"] = total_vocab
 master["total_readings"] = total_readings
-master["updated_at"] = "2026-10-19"
+master["updated_at"] = __import__("datetime").date.today().isoformat()
 master["books"] = new_books
 
 # Write to boya_data.json

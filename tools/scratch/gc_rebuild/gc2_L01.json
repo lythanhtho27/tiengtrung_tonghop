@@ -1,0 +1,1264 @@
+{
+ "book": "gc2",
+ "lesson_num": 1,
+ "title": "每天都冒一点险",
+ "pages": [
+  11,
+  36
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "憧憬",
+   "py": "chōngjǐng",
+   "pos": "动",
+   "zh": "向往。",
+   "en": "",
+   "hv": "SUNG CẢNH",
+   "vi": "mong ước, hướng tới",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "丸",
+   "py": "wán",
+   "pos": "名",
+   "zh": "丸药。",
+   "en": "",
+   "hv": "HOÀN",
+   "vi": "viên thuốc",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "一笑了之",
+   "py": "yí xiào liǎo zhī",
+   "pos": "",
+   "zh": "（对某事）笑一笑就算了，不去计较。",
+   "en": "",
+   "hv": "NHẤT TIẾU LIỄU CHI",
+   "vi": "cười cho qua",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "狠毒",
+   "py": "hěndú",
+   "pos": "形",
+   "zh": "凶狠毒辣。",
+   "en": "",
+   "hv": "NGOAN ĐỘC",
+   "vi": "hiểm độc, độc ác",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "处境",
+   "py": "chǔjìng",
+   "pos": "名",
+   "zh": "所处的境地（多指不利的情况下）。",
+   "en": "",
+   "hv": "XỨ CẢNH",
+   "vi": "hoàn cảnh, cảnh ngộ",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "原始",
+   "py": "yuánshǐ",
+   "pos": "形",
+   "zh": "最古老的；未开发的；未开化的。",
+   "en": "",
+   "hv": "NGUYÊN THỦY",
+   "vi": "nguyên thủy",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "茹毛饮血",
+   "py": "rú máo yǐn xuè",
+   "pos": "",
+   "zh": "指原始人不会用火，连毛带血地生吃动物。",
+   "en": "",
+   "hv": "NHƯ MAO ẨM HUYẾT",
+   "vi": "ăn lông ở lỗ, ăn sống nuốt tươi",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "刀耕火种",
+   "py": "dāo gēng huǒ zhòng",
+   "pos": "",
+   "zh": "一种原始的耕种方法，把地上的草木烧成灰做肥料，就地挖坑下种（zhǒng）。",
+   "en": "",
+   "hv": "ĐAO CANH HỎA CHỦNG",
+   "vi": "đốt rẫy làm nương",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "危机四伏",
+   "py": "wēijī sìfú",
+   "pos": "",
+   "zh": "到处潜伏着危险。",
+   "en": "",
+   "hv": "NGUY CƠ TỨ PHỤC",
+   "vi": "nguy hiểm rình rập khắp nơi",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "凶残",
+   "py": "xiōngcán",
+   "pos": "形",
+   "zh": "凶恶残暴。",
+   "en": "",
+   "hv": "HUNG TÀN",
+   "vi": "hung tàn",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "坠机",
+   "py": "zhuì jī",
+   "pos": "",
+   "zh": "飞机发生不幸的事故而落下毁坏。",
+   "en": "",
+   "hv": "TRỤY CƠ",
+   "vi": "rơi máy bay",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "躲避",
+   "py": "duǒbì",
+   "pos": "动",
+   "zh": "离开对自己不利的事物。",
+   "en": "",
+   "hv": "ĐỎA TỊ",
+   "vi": "tránh né, lẩn tránh",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "嗜好",
+   "py": "shìhào",
+   "pos": "名",
+   "zh": "特殊的爱好（多指不良的）。",
+   "en": "",
+   "hv": "THỊ HIẾU",
+   "vi": "thói nghiện, sở thích đặc biệt",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "焦虑",
+   "py": "jiāolǜ",
+   "pos": "形",
+   "zh": "着急，担心。",
+   "en": "",
+   "hv": "TIÊU LỰ",
+   "vi": "lo âu, sốt ruột",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "明码标价",
+   "py": "míngmǎ biāojià",
+   "pos": "",
+   "zh": "给所售商品标明价格。",
+   "en": "",
+   "hv": "MINH MÃ TIÊU GIÁ",
+   "vi": "niêm yết giá rõ ràng",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "享用",
+   "py": "xiǎngyòng",
+   "pos": "动",
+   "zh": "享受使用，常指使用某种东西而得到物质或精神上的满足。",
+   "en": "",
+   "hv": "HƯỞNG DỤNG",
+   "vi": "hưởng thụ, tận hưởng",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "超标",
+   "py": "chāo biāo",
+   "pos": "",
+   "zh": "超过规定的标准（多指不好的方面）。",
+   "en": "",
+   "hv": "SIÊU TIÊU",
+   "vi": "vượt tiêu chuẩn",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "绳索",
+   "py": "shéngsuǒ",
+   "pos": "名",
+   "zh": "粗的绳子。",
+   "en": "rope",
+   "hv": "THẰNG SÁCH",
+   "vi": "dây thừng",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "烟熏火燎",
+   "py": "yān xūn huǒ liǎo",
+   "pos": "",
+   "zh": "指环境恶劣。烟熏：烟接触物体，使变颜色或沾上气味。火燎：挨近了火而烧焦（多用于毛发等）。",
+   "en": "",
+   "hv": "YÊN HUÂN HỎA LIỆU",
+   "vi": "khói hun lửa táp (môi trường khắc nghiệt)",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "恶劣",
+   "py": "èliè",
+   "pos": "形",
+   "zh": "很坏。",
+   "en": "",
+   "hv": "ÁC LIỆT",
+   "vi": "tồi tệ, khắc nghiệt",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "操作",
+   "py": "cāozuò",
+   "pos": "动",
+   "zh": "按照一定的程序和技术要求去做。",
+   "en": "",
+   "hv": "THAO TÁC",
+   "vi": "thao tác, làm (việc)",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "赌博",
+   "py": "dǔbó",
+   "pos": "动",
+   "zh": "用某种形式，以财物作本钱争输赢。",
+   "en": "",
+   "hv": "ĐỔ BÁC",
+   "vi": "cờ bạc",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "饮弹",
+   "py": "yǐndàn",
+   "pos": "动",
+   "zh": "身上中（zhòng）了子弹（bullet）。",
+   "en": "",
+   "hv": "ẨM ĐẠN",
+   "vi": "trúng đạn, tự bắn mình",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "风险",
+   "py": "fēngxiǎn",
+   "pos": "名",
+   "zh": "可能发生的危险。（风险——危险）",
+   "en": "",
+   "hv": "PHONG HIỂM",
+   "vi": "rủi ro",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "范畴",
+   "py": "fànchóu",
+   "pos": "名",
+   "zh": "类型；范围。（范畴——范围）",
+   "en": "",
+   "hv": "PHẠM TRÙ",
+   "vi": "phạm trù, phạm vi",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "不宜",
+   "py": "bùyí",
+   "pos": "动",
+   "zh": "不适宜。",
+   "en": "",
+   "hv": "BẤT NGHI",
+   "vi": "không nên, không thích hợp",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "潜在",
+   "py": "qiánzài",
+   "pos": "形",
+   "zh": "存在于事物内部不容易发现或发觉的。",
+   "en": "",
+   "hv": "TIỀM TẠI",
+   "vi": "tiềm tàng, tiềm ẩn",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "损人利己",
+   "py": "sǔn rén lì jǐ",
+   "pos": "",
+   "zh": "使别人受到损失而使自己得到好处。",
+   "en": "",
+   "hv": "TỔN NHÂN LỢI KỶ",
+   "vi": "hại người lợi mình",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "亡命天涯",
+   "py": "wángmìng tiānyá",
+   "pos": "",
+   "zh": "逃到极远的地方以保全生命。天涯：形容极远的地方。",
+   "en": "",
+   "hv": "VONG MỆNH THIÊN NHAI",
+   "vi": "trốn chạy tận chân trời góc bể",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "回归",
+   "py": "huíguī",
+   "pos": "动",
+   "zh": "回到（原来地方）。",
+   "en": "",
+   "hv": "HỒI QUY",
+   "vi": "quay về",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "不由自主",
+   "py": "bù yóu zì zhǔ",
+   "pos": "",
+   "zh": "由不得自己；控制不了自己。",
+   "en": "",
+   "hv": "BẤT DO TỰ CHỦ",
+   "vi": "bất giác, không tự chủ được",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "跃跃欲试",
+   "py": "yuèyuè yù shì",
+   "pos": "",
+   "zh": "形容心里急切地想试一试。",
+   "en": "",
+   "hv": "DƯỢC DƯỢC DỤC THÍ",
+   "vi": "nóng lòng muốn thử",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "自作多情",
+   "py": "zì zuò duō qíng",
+   "pos": "",
+   "zh": "不问对方的态度，自己做出种种温情的表示。",
+   "en": "",
+   "hv": "TỰ TÁC ĐA TÌNH",
+   "vi": "tự mình đa tình, ảo tưởng",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "蠢蠢欲动",
+   "py": "chǔnchǔn yù dòng",
+   "pos": "",
+   "zh": "指敌人准备进行攻击或坏人策划破坏活动。",
+   "en": "",
+   "hv": "XUẨN XUẨN DỤC ĐỘNG",
+   "vi": "rục rịch muốn hành động",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "眼下",
+   "py": "yǎnxià",
+   "pos": "名",
+   "zh": "目前。",
+   "en": "",
+   "hv": "NHÃN HẠ",
+   "vi": "hiện nay, trước mắt",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "半径",
+   "py": "bànjìng",
+   "pos": "名",
+   "zh": "连接圆心和圆周上任意一点的线段叫做圆的半径。比喻生活的圈子、范围大小。",
+   "en": "radius",
+   "hv": "BÁN KÍNH",
+   "vi": "bán kính (phạm vi sinh hoạt)",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "招摇",
+   "py": "zhāoyáo",
+   "pos": "形",
+   "zh": "故意张大声势，引人注意。",
+   "en": "",
+   "hv": "CHIÊU DAO",
+   "vi": "phô trương",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "靡费",
+   "py": "mífèi",
+   "pos": "动",
+   "zh": "浪费。",
+   "en": "",
+   "hv": "MI PHÍ",
+   "vi": "lãng phí, tốn kém",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "认可",
+   "py": "rènkě",
+   "pos": "动",
+   "zh": "许可；承认。",
+   "en": "",
+   "hv": "NHẬN KHẢ",
+   "vi": "thừa nhận, công nhận",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "可观",
+   "py": "kěguān",
+   "pos": "形",
+   "zh": "指达到的程度比较高。",
+   "en": "",
+   "hv": "KHẢ QUAN",
+   "vi": "đáng kể, khá lớn",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "文",
+   "py": "wén",
+   "pos": "量",
+   "zh": "用于旧时的铜钱。",
+   "en": "",
+   "hv": "VĂN",
+   "vi": "đồng (tiền xu thời xưa)",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "津贴",
+   "py": "jīntiē",
+   "pos": "名",
+   "zh": "工资以外的补助费，也指供给制人员的生活零用钱。",
+   "en": "",
+   "hv": "TÂN THIẾP",
+   "vi": "phụ cấp, trợ cấp",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "东倒西歪",
+   "py": "dōng dǎo xī wāi",
+   "pos": "",
+   "zh": "形容行走、坐立时身体歪斜或摇晃不稳的样子。",
+   "en": "",
+   "hv": "ĐÔNG ĐẢO TÂY OAI",
+   "vi": "nghiêng ngả, xiêu vẹo",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "气喘吁吁",
+   "py": "qì chuǎn xūxū",
+   "pos": "",
+   "zh": "形容呼吸急促的样子。吁吁：拟声词，形容出气的声音。",
+   "en": "",
+   "hv": "KHÍ SUYỄN HU HU",
+   "vi": "thở hổn hển",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "当儿",
+   "py": "dāngr",
+   "pos": "名",
+   "zh": "事情发生或进行的时候；当口儿。",
+   "en": "",
+   "hv": "ĐƯƠNG NHI",
+   "vi": "lúc, đúng lúc",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "若干",
+   "py": "ruògān",
+   "pos": "代",
+   "zh": "指不确定的数目。",
+   "en": "",
+   "hv": "NHƯỢC CAN",
+   "vi": "một số, bao nhiêu đó",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "物美价廉",
+   "py": "wù měi jià lián",
+   "pos": "",
+   "zh": "东西质量好，价格便宜。也作“价廉物美”。",
+   "en": "",
+   "hv": "VẬT MỸ GIÁ LIÊM",
+   "vi": "hàng tốt giá rẻ",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "无趣",
+   "py": "wúqù",
+   "pos": "形",
+   "zh": "没意思。",
+   "en": "",
+   "hv": "VÔ THÚ",
+   "vi": "vô vị, chán",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "生涯",
+   "py": "shēngyá",
+   "pos": "名",
+   "zh": "指从事某种活动或事业的生活。（生涯——生活）",
+   "en": "",
+   "hv": "SINH NHAI",
+   "vi": "cuộc đời (làm việc gì), sự nghiệp",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "合伙",
+   "py": "héhuǒ",
+   "pos": "动",
+   "zh": "一起（做某事）。",
+   "en": "",
+   "hv": "HỢP HỎA",
+   "vi": "chung nhau, hùn nhau",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "汇聚一堂",
+   "py": "huìjù yì táng",
+   "pos": "",
+   "zh": "聚集在一个地方。",
+   "en": "",
+   "hv": "HỐI TỤ NHẤT ĐƯỜNG",
+   "vi": "tụ họp một chỗ",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "其乐融融",
+   "py": "qílè róngróng",
+   "pos": "",
+   "zh": "乐趣很多的样子。",
+   "en": "",
+   "hv": "KỲ LẠC DUNG DUNG",
+   "vi": "vui vẻ hòa thuận",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "通常",
+   "py": "tōngcháng",
+   "pos": "形",
+   "zh": "一般；平常。（通常——常常）",
+   "en": "",
+   "hv": "THÔNG THƯỜNG",
+   "vi": "thông thường",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "讥",
+   "py": "jī",
+   "pos": "动",
+   "zh": "讥讽，用旁敲侧击或尖刻的话指责或嘲笑对方的错误、缺点或某种表现。",
+   "en": "",
+   "hv": "CƠ",
+   "vi": "chế giễu, châm biếm",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "巧舌如簧",
+   "py": "qiǎo shé rú huáng",
+   "pos": "",
+   "zh": "舌头灵巧，像簧片一样能发出动听的音乐。形容花言巧语，能说会道。簧：指乐器里面用铜或其他材料制成的发声薄片。",
+   "en": "",
+   "hv": "XẢO THIỆT NHƯ HOÀNG",
+   "vi": "ăn nói khéo léo, hoa mỹ",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "客",
+   "py": "kè",
+   "pos": "量",
+   "zh": "用于论份儿出售的食品、饮料。",
+   "en": "",
+   "hv": "KHÁCH",
+   "vi": "suất, phần (đồ ăn)",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "芽",
+   "py": "yá",
+   "pos": "名",
+   "zh": "植物刚长出来的可以发育成茎、叶或花的部分。",
+   "en": "sprout; shoot",
+   "hv": "NHA",
+   "vi": "mầm, chồi",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "柳树",
+   "py": "liǔshù",
+   "pos": "名",
+   "zh": "一种树。",
+   "en": "willow (Salix)",
+   "hv": "LIỄU THỤ",
+   "vi": "cây liễu",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "叶脉",
+   "py": "yèmài",
+   "pos": "名",
+   "zh": "叶片上分布的细管状构造，主要由细而长的细胞构成，分布到叶片的各个部分，作用是输送水分、养料等。",
+   "en": "leaf vein",
+   "hv": "DIỆP MẠCH",
+   "vi": "gân lá",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "如同",
+   "py": "rútóng",
+   "pos": "动",
+   "zh": "好像。",
+   "en": "",
+   "hv": "NHƯ ĐỒNG",
+   "vi": "giống như",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "碟",
+   "py": "dié",
+   "pos": "名",
+   "zh": "碟子，盛食物的小盘子。",
+   "en": "small dish; small plate",
+   "hv": "ĐIỆP",
+   "vi": "đĩa nhỏ",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "杂糅",
+   "py": "záróu",
+   "pos": "动",
+   "zh": "指不同的东西混在一起。",
+   "en": "",
+   "hv": "TẠP NHỮU",
+   "vi": "trộn lẫn, pha tạp",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "尚",
+   "py": "shàng",
+   "pos": "副",
+   "zh": "还。",
+   "en": "",
+   "hv": "THƯỢNG",
+   "vi": "còn, vẫn còn, tạm",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "颇",
+   "py": "pō",
+   "pos": "副",
+   "zh": "很；相当地。",
+   "en": "",
+   "hv": "PHẢ",
+   "vi": "khá, rất",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "老少咸宜",
+   "py": "lǎo shào xián yí",
+   "pos": "",
+   "zh": "老人小孩儿都适合。",
+   "en": "",
+   "hv": "LÃO THIẾU HÀM NGHI",
+   "vi": "già trẻ đều hợp",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "好似",
+   "py": "hǎosì",
+   "pos": "动",
+   "zh": "好像。",
+   "en": "",
+   "hv": "HẢO TỰ",
+   "vi": "giống như",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "起锚",
+   "py": "qǐmáo",
+   "pos": "动",
+   "zh": "把锚拔起，船开始航行。",
+   "en": "",
+   "hv": "KHỞI MIÊU",
+   "vi": "nhổ neo",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "水兵",
+   "py": "shuǐbīng",
+   "pos": "名",
+   "zh": "军舰上的士兵。",
+   "en": "",
+   "hv": "THỦY BINH",
+   "vi": "lính thủy",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "症结",
+   "py": "zhēngjié",
+   "pos": "名",
+   "zh": "中医指腹腔内结块的病。比喻问题的关键。",
+   "en": "",
+   "hv": "CHỨNG KẾT",
+   "vi": "mấu chốt (vấn đề)",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "活扣",
+   "py": "huókòu",
+   "pos": "名",
+   "zh": "活结，一拉就开的绳结（区别于“死结”）。",
+   "en": "",
+   "hv": "HOẠT KHẤU",
+   "vi": "nút sống (nút thắt dễ tháo)",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "铆",
+   "py": "mǎo",
+   "pos": "动",
+   "zh": "集中（力气、勇气等），一下子使出来。",
+   "en": "",
+   "hv": "MÃO",
+   "vi": "dồn (sức), lấy hết (can đảm)",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "远航",
+   "py": "yuǎnháng",
+   "pos": "动",
+   "zh": "远程航行。",
+   "en": "",
+   "hv": "VIỄN HÀNG",
+   "vi": "đi biển xa",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "浑身",
+   "py": "húnshēn",
+   "pos": "名",
+   "zh": "全身。",
+   "en": "",
+   "hv": "HỒN THÂN",
+   "vi": "khắp người",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "揪",
+   "py": "jiū",
+   "pos": "动",
+   "zh": "紧紧地抓；抓住并拉。",
+   "en": "",
+   "hv": "TƯU",
+   "vi": "túm, giật",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "气定神闲",
+   "py": "qì dìng shén xián",
+   "pos": "",
+   "zh": "神情安定的样子。",
+   "en": "",
+   "hv": "KHÍ ĐỊNH THẦN NHÀN",
+   "vi": "bình thản, ung dung",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "喝彩",
+   "py": "hè cǎi",
+   "pos": "",
+   "zh": "大声叫好。",
+   "en": "",
+   "hv": "HÁT THẢI",
+   "vi": "hoan hô, reo khen",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "衣裳",
+   "py": "yīshang",
+   "pos": "名",
+   "zh": "衣服。",
+   "en": "",
+   "hv": "Y THƯỜNG",
+   "vi": "quần áo",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "检点",
+   "py": "jiǎndiǎn",
+   "pos": "动",
+   "zh": "检查；查点。",
+   "en": "",
+   "hv": "KIỂM ĐIỂM",
+   "vi": "kiểm điểm, xem lại",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "束缚",
+   "py": "shùfù",
+   "pos": "动",
+   "zh": "使受到约束；使停留在狭窄的范围里。",
+   "en": "",
+   "hv": "THÚC PHƯỢC",
+   "vi": "trói buộc, ràng buộc",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "微不足道",
+   "py": "wēi bù zú dào",
+   "pos": "",
+   "zh": "不重要，不值得一提。",
+   "en": "",
+   "hv": "VI BẤT TÚC ĐẠO",
+   "vi": "nhỏ nhặt, không đáng kể",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "茧",
+   "py": "jiǎn",
+   "pos": "名",
+   "zh": "某些昆虫的幼虫在变成蛹之前吐丝形成的壳。",
+   "en": "cocoon",
+   "hv": "KIỂN",
+   "vi": "kén",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "鞘",
+   "py": "qiào",
+   "pos": "名",
+   "zh": "装刀剑的套子。",
+   "en": "sheath; scabbard",
+   "hv": "SAO",
+   "vi": "vỏ (dao, kiếm)",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "裹挟",
+   "py": "guǒxié",
+   "pos": "动",
+   "zh": "（风、流水等）把别的东西卷入，使随着移动。",
+   "en": "",
+   "hv": "KHỎA HIỆP",
+   "vi": "cuốn theo, bó buộc",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "突破",
+   "py": "tūpò",
+   "pos": "动",
+   "zh": "打开缺口；打破（困难、限制等）。",
+   "en": "",
+   "hv": "ĐỘT PHÁ",
+   "vi": "đột phá, vượt qua",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "心智",
+   "py": "xīnzhì",
+   "pos": "名",
+   "zh": "心理；性情。",
+   "en": "",
+   "hv": "TÂM TRÍ",
+   "vi": "tâm trí, tâm lý",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "拘禁",
+   "py": "jūjìn",
+   "pos": "动",
+   "zh": "把人暂时关起来，使失去自由。",
+   "en": "",
+   "hv": "CÂU CẤM",
+   "vi": "giam cầm",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "惶惑",
+   "py": "huánghuò",
+   "pos": "形",
+   "zh": "害怕，疑惑。",
+   "en": "",
+   "hv": "HOÀNG HOẶC",
+   "vi": "hoang mang, sợ hãi",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "每天都冒一点险",
+   "paragraphs": [
+    "第一部分",
+    "“衰老很重要的标志，就是求稳怕变。所以，你想保持年轻吗？你希望自己有活力吗？你期待着清晨能在新生活的憧憬中醒来吗？有一个好办法——每天都冒一点险。”",
+    "以上这段话，见于一本国外的心理学小册子，像给某种青春大力丸做广告。本待一笑了之，但结尾的那句话吸引了我——每天都冒一点险。",
+    "“险”有灾难狠毒之意。如果把它比成一种处境一种状态，你说是现代人碰到它的时候多呢，还是古代甚至原始时代碰到的多呢？粗粗一想，好像是古代多吧。茹毛饮血刀耕火种时，危机四伏。细一想，不一定。那时的险多属自然灾害，虽然凶残，但比较单纯。现代了，天然险这种东西，也跟热带雨林似的，快速稀少，人工险增多，险种也丰富多了。以前可能被老虎毒蛇害掉，如今是被坠机、车祸、失业、污染所伤。以前是躲避危险，现代人多了越是艰险越向前的嗜好。住在城市里，反倒因为无险可冒而焦虑不安。一些商家，就制出“险”来售卖，明码标价。比如“蹦极”这事，实在挺惊险的，要花不少钱，算高消费了。且不是人人享用得了的，像我等体重超标，一旦那绳索不够结实，就不是冒一点险，而是从此再也用不着冒险了。",
+    "穷人的险多呢还是富人的险多呢？粗一想，肯定是穷人的险多，爬高上低烟熏火燎的，恶劣的工作多是穷人在操作。但富人钱多了，去买险来冒，比如投资或是赌博，输了跳楼饮弹，也扩大了风险的范畴。就不好说谁的险更多一些了。看来，险可以分大小，却是不宜分穷富的。",
+    "险是不是可以分好坏呢？什么是好的冒险呢？带来客观的利益吗？对人类的发展有潜在的好处吗？坏的冒险又是什么呢？损人利己亡命天涯？嗨！说远了。我等凡人，还是回归到普通的日常小险上来吧。",
+    "每天都冒一点险，让人不由自主地兴奋和跃跃欲试，有一种新鲜的挑战性。我给自己立下的冒险范畴是：以前没干过的事，试一试。当然了，以不犯错为前提。以前没吃过的东西尝一尝，条件是不能太贵，且非国家保护动物（有点自作多情。不出大价钱，吃到的定是平常物）。",
+    "即有蠢蠢欲动之感。可惜因眼下在北师大读书，冒险的半径范围较有限。清晨等车时，悲哀地想到，“险”像金戒指，招摇而靡费。比如到西藏，可算是大众认可的冒险之举，走一趟，费用可观。又一想，早年我去那儿，一文没花，还给每月6元的津贴，因是女兵，还外加7角5分钱的卫生费。真是占了大便宜。",
+    "车来了，在车门下挤得东倒西歪时，突然想起另一路公共汽车，也可转乘到校，只是我从来不曾试过这种走法，今天就冒一次险吧。于是扭身退出，放弃这路车，换了一趟新路线。七绕八拐，挤得更甚，费时更多，气喘吁吁地在差一分钟就迟到的当儿，撞进了教室。",
+    "不悔。改变让我有了口渴般的紧迫感。一路连颠带跑的，心跳增速，碰了人不停地说对不起，嘴巴也多张合了若干次。",
+    "今天的冒险任务算是完成了。变换上学的路线，是一种物美价廉的冒险方式，但我决定仅用这一次，原因是无趣。",
+    "第二部分",
+    "第二天冒险生涯的尝试是在饭桌上。平常三五同学合伙吃午饭，AA制，各点一菜，盘子们汇聚一堂，其乐融融。我通常点鱼香肉丝辣子鸡丁类，被同学们讥为“全中国的乡镇干部都是这种吃法”。这天凭着巧舌如簧的菜单，要了一客“柳芽迎春”，端上来一看，是柳树叶炒鸡蛋。叶脉宽得如同观音净瓶里洒水的树枝，还叫柳芽，真够谦虚了。好在碟中绿黄杂糅，略带苦气，味道尚好。",
+    "第三天的冒险颇费思索。最后决定穿一件宝石蓝色的连衣裙去上课。要说这算什么冒险啊，也不是樱桃红或是帝王黄色，蓝色老少咸宜，有什么穿不出去的？怕的是这连衣裙有一条黑色的领带，好似起锚的水兵。衣服是朋友所送，始终不敢穿的症结正因领带。它是活扣，可以解下。为了实践冒险计划，铆足了勇气，我打着领带去远航。浑身的不自在啊，好像满街筒子的人都在议论。仿佛在说：这位大妈是不是有毛病啊，把礼仪小姐的职业装穿出来了？极想躲进路边公厕，一把揪下领带，然后气定神闲地走出来。为了自己的冒险计划，咬着牙坚持了下来，走进教室的时候，同学友好地喝彩，老师说，哦，毕淑敏，这是自我认识你以来，你穿的最美丽的一件衣裳。",
+    "三天过后，检点冒险生涯，感觉自己的胆子比以往奓了点。有很多的束缚，不在他人手里，而在自己心中。别人看来微不足道的一件事，在本人，也许已构成了茧鞘般的裹挟。突破是一个过程，首先经历心智的拘禁，继之是行动的惶惑，最后是成功的喜悦。",
+    "（作者：毕淑敏　选自《青年文摘》）"
+   ],
+   "translations": [
+    "Phần một",
+    "“Một dấu hiệu rất quan trọng của sự già nua là thích ổn định, sợ thay đổi. Vậy nên, bạn có muốn giữ mãi tuổi trẻ không? Bạn có mong mình tràn đầy sức sống không? Bạn có mong mỗi sáng thức dậy giữa niềm háo hức về một cuộc sống mới không? Có một cách rất hay — mỗi ngày hãy mạo hiểm một chút.”",
+    "Đoạn văn trên tôi đọc được trong một cuốn sách mỏng về tâm lý học của nước ngoài, nghe cứ như quảng cáo cho một loại thần dược thanh xuân nào đó. Tôi định cười cho qua, nhưng câu kết đã cuốn hút tôi — mỗi ngày hãy mạo hiểm một chút.",
+    "Chữ “hiểm” mang nghĩa tai họa, hiểm độc. Nếu ví nó như một hoàn cảnh, một trạng thái, thì theo bạn người hiện đại gặp nó nhiều hơn, hay người thời cổ, thậm chí thời nguyên thủy gặp nhiều hơn? Thoạt nghĩ qua, có vẻ thời xưa nhiều hơn. Thời ăn lông ở lỗ, đốt rẫy làm nương, hiểm nguy rình rập khắp nơi. Nghĩ kỹ lại thì chưa chắc. Hiểm họa thời ấy phần nhiều là thiên tai, tuy hung tàn nhưng khá đơn thuần. Đến thời hiện đại, thứ hiểm họa tự nhiên kia cũng như rừng mưa nhiệt đới, thưa thớt đi nhanh chóng, còn hiểm họa nhân tạo thì tăng lên, các loại hiểm nguy cũng phong phú hơn nhiều. Ngày trước người ta có thể bị hổ dữ, rắn độc hại chết, ngày nay thì bị tai nạn máy bay, tai nạn xe cộ, thất nghiệp, ô nhiễm làm tổn thương. Ngày trước người ta tránh né nguy hiểm, người hiện đại lại có thêm cái thú càng gian nguy càng xông lên. Sống ở thành phố, người ta trái lại còn lo âu bứt rứt vì chẳng có hiểm nguy nào để mạo. Thế là một số nhà kinh doanh bèn chế ra “hiểm” để bán, niêm yết giá rõ ràng. Chẳng hạn như trò “nhảy bungee”, thật sự rất hồi hộp, phải tốn khá nhiều tiền, coi như tiêu dùng xa xỉ rồi. Hơn nữa đâu phải ai cũng hưởng thụ được, như hạng người thừa cân như tôi, lỡ sợi dây thừng không đủ chắc, thì chẳng phải mạo hiểm một chút nữa, mà là từ nay về sau không bao giờ cần mạo hiểm nữa.",
+    "Người nghèo gặp hiểm nguy nhiều hay người giàu gặp nhiều hơn? Thoạt nghĩ, chắc chắn là người nghèo nhiều hơn, những việc trèo cao leo thấp, khói hun lửa táp, những công việc khắc nghiệt phần lớn đều do người nghèo làm. Nhưng người giàu nhiều tiền, lại đi mua hiểm nguy để mạo, chẳng hạn đầu tư hay cờ bạc, thua rồi thì nhảy lầu, tự bắn mình, cũng mở rộng phạm vi của rủi ro. Vậy thì khó nói ai gặp hiểm nguy nhiều hơn. Xem ra, hiểm nguy có thể chia lớn nhỏ, nhưng không nên chia theo giàu nghèo.",
+    "Vậy hiểm nguy có thể chia tốt xấu không? Thế nào là mạo hiểm tốt? Là mang lại lợi ích khách quan chăng? Có lợi ích tiềm tàng cho sự phát triển của nhân loại chăng? Còn mạo hiểm xấu là gì? Hại người lợi mình rồi trốn chạy tận chân trời góc bể? Ôi! Nói xa quá rồi. Những người phàm như chúng tôi, hãy cứ quay về với những mạo hiểm nhỏ thường ngày thôi.",
+    "Mỗi ngày mạo hiểm một chút khiến người ta bất giác thấy phấn khích và nóng lòng muốn thử, có một tính thử thách mới mẻ. Phạm vi mạo hiểm tôi tự đặt ra là: việc gì trước đây chưa làm thì thử làm. Đương nhiên, với tiền đề là không phạm sai lầm. Món gì trước đây chưa ăn thì nếm thử, điều kiện là không được quá đắt, và không phải động vật được nhà nước bảo vệ (hơi tự mình đa tình rồi. Không bỏ ra nhiều tiền thì thứ ăn được chắc chắn chỉ là đồ bình thường).",
+    "Lập tức thấy rục rịch muốn hành động. Tiếc là hiện đang học ở Đại học Sư phạm Bắc Kinh, bán kính mạo hiểm khá hạn chế. Sáng sớm đứng đợi xe, tôi buồn bã nghĩ rằng “hiểm” giống như chiếc nhẫn vàng, vừa phô trương vừa tốn kém. Chẳng hạn đi Tây Tạng, có thể coi là chuyến mạo hiểm được mọi người công nhận, đi một chuyến, chi phí chẳng nhỏ. Lại nghĩ, hồi trẻ tôi đến đó, chẳng tốn một đồng, còn được phụ cấp mỗi tháng 6 đồng, vì là nữ binh nên còn được thêm 7 hào 5 xu tiền vệ sinh. Đúng là được hời lớn.",
+    "Xe đến, đang bị chen lấn nghiêng ngả ở cửa xe thì tôi chợt nhớ ra có một tuyến xe buýt khác cũng có thể đổi xe để đến trường, chỉ là tôi chưa bao giờ thử đi lối ấy, hôm nay mạo hiểm một lần vậy. Thế là tôi quay người lùi ra, bỏ chuyến xe này, chuyển sang một lộ trình mới. Vòng vèo quanh co, chen chúc còn tệ hơn, tốn thời gian hơn, tôi thở hổn hển lao vào lớp đúng lúc chỉ còn một phút nữa là muộn.",
+    "Không hối hận. Sự thay đổi cho tôi cảm giác gấp gáp như cơn khát. Suốt dọc đường vừa chạy vừa xóc nảy, tim đập nhanh hơn, va phải người thì luôn miệng xin lỗi, cái miệng cũng phải mở ra khép lại thêm không biết bao nhiêu lần.",
+    "Nhiệm vụ mạo hiểm hôm nay coi như hoàn thành. Thay đổi lộ trình đến trường là một kiểu mạo hiểm “hàng tốt giá rẻ”, nhưng tôi quyết định chỉ dùng lần này thôi, lý do là chán.",
+    "Phần hai",
+    "Ngày thứ hai, cuộc thử nghiệm trong “sự nghiệp mạo hiểm” diễn ra trên bàn ăn. Thường ngày ba năm bạn học chung nhau ăn trưa, chia đều tiền, mỗi người gọi một món, các đĩa thức ăn tụ về một bàn, vui vẻ đầm ấm. Tôi thường gọi những món như thịt xào vị cá, gà xào ớt, bị các bạn chế giễu là “cán bộ xã thị trấn khắp Trung Quốc đều ăn kiểu này”. Hôm ấy, nhờ cái thực đơn khéo mồm khéo miệng, tôi gọi một suất “Mầm liễu đón xuân”, bưng lên nhìn thì là lá liễu xào trứng. Gân lá to như cành cây vẩy nước trong bình tịnh thủy của Quan Âm, thế mà vẫn gọi là mầm liễu, đúng là khiêm tốn quá. May mà trong đĩa xanh vàng lẫn lộn, hơi có vị đắng, mùi vị cũng tạm được.",
+    "Cuộc mạo hiểm ngày thứ ba khiến tôi phải suy nghĩ khá nhiều. Cuối cùng tôi quyết định mặc một chiếc váy liền màu xanh lam ngọc bích đi học. Nói thì cũng chẳng phải mạo hiểm gì, đâu phải màu đỏ anh đào hay màu vàng hoàng đế, màu xanh lam già trẻ đều hợp, có gì mà không dám mặc ra đường? Cái đáng sợ là chiếc váy này có một chiếc cà vạt màu đen, trông như anh lính thủy sắp nhổ neo. Váy là bạn tặng, mấu chốt khiến tôi mãi không dám mặc chính là chiếc cà vạt. Nó là nút sống, có thể tháo ra. Để thực hiện kế hoạch mạo hiểm, tôi dồn hết can đảm, thắt cà vạt ra khơi. Khắp người đều thấy không thoải mái, cứ như cả con phố đang bàn tán. Như thể họ đang nói: bà cô này có vấn đề gì không vậy, lại mặc cả đồng phục của cô lễ tân ra đường? Tôi rất muốn chui vào nhà vệ sinh công cộng bên đường, giật phắt chiếc cà vạt xuống, rồi ung dung bước ra. Vì kế hoạch mạo hiểm của mình, tôi cắn răng chịu đựng, khi bước vào lớp, các bạn reo lên khen ngợi đầy thiện ý, thầy giáo nói, ồ, Tất Thục Mẫn, đây là bộ đồ đẹp nhất em mặc kể từ khi tôi quen em.",
+    "Ba ngày trôi qua, nhìn lại “sự nghiệp mạo hiểm”, tôi thấy mình bạo dạn hơn trước một chút. Có rất nhiều sự trói buộc không nằm trong tay người khác mà ở trong lòng mình. Một việc người khác thấy nhỏ nhặt không đáng kể, với bản thân mình có khi đã thành một lớp kén, lớp vỏ bó chặt lấy mình. Đột phá là một quá trình: trước hết trải qua sự giam cầm của tâm trí, tiếp đến là sự hoang mang khi hành động, cuối cùng là niềm vui thành công.",
+    "(Tác giả: Tất Thục Mẫn, trích từ “Thanh niên văn trích”)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "拾取逝去生命的碎片",
+   "paragraphs": [
+    "我学医、行医加起来前后有二十年，二十年的时间里看到了不少生与死。生命的诞生大致相同，但生命的逝去则千态万状，让人刻骨铭心，难以忘却。我常常想起那些与我擦肩而过又归于冥冥（míng）之中的生命，想起他们起步的刹那以及留给生者的思索，从而感到生与死连接的紧密与和谐。那一个个生命的逝去，已残缺为一块块记忆的碎片，捡拾这些碎片是对生的体味，对命的审视，是咀嚼（jǔjué）一颗颗苦而有味儿的橄榄（gǎnlǎn）。",
+    "那时年轻，不知何为生死，我的班长与我是“一帮一，一对红”，我们常常坐在水泥池子的木板上谈心。我们谈的常是一些很琐碎的事情，诸如跑操掉队、背后议论人、梳小辫臭美等。我们屁股下面的池子里，黄色的福尔马林液体中泡着三具尸体，两男一女，他们默默地听了不少我们之间的事情。",
+    "有一天，班长说，他将来死后要把遗体献给学校，为医学教育做贡献，我才突然觉得池子里面躺着的是三个“人”。",
+    "水泥池子上的木板很硬，很凉，药水的气味也很呛（qiàng）人。",
+    "“文革”时，他从八楼顶上跳下来，当时我恰巧从下面走过，他摔在我的面前，我下意识地奔过去，以为这是一个玩笑。他很平静地侧卧在地上，没有出血，脸色也相当红润。他看着我，想说什么，嘴唇动了一动，但只是两三秒的工夫，面部的血色便褪尽，眼神也变得散淡。我随着那目光追寻，它们已投向了遥远的天边。",
+    "三天后我看见他从湖南赶来的老父亲默默地坐在太平间的台阶上，望着西天发呆，老人的目光与儿子的如出一辙（zhé）。",
+    "西面的天空是一片凄艳（qīyàn）的晚霞。",
+    "她是个临产的产妇，长得很美，在被我推进产房的时候，她丈夫拉着她的手，她丈夫很英俊。这是对美丽的夫妻，他们一起由南方调到这偏僻的山地搞原子弹。平车在产房门口受到阻滞（zǔzhì），因为夫妻俩那双手迟迟不愿松开。孩子艰难地出了母腹，是个可爱的男婴，却因脐（qí）带绕颈而窒（zhì）息死亡。母亲突发心衰，抢救无效，连产床也没有下……这一切前后不到两个小时……",
+    "我走出产房，丈夫正在门外焦急地等候，我把这个消息告诉他，他说，他想躺一躺，我把他安排在医生值班室让他歇息。",
+    "半个小时后，我看见他慢慢地走出了医院大门。",
+    "儿子在母亲的病床旁，须臾（xūyú）不敢离开，医生说就是这一两天的事。儿子才从大学毕业，是独子，脸上还带着未经世事的稚（zhì）气。母亲患了子宫癌，已无药可治。疲惫不堪（píbèi bùkān）的儿子三天三夜没有合眼，母亲插着氧气在艰难地喘息，母子俩都怀着依依难舍的心紧张地等待着那一刻的到来。中午，儿子去食堂买饭，我来替他守护，母亲一阵躁动，继而用目光寻找什么，喉咙里发出呼噜呼噜的声响，我赶紧到她跟前，那目光已在失望里定格。",
+    "儿子回来，母亲的一切都已结束。他大叫一声扑过去，将那些撤下来的管子不顾一切地向母亲身上使劲插……",
+    "撒在地上的中午饭深深地印在了我的脑子里。",
+    "我给这个六岁的男孩做骨髓（suǐ）穿刺的时候孩子咬牙挺着，孩子的母亲在门外却哭成了泪人儿。粗硬的带套管的针头扎进嫩弱的髂（qià）骨前上脊，那感觉让我战栗（lì），是作为医生不该有的战栗。我知道，即使打了麻药，抽髓刹那的疼也是难以忍受的，而孩子给我的只是一声轻轻的呻吟（shēnyín）。取样刚结束，孩子的母亲就冲进治疗室，一把抱起她的儿子，把他搂得很紧很紧。孩子挣出母亲的搂抱，回过身问我：“这回我不会死了吧？”我坚定地回答：“不会。”",
+    "半个月后，孩子蒙着白布单躺在平车上被推出病房，后面跟着他痛不欲生的母亲。临行前，我将孩子穿刺伤口的纱布小心取下，他在那边应该是个健康、完整的孩子。辚辚（lín）的车声消逝在走廊尽头，留下空空荡荡一条楼道。",
+    "她是养老院送来的，她说她不怕死，怕的是走之前的孤独。我说我会在她身边的。她说：“我怎么知道你在呢？那时候我怕都糊涂了。”我说我肯定在。她说：“都说人死的时候灵魂会与肉体分离，悬浮在空气中，我想那时我会看见你的。”于是她就去看天花板，又说：“要是那样我就绕在那根电线上，你看见那根电线在动，就说明我向你打招呼呢。”我笑笑，把这些看做病人的遐（xiá）想。",
+    "她临终时我如约来到她的床前，她没有反应，其实她在两天前就已经昏迷。她死了，我也疲倦地靠在椅子上再不想动，无意间抬头，却见电线在猛烈地摇晃。",
+    "窗外下着雨，还有风。",
+    "……这样的碎片于每位医生都会有很多，它们并不闪光，它们也很平常，但正是在这司空见惯中，蕴含着一个个你我都要经历的故事，我们无法回避，也无法加以任何评论，我们只能顺其自然。生命是美好的，生命也是艰难的，有句话说“未知生焉（yān）知死”，我想它应该这样理解，“未知死焉知生”。我想起1985年在日本电视里看到的一个情景，那年8月，由东京飞往名古屋的波音747飞机坠毁在群马大山，全机224人，220人遇难。飞机出事前的紧急关头，一位乘客匆忙中写下了一张条子：感谢生命。",
+    "（作者：叶广岑（cén）　选自《精短散文佳作200篇》）"
+   ],
+   "translations": [
+    "Tôi học y rồi hành nghề y cộng lại trước sau hai mươi năm, trong hai mươi năm ấy đã chứng kiến không ít sự sống và cái chết. Sự ra đời của sinh mệnh đại thể giống nhau, nhưng sự ra đi thì muôn hình vạn trạng, khiến người ta khắc cốt ghi tâm, khó lòng quên được. Tôi thường nhớ đến những sinh mệnh từng lướt qua tôi rồi trở về cõi u minh, nhớ khoảnh khắc họ cất bước ra đi và những suy ngẫm họ để lại cho người sống, từ đó cảm nhận được sự gắn kết khăng khít và hài hòa giữa sống và chết. Sự ra đi của từng sinh mệnh ấy đã vỡ thành từng mảnh ký ức; nhặt nhạnh những mảnh vỡ ấy là nghiền ngẫm sự sống, là soi xét số phận, là nhai từng trái trám đắng mà đậm vị.",
+    "Hồi ấy còn trẻ, chẳng biết sống chết là gì, anh lớp trưởng và tôi là một cặp “một kèm một, cùng tiến bộ”, chúng tôi hay ngồi trên tấm ván gỗ đậy bể xi măng để tâm sự. Chuyện chúng tôi nói thường là những việc vụn vặt, như chạy tập thể dục bị tụt lại, nói xấu sau lưng người khác, tết tóc đuôi sam làm điệu… Trong cái bể dưới mông chúng tôi, ba cái xác ngâm trong dung dịch formalin màu vàng, hai nam một nữ, họ đã lặng lẽ nghe không ít chuyện giữa chúng tôi.",
+    "Một hôm, anh lớp trưởng nói sau này chết đi anh sẽ hiến di thể cho trường, góp phần cho việc đào tạo y khoa, lúc ấy tôi mới chợt cảm thấy nằm trong bể kia là ba “con người”.",
+    "Tấm ván trên bể xi măng rất cứng, rất lạnh, mùi thuốc cũng rất hắc.",
+    "Thời “Cách mạng Văn hóa”, anh nhảy từ nóc tầng tám xuống, lúc ấy tôi tình cờ đi ngang phía dưới, anh rơi ngay trước mặt tôi, tôi theo phản xạ chạy lại, cứ ngỡ đó là một trò đùa. Anh nằm nghiêng trên đất rất bình thản, không chảy máu, sắc mặt còn khá hồng hào. Anh nhìn tôi, như muốn nói điều gì, môi mấp máy, nhưng chỉ trong hai ba giây, sắc máu trên mặt đã rút hết, ánh mắt cũng trở nên tản mạn. Tôi dõi theo ánh mắt ấy, nó đã hướng về chân trời xa thẳm.",
+    "Ba ngày sau, tôi thấy người cha già của anh từ Hồ Nam vội vã đến, lặng lẽ ngồi trên bậc thềm nhà xác, ngây người nhìn về phía trời tây; ánh mắt ông lão giống hệt ánh mắt của con trai.",
+    "Bầu trời phía tây là một vùng ráng chiều đẹp mà thê lương.",
+    "Chị là một sản phụ sắp sinh, rất đẹp; khi tôi đẩy chị vào phòng sinh, chồng chị nắm tay chị, anh rất điển trai. Đây là một cặp vợ chồng đẹp đôi, họ cùng được điều từ miền Nam đến vùng núi hẻo lánh này để làm bom nguyên tử. Chiếc xe đẩy bị khựng lại ở cửa phòng sinh, vì đôi bàn tay của hai vợ chồng mãi không chịu buông. Đứa bé khó nhọc ra khỏi bụng mẹ, là một bé trai đáng yêu, nhưng vì dây rốn quấn cổ nên ngạt thở mà chết. Người mẹ đột ngột suy tim, cấp cứu không kịp, thậm chí chưa kịp rời bàn sinh… Tất cả diễn ra trong chưa đầy hai tiếng đồng hồ…",
+    "Tôi bước ra khỏi phòng sinh, người chồng đang sốt ruột chờ ngoài cửa, tôi báo tin cho anh, anh nói anh muốn nằm một lát, tôi xếp cho anh vào phòng trực bác sĩ để nghỉ.",
+    "Nửa tiếng sau, tôi thấy anh chậm rãi bước ra khỏi cổng bệnh viện.",
+    "Người con trai ở bên giường bệnh của mẹ, không dám rời nửa bước, bác sĩ nói chỉ trong một hai ngày nữa thôi. Cậu vừa tốt nghiệp đại học, là con một, trên mặt còn nét ngây thơ của người chưa trải sự đời. Người mẹ bị ung thư tử cung, đã hết thuốc chữa. Cậu con trai mệt mỏi rã rời, ba ngày ba đêm không chợp mắt; người mẹ thở oxy, hô hấp khó nhọc, hai mẹ con đều mang nỗi lưu luyến khó rời, căng thẳng chờ đợi khoảnh khắc ấy đến. Buổi trưa, cậu đi nhà ăn mua cơm, tôi trông thay, người mẹ bỗng bồn chồn, rồi đưa mắt tìm kiếm điều gì, cổ họng phát ra tiếng khò khè, tôi vội đến bên bà, ánh mắt ấy đã đông cứng lại trong thất vọng.",
+    "Cậu con trai trở về, mọi thứ của mẹ đã kết thúc. Cậu hét lên một tiếng rồi nhào tới, bất chấp tất cả mà ra sức cắm lại những ống dây đã được tháo ra vào người mẹ…",
+    "Bữa cơm trưa vương vãi trên sàn in sâu trong tâm trí tôi.",
+    "Khi tôi chọc tủy xương cho cậu bé sáu tuổi, cậu cắn răng chịu đựng, còn mẹ cậu ở ngoài cửa thì khóc như mưa. Mũi kim to cứng có ống bọc đâm vào gai chậu trước trên non yếu, cảm giác ấy khiến tôi run rẩy, thứ run rẩy mà một bác sĩ không nên có. Tôi biết, dù đã gây tê, cơn đau trong khoảnh khắc rút tủy vẫn khó mà chịu nổi, vậy mà cậu bé chỉ khẽ rên một tiếng. Vừa lấy mẫu xong, mẹ cậu đã lao vào phòng điều trị, ôm chầm lấy con trai, siết thật chặt, thật chặt. Cậu bé vùng ra khỏi vòng tay mẹ, quay lại hỏi tôi: “Lần này cháu sẽ không chết nữa phải không?” Tôi kiên quyết đáp: “Không đâu.”",
+    "Nửa tháng sau, cậu bé phủ tấm vải trắng nằm trên xe đẩy được đưa ra khỏi phòng bệnh, theo sau là người mẹ đau đớn muốn chết. Trước lúc đi, tôi cẩn thận gỡ miếng gạc trên vết chọc kim của cậu, ở thế giới bên kia cậu nên là một đứa trẻ khỏe mạnh, lành lặn. Tiếng bánh xe lăn lộc cộc mất hút ở cuối hành lang, để lại một dãy hành lang trống trải.",
+    "Bà được viện dưỡng lão chuyển đến, bà nói bà không sợ chết, chỉ sợ cô đơn trước lúc ra đi. Tôi nói tôi sẽ ở bên bà. Bà nói: “Làm sao tôi biết cô ở đó? Lúc ấy chắc tôi lú lẫn cả rồi.” Tôi nói nhất định tôi sẽ ở đó. Bà nói: “Người ta bảo lúc chết linh hồn sẽ tách khỏi thể xác, lơ lửng trong không trung, tôi nghĩ lúc đó tôi sẽ nhìn thấy cô.” Rồi bà nhìn lên trần nhà, lại nói: “Nếu vậy thì tôi sẽ quấn vào sợi dây điện kia, cô thấy sợi dây điện ấy động đậy tức là tôi đang chào cô đấy.” Tôi cười cười, coi đó là những tưởng tượng viển vông của người bệnh.",
+    "Lúc bà lâm chung, tôi đến bên giường như đã hẹn, bà không còn phản ứng, thật ra hai ngày trước bà đã hôn mê. Bà mất, tôi cũng mệt mỏi tựa vào ghế chẳng muốn cử động, vô tình ngẩng đầu lên, lại thấy sợi dây điện đang lắc lư dữ dội.",
+    "Ngoài cửa sổ trời đang mưa, còn có gió.",
+    "…Những mảnh vỡ như thế, bác sĩ nào cũng có rất nhiều; chúng chẳng lấp lánh, cũng rất bình thường, nhưng chính trong sự quen thuộc thường ngày ấy lại ẩn chứa từng câu chuyện mà bạn và tôi đều phải trải qua; chúng ta không thể né tránh, cũng không thể bình luận gì, chỉ có thể thuận theo tự nhiên. Sinh mệnh thật tươi đẹp, sinh mệnh cũng thật gian nan. Có câu nói “Chưa biết sống thì sao biết chết”, tôi nghĩ nên hiểu thế này: “Chưa biết chết thì sao biết sống”. Tôi nhớ lại một cảnh xem được trên truyền hình Nhật Bản năm 1985: tháng 8 năm ấy, chiếc Boeing 747 bay từ Tokyo đi Nagoya rơi ở núi Gunma, trên máy bay có 224 người, 220 người thiệt mạng. Trong giây phút nguy cấp trước khi máy bay gặp nạn, một hành khách đã vội vàng viết một mẩu giấy: Cảm ơn sinh mệnh.",
+    "(Tác giả: Diệp Quảng Sầm, trích từ “Tinh đoản tán văn giai tác 200 thiên”)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "反倒 (trái lại, ngược lại)",
+   "structure": "A，（主语）反倒 B",
+   "explanation": "Phó từ, dùng ở vế câu sau, dẫn ra ý trái ngược với vế trước hoặc biểu thị điều nằm ngoài dự liệu, ngữ khí chuyển ngoặt khá mạnh. Lưu ý: nếu vế câu có chủ ngữ thì “反倒” đặt sau chủ ngữ. Liên hệ: “反而” có nghĩa và cách dùng cơ bản giống “反倒”, nhưng “反倒” thiên về khẩu ngữ hơn.",
+   "examples": [
+    {
+     "zh": "以前是躲避危险，现代人多了越是艰险越向前的嗜好。住在城市里，反倒因为无险可冒而焦虑不安。",
+     "vi": "Ngày trước người ta tránh né nguy hiểm, người hiện đại lại có thêm cái thú càng gian nguy càng xông lên. Sống ở thành phố, trái lại còn lo âu vì chẳng có hiểm nguy nào để mạo."
+    },
+    {
+     "zh": "我好心好意地帮他，他反倒怪我多事。",
+     "vi": "Tôi có lòng tốt giúp anh ta, anh ta ngược lại còn trách tôi lắm chuyện."
+    },
+    {
+     "zh": "今天比平时吃得多，反倒饿得快。",
+     "vi": "Hôm nay ăn nhiều hơn mọi khi, vậy mà lại nhanh đói."
+    },
+    {
+     "zh": "已经立春了，怎么天气反倒越来越冷了？",
+     "vi": "Đã lập xuân rồi, sao thời tiết lại càng ngày càng lạnh thế?"
+    },
+    {
+     "zh": "昨天天气预报说今天天气会转晴，可是你看今天这天儿，雨不但没停，反倒更大了。",
+     "vi": "Hôm qua dự báo thời tiết nói hôm nay trời sẽ tạnh, thế mà bạn xem trời hôm nay, mưa chẳng những không tạnh mà còn to hơn."
+    }
+   ]
+  },
+  {
+   "point": "不宜 (không nên, không thích hợp)",
+   "structure": "不宜 + 动词/形容词（双音节以上）；宜 X 不宜 Y",
+   "explanation": "Động từ, nghĩa là “không thích hợp”. Thường mang tân ngữ là động từ, tính từ (đa số từ hai âm tiết trở lên). Dùng nhiều trong văn viết. Liên hệ: cấu trúc “宜 X 不宜 Y” (nên X không nên Y), X và Y thường là các từ đơn âm tiết có nghĩa trái ngược nhau.",
+   "examples": [
+    {
+     "zh": "看来，险可以分大小，却是不宜分穷富的。",
+     "vi": "Xem ra, hiểm nguy có thể chia lớn nhỏ, nhưng không nên chia theo giàu nghèo."
+    },
+    {
+     "zh": "孕妇不宜穿高跟鞋。",
+     "vi": "Phụ nữ mang thai không nên đi giày cao gót."
+    },
+    {
+     "zh": "王老先生年事已高，不宜远行。",
+     "vi": "Cụ Vương đã cao tuổi, không nên đi xa."
+    },
+    {
+     "zh": "这部电影暴力镜头过多，少儿不宜。",
+     "vi": "Bộ phim này có quá nhiều cảnh bạo lực, không thích hợp cho trẻ em."
+    },
+    {
+     "zh": "冤仇宜解不宜结，你何必跟他过不去呢？",
+     "vi": "Oan thù nên cởi không nên buộc, việc gì anh phải gây khó dễ với anh ta?"
+    }
+   ]
+  },
+  {
+   "point": "东 X 西 Y (khắp nơi, chỗ này chỗ kia)",
+   "structure": "东 + 单音节动词 + 西 + 单音节动词",
+   "explanation": "Nghĩa tương đương “khắp nơi, bốn phía”. Ở giữa thường là một cặp động từ đơn âm tiết. Các cụm cố định thường gặp: 东奔西走 (chạy ngược chạy xuôi), 东游西荡 (lang thang khắp nơi), 东逃西窜 (chạy trốn khắp nơi), 东躲西藏 (trốn chui trốn nhủi), 东拉西扯 (nói lan man không có trọng tâm), 东张西望 (nhìn ngó khắp nơi), 东拼西凑 (chỗ này một ít, chỗ kia một ít ghép lại), 东涂西抹 (viết vẽ bừa bãi).",
+   "examples": [
+    {
+     "zh": "车来了，在车门下挤得东倒西歪时，突然想起另一路公共汽车。",
+     "vi": "Xe đến, đang bị chen lấn nghiêng ngả ở cửa xe thì chợt nhớ ra một tuyến xe buýt khác."
+    },
+    {
+     "zh": "东奔西走",
+     "vi": "chạy ngược chạy xuôi (bôn ba khắp nơi vì một mục đích)"
+    },
+    {
+     "zh": "东张西望",
+     "vi": "nhìn ngó khắp nơi"
+    },
+    {
+     "zh": "东拉西扯",
+     "vi": "nói lan man, không có trọng tâm"
+    },
+    {
+     "zh": "东拼西凑",
+     "vi": "chắp vá chỗ này chỗ kia"
+    }
+   ]
+  },
+  {
+   "point": "七 X 八 Y (nhiều, lộn xộn)",
+   "structure": "七 + X + 八 + Y（X、Y为名词或动词/词素）",
+   "explanation": "Biểu thị nhiều, hoặc nhiều mà lộn xộn. X và Y có thể là danh từ hoặc động từ (kể cả hình vị). Các cụm thường gặp: 七手八脚 (nhiều người cùng ra tay), 七嘴八舌 (mồm năm miệng mười), 七上八下 (lòng dạ bồn chồn không yên), 七折八扣 (giảm giá rồi lại khấu trừ), 七零八落 (tan tác, lộn xộn), 七大姑八大姨 (họ hàng đông đúc).",
+   "examples": [
+    {
+     "zh": "七绕八拐，挤得更甚，费时更多。",
+     "vi": "Vòng vèo quanh co, chen chúc còn tệ hơn, tốn thời gian hơn."
+    },
+    {
+     "zh": "七手八脚",
+     "vi": "nhiều người cùng xúm tay vào làm"
+    },
+    {
+     "zh": "七嘴八舌",
+     "vi": "mồm năm miệng mười, nhiều người nói không ngớt"
+    },
+    {
+     "zh": "七上八下",
+     "vi": "lòng dạ bồn chồn không yên"
+    },
+    {
+     "zh": "七零八落",
+     "vi": "tan tác, lộn xộn"
+    }
+   ]
+  },
+  {
+   "point": "连 X 带 Y (vừa X vừa Y; cả X lẫn Y)",
+   "structure": "连 + 单音节动词 + 带 + 单音节动词",
+   "explanation": "Biểu thị hai động tác xảy ra đồng thời, không phân trước sau; X và Y thường là hai động từ đơn âm tiết có tính chất gần nhau (连蹦带跳, 连说带唱, 连说带笑, 连哭带闹, 连喊带叫, 连写带画). Liên hệ: “连 X 带 Y” còn có thể biểu thị bao gồm cả hai thứ X và Y, X và Y có thể là danh từ hoặc động từ, ví dụ: 连人带行李 (cả người lẫn hành lý), 连蔬菜带水果, 连老带小, 连吃带喝, 连洗澡带理发.",
+   "examples": [
+    {
+     "zh": "一路连颠带跑的，心跳增速。",
+     "vi": "Suốt dọc đường vừa chạy vừa xóc nảy, tim đập nhanh hơn."
+    },
+    {
+     "zh": "连蹦带跳",
+     "vi": "vừa nhảy vừa nhót"
+    },
+    {
+     "zh": "连说带笑",
+     "vi": "vừa nói vừa cười"
+    },
+    {
+     "zh": "连哭带闹",
+     "vi": "vừa khóc vừa quấy"
+    },
+    {
+     "zh": "连人带行李",
+     "vi": "cả người lẫn hành lý"
+    }
+   ]
+  },
+  {
+   "point": "略 (hơi, sơ qua)",
+   "structure": "略 + 动词/形容词；略加修改、略知一二……",
+   "explanation": "Phó từ, nghĩa là “hơi, một chút” hoặc “đại khái”. Mang sắc thái văn ngôn, thường dùng trong văn viết; trong khẩu ngữ “略” chủ yếu xuất hiện trong một số cách nói quen dùng. Các kết hợp cố định thường gặp: 略加修改 (sửa qua một chút), 略事休整 (nghỉ ngơi chỉnh đốn một chút), 略述梗概 (nói sơ qua nội dung chính), 略知一二 (biết sơ sơ, lời khiêm tốn), 略有所闻 (có nghe phong thanh), 略见一斑 (nhìn một phần mà đoán được toàn thể), 略胜一筹 (nhỉnh hơn một chút), 略逊一筹 (kém hơn một chút).",
+   "examples": [
+    {
+     "zh": "好在碟中绿黄杂糅，略带苦气，味道尚好。",
+     "vi": "May mà trong đĩa xanh vàng lẫn lộn, hơi có vị đắng, mùi vị cũng tạm được."
+    },
+    {
+     "zh": "女孩的表情略带些哀愁，好像有什么心事。",
+     "vi": "Nét mặt cô gái thoáng chút u buồn, như có tâm sự gì."
+    },
+    {
+     "zh": "今天的菜都不错，只是豆角略老了一些。",
+     "vi": "Thức ăn hôm nay đều ngon, chỉ có đậu đũa hơi già một chút."
+    }
+   ]
+  },
+  {
+   "point": "尚 (còn, vẫn còn; tạm được)",
+   "structure": "尚 + 单音节形容词/动词短语；尚未……",
+   "explanation": "Phó từ, biểu thị mức độ nhẹ, hàm ý chưa hoàn toàn đạt tiêu chuẩn hay yêu cầu nào đó, chỉ “tạm chấp nhận được”, ngữ khí uyển chuyển. Mang sắc thái văn viết. Phía sau thường là tính từ đơn âm tiết hoặc cụm động từ; “尚” còn hay đi với “未” (尚未 = vẫn chưa). Liên hệ: “还” có nghĩa giống “尚”, nhưng “还” dùng được cả trong văn viết lẫn khẩu ngữ, còn “尚” là hư từ văn ngôn, chỉ dùng trong văn viết.",
+   "examples": [
+    {
+     "zh": "好在碟中绿黄杂糅，略带苦气，味道尚好。",
+     "vi": "May mà trong đĩa xanh vàng lẫn lộn, hơi có vị đắng, mùi vị cũng tạm được."
+    },
+    {
+     "zh": "我认为现在下结论，为时尚早，我们还需进一步观察。",
+     "vi": "Tôi cho rằng bây giờ kết luận thì còn quá sớm, chúng ta cần quan sát thêm."
+    },
+    {
+     "zh": "这个问题尚待研究，三天后我们将予以答复。",
+     "vi": "Vấn đề này còn chờ nghiên cứu, ba ngày sau chúng tôi sẽ trả lời."
+    },
+    {
+     "zh": "房子尽管不大，尚能将就。",
+     "vi": "Nhà tuy không lớn nhưng vẫn tạm ở được."
+    },
+    {
+     "zh": "革命尚未成功，同志仍须努力！",
+     "vi": "Cách mạng chưa thành công, đồng chí vẫn phải cố gắng!"
+    }
+   ]
+  },
+  {
+   "point": "颇 (khá, rất)",
+   "structure": "颇 + 动词/形容词；颇为 + 双音节词语",
+   "explanation": "Phó từ, nghĩa là “rất, khá, tương đối”. Thường dùng trong văn viết. Cũng nói “颇为”, nhưng sau “颇为” nhất định phải là từ ngữ hai âm tiết.",
+   "examples": [
+    {
+     "zh": "第三天的冒险颇费思索。",
+     "vi": "Cuộc mạo hiểm ngày thứ ba khiến tôi phải suy nghĩ khá nhiều."
+    },
+    {
+     "zh": "在这次的《天龙八部》电视剧中，采用了一些特殊的拍摄方法和电脑制作技巧，效果颇佳。",
+     "vi": "Trong bộ phim truyền hình “Thiên Long Bát Bộ” lần này, người ta đã dùng một số cách quay đặc biệt và kỹ xảo máy tính, hiệu quả khá tốt."
+    },
+    {
+     "zh": "老王搬过几次家，这次找到他颇费了一番周折。",
+     "vi": "Lão Vương đã chuyển nhà mấy lần, lần này tìm được ông ấy khá vất vả."
+    },
+    {
+     "zh": "她对自己的男朋友颇为满意，已经下决心与他共结连理。",
+     "vi": "Cô ấy khá hài lòng với bạn trai, đã quyết tâm nên duyên vợ chồng với anh ấy."
+    }
+   ]
+  }
+ ]
+}

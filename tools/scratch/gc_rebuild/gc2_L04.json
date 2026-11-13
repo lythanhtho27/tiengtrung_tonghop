@@ -1,0 +1,1617 @@
+{
+ "book": "gc2",
+ "lesson_num": 4,
+ "title": "现代化和蜗牛",
+ "pages": [
+  93,
+  117
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "蜗牛",
+   "py": "wōniú",
+   "pos": "名",
+   "zh": "一种软体动物。",
+   "en": "snail",
+   "hv": "OA NGƯU",
+   "vi": "con ốc sên",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "七荤八素",
+   "py": "qī hūn bā sù",
+   "pos": "",
+   "zh": "课文中形容事情多而乱，十分忙碌。",
+   "en": "",
+   "hv": "THẤT HUÂN BÁT TỐ",
+   "vi": "bận tối tăm mặt mũi, rối tung",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "怨艾",
+   "py": "yuànyì",
+   "pos": "动",
+   "zh": "怨恨，对人或事强烈地不满或仇恨。",
+   "en": "",
+   "hv": "OÁN NGẢI",
+   "vi": "oán trách, than phiền",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "闲者",
+   "py": "xiánzhě",
+   "pos": "名",
+   "zh": "有空闲时间的人。",
+   "en": "",
+   "hv": "NHÀN GIẢ",
+   "vi": "người nhàn rỗi",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "连声",
+   "py": "liánshēng",
+   "pos": "副",
+   "zh": "一声紧接一声。",
+   "en": "",
+   "hv": "LIÊN THANH",
+   "vi": "luôn miệng, liên tiếng",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "赞许",
+   "py": "zànxǔ",
+   "pos": "动",
+   "zh": "认为好而加以称赞。",
+   "en": "",
+   "hv": "TÁN HỨA",
+   "vi": "khen ngợi, tán thưởng",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "属",
+   "py": "shǔ",
+   "pos": "动",
+   "zh": "归属，属于。",
+   "en": "",
+   "hv": "THUỘC",
+   "vi": "thuộc về, là",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "版",
+   "py": "bǎn",
+   "pos": "名",
+   "zh": "原意指书籍的版本。课文中指另一种说法。",
+   "en": "",
+   "hv": "BẢN",
+   "vi": "phiên bản, cách nói khác",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "足以",
+   "py": "zúyǐ",
+   "pos": "动",
+   "zh": "完全可以，够得上。",
+   "en": "",
+   "hv": "TÚC DĨ",
+   "vi": "đủ để",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "接轨",
+   "py": "jiē guǐ",
+   "pos": "",
+   "zh": "连接路轨。课文中比喻把两种体制连接起来。",
+   "en": "",
+   "hv": "TIẾP QUỸ",
+   "vi": "nối ray; hội nhập",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "步伐",
+   "py": "bùfá",
+   "pos": "名",
+   "zh": "行走的步子。课文中比喻事物发展的速度。",
+   "en": "",
+   "hv": "BỘ PHẠT",
+   "vi": "bước đi, nhịp bước",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "提速",
+   "py": "tí sù",
+   "pos": "",
+   "zh": "提高速度。",
+   "en": "",
+   "hv": "ĐỀ TỐC",
+   "vi": "tăng tốc",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "超速",
+   "py": "chāo sù",
+   "pos": "",
+   "zh": "超过规定的速度。",
+   "en": "",
+   "hv": "SIÊU TỐC",
+   "vi": "vượt tốc độ",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "镜头",
+   "py": "jìngtóu",
+   "pos": "名",
+   "zh": "拍摄电影、电视时用摄影机留下的一系列画面。",
+   "en": "shot; scene",
+   "hv": "KÍNH ĐẦU",
+   "vi": "cảnh quay",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "隐去",
+   "py": "yǐnqù",
+   "pos": "动",
+   "zh": "消失，看不见。",
+   "en": "",
+   "hv": "ẨN KHỨ",
+   "vi": "biến mất, khuất đi",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "起身",
+   "py": "qǐ shēn",
+   "pos": "",
+   "zh": "站起身来。",
+   "en": "",
+   "hv": "KHỞI THÂN",
+   "vi": "đứng dậy",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "卡",
+   "py": "kǎ",
+   "pos": "名",
+   "zh": "卡片。",
+   "en": "",
+   "hv": "KA",
+   "vi": "thiệp, tấm thẻ",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "家人",
+   "py": "jiārén",
+   "pos": "名",
+   "zh": "生活在同一个家庭里的人。",
+   "en": "",
+   "hv": "GIA NHÂN",
+   "vi": "người nhà",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "恋人",
+   "py": "liànrén",
+   "pos": "名",
+   "zh": "恋爱中男女的一方。",
+   "en": "",
+   "hv": "LUYẾN NHÂN",
+   "vi": "người yêu",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "书信",
+   "py": "shūxìn",
+   "pos": "名",
+   "zh": "信。",
+   "en": "",
+   "hv": "THƯ TÍN",
+   "vi": "thư từ",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "灶",
+   "py": "zào",
+   "pos": "名",
+   "zh": "生火做饭的设备。",
+   "en": "stove; kitchen range",
+   "hv": "TÁO",
+   "vi": "bếp",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "往日",
+   "py": "wǎngrì",
+   "pos": "名",
+   "zh": "过去的日子，从前。",
+   "en": "",
+   "hv": "VÃNG NHẬT",
+   "vi": "ngày trước",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "阖家",
+   "py": "héjiā",
+   "pos": "名",
+   "zh": "全家。",
+   "en": "",
+   "hv": "HẠP GIA",
+   "vi": "cả nhà",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "进餐",
+   "py": "jìn cān",
+   "pos": "",
+   "zh": "吃饭。",
+   "en": "",
+   "hv": "TIẾN XAN",
+   "vi": "dùng bữa",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "天伦之乐",
+   "py": "tiānlún zhī lè",
+   "pos": "",
+   "zh": "指父母子女、兄弟姐妹等亲属团聚带来的快乐。",
+   "en": "",
+   "hv": "THIÊN LUÂN CHI LẠC",
+   "vi": "niềm vui sum họp gia đình",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "追忆",
+   "py": "zhuīyì",
+   "pos": "动",
+   "zh": "回忆。",
+   "en": "",
+   "hv": "TRUY ỨC",
+   "vi": "hồi tưởng, nhớ lại",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "场景",
+   "py": "chǎngjǐng",
+   "pos": "名",
+   "zh": "（具体场合的）情形，景象。",
+   "en": "",
+   "hv": "TRƯỜNG CẢNH",
+   "vi": "cảnh tượng",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "弹簧",
+   "py": "tánhuáng",
+   "pos": "名",
+   "zh": "利用材料的弹性作用制成的零件。",
+   "en": "spring",
+   "hv": "ĐÀN HOÀNG",
+   "vi": "lò xo",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "松弛",
+   "py": "sōngchí",
+   "pos": "形",
+   "zh": "不紧张，放松。",
+   "en": "",
+   "hv": "TÙNG THỈ",
+   "vi": "chùng xuống, thư giãn",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "有心",
+   "py": "yǒu xīn",
+   "pos": "",
+   "zh": "有某种心意或想法。",
+   "en": "",
+   "hv": "HỮU TÂM",
+   "vi": "có lòng, có ý",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "放缓",
+   "py": "fànghuǎn",
+   "pos": "动",
+   "zh": "使速度慢下来。",
+   "en": "",
+   "hv": "PHÓNG HOÃN",
+   "vi": "chậm lại",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "步子",
+   "py": "bùzi",
+   "pos": "名",
+   "zh": "脚步。比喻速度。",
+   "en": "",
+   "hv": "BỘ TỬ",
+   "vi": "bước chân",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "人潮",
+   "py": "réncháo",
+   "pos": "名",
+   "zh": "像潮水般的人群。",
+   "en": "",
+   "hv": "NHÂN TRIỀU",
+   "vi": "dòng người",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "蒸汽机",
+   "py": "zhēngqìjī",
+   "pos": "名",
+   "zh": "利用水蒸气产生动力的发动机。",
+   "en": "steam engine",
+   "hv": "CHƯNG KHÍ CƠ",
+   "vi": "máy hơi nước",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "原意",
+   "py": "yuányì",
+   "pos": "名",
+   "zh": "原来的意思或意图。",
+   "en": "",
+   "hv": "NGUYÊN Ý",
+   "vi": "ý định ban đầu",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "劳动力",
+   "py": "láodònglì",
+   "pos": "名",
+   "zh": "人的劳动能力；也指参加劳动的人。",
+   "en": "labour force",
+   "hv": "LAO ĐỘNG LỰC",
+   "vi": "sức lao động",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "随之而起",
+   "py": "suí zhī ér qǐ",
+   "pos": "",
+   "zh": "跟着某种事物而产生。",
+   "en": "",
+   "hv": "TÙY CHI NHI KHỞI",
+   "vi": "theo đó mà nảy sinh",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "休闲",
+   "py": "xiūxián",
+   "pos": "动",
+   "zh": "休息，过清闲的生活。",
+   "en": "",
+   "hv": "HƯU NHÀN",
+   "vi": "nghỉ ngơi, thư giãn",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "增",
+   "py": "zēng",
+   "pos": "动",
+   "zh": "增加。",
+   "en": "",
+   "hv": "TĂNG",
+   "vi": "tăng",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "后期",
+   "py": "hòuqī",
+   "pos": "名",
+   "zh": "某一时期的后一阶段。",
+   "en": "",
+   "hv": "HẬU KỲ",
+   "vi": "giai đoạn cuối, hậu kỳ",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "大大",
+   "py": "dàdà",
+   "pos": "副",
+   "zh": "强调数量很大或程度很深。",
+   "en": "",
+   "hv": "ĐẠI ĐẠI",
+   "vi": "rất nhiều, đáng kể",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "精简",
+   "py": "jīngjiǎn",
+   "pos": "动",
+   "zh": "去掉不必要的，留下必要的。",
+   "en": "",
+   "hv": "TINH GIẢN",
+   "vi": "tinh giản, cắt giảm",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "冷冰冰",
+   "py": "lěngbīngbīng",
+   "pos": "形",
+   "zh": "形容不热情或不温和。",
+   "en": "",
+   "hv": "LÃNH BĂNG BĂNG",
+   "vi": "lạnh lùng, lạnh tanh",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "失却",
+   "py": "shīquè",
+   "pos": "动",
+   "zh": "失掉，失去。",
+   "en": "",
+   "hv": "THẤT KHƯỚC",
+   "vi": "đánh mất",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "浪漫",
+   "py": "làngmàn",
+   "pos": "形",
+   "zh": "富有诗意，充满幻想。",
+   "en": "romantic",
+   "hv": "LÃNG MẠN",
+   "vi": "lãng mạn",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "悠闲",
+   "py": "yōuxián",
+   "pos": "形",
+   "zh": "形容没有压力，轻松舒服的生活。",
+   "en": "",
+   "hv": "DU NHÀN",
+   "vi": "thong thả, nhàn nhã",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "节奏",
+   "py": "jiézòu",
+   "pos": "名",
+   "zh": "比喻均匀的、有规律的工作、生活进程。",
+   "en": "tempo",
+   "hv": "TIẾT TẤU",
+   "vi": "nhịp điệu",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "目眩",
+   "py": "mùxuàn",
+   "pos": "动",
+   "zh": "眼花。",
+   "en": "",
+   "hv": "MỤC HUYỄN",
+   "vi": "hoa mắt",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "递增",
+   "py": "dìzēng",
+   "pos": "动",
+   "zh": "一次比一次增加。",
+   "en": "",
+   "hv": "ĐỆ TĂNG",
+   "vi": "tăng dần",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "分秒必争",
+   "py": "fēn miǎo bì zhēng",
+   "pos": "",
+   "zh": "一点儿时间也不放松。",
+   "en": "",
+   "hv": "PHÂN MIỂU TẤT TRANH",
+   "vi": "tranh thủ từng giây từng phút",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "视为",
+   "py": "shìwéi",
+   "pos": "动",
+   "zh": "看成，看做。",
+   "en": "",
+   "hv": "THỊ VI",
+   "vi": "coi là",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "等同",
+   "py": "děngtóng",
+   "pos": "动",
+   "zh": "当做同样的事物看待。",
+   "en": "",
+   "hv": "ĐẲNG ĐỒNG",
+   "vi": "đánh đồng, coi như nhau",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "懒惰",
+   "py": "lǎnduò",
+   "pos": "形",
+   "zh": "不爱工作，不勤快。",
+   "en": "",
+   "hv": "LÃN ĐỌA",
+   "vi": "lười biếng",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "资讯",
+   "py": "zīxùn",
+   "pos": "名",
+   "zh": "资料与信息。",
+   "en": "",
+   "hv": "TƯ TẤN",
+   "vi": "thông tin",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "快捷",
+   "py": "kuàijié",
+   "pos": "形",
+   "zh": "（速度）快，（行动）敏捷。",
+   "en": "",
+   "hv": "KHOÁI TIỆP",
+   "vi": "nhanh chóng, nhanh gọn",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "回报",
+   "py": "huíbào",
+   "pos": "动",
+   "zh": "报答，酬报。",
+   "en": "",
+   "hv": "HỒI BÁO",
+   "vi": "đền đáp; lợi nhuận thu về",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "理财",
+   "py": "lǐcái",
+   "pos": "动",
+   "zh": "管理财物或财务。",
+   "en": "",
+   "hv": "LÝ TÀI",
+   "vi": "quản lý tài chính",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "忙碌",
+   "py": "mánglù",
+   "pos": "形",
+   "zh": "忙着做各种事情。",
+   "en": "",
+   "hv": "MANG LỤC",
+   "vi": "bận rộn",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "鼓吹",
+   "py": "gǔchuī",
+   "pos": "动",
+   "zh": "宣传提倡。",
+   "en": "",
+   "hv": "CỔ XÚY",
+   "vi": "cổ xúy, tuyên truyền",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "高消费",
+   "py": "gāoxiāofèi",
+   "pos": "动",
+   "zh": "花钱更多、更高档的消费。",
+   "en": "",
+   "hv": "CAO TIÊU PHÍ",
+   "vi": "tiêu dùng cao cấp",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "模式",
+   "py": "móshì",
+   "pos": "名",
+   "zh": "某种事物的标准形式或使人可以照着做的标准样式。",
+   "en": "",
+   "hv": "MÔ THỨC",
+   "vi": "mô hình, kiểu mẫu",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "需求",
+   "py": "xūqiú",
+   "pos": "名",
+   "zh": "由需要而产生的要求。",
+   "en": "",
+   "hv": "NHU CẦU",
+   "vi": "nhu cầu",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "最多",
+   "py": "zuìduō",
+   "pos": "形",
+   "zh": "数量最大的，程度最高的。",
+   "en": "",
+   "hv": "TỐI ĐA",
+   "vi": "nhiều nhất, tối đa",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "栋",
+   "py": "dòng",
+   "pos": "量",
+   "zh": "指房屋。",
+   "en": "",
+   "hv": "ĐỐNG",
+   "vi": "tòa, căn (nhà)",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "传媒",
+   "py": "chuánméi",
+   "pos": "名",
+   "zh": "传播媒介，特指报纸、广播、电视、网络等各种新闻工具。",
+   "en": "",
+   "hv": "TRUYỀN MÔI",
+   "vi": "truyền thông",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "豪华",
+   "py": "háohuá",
+   "pos": "形",
+   "zh": "十分华丽。",
+   "en": "",
+   "hv": "HÀO HOA",
+   "vi": "xa hoa, sang trọng",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "渺小",
+   "py": "miǎoxiǎo",
+   "pos": "形",
+   "zh": "微小。",
+   "en": "",
+   "hv": "MIỂU TIỂU",
+   "vi": "nhỏ bé",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "寒酸",
+   "py": "hánsuān",
+   "pos": "形",
+   "zh": "形容由于简陋或过于俭朴而显得不体面。",
+   "en": "",
+   "hv": "HÀN TOAN",
+   "vi": "nghèo hèn, tồi tàn",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "呈现",
+   "py": "chéngxiàn",
+   "pos": "动",
+   "zh": "显出，露出。",
+   "en": "",
+   "hv": "TRÌNH HIỆN",
+   "vi": "hiện ra, thể hiện",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "上流社会",
+   "py": "shàngliú shèhuì",
+   "pos": "",
+   "zh": "指社会地位高的人群。",
+   "en": "",
+   "hv": "THƯỢNG LƯU XÃ HỘI",
+   "vi": "giới thượng lưu",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "似",
+   "py": "sì",
+   "pos": "动",
+   "zh": "似乎。",
+   "en": "",
+   "hv": "TỰ",
+   "vi": "dường như",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "伸手可及",
+   "py": "shēn shǒu kě jí",
+   "pos": "",
+   "zh": "一伸手就可以碰到。形容距离很近。",
+   "en": "",
+   "hv": "THÂN THỦ KHẢ CẬP",
+   "vi": "trong tầm tay",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "遥遥无期",
+   "py": "yáoyáo wú qī",
+   "pos": "",
+   "zh": "没有确定的日期，指希望渺茫。",
+   "en": "",
+   "hv": "DAO DAO VÔ KỲ",
+   "vi": "xa vời vô hạn",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "昔日",
+   "py": "xīrì",
+   "pos": "名",
+   "zh": "从前。",
+   "en": "",
+   "hv": "TÍCH NHẬT",
+   "vi": "ngày xưa",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "引发",
+   "py": "yǐnfā",
+   "pos": "动",
+   "zh": "引起，触发。",
+   "en": "",
+   "hv": "DẪN PHÁT",
+   "vi": "gây ra, khơi dậy",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "亡命",
+   "py": "wángmìng",
+   "pos": "动",
+   "zh": "不顾性命地逃亡。",
+   "en": "",
+   "hv": "VONG MỆNH",
+   "vi": "liều mạng (chạy)",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "疾奔",
+   "py": "jíbēn",
+   "pos": "动",
+   "zh": "快速奔跑。",
+   "en": "",
+   "hv": "TẬT BÔN",
+   "vi": "chạy nhanh, lao đi",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "急剧",
+   "py": "jíjù",
+   "pos": "副",
+   "zh": "迅速而剧烈。",
+   "en": "",
+   "hv": "CẤP KỊCH",
+   "vi": "nhanh chóng, đột ngột",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "欲念",
+   "py": "yùniàn",
+   "pos": "名",
+   "zh": "欲望。",
+   "en": "",
+   "hv": "DỤC NIỆM",
+   "vi": "ham muốn, dục vọng",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "刻意",
+   "py": "kèyì",
+   "pos": "副",
+   "zh": "用尽心思。",
+   "en": "",
+   "hv": "KHẮC Ý",
+   "vi": "cố ý, dụng công",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "足够",
+   "py": "zúgòu",
+   "pos": "形",
+   "zh": "达到应有的或能满足需要的程度。",
+   "en": "",
+   "hv": "TÚC CẤU",
+   "vi": "đủ, đầy đủ",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "整日",
+   "py": "zhěngrì",
+   "pos": "名",
+   "zh": "全天，整天。",
+   "en": "",
+   "hv": "CHỈNH NHẬT",
+   "vi": "cả ngày",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "预测",
+   "py": "yùcè",
+   "pos": "动",
+   "zh": "预先推测或测定。",
+   "en": "",
+   "hv": "DỰ TRẮC",
+   "vi": "dự đoán",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "闲暇",
+   "py": "xiánxiá",
+   "pos": "名",
+   "zh": "闲空。",
+   "en": "",
+   "hv": "NHÀN HẠ",
+   "vi": "thời gian rảnh",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "起码",
+   "py": "qǐmǎ",
+   "pos": "形",
+   "zh": "最低限度。",
+   "en": "",
+   "hv": "KHỞI MÃ",
+   "vi": "ít nhất, tối thiểu",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "沮丧",
+   "py": "jǔsàng",
+   "pos": "形",
+   "zh": "灰心失望。",
+   "en": "",
+   "hv": "TỰ TANG",
+   "vi": "chán nản, thất vọng",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "过于",
+   "py": "guòyú",
+   "pos": "副",
+   "zh": "表示程度或数量过分。",
+   "en": "",
+   "hv": "QUÁ VU",
+   "vi": "quá mức",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "乐观",
+   "py": "lèguān",
+   "pos": "形",
+   "zh": "精神愉快，对事物的发展充满信心。",
+   "en": "",
+   "hv": "LẠC QUAN",
+   "vi": "lạc quan",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "层次",
+   "py": "céngcì",
+   "pos": "名",
+   "zh": "同一事物由于大小、高低等不同而形成的区别。",
+   "en": "",
+   "hv": "TẦNG THỨ",
+   "vi": "tầng lớp, cấp bậc",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "专利",
+   "py": "zhuānlì",
+   "pos": "名",
+   "zh": "法律保障创造发明者在一定时期内由于创造发明而独自享有的利益。比喻某人的专门利益或权力。",
+   "en": "",
+   "hv": "CHUYÊN LỢI",
+   "vi": "bằng sáng chế; đặc quyền",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "稀世珍品",
+   "py": "xī shì zhēn pǐn",
+   "pos": "",
+   "zh": "世上很少有的宝物。",
+   "en": "",
+   "hv": "HY THẾ TRÂN PHẨM",
+   "vi": "của hiếm có trên đời",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "快速",
+   "py": "kuàisù",
+   "pos": "形",
+   "zh": "速度快的，迅速。",
+   "en": "",
+   "hv": "KHOÁI TỐC",
+   "vi": "nhanh chóng",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "误导",
+   "py": "wùdǎo",
+   "pos": "动",
+   "zh": "不正确地引导。",
+   "en": "",
+   "hv": "NGỘ ĐẠO",
+   "vi": "dẫn dắt sai, đánh lừa",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "率先",
+   "py": "shuàixiān",
+   "pos": "副",
+   "zh": "带头，首先。",
+   "en": "",
+   "hv": "SUẤT TIÊN",
+   "vi": "đi đầu, trước tiên",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "质疑",
+   "py": "zhìyí",
+   "pos": "动",
+   "zh": "提出疑问。",
+   "en": "",
+   "hv": "CHẤT NGHI",
+   "vi": "chất vấn, nghi vấn",
+   "proper": false
+  },
+  {
+   "n": 96,
+   "hz": "美食",
+   "py": "měishí",
+   "pos": "名",
+   "zh": "精美的饮食。",
+   "en": "",
+   "hv": "MỸ THỰC",
+   "vi": "món ngon, ẩm thực",
+   "proper": false
+  },
+  {
+   "n": 97,
+   "hz": "著称",
+   "py": "zhùchēng",
+   "pos": "动",
+   "zh": "著名。",
+   "en": "",
+   "hv": "TRỨ XƯNG",
+   "vi": "nổi tiếng",
+   "proper": false
+  },
+  {
+   "n": 98,
+   "hz": "抵制",
+   "py": "dǐzhì",
+   "pos": "动",
+   "zh": "阻止某些事物，使不能侵入或发生作用。",
+   "en": "",
+   "hv": "ĐỂ CHẾ",
+   "vi": "tẩy chay, chống lại",
+   "proper": false
+  },
+  {
+   "n": 99,
+   "hz": "崇尚",
+   "py": "chóngshàng",
+   "pos": "动",
+   "zh": "尊重，推崇。",
+   "en": "",
+   "hv": "SÙNG THƯỢNG",
+   "vi": "đề cao, tôn sùng",
+   "proper": false
+  },
+  {
+   "n": 100,
+   "hz": "批量",
+   "py": "pīliàng",
+   "pos": "名",
+   "zh": "成批地（制造）。",
+   "en": "",
+   "hv": "PHÊ LƯỢNG",
+   "vi": "hàng loạt",
+   "proper": false
+  },
+  {
+   "n": 101,
+   "hz": "全球",
+   "py": "quánqiú",
+   "pos": "名",
+   "zh": "整个地球。",
+   "en": "",
+   "hv": "TOÀN CẦU",
+   "vi": "toàn cầu",
+   "proper": false
+  },
+  {
+   "n": 102,
+   "hz": "众人",
+   "py": "zhòngrén",
+   "pos": "名",
+   "zh": "大家，许多人。",
+   "en": "",
+   "hv": "CHÚNG NHÂN",
+   "vi": "mọi người",
+   "proper": false
+  },
+  {
+   "n": 103,
+   "hz": "餐桌",
+   "py": "cānzhuō",
+   "pos": "名",
+   "zh": "饭桌。",
+   "en": "",
+   "hv": "XAN TRÁC",
+   "vi": "bàn ăn",
+   "proper": false
+  },
+  {
+   "n": 104,
+   "hz": "廉价",
+   "py": "liánjià",
+   "pos": "形",
+   "zh": "价钱比一般低。",
+   "en": "",
+   "hv": "LIÊM GIÁ",
+   "vi": "giá rẻ",
+   "proper": false
+  },
+  {
+   "n": 105,
+   "hz": "单一",
+   "py": "dānyī",
+   "pos": "形",
+   "zh": "只有一种。",
+   "en": "",
+   "hv": "ĐƠN NHẤT",
+   "vi": "đơn điệu, chỉ một loại",
+   "proper": false
+  },
+  {
+   "n": 106,
+   "hz": "由此",
+   "py": "yóucǐ",
+   "pos": "",
+   "zh": "从这里。",
+   "en": "",
+   "hv": "DO THỬ",
+   "vi": "từ đó, do đó",
+   "proper": false
+  },
+  {
+   "n": 107,
+   "hz": "派生",
+   "py": "pàishēng",
+   "pos": "动",
+   "zh": "从一个主要事物的发展中分化出来。",
+   "en": "",
+   "hv": "PHÁI SINH",
+   "vi": "phái sinh, nảy sinh ra",
+   "proper": false
+  },
+  {
+   "n": 108,
+   "hz": "专用",
+   "py": "zhuānyòng",
+   "pos": "动",
+   "zh": "专供某种需要或某个人使用。",
+   "en": "",
+   "hv": "CHUYÊN DỤNG",
+   "vi": "chuyên dụng, dành riêng",
+   "proper": false
+  },
+  {
+   "n": 109,
+   "hz": "通道",
+   "py": "tōngdào",
+   "pos": "名",
+   "zh": "往来畅通的大路。",
+   "en": "",
+   "hv": "THÔNG ĐẠO",
+   "vi": "lối đi, làn đường",
+   "proper": false
+  },
+  {
+   "n": 110,
+   "hz": "绿化",
+   "py": "lǜhuà",
+   "pos": "动",
+   "zh": "种植树木花草，使环境优美卫生，防止水土流失。",
+   "en": "",
+   "hv": "LỤC HÓA",
+   "vi": "phủ xanh, trồng cây xanh",
+   "proper": false
+  },
+  {
+   "n": 111,
+   "hz": "霓虹灯",
+   "py": "níhóngdēng",
+   "pos": "名",
+   "zh": "",
+   "en": "neon light",
+   "hv": "NGHÊ HỒNG ĐĂNG",
+   "vi": "đèn nê-ông",
+   "proper": false
+  },
+  {
+   "n": 112,
+   "hz": "有机耕种",
+   "py": "yǒujī gēngzhòng",
+   "pos": "",
+   "zh": "有机，指有机化合物，即organic；有机耕种，即使用有机化合物进行耕种。",
+   "en": "",
+   "hv": "HỮU CƠ CANH CHỦNG",
+   "vi": "canh tác hữu cơ",
+   "proper": false
+  },
+  {
+   "n": 113,
+   "hz": "作坊",
+   "py": "zuōfang",
+   "pos": "名",
+   "zh": "手工业工场。",
+   "en": "workshop",
+   "hv": "TÁC PHƯỜNG",
+   "vi": "xưởng thủ công",
+   "proper": false
+  },
+  {
+   "n": 114,
+   "hz": "标记",
+   "py": "biāojì",
+   "pos": "名",
+   "zh": "标志，记号。",
+   "en": "sign; mark; symbol",
+   "hv": "TIÊU KÝ",
+   "vi": "biểu tượng, ký hiệu",
+   "proper": false
+  },
+  {
+   "n": 115,
+   "hz": "穿插",
+   "py": "chuānchā",
+   "pos": "动",
+   "zh": "在其他物体的空隙间穿过。",
+   "en": "",
+   "hv": "XUYÊN SÁP",
+   "vi": "xen giữa, len lỏi",
+   "proper": false
+  },
+  {
+   "n": 116,
+   "hz": "建筑物",
+   "py": "jiànzhùwù",
+   "pos": "名",
+   "zh": "人工修建的房屋、桥梁、亭子、宝塔等。",
+   "en": "building; structure",
+   "hv": "KIẾN TRÚC VẬT",
+   "vi": "công trình kiến trúc",
+   "proper": false
+  },
+  {
+   "n": 117,
+   "hz": "智者",
+   "py": "zhìzhě",
+   "pos": "名",
+   "zh": "聪明人。",
+   "en": "",
+   "hv": "TRÍ GIẢ",
+   "vi": "người trí tuệ, bậc hiền triết",
+   "proper": false
+  },
+  {
+   "n": 118,
+   "hz": "远远",
+   "py": "yuǎnyuǎn",
+   "pos": "副",
+   "zh": "差得很多。",
+   "en": "",
+   "hv": "VIỄN VIỄN",
+   "vi": "xa, kém xa",
+   "proper": false
+  },
+  {
+   "n": 119,
+   "hz": "古人",
+   "py": "gǔrén",
+   "pos": "名",
+   "zh": "泛指古代的人。",
+   "en": "",
+   "hv": "CỔ NHÂN",
+   "vi": "người xưa",
+   "proper": false
+  },
+  {
+   "n": 120,
+   "hz": "中外",
+   "py": "zhōngwài",
+   "pos": "名",
+   "zh": "中国和外国。",
+   "en": "",
+   "hv": "TRUNG NGOẠI",
+   "vi": "Trung Quốc và nước ngoài",
+   "proper": false
+  },
+  {
+   "n": 121,
+   "hz": "绝代",
+   "py": "juédài",
+   "pos": "形",
+   "zh": "当代没有可以相比的。",
+   "en": "",
+   "hv": "TUYỆT ĐẠI",
+   "vi": "tuyệt thế, có một không hai",
+   "proper": false
+  },
+  {
+   "n": 122,
+   "hz": "大师",
+   "py": "dàshī",
+   "pos": "名",
+   "zh": "在学问或艺术上有很深的造诣，为大家所尊崇的人。",
+   "en": "",
+   "hv": "ĐẠI SƯ",
+   "vi": "bậc thầy",
+   "proper": false
+  },
+  {
+   "n": 123,
+   "hz": "幸好",
+   "py": "xìnghǎo",
+   "pos": "副",
+   "zh": "幸亏。",
+   "en": "",
+   "hv": "HẠNH HẢO",
+   "vi": "may mà",
+   "proper": false
+  },
+  {
+   "n": 124,
+   "hz": "觉醒",
+   "py": "juéxǐng",
+   "pos": "动",
+   "zh": "醒悟，觉悟。",
+   "en": "",
+   "hv": "GIÁC TỈNH",
+   "vi": "thức tỉnh",
+   "proper": false
+  },
+  {
+   "n": 125,
+   "hz": "盒饭",
+   "py": "héfàn",
+   "pos": "名",
+   "zh": "装在盒子里出售的份饭。",
+   "en": "box lunch",
+   "hv": "HẠP PHẠN",
+   "vi": "cơm hộp",
+   "proper": false
+  },
+  {
+   "n": 126,
+   "hz": "饭局",
+   "py": "fànjú",
+   "pos": "名",
+   "zh": "宴会，聚餐。",
+   "en": "",
+   "hv": "PHẠN CỤC",
+   "vi": "bữa tiệc, cuộc nhậu",
+   "proper": false
+  },
+  {
+   "n": 127,
+   "hz": "共享",
+   "py": "gòngxiǎng",
+   "pos": "动",
+   "zh": "共同享受。",
+   "en": "",
+   "hv": "CỘNG HƯỞNG",
+   "vi": "cùng hưởng",
+   "proper": false
+  },
+  {
+   "n": 128,
+   "hz": "应酬",
+   "py": "yìngchou",
+   "pos": "动",
+   "zh": "交际往来。",
+   "en": "",
+   "hv": "ỨNG THÙ",
+   "vi": "xã giao, tiếp khách",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "现代化和蜗牛",
+   "paragraphs": [
+    "第一部分",
+    "“最近怎样？忙吗？”",
+    "“忙……忙得七荤八素，连家里人都不认得！”听起来是怨艾，其实充满自豪。",
+    "“忙好……只怕不忙……”闲者连声赞许。",
+    "这应属新世纪城市人最时髦的“今天天气哈哈哈”的现代版，不忙不足以表示你是现代人，不忙不足以体现你与世界接轨的步伐！",
+    "因为忙，飞机提速了还要超速；因为忙，看电影等不及最后一个镜头隐去便纷纷起身离场；因为忙，宁可以现成的问候卡代替给家人或恋人的书信；因为忙，今日不少城市人的厨房灶冷灯黑。往日温和灯光下阖家围桌进餐的天伦之乐，因为模范（无饭），也因为多丁克族而越来越成一种待追忆的场景……人人像拉紧了的弹簧无法松弛下来，就算有心想放缓步子，也会被后面涌上来的人潮推着走，根本放不缓步子。",
+    "当年英国发明蒸汽机，原意为提高生产效率节省劳动力，但随之而起的流水作业线并未令我们的休闲时间增多；20世纪后期的电子革命，更是大大精简了劳动力和时间，但冷冰冰的e时代，反而失却了农业社会给我们留下的浪漫和悠闲。我们的生活节奏继续令人目眩地递增，已到了分秒必争的地步。",
+    "第二部分",
+    "今天如果行动思维缓慢，会被视为犯罪；赞美悠闲，简直等同赞美懒惰！现代人要更快的电脑、更快的消费、更及时的资讯、更快捷的回报的理财方式……于是，就变得……越来越忙……",
+    "造成现代人如此忙碌，还有现在鼓吹的高消费模式。因为消费在今日已成为社会一种“比较”的方式，而不是一种社会的“需求”的反应。在农业社会、工业社会，大家的比较范围较窄，不过只是几个家庭，最多一个村，一栋楼……现在，电视和电子传媒，可以将全世界最豪华的现象带到你眼前，令你觉得自己有多渺小，多寒酸；广告中呈现的中产生活和上流社会对你似伸手可及又是遥遥无期，就像昔日上海跑狗场那只引发跑狗亡命疾奔的电兔！",
+    "今日急剧上升的消费欲念，将豪华代替了舒适，刻意代替了自然，在这样的冲击下，城市人根本无“足够收入”这样的概念！于是，整日忙忙碌碌！",
+    "英国埃塞克斯大学社会及经济研究中心前不久做了个调查，发现几十年前有人预测的，随着人类的生活日益富裕，人们的闲暇时间将会每周增加起码一天。主持调查的格尔舒尼教授沮丧地表示，19世纪和20世纪初的调查过于乐观。在20世纪初，闲暇是高层次人士的专利，但现在，越来越多的证据表示，消费成了高层次人士的专利，而闲暇已成稀世珍品……与两代以前的人相比，现代人在家吃饭的时间少了一半，与家人相处的时间也每日减少45分钟……",
+    "第三部分",
+    "这种事事讲求速度，将快速等同为进步的现代误导，率先在讲究效率的西方受到质疑。早在20世纪80年代末，以美食著称的意大利，开始发起“慢慢吃运动”，从提倡享受饮食开始，以抵制崇尚快速和大批量生产方式，提倡悠闲生活文化。20年来，据说已有超过12万人参加，全球有36个国家均设有分部。“慢慢吃运动”提倡众人回到餐桌，享受家人围桌进餐的天伦之乐，抵制快餐店的大批量生产的廉价的无营养的单一的食物，并由此派生出一个“慢慢城市联盟”，倡导悠闲生活。",
+    "除了“慢慢吃”，“慢慢城市联盟”还提倡城市扩大行人专用区和自行车通道，开辟更多绿化地，少一点汽车喇叭声和霓虹灯，支持有机耕种和作坊式经营……这个“慢慢城市联盟”的标记，是一只穿插在现代和古代建筑物中的蜗牛！",
+    "不记得是哪位智者讲过：人类高一层次的时间体验，就是悠闲。就这点讲，现代人的体验，远远不及古人，难怪近代中外，都很少出绝代艺术大师和思想家！幸好，现代人已开始觉醒。清代文学家张潮说得好：能闲世人所忙者，方能忙世人之所闲。",
+    "放慢一点生活脚步，从今晚的晚饭开始：今晚不吃麦当劳不吃盒饭，不赶三四个饭局忙应酬，回家炒几个母亲做惯的菜，与家人围桌慢慢吃，共享天伦之乐吧！",
+    "（作者：程乃珊　选自《广州日报》）"
+   ],
+   "translations": [
+    "Phần một",
+    "“Dạo này thế nào? Bận không?”",
+    "“Bận… bận tối tăm mặt mũi, đến người nhà cũng chẳng nhận ra nữa!” Nghe thì như than phiền, kỳ thực lại đầy tự hào.",
+    "“Bận là tốt… chỉ sợ không bận thôi…” người nhàn rỗi luôn miệng khen.",
+    "Đây hẳn là phiên bản hiện đại thời thượng nhất của câu chào xã giao “hôm nay trời đẹp nhỉ, ha ha ha” của người thành thị thế kỷ mới: không bận thì chưa đủ để chứng tỏ bạn là người hiện đại, không bận thì chưa đủ để thể hiện nhịp bước hội nhập với thế giới của bạn!",
+    "Vì bận, máy bay đã tăng tốc rồi còn muốn vượt tốc; vì bận, xem phim chẳng đợi nổi cảnh cuối khuất đi đã lũ lượt đứng dậy rời rạp; vì bận, thà dùng tấm thiệp chúc có sẵn thay cho lá thư gửi người nhà hay người yêu; vì bận, nhiều người thành thị ngày nay để bếp lạnh đèn tắt. Niềm vui sum họp cả nhà quây quần bên bàn ăn dưới ánh đèn ấm áp ngày trước, vì những gia đình “kiểu mẫu” (không nấu cơm), cũng vì có thêm nhiều gia đình DINK, mà ngày càng trở thành một cảnh tượng chỉ còn để hoài niệm… Ai nấy như chiếc lò xo bị kéo căng không thể chùng xuống, dù có lòng muốn chậm bước lại, cũng sẽ bị dòng người ùa lên phía sau đẩy đi, hoàn toàn không thể chậm lại.",
+    "Năm xưa nước Anh phát minh máy hơi nước, ý định ban đầu là nâng cao hiệu suất sản xuất, tiết kiệm sức lao động, nhưng dây chuyền sản xuất ra đời theo đó lại chẳng làm thời gian nghỉ ngơi của chúng ta tăng thêm; cuộc cách mạng điện tử cuối thế kỷ 20 càng tinh giản đáng kể sức lao động và thời gian, nhưng thời đại e lạnh lẽo lại đánh mất sự lãng mạn và thong thả mà xã hội nông nghiệp để lại cho chúng ta. Nhịp sống của chúng ta tiếp tục tăng dần đến hoa mắt, đã tới mức phải giành giật từng giây từng phút.",
+    "Phần hai",
+    "Ngày nay nếu hành động, suy nghĩ chậm chạp sẽ bị coi như phạm tội; ca ngợi sự thong thả chẳng khác nào ca ngợi sự lười biếng! Người hiện đại muốn máy tính nhanh hơn, tiêu dùng nhanh hơn, thông tin kịp thời hơn, cách quản lý tài chính thu lợi nhanh hơn… thế là trở nên… ngày càng bận rộn…",
+    "Khiến người hiện đại bận rộn đến thế còn có mô hình tiêu dùng cao cấp đang được cổ xúy hiện nay. Bởi vì ngày nay tiêu dùng đã trở thành một cách “so bì” của xã hội, chứ không phải phản ánh “nhu cầu” của xã hội. Trong xã hội nông nghiệp, xã hội công nghiệp, phạm vi so bì của mọi người khá hẹp, chẳng qua chỉ vài gia đình, nhiều nhất là một làng, một tòa nhà… Bây giờ, truyền hình và truyền thông điện tử có thể đem những cảnh xa hoa nhất thế giới đến trước mắt bạn, khiến bạn thấy mình nhỏ bé, nghèo hèn biết bao; cuộc sống trung lưu và giới thượng lưu hiện lên trong quảng cáo đối với bạn dường như trong tầm tay mà lại xa vời vô hạn, giống như con thỏ điện ở trường đua chó Thượng Hải ngày xưa khiến bầy chó đua liều mạng lao theo!",
+    "Ham muốn tiêu dùng tăng vọt ngày nay đã lấy xa hoa thay cho thoải mái, lấy cố ý thay cho tự nhiên; dưới sự tác động ấy, người thành thị hoàn toàn không có khái niệm “thu nhập đủ”! Thế là suốt ngày tất bật bận rộn!",
+    "Trung tâm Nghiên cứu Xã hội và Kinh tế của Đại học Essex (Anh) cách đây không lâu đã tiến hành một cuộc điều tra, phát hiện rằng mấy chục năm trước có người dự đoán, cùng với đời sống loài người ngày càng sung túc, thời gian rảnh rỗi của con người mỗi tuần sẽ tăng thêm ít nhất một ngày. Giáo sư Gershuny, người chủ trì cuộc điều tra, chán nản cho biết các cuộc điều tra thế kỷ 19 và đầu thế kỷ 20 đã quá lạc quan. Đầu thế kỷ 20, nhàn rỗi là đặc quyền của tầng lớp trên, nhưng hiện nay ngày càng nhiều bằng chứng cho thấy tiêu dùng đã thành đặc quyền của tầng lớp trên, còn nhàn rỗi đã trở thành của hiếm có trên đời… So với người hai thế hệ trước, thời gian người hiện đại ăn cơm ở nhà giảm một nửa, thời gian ở bên người nhà mỗi ngày cũng giảm 45 phút…",
+    "Phần ba",
+    "Sự dẫn dắt sai lầm của thời hiện đại, việc gì cũng đòi tốc độ, đánh đồng nhanh với tiến bộ, đã bị chất vấn trước tiên ở phương Tây vốn coi trọng hiệu suất. Ngay từ cuối thập niên 80 thế kỷ 20, nước Ý nổi tiếng về ẩm thực đã khởi xướng “phong trào ăn chậm”, bắt đầu từ việc đề cao thưởng thức ăn uống, để chống lại lối sản xuất tôn sùng tốc độ và hàng loạt quy mô lớn, đề xướng văn hóa sống thong thả. Hai mươi năm qua, nghe nói đã có hơn 120.000 người tham gia, trên toàn cầu có 36 quốc gia đều lập chi nhánh. “Phong trào ăn chậm” kêu gọi mọi người trở về bàn ăn, tận hưởng niềm vui sum họp cả nhà quây quần dùng bữa, tẩy chay những món ăn đơn điệu, rẻ tiền, không dinh dưỡng được sản xuất hàng loạt của các cửa hàng đồ ăn nhanh, và từ đó nảy sinh ra một “Liên minh thành phố chậm”, đề xướng lối sống thong thả.",
+    "Ngoài “ăn chậm”, “Liên minh thành phố chậm” còn đề xướng thành phố mở rộng khu dành riêng cho người đi bộ và làn đường xe đạp, mở thêm nhiều mảng xanh, bớt đi tiếng còi ô tô và đèn nê-ông, ủng hộ canh tác hữu cơ và kinh doanh kiểu xưởng thủ công… Biểu tượng của “Liên minh thành phố chậm” này là một chú ốc sên len lỏi giữa những công trình kiến trúc hiện đại và cổ xưa!",
+    "Chẳng nhớ là bậc hiền triết nào từng nói: trải nghiệm về thời gian ở tầng cao hơn của loài người chính là sự thong thả. Xét ở điểm này, trải nghiệm của người hiện đại kém xa người xưa, chẳng trách thời cận đại, cả trong và ngoài Trung Quốc, đều hiếm xuất hiện những bậc thầy nghệ thuật và nhà tư tưởng tuyệt thế! May mà người hiện đại đã bắt đầu thức tỉnh. Nhà văn đời Thanh Trương Triều nói rất hay: có thể thong thả trước những việc người đời bận rộn, mới có thể bận rộn với những việc người đời thong thả bỏ qua.",
+    "Hãy chậm lại nhịp bước cuộc sống một chút, bắt đầu từ bữa tối nay: tối nay không ăn McDonald's, không ăn cơm hộp, không chạy ba bốn bữa tiệc bận bịu xã giao, mà về nhà xào vài món mẹ vẫn quen nấu, cùng người nhà quây quần bên bàn ăn chậm rãi, cùng hưởng niềm vui sum họp gia đình!",
+    "(Tác giả: Trình Nãi San, trích từ “Quảng Châu Nhật báo”)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "生活是可以这样拐弯的",
+   "paragraphs": [
+    "傍晚，从客厅窗子望去，稻田和尽头那幢白墙红瓦的村民小楼笼罩在一片淡淡夕照中，总使我不禁想起卢梭（Étienne Pierre Théodore Rousseau，1812－1867，法国风景画家）的那些画——《有牛的风景》《河岸》等，笔触严整，流溢的却是梦幻般的静谧。田野、树、小路、人以及动物，一切仿佛可以这样如梦如幻地安宁下去。",
+    "然而，城市高架飞速的汽车流、霓虹斑驳（bó）的商厦、灯光通明的商务楼，一切似乎提醒自己应该上紧发条（wind a clock）跟上时代的步伐，否则很有些被淘汰之虞，于是我们多少有点身不由己地裹挟在社会的种种潮流中。我们拥有的物质越来越多，生活越来越复杂丰富，我们的心灵却日益疲惫（píbèi），不见得增添多少愉悦。我们也感叹，却难以放下，或者拐个弯，改变生活方式。于是，那幅淡金色的田园画面就仿佛是一种慰藉，朴素简单的生活大概总归是一种梦想吧，我们有多少力量与社会主流意识抗争？甚至这幅画面本身或许多少也是一种想象？",
+    "但总是有许多人听从内心的召唤，从复杂纷繁的社会主流轨道上抽身，走向并创造出自己的生活空间。在堪称世界最发达国家的美国，有些人离开繁华都市，比如纽约，去乡下买一块地，自己耕种、做食物、缝衣服，与邻居一起交流耕作经验，物物交换，共享劳动成果。他们远离电视等现代媒体，步行去小镇商店购物；他们比赚钱更看重家庭成员间的亲密关系，重视和体验着爱的价值；孩子们参与劳作，在大自然中玩耍和体验、唱儿歌、自己讲故事，用身心感受真实的世界……这些图景来自《简朴生活读本》一书，那些信奉和实践着简朴生活的人写出自己的想法和感受，告诉我们这样一种生活信念和生活方式。",
+    "选择过简朴生活，并不是一种被动的选择，而是源于心灵深处对现代生活的个性化理解的主动选择。他们感到“这个世界都好像坐在一列飞速下坡、不断加速的火车上，虽然许多人为自己所走的方向感到惊愕（è），但他们又似乎找不到安全跳车的方法”。于是，他们重新选择生活：慢速度、朴素衣服、低科技，更多的体力劳动，心灵的简单纯净，抵制漫卷一切的消费文化和技术的统治。他们实践着，也欢乐着。",
+    "我并不完全认同诸如“颠覆生活的经典之作”之类的阿谀（ēyú）之词，但我认同“这是一本关于欢乐的书”，我感觉叙述人的确弥散着一种心灵单纯的欢乐。当然，简朴生活其实还是有所“待”的，比如要有点地以耕种，有社区形成一种生活互助。事实上，它的意义更在于一种理念：生活的欢乐不在于拥有永远没个够的物质资源，真正重要的是人内心的丰富，是家庭和人际之间的爱和温情。在人们越来越多地希望占有更多资源的现时代，在全球社会都趋于技术理性和消费同一性的当下，简朴生活的意义彰（zhāng）显于此。",
+    "现代人其实是很难回到过去的，我想简朴生活也应该不是为了回到过去，如此，人类文明史上的所有发明创造似乎都将是一种虚妄，而非人类智慧的成功。问题在于，人类文明过分地相信发展，以至于人类如今受制于自己的文明，受制于大量攫（jué）取地球资源的商品生产，而忽略人性的平衡发展，以为机器文明就意味着人类的一切。那么，重新选择过一种低技术的生活，与其说是一种生活的选择，不如说更诠（quán）释着一种心灵所趋。毕竟，生活的状态也许并非永远该这样“进化”下去的，它可以拐弯，可以离开主河道，关键在于我们对生活的认识和思考，以及在众口一词中自身的选择。",
+    "虽然这需要勇气，但值得去努力。",
+    "（作者：龚静　选自《青年报》）"
+   ],
+   "translations": [
+    "Chiều tối, nhìn ra từ cửa sổ phòng khách, cánh đồng lúa và ngôi nhà nhỏ tường trắng ngói đỏ của dân làng ở cuối tầm mắt chìm trong ánh chiều nhạt nhòa, luôn khiến tôi bất giác nhớ đến những bức tranh của Rousseau (Étienne Pierre Théodore Rousseau, 1812–1867, họa sĩ phong cảnh Pháp) — “Phong cảnh có bò”, “Bờ sông”…, nét bút chặt chẽ nghiêm cẩn, mà tràn ra lại là một sự tĩnh lặng như mộng. Đồng ruộng, cây cối, con đường nhỏ, con người và muông thú, tất cả dường như có thể cứ thế yên bình như mơ như ảo mãi.",
+    "Thế nhưng, dòng xe lao vun vút trên đường trên cao của thành phố, những trung tâm thương mại loang lổ ánh đèn nê-ông, những tòa nhà văn phòng đèn sáng trưng, tất cả dường như nhắc nhở ta phải lên dây cót để theo kịp nhịp bước thời đại, nếu không sẽ có nguy cơ bị đào thải, thế là ít nhiều chúng ta bị cuốn vào đủ thứ trào lưu của xã hội một cách bất đắc dĩ. Vật chất ta có ngày càng nhiều, cuộc sống ngày càng phức tạp phong phú, nhưng tâm hồn ta lại ngày càng mỏi mệt, chưa chắc đã thêm được bao nhiêu niềm vui. Chúng ta cũng than thở, nhưng khó buông bỏ, hay rẽ một ngả khác để thay đổi lối sống. Thế là bức tranh điền viên màu vàng nhạt kia như một niềm an ủi; cuộc sống mộc mạc giản dị có lẽ rốt cuộc chỉ là một giấc mơ, chúng ta có bao nhiêu sức lực để chống lại ý thức chủ lưu của xã hội? Thậm chí bản thân bức tranh ấy có lẽ ít nhiều cũng chỉ là một sự tưởng tượng?",
+    "Nhưng luôn có nhiều người nghe theo tiếng gọi của nội tâm, rút mình ra khỏi quỹ đạo chủ lưu phức tạp rối ren của xã hội, đi tìm và tạo dựng không gian sống của riêng mình. Ở Mỹ, quốc gia được xem là phát triển nhất thế giới, có những người rời bỏ đô thị phồn hoa, chẳng hạn New York, về quê mua một mảnh đất, tự cày cấy, tự nấu ăn, tự may quần áo, cùng hàng xóm trao đổi kinh nghiệm canh tác, đổi hàng lấy hàng, cùng chia sẻ thành quả lao động. Họ tránh xa truyền hình và các phương tiện truyền thông hiện đại, đi bộ ra cửa hàng thị trấn mua sắm; họ coi trọng sự gắn bó thân thiết giữa các thành viên gia đình hơn kiếm tiền, coi trọng và trải nghiệm giá trị của tình yêu thương; con trẻ cùng tham gia lao động, vui chơi và trải nghiệm giữa thiên nhiên, hát đồng dao, tự kể chuyện, dùng cả thân và tâm để cảm nhận thế giới chân thực… Những bức tranh ấy đến từ cuốn sách “Sách đọc về cuộc sống giản dị”, những người tin theo và thực hành lối sống giản dị đã viết ra suy nghĩ và cảm nhận của mình, cho chúng ta biết về một niềm tin sống và một lối sống như thế.",
+    "Chọn sống giản dị không phải là một lựa chọn bị động, mà là lựa chọn chủ động bắt nguồn từ cách hiểu mang tính cá nhân về cuộc sống hiện đại nơi sâu thẳm tâm hồn. Họ cảm thấy “cả thế giới này như đang ngồi trên một đoàn tàu lao dốc vun vút, không ngừng tăng tốc; tuy nhiều người kinh ngạc trước hướng đi của mình, nhưng dường như họ không tìm được cách nhảy khỏi tàu an toàn”. Thế là họ chọn lại cuộc sống: tốc độ chậm, quần áo mộc mạc, ít công nghệ, nhiều lao động chân tay hơn, tâm hồn đơn giản trong sạch, chống lại sự thống trị của văn hóa tiêu dùng và kỹ thuật đang cuốn phăng mọi thứ. Họ thực hành, và họ cũng vui sống.",
+    "Tôi không hoàn toàn tán thành những lời tâng bốc kiểu như “kiệt tác kinh điển lật đổ cuộc sống”, nhưng tôi đồng ý rằng “đây là một cuốn sách về niềm vui”; tôi cảm thấy người kể quả thật tỏa ra một niềm vui của tâm hồn đơn thuần. Đương nhiên, cuộc sống giản dị thực ra vẫn cần “dựa vào” một số điều kiện, chẳng hạn phải có chút đất để cày cấy, có cộng đồng tạo nên sự tương trợ trong đời sống. Thật ra, ý nghĩa của nó nằm nhiều hơn ở một quan niệm: niềm vui sống không nằm ở việc sở hữu nguồn vật chất mãi mãi không bao giờ thấy đủ, điều thực sự quan trọng là sự phong phú trong nội tâm con người, là tình yêu và sự ấm áp trong gia đình và giữa người với người. Trong thời đại mà con người ngày càng muốn chiếm hữu nhiều tài nguyên hơn, trong lúc cả xã hội toàn cầu đều hướng về lý tính kỹ thuật và sự đồng nhất trong tiêu dùng, ý nghĩa của cuộc sống giản dị hiển hiện chính ở đây.",
+    "Người hiện đại thực ra rất khó quay về quá khứ, tôi nghĩ cuộc sống giản dị cũng không phải để quay về quá khứ; nếu thế, mọi phát minh sáng tạo trong lịch sử văn minh nhân loại dường như đều sẽ là hư vọng, chứ không phải thành công của trí tuệ con người. Vấn đề là ở chỗ văn minh nhân loại đã quá tin vào sự phát triển, đến nỗi con người ngày nay bị chính nền văn minh của mình chi phối, bị chi phối bởi nền sản xuất hàng hóa khai thác ồ ạt tài nguyên trái đất, mà xem nhẹ sự phát triển cân bằng của nhân tính, tưởng rằng văn minh máy móc là tất cả của loài người. Vậy thì, chọn lại một lối sống ít công nghệ, nói là một lựa chọn lối sống, chẳng bằng nói là sự thể hiện một hướng đi của tâm hồn. Suy cho cùng, trạng thái cuộc sống có lẽ không phải mãi mãi cứ “tiến hóa” theo một hướng như thế, nó có thể rẽ ngoặt, có thể rời khỏi dòng chính, điều mấu chốt là nhận thức và suy ngẫm của chúng ta về cuộc sống, và lựa chọn của bản thân giữa muôn miệng một lời.",
+    "Tuy điều đó cần dũng khí, nhưng đáng để nỗ lực.",
+    "(Tác giả: Cung Tĩnh, trích từ “Thanh niên báo”)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "足以 (đủ để)",
+   "structure": "（不）足以 + 动词短语",
+   "explanation": "足以 là phó từ, nghĩa là đủ, hoàn toàn có thể, biểu thị mức độ đạt tới được. Cấu trúc: 足以 + cụm động từ; dạng phủ định là “不足以” (không đủ để).",
+   "examples": [
+    {
+     "zh": "……不忙不足以表示你是现代人，不忙不足以体现你与世界接轨的步伐！",
+     "vi": "…không bận thì chưa đủ để chứng tỏ bạn là người hiện đại, không bận thì chưa đủ để thể hiện nhịp bước hội nhập với thế giới của bạn!"
+    },
+    {
+     "zh": "这些诗歌足以说明这位作家感情丰富，而且有很深的艺术造诣。",
+     "vi": "Những bài thơ này đủ để cho thấy nhà văn ấy giàu tình cảm và có trình độ nghệ thuật rất sâu."
+    },
+    {
+     "zh": "不审判这个贪官不足以平民愤。",
+     "vi": "Không xét xử tên tham quan này thì không đủ để xoa dịu lòng căm phẫn của dân."
+    }
+   ]
+  },
+  {
+   "point": "随之而起 (theo đó mà nảy sinh)",
+   "structure": "A……，随之而起的（是）B；随之而 + 动词",
+   "explanation": "随之而起 nghĩa là theo sự xuất hiện của một sự vật nào đó mà xuất hiện theo. Liên hệ: các cách nói tương tự 随之而来、随之而去、随之而产生、随之而消失、随之而提高、随之而降低、随之而结束、随之而开始、随之而离开、随之而发展、随之而停止.",
+   "examples": [
+    {
+     "zh": "……但随之而起的流水作业线并未令我们的休闲时间增多。",
+     "vi": "…nhưng dây chuyền sản xuất ra đời theo đó lại chẳng làm thời gian nghỉ ngơi của chúng ta tăng thêm."
+    },
+    {
+     "zh": "随着电脑应用的普及，与电脑有关的产品也就随之而起，越来越丰富和发达起来。",
+     "vi": "Cùng với sự phổ cập của máy tính, các sản phẩm liên quan đến máy tính cũng theo đó ra đời, ngày càng phong phú và phát triển."
+    },
+    {
+     "zh": "上个世纪八十年代初中国开始实行改革开放，随之而起的市场经济给中国带来了新的活力。",
+     "vi": "Đầu thập niên 80 thế kỷ trước Trung Quốc bắt đầu cải cách mở cửa, nền kinh tế thị trường hình thành theo đó đã đem lại sức sống mới cho Trung Quốc."
+    }
+   ]
+  },
+  {
+   "point": "起码 (tối thiểu; ít nhất)",
+   "structure": "（最）起码的 + 名词；起码 + 动词/数量",
+   "explanation": "起码 vừa là tính từ vừa là phó từ, biểu thị mức thấp nhất, ít nhất. Ngoài “最” và “顶” ra, không nhận sự bổ nghĩa của phó từ chỉ mức độ khác. Làm tính từ: (最)起码的 + danh từ (yêu cầu tối thiểu); làm phó từ: 起码 + động từ/số lượng (ít nhất).",
+   "examples": [
+    {
+     "zh": "……人们的闲暇时间将会每周增加起码一天。",
+     "vi": "…thời gian rảnh rỗi của con người mỗi tuần sẽ tăng thêm ít nhất một ngày."
+    },
+    {
+     "zh": "这是老师对你们的最起码的要求了，希望同学们都能够做到。",
+     "vi": "Đây là yêu cầu tối thiểu nhất của thầy đối với các em, mong các em đều làm được."
+    },
+    {
+     "zh": "这个罪犯连一点起码的人性和道德都没有。",
+     "vi": "Tên tội phạm này đến một chút nhân tính và đạo đức tối thiểu cũng không có."
+    },
+    {
+     "zh": "在做出最后的决定之前，起码要征求一下家人的意见。",
+     "vi": "Trước khi đưa ra quyết định cuối cùng, ít nhất cũng phải hỏi ý kiến người nhà."
+    },
+    {
+     "zh": "《红楼梦》这部小说我起码看过五遍。",
+     "vi": "Cuốn tiểu thuyết “Hồng Lâu Mộng” này tôi đọc ít nhất năm lần rồi."
+    }
+   ]
+  },
+  {
+   "point": "过于 (quá, quá mức)",
+   "structure": "过于 + 双音节形容词/动词性结构",
+   "explanation": "过于 là phó từ, đặt trước tính từ hoặc cấu trúc động từ, biểu thị về số lượng hay mức độ đã vượt quá một tiêu chuẩn nhất định; phần nhiều mang nghĩa xấu (chê); phía sau thường là từ ngữ hai âm tiết.",
+   "examples": [
+    {
+     "zh": "19世纪和20世纪初的调查过于乐观。",
+     "vi": "Các cuộc điều tra thế kỷ 19 và đầu thế kỷ 20 đã quá lạc quan."
+    },
+    {
+     "zh": "这种材料过于柔软，不适合我们公司的产品使用。",
+     "vi": "Loại vật liệu này quá mềm, không phù hợp dùng cho sản phẩm của công ty chúng tôi."
+    },
+    {
+     "zh": "家长要注意培养孩子的独立性，使他们不过于依赖家庭和父母。",
+     "vi": "Phụ huynh cần chú ý rèn tính tự lập cho con, để chúng không quá dựa dẫm vào gia đình và cha mẹ."
+    }
+   ]
+  },
+  {
+   "point": "著称 (nổi tiếng)",
+   "structure": "以……（而）著称；著称于……",
+   "explanation": "著称 là động từ, nghĩa là nổi tiếng về một phương diện nào đó mà được người ta nhắc đến. Không thể đứng một mình làm vị ngữ, thường đi kèm trạng ngữ do cụm giới từ “以” đảm nhiệm hoặc bổ ngữ do cụm giới từ “于” đảm nhiệm.",
+   "examples": [
+    {
+     "zh": "以美食著称的意大利，开始发起“慢慢吃运动”。",
+     "vi": "Nước Ý nổi tiếng về ẩm thực đã khởi xướng “phong trào ăn chậm”."
+    },
+    {
+     "zh": "安徽黄山以其优美的风景和形态各异的松树而著称。",
+     "vi": "Hoàng Sơn ở An Huy nổi tiếng nhờ phong cảnh đẹp và những cây thông muôn hình muôn vẻ."
+    },
+    {
+     "zh": "北京这个城市以悠久的历史和丰富的文化而著称于世。",
+     "vi": "Thành phố Bắc Kinh nổi tiếng khắp thế giới nhờ lịch sử lâu đời và văn hóa phong phú."
+    }
+   ]
+  },
+  {
+   "point": "幸好 (may mà, may thay)",
+   "structure": "幸好 + 小句（，否则/不然……）",
+   "explanation": "幸好 là phó từ, biểu thị nhờ một điều kiện có lợi xuất hiện ngẫu nhiên mà tránh được một việc bất lợi nào đó. Nghĩa và cách dùng giống “幸亏”, nhưng phần nhiều dùng trong khẩu ngữ.",
+   "examples": [
+    {
+     "zh": "幸好，现代人已开始觉醒。",
+     "vi": "May mà người hiện đại đã bắt đầu thức tỉnh."
+    },
+    {
+     "zh": "房子倒塌的时候，幸好里面没有人。",
+     "vi": "Khi ngôi nhà sập, may mà bên trong không có ai."
+    },
+    {
+     "zh": "刚到中国时，我遇到了很多困难，幸好遇到一位好朋友，在他的帮助下，我才渐渐适应了这里的环境。",
+     "vi": "Mới đến Trung Quốc, tôi gặp rất nhiều khó khăn, may mà gặp được một người bạn tốt, nhờ anh ấy giúp đỡ tôi mới dần thích nghi với môi trường ở đây."
+    },
+    {
+     "zh": "幸好飞机起飞的时间推迟了，否则我们肯定得迟到。",
+     "vi": "May mà giờ cất cánh bị hoãn, không thì chúng tôi chắc chắn đã bị trễ."
+    }
+   ]
+  }
+ ]
+}

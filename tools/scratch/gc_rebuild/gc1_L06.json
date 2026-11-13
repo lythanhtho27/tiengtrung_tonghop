@@ -1,0 +1,1226 @@
+{
+ "book": "gc1",
+ "lesson_num": 6,
+ "title": "天才梦",
+ "pages": [
+  114,
+  132
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "古怪",
+   "py": "gǔguài",
+   "pos": "形",
+   "zh": "跟一般情况很不相同，使人觉得奇怪。(古怪——奇怪)",
+   "en": "",
+   "hv": "CỔ QUÁI",
+   "vi": "kỳ quặc, quái lạ",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "视为",
+   "py": "shìwéi",
+   "pos": "动",
+   "zh": "看成。",
+   "en": "",
+   "hv": "THỊ VI",
+   "vi": "coi là, xem như",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "童年",
+   "py": "tóngnián",
+   "pos": "名",
+   "zh": "儿童时期。",
+   "en": "",
+   "hv": "ĐỒNG NIÊN",
+   "vi": "thời thơ ấu",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "狂想",
+   "py": "kuángxiǎng",
+   "pos": "动",
+   "zh": "幻想。",
+   "en": "",
+   "hv": "CUỒNG TƯỞNG",
+   "vi": "mơ mộng viển vông, ảo tưởng",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "褪色",
+   "py": "tuì sè",
+   "pos": "",
+   "zh": "颜色慢慢变淡。",
+   "en": "",
+   "hv": "THỐI SẮC",
+   "vi": "phai màu, nhạt dần",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "一无所有",
+   "py": "yì wú suǒ yǒu",
+   "pos": "",
+   "zh": "什么都没有，多形容非常贫穷。",
+   "en": "",
+   "hv": "NHẤT VÔ SỞ HỮU",
+   "vi": "không có gì cả, trắng tay",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "乖僻",
+   "py": "guāipì",
+   "pos": "形",
+   "zh": "古怪孤僻。",
+   "en": "",
+   "hv": "QUAI TÍCH",
+   "vi": "quái gở, lập dị",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "世人",
+   "py": "shìrén",
+   "pos": "名",
+   "zh": "世界上的人，一般的人。",
+   "en": "",
+   "hv": "THẾ NHÂN",
+   "vi": "người đời",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "疏狂",
+   "py": "shūkuáng",
+   "pos": "形",
+   "zh": "性格狂放，不受约束。",
+   "en": "",
+   "hv": "SƠ CUỒNG",
+   "vi": "ngông cuồng phóng túng",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "式",
+   "py": "shì",
+   "pos": "名",
+   "zh": "样式。",
+   "en": "",
+   "hv": "THỨC",
+   "vi": "kiểu, kiểu cách",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "誉为",
+   "py": "yùwéi",
+   "pos": "动",
+   "zh": "称赞为。",
+   "en": "",
+   "hv": "DỰ VI",
+   "vi": "được ca ngợi là, tôn vinh là",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "神童",
+   "py": "shéntóng",
+   "pos": "名",
+   "zh": "指特别聪明，有超常才能的儿童。",
+   "en": "child prodigy",
+   "hv": "THẦN ĐỒNG",
+   "vi": "thần đồng",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "藤",
+   "py": "téng",
+   "pos": "名",
+   "zh": "某些植物的茎，可以做成箱子、椅子等。",
+   "en": "cane; rattan",
+   "hv": "ĐẰNG",
+   "vi": "mây, song (cây leo)",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "朗吟",
+   "py": "lǎngyín",
+   "pos": "动",
+   "zh": "声音响亮地、有节奏地读或背诵。",
+   "en": "",
+   "hv": "LÃNG NGÂM",
+   "vi": "ngâm to, ngâm vang",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "泪珠",
+   "py": "lèizhū",
+   "pos": "名",
+   "zh": "一滴一滴的眼泪。",
+   "en": "teardrop",
+   "hv": "LỆ CHÂU",
+   "vi": "giọt nước mắt",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "悲剧",
+   "py": "bēijù",
+   "pos": "名",
+   "zh": "比喻不幸的遭遇。",
+   "en": "tragedy",
+   "hv": "BI KỊCH",
+   "vi": "bi kịch",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "厨子",
+   "py": "chúzi",
+   "pos": "名",
+   "zh": "厨师。",
+   "en": "cook; chef",
+   "hv": "TRÙ TỬ",
+   "vi": "đầu bếp",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "失恋",
+   "py": "shī liàn",
+   "pos": "",
+   "zh": "恋爱的一方失去另一方的爱情。",
+   "en": "",
+   "hv": "THẤT LUYẾN",
+   "vi": "thất tình",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "自杀",
+   "py": "zìshā",
+   "pos": "动",
+   "zh": "自己结束自己的生命。",
+   "en": "",
+   "hv": "TỰ SÁT",
+   "vi": "tự sát, tự tử",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "女郎",
+   "py": "nǚláng",
+   "pos": "名",
+   "zh": "年轻的女性。",
+   "en": "",
+   "hv": "NỮ LANG",
+   "vi": "cô gái trẻ",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "自溺",
+   "py": "zìnì",
+   "pos": "动",
+   "zh": "自己使自己淹死。",
+   "en": "",
+   "hv": "TỰ NỊCH",
+   "vi": "tự trầm, gieo mình xuống nước",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "诗意",
+   "py": "shīyì",
+   "pos": "名",
+   "zh": "像诗里表达的那样能给人以美感的意境。",
+   "en": "",
+   "hv": "THI Ý",
+   "vi": "chất thơ, thi vị",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "少量",
+   "py": "shǎoliàng",
+   "pos": "形",
+   "zh": "数量很少。",
+   "en": "",
+   "hv": "THIỂU LƯỢNG",
+   "vi": "số lượng ít, một ít",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "童话",
+   "py": "tónghuà",
+   "pos": "名",
+   "zh": "适合儿童阅读的富有想象的故事。",
+   "en": "children's stories; fairy tales",
+   "hv": "ĐỒNG THOẠI",
+   "vi": "truyện cổ tích, đồng thoại",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "束缚",
+   "py": "shùfù",
+   "pos": "动",
+   "zh": "使受到约束限制。(束缚——约束)",
+   "en": "",
+   "hv": "THÚC PHƯỢC",
+   "vi": "trói buộc, ràng buộc",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "尝试",
+   "py": "chángshì",
+   "pos": "动",
+   "zh": "试一试；试验。",
+   "en": "",
+   "hv": "THƯỜNG THÍ",
+   "vi": "thử, thử làm",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "好战",
+   "py": "hàozhàn",
+   "pos": "形",
+   "zh": "喜欢挑起或介入战争。",
+   "en": "",
+   "hv": "HIẾU CHIẾN",
+   "vi": "hiếu chiến",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "蒙",
+   "py": "méng",
+   "pos": "动",
+   "zh": "受。",
+   "en": "",
+   "hv": "MÔNG",
+   "vi": "được, nhận được (ân huệ)",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "特许",
+   "py": "tèxǔ",
+   "pos": "动",
+   "zh": "特别许可。",
+   "en": "",
+   "hv": "ĐẶC HỨA",
+   "vi": "đặc cách cho phép",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "免",
+   "py": "miǎn",
+   "pos": "动",
+   "zh": "去掉；除掉。",
+   "en": "",
+   "hv": "MIỄN",
+   "vi": "miễn, bỏ",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "赋税",
+   "py": "fùshuì",
+   "pos": "名",
+   "zh": "各种税收的总称。",
+   "en": "taxes; levy",
+   "hv": "PHÚ THUẾ",
+   "vi": "thuế má",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "予",
+   "py": "yǔ",
+   "pos": "动",
+   "zh": "给。",
+   "en": "",
+   "hv": "DỮ",
+   "vi": "cho, ban cho",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "自治权",
+   "py": "zìzhìquán",
+   "pos": "名",
+   "zh": "有自己决定自己事务的权力。",
+   "en": "autonomy",
+   "hv": "TỰ TRỊ QUYỀN",
+   "vi": "quyền tự trị",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "隔绝",
+   "py": "géjué",
+   "pos": "动",
+   "zh": "阻隔，使断绝。",
+   "en": "",
+   "hv": "CÁCH TUYỆT",
+   "vi": "cách biệt, cô lập",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "自耕自织",
+   "py": "zì gēng zì zhī",
+   "pos": "",
+   "zh": "自己耕种自己纺织。指一种不与外界发生联系的经济状态。",
+   "en": "",
+   "hv": "TỰ CANH TỰ CHỨC",
+   "vi": "tự cày tự dệt, tự cung tự cấp",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "特地",
+   "py": "tèdì",
+   "pos": "副",
+   "zh": "表示专为某件事。",
+   "en": "",
+   "hv": "ĐẶC ĐỊA",
+   "vi": "cất công, đặc biệt (vì việc gì)",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "打",
+   "py": "dá",
+   "pos": "量",
+   "zh": "十二个为一打。",
+   "en": "",
+   "hv": "ĐẢ",
+   "vi": "tá (12 cái)",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "簿",
+   "py": "bù",
+   "pos": "名",
+   "zh": "本子。",
+   "en": "book",
+   "hv": "BẠ",
+   "vi": "cuốn vở, sổ",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "预期",
+   "py": "yùqī",
+   "pos": "动",
+   "zh": "预先期待。",
+   "en": "",
+   "hv": "DỰ KÌ",
+   "vi": "dự tính, mong đợi trước",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "洋洋",
+   "py": "yángyáng",
+   "pos": "形",
+   "zh": "形容众多或丰盛。",
+   "en": "",
+   "hv": "DƯƠNG DƯƠNG",
+   "vi": "đồ sộ, dồi dào",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "大作",
+   "py": "dàzuò",
+   "pos": "名",
+   "zh": "礼貌语，指别人的作品。课文中指作品的规模很大。",
+   "en": "",
+   "hv": "ĐẠI TÁC",
+   "vi": "tác phẩm lớn, đồ sộ",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "绘",
+   "py": "huì",
+   "pos": "动",
+   "zh": "画。",
+   "en": "",
+   "hv": "HỘI",
+   "vi": "vẽ",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "插画",
+   "py": "chāhuà",
+   "pos": "名",
+   "zh": "插在文字中间帮助说明内容的图画。",
+   "en": "",
+   "hv": "SÁP HỌA",
+   "vi": "tranh minh họa",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "帧",
+   "py": "zhēn",
+   "pos": "量",
+   "zh": "幅（用于字画等）。",
+   "en": "",
+   "hv": "TRINH",
+   "vi": "bức (lượng từ cho tranh, chữ)",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "装修",
+   "py": "zhuāngxiū",
+   "pos": "动",
+   "zh": "对房屋进行修饰，安装各种设备。",
+   "en": "",
+   "hv": "TRANG TU",
+   "vi": "trang trí, sửa sang (nhà cửa)",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "餐室",
+   "py": "cānshì",
+   "pos": "名",
+   "zh": "专供吃饭的房间。",
+   "en": "",
+   "hv": "XAN THẤT",
+   "vi": "phòng ăn",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "荷花",
+   "py": "héhuā",
+   "pos": "名",
+   "zh": "",
+   "en": "lotus",
+   "hv": "HÀ HOA",
+   "vi": "hoa sen",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "踌躇",
+   "py": "chóuchú",
+   "pos": "形",
+   "zh": "拿不定主意。也形容得意的样子。(踌躇——犹豫)",
+   "en": "",
+   "hv": "TRÙ TRỪ",
+   "vi": "do dự, chần chừ",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "穷困",
+   "py": "qióngkùn",
+   "pos": "形",
+   "zh": "生活贫穷，经济困难。",
+   "en": "",
+   "hv": "CÙNG KHỐN",
+   "vi": "nghèo khổ, túng quẫn",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "钢琴",
+   "py": "gāngqín",
+   "pos": "名",
+   "zh": "",
+   "en": "piano",
+   "hv": "CƯƠNG CẦM",
+   "vi": "đàn piano, dương cầm",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "富丽堂皇",
+   "py": "fùlì tánghuáng",
+   "pos": "",
+   "zh": "华丽而又宏大。",
+   "en": "",
+   "hv": "PHÚ LỆ ĐƯỜNG HOÀNG",
+   "vi": "lộng lẫy nguy nga",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "演奏",
+   "py": "yǎnzòu",
+   "pos": "动",
+   "zh": "用乐器表演。",
+   "en": "",
+   "hv": "DIỄN TẤU",
+   "vi": "biểu diễn (nhạc cụ)",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "音符",
+   "py": "yīnfú",
+   "pos": "名",
+   "zh": "乐谱中表现音长或音高的符号。",
+   "en": "note",
+   "hv": "ÂM PHÙ",
+   "vi": "nốt nhạc",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "字眼",
+   "py": "zìyǎn",
+   "pos": "名",
+   "zh": "用在句子中的字或词。",
+   "en": "",
+   "hv": "TỰ NHÃN",
+   "vi": "con chữ, từ ngữ",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "敏感",
+   "py": "mǐngǎn",
+   "pos": "形",
+   "zh": "生理上或心理上对外界事物反应很快。",
+   "en": "",
+   "hv": "MẪN CẢM",
+   "vi": "nhạy cảm",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "弹奏",
+   "py": "tánzòu",
+   "pos": "动",
+   "zh": "用手指演奏。",
+   "en": "",
+   "hv": "ĐÀN TẤU",
+   "vi": "đánh đàn, gảy đàn",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "穿戴",
+   "py": "chuāndài",
+   "pos": "动",
+   "zh": "穿和戴，泛指打扮。",
+   "en": "",
+   "hv": "XUYÊN ĐÁI",
+   "vi": "ăn mặc, đội mũ mặc áo",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "携手",
+   "py": "xiéshǒu",
+   "pos": "动",
+   "zh": "手拉着手。",
+   "en": "",
+   "hv": "HUỀ THỦ",
+   "vi": "nắm tay nhau",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "浓厚",
+   "py": "nónghòu",
+   "pos": "形",
+   "zh": "（色彩、意识、气氛）重。",
+   "en": "",
+   "hv": "NỒNG HẬU",
+   "vi": "đậm, đậm đà",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "音韵",
+   "py": "yīnyùn",
+   "pos": "名",
+   "zh": "诗文的音节韵律。",
+   "en": "",
+   "hv": "ÂM VẬN",
+   "vi": "âm vận, vần điệu",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "铿锵",
+   "py": "kēngqiāng",
+   "pos": "形",
+   "zh": "形容声音有节奏而响亮。",
+   "en": "",
+   "hv": "KHANH THƯƠNG",
+   "vi": "vang dội nhịp nhàng",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "珠灰",
+   "py": "zhūhuī",
+   "pos": "形",
+   "zh": "形容一种有珍珠光泽的灰色。",
+   "en": "",
+   "hv": "CHÂU HÔI",
+   "vi": "màu xám ngọc trai",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "婉妙",
+   "py": "wǎnmiào",
+   "pos": "形",
+   "zh": "温和曲折而又优美。",
+   "en": "",
+   "hv": "UYỂN DIỆU",
+   "vi": "uyển chuyển tuyệt diệu",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "堆砌",
+   "py": "duīqì",
+   "pos": "动",
+   "zh": "比喻写文章时使用大量华丽而无用的词语。",
+   "en": "",
+   "hv": "ĐÔI THẾ",
+   "vi": "chất chồng từ ngữ, sáo rỗng",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "俗气",
+   "py": "súqi",
+   "pos": "形",
+   "zh": "粗俗；庸俗。",
+   "en": "",
+   "hv": "TỤC KHÍ",
+   "vi": "tầm thường, dung tục",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "时装",
+   "py": "shízhuāng",
+   "pos": "名",
+   "zh": "式样最新的服装。",
+   "en": "",
+   "hv": "THỜI TRANG",
+   "vi": "thời trang",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "自信",
+   "py": "zìxìn",
+   "pos": "动",
+   "zh": "相信自己。",
+   "en": "",
+   "hv": "TỰ TÍN",
+   "vi": "tự tin",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "懊悔",
+   "py": "àohuǐ",
+   "pos": "动",
+   "zh": "做错了事或说错了话，心里自恨不该这样。(懊悔——懊恼)",
+   "en": "",
+   "hv": "ÁO HỐI",
+   "vi": "hối hận, ân hận",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "看护",
+   "py": "kānhù",
+   "pos": "动",
+   "zh": "护理。",
+   "en": "",
+   "hv": "KHÁN HỘ",
+   "vi": "chăm sóc (người bệnh)",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "宁愿",
+   "py": "nìngyuàn",
+   "pos": "副",
+   "zh": "表示比较几方面的利害得失后选取一面。",
+   "en": "",
+   "hv": "NINH NGUYỆN",
+   "vi": "thà, thà rằng",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "裁缝",
+   "py": "cáifeng",
+   "pos": "名",
+   "zh": "专门以做衣服为职业的人。",
+   "en": "tailor; dressmaker",
+   "hv": "TÀI PHÙNG",
+   "vi": "thợ may",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "衣裳",
+   "py": "yīshang",
+   "pos": "名",
+   "zh": "衣服。",
+   "en": "",
+   "hv": "Y THƯỜNG",
+   "vi": "quần áo",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "毛线",
+   "py": "máoxiàn",
+   "pos": "名",
+   "zh": "用动物的毛或人造毛纺成的线。",
+   "en": "knitting wool",
+   "hv": "MAO TUYẾN",
+   "vi": "len, sợi len",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "茫然",
+   "py": "mángrán",
+   "pos": "形",
+   "zh": "完全不知道的样子。",
+   "en": "",
+   "hv": "MANG NHIÊN",
+   "vi": "mờ mịt, ngơ ngác",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "废物",
+   "py": "fèiwu",
+   "pos": "名",
+   "zh": "没用的东西，比喻没有用的人。",
+   "en": "",
+   "hv": "PHẾ VẬT",
+   "vi": "đồ bỏ đi, người vô dụng",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "肥皂粉",
+   "py": "féizàofěn",
+   "pos": "名",
+   "zh": "洗衣粉。",
+   "en": "washing powder",
+   "hv": "PHÌ TẠO PHẤN",
+   "vi": "bột giặt",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "眼色",
+   "py": "yǎnsè",
+   "pos": "名",
+   "zh": "向人示意的目光。",
+   "en": "",
+   "hv": "NHÃN SẮC",
+   "vi": "ánh mắt ra hiệu, sắc mặt",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "面部",
+   "py": "miànbù",
+   "pos": "名",
+   "zh": "脸。",
+   "en": "",
+   "hv": "DIỆN BỘ",
+   "vi": "khuôn mặt",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "神态",
+   "py": "shéntài",
+   "pos": "名",
+   "zh": "神情态度。",
+   "en": "",
+   "hv": "THẦN THÁI",
+   "vi": "thần thái, vẻ mặt",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "待人接物",
+   "py": "dài rén jiē wù",
+   "pos": "",
+   "zh": "跟人相处。",
+   "en": "",
+   "hv": "ĐÃI NHÂN TIẾP VẬT",
+   "vi": "đối nhân xử thế",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "显露",
+   "py": "xiǎnlù",
+   "pos": "动",
+   "zh": "现出。",
+   "en": "",
+   "hv": "HIỂN LỘ",
+   "vi": "lộ ra, bộc lộ",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "愚笨",
+   "py": "yúbèn",
+   "pos": "形",
+   "zh": "头脑迟钝，不灵活。",
+   "en": "",
+   "hv": "NGU BỔN",
+   "vi": "ngu dốt, vụng về",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "均衡",
+   "py": "jūnhéng",
+   "pos": "形",
+   "zh": "平衡。",
+   "en": "",
+   "hv": "QUÂN HÀNH",
+   "vi": "cân bằng",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "沉痛",
+   "py": "chéntòng",
+   "pos": "形",
+   "zh": "深刻而令人痛心的。",
+   "en": "",
+   "hv": "TRẦM THỐNG",
+   "vi": "đau xót, nặng nề",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "领略",
+   "py": "lǐnglüè",
+   "pos": "动",
+   "zh": "了解；欣赏。",
+   "en": "",
+   "hv": "LĨNH LƯỢC",
+   "vi": "cảm nhận, thưởng thức",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "霓虹灯",
+   "py": "níhóngdēng",
+   "pos": "名",
+   "zh": "灯的一种，通电时发出各种颜色的光。多用作广告灯或信号灯。",
+   "en": "neon light",
+   "hv": "NGHÊ HỒNG ĐĂNG",
+   "vi": "đèn nê-ông",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "巅",
+   "py": "diān",
+   "pos": "名",
+   "zh": "山顶。",
+   "en": "",
+   "hv": "ĐIÊN",
+   "vi": "đỉnh, ngọn",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "交接",
+   "py": "jiāojiē",
+   "pos": "动",
+   "zh": "结交，打交道。",
+   "en": "",
+   "hv": "GIAO TIẾP",
+   "vi": "giao tiếp, giao du",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "欢悦",
+   "py": "huānyuè",
+   "pos": "形",
+   "zh": "欢乐喜悦。",
+   "en": "",
+   "hv": "HOAN DUYỆT",
+   "vi": "vui sướng, hân hoan",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "咬啮",
+   "py": "yǎoniè",
+   "pos": "动",
+   "zh": "用牙咬。",
+   "en": "",
+   "hv": "GIẢO KHIẾT",
+   "vi": "cắn, gặm nhấm",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "袭",
+   "py": "xí",
+   "pos": "量",
+   "zh": "用于成套的衣服。",
+   "en": "",
+   "hv": "TẬP",
+   "vi": "bộ (lượng từ cho quần áo)",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "华美",
+   "py": "huáměi",
+   "pos": "形",
+   "zh": "美丽而有光彩。",
+   "en": "",
+   "hv": "HOA MĨ",
+   "vi": "lộng lẫy, đẹp đẽ",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "袍",
+   "py": "páo",
+   "pos": "名",
+   "zh": "从上身一直到脚面的一种长衣服。",
+   "en": "robe; gown",
+   "hv": "BÀO",
+   "vi": "áo choàng dài",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "天才梦",
+   "paragraphs": [
+    "第一部分",
+    "我是一个古怪的女孩，从小被视为天才，除了发展我的天才外别无生存的目标。然而，当童年的狂想逐渐褪色的时候，我发现我除了天才梦之外一无所有——所有的只是天才的乖僻缺点。世人原谅瓦格涅的疏狂，可是他们不会原谅我。",
+    "加上一点美国式的宣传，也许我会被誉为神童。我三岁时能背诵唐诗。我还记得摇摇摆摆地立在一个满清遗老的藤椅前朗吟“商女不知亡国恨，隔江犹唱后庭花”，眼看着他的泪珠滚下来。七岁时我写了第一部小说，一个家庭悲剧。遇到笔画复杂的字，我常常跑去问厨子怎样写。第二部小说是关于一个失恋自杀的女郎。我母亲批评说：如果她要自杀，她决不会从上海乘火车到西湖去自溺。可是我因为西湖诗意的背景，终于固执地保存了这一点。",
+    "我仅有的课外读物是《西游记》与少量的童话，但我的思想并不为它们所束缚。八岁那年，我尝试过一篇类似乌托邦的小说，题名《快乐村》。快乐村人是一个好战的高原民族，因克服苗人有功，蒙中国皇帝特许，免征赋税，并予自治权。所以快乐村是一个与外界隔绝的大家庭，自耕自织，保存着部落时代的活泼文化。",
+    "我特地将半打练习簿缝在一起，预期一本洋洋大作，然而不久我就对这伟大的题材失去了兴趣。现在我仍旧保存着我所绘的插画多帧，介绍这种理想社会的服务，建筑，室内装修，包括图书馆，“演武厅”，巧克力店，屋顶花园。公共餐室是荷花池里的一座凉亭。我不记得那里有没有电影院与社会主义——虽然缺少这两样文明产物，他们似乎也过得很好。",
+    "九岁时，我踌躇着不知道应当选择音乐或美术作我终身的事业。看了一部描写穷困的画家的影片后，我哭了一场，决定做一个钢琴家，在富丽堂皇的音乐厅里演奏。",
+    "第二部分",
+    "对于色彩，音符，字眼，我极为敏感。当我弹奏钢琴时，我想象那八个音符有不同的个性，穿戴了鲜艳的衣帽携手舞蹈。我学写文章，爱用色彩浓厚，音韵铿锵的字眼，如“珠灰”，“黄昏”，“婉妙”，“splendour”，“melancholy”，因此常犯了堆砌的毛病。直到现在，我仍然爱看《聊斋志异》与俗气的巴黎时装报告，便是为了这种有吸引力的字眼。",
+    "在学校里我得到自由发展。我的自信心日益坚强，直到我十六岁时，我母亲从法国回来，将她睽隔多年的女儿研究了一下。",
+    "“我懊悔从前小心看护你的伤寒症，”她告诉我，“我宁愿看你死，不愿看你活着使你自己处处受痛苦。”",
+    "我发现我不会削苹果。经过艰苦的努力我才学会补袜子。我怕上理发店，怕见客，怕给裁缝试衣裳。许多人尝试过教我织毛线，可是没有一个成功。在一间房里住了两年，问我电铃在哪儿我还茫然。我天天乘黄包车上医院打针，接连三个月，仍然不认识那条路。总而言之，在现实的社会里，我等于一个废物。",
+    "我母亲给我两年的时间学习适应环境。她教我煮饭，用肥皂粉洗衣；练习行路的姿势；看人的眼色，点灯后记得拉上窗帘；照镜子研究面部神态；如果没有幽默天才，千万别说笑话。",
+    "在待人接物的常识方面，我显露惊人的愚笨。我的两年计划是一个失败的试验。除了使我的思想失去均衡外，我母亲的沉痛警告没有给我任何影响。",
+    "生活的艺术，有一部分我不是不能领略。我懂得怎么看“七月巧云”，听苏格兰兵吹bagpipe，享受微风中的藤椅，吃盐水花生，欣赏雨夜的霓虹灯，从双层公共汽车上伸出手摘树巅的绿叶。在没有人与人交接的场合，我充满了生命的欢悦。可是我一天不能克服这种咬啮性的小烦恼，生命是一袭华美的袍，爬满了蚤子。",
+    "（作者：张爱玲，选自《张爱玲文集》（第四卷），有改动）"
+   ],
+   "translations": [
+    "Phần một",
+    "Tôi là một cô bé kỳ quặc, từ nhỏ đã được coi là thiên tài, ngoài việc phát triển thiên tài của mình ra thì không có mục tiêu sống nào khác. Thế nhưng, khi những mộng tưởng thời thơ ấu dần phai nhạt, tôi nhận ra rằng ngoài giấc mộng thiên tài, tôi chẳng có gì cả — thứ tôi có chỉ là những khuyết điểm quái gở của thiên tài. Người đời tha thứ cho sự ngông cuồng của Wagner, nhưng họ sẽ không tha thứ cho tôi.",
+    "Thêm một chút quảng bá kiểu Mỹ, có lẽ tôi đã được tôn vinh là thần đồng. Ba tuổi tôi đã thuộc lòng thơ Đường. Tôi còn nhớ mình lẫm chẫm đứng trước chiếc ghế mây của một vị di thần nhà Mãn Thanh, cất giọng ngâm \"Thương nữ bất tri vong quốc hận, cách giang do xướng Hậu đình hoa\", rồi nhìn những giọt lệ lăn xuống trên mặt ông. Bảy tuổi tôi viết cuốn tiểu thuyết đầu tiên, một bi kịch gia đình. Gặp chữ nhiều nét phức tạp, tôi thường chạy đi hỏi đầu bếp viết thế nào. Cuốn tiểu thuyết thứ hai kể về một cô gái thất tình tự tử. Mẹ tôi phê bình: nếu cô ta muốn tự tử thì nhất định sẽ không đi tàu từ Thượng Hải đến Tây Hồ để gieo mình xuống nước. Nhưng vì cái phông nền đầy chất thơ của Tây Hồ, rốt cuộc tôi vẫn cố chấp giữ nguyên chi tiết ấy.",
+    "Sách đọc ngoại khóa duy nhất của tôi là \"Tây du ký\" và một ít truyện cổ tích, nhưng tư tưởng của tôi không hề bị chúng trói buộc. Năm tám tuổi, tôi thử viết một cuốn tiểu thuyết kiểu Utopia, đặt tên là \"Làng Vui Vẻ\". Người làng Vui Vẻ là một dân tộc cao nguyên hiếu chiến, vì có công chinh phục người Miêu nên được hoàng đế Trung Hoa đặc cách miễn thuế má, lại ban cho quyền tự trị. Vì thế làng Vui Vẻ là một đại gia đình cách biệt với thế giới bên ngoài, tự cày tự dệt, giữ gìn nền văn hóa sôi nổi của thời bộ lạc.",
+    "Tôi đã cất công khâu nửa tá cuốn vở tập lại với nhau, dự tính sẽ viết một tác phẩm đồ sộ, nhưng chẳng bao lâu tôi đã mất hứng thú với đề tài vĩ đại ấy. Đến giờ tôi vẫn còn giữ nhiều bức tranh minh họa do mình vẽ, giới thiệu các dịch vụ, kiến trúc, cách bài trí nội thất của xã hội lý tưởng này, gồm thư viện, \"võ đường\", tiệm sô-cô-la, vườn trên sân thượng. Phòng ăn công cộng là một ngôi đình nghỉ mát giữa hồ sen. Tôi không nhớ ở đó có rạp chiếu bóng và chủ nghĩa xã hội hay không — dù thiếu hai sản phẩm văn minh ấy, có vẻ họ vẫn sống rất tốt.",
+    "Năm chín tuổi, tôi do dự không biết nên chọn âm nhạc hay mỹ thuật làm sự nghiệp cả đời. Sau khi xem một bộ phim kể về một họa sĩ nghèo khổ, tôi khóc một trận rồi quyết định trở thành nghệ sĩ dương cầm, biểu diễn trong những phòng hòa nhạc lộng lẫy nguy nga.",
+    "Phần hai",
+    "Đối với màu sắc, nốt nhạc và con chữ, tôi cực kỳ nhạy cảm. Khi đánh đàn, tôi tưởng tượng tám nốt nhạc kia mỗi nốt một tính cách, khoác áo đội mũ rực rỡ nắm tay nhau nhảy múa. Khi tập viết văn, tôi thích dùng những chữ màu sắc đậm đà, âm vận vang vọng như \"xám ngọc trai\", \"hoàng hôn\", \"uyển diệu\", \"splendour\", \"melancholy\", vì thế thường mắc lỗi chất chồng từ ngữ. Cho đến tận bây giờ, tôi vẫn thích đọc \"Liêu trai chí dị\" và những bản tin thời trang Paris dung tục, chính là vì những con chữ hấp dẫn kiểu ấy.",
+    "Ở trường, tôi được phát triển tự do. Lòng tự tin của tôi ngày càng vững vàng, cho đến năm tôi mười sáu tuổi, mẹ tôi từ Pháp trở về và \"nghiên cứu\" một lượt cô con gái đã xa cách nhiều năm.",
+    "\"Mẹ hối hận vì ngày trước đã cẩn thận chăm con qua trận thương hàn,\" bà bảo tôi, \"mẹ thà nhìn con chết còn hơn nhìn con sống mà tự làm mình khổ sở khắp nơi.\"",
+    "Tôi phát hiện mình không biết gọt táo, phải cố gắng vất vả lắm mới học được cách vá tất. Tôi sợ đến tiệm cắt tóc, sợ tiếp khách, sợ thử áo cho thợ may. Nhiều người đã thử dạy tôi đan len, nhưng chẳng ai thành công. Sống trong một căn phòng hai năm trời, hỏi chuông điện ở đâu tôi vẫn ngơ ngác. Ngày nào tôi cũng đi xe kéo đến bệnh viện tiêm thuốc, liên tục ba tháng mà vẫn không nhớ đường. Tóm lại, trong xã hội hiện thực, tôi chẳng khác gì một kẻ vô dụng.",
+    "Mẹ cho tôi hai năm để học cách thích nghi với môi trường. Bà dạy tôi nấu cơm, giặt quần áo bằng bột giặt; tập dáng đi; nhìn sắc mặt người khác; bật đèn rồi thì nhớ kéo rèm cửa; soi gương nghiên cứu nét mặt; nếu không có năng khiếu hài hước thì tuyệt đối đừng kể chuyện cười.",
+    "Về những hiểu biết thông thường trong đối nhân xử thế, tôi bộc lộ sự vụng về đáng kinh ngạc. Kế hoạch hai năm của tôi là một thử nghiệm thất bại. Ngoài việc làm tư tưởng tôi mất cân bằng, những lời cảnh cáo đau xót của mẹ chẳng hề có ảnh hưởng gì đến tôi.",
+    "Nghệ thuật sống, có một phần tôi không phải là không cảm nhận được. Tôi biết cách ngắm \"mây xảo tháng bảy\", nghe lính Scotland thổi kèn túi, tận hưởng chiếc ghế mây trong làn gió nhẹ, ăn đậu phộng luộc nước muối, thưởng thức ánh đèn nê-ông trong đêm mưa, thò tay từ xe buýt hai tầng hái những chiếc lá xanh trên ngọn cây. Ở những nơi không phải giao tiếp giữa người với người, tôi tràn đầy niềm vui sống. Nhưng chừng nào tôi còn chưa vượt qua được những phiền muộn nhỏ nhặt gặm nhấm ấy, thì đời người vẫn là một chiếc áo choàng lộng lẫy, bò đầy bọ chét.",
+    "(Tác giả: Trương Ái Linh, trích từ \"Tuyển tập Trương Ái Linh\" (quyển 4), có sửa đổi)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "高等教育",
+   "paragraphs": [
+    "伟高考落榜后就随哥哥到深圳打工。深圳很美，伟的眼睛就不够用了。哥说，不赖（lài）吧？伟说，不赖。哥说，不赖是不赖，可总归不是自己的家，人家瞧不起咱。伟说，咱自个儿瞧得起自个儿就行。",
+    "伟和哥在一个码头的仓库给人家缝补篷布。伟很能干，做的活儿很精细，他看到丢弃的线头碎布也拾起来，留做备用。",
+    "一天夜里，暴风雨骤（zhòu）起，伟从床上爬起来，冲到雨帘中。哥劝不住他，骂他是个傻瓜。",
+    "在露天仓库里，伟查了一个又一个的货堆，加固被掀起的篷布。这时候老板开车过来了，伟已成了一个水人儿。老板看到货物无损，当场要给伟加薪。他说，不用了，我只是看看我缝补的篷布结不结实。",
+    "老板见他如此诚实，就想让他到自己的另一个公司当经理。伟说，我不行，让文化高的人干吧。老板说，我说你行你就行，你比文化人高的就是你身上的憨（hān）劲儿！就这样，伟当了经理。",
+    "公司刚开张，需要招聘几个大专以上文化程度的年轻人当业务员，哥闻讯跑来，说，给我弄个美差（chāi）干干。伟说，你不行。哥说，看大门也不行吗？伟说不行，你不会把活当自己家的事干。哥的脸涨得通红，骂他没良心！伟说把事当自个儿的事干才算有良心。",
+    "公司来了几个有文凭的年轻人，业务很快就开展起来了，效益也不错。不知几个受过高等教育的年轻人从哪儿知道了伟的底细，很是不服，“就凭我们的学历，怎能受他的领导？”伟知道并不气，说：我们既然在一起做事，就要把事做好。我这经理谁都可以干，可有价值的并不是在经理的职位上。",
+    "那几个大学生面面相觑（qù），就不吭声了。",
+    "一家外商听说伟的公司很有发展前景，想和伟共同合作一个项目。伟的助手说，这可是一条大鱼啊。伟说，对头。",
+    "外商来了，是位外籍华人，还带着翻译、秘书一行几人。",
+    "伟用英语问：“先生，会说汉语吗？”",
+    "那外商一愣，说：“会。”伟就说：“我们用汉语谈好吗？”",
+    "外商道了一声“OK”。谈完了，伟邀请他们共进晚餐。",
+    "晚餐很简单，但很有特色。所有的盘子都尽了，只剩下两个小笼包子。",
+    "伟对服务员说：“请把这两个包子装进食品袋里，我带走。”伟说这话时很自然，他的助手却紧张起来，不住地看那外商。",
+    "那外商站了起来，抓住伟的手紧紧地握着，说：“OK，明天我们就签合同。”",
+    "事成之后，老板设宴款待外商，伟和他的助手都去了。",
+    "席间，外商轻声问伟：“你受过什么教育？为什么能做得这么好？”",
+    "伟说：“我家穷，父母不识字。可他们对我的教育是从一粒米、一根线开始的。后来，我母亲去世，父亲辛辛苦苦地供我上学。他说：‘俺不指望你高人一等，能做好自己的事就中’……”",
+    "一旁的老板眼里渗出亮亮的液体。他端起一杯酒，说：“我提议，敬他老人家一杯，你受到了人生最好的教育，把你父亲接来吧。”",
+    "（作者：王伟，选自《深圳特区报》）"
+   ],
+   "translations": [
+    "Vĩ thi đại học trượt bèn theo anh trai đến Thâm Quyến làm thuê. Thâm Quyến đẹp quá, mắt Vĩ nhìn không xuể. Anh hỏi: Không tệ chứ? Vĩ đáp: Không tệ. Anh nói: Không tệ thì không tệ thật, nhưng rốt cuộc chẳng phải nhà mình, người ta coi thường mình. Vĩ nói: Mình tự coi trọng mình là được.",
+    "Vĩ và anh trai vá bạt cho người ta ở kho hàng của một bến cảng. Vĩ rất giỏi giang, làm việc rất tỉ mỉ, thấy đầu chỉ, vải vụn bị vứt đi cũng nhặt lên, giữ lại để dùng khi cần.",
+    "Một đêm, mưa bão nổi lên đột ngột, Vĩ bật dậy khỏi giường, lao vào màn mưa. Anh trai can không được, mắng cậu là đồ ngốc.",
+    "Trong kho hàng ngoài trời, Vĩ kiểm tra hết đống hàng này đến đống hàng khác, gia cố những tấm bạt bị gió lật lên. Lúc ấy ông chủ lái xe tới, Vĩ đã ướt như chuột lột. Ông chủ thấy hàng hóa không hư hại gì, lập tức muốn tăng lương cho Vĩ. Cậu nói: Không cần đâu ạ, cháu chỉ xem những tấm bạt mình vá có chắc không thôi.",
+    "Ông chủ thấy cậu thật thà như vậy, bèn muốn cho cậu sang một công ty khác của mình làm giám đốc. Vĩ nói: Cháu không làm được đâu, để người có học vấn cao làm đi ạ. Ông chủ nói: Tôi bảo cậu làm được là cậu làm được, cái cậu hơn người có học chính là cái tính chân chất ở cậu! Thế là Vĩ làm giám đốc.",
+    "Công ty vừa khai trương, cần tuyển vài người trẻ có trình độ cao đẳng trở lên làm nhân viên kinh doanh. Anh trai nghe tin chạy đến, nói: Kiếm cho anh một việc béo bở mà làm. Vĩ nói: Anh không làm được. Anh hỏi: Gác cổng cũng không được à? Vĩ nói không được, anh sẽ không làm việc như làm việc nhà mình. Anh trai đỏ bừng mặt, mắng cậu vô lương tâm! Vĩ nói coi việc chung như việc của chính mình mới gọi là có lương tâm.",
+    "Công ty có thêm mấy người trẻ có bằng cấp, công việc kinh doanh nhanh chóng khởi sắc, hiệu quả cũng khá. Không biết mấy người trẻ được học đại học ấy biết được lai lịch của Vĩ từ đâu, rất không phục: \"Với học vấn của chúng ta, sao có thể chịu sự lãnh đạo của anh ta?\" Vĩ biết chuyện cũng không giận, nói: Chúng ta đã cùng làm việc thì phải làm cho tốt. Cái chức giám đốc này của tôi ai cũng làm được, nhưng điều có giá trị không nằm ở chức vị giám đốc.",
+    "Mấy sinh viên ấy nhìn nhau, rồi không ai nói gì nữa.",
+    "Một thương nhân nước ngoài nghe nói công ty của Vĩ có triển vọng phát triển, muốn cùng Vĩ hợp tác một dự án. Trợ lý của Vĩ nói: Đây đúng là một con cá lớn đấy. Vĩ nói: Đúng thế.",
+    "Thương nhân nước ngoài đến, là một người Hoa quốc tịch nước ngoài, còn dẫn theo phiên dịch, thư ký, cả đoàn mấy người.",
+    "Vĩ hỏi bằng tiếng Anh: \"Thưa ông, ông có nói được tiếng Trung không?\"",
+    "Vị thương nhân sững lại, nói: \"Được.\" Vĩ liền nói: \"Chúng ta nói chuyện bằng tiếng Trung nhé?\"",
+    "Vị thương nhân đáp một tiếng \"OK\". Bàn bạc xong, Vĩ mời họ cùng dùng bữa tối.",
+    "Bữa tối rất đơn giản nhưng rất đặc sắc. Đĩa nào cũng sạch trơn, chỉ còn lại hai chiếc bánh bao nhỏ.",
+    "Vĩ nói với nhân viên phục vụ: \"Làm ơn cho hai cái bánh bao này vào túi đựng thức ăn, tôi mang về.\" Vĩ nói câu ấy rất tự nhiên, còn trợ lý của cậu thì căng thẳng hẳn lên, cứ liếc nhìn vị thương nhân mãi.",
+    "Vị thương nhân đứng dậy, nắm chặt tay Vĩ, nói: \"OK, ngày mai chúng ta ký hợp đồng.\"",
+    "Sau khi việc thành, ông chủ mở tiệc chiêu đãi vị thương nhân, Vĩ và trợ lý đều đến dự.",
+    "Trong bữa tiệc, vị thương nhân khẽ hỏi Vĩ: \"Cậu đã được giáo dục thế nào? Vì sao lại làm tốt như vậy?\"",
+    "Vĩ nói: \"Nhà tôi nghèo, bố mẹ không biết chữ. Nhưng sự giáo dục của họ đối với tôi bắt đầu từ một hạt gạo, một sợi chỉ. Sau này mẹ tôi qua đời, bố vất vả nuôi tôi đi học. Ông bảo: 'Bố không mong con hơn người, làm tốt việc của mình là được'...\"",
+    "Ông chủ ngồi bên cạnh rưng rưng nước mắt. Ông nâng một ly rượu, nói: \"Tôi đề nghị, chúng ta kính cụ một ly. Cậu đã nhận được sự giáo dục tốt nhất của đời người, hãy đón bố cậu lên đây đi.\"",
+    "(Tác giả: Vương Vĩ, trích từ \"Báo Đặc khu Thâm Quyến\")"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "被视为 (được coi là, bị xem là)",
+   "structure": "A 被（B）视为 C；把 A 视为 C",
+   "explanation": "被视为 nghĩa là \"được/bị coi là, được/bị xem như\". Khi dùng bắt buộc phải có tân ngữ phía sau. \"被\" và \"视为\" có thể tách ra, chen tác nhân vào giữa: 被 + người + 视为…. Liên hệ: dạng chủ động 把……视为…… (coi … là …), ví dụ: 中国人一直把婚姻视为人生中最重要的事情 (Người Trung Quốc luôn coi hôn nhân là việc quan trọng nhất đời).",
+   "examples": [
+    {
+     "zh": "我是一个古怪的女孩，从小被视为天才，……",
+     "vi": "Tôi là một cô bé kỳ quặc, từ nhỏ đã được coi là thiên tài, ..."
+    },
+    {
+     "zh": "在中国的小学，语文和数学被视为最重要的课程。",
+     "vi": "Ở tiểu học Trung Quốc, ngữ văn và toán được coi là những môn quan trọng nhất."
+    },
+    {
+     "zh": "学习被这个坐不住的孩子视为畏途，他宁可被妈妈惩罚，也不愿意完成作业。",
+     "vi": "Đứa trẻ hiếu động này coi việc học như con đường đáng sợ, nó thà bị mẹ phạt chứ không chịu làm bài tập."
+    },
+    {
+     "zh": "孔子是中国古代伟大的思想家、教育家，他被中国人视为圣人。",
+     "vi": "Khổng Tử là nhà tư tưởng, nhà giáo dục vĩ đại thời cổ đại Trung Quốc, ông được người Trung Quốc coi là thánh nhân."
+    }
+   ]
+  },
+  {
+   "point": "式 (kiểu, kiểu cách)",
+   "structure": "名词/形容词 + 式（中间不加“的”）",
+   "explanation": "式 nghĩa là \"kiểu dáng, kiểu cách\". Thường kết hợp trực tiếp với danh từ hoặc tính từ, ở giữa không thêm \"的\". Ví dụ: 古典式 (kiểu cổ điển), 现代式, 传统式, 新式, 旧式, 老式, 中式, 西式, 欧式, 日本式….",
+   "examples": [
+    {
+     "zh": "加上一点美国式的宣传，也许我会被誉为神童。",
+     "vi": "Thêm một chút quảng bá kiểu Mỹ, có lẽ tôi đã được tôn vinh là thần đồng."
+    },
+    {
+     "zh": "这个节目的主持人很喜欢穿传统的中式服装，形成了自己的独特风格，很受观众的欢迎。",
+     "vi": "Người dẫn chương trình này rất thích mặc trang phục truyền thống kiểu Trung Quốc, tạo nên phong cách riêng, rất được khán giả yêu thích."
+    },
+    {
+     "zh": "他留学回国后，连消费观念和方式都变成西式的了。",
+     "vi": "Sau khi du học về nước, đến cả quan niệm và cách tiêu dùng của anh ấy cũng thành kiểu phương Tây."
+    },
+    {
+     "zh": "这是最新式的发型，现在非常流行，你想试试吗？",
+     "vi": "Đây là kiểu tóc mới nhất, hiện đang rất thịnh hành, bạn có muốn thử không?"
+    }
+   ]
+  },
+  {
+   "point": "免 (miễn, bỏ)",
+   "structure": "免 + 单音节名词/动词；……，以免/免得 + 不好的结果",
+   "explanation": "免 là động từ, phía sau thường là danh từ hoặc động từ một âm tiết. Ví dụ: 免税 (miễn thuế), 免礼, 免罪, 免费, 免票, 免职, 免冠 (bỏ mũ), 免征, 免试, 免考, 免进, 免检, 免修…. Liên hệ: 以免 / 免得 đều là liên từ, đứng đầu vế sau của câu, biểu thị mục đích là để không dẫn đến kết quả nói ở vế đó (\"để khỏi, kẻo\").",
+   "examples": [
+    {
+     "zh": "蒙中国皇帝特许，免征赋税，并予自治权。",
+     "vi": "Được hoàng đế Trung Hoa đặc cách miễn thuế má, lại ban cho quyền tự trị."
+    },
+    {
+     "zh": "中国改革了婚姻登记制度，以前许多繁杂的手续现在都被免了。",
+     "vi": "Trung Quốc đã cải cách chế độ đăng ký kết hôn, nhiều thủ tục rườm rà trước đây nay đều được miễn."
+    },
+    {
+     "zh": "每逢“五一”、“十一”这样的重大节日，北京各大公园都可以免票进入。",
+     "vi": "Mỗi dịp lễ lớn như \"1/5\", \"1/10\", các công viên lớn ở Bắc Kinh đều có thể vào cửa miễn phí."
+    },
+    {
+     "zh": "应该把汽车停放在规定的地方，以免（免得）影响交通。",
+     "vi": "Nên đỗ xe ở nơi quy định, để khỏi ảnh hưởng giao thông."
+    },
+    {
+     "zh": "在正式场合发言的时候最好有个提纲，以免（免得）说乱了。",
+     "vi": "Khi phát biểu ở dịp trang trọng tốt nhất nên có dàn ý, kẻo nói lộn xộn."
+    }
+   ]
+  },
+  {
+   "point": "予 (cho, ban cho)",
+   "structure": "单音节动词 + 予 + 双音节名词/动词；予以 + 动词/形容词",
+   "explanation": "予 là động từ, nghĩa là \"cho\", thường dùng trong văn viết. Cấu trúc thường gặp: \"động từ một âm tiết + 予 + danh từ/động từ hai âm tiết\", ví dụ: 授予奖状 (trao bằng khen), 赋予称号, 赐予幸福, 请予批准, 给予支持, 给予奖励, 寄予希望, 准予入境, 免予处分…. Liên hệ: 予以 nghĩa là \"dành cho, tiến hành\", mang tân ngữ là động từ hoặc tính từ, dùng trong văn viết.",
+   "examples": [
+    {
+     "zh": "蒙中国皇帝特许，免征赋税，并予自治权。",
+     "vi": "Được hoàng đế Trung Hoa đặc cách miễn thuế má, lại ban cho quyền tự trị."
+    },
+    {
+     "zh": "由于他出色的工作表现，公司授予他“优秀员工”的称号。",
+     "vi": "Nhờ thành tích làm việc xuất sắc, công ty trao cho anh danh hiệu \"Nhân viên ưu tú\"."
+    },
+    {
+     "zh": "全家人都对小明寄予了很大的期望，希望他今后成为一名优秀的律师。",
+     "vi": "Cả nhà đều đặt kỳ vọng rất lớn vào Tiểu Minh, mong sau này cậu trở thành một luật sư giỏi."
+    },
+    {
+     "zh": "在我的人生道路上，父母亲给予我的支持和帮助是最大的。",
+     "vi": "Trên con đường đời của tôi, sự ủng hộ và giúp đỡ mà cha mẹ dành cho tôi là lớn nhất."
+    },
+    {
+     "zh": "对身体有残疾的人士，我们应该予以照顾。",
+     "vi": "Đối với người khuyết tật, chúng ta nên quan tâm chăm sóc."
+    }
+   ]
+  }
+ ]
+}

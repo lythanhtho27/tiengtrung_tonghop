@@ -1,0 +1,1703 @@
+{
+ "book": "gc2",
+ "lesson_num": 10,
+ "title": "音乐之伴",
+ "pages": [
+  249,
+  280
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "幼年",
+   "py": "yòunián",
+   "pos": "名",
+   "zh": "一般指人3岁到10岁左右的时期。",
+   "en": "",
+   "hv": "ẤU NIÊN",
+   "vi": "thời thơ ấu, tuổi nhỏ",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "保姆",
+   "py": "bǎomǔ",
+   "pos": "名",
+   "zh": "受雇为人照看小孩或料理家务的人员。",
+   "en": "(children's) nurse",
+   "hv": "BẢO MẪU",
+   "vi": "bảo mẫu, người giữ trẻ",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "旋律",
+   "py": "xuánlǜ",
+   "pos": "名",
+   "zh": "音乐上指若干乐音的有规律、有节奏的组合。",
+   "en": "melody",
+   "hv": "TOÀN LUẬT",
+   "vi": "giai điệu",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "稚拙",
+   "py": "zhìzhuō",
+   "pos": "形",
+   "zh": "幼稚朴拙，多形容艺术作品或人的行为。",
+   "en": "",
+   "hv": "TRĨ CHUYẾT",
+   "vi": "non nớt vụng về, mộc mạc ngây ngô",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "音符",
+   "py": "yīnfú",
+   "pos": "名",
+   "zh": "乐谱中表示音长和音高的符号。",
+   "en": "note",
+   "hv": "ÂM PHÙ",
+   "vi": "nốt nhạc",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "柔和",
+   "py": "róuhé",
+   "pos": "形",
+   "zh": "温顺；温和。",
+   "en": "",
+   "hv": "NHU HÒA",
+   "vi": "dịu dàng, êm dịu",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "温厚",
+   "py": "wēnhòu",
+   "pos": "形",
+   "zh": "平和宽厚。",
+   "en": "",
+   "hv": "ÔN HẬU",
+   "vi": "ôn hòa, hiền hậu",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "淳朴",
+   "py": "chúnpǔ",
+   "pos": "形",
+   "zh": "敦厚朴实。",
+   "en": "",
+   "hv": "THUẦN PHÁC",
+   "vi": "chất phác, mộc mạc",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "摇篮",
+   "py": "yáolán",
+   "pos": "名",
+   "zh": "婴儿的一种睡具，形似篮子，能左右晃动。",
+   "en": "cradle",
+   "hv": "DAO LAM",
+   "vi": "cái nôi",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "歌谣",
+   "py": "gēyáo",
+   "pos": "名",
+   "zh": "民间文学中的韵文，包括民歌、民谣、童谣等。",
+   "en": "ballad; folk song",
+   "hv": "CA DAO",
+   "vi": "ca dao, bài hát dân gian",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "骨节",
+   "py": "gǔjié",
+   "pos": "名",
+   "zh": "两骨相接的关节。",
+   "en": "joint",
+   "hv": "CỐT TIẾT",
+   "vi": "khớp xương",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "各司其职",
+   "py": "gè sī qí zhí",
+   "pos": "",
+   "zh": "各自做自己职责范围内的事情。",
+   "en": "",
+   "hv": "CÁC TI KỲ CHỨC",
+   "vi": "ai làm việc nấy, mỗi người một phận sự",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "互为其主",
+   "py": "hù wéi qí zhǔ",
+   "pos": "",
+   "zh": "课文中的意思是：两种事物交替着成为对孩子来说主要的一方面。",
+   "en": "",
+   "hv": "HỖ VI KỲ CHỦ",
+   "vi": "thay nhau làm chủ",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "轻捷",
+   "py": "qīngjié",
+   "pos": "形",
+   "zh": "轻快敏捷。",
+   "en": "",
+   "hv": "KHINH TIỆP",
+   "vi": "nhẹ nhàng nhanh nhẹn",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "倾慕",
+   "py": "qīngmù",
+   "pos": "动",
+   "zh": "倾心、钟情、爱慕。",
+   "en": "",
+   "hv": "KHUYNH MỘ",
+   "vi": "ngưỡng mộ, say mê, đem lòng yêu",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "相约",
+   "py": "xiāngyuē",
+   "pos": "动",
+   "zh": "彼此约定。",
+   "en": "",
+   "hv": "TƯƠNG ƯỚC",
+   "vi": "hẹn hò, hẹn nhau",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "聆听",
+   "py": "língtīng",
+   "pos": "动",
+   "zh": "仔细听。",
+   "en": "",
+   "hv": "LINH THÍNH",
+   "vi": "lắng nghe",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "倾诉",
+   "py": "qīngsù",
+   "pos": "动",
+   "zh": "把心里话全部诉说出来。",
+   "en": "",
+   "hv": "KHUYNH TỐ",
+   "vi": "giãi bày, thổ lộ",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "呼唤",
+   "py": "hūhuàn",
+   "pos": "动",
+   "zh": "召唤；号召。",
+   "en": "",
+   "hv": "HÔ HOÁN",
+   "vi": "tiếng gọi, mời gọi",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "细微末节",
+   "py": "xì wēi mò jié",
+   "pos": "",
+   "zh": "也说“细枝末节”。比喻无关紧要的小事。",
+   "en": "",
+   "hv": "TẾ VI MẠT TIẾT",
+   "vi": "tiểu tiết, chi tiết vụn vặt",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "颤音",
+   "py": "chànyīn",
+   "pos": "名",
+   "zh": "颤抖的声音；连续颤动的声音。",
+   "en": "trill",
+   "hv": "CHIẾN ÂM",
+   "vi": "tiếng rung, láy rền (trill)",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "纯真",
+   "py": "chúnzhēn",
+   "pos": "形",
+   "zh": "纯洁真挚。",
+   "en": "",
+   "hv": "THUẦN CHÂN",
+   "vi": "trong sáng, chân thành",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "无邪",
+   "py": "wúxié",
+   "pos": "形",
+   "zh": "没有不正当的念头。",
+   "en": "",
+   "hv": "VÔ TÀ",
+   "vi": "ngây thơ, vô tư không tà ý",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "本源",
+   "py": "běnyuán",
+   "pos": "名",
+   "zh": "事物产生的根源。",
+   "en": "origin; source",
+   "hv": "BẢN NGUYÊN",
+   "vi": "cội nguồn",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "冲动",
+   "py": "chōngdòng",
+   "pos": "名",
+   "zh": "受某种欲望刺激而产生的兴奋状态。",
+   "en": "impulse",
+   "hv": "XUNG ĐỘNG",
+   "vi": "sự thôi thúc, xung động",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "饥不择食",
+   "py": "jī bù zé shí",
+   "pos": "",
+   "zh": "饿急了就不挑食。比喻迫切需要时顾不上选择。",
+   "en": "",
+   "hv": "CƠ BẤT TRẠCH THỰC",
+   "vi": "đói ăn quàng, cần quá không kịp chọn lựa",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "来者不拒",
+   "py": "lái zhě bú jù",
+   "pos": "",
+   "zh": "对所有来的人或事物都不拒绝。",
+   "en": "",
+   "hv": "LAI GIẢ BẤT CỰ",
+   "vi": "ai đến cũng nhận, không từ chối thứ gì",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "欢欣",
+   "py": "huānxīn",
+   "pos": "形",
+   "zh": "喜悦而兴奋。",
+   "en": "",
+   "hv": "HOAN HÂN",
+   "vi": "vui mừng, hân hoan",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "辨析",
+   "py": "biànxī",
+   "pos": "动",
+   "zh": "通过辨别分析找出事物之间的区别。",
+   "en": "",
+   "hv": "BIỆN TÍCH",
+   "vi": "phân biệt, phân tích",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "奥妙",
+   "py": "àomiào",
+   "pos": "名",
+   "zh": "高深微妙的道理。",
+   "en": "",
+   "hv": "ÁO DIỆU",
+   "vi": "điều huyền diệu, sự kỳ diệu sâu xa",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "尾声",
+   "py": "wěishēng",
+   "pos": "名",
+   "zh": "某项活动或事情快要结束的阶段。",
+   "en": "end",
+   "hv": "VĨ THANH",
+   "vi": "giai đoạn cuối, đoạn kết",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "托付",
+   "py": "tuōfù",
+   "pos": "动",
+   "zh": "托人照料或办事。",
+   "en": "",
+   "hv": "THÁC PHÓ",
+   "vi": "gửi gắm, phó thác",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "发泄",
+   "py": "fāxiè",
+   "pos": "动",
+   "zh": "（把感情或情欲等）宣泄出来。",
+   "en": "",
+   "hv": "PHÁT TIẾT",
+   "vi": "trút ra, giải tỏa (tình cảm)",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "寄予",
+   "py": "jìyǔ",
+   "pos": "动",
+   "zh": "给予。",
+   "en": "",
+   "hv": "KÝ DỮ",
+   "vi": "gửi gắm, đặt vào",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "内心",
+   "py": "nèixīn",
+   "pos": "名",
+   "zh": "心中；心里。",
+   "en": "",
+   "hv": "NỘI TÂM",
+   "vi": "nội tâm, trong lòng",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "崇拜",
+   "py": "chóngbài",
+   "pos": "动",
+   "zh": "崇敬钦佩。",
+   "en": "",
+   "hv": "SÙNG BÁI",
+   "vi": "sùng bái, tôn thờ",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "爱恋",
+   "py": "àiliàn",
+   "pos": "动",
+   "zh": "喜爱、眷恋而舍不得离开。",
+   "en": "",
+   "hv": "ÁI LUYẾN",
+   "vi": "yêu thương quyến luyến",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "偏爱",
+   "py": "piān'ài",
+   "pos": "动",
+   "zh": "特别喜爱（同类的人或事物中的一个或一种）。",
+   "en": "",
+   "hv": "THIÊN ÁI",
+   "vi": "đặc biệt yêu thích, ưu ái",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "激昂",
+   "py": "jī'áng",
+   "pos": "形",
+   "zh": "（情绪、语调等）激愤昂扬。",
+   "en": "",
+   "hv": "KHÍCH NGANG",
+   "vi": "sôi nổi, hùng hồn",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "亢奋",
+   "py": "kàngfèn",
+   "pos": "形",
+   "zh": "非常振奋。",
+   "en": "extremely excited; stimulated",
+   "hv": "KHÁNG PHẤN",
+   "vi": "hưng phấn, phấn khích tột độ",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "雄壮",
+   "py": "xióngzhuàng",
+   "pos": "形",
+   "zh": "（声音）洪亮有气势。",
+   "en": "",
+   "hv": "HÙNG TRÁNG",
+   "vi": "hùng tráng",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "一度",
+   "py": "yídù",
+   "pos": "副",
+   "zh": "表示过去发生过一次。",
+   "en": "",
+   "hv": "NHẤT ĐỘ",
+   "vi": "đã từng có lúc, một dạo",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "激情",
+   "py": "jīqíng",
+   "pos": "名",
+   "zh": "强烈而难以抑制的感情。",
+   "en": "intense emotion; fervour",
+   "hv": "KHÍCH TÌNH",
+   "vi": "nhiệt huyết, cảm xúc mãnh liệt",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "点燃",
+   "py": "diǎnrán",
+   "pos": "动",
+   "zh": "使火燃起；点着；比喻激起（感情等）。",
+   "en": "",
+   "hv": "ĐIỂM NHIÊN",
+   "vi": "châm lửa, thắp lên; khơi dậy",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "信仰",
+   "py": "xìnyǎng",
+   "pos": "名",
+   "zh": "指信服、崇拜并奉为言行准则和指南的事物。",
+   "en": "faith; belief; conviction",
+   "hv": "TÍN NGƯỠNG",
+   "vi": "niềm tin, tín ngưỡng",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "奔走",
+   "py": "bēnzǒu",
+   "pos": "动",
+   "zh": "为某种活动而四处活动。",
+   "en": "",
+   "hv": "BÔN TẨU",
+   "vi": "bôn ba, chạy vạy",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "浮游",
+   "py": "fúyóu",
+   "pos": "动",
+   "zh": "在水面或空气中游动。",
+   "en": "",
+   "hv": "PHÙ DU",
+   "vi": "trôi nổi, bồng bềnh",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "荡漾",
+   "py": "dàngyàng",
+   "pos": "动",
+   "zh": "（水波等）微微起伏波动。",
+   "en": "ripple; undulate",
+   "hv": "ĐÃNG DẠNG",
+   "vi": "dập dềnh, gợn sóng lan tỏa",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "沉淀",
+   "py": "chéndiàn",
+   "pos": "动",
+   "zh": "比喻凝聚、积聚。",
+   "en": "",
+   "hv": "TRẦM ĐIẾN",
+   "vi": "lắng đọng",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "试图",
+   "py": "shìtú",
+   "pos": "动",
+   "zh": "打算。",
+   "en": "",
+   "hv": "THÍ ĐỒ",
+   "vi": "thử, cố gắng",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "读解",
+   "py": "dújiě",
+   "pos": "动",
+   "zh": "阅读并理解。",
+   "en": "",
+   "hv": "ĐỘC GIẢI",
+   "vi": "đọc hiểu, giải mã",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "领悟",
+   "py": "lǐngwù",
+   "pos": "动",
+   "zh": "领会，悟出，明白。（领悟——领略）",
+   "en": "",
+   "hv": "LĨNH NGỘ",
+   "vi": "lĩnh hội, thấu hiểu",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "立体",
+   "py": "lìtǐ",
+   "pos": "名",
+   "zh": "多层次、多方面的。",
+   "en": "three-dimensional; stereoscopic",
+   "hv": "LẬP THỂ",
+   "vi": "lập thể, nhiều chiều",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "辐射",
+   "py": "fúshè",
+   "pos": "动",
+   "zh": "从中心向四周沿着直线放射出去。",
+   "en": "radiate",
+   "hv": "PHÚC XẠ",
+   "vi": "tỏa ra, bức xạ",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "扩张",
+   "py": "kuòzhāng",
+   "pos": "动",
+   "zh": "扩大（势力、领地）。（扩张—扩大—扩充）",
+   "en": "",
+   "hv": "KHUẾCH TRƯƠNG",
+   "vi": "mở rộng, bành trướng",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "趋势",
+   "py": "qūshì",
+   "pos": "名",
+   "zh": "事物朝着某一方面发展变化的方向。",
+   "en": "trend; tendency",
+   "hv": "XU THẾ",
+   "vi": "xu thế, khuynh hướng",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "暗藏",
+   "py": "àncáng",
+   "pos": "动",
+   "zh": "暗中藏着。",
+   "en": "",
+   "hv": "ÁM TÀNG",
+   "vi": "ẩn giấu, tiềm ẩn",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "可视可感",
+   "py": "kě shì kě gǎn",
+   "pos": "",
+   "zh": "可以看到，可以感到。",
+   "en": "",
+   "hv": "KHẢ THỊ KHẢ CẢM",
+   "vi": "có thể thấy, có thể cảm",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "深不可测",
+   "py": "shēn bù kě cè",
+   "pos": "",
+   "zh": "深得不可以测量，多形容道理深奥或人心难以猜测。",
+   "en": "",
+   "hv": "THÂM BẤT KHẢ TRẮC",
+   "vi": "sâu không lường được",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "隧道",
+   "py": "suìdào",
+   "pos": "名",
+   "zh": "在地面以下开凿的通道。",
+   "en": "tunnel",
+   "hv": "TOẠI ĐẠO",
+   "vi": "đường hầm",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "内壁",
+   "py": "nèibì",
+   "pos": "名",
+   "zh": "物体内部的层面。",
+   "en": "",
+   "hv": "NỘI BÍCH",
+   "vi": "vách trong, thành trong",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "悬",
+   "py": "xuán",
+   "pos": "动",
+   "zh": "挂。",
+   "en": "",
+   "hv": "HUYỀN",
+   "vi": "treo",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "缀",
+   "py": "zhuì",
+   "pos": "动",
+   "zh": "用针线等使连起来。",
+   "en": "",
+   "hv": "CHUẾ",
+   "vi": "đính, kết (vào)",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "临摹",
+   "py": "línmó",
+   "pos": "动",
+   "zh": "照着（书画碑帖等）模仿。",
+   "en": "",
+   "hv": "LÂM MÔ",
+   "vi": "đồ lại, phỏng theo",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "曲谱",
+   "py": "qǔpǔ",
+   "pos": "名",
+   "zh": "歌唱或演奏用的乐谱。",
+   "en": "music score",
+   "hv": "KHÚC PHỔ",
+   "vi": "bản nhạc, nhạc phổ",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "烙刻",
+   "py": "làokè",
+   "pos": "动",
+   "zh": "用烧热的金属工具熨烫，在物体上留下印记。课文中比喻在大脑中留下不易磨灭的记忆。",
+   "en": "",
+   "hv": "LẠC KHẮC",
+   "vi": "in đậm, khắc sâu",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "碾磨",
+   "py": "niǎnmó",
+   "pos": "动",
+   "zh": "用碾子等滚压。课文中比喻仔细领会、吸收。",
+   "en": "",
+   "hv": "NIỄN MA",
+   "vi": "nghiền ngẫm, nghiền nát",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "体内",
+   "py": "tǐnèi",
+   "pos": "名",
+   "zh": "身体内部。",
+   "en": "",
+   "hv": "THỂ NỘI",
+   "vi": "trong cơ thể",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "流淌",
+   "py": "liútǎng",
+   "pos": "动",
+   "zh": "液体流动。",
+   "en": "",
+   "hv": "LƯU THẢNG",
+   "vi": "chảy, tuôn chảy",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "琐事",
+   "py": "suǒshì",
+   "pos": "名",
+   "zh": "细小而繁杂的小事。",
+   "en": "",
+   "hv": "TỎA SỰ",
+   "vi": "việc vặt",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "杂事",
+   "py": "záshì",
+   "pos": "名",
+   "zh": "正事以外的琐碎事情。",
+   "en": "",
+   "hv": "TẠP SỰ",
+   "vi": "việc lặt vặt",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "缠身",
+   "py": "chánshēn",
+   "pos": "动",
+   "zh": "（事物、疾病等）麻烦的事情搅扰着人，摆脱不开。",
+   "en": "",
+   "hv": "TRIỀN THÂN",
+   "vi": "quấn thân, vướng bận",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "岁月",
+   "py": "suìyuè",
+   "pos": "名",
+   "zh": "年月；泛指时间。",
+   "en": "",
+   "hv": "TUẾ NGUYỆT",
+   "vi": "năm tháng",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "匆促",
+   "py": "cōngcù",
+   "pos": "形",
+   "zh": "匆忙仓促。",
+   "en": "",
+   "hv": "THÔNG XÚC",
+   "vi": "vội vã, hấp tấp",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "奢侈",
+   "py": "shēchǐ",
+   "pos": "形",
+   "zh": "大手大脚乱花钱，过分追求享受。",
+   "en": "",
+   "hv": "XA XỈ",
+   "vi": "xa xỉ",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "情人",
+   "py": "qíngrén",
+   "pos": "名",
+   "zh": "恋爱中的男女互为情人。",
+   "en": "",
+   "hv": "TÌNH NHÂN",
+   "vi": "người yêu, tình nhân",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "百无聊赖",
+   "py": "bǎi wú liáo lài",
+   "pos": "",
+   "zh": "指无事可做或精神空虚，感到什么都没有意思。",
+   "en": "",
+   "hv": "BÁCH VÔ LIÊU LẠI",
+   "vi": "buồn chán vô vị, chẳng có gì làm",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "节制",
+   "py": "jiézhì",
+   "pos": "动",
+   "zh": "限制或控制。",
+   "en": "",
+   "hv": "TIẾT CHẾ",
+   "vi": "tiết chế, kiềm chế",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "可有可无",
+   "py": "kě yǒu kě wú",
+   "pos": "",
+   "zh": "可以有，也可以没有。形容不重要。",
+   "en": "",
+   "hv": "KHẢ HỮU KHẢ VÔ",
+   "vi": "có cũng được, không cũng được",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "若是",
+   "py": "ruòshì",
+   "pos": "连",
+   "zh": "表示假设关系，相当于“如果”。常用于书面语。",
+   "en": "",
+   "hv": "NHƯỢC THỊ",
+   "vi": "nếu, nếu như",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "割断",
+   "py": "gēduàn",
+   "pos": "动",
+   "zh": "切断。",
+   "en": "",
+   "hv": "CÁT ĐOẠN",
+   "vi": "cắt đứt",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "情丝",
+   "py": "qíngsī",
+   "pos": "名",
+   "zh": "深切浓厚的情意。",
+   "en": "",
+   "hv": "TÌNH TI",
+   "vi": "sợi tơ tình, tình cảm sâu nặng",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "忧伤",
+   "py": "yōushāng",
+   "pos": "形",
+   "zh": "忧愁哀伤。",
+   "en": "",
+   "hv": "ƯU THƯƠNG",
+   "vi": "buồn thương, u sầu",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "重温",
+   "py": "chóngwēn",
+   "pos": "动",
+   "zh": "重新学习、回味等。",
+   "en": "",
+   "hv": "TRÙNG ÔN",
+   "vi": "ôn lại, sống lại (kỷ niệm)",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "往昔",
+   "py": "wǎngxī",
+   "pos": "名",
+   "zh": "以前；过去。",
+   "en": "",
+   "hv": "VÃNG TÍCH",
+   "vi": "ngày xưa, thuở trước",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "缠绵",
+   "py": "chánmián",
+   "pos": "形",
+   "zh": "（情意）深切浓厚，纠结缠绕，无法解脱。",
+   "en": "",
+   "hv": "TRIỀN MIÊN",
+   "vi": "quấn quýt, da diết",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "恩爱",
+   "py": "ēn'ài",
+   "pos": "形",
+   "zh": "（夫妻）感情融洽。",
+   "en": "",
+   "hv": "ÂN ÁI",
+   "vi": "ân ái, mặn nồng",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "依稀",
+   "py": "yīxī",
+   "pos": "形",
+   "zh": "隐隐约约，模糊不清。",
+   "en": "",
+   "hv": "Y HY",
+   "vi": "mơ hồ, lờ mờ",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "感官",
+   "py": "gǎnguān",
+   "pos": "名",
+   "zh": "感受外界刺激的器官。",
+   "en": "short for sense organs",
+   "hv": "CẢM QUAN",
+   "vi": "giác quan",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "麻木",
+   "py": "mámù",
+   "pos": "形",
+   "zh": "对外界事物反应迟钝，不敏感。（麻木—麻痹—麻醉）",
+   "en": "numb; insensible",
+   "hv": "MA MỘC",
+   "vi": "tê dại, chai sạn, trơ lì",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "摈除",
+   "py": "bìnchú",
+   "pos": "动",
+   "zh": "抛弃；排除。",
+   "en": "",
+   "hv": "BÂN TRỪ",
+   "vi": "gạt bỏ, loại bỏ",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "枯涩",
+   "py": "kūsè",
+   "pos": "形",
+   "zh": "枯燥乏味，不流畅。",
+   "en": "",
+   "hv": "KHÔ SÁP",
+   "vi": "khô khan, cứng nhắc",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "灰暗",
+   "py": "huī'àn",
+   "pos": "形",
+   "zh": "（光、色）昏暗；不明朗。",
+   "en": "",
+   "hv": "HÔI ÁM",
+   "vi": "u ám, xám xịt",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "饱满",
+   "py": "bǎomǎn",
+   "pos": "形",
+   "zh": "充实；充沛。",
+   "en": "",
+   "hv": "BÃO MÃN",
+   "vi": "đầy đặn, dồi dào",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "滋润",
+   "py": "zīrùn",
+   "pos": "形",
+   "zh": "舒服。",
+   "en": "",
+   "hv": "TƯ NHUẬN",
+   "vi": "dễ chịu, thư thái",
+   "proper": false
+  },
+  {
+   "n": 96,
+   "hz": "无须",
+   "py": "wúxū",
+   "pos": "副",
+   "zh": "不用；不必。",
+   "en": "",
+   "hv": "VÔ TU",
+   "vi": "không cần, không phải",
+   "proper": false
+  },
+  {
+   "n": 97,
+   "hz": "浇灌",
+   "py": "jiāoguàn",
+   "pos": "动",
+   "zh": "用水灌溉农田。课文中比喻艺术的滋养。",
+   "en": "",
+   "hv": "KIÊU QUÁN",
+   "vi": "tưới tắm, tưới tiêu",
+   "proper": false
+  },
+  {
+   "n": 98,
+   "hz": "挑剔",
+   "py": "tiāoti",
+   "pos": "动",
+   "zh": "在细节上过分地找毛病。",
+   "en": "",
+   "hv": "THIÊU DỊCH",
+   "vi": "bới lông tìm vết, kén chọn",
+   "proper": false
+  },
+  {
+   "n": 99,
+   "hz": "回声",
+   "py": "huíshēng",
+   "pos": "名",
+   "zh": "反射回来的声音；回应。",
+   "en": "echo",
+   "hv": "HỒI THANH",
+   "vi": "tiếng vọng",
+   "proper": false
+  },
+  {
+   "n": 100,
+   "hz": "不堪入耳",
+   "py": "bù kān rù ěr",
+   "pos": "",
+   "zh": "形容（说话、演奏等的）声音难听，使人听不下去。",
+   "en": "",
+   "hv": "BẤT KHAM NHẬP NHĨ",
+   "vi": "chói tai, nghe không lọt tai",
+   "proper": false
+  },
+  {
+   "n": 101,
+   "hz": "噪声",
+   "py": "zàoshēng",
+   "pos": "名",
+   "zh": "指嘈杂刺耳的声音。",
+   "en": "noise",
+   "hv": "TÁO THANH",
+   "vi": "tiếng ồn",
+   "proper": false
+  },
+  {
+   "n": 102,
+   "hz": "排除",
+   "py": "páichú",
+   "pos": "动",
+   "zh": "去除；除掉。",
+   "en": "",
+   "hv": "BÀI TRỪ",
+   "vi": "loại bỏ, gạt bỏ",
+   "proper": false
+  },
+  {
+   "n": 103,
+   "hz": "杂音",
+   "py": "záyīn",
+   "pos": "名",
+   "zh": "嘈杂扰人的声音。",
+   "en": "noise",
+   "hv": "TẠP ÂM",
+   "vi": "tạp âm",
+   "proper": false
+  },
+  {
+   "n": 104,
+   "hz": "淡泊",
+   "py": "dànbó",
+   "pos": "形",
+   "zh": "不追求；不热衷；不求名利。",
+   "en": "",
+   "hv": "ĐẠM BẠC",
+   "vi": "điềm đạm, không màng danh lợi",
+   "proper": false
+  },
+  {
+   "n": 105,
+   "hz": "心境",
+   "py": "xīnjìng",
+   "pos": "名",
+   "zh": "心情；内心的境界。",
+   "en": "state of mind; mental state",
+   "hv": "TÂM CẢNH",
+   "vi": "tâm trạng, tâm cảnh",
+   "proper": false
+  },
+  {
+   "n": 106,
+   "hz": "质感",
+   "py": "zhìgǎn",
+   "pos": "名",
+   "zh": "艺术品所表现的物质真实感。",
+   "en": "",
+   "hv": "CHẤT CẢM",
+   "vi": "chất cảm",
+   "proper": false
+  },
+  {
+   "n": 107,
+   "hz": "尽头",
+   "py": "jìntóu",
+   "pos": "名",
+   "zh": "终点。",
+   "en": "",
+   "hv": "TẬN ĐẦU",
+   "vi": "điểm cuối, tận cùng",
+   "proper": false
+  },
+  {
+   "n": 108,
+   "hz": "先哲",
+   "py": "xiānzhé",
+   "pos": "名",
+   "zh": "已故的有才德的思想家。",
+   "en": "sage",
+   "hv": "TIÊN TRIẾT",
+   "vi": "bậc hiền triết xưa",
+   "proper": false
+  },
+  {
+   "n": 109,
+   "hz": "神祇",
+   "py": "shénqí",
+   "pos": "名",
+   "zh": "天神和地祇（地神）合称，泛指神明。",
+   "en": "gods; deities",
+   "hv": "THẦN KỲ",
+   "vi": "thần linh",
+   "proper": false
+  },
+  {
+   "n": 110,
+   "hz": "伴侣",
+   "py": "bànlǚ",
+   "pos": "名",
+   "zh": "同伴；伙伴。",
+   "en": "",
+   "hv": "BẠN LỮ",
+   "vi": "bạn đồng hành",
+   "proper": false
+  },
+  {
+   "n": 111,
+   "hz": "博大",
+   "py": "bódà",
+   "pos": "形",
+   "zh": "宽广；丰富。",
+   "en": "",
+   "hv": "BÁC ĐẠI",
+   "vi": "rộng lớn, phong phú",
+   "proper": false
+  },
+  {
+   "n": 112,
+   "hz": "定义",
+   "py": "dìngyì",
+   "pos": "名",
+   "zh": "对于一种事物的本质特征或一个概念的内涵和外延所做的确切表述。",
+   "en": "definition",
+   "hv": "ĐỊNH NGHĨA",
+   "vi": "định nghĩa",
+   "proper": false
+  },
+  {
+   "n": 113,
+   "hz": "分享",
+   "py": "fēnxiǎng",
+   "pos": "动",
+   "zh": "和他人共同享受。",
+   "en": "",
+   "hv": "PHÂN HƯỞNG",
+   "vi": "chia sẻ, cùng thưởng thức",
+   "proper": false
+  },
+  {
+   "n": 114,
+   "hz": "界别",
+   "py": "jièbié",
+   "pos": "名",
+   "zh": "区别。",
+   "en": "",
+   "hv": "GIỚI BIỆT",
+   "vi": "ranh giới, sự phân biệt",
+   "proper": false
+  },
+  {
+   "n": 115,
+   "hz": "感人至深",
+   "py": "gǎn rén zhì shēn",
+   "pos": "",
+   "zh": "使人深深地感动。",
+   "en": "",
+   "hv": "CẢM NHÂN CHÍ THÂM",
+   "vi": "cảm động sâu sắc",
+   "proper": false
+  },
+  {
+   "n": 116,
+   "hz": "迷途",
+   "py": "mítú",
+   "pos": "名",
+   "zh": "比喻错误的道路。",
+   "en": "",
+   "hv": "MÊ ĐỒ",
+   "vi": "lạc lối, đường lầm",
+   "proper": false
+  },
+  {
+   "n": 117,
+   "hz": "错位",
+   "py": "cuòwèi",
+   "pos": "动",
+   "zh": "位置发生颠倒。",
+   "en": "",
+   "hv": "THÁC VỊ",
+   "vi": "lệch chỗ, đảo lộn vị trí",
+   "proper": false
+  },
+  {
+   "n": 118,
+   "hz": "宽容大度",
+   "py": "kuānróng dàdù",
+   "pos": "",
+   "zh": "宽大容忍，度量大。",
+   "en": "",
+   "hv": "KHOAN DUNG ĐẠI ĐỘ",
+   "vi": "khoan dung độ lượng",
+   "proper": false
+  },
+  {
+   "n": 119,
+   "hz": "激起",
+   "py": "jīqǐ",
+   "pos": "动",
+   "zh": "刺激使产生。",
+   "en": "",
+   "hv": "KHÍCH KHỞI",
+   "vi": "khơi dậy, gợi lên",
+   "proper": false
+  },
+  {
+   "n": 120,
+   "hz": "空灵",
+   "py": "kōnglíng",
+   "pos": "形",
+   "zh": "中国画以留空白来寄托情意，称为空灵，此处比喻音乐的精妙。",
+   "en": "",
+   "hv": "KHÔNG LINH",
+   "vi": "khoáng đạt, tinh diệu",
+   "proper": false
+  },
+  {
+   "n": 121,
+   "hz": "无形无状",
+   "py": "wú xíng wú zhuàng",
+   "pos": "",
+   "zh": "不露形迹，看不见摸不着。",
+   "en": "",
+   "hv": "VÔ HÌNH VÔ TRẠNG",
+   "vi": "không hình không dạng",
+   "proper": false
+  },
+  {
+   "n": 122,
+   "hz": "无影无踪",
+   "py": "wú yǐng wú zōng",
+   "pos": "",
+   "zh": "没有一点影子和踪迹。形容完全消失或不知去向。",
+   "en": "",
+   "hv": "VÔ ẢNH VÔ TUNG",
+   "vi": "không bóng không dấu, biệt tăm",
+   "proper": false
+  },
+  {
+   "n": 123,
+   "hz": "触摸",
+   "py": "chùmō",
+   "pos": "动",
+   "zh": "接触抚摸。",
+   "en": "",
+   "hv": "XÚC MÔ",
+   "vi": "chạm, sờ",
+   "proper": false
+  },
+  {
+   "n": 124,
+   "hz": "流逝",
+   "py": "liúshì",
+   "pos": "动",
+   "zh": "像流水一样消逝。",
+   "en": "",
+   "hv": "LƯU THỆ",
+   "vi": "trôi đi, trôi qua",
+   "proper": false
+  },
+  {
+   "n": 125,
+   "hz": "固化",
+   "py": "gùhuà",
+   "pos": "动",
+   "zh": "使牢固；使稳定。",
+   "en": "",
+   "hv": "CỐ HÓA",
+   "vi": "làm vững chắc, đông cứng lại",
+   "proper": false
+  },
+  {
+   "n": 126,
+   "hz": "吸纳",
+   "py": "xīnà",
+   "pos": "动",
+   "zh": "吸收；接纳。",
+   "en": "",
+   "hv": "HẤP NẠP",
+   "vi": "hấp thu, tiếp nhận",
+   "proper": false
+  },
+  {
+   "n": 127,
+   "hz": "自然而然",
+   "py": "zìrán ér rán",
+   "pos": "",
+   "zh": "没有外力的干预，自然发展或形成。",
+   "en": "",
+   "hv": "TỰ NHIÊN NHI NHIÊN",
+   "vi": "tự nhiên mà thế, một cách tự nhiên",
+   "proper": false
+  },
+  {
+   "n": 128,
+   "hz": "传递",
+   "py": "chuándì",
+   "pos": "动",
+   "zh": "由一方交给另一方。",
+   "en": "",
+   "hv": "TRUYỀN ĐỆ",
+   "vi": "truyền lại, chuyển giao",
+   "proper": false
+  },
+  {
+   "n": 129,
+   "hz": "永恒",
+   "py": "yǒnghéng",
+   "pos": "形",
+   "zh": "长久不变的；永远存在的。",
+   "en": "",
+   "hv": "VĨNH HẰNG",
+   "vi": "vĩnh hằng",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "音乐之伴",
+   "paragraphs": [
+    "第一部分",
+    "音乐是有年龄的。",
+    "在我们幼年的时候，音乐也许曾经是保姆。旋律的构成简单而稚拙，但每个音符都舒缓、柔和、温厚和淳朴。那节奏是摇篮式的，在摇晃着的歌谣里，我们的骨节一寸寸放大着成长着，却分不清保姆和音乐，是怎样各司其职又互为其主。",
+    "少女时代，音乐轻捷的脚步，是我们第一个悄悄倾慕的恋人。我们在深夜与它相约，聆听它的倾诉和呼唤。乐曲中每一处细微末节，哪怕一个小小的颤音，也会让我们心跳脸红。那欢喜是纯真无邪的，来自生命本源的冲动，饥不择食，来者不拒，无论哪一种音乐都会使我们欢欣。但可惜那时我们太年轻，心里喜欢着，却无法分解和辨析它真正的奥妙。",
+    "进入少年时代的尾声，音乐是托付和发泄所有的青春热情，寄予内心狂热崇拜和爱恋的对象。那一段“阳光灿烂的日子”，我们偏爱激昂、亢奋、热烈和雄壮的歌曲，严格说那已不是音乐，革命一度消灭了音乐。音乐在那个年龄已不再是音乐本身，而是作为激情的象征存在。对于音乐革命的热爱，爱得盲目而疯狂。更多的时候，它是一种煽动性极强的燃料，可将我们的血肉点燃，为信仰和理想奔走。",
+    "第二部分",
+    "当我们成为沉稳和成熟些的青年时，浮游荡漾在空气中的音乐，也渐渐沉淀下来。那时我们开始思考音乐，努力试图去读解和领悟，并试图与音乐对话。音符变得立体，有一种辐射和扩张的趋势，暗藏着你听得见或是听不见的声音。音乐不再仅仅是一种情绪，而有了实在和具体的内容，成为可视可感的语言和思想，甚至是哲学。你发现音乐世界其实是一条深不可测的隧道，内壁悬缀着抽象的音符，不可复制也不可临摹，往往当你开口或是动手将其制作成曲谱时，它们却已消失。你只能将其烙刻在脑子里，一遍遍碾磨成体内血液流淌的声音。",
+    "被琐事杂事俗事缠身的中年，岁月匆促，音乐在生活中已是显得奢侈的享受，往往纯粹是一种娱乐和休闲。那时候音乐有点像一个分手多年的旧情人，只是在百无聊赖的日子里，会偶尔下决心安排一次有礼貌而有节制的约会。多少有点儿可有可无的意思，但若是真正割断情丝，又是不甘的。在忧伤的乐曲中，重温往昔的缠绵和恩爱，毕竟还有一种依稀的幸福感。",
+    "第三部分",
+    "音乐对于老年，若不是感官麻木得不再需要，那定是摈除得很彻底很坚决的。没有音乐的老年，也许枯涩也许灰暗但也许恰恰是因他的内心饱满滋润，而无须依赖音乐的浇灌。人到了老年，对音乐的选择变得十分挑剔。若是喜欢的音乐，必是自己灵魂的回声，是真正属于自己的。除了自己认定的那种之外，天下的音乐都是不堪入耳的噪声。所以老年的音乐，由于排除了功利的杂音，在自然淡泊的心境中，便有了一种宁静透明的质感。人走向生命尽头时，音乐不再是保姆也不是恋人，不是先哲更不是神祇，而只是一个忠实的人生伴侣。",
+    "所以音乐具有着极其博大而丰富的包容性。音乐无法定义。不同的音乐可以被每个年龄段的音乐爱好者、音乐迷分享，音乐似乎又是没有年龄的。古典或是现代、严肃或是流行，在欣赏者那里，并没有绝对的界别。在感人至深的音乐中我们常常迷途甚至错位，但音乐宽容大度，它知道自己所能在人们心上激起的回声，是“喜欢”的唯一标准。",
+    "音乐只是有点儿模糊，有点儿空灵。它无形无状、无影无踪，无法触摸、无法品尝，是一种流逝的时间，一种被曲谱固化的记忆。音乐被人吸纳到心里去，又被人在各个生命阶段自然而然地传递下去，就变得永恒了。",
+    "（作者：张抗抗　选自《散文选刊》）"
+   ],
+   "translations": [
+    "Phần một",
+    "Âm nhạc cũng có tuổi tác.",
+    "Thuở ấu thơ, có lẽ âm nhạc đã từng là người bảo mẫu. Giai điệu được dựng nên giản đơn và vụng dại, nhưng nốt nhạc nào cũng khoan thai, dịu dàng, ấm áp và chân chất. Nhịp điệu ấy là nhịp đưa nôi; trong tiếng hát ru đung đưa, từng khớp xương của chúng ta lớn dần lên từng tấc, vậy mà ta chẳng thể phân biệt nổi người bảo mẫu và âm nhạc đã làm sao để vừa mỗi bên một phận sự, vừa thay nhau làm chủ.",
+    "Thời thiếu nữ, những bước chân nhẹ nhàng của âm nhạc là người tình đầu tiên mà ta thầm lặng đem lòng ngưỡng mộ. Ta hẹn hò với nó trong đêm khuya, lắng nghe nó thì thầm giãi bày và cất tiếng gọi mời. Mỗi chi tiết nhỏ nhặt trong bản nhạc, dù chỉ là một tiếng láy rung bé xíu, cũng khiến tim ta đập rộn, má ta ửng hồng. Niềm vui ấy trong trẻo ngây thơ, là sự thôi thúc đến từ cội nguồn sự sống, đói ăn quàng, đến gì nhận nấy, bất kể loại nhạc nào cũng làm ta hân hoan. Tiếc thay khi ấy ta còn quá trẻ, trong lòng yêu thích mà chẳng thể mổ xẻ, phân định được cái huyền diệu thực sự của nó.",
+    "Bước vào những năm cuối của tuổi thiếu niên, âm nhạc là nơi ta gửi gắm và trút hết mọi nhiệt huyết thanh xuân, là đối tượng để ta đặt vào đó lòng tôn thờ cuồng nhiệt và tình yêu say đắm. Trong quãng “những ngày nắng chói chang” ấy, ta đặc biệt mê những bài ca sục sôi, hưng phấn, nồng nhiệt và hùng tráng; nói cho đúng thì đó đã chẳng còn là âm nhạc, cách mạng từng có lúc xóa sổ âm nhạc. Ở lứa tuổi ấy, âm nhạc không còn là chính nó nữa, mà tồn tại như biểu tượng của nhiệt huyết. Tình yêu dành cho âm nhạc cách mạng là thứ tình yêu mù quáng và điên cuồng. Phần nhiều khi, nó là một thứ nhiên liệu có sức kích động cực mạnh, có thể đốt cháy máu thịt chúng ta, để ta bôn ba vì niềm tin và lý tưởng.",
+    "Phần hai",
+    "Khi ta trở thành những thanh niên điềm tĩnh và chín chắn hơn, thứ âm nhạc trôi nổi dập dềnh trong không khí cũng dần dần lắng đọng. Khi ấy ta bắt đầu suy ngẫm về âm nhạc, cố gắng đọc hiểu và lĩnh hội nó, và thử trò chuyện cùng nó. Nốt nhạc trở nên lập thể, có xu thế tỏa rộng và lan ra, ẩn chứa những âm thanh bạn nghe thấy hoặc không nghe thấy. Âm nhạc không còn chỉ là một thứ cảm xúc, mà đã có nội dung thực tại và cụ thể, trở thành ngôn ngữ và tư tưởng có thể thấy, có thể cảm, thậm chí là triết học. Bạn nhận ra thế giới âm nhạc thật ra là một đường hầm sâu không đáy, vách trong treo kết những nốt nhạc trừu tượng, không thể sao chép cũng chẳng thể đồ lại; thường thì khi bạn vừa cất lời hay bắt tay chép chúng thành bản nhạc, chúng đã biến mất. Bạn chỉ có thể khắc sâu chúng vào tâm trí, nghiền ngẫm hết lần này đến lần khác cho đến khi chúng thành âm thanh của dòng máu chảy trong cơ thể.",
+    "Tuổi trung niên bị việc vặt, việc lặt vặt, việc đời thường quấn chặt lấy thân, năm tháng vội vã, âm nhạc trong đời sống đã trở thành một thú hưởng thụ có phần xa xỉ, thường chỉ thuần túy là một cách giải trí và nghỉ ngơi. Khi ấy âm nhạc giống như một người tình cũ đã chia tay nhiều năm, chỉ những ngày buồn chán vô vị mới thỉnh thoảng quyết tâm sắp xếp một cuộc hẹn lịch sự và có chừng mực. Ít nhiều có chút ý vị có cũng được mà không có cũng chẳng sao, nhưng nếu thật sự cắt đứt sợi tơ tình thì lại chẳng cam lòng. Trong những khúc nhạc u buồn, sống lại sự quấn quýt và ân tình thuở trước, dù sao vẫn còn một thứ hạnh phúc mơ hồ.",
+    "Phần ba",
+    "Đối với tuổi già, âm nhạc nếu không phải vì giác quan đã chai lì đến mức chẳng còn cần nữa, thì hẳn là đã bị gạt bỏ một cách rất triệt để, rất dứt khoát. Tuổi già không có âm nhạc, có thể khô khan, có thể xám xịt, nhưng cũng có thể chính vì nội tâm người ấy đầy đặn, thấm đẫm, nên chẳng cần nhờ đến sự tưới tắm của âm nhạc. Người đến tuổi già trở nên rất kén chọn trong việc chọn nhạc. Nếu là thứ nhạc mình yêu thích, ắt phải là tiếng vọng của chính linh hồn mình, thực sự thuộc về mình. Ngoài thứ nhạc mà mình đã chọn định, mọi thứ nhạc trong thiên hạ đều là tiếng ồn chói tai không lọt nổi vào tai. Bởi thế âm nhạc của tuổi già, vì đã gạt bỏ những tạp âm danh lợi, nên trong tâm thế tự nhiên, điềm đạm, mới có được một chất cảm tĩnh lặng và trong suốt. Khi con người đi đến tận cùng của sự sống, âm nhạc không còn là bảo mẫu, cũng không là người tình, không phải bậc hiền triết, càng không phải thần linh, mà chỉ là một người bạn đời trung thành.",
+    "Vì thế, âm nhạc mang một sức bao dung vô cùng rộng lớn và phong phú. Âm nhạc không thể định nghĩa. Những thể loại nhạc khác nhau có thể được những người yêu nhạc, mê nhạc ở mọi lứa tuổi cùng chia sẻ, nên dường như âm nhạc lại chẳng có tuổi tác. Cổ điển hay hiện đại, nghiêm trang hay thịnh hành, với người thưởng thức đều không có ranh giới tuyệt đối. Trong những bản nhạc cảm động sâu xa, ta thường lạc lối, thậm chí lệch nhịp, nhưng âm nhạc khoan dung độ lượng; nó biết rằng tiếng vọng mà nó có thể khơi dậy trong lòng người chính là tiêu chuẩn duy nhất của sự “yêu thích”.",
+    "Âm nhạc chỉ hơi mơ hồ, hơi phiêu diêu. Nó không hình không dạng, không bóng không dấu, không thể chạm tới, không thể nếm trải; nó là thời gian đang trôi đi, là ký ức được bản nhạc đông cứng lại. Âm nhạc được con người thu nhận vào lòng, rồi lại được con người tự nhiên truyền tiếp qua từng chặng đời, thế là nó trở nên vĩnh hằng.",
+    "(Tác giả: Trương Kháng Kháng, trích từ “Tản văn tuyển san”)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "从音乐聆听内在情感",
+   "paragraphs": [
+    "（一）从音乐聆听内在情感",
+    "你喜欢听流行音乐？古典音乐？还是摇滚乐？别以为听音乐只是单纯的打发时间，它可以反映出听者“当时的情绪”与“深层的情感”。",
+    "刚认识一个人的时候，我们常会“没话找话说”地问对方：“平常都做些什么休闲活动？”",
+    "听到这个“有点八股”的问题，相信不少人都会“很标准”地回答：“我喜欢在家听听音乐！”",
+    "如果你以为听音乐只是“无意义地打发时间”，那你可就太小看音乐的力量了，其实它还会反映出听者“当时的情绪”与“深层的情感”。",
+    "在《感观之旅》这本书中，作者黛安·艾克曼就曾经研究过音乐与情绪之间的关系。她以为：“音乐就如感情一般，有波涛汹涌的时刻，也有平静的时刻，会狂暴，也会安静。它就像我们的情绪，能象征、反映，也能传达……”",
+    "因此，下次当你听到有人跟你说“我喜欢听音乐”的时候，千万别急着“转移话题”，不妨进一步问对方：“那你喜欢听什么类型的音乐？”或是：“你最爱听谁的歌？”",
+    "从对方喜欢听的音乐中，你往往可以推测他当时的“感情状态”。譬如，“热恋中的人”喜欢听的歌一定和“失恋中的人”完全不一样——像张学友的《你爱他》就是热恋中人最爱听的情歌，充满了温馨幸福的感觉；相反的，黄品源的《你怎么舍得我难过》刚好敲中失恋者的痛处，我有个朋友失恋的时候就真的“听它千遍也不厌倦”。",
+    "通常一个人在某个阶段会受到情绪的影响，特别会喜欢听某一首歌，等情绪转换后，他又“移情”听另一首歌。所以，在此我并不针对单一歌曲分析一个人的内在情感，而是根据音乐的种类来聆听他的内在情感。",
+    "当然，很少人会只喜欢听一种音乐，大部分人的架上都会同时陈列好几种不同类型的音乐（从流行音乐到古典音乐什么都有）。这个时候，你就得花点时间观察：什么样的音乐他最常听？还有，他对什么音乐最有感觉？",
+    "等你听出他“最爱”的音乐之后，才能进一步聆听他的内在情感。",
+    "（二）喜欢流行音乐的人",
+    "不管流行音乐的“替换率”有多高，一首歌只要被归类为“流行音乐”，大概都拥有曲调简单、歌词浅显的共同特征，因为这样大家才能朗朗上口嘛！",
+    "就跟流行音乐的特性一样，喜欢流行音乐的人也不爱太过复杂的人和事物，他们比较能够接受简单易懂、一目了然的东西。",
+    "谈恋爱的时候，他们很容易被对方的外表所吸引，一旦他们觉得“这个人看起来蛮顺眼的”，很快就会坠入爱河，而不会先伤脑筋去思考“我们的生命基调合不合”“人生的价值观如果不一致……”“双方家庭处不处得来”这些烦人的问题。",
+    "一般喜欢听流行音乐的人多半都很爱看电视，尤其爱看歌唱综艺节目（否则，他怎么知道现在流行什么歌）。此外，他们也很关心娱乐新闻，哪个歌星又出了新专辑，哪个朋友又有新恋曲，他们都一清二楚。",
+    "若想和爱听流行歌曲的人成为好朋友，方法很简单，只要约他们去KTV，很快就能打成一片。",
+    "由于爱听流行歌曲的人，内在情感都很“简单易懂”，你也不必花太多心思去揣摩他的“心意”，最好的相处之道便是，轻松愉快地打打牌、唱唱歌，双方的友谊即能长存。",
+    "（三）喜欢听古典音乐的人",
+    "就像“古典”与“流行”是属于两个不同时空的产物一样，爱听古典音乐的人和爱听流行音乐的人，也分别活在两个不同的世界。",
+    "热爱古典音乐的人非但思想比较复杂，他们同时也偏爱有深度的人、事、物，最怕跟“肚子里没有什么东西”的人聊天，这会让他们觉得自己是在“浪费生命”。",
+    "谈恋爱的时候，他们会非常重视自己和对方的“心灵层次契不契合”“生命基调能不能产生共鸣”。假使你让他感觉两人交往无法谱出“荡气回肠的乐章”，那他很可能就会为爱情“画上休止符”！",
+    "对于喜欢听古典音乐的人来说，生命过程的严谨比什么都重要。因此，除了少数“制作过程严谨”的节目（如Discovery频道）之外，他们是不愿意浪费太多时间看电视的。",
+    "此外，他们也特别喜欢到“有点历史”的地方去旅游，譬如博物馆、美术馆或名胜古迹，都是他们的最爱。他们会花很多时间细细地浏览，用心地阅读旁边的说明文字，而不会走马看花，随便走一圈就算“到此一游”。",
+    "我认识很多建筑师都是古典音乐的赞赏者，他们不只做事态度严谨、有组织，连内在情感都非常地理智内敛，一般人比较难跟他们混熟。",
+    "（四）喜欢听轻音乐的人",
+    "很多人在工作或读书的时候，喜欢听点轻轻柔柔的音乐，一方面缓和紧张的气氛，一方面缓和紧张的情绪，让自己可以更专心地工作。",
+    "爱听轻音乐的人大部分都很“怕吵”，他们的内心非常渴望安静，无论工作或生活都不喜欢被人打扰，最痛恨没有事先约好就突然跑来的不速之客，如果有人冒冒失失地闯来，那他们绝对不会给他好脸色看的（即使是自己的亲人亦不能拥有“豁免权”）。",
+    "可想而知，连日常生活都如此有气氛的人，谈恋爱的时候，他们自然更加讲究气氛。也因此，想要打动他们的芳心，一定要懂得如何制造罗曼蒂克的气氛，这样他们才会“情不自禁”地爱上你。",
+    "有趣的是，很多爱听轻音乐的人的外表都不属于娇柔型，但不管他们的外表看起来多么“强壮”，他们的内在情感依然浪漫，千万不要被他们的外表给骗了。",
+    "还有，爱听轻音乐的人也普遍不能容忍压力，举凡工作压力、人际压力，都会让他们产生“逃跑”的欲望，他们只能接受“轻量级”的感情与工作。",
+    "（五）喜欢听摇滚乐的人",
+    "假使你到现场听过摇滚乐团演唱的话，应该都曾经被擅于带动气氛的主唱“耍得团团转”：他要你尖叫你就尖叫，他要你摆动双手你就摆动双手，他要你鼓掌你就鼓掌，仿佛有股强而有力的力量带领你“非得乖乖照着他说的话做不可”。",
+    "许多热爱摇滚乐的人都觉得自己“又酷又叛逆”，事实上刚好相反，他们的内心深处其实需要一个强而有力的人，引领他们找到“人生方向”（当然，这个“强人”一定要让他们崇拜得五体投地才行）。",
+    "除了会疯狂地崇拜偶像之外，他们也很喜欢在人群中摆动身体，当他们强烈感觉到自己是团体中的一分子时，似乎就能从中获得“认同感”。",
+    "或许是生活中太习惯音乐的存在吧！他们甚至连谈恋爱或交朋友，都必须藉由音乐来交流彼此感情。要不然，他们就会认为双方“感觉不对”！",
+    "万一你的朋友刚好是个摇滚乐迷，那你最好祈祷老天爷赐给你一双能耐高分贝音量的超强耳朵，因为噪音非但会破坏你的听力（小心啊！听力若惨遭破坏可是永世不得恢复的），还会导致“心情不安”“注意力不集中”等后遗症。",
+    "更悲惨的是，听力衰退的人由于听不清楚别人在说些什么，所以老是觉得有人在背后说他坏话，久而久之，就会变得疑神疑鬼，严重者甚至会产生被迫害妄想症。",
+    "（作者：林萃芬　选自《读者》）"
+   ],
+   "translations": [
+    "(1) Lắng nghe tình cảm sâu kín qua âm nhạc",
+    "Bạn thích nghe nhạc pop? Nhạc cổ điển? Hay nhạc rock? Đừng tưởng nghe nhạc chỉ đơn thuần là để giết thời gian, nó có thể phản ánh “tâm trạng lúc đó” và “tình cảm sâu kín” của người nghe.",
+    "Khi mới quen một người, ta thường “kiếm chuyện để nói” mà hỏi đối phương: “Bình thường bạn hay làm gì lúc rảnh rỗi?”",
+    "Nghe câu hỏi “hơi rập khuôn” này, tôi tin không ít người sẽ trả lời “rất chuẩn mực”: “Tôi thích ở nhà nghe nhạc!”",
+    "Nếu bạn cho rằng nghe nhạc chỉ là “giết thời gian vô nghĩa” thì bạn đã quá xem thường sức mạnh của âm nhạc rồi, thật ra nó còn phản ánh “tâm trạng lúc đó” và “tình cảm sâu kín” của người nghe.",
+    "Trong cuốn “Lịch sử tự nhiên của các giác quan”, tác giả Diane Ackerman từng nghiên cứu mối quan hệ giữa âm nhạc và cảm xúc. Bà cho rằng: “Âm nhạc cũng như tình cảm, có những lúc cuộn trào như sóng dữ, cũng có lúc bình lặng; có thể cuồng bạo, cũng có thể yên tĩnh. Nó giống như cảm xúc của chúng ta, có thể tượng trưng, phản ánh, và cũng có thể truyền đạt…”",
+    "Vì vậy, lần sau khi nghe ai đó nói với bạn “Tôi thích nghe nhạc”, đừng vội “chuyển đề tài”, hãy thử hỏi thêm: “Thế bạn thích nghe loại nhạc nào?” hoặc: “Bạn thích nghe ai hát nhất?”",
+    "Từ thứ nhạc đối phương thích nghe, bạn thường có thể đoán được “trạng thái tình cảm” của người đó lúc ấy. Chẳng hạn, bài hát “người đang yêu say đắm” thích nghe chắc chắn hoàn toàn khác với “người đang thất tình” — như bài “Em yêu anh ấy” của Trương Học Hữu là bản tình ca mà người đang yêu thích nghe nhất, tràn đầy cảm giác ấm áp hạnh phúc; ngược lại, bài “Sao em nỡ để anh buồn” của Hoàng Phẩm Nguyên lại gõ trúng nỗi đau của người thất tình, tôi có một người bạn khi thất tình quả thật “nghe nó nghìn lần vẫn không chán”.",
+    "Thông thường, ở một giai đoạn nào đó, một người chịu ảnh hưởng của cảm xúc sẽ đặc biệt thích nghe một bài hát nào đó, đến khi cảm xúc thay đổi, họ lại “chuyển tình” sang nghe bài khác. Vì vậy, ở đây tôi không dựa vào một bài hát riêng lẻ để phân tích tình cảm sâu kín của một người, mà căn cứ vào thể loại nhạc để lắng nghe tình cảm bên trong của họ.",
+    "Dĩ nhiên, rất ít người chỉ thích nghe một loại nhạc, trên kệ của phần lớn mọi người đều bày cùng lúc nhiều loại nhạc khác nhau (từ nhạc pop đến nhạc cổ điển, thứ gì cũng có). Lúc này, bạn phải bỏ chút thời gian quan sát: loại nhạc nào người đó nghe thường xuyên nhất? Và, người đó có cảm xúc nhất với loại nhạc nào?",
+    "Đợi đến khi bạn nghe ra thứ nhạc “yêu nhất” của người đó, mới có thể lắng nghe sâu hơn tình cảm bên trong của họ.",
+    "(2) Người thích nhạc pop",
+    "Bất kể “tốc độ thay thế” của nhạc pop cao đến đâu, một bài hát hễ được xếp vào loại “nhạc pop” thì hầu như đều có chung đặc điểm giai điệu đơn giản, lời ca dễ hiểu, vì như thế mọi người mới dễ dàng ngân nga theo được chứ!",
+    "Cũng giống như đặc tính của nhạc pop, người thích nhạc pop cũng không thích người và sự vật quá phức tạp, họ dễ chấp nhận những thứ đơn giản dễ hiểu, nhìn qua là rõ.",
+    "Khi yêu, họ rất dễ bị vẻ bề ngoài của đối phương thu hút, hễ họ thấy “người này trông khá vừa mắt” là sẽ nhanh chóng rơi vào lưới tình, chứ không đau đầu suy nghĩ trước những vấn đề phiền phức như “nhịp sống cơ bản của chúng ta có hợp nhau không”, “nếu quan niệm sống không giống nhau thì…”, “hai bên gia đình có hòa hợp được không”.",
+    "Nói chung, người thích nghe nhạc pop phần lớn đều rất thích xem tivi, nhất là các chương trình ca nhạc giải trí (nếu không thì làm sao họ biết hiện nay đang thịnh hành bài gì). Ngoài ra, họ cũng rất quan tâm tin tức giải trí, ca sĩ nào vừa ra album mới, người bạn nào lại có mối tình mới, họ đều biết rõ mồn một.",
+    "Nếu muốn kết bạn thân với người thích nghe nhạc pop, cách rất đơn giản, chỉ cần rủ họ đi hát karaoke là sẽ nhanh chóng hòa thành một khối.",
+    "Vì người thích nghe nhạc pop có tình cảm bên trong rất “đơn giản dễ hiểu”, nên bạn cũng không cần tốn quá nhiều tâm tư dò đoán “tâm ý” của họ; cách chung sống tốt nhất là cùng nhau thoải mái vui vẻ đánh bài, ca hát, thế là tình bạn hai bên có thể bền lâu.",
+    "(3) Người thích nghe nhạc cổ điển",
+    "Cũng như “cổ điển” và “thịnh hành” là sản phẩm của hai thời không khác nhau, người thích nghe nhạc cổ điển và người thích nghe nhạc pop cũng sống ở hai thế giới khác nhau.",
+    "Người say mê nhạc cổ điển chẳng những có suy nghĩ tương đối phức tạp, mà đồng thời còn đặc biệt ưa chuộng người, việc, vật có chiều sâu; họ sợ nhất là trò chuyện với người “trong bụng chẳng có gì”, điều đó khiến họ cảm thấy mình đang “lãng phí cuộc đời”.",
+    "Khi yêu, họ rất coi trọng việc tầng bậc tâm hồn giữa mình và đối phương “có khế hợp hay không”, “nhịp sống cơ bản có thể cộng hưởng hay không”. Nếu bạn khiến họ cảm thấy cuộc giao du của hai người không thể viết nên một “khúc nhạc rung động lòng người”, thì rất có thể họ sẽ “đặt dấu lặng” cho cuộc tình!",
+    "Đối với người thích nghe nhạc cổ điển, sự nghiêm cẩn của quá trình sống quan trọng hơn bất cứ điều gì. Vì thế, ngoài một số ít chương trình “được làm một cách nghiêm cẩn” (như kênh Discovery), họ không muốn tốn quá nhiều thời gian xem tivi.",
+    "Ngoài ra, họ cũng đặc biệt thích đi du lịch ở những nơi “có chút lịch sử”, chẳng hạn bảo tàng, phòng tranh hay danh lam thắng cảnh, di tích cổ đều là nơi họ yêu thích nhất. Họ sẽ dành nhiều thời gian xem xét tỉ mỉ, chăm chú đọc những dòng chú thích bên cạnh, chứ không cưỡi ngựa xem hoa, đi qua loa một vòng là coi như “đã đến đây chơi”.",
+    "Tôi quen nhiều kiến trúc sư đều là người hâm mộ nhạc cổ điển; họ không chỉ làm việc nghiêm cẩn, có tổ chức, mà ngay cả tình cảm bên trong cũng hết sức lý trí và kín đáo, người bình thường khá khó thân thiết với họ.",
+    "(4) Người thích nghe nhạc nhẹ",
+    "Nhiều người khi làm việc hay đọc sách thích nghe chút nhạc nhẹ nhàng êm dịu, một mặt làm dịu bầu không khí căng thẳng, mặt khác làm dịu tâm trạng căng thẳng, giúp mình chuyên tâm làm việc hơn.",
+    "Người thích nghe nhạc nhẹ phần lớn đều rất “sợ ồn”, nội tâm họ vô cùng khao khát yên tĩnh, dù làm việc hay sinh hoạt đều không thích bị người khác quấy rầy, ghét nhất là những vị khách không mời mà đến, không hẹn trước đã đột ngột ghé qua; nếu có ai đó hấp tấp xông vào, họ tuyệt đối sẽ không cho người đó sắc mặt dễ chịu (dù là người thân của mình cũng chẳng có “quyền miễn trừ”).",
+    "Có thể hình dung được, người mà ngay cả cuộc sống thường ngày cũng nhiều không khí như thế, khi yêu đương tự nhiên càng chú trọng không khí. Cũng vì vậy, muốn chinh phục trái tim họ, nhất định phải biết cách tạo ra bầu không khí lãng mạn, như thế họ mới “không kìm lòng được” mà yêu bạn.",
+    "Thú vị là, nhiều người thích nghe nhạc nhẹ có vẻ ngoài chẳng hề thuộc kiểu yểu điệu mềm mại, nhưng dù bề ngoài trông “cường tráng” đến đâu, tình cảm bên trong của họ vẫn lãng mạn, nhất định đừng để vẻ ngoài của họ đánh lừa.",
+    "Còn nữa, người thích nghe nhạc nhẹ cũng thường không chịu được áp lực; hễ là áp lực công việc, áp lực quan hệ, đều khiến họ nảy sinh mong muốn “bỏ chạy”, họ chỉ có thể chấp nhận tình cảm và công việc “hạng nhẹ”.",
+    "(5) Người thích nghe nhạc rock",
+    "Nếu bạn từng đến tận nơi nghe ban nhạc rock biểu diễn, hẳn đã từng bị anh ca sĩ chính giỏi khuấy động không khí “xoay như chong chóng”: anh ta bảo bạn hét là bạn hét, bảo bạn vẫy tay là bạn vẫy tay, bảo bạn vỗ tay là bạn vỗ tay, dường như có một sức mạnh mạnh mẽ dẫn dắt bạn “không thể không ngoan ngoãn làm theo lời anh ta”.",
+    "Nhiều người mê nhạc rock đều cho rằng mình “vừa ngầu vừa nổi loạn”, thật ra lại hoàn toàn ngược lại, sâu trong lòng họ thực sự cần một người mạnh mẽ dẫn dắt họ tìm ra “phương hướng cuộc đời” (dĩ nhiên, “người mạnh” này phải khiến họ sùng bái đến mức phục sát đất mới được).",
+    "Ngoài việc sùng bái thần tượng một cách cuồng nhiệt, họ cũng rất thích lắc lư cơ thể giữa đám đông; khi cảm nhận mãnh liệt rằng mình là một thành viên của tập thể, dường như họ nhận được từ đó “cảm giác được thừa nhận”.",
+    "Có lẽ vì trong cuộc sống đã quá quen với sự hiện diện của âm nhạc! Đến cả yêu đương hay kết bạn, họ cũng phải nhờ âm nhạc để trao đổi tình cảm với nhau. Nếu không, họ sẽ cho rằng hai bên “không hợp cảm giác”!",
+    "Lỡ như bạn của bạn lại đúng là một người mê nhạc rock, thì tốt nhất bạn nên cầu trời ban cho mình một đôi tai siêu khỏe chịu được âm lượng nhiều đề-xi-ben, vì tiếng ồn chẳng những phá hỏng thính lực của bạn (cẩn thận đấy! thính lực nếu bị tổn hại nặng thì mãi mãi không thể hồi phục), mà còn gây ra những di chứng như “tâm trạng bất an”, “mất tập trung”.",
+    "Bi thảm hơn nữa là, người bị suy giảm thính lực vì nghe không rõ người khác đang nói gì nên cứ luôn cảm thấy có người nói xấu mình sau lưng, lâu dần sẽ trở nên đa nghi, nặng hơn thậm chí còn mắc chứng hoang tưởng bị hại.",
+    "(Tác giả: Lâm Tụy Phân, trích từ tạp chí “Độc giả”)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "各司其职 (ai làm việc nấy)",
+   "structure": "各 + 动 + 其 + ……（各司其职 / 各得其所 / 各负其责 / 各尽其职 / 各行其是）",
+   "explanation": "各司其职: mỗi người làm tốt việc trong phạm vi chức trách của mình. Thành ngữ bốn chữ theo cấu trúc \"各 + động từ + 其……\" còn có: 各得其所 (mỗi người/mỗi việc đều được sắp xếp thỏa đáng), 各负其责 (mỗi người tự gánh trách nhiệm của mình), 各尽其职 (mỗi người làm tròn công việc bổn phận), 各行其是 (mỗi người tự làm theo điều mình cho là đúng – thường mang nghĩa không thống nhất).",
+   "examples": [
+    {
+     "zh": "……却分不清保姆和音乐，是怎样各司其职又互为其主。",
+     "vi": "...nhưng chẳng phân biệt nổi người bảo mẫu và âm nhạc đã làm sao để ai lo phận nấy mà lại thay nhau làm chủ."
+    },
+    {
+     "zh": "公安、武警、消防等各个部门各司其职，共同维护着城市的安全和秩序。",
+     "vi": "Các ngành công an, cảnh sát vũ trang, cứu hỏa... mỗi bên làm đúng chức trách, cùng nhau giữ gìn an ninh và trật tự thành phố."
+    },
+    {
+     "zh": "小王真能干，搬家的第一天，所有的东西就都已经各得其所了。",
+     "vi": "Tiểu Vương thật giỏi, ngay ngày đầu chuyển nhà mọi đồ đạc đã đâu vào đấy."
+    },
+    {
+     "zh": "一个公司的各个部门应该有一个协调机制，绝对不能各行其是。",
+     "vi": "Các bộ phận của một công ty phải có cơ chế phối hợp, tuyệt đối không được mỗi bên làm một kiểu."
+    }
+   ]
+  },
+  {
+   "point": "一度 (từng có lúc, một dạo; một lần)",
+   "structure": "一度 + V（副词）；数量 + 一度（名词：一次）",
+   "explanation": "一度 là phó từ, biểu thị trong quá khứ đã từng xảy ra một lần, hoặc đã từng có một thời gian (tình trạng như vậy). Liên hệ: \"一度\" còn có cách dùng danh từ, nghĩa là \"một lần\", ví dụ 四年一度 (bốn năm một lần), 一年一度 (mỗi năm một lần).",
+   "examples": [
+    {
+     "zh": "严格说那已不是音乐，革命一度消灭了音乐。",
+     "vi": "Nói nghiêm ra thì đó đã chẳng còn là âm nhạc, cách mạng đã có lúc xóa sổ âm nhạc."
+    },
+    {
+     "zh": "他曾经因为无法戒毒而一度对生活失去信心。",
+     "vi": "Anh ấy từng có một dạo mất niềm tin vào cuộc sống vì không cai được ma túy."
+    },
+    {
+     "zh": "这两个青梅竹马的朋友一度失去了联系，但后来在一个偶然的机会又见面了。",
+     "vi": "Đôi bạn thanh mai trúc mã ấy có thời gian mất liên lạc, nhưng sau đó tình cờ lại gặp nhau."
+    },
+    {
+     "zh": "在会议进行过程中，一度因为有与会者情绪冲动而暂停，但不久又恢复了。",
+     "vi": "Trong lúc họp, có lúc phải tạm dừng vì một đại biểu bị kích động, nhưng chẳng bao lâu lại tiếp tục."
+    },
+    {
+     "zh": "四年一度的奥运会是全世界人都关注的盛会。",
+     "vi": "Thế vận hội bốn năm một lần là đại hội được cả thế giới quan tâm."
+    }
+   ]
+  },
+  {
+   "point": "可视可感 (có thể thấy, có thể cảm)",
+   "structure": "可 + V1 + 可 + V2；可 + V1 + 可不 + V2；可 + adj1 + 可 + adj2",
+   "explanation": "可视可感: có thể nhìn thấy, có thể cảm nhận được. \"可 + V1 + 可 + V2\" là cấu trúc có thể thay đổi, động từ sau hai chữ \"可\" thay được, thường gặp: 可看可吃, 可写可画, 可坐可卧, 可走可跑, 可煮可炒, 可听可唱, 可学可玩, 可买可卖, 可出可进, 可上可下, 可关可开, 可使用可收藏, 可学习可娱乐, 可湿洗可干洗, 可收缩可伸展, 可熟吃可生吃. Liên hệ 1: \"可 + V1 + 可不 + V2……\" biểu thị có thể làm thế này cũng có thể không, ví dụ 可带可不带, 可买可不买, 可去可不去, 可看可不看, 可开可不开. Liên hệ 2: \"可 + adj1 + 可 + adj2\" biểu thị có thể thế này cũng có thể thế kia, ví dụ 可长可短, 可大可小, 可宽可窄, 可明可暗, 可高可低, 可厚可薄, 可多可少, 可远可近, 可深可浅, 可黑可白, 可快可慢.",
+   "examples": [
+    {
+     "zh": "音乐不再仅仅是一种情绪，而有了实在和具体的内容，成为可视可感的语言和思想，甚至是哲学。",
+     "vi": "Âm nhạc không còn chỉ là một cảm xúc mà đã có nội dung thực tại và cụ thể, trở thành ngôn ngữ và tư tưởng có thể thấy, có thể cảm, thậm chí là triết học."
+    },
+    {
+     "zh": "可湿洗可干洗 / 可收缩可伸展 / 可熟吃可生吃",
+     "vi": "giặt nước được, giặt khô được / co lại được, duỗi ra được / ăn chín được, ăn sống được"
+    },
+    {
+     "zh": "可带可不带、可买可不买、可去可不去",
+     "vi": "mang cũng được không mang cũng được, mua cũng được không mua cũng được, đi cũng được không đi cũng được"
+    },
+    {
+     "zh": "可长可短 / 可大可小 / 可明可暗 / 可快可慢",
+     "vi": "dài ngắn tùy ý / to nhỏ tùy ý / sáng tối tùy ý / nhanh chậm tùy ý"
+    }
+   ]
+  },
+  {
+   "point": "可有可无 (có cũng được, không có cũng được)",
+   "structure": "……是可有可无的；可……可……（可歌可泣 / 可丁可卯 / 可圈可点）",
+   "explanation": "可有可无: thành ngữ, nghĩa là có cũng được mà không có cũng được (không quan trọng). Liên hệ: thành ngữ theo cấu trúc \"可……可……\" còn có: 可歌可泣 (đáng ca ngợi, khiến người ta cảm động rơi lệ), 可丁可卯 (mǎo) (chỉ số lượng không nhiều không ít, hoặc phạm vi không lớn không nhỏ – vừa khít), 可圈可点 (ví với biểu hiện xuất sắc, đáng khen ngợi).",
+   "examples": [
+    {
+     "zh": "多少有点儿可有可无的意思，但若是真正割断情丝，又是不甘的。",
+     "vi": "Ít nhiều có chút ý vị có cũng được không có cũng chẳng sao, nhưng nếu thật sự cắt đứt sợi tơ tình thì lại không cam lòng."
+    },
+    {
+     "zh": "对于我来说，真诚和善良不是可有可无的，而是一个人必须具备的品德。",
+     "vi": "Với tôi, chân thành và lương thiện không phải thứ có cũng được không cũng được, mà là phẩm chất một người nhất định phải có."
+    },
+    {
+     "zh": "根据我的经验，出门旅行必须携带两样东西：钱和地图，其他东西都是可有可无的。",
+     "vi": "Theo kinh nghiệm của tôi, đi du lịch nhất định phải mang hai thứ: tiền và bản đồ, những thứ khác có hay không cũng được."
+    }
+   ]
+  },
+  {
+   "point": "无须 (không cần, không phải)",
+   "structure": "无须 + V；无须 + 主语 + V",
+   "explanation": "无须: phó từ, nghĩa là không cần, không phải, dùng trong văn viết. Nhưng khác với \"不必\": \"不必\" có thể đứng một mình thành câu, còn \"无须\" thì không; ngoài ra \"无须\" có thể đặt trước chủ ngữ, còn \"不必\" thì không.",
+   "examples": [
+    {
+     "zh": "没有音乐的老年，也许枯涩也许灰暗但也许恰恰是因他的内心饱满滋润，而无须依赖音乐的浇灌。",
+     "vi": "Tuổi già không có âm nhạc, có thể khô khan, có thể u ám, nhưng cũng có thể chính vì nội tâm người ấy đầy đặn, thấm đẫm, nên không cần nhờ đến sự tưới tắm của âm nhạc."
+    },
+    {
+     "zh": "无须再说什么，悲痛的眼泪已经表明了一切。",
+     "vi": "Chẳng cần nói thêm gì nữa, những giọt nước mắt đau thương đã nói lên tất cả."
+    },
+    {
+     "zh": "爸爸妈妈，我在这里过得很好，自己能安排好一切，你们无须牵挂。",
+     "vi": "Bố mẹ ơi, con ở đây sống rất tốt, tự lo liệu được mọi thứ, bố mẹ không cần lo lắng."
+    },
+    {
+     "zh": "她是一个优秀的演员，每次拍戏之前都准备得非常充分，表演也非常到位，无须导演操心。",
+     "vi": "Cô ấy là một diễn viên xuất sắc, trước mỗi lần quay đều chuẩn bị rất kỹ, diễn cũng rất đạt, không cần đạo diễn phải bận tâm."
+    }
+   ]
+  },
+  {
+   "point": "无形无状 (không hình không dạng)",
+   "structure": "无 + N1 + 无 + N2（有/没 + N1 + 有/没 + N2）",
+   "explanation": "无形无状: không có hình dạng cụ thể, có thể sờ chạm. \"无 + N1 + 无 + N2\" là cấu trúc có thể thay đổi, danh từ sau hai chữ \"无\" thay được, thường gặp: 无钱(权)无势, 无房无车, 无家无业, 无电无水, 无名无利, 无树无草, 无章无法, 无儿无女, 无风无雨, 无灾无难, 无头无绪, 无头无尾, 无病无灾. Liên hệ: trong cấu trúc này \"无\" đều có thể đổi thành \"没\", cũng có thể đổi thành \"有\", ví dụ 有(没)钱有(没)势, 有(没)房有(没)车, 有(没)家有(没)业, 有(没)电有(没)水, 有(没)树有(没)草.",
+   "examples": [
+    {
+     "zh": "它无形无状、无影无踪，无法触摸、无法品尝，是一种流逝的时间，一种被曲谱固化的记忆。",
+     "vi": "Nó không hình không dạng, không bóng không dấu, không thể chạm tới, không thể nếm trải; nó là thời gian đang trôi, là ký ức được bản nhạc đông cứng lại."
+    },
+    {
+     "zh": "无钱（权）无势 / 无房无车 / 无家无业 / 无儿无女",
+     "vi": "không tiền (quyền) không thế / không nhà không xe / không nhà cửa không nghề nghiệp / không con không cái"
+    },
+    {
+     "zh": "有（没）钱有（没）势 / 有（没）房有（没）车",
+     "vi": "có (không) tiền có (không) thế / có (không) nhà có (không) xe"
+    }
+   ]
+  },
+  {
+   "point": "无影无踪 (không bóng không dấu, biến mất tăm)",
+   "structure": "……就无影无踪了；无……无……（无边无际 / 无法无天 / 无尽无休……）",
+   "explanation": "无影无踪: thành ngữ, nghĩa là biến mất hoàn toàn, không còn chút bóng dáng hay dấu vết nào. Liên hệ: thành ngữ theo cấu trúc \"无……无……\" còn có: 无边无际 (không bờ bến, tả sự bao la), 无法无天 (chẳng kiêng nể gì mà làm điều xấu), 无尽无休 (không dứt, mãi không thôi), 无拘无束 (không bị ràng buộc, tự do tự tại), 无牵无挂 (không vướng bận gì), 无亲无故 (không người thân, bạn bè – rất cô độc), 无穷无尽 (không bao giờ hết, không giới hạn), 无声无息 (không tiếng không hơi – rất yên lặng; cũng tả không có tiếng tăm), 无时无刻 (không lúc nào không, mọi lúc mọi nơi), 无私无畏 (không vụ lợi, không sợ hãi), 无依无靠 (không nơi nương tựa), 无忧无虑 (không lo không nghĩ), 无缘无故 (không duyên cớ).",
+   "examples": [
+    {
+     "zh": "它无形无状、无影无踪，无法触摸、无法品尝，是一种流逝的时间，一种被曲谱固化的记忆。",
+     "vi": "Nó không hình không dạng, không bóng không dấu, không thể chạm tới, không thể nếm trải; nó là thời gian đang trôi, là ký ức được bản nhạc đông cứng lại."
+    },
+    {
+     "zh": "小兔子一蹦一跳地进了草地，一会儿就无影无踪了。",
+     "vi": "Chú thỏ con nhảy tung tăng vào bãi cỏ, chỉ một lát đã mất tăm."
+    }
+   ]
+  }
+ ]
+}

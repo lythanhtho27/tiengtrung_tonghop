@@ -1,0 +1,1308 @@
+{
+ "book": "gc1",
+ "lesson_num": 7,
+ "title": "人",
+ "pages": [
+  133,
+  151
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "仙果",
+   "py": "xiānguǒ",
+   "pos": "名",
+   "zh": "神话传说中的一种果实，具有起死回生或使人长生不老的奇效。",
+   "en": "",
+   "hv": "TIÊN QUẢ",
+   "vi": "quả tiên",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "心智",
+   "py": "xīnzhì",
+   "pos": "名",
+   "zh": "智力。",
+   "en": "",
+   "hv": "TÂM TRÍ",
+   "vi": "trí tuệ, trí lực",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "平平",
+   "py": "píngpíng",
+   "pos": "形",
+   "zh": "不好不坏；寻常。",
+   "en": "",
+   "hv": "BÌNH BÌNH",
+   "vi": "bình thường, tầm thường",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "瘸",
+   "py": "qué",
+   "pos": "形",
+   "zh": "跛。",
+   "en": "",
+   "hv": "QUÀ",
+   "vi": "què",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "跛",
+   "py": "bǒ",
+   "pos": "形",
+   "zh": "腿脚有毛病，走起路来身体不平衡，向两边摇晃。",
+   "en": "",
+   "hv": "BẢ",
+   "vi": "thọt, khập khiễng",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "铺",
+   "py": "pù",
+   "pos": "名",
+   "zh": "旧时的驿站。现多用于地名。",
+   "en": "",
+   "hv": "PHỐ",
+   "vi": "trạm (dịch trạm thời xưa)",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "荆棘布道",
+   "py": "jīngjí bù dào",
+   "pos": "",
+   "zh": "丛生多刺的灌木遍布在道路上。",
+   "en": "",
+   "hv": "KINH CỨC BỐ ĐẠO",
+   "vi": "gai góc đầy đường",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "密林蔽日",
+   "py": "mì lín bì rì",
+   "pos": "",
+   "zh": "茂盛而稠密的树林遮挡了阳光。",
+   "en": "",
+   "hv": "MẬT LÂM TẾ NHẬT",
+   "vi": "rừng rậm che khuất mặt trời",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "猿啼狼啸",
+   "py": "yuán tí láng xiào",
+   "pos": "",
+   "zh": "野兽拉长声音叫。",
+   "en": "",
+   "hv": "VIÊN ĐỀ LANG KHIẾU",
+   "vi": "vượn kêu sói hú",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "叮",
+   "py": "dīng",
+   "pos": "动",
+   "zh": "咬，蚊虫等用针形口器插入人或动物皮肤内吸食血液。",
+   "en": "",
+   "hv": "ĐINH",
+   "vi": "đốt, chích (côn trùng)",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "屈服",
+   "py": "qūfú",
+   "pos": "动",
+   "zh": "在外来压力下放弃斗争，低头认输。（屈服——服从）",
+   "en": "",
+   "hv": "KHUẤT PHỤC",
+   "vi": "khuất phục",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "萧瑟",
+   "py": "xiāosè",
+   "pos": "拟声",
+   "zh": "形容风吹树木发出的声响。",
+   "en": "",
+   "hv": "TIÊU SẮT",
+   "vi": "xào xạc (tiếng gió thổi cây)",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "匆匆",
+   "py": "cōngcōng",
+   "pos": "形",
+   "zh": "急急忙忙的样子。",
+   "en": "",
+   "hv": "THÔNG THÔNG",
+   "vi": "vội vã, vội vàng",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "峰回路转",
+   "py": "fēng huí lù zhuǎn",
+   "pos": "",
+   "zh": "山峰和道路曲折，多用来比喻困境中出现转机或新局面。",
+   "en": "",
+   "hv": "PHONG HỒI LỘ CHUYỂN",
+   "vi": "núi vòng đường quanh; (ví) tình thế xoay chuyển",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "劳累",
+   "py": "láolèi",
+   "pos": "形",
+   "zh": "因过度劳动而疲乏。",
+   "en": "",
+   "hv": "LAO LUỴ",
+   "vi": "mệt nhọc, vất vả",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "奔波",
+   "py": "bēnbō",
+   "pos": "动",
+   "zh": "辛劳地到处奔走。",
+   "en": "",
+   "hv": "BÔN BA",
+   "vi": "bôn ba",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "面黄肌瘦",
+   "py": "miàn huáng jī shòu",
+   "pos": "",
+   "zh": "脸色枯黄，身体消瘦。形容身体很不健康的样子。",
+   "en": "",
+   "hv": "DIỆN HOÀNG CƠ SẤU",
+   "vi": "mặt vàng người gầy, xanh xao gầy yếu",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "瘦骨嶙峋",
+   "py": "shòu gǔ línxún",
+   "pos": "",
+   "zh": "形容人十分瘦。嶙峋：形容人消瘦露骨。",
+   "en": "",
+   "hv": "SẤU CỐT LÂN TUÂN",
+   "vi": "gầy trơ xương",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "十度春秋",
+   "py": "shí dù chūnqiū",
+   "pos": "",
+   "zh": "十年。度：相当于“次，回”。春秋：代指年。",
+   "en": "",
+   "hv": "THẬP ĐỘ XUÂN THU",
+   "vi": "mười năm (mười mùa xuân thu)",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "磨难",
+   "py": "mónàn",
+   "pos": "名",
+   "zh": "折磨和苦难。",
+   "en": "",
+   "hv": "MA NẠN",
+   "vi": "gian truân, khổ nạn",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "渔村",
+   "py": "yúcūn",
+   "pos": "名",
+   "zh": "渔民聚居的村庄。",
+   "en": "",
+   "hv": "NGƯ THÔN",
+   "vi": "làng chài",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "风餐露宿",
+   "py": "fēng cān lù sù",
+   "pos": "",
+   "zh": "在风里吃饭，在露天住宿。形容旅途中的辛苦劳累。",
+   "en": "",
+   "hv": "PHONG XAN LỘ TÚC",
+   "vi": "ăn gió nằm sương",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "朝不保夕",
+   "py": "zhāo bù bǎo xī",
+   "pos": "",
+   "zh": "保得住早上，不一定保得住晚上，形容形势危急。",
+   "en": "",
+   "hv": "TRIÊU BẤT BẢO TỊCH",
+   "vi": "sáng không biết tối (bấp bênh, nguy ngập)",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "衣食无虞",
+   "py": "yī shí wú yú",
+   "pos": "",
+   "zh": "不需为穿衣吃饭而发愁。虞：忧虑。",
+   "en": "",
+   "hv": "Y THỰC VÔ NGU",
+   "vi": "không lo cơm áo",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "荒无人烟",
+   "py": "huāng wú rényān",
+   "pos": "",
+   "zh": "（地区）荒凉偏僻，见不到一户人家。",
+   "en": "",
+   "hv": "HOANG VÔ NHÂN YÊN",
+   "vi": "hoang vắng không bóng người",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "旷野",
+   "py": "kuàngyě",
+   "pos": "名",
+   "zh": "空旷荒凉的原野。",
+   "en": "",
+   "hv": "KHOÁNG DÃ",
+   "vi": "đồng hoang, cánh đồng mênh mông",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "皑皑",
+   "py": "ái'ái",
+   "pos": "形",
+   "zh": "霜、雪洁白的样子。",
+   "en": "",
+   "hv": "NGAI NGAI",
+   "vi": "trắng xoá (sương, tuyết)",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "碎片",
+   "py": "suìpiàn",
+   "pos": "名",
+   "zh": "破碎的小片。",
+   "en": "",
+   "hv": "TOÁI PHIẾN",
+   "vi": "mảnh vụn",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "嚎叫",
+   "py": "háojiào",
+   "pos": "动",
+   "zh": "大声喊叫。",
+   "en": "",
+   "hv": "HÀO KHIẾU",
+   "vi": "gào rú, tru",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "辗转难眠",
+   "py": "zhǎnzhuǎn nán mián",
+   "pos": "",
+   "zh": "躺在床上翻来覆去地不能入睡。形容心中有事。同“辗转反侧”。",
+   "en": "",
+   "hv": "TRIỂN CHUYỂN NAN MIÊN",
+   "vi": "trằn trọc khó ngủ",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "鳄鱼",
+   "py": "èyú",
+   "pos": "名",
+   "zh": "一种凶恶的爬行动物，全身有灰褐色硬皮，捕食小动物，有的也吃人、畜。",
+   "en": "crocodile",
+   "hv": "NGẠC NGƯ",
+   "vi": "cá sấu",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "潜",
+   "py": "qián",
+   "pos": "动",
+   "zh": "隐在水面下。",
+   "en": "",
+   "hv": "TIỀM",
+   "vi": "lặn, ẩn dưới nước",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "水蛭",
+   "py": "shuǐzhì",
+   "pos": "名",
+   "zh": "环节动物，生活在池沼或水田中，吸食人畜的血液。",
+   "en": "leech; bloodsucker",
+   "hv": "THUỶ CHẤT",
+   "vi": "con đỉa",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "贪婪",
+   "py": "tānlán",
+   "pos": "形",
+   "zh": "贪得无厌。",
+   "en": "",
+   "hv": "THAM LAM",
+   "vi": "tham lam",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "昼夜",
+   "py": "zhòuyè",
+   "pos": "名",
+   "zh": "白天与黑夜。",
+   "en": "",
+   "hv": "TRÚ DẠ",
+   "vi": "ngày đêm",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "火花",
+   "py": "huǒhuā",
+   "pos": "名",
+   "zh": "比喻闪耀有如迸发出来的火焰或火星。",
+   "en": "",
+   "hv": "HOẢ HOA",
+   "vi": "tia lửa, ngọn lửa (lóe sáng)",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "绿草如茵",
+   "py": "lǜ cǎo rú yīn",
+   "pos": "",
+   "zh": "绿油油的草坪，就像地上铺的褥（rù）子。形容草绿得可爱。",
+   "en": "",
+   "hv": "LỤC THẢO NHƯ NHÂN",
+   "vi": "cỏ xanh như thảm",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "夕阳",
+   "py": "xīyáng",
+   "pos": "名",
+   "zh": "傍晚的太阳。",
+   "en": "",
+   "hv": "TỊCH DƯƠNG",
+   "vi": "mặt trời lặn, tà dương",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "栖",
+   "py": "qī",
+   "pos": "动",
+   "zh": "鸟类停息，歇宿。",
+   "en": "",
+   "hv": "THÊ",
+   "vi": "đậu, ngủ (chim)",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "茹毛饮血",
+   "py": "rú máo yǐn xuè",
+   "pos": "",
+   "zh": "指原始人不会用火，连毛带血地生吃禽兽的肉。",
+   "en": "",
+   "hv": "NHƯ MAO ẨM HUYẾT",
+   "vi": "ăn lông ở lỗ (ăn sống nuốt tươi)",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "安定有序",
+   "py": "āndìng yǒuxù",
+   "pos": "",
+   "zh": "平静稳定，有秩序。",
+   "en": "",
+   "hv": "AN ĐỊNH HỮU TỰ",
+   "vi": "yên ổn, trật tự",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "眼神",
+   "py": "yǎnshén",
+   "pos": "名",
+   "zh": "眼睛的神态，眼色。",
+   "en": "",
+   "hv": "NHÃN THẦN",
+   "vi": "ánh mắt",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "行囊",
+   "py": "xíngnáng",
+   "pos": "名",
+   "zh": "行李。",
+   "en": "",
+   "hv": "HÀNH NANG",
+   "vi": "hành lý, túi hành trang",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "湍",
+   "py": "tuān",
+   "pos": "",
+   "zh": "急流的水。",
+   "en": "",
+   "hv": "THOAN",
+   "vi": "dòng nước xiết",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "皆",
+   "py": "jiē",
+   "pos": "副",
+   "zh": "都，全是。",
+   "en": "",
+   "hv": "GIAI",
+   "vi": "đều, tất cả",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "柯",
+   "py": "kē",
+   "pos": "",
+   "zh": "树枝。",
+   "en": "",
+   "hv": "KHA",
+   "vi": "cành cây",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "险峻",
+   "py": "xiǎnjùn",
+   "pos": "形",
+   "zh": "山势高峻而凶险。（险峻——险恶）",
+   "en": "",
+   "hv": "HIỂM TUẤN",
+   "vi": "hiểm trở, cheo leo",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "无比",
+   "py": "wúbǐ",
+   "pos": "动",
+   "zh": "没有别的能够相比（多用于好的方面）。",
+   "en": "",
+   "hv": "VÔ TỶ",
+   "vi": "không gì sánh được, vô cùng",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "径",
+   "py": "jìng",
+   "pos": "",
+   "zh": "狭窄的小道。",
+   "en": "",
+   "hv": "KÍNH",
+   "vi": "đường mòn, lối nhỏ",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "搀扶",
+   "py": "chānfú",
+   "pos": "动",
+   "zh": "从旁轻轻架住别人的手臂或身体。",
+   "en": "",
+   "hv": "SAM PHÙ",
+   "vi": "dìu, đỡ",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "岁月",
+   "py": "suìyuè",
+   "pos": "名",
+   "zh": "年月，时光。",
+   "en": "",
+   "hv": "TUẾ NGUYỆT",
+   "vi": "năm tháng",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "刻刀",
+   "py": "kèdāo",
+   "pos": "名",
+   "zh": "雕刻用的刀具。",
+   "en": "",
+   "hv": "KHẮC ĐAO",
+   "vi": "dao khắc",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "轻狂",
+   "py": "qīngkuáng",
+   "pos": "形",
+   "zh": "轻浮狂放。",
+   "en": "",
+   "hv": "KHINH CUỒNG",
+   "vi": "ngông cuồng, bồng bột",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "额头",
+   "py": "étóu",
+   "pos": "名",
+   "zh": "眉毛之上头发之下的部分。",
+   "en": "",
+   "hv": "NGẠCH ĐẦU",
+   "vi": "trán",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "眼角",
+   "py": "yǎnjiǎo",
+   "pos": "名",
+   "zh": "上下眼皮结合处。",
+   "en": "canthus; the corner of the eye",
+   "hv": "NHÃN GIÁC",
+   "vi": "khoé mắt",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "沧桑",
+   "py": "cāngsāng",
+   "pos": "名",
+   "zh": "比喻世事变化很大。",
+   "en": "",
+   "hv": "THƯƠNG TANG",
+   "vi": "tang thương, dấu vết thời gian",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "衰老",
+   "py": "shuāilǎo",
+   "pos": "形",
+   "zh": "因年老而身体、精力衰弱。",
+   "en": "",
+   "hv": "SUY LÃO",
+   "vi": "già yếu",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "非凡",
+   "py": "fēifán",
+   "pos": "形",
+   "zh": "超过一般；不寻常。",
+   "en": "",
+   "hv": "PHI PHÀM",
+   "vi": "phi thường, khác thường",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "吞吞吐吐",
+   "py": "tūntūntǔtǔ",
+   "pos": "形",
+   "zh": "形容说话有顾虑，想说又不敢说的样子。",
+   "en": "",
+   "hv": "THÔN THÔN THỔ THỔ",
+   "vi": "ấp a ấp úng",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "坎坷",
+   "py": "kǎnkě",
+   "pos": "形",
+   "zh": "道路不平。比喻经历曲折，不得志。",
+   "en": "",
+   "hv": "KHẢM KHA",
+   "vi": "gập ghềnh, trắc trở",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "蹉跎",
+   "py": "cuōtuó",
+   "pos": "动",
+   "zh": "时间白白地过去。",
+   "en": "",
+   "hv": "SA ĐÀ",
+   "vi": "lần lữa, để thời gian trôi uổng",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "消磨",
+   "py": "xiāomó",
+   "pos": "动",
+   "zh": "意志、精力等消散磨灭。",
+   "en": "",
+   "hv": "TIÊU MA",
+   "vi": "hao mòn (ý chí, sức lực)",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "昔日",
+   "py": "xīrì",
+   "pos": "名",
+   "zh": "往日，从前。",
+   "en": "",
+   "hv": "TÍCH NHẬT",
+   "vi": "ngày xưa, ngày trước",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "无怨无悔",
+   "py": "wú yuàn wú huǐ",
+   "pos": "",
+   "zh": "既没有怨恨，也不后悔。指心甘情愿地接受某种事实或结果。",
+   "en": "",
+   "hv": "VÔ OÁN VÔ HỐI",
+   "vi": "không oán không hối",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "毅然决然",
+   "py": "yìrán juérán",
+   "pos": "",
+   "zh": "毫不犹豫，很坚决的样子。",
+   "en": "",
+   "hv": "NGHỊ NHIÊN QUYẾT NHIÊN",
+   "vi": "kiên quyết, dứt khoát",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "拐杖",
+   "py": "guǎizhàng",
+   "pos": "名",
+   "zh": "手杖，俗称拐棍。",
+   "en": "",
+   "hv": "QUẢI TRƯỢNG",
+   "vi": "cây gậy chống",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "披荆斩棘",
+   "py": "pī jīng zhǎn jí",
+   "pos": "",
+   "zh": "比喻在前进道路上消除障碍，克服种种困难。",
+   "en": "",
+   "hv": "PHI KINH TRẢM CỨC",
+   "vi": "vạch gai chặt góc, vượt mọi gian nan",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "羞愧",
+   "py": "xiūkuì",
+   "pos": "形",
+   "zh": "感到羞耻和惭愧。",
+   "en": "",
+   "hv": "TU QUÝ",
+   "vi": "xấu hổ, hổ thẹn",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "丛林",
+   "py": "cónglín",
+   "pos": "名",
+   "zh": "茂密的树林子。",
+   "en": "",
+   "hv": "TÙNG LÂM",
+   "vi": "rừng rậm",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "泅",
+   "py": "qiú",
+   "pos": "动",
+   "zh": "在水里游，多指游水渡过。",
+   "en": "",
+   "hv": "TÙ",
+   "vi": "bơi (qua sông)",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "茧子",
+   "py": "jiǎnzi",
+   "pos": "名",
+   "zh": "手上或脚上因长期劳动、走路而磨成的硬皮。",
+   "en": "callus",
+   "hv": "KIỂN TỬ",
+   "vi": "vết chai",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "哧哧",
+   "py": "chīchī",
+   "pos": "拟声",
+   "zh": "摩擦、撕裂的声音。",
+   "en": "",
+   "hv": "XÍCH XÍCH",
+   "vi": "xoèn xoẹt, sột soạt (tiếng cọ xát)",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "血痂",
+   "py": "xuèjiā",
+   "pos": "名",
+   "zh": "伤口或疮口由血液凝结成的块状物。",
+   "en": "scab",
+   "hv": "HUYẾT GIA",
+   "vi": "vảy máu, vảy vết thương",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "挑战",
+   "py": "tiǎozhàn",
+   "pos": "动",
+   "zh": "主动表示要跟对方竞赛。",
+   "en": "",
+   "hv": "KHIÊU CHIẾN",
+   "vi": "thách thức, khiêu chiến",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "极限",
+   "py": "jíxiàn",
+   "pos": "名",
+   "zh": "最高的限度。",
+   "en": "",
+   "hv": "CỰC HẠN",
+   "vi": "giới hạn tột cùng",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "死里逃生",
+   "py": "sǐ lǐ táo shēng",
+   "pos": "",
+   "zh": "从极其危险的境地逃脱，保全性命。",
+   "en": "",
+   "hv": "TỬ LÝ ĐÀO SINH",
+   "vi": "thoát chết trong gang tấc",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "挣扎",
+   "py": "zhēngzhá",
+   "pos": "动",
+   "zh": "奋力支撑。",
+   "en": "",
+   "hv": "TRANH TRÁT",
+   "vi": "vùng vẫy, gắng gượng",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "摸索",
+   "py": "mōsuǒ",
+   "pos": "动",
+   "zh": "试探着（行进）；寻找（方向、方法、经验等）。（摸索——探索）",
+   "en": "",
+   "hv": "MÔ SÁCH",
+   "vi": "mò mẫm, dò dẫm",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "苍苍",
+   "py": "cāngcāng",
+   "pos": "形",
+   "zh": "灰白。",
+   "en": "",
+   "hv": "THƯƠNG THƯƠNG",
+   "vi": "bạc phơ",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "追寻",
+   "py": "zhuīxún",
+   "pos": "动",
+   "zh": "跟踪寻找。",
+   "en": "",
+   "hv": "TRUY TẦM",
+   "vi": "truy tìm, theo đuổi",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "历程",
+   "py": "lìchéng",
+   "pos": "名",
+   "zh": "经历的过程。（历程——过程）",
+   "en": "",
+   "hv": "LỊCH TRÌNH",
+   "vi": "chặng đường, quá trình đã trải",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "苍老",
+   "py": "cānglǎo",
+   "pos": "形",
+   "zh": "衰老（多指声音、形貌）。",
+   "en": "",
+   "hv": "THƯƠNG LÃO",
+   "vi": "già nua",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "知觉",
+   "py": "zhījué",
+   "pos": "名",
+   "zh": "感觉。",
+   "en": "",
+   "hv": "TRI GIÁC",
+   "vi": "cảm giác, tri giác",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "沟壑",
+   "py": "gōuhè",
+   "pos": "名",
+   "zh": "山沟，溪谷。",
+   "en": "gully; ravine",
+   "hv": "CÂU HÁC",
+   "vi": "khe rãnh; (ở bài) nếp nhăn sâu",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "破土而出",
+   "py": "pò tǔ ér chū",
+   "pos": "",
+   "zh": "（植物）从土里长出来。",
+   "en": "",
+   "hv": "PHÁ THỔ NHI XUẤT",
+   "vi": "đội đất mọc lên",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "萌动",
+   "py": "méngdòng",
+   "pos": "动",
+   "zh": "幼芽滋长。",
+   "en": "",
+   "hv": "MANH ĐỘNG",
+   "vi": "nảy mầm, nhú lên",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "浓烈",
+   "py": "nóngliè",
+   "pos": "形",
+   "zh": "浓重强烈。",
+   "en": "",
+   "hv": "NỒNG LIỆT",
+   "vi": "nồng nàn, đậm đặc",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "馥郁",
+   "py": "fùyù",
+   "pos": "形",
+   "zh": "香气浓厚。",
+   "en": "",
+   "hv": "PHỨC ÚC",
+   "vi": "thơm ngào ngạt",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "枚",
+   "py": "méi",
+   "pos": "量",
+   "zh": "计量形体小的东西，相当于“个”。",
+   "en": "",
+   "hv": "MAI",
+   "vi": "quả, chiếc (lượng từ vật nhỏ)",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "红润",
+   "py": "hóngrùn",
+   "pos": "形",
+   "zh": "（色）红而滋润（多指皮肤）。",
+   "en": "",
+   "hv": "HỒNG NHUẬN",
+   "vi": "hồng hào",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "神采奕奕",
+   "py": "shéncǎi yìyì",
+   "pos": "",
+   "zh": "形容精神旺盛、容光焕发。",
+   "en": "",
+   "hv": "THẦN THÁI DỊCH DỊCH",
+   "vi": "tinh thần phấn chấn, rạng rỡ",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "贪心",
+   "py": "tānxīn",
+   "pos": "形",
+   "zh": "贪得无厌。",
+   "en": "",
+   "hv": "THAM TÂM",
+   "vi": "tham lam",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "揣",
+   "py": "chuāi",
+   "pos": "动",
+   "zh": "藏在衣服或口袋里。",
+   "en": "",
+   "hv": "SUỶ",
+   "vi": "giắt, nhét (vào áo, túi)",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "身轻如燕",
+   "py": "shēn qīng rú yàn",
+   "pos": "",
+   "zh": "形容脚步轻快。",
+   "en": "",
+   "hv": "THÂN KHINH NHƯ YẾN",
+   "vi": "nhẹ nhàng như chim én",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "健步如飞",
+   "py": "jiàn bù rú fēi",
+   "pos": "",
+   "zh": "脚步轻快有力，像飞一样。",
+   "en": "",
+   "hv": "KIỆN BỘ NHƯ PHI",
+   "vi": "bước chân nhanh như bay",
+   "proper": false
+  },
+  {
+   "n": 96,
+   "hz": "活力",
+   "py": "huólì",
+   "pos": "名",
+   "zh": "旺盛的生命力。",
+   "en": "",
+   "hv": "HOẠT LỰC",
+   "vi": "sức sống",
+   "proper": false
+  },
+  {
+   "n": 97,
+   "hz": "复明",
+   "py": "fùmíng",
+   "pos": "动",
+   "zh": "失明后视力又恢复。",
+   "en": "",
+   "hv": "PHỤC MINH",
+   "vi": "sáng mắt lại",
+   "proper": false
+  },
+  {
+   "n": 98,
+   "hz": "面面相觑",
+   "py": "miànmiàn xiāng qù",
+   "pos": "",
+   "zh": "你看看我，我看看你。形容大家因惊惧或不知所措而互相望着，都不说话。",
+   "en": "",
+   "hv": "DIỆN DIỆN TƯƠNG THỨ",
+   "vi": "nhìn nhau ngơ ngác",
+   "proper": false
+  },
+  {
+   "n": 99,
+   "hz": "懊丧",
+   "py": "àosàng",
+   "pos": "形",
+   "zh": "因事情不如意而情绪低落，精神不振。",
+   "en": "",
+   "hv": "ÁO TANG",
+   "vi": "chán nản, thất vọng",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "人",
+   "paragraphs": [
+    "第一部分",
+    "有四个年轻的旅行者，分别叫做“每个人”、“某个人”、“任何人”和“没有人”。他们一起去寻找传说中神奇的仙果。",
+    "“每个人”心智平平，他希望更加聪明；“某个人”双目失明，希望重见光明；“任何人”有点瘸跛，希望百病全消；“没有人”弱听弱视，他也希望找到仙果。四个人怀着不同的目的，一起出发了。",
+    "东边路西边路南边路，五里铺七里铺十里铺，他们行一步盼一步更艰难一步。荆棘布道，密林蔽日，猿啼狼啸，虫叮蛇咬，他们没有害怕屈服。春暖花开，夏日酷暑，秋风萧瑟，冬寒刺骨，他们总迈着匆匆的脚步。峰回路转，路转峰回，却依旧山无数水无数艰难无数。长期的劳累奔波使四人面黄肌瘦，瘦骨嶙峋。",
+    "十度春秋，历尽磨难，他们才看到了一个小小的渔村。规模不大，但比起他们风餐露宿，朝不保夕的生活，也算是衣食无虞。“每个人”犹豫退缩了。“找仙果太辛苦了，靠你们吧！”“每个人”耍了个小聪明，“也许任何人可以找到，也许某个人能找到，也可能没有人能找到仙果。”“每个人”决定留在渔村，耐心地等待，等待。",
+    "“任何人”、“某个人”和“没有人”怀着希望又上路了。他们告别了温暖的渔村，迈过荒无人烟的旷野，穿过湿热的丛林，翻过皑皑的雪山，寒风把他们的衣服撕成碎片，恶狼的嚎叫使他们辗转难眠，饥饿的鳄鱼潜在前方的河流中，水蛭贪婪吸食他们的鲜血，一拔下就是一股血柱，他们全身找不出一块像样的皮肤。他们昼夜赶路不愿停下休息，眼中闪着希望的火花。",
+    "十年后，他们才看到了一个绿草如茵的牧场。夕阳西下，鸡栖于架，牛羊遍野。这比起他们茹毛饮血、饥饱不定的生活，总算是安定有序。“某个人”决定留下来。“找仙果太辛苦了，靠你们吧。”“某个人”的眼神黯淡无光，“任何人都可以找到，也不差我某个人，也许没有人找得到。”“某个人”决心留在牧场，耐心地等待，等待。",
+    "“任何人”和“没有人”背上行囊又上路了。一路上，江河挡道，断桥失修，急湍似箭，猛浪若奔，夹岸高山，皆生寒树，横柯蔽日，险峻无比。“千山鸟飞绝，万径人踪灭”，“任何人”和“没有人”互相搀扶，互相鼓励，艰难地踩着每一步。岁月的刻刀磨去他们年少的轻狂，在他们的额头眼角刻下沧桑。“任何人”和“没有人”开始衰老。",
+    "第二部分",
+    "又十年，他们来到了一个繁华的城市。城市里车来车往，热闹非凡。毕竟，这是去找仙果的路上最后一个可以遇到的人类居住的地方了。“任何人”挽住“没有人”的手，犹犹豫豫，吞吞吐吐。“我们朝也坎坷、夕也坎坷，岁月蹉跎，身心消磨。怕只怕昔日理想，今日南柯啊！”",
+    "“没有人”知道最后一个同伴也放弃了，他轻轻抽回手。“我知道前进对于弱听弱视的人会更艰难，但我可以用心感觉，无怨无悔。”“没有人”毅然决然地上了路，一根拐杖是他披荆斩棘的工具。“任何人”目送“没有人”悲壮前行，眼底有一点羞愧的泪水。",
+    "“没有人”走旷野、穿丛林、爬雪山、泅大河。“没有人”双手厚厚的茧子与岩石哧哧地摩擦；“没有人”无数次跌倒，无数次又爬起；“没有人”身上的血痂结了落，落了结；“没有人”一次次挑战极限，死里逃生。他走着，爬着，挣扎着，摸索着，一分钟也没有停止前进。",
+    "又过了整整二十年，“没有人”的头发、眉毛、胡子，白得像苍苍雪山，长得像他五十年不停追寻的漫长历程。",
+    "终于有一天，“没有人”踏上一块平地，他的手和脸已苍老得失去了知觉，只有一颗心依然顽强跳动，是这儿吗？“没有人”看不明听不清，他只能用心细细地感觉。一滴浑浊的老泪爬过他脸上的沟壑，滴落在地上。奇迹发生了！“没有人”似乎感到了生命破土而出的萌动。闻到叶的清香，花的浓烈，果的馥郁。他吃力地摘下一枚软果，咬一口，又脆又甜。刚吃完，他清晰地看见果树成行，花红草绿，所有的果子都朝他点头微笑；微风轻拂，他竟听到叶子的欢笑和鸟的歌唱！他在溪边一照，惊奇地发现自己白发复黑，面色红润，神采奕奕！“没有人”感激地吻着脚下的土地。“没有人”不贪心，他怀揣三个果子，踏上归途。",
+    "他身轻如燕、健步如飞。他路过城市、牧场、渔村，分别拜访了“任何人”、“某个人”和“每个人”，他们却都已白发苍苍，他们都不相信这个充满活力的年轻人就是当初与他们同行的弱听弱视的“没有人”。“没有人”把果子分给他们。“任何人”病好了，“某个人”复明了，“每个人”是否变聪明倒一时难下定论。遗憾的是，他们依旧白发苍苍，也许，只有亲自采摘品尝新鲜的仙果，才能有最大的收获吧！",
+    "三个人面面相觑，是后悔自己的不坚持还是懊丧自己太依赖别人了呢？他们好悔啊！",
+    "（作者：蔡雨玲，选自《首届全国新概念作文大赛获奖作品选》，作家出版社，部分删节）"
+   ],
+   "translations": [
+    "Phần một",
+    "Có bốn lữ khách trẻ tuổi, lần lượt tên là “Mỗi Người”, “Một Người Nào Đó”, “Bất Kỳ Ai” và “Không Ai Cả”. Họ cùng nhau đi tìm thứ quả tiên thần kỳ trong truyền thuyết.",
+    "“Mỗi Người” trí tuệ tầm thường, anh mong mình thông minh hơn; “Một Người Nào Đó” mù cả hai mắt, mong được nhìn thấy ánh sáng trở lại; “Bất Kỳ Ai” hơi khập khiễng, mong trăm bệnh tiêu tan; “Không Ai Cả” tai nghe kém, mắt nhìn kém, anh cũng mong tìm được quả tiên. Bốn người mang những mục đích khác nhau, cùng lên đường.",
+    "Đường phía đông, đường phía tây, đường phía nam, trạm năm dặm, trạm bảy dặm, trạm mười dặm, họ đi một bước, mong một bước, mỗi bước lại gian nan hơn. Gai góc phủ kín lối đi, rừng rậm che khuất mặt trời, vượn kêu sói hú, sâu đốt rắn cắn, họ vẫn không sợ hãi khuất phục. Xuân ấm hoa nở, hè nắng gay gắt, thu gió xào xạc, đông rét buốt xương, họ vẫn luôn bước những bước chân vội vã. Núi vòng đường quanh, đường quanh núi vòng, nhưng vẫn là núi vô số, sông vô số, gian nan vô số. Sự mệt nhọc bôn ba lâu ngày khiến bốn người mặt vàng người gầy, trơ cả xương.",
+    "Mười mùa xuân thu, trải qua bao gian truân, họ mới nhìn thấy một làng chài nho nhỏ. Quy mô không lớn, nhưng so với cuộc sống ăn gió nằm sương, sáng không biết tối của họ, thì cũng coi như không phải lo cơm áo. “Mỗi Người” do dự rồi chùn bước. “Tìm quả tiên vất vả quá, trông cậy vào các anh vậy!” “Mỗi Người” giở chút khôn vặt, “Có lẽ bất kỳ ai cũng tìm được, có lẽ một người nào đó sẽ tìm được, cũng có thể không ai cả tìm được quả tiên.” “Mỗi Người” quyết định ở lại làng chài, kiên nhẫn chờ đợi, chờ đợi.",
+    "“Bất Kỳ Ai”, “Một Người Nào Đó” và “Không Ai Cả” mang theo hy vọng lại lên đường. Họ từ biệt làng chài ấm áp, vượt qua đồng hoang không bóng người, xuyên qua rừng rậm nóng ẩm, trèo qua những ngọn núi tuyết trắng xoá; gió rét xé quần áo họ thành từng mảnh vụn, tiếng tru của bầy sói dữ khiến họ trằn trọc khó ngủ, lũ cá sấu đói lặn sẵn dưới dòng sông phía trước, đàn đỉa tham lam hút máu họ, vừa giật ra là một dòng máu phụt lên, khắp người họ không tìm ra nổi một mảng da lành lặn. Họ ngày đêm đi gấp, không chịu dừng lại nghỉ ngơi, trong mắt loé lên ngọn lửa hy vọng.",
+    "Mười năm sau, họ mới nhìn thấy một đồng cỏ chăn nuôi xanh mướt như thảm. Mặt trời lặn về tây, gà đậu trên giàn, trâu bò dê cừu đầy đồng. So với cuộc sống ăn sống nuốt tươi, lúc no lúc đói của họ, nơi đây quả là yên ổn trật tự. “Một Người Nào Đó” quyết định ở lại. “Tìm quả tiên vất vả quá, trông cậy vào các anh vậy.” Ánh mắt “Một Người Nào Đó” ảm đạm không chút ánh sáng, “Bất kỳ ai cũng có thể tìm được, cũng chẳng thiếu một người nào đó như tôi, có lẽ không ai cả tìm được đâu.” “Một Người Nào Đó” quyết tâm ở lại đồng cỏ, kiên nhẫn chờ đợi, chờ đợi.",
+    "“Bất Kỳ Ai” và “Không Ai Cả” khoác hành trang lại lên đường. Dọc đường, sông ngòi chắn lối, cầu gãy không ai sửa, dòng nước xiết nhanh như tên bắn, sóng dữ như ngựa phi, núi cao kẹp hai bên bờ, mọc toàn cây lạnh, cành ngang che khuất mặt trời, hiểm trở vô cùng. “Nghìn núi chim bay hết, muôn lối dấu người tan”, “Bất Kỳ Ai” và “Không Ai Cả” dìu đỡ nhau, động viên nhau, gian nan đặt từng bước chân. Lưỡi dao khắc của năm tháng mài mòn đi sự bồng bột thời trẻ, khắc lên trán và khoé mắt họ những dấu vết tang thương. “Bất Kỳ Ai” và “Không Ai Cả” bắt đầu già đi.",
+    "Phần hai",
+    "Lại mười năm nữa, họ đến một thành phố phồn hoa. Trong thành phố xe cộ qua lại, náo nhiệt phi thường. Dù sao đây cũng là nơi cuối cùng có người ở mà họ có thể gặp trên đường đi tìm quả tiên. “Bất Kỳ Ai” níu lấy tay “Không Ai Cả”, ngập ngừng do dự, ấp a ấp úng: “Chúng ta sáng cũng trắc trở, tối cũng trắc trở, năm tháng trôi uổng, thân tâm hao mòn. Chỉ sợ lý tưởng ngày xưa, hôm nay hoá thành giấc mộng Nam Kha thôi!”",
+    "“Không Ai Cả” biết người bạn đồng hành cuối cùng cũng đã bỏ cuộc, anh nhẹ nhàng rút tay về. “Tôi biết đi tiếp đối với người tai kém mắt kém như tôi sẽ càng khó khăn hơn, nhưng tôi có thể cảm nhận bằng trái tim, không oán không hối.” “Không Ai Cả” kiên quyết lên đường, một cây gậy chống là công cụ để anh vạch gai chặt góc. “Bất Kỳ Ai” dõi theo “Không Ai Cả” bi tráng tiến bước, đáy mắt rưng rưng chút nước mắt hổ thẹn.",
+    "“Không Ai Cả” đi qua đồng hoang, xuyên qua rừng rậm, trèo núi tuyết, bơi qua sông lớn. Những vết chai dày trên hai bàn tay “Không Ai Cả” cọ xoèn xoẹt vào đá; “Không Ai Cả” vô số lần ngã xuống, vô số lần lại bò dậy; vảy máu trên người “Không Ai Cả” đóng rồi bong, bong rồi đóng; “Không Ai Cả” hết lần này đến lần khác thách thức giới hạn, thoát chết trong gang tấc. Anh đi, bò, vùng vẫy, mò mẫm, không một phút nào ngừng tiến bước.",
+    "Lại qua tròn hai mươi năm, tóc, lông mày, râu của “Không Ai Cả” trắng như núi tuyết bạc phơ, dài như chặng đường đằng đẵng năm mươi năm không ngừng kiếm tìm của anh.",
+    "Cuối cùng có một ngày, “Không Ai Cả” đặt chân lên một vùng đất bằng, tay và mặt anh đã già nua đến mất hết cảm giác, chỉ có trái tim vẫn đập kiên cường. Là nơi này sao? “Không Ai Cả” nhìn không rõ, nghe không rõ, anh chỉ có thể dùng trái tim cảm nhận thật kỹ. Một giọt lệ già đục ngầu bò qua những nếp nhăn sâu như khe rãnh trên mặt anh, rơi xuống đất. Kỳ tích đã xảy ra! “Không Ai Cả” dường như cảm thấy sự cựa mình của sự sống đang đội đất trồi lên. Anh ngửi thấy hương thơm thanh mát của lá, mùi nồng nàn của hoa, hương ngào ngạt của quả. Anh khó nhọc hái xuống một quả mềm, cắn một miếng, vừa giòn vừa ngọt. Vừa ăn xong, anh đã nhìn rõ những hàng cây trái thẳng tắp, hoa đỏ cỏ xanh, tất cả trái cây đều gật đầu mỉm cười với anh; gió nhẹ lướt qua, anh lại nghe được tiếng cười vui của lá và tiếng hót của chim! Anh soi mình bên dòng suối, kinh ngạc phát hiện tóc bạc đã đen trở lại, sắc mặt hồng hào, tinh thần rạng rỡ! “Không Ai Cả” xúc động hôn lên mảnh đất dưới chân. “Không Ai Cả” không tham lam, anh giắt trong người ba quả, bước lên đường trở về.",
+    "Anh nhẹ nhàng như chim én, bước nhanh như bay. Anh đi qua thành phố, đồng cỏ, làng chài, lần lượt đến thăm “Bất Kỳ Ai”, “Một Người Nào Đó” và “Mỗi Người”, nhưng họ đều đã tóc bạc phơ, chẳng ai tin chàng trai trẻ tràn đầy sức sống này lại chính là “Không Ai Cả” tai kém mắt kém từng đồng hành với họ năm nào. “Không Ai Cả” chia quả cho họ. “Bất Kỳ Ai” khỏi bệnh, “Một Người Nào Đó” sáng mắt lại, còn “Mỗi Người” có thông minh hơn hay không thì nhất thời khó kết luận. Đáng tiếc là họ vẫn tóc bạc phơ như cũ; có lẽ chỉ có tự tay hái và nếm quả tiên tươi mới thu được thành quả lớn nhất chăng!",
+    "Ba người nhìn nhau ngơ ngác, là hối hận vì mình đã không kiên trì, hay chán nản vì mình đã quá dựa dẫm vào người khác? Họ hối hận biết bao!",
+    "(Tác giả: Thái Vũ Linh, trích từ “Tuyển tập tác phẩm đoạt giải Cuộc thi viết văn Khái niệm mới toàn quốc lần thứ nhất”, NXB Tác gia, có lược bớt)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "时尚的产生",
+   "paragraphs": [
+    "在美国西部，一个乡下青年要去参加斗牛赛，可他穷得除了一条破裤子，再也没得换了。事先，他曾想借一条裤子，可朋友们说，他要去参加斗牛赛，回来时，好裤子可能又成了破裤子，于是，谁都不肯借给他。他只好穿着露了膝（xī）盖的破裤子到了赛场。没想到，他竟奇迹般地得了第一。他上台领奖时，破裤子使他很难为情。台下十几名摄影记者却不管不顾地为他拍照，他简直无地自容。谁想，他的相片被登在报上后，他的破牛仔裤竟然成了当时许多年轻人效仿的款式。几天以后，大街小巷，到处都是穿着破裤子的青年。这一景象一直流传到今天。",
+    "在法国，一个不被人所知的流浪歌手，整天在大街上卖唱，可他不知道自己的歌唱得有多好。他穿着一条肥大的裤子，手握一把吉他，从一个城市走到另一个城市。有一天，一个经纪人竟为他出资，要帮他组建一支OK乐队，并让他提出自己的要求。他的唯一要求，便是希望投资人给他先买几条裤子，把他不合时宜的大肥裤子换掉，因为那时的歌星们，都是穿着很合身的瘦腿裤。",
+    "可是，他的资助人却笑了，说我就是看中了你的肥裤子。从此，他的肥裤子果然代表了一种潮流和时尚。在世界各地，许多歌手和乐队都开始穿起了肥裤子。",
+    "把头发染成多种颜色，更是一个无钱理发的年轻人所为。有一天，在英国小镇莱切，一个青年走到一家化工厂楼下的时候，被楼上倒下来的一桶化学物质弄脏了头发。他没有钱去理发，就那么留着，红红黄黄地留了几天，惹得大街上许多青年纷纷追逐，然后又去效仿。结果，有家理发店抓住时机，专门找人研制出了各种染发的颜料，满足了新奇者的愿望。这一现象一直扩大到全球，成为一种典型的时尚。",
+    "在巴西，一个乡下女孩儿进城时，她的姥姥在她的裤子上绣了几朵花，这本来是很土、很落后的工艺，早就被淘汰（táotài）了。可老太太实在没钱打扮自己的外孙女，只能力所能及地绣上几朵花。但没有想到，那时城里的女人正因为“没得穿”而发愁，她们看到女孩子的裤子时，不觉眼睛一亮，这女孩子简直就是开了女性服装之先河。爱美的城里女人纷纷去缝衣店里定做。于是，满大街都是绣了花的裤子。这种裤子先是在欧洲流行，后来又传到亚洲。女孩子们又都穿上绣花的裤子。",
+    "光脚丫（yā）不穿袜子，其实也是穷家女孩儿创造出来的。涂红脚指甲，也是乡下女孩子开的头。在南非，一个女孩儿到城里打工，在商店，她不小心打碎了柜台上的一瓶指甲油，后来发现指甲油染了她的脚指甲。这么贵的东西，她不忍心擦掉，于是就这么走在路上。结果，这反而成了一种时尚，这位女孩儿成了涂脚指甲油的开创者和传播者。",
+    "如果你去考察，你就会惊奇地发现，许多时尚的东西，并不是那些富人创造的，而恰恰是那些很不起眼的小人物或干脆就是一些穷人的无奈。这些时尚的发明，开始时，也并非都是什么乐事，它往往来自许多人的苦涩命运。",
+    "（作者：星竹，选自《北京晚报》）"
+   ],
+   "translations": [
+    "Ở miền Tây nước Mỹ, một thanh niên nông thôn muốn đi dự cuộc thi đấu bò, nhưng anh nghèo đến mức ngoài một chiếc quần rách ra thì chẳng có gì để thay. Trước đó, anh từng định mượn một chiếc quần, nhưng bạn bè bảo anh đi đấu bò, lúc về thì quần lành có khi lại thành quần rách, thế là chẳng ai chịu cho mượn. Anh đành mặc chiếc quần rách thủng đầu gối đến trường đấu. Không ngờ anh lại giành giải nhất như một kỳ tích. Khi lên bục nhận giải, chiếc quần rách khiến anh rất ngượng ngùng. Thế nhưng mười mấy phóng viên ảnh dưới khán đài cứ mặc kệ tất cả mà chụp ảnh anh, anh xấu hổ không biết giấu mặt vào đâu. Ai ngờ, sau khi ảnh của anh được đăng báo, chiếc quần bò rách của anh lại trở thành kiểu dáng mà rất nhiều thanh niên thời ấy bắt chước. Mấy ngày sau, khắp phố lớn ngõ nhỏ đâu đâu cũng thấy thanh niên mặc quần rách. Cảnh tượng ấy vẫn lưu truyền đến tận hôm nay.",
+    "Ở Pháp, một ca sĩ lang thang vô danh suốt ngày hát rong trên phố, nhưng anh không biết mình hát hay đến mức nào. Anh mặc một chiếc quần rộng thùng thình, tay cầm cây đàn ghi-ta, đi từ thành phố này sang thành phố khác. Một ngày nọ, một người quản lý lại bỏ tiền ra giúp anh lập một ban nhạc OK, và bảo anh nêu yêu cầu của mình. Yêu cầu duy nhất của anh là mong nhà đầu tư mua trước cho anh vài chiếc quần, thay chiếc quần rộng thùng thình lỗi thời kia, bởi các ngôi sao ca nhạc khi ấy đều mặc quần ống bó rất vừa người.",
+    "Thế nhưng người tài trợ lại cười, nói rằng tôi chính là ưng chiếc quần rộng của anh đấy. Từ đó, chiếc quần rộng của anh quả nhiên trở thành biểu tượng của một trào lưu, một mốt thời thượng. Khắp nơi trên thế giới, nhiều ca sĩ và ban nhạc bắt đầu mặc quần rộng.",
+    "Còn việc nhuộm tóc nhiều màu lại càng là việc làm của một chàng trai không có tiền cắt tóc. Một hôm, ở thị trấn nhỏ Leitch nước Anh, một thanh niên đi đến dưới toà nhà của một nhà máy hoá chất thì bị một thùng hoá chất đổ từ trên lầu xuống làm bẩn tóc. Anh không có tiền đi cắt tóc, cứ để nguyên như thế, đỏ đỏ vàng vàng suốt mấy ngày, khiến rất nhiều thanh niên ngoài phố đua nhau chạy theo, rồi lại bắt chước. Kết quả là có một tiệm cắt tóc nắm lấy thời cơ, chuyên tìm người nghiên cứu chế ra đủ loại thuốc nhuộm tóc, thoả mãn mong muốn của những người thích cái mới lạ. Hiện tượng này lan rộng ra toàn cầu, trở thành một mốt thời thượng điển hình.",
+    "Ở Brazil, khi một cô gái quê lên thành phố, bà ngoại thêu lên quần cô mấy bông hoa; đây vốn là kiểu thủ công rất quê mùa, lạc hậu, đã bị đào thải từ lâu. Nhưng bà cụ thật sự không có tiền sắm sửa cho cháu gái, chỉ có thể làm trong khả năng mình, thêu lên vài bông hoa. Không ngờ khi ấy phụ nữ thành phố đang lo lắng vì “chẳng có gì để mặc”, nhìn thấy chiếc quần của cô gái, bất giác mắt họ sáng lên, cô gái này đúng là đã mở đầu cho một trào lưu thời trang nữ. Những người phụ nữ thành phố thích làm đẹp lũ lượt đến tiệm may đặt may. Thế là khắp phố đâu đâu cũng thấy quần thêu hoa. Loại quần này đầu tiên thịnh hành ở châu Âu, sau lại lan sang châu Á. Các cô gái lại đều mặc quần thêu hoa.",
+    "Đi chân trần không mang tất, thực ra cũng là do các cô gái nhà nghèo tạo ra. Sơn đỏ móng chân cũng là do các cô gái quê khởi xướng. Ở Nam Phi, một cô gái lên thành phố làm thuê, ở cửa hàng, cô vô ý làm vỡ một lọ sơn móng tay trên quầy, sau đó phát hiện sơn đã dính lên móng chân mình. Thứ đắt tiền như vậy, cô không nỡ lau đi, thế là cứ thế đi ngoài đường. Kết quả, điều đó lại trở thành một mốt thời thượng, cô gái này trở thành người khai sinh và lan truyền mốt sơn móng chân.",
+    "Nếu bạn đi tìm hiểu, bạn sẽ ngạc nhiên phát hiện rằng rất nhiều thứ thời thượng không phải do những người giàu tạo ra, mà lại chính là từ những nhân vật nhỏ bé chẳng ai để ý, hoặc dứt khoát là từ sự bất đắc dĩ của những người nghèo. Những phát minh thời thượng ấy, lúc ban đầu cũng chẳng phải đều là chuyện vui vẻ gì, chúng thường bắt nguồn từ số phận cay đắng của rất nhiều người.",
+    "(Tác giả: Tinh Trúc, trích từ Bắc Kinh vãn báo)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "比起……（来）(so với…)",
+   "structure": "比起A（来），B……",
+   "explanation": "“比起……（来）” có nghĩa là “跟……相比” (so với…). Dùng để đưa ra đối tượng so sánh, vế sau nêu kết quả so sánh; “来” có thể có hoặc không.",
+   "examples": [
+    {
+     "zh": "十度春秋，历尽磨难，他们才看到了一个小小的渔村。规模不大，但比起他们风餐露宿，朝不保夕的生活，也算是衣食无虞。",
+     "vi": "Mười mùa xuân thu, trải bao gian truân, họ mới thấy một làng chài nho nhỏ. Quy mô không lớn, nhưng so với cuộc sống ăn gió nằm sương, sáng không biết tối của họ, thì cũng coi như không phải lo cơm áo."
+    },
+    {
+     "zh": "他只觉得自己比起初到厂里的时候，老了许多许多。",
+     "vi": "Anh chỉ thấy mình so với hồi mới vào nhà máy đã già đi rất nhiều."
+    },
+    {
+     "zh": "明孝陵大概是开国时草创的规模，所以简朴得很，比起长陵，差得太远了。",
+     "vi": "Minh Hiếu lăng có lẽ là quy mô dựng tạm thời mới lập quốc nên rất giản dị, so với Trường lăng thì kém xa."
+    },
+    {
+     "zh": "比起一般的学生来，他还不能算是很勤奋的。",
+     "vi": "So với học sinh bình thường, cậu ấy vẫn chưa thể coi là rất chăm chỉ."
+    },
+    {
+     "zh": "张文这个人在他看来是“有些能力”，不过比起他来还算不了什么。",
+     "vi": "Trương Văn trong mắt anh ta là người “có chút năng lực”, nhưng so với anh ta thì chẳng đáng là gì."
+    }
+   ]
+  },
+  {
+   "point": "无比 (không gì sánh bằng; vô cùng)",
+   "structure": "双音节形容词＋无比；无比＋形容词/动词",
+   "explanation": "“无比” nghĩa là “không có gì khác có thể so sánh được”. Cấu trúc thường gặp: tính từ hai âm tiết + 无比 (英勇无比, 威力无比, 硕大无比, 聪颖无比, 兴奋无比, 骄傲无比). Mở rộng (链接): 无比 + tính từ hoặc động từ, lúc này “无比” mang nghĩa “非常” (rất, vô cùng), ví dụ: 无比幸福, 无比优越, 无比美好, 无比强大, 无比热爱, 无比仇恨, 无比感慨, 无比轻松, 无比开心…",
+   "examples": [
+    {
+     "zh": "一路上，江河挡道，断桥失修……横柯蔽日，险峻无比。",
+     "vi": "Dọc đường, sông ngòi chắn lối, cầu gãy không ai sửa… cành ngang che khuất mặt trời, hiểm trở vô cùng."
+    },
+    {
+     "zh": "英勇无比／威力无比／硕大无比／聪颖无比／兴奋无比／骄傲无比",
+     "vi": "anh dũng vô song / uy lực không gì sánh / to lớn vô cùng / thông minh tuyệt đỉnh / phấn khởi vô cùng / kiêu hãnh vô cùng"
+    },
+    {
+     "zh": "无比幸福／无比美好／无比强大／无比热爱／无比轻松／无比开心",
+     "vi": "vô cùng hạnh phúc / vô cùng tươi đẹp / vô cùng hùng mạnh / vô cùng yêu quý / vô cùng nhẹ nhõm / vô cùng vui vẻ"
+    }
+   ]
+  },
+  {
+   "point": "非凡 (phi thường, khác thường)",
+   "structure": "非凡的＋名词；名词＋非凡",
+   "explanation": "“非凡” là tính từ, nghĩa là “vượt quá mức thông thường; khác thường; không tầm thường”. Là từ mang sắc thái khen (褒义词). Có thể làm định ngữ (非凡的技能) hoặc vị ngữ (业绩非凡, 热闹非凡).",
+   "examples": [
+    {
+     "zh": "城市里车来车往，热闹非凡。",
+     "vi": "Trong thành phố xe cộ qua lại, náo nhiệt phi thường."
+    },
+    {
+     "zh": "非凡的技能／非凡的成就／非凡的魅力／非凡的组织才能",
+     "vi": "kỹ năng phi thường / thành tựu phi thường / sức hút phi thường / tài tổ chức xuất chúng"
+    },
+    {
+     "zh": "业绩非凡／才华非凡／相貌非凡／气质非凡／价值非凡／品质非凡／美丽非凡",
+     "vi": "thành tích phi thường / tài hoa xuất chúng / tướng mạo khác thường / khí chất phi phàm / giá trị phi thường / phẩm chất phi thường / đẹp phi thường"
+    }
+   ]
+  },
+  {
+   "point": "V了V，V了V (… rồi lại …, lặp đi lặp lại)",
+   "structure": "A了B，B了A（A、B多为单音节动词）",
+   "explanation": "Diễn tả hai động tác thay nhau lặp đi lặp lại không ngừng. “了” là trợ từ, biểu thị động tác hoặc sự thay đổi đã hoàn thành. Động từ phần nhiều là động từ đơn âm tiết.",
+   "examples": [
+    {
+     "zh": "“没有人”身上的血痂结了落，落了结……",
+     "vi": "Vảy máu trên người “Không Ai Cả” đóng rồi bong, bong rồi đóng…"
+    },
+    {
+     "zh": "人们因为蚕吃了睡，睡了吃，就把它比作是刚出生不久的婴儿，亲切地叫它“蚕宝宝”。",
+     "vi": "Vì con tằm ăn rồi ngủ, ngủ rồi ăn, người ta ví nó như em bé mới sinh, trìu mến gọi là “tằm bé bỏng”."
+    },
+    {
+     "zh": "她擦了写，写了擦，一句话足足写了十分钟。",
+     "vi": "Cô ấy xoá rồi viết, viết rồi xoá, một câu mà viết mất trọn mười phút."
+    },
+    {
+     "zh": "她是个爱赶时髦的人，她的衣服常常是买了扔，扔了又买。",
+     "vi": "Cô ấy thích chạy theo mốt, quần áo thường là mua rồi vứt, vứt rồi lại mua."
+    },
+    {
+     "zh": "他站起来了又倒下，倒下了又站起来，直到筋疲力尽。",
+     "vi": "Anh đứng dậy rồi lại ngã xuống, ngã xuống rồi lại đứng dậy, cho đến khi kiệt sức."
+    }
+   ]
+  },
+  {
+   "point": "枚 (lượng từ: quả, chiếc, tấm)",
+   "structure": "数词＋枚＋名词（形体小的东西／某些武器）",
+   "explanation": "“枚” là lượng từ, tương đương “个”, phần nhiều dùng cho vật có hình thể nhỏ (đồng xu, con tem, huy chương…) hoặc một số loại vũ khí hình thể lớn (tên lửa, đạn đạo). Thường dùng trong văn viết, sắc thái trang trọng.",
+   "examples": [
+    {
+     "zh": "他吃力地摘下一枚软果。",
+     "vi": "Anh khó nhọc hái xuống một quả mềm."
+    },
+    {
+     "zh": "一枚硬币／一枚铜元／三枚邮票／三枚奖章／五枚纪念章",
+     "vi": "một đồng xu / một đồng tiền đồng / ba con tem / ba tấm huân chương / năm chiếc huy hiệu kỷ niệm"
+    },
+    {
+     "zh": "一枚金牌／一枚火箭／两枚导弹",
+     "vi": "một tấm huy chương vàng / một quả tên lửa đẩy / hai quả tên lửa đạn đạo"
+    }
+   ]
+  },
+  {
+   "point": "一时 (nhất thời, trong chốc lát)",
+   "structure": "一时＋动词短语",
+   "explanation": "“一时” là phó từ, biểu thị hành vi xảy ra trong thời gian ngắn. “一时” ở đây có nghĩa “tạm thời”, “trong thời gian ngắn”.",
+   "examples": [
+    {
+     "zh": "“每个人”是否变聪明倒一时难下定论。",
+     "vi": "Còn “Mỗi Người” có thông minh hơn hay không thì nhất thời khó kết luận."
+    },
+    {
+     "zh": "我一时还不想去深圳。",
+     "vi": "Tạm thời tôi vẫn chưa muốn đi Thâm Quyến."
+    },
+    {
+     "zh": "吴越试探地瞧着芳芳，一时猜不透芳芳心里的谜。",
+     "vi": "Ngô Việt dò xét nhìn Phương Phương, nhất thời không đoán được điều bí ẩn trong lòng cô."
+    },
+    {
+     "zh": "他只是来城里打工的，一时哪里拿得出这么多钱。",
+     "vi": "Anh ấy chỉ lên thành phố làm thuê, trong chốc lát lấy đâu ra nhiều tiền thế."
+    },
+    {
+     "zh": "她年纪轻，一时糊涂，被别人利用了。",
+     "vi": "Cô ấy còn trẻ, nhất thời hồ đồ nên bị người khác lợi dụng."
+    }
+   ]
+  }
+ ]
+}
