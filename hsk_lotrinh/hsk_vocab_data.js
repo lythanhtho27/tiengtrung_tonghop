@@ -1,4 +1,4 @@
-// Tự động sinh bởi extract_hsk_vocab.py từ word_list_data/HSK1-HSK6_full.xlsx — không sửa tay
+// Tự động sinh bởi extract_hsk_vocab.py từ D:\Tho\HSK\Chuan HSK\BOYA\boya_tonghop_html\tools\word_list_data\HSK1-HSK6_full.xlsx — không sửa tay
 // [level, hanzi, pinyin, nghĩa, ví dụ, pinyin ví dụ, dịch ví dụ, hán việt]
 window.HSK_VOCAB = [
 [1,"爱","ài","yêu","我爱你。","Wǒ ài nǐ.","Tôi yêu bạn.",""],

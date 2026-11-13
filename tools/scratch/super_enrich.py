@@ -174,7 +174,7 @@ gc2_extra = {
 }
 
 # Load master boya_data.json
-with open("boya_data.json", "r", encoding="utf-8") as f:
+with open("boya_learning/boya_data.json", "r", encoding="utf-8") as f:
     master = json.load(f)
 
 # Enrich GC1
@@ -228,10 +228,10 @@ for b in master["books"]:
 master["total_vocab"] = sum(b["total_vocab"] for b in master["books"])
 
 # Write out master JSON and JS
-with open("boya_data.json", "w", encoding="utf-8") as f:
+with open("boya_learning/boya_data.json", "w", encoding="utf-8") as f:
     json.dump(master, f, ensure_ascii=False, indent=2)
 
-with open("boya_data.js", "w", encoding="utf-8") as f:
+with open("boya_learning/boya_data.js", "w", encoding="utf-8") as f:
     f.write("window.BOYA_DATA = ")
     json.dump(master, f, ensure_ascii=False)
     f.write(";\n")

@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
 """Trích xuất word_list_data/HSK1-HSK6_full.xlsx -> hsk_vocab_data.js
 
-Chạy:  python extract_hsk_vocab.py
+Chạy (từ bất kỳ đâu):  python tools/extract_hsk_vocab.py
 Mỗi từ: [level, hanzi, pinyin, nghĩa, ví dụ (Hán), ví dụ (pinyin), ví dụ (dịch), hán việt]
 """
 import json
+import os
 import re
 import openpyxl
 
-SRC = "word_list_data/HSK1-HSK6_full.xlsx"
-OUT = "hsk_vocab_data.js"
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+SRC = os.path.join(HERE, "word_list_data", "HSK1-HSK6_full.xlsx")
+OUT = os.path.join(ROOT, "hsk_lotrinh", "hsk_vocab_data.js")
 
 
 def clean(v):

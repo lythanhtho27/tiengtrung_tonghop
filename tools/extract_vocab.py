@@ -5,7 +5,7 @@ import json
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # thư mục gốc project
 
 BOOKS = [
     {
@@ -66,7 +66,7 @@ def extract_all():
     global_lesson_count = 0
 
     for book_info in BOOKS:
-        fpath = os.path.join(BASE_DIR, book_info["file"])
+        fpath = os.path.join(BASE_DIR, "sach_boya", book_info["file"])
         if not os.path.exists(fpath):
             print(f"Error: {fpath} not found!")
             continue
@@ -196,13 +196,13 @@ def extract_all():
     dataset["total_lessons"] = global_lesson_count
 
     # Write vocab_data.json
-    json_path = os.path.join(BASE_DIR, "vocab_data.json")
+    json_path = os.path.join(BASE_DIR, "tuvung", "vocab_data.json")
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(dataset, f, ensure_ascii=False, indent=2)
     print(f"Saved: {json_path}")
 
     # Write vocab_data.js for fast direct loading without CORS
-    js_path = os.path.join(BASE_DIR, "vocab_data.js")
+    js_path = os.path.join(BASE_DIR, "tuvung", "vocab_data.js")
     with open(js_path, 'w', encoding='utf-8') as f:
         f.write("/**\n * Boya Chinese Vocabulary Dataset\n * Generated automatically from tc1.html, tc2.html, tc3.html, tc4.html\n")
         f.write(f" * Total books: {len(dataset['books'])}, Total lessons: {dataset['total_lessons']}, Total words: {dataset['total_words']}\n */\n")

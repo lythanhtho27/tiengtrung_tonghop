@@ -7,13 +7,13 @@ Ensures tc1, tc2, tc3, tc4 remain completely untouched.
 import json
 import os
 
-with open("boya_data.json", "r", encoding="utf-8") as f:
+with open("boya_learning/boya_data.json", "r", encoding="utf-8") as f:
     master = json.load(f)
 
-with open("scratch/gc1_book.json", "r", encoding="utf-8") as f:
+with open("tools/scratch/gc1_book.json", "r", encoding="utf-8") as f:
     gc1_book = json.load(f)
 
-with open("scratch/gc2_book.json", "r", encoding="utf-8") as f:
+with open("tools/scratch/gc2_book.json", "r", encoding="utf-8") as f:
     gc2_book = json.load(f)
 
 # Filter out existing gc1 or gc2 if any
@@ -38,12 +38,12 @@ master["updated_at"] = "2026-10-19"
 master["books"] = new_books
 
 # Write to boya_data.json
-with open("boya_data.json", "w", encoding="utf-8") as f:
+with open("boya_learning/boya_data.json", "w", encoding="utf-8") as f:
     json.dump(master, f, ensure_ascii=False, indent=2)
 print("Updated boya_data.json successfully!")
 
 # Write to boya_data.js
-with open("boya_data.js", "w", encoding="utf-8") as f:
+with open("boya_learning/boya_data.js", "w", encoding="utf-8") as f:
     f.write("window.BOYA_DATA = ")
     json.dump(master, f, ensure_ascii=False)
     f.write(";\n")
