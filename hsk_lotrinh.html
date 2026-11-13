@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lộ Trình Từ Vựng HSK 1–6</title>
+    <meta name="description" content="Học 5.000 từ vựng HSK 1–6 theo lộ trình từng bài, luyện tập và ôn tập lặp lại ngắt quãng.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hsk_lotrinh.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="index.html" class="brand" title="Về trang chủ">
+                <span class="brand-mark">汉</span>
+                <span class="brand-text">
+                    <strong>Lộ Trình HSK</strong>
+                    <small>5.002 từ · HSK 1–6</small>
+                </span>
+            </a>
+            <nav class="tabs" id="tabs">
+                <button class="tab active" data-view="path"><span class="tab-ic">🗺️</span><span>Lộ trình</span></button>
+                <button class="tab" data-view="review"><span class="tab-ic">🔁</span><span>Ôn tập</span><span class="tab-badge" id="tab-due" hidden>0</span></button>
+                <button class="tab" data-view="dict"><span class="tab-ic">📖</span><span>Từ điển</span></button>
+                <button class="tab" data-view="settings"><span class="tab-ic">⚙️</span><span>Cài đặt</span></button>
+            </nav>
+            <div class="topbar-right">
+                <span class="streak-pill" id="streak-pill" title="Chuỗi ngày học liên tục">🔥 <b>0</b></span>
+                <button class="icon-btn" id="btn-theme" title="Đổi giao diện sáng / tối">🌓</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- ============ LỘ TRÌNH ============ -->
+        <section class="view active" id="view-path">
+            <div class="today-grid">
+                <div class="card today-card">
+                    <div class="today-head">
+                        <div>
+                            <div class="eyebrow" id="today-date">Hôm nay</div>
+                            <h2 id="today-title">Kế hoạch học hôm nay</h2>
+                        </div>
+                        <div class="ring" id="goal-ring" style="--p:0">
+                            <div class="ring-inner"><b id="goal-num">0</b><small id="goal-den">/20 từ mới</small></div>
+                        </div>
+                    </div>
+                    <ol class="plan-steps" id="plan-steps"></ol>
+                    <div class="today-actions" id="today-actions"></div>
+                </div>
+
+                <div class="card stats-card">
+                    <div class="stat"><span class="stat-num" id="st-learned">0</span><span class="stat-lbl">Từ đã học</span></div>
+                    <div class="stat"><span class="stat-num" id="st-mastered">0</span><span class="stat-lbl">Đã thuộc lâu</span></div>
+                    <div class="stat"><span class="stat-num" id="st-due">0</span><span class="stat-lbl">Cần ôn</span></div>
+                    <div class="stat"><span class="stat-num" id="st-acc">–</span><span class="stat-lbl">Độ chính xác</span></div>
+                    <div class="stat"><span class="stat-num" id="st-rt">–</span><span class="stat-lbl">Tốc độ nhận diện</span></div>
+                    <div class="stat"><span class="stat-num" id="st-slow">0</span><span class="stat-lbl">Cần tăng tốc</span></div>
+                    <div class="heat-wrap">
+                        <div class="heat-title">Hoạt động 12 tuần</div>
+                        <div class="heatmap" id="heatmap"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="level-switch" id="level-switch"></div>
+
+            <div class="card level-panel" id="level-panel"></div>
+
+            <div class="card method-card">
+                <h3>Phương pháp của lộ trình</h3>
+                <div class="method-grid">
+                    <div><b>1 · Học theo bài nhỏ</b><p>Mỗi bài 10–20 từ. Xem thẻ từ, nghe phát âm, đọc câu ví dụ.</p></div>
+                    <div><b>2 · Luyện ngay</b><p>Trắc nghiệm nghĩa, chọn chữ, nghe chọn từ, điền từ vào câu. Đạt từ 70% mới qua bài.</p></div>
+                    <div><b>3 · Kiểm tra chặng</b><p>Cứ 5 bài có một bài kiểm tra tổng hợp. Đạt 80% mới mở chặng tiếp theo.</p></div>
+                    <div><b>4 · Ôn lặp ngắt quãng</b><p>Từ đã học được hẹn ôn sau 1, 3, 7, 16… ngày. Ôn đúng lúc sắp quên để nhớ lâu.</p></div>
+                    <div><b>5 · Tăng tốc đọc</b><p>Thời gian nhận ra mỗi từ được đo khi ôn tập. Từ nào chậm hơn 3 giây được đưa vào chế độ Đọc nhanh để luyện phản xạ.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ÔN TẬP ============ -->
+        <section class="view" id="view-review">
+            <div class="card review-hub">
+                <div class="review-hero">
+                    <div>
+                        <div class="eyebrow">Ôn tập lặp lại ngắt quãng</div>
+                        <h2><span id="rv-due">0</span> từ đến hạn ôn</h2>
+                        <p class="muted" id="rv-sub">Ôn các từ đến hạn trước khi học bài mới để không bị quên.</p>
+                    </div>
+                    <button class="btn btn-primary btn-lg" id="btn-start-review">Bắt đầu ôn</button>
+                </div>
+                <div class="forecast" id="forecast"></div>
+            </div>
+
+            <div class="card speed-card">
+                <div class="speed-head">
+                    <div>
+                        <div class="eyebrow">Luyện phản xạ đọc</div>
+                        <h2>⚡ Đọc nhanh</h2>
+                        <p class="muted">Chữ Hán hiện ra kèm 2 nghĩa, chọn đúng trước khi hết giờ. Đúng 3 câu liên tiếp thì tốc độ tăng, sai thì chậm lại.</p>
+                        <p class="speed-meta" id="speed-avg"></p>
+                        <p class="speed-meta" id="speed-best"></p>
+                    </div>
+                </div>
+                <div class="speed-setup">
+                    <label><span>Nguồn từ</span><select id="speed-src" class="select"></select></label>
+                    <label><span>Số câu</span>
+                        <select id="speed-count" class="select">
+                            <option value="20">20 câu</option><option value="30" selected>30 câu</option>
+                            <option value="50">50 câu</option><option value="80">80 câu</option>
+                        </select>
+                    </label>
+                    <label><span>Tốc độ bắt đầu</span>
+                        <select id="speed-start" class="select">
+                            <option value="3000">Chậm · 3 giây/từ</option>
+                            <option value="2000" selected>Vừa · 2 giây/từ</option>
+                            <option value="1500">Nhanh · 1,5 giây/từ</option>
+                            <option value="1000">Rất nhanh · 1 giây/từ</option>
+                        </select>
+                    </label>
+                    <button class="btn btn-primary btn-lg" id="btn-speed">Bắt đầu</button>
+                </div>
+            </div>
+
+            <div class="practice-grid">
+                <div class="card practice-card">
+                    <h3>🎯 Ôn từ hay sai</h3>
+                    <p class="muted">Trắc nghiệm các từ bạn từng quên nhiều lần.</p>
+                    <div class="practice-foot"><span id="weak-count" class="muted">0 từ</span><button class="btn" id="btn-weak">Luyện</button></div>
+                </div>
+                <div class="card practice-card">
+                    <h3>⚡ Trắc nghiệm nhanh</h3>
+                    <p class="muted">20 câu ngẫu nhiên từ các từ đã học của một cấp.</p>
+                    <div class="practice-foot">
+                        <select id="quick-level" class="select"></select>
+                        <button class="btn" id="btn-quick">Luyện</button>
+                    </div>
+                </div>
+                <div class="card practice-card">
+                    <h3>🎧 Luyện nghe</h3>
+                    <p class="muted">Nghe phát âm và chọn đúng chữ Hán trong các từ đã học.</p>
+                    <div class="practice-foot"><span class="muted">20 câu</span><button class="btn" id="btn-listen">Luyện</button></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TỪ ĐIỂN ============ -->
+        <section class="view" id="view-dict">
+            <div class="card dict-bar">
+                <input type="search" id="dict-q" class="input" placeholder="Tìm chữ Hán, pinyin (không dấu cũng được) hoặc nghĩa tiếng Việt…">
+                <select id="dict-level" class="select">
+                    <option value="0">Tất cả cấp</option>
+                    <option value="1">HSK 1</option><option value="2">HSK 2</option><option value="3">HSK 3</option>
+                    <option value="4">HSK 4</option><option value="5">HSK 5</option><option value="6">HSK 6</option>
+                </select>
+                <select id="dict-status" class="select">
+                    <option value="">Mọi trạng thái</option>
+                    <option value="new">Chưa học</option>
+                    <option value="learning">Đang học</option>
+                    <option value="familiar">Đã quen</option>
+                    <option value="mastered">Thuộc lâu</option>
+                    <option value="due">Đến hạn ôn</option>
+                    <option value="slow">Cần tăng tốc (&gt; 3 giây)</option>
+                </select>
+            </div>
+            <div class="dict-meta muted" id="dict-meta"></div>
+            <div class="dict-list" id="dict-list"></div>
+            <div class="center"><button class="btn" id="dict-more" hidden>Xem thêm</button></div>
+        </section>
+
+        <!-- ============ CÀI ĐẶT ============ -->
+        <section class="view" id="view-settings">
+            <div class="card settings">
+                <h3>Mục tiêu &amp; học tập</h3>
+                <label class="row">
+                    <span><b>Số từ mới mỗi ngày</b><small>Dùng để lập kế hoạch và ước tính ngày hoàn thành</small></span>
+                    <select id="set-goal" class="select">
+                        <option value="10">10 từ</option><option value="20">20 từ</option><option value="30">30 từ</option>
+                        <option value="40">40 từ</option><option value="60">60 từ</option>
+                    </select>
+                </label>
+                <label class="row">
+                    <span><b>Tự động phát âm</b><small>Đọc từ khi xem thẻ và khi trả lời</small></span>
+                    <input type="checkbox" id="set-speak" class="switch">
+                </label>
+                <label class="row">
+                    <span><b>Tốc độ đọc</b><small>Tốc độ giọng đọc tiếng Trung</small></span>
+                    <select id="set-rate" class="select">
+                        <option value="0.6">Chậm</option><option value="0.8">Vừa</option><option value="1">Bình thường</option>
+                    </select>
+                </label>
+                <label class="row">
+                    <span><b>Chiều ôn tập</b><small>Cách hiển thị mặt trước của thẻ khi ôn</small></span>
+                    <select id="set-dir" class="select">
+                        <option value="mix">Xen kẽ hai chiều</option>
+                        <option value="hz">Chữ Hán → Nghĩa</option>
+                        <option value="vi">Nghĩa → Chữ Hán</option>
+                    </select>
+                </label>
+                <label class="row">
+                    <span><b>Chế độ tự do</b><small>Mở khóa tất cả bài, không cần học theo thứ tự</small></span>
+                    <input type="checkbox" id="set-free" class="switch">
+                </label>
+            </div>
+            <div class="card settings">
+                <h3>Dữ liệu tiến độ</h3>
+                <p class="muted">Tiến độ được lưu trong trình duyệt này. Hãy xuất file sao lưu nếu muốn chuyển sang máy khác.</p>
+                <div class="btn-row">
+                    <button class="btn" id="btn-export">⬇️ Xuất tiến độ</button>
+                    <label class="btn">⬆️ Nhập tiến độ<input type="file" id="file-import" accept="application/json" hidden></label>
+                    <button class="btn btn-danger" id="btn-reset">Xóa toàn bộ tiến độ</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ PHIÊN HỌC (toàn màn hình) ============ -->
+    <div class="session" id="session" hidden>
+        <div class="session-top">
+            <button class="icon-btn" id="ss-close" title="Thoát (Esc)">✕</button>
+            <div class="ss-progress"><div class="ss-bar" id="ss-bar"></div></div>
+            <div class="ss-label" id="ss-label"></div>
+        </div>
+        <div class="session-body" id="ss-body"></div>
+    </div>
+
+    <!-- ============ CHI TIẾT TỪ ============ -->
+    <div class="modal" id="modal" hidden>
+        <div class="modal-box" id="modal-box"></div>
+    </div>
+
+    <div class="toast" id="toast" hidden></div>
+
+    <script src="hsk_vocab_data.js"></script>
+    <script src="hsk_lotrinh.js"></script>
+</body>
+</html>
