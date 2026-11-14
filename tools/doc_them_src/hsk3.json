@@ -1,0 +1,381 @@
+[
+ {
+  "id": "h3-01",
+  "level": 3,
+  "title": "同一个月亮",
+  "title_vi": "Cùng một vầng trăng",
+  "topic": "văn hóa – phong tục",
+  "paragraphs": [
+   "每年秋天，中国人都要过一个重要的节日——中秋节。这一天晚上，月亮又大又圆，一家人会坐在一起，一边吃月饼，一边看月亮。",
+   "我叫小月，今年上三年级。我的名字就和月亮有关系。奶奶说，我是在中秋节的晚上出生的，那天的月亮特别漂亮，所以爸爸妈妈就叫我“小月”。",
+   "今年中秋节，爸爸妈妈在别的城市工作，太忙了，不能回家。我和爷爷奶奶住在一起。下午，奶奶在厨房里做月饼，我在旁边帮忙。奶奶做的月饼不太甜，里面有鸡蛋，还有一点儿肉。她说，以前大家都是自己在家里做月饼，现在人们习惯去商店买，可是她认为还是自己做的最好吃。",
+   "晚上，我们拿着月饼和水果，到楼下的小公园里看月亮。爷爷说，以前很多人在很远的地方工作，中秋节回不了家，他们就会在晚上看一看月亮。因为在世界上的每一个地方，大家看到的都是同一个月亮。",
+   "我听了以后，突然非常想爸爸妈妈。就在这时候，奶奶的手机响了，是爸爸妈妈打来的电话。妈妈笑着说：“小月，你看月亮了吗？我们也在看呢！”",
+   "我又看了看天上的月亮，觉得它比以前更大、更漂亮了。那天晚上我明白了：中秋节的月亮这么特别，是因为它能让住在不同地方的家人觉得，他们其实就在一起。"
+  ],
+  "translations": [
+   "Mùa thu hằng năm, người Trung Quốc đều đón một ngày lễ quan trọng – Tết Trung thu. Tối hôm ấy, mặt trăng vừa to vừa tròn, cả nhà sẽ ngồi bên nhau, vừa ăn bánh trung thu vừa ngắm trăng.",
+   "Em tên là Tiểu Nguyệt, năm nay học lớp ba. Tên của em có liên quan đến mặt trăng. Bà nói em sinh vào tối Trung thu, hôm đó trăng đẹp lắm, nên bố mẹ gọi em là \"Tiểu Nguyệt\" (Trăng nhỏ).",
+   "Trung thu năm nay, bố mẹ làm việc ở thành phố khác, bận quá nên không về nhà được. Em ở cùng ông bà. Buổi chiều, bà làm bánh trung thu trong bếp, em đứng bên cạnh giúp. Bánh bà làm không ngọt lắm, bên trong có trứng và một chút thịt. Bà bảo ngày trước mọi người đều tự làm bánh ở nhà, bây giờ người ta quen ra cửa hàng mua, nhưng bà cho rằng bánh tự làm vẫn ngon nhất.",
+   "Buổi tối, chúng em mang bánh và hoa quả xuống công viên nhỏ dưới nhà ngắm trăng. Ông kể rằng ngày xưa nhiều người làm việc ở nơi rất xa, Trung thu không về nhà được, nên buổi tối họ sẽ ngắm trăng. Bởi vì dù ở nơi nào trên thế giới, mọi người cũng đều nhìn thấy cùng một vầng trăng.",
+   "Nghe xong, em bỗng nhớ bố mẹ vô cùng. Đúng lúc ấy, điện thoại của bà reo, là bố mẹ gọi tới. Mẹ cười nói: \"Tiểu Nguyệt, con ngắm trăng chưa? Bố mẹ cũng đang ngắm đây!\"",
+   "Em lại ngước nhìn mặt trăng trên trời, thấy nó to hơn, đẹp hơn trước. Tối hôm đó em hiểu ra: trăng Trung thu đặc biệt như vậy là vì nó khiến những người thân sống ở những nơi khác nhau cảm thấy họ thật ra đang ở bên nhau."
+  ],
+  "questions": [
+   {
+    "q": "小月的名字是怎么来的？",
+    "q_vi": "Tên của Tiểu Nguyệt từ đâu mà có?",
+    "options": [
+     "她最喜欢看月亮",
+     "她是中秋节晚上出生的",
+     "奶奶喜欢吃月饼",
+     "她的家在月亮旁边"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2: bé sinh vào tối Trung thu, trăng rất đẹp nên được gọi là Tiểu Nguyệt."
+   },
+   {
+    "q": "关于奶奶做的月饼，下面哪个是对的？",
+    "q_vi": "Về bánh trung thu bà làm, câu nào dưới đây đúng?",
+    "options": [
+     "是在商店买的",
+     "非常非常甜",
+     "里面有鸡蛋和一点儿肉",
+     "小月一个人做的"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 3: bánh không ngọt lắm, bên trong có trứng và một chút thịt."
+   },
+   {
+    "q": "爷爷为什么说以前的人中秋节会看月亮？",
+    "q_vi": "Vì sao ông nói người xưa ngắm trăng vào Trung thu?",
+    "options": [
+     "因为在哪儿看到的都是同一个月亮",
+     "因为那天晚上没有电视",
+     "因为月亮能告诉他们时间",
+     "因为他们不喜欢吃月饼"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 4: dù ở đâu mọi người cũng thấy cùng một vầng trăng, nên ngắm trăng như nhớ về người nhà."
+   },
+   {
+    "q": "这篇文章主要想告诉我们什么？",
+    "q_vi": "Bài văn chủ yếu muốn nói với chúng ta điều gì?",
+    "options": [
+     "月饼应该自己做",
+     "中秋节的月亮最大",
+     "小孩子不能一个人看月亮",
+     "中秋节的月亮让分开的家人觉得在一起"
+    ],
+    "answer": 3,
+    "explain_vi": "Câu kết: trăng Trung thu khiến người thân ở xa nhau cảm thấy như đang ở bên nhau – đó là ý chính."
+   }
+  ]
+ },
+ {
+  "id": "h3-02",
+  "level": 3,
+  "title": "车站的老奶奶",
+  "title_vi": "Bà cụ ở bến xe buýt",
+  "topic": "truyện ngắn",
+  "paragraphs": [
+   "小王每天早上七点半坐公共汽车去上班。在车站，他总是能看见一位老奶奶。她的头发都白了，衣服很旧，可是非常干净，手里总是拿着一个小包。",
+   "奇怪的是，每次车来了，别人都上车，只有老奶奶不上。她就站在那里，看着车开走，然后笑一笑，再慢慢地走回家。",
+   "一个星期过去了，一个月过去了，每天都是这样。小王想：她是不是在等一个人？可能是她的老朋友，也可能是她的儿子。可是那个人为什么一直不来呢？小王越想越担心。",
+   "有一天下大雨，老奶奶还是来了。她没有带伞，就站在雨里。小王走过去，把自己的伞给她，问：“奶奶，您每天都在这儿等谁啊？天气这么不好，您还是回家吧。”",
+   "老奶奶笑了，说：“谢谢你，年轻人。我不是在等人，我是来看人的。”",
+   "“看人？看谁？”小王更不明白了。",
+   "这时候，公共汽车来了。老奶奶向开车的司机笑了笑，司机也笑着向她点了点头。",
+   "“那是我儿子。”老奶奶高兴地说，“他工作很忙，一年只能回家一次。可是他每天早上都会开着这辆车经过这里。我来车站，就是为了每天能看他一眼。”",
+   "那天上车以后，小王一直看着外面的雨。过了一会儿，他拿出手机，给很久没回家看过的妈妈打了一个电话。"
+  ],
+  "translations": [
+   "Sáng nào Tiểu Vương cũng đi xe buýt lúc bảy rưỡi để đi làm. Ở bến xe, anh luôn thấy một bà cụ. Tóc bà đã bạc trắng, quần áo cũ nhưng rất sạch sẽ, tay lúc nào cũng cầm một chiếc túi nhỏ.",
+   "Điều lạ là mỗi lần xe đến, người khác đều lên xe, chỉ có bà cụ là không. Bà cứ đứng đó, nhìn xe chạy đi, rồi mỉm cười và thong thả đi về nhà.",
+   "Một tuần trôi qua, một tháng trôi qua, ngày nào cũng như vậy. Tiểu Vương nghĩ: có phải bà đang đợi ai đó không? Có thể là bạn cũ của bà, cũng có thể là con trai bà. Nhưng sao người đó mãi không đến? Tiểu Vương càng nghĩ càng lo.",
+   "Một hôm trời mưa to, bà cụ vẫn đến. Bà không mang ô, cứ đứng dưới mưa. Tiểu Vương bước tới, đưa ô của mình cho bà và hỏi: \"Bà ơi, ngày nào bà cũng đợi ai ở đây vậy? Thời tiết xấu thế này, bà về nhà đi ạ.\"",
+   "Bà cụ cười, nói: \"Cảm ơn cháu, chàng trai. Bà không đợi ai cả, bà đến để nhìn một người.\"",
+   "\"Nhìn người? Nhìn ai ạ?\" Tiểu Vương càng không hiểu.",
+   "Lúc ấy, xe buýt đến. Bà cụ mỉm cười với người tài xế, người tài xế cũng cười và gật đầu với bà.",
+   "\"Đó là con trai bà.\" Bà cụ vui vẻ nói. \"Nó bận việc lắm, mỗi năm chỉ về nhà được một lần. Nhưng sáng nào nó cũng lái chiếc xe này đi qua đây. Bà ra bến xe chính là để ngày nào cũng được nhìn nó một cái.\"",
+   "Hôm ấy lên xe rồi, Tiểu Vương cứ nhìn mưa ngoài cửa sổ. Một lúc sau, anh lấy điện thoại ra, gọi cho người mẹ mà đã lâu rồi anh không về thăm."
+  ],
+  "questions": [
+   {
+    "q": "小王觉得老奶奶哪里很奇怪？",
+    "q_vi": "Tiểu Vương thấy bà cụ lạ ở điểm nào?",
+    "options": [
+     "她每天都穿新衣服",
+     "她每天来车站，可是从来不上车",
+     "她总是在车站唱歌",
+     "她每天坐车去很远的地方"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2: xe đến thì ai cũng lên, chỉ bà cụ không lên mà đứng nhìn xe đi."
+   },
+   {
+    "q": "下大雨那天，小王做了什么？",
+    "q_vi": "Hôm trời mưa to, Tiểu Vương đã làm gì?",
+    "options": [
+     "送老奶奶回家",
+     "给老奶奶买了一把伞",
+     "把自己的伞给了老奶奶",
+     "没去上班"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 4: Tiểu Vương đưa ô của mình cho bà cụ."
+   },
+   {
+    "q": "老奶奶每天去车站是为了什么？",
+    "q_vi": "Bà cụ ra bến xe mỗi ngày để làm gì?",
+    "options": [
+     "看开车的儿子",
+     "等她的老朋友",
+     "坐车去医院",
+     "卖东西"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 8: tài xế là con trai bà, bà ra bến để được nhìn con mỗi ngày."
+   },
+   {
+    "q": "最后小王给妈妈打电话，最可能是因为：",
+    "q_vi": "Cuối cùng Tiểu Vương gọi điện cho mẹ, nhiều khả năng là vì:",
+    "options": [
+     "他忘了带伞",
+     "他上班要迟到了",
+     "妈妈给他打过很多电话",
+     "老奶奶的故事让他想起了自己的妈妈"
+    ],
+    "answer": 3,
+    "explain_vi": "Câu chuyện của bà cụ về tình mẹ khiến anh nhớ tới mẹ mình, người đã lâu anh không về thăm – đây là câu hỏi suy luận."
+   }
+  ]
+ },
+ {
+  "id": "h3-03",
+  "level": 3,
+  "title": "一盘特别的菜",
+  "title_vi": "Một đĩa thức ăn đặc biệt",
+  "topic": "nhật ký – gia đình",
+  "paragraphs": [
+   "三月八日 星期日 晴",
+   "今天是妈妈的生日。早上，妈妈有事去公司了。她刚出门，爸爸就小声对我说：“我们今天给妈妈做晚饭，让她高兴高兴，好不好？”我马上就同意了。",
+   "下午三点，我们去超市买了鱼、鸡蛋、西红柿和一些水果，还买了一个小蛋糕。回到家，爸爸说他做鱼，我做西红柿鸡蛋。这个菜我看妈妈做过很多次，我觉得一点儿也不难。",
+   "可是做起来我才发现，做饭真不简单！我一着急，把两个鸡蛋都打到了碗外面。爸爸那边也不太好，他做一条鱼就用了一个多小时，厨房里热得像夏天一样。最后，我们终于做好了三个菜，还把桌子也打扫得干干净净。",
+   "六点半，妈妈回来了。看到桌子上的菜和蛋糕，她非常高兴。她先吃了一口我做的西红柿鸡蛋，笑着说：“真好吃！有点儿甜，跟你外婆做的一样。”",
+   "我也吃了一口——啊，太甜了！我这才发现，我把糖当成了盐。我的脸一下子就红了。",
+   "可是妈妈笑着对我说：“别担心。我小时候第一次给你外婆做饭，也放错了。那天你外婆说的话，跟我今天说的一样。”爸爸听了，在旁边也笑了。",
+   "今天我明白了两件事：第一，做饭不是一件容易的事；第二，妈妈说菜好吃，不是因为它真的好吃，而是因为这个菜是我为她做的。"
+  ],
+  "translations": [
+   "Chủ nhật, ngày 8 tháng 3, trời nắng",
+   "Hôm nay là sinh nhật mẹ. Buổi sáng mẹ có việc phải lên công ty. Mẹ vừa ra khỏi nhà, bố đã nói nhỏ với tôi: \"Hôm nay hai bố con mình nấu một bữa tối cho mẹ, để mẹ vui một chút, được không?\" Tôi đồng ý ngay.",
+   "Ba giờ chiều, chúng tôi đi siêu thị mua cá, trứng, cà chua, ít hoa quả và một chiếc bánh kem nhỏ. Về đến nhà, bố bảo bố làm cá, còn tôi làm món cà chua xào trứng. Món này tôi đã xem mẹ làm rất nhiều lần, nên tôi thấy chẳng khó chút nào.",
+   "Nhưng bắt tay vào làm tôi mới nhận ra, nấu ăn thật không đơn giản! Tôi cuống lên, đập cả hai quả trứng ra ngoài bát. Bên phía bố cũng chẳng khá hơn, bố làm một con cá mà mất hơn một tiếng, căn bếp nóng như mùa hè. Cuối cùng, chúng tôi cũng làm xong ba món, còn lau dọn bàn sạch sẽ tinh tươm.",
+   "Sáu rưỡi mẹ về. Nhìn thấy thức ăn và bánh kem trên bàn, mẹ vui lắm. Mẹ ăn thử một miếng cà chua xào trứng tôi làm trước, rồi cười nói: \"Ngon quá! Hơi ngọt một chút, giống hệt bà ngoại con làm.\"",
+   "Tôi cũng ăn một miếng – trời ơi, ngọt quá! Lúc này tôi mới phát hiện mình đã nhầm đường thành muối. Mặt tôi đỏ bừng ngay lập tức.",
+   "Thế nhưng mẹ cười nói với tôi: \"Đừng lo. Hồi nhỏ lần đầu mẹ nấu cơm cho bà ngoại con, mẹ cũng nêm nhầm. Hôm đó bà ngoại nói với mẹ đúng y như những gì mẹ nói hôm nay.\" Bố nghe xong, ở bên cạnh cũng bật cười.",
+   "Hôm nay tôi hiểu ra hai điều: thứ nhất, nấu ăn không phải là việc dễ; thứ hai, mẹ khen món ăn ngon không phải vì nó thật sự ngon, mà vì đó là món tôi làm cho mẹ."
+  ],
+  "questions": [
+   {
+    "q": "爸爸和“我”为什么要做晚饭？",
+    "q_vi": "Vì sao bố và \"tôi\" muốn nấu bữa tối?",
+    "options": [
+     "因为今天是妈妈的生日",
+     "因为妈妈生病了",
+     "因为家里没有饭馆",
+     "因为爸爸想学做菜"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 2: hôm nay là sinh nhật mẹ, hai bố con muốn làm mẹ vui."
+   },
+   {
+    "q": "“我”做的西红柿鸡蛋为什么很甜？",
+    "q_vi": "Vì sao món cà chua trứng \"tôi\" làm lại rất ngọt?",
+    "options": [
+     "因为放了很多水果",
+     "因为外婆告诉“我”要放糖",
+     "因为“我”把糖当成了盐",
+     "因为西红柿特别甜"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 6: \"tôi\" nhầm đường thành muối."
+   },
+   {
+    "q": "妈妈说“跟你外婆做的一样”，其实是什么意思？",
+    "q_vi": "Mẹ nói \"giống bà ngoại con làm\", thực ra có ý gì?",
+    "options": [
+     "外婆做菜比“我”好吃",
+     "妈妈小时候也犯过一样的错",
+     "外婆今天也来吃饭了",
+     "妈妈不喜欢吃甜的"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 7: hồi nhỏ mẹ nấu cho bà ngoại cũng nêm nhầm – nên món \"ngọt\" giống bà ngoại là kỷ niệm của mẹ."
+   },
+   {
+    "q": "这篇日记最想说的是什么？",
+    "q_vi": "Bài nhật ký này muốn nói điều gì nhất?",
+    "options": [
+     "西红柿鸡蛋很难做",
+     "爸爸做鱼做得很慢",
+     "去超市买东西要早点儿去",
+     "妈妈最高兴的是“我”为她做菜"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn cuối: mẹ khen ngon vì món đó do con làm cho mẹ – điều quý là tấm lòng."
+   }
+  ]
+ },
+ {
+  "id": "h3-04",
+  "level": 3,
+  "title": "电梯坏了以后",
+  "title_vi": "Sau khi thang máy hỏng",
+  "topic": "xã hội – hàng xóm",
+  "paragraphs": [
+   "我家住在一个很高的楼里，一共有二十层。楼里住着一百多家人，可是我只认识住在旁边的一家。每天大家坐电梯上楼、下楼，在电梯里也很少说话，每个人都在看自己的手机。",
+   "上个星期一，电梯突然坏了。楼下的人说，最快也要一个星期才能修好。这下大家都着急了，特别是住在高层的人。",
+   "我家在十二层。第一天晚上，我提着一大包东西爬楼梯，爬到第八层的时候，我已经累得走不动了。这时候，一个年轻的男人从后面走上来，说：“我帮你拿吧，我住十五层，正好经过。”",
+   "第二天，我在楼梯上看见了一位老爷爷。他住在十八层，腿不太好，手里还拿着刚买的菜。我想起了那个帮过我的人，就走过去帮他拿菜，一边慢慢地走，一边和他说话。我这才知道，他一个人住，孩子们都在国外。",
+   "后来，楼里的人想了一个好办法：住在低层的人去超市的时候，就问问高层的邻居需要买什么，再帮他们带上来。每天晚上，楼梯上都很热闹，大家一边走一边说话，有的还在中间坐下来，一起喝一杯水，休息一会儿。",
+   "一个星期以后，电梯终于修好了。第一天坐电梯的时候，我发现电梯里的人不再只看手机了。大家都会笑着打招呼：“早！今天去哪儿啊？”“老爷爷，您的腿好点儿了吗？”",
+   "现在，我在这个楼里认识了很多人。有时候我想，电梯坏了的那个星期虽然很累，但是它让我们这些住得很近的人，第一次真的成了邻居。"
+  ],
+  "translations": [
+   "Nhà tôi ở trong một tòa nhà rất cao, tổng cộng hai mươi tầng. Trong tòa nhà có hơn một trăm hộ, nhưng tôi chỉ quen nhà bên cạnh. Hằng ngày mọi người đi thang máy lên xuống, trong thang máy cũng rất ít nói chuyện, ai nấy đều cắm mặt vào điện thoại của mình.",
+   "Thứ Hai tuần trước, thang máy đột nhiên hỏng. Người ở tầng dưới nói nhanh nhất cũng phải một tuần mới sửa xong. Lần này ai cũng sốt ruột, nhất là những người sống ở tầng cao.",
+   "Nhà tôi ở tầng mười hai. Tối hôm đầu tiên, tôi xách một túi đồ to leo cầu thang, leo đến tầng tám thì đã mệt không bước nổi nữa. Lúc ấy, một người đàn ông trẻ từ phía sau đi lên, nói: \"Để tôi xách giúp cho, tôi ở tầng mười lăm, tiện đường.\"",
+   "Ngày thứ hai, tôi gặp một ông cụ trên cầu thang. Ông ở tầng mười tám, chân không được khỏe, tay còn cầm đồ ăn vừa mua. Tôi nhớ tới người đã giúp mình, liền bước tới xách giúp ông, vừa chậm rãi đi vừa trò chuyện với ông. Lúc ấy tôi mới biết ông sống một mình, con cái đều ở nước ngoài.",
+   "Sau đó, mọi người trong tòa nhà nghĩ ra một cách hay: người ở tầng thấp khi đi siêu thị thì hỏi hàng xóm tầng cao cần mua gì, rồi mang lên giúp. Tối nào cầu thang cũng rất náo nhiệt, mọi người vừa đi vừa nói chuyện, có người còn ngồi xuống giữa chừng, cùng uống cốc nước, nghỉ một lát.",
+   "Một tuần sau, thang máy cuối cùng cũng sửa xong. Ngày đầu tiên đi thang máy, tôi phát hiện mọi người trong thang không còn chỉ nhìn điện thoại nữa. Ai cũng cười chào nhau: \"Chào buổi sáng! Hôm nay đi đâu đấy?\" \"Ông ơi, chân ông đỡ hơn chưa ạ?\"",
+   "Bây giờ tôi đã quen rất nhiều người trong tòa nhà này. Có lúc tôi nghĩ, tuần thang máy hỏng tuy rất mệt, nhưng nó đã khiến những người sống rất gần nhau như chúng tôi lần đầu tiên thật sự trở thành hàng xóm."
+  ],
+  "questions": [
+   {
+    "q": "电梯坏了以前，楼里的人在电梯里常常做什么？",
+    "q_vi": "Trước khi thang máy hỏng, mọi người trong tòa nhà thường làm gì trong thang máy?",
+    "options": [
+     "一起聊天",
+     "看自己的手机",
+     "帮别人拿东西",
+     "唱歌"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 1: trong thang máy ít nói chuyện, ai cũng nhìn điện thoại của mình."
+   },
+   {
+    "q": "“我”为什么帮老爷爷拿菜？",
+    "q_vi": "Vì sao \"tôi\" xách đồ ăn giúp ông cụ?",
+    "options": [
+     "因为老爷爷是“我”的爷爷",
+     "因为老爷爷给了“我”钱",
+     "因为“我”想起了别人也帮过自己",
+     "因为“我”也住在十八层"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 4: \"tôi\" nhớ đến người đàn ông trẻ đã giúp mình hôm trước."
+   },
+   {
+    "q": "楼里的人想了一个什么办法？",
+    "q_vi": "Mọi người trong tòa nhà đã nghĩ ra cách gì?",
+    "options": [
+     "自己修电梯",
+     "都搬到低层去住",
+     "不去超市买东西",
+     "低层的人帮高层的邻居带东西"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 5: người ở tầng thấp đi siêu thị thì mua giúp và mang đồ lên cho hàng xóm tầng cao."
+   },
+   {
+    "q": "作者最想告诉我们的是：",
+    "q_vi": "Điều tác giả muốn nói nhất là:",
+    "options": [
+     "一件坏事让邻居们真正认识了",
+     "住高楼很不方便",
+     "电梯应该常常检查",
+     "爬楼梯是很好的锻炼"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn cuối: tuần thang máy hỏng khiến mọi người lần đầu thật sự trở thành hàng xóm."
+   }
+  ]
+ },
+ {
+  "id": "h3-05",
+  "level": 3,
+  "title": "熊猫为什么总是在吃？",
+  "title_vi": "Vì sao gấu trúc lúc nào cũng ăn?",
+  "topic": "khoa học thường thức",
+  "paragraphs": [
+   "大熊猫是一种只住在中国的动物。它们的身体是黑白两种颜色，眼睛旁边是黑色的，看起来好像总是没睡好觉。很多人第一次见到熊猫，都会说：“太可爱了！”",
+   "熊猫最喜欢吃竹子。一只大熊猫一天要吃十几公斤竹子，一天里有一半的时间都在吃东西。除了吃，它们最喜欢做的事情就是睡觉。",
+   "为什么熊猫要吃这么多呢？其实，竹子对熊猫来说不是很好的东西。熊猫吃下去的竹子，身体只能用到很少的一点儿，所以它们必须多吃一些，才能不饿。",
+   "更有意思的是，很久很久以前，熊猫是吃肉的。后来，因为环境变了，能吃的肉越来越少，它们才慢慢地开始吃竹子。可是到了今天，熊猫的身体还是更像吃肉的动物，所以吃竹子对它们来说不是一件容易的事。",
+   "也是因为这样，熊猫不太喜欢运动。它们走路很慢，很少跑，也很少爬到很高的地方。这样做，它们就不会很快饿了。",
+   "熊猫妈妈一般一次只生一个孩子。刚出生的熊猫非常小，和一个苹果差不多大，身上几乎没有黑色。你很难想到，这么小的孩子，以后会长成一百多公斤的大熊猫。",
+   "今天，世界上很多国家的动物园里都有大熊猫。它们是中国送给世界的朋友，也是很多孩子最喜欢的动物。下次你去动物园看熊猫的时候，如果它正在吃竹子，别觉得它太胖，它只是在努力“工作”呢！"
+  ],
+  "translations": [
+   "Gấu trúc lớn là một loài động vật chỉ sống ở Trung Quốc. Cơ thể chúng có hai màu đen trắng, quanh mắt màu đen, trông như lúc nào cũng thiếu ngủ. Nhiều người lần đầu nhìn thấy gấu trúc đều thốt lên: \"Dễ thương quá!\"",
+   "Gấu trúc thích ăn tre nhất. Một con gấu trúc lớn mỗi ngày ăn hơn mười cân tre, một nửa thời gian trong ngày là để ăn. Ngoài ăn ra, việc chúng thích làm nhất là ngủ.",
+   "Vì sao gấu trúc phải ăn nhiều như vậy? Thật ra, với gấu trúc, tre không phải là thức ăn tốt lắm. Tre gấu trúc ăn vào, cơ thể chỉ dùng được một phần rất nhỏ, nên chúng buộc phải ăn nhiều hơn mới không bị đói.",
+   "Thú vị hơn nữa là, rất rất lâu về trước, gấu trúc ăn thịt. Về sau, vì môi trường thay đổi, thịt có thể ăn ngày càng ít, chúng mới dần dần chuyển sang ăn tre. Nhưng đến tận hôm nay, cơ thể gấu trúc vẫn giống động vật ăn thịt hơn, nên ăn tre đối với chúng không phải chuyện dễ dàng.",
+   "Cũng vì vậy mà gấu trúc không thích vận động lắm. Chúng đi rất chậm, ít khi chạy, cũng ít khi trèo lên chỗ cao. Làm như vậy chúng sẽ không nhanh đói.",
+   "Gấu trúc mẹ thường mỗi lứa chỉ sinh một con. Gấu trúc con mới sinh rất nhỏ, to cỡ một quả táo, trên người hầu như chưa có màu đen. Bạn khó mà ngờ rằng một chú gấu nhỏ như thế sau này sẽ lớn thành con gấu trúc nặng hơn một trăm cân.",
+   "Ngày nay, vườn thú ở nhiều nước trên thế giới đều có gấu trúc. Chúng là những người bạn Trung Quốc gửi tặng thế giới, cũng là loài vật nhiều trẻ em yêu thích nhất. Lần sau đi vườn thú xem gấu trúc, nếu nó đang ăn tre, đừng nghĩ nó béo quá nhé, nó chỉ đang chăm chỉ \"làm việc\" thôi!"
+  ],
+  "questions": [
+   {
+    "q": "熊猫一天大概用多少时间吃东西？",
+    "q_vi": "Mỗi ngày gấu trúc dành khoảng bao nhiêu thời gian để ăn?",
+    "options": [
+     "一个小时",
+     "两三个小时",
+     "一天里一半的时间",
+     "差不多一整天都不吃"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 2: một nửa thời gian trong ngày gấu trúc dành để ăn."
+   },
+   {
+    "q": "熊猫为什么要吃很多竹子？",
+    "q_vi": "Vì sao gấu trúc phải ăn nhiều tre?",
+    "options": [
+     "因为身体只能用到竹子的很少一部分",
+     "因为竹子特别好吃",
+     "因为它们每天运动很多",
+     "因为动物园要求它们吃"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 3: cơ thể gấu trúc chỉ dùng được rất ít từ tre nên phải ăn nhiều mới no."
+   },
+   {
+    "q": "根据文章，下面哪句话是对的？",
+    "q_vi": "Theo bài, câu nào dưới đây đúng?",
+    "options": [
+     "熊猫一直都是吃竹子的",
+     "刚出生的熊猫和苹果差不多大",
+     "熊猫很喜欢跑和爬高",
+     "熊猫妈妈一次生很多孩子"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 6: gấu trúc con mới sinh to cỡ quả táo. Các ý khác đều trái với bài."
+   },
+   {
+    "q": "最后一段说熊猫在努力“工作”，意思是：",
+    "q_vi": "Đoạn cuối nói gấu trúc đang chăm chỉ \"làm việc\", ý là:",
+    "options": [
+     "熊猫在动物园里上班",
+     "熊猫在帮人做事",
+     "熊猫想变得更胖",
+     "多吃竹子是熊猫必须做的事"
+    ],
+    "answer": 3,
+    "explain_vi": "Vì tre ít dinh dưỡng, ăn nhiều là việc bắt buộc để sống – tác giả nói vui đó là \"công việc\" của gấu trúc."
+   }
+  ]
+ }
+]

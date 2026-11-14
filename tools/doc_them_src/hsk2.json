@@ -1,0 +1,297 @@
+[
+ {
+  "id": "h2-01",
+  "level": 2,
+  "title": "第一次考试",
+  "title_vi": "Kỳ thi đầu tiên",
+  "topic": "học tập",
+  "paragraphs": [
+   "我叫马小东，在北京学习汉语。上个星期五，老师告诉我们：“下星期一有考试，大家好好准备吧。”",
+   "这是我的第一次汉语考试，所以我每天都在准备：早上六点起床，晚上十二点睡觉。我看了很多书，做了几百个题。星期天晚上，两点多了，我还在学习。",
+   "星期一早上，我起床的时候，手机上已经是七点五十了！我想：考试八点开始，我得快点儿！我很快穿上衣服，什么也没吃，就跑出了门。",
+   "我坐出租车到了学校，跑进教室。但是教室里一个人也没有！我想：“我来晚了吗？大家都考完了吗？”",
+   "这时候，老师从门外走进来。他看见我，笑了：“小东，你来得真早！考试是下午两点开始的。你可以先回家睡觉了！”"
+  ],
+  "translations": [
+   "Tôi tên là Mã Tiểu Đông, đang học tiếng Hán ở Bắc Kinh. Thứ Sáu tuần trước, thầy giáo bảo chúng tôi: “Thứ Hai tuần sau có bài thi, mọi người chuẩn bị cho tốt nhé.”",
+   "Đây là kỳ thi tiếng Hán đầu tiên của tôi, vì vậy ngày nào tôi cũng ôn: sáu giờ sáng dậy, mười hai giờ đêm mới ngủ. Tôi đọc rất nhiều sách, làm mấy trăm câu bài tập. Tối Chủ nhật, đã hơn hai giờ sáng mà tôi vẫn còn học.",
+   "Sáng thứ Hai, lúc tôi thức dậy, điện thoại đã chỉ bảy giờ năm mươi! Tôi nghĩ: tám giờ bắt đầu thi, mình phải nhanh lên! Tôi vội vàng mặc quần áo, chẳng ăn gì, chạy ngay ra khỏi nhà.",
+   "Tôi đi taxi đến trường, chạy vào phòng học. Nhưng trong phòng học không có một ai! Tôi nghĩ: “Mình đến muộn rồi sao? Mọi người thi xong hết rồi à?”",
+   "Đúng lúc đó, thầy giáo từ ngoài cửa bước vào. Thấy tôi, thầy bật cười: “Tiểu Đông, em đến sớm thật đấy! Hai giờ chiều mới bắt đầu thi cơ. Em có thể về nhà ngủ một giấc trước đã!”"
+  ],
+  "questions": [
+   {
+    "q": "这个星期小东为什么睡觉很晚？",
+    "q_vi": "Tuần này vì sao Tiểu Đông ngủ rất muộn?",
+    "options": [
+     "他在看电视",
+     "他在准备考试",
+     "他在公司工作",
+     "他生病了"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2: đây là kỳ thi đầu tiên nên ngày nào cậu cũng ôn đến khuya."
+   },
+   {
+    "q": "小东跑进教室的时候，教室里有谁？",
+    "q_vi": "Khi Tiểu Đông chạy vào phòng học, trong phòng có ai?",
+    "options": [
+     "很多同学",
+     "老师和同学",
+     "一个人也没有",
+     "两个同学"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 4: “教室里一个人也没有” – trong phòng không có ai cả."
+   },
+   {
+    "q": "从这个故事我们可以知道什么？",
+    "q_vi": "Qua câu chuyện này, ta có thể biết điều gì?",
+    "options": [
+     "小东考试考得很好",
+     "老师来晚了",
+     "同学们都考完了",
+     "小东觉得考试是早上八点开始"
+    ],
+    "answer": 3,
+    "explain_vi": "Tiểu Đông tưởng tám giờ sáng thi nên vội vàng chạy đến, thật ra hai giờ chiều mới thi."
+   }
+  ]
+ },
+ {
+  "id": "h2-02",
+  "level": 2,
+  "title": "爸爸的手表",
+  "title_vi": "Chiếc đồng hồ của bố",
+  "topic": "gia đình",
+  "paragraphs": [
+   "爸爸有一块手表，是二十年前妈妈送给他的。这块手表不贵，颜色也不新了，但是爸爸非常喜欢，每天上班都要用它。",
+   "上个星期，爸爸的手表找不到了。他在房间里找，在公司里找，还给公共汽车公司打了电话，都没有找到。爸爸很不高兴，饭也吃得很少。",
+   "我和弟弟想：我们送爸爸一块新手表吧！我们一起去商店看了很多手表。好看的都非常贵，我们的钱太少了。我们买了一块黑色的，三百块。",
+   "爸爸生日那天，我们把新手表送给他。爸爸笑了：“谢谢你们！”这时候，妈妈从房间里走出来，说：“我也有一件东西要送给你。”她送的，就是那块找不到的手表！",
+   "妈妈说：“昨天我洗衣服的时候，在你的衣服里找到的。”现在，爸爸有两块手表，左边一块，右边一块。他说：“左边的是妻子送的，右边的是孩子们送的，我都爱！”"
+  ],
+  "translations": [
+   "Bố có một chiếc đồng hồ đeo tay, là quà mẹ tặng bố từ hai mươi năm trước. Chiếc đồng hồ này không đắt, màu cũng đã cũ, nhưng bố rất thích, ngày nào đi làm cũng mang theo.",
+   "Tuần trước, bố không tìm thấy đồng hồ đâu nữa. Bố tìm trong phòng, tìm ở công ty, còn gọi điện cho cả công ty xe buýt, nhưng đều không tìm được. Bố buồn lắm, ăn cơm cũng ít hẳn.",
+   "Em trai và tôi nghĩ: hay là mình tặng bố một chiếc đồng hồ mới! Hai anh em cùng ra cửa hàng xem rất nhiều đồng hồ. Cái nào đẹp cũng đắt lắm, tiền của tụi tôi thì ít quá. Cuối cùng tụi tôi mua một chiếc màu đen, giá ba trăm đồng.",
+   "Hôm sinh nhật bố, tụi tôi tặng bố chiếc đồng hồ mới. Bố cười: “Cảm ơn các con!” Đúng lúc đó, mẹ từ trong phòng bước ra, nói: “Em cũng có một món muốn tặng anh.” Thứ mẹ tặng chính là chiếc đồng hồ đã thất lạc!",
+   "Mẹ nói: “Hôm qua lúc giặt quần áo, em tìm thấy nó trong túi áo của anh.” Bây giờ bố có hai chiếc đồng hồ, tay trái một chiếc, tay phải một chiếc. Bố bảo: “Cái bên trái là vợ tặng, cái bên phải là các con tặng, bố quý cả hai!”"
+  ],
+  "questions": [
+   {
+    "q": "爸爸的旧手表是谁送的？",
+    "q_vi": "Chiếc đồng hồ cũ của bố là ai tặng?",
+    "options": [
+     "孩子们",
+     "妈妈",
+     "爸爸的朋友",
+     "公司"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 1: “是二十年前妈妈送给他的” – do mẹ tặng hai mươi năm trước."
+   },
+   {
+    "q": "手表是在哪儿找到的？",
+    "q_vi": "Chiếc đồng hồ được tìm thấy ở đâu?",
+    "options": [
+     "公司里",
+     "公共汽车上",
+     "商店里",
+     "爸爸的衣服里"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 5: mẹ giặt quần áo và tìm thấy đồng hồ trong quần áo của bố."
+   },
+   {
+    "q": "爸爸为什么说“我都爱”？",
+    "q_vi": "Vì sao bố nói “bố quý cả hai”?",
+    "options": [
+     "两块手表都是家人送的",
+     "两块手表都很贵",
+     "两块手表颜色一样",
+     "他不喜欢新手表"
+    ],
+    "answer": 0,
+    "explain_vi": "Một chiếc là vợ tặng, một chiếc là các con tặng – cả hai đều chứa tình cảm gia đình."
+   }
+  ]
+ },
+ {
+  "id": "h2-03",
+  "level": 2,
+  "title": "第一次看见雪",
+  "title_vi": "Lần đầu thấy tuyết",
+  "topic": "du lịch, nhật ký",
+  "paragraphs": [
+   "一月十五日，晴。今天我和姐姐从北京坐飞机去了哈尔滨。哈尔滨离北京很远，我们坐了两个多小时的飞机。",
+   "在越南，我没有看见过雪。下飞机的时候，我看见外面都是白色的，高兴得笑了起来。外面非常冷，比北京冷多了。我穿了三件衣服，但是还觉得冷。",
+   "下午，我们在雪里玩了两个小时。我们做了一个很大的雪人。它有两个黑黑的眼睛，还穿着姐姐的红衣服，非常漂亮！",
+   "晚上，我们去饭馆吃饭。服务员向我们介绍了这里的羊肉和鱼。羊肉非常好吃，也不贵，两个人一共一百多块钱。",
+   "回到房间，我给妈妈打电话：“妈妈，我看见雪了！”妈妈说：“真的吗？你们那里冷不冷？今天我们这里也很冷，十五度！”我和姐姐听了，都笑了。"
+  ],
+  "translations": [
+   "Ngày 15 tháng 1, trời nắng. Hôm nay em và chị gái đi máy bay từ Bắc Kinh đến Cáp Nhĩ Tân. Cáp Nhĩ Tân cách Bắc Kinh rất xa, tụi em ngồi máy bay hơn hai tiếng.",
+   "Ở Việt Nam, em chưa từng thấy tuyết. Lúc xuống máy bay, em thấy bên ngoài trắng xóa, vui đến bật cười. Bên ngoài lạnh cực kỳ, lạnh hơn Bắc Kinh nhiều. Em mặc ba lớp áo mà vẫn thấy lạnh.",
+   "Buổi chiều, tụi em chơi trong tuyết suốt hai tiếng. Tụi em đắp một người tuyết rất to. Nó có hai con mắt đen láy, còn mặc chiếc áo đỏ của chị, đẹp lắm!",
+   "Buổi tối, tụi em đi ăn ở nhà hàng. Nhân viên phục vụ giới thiệu món thịt cừu và cá ở đây. Thịt cừu ngon tuyệt, lại không đắt, hai người tổng cộng chỉ hơn một trăm đồng.",
+   "Về đến phòng, em gọi điện cho mẹ: “Mẹ ơi, con thấy tuyết rồi!” Mẹ nói: “Thật hả? Chỗ con có lạnh không? Hôm nay ở nhà mình cũng lạnh lắm, mười lăm độ đấy!” Em và chị nghe xong đều phá lên cười."
+  ],
+  "questions": [
+   {
+    "q": "这是“我”第一次做什么？",
+    "q_vi": "Đây là lần đầu tiên “tôi” làm gì?",
+    "options": [
+     "坐飞机",
+     "看见雪",
+     "吃羊肉",
+     "去北京"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2: “在越南，我没有看见过雪” – đây là lần đầu tiên thấy tuyết."
+   },
+   {
+    "q": "雪人穿着什么衣服？",
+    "q_vi": "Người tuyết mặc áo gì?",
+    "options": [
+     "黑色的衣服",
+     "白色的衣服",
+     "姐姐的红衣服",
+     "妈妈的衣服"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 3: “还穿着姐姐的红衣服” – mặc chiếc áo đỏ của chị."
+   },
+   {
+    "q": "“我”和姐姐为什么笑了？",
+    "q_vi": "Vì sao “tôi” và chị gái bật cười?",
+    "options": [
+     "妈妈觉得十五度很冷，可是哈尔滨冷多了",
+     "妈妈也来了哈尔滨",
+     "羊肉太便宜了",
+     "妈妈没有听懂"
+    ],
+    "answer": 0,
+    "explain_vi": "Mẹ ở Việt Nam thấy 15 độ đã là lạnh, trong khi Cáp Nhĩ Tân lạnh hơn rất nhiều – nên hai chị em thấy buồn cười."
+   }
+  ]
+ },
+ {
+  "id": "h2-04",
+  "level": 2,
+  "title": "说真话的孩子",
+  "title_vi": "Cậu bé nói thật",
+  "topic": "ngụ ngôn",
+  "paragraphs": [
+   "天气非常热，路旁边有一个卖西瓜的孩子。他叫小林，今年十岁。他的西瓜很大，也很便宜，但是买的人不多。",
+   "一天下午，一个男人走过来，问：“小朋友，这个西瓜好吃吗？”小林看了看，说：“这个不好吃，里面太白了。您买旁边那个吧，那个好吃。”",
+   "男人笑了：“卖西瓜的人都说‘我的西瓜最好吃’，你为什么说‘这个不好吃’？”小林回答：“妈妈告诉我，卖东西的时候，要说真话。”",
+   "男人买了十个西瓜。第二天，他又来了，还和很多朋友一起来。他说：“我在前面开了一个饭馆。从今天开始，我的饭馆每天都要买你的西瓜！”",
+   "现在，小林的西瓜卖得非常快。大家都说：“买西瓜，就去找那个说真话的孩子！”"
+  ],
+  "translations": [
+   "Trời nóng như đổ lửa, bên vệ đường có một cậu bé bán dưa hấu. Cậu tên là Tiểu Lâm, năm nay mười tuổi. Dưa của cậu rất to, lại rẻ, nhưng không mấy người mua.",
+   "Một buổi chiều, có một người đàn ông đi tới hỏi: “Cháu ơi, quả dưa này có ngon không?” Tiểu Lâm nhìn nhìn rồi nói: “Quả này không ngon đâu ạ, ruột trắng quá. Chú mua quả bên cạnh ấy, quả đó ngon.”",
+   "Người đàn ông bật cười: “Người bán dưa ai cũng nói ‘dưa của tôi ngon nhất’, sao cháu lại bảo ‘quả này không ngon’?” Tiểu Lâm đáp: “Mẹ cháu dặn, khi bán hàng phải nói thật.”",
+   "Người đàn ông mua mười quả dưa. Hôm sau ông lại đến, còn dẫn theo rất nhiều bạn bè. Ông nói: “Chú mở một nhà hàng ở phía trước. Từ hôm nay, ngày nào nhà hàng của chú cũng sẽ mua dưa của cháu!”",
+   "Bây giờ dưa của Tiểu Lâm bán rất chạy. Ai cũng nói: “Mua dưa hấu thì cứ tìm cậu bé nói thật ấy!”"
+  ],
+  "questions": [
+   {
+    "q": "小林是做什么的？",
+    "q_vi": "Tiểu Lâm làm gì?",
+    "options": [
+     "在饭馆工作",
+     "卖鱼",
+     "开出租车",
+     "卖西瓜"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 1: “路旁边有一个卖西瓜的孩子” – Tiểu Lâm bán dưa hấu bên đường."
+   },
+   {
+    "q": "小林为什么说“这个不好吃”？",
+    "q_vi": "Vì sao Tiểu Lâm nói “quả này không ngon”?",
+    "options": [
+     "他想卖贵的西瓜",
+     "妈妈告诉他要说真话",
+     "他不喜欢那个男人",
+     "那个西瓜是他的"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 3: mẹ dặn cậu khi bán hàng phải nói thật."
+   },
+   {
+    "q": "这个故事想告诉我们什么？",
+    "q_vi": "Câu chuyện này muốn nói với chúng ta điều gì?",
+    "options": [
+     "说真话的人，大家都喜欢",
+     "白色的西瓜最好吃",
+     "卖东西一定要便宜",
+     "饭馆的西瓜很贵"
+    ],
+    "answer": 0,
+    "explain_vi": "Nhờ trung thực, Tiểu Lâm được người khác tin tưởng và bán được nhiều dưa – nói thật sẽ được mọi người quý."
+   }
+  ]
+ },
+ {
+  "id": "h2-05",
+  "level": 2,
+  "title": "妈妈的新手机",
+  "title_vi": "Chiếc điện thoại mới của mẹ",
+  "topic": "xã hội hiện đại",
+  "paragraphs": [
+   "去年，我给妈妈买了一个新手机。妈妈说：“我已经五十多岁了，不会用这个。”我说：“没关系，我来帮助你。”",
+   "我每天晚上都帮妈妈：怎么打电话，怎么给朋友写东西，怎么看电影。妈妈学得很慢，一个问题要问三四次。",
+   "两个月过去了，妈妈什么都会了。她用手机买东西、听歌，还用手机学跳舞。她认识了很多跳舞的新朋友，每天晚上都和她们一起出去跳舞。",
+   "现在，妈妈早上一起床就看手机。吃饭的时候，她也看着手机笑。我问她：“妈妈，什么事情这么好笑？”她说：“你不懂！”",
+   "昨天晚上十一点，妈妈还在玩手机。我说：“妈妈，已经十一点了，别玩手机了，快去睡觉吧！”妈妈看着我，笑了：“你小的时候，我每天都对你说这个！”"
+  ],
+  "translations": [
+   "Năm ngoái, tôi mua cho mẹ một chiếc điện thoại mới. Mẹ nói: “Mẹ đã hơn năm mươi tuổi rồi, không biết dùng cái này đâu.” Tôi nói: “Không sao, để con giúp mẹ.”",
+   "Tối nào tôi cũng giúp mẹ: cách gọi điện, cách nhắn tin cho bạn bè, cách xem phim. Mẹ học rất chậm, một câu hỏi phải hỏi ba bốn lần.",
+   "Hai tháng trôi qua, mẹ đã biết làm mọi thứ. Mẹ dùng điện thoại để mua đồ, nghe nhạc, còn học nhảy trên điện thoại nữa. Mẹ quen được rất nhiều bạn mới cùng nhảy, tối nào cũng cùng họ ra ngoài nhảy.",
+   "Bây giờ, sáng ra mẹ vừa dậy là xem điện thoại ngay. Lúc ăn cơm, mẹ cũng nhìn điện thoại mà cười. Tôi hỏi: “Mẹ ơi, có chuyện gì buồn cười thế?” Mẹ bảo: “Con không hiểu đâu!”",
+   "Mười một giờ tối qua, mẹ vẫn còn chơi điện thoại. Tôi nói: “Mẹ ơi, mười một giờ rồi, đừng chơi điện thoại nữa, mau đi ngủ đi!” Mẹ nhìn tôi rồi cười: “Hồi con còn nhỏ, ngày nào mẹ cũng nói với con câu này!”"
+  ],
+  "questions": [
+   {
+    "q": "开始的时候，妈妈为什么说不会用手机？",
+    "q_vi": "Lúc đầu, vì sao mẹ nói không biết dùng điện thoại?",
+    "options": [
+     "手机太贵了",
+     "她没有时间",
+     "她觉得自己年纪大了",
+     "她不喜欢新东西"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 1: “我已经五十多岁了” – mẹ nghĩ mình đã lớn tuổi nên không học được."
+   },
+   {
+    "q": "下面哪一个，妈妈没有用手机做？",
+    "q_vi": "Việc nào dưới đây mẹ KHÔNG dùng điện thoại để làm?",
+    "options": [
+     "买东西",
+     "学跳舞",
+     "听歌",
+     "打篮球"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 3 nói mẹ dùng điện thoại mua đồ, nghe nhạc, học nhảy; không nhắc đến chơi bóng rổ."
+   },
+   {
+    "q": "妈妈最后的话是什么意思？",
+    "q_vi": "Câu nói cuối cùng của mẹ có ý gì?",
+    "options": [
+     "以前是妈妈让孩子别玩，快睡觉",
+     "妈妈每天十一点睡觉",
+     "妈妈不想睡觉，想跳舞",
+     "孩子小的时候很喜欢手机"
+    ],
+    "answer": 0,
+    "explain_vi": "Ngày xưa mẹ hay nhắc con đi ngủ, giờ đến lượt con nhắc mẹ – vai trò đã đảo ngược, rất hài hước."
+   }
+  ]
+ }
+]

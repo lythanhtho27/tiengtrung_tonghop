@@ -1,0 +1,296 @@
+# Từ vựng HSK 3 (295 từ): chữ Hán<TAB>pinyin<TAB>nghĩa
+阿姨	āyí	dì, cô
+啊	a	a, à, ơ (trợ từ ngữ khí)
+矮	ǎi	thấp, lùn
+爱好	àihào	sở thích
+安静	ānjìng	yên tĩnh
+把	bǎ	đem, lấy (giới từ)
+班	bān	lớp, ca (làm việc)
+搬	bān	chuyển, dời
+半	bàn	một nửa
+办法	bànfǎ	biện pháp
+办公室	bàngōngshì	văn phòng
+帮忙	bāngmáng	giúp đỡ (động từ li hợp)
+包	bāo	túi, bao
+饱	bǎo	no
+北方	běifāng	miền Bắc
+被	bèi	bị, được (giới từ bị động)
+比较	bǐjiào	khá, tương đối
+比赛	bǐsài	cuộc thi, thi đấu
+必须	bìxū	phải, cần phải
+变化	biànhuà	thay đổi
+表示	biǎoshì	biểu thị, thể hiện
+表演	biǎoyǎn	biểu diễn
+别人	biérén	người khác
+宾馆	bīnguǎn	khách sạn
+冰箱	bīngxiāng	tủ lạnh
+才	cái	mới (nhấn mạnh thời gian muộn, trễ)
+菜单	càidān	thực đơn
+参加	cānjiā	tham gia
+草	cǎo	cỏ
+层	céng	tầng
+差	chà	kém, thiếu, tệ
+超市	chāoshì	siêu thị
+衬衫	chènshān	áo sơ mi
+成绩	chéngjì	thành tích
+城市	chéngshì	thành phố
+迟到	chídào	đến trễ
+出现	chūxiàn	xuất hiện
+厨房	chúfáng	nhà bếp
+除了	chúle	ngoài ra, trừ ra
+春	chūn	mùa xuân
+词语	cíyǔ	từ ngữ
+聪明	cōngmíng	thông minh
+打扫	dǎsǎo	quét dọn
+打算	dǎsuàn	dự định
+带	dài	mang theo, dẫn theo
+担心	dānxīn	lo lắng
+蛋糕	dàngāo	bánh ngọt
+当然	dāngrán	đương nhiên
+地	de	trợ từ của động từ
+灯	dēng	đèn
+低	dī	thấp
+地方	dìfāng	nơi, chỗ
+地铁	dìtiě	tàu điện ngầm
+地图	dìtú	bản đồ
+电梯	diàntī	thang máy
+电子邮箱	diànzǐ yóuxiāng	hộp thư điện tử (email)
+东	dōng	đông (hướng đông)
+冬	dōng	mùa đông
+动物	dòngwù	động vật
+短	duǎn	ngắn
+段	duàn	đoạn, quãng
+锻炼	duànliàn	luyện tập, rèn luyện
+多么	duōme	bao nhiêu, biết bao
+饿	è	đói
+而且	érqiě	mà còn, hơn nữa
+耳朵	ěrduo	tai
+发烧	fāshāo	sốt
+发现	fāxiàn	phát hiện
+方便	fāngbiàn	thuận tiện
+放	fàng	đặt, để
+放心	fàngxīn	yên tâm
+分	fēn	phút, phân
+附近	fùjìn	gần đây, vùng lân cận
+复习	fùxí	ôn tập
+干净	gānjìng	sạch sẽ
+敢	gǎn	dám
+感冒	gǎnmào	cảm mạo, cảm lạnh
+刚才	gāngcái	vừa mới
+跟	gēn	cùng với
+根据	gēnjù	căn cứ vào
+更	gèng	hơn, càng
+公园	gōngyuán	công viên
+故事	gùshì	câu chuyện
+刮风	guā fēng	gió thổi
+关	guān	đóng, tắt
+关系	guānxì	quan hệ
+关心	guānxīn	quan tâm
+关于	guānyú	về (liên quan đến)
+国家	guójiā	quốc gia
+果汁	guǒzhī	nước ép trái cây
+过去	guòqù	quá khứ
+还是	háishì	vẫn còn, hay là
+害怕	hàipà	sợ
+河	hé	sông
+黑板	hēibǎn	bảng
+护照	hùzhào	hộ chiếu
+花	huā	hoa, tiêu (tiền, thời gian)
+花园	huāyuán	vườn hoa
+画	huà	vẽ, tranh
+坏	huài	hỏng, xấu
+还	huán	trả lại, hoàn
+环境	huánjìng	môi trường
+换	huàn	đổi
+黄	huáng	màu vàng
+会议	huìyì	hội nghị, cuộc họp
+或者	huòzhě	hoặc là
+机会	jīhuì	cơ hội
+几乎	jīhū	hầu như, gần như
+极	jí	cực kỳ
+记得	jìdé	nhớ, nhớ đến
+季节	jìjié	mùa
+检查	jiǎnchá	kiểm tra
+简单	jiǎndān	đơn giản
+健康	jiànkāng	khỏe mạnh
+见面	jiànmiàn	gặp mặt
+讲	jiǎng	nói, giảng
+教	jiāo	dạy
+角	jiǎo	góc
+脚	jiǎo	chân
+接	jiē	nhận, tiếp
+街道	jiēdào	đường phố
+结婚	jiéhūn	kết hôn
+结束	jiéshù	kết thúc
+节目	jiémù	chương trình
+节日	jiérì	ngày lễ
+解决	jiějué	giải quyết
+借	jiè	mượn
+经常	jīngcháng	thường xuyên
+经过	jīngguò	trải qua
+经历	jīnglì	kinh nghiệm
+久	jiǔ	lâu
+旧	jiù	cũ
+举行	jǔxíng	tổ chức
+句子	jùzi	câu
+决定	juédìng	quyết định
+可爱	kě'ài	đáng yêu
+刻	kè	khắc (15 phút)
+客人	kèrén	khách
+空调	kòngtiáo	máy điều hòa
+口	kǒu	miệng, khẩu
+哭	kū	khóc
+裤子	kùzi	quần
+筷子	kuàizi	đũa
+蓝	lán	màu xanh
+老	lǎo	già, cũ
+离开	líkāi	rời khỏi
+礼物	lǐwù	quà
+历史	lìshǐ	lịch sử
+脸	liǎn	mặt
+练习	liànxí	luyện tập
+辆	liàng	chiếc (xe)
+了解	liǎojiě	hiểu rõ
+邻居	línjū	hàng xóm
+楼	lóu	tòa nhà
+马	mǎ	con ngựa
+马上	mǎshàng	ngay lập tức
+满意	mǎnyì	hài lòng
+帽子	màozi	mũ
+米	mǐ	gạo, mét
+面包	miànbāo	bánh mì
+面条	miàntiáo	mì sợi
+明白	míngbái	hiểu rõ
+拿	ná	cầm, lấy
+奶奶	nǎinai	bà nội
+南	nán	phía nam
+难	nán	khó
+难过	nánguò	buồn
+年级	niánjí	lớp, năm học
+年轻	niánqīng	trẻ
+鸟	niǎo	chim
+努力	nǔlì	nỗ lực, chăm chỉ
+爬山	páshān	leo núi
+盘子	pánzi	đĩa
+胖	pàng	béo
+啤酒	píjiǔ	bia
+葡萄	pútao	nho
+普通话	pǔtōnghuà	tiếng Phổ thông (tiếng Trung chuẩn)
+骑	qí	cưỡi, đi (xe đạp, xe máy)
+其实	qíshí	thực ra
+其他	qítā	khác
+奇怪	qíguài	kỳ lạ
+铅笔	qiānbǐ	bút chì
+清楚	qīngchǔ	rõ ràng
+秋	qiū	mùa thu
+裙子	qúnzi	váy
+然后	ránhòu	sau đó
+热情	rèqíng	nhiệt tình
+认为	rènwéi	cho rằng
+认真	rènzhēn	nghiêm túc
+容易	róngyì	dễ dàng
+如果	rúguǒ	nếu như
+伞	sǎn	ô, dù
+上网	shàngwǎng	lên mạng
+生气	shēngqì	giận dữ
+声音	shēngyīn	âm thanh
+使	shǐ	khiến, làm cho
+世界	shìjiè	thế giới
+瘦	shòu	gầy
+舒服	shūfu	thoải mái
+叔叔	shūshu	chú
+树	shù	cây
+数学	shùxué	toán học
+刷牙	shuāyá	đánh răng
+双	shuāng	đôi
+水平	shuǐpíng	trình độ
+司机	sījī	lái xe, tài xế
+虽然	suīrán	tuy rằng
+太阳	tàiyáng	mặt trời
+糖	táng	kẹo, đường
+特别	tèbié	đặc biệt
+疼	téng	đau
+提高	tígāo	nâng cao
+体育	tǐyù	thể dục, thể thao
+甜	tián	ngọt
+条	tiáo	sợi, cái
+同事	tóngshì	đồng nghiệp
+同意	tóngyì	đồng ý
+头发	tóufa	tóc
+突然	tūrán	đột nhiên
+图书馆	túshūguǎn	thư viện
+腿	tuǐ	chân
+完成	wánchéng	hoàn thành
+碗	wǎn	bát
+万	wàn	vạn, mười nghìn
+忘记	wàngjì	quên
+位	wèi	vị, ngài
+为	wèi	vì
+为了	wèile	để, vì
+文化	wénhuà	văn hóa
+西	xī	phía tây
+习惯	xíguàn	thói quen
+洗手间	xǐshǒujiān	nhà vệ sinh
+洗澡	xǐzǎo	tắm
+喜欢	xǐhuān	thích
+现在	xiànzài	hiện
+香蕉	xiāngjiāo	chuối
+相同	xiāngtóng	giống nhau
+相信	xiāngxìn	tin tưởng
+像	xiàng	giống
+小心	xiǎoxīn	cẩn thận
+校长	xiàozhǎng	hiệu trưởng
+鞋	xié	giày
+新闻	xīnwén	tin tức
+新鲜	xīnxiān	tươi mới
+信	xìn	thư, tin tưởng
+行李箱	xínglǐxiāng	vali
+兴趣	xìngqù	hứng thú
+熊猫	xióngmāo	gấu trúc
+需要	xūyào	cần
+选择	xuǎnzé	lựa chọn
+眼镜	yǎnjìng	kính
+要求	yāoqiú	yêu cầu
+爷爷	yéye	ông nội
+一定	yīdìng	nhất định
+一共	yīgòng	tổng cộng
+一会儿	yīhuìr	một lát
+一样	yīyàng	giống nhau
+以后	yǐhòu	sau này
+以前	yǐqián	trước đây
+以为	yǐwéi	cho rằng
+一般	yībān	thông thường
+一边	yībiān	vừa ... vừa ...
+一直	yīzhí	luôn luôn
+音乐	yīnyuè	âm nhạc
+银行	yínháng	ngân hàng
+应该	yīnggāi	nên
+影响	yǐngxiǎng	ảnh hưởng
+用	yòng	dùng
+游戏	yóuxì	trò chơi
+又	yòu	lại, vừa
+有名	yǒumíng	nổi tiếng
+遇到	yùdào	gặp phải
+月亮	yuèliàng	mặt trăng
+云	yún	mây
+站	zhàn	đứng, trạm
+长	zhǎng	dài
+着急	zhāojí	lo lắng
+照顾	zhàogu	chăm sóc
+照片	zhàopiàn	bức ảnh
+照相机	zhàoxiàngjī	máy ảnh
+只	zhǐ	chỉ
+中间	zhōngjiān	ở giữa
+终于	zhōngyú	cuối cùng
+种	zhǒng	loại, hạt giống
+重要	zhòngyào	quan trọng
+主要	zhǔyào	chủ yếu
+周末	zhōumò	cuối tuần
+祝	zhù	chúc
+注意	zhùyì	chú ý
+字典	zìdiǎn	từ điển
+自己	zìjǐ	bản thân
+总是	zǒngshì	luôn luôn
+最近	zuìjìn	gần đây
+作业	zuòyè	bài tập về nhà
+作用	zuòyòng	tác dụng

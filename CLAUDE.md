@@ -28,14 +28,17 @@ word_learning/        Giáo trình HSK 3.0 (词汇速记速练手册)
   word_learning.html/.css/.js, hsk_book_data.js, json_data/quyen_*.js(.json)
 hsk_lotrinh/          Lộ trình từ vựng HSK 1–6 (SRS, đọc nhanh)
   hsk_lotrinh.html/.css/.js, hsk_vocab_data.js
+doc_them/             Đọc thêm: thư viện 30 bài đọc phân cấp HSK 1–6, bài tự dán, đọc lại bài khóa Boya
+  doc_them.html/.css/.js, doc_data.js (sinh tự động)
 luyen_tap/            Luyện tập: sắp xếp câu (Việt→Trung), nghe – viết từ/câu, lấy từ đã học ở mọi trang
   luyen_tap.html/.css/.js, lt_data.js, lt_data_wl.js (sinh tự động)
 anh_ngu_3/            Bài luyện tiếng Anh HUTECH (an3*.html), trang độc lập, không liên quan tiếng Trung
-shared/               Tài nguyên dùng chung: theme, progress, sync, mywords (sổ Từ của tôi), dict_vi.js (từ điển, sinh tự động)
+shared/               Tài nguyên dùng chung: theme, progress, sync, mywords (sổ Từ của tôi), lookup (tách từ/pinyin/tra từ), dict_vi.js (từ điển, sinh tự động)
 tools/                Script sinh dữ liệu + dữ liệu nguồn
   extract_hsk_vocab.py, extract_vocab.py, word_list_data/HSK1-HSK6_full.xlsx
   hanviet/            Bảng âm Hán Việt theo (chữ, pinyin): hv_1..3.tsv, overrides.tsv (sửa tay), hanviet.py
-  add_hanviet_wl.py, build_dict.py, build_luyen_tap.py
+  add_hanviet_wl.py, build_dict.py, build_luyen_tap.py, build_doc_them.py
+  doc_them_src/       Bài đọc gốc hsk1..6.json (sáng tác mới) + BRIEF.md (quy cách viết) + vocab_hskN.txt
   scratch/            Script xử lý một lần (OCR, kiểm tra, sửa dữ liệu), chỉ để tham khảo
 ```
 
@@ -59,6 +62,7 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
 - **`progress.js`**: `HocProgress.save(page, {...})` / `load(page)` / `all()`, key `hoc_summary_v1:<page>`. Mỗi trang ghi một bản tóm tắt tiến độ (`next`, `nextUrl` tính từ thư mục gốc, `due`, `learned`, `groups`), và trang chủ đọc các bản tóm tắt này để vẽ lộ trình. Định dạng chi tiết ở đầu file.
 - **`sync.js`**: tài khoản và đồng bộ tiến độ (xem mục dưới). Nạp đồng bộ trong `<head>` ngay sau `theme.js`, trước script của trang. Đã gắn vào: `index`, `hom_nay`, `hsk_lotrinh`, `boya_learning`, `tuvung`, `word_learning`, `luyen_tap`.
 - **`mywords.js`**: sổ "Từ của tôi" (key `hoc_mywords_v1`), chứa các từ người học tự thêm khi tra trong bài khóa. Mỗi từ có thẻ SM-2 riêng (`schedule()` giống `hsk_lotrinh`). API: `HocMyWords.all/get/has/add/remove/update/due/schedule/ivLabel`. Thẻ được ôn ở `hom_nay`, và trang `luyen_tap` cũng dùng các từ này.
+- **`lookup.js`** (`HocLookup`): tách từ khớp dài nhất theo `HOC_DICT`; `pinyinOf(text)` sinh pinyin cho văn bản bất kỳ (tách âm tiết pinyin theo quy tắc thanh mẫu + vận mẫu); `rubyHTML()`; `attach(container, opts)` bật chạm-để-tra (khung tra + thêm vào Từ của tôi). Mỗi đoạn cần có `data-lk-text`, mỗi chữ là `.lk-c[data-i]`. Hiện `doc_them` dùng module này; `boya_learning` vẫn dùng bản tra từ riêng.
 - **`dict_vi.js`** (khoảng 0,9MB, sinh bởi `tools/build_dict.py`): `HOC_DICT = {m, w: {từ: [pinyin, HÁN VIỆT, nghĩa]}, c: {chữ: [pinyin, HÁN VIỆT]}}`, gộp khoảng 13.000 từ của HSK, Boya và HSK 3.0. Các trang nạp lười file này (`boya_learning` nạp khi mở Bài khóa).
 
 ## Tài khoản & đồng bộ (`shared/sync.js`, Supabase)
@@ -125,6 +129,7 @@ Không sửa tay các file dữ liệu sinh tự động. Sửa nguồn rồi ch
 | `tuvung/vocab_data.js` / `.json` | `sach_boya/tc1.html` … `tc4.html` | `python tools/extract_vocab.py` ⚠️ Bản `vocab_data` hiện tại có vài chỗ đã được sửa tay (ví dụ câu ví dụ "精神～"). Chạy lại script sẽ mất các chỗ sửa đó, nên kiểm tra `git diff` trước khi giữ. |
 | Âm Hán Việt: cột 8 của `hsk_vocab_data.js`, trường `han_viet` của `word_learning/json_data/quyen_*` | `tools/hanviet/hv_*.tsv` + `overrides.tsv` (sửa âm sai ở `overrides.tsv`) | `extract_hsk_vocab.py` tự điền khi Excel không có `[..]`. Với HSK 3.0 chạy `python tools/add_hanviet_wl.py` (ghi cả `.json` lẫn `.js`, giữ định dạng; dùng `--force` để ghi đè). |
 | `shared/dict_vi.js` | dữ liệu 3 trang + `tools/hanviet/` | `python tools/build_dict.py` (chạy sau khi đổi dữ liệu hoặc âm Hán Việt) |
+| `doc_them/doc_data.js` | `tools/doc_them_src/hsk1..6.json` (bài, bản dịch, câu hỏi) | `python tools/build_doc_them.py` (cần `pypinyin`, `jieba`). Script tự tính pinyin từng chữ và danh sách "từ ngoài cấp" (so với HSK 2.0 cộng HSK 3.0 cùng cấp; cụm tách nhầm cho vào `SPLIT_ARTIFACTS`). |
 | `luyen_tap/lt_data.js`, `lt_data_wl.js` | `hsk_lotrinh/hsk_vocab_data.js` (câu ví dụ), `boya_learning/boya_data.json` (từ + câu ví dụ ngữ pháp), `word_learning/json_data/quyen_*.json` (câu ví dụ) | `python tools/build_luyen_tap.py` (cần `pypinyin`, `jieba`). Chạy lại sau khi đổi dữ liệu ở các trang kia. |
 | `boya_learning/boya_data.js` / `.json` (phần Cao cấp gc1/gc2) | `tools/scratch/gc_rebuild/gc1_L01.json` … `gc2_L10.json`: chép từ PDF `pdf/高级飞翔篇1.pdf`, `2.pdf`, mỗi bài một file (có thể tách `_part_*.json`) gồm từ vựng, bài đọc + bản dịch và ngữ pháp | Từ thư mục gốc: `python tools/scratch/gc_rebuild/build_gc_books.py` (sinh `tools/scratch/gc1_book.json`, `gc2_book.json`, tự thêm ruby pinyin và câu ví dụ, cần `pypinyin`), rồi `python tools/scratch/merge_all_books.py`. **Không chạy `super_enrich.py`** vì script này thêm từ bịa vào Cao cấp. Quy cách chép nằm trong `gc_rebuild/BRIEF.md`. |
 
@@ -157,6 +162,21 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
 - **Cách tìm từ:** lấy từ dài nhất trong `HOC_DICT.w` hoặc trong bảng từ của bài có chứa chữ được bấm. Cùng độ dài thì ưu tiên từ của bài. Có mục "Cách tách khác" để chuyển, và phân tích từng chữ.
 - **Thêm vào ôn tập:** nút "＋ Thêm vào Từ của tôi" (`HocMyWords.add`, `ex` = câu chứa từ). Nút này có trong khung tra; giao diện là khung nổi trên máy tính, bottom sheet trên điện thoại.
 - **Phối hợp với tính năng cũ:** chữ đang bị "Che từ vựng" thì chỉ mở ô che, không tra. Đang đọc tính giờ vẫn tra được.
+
+## Đọc thêm (`doc_them/`)
+
+- **3 tab:**
+  - **Thư viện:** 30 bài sáng tác mới, 5 bài mỗi cấp, độ dài từ khoảng 120 chữ (HSK 1) đến khoảng 1.800 chữ (HSK 6). Mỗi bài có bản dịch theo đoạn, câu hỏi đọc hiểu và "từ ngoài cấp".
+  - **Bài của tôi:** dán văn bản bất kỳ; pinyin sinh bằng `HocLookup.pinyinOf`.
+  - **Bài khóa đã học:** các bài trong `boya_learning_progress_v2.lessons`. `boya_data.js` chỉ nạp khi mở tab; chữ và pinyin lấy từ `chinese_html` bằng DOMParser. Bài nào số đoạn khác số bản dịch thì bản dịch được chia theo tỉ lệ độ dài.
+- **Trình đọc chung:**
+  - Pinyin bật/tắt, cỡ chữ, tô từ chưa học, dịch (tắt / từng đoạn / tất cả), chạm để tra (`HocLookup.attach`).
+  - Nghe cả bài hoặc từng đoạn, "Nhại" từng câu.
+  - Đọc tính giờ, đếm chữ/phút chỉ tính chữ Hán.
+- **"% từ đã biết":** so với chữ Hán của mọi thẻ SRS và "Từ của tôi". Thẻ Boya được đổi id sang chữ Hán qua `luyen_tap/lt_data.js`.
+- **URL:** `?id=h3-02`, `?mine=<id>`, `?boya=tc1_bai1&r=0`.
+- **Key lưu:** `doc_them_v1` = `{settings, mine[], read{id:{done, at, quiz, cpm[]}}}`, được đồng bộ. Tóm tắt ghi qua `HocProgress("doc_them")`. Hàm cho test để lộ ở `window.__DT`.
+- **Thêm bài mới:** viết theo `tools/doc_them_src/BRIEF.md` vào `hskN.json`, rồi chạy `build_doc_them.py`.
 
 ## Luyện tập (`luyen_tap/`)
 

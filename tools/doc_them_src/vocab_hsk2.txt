@@ -1,0 +1,151 @@
+# Từ vựng HSK 2 (150 từ): chữ Hán<TAB>pinyin<TAB>nghĩa
+吧	ba	đi, nhé, nhỉ (đứng cuối câu)
+白	bái	trắng
+百	bǎi	trăm
+帮助	bāngzhù	giúp đỡ
+报纸	bàozhǐ	báo
+比	bǐ	so sánh
+别	bié	đừng, khác biệt
+长	cháng	dài
+唱歌	chànggē	hát
+出	chū	ra ngoài
+穿	chuān	mặc
+船	chuán	thuyền
+次	cì	lần
+从	cóng	từ, theo
+错	cuò	sai
+打篮球	dǎ lánqiú	chơi bóng rổ
+大家	dàjiā	mọi người
+但是	dànshì	nhưng
+到	dào	đến
+得	děi	phải, đạt được
+等	děng	đợi
+弟弟	dìdì	em trai
+第一	dì yī	đầu tiên
+懂	dǒng	hiểu
+对	duì	đúng, đối với
+房间	fángjiān	phòng
+非常	fēicháng	rất, cực kỳ
+服务员	fúwùyuán	nhân viên phục vụ
+高	gāo	cao
+告诉	gàosù	nói cho, thông báo
+哥哥	gēge	anh trai
+给	gěi	đưa cho, cho
+公共汽车	gōnggòng qìchē	xe buýt
+公斤	gōngjīn	kilogram (kg)
+公司	gōngsī	công ty
+贵	guì	đắt, quý
+过	guò	qua, đi qua
+还	hái	vẫn, còn
+孩子	háizi	trẻ con
+好吃	hǎochī	ngon
+号	hào	số (như số điện thoại, số nhà)
+黑	hēi	đen
+红	hóng	đỏ
+欢迎	huānyíng	hoan nghênh, chào mừng
+回答	huídá	trả lời
+机场	jīchǎng	sân bay
+鸡蛋	jīdàn	trứng gà
+件	jiàn	cái (dùng cho sự việc, quần áo)
+教室	jiàoshì	lớp học
+姐姐	jiějie	chị gái
+介绍	jièshào	giới thiệu
+进	jìn	vào
+近	jìn	gần
+就	jiù	thì, ngay
+觉得	juéde	cảm thấy
+咖啡	kāfēi	cà phê
+开始	kāishǐ	bắt đầu
+考试	kǎoshì	thi
+可能	kěnéng	có thể
+可以	kěyǐ	có thể
+课	kè	bài học
+快	kuài	nhanh
+快乐	kuàilè	vui vẻ
+累	lèi	mệt
+离	lí	cách (khoảng cách), rời
+两	liǎng	hai (khi đếm số lượng)
+路	lù	đường
+旅游	lǚyóu	du lịch
+卖	mài	bán
+慢	màn	chậm
+忙	máng	bận
+每	měi	mỗi
+妹妹	mèimei	em gái
+门	mén	cửa
+男人	nánrén	đàn ông
+您	nín	bạn (dùng lịch sự)
+牛奶	niúnǎi	sữa bò
+女人	nǚrén	phụ nữ
+旁边	pángbiān	bên cạnh
+跑步	pǎobù	chạy bộ
+便宜	piányí	rẻ
+票	piào	vé
+妻子	qīzi	vợ
+起床	qǐchuáng	dậy (rời khỏi giường)
+千	qiān	nghìn
+晴	qíng	nắng, quang đãng
+去年	qùnián	năm ngoái
+让	ràng	để, làm cho, nhường
+上班	shàngbān	đi làm
+身体	shēntǐ	cơ thể
+生病	shēngbìng	bị bệnh
+生日	shēngrì	sinh nhật
+时间	shíjiān	thời gian
+事情	shìqíng	việc
+手表	shǒubiǎo	đồng hồ
+手机	shǒujī	điện thoại di động
+送	sòng	tặng
+所以	suǒyǐ	vì vậy
+它	tā	nó (cho vật, động vật)
+踢足球	tī zúqiú	đá bóng
+题	tí	câu hỏi, đề bài
+跳舞	tiàowǔ	nhảy múa
+外	wài	ngoài
+玩	wán	chơi
+完	wán	xong, hoàn thành
+晚上	wǎnshàng	buổi tối
+为什么	wèishénme	tại sao
+问	wèn	hỏi
+问题	wèntí	vấn đề
+西瓜	xīguā	dưa hấu
+希望	xīwàng	hy vọng
+洗	xǐ	rửa
+向	xiàng	hướng về, đối với
+小时	xiǎoshí	tiếng đồng hồ
+笑	xiào	cười
+新	xīn	mới
+姓	xìng	họ
+休息	xiūxi	nghỉ ngơi
+雪	xuě	tuyết
+颜色	yánsè	màu sắc
+眼睛	yǎnjing	mắt
+羊肉	yángròu	thịt cừu
+要	yào	muốn, cần
+药	yào	thuốc
+也	yě	cũng
+已经	yǐjīng	đã
+一起	yìqǐ	cùng nhau
+意思	yìsi	ý nghĩa
+阴	yīn	âm u, trời nhiều mây
+因为	yīnwèi	vì
+游泳	yóuyǒng	bơi
+右边	yòubiān	bên phải
+鱼	yú	cá
+元	yuán	Đồng (đơn vị tiền tệ)
+远	yuǎn	xa
+运动	yùndòng	vận
+再	zài	lại
+早上	zǎoshàng	buổi sáng
+张	zhāng	tờ, bức (dùng cho vật phẳng, giấy, tranh, bàn)
+丈夫	zhàngfu	chồng
+找	zhǎo	tìm
+着	zhe	đang (dùng để chỉ trạng thái hiện tại)
+真	zhēn	thật
+正在	zhèngzài	đang
+知道	zhīdào	biết
+准备	zhǔnbèi	chuẩn bị
+自行车	zìxíngchē	xe đạp
+走	zǒu	đi
+最	zuì	nhất (so sánh nhất)
+左边	zuǒbiān	bên trái

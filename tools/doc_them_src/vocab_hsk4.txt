@@ -1,0 +1,601 @@
+# Từ vựng HSK 4 (600 từ): chữ Hán<TAB>pinyin<TAB>nghĩa
+爱情	ài qíng	tình yêu
+安排	ān pái	sắp xếp
+安全	ān quán	an toàn
+按时	àn shí	đúng hạn
+按照	àn zhào	dựa vào, theo
+百分之	bǎi fēn zhī	%
+棒	bàng	cây gậy/ giỏi, tốt
+包子	bāo zi	bánh bao
+保护	bǎo hù	che chở, bảo vệ
+保证	bǎo zhèng	đảm bảo, cam đoan
+报名	bào míng	đăng kí
+抱	bào	ôm
+抱歉	bào qiàn	xin lỗi
+倍	bèi	lần
+本来	běn lái	vốn có
+笨	bèn	ngốc nghếch
+比如	bǐ rú	ví dụ như
+毕业	bì yè	tốt nghiệp
+遍	biàn	lần, lượt
+标准	biāo zhǔn	tiêu chuẩn
+表格	biǎo gé	bảng biểu
+表示	biǎo shì	biểu thị, cho thấy
+表演	biǎo yǎn	biểu diễn
+表扬	biǎo yáng	tuyên dương
+饼干	bǐng gān	bánh
+并且	bìng qiě	đồng thời
+博士	bó shì	tiến sĩ
+不得不	bù dé bù	đành
+不管	bù guǎn	bất kể
+不过	bù guò	nhưng, có điều
+不仅	bù jǐn	không những
+部分	bù fèn	bộ phận, phần
+擦	cā	lau
+猜	cāi	đoán
+材料	cái liào	tài liệu
+参观	cān guān	tham quan
+餐厅	cān tīng	căng tin, nhà ăn
+厕所	cè suǒ	phòng vệ sinh
+差不多	chà bù duō	gần như
+长城	cháng chéng	Trường Thành
+长江	cháng jiāng	Trường Giang
+尝	cháng	nếm thử
+场	chǎng	trận, suất
+超过	chāo guò	vượt trên
+成功	chéng gōng	thành công
+成为	chéng wéi	trở thành
+诚实	chéng shí	trung thực
+乘坐	chéng zuò	ngồi xe
+吃惊	chī jīng	ngạc nhiên
+重新	chóng xīn	làm lại
+抽烟	chōu yān	hút thuốc
+出差	chū chāi	đi công tác
+出发	chū fā	xuất phát
+出生	chū shēng	ra đời
+出现	chū xiàn	xuất hiện
+厨房	chú fáng	phòng bếp
+传真	chuán zhēn	fax, bản fax
+窗户	chuāng hù	cửa sổ
+词语	cí yǔ	từ ngữ
+从来	cóng lái	từ trước đến nay
+粗心	cū xīn	thô lỗ, cẩu thả
+存	cún	giữ, tiết kiệm, tồn
+错误	cuò wù	sai lầm
+答案	dá àn	đáp án
+打扮	dǎ bàn	trau chuốt, trang điểm
+打扰	dǎ rǎo	làm phiền
+打印	dǎ yìn	in ấn
+打招呼	dǎ zhāo hū	chào hỏi
+打折	dǎ zhé	giảm giá
+打针	dǎ zhēn	tiêm
+大概	dà gài	khoảng
+大使馆	dà shǐ guǎn	đại sứ quán
+大约	dà yuē	khoảng
+大夫	dài fū	bác sĩ, đại phu
+戴	dài	đeo
+当	dāng	làm
+当时	dāng shí	lúc đó
+刀	dāo	cái dao
+导游	dǎo yóu	hướng dẫn viên du lịch
+到处	dào chù	khắp nơi
+到底	dào dǐ	cuối cùng
+倒	dǎo	đổ, ngã
+道歉	dào qiàn	xin lỗi
+得意	dé yì	đắc ý
+得（助动词）	de （ zhù dòng cí ）	trợ từ
+登机牌	dēng jī pái	thẻ lên tàu
+等（助词）	děng （ zhù cí ）	vân vân
+低	dī	thấp
+底	dǐ	đáy
+地点	dì diǎn	địa điểm
+地球	dì qiú	địa cầu
+地址	dì zhǐ	địa chỉ
+调查	diào chá	điều tra
+掉	diào	rơi
+丢	diū	mất
+动作	dòng zuò	động tác
+堵车	dǔ chē	tắc đường
+肚子	dù zi	bụng
+短信	duǎn xìn	tin nhắn
+对话	duì huà	hội thoại, đối thoại
+对面	duì miàn	đối diện
+对于	duì yú	về (vấn đề gì đó)
+儿童	ér tóng	trẻ con
+而	ér	còn
+发生	fā shēng	xảy ra
+发展	fā zhǎn	phát triển
+法律	fǎ lǜ	pháp luật
+翻译	fān yì	phiên dịch
+烦恼	fán nǎo	phiền não
+反对	fǎn duì	phản đối
+方法	fāng fǎ	phương pháp
+方面	fāng miàn	phương diện
+方向	fāng xiàng	phương hướng
+房东	fáng dōng	chủ nhà
+放弃	fàng qì	vứt bỏ, từ bỏ
+放暑假	fàng shǔ jià	nghỉ hè
+放松	fàng sōng	thư giãn
+份	fèn	phần
+丰富	fēng fù	phong phú
+否则	fǒu zé	nếu không thì
+符合	fú hé	phù hợp
+父亲	fù qīn	bố
+付款	fù kuǎn	thanh toán
+负责	fù zé	phụ trách
+复印	fù yìn	phô tô
+复杂	fù zá	phức tạp
+富	fù	giàu
+改变	gǎi biàn	thay đổi
+干杯	gān bēi	cạn ly
+赶	gǎn	đuổi theo
+敢	gǎn	dám
+感动	gǎn dòng	cảm động
+感觉	gǎn jué	cảm giác
+感情	gǎn qíng	tình cảm
+感谢	gǎn xiè	cảm ơn
+干	gān	khô
+刚	gāng	vừa mới
+高速公路	gāo sù gōng lù	đường cao tốc
+胳膊	gē bo	cánh tay
+各	gè	các
+工资	gōng zī	lương
+公里	gōng lǐ	km
+功夫	gōng fū	công phu
+共同	gòng tóng	giống nhau
+购物	gòu wù	mua sắm
+够	gòu	đủ
+估计	gū jì	ước lượng
+鼓励	gǔ lì	cổ vũ
+故意	gù yì	cố ý
+顾客	gù kè	khách hàng
+挂	guà	treo, ngắt điện thoại
+关键	guān jiàn	mấu chốt
+观众	guān zhòng	khán giả
+管理	guǎn lǐ	quản lý
+光	guāng	chỉ, hết
+广播	guǎng bō	phát thanh
+广告	guǎng gào	quảng cáo
+逛	guàng	đi dạo
+规定	guī dìng	qui định
+国籍	guó jí	quốc tịch
+国际	guó jì	quốc tế
+果汁	guǒ zhī	nước hoa quả
+过程	guò chéng	quá trình
+海洋	hǎi yáng	đại dương
+害羞	hài xiū	xấu hổ
+寒假	hán jià	kì nghỉ đông
+汗	hàn	mồ hôi
+航班	háng bān	chuyến bay
+好处	hǎo chù	cái tốt
+好像	hǎo xiàng	dường như
+号码	hào mǎ	số
+合格	hé gé	đạt yêu cầu
+合适	hé shì	thích hợp
+盒子	hé zi	cái hộp
+后悔	hòu huǐ	hối hận
+厚	hòu	dày
+互联网	hù lián wǎng	mạng internet
+互相	hù xiāng	lẫn nhau
+护士	hù shì	y tá
+怀疑	huái yí	nghi ngờ
+回忆	huí yì	hồi ức, nhớ lại
+活动	huó dòng	hoạt động
+活泼	huó pō	hoạt bát
+火	huǒ	lửa
+获得	huò dé	giành được
+积极	jī jí	tích cực
+积累	jī lěi	tích lũy
+基础	jī chǔ	cơ sở, căn bản
+激动	jī dòng	xúc động
+及时	jí shí	kịp thời
+即使	jí shǐ	cho dù
+计划	jì huà	kế hoạch
+记者	jì zhě	phóng viên
+技术	jì shù	kỹ thuật
+既然	jì rán	đã….
+继续	jì xù	tiếp tục
+寄	jì	gửi
+加班	jiā bān	tăng ca
+加油站	jiā yóu zhàn	cây xăng
+家具	jiā jù	đồ gia dụng
+假	jiǎ	giả
+价格	jià gé	giá cả
+坚持	jiān chí	kiên trì
+减肥	jiǎn féi	giảm béo
+减少	jiǎn shǎo	cắt giảm
+建议	jiàn yì	kiến nghị
+将来	jiāng lái	tương lai
+奖金	jiǎng jīn	học bổng
+降低	jiàng dī	hạ thấp
+降落	jiàng luò	hạ cánh
+交	jiāo	giao
+交流	jiāo liú	giao lưu
+交通	jiāo tōng	giao thông
+郊区	jiāo qū	ngoại ô
+骄傲	jiāo ào	tự hào, kiêu ngạo
+饺子	jiǎo zi	sủi cảo
+教授	jiào shòu	giáo sư
+教育	jiào yù	giáo dục
+接受	jiē shòu	tiếp nhận
+接着	jiē zhe	tiếp theo
+节	jié	tiết
+节约	jié yuē	tiết kiệm
+结果	jié guǒ	kết quả
+解释	jiě shì	giải thích
+尽管	jǐn guǎn	tuy rằng
+紧张	jǐn zhāng	căng thẳng
+进行	jìn xíng	tiến hành
+禁止	jìn zhǐ	cấm
+京剧	jīng jù	kinh kịch
+经济	jīng jì	kinh tế
+经历	jīng lì	trải qua, kinh qua
+经验	jīng yàn	kinh nghiệm
+精彩	jīng cǎi	hấp dẫn
+景色	jǐng sè	cảnh sắc
+警察	jǐng chá	cảnh sát
+竞争	jìng zhēng	cạnh tranh
+竟然	jìng rán	vậy mà lại
+镜子	jìng zi	kính, gương
+究竟	jiū jìng	rốt cuộc
+举	jǔ	giơ, nâng
+举办	jǔ bàn	tổ chức
+举行	jǔ xíng	tổ chức
+拒绝	jù jué	từ chối
+距离	jù lí	khoảng cách
+聚会	jù huì	tụ tập
+开玩笑	kāi wán xiào	đùa
+开心	kāi xīn	vui vẻ
+看法	kàn fǎ	quan điểm
+考虑	kǎo lǜ	suy nghĩ
+烤鸭	kǎo yā	vịt quay
+科学	kē xué	khoa học
+棵	kē	lượng từ cho cây
+咳嗽	ké sou	ho
+可怜	kě lián	đáng thương
+可是	kě shì	nhưng
+可惜	kě xī	đáng tiếc
+客厅	kè tīng	phòng khách
+肯定	kěn dìng	khẳng định
+空	kōng	trống rỗng
+空气	kōng qì	không khí
+恐怕	kǒng pà	e rằng
+苦	kǔ	khổ, đắng
+矿泉水	kuàng quán shuǐ	nước khoáng
+困	kùn	buồn ngủ
+困难	kùn nán	khó khăn
+垃圾桶	lā jī tǒng	thùng rác
+拉	lā	kéo
+辣	là	cay
+来不及	lái bù jí	không kịp
+来得及	lái de jí	kịp
+来自	lái zì	đến từ
+懒	lǎn	lười biếng
+浪费	làng fèi	lãng phí
+浪漫	làng màn	lãng mạn
+老虎	lǎo hǔ	hổ
+冷静	lěng jìng	bình tĩnh
+礼拜天	lǐ bài tiān	chủ nhật
+礼貌	lǐ mào	lễ phép, lịch sự
+理发	lǐ fà	cắt tóc
+理解	lǐ jiě	lý giải, hiểu
+理想	lǐ xiǎng	lý tưởng
+力气	lì qì	sức lực
+厉害	lì hài	lợi hại
+例如	lì rú	ví dụ
+俩	liǎ	hai người
+连	lián	liên kết, nối
+联系	lián xì	liên hệ
+凉快	liáng kuài	mát mẻ
+零钱	líng qián	tiền lẻ
+另外	lìng wài	ngoài ra, còn lại
+留	liú	lưu lại, ở lại
+流利	liú lì	lưu loát
+流行	liú xíng	thịnh hành
+旅行	lǚ xíng	du lịch
+律师	lǜ shī	luật sư
+乱	luàn	loạn
+麻烦	má fan	phiền phức, làm phiền
+马虎	mǎ hu	qua loa
+满	mǎn	đầy
+毛	máo	lông
+毛巾	máo jīn	khăn bông
+美丽	měi lì	đẹp
+梦	mèng	giấc mơ, mơ
+迷路	mí lù	lạc đường
+密码	mì mǎ	mật khẩu
+免费	miǎn fèi	miễn phí
+秒	miǎo	giây
+民族	mín zú	dân tộc
+母亲	mǔ qin	mẹ
+目的	mù dì	mục đích
+耐心	nài xīn	nhẫn nại
+难道	nán dào	lẽ nào
+难受	nán shòu	buồn
+内	nèi	bên trong
+内容	nèi róng	nội dung
+能力	néng lì	năng lực
+年龄	nián líng	tuổi tác
+弄	nòng	làm
+暖和	nuǎn huo	ấm áp
+偶尔	ǒu ěr	đôi khi
+排队	pái duì	xếp hàng
+排列	pái liè	sắp xếp, xếp
+判断	pàn duàn	phán đoán
+陪	péi	cùng
+批评	pī píng	phê bình
+皮肤	pí fū	da
+脾气	pí qì	tính khí
+篇	piān	lượng từ cho bài viết
+骗	piàn	lừa
+乒乓球	pīng pāng qiú	bóng bàn
+平时	píng shí	bình thường
+破	pò	rách, nổ
+葡萄	pú táo	nho
+普遍	pǔ biàn	phổ biến
+普通话	pǔ tōng huà	tiếng phổ thông
+其次	qí cì	tiếp theo
+其中	qí zhōng	trong đó
+气候	qì hòu	khí hậu
+千万	qiān wàn	nhất thiết
+签证	qiān zhèng	visa
+敲	qiāo	gõ
+桥	qiáo	cầu
+巧克力	qiǎo kè lì	sô cô la
+亲戚	qīn qi	họ hàng
+轻	qīng	nhẹ
+轻松	qīng sōng	thoải mái
+情况	qíng kuàng	tình hình
+穷	qióng	nghèo
+区别	qū bié	khác biệt
+取	qǔ	lấy
+全部	quán bù	toàn bộ
+缺点	quē diǎn	khuyết điểm
+缺少	quē shǎo	thiếu
+却	què	lại, nhưng
+确实	què shí	thật sự
+然而	rán ér	vậy mà
+热闹	rè nào	náo nhiệt
+任何	rèn hé	bất kì
+任务	rèn wù	nhiệm vụ
+扔	rēng	ném
+仍然	réng rán	vẫn
+日记	rì jì	nhật kí
+入口	rù kǒu	cửa vào
+散步	sàn bù	tản bộ
+森林	sēn lín	rừng sâu
+沙发	shā fā	ghế sô pha
+伤心	shāng xīn	tổn thương
+商量	shāng liáng	thương lượng, bàn bạc
+稍微	shāo wēi	một chút
+勺子	sháo zi	cái thìa
+社会	shè huì	xã hội
+申请	shēn qǐng	xin
+深	shēn	sâu
+甚至	shèn zhì	thậm chí
+生活	shēng huó	cuộc sống
+生命	shēng mìng	tính mạng
+生意	shēng yì	kinh doanh
+省	shěng	tỉnh thành
+剩	shèng	thừa
+失败	shī bài	thất bại
+失望	shī wàng	thất vọng
+师傅	shī fù	sư phụ
+十分	shí fēn	vô cùng
+实际	shí jì	thực tế
+实在	shí zài	thật sự
+使	shǐ	khiến cho
+使用	shǐ yòng	sử dụng
+世纪	shì jì	thế kỉ
+是否	shì fǒu	liệu có phải
+适合	shì hé	thích hợp
+适应	shì yìng	thích nghi
+收	shōu	nhận
+收入	shōu rù	thu nhập
+收拾	shōu shí	dọn dẹp
+首都	shǒu dū	thủ đô
+首先	shǒu xiān	đầu tiên
+受不了	shòu bù liǎo	không chịu nổi
+受到	shòu dào	nhận được
+售货员	shòu huò yuán	nhân viên bán vé
+输	shū	thua
+熟悉	shú xī	quen thuộc
+数量	shù liàng	số lượng
+数字	shù zi	con cố
+帅	shuài	đẹp trai
+顺便	shùn biàn	nhân tiện
+顺利	shùn lì	thuận lợi
+顺序	shùn xù	thứ tự
+说明	shuō míng	nói rõ
+硕士	shuò shì	thạc sĩ
+死	sǐ	chết
+速度	sù dù	tốc độ
+塑料袋	sù liào dài	túi ni lông
+酸	suān	chua
+随便	suí biàn	tùy tiện, tự nhiên
+随着	suí zhe	cùng với
+孙子	sūn zi	cháu trai
+所有	suǒ yǒu	tất cả
+台	tái	cái, chiếc
+抬	tái	ngẩng
+态度	tài dù	thái độ
+谈	tán	nói chuyện
+弹钢琴	tán gāng qín	chơi piano
+汤	tāng	canh
+糖	táng	đường
+躺	tǎng	nằm
+趟	tàng	chuyến
+讨论	tǎo lùn	thảo luận
+讨厌	tǎo yàn	ghét
+特点	tè diǎn	đặc điểm
+提	tí	đề ra
+提供	tí gōng	cung cấp
+提前	tí qián	trước thời hạn
+提醒	tí xǐng	nhắc nhở
+填空	tián kòng	điền trống
+条件	tiáo jiàn	điều kiện
+停	tíng	dừng
+挺	tǐng	rất
+通过	tōng guò	thông qua
+通知	tōng zhī	thông báo
+同情	tóng qíng	đồng tình
+同时	tóng shí	đồng thời
+推	tuī	đẩy
+推迟	tuī chí	kéo dài thời gian
+脱	tuō	cởi
+袜子	wà zi	tất chân
+完全	wán quán	hoàn toàn
+网球	wǎng qiú	tennis
+网站	wǎng zhàn	trang mạng
+往往	wǎng wǎng	thường (quá khứ)
+危险	wēi xiǎn	nguy hiểm
+卫生间	wèi shēng jiān	phòng vệ sinh
+味道	wèi dào	mùi vị
+温度	wēn dù	nhiệt độ
+文章	wén zhāng	bài văn
+污染	wū rǎn	ô nhiễm
+无	wú	không
+无聊	wú liáo	nhàm chán
+无论	wú lùn	bất luận
+误会	wù huì	hiểu lầm
+西红柿	xī hóng shì	cà chua
+吸引	xī yǐn	thu hút
+咸	xián	mặn
+现金	xiàn jīn	tiền mặt
+羡慕	xiàn mù	ngưỡng mộ
+相反	xiāng fǎn	ngược lại
+相同	xiāng tóng	giống nhau
+香	xiāng	thơm
+详细	xiáng xì	tỉ mỉ
+响	xiǎng	kêu
+橡皮	xiàng pí	cục tẩy
+消息	xiāo xi	thông tin, tin
+小吃	xiǎo chī	đồ ăn vặt
+小伙子	xiǎo huǒ zi	anh chàng
+小说	xiǎo shuō	tiểu thuyết
+笑话	xiào huà	truyện cười
+效果	xiào guǒ	hiệu quả
+心情	xīn qíng	tâm trạng
+辛苦	xīn kǔ	vất vả
+信封	xìn fēng	bức thư
+信息	xìn xī	thông tin
+信心	xìn xīn	niềm tin
+兴奋	xīng fèn	hưng phấn, hứng khởi
+行	xíng	được
+醒	xǐng	tỉnh
+幸福	xìng fú	hạnh phúc
+性别	xìng bié	giới tính
+性格	xìng gé	tính cách
+修理	xiū lǐ	sửa chữa
+许多	xǔ duō	rất nhiều
+学期	xué qī	học kì
+压力	yā lì	áp lực
+呀	yā	a
+牙膏	yá gāo	kem đánh răng
+亚洲	yà zhōu	châu Á
+严格	yán gé	nghiêm khắc
+严重	yán zhòng	nghiêm trọng
+研究	yán jiū	nghiên cứu
+盐	yán	muối
+眼镜	yǎn jìng	kính mắt
+演出	yǎn chū	buổi diễn
+演员	yǎn yuán	diễn viên
+阳光	yáng guāng	ánh nắng
+养成	yǎng chéng	nuôi dưỡng, hình thành
+样子	yàng zi	kiểu dáng, dáng vẻ
+邀请	yāo qǐng	mời
+要是	yào shì	nếu
+钥匙	yào shi	chìa khóa
+也许	yě xǔ	có lẽ
+叶子	yè zi	chiếc lá
+页	yè	trang mạng
+一切	yī qiè	tất cả
+以	yǐ	lấy, với
+以为	yǐ wéi	tưởng rằng
+艺术	yì shù	nghệ thuật
+意见	yì jiàn	ý kiến
+因此	yīn cǐ	cho nên
+引起	yǐn qǐ	dẫn đến, gây ra
+印象	yìn xiàng	ấn tượng
+赢	yíng	thắng
+应聘	yìng pìn	ứng tuyển
+永远	yǒng yuǎn	mãi mãi
+勇敢	yǒng gǎn	dũng cảm
+优点	yōu diǎn	ưu điểm
+优秀	yōu xiù	ưu tú
+幽默	yōu mò	hài hước
+尤其	yóu qí	đặc biệt là
+由	yóu	do
+由于	yóu yú	do
+邮局	yóu jú	bưu điện
+友好	yǒu hǎo	hữu hảo
+友谊	yǒu yì	hữu nghị
+有趣	yǒu qù	hứng thú
+于是	yú shì	thế là
+愉快	yú kuài	vui vẻ
+与	yǔ	và
+羽毛球	yǔ máo qiú	cầu lông
+语法	yǔ fǎ	ngữ pháp
+语言	yǔ yán	ngôn ngữ
+预习	yù xí	chuẩn bị trước
+原来	yuán lái	hóa ra, vốn, cũ
+原谅	yuán liàng	tha thứ
+原因	yuán yīn	nguyên nhân
+约会	yuē huì	hẹn, cuộc hẹn
+阅读	yuè dú	đọc hiểu
+云	yún	mây
+允许	yǔn xǔ	cho phép
+杂志	zá zhì	tạp chí
+咱们	zán men	chúng ta
+暂时	zàn shí	tạm thời
+脏	zāng	bẩn
+责任	zé rèn	trách nhiệm
+增加	zēng jiā	tăng thêm
+占线	zhàn xiàn	máy bận
+招聘	zhāo pìn	tuyển dụng
+照	zhào	chiếu, chụp
+真正	zhēn zhèng	thật
+整理	zhěng lǐ	chỉnh sửa
+正常	zhèng cháng	bình thường
+正好	zhèng hǎo	vừa hay
+正确	zhèng què	chính xác
+正式	zhèng shì	chính thức
+证明	zhèng míng	chứng minh
+之	zhī	của
+支持	zhī chí	ủng hộ
+知识	zhī shí	tri thức, kiến thức
+直接	zhí jiē	trực tiếp
+值得	zhí dé	đáng
+职业	zhí yè	nghề nghiệp
+植物	zhí wù	thực vật
+只好	zhǐ hǎo	đành
+只要	zhǐ yào	chỉ cần
+指	zhǐ	chỉ
+至少	zhì shǎo	chí ít
+质量	zhì liàng	chất lượng
+重	zhòng	nặng
+重点	zhòng diǎn	trọng điểm
+重视	zhòng shì	coi trọng
+周围	zhōu wéi	xung quanh
+主意	zhǔ yì	chủ ý
+祝贺	zhù hè	chúc mừng
+著名	zhù míng	nổi tiếng
+专门	zhuān mén	chuyên môn
+专业	zhuān yè	chuyên ngành
+转	zhuǎn	chuyển
+赚	zhuàn	kiếm
+准确	zhǔn què	chính xác
+准时	zhǔn shí	đúng giờ
+仔细	zǐ xì	cẩn thận
+自然	zì rán	tự nhiên
+自信	zì xìn	tự tin
+总结	zǒng jié	tổng kết
+租	zū	thuê
+最好	zuì hǎo	tốt nhất
+尊重	zūn zhòng	tôn trọng
+左右	zuǒ yòu	khoảng
+作家	zuò jiā	tác gia
+作用	zuò yòng	tác dụng
+作者	zuò zhě	tác giả
+座	zuò	tòa
+座位	zuò wèi	chỗ ngồi

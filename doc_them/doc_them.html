@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đọc thêm</title>
+    <meta name="description" content="Đọc thêm tiếng Trung theo cấp HSK, bài tự dán và bài khóa Boya đã học: pinyin, chạm để tra, nghe, đọc tính giờ, câu hỏi đọc hiểu.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/theme.css">
+    <script src="../shared/theme.js"></script>
+    <script src="../shared/sync.js"></script>
+    <link rel="stylesheet" href="doc_them.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="back" id="btn-back" href="../index.html" title="Về trang chủ">←</a>
+            <div class="brand"><strong id="brand-title">Đọc thêm</strong><small id="brand-sub">Bài đọc theo cấp · Bài của tôi · Bài khóa</small></div>
+            <button class="account-btn" data-hoc-account type="button">Đăng nhập</button>
+            <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
+        </div>
+    </header>
+
+    <!-- ================= Danh sách (3 tab) ================= -->
+    <main class="container" id="list-view">
+        <nav class="tabs" role="tablist">
+            <button class="tab" data-tab="lib" role="tab">📚 Thư viện</button>
+            <button class="tab" data-tab="mine" role="tab">✍️ Bài của tôi</button>
+            <button class="tab" data-tab="boya" role="tab">📖 Bài khóa đã học</button>
+        </nav>
+
+        <!-- Tab 1: Thư viện -->
+        <section id="tab-lib" class="tab-pane">
+            <div class="summary card" id="lib-summary"></div>
+            <div class="chips" id="lib-levels"></div>
+            <div class="text-list" id="lib-list"></div>
+        </section>
+
+        <!-- Tab 2: Bài của tôi -->
+        <section id="tab-mine" class="tab-pane" hidden>
+            <form class="card mine-form" id="mine-form" autocomplete="off">
+                <h2 id="mine-form-title">Dán bài mới</h2>
+                <label class="field">Tiêu đề
+                    <input type="text" id="mine-title" maxlength="120" placeholder="Ví dụ: Tin tức hôm nay">
+                </label>
+                <label class="field">Nội dung tiếng Trung <small class="muted">(mỗi dòng là một đoạn)</small>
+                    <textarea id="mine-text" rows="7" placeholder="粘贴中文文章……"></textarea>
+                </label>
+                <div class="form-actions">
+                    <button class="btn btn-primary" type="submit" id="mine-save">💾 Lưu bài</button>
+                    <button class="btn" type="button" id="mine-cancel" hidden>Hủy sửa</button>
+                    <span class="muted small" id="mine-count"></span>
+                </div>
+            </form>
+            <div class="text-list" id="mine-list"></div>
+        </section>
+
+        <!-- Tab 3: Bài khóa Boya đã học -->
+        <section id="tab-boya" class="tab-pane" hidden>
+            <div id="boya-list"></div>
+        </section>
+    </main>
+
+    <!-- ================= Trình đọc ================= -->
+    <main class="reader-wrap" id="reader-view" hidden>
+        <div class="toolbar" id="toolbar" role="toolbar" aria-label="Công cụ đọc">
+            <button class="tb" id="tb-py" title="Bật/tắt pinyin"><b class="cn">拼</b> <span>Pinyin</span></button>
+            <button class="tb" id="tb-smaller" title="Chữ nhỏ hơn">A−</button>
+            <button class="tb" id="tb-bigger" title="Chữ lớn hơn">A+</button>
+            <button class="tb" id="tb-new" title="Tô các chữ thuộc từ chưa học">🖍 <span>Từ mới</span></button>
+            <button class="tb" id="tb-tr" title="Bản dịch: tắt / từng đoạn / tất cả">🇻🇳 <span id="tb-tr-label">Dịch</span></button>
+            <button class="tb" id="tb-lookup" title="Chạm chữ để tra từ">🔍 <span>Tra</span></button>
+            <button class="tb" id="tb-listen" title="Nghe cả bài">🔊 <span>Nghe</span></button>
+            <label class="tb tb-select" title="Tốc độ đọc">
+                <select id="tb-rate">
+                    <option value="0.6">0.6×</option>
+                    <option value="0.75">0.75×</option>
+                    <option value="0.9">0.9×</option>
+                    <option value="1">1×</option>
+                    <option value="1.15">1.15×</option>
+                </select>
+            </label>
+            <button class="tb" id="tb-timer" title="Đọc tính giờ">⏱ <span id="tb-timer-label">Tính giờ</span></button>
+        </div>
+
+        <div class="reader" id="reader">
+            <div class="timer-bar" id="timer-bar" hidden>
+                <span>⏱ <b id="timer-clock">0:00</b> · đang đọc…</span>
+                <label class="check small"><input type="checkbox" id="opt-autohide"> Ẩn pinyin khi tính giờ</label>
+                <button class="btn btn-primary btn-sm" id="btn-timer-done">✓ Đọc xong</button>
+                <button class="btn btn-ghost btn-sm" id="btn-timer-cancel" title="Hủy">✕</button>
+            </div>
+            <div class="play-bar" id="play-bar" hidden>
+                <span id="play-text">Đang đọc…</span>
+                <button class="btn btn-sm" id="btn-play-stop">■ Dừng</button>
+            </div>
+
+            <header class="doc-head">
+                <div class="eyebrow" id="doc-eyebrow"></div>
+                <h1 class="doc-title cn" id="doc-title"></h1>
+                <div class="doc-sub" id="doc-sub"></div>
+                <div class="doc-meta" id="doc-meta"></div>
+            </header>
+
+            <div id="doc-result"></div>
+            <details class="card beyond" id="doc-beyond" hidden></details>
+            <article class="doc-body" id="doc-body"></article>
+            <section class="quiz" id="doc-quiz" hidden></section>
+            <div class="doc-end" id="doc-end"></div>
+        </div>
+    </main>
+
+    <div class="toast" id="toast" hidden></div>
+
+    <script src="../shared/progress.js"></script>
+    <script src="../shared/mywords.js"></script>
+    <script src="../shared/lookup.js"></script>
+    <script src="doc_data.js"></script>
+    <script src="doc_them.js"></script>
+</body>
+</html>

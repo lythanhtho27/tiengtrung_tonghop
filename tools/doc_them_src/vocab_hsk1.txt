@@ -1,0 +1,150 @@
+# Từ vựng HSK 1 (149 từ): chữ Hán<TAB>pinyin<TAB>nghĩa
+爱	ài	yêu
+八	bā	tám
+爸爸	bàba	bố
+（杯）子	bēizi	cốc
+北京	Běijīng	Bắc Kinh
+本	běn	cuốn (dùng cho sách)
+不客气	bú kèqì	không có gì (đáp lại lời cảm ơn)
+不	bù	không
+菜	cài	món ăn, rau củ
+茶	chá	trà
+吃	chī	ăn
+出租车	chūzūchē	taxi
+打电话	dǎ diànhuà	gọi điện thoại
+大	dà	lớn, to
+的	de	của (thuộc tính)
+点	diǎn	giờ (trong thời gian)
+电脑	diànnǎo	máy tính
+电视	diànshì	ti vi
+电影	diànyǐng	phim
+东西	dōngxī	đồ vật, thứ
+都	dōu	đều
+读	dú	đọc
+对不起	duìbùqǐ	xin lỗi
+多	duō	nhiều
+多少	duōshǎo	bao nhiêu
+儿子/ 女儿	érzi	con trai
+二	èr	hai
+饭馆	fànguǎn	nhà hàng
+飞机	fēijī	máy bay
+分钟	fēnzhōng	phút
+高兴	gāoxìng	vui
+个	gè	cái (đơn vị lượng từ)
+工作	gōngzuò	công việc
+狗	gǒu	chó
+汉语	Hànyǔ	tiếng Hán
+好	hǎo	tốt, khỏe
+喝	hē	uống
+和	hé	và
+很	hěn	rất
+后面	hòumiàn	phía sau
+回	huí	quay lại, về
+会	huì	sẽ, biết (kỹ năng)
+火车站	huǒchēzhàn	ga tàu
+几	jǐ	mấy
+家	jiā	gia đình, nhà
+叫	jiào	gọi, tên gọi
+今天	jīntiān	hôm nay
+九	jiǔ	chín
+开	kāi	mở, khởi động
+看	kàn	xem
+看见	kànjiàn	nhìn thấy
+块	kuài	miếng, đồng (tiền)
+来	lái	đến
+老师	lǎoshī	giáo viên
+了	le	đã (dùng để chỉ sự thay đổi)
+冷	lěng	lạnh
+里	lǐ	trong
+零	líng	không (số 0)
+六	liù	sáu
+妈妈	māma	mẹ
+吗	ma	không (dùng trong câu hỏi)
+买	mǎi	mua
+猫	māo	mèo
+没	méi	không có, chưa
+没关系	méi guānxi	không sao, không có gì
+米饭	mǐfàn	cơm
+明天	míngtiān	ngày mai
+名字	míngzi	tên
+哪里 (哪儿)	nǎlǐ (nǎr)	đâu, chỗ nào
+那	nà	đó, kia
+呢	ne	thì sao? (dùng để hỏi thêm)
+能	néng	có thể
+你	nǐ	bạn
+年	nián	năm
+女儿	nǚ'ér	con gái
+朋友	péngyou	bạn
+漂亮	piàoliang	đẹp
+苹果	píngguǒ	táo
+七	qī	bảy
+钱	qián	tiền
+前面	qiánmiàn	phía trước
+请	qǐng	xin vui lòng, mời
+去	qù	đi
+热	rè	nóng
+人	rén	người
+认识	rènshi	quen biết
+日	rì	ngày
+三	sān	ba
+商店	shāngdiàn	cửa hàng
+上	shàng	lên
+上午	shàngwǔ	buổi sáng
+少	shǎo	ít
+谁	shuí/ shéi	ai
+什么	shénme	cái gì
+十	shí	mười
+时候	shíhòu	lúc, khi
+是	shì	là, thì
+书	shū	sách
+水	shuǐ	nước
+水果	shuǐguǒ	trái cây
+睡觉	shuìjiào	ngủ
+说话	shuōhuà	nói chuyện
+四	sì	bốn
+岁	suì	tuổi
+他	tā	anh ấy, ông ấy
+她	tā	cô ấy, bà ấy
+太	tài	quá
+天气	tiānqì	thời tiết
+听	tīng	nghe
+同学	tóngxué	bạn học
+喂	wèi	alo
+我	wǒ	tôi
+我们	wǒmen	chúng tôi
+五	wǔ	năm
+喜欢	xǐhuān	thích
+下	xià	xuống
+下午	xiàwǔ	buổi chiều
+下雨	xià yǔ	mưa
+先生	xiānshēng	ông, ngài
+现在	xiànzài	bây giờ
+想	xiǎng	nghĩ, muốn
+小	xiǎo	nhỏ
+小姐	xiǎojiě	cô (trong cách gọi)
+些	xiē	vài
+写	xiě	viết
+谢谢	xièxiè	cảm ơn
+星期	xīngqī	tuần
+学生	xuéshēng	học sinh
+学习	xuéxí	học tập
+学校	xuéxiào	trường học
+一	yī	một
+衣服	yīfu	quần áo
+医生	yīshēng	bác sĩ
+医院	yīyuàn	bệnh viện
+椅子 （把）	yǐzi	ghế
+月	yuè	tháng, mặt trăng
+在	zài	ở, tại
+再见	zàijiàn	tạm biệt
+怎么	zěnme	làm sao, thế nào
+怎么样	zěnmeyàng	như thế nào
+这	zhè	Đây, này
+中国	Zhōngguó	Trung Quốc
+中午	zhōngwǔ	buổi trưa
+住	zhù	sống, cư trú
+桌子	zhuōzi	bàn 张
+字	zì	chữ
+昨天	zuótiān	hôm qua
+坐	zuò	ngồi
+做	zuò	làm

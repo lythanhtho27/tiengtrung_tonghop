@@ -1,0 +1,299 @@
+[
+ {
+  "id": "h1-01",
+  "level": 1,
+  "title": "米饭在哪儿？",
+  "title_vi": "Mễ Phạn đâu rồi?",
+  "topic": "gia đình",
+  "paragraphs": [
+   "我叫小月，今年八岁。我家有一个小猫，名字叫“米饭”。米饭很小，很漂亮。我很爱米饭，我们是好朋友。",
+   "昨天下午，我回家的时候，没看见米饭。我叫：“米饭！米饭！你在哪儿？”没有猫来。",
+   "我看了桌子下，看了椅子后面，看了电视后面，都没有米饭。我很不高兴，打电话说：“喂，妈妈，米饭不在家！”",
+   "妈妈说：“没关系，你去看看我的衣服。”我去看妈妈的衣服，米饭在衣服里睡觉呢！",
+   "六点，妈妈回家了。我说：“妈妈，你不在家，怎么会说‘看衣服’？”妈妈说：“小月，你小的时候，很喜欢在妈妈的衣服里睡觉。米饭和你都喜欢妈妈！”"
+  ],
+  "translations": [
+   "Mình tên là Tiểu Nguyệt, năm nay tám tuổi. Nhà mình có một chú mèo nhỏ tên là “Mễ Phạn” (Cơm). Mễ Phạn nhỏ xíu, rất xinh. Mình rất yêu Mễ Phạn, tụi mình là bạn thân.",
+   "Chiều hôm qua, lúc về đến nhà, mình không thấy Mễ Phạn đâu. Mình gọi: “Mễ Phạn! Mễ Phạn! Em ở đâu?” Chẳng có con mèo nào chạy ra cả.",
+   "Mình tìm dưới gầm bàn, tìm sau ghế, tìm sau ti vi, đều không có Mễ Phạn. Mình buồn lắm, gọi điện thoại: “Alo, mẹ ơi, Mễ Phạn không có ở nhà!”",
+   "Mẹ nói: “Không sao đâu, con đi xem quần áo của mẹ xem.” Mình đi xem đống quần áo của mẹ, hóa ra Mễ Phạn đang ngủ trong đó!",
+   "Sáu giờ, mẹ về nhà. Mình hỏi: “Mẹ ơi, mẹ đâu có ở nhà, sao mẹ lại bảo ‘xem quần áo’?” Mẹ nói: “Tiểu Nguyệt à, hồi con còn bé, con rất thích ngủ trong đống quần áo của mẹ. Mễ Phạn với con đều mê mẹ cả!”"
+  ],
+  "questions": [
+   {
+    "q": "“米饭”是什么？",
+    "q_vi": "“Mễ Phạn” là gì?",
+    "options": [
+     "一个人",
+     "一个小猫",
+     "一个小狗",
+     "一本书"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 1: “我家有一个小猫，名字叫‘米饭’” – Mễ Phạn là tên chú mèo."
+   },
+   {
+    "q": "米饭在哪儿睡觉？",
+    "q_vi": "Mễ Phạn ngủ ở đâu?",
+    "options": [
+     "桌子下",
+     "电视后面",
+     "椅子上",
+     "妈妈的衣服里"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 4: “米饭在衣服里睡觉呢” – nó ngủ trong quần áo của mẹ."
+   },
+   {
+    "q": "妈妈为什么会想到衣服？",
+    "q_vi": "Vì sao mẹ lại nghĩ đến chỗ quần áo?",
+    "options": [
+     "她上午在家看见了米饭",
+     "米饭喜欢吃衣服",
+     "小月小的时候也喜欢在那里睡觉",
+     "小月打电话说了"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 5: mẹ nói hồi nhỏ Tiểu Nguyệt cũng thích ngủ trong quần áo của mẹ, nên mẹ đoán mèo cũng vậy."
+   }
+  ]
+ },
+ {
+  "id": "h1-02",
+  "level": 1,
+  "title": "下雨天的出租车",
+  "title_vi": "Chiếc taxi ngày mưa",
+  "topic": "đời sống",
+  "paragraphs": [
+   "星期一上午，北京下雨了。王老师今年六十岁，他想去火车站，坐十点的火车回家。",
+   "王先生在学校前面看见一个出租车。他坐上车，说：“你好，请去火车站。”",
+   "开车的先生说：“您在哪里工作？”王先生说：“我在前面那个学校工作，我是汉语老师。”先生说：“汉语老师？我小的时候，很喜欢我的汉语老师。他的字很漂亮。”",
+   "二十分钟后，火车站在前面了。王先生说：“多少钱？”先生说：“我不能要您的钱。”",
+   "王先生不认识他：“你是……？”先生说：“王老师，我是李小明！二十年前，我是您的学生。您的字，我现在都会写！”王先生很高兴：“小明，谢谢你！”"
+  ],
+  "translations": [
+   "Sáng thứ Hai, Bắc Kinh đổ mưa. Thầy Vương năm nay sáu mươi tuổi, thầy muốn ra ga tàu, đi chuyến tàu mười giờ để về nhà.",
+   "Trước cổng trường, ông Vương thấy một chiếc taxi. Ông lên xe và nói: “Chào anh, cho tôi ra ga tàu.”",
+   "Người lái xe hỏi: “Bác làm việc ở đâu ạ?” Ông Vương đáp: “Tôi dạy ở ngôi trường đằng kia, tôi là giáo viên tiếng Hán.” Anh ta nói: “Giáo viên tiếng Hán ạ? Hồi nhỏ cháu rất quý thầy dạy tiếng Hán của cháu. Chữ thầy viết đẹp lắm.”",
+   "Hai mươi phút sau, ga tàu đã ở ngay phía trước. Ông Vương hỏi: “Bao nhiêu tiền vậy?” Anh ta nói: “Cháu không thể lấy tiền của bác được.”",
+   "Ông Vương không nhận ra anh: “Anh là…?” Anh ta nói: “Thầy Vương, em là Lý Tiểu Minh đây! Hai mươi năm trước, em là học trò của thầy. Những chữ thầy dạy, giờ em đều viết được hết!” Ông Vương vui lắm: “Tiểu Minh, cảm ơn em!”"
+  ],
+  "questions": [
+   {
+    "q": "王先生想去哪儿？",
+    "q_vi": "Ông Vương muốn đi đâu?",
+    "options": [
+     "学校",
+     "医院",
+     "火车站",
+     "商店"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 1: “他想去火车站” – ông muốn ra ga tàu."
+   },
+   {
+    "q": "开出租车的先生是谁？",
+    "q_vi": "Người lái taxi là ai?",
+    "options": [
+     "王先生二十年前的学生",
+     "王先生的儿子",
+     "一个医生",
+     "王先生的同学"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 5: “二十年前，我是您的学生” – anh là học trò cũ của ông Vương."
+   },
+   {
+    "q": "开车的先生为什么不要钱？",
+    "q_vi": "Vì sao người lái xe không lấy tiền?",
+    "options": [
+     "他不喜欢钱",
+     "王先生没有钱",
+     "火车站不远",
+     "王先生是他的老师"
+    ],
+    "answer": 3,
+    "explain_vi": "Anh nhận ra ông Vương là thầy giáo cũ của mình nên không lấy tiền để cảm ơn thầy."
+   }
+  ]
+ },
+ {
+  "id": "h1-03",
+  "level": 1,
+  "title": "四个苹果",
+  "title_vi": "Bốn quả táo",
+  "topic": "mua sắm",
+  "paragraphs": [
+   "星期六上午，妈妈说：“小丽，这里有十块钱，你去商店买些水果，好吗？”",
+   "我家前面有一个水果商店。我去了那里，看见很多水果。我问：“小姐，苹果多少钱一个？”小姐说：“三块。”",
+   "我想：我家有爸爸、妈妈、我，和小狗点点。点点很爱吃苹果，我想买四个苹果。四个苹果是十二块，我的钱太少了。",
+   "我说：“对不起，我买三个。”小姐问：“你家有几个人？”我说：“三个人和一个小狗。”小姐听了，说：“这个苹果是小狗的，不要钱！”",
+   "中午，我们一家人坐在桌子前面吃苹果。点点吃了一个大苹果，很高兴。妈妈说：“小丽，谢谢你！你是一个好女儿。”"
+  ],
+  "translations": [
+   "Sáng thứ Bảy, mẹ nói: “Tiểu Lệ, đây là mười đồng, con ra cửa hàng mua ít trái cây nhé?”",
+   "Trước nhà mình có một cửa hàng trái cây. Mình đến đó, thấy rất nhiều trái cây. Mình hỏi: “Chị ơi, táo bao nhiêu tiền một quả ạ?” Chị bán hàng nói: “Ba đồng.”",
+   "Mình nghĩ: nhà mình có bố, mẹ, mình và chú chó Điểm Điểm. Điểm Điểm rất thích ăn táo, nên mình muốn mua bốn quả. Bốn quả táo là mười hai đồng, tiền của mình ít quá.",
+   "Mình nói: “Xin lỗi chị, em mua ba quả thôi ạ.” Chị hỏi: “Nhà em có mấy người?” Mình đáp: “Ba người và một chú chó ạ.” Chị nghe xong thì nói: “Quả táo này là của chú chó, không lấy tiền!”",
+   "Buổi trưa, cả nhà mình ngồi quanh bàn ăn táo. Điểm Điểm ăn hết một quả táo to, vui lắm. Mẹ nói: “Tiểu Lệ, cảm ơn con! Con là một đứa con gái ngoan.”"
+  ],
+  "questions": [
+   {
+    "q": "苹果多少钱一个？",
+    "q_vi": "Táo bao nhiêu tiền một quả?",
+    "options": [
+     "两块",
+     "三块",
+     "四块",
+     "十块"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2: chị bán hàng nói “三块” – ba đồng một quả."
+   },
+   {
+    "q": "小丽为什么想买四个苹果？",
+    "q_vi": "Vì sao Tiểu Lệ muốn mua bốn quả táo?",
+    "options": [
+     "小狗点点也爱吃苹果",
+     "她很爱吃苹果",
+     "妈妈想吃两个",
+     "苹果不贵"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 3: nhà có ba người và chú chó Điểm Điểm cũng thích ăn táo, nên cần bốn quả."
+   },
+   {
+    "q": "小狗的苹果多少钱？",
+    "q_vi": "Quả táo của chú chó giá bao nhiêu?",
+    "options": [
+     "三块",
+     "九块",
+     "不要钱",
+     "十二块"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 4: chị bán hàng nói quả táo của chú chó “不要钱” – không lấy tiền, tức là tặng."
+   }
+  ]
+ },
+ {
+  "id": "h1-04",
+  "level": 1,
+  "title": "我在北京",
+  "title_vi": "Con đang ở Bắc Kinh",
+  "topic": "thư từ",
+  "paragraphs": [
+   "妈妈：你好！我是阿明。我现在在北京学习汉语，我很好。",
+   "北京很大，人很多。现在是十二月，北京很冷，我买了很多衣服。",
+   "我的老师是中国人，她很漂亮，我们都很喜欢她。上午我们学习说汉语，下午学习写字。我现在会写八十个字了！",
+   "我有一个中国朋友，他叫李大文。星期天，我和大文去饭馆吃饭。中国菜很多，我都喜欢。但是，我想吃妈妈做的菜。",
+   "明年一月，我回家。我很想您和爸爸，想我们家的小狗。大文说，他很想去越南看看。妈妈，我的中国朋友能住在我们家吗？",
+   "阿明，十二月九日"
+  ],
+  "translations": [
+   "Mẹ ơi, mẹ khỏe không ạ! Con là A Minh đây. Bây giờ con đang học tiếng Hán ở Bắc Kinh, con vẫn khỏe.",
+   "Bắc Kinh rất rộng, người rất đông. Bây giờ là tháng Mười Hai, Bắc Kinh lạnh lắm, con đã mua rất nhiều quần áo.",
+   "Cô giáo của con là người Trung Quốc, cô rất xinh, cả lớp đều quý cô. Buổi sáng tụi con học nói tiếng Hán, buổi chiều học viết chữ. Bây giờ con viết được tám mươi chữ rồi đó!",
+   "Con có một người bạn Trung Quốc tên là Lý Đại Văn. Chủ nhật, con với Đại Văn đi nhà hàng ăn cơm. Món Trung Quốc nhiều lắm, món nào con cũng thích. Nhưng con vẫn thèm món mẹ nấu.",
+   "Tháng Một năm sau con về nhà. Con nhớ mẹ và bố lắm, nhớ cả chú chó nhà mình nữa. Đại Văn bảo cậu ấy rất muốn sang Việt Nam xem thử. Mẹ ơi, bạn Trung Quốc của con ở nhà mình được không ạ?",
+   "A Minh, ngày 9 tháng 12"
+  ],
+  "questions": [
+   {
+    "q": "阿明在北京做什么？",
+    "q_vi": "A Minh làm gì ở Bắc Kinh?",
+    "options": [
+     "工作",
+     "学习汉语",
+     "看医生",
+     "开商店"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 1: “我现在在北京学习汉语” – A Minh đang học tiếng Hán."
+   },
+   {
+    "q": "阿明现在会写多少个字？",
+    "q_vi": "Bây giờ A Minh viết được bao nhiêu chữ?",
+    "options": [
+     "十个",
+     "二十个",
+     "四十个",
+     "八十个"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 3: “我现在会写八十个字了” – tám mươi chữ."
+   },
+   {
+    "q": "阿明为什么问“我的中国朋友能住在我们家吗”？",
+    "q_vi": "Vì sao A Minh hỏi “bạn Trung Quốc của con ở nhà mình được không”?",
+    "options": [
+     "大文想去越南看看",
+     "大文没有钱",
+     "大文不喜欢北京",
+     "阿明家很大"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 5: Đại Văn rất muốn sang Việt Nam, nên A Minh muốn mời bạn về ở nhà mình."
+   }
+  ]
+ },
+ {
+  "id": "h1-05",
+  "level": 1,
+  "title": "一个电话",
+  "title_vi": "Một cuộc điện thoại",
+  "topic": "truyện ngắn",
+  "paragraphs": [
+   "星期天下午三点，我在家看书，电话来了。",
+   "“喂，是小李吗？我是爸爸。”我说：“对不起，我不是小李，我叫王一。”",
+   "那个人说：“对不起，对不起。”听他说话，我想他七八十岁了。他说：“我儿子在北京工作，他很少回家。今天我很想和他说说话……”",
+   "我听了，想了想，说：“先生，没关系，我们能说说话。您住在哪里？今天那里天气怎么样？”我们说了二十分钟。他喜欢喝茶，喜欢小猫，他家有三个猫。",
+   "现在，星期天下午三点，我都会打电话。电话里，那个先生很高兴：“喂，是小王吗？我是你的老朋友！”"
+  ],
+  "translations": [
+   "Ba giờ chiều Chủ nhật, mình đang đọc sách ở nhà thì có điện thoại gọi đến.",
+   "“Alo, Tiểu Lý đó hả? Bố đây.” Mình nói: “Xin lỗi, cháu không phải Tiểu Lý, cháu tên là Vương Nhất.”",
+   "Người đó nói: “Xin lỗi, xin lỗi.” Nghe giọng ông, mình đoán ông đã bảy, tám mươi tuổi. Ông nói: “Con trai tôi làm việc ở Bắc Kinh, nó ít khi về nhà. Hôm nay tôi rất muốn nói chuyện với nó một chút…”",
+   "Nghe xong, mình nghĩ một lát rồi nói: “Ông ơi, không sao đâu, mình nói chuyện với nhau nhé. Ông sống ở đâu ạ? Hôm nay thời tiết ở đó thế nào?” Hai ông cháu nói chuyện hai mươi phút. Ông thích uống trà, thích mèo, nhà ông có ba con mèo.",
+   "Bây giờ, cứ ba giờ chiều Chủ nhật là mình gọi điện. Trong điện thoại, ông vui vẻ nói: “Alo, Tiểu Vương đó hả? Bạn già của cháu đây!”"
+  ],
+  "questions": [
+   {
+    "q": "打电话的先生想找谁？",
+    "q_vi": "Ông cụ gọi điện muốn tìm ai?",
+    "options": [
+     "王一",
+     "他的女儿",
+     "他的儿子小李",
+     "一个医生"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 2: “是小李吗？我是爸爸” – ông muốn gọi cho con trai là Tiểu Lý nhưng gọi nhầm."
+   },
+   {
+    "q": "那个先生为什么想说说话？",
+    "q_vi": "Vì sao ông cụ muốn nói chuyện?",
+    "options": [
+     "他想买猫",
+     "他儿子很少回家",
+     "他是汉语老师",
+     "他不认识路"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 3: con trai ông làm việc ở Bắc Kinh, ít khi về nhà nên ông thấy cô đơn."
+   },
+   {
+    "q": "从这个故事我们能知道什么？",
+    "q_vi": "Qua câu chuyện này, ta biết được điều gì?",
+    "options": [
+     "王一不喜欢说话",
+     "那个先生住在北京",
+     "王一是小李的同学",
+     "王一和那个先生现在是朋友"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 5: mỗi Chủ nhật Vương Nhất đều gọi điện, ông cụ gọi cậu là “bạn già” – hai người đã thành bạn."
+   }
+  ]
+ }
+]

@@ -1,0 +1,473 @@
+[
+ {
+  "id": "h5-01",
+  "level": 5,
+  "title": "旧书店里的纸条",
+  "title_vi": "Những mảnh giấy trong hiệu sách cũ",
+  "topic": "truyện ngắn",
+  "paragraphs": [
+   "小林大学毕业以后，一个人来到南方的一座城市工作。周末的时候，同事们都有自己的安排，他却不知道该去哪儿。这座城市很热闹，可是他觉得自己像一片落在河里的叶子，跟着水流走，却没有人注意到他。",
+   "一个下雨的星期六，他为了躲雨，走进了一家旧书店。书店不大，书架一直排到屋顶，空气里有一股旧纸的味道。柜台后面坐着一位头发花白的老人，正戴着眼镜看报纸。老人抬头看了他一眼，没有向他推荐任何东西。小林很喜欢这种安静，就在书架之间慢慢地转了起来。",
+   "他挑了一本散文集，价格很便宜，只要八块钱。回到家打开一看，他发现书里夹着一张小纸条，上面的字写得很整齐：“读到这里的人，你好。这本书的第三十七页是我最喜欢的一段。如果你也有喜欢的句子，可以写在纸条上，放进店里那本蓝色封面的《海边的灯》里。我会看到的。”",
+   "小林觉得很有意思，翻到第三十七页，那一段写的是一个人在外地过春节的感受。他读了好几遍，心里忽然有点儿难过，又有点儿温暖。第二个周末，他又去了那家书店，找到那本蓝色的书，把自己写的纸条放了进去。他写道：“我刚来这座城市半年，还没有一个朋友。读了那一段，我才知道原来孤单的人不止我一个。”",
+   "一个星期以后，他在同一本书里找到了回信：“孤单并不可怕，它让人有时间认识自己。你可以试着每天做一件小事，比如早上换一条路去上班。慢慢地，这座城市就会变成你的城市。”",
+   "就这样，他们开始了一种特别的通信。小林在纸条上写工作上的烦恼：老板批评他做事太慢，同事抢了他的成绩，他想辞职又不敢。对方的回信总是不长，却很有道理。有一次，对方写道：“别急着证明自己比别人强，先把手里的事做好。时间会替你说话。”小林把这句话抄在了笔记本的第一页上。",
+   "他越来越好奇，写纸条的到底是什么人。从字上看，对方应该是一个细心的人；从内容看，好像读过很多书，也经历过很多事。他甚至想象，对方也许是一位和他差不多大的姑娘，每个周末也会来这家书店。有好几次，他故意在店里待到很晚，可是什么也没发现。",
+   "三个月后，他终于鼓起勇气，在纸条上写：“我们能见一面吗？我想当面谢谢你。”回信很快就来了：“好啊，下周六下午三点，就在书店里。”",
+   "那个星期六，小林特意换上了新买的衬衫，两点半就到了书店。他站在那个书架前，心跳得很快。三点到了，店里除了他，只有柜台后面的那位老人。三点十分，三点二十，门口一直没有人进来。他有点儿失望，正准备离开，老人却摘下眼镜，慢慢走过来，从口袋里拿出一张纸条，递给了他。纸条上只有一句话：“年轻人，你好，我就是你要找的人。”",
+   "小林一下子呆住了。那熟悉的字，他已经看了整整三个月。老人请他坐下，给他倒了一杯茶，说：“我以前是中学语文老师，退休以后开了这家小店。来这儿的年轻人，很多都和你一样，一个人在外地奋斗。我老了，帮不上什么大忙，只能写几句话。”他笑着补充道：“其实，这些年给我回过纸条的人有二十多个，你是第一个约我见面的。”",
+   "后来，小林成了书店的常客，也成了老人的好朋友。他换了一个更合适的工作，也交了几个朋友。又过了一年，老人搬到北方和儿子一起生活，书店交给了别人。离开前，老人把那本蓝色的书送给了小林。",
+   "现在，每当小林在街上看到一个拿着行李、一脸紧张的年轻人，他就会想起那个下雨的星期六。他的包里总放着几张空白的纸条。他知道，有时候，一句陌生人的问候，就能让一座冷冰冰的城市变得温暖起来。"
+  ],
+  "translations": [
+   "Sau khi tốt nghiệp đại học, Tiểu Lâm một mình đến làm việc ở một thành phố phía Nam. Cuối tuần, đồng nghiệp ai cũng có kế hoạch riêng, còn anh thì chẳng biết nên đi đâu. Thành phố này rất náo nhiệt, nhưng anh thấy mình như một chiếc lá rơi xuống sông, trôi theo dòng nước mà chẳng ai để ý tới.",
+   "Một ngày thứ Bảy mưa, để trú mưa, anh bước vào một hiệu sách cũ. Hiệu sách không lớn, giá sách xếp cao tới tận mái nhà, trong không khí thoang thoảng mùi giấy cũ. Sau quầy có một ông cụ tóc hoa râm đang đeo kính đọc báo. Ông ngẩng lên nhìn anh một cái, không giới thiệu cho anh món gì cả. Tiểu Lâm rất thích sự yên tĩnh ấy, liền thong thả dạo giữa các giá sách.",
+   "Anh chọn một tập tản văn, giá rất rẻ, chỉ tám đồng. Về nhà mở ra xem, anh phát hiện trong sách kẹp một mảnh giấy nhỏ, chữ viết rất ngay ngắn: \"Chào người đọc đến đây. Trang ba mươi bảy của cuốn sách này là đoạn tôi thích nhất. Nếu bạn cũng có câu mình thích, có thể viết lên giấy rồi bỏ vào cuốn 'Ngọn đèn bên bờ biển' bìa xanh trong tiệm. Tôi sẽ đọc được.\"",
+   "Tiểu Lâm thấy rất thú vị, lật đến trang ba mươi bảy; đoạn đó viết về cảm giác của một người đón Tết nơi đất khách. Anh đọc đi đọc lại mấy lần, trong lòng bỗng thấy hơi buồn mà cũng hơi ấm áp. Cuối tuần sau, anh lại đến hiệu sách, tìm cuốn sách màu xanh và kẹp mảnh giấy mình viết vào. Anh viết: \"Tôi mới đến thành phố này được nửa năm, vẫn chưa có một người bạn nào. Đọc đoạn ấy, tôi mới biết hóa ra người cô đơn không chỉ có mình tôi.\"",
+   "Một tuần sau, anh tìm thấy thư trả lời trong chính cuốn sách đó: \"Cô đơn không đáng sợ, nó cho con người thời gian để hiểu chính mình. Bạn có thể thử mỗi ngày làm một việc nhỏ, chẳng hạn buổi sáng đi làm bằng một con đường khác. Dần dần, thành phố này sẽ trở thành thành phố của bạn.\"",
+   "Cứ như vậy, họ bắt đầu một kiểu thư từ đặc biệt. Tiểu Lâm viết lên giấy những phiền muộn trong công việc: sếp chê anh làm việc quá chậm, đồng nghiệp giành mất thành tích của anh, anh muốn nghỉ việc mà không dám. Thư trả lời của đối phương lúc nào cũng ngắn nhưng rất có lý. Có lần, người ấy viết: \"Đừng vội chứng minh mình giỏi hơn người khác, hãy làm tốt việc trong tay trước đã. Thời gian sẽ nói thay bạn.\" Tiểu Lâm chép câu ấy vào trang đầu tiên của cuốn sổ.",
+   "Anh ngày càng tò mò người viết những mảnh giấy rốt cuộc là ai. Nhìn nét chữ thì người đó hẳn là người tỉ mỉ; nhìn nội dung thì dường như đã đọc nhiều sách, cũng trải qua nhiều chuyện. Anh thậm chí còn tưởng tượng người ấy có lẽ là một cô gái trạc tuổi mình, cuối tuần nào cũng đến hiệu sách này. Đã mấy lần anh cố ý ở lại tiệm đến rất muộn, nhưng chẳng phát hiện được gì.",
+   "Ba tháng sau, cuối cùng anh lấy hết can đảm viết lên giấy: \"Chúng ta có thể gặp nhau một lần không? Tôi muốn cảm ơn bạn trực tiếp.\" Thư trả lời đến rất nhanh: \"Được thôi, ba giờ chiều thứ Bảy tuần sau, ngay tại hiệu sách.\"",
+   "Thứ Bảy hôm ấy, Tiểu Lâm cố ý mặc chiếc áo sơ mi mới mua, hai rưỡi đã có mặt ở hiệu sách. Anh đứng trước giá sách đó, tim đập rất nhanh. Ba giờ đến, trong tiệm ngoài anh ra chỉ có ông cụ sau quầy. Ba giờ mười, ba giờ hai mươi, ngoài cửa vẫn không có ai bước vào. Anh hơi thất vọng, vừa định ra về thì ông cụ tháo kính, chậm rãi bước tới, lấy từ trong túi ra một mảnh giấy đưa cho anh. Trên giấy chỉ có một câu: \"Chào chàng trai, tôi chính là người cậu đang tìm.\"",
+   "Tiểu Lâm sững người. Nét chữ quen thuộc ấy anh đã đọc tròn ba tháng. Ông cụ mời anh ngồi, rót cho anh một chén trà rồi nói: \"Trước đây tôi là giáo viên ngữ văn cấp hai, nghỉ hưu thì mở tiệm nhỏ này. Những người trẻ đến đây, nhiều người cũng giống cậu, một mình phấn đấu nơi đất khách. Tôi già rồi, chẳng giúp được việc gì lớn, chỉ có thể viết vài câu.\" Ông cười nói thêm: \"Thật ra, mấy năm nay có hơn hai mươi người viết thư trả lời tôi, cậu là người đầu tiên hẹn gặp tôi.\"",
+   "Về sau, Tiểu Lâm trở thành khách quen của hiệu sách, cũng thành bạn thân của ông cụ. Anh chuyển sang một công việc phù hợp hơn, cũng kết bạn được với vài người. Thêm một năm nữa, ông cụ chuyển lên phía Bắc sống cùng con trai, hiệu sách giao lại cho người khác. Trước khi đi, ông tặng Tiểu Lâm cuốn sách màu xanh ấy.",
+   "Giờ đây, mỗi khi thấy trên phố một người trẻ xách hành lý, mặt đầy căng thẳng, Tiểu Lâm lại nhớ đến ngày thứ Bảy mưa năm ấy. Trong túi anh lúc nào cũng có vài mảnh giấy trắng. Anh biết rằng, đôi khi chỉ một lời hỏi thăm của người lạ cũng có thể khiến một thành phố lạnh lẽo trở nên ấm áp."
+  ],
+  "questions": [
+   {
+    "q": "小林刚到这座城市时，生活怎么样？",
+    "q_vi": "Khi Tiểu Lâm mới đến thành phố này, cuộc sống của anh thế nào?",
+    "options": [
+     "工作轻松，朋友很多",
+     "没有朋友，感到孤单",
+     "常常和同事去旅行",
+     "每天都去书店看书"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 1: cuối tuần không biết đi đâu, thấy mình như chiếc lá trôi trên sông mà không ai để ý — tức là cô đơn."
+   },
+   {
+    "q": "小林和写纸条的人是怎么联系的？",
+    "q_vi": "Tiểu Lâm liên lạc với người viết giấy bằng cách nào?",
+    "options": [
+     "打电话",
+     "在网上聊天",
+     "把纸条放在一本蓝色的书里",
+     "请老人帮忙寄信"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 3–5: hai bên kẹp giấy vào cuốn sách bìa xanh 《海边的灯》 trong tiệm."
+   },
+   {
+    "q": "见面以前，小林以为写纸条的人可能是谁？",
+    "q_vi": "Trước khi gặp, Tiểu Lâm nghĩ người viết giấy có thể là ai?",
+    "options": [
+     "一位和他年纪差不多的姑娘",
+     "书店的老板",
+     "公司的老板",
+     "他的大学同学"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 7: anh tưởng tượng đó là một cô gái trạc tuổi mình."
+   },
+   {
+    "q": "老人为什么要在书里留纸条？",
+    "q_vi": "Vì sao ông cụ để lại giấy trong sách?",
+    "options": [
+     "想多卖几本书",
+     "想找一个年轻人帮他管书店",
+     "想练习写字",
+     "想帮助在外地孤单的年轻人"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 10: ông nói nhiều người trẻ một mình phấn đấu nơi đất khách, ông chỉ có thể viết vài câu để giúp họ."
+   },
+   {
+    "q": "最后一段说明了什么？",
+    "q_vi": "Đoạn cuối cho thấy điều gì?",
+    "options": [
+     "小林后来也开了一家书店",
+     "小林也想像老人一样去温暖陌生人",
+     "小林很想念北方的生活",
+     "小林不再喜欢这座城市了"
+    ],
+    "answer": 1,
+    "explain_vi": "Anh luôn mang theo giấy trắng và tin rằng một lời hỏi thăm của người lạ có thể sưởi ấm thành phố — anh muốn tiếp nối việc làm của ông cụ."
+   }
+  ]
+ },
+ {
+  "id": "h5-02",
+  "level": 5,
+  "title": "植物也会“说话”吗？",
+  "title_vi": "Thực vật cũng biết \"nói chuyện\" sao?",
+  "topic": "khoa học thường thức",
+  "paragraphs": [
+   "说到“交流”，人们首先想到的是语言、表情和动作。动物也有自己的交流方式：狗用叫声表达情绪，蜜蜂用跳舞告诉同伴哪里有花。可是植物呢？它们不能走，也不能叫，一辈子站在同一个地方，看起来好像什么都不会“说”。然而，近几十年的科学研究发现，植物其实一直在用自己的方式“说话”，只是我们听不见而已。",
+   "最早引起科学家注意的，是发生在非洲草原上的一种现象。当地有一种动物特别喜欢吃某种树的叶子。人们发现，这些动物吃一会儿叶子，就会走到很远的另一棵树那儿去吃，而不是把附近的树都吃一遍。这是为什么呢？",
+   "经过研究，科学家找到了答案。原来，当树叶被吃的时候，树会很快在叶子里产生一种让动物觉得很苦的物质。不仅如此，受伤的树还会向空气中放出一种特殊的气体。附近的树“闻”到这种气体以后，也会提前做好准备，让自己的叶子变苦。动物吃了几口就觉得味道不对，只好走到远处去，找那些还没有“收到消息”的树。",
+   "这个发现让许多人感到吃惊：难道树和树之间也会互相提醒吗？后来，越来越多的实验证明，这种现象并不少见。比如，西红柿的叶子被虫子咬了以后，也会放出一种气味，附近的西红柿收到这个“信号”，就会提前产生一些虫子不喜欢的物质。从某种意义上说，这就像一个村子里的人发现了小偷，大声喊“小心”，让邻居们赶快关好门窗。",
+   "植物不仅能通过空气“说话”，还能通过地下“打电话”。在森林的土里，生活着大量非常细小的生物。它们和树根连在一起，组成了一张看不见的大网。科学家通过实验发现，营养和信息都可以通过这张网，从一棵树传到另一棵树。有人给它起了一个很形象的名字——“森林的互联网”。",
+   "更有意思的是，这张网还会帮助“家人”。研究人员发现，一些高大的老树会通过地下的网，把多余的营养送给附近的小树，特别是那些长在大树下面、晒不到太阳的小树。而当一棵老树快要死的时候，它会把身体里剩下的营养尽量送出去。因此，有的科学家把这些老树叫作“树妈妈”。",
+   "当然，也有科学家提醒大家，不要把植物想象得和人一样。植物没有大脑，它们的“交流”并不是有意识的行为，而是在漫长的时间里慢慢形成的一种保护自己的本领。用“说话”“帮助”“妈妈”这样的词来描写植物，只是为了让普通人更容易理解，并不代表植物真的有感情。",
+   "即使这样，这些研究也改变了我们看待自然的方式。过去，人们常常把一棵树当作一个单独的个体；现在我们知道，森林更像是一个紧密联系的大家庭。砍掉一棵老树，影响的可能不只是这一棵树，而是周围许多植物的生活。",
+   "这些发现对农业也有实际的用处。如果能弄清楚植物之间是怎样传递信号的，农民也许就能少用一些农药，让庄稼自己“提醒”自己提前防虫。目前，已经有科学家在这方面进行试验了。",
+   "下次走进公园或者森林的时候，你不妨停下来，安静地站一会儿。也许就在你身边，树木和花草正在进行着一场热闹的“谈话”。只不过，它们用的不是声音，而是一种我们还没有完全读懂的语言。"
+  ],
+  "translations": [
+   "Nói đến \"giao tiếp\", người ta trước hết nghĩ tới ngôn ngữ, nét mặt và động tác. Động vật cũng có cách giao tiếp riêng: chó dùng tiếng sủa để bày tỏ cảm xúc, ong dùng điệu nhảy để báo cho đồng loại biết chỗ nào có hoa. Còn thực vật thì sao? Chúng không đi được, cũng không kêu được, cả đời đứng một chỗ, trông như chẳng biết \"nói\" gì. Thế nhưng, các nghiên cứu khoa học mấy chục năm gần đây cho thấy thực vật thật ra vẫn luôn \"nói chuyện\" theo cách riêng của chúng, chỉ là chúng ta không nghe thấy mà thôi.",
+   "Điều đầu tiên thu hút sự chú ý của các nhà khoa học là một hiện tượng xảy ra trên thảo nguyên châu Phi. Ở đó có một loài động vật rất thích ăn lá của một loại cây. Người ta phát hiện những con vật này ăn lá một lúc thì lại đi rất xa sang một cây khác để ăn, chứ không ăn hết lượt các cây ở gần. Tại sao vậy?",
+   "Qua nghiên cứu, các nhà khoa học đã tìm ra câu trả lời. Hóa ra, khi lá bị ăn, cây sẽ nhanh chóng tạo ra trong lá một chất khiến con vật thấy rất đắng. Không chỉ thế, cây bị thương còn thải vào không khí một loại khí đặc biệt. Những cây gần đó \"ngửi\" thấy khí này cũng sẽ chuẩn bị trước, làm cho lá của mình trở nên đắng. Con vật ăn vài miếng thấy vị không ổn, đành đi ra xa tìm những cây chưa \"nhận được tin\".",
+   "Phát hiện này khiến nhiều người kinh ngạc: lẽ nào giữa cây với cây cũng biết nhắc nhở nhau? Về sau, ngày càng nhiều thí nghiệm chứng minh hiện tượng này không hề hiếm. Chẳng hạn, lá cà chua bị sâu cắn cũng sẽ tỏa ra một mùi, những cây cà chua gần đó nhận được \"tín hiệu\" này sẽ tạo ra trước một số chất mà sâu không thích. Theo một nghĩa nào đó, điều này giống như người trong làng phát hiện có trộm, hô to \"Cẩn thận!\" để hàng xóm mau đóng kỹ cửa.",
+   "Thực vật không chỉ \"nói chuyện\" qua không khí mà còn \"gọi điện\" dưới lòng đất. Trong đất rừng có vô số sinh vật cực kỳ nhỏ bé. Chúng gắn liền với rễ cây, tạo thành một tấm lưới lớn vô hình. Qua thí nghiệm, các nhà khoa học phát hiện chất dinh dưỡng và thông tin đều có thể truyền qua tấm lưới này từ cây này sang cây khác. Có người đặt cho nó một cái tên rất hình tượng: \"Internet của rừng\".",
+   "Thú vị hơn nữa là tấm lưới này còn giúp đỡ \"người nhà\". Các nhà nghiên cứu phát hiện một số cây cổ thụ cao lớn sẽ thông qua mạng lưới dưới đất mà chuyển chất dinh dưỡng dư thừa cho những cây non gần đó, nhất là những cây mọc dưới tán cây lớn, không được phơi nắng. Còn khi một cây già sắp chết, nó sẽ cố gắng chuyển hết chất dinh dưỡng còn lại trong cơ thể ra ngoài. Vì vậy, có nhà khoa học gọi những cây già này là \"cây mẹ\".",
+   "Tất nhiên, cũng có nhà khoa học nhắc mọi người đừng tưởng tượng thực vật giống như con người. Thực vật không có não, sự \"giao tiếp\" của chúng không phải hành vi có ý thức, mà là một khả năng tự bảo vệ dần hình thành qua thời gian dài đằng đẵng. Dùng những từ như \"nói chuyện\", \"giúp đỡ\", \"mẹ\" để miêu tả thực vật chỉ là để người bình thường dễ hiểu hơn, chứ không có nghĩa thực vật thật sự có tình cảm.",
+   "Dù vậy, những nghiên cứu này cũng đã thay đổi cách chúng ta nhìn nhận tự nhiên. Trước đây, người ta thường coi một cái cây là một cá thể riêng lẻ; giờ đây chúng ta biết rằng khu rừng giống một đại gia đình gắn bó chặt chẽ hơn. Chặt đi một cây cổ thụ, thứ bị ảnh hưởng có thể không chỉ là cây đó, mà là cuộc sống của rất nhiều cây cối xung quanh.",
+   "Những phát hiện này cũng có ích thực tế cho nông nghiệp. Nếu hiểu rõ thực vật truyền tín hiệu cho nhau như thế nào, có lẽ nông dân sẽ dùng ít thuốc trừ sâu hơn, để cây trồng tự \"nhắc\" nhau phòng sâu từ sớm. Hiện nay, đã có nhà khoa học tiến hành thử nghiệm về mặt này.",
+   "Lần tới khi bước vào công viên hay khu rừng, bạn thử dừng lại, lặng lẽ đứng một lúc xem. Biết đâu ngay bên cạnh bạn, cây cối và hoa cỏ đang có một cuộc \"trò chuyện\" rôm rả. Chỉ có điều, thứ chúng dùng không phải âm thanh, mà là một thứ ngôn ngữ chúng ta vẫn chưa hoàn toàn hiểu được."
+  ],
+  "questions": [
+   {
+    "q": "非洲草原上的动物为什么吃一会儿就换一棵树？",
+    "q_vi": "Vì sao con vật trên thảo nguyên châu Phi ăn một lúc lại đổi sang cây khác?",
+    "options": [
+     "因为附近的树叶已经吃完了",
+     "因为附近的树叶变苦了",
+     "因为它们喜欢走路",
+     "因为远处的树更高"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 3: cây bị ăn tạo chất đắng và tỏa khí báo hiệu, cây gần đó cũng làm lá đắng nên con vật phải đi xa."
+   },
+   {
+    "q": "“森林的互联网”指的是什么？",
+    "q_vi": "\"Internet của rừng\" chỉ cái gì?",
+    "options": [
+     "森林里的电话线",
+     "树叶放出的气体",
+     "动物之间的叫声",
+     "地下由树根和细小生物组成的网"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 5: sinh vật nhỏ trong đất gắn với rễ cây tạo thành mạng lưới vô hình truyền dinh dưỡng và thông tin."
+   },
+   {
+    "q": "关于“树妈妈”，下面哪一项是正确的？",
+    "q_vi": "Về \"cây mẹ\", điều nào dưới đây đúng?",
+    "options": [
+     "老树会把营养送给附近的小树",
+     "老树会阻止小树长大",
+     "老树会自己走到小树旁边",
+     "老树只照顾自己的孩子"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 6: cây già chuyển dinh dưỡng dư thừa cho cây non gần đó, nên được gọi là \"cây mẹ\"."
+   },
+   {
+    "q": "第七段作者想提醒读者什么？",
+    "q_vi": "Ở đoạn 7, tác giả muốn nhắc người đọc điều gì?",
+    "options": [
+     "植物比人更聪明",
+     "植物的交流方式还没有被证明",
+     "植物的“交流”不是有意识的，不能和人完全一样看待",
+     "研究植物没有什么意义"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 7: thực vật không có não, \"giao tiếp\" của chúng không có ý thức; các từ như \"mẹ\" chỉ để dễ hiểu."
+   },
+   {
+    "q": "这篇文章主要想告诉我们什么？",
+    "q_vi": "Bài viết chủ yếu muốn nói với chúng ta điều gì?",
+    "options": [
+     "怎样种好西红柿",
+     "植物之间存在着我们过去不了解的联系方式",
+     "非洲草原上的动物生活",
+     "怎样保护森林里的动物"
+    ],
+    "answer": 1,
+    "explain_vi": "Toàn bài giới thiệu các cách thực vật \"trò chuyện\" với nhau qua không khí và lòng đất — điều trước đây ta không biết."
+   }
+  ]
+ },
+ {
+  "id": "h5-03",
+  "level": 5,
+  "title": "外卖时代的厨房",
+  "title_vi": "Căn bếp trong thời đại đồ ăn giao tận nơi",
+  "topic": "xã hội hiện đại",
+  "paragraphs": [
+   "晚上七点，办公楼的电梯门一开，几个年轻人提着刚送到的外卖走了出来。对今天的很多城市人来说，这是再普通不过的画面。打开手机，动动手指，半个小时以后，热腾腾的饭菜就送到了门口。外卖的出现，让“吃饭”这件事比以前方便多了。",
+   "根据一些调查，在大城市里，相当一部分年轻人每周点外卖超过五次，有的人甚至一日三餐都靠外卖解决。家里的厨房越来越干净，不是因为主人爱打扫，而是因为它几乎没有被使用过。有人开玩笑说，现在不少年轻人的冰箱里，除了饮料，就只剩下几个过期的鸡蛋。",
+   "外卖受欢迎，原因并不难理解。首先是节省时间。在快节奏的城市里，很多人下班回家已经很累了，再去买菜、洗菜、做饭、洗碗，至少要花一个多小时。其次是选择多。一个人做饭，往往只能做一两个菜，而在外卖软件上，可以吃到来自全国各地甚至世界各国的美食。另外，对于不会做饭的人来说，外卖几乎是唯一的选择。",
+   "然而，外卖带来的问题也越来越明显。第一是健康问题。为了让味道更吸引人，一些外卖的油和盐放得特别多；而且长期吃外卖的人，往往蔬菜吃得少，营养不够全面。第二是环境问题。每一份外卖都离不开塑料盒、塑料袋和用完就扔的筷子，每天产生的垃圾数量十分惊人。",
+   "除此以外，还有一个不太容易被注意到的问题：我们正在失去一种生活的能力，以及这种能力带来的乐趣。做饭不仅仅是为了吃饱。挑选新鲜的材料，按照自己的口味调整做法，看着一盘菜从无到有，这个过程本身就能让人放松。很多人回忆起小时候，印象最深的不是去过什么高级饭店，而是妈妈在厨房里忙来忙去的背影和满屋子的饭菜香。",
+   "我的朋友小周就是一个例子。她曾经是“外卖专家”，手机里装着四五个外卖软件，每个月光外卖就要花掉两三千块钱。去年体检的时候，有几项结果不太理想，医生建议她改变饮食习惯。她这才下决心学做饭。刚开始，她不是把菜炒糊了，就是把汤做得太咸，有好几次差点儿放弃。",
+   "半年后，小周已经能做出一桌像样的家常菜了。她说，最大的变化不是省了钱，也不是瘦了几斤，而是生活的节奏慢了下来。“以前下班回家就躺在沙发上玩手机，等外卖。现在我会一边听音乐一边切菜，做饭的那一个小时，是我一天中最安静的时候。”周末，她还经常请朋友来家里吃饭，原来冷冷清清的出租房变得热闹了起来。",
+   "当然，我们并不需要因此完全拒绝外卖。对于工作忙碌的人来说，外卖确实是一种解决问题的好办法；它也给成千上万的送餐员提供了工作机会。问题不在于外卖本身，而在于我们是不是把它当成了唯一的选择。",
+   "也许，我们可以试着找到一种平衡：工作日忙的时候点外卖，周末有空的时候自己下厨；点外卖时选择少油少盐的饭菜，并主动告诉商家不需要筷子。这些小小的改变，既不会让生活变得麻烦，又能让我们吃得更健康，也给地球减少一点儿负担。",
+   "毕竟，厨房不只是一个做饭的地方，它还连着我们和家人、和朋友、和自己的生活。偶尔让厨房重新热闹起来，也许你会发现，最好吃的那顿饭，就是自己亲手做的。"
+  ],
+  "translations": [
+   "Bảy giờ tối, cửa thang máy của tòa văn phòng vừa mở, mấy người trẻ xách đồ ăn vừa được giao tới bước ra. Với nhiều người thành phố ngày nay, đây là cảnh tượng bình thường không thể bình thường hơn. Mở điện thoại, động vài ngón tay, nửa tiếng sau cơm canh nóng hổi đã được đưa tới tận cửa. Sự xuất hiện của dịch vụ giao đồ ăn khiến chuyện \"ăn cơm\" tiện hơn trước rất nhiều.",
+   "Theo một số khảo sát, ở các thành phố lớn, khá nhiều người trẻ đặt đồ ăn hơn năm lần mỗi tuần, có người thậm chí ba bữa một ngày đều trông cả vào đồ ăn giao tận nơi. Căn bếp trong nhà ngày càng sạch sẽ, không phải vì chủ nhà chăm dọn dẹp mà vì nó gần như chưa từng được dùng đến. Có người đùa rằng, tủ lạnh của nhiều bạn trẻ bây giờ ngoài đồ uống ra thì chỉ còn mấy quả trứng đã quá hạn.",
+   "Đồ ăn giao tận nơi được ưa chuộng, lý do không khó hiểu. Trước hết là tiết kiệm thời gian. Ở thành phố nhịp sống nhanh, nhiều người tan làm về nhà đã rất mệt, nếu còn đi chợ, rửa rau, nấu cơm, rửa bát thì ít nhất mất hơn một tiếng. Thứ hai là nhiều lựa chọn. Một người nấu ăn thường chỉ làm được một hai món, còn trên ứng dụng giao đồ ăn có thể ăn món ngon từ khắp cả nước, thậm chí khắp thế giới. Ngoài ra, với người không biết nấu ăn, đồ ăn giao tận nơi gần như là lựa chọn duy nhất.",
+   "Thế nhưng, những vấn đề do đồ ăn giao tận nơi mang lại cũng ngày càng rõ. Thứ nhất là sức khỏe. Để món ăn hấp dẫn hơn, một số quán cho rất nhiều dầu và muối; hơn nữa người ăn đồ giao lâu ngày thường ăn ít rau, dinh dưỡng không đầy đủ. Thứ hai là môi trường. Mỗi suất ăn đều không thể thiếu hộp nhựa, túi nhựa và đũa dùng một lần, lượng rác thải ra mỗi ngày nhiều đến kinh ngạc.",
+   "Ngoài ra còn một vấn đề không dễ nhận ra: chúng ta đang đánh mất một kỹ năng sống, cùng với niềm vui mà kỹ năng ấy đem lại. Nấu ăn không chỉ để no bụng. Chọn nguyên liệu tươi, điều chỉnh cách nấu theo khẩu vị của mình, nhìn một đĩa thức ăn từ không thành có — bản thân quá trình ấy đã giúp người ta thư giãn. Nhiều người nhớ lại thời thơ ấu, ấn tượng sâu sắc nhất không phải là từng đến nhà hàng sang trọng nào, mà là bóng lưng mẹ tất bật trong bếp và mùi thơm cơm canh khắp nhà.",
+   "Cô bạn Tiểu Chu của tôi là một ví dụ. Cô từng là \"chuyên gia đặt đồ ăn\", điện thoại cài bốn năm ứng dụng giao đồ ăn, mỗi tháng riêng tiền đồ ăn đã tiêu mất hai ba nghìn tệ. Năm ngoái khi khám sức khỏe, có vài chỉ số không được tốt, bác sĩ khuyên cô thay đổi thói quen ăn uống. Lúc ấy cô mới quyết tâm học nấu ăn. Ban đầu, không phải xào cháy món ăn thì cũng nấu canh quá mặn, mấy lần suýt bỏ cuộc.",
+   "Nửa năm sau, Tiểu Chu đã nấu được một mâm cơm nhà ra trò. Cô nói, thay đổi lớn nhất không phải tiết kiệm được tiền hay gầy đi mấy cân, mà là nhịp sống chậm lại. \"Trước đây tan làm về là nằm dài trên sofa nghịch điện thoại chờ đồ ăn. Giờ tôi vừa nghe nhạc vừa thái rau, một tiếng nấu ăn ấy là lúc yên tĩnh nhất trong ngày của tôi.\" Cuối tuần, cô còn hay mời bạn bè đến nhà ăn cơm, căn phòng thuê vốn vắng vẻ nay trở nên rộn ràng.",
+   "Tất nhiên, chúng ta không cần vì thế mà hoàn toàn từ chối đồ ăn giao tận nơi. Với người bận rộn, đó quả thực là một cách giải quyết tốt; nó cũng mang lại việc làm cho hàng nghìn hàng vạn người giao hàng. Vấn đề không nằm ở bản thân việc giao đồ ăn, mà ở chỗ chúng ta có coi nó là lựa chọn duy nhất hay không.",
+   "Có lẽ chúng ta có thể thử tìm một sự cân bằng: ngày làm việc bận thì đặt đồ ăn, cuối tuần rảnh thì tự vào bếp; khi đặt thì chọn món ít dầu ít muối, và chủ động báo cửa hàng không cần đũa. Những thay đổi nho nhỏ ấy vừa không làm cuộc sống phiền phức, lại giúp ta ăn uống lành mạnh hơn, cũng giảm bớt một chút gánh nặng cho Trái Đất.",
+   "Suy cho cùng, căn bếp không chỉ là nơi nấu ăn, nó còn nối chúng ta với gia đình, với bạn bè và với cuộc sống của chính mình. Thỉnh thoảng để căn bếp náo nhiệt trở lại, có lẽ bạn sẽ phát hiện ra bữa cơm ngon nhất chính là bữa do tự tay mình nấu."
+  ],
+  "questions": [
+   {
+    "q": "第二段中“冰箱里只剩下几个过期的鸡蛋”说明了什么？",
+    "q_vi": "Câu \"tủ lạnh chỉ còn mấy quả trứng quá hạn\" ở đoạn 2 cho thấy điều gì?",
+    "options": [
+     "年轻人很喜欢吃鸡蛋",
+     "年轻人很少在家做饭",
+     "年轻人的冰箱太小了",
+     "鸡蛋的价格越来越高"
+    ],
+    "answer": 1,
+    "explain_vi": "Đây là câu nói đùa minh họa việc bếp gần như không được dùng, tức người trẻ hiếm khi tự nấu."
+   },
+   {
+    "q": "下面哪一项不是文章提到的外卖受欢迎的原因？",
+    "q_vi": "Điều nào dưới đây KHÔNG phải lý do được nhắc đến khiến đồ ăn giao tận nơi được ưa chuộng?",
+    "options": [
+     "节省时间",
+     "选择很多",
+     "比自己做饭更健康",
+     "不会做饭的人也能吃好"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 3 nêu: tiết kiệm thời gian, nhiều lựa chọn, người không biết nấu cũng có cái ăn. Còn sức khỏe lại là một vấn đề của đồ ăn giao (đoạn 4)."
+   },
+   {
+    "q": "小周为什么开始学做饭？",
+    "q_vi": "Vì sao Tiểu Chu bắt đầu học nấu ăn?",
+    "options": [
+     "体检结果不太好，医生建议她改变饮食习惯",
+     "外卖软件都不能用了",
+     "她想开一家饭店",
+     "她的朋友都会做饭"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 6: khám sức khỏe có vài chỉ số không tốt, bác sĩ khuyên đổi thói quen ăn uống."
+   },
+   {
+    "q": "对小周来说，学会做饭后最大的变化是什么？",
+    "q_vi": "Với Tiểu Chu, thay đổi lớn nhất sau khi biết nấu ăn là gì?",
+    "options": [
+     "省了很多钱",
+     "瘦了几斤",
+     "找到了新工作",
+     "生活的节奏慢了下来"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 7: cô nói thay đổi lớn nhất không phải tiết kiệm tiền hay giảm cân, mà là nhịp sống chậm lại."
+   },
+   {
+    "q": "作者对外卖的态度是什么？",
+    "q_vi": "Thái độ của tác giả đối với đồ ăn giao tận nơi là gì?",
+    "options": [
+     "应该完全拒绝外卖",
+     "外卖没有任何问题",
+     "可以点外卖，但不要把它当成唯一的选择",
+     "只有周末才能点外卖"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 8–9: không cần từ chối hoàn toàn, vấn đề là đừng coi nó là lựa chọn duy nhất, nên tìm sự cân bằng."
+   }
+  ]
+ },
+ {
+  "id": "h5-04",
+  "level": 5,
+  "title": "爷爷的“时间表”",
+  "title_vi": "\"Thời gian biểu\" của ông nội",
+  "topic": "văn hóa Trung Quốc",
+  "paragraphs": [
+   "小时候，我在农村跟爷爷奶奶生活过几年。爷爷认识的字不多，却能准确地说出什么时候该种什么、收什么。每到一个特别的日子，他就会说一句：“清明前后，种瓜种豆。”那时我不明白，这些听起来像儿歌一样的话是从哪儿来的。长大后我才知道，爷爷说的，是中国古人留下的“二十四节气”。",
+   "所谓节气，简单地说，就是古人根据太阳在一年中位置的变化，把一年分成二十四段，每一段大约十五天，并给每一段起一个名字。比如“立春”表示春天开始了，“雨水”说明下雨的日子渐渐多了起来，“惊蛰”的意思是天上开始打雷，把在土里睡了一冬的小虫子都叫醒了。",
+   "二十四节气产生于黄河一带，已经有两千多年的历史。在没有天气预报的古代，农民主要靠它来安排一年的农活：什么时候种地，什么时候浇水，什么时候收粮食，都和节气有着密切的关系。可以说，节气就是古代农民手中的一张“时间表”。",
+   "有趣的是，节气不仅对农业有用，也和人们的日常生活紧紧地连在一起。很多节气都有自己的风俗和美食。立春这一天，北方人要吃春饼，表示迎接春天；冬至这一天，北方人吃饺子，南方人吃汤圆，民间还有“冬至大如年”的说法。到了立秋，有的地方要吃肉，意思是夏天天气热，人吃得少、瘦了，秋天要把肉补回来。",
+   "节气里还藏着古人对自然的仔细观察。古人把每个节气又分成三小段，每段五天，每一段都对应一种自然现象。例如，在立春的十五天里，先是春风吹来，冰开始化了；接着，睡了一冬的虫子开始动了；最后，鱼游到水面上，好像背着还没化完的冰块。读到这些描写，你不得不佩服古人观察的耐心。",
+   "那么，在现代社会，二十四节气还有用吗？有人认为，现在有了科学的天气预报，农业也越来越现代化，节气已经过时了。而且由于全球气候变化，有些节气的说法和实际情况并不完全一样。比如到了“小雪”，南方很多城市的人可能还穿着短袖。",
+   "不过，更多的人认为，节气的价值并不只在于指导农业。2016年，二十四节气被正式列为世界非物质文化遗产，这说明它已经被看作人类共同的文化财富。对生活在城市里的人来说，节气提醒我们：在高楼大厦之间，仍然有季节的变化，仍然有自然的节奏。",
+   "这些年，我发现身边越来越多的年轻人开始关注节气。有人每到一个节气就在网上分享一张照片，有人按照节气调整自己的饮食，比如夏天多喝绿豆汤，秋天多吃梨。还有一些学校把节气的知识带进课堂，带孩子们去田里看麦子怎样一天天变黄。",
+   "去年冬至，我特意回了一趟老家。爷爷已经八十多岁了，耳朵也不太好，可是一说到节气，他的眼睛就亮了起来。他一边包饺子，一边给我讲“数九”的老规矩：从冬至这天开始，每九天为一个“九”，数完九个“九”，春天就来了。“到那时候啊，天暖和了，地里又该忙起来了。”他说完，得意地笑了。",
+   "那一刻我忽然明白，节气不是书本上冷冰冰的知识，而是一代又一代人对生活的记忆。它让我们记住，人是自然的一部分；无论时代怎么变，冬天过去，春天总会到来。"
+  ],
+  "translations": [
+   "Hồi nhỏ, tôi từng sống với ông bà nội ở quê vài năm. Ông biết không nhiều chữ, nhưng lại nói chính xác được khi nào nên trồng gì, thu hoạch gì. Cứ đến một ngày đặc biệt, ông lại nói một câu: \"Quanh tiết Thanh minh, trồng dưa trồng đậu.\" Hồi đó tôi không hiểu những câu nghe như đồng dao ấy từ đâu mà có. Lớn lên tôi mới biết, điều ông nói chính là \"hai mươi bốn tiết khí\" người xưa của Trung Quốc để lại.",
+   "Cái gọi là tiết khí, nói đơn giản, là người xưa dựa vào sự thay đổi vị trí của mặt trời trong một năm mà chia năm thành hai mươi bốn đoạn, mỗi đoạn khoảng mười lăm ngày, và đặt cho mỗi đoạn một cái tên. Chẳng hạn \"Lập xuân\" nghĩa là mùa xuân bắt đầu, \"Vũ thủy\" cho biết những ngày mưa dần nhiều lên, \"Kinh trập\" có nghĩa trời bắt đầu có sấm, đánh thức những con sâu bọ đã ngủ suốt mùa đông dưới đất.",
+   "Hai mươi bốn tiết khí ra đời ở vùng Hoàng Hà, đã có lịch sử hơn hai nghìn năm. Thời xưa chưa có dự báo thời tiết, nông dân chủ yếu dựa vào nó để sắp xếp việc đồng áng cả năm: khi nào làm đất, khi nào tưới nước, khi nào thu lương thực đều có quan hệ mật thiết với tiết khí. Có thể nói, tiết khí chính là tờ \"thời gian biểu\" trong tay người nông dân thời xưa.",
+   "Thú vị là tiết khí không chỉ có ích cho nông nghiệp, mà còn gắn chặt với đời sống hằng ngày. Nhiều tiết khí có phong tục và món ăn riêng. Ngày Lập xuân, người miền Bắc ăn bánh xuân để đón mùa xuân; ngày Đông chí, người miền Bắc ăn sủi cảo, người miền Nam ăn bánh trôi, dân gian còn có câu \"Đông chí lớn như Tết\". Đến Lập thu, có nơi phải ăn thịt, ý là mùa hè trời nóng, người ăn ít nên gầy đi, sang thu phải bồi bổ lại.",
+   "Trong tiết khí còn ẩn chứa sự quan sát tỉ mỉ của người xưa đối với tự nhiên. Người xưa lại chia mỗi tiết khí thành ba đoạn nhỏ, mỗi đoạn năm ngày, mỗi đoạn ứng với một hiện tượng tự nhiên. Ví dụ, trong mười lăm ngày Lập xuân, trước tiên gió xuân thổi tới, băng bắt đầu tan; tiếp đó, sâu bọ ngủ suốt mùa đông bắt đầu cựa quậy; cuối cùng, cá bơi lên mặt nước như đang cõng những tảng băng chưa tan hết. Đọc những dòng miêu tả ấy, bạn không thể không khâm phục sự kiên nhẫn quan sát của người xưa.",
+   "Vậy trong xã hội hiện đại, hai mươi bốn tiết khí còn có ích không? Có người cho rằng giờ đã có dự báo thời tiết khoa học, nông nghiệp cũng ngày càng hiện đại, tiết khí đã lỗi thời. Hơn nữa do biến đổi khí hậu toàn cầu, cách nói của một số tiết khí không hoàn toàn khớp với thực tế. Chẳng hạn đến tiết \"Tiểu tuyết\", người ở nhiều thành phố miền Nam có khi vẫn mặc áo cộc tay.",
+   "Tuy vậy, nhiều người hơn cho rằng giá trị của tiết khí không chỉ nằm ở việc chỉ dẫn nông nghiệp. Năm 2016, hai mươi bốn tiết khí chính thức được công nhận là di sản văn hóa phi vật thể thế giới, cho thấy nó đã được coi là tài sản văn hóa chung của nhân loại. Với người sống ở thành phố, tiết khí nhắc chúng ta rằng: giữa những tòa nhà cao tầng, vẫn có sự đổi thay của mùa, vẫn có nhịp điệu của thiên nhiên.",
+   "Mấy năm nay, tôi thấy ngày càng nhiều người trẻ quanh mình bắt đầu quan tâm đến tiết khí. Có người cứ đến một tiết khí lại chia sẻ một bức ảnh lên mạng, có người điều chỉnh việc ăn uống theo tiết khí, chẳng hạn mùa hè uống nhiều chè đậu xanh, mùa thu ăn nhiều lê. Còn có trường học đưa kiến thức về tiết khí vào lớp học, dẫn các em ra đồng xem lúa mì vàng dần từng ngày.",
+   "Đông chí năm ngoái, tôi cố ý về quê một chuyến. Ông đã ngoài tám mươi, tai cũng không còn thính, nhưng hễ nói đến tiết khí là mắt ông sáng lên. Ông vừa gói sủi cảo vừa kể cho tôi nghe lệ cũ \"đếm chín\": bắt đầu từ ngày Đông chí, cứ chín ngày là một \"chín\", đếm xong chín cái \"chín\" thì mùa xuân đến. \"Đến lúc ấy à, trời ấm lên, ngoài đồng lại bận rộn rồi.\" Nói xong, ông cười đắc ý.",
+   "Khoảnh khắc ấy tôi chợt hiểu, tiết khí không phải là kiến thức khô khan trên trang sách, mà là ký ức về cuộc sống của bao thế hệ. Nó giúp ta nhớ rằng con người là một phần của tự nhiên; dù thời đại đổi thay thế nào, mùa đông qua đi thì mùa xuân nhất định sẽ đến."
+  ],
+  "questions": [
+   {
+    "q": "“二十四节气”是根据什么来划分的？",
+    "q_vi": "\"Hai mươi bốn tiết khí\" được chia dựa vào điều gì?",
+    "options": [
+     "月亮的变化",
+     "太阳位置的变化",
+     "农民的经验",
+     "每个月的天数"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2: người xưa dựa vào sự thay đổi vị trí của mặt trời trong năm để chia thành 24 đoạn."
+   },
+   {
+    "q": "在古代，节气对农民最大的作用是什么？",
+    "q_vi": "Thời xưa, tác dụng lớn nhất của tiết khí đối với nông dân là gì?",
+    "options": [
+     "决定什么时候过节",
+     "帮助他们学习认字",
+     "帮助他们安排一年的农活",
+     "告诉他们哪里能卖粮食"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 3: nông dân dựa vào tiết khí để sắp xếp việc đồng áng, nó là \"thời gian biểu\" của họ."
+   },
+   {
+    "q": "根据文章，冬至这一天北方人一般吃什么？",
+    "q_vi": "Theo bài, ngày Đông chí người miền Bắc thường ăn gì?",
+    "options": [
+     "饺子",
+     "汤圆",
+     "春饼",
+     "绿豆汤"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 4: Đông chí người miền Bắc ăn sủi cảo (饺子), người miền Nam ăn bánh trôi (汤圆)."
+   },
+   {
+    "q": "有人认为节气已经过时了，下面哪一项不是他们的理由？",
+    "q_vi": "Có người cho rằng tiết khí đã lỗi thời; điều nào dưới đây KHÔNG phải lý do của họ?",
+    "options": [
+     "现在有科学的天气预报",
+     "农业越来越现代化",
+     "气候变化让有些说法和实际不一样",
+     "年轻人都不喜欢传统文化"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 6 nêu ba lý do đầu. Còn đoạn 8 lại nói ngày càng nhiều người trẻ quan tâm đến tiết khí."
+   },
+   {
+    "q": "最后一段作者想表达什么？",
+    "q_vi": "Ở đoạn cuối tác giả muốn bày tỏ điều gì?",
+    "options": [
+     "节气的知识很难记住",
+     "节气包含着人们对生活的记忆和对自然的尊重",
+     "爷爷的身体越来越差了",
+     "城市里的人不需要节气"
+    ],
+    "answer": 1,
+    "explain_vi": "Tác giả hiểu ra tiết khí là ký ức về cuộc sống của bao thế hệ, nhắc ta rằng con người là một phần của tự nhiên."
+   }
+  ]
+ },
+ {
+  "id": "h5-05",
+  "level": 5,
+  "title": "母亲和“小圆”",
+  "title_vi": "Mẹ và \"Tiểu Viên\"",
+  "topic": "gia đình",
+  "paragraphs": [
+   "去年春节，儿子给家里买了一台智能音箱。这东西个子不大，圆圆的，放在客厅的电视柜上，看起来像一盏小小的灯。儿子教大家怎么用：只要叫一声它的名字，再说出你的要求，它就能放音乐、讲笑话、报天气，甚至还能帮你定闹钟。",
+   "我和妻子工作忙，新鲜了几天就把它忘在了一边。倒是我母亲，对这个小东西产生了很大的兴趣。母亲今年七十三岁，三年前父亲去世后，她就从老家搬来和我们一起住。白天我们上班，孩子上学，家里常常只剩下她一个人。",
+   "一开始，母亲不太会用，总是把它的名字叫错。音箱听不懂，就回答：“对不起，我没听清楚。”母亲也不生气，一遍一遍地重复，像在教一个刚学说话的孩子。后来，她慢慢找到了方法，还给它起了个名字，叫“小圆”。每天早上一起床，她的第一件事就是问它：“小圆，今天天气怎么样？”",
+   "渐渐地，我发现母亲和它说的话越来越多了。有一天我提前下班，刚走到门口，就听见母亲在客厅里说：“小圆，你说今天包饺子好，还是做面条好？”音箱回答：“我为你找到了一个饺子的做法……”母亲笑着说：“谁让你找做法了？我包了几十年饺子，还用你教？”",
+   "我在门外站了很久，没有进去。我忽然意识到，母亲需要的并不是天气预报和做菜的方法，而是一个能跟她说话的人。可是这几年，我每天回家，吃完饭就坐在电脑前加班，或者躺在沙发上看手机。母亲有时想跟我聊几句，我总是“嗯嗯啊啊”地随便回答两句就过去了。",
+   "那天晚上，我问妻子知不知道这件事。妻子说她早就发现了：“妈每天跟它说的话，比跟我们俩加起来还多。上次她还问它，‘你一个人待着，闷不闷啊？’”说到这里，妻子的眼睛有点儿红了。",
+   "过了几个星期，音箱突然坏了，怎么叫都没有反应。母亲急得不得了，拿着它翻过来倒过去地看，还问我是不是她说话太多，把它“累坏了”。我本来打算马上在网上再买一台，但想了想，还是决定先不买。",
+   "从那天起，我和妻子商量好，每天晚饭后都留出半个小时，什么也不干，就陪母亲聊天。一开始大家都有点儿不习惯，不知道该聊什么。母亲说的多半是老家的事：哪家的孩子结婚了，以前的邻居搬到哪儿去了，年轻的时候她和父亲是怎么认识的。这些故事，有的我听过很多遍，有的却是第一次听说。",
+   "我的女儿也加入了进来。她把学校里的有趣的事讲给奶奶听，奶奶就教她剪纸、包饺子。有一次，女儿说：“奶奶，您讲的故事比音箱里的好听多了！”母亲高兴得笑个不停。",
+   "几个月后，我在整理柜子的时候，又看到了那台坏掉的音箱。我拿去修了修，原来只是里面一个小零件松了。我把它放回电视柜上，母亲看了一眼，说：“修好了？那就放着吧，早上让它报报天气。”",
+   "现在，那台音箱每天只工作一次，就是早上告诉母亲今天的天气。其他时间，它安安静静地待在那里，好像也在听我们一家人聊天。我常常想，科技可以给我们带来很多方便，却代替不了家人之间的一句问候。真正能让老人不孤单的，不是一台聪明的机器，而是愿意坐下来听她说话的我们。"
+  ],
+  "translations": [
+   "Tết năm ngoái, con trai mua cho nhà một chiếc loa thông minh. Thứ này không to, tròn tròn, đặt trên tủ ti vi ở phòng khách, trông như một chiếc đèn nho nhỏ. Con trai dạy mọi người cách dùng: chỉ cần gọi tên nó một tiếng rồi nói yêu cầu, nó sẽ mở nhạc, kể chuyện cười, báo thời tiết, thậm chí còn đặt báo thức giúp bạn.",
+   "Vợ chồng tôi bận công việc, thấy lạ được mấy hôm rồi bỏ quên nó một bên. Ngược lại, mẹ tôi lại rất hứng thú với món đồ nhỏ này. Năm nay mẹ bảy mươi ba tuổi; ba năm trước bố tôi mất, bà từ quê chuyển lên sống cùng chúng tôi. Ban ngày chúng tôi đi làm, con đi học, trong nhà thường chỉ còn mình bà.",
+   "Lúc đầu, mẹ không biết dùng lắm, lúc nào cũng gọi sai tên nó. Loa không hiểu thì trả lời: \"Xin lỗi, tôi nghe không rõ.\" Mẹ cũng không giận, lặp đi lặp lại hết lần này đến lần khác, như đang dạy một đứa trẻ mới tập nói. Về sau, bà dần tìm ra cách, còn đặt cho nó một cái tên là \"Tiểu Viên\". Sáng nào vừa thức dậy, việc đầu tiên của bà là hỏi nó: \"Tiểu Viên, hôm nay thời tiết thế nào?\"",
+   "Dần dần, tôi phát hiện mẹ nói chuyện với nó ngày càng nhiều. Có hôm tôi tan làm sớm, vừa tới cửa đã nghe mẹ nói trong phòng khách: \"Tiểu Viên này, con bảo hôm nay gói sủi cảo hay nấu mì thì hơn?\" Loa trả lời: \"Tôi đã tìm cho bạn một cách làm sủi cảo...\" Mẹ cười: \"Ai bảo con tìm cách làm? Mẹ gói sủi cảo mấy chục năm rồi, còn cần con dạy à?\"",
+   "Tôi đứng ngoài cửa rất lâu mà không vào. Tôi chợt nhận ra, thứ mẹ cần không phải dự báo thời tiết hay cách nấu ăn, mà là một người có thể trò chuyện với bà. Thế nhưng mấy năm nay, ngày nào về nhà tôi cũng ăn xong là ngồi trước máy tính làm thêm, hoặc nằm trên sofa xem điện thoại. Có lúc mẹ muốn nói với tôi vài câu, tôi toàn \"ừ ừ à à\" đáp qua loa rồi thôi.",
+   "Tối hôm đó, tôi hỏi vợ có biết chuyện này không. Vợ nói cô đã phát hiện từ lâu: \"Mỗi ngày mẹ nói chuyện với nó còn nhiều hơn với cả hai vợ chồng mình cộng lại. Lần trước mẹ còn hỏi nó: 'Con ở một mình có buồn không?'\" Nói đến đây, mắt vợ tôi hơi đỏ lên.",
+   "Mấy tuần sau, chiếc loa đột nhiên hỏng, gọi thế nào cũng không phản ứng. Mẹ cuống lên, cầm nó lật qua lật lại xem, còn hỏi tôi có phải do bà nói nhiều quá nên làm nó \"mệt quá hỏng rồi\" không. Tôi vốn định lên mạng mua ngay một cái khác, nhưng nghĩ một lúc lại quyết định tạm chưa mua.",
+   "Từ hôm đó, vợ chồng tôi bàn nhau, mỗi tối sau bữa cơm dành ra nửa tiếng, không làm gì cả, chỉ ngồi trò chuyện với mẹ. Lúc đầu mọi người đều hơi không quen, chẳng biết nên nói gì. Mẹ chủ yếu kể chuyện ở quê: con nhà ai lấy vợ lấy chồng rồi, hàng xóm cũ chuyển đi đâu, hồi trẻ bà và bố quen nhau thế nào. Những câu chuyện ấy, có chuyện tôi đã nghe rất nhiều lần, có chuyện lại là lần đầu được nghe.",
+   "Con gái tôi cũng tham gia. Con bé kể cho bà nghe những chuyện thú vị ở trường, bà thì dạy cháu cắt giấy, gói sủi cảo. Có lần con gái nói: \"Bà ơi, chuyện bà kể hay hơn trong loa nhiều!\" Mẹ tôi vui đến cười mãi không thôi.",
+   "Mấy tháng sau, khi dọn tủ, tôi lại thấy chiếc loa hỏng ấy. Tôi đem đi sửa, hóa ra chỉ là một linh kiện nhỏ bên trong bị lỏng. Tôi đặt nó lại lên tủ ti vi, mẹ nhìn một cái rồi nói: \"Sửa xong rồi à? Thế thì cứ để đấy, buổi sáng cho nó báo thời tiết.\"",
+   "Bây giờ, chiếc loa mỗi ngày chỉ làm việc một lần, ấy là buổi sáng báo cho mẹ thời tiết hôm nay. Thời gian còn lại, nó nằm yên lặng ở đó, như thể cũng đang nghe cả nhà tôi trò chuyện. Tôi thường nghĩ, công nghệ có thể mang lại cho ta nhiều tiện lợi, nhưng không thay được một lời hỏi han giữa người thân. Thứ thật sự giúp người già không cô đơn không phải là một cỗ máy thông minh, mà là chúng ta — những người sẵn lòng ngồi xuống nghe họ nói."
+  ],
+  "questions": [
+   {
+    "q": "为什么母亲对音箱特别感兴趣？",
+    "q_vi": "Vì sao mẹ đặc biệt hứng thú với chiếc loa?",
+    "options": [
+     "她喜欢听音乐",
+     "她白天常常一个人在家，很孤单",
+     "她想学习新技术",
+     "儿子要求她每天用"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2: bố mất, ban ngày cả nhà đi vắng, mẹ thường ở một mình — bà cô đơn nên coi chiếc loa như người để trò chuyện."
+   },
+   {
+    "q": "“我”在门外站了很久，没有进去，是因为什么？",
+    "q_vi": "\"Tôi\" đứng ngoài cửa rất lâu mà không vào là vì sao?",
+    "options": [
+     "忘了带钥匙",
+     "不想打扰母亲做饭",
+     "忽然明白了母亲需要有人陪她说话",
+     "担心音箱坏了"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 5: anh chợt nhận ra thứ mẹ cần là một người để nói chuyện."
+   },
+   {
+    "q": "音箱坏了以后，“我”为什么没有马上再买一台？",
+    "q_vi": "Sau khi loa hỏng, vì sao \"tôi\" không mua ngay cái khác?",
+    "options": [
+     "想让家人代替音箱多陪母亲聊天",
+     "觉得音箱太贵了",
+     "母亲不让他买",
+     "网上没有卖的"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 8: từ đó vợ chồng anh dành nửa tiếng mỗi tối trò chuyện với mẹ — tức muốn người nhà thay chiếc loa."
+   },
+   {
+    "q": "关于这个家庭后来的变化，下面哪一项正确？",
+    "q_vi": "Về sự thay đổi sau này của gia đình, điều nào đúng?",
+    "options": [
+     "母亲搬回了老家",
+     "他们又买了一台新音箱",
+     "女儿不喜欢听奶奶讲故事",
+     "一家人每天晚饭后都会陪母亲聊天"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 8–9: mỗi tối cả nhà dành nửa tiếng trò chuyện với mẹ, con gái cũng tham gia."
+   },
+   {
+    "q": "这篇文章主要想说明什么？",
+    "q_vi": "Bài viết chủ yếu muốn nói điều gì?",
+    "options": [
+     "智能音箱很容易坏",
+     "老人学不会使用新科技",
+     "科技代替不了家人的陪伴",
+     "做饭是一件很有意思的事"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn cuối: công nghệ không thay được lời hỏi han của người thân; điều giúp người già không cô đơn là con cháu chịu ngồi nghe họ nói."
+   }
+  ]
+ }
+]

@@ -1,0 +1,393 @@
+[
+ {
+  "id": "h4-01",
+  "level": 4,
+  "title": "爷爷的红包",
+  "title_vi": "Bao lì xì của ông nội",
+  "topic": "văn hóa – phong tục",
+  "paragraphs": [
+   "春节是中国最重要的节日。每到春节，不管离家多远，人们都会想办法回到父母身边，和家人一起吃年夜饭、看电视、聊天。对孩子们来说，春节最让人兴奋的事情，大概就是收红包了。",
+   "红包就是一个红色的小纸袋，里面放着钱。一般是年纪大的人给年纪小的人，比如爷爷奶奶给孙子孙女，父母给孩子。在中国人看来，红色能带来好运气，所以红包不只是钱，还是大人对孩子的祝福：希望他们在新的一年里健康、平安、快乐。",
+   "我小时候，每年除夕晚上，爷爷都会把我叫到他身边，从口袋里拿出一个红包，认真地对我说：“又长大一岁了，要好好学习，听爸爸妈妈的话。”那时候红包里的钱并不多，可是我总是把它放在床边的小盒子里，过好几天才打开。",
+   "这几年，过年的方式发生了很大的变化。很多人开始用手机发红包。除夕晚上，我们一家人有一个微信群，大家一边看春节晚会，一边在群里“抢红包”。红包里的钱也许只有几块，但是抢到的人会特别高兴，没抢到的人就大声叫：“再发一个！”整个客厅都是笑声。",
+   "只有爷爷不参加。他说自己年纪大了，看不清手机上的字，也学不会这些新东西。每次大家抢红包的时候，他就坐在沙发上，笑着看我们。我发现，他的笑里好像有一点儿孤单。",
+   "去年春节前，我决定教爷爷用手机发红包。一开始，他总是按错，有一次还差点儿把一千块发给了一个不认识的人。我耐心地教了他一遍又一遍，还把每一步都写在一张纸上，放在他的桌子上。",
+   "除夕那天晚上，正当大家聊得热闹的时候，手机上突然出现了一个红包，上面写着：“爷爷祝大家新年快乐！”整个客厅一下子安静了，接着大家都叫了起来。那是爷爷第一次在手机上发红包。",
+   "我打开红包，里面只有八块八毛八。可是对我来说，这是我收到过的最特别的红包。我突然明白了：红包的样子可以变，里面的钱可以多，也可以少，但是一家人互相关心的那份心意，是永远不会变的。"
+  ],
+  "translations": [
+   "Tết Nguyên đán là ngày lễ quan trọng nhất của Trung Quốc. Mỗi dịp Tết đến, dù xa nhà đến đâu, mọi người cũng tìm cách trở về bên cha mẹ, cùng gia đình ăn bữa cơm tất niên, xem tivi, trò chuyện. Với trẻ con, điều khiến chúng háo hức nhất ngày Tết có lẽ là được nhận lì xì.",
+   "Bao lì xì là một chiếc túi giấy nhỏ màu đỏ, bên trong đựng tiền. Thường là người lớn tuổi cho người nhỏ tuổi, chẳng hạn ông bà cho cháu, cha mẹ cho con. Theo quan niệm của người Trung Quốc, màu đỏ tượng trưng cho may mắn, nên bao lì xì không chỉ là tiền mà còn là lời chúc của người lớn dành cho trẻ nhỏ: mong các con một năm mới khỏe mạnh, bình an, vui vẻ.",
+   "Hồi nhỏ, tối giao thừa năm nào ông nội cũng gọi tôi lại bên cạnh, lấy từ túi áo ra một bao lì xì, nghiêm túc dặn: \"Lại lớn thêm một tuổi rồi, phải chăm học, nghe lời bố mẹ.\" Hồi ấy tiền trong bao không nhiều, nhưng tôi luôn cất nó trong chiếc hộp nhỏ cạnh giường, mấy ngày sau mới mở ra.",
+   "Mấy năm gần đây, cách đón Tết đã thay đổi rất nhiều. Nhiều người bắt đầu gửi lì xì qua điện thoại. Tối giao thừa, cả nhà tôi có một nhóm WeChat, mọi người vừa xem chương trình Gala mừng xuân vừa \"giành lì xì\" trong nhóm. Tiền trong bao có khi chỉ vài đồng, nhưng ai giành được thì vui lắm, ai không giành được thì hét to: \"Phát cái nữa đi!\" Cả phòng khách rộn tiếng cười.",
+   "Chỉ có ông là không tham gia. Ông nói mình già rồi, không nhìn rõ chữ trên điện thoại, cũng không học nổi mấy thứ mới mẻ này. Mỗi lần mọi người giành lì xì, ông lại ngồi trên sofa cười nhìn chúng tôi. Tôi nhận ra trong nụ cười ấy dường như có chút cô đơn.",
+   "Trước Tết năm ngoái, tôi quyết định dạy ông gửi lì xì bằng điện thoại. Lúc đầu ông toàn bấm nhầm, có lần suýt nữa gửi một nghìn tệ cho một người lạ. Tôi kiên nhẫn dạy ông hết lần này đến lần khác, còn viết từng bước ra một tờ giấy, đặt trên bàn của ông.",
+   "Tối giao thừa hôm ấy, đúng lúc mọi người đang trò chuyện rôm rả, trên điện thoại bỗng xuất hiện một bao lì xì, trên đó viết: \"Ông chúc cả nhà năm mới vui vẻ!\" Cả phòng khách lập tức im phăng phắc, rồi ai nấy đều reo lên. Đó là lần đầu tiên ông gửi lì xì trên điện thoại.",
+   "Tôi mở bao lì xì, bên trong chỉ có tám tệ tám hào tám xu. Nhưng với tôi, đó là bao lì xì đặc biệt nhất tôi từng nhận. Tôi chợt hiểu ra: hình thức bao lì xì có thể thay đổi, tiền bên trong có thể nhiều hay ít, nhưng tấm lòng quan tâm lẫn nhau của người một nhà thì mãi mãi không thay đổi."
+  ],
+  "questions": [
+   {
+    "q": "根据文章，人们为什么喜欢用红色的纸袋装钱？",
+    "q_vi": "Theo bài, vì sao người ta thích dùng túi giấy màu đỏ để đựng tiền?",
+    "options": [
+     "因为红色的纸袋比较便宜",
+     "因为红色代表好运气",
+     "因为孩子们最喜欢红色",
+     "因为红色的纸袋不容易丢"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2: màu đỏ tượng trưng cho may mắn, nên bao lì xì còn là lời chúc."
+   },
+   {
+    "q": "爷爷以前为什么不参加“抢红包”？",
+    "q_vi": "Trước đây vì sao ông không tham gia \"giành lì xì\"?",
+    "options": [
+     "他不会用手机发红包",
+     "他觉得抢红包很浪费钱",
+     "他不喜欢热闹",
+     "他要去厨房做饭"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 5: ông nói mình già, nhìn không rõ chữ, không học được thứ mới – tức là không biết dùng."
+   },
+   {
+    "q": "“我发现，他的笑里好像有一点儿孤单”，这说明：",
+    "q_vi": "\"Tôi nhận ra trong nụ cười của ông dường như có chút cô đơn\" cho thấy:",
+    "options": [
+     "爷爷身体不舒服",
+     "爷爷对“我”很生气",
+     "爷爷其实也想参加大家的活动",
+     "爷爷不喜欢过春节"
+    ],
+    "answer": 2,
+    "explain_vi": "Ông ngồi nhìn mọi người vui mà không tham gia được, nên có chút cô đơn – ông thật ra cũng muốn hòa vào."
+   },
+   {
+    "q": "作者为什么说八块八毛八的红包“最特别”？",
+    "q_vi": "Vì sao tác giả nói bao lì xì 8,88 tệ là \"đặc biệt nhất\"?",
+    "options": [
+     "因为数字“八”能带来很多钱",
+     "因为那是爷爷最后一次给红包",
+     "因为别人都没抢到",
+     "因为它包含了爷爷努力学习后对家人的关心"
+    ],
+    "answer": 3,
+    "explain_vi": "Ông đã cố học cách gửi lì xì để chúc cả nhà – giá trị nằm ở tấm lòng, không ở số tiền."
+   }
+  ]
+ },
+ {
+  "id": "h4-02",
+  "level": 4,
+  "title": "网上的“老李”",
+  "title_vi": "\"Lão Lý\" trên mạng",
+  "topic": "truyện ngắn",
+  "paragraphs": [
+   "张明今年二十八岁，在上海一家公司做程序员。他每天早上九点上班，晚上常常十点以后才能下班。回到租的房子里，他累得什么都不想做，只想一个人安安静静地下一盘棋。",
+   "他是在一个下棋的网站上认识“老李”的。老李的棋下得不算特别好，但是很有耐心，从来不着急。两个人下了几次以后，就开始一边下棋一边聊天。",
+   "慢慢地，张明发现自己什么都想跟老李说：工作压力大，经理总是批评他；女朋友跟他分手了；房租又贵了……老李总是安静地听，然后说一些很简单的话：“别着急，事情会慢慢好起来的。”“工作再忙，饭也要按时吃。”这些话不特别，可是张明每次听了，心里都觉得很温暖。",
+   "有一次，张明问老李：“你是做什么工作的？”老李说：“我已经退休了，在一个小城市住，每天就是看看书，散散步。”张明又问：“那你有孩子吗？”过了很久，老李才回答：“有一个儿子，在外地工作，很少回家。我们俩都不太会说话，一打电话就不知道说什么。”",
+   "张明看着这句话，想起了自己的父亲。他已经快一年没回家了。每次父亲打电话来，问的总是那几个问题：“吃饭了吗？”“工作累不累？”他总是回答“挺好的”，然后就说自己很忙，挂了电话。",
+   "国庆节放假，张明终于决定回家一趟。走之前，他跟老李说：“我要回老家几天，可能没时间下棋了。”老李马上回答：“好啊！回家好！多陪陪你爸爸。”",
+   "回到家的那天晚上，母亲做了一桌子他爱吃的菜。吃完饭，父亲像平时一样走进书房。张明经过书房门口的时候，看见父亲正戴着眼镜，认真地看着电脑。电脑上是一个他非常熟悉的网站——那个下棋的网站。",
+   "他愣住了。父亲的用户名，正是“老李”。原来，父亲不知道怎么跟儿子聊天，就让儿子的表妹打听到了张明常去的网站，又花了两个月学会了下棋。父亲转过头，看见站在门口的儿子，有点儿不好意思地笑了：“我……我就是想知道你过得好不好。”",
+   "那天晚上，父子俩在书房里坐了很久。这一次，他们没有在网上，而是面对面地下了一盘棋。"
+  ],
+  "translations": [
+   "Trương Minh năm nay hai mươi tám tuổi, làm lập trình viên ở một công ty tại Thượng Hải. Sáng nào anh cũng đi làm lúc chín giờ, tối thường sau mười giờ mới tan làm. Về đến căn phòng thuê, anh mệt đến mức chẳng muốn làm gì, chỉ muốn một mình yên lặng chơi một ván cờ.",
+   "Anh quen \"Lão Lý\" trên một trang web chơi cờ. Lão Lý chơi cờ không hẳn là giỏi, nhưng rất kiên nhẫn, chưa bao giờ vội vàng. Hai người chơi vài lần, rồi bắt đầu vừa chơi cờ vừa trò chuyện.",
+   "Dần dần, Trương Minh thấy chuyện gì mình cũng muốn kể với Lão Lý: áp lực công việc lớn, sếp hay phê bình anh; bạn gái chia tay anh; tiền thuê nhà lại đắt hơn… Lão Lý luôn lặng lẽ lắng nghe, rồi nói vài câu rất đơn giản: \"Đừng vội, mọi chuyện rồi sẽ dần tốt lên.\" \"Bận mấy cũng phải ăn cơm đúng giờ.\" Những câu ấy không có gì đặc biệt, nhưng mỗi lần nghe, Trương Minh đều thấy lòng ấm áp.",
+   "Có lần Trương Minh hỏi Lão Lý: \"Bác làm nghề gì ạ?\" Lão Lý đáp: \"Tôi nghỉ hưu rồi, sống ở một thành phố nhỏ, ngày nào cũng chỉ đọc sách, đi dạo.\" Trương Minh lại hỏi: \"Thế bác có con không?\" Một lúc lâu sau Lão Lý mới trả lời: \"Có một thằng con trai, làm việc ở tỉnh khác, ít khi về nhà. Hai bố con đều không giỏi ăn nói, cứ gọi điện là chẳng biết nói gì.\"",
+   "Trương Minh nhìn câu ấy, nhớ tới bố mình. Đã gần một năm anh không về nhà. Mỗi lần bố gọi điện, hỏi lúc nào cũng mấy câu ấy: \"Ăn cơm chưa?\" \"Công việc có mệt không?\" Anh luôn trả lời \"Ổn cả ạ\", rồi bảo mình bận, cúp máy.",
+   "Nghỉ lễ Quốc khánh, Trương Minh cuối cùng cũng quyết định về nhà một chuyến. Trước khi đi, anh nói với Lão Lý: \"Cháu về quê mấy hôm, chắc không có thời gian chơi cờ.\" Lão Lý trả lời ngay: \"Tốt quá! Về nhà là tốt! Ở bên bố cháu nhiều vào.\"",
+   "Tối hôm về đến nhà, mẹ nấu cả một bàn đầy món anh thích. Ăn xong, bố như thường lệ đi vào phòng sách. Lúc Trương Minh đi ngang cửa phòng sách, anh thấy bố đang đeo kính, chăm chú nhìn máy tính. Trên màn hình là một trang web anh vô cùng quen thuộc – chính là trang web chơi cờ ấy.",
+   "Anh sững người. Tên tài khoản của bố chính là \"Lão Lý\". Hóa ra bố không biết trò chuyện với con thế nào, bèn nhờ cô em họ của anh dò hỏi trang web anh hay vào, rồi bỏ ra hai tháng học chơi cờ. Bố quay đầu lại, thấy con trai đứng ở cửa, hơi ngượng ngùng mỉm cười: \"Bố… bố chỉ muốn biết con sống có tốt không.\"",
+   "Tối hôm đó, hai bố con ngồi trong phòng sách rất lâu. Lần này họ không chơi trên mạng, mà ngồi đối diện nhau đánh một ván cờ."
+  ],
+  "questions": [
+   {
+    "q": "张明为什么喜欢跟老李聊天？",
+    "q_vi": "Vì sao Trương Minh thích trò chuyện với Lão Lý?",
+    "options": [
+     "老李能帮他找到新工作",
+     "老李很耐心，他的话让张明觉得温暖",
+     "老李的棋下得特别好",
+     "老李给他介绍了女朋友"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2–3: Lão Lý kiên nhẫn lắng nghe, những lời giản dị khiến anh thấy ấm lòng."
+   },
+   {
+    "q": "老李说自己和儿子“一打电话就不知道说什么”，张明听了以后想到了什么？",
+    "q_vi": "Lão Lý nói hai bố con \"cứ gọi điện là không biết nói gì\", Trương Minh nghe xong nghĩ đến điều gì?",
+    "options": [
+     "自己的经理",
+     "自己的女朋友",
+     "老李住的城市",
+     "自己和父亲的关系"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 5: anh nhớ tới bố mình, mỗi lần bố gọi anh đều trả lời qua loa rồi cúp máy."
+   },
+   {
+    "q": "张明为什么“愣住了”？",
+    "q_vi": "Vì sao Trương Minh \"sững người\"?",
+    "options": [
+     "他发现老李就是自己的父亲",
+     "父亲的电脑坏了",
+     "父亲在网上玩游戏",
+     "母亲做的菜不好吃"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 8: tên tài khoản của bố chính là \"Lão Lý\" – đây là cái kết bất ngờ."
+   },
+   {
+    "q": "关于父亲，下面哪一项是正确的？",
+    "q_vi": "Về người bố, câu nào dưới đây đúng?",
+    "options": [
+     "他年轻的时候就是下棋高手",
+     "他让张明的表妹教他用电脑",
+     "他为了了解儿子，专门学会了下棋",
+     "他不想让张明回家"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 9: bố mất hai tháng học chơi cờ chỉ để được trò chuyện, biết con sống thế nào."
+   }
+  ]
+ },
+ {
+  "id": "h4-03",
+  "level": 4,
+  "title": "写给十年后的自己",
+  "title_vi": "Gửi chính mình mười năm sau",
+  "topic": "thư từ – học tập",
+  "paragraphs": [
+   "十年后的我：",
+   "你好！现在是二〇二六年九月一日，我刚刚到北京，开始了留学生活。这是我第一次离开越南，第一次一个人住在国外。今天晚上，宿舍里很安静，我的同屋已经睡着了，我却怎么也睡不着，所以决定给你写一封信。等你读到这封信的时候，你应该已经三十岁了吧？",
+   "先说说我现在的情况吧。说实话，今天我有点儿失望。在越南的时候，我的汉语成绩一直很好，老师和同学都说我的发音很标准。可是今天下了飞机，出租车司机跟我说了一句话，我一个字也没听懂。在食堂买饭的时候，我想要一碗面条，最后却拿到了一碗米饭。我站在那里，脸红得像一个西红柿。",
+   "但是，今天也发生了一件让我很感动的事。我拿着很重的行李找不到宿舍楼，一个中国女孩儿主动走过来问我需不需要帮助。她不但帮我把行李送到了房间，还把她的手机号码留给了我，说：“有什么不明白的，随时问我。”她叫林小雨，是中文系的学生。我们约好了，以后我教她越南语，她帮我练习口语。",
+   "我想问你几个问题：你现在的汉语说得怎么样？能不能跟中国人自然地聊天、开玩笑？你有没有像今天计划的那样，成为一名翻译？你还和林小雨保持联系吗？还有，你还记得爸爸妈妈在机场送我时说的话吗？他们说：“不要怕犯错误，怕的是不敢开口。”",
+   "我也想给你提几个要求。第一，不管工作多忙，都要每年回家看看爸爸妈妈；第二，不要放弃学习，世界很大，还有很多值得去了解的东西；第三，如果你现在遇到了困难，请想一想今天的我：一个连面条和米饭都说不清楚的女孩儿，都敢一个人来到这么远的地方，你还有什么好害怕的呢？",
+   "最后，我想对你说一声“谢谢”。谢谢你没有放弃，一直努力地往前走。不管你现在成功还是失败，我都为你感到骄傲。",
+   "祝你一切都好！",
+   "二〇二六年的你 阮秋河"
+  ],
+  "translations": [
+   "Gửi tôi của mười năm sau:",
+   "Chào bạn! Bây giờ là ngày 1 tháng 9 năm 2026, tôi vừa đến Bắc Kinh, bắt đầu cuộc sống du học. Đây là lần đầu tiên tôi rời Việt Nam, lần đầu tiên sống một mình ở nước ngoài. Tối nay ký túc xá rất yên tĩnh, bạn cùng phòng đã ngủ say, còn tôi thì mãi không ngủ được, nên quyết định viết cho bạn một lá thư. Khi bạn đọc lá thư này, chắc bạn đã ba mươi tuổi rồi nhỉ?",
+   "Kể trước tình hình hiện giờ của tôi nhé. Nói thật, hôm nay tôi hơi thất vọng. Hồi ở Việt Nam, điểm tiếng Trung của tôi lúc nào cũng tốt, thầy cô và bạn bè đều khen tôi phát âm rất chuẩn. Vậy mà hôm nay xuống máy bay, bác tài xế taxi nói với tôi một câu, tôi không nghe hiểu chữ nào. Lúc mua cơm ở căng tin, tôi muốn gọi một bát mì, cuối cùng lại nhận được một bát cơm trắng. Tôi đứng đó, mặt đỏ như quả cà chua.",
+   "Nhưng hôm nay cũng có một chuyện khiến tôi rất cảm động. Tôi xách hành lý nặng trịch mà không tìm thấy khu ký túc xá, một cô gái Trung Quốc chủ động đến hỏi tôi có cần giúp không. Cô ấy không chỉ giúp tôi mang hành lý lên tận phòng, mà còn để lại số điện thoại cho tôi, nói: \"Có gì không hiểu thì cứ hỏi mình bất cứ lúc nào.\" Cô ấy tên Lâm Tiểu Vũ, là sinh viên khoa tiếng Trung. Chúng tôi hẹn nhau sau này tôi dạy cô ấy tiếng Việt, cô ấy giúp tôi luyện khẩu ngữ.",
+   "Tôi muốn hỏi bạn vài câu: bây giờ tiếng Trung của bạn thế nào rồi? Có thể trò chuyện, đùa giỡn tự nhiên với người Trung Quốc chưa? Bạn có trở thành phiên dịch viên như kế hoạch hôm nay không? Bạn còn giữ liên lạc với Lâm Tiểu Vũ chứ? Còn nữa, bạn còn nhớ câu bố mẹ dặn khi tiễn tôi ở sân bay không? Bố mẹ nói: \"Đừng sợ mắc lỗi, đáng sợ là không dám mở miệng.\"",
+   "Tôi cũng muốn đưa ra cho bạn vài yêu cầu. Thứ nhất, dù công việc bận đến đâu, năm nào cũng phải về thăm bố mẹ; thứ hai, đừng bỏ việc học, thế giới rất rộng lớn, còn rất nhiều điều đáng để tìm hiểu; thứ ba, nếu bây giờ bạn đang gặp khó khăn, hãy nghĩ đến tôi của hôm nay: một cô gái đến mì với cơm còn nói không rõ mà vẫn dám một mình đến nơi xa thế này, thì bạn còn gì phải sợ nữa chứ?",
+   "Cuối cùng, tôi muốn nói với bạn một tiếng \"cảm ơn\". Cảm ơn bạn đã không bỏ cuộc, luôn nỗ lực bước về phía trước. Dù bây giờ bạn thành công hay thất bại, tôi đều tự hào về bạn.",
+   "Chúc bạn mọi điều tốt đẹp!",
+   "Bạn của năm 2026, Nguyễn Thu Hà"
+  ],
+  "questions": [
+   {
+    "q": "作者写这封信的时候在哪里？",
+    "q_vi": "Khi viết lá thư này tác giả đang ở đâu?",
+    "options": [
+     "越南的家里",
+     "北京的宿舍里",
+     "机场",
+     "林小雨的家里"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2: tác giả vừa đến Bắc Kinh, viết thư vào buổi tối trong ký túc xá."
+   },
+   {
+    "q": "作者为什么说今天“有点儿失望”？",
+    "q_vi": "Vì sao tác giả nói hôm nay \"hơi thất vọng\"?",
+    "options": [
+     "她找不到宿舍",
+     "食堂的饭不好吃",
+     "她发现自己的汉语在实际生活中不太够用",
+     "同屋不太友好"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 3: ở Việt Nam học giỏi, nhưng đến nơi thì không nghe hiểu tài xế, gọi mì lại ra cơm."
+   },
+   {
+    "q": "爸爸妈妈说的“怕的是不敢开口”是什么意思？",
+    "q_vi": "Câu bố mẹ nói \"đáng sợ là không dám mở miệng\" có ý gì?",
+    "options": [
+     "学语言最重要的是敢说",
+     "说话要小心，不要说错",
+     "在国外不要随便跟别人说话",
+     "开口说话很危险"
+    ],
+    "answer": 0,
+    "explain_vi": "Ý là đừng sợ sai, điều quan trọng khi học ngoại ngữ là dám nói."
+   },
+   {
+    "q": "关于这封信，下面哪一项是正确的？",
+    "q_vi": "Về lá thư này, câu nào dưới đây đúng?",
+    "options": [
+     "作者已经成为了一名翻译",
+     "林小雨是作者的越南朋友",
+     "作者觉得留学太难，想回国",
+     "作者希望十年后的自己不要害怕困难"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 6: tác giả nhắn nhủ nếu gặp khó khăn thì hãy nhớ cô gái dũng cảm hôm nay – đừng sợ."
+   }
+  ]
+ },
+ {
+  "id": "h4-04",
+  "level": 4,
+  "title": "午睡的学问",
+  "title_vi": "Ngủ trưa cũng là một môn học",
+  "topic": "khoa học thường thức",
+  "paragraphs": [
+   "在中国，很多人都有午睡的习惯。不少学校中午会给学生留出一段休息时间，有的公司也允许员工吃完午饭后在座位上睡一会儿。可是也有人认为，白天睡觉是浪费时间，而且越睡越累。那么，午睡到底有没有好处呢？",
+   "科学家发现，人在一天里的精神并不是一样的。除了晚上，下午一点到三点左右，人也特别容易觉得困。这不完全是因为吃饱了饭，而是我们身体本来的规律。所以，就算不吃午饭，很多人到了下午也会想睡觉。",
+   "研究证明，一次合适的午睡可以让人的精神变好，记忆力也会提高。对学生来说，午睡以后再学习，往往学得更快、记得更清楚；对司机来说，在困的时候睡十几分钟，可以减少交通事故。",
+   "不过，午睡并不是越长越好。很多人都有过这样的经历：中午本来只想睡一会儿，结果一下子睡了一个多小时，醒来以后不但没有精神，反而头很重，心情也不好。这是为什么呢？",
+   "原来，人睡着以后，会慢慢地从“浅睡”进入“深睡”。一般来说，睡着二三十分钟以后，人就会开始进入深睡。如果正好在深睡的时候被叫醒，大脑还没有准备好，人就会觉得特别难受。所以专家建议，午睡最好不要超过二三十分钟。",
+   "那么，怎样才能不睡过头呢？有一个有趣的方法：午睡之前先喝一杯咖啡，然后马上睡觉。听起来很奇怪，对吧？其实，咖啡喝下去以后，要过大约二十分钟才会起作用。等你睡了二十分钟，咖啡正好开始让你变得清醒，你就能轻松地醒过来了。当然，晚上睡得不好的人最好别试这个方法。",
+   "另外，午睡的方式也很重要。很多上班族习惯在桌子上睡，时间长了，身体会很不舒服。如果条件允许，最好能躺下来，或者在椅子上舒舒服服地坐着睡。",
+   "总的来说，午睡就像给手机充电：充十几分钟，就能用一个下午；可是如果一直充个不停，也不一定是好事。找到适合自己的方法，才能让午睡真正帮到你。"
+  ],
+  "translations": [
+   "Ở Trung Quốc, nhiều người có thói quen ngủ trưa. Không ít trường học dành cho học sinh một khoảng thời gian nghỉ vào buổi trưa, có công ty cũng cho phép nhân viên ăn trưa xong được ngủ một lát tại chỗ ngồi. Thế nhưng cũng có người cho rằng ngủ ban ngày là lãng phí thời gian, mà càng ngủ càng mệt. Vậy rốt cuộc ngủ trưa có lợi hay không?",
+   "Các nhà khoa học phát hiện, tinh thần của con người trong một ngày không phải lúc nào cũng như nhau. Ngoài buổi tối ra, khoảng từ một đến ba giờ chiều con người cũng rất dễ buồn ngủ. Điều này không hoàn toàn do ăn no, mà là quy luật vốn có của cơ thể. Vì thế, dù không ăn trưa, nhiều người đến chiều vẫn muốn ngủ.",
+   "Nghiên cứu chứng minh, một giấc ngủ trưa hợp lý có thể giúp tinh thần tốt lên, trí nhớ cũng được cải thiện. Với học sinh, ngủ trưa xong rồi học thường học nhanh hơn, nhớ lâu hơn; với tài xế, ngủ mười mấy phút khi buồn ngủ có thể giảm tai nạn giao thông.",
+   "Tuy nhiên, ngủ trưa không phải càng dài càng tốt. Nhiều người từng trải qua chuyện này: buổi trưa định chỉ ngủ một lát, kết quả một mạch ngủ hơn một tiếng, tỉnh dậy chẳng những không tỉnh táo mà đầu còn nặng trĩu, tâm trạng cũng không tốt. Vì sao vậy?",
+   "Thì ra, sau khi ngủ, con người sẽ dần đi từ \"ngủ nông\" vào \"ngủ sâu\". Thông thường, sau khi ngủ khoảng hai ba mươi phút, người ta sẽ bắt đầu vào giấc ngủ sâu. Nếu bị gọi dậy đúng lúc đang ngủ sâu, não chưa chuẩn bị xong, người ta sẽ thấy rất khó chịu. Vì vậy chuyên gia khuyên ngủ trưa tốt nhất đừng quá hai ba mươi phút.",
+   "Vậy làm sao để không ngủ quá giờ? Có một cách thú vị: trước khi ngủ trưa hãy uống một cốc cà phê, rồi đi ngủ ngay. Nghe có vẻ kỳ lạ, đúng không? Thật ra, cà phê uống vào phải khoảng hai mươi phút sau mới phát huy tác dụng. Đợi bạn ngủ được hai mươi phút, cà phê vừa bắt đầu khiến bạn tỉnh táo, bạn sẽ dễ dàng thức dậy. Đương nhiên, người buổi tối ngủ không ngon thì tốt nhất đừng thử cách này.",
+   "Ngoài ra, cách ngủ trưa cũng rất quan trọng. Nhiều người đi làm quen ngủ gục trên bàn, lâu ngày cơ thể sẽ rất khó chịu. Nếu điều kiện cho phép, tốt nhất nên nằm xuống, hoặc ngồi thoải mái trên ghế mà ngủ.",
+   "Nói tóm lại, ngủ trưa giống như sạc điện thoại: sạc mười mấy phút là dùng được cả buổi chiều; nhưng nếu cứ sạc mãi không ngừng thì cũng chưa chắc đã tốt. Tìm được cách phù hợp với bản thân thì giấc ngủ trưa mới thật sự giúp được bạn."
+  ],
+  "questions": [
+   {
+    "q": "根据第二段，人下午容易困的主要原因是什么？",
+    "q_vi": "Theo đoạn 2, nguyên nhân chính khiến con người dễ buồn ngủ vào buổi chiều là gì?",
+    "options": [
+     "午饭吃得太多",
+     "晚上睡得太晚",
+     "身体本来就有这样的规律",
+     "下午的工作太无聊"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 2: không hoàn toàn do ăn no, mà là quy luật vốn có của cơ thể."
+   },
+   {
+    "q": "为什么午睡时间太长，醒来以后反而不舒服？",
+    "q_vi": "Vì sao ngủ trưa quá lâu, tỉnh dậy lại thấy khó chịu?",
+    "options": [
+     "因为可能在深睡的时候醒来",
+     "因为咖啡喝得太多",
+     "因为睡觉的地方太热",
+     "因为午饭没有吃饱"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 5: ngủ quá 20–30 phút sẽ vào giấc ngủ sâu, bị đánh thức lúc đó thì não chưa sẵn sàng nên khó chịu."
+   },
+   {
+    "q": "“午睡前喝咖啡”这个方法为什么有用？",
+    "q_vi": "Vì sao cách \"uống cà phê trước khi ngủ trưa\" lại có tác dụng?",
+    "options": [
+     "因为咖啡能让人马上睡着",
+     "因为咖啡大约二十分钟后才起作用，正好帮人醒来",
+     "因为咖啡可以让人睡得更久",
+     "因为喝了咖啡晚上就不用睡觉了"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 6: cà phê cần khoảng 20 phút mới có tác dụng, đúng lúc cần thức dậy."
+   },
+   {
+    "q": "作者把午睡比作“给手机充电”，想说明什么？",
+    "q_vi": "Tác giả ví ngủ trưa như \"sạc điện thoại\" để nói lên điều gì?",
+    "options": [
+     "午睡的时候应该给手机充电",
+     "不午睡的人手机用得更多",
+     "午睡时间越长越好",
+     "午睡时间短效果好，太长不一定好"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn cuối: sạc ít phút dùng cả buổi chiều, cắm mãi chưa chắc tốt – ngủ ngắn có lợi, ngủ quá dài không tốt."
+   }
+  ]
+ },
+ {
+  "id": "h4-05",
+  "level": 4,
+  "title": "没有手机的一天",
+  "title_vi": "Một ngày không có điện thoại",
+  "topic": "du lịch",
+  "paragraphs": [
+   "去年暑假，我一个人去西安旅游。西安是一座有三千多年历史的古城，到处都是名胜古迹。出发前，我在手机上查好了所有的信息：住哪个酒店、坐几路公共汽车、去哪家饭馆吃饭……我觉得，只要有手机，在中国旅游就一点儿问题也没有。",
+   "到西安的第二天，我打车去看兵马俑。下车的时候，我一边跟司机说“谢谢”，一边拿着地图往外走。车开走了大概五分钟，我才发现：我的手机不见了！",
+   "我马上紧张起来。在中国，手机实在太重要了。买票、坐车、吃饭、买水，几乎都是用手机付款，很多年轻人身上根本不带现金。我翻了翻钱包，里面只有二十块钱和一张银行卡。",
+   "那天下午，我在景区门口用二十块钱买了一个面包和一瓶水，然后坐公共汽车回到了市里。天快黑的时候，我又累又饿，走进酒店附近的一家小面馆。我不好意思地对老板说：“对不起，我的手机丢了，身上没有钱。我能先吃一碗面，明天再来付钱吗？”",
+   "老板是一位五十多岁的阿姨。她看了看我，什么也没问，就给我拿来了一大碗热乎乎的面，上面还放了一个鸡蛋。她说：“吃吧，出门在外，谁都会遇到麻烦。”我一边吃，一边差点儿哭了出来。",
+   "吃完饭，阿姨还用她的手机帮我给我的手机打了电话。电话响了很久，终于有人接了，原来是那位出租车司机！他说他也发现了座位上的手机，正在想办法联系我。第二天早上，他专门开车把手机送到了我住的酒店，一分钱也不要。",
+   "拿回手机以后，我第一件事就是去面馆付钱。可是阿姨笑着摆了摆手：“一碗面而已，不用了。”我坚持要给，她就说：“那你以后要是看到别人需要帮忙，也帮一把吧。”",
+   "离开西安的那天，我没有拍很多照片，可是这座城市留给我的印象比任何一张照片都深刻。我原来以为，旅游最重要的是看风景，后来才明白，让我们记住一个地方的，常常是那里的人。",
+   "现在，每次看到路上有人问路，或者有人在商店门口着急地找东西，我都会想起那碗面，然后走过去问一句：“需要帮忙吗？”"
+  ],
+  "translations": [
+   "Kỳ nghỉ hè năm ngoái, tôi đi du lịch Tây An một mình. Tây An là một cố đô có lịch sử hơn ba nghìn năm, đâu đâu cũng là danh lam thắng cảnh, di tích cổ. Trước khi đi, tôi đã tra sẵn mọi thông tin trên điện thoại: ở khách sạn nào, đi xe buýt số mấy, ăn ở quán nào… Tôi nghĩ, chỉ cần có điện thoại thì du lịch ở Trung Quốc chẳng có vấn đề gì cả.",
+   "Ngày thứ hai ở Tây An, tôi bắt taxi đi xem tượng binh mã. Lúc xuống xe, tôi vừa nói \"cảm ơn\" với bác tài vừa cầm bản đồ bước ra. Xe chạy đi được chừng năm phút, tôi mới phát hiện: điện thoại của tôi biến mất rồi!",
+   "Tôi lập tức cuống lên. Ở Trung Quốc, điện thoại thật sự quá quan trọng. Mua vé, đi xe, ăn uống, mua nước, hầu như đều thanh toán bằng điện thoại, nhiều người trẻ hoàn toàn không mang tiền mặt. Tôi lục ví, trong đó chỉ có hai mươi tệ và một chiếc thẻ ngân hàng.",
+   "Chiều hôm đó, tôi dùng hai mươi tệ mua một cái bánh mì và một chai nước ở cổng khu tham quan, rồi đi xe buýt về thành phố. Trời gần tối, tôi vừa mệt vừa đói, bước vào một quán mì nhỏ gần khách sạn. Tôi ngại ngùng nói với chủ quán: \"Xin lỗi, cháu mất điện thoại, trên người không có tiền. Cháu ăn trước một bát mì, mai quay lại trả tiền được không ạ?\"",
+   "Chủ quán là một cô ngoài năm mươi tuổi. Cô nhìn tôi, chẳng hỏi gì, liền bưng ra một bát mì to nóng hổi, bên trên còn đặt một quả trứng. Cô nói: \"Ăn đi cháu, ra ngoài xa nhà, ai mà chẳng có lúc gặp rắc rối.\" Tôi vừa ăn vừa suýt bật khóc.",
+   "Ăn xong, cô còn dùng điện thoại của cô gọi vào máy của tôi giúp. Chuông đổ rất lâu, cuối cùng cũng có người nhấc máy, hóa ra là bác tài xế taxi! Bác nói bác cũng đã thấy chiếc điện thoại trên ghế, đang tìm cách liên lạc với tôi. Sáng hôm sau, bác đặc biệt lái xe mang điện thoại đến tận khách sạn tôi ở, một đồng cũng không chịu nhận.",
+   "Lấy lại điện thoại xong, việc đầu tiên tôi làm là đến quán mì trả tiền. Nhưng cô cười xua tay: \"Có bát mì thôi mà, không cần đâu.\" Tôi nhất quyết đòi trả, cô bèn nói: \"Vậy sau này nếu cháu thấy ai cần giúp đỡ thì giúp người ta một tay nhé.\"",
+   "Hôm rời Tây An, tôi không chụp được nhiều ảnh, nhưng ấn tượng thành phố này để lại cho tôi còn sâu đậm hơn bất kỳ tấm ảnh nào. Trước đây tôi cứ nghĩ đi du lịch quan trọng nhất là ngắm cảnh, về sau mới hiểu, thứ khiến ta nhớ mãi một nơi thường là con người ở đó.",
+   "Bây giờ, mỗi lần thấy ai đó hỏi đường trên phố, hay có người cuống quýt tìm đồ trước cửa hàng, tôi đều nhớ đến bát mì ấy, rồi bước tới hỏi một câu: \"Bạn có cần giúp không?\""
+  ],
+  "questions": [
+   {
+    "q": "作者丢了手机以后为什么特别着急？",
+    "q_vi": "Vì sao sau khi mất điện thoại, tác giả đặc biệt sốt ruột?",
+    "options": [
+     "手机是朋友送的礼物",
+     "手机里有很多照片",
+     "在中国买东西几乎都用手机付款，她身上钱很少",
+     "她不认识回酒店的路"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 3: ở Trung Quốc hầu như mọi thứ đều trả bằng điện thoại, trong ví cô chỉ có 20 tệ."
+   },
+   {
+    "q": "面馆的阿姨是怎么做的？",
+    "q_vi": "Cô chủ quán mì đã làm gì?",
+    "options": [
+     "先让作者吃面，还帮她打电话找手机",
+     "让作者去银行取钱",
+     "让作者帮她洗碗",
+     "给作者打了一辆出租车"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 5–6: cô cho ăn mì không hỏi han gì, sau đó còn dùng máy mình gọi vào số của tác giả."
+   },
+   {
+    "q": "阿姨最后为什么不收作者的钱？",
+    "q_vi": "Cuối cùng vì sao cô chủ quán không nhận tiền của tác giả?",
+    "options": [
+     "因为面很便宜",
+     "因为作者是外国人",
+     "因为司机已经替作者付了钱",
+     "因为她希望作者以后也去帮助别人"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 7: cô bảo sau này thấy ai cần giúp thì giúp người ta – cô muốn lòng tốt được truyền đi."
+   },
+   {
+    "q": "这篇文章主要想表达什么？",
+    "q_vi": "Bài văn chủ yếu muốn thể hiện điều gì?",
+    "options": [
+     "去西安旅游一定要带现金",
+     "让人记住一个地方的常常是那里的人",
+     "出租车司机都很诚实",
+     "旅游的时候不应该用手机"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 8: điều khiến ta nhớ một nơi thường là con người ở đó – đây là ý chính."
+   }
+  ]
+ }
+]
