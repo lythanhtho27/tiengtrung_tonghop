@@ -79,6 +79,23 @@
         .due-badge.zero { background: var(--ui-success-soft); color: var(--ui-success); }
         .review-total { font-size: 28px; font-weight: 700; }
 
+        /* Buổi học hôm nay (lối vào chính) */
+        .today-banner {
+            display: flex; align-items: center; gap: 16px; margin-bottom: 16px; padding: 16px 20px;
+            border-radius: var(--ui-radius-lg); background: var(--ui-primary); color: var(--ui-on-primary);
+            box-shadow: var(--ui-shadow); transition: transform var(--ui-transition), background var(--ui-transition);
+        }
+        .today-banner:hover { background: var(--ui-primary-hover); transform: translateY(-1px); }
+        .today-banner .tb-play { width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; font-size: 20px; background: rgba(255,255,255,.18); }
+        .today-banner .tb-main { flex: 1; min-width: 0; }
+        .today-banner strong { display: block; font-size: 19px; line-height: 1.25; }
+        .today-banner .tb-steps { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+        .today-banner .tb-step { font-size: 12.5px; font-weight: 600; padding: 2px 10px; border-radius: 99px; background: rgba(255,255,255,.16); white-space: nowrap; }
+        .today-banner .tb-step.ok { background: rgba(255,255,255,.92); color: var(--ui-success); }
+        .today-banner .tb-due { text-align: center; flex-shrink: 0; }
+        .today-banner .tb-due b { display: block; font-size: 28px; line-height: 1.1; }
+        .today-banner .tb-due span { font-size: 12px; opacity: .9; }
+
         /* Lộ trình 4 chặng */
         .stages { display: flex; flex-direction: column; gap: 14px; position: relative; }
         .stage { display: grid; grid-template-columns: 54px 1fr; gap: 14px; }
@@ -142,6 +159,9 @@
             .stage:not(:last-child) .stage-num::after { top: 44px; left: 19px; }
             .card { padding: 16px; }
             .hero-main h1 { font-size: 21px; }
+            .today-banner { padding: 14px 16px; gap: 12px; }
+            .today-banner .tb-play { display: none; }
+            .today-banner strong { font-size: 17px; }
         }
     </style>
 </head>
@@ -158,6 +178,11 @@
     </header>
 
     <main class="container">
+        <a class="today-banner" id="today-banner" href="hom_nay/hom_nay.html">
+            <span class="tb-play">▶</span>
+            <span class="tb-main"><strong>Buổi học hôm nay</strong><span class="tb-steps" id="tb-steps"></span></span>
+            <span class="tb-due"><b id="tb-due">0</b><span>thẻ cần ôn</span></span>
+        </a>
         <section class="hero">
             <div class="card hero-main" id="hero-main"></div>
             <div class="card">
@@ -272,6 +297,28 @@
             const d = P[r.key].due || 0;
             return `<li><a href="${r.url}"><span>${r.name}</span><span class="due-badge ${d ? "" : "zero"}">${d ? fmt(d) : "✓"}</span></a></li>`;
         }).join("");
+
+        // ----- Buổi học hôm nay: đếm nhanh thẻ đến hạn ở mọi nguồn SRS (không gộp trùng) + trạng thái 3 bước
+        (function todayBanner() {
+            const read = k => { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (e) { return null; } };
+            const now = Date.now(), d0 = new Date(), dk = d0.getFullYear() + "-" + String(d0.getMonth() + 1).padStart(2, "0") + "-" + String(d0.getDate()).padStart(2, "0");
+            const countDue = m => { let n = 0; for (const id in (m || {})) { const c = m[id]; if (c && c.due <= now) n++; } return n; };
+            const hs = read("hsk_lotrinh_v1") || {}, bl = read("boya_learning_progress_v2") || {}, tvd = read("boya_tv_days") || {};
+            const wp = read("hsk_wl_json_progress_v2") || {}, lt = read("luyen_tap_v1") || {}, hn = read("hom_nay_v1") || {};
+            const my = (read("hoc_mywords_v1") || {}).words || {};
+            let due = countDue(hs.srs) + countDue(bl.srs) + countDue(read("boya_tv_srs")) + countDue(read("hsk_wl_srs_v3"));
+            for (const k in my) if (my[k] && my[k].card && my[k].card.due <= now) due++;
+            const steps = ((hn.days || {})[dk] || {}).steps || {};
+            const day = (o) => (o || {})[dk] || {};
+            const newN = (day(hs.days).n || 0) + (day(bl.days).n || 0) + (day(bl.days).c || 0) + (day(tvd).n || 0) + (wp.daily && wp.daily.d === dk ? wp.daily.n || 0 : 0);
+            const st = [
+                ["Ôn tập", !due || !!steps.review],
+                ["Học bài mới", newN > 0 || !!steps.learn],
+                ["Luyện tập", (day(lt.days).n || 0) >= 10 || !!steps.practice],
+            ];
+            document.getElementById("tb-due").textContent = fmt(due);
+            document.getElementById("tb-steps").innerHTML = st.map((x, i) => `<span class="tb-step ${x[1] ? "ok" : ""}">${x[1] ? "✓" : i + 1} ${x[0]}</span>`).join("");
+        })();
 
         // ----- Lộ trình
         document.getElementById("stages").innerHTML = stages.map((s, i) => {

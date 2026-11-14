@@ -45,6 +45,7 @@
         timed: null,               // { start, lid, idx, timerId, prevPinyin, run }
         timedResult: null,         // kết quả lần đọc vừa xong (hiển thị)
         shadow: null,              // nghe-nhại: { el, round, timer }
+        lookupOn: true,            // chạm vào chữ Hán trong bài khóa để tra từ
 
         // Filters
         sidebarFilter: 'all',      // 'all' | 'todo' | 'done'
@@ -169,6 +170,7 @@
                 if (parsed.readingLayout) state.readingLayout = parsed.readingLayout;
                 if (parsed.pinyinVisible !== undefined) state.pinyinVisible = parsed.pinyinVisible;
                 if (parsed.quizSubMode) state.quizSubMode = parsed.quizSubMode;
+                if (parsed.lookupOn !== undefined) state.lookupOn = !!parsed.lookupOn;
                 // Mặc định bản dịch luôn thu gọn để người học tự luyện đọc trước
                 state.transVisible = false;
             }
@@ -227,7 +229,8 @@
                 readingLayout: state.readingLayout,
                 pinyinVisible: state.pinyinVisible,
                 transVisible: state.transVisible,
-                quizSubMode: state.quizSubMode
+                quizSubMode: state.quizSubMode,
+                lookupOn: state.lookupOn
             };
             localStorage.setItem(STORAGE_KEY_SETTINGS, JSON.stringify(sett));
         } catch (e) {}
@@ -831,6 +834,7 @@
         if (state.activeMode !== 'quiz' && state.activeMode !== 'test') state.quiz = null;
         if (state.activeMode !== 'test') state.testStarted = false;
         sentinelCheck = null;
+        closeLookup();
 
         switch (state.activeMode) {
             case 'reading': renderReadingStudio(); break;
@@ -1167,6 +1171,9 @@
             </div>
         ` : '';
 
+        closeLookup();
+        if (state.lookupOn) loadDict(); // nạp lười từ điển khi mở Bài khóa lần đầu
+
         const displayHtml = state.readingLayout === 'interlinear'
             ? buildInterlinearReadingHtml(processedHtml, reading.translations || [])
             : processedHtml;
@@ -1190,6 +1197,10 @@
 
                         <button class="rt-btn ${state.clozeMode ? 'active' : ''}" id="btnToggleCloze" title="Ôn bài khóa: che các từ vựng của bài, chạm vào ô để hiện lại">
                             🙈 Che từ vựng${state.clozeMode ? `: ${clozeCount}` : ''}
+                        </button>
+
+                        <button class="rt-btn ${state.lookupOn ? 'active' : ''}" id="btnToggleLookup" title="Chạm vào chữ Hán trong bài để tra nghĩa và thêm vào Từ của tôi (tắt: chạm để nghe phát âm)">
+                            🔍 Chạm để tra: <strong>${state.lookupOn ? 'Bật' : 'Tắt'}</strong>
                         </button>
 
                         <select class="rt-btn" id="selectReadingLayout" title="Bố cục hiển thị bản dịch">
@@ -1220,7 +1231,7 @@
                         <h2 class="reading-passage-title">${escapeHtml(reading.title)}</h2>
                     </div>
 
-                    <div class="chinese-text-content ${state.pinyinVisible ? '' : 'hide-pinyin'} font-${state.fontStyle} layout-${state.readingLayout}"
+                    <div class="chinese-text-content ${state.pinyinVisible ? '' : 'hide-pinyin'} font-${state.fontStyle} layout-${state.readingLayout}${state.lookupOn ? ' lookup-on' : ''}"
                          id="chineseTextContent"
                          style="--reading-font-size: ${state.fontSize}px;">
                         ${displayHtml}
@@ -1380,7 +1391,7 @@
                 saveSettings();
                 const content = document.getElementById('chineseTextContent');
                 if (content) {
-                    content.className = `chinese-text-content ${state.pinyinVisible ? '' : 'hide-pinyin'} font-${state.fontStyle} layout-${state.readingLayout}`;
+                    content.className = `chinese-text-content ${state.pinyinVisible ? '' : 'hide-pinyin'} font-${state.fontStyle} layout-${state.readingLayout}${state.lookupOn ? ' lookup-on' : ''}`;
                 }
             });
         }
@@ -1407,10 +1418,27 @@
             });
         }
 
-        // Chạm vào chữ Hán để nghe phát âm
+        // Công tắc "Chạm để tra"
+        const btnLookup = document.getElementById('btnToggleLookup');
+        if (btnLookup) {
+            btnLookup.addEventListener('click', () => {
+                state.lookupOn = !state.lookupOn;
+                saveSettings();
+                renderReadingStudio();
+                showToast(state.lookupOn ? '🔍 Chạm vào chữ Hán bất kỳ để tra nghĩa' : 'Đã tắt tra từ — chạm vào chữ để nghe phát âm');
+            });
+        }
+
+        // Chạm vào chữ Hán: tra từ (khi bật "Chạm để tra"), không thì nghe phát âm
         dom.modeContainer.querySelectorAll('#chineseTextContent ruby').forEach(rb => {
-            rb.addEventListener('click', () => {
+            rb.addEventListener('click', (e) => {
                 if (rb.closest('.cloze-hidden-word:not(.revealed)')) return;
+                if (state.lookupOn) {
+                    // không để ô "Che từ vựng" đã mở bị che lại khi đang tra
+                    e.stopPropagation();
+                    openLookup(rb);
+                    return;
+                }
                 const clone = rb.cloneNode(true);
                 clone.querySelectorAll('rt').forEach(r => r.remove());
                 const text = clone.textContent.trim();
@@ -1515,6 +1543,309 @@
         return { html: out, count: gid };
     }
 
+    // --------------------------------------------------------------------------
+    // Tra từ trong bài khóa: chạm vào chữ Hán → tìm từ dài nhất (HOC_DICT) chứa chữ đó,
+    // hiện khung tra (desktop: nổi cạnh chữ; điện thoại ≤720px: bottom sheet), thêm vào "Từ của tôi".
+    // --------------------------------------------------------------------------
+    const BOOK_SHORT = { tc1: 'Chuẩn TC1', tc2: 'Chuẩn TC2', tc3: 'TC1', tc4: 'TC2', gc1: 'Cao cấp 1', gc2: 'Cao cấp 2' };
+    let dictLoad = 0;              // 0 chưa nạp, 1 đang nạp, 2 xong, 3 lỗi
+    const dictWaiters = [];
+    let LK = null;                 // { units, idx, words, anchor, cands, cur }
+    let lkPop = null;
+
+    // Nạp lười shared/dict_vi.js (~0,9MB) bằng thẻ <script> (chạy được qua file://)
+    function loadDict(cb) {
+        if (window.HOC_DICT) { dictLoad = 2; if (cb) cb(); return; }
+        if (cb) dictWaiters.push(cb);
+        if (dictLoad === 1) return;
+        dictLoad = 1;
+        const s = document.createElement('script');
+        s.src = '../shared/dict_vi.js';
+        s.async = true;
+        const done = ok => {
+            dictLoad = ok && window.HOC_DICT ? 2 : 3;
+            dictWaiters.splice(0).forEach(fn => { try { fn(); } catch (e) { console.error(e); } });
+        };
+        s.onload = () => done(true);
+        s.onerror = () => done(false);
+        document.head.appendChild(s);
+    }
+
+    function isHan(ch) { return /\p{Script=Han}/u.test(ch); }
+    function lowerPy(p) { return String(p || '').trim().toLowerCase(); }
+
+    // Nghĩa trong bảng từ của bài: "THƯƠNG TRƯỜNG (chợ, thị trường) /" → { hv, vi }
+    function splitLessonMean(mean) {
+        const m0 = cleanMean(mean);
+        const m = /^(.+?)\s*[(（](.*)[)）]$/.exec(m0);
+        if (m && /\p{L}/u.test(m[1]) && m[1] === m[1].toUpperCase() && m[1] !== m[1].toLowerCase()) {
+            return { hv: m[1].trim(), vi: m[2].trim() };
+        }
+        return { hv: '', vi: m0 };
+    }
+
+    // Văn bản của đoạn chứa chữ được chạm: mỗi phần tử { ch, el (ruby|null), py, brk }
+    // brk = true: không được ghép vào từ (dấu câu, chữ đang bị "Che từ vựng")
+    function collectUnits(para) {
+        const units = [];
+        const walker = document.createTreeWalker(para, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+            const p = node.parentElement;
+            if (!p || p.closest('rt')) continue;
+            const rb = p.closest('ruby');
+            const hidden = !!p.closest('.cloze-hidden-word:not(.revealed)');
+            if (rb && para.contains(rb)) {
+                const rt = rb.querySelector('rt');
+                const py = rt ? lowerPy(rt.textContent) : '';
+                for (const ch of node.textContent) {
+                    if (/\s/.test(ch)) continue;
+                    units.push({ ch, el: rb, py, brk: hidden || !isHan(ch) });
+                }
+            } else {
+                for (const ch of node.textContent) {
+                    if (/\s/.test(ch)) continue;
+                    units.push({ ch, el: null, py: '', brk: true });
+                }
+            }
+        }
+        return units;
+    }
+
+    // Bảng từ mới của bài hiện tại: hz (đã bỏ ngoặc) → word
+    function lessonWordMap() {
+        const map = new Map();
+        (getActiveLesson().words || []).forEach(w => {
+            const h = cleanHz(w.hz);
+            if (h && !map.has(h)) map.set(h, w);
+        });
+        return map;
+    }
+
+    // Mọi từ (trong từ điển hoặc bảng từ của bài) chứa vị trí idx; từ dài nhất đứng đầu
+    function findCandidates(units, idx, words) {
+        const D = window.HOC_DICT || null;
+        const W = (D && D.w) || {};
+        let m = (D && D.m) || 8;
+        words.forEach((_, h) => { m = Math.max(m, h.length); });
+        const out = [];
+        const seen = new Set();
+        for (let s = Math.max(0, idx - m + 1); s <= idx; s++) {
+            let str = '';
+            let ok = true;
+            for (let k = s; k < idx; k++) { if (units[k].brk) { ok = false; break; } str += units[k].ch; }
+            if (!ok) continue;
+            for (let e = idx; e < units.length && e - s < m; e++) {
+                if (units[e].brk) break;
+                str += units[e].ch;
+                if (seen.has(str)) continue;
+                if (Object.prototype.hasOwnProperty.call(W, str) || words.has(str)) {
+                    seen.add(str);
+                    out.push({ s, e: e + 1, hz: str, lw: words.get(str) || null, d: W[str] || null });
+                }
+            }
+        }
+        // dài hơn đứng trước; cùng độ dài thì ưu tiên từ của bài, rồi từ bắt đầu sớm hơn
+        out.sort((a, b) => (b.hz.length - a.hz.length) || ((b.lw ? 1 : 0) - (a.lw ? 1 : 0)) || (a.s - b.s));
+        const ch = units[idx].ch;
+        if (!seen.has(ch)) out.push({ s: idx, e: idx + 1, hz: ch, lw: null, d: null });
+        return out;
+    }
+
+    // Thông tin hiển thị của một cách tách
+    function lookupInfo(c, units) {
+        const D = window.HOC_DICT || {};
+        const C = D.c || {};
+        const chars = [];
+        for (let k = c.s; k < c.e; k++) {
+            const u = units[k];
+            const ci = C[u.ch] || null;
+            chars.push({ ch: u.ch, py: u.py || (ci ? ci[0] : ''), hv: ci ? (ci[1] || '') : '' });
+        }
+        let py = '', hv = '', vi = '';
+        if (c.d) { py = c.d[0] || ''; hv = c.d[1] || ''; vi = c.d[2] || ''; }
+        if (c.lw) {
+            const sp = splitLessonMean(c.lw.mean);
+            py = c.lw.py || py;
+            vi = sp.vi || vi;
+            hv = sp.hv || hv;
+        }
+        if (!py) py = chars.map(x => x.py).join('');
+        if (!hv && chars.length === 1) hv = chars[0].hv;
+        if (!hv && chars.length > 1 && chars.every(x => x.hv)) hv = chars.map(x => x.hv).join(' ');
+        return { hz: c.hz, py, hv: String(hv || '').toUpperCase(), vi, chars, isLesson: !!c.lw };
+    }
+
+    // Câu (giữa các dấu 。！？) chứa từ, lấy từ văn bản của đoạn
+    function sentenceOf(units, s, e) {
+        const END = /[。！？!?]/;
+        let a = s, b = e;
+        while (a > 0 && !END.test(units[a - 1].ch)) a--;
+        while (b < units.length && !END.test(units[b - 1].ch)) b++;
+        // lấy cả dấu đóng ngoặc / ngoặc kép ngay sau dấu kết câu
+        while (b < units.length && /[”」』）)"’]/.test(units[b].ch)) b++;
+        return units.slice(a, b).map(u => u.ch).join('')
+            .replace(/【\d+】/g, '').replace(/^[：:，,”」』）)]+/, '').trim();
+    }
+
+    function lookupOpen() { return !!(lkPop && lkPop.classList.contains('show')); }
+
+    function closeLookup() {
+        if (lkPop) lkPop.classList.remove('show', 'is-sheet');
+        document.querySelectorAll('#chineseTextContent ruby.lk-hl').forEach(r => r.classList.remove('lk-hl'));
+        LK = null;
+    }
+
+    function ensureLookupPop() {
+        if (lkPop) return lkPop;
+        lkPop = document.createElement('div');
+        lkPop.id = 'lookupPop';
+        lkPop.className = 'lookup-pop';
+        lkPop.setAttribute('role', 'dialog');
+        lkPop.setAttribute('aria-label', 'Tra từ');
+        document.body.appendChild(lkPop);
+        lkPop.addEventListener('click', (e) => {
+            // nội dung khung được vẽ lại → không để click này bị coi là "bấm ra ngoài"
+            e.stopPropagation();
+            const t = e.target.closest('button');
+            if (!t || !LK) return;
+            if (t.classList.contains('lk-close')) { closeLookup(); return; }
+            if (t.hasAttribute('data-alt')) { LK.cur = parseInt(t.getAttribute('data-alt'), 10) || 0; renderLookup(false); return; }
+            const info = lookupInfo(LK.cands[LK.cur], LK.units);
+            if (t.classList.contains('lk-speak')) { speakChinese(info.hz); return; }
+            if (t.classList.contains('lk-add')) toggleMyWord(info);
+        });
+        // Bấm ra ngoài khung thì đóng (trừ chữ trong bài khóa: chữ đó mở lượt tra mới)
+        document.addEventListener('click', (e) => {
+            if (!lookupOpen()) return;
+            const tg = e.target;
+            if (tg && tg.closest && (tg.closest('#lookupPop') || tg.closest('#chineseTextContent ruby'))) return;
+            closeLookup();
+        });
+        window.addEventListener('resize', () => { if (lookupOpen()) renderLookup(false); });
+        // Cuộn trang: khung nổi đi theo chữ; chữ đã cuộn khuất hẳn thì đóng
+        document.addEventListener('scroll', () => {
+            if (!lookupOpen() || lkPop.classList.contains('is-sheet') || !LK) return;
+            const r = LK.anchor.getBoundingClientRect();
+            if (!LK.anchor.isConnected || r.bottom < 0 || r.top > window.innerHeight) { closeLookup(); return; }
+            positionLookup();
+        }, true);
+        return lkPop;
+    }
+
+    function openLookup(rb) {
+        const content = rb.closest('#chineseTextContent');
+        if (!content) return;
+        if (LK && LK.anchor === rb && lookupOpen()) { closeLookup(); return; } // chạm lại cùng chữ: đóng
+        const para = rb.closest('.block') || rb.closest('.para-chinese') || content;
+        const units = collectUnits(para);
+        const idx = units.findIndex(u => u.el === rb && !u.brk);
+        if (idx < 0) return;
+        const words = lessonWordMap();
+        LK = { units, idx, words, anchor: rb, cands: findCandidates(units, idx, words), cur: 0 };
+        renderLookup(true);
+        if (!window.HOC_DICT) {
+            const my = LK;
+            loadDict(() => {
+                if (LK !== my) return;
+                LK.cands = findCandidates(LK.units, LK.idx, LK.words);
+                LK.cur = 0;
+                renderLookup(false);
+            });
+        }
+    }
+
+    function renderLookup(first) {
+        if (!LK) return;
+        const pop = ensureLookupPop();
+        const c = LK.cands[LK.cur];
+        const info = lookupInfo(c, LK.units);
+        const inBook = !!(window.HocMyWords && HocMyWords.has(info.hz));
+
+        // Tô sáng các chữ của từ đang tra
+        document.querySelectorAll('#chineseTextContent ruby.lk-hl').forEach(r => r.classList.remove('lk-hl'));
+        for (let k = c.s; k < c.e; k++) if (LK.units[k].el) LK.units[k].el.classList.add('lk-hl');
+
+        const noMean = !window.HOC_DICT && dictLoad !== 3 ? 'Đang tải từ điển…'
+            : (dictLoad === 3 ? 'Không tải được từ điển.' : 'Chưa có nghĩa trong từ điển.');
+        const alts = LK.cands.length > 1 ? `
+            <div class="lk-alts">
+                <span class="lk-label">Cách tách khác:</span>
+                ${LK.cands.map((a, i) => `<button type="button" class="lk-alt ${i === LK.cur ? 'active' : ''}" data-alt="${i}">${escapeHtml(a.hz)}</button>`).join('')}
+            </div>` : '';
+        const charsHtml = info.chars.length > 1 ? `
+            <div class="lk-chars">
+                ${info.chars.map(x => `
+                    <div class="lk-ch">
+                        <span class="lk-ch-hz">${escapeHtml(x.ch)}</span>
+                        <span class="lk-ch-py">${escapeHtml(x.py)}</span>
+                        <span class="lk-ch-hv">${escapeHtml(String(x.hv || '').toUpperCase()) || '—'}</span>
+                    </div>`).join('')}
+            </div>` : '';
+
+        pop.innerHTML = `
+            <div class="lk-head">
+                <div class="lk-word">
+                    <span class="lk-hz">${escapeHtml(info.hz)}</span>
+                    <span class="lk-py">${escapeHtml(info.py)}</span>
+                </div>
+                <button type="button" class="lk-close" aria-label="Đóng" title="Đóng (Esc)">✕</button>
+            </div>
+            ${info.isLesson ? `<div class="lk-tag">📘 Từ mới của bài</div>` : ''}
+            ${info.hv ? `<div class="lk-hv">${escapeHtml(info.hv)}</div>` : ''}
+            <div class="lk-vi">${info.vi ? escapeHtml(info.vi) : `<span class="lk-muted">${noMean}</span>`}</div>
+            ${charsHtml}
+            ${alts}
+            <div class="lk-actions">
+                <button type="button" class="lk-btn lk-speak">🔊 Nghe</button>
+                ${window.HocMyWords ? `<button type="button" class="lk-btn lk-add ${inBook ? 'is-in' : ''}">${inBook ? '✓ Đã trong sổ (bấm để bỏ)' : '＋ Thêm vào Từ của tôi'}</button>` : ''}
+            </div>`;
+
+        const sheet = !!(window.matchMedia && window.matchMedia('(max-width: 720px)').matches);
+        pop.classList.toggle('is-sheet', sheet);
+        pop.classList.add('show');
+        positionLookup();
+
+        // Điện thoại: chữ đang tra bị sheet che → cuộn chữ lên giữa màn hình
+        if (first && sheet && LK.anchor) {
+            const r = LK.anchor.getBoundingClientRect();
+            if (r.bottom > window.innerHeight - pop.offsetHeight - 8) LK.anchor.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }
+    }
+
+    // Desktop: đặt khung dưới (hoặc trên) chữ được chạm, không tràn khỏi màn hình
+    function positionLookup() {
+        if (!lkPop || !LK) return;
+        if (lkPop.classList.contains('is-sheet')) { lkPop.style.left = ''; lkPop.style.top = ''; return; }
+        const r = LK.anchor.getBoundingClientRect();
+        const vw = document.documentElement.clientWidth, vh = window.innerHeight;
+        const w = lkPop.offsetWidth, h = lkPop.offsetHeight;
+        let left = r.left + r.width / 2 - w / 2;
+        left = Math.max(8, Math.min(left, vw - w - 8));
+        let top = r.bottom + 8;
+        if (top + h > vh - 8 && r.top - h - 8 >= 8) top = r.top - h - 8;
+        top = Math.max(8, Math.min(top, vh - h - 8));
+        lkPop.style.left = Math.round(left) + 'px';
+        lkPop.style.top = Math.round(top) + 'px';
+    }
+
+    function toggleMyWord(info) {
+        if (!window.HocMyWords || !LK) return;
+        if (HocMyWords.has(info.hz)) {
+            HocMyWords.remove(info.hz);
+            showToast(`Đã bỏ "${info.hz}" khỏi Từ của tôi`);
+        } else {
+            const c = LK.cands[LK.cur];
+            const book = getActiveBook(), lesson = getActiveLesson();
+            HocMyWords.add({
+                hz: info.hz, py: info.py, hv: info.hv, vi: info.vi,
+                ex: sentenceOf(LK.units, c.s, c.e), exvi: '',
+                src: `Boya · ${BOOK_SHORT[book.id] || book.name} · Bài ${lesson.lesson_num}`
+            });
+            showToast(`✓ Đã thêm "${info.hz}" vào Từ của tôi — sẽ ôn ở trang Hôm nay`);
+        }
+        renderLookup(false);
+    }
 
     // ==========================================================================
     // 7. MODE 2: BẢNG TỪ VỰNG (VOCABULARY STUDIO)
@@ -3257,6 +3588,7 @@
             }
             // Escape closes modals
             if (e.key === 'Escape') {
+                if (lookupOpen()) { closeLookup(); return; }
                 closeSearchModal();
                 closeStatsModal();
                 closeSidebar();

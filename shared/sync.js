@@ -29,7 +29,7 @@
         "boya_learning_progress_v2", "boya_learning_settings_v1", "boya_learning_starred_words_v1",
         "boya_tv_srs", "boya_tv_progress", "boya_tv_settings", "boya_tv_days", "boya_tv_best", "boya_starred_words",
         "hsk_wl_srs_v3", "hsk_wl_json_progress_v2", "hsk_wl_gamify_data_v2", "hsk_wl_json_font_v2", "hsk_wl_json_tone_color_v2",
-        "luyen_tap_v1"
+        "luyen_tap_v1", "hoc_mywords_v1", "hom_nay_v1"
     ];
     var SYNC_PREFIXES = ["hoc_summary_v1:"];
 

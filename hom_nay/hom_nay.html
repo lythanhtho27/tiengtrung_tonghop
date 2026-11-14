@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buổi học hôm nay</title>
+    <meta name="description" content="Buổi học hằng ngày: ôn tập mọi từ đến hạn, học bài mới của chặng hiện tại và luyện tập 10 phút.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/theme.css">
+    <script src="../shared/theme.js"></script>
+    <script src="../shared/sync.js"></script>
+    <link rel="stylesheet" href="hom_nay.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="back" href="../index.html" title="Về trang chủ">←</a>
+            <div class="brand"><strong>Buổi học hôm nay</strong><small id="brand-date">Ôn tập · Bài mới · Luyện tập</small></div>
+            <button class="account-btn" data-hoc-account type="button">Đăng nhập</button>
+            <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Màn hình chính: checklist 3 bước -->
+        <section id="home">
+            <div class="card hero">
+                <div class="hero-top">
+                    <div>
+                        <div class="eyebrow" id="hero-date">Hôm nay</div>
+                        <h1 id="hero-title">Buổi học hôm nay</h1>
+                        <p class="muted" id="hero-note">Làm lần lượt 3 bước, khoảng 30–45 phút.</p>
+                    </div>
+                    <div class="streak" id="streak" title="Chuỗi ngày học: ngày có ôn ≥ 10 thẻ hoặc xong bước 2/3">
+                        <b id="streak-n">0</b><span>ngày liên tiếp</span>
+                    </div>
+                </div>
+                <div class="day-bar"><i id="day-bar"></i></div>
+            </div>
+
+            <ol class="steps">
+                <li class="step" id="step-review">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <div class="step-head">
+                            <h2>Ôn tập đến hạn</h2>
+                            <span class="tag" id="review-tag"></span>
+                        </div>
+                        <p class="muted" id="review-note">Đang đọc lịch ôn…</p>
+                        <div class="src-chips" id="review-src"></div>
+                        <div class="step-actions">
+                            <button class="btn btn-primary btn-lg" id="btn-review">▶ Bắt đầu ôn</button>
+                            <label class="field-inline">Mỗi phiên
+                                <select id="opt-limit">
+                                    <option value="20">20 thẻ</option>
+                                    <option value="50">50 thẻ</option>
+                                    <option value="100">100 thẻ</option>
+                                    <option value="0">Tất cả</option>
+                                </select>
+                            </label>
+                            <label class="check"><input type="checkbox" id="opt-speak"> Tự đọc khi lật thẻ</label>
+                        </div>
+                    </div>
+                </li>
+                <li class="step" id="step-learn">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <div class="step-head">
+                            <h2>Học bài mới</h2>
+                            <span class="tag" id="learn-tag"></span>
+                        </div>
+                        <p class="muted" id="learn-note"></p>
+                        <div class="lesson-list" id="learn-list"></div>
+                    </div>
+                </li>
+                <li class="step" id="step-practice">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <div class="step-head">
+                            <h2>Luyện tập 10 phút</h2>
+                            <span class="tag" id="practice-tag"></span>
+                        </div>
+                        <p class="muted" id="practice-note">Sắp xếp câu và nghe – viết bằng các từ bạn đã học. Làm ít nhất 10 câu.</p>
+                        <div class="step-actions">
+                            <a class="btn" id="btn-practice" href="../luyen_tap/luyen_tap.html">✍️ Mở trang Luyện tập</a>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Phiên ôn tập -->
+        <section id="review" hidden>
+            <div class="session-top">
+                <button class="btn btn-ghost" id="btn-quit" title="Kết thúc phiên (Esc)">✕</button>
+                <div class="progress"><i id="prog-bar"></i></div>
+                <span class="prog-text" id="prog-text">0/0</span>
+            </div>
+            <div class="fcard" id="fcard" tabindex="0">
+                <div class="fc-meta">
+                    <span class="fc-src" id="fc-src"></span>
+                    <span class="fc-again" id="fc-again" hidden>Ôn lại</span>
+                </div>
+                <div class="fc-front">
+                    <div class="fc-hz" id="fc-hz"></div>
+                    <button class="say" id="fc-say" title="Nghe phát âm" aria-label="Nghe phát âm">🔊</button>
+                </div>
+                <div class="fc-back" id="fc-back" hidden>
+                    <div class="fc-py" id="fc-py"></div>
+                    <div class="fc-hv" id="fc-hv"></div>
+                    <div class="fc-vi" id="fc-vi"></div>
+                    <div class="fc-ex" id="fc-ex"></div>
+                </div>
+                <div class="fc-hint" id="fc-hint">Chạm vào thẻ hoặc nhấn <kbd>Space</kbd> để lật</div>
+            </div>
+            <div class="rate-bar" id="rate-bar">
+                <button class="btn btn-primary btn-lg flip-btn" id="btn-flip">Lật thẻ <kbd>Space</kbd></button>
+                <div class="rate-row" id="rate-row" hidden>
+                    <button class="rate r1" data-rate="1"><b>Quên</b><small id="iv-1"></small><kbd>1</kbd></button>
+                    <button class="rate r2" data-rate="2"><b>Khó</b><small id="iv-2"></small><kbd>2</kbd></button>
+                    <button class="rate r3" data-rate="3"><b>Nhớ</b><small id="iv-3"></small><kbd>3</kbd></button>
+                    <button class="rate r4" data-rate="4"><b>Dễ</b><small id="iv-4"></small><kbd>4</kbd></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kết thúc phiên ôn -->
+        <section id="done" hidden>
+            <div class="card result-head">
+                <div class="score" id="res-score">0%</div>
+                <div>
+                    <h2 id="res-title">Xong phần ôn tập!</h2>
+                    <p class="muted" id="res-sub"></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="res-stats" id="res-stats"></div>
+            </div>
+            <div class="actions" id="res-actions"></div>
+        </section>
+    </main>
+
+    <div class="toast" id="toast" hidden></div>
+
+    <script src="../shared/progress.js"></script>
+    <script src="../shared/mywords.js"></script>
+    <script src="../luyen_tap/lt_data.js"></script>
+    <script src="../shared/dict_vi.js"></script>
+    <script src="hom_nay.js"></script>
+</body>
+</html>

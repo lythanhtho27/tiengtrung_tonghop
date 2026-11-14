@@ -18,7 +18,7 @@
         dword: { name: "Nghe – viết từ", ic: "🎧" },
         dsent: { name: "Nghe – viết câu", ic: "✍️" },
     };
-    const SRC_NAME = { hsk: "HSK", boya: "Boya", wl: "HSK 3.0" };
+    const SRC_NAME = { hsk: "HSK", boya: "Boya", wl: "HSK 3.0", my: "Từ của tôi" };
     const HAN = /[㐀-鿿]/;
     const DATA = window.LT_DATA || { words: {}, sents: [] };
 
@@ -72,6 +72,8 @@
         Object.keys(tv || {}).forEach(id => add(id, DATA.words[id], "boya", tv[id]));
         const wl = readJSON("hsk_wl_srs_v3", {});
         Object.keys(wl || {}).forEach(id => { const c = wl[id] || {}; add(id, [c.hz, c.py, c.vi], "wl", c); });
+        // Sổ "Từ của tôi" (shared/mywords.js): từ tự thêm khi tra trong bài khóa — dùng cho Nghe – viết từ
+        if (window.HocMyWords) HocMyWords.all().forEach(e => add("my:" + e.hz, [e.hz, e.py, e.vi], "my", e.card));
         return POOL;
     }
     function freePool(level) {     // chưa học gì / muốn luyện tự do: lấy toàn bộ từ HSK của cấp đó
@@ -497,7 +499,7 @@
     }
     function renderHome() {
         const pool = buildPool();
-        const bySrc = { hsk: 0, boya: 0, wl: 0 };
+        const bySrc = { hsk: 0, boya: 0, wl: 0, my: 0 };
         pool.forEach(w => { bySrc[w.src]++; });
         const parts = Object.keys(bySrc).filter(k => bySrc[k]).map(k => `${SRC_NAME[k]} ${bySrc[k].toLocaleString("vi-VN")}`);
         $("pool-note").innerHTML = pool.size

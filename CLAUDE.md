@@ -14,7 +14,9 @@ Bộ trang web học tiếng Trung (giáo trình **Boya** và từ vựng **HSK*
 ## Cấu trúc thư mục
 
 ```
-index.html            Trang chủ: banner dẫn tới từng trang
+index.html            Trang chủ: banner "Buổi học hôm nay" + lộ trình 4 chặng + công cụ
+hom_nay/              Buổi học hôm nay: ôn mọi thẻ đến hạn (gộp trùng) → bài mới → luyện tập
+  hom_nay.html/.css/.js
 audio/                MP3 bài khóa Boya (Trung cap 1–4, Cao cap 1–2), DÙNG CHUNG (~613MB)
 boya_learning/        Boya Learning: bài khóa 6 quyển + audio + từ vựng
   boya_learning.html/.css/.js, boya_data.js (+ .json)
@@ -29,9 +31,11 @@ hsk_lotrinh/          Lộ trình từ vựng HSK 1–6 (SRS, đọc nhanh)
 luyen_tap/            Luyện tập: sắp xếp câu (Việt→Trung), nghe – viết từ/câu, lấy từ đã học ở mọi trang
   luyen_tap.html/.css/.js, lt_data.js, lt_data_wl.js (sinh tự động)
 anh_ngu_3/            Bài luyện tiếng Anh HUTECH (an3*.html), trang độc lập, không liên quan tiếng Trung
-shared/               Tài nguyên dùng chung giữa các trang (theme, progress, sync)
+shared/               Tài nguyên dùng chung: theme, progress, sync, mywords (sổ Từ của tôi), dict_vi.js (từ điển, sinh tự động)
 tools/                Script sinh dữ liệu + dữ liệu nguồn
   extract_hsk_vocab.py, extract_vocab.py, word_list_data/HSK1-HSK6_full.xlsx
+  hanviet/            Bảng âm Hán Việt theo (chữ, pinyin): hv_1..3.tsv, overrides.tsv (sửa tay), hanviet.py
+  add_hanviet_wl.py, build_dict.py, build_luyen_tap.py
   scratch/            Script xử lý một lần (OCR, kiểm tra, sửa dữ liệu), chỉ để tham khảo
 ```
 
@@ -53,7 +57,9 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
   - Phần tử có `[data-ui-theme-toggle]` tự thành nút đổi theme. Class `.ui-theme-toggle` tự hiện 🌙/☀️.
   - Các tab tự đồng bộ theme với nhau. **Không tạo thêm theme riêng cho từng trang.**
 - **`progress.js`**: `HocProgress.save(page, {...})` / `load(page)` / `all()`, key `hoc_summary_v1:<page>`. Mỗi trang ghi một bản tóm tắt tiến độ (`next`, `nextUrl` tính từ thư mục gốc, `due`, `learned`, `groups`), và trang chủ đọc các bản tóm tắt này để vẽ lộ trình. Định dạng chi tiết ở đầu file.
-- **`sync.js`**: tài khoản và đồng bộ tiến độ (xem mục dưới). Nạp đồng bộ trong `<head>` ngay sau `theme.js`, trước script của trang. Đã gắn vào 5 trang: `index`, `hsk_lotrinh`, `boya_learning`, `tuvung`, `word_learning`.
+- **`sync.js`**: tài khoản và đồng bộ tiến độ (xem mục dưới). Nạp đồng bộ trong `<head>` ngay sau `theme.js`, trước script của trang. Đã gắn vào: `index`, `hom_nay`, `hsk_lotrinh`, `boya_learning`, `tuvung`, `word_learning`, `luyen_tap`.
+- **`mywords.js`**: sổ "Từ của tôi" (key `hoc_mywords_v1`), chứa các từ người học tự thêm khi tra trong bài khóa. Mỗi từ có thẻ SM-2 riêng (`schedule()` giống `hsk_lotrinh`). API: `HocMyWords.all/get/has/add/remove/update/due/schedule/ivLabel`. Thẻ được ôn ở `hom_nay`, và trang `luyen_tap` cũng dùng các từ này.
+- **`dict_vi.js`** (khoảng 0,9MB, sinh bởi `tools/build_dict.py`): `HOC_DICT = {m, w: {từ: [pinyin, HÁN VIỆT, nghĩa]}, c: {chữ: [pinyin, HÁN VIỆT]}}`, gộp khoảng 13.000 từ của HSK, Boya và HSK 3.0. Các trang nạp lười file này (`boya_learning` nạp khi mở Bài khóa).
 
 ## Tài khoản & đồng bộ (`shared/sync.js`, Supabase)
 
@@ -117,10 +123,40 @@ Không sửa tay các file dữ liệu sinh tự động. Sửa nguồn rồi ch
 |---|---|---|
 | `hsk_lotrinh/hsk_vocab_data.js` | `tools/word_list_data/HSK1-HSK6_full.xlsx` (sheet HSK1…HSK6, cột: STT, Từ mới, Phiên âm, Giải thích, Ví dụ, Phiên âm VD, Dịch) | `python tools/extract_hsk_vocab.py` (cần `openpyxl`, chạy từ đâu cũng được) |
 | `tuvung/vocab_data.js` / `.json` | `sach_boya/tc1.html` … `tc4.html` | `python tools/extract_vocab.py` ⚠️ Bản `vocab_data` hiện tại có vài chỗ đã được sửa tay (ví dụ câu ví dụ "精神～"). Chạy lại script sẽ mất các chỗ sửa đó, nên kiểm tra `git diff` trước khi giữ. |
+| Âm Hán Việt: cột 8 của `hsk_vocab_data.js`, trường `han_viet` của `word_learning/json_data/quyen_*` | `tools/hanviet/hv_*.tsv` + `overrides.tsv` (sửa âm sai ở `overrides.tsv`) | `extract_hsk_vocab.py` tự điền khi Excel không có `[..]`. Với HSK 3.0 chạy `python tools/add_hanviet_wl.py` (ghi cả `.json` lẫn `.js`, giữ định dạng; dùng `--force` để ghi đè). |
+| `shared/dict_vi.js` | dữ liệu 3 trang + `tools/hanviet/` | `python tools/build_dict.py` (chạy sau khi đổi dữ liệu hoặc âm Hán Việt) |
 | `luyen_tap/lt_data.js`, `lt_data_wl.js` | `hsk_lotrinh/hsk_vocab_data.js` (câu ví dụ), `boya_learning/boya_data.json` (từ + câu ví dụ ngữ pháp), `word_learning/json_data/quyen_*.json` (câu ví dụ) | `python tools/build_luyen_tap.py` (cần `pypinyin`, `jieba`). Chạy lại sau khi đổi dữ liệu ở các trang kia. |
 | `boya_learning/boya_data.js` / `.json` (phần Cao cấp gc1/gc2) | `tools/scratch/gc_rebuild/gc1_L01.json` … `gc2_L10.json`: chép từ PDF `pdf/高级飞翔篇1.pdf`, `2.pdf`, mỗi bài một file (có thể tách `_part_*.json`) gồm từ vựng, bài đọc + bản dịch và ngữ pháp | Từ thư mục gốc: `python tools/scratch/gc_rebuild/build_gc_books.py` (sinh `tools/scratch/gc1_book.json`, `gc2_book.json`, tự thêm ruby pinyin và câu ví dụ, cần `pypinyin`), rồi `python tools/scratch/merge_all_books.py`. **Không chạy `super_enrich.py`** vì script này thêm từ bịa vào Cao cấp. Quy cách chép nằm trong `gc_rebuild/BRIEF.md`. |
 
 Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHONIOENCODING=utf-8` để tránh lỗi `UnicodeEncodeError` (cp1252). Các script khác trong `tools/scratch/` vẫn dùng đường dẫn cũ (trước khi chuyển thư mục), phải sửa trước khi chạy lại.
+
+## Buổi học hôm nay (`hom_nay/`)
+
+- Trang chủ có banner dẫn vào, kèm số thẻ đến hạn đếm thô và trạng thái 3 bước.
+- **Bước 1 · Ôn tập:** gom thẻ đến hạn từ 5 nguồn rồi ôn kiểu flashcard (phím 1–4; trên điện thoại nút chấm điểm cố định ở đáy). Các nguồn:
+  - `hsk_lotrinh_v1.srs`
+  - `boya_learning_progress_v2.srs`
+  - `boya_tv_srs`
+  - `hsk_wl_srs_v3`
+  - `hoc_mywords_v1`
+- **Gộp trùng theo `cleanHz`:** mỗi chữ chỉ hỏi một lần, điểm chấm áp dụng cho mọi thẻ đến hạn của chữ đó.
+- **Ghi ngược đúng key của từng trang:**
+  - Mỗi nguồn dùng bản chép công thức `schedule` của chính trang đó, và cập nhật `rt`, bộ đếm ngày (`days`, `boya_tv_days`, `daily`) cùng streak Boya.
+  - Mỗi lần chấm, trang đọc lại key rồi mới ghi.
+  - Trang cũng sửa `due` trong tóm tắt `hoc_summary_v1:*`.
+  - **Khi đổi logic SRS ở một trang học, phải sửa bản chép tương ứng trong `hom_nay.js`.**
+- **Dữ liệu hiển thị:** `luyen_tap/lt_data.js` (id → chữ, nghĩa, câu ví dụ) và `shared/dict_vi.js` (Hán Việt). Thẻ Boya chỉ được lấy khi id có trong `LT_DATA.words`, nên phải chạy lại `build_luyen_tap.py` khi đổi dữ liệu Boya.
+- **Bước 2 · Học bài mới:** gợi ý bài tiếp theo của chặng hiện tại (logic chặng chép từ `index.html`). Xong khi hôm nay có học từ mới.
+- **Bước 3 · Luyện tập:** xong khi làm ≥ 10 câu ở `luyen_tap`.
+- **Key lưu:** `hom_nay_v1` = `{settings{limit, speak}, days{date:{r, ok, steps}}, streak}`. Streak tăng khi ôn ≥ 10 lượt hoặc xong bước 2/3. Tóm tắt ghi qua `HocProgress("hom_nay")`.
+- **Giới hạn:** XP/streak của HSK 3.0 (`hsk_wl_gamify_data_v2`) không được cộng khi ôn ở đây. Nếu tab trang gốc đang mở cùng lúc thì tab đó có thể ghi đè lên.
+
+## Tra từ trong bài khóa (`boya_learning`)
+
+- **Thao tác:** ở chế độ Bài khóa, bấm vào chữ Hán để mở khung tra (công tắc "🔍 Chạm để tra", lưu trong `boya_learning_settings_v1`; khi tắt thì bấm chữ để nghe như cũ).
+- **Cách tìm từ:** lấy từ dài nhất trong `HOC_DICT.w` hoặc trong bảng từ của bài có chứa chữ được bấm. Cùng độ dài thì ưu tiên từ của bài. Có mục "Cách tách khác" để chuyển, và phân tích từng chữ.
+- **Thêm vào ôn tập:** nút "＋ Thêm vào Từ của tôi" (`HocMyWords.add`, `ex` = câu chứa từ). Nút này có trong khung tra; giao diện là khung nổi trên máy tính, bottom sheet trên điện thoại.
+- **Phối hợp với tính năng cũ:** chữ đang bị "Che từ vựng" thì chỉ mở ô che, không tra. Đang đọc tính giờ vẫn tra được.
 
 ## Luyện tập (`luyen_tap/`)
 

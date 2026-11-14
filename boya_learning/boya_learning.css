@@ -4117,3 +4117,129 @@ html[data-theme="dark"] .sp-btn-stop { color: var(--ui-bg); }
     .book-pill-btn { padding: 6px 9px; gap: 4px; }
     .mode-tab-btn { padding: 10px 9px; gap: 5px; }
 }
+
+/* ==========================================================================
+   Tra từ trong bài khóa (chạm vào chữ Hán)
+   ========================================================================== */
+.chinese-text-content.lookup-on ruby { cursor: pointer; border-radius: 4px; }
+@media (hover: hover) {
+    .chinese-text-content.lookup-on ruby:hover { background: var(--primary-light); }
+}
+.chinese-text-content ruby.lk-hl,
+.chinese-text-content.lookup-on ruby.lk-hl {
+    background: var(--ui-highlight);
+    box-shadow: 0 0 0 1px var(--ui-highlight);
+    border-radius: 3px;
+}
+
+.lookup-pop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9000;
+    width: min(360px, calc(100vw - 16px));
+    max-height: min(70vh, 520px);
+    overflow-y: auto;
+    background: var(--ui-surface);
+    color: var(--ui-text);
+    border: 1px solid var(--ui-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--ui-shadow-lg);
+    padding: 14px 16px 14px;
+    font-family: var(--font-sans);
+    display: none;
+}
+.lookup-pop.show { display: block; animation: lkPop 0.16s ease-out; }
+@keyframes lkPop { from { transform: translateY(4px) scale(0.98); } to { transform: none; } }
+
+.lk-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.lk-word { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; min-width: 0; }
+.lk-hz { font-family: var(--ui-font-cn, var(--font-chinese)); font-size: 34px; line-height: 1.15; font-weight: 600; color: var(--ui-text); }
+.lk-py { font-size: 17px; font-weight: 600; color: var(--ui-pinyin); }
+.lk-close {
+    flex: none;
+    width: 32px; height: 32px;
+    border: none; border-radius: 50%;
+    background: var(--ui-surface-2);
+    color: var(--ui-muted);
+    font-size: 15px; cursor: pointer;
+}
+.lk-close:hover { background: var(--ui-surface-3); color: var(--ui-text); }
+.lk-tag {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 2px 9px;
+    border-radius: 9999px;
+    background: var(--primary-light);
+    border: 1px solid var(--primary-border);
+    color: var(--primary-text);
+    font-size: 12px; font-weight: 700;
+}
+.lk-hv { margin-top: 6px; font-size: 13px; font-weight: 700; letter-spacing: 0.4px; color: var(--ui-text-2); }
+.lk-vi { margin-top: 6px; font-size: 15px; line-height: 1.5; color: var(--ui-text); }
+.lk-muted { color: var(--ui-muted); font-style: italic; }
+.lk-chars { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.lk-ch {
+    display: flex; flex-direction: column; align-items: center;
+    min-width: 54px; padding: 5px 8px;
+    border-radius: var(--radius-md);
+    background: var(--ui-surface-2);
+    border: 1px solid var(--ui-border);
+}
+.lk-ch-hz { font-family: var(--ui-font-cn, var(--font-chinese)); font-size: 20px; line-height: 1.2; }
+.lk-ch-py { font-size: 12px; color: var(--ui-pinyin); font-weight: 600; }
+.lk-ch-hv { font-size: 10.5px; color: var(--ui-muted); font-weight: 700; letter-spacing: 0.3px; }
+.lk-alts { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 10px; }
+.lk-label { font-size: 12px; color: var(--ui-muted); }
+.lk-alt {
+    padding: 3px 10px;
+    border-radius: 9999px;
+    border: 1px solid var(--ui-border);
+    background: var(--ui-surface);
+    color: var(--ui-text);
+    font-family: var(--ui-font-cn, var(--font-chinese));
+    font-size: 15px; cursor: pointer;
+}
+.lk-alt:hover { border-color: var(--primary-border); background: var(--primary-light); }
+.lk-alt.active { background: var(--primary-strong); border-color: var(--primary-strong); color: var(--ui-on-primary); }
+.lk-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.lk-btn {
+    flex: 1 1 auto;
+    padding: 9px 12px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--ui-border);
+    background: var(--ui-surface-2);
+    color: var(--ui-text);
+    font-size: 13.5px; font-weight: 600; cursor: pointer;
+}
+.lk-btn:hover { background: var(--ui-surface-3); }
+.lk-add { background: var(--primary-strong); border-color: var(--primary-strong); color: var(--ui-on-primary); }
+.lk-add:hover { background: var(--primary-hover); }
+.lk-add.is-in { background: var(--ui-success-soft); border-color: var(--ui-success); color: var(--ui-success); }
+.lk-add.is-in:hover { background: var(--ui-surface-2); }
+
+/* Điện thoại: bottom sheet cố định ở đáy */
+.lookup-pop.is-sheet {
+    left: 0 !important;
+    right: 0;
+    top: auto !important;
+    bottom: 0;
+    width: 100%;
+    max-height: 75vh;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    border-bottom: none;
+    padding: 12px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+    z-index: 99990;               /* dưới toast (99999) để vẫn thấy thông báo */
+    animation: lkSheet 0.2s ease-out;
+}
+.lookup-pop.is-sheet::before {
+    content: '';
+    display: block;
+    width: 40px; height: 4px;
+    margin: 0 auto 10px;
+    border-radius: 2px;
+    background: var(--ui-border-strong);
+}
+.lookup-pop.is-sheet .lk-hz { font-size: 30px; }
+.lookup-pop.is-sheet .lk-actions { position: sticky; bottom: 0; background: var(--ui-surface); padding-top: 4px; }
+@keyframes lkSheet { from { transform: translateY(24px); } to { transform: none; } }

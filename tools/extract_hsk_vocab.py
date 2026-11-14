@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Trích xuất word_list_data/HSK1-HSK6_full.xlsx -> hsk_vocab_data.js
+(Hán Việt: lấy phần [..] trong cột phiên âm nếu có, không thì sinh từ tools/hanviet/)
 
 Chạy (từ bất kỳ đâu):  python tools/extract_hsk_vocab.py
 Mỗi từ: [level, hanzi, pinyin, nghĩa, ví dụ (Hán), ví dụ (pinyin), ví dụ (dịch), hán việt]
@@ -7,12 +8,15 @@ Mỗi từ: [level, hanzi, pinyin, nghĩa, ví dụ (Hán), ví dụ (pinyin), v
 import json
 import os
 import re
+import sys
 import openpyxl
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 SRC = os.path.join(HERE, "word_list_data", "HSK1-HSK6_full.xlsx")
 OUT = os.path.join(ROOT, "hsk_lotrinh", "hsk_vocab_data.js")
+sys.path.insert(0, os.path.join(HERE, "hanviet"))
+from hanviet import word_hv  # noqa: E402  (âm Hán Việt cho từ không ghi sẵn [..] trong file Excel)
 
 
 def clean(v):
@@ -41,6 +45,8 @@ def main():
             if hv:
                 hanviet = hv.group(1).strip()
                 pinyin = re.sub(r"\s*\[.+?\]\s*", " ", pinyin).strip()
+            if not hanviet:
+                hanviet = word_hv(hanzi)
             words.append([
                 level, hanzi, pinyin, clean(row[3]),
                 clean(row[4]), clean(row[5]), clean(row[6]), hanviet,
