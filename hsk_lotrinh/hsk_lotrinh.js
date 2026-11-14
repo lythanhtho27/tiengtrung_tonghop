@@ -489,10 +489,11 @@
         $("session").hidden = false;
         document.body.classList.add("no-scroll");
         $("ss-label").textContent = label;
-        setProgress(0);
+        setProgress(0, "");
     }
     function closeSession(force) {
         if (session && session.dirty && !force && !confirm("Thoát phiên học? Kết quả của phần đang làm sẽ không được lưu.")) return;
+        document.body.classList.remove("fb-open");
         if ("speechSynthesis" in window) speechSynthesis.cancel();
         if (session && session.timer) clearTimeout(session.timer);
         session = null;
@@ -501,7 +502,23 @@
         const active = document.querySelector(".tab.active");
         showView(active ? active.dataset.view : "path");
     }
-    function setProgress(p) { $("ss-bar").style.width = Math.round(p * 100) + "%"; }
+    // Thanh tiến độ dạng liền (học thẻ, ôn tập, đọc nhanh); count: chữ hiện bên phải, vd "3/10"
+    function setProgress(p, count) {
+        const tr = $("ss-track");
+        let bar = tr.querySelector(".ss-bar");
+        if (!bar) { tr.className = "ss-track"; tr.innerHTML = '<div class="ss-bar"></div>'; bar = tr.querySelector(".ss-bar"); }
+        bar.style.width = Math.round(Math.max(0, Math.min(1, p)) * 100) + "%";
+        if (count !== undefined) $("ss-count").textContent = count;
+        else if (p >= 1) $("ss-count").textContent = "✓ Xong";
+    }
+    // Thanh tiến độ dạng từng ô cho trắc nghiệm: mỗi câu một ô, xanh = đúng ngay, đỏ = sai, viền = câu hiện tại
+    function setSegments(marks, current, count) {
+        const tr = $("ss-track");
+        if (marks.length > 60) { setProgress(marks.filter(Boolean).length / marks.length, count); return; }
+        tr.className = "ss-track ss-seg";
+        tr.innerHTML = marks.map((m, i) => `<i class="${m || ""}${i === current ? " cur" : ""}"></i>`).join("");
+        $("ss-count").textContent = count;
+    }
     const body = () => $("ss-body");
 
     // ---------- Học bài: bước 1 - thẻ từ
@@ -536,7 +553,7 @@
     }
     function renderLearnCard() {
         const s = session, w = s.words[s.i];
-        setProgress(s.i / s.words.length * 0.4);
+        setProgress((s.i + 1) / s.words.length, `Thẻ ${s.i + 1}/${s.words.length}`);
         body().innerHTML = `<div class="step-tag">Bước 1/2 · Học từ mới</div>
             ${wordCardHTML(w, { counter: `<span class="muted">${s.i + 1} / ${s.words.length}</span>` })}
             <div class="btn-row center">
@@ -612,7 +629,9 @@
 
     // ---------- Engine trắc nghiệm dùng chung
     function runQuiz(cfg) {
-        const q = { cfg, queue: cfg.questions.slice(), total: cfg.questions.length, done: 0, firstTry: 0, attempts: {}, wrongWords: new Map(), answered: false };
+        const q = { cfg, queue: cfg.questions.slice(), total: cfg.questions.length, done: 0, firstTry: 0, attempts: {}, wrongWords: new Map(), answered: false,
+                    marks: cfg.questions.map(() => "") };
+        q.queue.forEach((x, i) => { x.qi = i; });
         session.quiz = q;
         renderQuestion();
     }
@@ -620,9 +639,10 @@
         const q = session.quiz;
         if (!q.queue.length) { q.cfg.onDone(quizResult(q)); return; }
         const cur = q.queue[0];
-        const base = q.cfg.progressBase || 0;
-        setProgress(base + (1 - base) * (q.done / q.total));
+        setSegments(q.marks, cur.qi, cur.retry ? `Làm lại · ${q.done}/${q.total}` : `Câu ${q.done + 1}/${q.total}`);
         q.answered = false;
+        q.answeredAt = 0;
+        document.body.classList.remove("fb-open");
         body().innerHTML = `<div class="step-tag">${q.cfg.title}${cur.retry ? " · <em>làm lại câu sai</em>" : ""}</div>
             <div class="quiz">
                 <div class="q-type">${QTYPES[cur.type]}</div>
@@ -634,7 +654,7 @@
         body().onclick = e => {
             const say = e.target.closest("[data-say]"); if (say) { speak(say.dataset.say); return; }
             const o = e.target.closest(".opt"); if (o && !q.answered) { answer(+o.dataset.i); return; }
-            if (e.target.closest("#btn-continue")) nextQuestion();
+            if (e.target.closest("#btn-continue")) tryContinue();
         };
     }
     function answer(i) {
@@ -644,12 +664,13 @@
         const btns = body().querySelectorAll(".opt");
         btns.forEach((b, k) => { b.disabled = true; if (k === cur.answer) b.classList.add("correct"); else if (k === i) b.classList.add("wrong"); });
         logAnswer(ok);
-        if (!cur.retry) { if (ok) q.firstTry++; }
+        if (!cur.retry) { if (ok) q.firstTry++; q.marks[cur.qi] = ok ? "ok" : "bad"; setSegments(q.marks, cur.qi, `Câu ${q.done + 1}/${q.total}`); }
         if (!ok) {
             q.wrongWords.set(cur.w.id, cur.w);
             if (q.cfg.retryWrong && !cur.retry) {
                 const again = makeQuestion(cur.w, cur.type, LEVELS[cur.w.level].words);
                 again.retry = true;
+                again.qi = cur.qi;
                 q.queue.splice(Math.min(q.queue.length, 4), 0, again);
             }
         }
@@ -659,11 +680,20 @@
             <div class="fb-word"><span class="fb-hz">${esc(w.hz)}</span> <span class="py">${esc(w.py)}</span> — ${esc(w.vi)}
                 <button class="say-btn sm" data-say="${esc(w.clean)}">🔊</button></div>
             ${!ok && w.ex ? `<div class="fb-ex">${highlight(w.ex, w.clean)}<br><small>${esc(w.exvi)}</small></div>` : ""}
-            <button class="btn btn-primary" id="btn-continue">Tiếp tục (Enter)</button>
+            <button class="btn btn-primary" id="btn-continue">Tiếp tục <span class="kbd-only">(Enter)</span></button>
         </div>`;
+        q.answeredAt = Date.now();
+        document.body.classList.add("fb-open");   // điện thoại: khung kết quả + nút Tiếp tục nổi ở đáy màn hình
         if (S.settings.speak && cur.type !== "listen") speak(w.clean);
     }
+    // Chặn chạm nhầm: bỏ qua lần bấm "Tiếp tục" trong 350ms đầu sau khi chọn đáp án
+    function tryContinue() {
+        const q = session && session.quiz;
+        if (!q || !q.answered || Date.now() - (q.answeredAt || 0) < 350) return;
+        nextQuestion();
+    }
     function nextQuestion() {
+        document.body.classList.remove("fb-open");
         const q = session.quiz;
         const cur = q.queue.shift();
         if (!cur.retry) q.done++;
@@ -840,7 +870,7 @@
     function renderReviewCard() {
         const s = session;
         if (!s.queue.length) { finishReview(); return; }
-        setProgress(s.done / s.total);
+        setProgress(s.done / s.total, `${Math.min(s.done + 1, s.total)}/${s.total}`);
         const item = s.queue[0], w = BY_ID.get(item.id), c = S.srs[item.id];
         const front = reviewFront(c, w);
         s.revealed = false;
@@ -959,7 +989,7 @@
         s.opts = shuffle([w, d]);
         s.answer = s.opts.indexOf(w);
         s.locked = false;
-        setProgress(s.i / s.list.length);
+        setProgress(s.i / s.list.length, `${s.i + 1}/${s.list.length}`);
         body().innerHTML = `<div class="speed">
             <div class="sp-top">
                 <span>Câu <b>${s.i + 1}</b>/${s.list.length}</span>
@@ -1216,7 +1246,7 @@
         if (session.quiz && body().querySelector(".quiz")) {
             const q = session.quiz;
             if (!q.answered && /^[1-4]$/.test(e.key)) { e.preventDefault(); answer(+e.key - 1); }
-            else if (q.answered && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); nextQuestion(); }
+            else if (q.answered && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); tryContinue(); }
             return;
         }
         if (session.kind === "unit" && body().querySelector(".wcard") && !session.quiz) {
