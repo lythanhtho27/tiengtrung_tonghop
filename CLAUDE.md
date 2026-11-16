@@ -247,6 +247,14 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
     - từ sai thì đến hạn ngay;
     - không bao giờ hạ cấp dữ liệu đã có.
   - Lưu `S.placement = {at, range, result}`.
+- **Đặt lại tiến độ:**
+  - Có nút ↺ ở ba mức: từng bài (trong hộp xem trước bài), từng chặng (đầu chặng), cả cấp (đầu bảng cấp). Thẻ Kiểm tra xếp lớp có thêm nút "↺ Hoàn tác".
+  - Ba chế độ đặt lại:
+    - `mark`: chỉ bỏ đánh dấu xong;
+    - `placed`: bỏ đánh dấu và xóa thẻ do kiểm tra xếp lớp tạo mà chưa ôn lần nào (`placed:true` và `last <= first`);
+    - `all`: xóa mọi thẻ ôn của các từ.
+  - Bài/chặng không bị xóa khỏi `S.units`/`S.stages` mà được ghi đè bằng `{done:false, best:0, at:now, reset:true}`. Nhờ có mốc thời gian mới, khi `sync.js` gộp dữ liệu sẽ chọn bản đã đặt lại và không khôi phục bản cũ.
+  - Hàm: `resetProgress`, `confirmReset`, `undoPlacement`.
 - **Phát âm:** Web Speech API (`speechSynthesis`, giọng `zh-CN`).
 - **Lưu ý CSS:** không dùng `opacity: 0` trong `@keyframes` cho phần tử được hiện ra từ `hidden` / `display:none`. Từng có lỗi thẻ bị kẹt ở trạng thái trong suốt, vì vậy các animation `pop` và `fade` chỉ dùng `transform`.
 

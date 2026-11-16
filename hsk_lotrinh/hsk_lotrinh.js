@@ -396,6 +396,7 @@
                 <p class="muted">${eta}</p>
             </div>
             <div class="lp-nums">
+                <button class="reset-btn reset-level" data-reset-level="${lv}" title="Đặt lại tiến độ HSK ${lv}">↺ Đặt lại HSK ${lv}</button>
                 <div><b>${s.unitsDone}/${L.units.length}</b><small>bài</small></div>
                 <div><b>${fmtNum(s.learned)}</b><small>đã học</small></div>
                 <div><b>${fmtNum(s.mastered)}</b><small>thuộc lâu</small></div>
@@ -412,7 +413,8 @@
         L.stages.forEach(st => {
             const done = st.units.filter(unitDone).length;
             html += `<div class="stage ${stageDone(st) ? "stage-done" : ""}" style="--c:${color}">
-                <div class="stage-head"><span>Chặng ${st.n + 1}</span><small>${done}/${st.units.length} bài${stageDone(st) ? " · đã qua kiểm tra" : ""}</small></div>
+                <div class="stage-head"><span>Chặng ${st.n + 1}</span><small>${done}/${st.units.length} bài${stageDone(st) ? " · đã qua kiểm tra" : ""}</small>
+                    ${done || stageDone(st) ? `<button class="reset-btn" data-reset-stage="${st.key}" title="Đặt lại chặng ${st.n + 1}">↺ Đặt lại</button>` : ""}</div>
                 <div class="nodes">`;
             st.units.forEach(u => {
                 const r = S.units[u.key];
@@ -449,6 +451,9 @@
             if (e.target.id === "btn-unlock") {
                 S.unlocked[lv] = true; S.lastLevel = lv; save(); renderPath(); toast("Đã mở khóa HSK " + lv); return;
             }
+            const rs = e.target.closest("[data-reset-stage]");
+            if (rs) { const st = L.stages.find(x => x.key === rs.dataset.resetStage); confirmReset(`HSK ${lv} · Chặng ${st.n + 1}`, st.units, [st]); return; }
+            if (e.target.closest("[data-reset-level]")) { confirmReset(`toàn bộ HSK ${lv}`, L.units, L.stages); return; }
             const nb = e.target.closest(".node"); if (!nb) return;
             if (nb.dataset.unit) {
                 const u = L.units.find(x => x.key === nb.dataset.unit);
@@ -472,15 +477,85 @@
             <p class="muted">${u.words.length} từ${r ? ` · Điểm cao nhất ${r.best}%` : ""}. Bấm vào từ để nghe phát âm.</p>
             <div class="table-wrap"><table class="wtable">${rows}</table></div>
             <div class="btn-row end">
+                ${r && (r.done || r.best) ? `<button class="btn btn-ghost-danger" data-go="reset" title="Bỏ đánh dấu hoàn thành bài này">↺ Đặt lại bài</button>` : ""}
                 ${r && r.done ? `<button class="btn" data-go="practice">Chỉ luyện tập</button>` : ""}
                 <button class="btn btn-primary" data-go="learn">${r && r.done ? "Học lại" : "Bắt đầu học"}</button>
             </div>`, e => {
             const tr = e.target.closest("tr[data-id]");
             if (tr) speak(BY_ID.get(tr.dataset.id).clean);
             const g = e.target.closest("[data-go]");
+            if (g && g.dataset.go === "reset") { const st = LEVELS[u.level].stages.find(x => x.units.includes(u)); confirmReset(`HSK ${u.level} · Bài ${u.n + 1}`, [u], st && stageDone(st) ? [st] : []); return; }
             if (g) { closeModal(); g.dataset.go === "learn" ? startUnit(u) : startUnit(u, true); }
         });
     }
+    // ================================================================ ĐẶT LẠI TIẾN ĐỘ (bài / chặng / cấp / hoàn tác xếp lớp)
+    // Không xóa hẳn bản ghi bài/chặng mà ghi đè bằng bản "đã đặt lại" có mốc thời gian mới, để khi đồng bộ
+    // giữa các máy (shared/sync.js gộp theo bản ghi mới hơn) dữ liệu cũ không bị khôi phục lại.
+    // mode: "mark" chỉ bỏ đánh dấu xong · "placed" bỏ đánh dấu + xóa thẻ do kiểm tra xếp lớp tạo mà chưa ôn lần nào
+    //       "all" bỏ đánh dấu + xóa mọi thẻ ôn của các từ (học lại từ đầu)
+    function untouchedPlacedCard(c) { return c && c.placed && (!c.last || !c.first || c.last <= c.first) && !c.lapses; }
+    function resetProgress(units, stages, mode) {
+        const now = Date.now();
+        let nu = 0, ns = 0, nc = 0;
+        units.forEach(u => {
+            if (S.units[u.key] && (S.units[u.key].done || S.units[u.key].best)) nu++;
+            S.units[u.key] = { done: false, best: 0, stars: 0, at: now, reset: true };
+            if (mode === "placed" || mode === "all") u.words.forEach(w => {
+                const c = S.srs[w.id];
+                if (c && (mode === "all" || untouchedPlacedCard(c))) { delete S.srs[w.id]; nc++; }
+            });
+        });
+        stages.forEach(st => {
+            if (S.stages[st.key] && S.stages[st.key].done) ns++;
+            S.stages[st.key] = { done: false, best: 0, at: now, reset: true };
+        });
+        save();
+        renderPath();
+        toast(`Đã đặt lại ${nu} bài${ns ? ", " + ns + " chặng" : ""}${nc ? ", xóa " + nc + " thẻ ôn" : ""}.`);
+    }
+    function confirmReset(title, units, stages) {
+        const placedUnits = units.filter(u => S.units[u.key] && S.units[u.key].placed).length;
+        const doneUnits = units.filter(unitDone).length;
+        const cards = units.reduce((a, u) => a + u.words.filter(w => S.srs[w.id]).length, 0);
+        const placedCards = units.reduce((a, u) => a + u.words.filter(w => untouchedPlacedCard(S.srs[w.id])).length, 0);
+        openModal(`<div class="modal-head"><h3>↺ Đặt lại ${esc(title)}</h3><button class="icon-btn" data-close>✕</button></div>
+            <p class="muted">${units.length} bài · ${doneUnits} bài đang đánh dấu xong${placedUnits ? ` (${placedUnits} bài do kiểm tra xếp lớp)` : ""} · ${cards} từ đang có thẻ ôn.</p>
+            <div class="reset-opts">
+                <label class="reset-opt"><input type="radio" name="rs-mode" value="placed" ${placedCards || placedUnits ? "checked" : ""}>
+                    <span><b>Bỏ đánh dấu + xóa thẻ do kiểm tra xếp lớp tạo</b><small>Khuyên dùng nếu bài bị đánh dấu nhầm sau kiểm tra xếp lớp. Xóa ${placedCards} thẻ chưa từng ôn; thẻ bạn đã tự học/ôn được giữ.</small></span></label>
+                <label class="reset-opt"><input type="radio" name="rs-mode" value="mark" ${placedCards || placedUnits ? "" : "checked"}>
+                    <span><b>Chỉ bỏ đánh dấu hoàn thành</b><small>Giữ nguyên lịch ôn tập của các từ, chỉ để học lại bài.</small></span></label>
+                <label class="reset-opt"><input type="radio" name="rs-mode" value="all">
+                    <span><b>Xóa hết, học lại từ đầu</b><small>Bỏ đánh dấu và xóa toàn bộ ${cards} thẻ ôn của các từ này (không hoàn tác được).</small></span></label>
+            </div>
+            <div class="btn-row end"><button class="btn" data-close>Hủy</button><button class="btn btn-reset-go" data-go="reset">↺ Đặt lại</button></div>`, e => {
+            if (!e.target.closest('[data-go="reset"]')) return;
+            const m = (document.querySelector('input[name="rs-mode"]:checked') || {}).value || "mark";
+            if (m === "all" && !confirm(`Xóa toàn bộ ${cards} thẻ ôn của ${title}? Không thể hoàn tác.`)) return;
+            closeModal();
+            resetProgress(units, stages, m);
+        });
+    }
+    // Hoàn tác kiểm tra xếp lớp: bỏ đánh dấu mọi bài/chặng có placed:true chưa học thật, xóa thẻ xếp lớp chưa ôn lần nào
+    function undoPlacement() {
+        const units = [], stages = [];
+        Object.keys(LEVELS).forEach(lv => LEVELS[lv].stages.forEach(st => {
+            if (S.stages[st.key] && S.stages[st.key].placed) stages.push(st);
+            st.units.forEach(u => { if (S.units[u.key] && S.units[u.key].placed) units.push(u); });
+        }));
+        const cards = Object.keys(S.srs).filter(id => untouchedPlacedCard(S.srs[id])).length;
+        if (!units.length && !stages.length && !cards) { toast("Không còn gì từ kiểm tra xếp lớp để hoàn tác."); return; }
+        if (!confirm(`Hoàn tác kiểm tra xếp lớp?\n• Bỏ đánh dấu ${units.length} bài và ${stages.length} chặng được đánh dấu bởi bài kiểm tra\n• Xóa ${cards} thẻ ôn do bài kiểm tra tạo mà bạn chưa ôn lần nào\nCác bài bạn tự học và thẻ đã ôn được giữ nguyên.`)) return;
+        const now = Date.now();
+        units.forEach(u => { S.units[u.key] = { done: false, best: 0, stars: 0, at: now, reset: true }; });
+        stages.forEach(st => { S.stages[st.key] = { done: false, best: 0, at: now, reset: true }; });
+        Object.keys(S.srs).forEach(id => { if (untouchedPlacedCard(S.srs[id])) delete S.srs[id]; });
+        if (S.placement) S.placement = Object.assign({}, S.placement, { undone: now });
+        save();
+        renderPath();
+        toast(`Đã hoàn tác: ${units.length} bài, ${stages.length} chặng, ${cards} thẻ.`);
+    }
+
     function statusLabel(s) {
         return { new: "Chưa học", learning: "Đang học", familiar: "Đã quen", mastered: "Thuộc lâu" }[s];
     }
@@ -1430,8 +1505,12 @@
                     ? `Đã làm ngày ${fmtDate(p.at)} (HSK 1–${p.range}${p.result ? `, đạt ${p.result.passed} bài` : ""}). Làm lại để cập nhật trình độ.`
                     : "Đã có nền tảng? Làm bài kiểm tra 15–20 phút để bỏ qua các bài đã biết."}</span>
             </div>
-            <button class="btn ${p && p.at ? "" : "btn-primary"} pl-cta-btn" id="btn-placement">${p && p.at ? "Làm lại" : "Bắt đầu"}</button>`;
+            <div class="pl-cta-acts">
+                <button class="btn ${p && p.at ? "" : "btn-primary"} pl-cta-btn" id="btn-placement">${p && p.at ? "Làm lại" : "Bắt đầu"}</button>
+                ${p && p.at && !p.undone ? `<button class="btn btn-ghost-danger pl-cta-btn" id="btn-placement-undo" title="Bỏ các đánh dấu do bài kiểm tra tạo">↺ Hoàn tác</button>` : ""}
+            </div>`;
         $("btn-placement").onclick = openPlacementIntro;
+        if ($("btn-placement-undo")) $("btn-placement-undo").onclick = undoPlacement;
     }
 
     // ---------- Luyện tập tự do (không ảnh hưởng tiến độ bài)
