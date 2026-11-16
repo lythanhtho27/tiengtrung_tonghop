@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../shared/theme.css">
     <script src="../shared/theme.js"></script>
     <script src="../shared/sync.js"></script>
+    <script src="../shared/tts.js"></script>
     <link rel="stylesheet" href="doc_them.css">
 </head>
 <body>
@@ -19,6 +20,7 @@
             <a class="back" id="btn-back" href="../index.html" title="Về trang chủ">←</a>
             <div class="brand"><strong id="brand-title">Đọc thêm</strong><small id="brand-sub">Bài đọc theo cấp · Bài của tôi · Bài khóa</small></div>
             <button class="account-btn" data-hoc-account type="button">Đăng nhập</button>
+            <button class="ui-voice-btn" data-hoc-voice title="Giọng đọc (chọn giọng, luân phiên, đọc nhập vai)" aria-label="Giọng đọc">🔊</button>
             <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
         </div>
     </header>
@@ -73,6 +75,8 @@
             <button class="tb" id="tb-tr" title="Bản dịch: tắt / từng đoạn / tất cả">🇻🇳 <span id="tb-tr-label">Dịch</span></button>
             <button class="tb" id="tb-lookup" title="Chạm chữ để tra từ">🔍 <span>Tra</span></button>
             <button class="tb" id="tb-listen" title="Nghe cả bài">🔊 <span>Nghe</span></button>
+            <button class="tb" id="tb-role" title="Đọc nhập vai: lời dẫn một giọng, lời thoại trong ngoặc kép hai giọng luân phiên"><span id="tb-role-ico">🎭</span> <span id="tb-role-label">Nhập vai</span></button>
+            <button class="tb tb-voice" id="tb-voice" data-hoc-voice title="Chọn giọng Người dẫn / Vai 1 / Vai 2" aria-label="Chọn giọng đọc">⚙</button>
             <label class="tb tb-select" title="Tốc độ đọc">
                 <select id="tb-rate">
                     <option value="0.6">0.6×</option>

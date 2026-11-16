@@ -161,6 +161,12 @@ a { color: inherit; }
 .doc-body { font-family: var(--cn); font-size: var(--rd-size); line-height: 2.05; }
 .para { margin: 0 0 6px; padding: 4px 0 2px; border-radius: 10px; }
 .para.playing { background: var(--ui-highlight); }
+/* Đọc nhập vai: viền + nhãn theo vai của đoạn đang đọc */
+.para.rp-on { position: relative; box-shadow: inset 3px 0 0 var(--rp-c, var(--primary)); padding-left: 10px; }
+.para.rp-on[data-rp="a"] { --rp-c: var(--ui-tone-1); }
+.para.rp-on[data-rp="b"] { --rp-c: var(--ui-tone-4); }
+.para.rp-on::before { content: attr(data-rp-label); position: absolute; bottom: 7px; left: 12px; z-index: 1; font: 700 10.5px/1 var(--ui-font-sans); text-indent: 0; letter-spacing: .02em; color: #fff; background: var(--rp-c, var(--primary)); border-radius: 99px; padding: 3px 7px; }
+.tb-voice { padding: 6px 8px; }
 .ptext { text-indent: 2em; word-break: break-all; }
 .para.title .ptext { text-indent: 0; text-align: center; font-weight: 700; }
 .para.attr .ptext { text-indent: 0; text-align: right; font-size: .8em; color: var(--muted); }
@@ -213,6 +219,7 @@ a { color: inherit; }
     .toolbar { padding: 7px 12px; }
     .tb span { display: none; }
     .tb#tb-timer span, .tb#tb-tr span { display: inline; }
+    .tb#tb-role #tb-role-ico, .tb#tb-role.on span { display: inline; }
     .timer-bar, .play-bar { top: 104px; }
     .ptext { text-indent: 0; }
 }

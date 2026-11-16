@@ -45,6 +45,7 @@
         timed: null,               // { start, lid, idx, timerId, prevPinyin, run }
         timedResult: null,         // kết quả lần đọc vừa xong (hiển thị)
         shadow: null,              // nghe-nhại: { el, round, timer }
+        roleplay: null,            // đọc nhập vai: { key, handle, para, role, moved }
         lookupOn: true,            // chạm vào chữ Hán trong bài khóa để tra từ
 
         // Filters
@@ -641,6 +642,7 @@
         state.vocabSearch = ''; state.grammarSearch = '';
         stopTimedReading(true);
         stopShadow();
+        stopRoleplay();
         saveSettings();
         updateUrl();
         publishSummary();
@@ -830,7 +832,7 @@
         if (state.activeMode !== 'podcast' && state.podcastRunning) stopPodcast();
         clearInterval(state.matchTimerId);
         state.matchTimerId = null;
-        if (state.activeMode !== 'reading') { stopTimedReading(true); stopShadow(); }
+        if (state.activeMode !== 'reading') { stopTimedReading(true); stopShadow(); stopRoleplay(); }
         if (state.activeMode !== 'quiz' && state.activeMode !== 'test') state.quiz = null;
         if (state.activeMode !== 'test') state.testStarted = false;
         sentinelCheck = null;
@@ -1039,6 +1041,7 @@
     }
 
     function startTimedReading() {
+        stopRoleplay();
         const hist = P.reading[readingKey(state.activeReadingIdx)] || [];
         const run = hist.length + 1;
         state.timedResult = null;
@@ -1140,9 +1143,90 @@
         loop();
     }
 
+    // Đọc nhập vai bằng HocTTS (shared/tts.js): lời dẫn = giọng người dẫn, lời trong “…”/「…」 = Vai 1/Vai 2.
+    // Dùng được cho mọi bài, đặc biệt các bài không có audio thật (ví dụ "Đọc thêm" của Cao cấp).
+    const RP_LABEL = { narrator: 'Dẫn', a: 'Vai 1', b: 'Vai 2' };
+    // Danh sách đoạn đọc được: mỗi .block có chữ Hán (bỏ pinyin trong <rt>, bỏ dòng nguồn "（根据…）")
+    function roleplayParas() {
+        const box = document.getElementById('chineseTextContent');
+        if (!box) return [];
+        const out = [];
+        box.querySelectorAll('.block').forEach(b => {
+            const c = b.cloneNode(true);
+            c.querySelectorAll('rt').forEach(r => r.remove());
+            const text = c.textContent.replace(/【\d+】/g, '').replace(/\s+/g, '').trim();
+            if (!/\p{Script=Han}/u.test(text) || /^[（(](根据|选自)/.test(text)) return;
+            out.push({ el: b.closest('.para-card') || b, text });
+        });
+        return out;
+    }
+    function clearRoleplayMarks() {
+        document.querySelectorAll('.rp-active').forEach(el => {
+            el.classList.remove('rp-active');
+            el.removeAttribute('data-rp');
+            el.removeAttribute('data-rp-label');
+        });
+    }
+    function markRoleplay(scroll) {
+        clearRoleplayMarks();
+        const r = state.roleplay;
+        if (!r || r.para < 0) return;
+        const p = roleplayParas()[r.para];
+        if (!p) return;
+        p.el.classList.add('rp-active');
+        p.el.setAttribute('data-rp', r.role);
+        p.el.setAttribute('data-rp-label', RP_LABEL[r.role] || '');
+        if (scroll) p.el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
+    function updateRoleplayBtn() {
+        const b = document.getElementById('btnRoleplay');
+        if (!b) return;
+        const on = !!state.roleplay;
+        b.classList.toggle('is-playing', on);
+        b.textContent = on ? '⏹ Dừng' : b.getAttribute('data-label');
+    }
+    function stopRoleplay() {
+        const r = state.roleplay;
+        if (!r) return;
+        state.roleplay = null;
+        try { if (r.handle) r.handle.stop(); } catch (e) { /* bỏ qua */ }
+        clearRoleplayMarks();
+        updateRoleplayBtn();
+    }
+    function startRoleplay() {
+        if (state.roleplay) { stopRoleplay(); return; }
+        if (!window.HocTTS || !HocTTS.readDialogue || !window.speechSynthesis) { showToast('Trình duyệt này không hỗ trợ đọc văn bản.'); return; }
+        if (state.timed) { showToast('Đang đọc tính giờ — bấm "Đọc xong" trước khi nghe nhập vai.'); return; }
+        // dừng các kiểu đọc khác đang chạy
+        stopShadow();
+        if (state.podcastRunning) stopPodcast();
+        if (dom.audioPlayer && !dom.audioPlayer.paused) dom.audioPlayer.pause();
+        const paras = roleplayParas();
+        if (!paras.length) { showToast('Phần này không có đoạn nào để đọc.'); return; }
+        const r = state.roleplay = { key: readingKey(state.activeReadingIdx), handle: null, para: -1, role: '', moved: false };
+        updateRoleplayBtn();
+        r.handle = HocTTS.readDialogue(paras.map(p => p.text), {
+            rate: 0.9,
+            onPara: (i) => { if (state.roleplay !== r) return; r.para = i; r.moved = true; },
+            onSeg: (seg) => {
+                if (state.roleplay !== r) return;
+                r.role = seg.role;
+                markRoleplay(r.moved);
+                r.moved = false;
+            },
+            onEnd: () => {
+                if (state.roleplay !== r) return;
+                stopRoleplay();
+                showToast('✓ Đã đọc nhập vai hết phần này');
+            }
+        });
+    }
+
     function renderReadingStudio() {
         const lesson = getActiveLesson();
         const book = getActiveBook();
+        // đổi bài / đổi phần thì dừng đọc nhập vai; vẽ lại cùng phần (đổi bố cục, bật tra…) thì giữ
+        if (state.roleplay && state.roleplay.key !== readingKey(state.activeReadingIdx)) stopRoleplay();
 
         if (!lesson.readings || lesson.readings.length === 0) {
             dom.modeContainer.innerHTML = `<div class="empty-state">Không có nội dung bài đọc cho bài này.</div>`;
@@ -1174,6 +1258,15 @@
         closeLookup();
         if (state.lookupOn) loadDict(); // nạp lười từ điển khi mở Bài khóa lần đầu
 
+        const rpLabel = reading.audio ? '🎭 Đọc nhập vai' : '🎭 Nghe đọc nhập vai';
+        const rpHtml = `
+                        ${reading.audio ? '' : `<span class="rp-noaudio-note" title="Phần này không có file audio">🔇 Không có audio</span>`}
+                        <span class="rp-group">
+                            <button class="rt-btn rp-btn ${reading.audio ? '' : 'audio-play-btn rp-noaudio'} ${state.roleplay ? 'is-playing' : ''}" id="btnRoleplay" type="button"
+                                    data-label="${rpLabel}" title="Máy đọc cả phần: lời dẫn một giọng, lời thoại trong ngoặc kép hai giọng luân phiên">${state.roleplay ? '⏹ Dừng' : rpLabel}</button>
+                            <button class="rt-btn rp-voice" type="button" data-hoc-voice title="Chọn giọng Người dẫn / Vai 1 / Vai 2" aria-label="Chọn giọng đọc">⚙</button>
+                        </span>`;
+
         const displayHtml = state.readingLayout === 'interlinear'
             ? buildInterlinearReadingHtml(processedHtml, reading.translations || [])
             : processedHtml;
@@ -1189,6 +1282,7 @@
                                 🔊 Nghe Bài Này
                             </button>
                         ` : ''}
+                        ${rpHtml}
 
                         <button class="rt-btn trans-toggle-btn ${state.transVisible ? 'active' : ''}" id="btnToggleTrans" title="Bật / Tắt hiển thị bản dịch (Phím T)">
                             <span>🇻🇳</span>
@@ -1297,6 +1391,11 @@
                 renderReadingStudio();
             });
         });
+
+        // Đọc nhập vai: nút bắt đầu/dừng; vẽ lại khi đang đọc thì tô lại đoạn hiện tại
+        const btnRp = document.getElementById('btnRoleplay');
+        if (btnRp) btnRp.addEventListener('click', startRoleplay);
+        if (state.roleplay) markRoleplay(false);
 
         // Bind Audio Play Button
         const btnPlay = document.getElementById('btnPlayReadingAudio');
@@ -3265,6 +3364,7 @@
     }
 
     function speakChinese(text, onEndCallback, rate) {
+        stopRoleplay();
         if (!window.speechSynthesis) { if (onEndCallback) setTimeout(onEndCallback, 600); return; }
         window.speechSynthesis.cancel();
         const clean = ttsClean(text);
@@ -3283,6 +3383,7 @@
     }
 
     function speakVietnamese(text, onEndCallback) {
+        stopRoleplay();
         if (!window.speechSynthesis) { if (onEndCallback) setTimeout(onEndCallback, 600); return; }
         window.speechSynthesis.cancel();
 
@@ -3317,6 +3418,7 @@
 
         // Audio state listeners
         dom.audioPlayer.addEventListener('play', () => {
+            stopRoleplay(); // audio thật và đọc nhập vai không chạy cùng lúc
             if (dom.btnPlayPause) dom.btnPlayPause.innerHTML = '⏸';
         });
 
@@ -3463,6 +3565,8 @@
     function bindGlobalEvents() {
         // Theo dõi cuộn để tính "đã đọc/xem tới cuối" (bắt sự kiện cuộn của mọi vùng)
         document.addEventListener('scroll', onAnyScroll, true);
+        // rời trang: dừng đọc nhập vai (giọng đọc của trình duyệt có thể vẫn chạy sau khi đóng trang)
+        window.addEventListener('pagehide', () => { stopRoleplay(); stopShadow(); });
         window.addEventListener('resize', onAnyScroll);
 
         // Ôn hôm nay & thống kê

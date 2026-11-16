@@ -713,10 +713,11 @@
             speechSynthesis.speak(u);
         });
     }
-    function speakWord(t) { if ("speechSynthesis" in window) speechSynthesis.cancel(); speakOne(t, Math.min(1, S.settings.rate)); }
+    function speakWord(t) { stopRole(); if ("speechSynthesis" in window) speechSynthesis.cancel(); speakOne(t, Math.min(1, S.settings.rate)); }
     function wait(ms, token) { return new Promise(function (res) { setTimeout(function () { res(token === playToken); }, ms); }); }
     function stopPlay() {
         playToken++;
+        stopRole();
         if ("speechSynthesis" in window) speechSynthesis.cancel();
         $("play-bar").hidden = true;
         $("tb-listen").classList.remove("on");
@@ -751,6 +752,49 @@
             showPlay(to > from ? "🔊 Đang đọc đoạn " + (k + 1) + "/" + doc.paras.length : "🔊 Đang đọc đoạn " + (k + 1));
             speakOne(p.text).then(function () { k++; if (token === playToken) setTimeout(next, 250); });
         })();
+    }
+    // Đọc nhập vai (HocTTS.readDialogue): lời dẫn = giọng người dẫn, lời trong “…”/「…」 = Vai 1/Vai 2 luân phiên
+    var role = null;       // { h: handle của HocTTS, k: đoạn đang đọc }
+    var ROLE_LABEL = { narrator: "Dẫn", a: "Vai 1", b: "Vai 2" };
+    function unmarkRole(el) { el.classList.remove("rp-on", "playing"); el.removeAttribute("data-rp"); el.removeAttribute("data-rp-label"); }
+    function stopRole() {
+        var r = role;
+        if (!r) return;
+        role = null;
+        try { if (r.h) r.h.stop(); } catch (e) {}
+        $("tb-role").classList.remove("on");
+        $("tb-role-ico").textContent = "🎭"; $("tb-role-label").textContent = "Nhập vai";
+        document.querySelectorAll(".para.rp-on").forEach(unmarkRole);
+    }
+    function startRole() {
+        stopPlay();
+        if (!doc) return;
+        if (!window.HocTTS || !HocTTS.readDialogue || !("speechSynthesis" in window)) { toast("Trình duyệt không hỗ trợ đọc văn bản."); return; }
+        // chỉ đọc đoạn có chữ Hán, bỏ dòng nguồn (căn phải)
+        var ks = [];
+        doc.paras.forEach(function (p, k) { if (p.kind !== "attr" && hanCount(p.text)) ks.push(k); });
+        if (!ks.length) return;
+        var r = role = { h: null, k: -1 };
+        $("tb-role").classList.add("on");
+        $("tb-role-ico").textContent = "⏹"; $("tb-role-label").textContent = "Dừng";
+        r.h = HocTTS.readDialogue(ks.map(function (k) { return doc.paras[k].text; }), {
+            rate: S.settings.rate || 0.9,
+            onSeg: function (seg) {
+                if (role !== r) return;
+                var k = ks[seg.p], moved = k !== r.k;
+                r.k = k;
+                document.querySelectorAll(".para.rp-on").forEach(function (p) { if (+p.dataset.k !== k) unmarkRole(p); });
+                var el = document.querySelector('.para[data-k="' + k + '"]');
+                if (el) {
+                    el.classList.add("rp-on", "playing");
+                    el.setAttribute("data-rp", seg.role);
+                    el.setAttribute("data-rp-label", ROLE_LABEL[seg.role] || "");
+                    if (moved) el.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+                showPlay("🎭 Đoạn " + (seg.p + 1) + "/" + ks.length + " · " + ({ narrator: "Người dẫn", a: "Vai 1", b: "Vai 2" }[seg.role] || ""));
+            },
+            onEnd: function () { if (role !== r) return; stopPlay(); toast("Đã đọc hết bài."); }
+        });
     }
     // Nhại: đọc từng câu, dừng một khoảng để người học đọc theo
     function shadowPara(k, startSent) {
@@ -896,6 +940,7 @@
             backToList();
         });
         window.addEventListener("popstate", function () { route(false); });
+        window.addEventListener("pagehide", stopAll);
 
         // Thanh công cụ
         $("tb-py").onclick = function () { setSetting("py", !S.settings.py); };
@@ -912,6 +957,7 @@
             if ($("tb-listen").classList.contains("on")) { stopPlay(); return; }
             playParas(0, doc.paras.length - 1);
         };
+        $("tb-role").onclick = function () { if (role) stopPlay(); else startRole(); };
         $("tb-rate").onchange = function () { setSetting("rate", parseFloat($("tb-rate").value) || 0.9); };
         $("tb-timer").onclick = function () { if (timer) finishTimer(); else startTimer(); };
         $("btn-timer-done").onclick = finishTimer;

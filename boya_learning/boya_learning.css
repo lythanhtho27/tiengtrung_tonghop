@@ -3803,6 +3803,20 @@ html[data-theme="dark"] .sp-btn-stop { color: var(--ui-bg); }
 .para-card.is-shadowing { border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 15%, transparent); }
 .para-card.is-shadowing .btn-shadow { background: var(--primary-strong); color: var(--on-primary); border-color: var(--primary); }
 .para-card.is-your-turn { border-color: var(--color-success); box-shadow: 0 0 0 3px var(--color-success-bg); }
+/* Đọc nhập vai: đoạn đang đọc + nhãn vai (Dẫn / Vai 1 / Vai 2) */
+.rp-group { display: inline-flex; gap: 2px; }
+.rp-group .rp-btn { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.rp-group .rp-voice { border-top-left-radius: 0; border-bottom-left-radius: 0; padding-left: 8px; padding-right: 8px; }
+.rt-btn.rp-btn.is-playing { background: var(--ui-danger); border-color: var(--ui-danger); color: #fff; box-shadow: none; }
+.rt-btn.rp-noaudio:not(.is-playing) { animation: rp-glow 2.4s ease-in-out 2; }
+@keyframes rp-glow { 50% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 25%, transparent); } }
+.rp-noaudio-note { font-size: 11.5px; font-weight: 600; color: var(--text-muted); padding: 0 2px; }
+.rp-active { --rp-c: var(--ui-primary); position: relative; background: var(--ui-highlight); box-shadow: inset 4px 0 0 var(--rp-c); border-radius: var(--radius-md); }
+.rp-active[data-rp="a"] { --rp-c: var(--ui-tone-1); }
+.rp-active[data-rp="b"] { --rp-c: var(--ui-tone-4); }
+.para-card.rp-active { border-color: var(--rp-c); box-shadow: inset 4px 0 0 var(--rp-c), 0 0 0 3px var(--ui-highlight); }
+.chinese-text-content .block.rp-active { padding-left: 10px; }
+.rp-active::before { content: attr(data-rp-label); position: absolute; top: -9px; left: 10px; z-index: 2; font: 700 10.5px/1 var(--ui-font-sans, system-ui, sans-serif); letter-spacing: .02em; color: #fff; background: var(--rp-c); border-radius: 9999px; padding: 3px 7px; pointer-events: none; }
 .para-card.is-your-turn .btn-shadow { background: var(--color-success-bg); color: var(--color-success); border-color: var(--color-success); }
 
 /* Flashcards + chấm điểm SRS */

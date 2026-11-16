@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../shared/theme.css">
     <script src="../shared/theme.js"></script>
     <script src="../shared/sync.js"></script>
+    <script src="../shared/tts.js"></script>
     <script>
         // Chuyển theme cũ của trang (6 theme) sang sáng/tối dùng chung — chỉ chạy 1 lần
         (function () {
@@ -65,6 +66,7 @@
             <button id="btnBadgesModal" class="action-pill streak-pill" title="Xem chuỗi ngày học & huy hiệu thành tích">
                 🔥 <span id="hdrStreakCount">1</span><span class="hide-sm"> ngày · <span id="hdrUserLevel">Lv.1</span></span>
             </button>
+            <button class="ui-voice-btn" data-hoc-voice title="Giọng đọc (chọn giọng, luân phiên, đọc nhập vai)" aria-label="Giọng đọc">🔊</button>
             <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
 
             <!-- Cài đặt nhanh: thứ tự học, kiểu chữ, podcast, ngữ pháp -->
