@@ -13,7 +13,13 @@
    Bước 3. Luyện tập 10 phút: trang luyen_tap, xong khi hôm nay làm ≥ 10 câu.
    - Hiển thị: luyen_tap/lt_data.js (LT_DATA.words[id] = [hz, py, nghĩa], LT_DATA.sents),
      shared/dict_vi.js (HOC_DICT.w[hz] = [py, HV, nghĩa], HOC_DICT.c[chữ] = [py, HV]).
-   - Lưu: "hom_nay_v1" = { settings, days{date:{r, ok, steps}}, streak } (đồng bộ qua sync.js),
+   - Kiểu thẻ ôn (settings.cardMode): "mix" (trộn 50/30/20, thẻ reps ≤ 1 luôn là Chữ → nghĩa) / "hz" Chữ → nghĩa /
+     "vi" Nghĩa → chữ / "listen" Nghe → nghĩa. Chỉ đo rt ở kiểu Chữ → nghĩa (lần hỏi đầu).
+   - Mặt sau thẻ: mỗi chữ có data-zizu (bảng Họ chữ, shared/zizu.js) + ghi chú gợi nhớ (shared/notes.js, HocNotes).
+   - Từ cứng đầu: số lần quên max(lapses, wrong) của một thẻ ≥ HARD_MIN ở bất kỳ nguồn nào (gộp theo chữ Hán,
+     lấy giá trị lớn nhất giữa các nguồn để không đếm trùng một lần quên đã ghi vào nhiều nguồn).
+     "Luyện riêng" = phiên ôn bất kể hạn, KHÔNG ghi gì vào lịch SRS / bộ đếm ngày.
+   - Lưu: "hom_nay_v1" = { settings{limit, speak, cardMode}, days{date:{r, ok, steps}}, streak } (đồng bộ qua sync.js),
      tóm tắt qua HocProgress.save("hom_nay", …).
    ========================================================================== */
 (function () {
@@ -25,6 +31,9 @@
     const SLOW_MS = 3000;
     const STREAK_MIN = 10;          // ôn ≥ 10 thẻ trong ngày (hoặc xong bước 2/3) mới tính vào chuỗi ngày học
     const BOYA_STREAK_MIN = 10;     // boya_learning: STREAK_MIN của trang đó
+    const HARD_MIN = 4;             // quên ≥ 4 lần -> "từ cứng đầu"
+    const HARD_SHOW = 8;            // số từ cứng đầu hiện sẵn trên trang chính
+    const MODES = { hz: "Chữ → nghĩa", vi: "Nghĩa → chữ", listen: "Nghe → nghĩa" };
     const SRC = {
         hsk:  { name: "HSK",        order: 0 },
         boya: { name: "Boya",       order: 1 },
@@ -348,7 +357,7 @@
     const SRC_KEYS = Object.keys(SOURCES);
 
     // ====================================================================== Trạng thái trang
-    const DEFAULT = { settings: { limit: 50, speak: true }, days: {}, streak: { count: 0, last: "", best: 0 } };
+    const DEFAULT = { settings: { limit: 50, speak: true, cardMode: "mix" }, days: {}, streak: { count: 0, last: "", best: 0 } };
     let S = loadState();
     function loadState() {
         const o = readJSON(STORE, {}) || {};
@@ -414,8 +423,8 @@
         }
         return { py: w ? w[0] : "", hv, vi: w ? w[2] : "" };
     }
-    function collectDue(now) {
-        now = now || Date.now();
+    // Gom thẻ có due <= now của mọi nguồn, gộp theo chữ Hán (now = Infinity: mọi thẻ)
+    function gatherGroups(now) {
         const groups = new Map();
         SRC_KEYS.forEach(src => {
             let list = [];
@@ -440,12 +449,26 @@
             g.hv = g.info.hv || di.hv;
             g.minDue = Math.min.apply(null, g.cards.map(c => c.card.due || 0));
             g.lapses = Math.max.apply(null, g.cards.map(c => (c.card.lapses || 0) + (c.card.wrong || 0)));
+            g.forgot = Math.max.apply(null, g.cards.map(c => forgotCount(c.card)));
         });
+        return out;
+    }
+    // Số lần quên của một thẻ: lapses (SM-2) hoặc wrong (sổ lỗi boya_tv), lấy giá trị lớn hơn vì một lần sai tăng cả hai
+    function forgotCount(c) { return Math.max((c && c.lapses) || 0, (c && c.wrong) || 0); }
+    function collectDue(now) {
+        now = now || Date.now();
+        const out = gatherGroups(now);
         // Quá hạn lâu trước (theo ngày), cùng mức thì hay quên trước
         out.sort((a, b) => {
             const oa = Math.floor((now - a.minDue) / DAY), ob = Math.floor((now - b.minDue) / DAY);
             return (ob - oa) || (b.lapses - a.lapses) || (a.minDue - b.minDue);
         });
+        return out;
+    }
+    // Từ cứng đầu: mọi thẻ (bất kể hạn) có số lần quên ≥ HARD_MIN
+    function collectHard() {
+        const out = gatherGroups(Infinity).filter(g => g.forgot >= HARD_MIN);
+        out.sort((a, b) => (b.forgot - a.forgot) || (a.minDue - b.minDue));
         return out;
     }
 
@@ -497,55 +520,137 @@
         zhVoice = vs.find(v => /zh[-_]CN/i.test(v.lang)) || vs.find(v => /^zh/i.test(v.lang)) || null;
     }
     if ("speechSynthesis" in window) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
-    function speak(text) {
+    function speak(text, rate) {
         if (!("speechSynthesis" in window) || !text) return;
         try {
             speechSynthesis.cancel();
             const u = new SpeechSynthesisUtterance(text);
             u.lang = "zh-CN";
             if (zhVoice) u.voice = zhVoice;
-            u.rate = 0.85;
+            u.rate = rate || 0.85;
             speechSynthesis.speak(u);
         } catch (e) {}
     }
 
     // ====================================================================== Phiên ôn tập
     let session = null;
+    let hardMap = new Map();         // chữ Hán -> số lần quên (để gắn nhãn 🧠 trên thẻ ôn thường)
+    function newSession(groups, practice, remainAfter) {
+        hardMap = new Map(collectHard().map(g => [g.key, g.forgot]));
+        session = {
+            queue: groups.map(g => ({ g, again: false })),
+            total: groups.length, done: 0, rated: 0,
+            stats: { 1: 0, 2: 0, 3: 0, 4: 0 },
+            remainAfter: remainAfter || 0,
+            practice: !!practice,
+            flipped: false, t0: 0, ms: 0,
+        };
+        if (groups.some(g => g.cards.some(c => c.src === "wl"))) ensureWLSents();
+        document.body.classList.add("in-review");
+        $("practice-note").hidden = !practice;
+        show("review");
+        renderCard();
+    }
     function startReview() {
         const all = collectDue();
         if (!all.length) { toast("Không còn thẻ nào đến hạn. Tuyệt vời!"); renderHome(); return; }
         const limit = +S.settings.limit || 0;
         const groups = limit ? all.slice(0, limit) : all;
-        session = {
-            queue: groups.map(g => ({ g, again: false })),
-            total: groups.length, done: 0, rated: 0,
-            stats: { 1: 0, 2: 0, 3: 0, 4: 0 },
-            remainAfter: all.length - groups.length,
-            flipped: false, t0: 0, ms: 0,
-        };
-        if (groups.some(g => g.cards.some(c => c.src === "wl"))) ensureWLSents();
-        document.body.classList.add("in-review");
-        show("review");
-        renderCard();
+        newSession(groups, false, all.length - groups.length);
+    }
+    // Luyện riêng từ cứng đầu: bất kể hạn, không ghi vào lịch SRS
+    function startPractice() {
+        const groups = collectHard();
+        if (!groups.length) { toast("Chưa có từ cứng đầu nào."); return; }
+        newSession(groups, true, 0);
     }
     function curItem() { return session && session.queue[0]; }
+    // Chọn kiểu thẻ cho một lượt hỏi
+    function pickMode(g) {
+        let m = S.settings.cardMode || "mix";
+        if (m === "mix") {
+            const reps = Math.min.apply(null, g.cards.map(c => (c.card && c.card.reps) || 0));
+            if (reps <= 1) m = "hz";                       // thẻ mới học: nhận diện chữ trước
+            else { const x = Math.random(); m = x < 0.5 ? "hz" : x < 0.8 ? "vi" : "listen"; }
+        }
+        if (!MODES[m]) m = "hz";
+        if (m === "vi" && !meaningOnly(g.vi)) m = "hz";                 // không có nghĩa thì không hỏi ngược được
+        if (m === "listen" && !("speechSynthesis" in window)) m = "hz";
+        return m;
+    }
+    // Nghĩa để hỏi ở kiểu Nghĩa → chữ: bỏ phần Hán Việt viết hoa ở đầu (dữ liệu Boya: "THƯƠNG TRƯỜNG (chợ, thị trường)")
+    function meaningOnly(vi) {
+        const t = String(vi || "").trim();
+        let m = /^\p{Lu}+(?:[\s-]+\p{Lu}+)*\s*\((.*)\)\s*$/u.exec(t);
+        if (m) return m[1].trim();
+        m = /^\p{Lu}{2,}(?:[\s-]+\p{Lu}+)*\s*[:：\-–]\s*(.+)$/u.exec(t);
+        if (m) return m[1].trim();
+        return /^[\p{Lu}\s-]+$/u.test(t) ? "" : t;      // chỉ có Hán Việt -> không dùng làm câu hỏi
+    }
+    function zizuHTML(hz) {
+        return Array.from(hz).map(ch => HAN.test(ch) ? `<span class="zz-ch" data-zizu="${esc(ch)}">${esc(ch)}</span>` : esc(ch)).join("");
+    }
+    function frontHTML(g, mode) {
+        if (mode === "vi") {
+            const n = Array.from(g.hz).filter(ch => HAN.test(ch)).length;
+            return `<div class="fc-q-vi">${esc(meaningOnly(g.vi))}</div>
+                <div class="fc-q-sub">${n} chữ Hán · nhớ chữ và pinyin rồi lật thẻ</div>
+                <button class="btn btn-sm hint-btn" type="button" data-hint>💡 Gợi ý</button>
+                <div class="fc-hintbox" id="fc-hintbox" hidden></div>`;
+        }
+        if (mode === "listen") {
+            return `<button class="say-big" type="button" data-say-word title="Nghe lại" aria-label="Nghe lại">🔊</button>
+                <div class="listen-row">
+                    <button class="btn btn-sm" type="button" data-say-word>🔁 Nghe lại</button>
+                    <button class="btn btn-sm" type="button" data-say-slow>🐢 Chậm</button>
+                </div>
+                <div class="fc-q-sub">Nghe rồi nhớ nghĩa và mặt chữ, sau đó lật thẻ</div>`;
+        }
+        return `<div class="fc-hz">${esc(g.hz)}</div>
+            <button class="say" id="fc-say" type="button" title="Nghe phát âm" aria-label="Nghe phát âm">🔊</button>`;
+    }
+    const HINTS = { hz: "Nhớ nghĩa rồi chạm vào thẻ hoặc nhấn <kbd>Space</kbd> để lật",
+        vi: "Nhớ chữ Hán + pinyin rồi chạm vào thẻ hoặc nhấn <kbd>Space</kbd> để lật",
+        listen: "Nhớ nghĩa rồi chạm vào thẻ hoặc nhấn <kbd>Space</kbd> để lật · <kbd>R</kbd> nghe lại" };
+    function hardCount(g) { return Math.max(hardMap.get(g.key) || 0, g.forgot || 0); }
     function renderCard() {
         const s = session;
         if (!s.queue.length) { finishReview(); return; }
         const it = s.queue[0], g = it.g;
         s.flipped = false;
+        if (!it.mode) it.mode = pickMode(g);
         $("prog-bar").style.width = (s.done / s.total * 100) + "%";
         $("prog-text").textContent = Math.min(s.done + 1, s.total) + "/" + s.total;
+        $("fc-mode").textContent = MODES[it.mode];
+        $("fc-mode").className = "fc-mode m-" + it.mode;
         $("fc-src").innerHTML = uniqSrc(g).map(src => `<span class="s-${src}">${esc(SRC[src].name)}</span>`).join("");
         $("fc-again").hidden = !it.again;
-        $("fc-hz").textContent = g.hz;
+        const hc = hardCount(g);
+        $("fc-hard").hidden = hc < HARD_MIN;
+        $("fc-hard").textContent = "🧠 Cứng đầu";
+        $("fc-hard").title = `Đã quên ${hc} lần`;
+        $("fc-front").className = "fc-front m-" + it.mode;
+        $("fc-front").innerHTML = frontHTML(g, it.mode);
         $("fc-back").hidden = true;
         $("fcard").classList.remove("flipped");
+        $("fc-hint").innerHTML = HINTS[it.mode];
         $("fc-hint").hidden = false;
         $("btn-flip").hidden = false;
         $("rate-row").hidden = true;
         s.t0 = performance.now();
         window.scrollTo(0, 0);
+        if (it.mode === "listen") setTimeout(() => { if (curItem() === it && !s.flipped) speak(g.hz); }, 120);
+    }
+    // Gợi ý ở kiểu Nghĩa → chữ: ghi chú gợi nhớ nếu có, không thì chữ cái đầu của pinyin
+    function showHint() {
+        const it = curItem(), box = $("fc-hintbox");
+        if (!it || !box) return;
+        const note = window.HocNotes ? HocNotes.get(it.g.hz) : "";
+        const py = String(it.g.py || "").trim();
+        box.innerHTML = note ? `📝 ${esc(note)}`
+            : py ? `Pinyin bắt đầu bằng “<b>${esc(py.charAt(0))}</b>…”`
+            : "Chưa có gợi ý cho từ này.";
+        box.hidden = false;
     }
     function uniqSrc(g) { return Array.from(new Set(g.cards.map(c => c.src))); }
     function flip() {
@@ -553,7 +658,10 @@
         if (!s || s.flipped || !s.queue.length) return;
         s.flipped = true;
         s.ms = performance.now() - s.t0;
-        const g = s.queue[0].g;
+        const it = s.queue[0], g = it.g;
+        $("fc-front").className = "fc-front m-back";
+        $("fc-front").innerHTML = `<div class="fc-hz">${zizuHTML(g.hz)}</div>
+            <button class="say" id="fc-say" type="button" title="Nghe phát âm" aria-label="Nghe phát âm">🔊</button>`;
         $("fc-py").textContent = g.py || "";
         $("fc-hv").textContent = g.hv ? g.hv.toUpperCase() : "";
         $("fc-vi").textContent = g.vi || "";
@@ -563,6 +671,10 @@
             $("fc-ex").innerHTML = `<button class="say" data-say="${esc(ex.zh)}" title="Nghe câu ví dụ">🔊</button>
                 <div class="zh">${zh}</div>${ex.py ? `<div class="py">${esc(ex.py)}</div>` : ""}${ex.vi ? `<div class="vi">${esc(ex.vi)}</div>` : ""}`;
         } else $("fc-ex").innerHTML = "";
+        const nb = $("fc-note");
+        nb.dataset.hz = g.hz;
+        nb.dataset.hard = hardCount(g) >= HARD_MIN ? "1" : "0";
+        fillNoteBox(nb);
         $("fc-back").hidden = false;
         $("fcard").classList.add("flipped");
         $("btn-flip").hidden = true;
@@ -571,8 +683,9 @@
         const main = g.cards[0];
         const sched = SOURCES[main.src].schedule;
         const live = freshCard(main) || main.card;
-        for (let r = 1; r <= 4; r++) $("iv-" + r).textContent = ivText(sched(Object.assign({ ef: 2.5, iv: 0, reps: 0, lapses: 0 }, live), r).iv);
-        if (S.settings.speak) speak(g.hz);
+        for (let r = 1; r <= 4; r++) $("iv-" + r).textContent = s.practice ? "luyện thêm"
+            : ivText(sched(Object.assign({ ef: 2.5, iv: 0, reps: 0, lapses: 0 }, live), r).iv);
+        if (S.settings.speak && it.mode !== "listen") speak(g.hz);
     }
     // Đọc lại thẻ mới nhất từ localStorage (thẻ có thể vừa đổi sau một lần chấm "Quên")
     function freshCard(c) {
@@ -589,7 +702,15 @@
         const s = session;
         if (!s || !s.flipped || !s.queue.length) return;
         const it = s.queue.shift();
-        const ms = it.again ? null : s.ms;      // chỉ đo tốc độ ở lần hỏi đầu (giống hsk_lotrinh)
+        if (s.practice) {                       // luyện riêng: không ghi gì vào lịch ôn / bộ đếm
+            s.rated++;
+            if (!it.again) { s.stats[r]++; s.done++; }
+            if (r === 1) s.queue.push({ g: it.g, again: true });
+            renderCard();
+            return;
+        }
+        // chỉ đo tốc độ ở lần hỏi đầu (giống hsk_lotrinh) và chỉ khi mặt trước là chữ Hán
+        const ms = it.again || it.mode !== "hz" ? null : s.ms;
         const touched = new Set();
         it.g.cards.forEach(c => {
             try {
@@ -611,7 +732,9 @@
         const s = session;
         if (!s) return;
         document.body.classList.remove("in-review");
+        $("practice-note").hidden = true;
         if ("speechSynthesis" in window) speechSynthesis.cancel();
+        if (s.practice) { finishPractice(s, quit); return; }
         const remain = collectDue();
         lastDueCount = remain.length;
         if (!quit || !remain.length) { today().steps.review = true; }
@@ -642,6 +765,98 @@
         $("res-home").onclick = () => { session = null; show("home"); };
         session = null;
         show("done");
+    }
+
+    function finishPractice(s, quit) {
+        const t = s.stats[1] + s.stats[2] + s.stats[3] + s.stats[4];
+        const pct = t ? Math.round((s.stats[3] + s.stats[4]) / t * 100) : 0;
+        const noNote = collectHard().filter(g => !(window.HocNotes && HocNotes.get(g.hz))).length;
+        $("res-score").textContent = t ? pct + "%" : "–";
+        $("res-title").textContent = !t ? "Chưa luyện từ nào" : quit ? "Đã dừng phiên luyện" : "Xong phần luyện từ cứng đầu!";
+        $("res-sub").innerHTML = (t ? `Đã luyện <b>${fmt(t)}</b> từ, nhớ được <b>${pct}%</b>. ` : "")
+            + "Phiên luyện riêng không thay đổi lịch ôn."
+            + (noNote ? ` Còn <b>${fmt(noNote)}</b> từ chưa có ghi chú gợi nhớ.` : "");
+        $("res-stats").innerHTML = [
+            [s.stats[1], "Quên"], [s.stats[2], "Khó"], [s.stats[3] + s.stats[4], "Nhớ / Dễ"], ["🔥 " + currentStreak(), "ngày liên tiếp"],
+        ].map(x => `<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
+        $("res-actions").innerHTML = `<button class="btn btn-primary" id="res-again">🎯 Luyện lại</button><button class="btn" id="res-home">Về buổi học hôm nay</button>`;
+        $("res-again").onclick = startPractice;
+        $("res-home").onclick = () => { session = null; show("home"); };
+        session = null;
+        show("done");
+    }
+
+    // ====================================================================== Ghi chú gợi nhớ (HocNotes)
+    // Khung ghi chú: phần tử .note-box[data-hz][data-hard] — hiện ghi chú + Sửa/Xóa, hoặc nút thêm
+    function noteBoxHTML(hz, hard) {
+        const t = window.HocNotes ? HocNotes.get(hz) : "";
+        if (t) return `<div class="note-show"><span class="note-t">📝 ${esc(t)}</span>
+            <span class="note-acts"><button class="lnk" type="button" data-note-edit>Sửa</button><button class="lnk danger" type="button" data-note-del>Xóa</button></span></div>`;
+        return (hard ? `<div class="note-ask">🧠 Bạn hay quên từ này. Viết một ghi chú gợi nhớ (tách chữ, liên tưởng, câu vui…) để nhớ lâu hơn.</div>` : "")
+            + `<button class="btn btn-sm note-add" type="button" data-note-edit>📝 Ghi chú gợi nhớ</button>`;
+    }
+    function fillNoteBox(box) {
+        if (!window.HocNotes) { box.innerHTML = ""; return; }
+        box.innerHTML = noteBoxHTML(box.dataset.hz, box.dataset.hard === "1");
+    }
+    function editNote(box) {
+        const t = HocNotes.get(box.dataset.hz);
+        box.innerHTML = `<textarea class="note-input" rows="2" maxlength="500" placeholder="Ví dụ: 休 = người (亻) tựa gốc cây (木) → nghỉ ngơi">${esc(t)}</textarea>
+            <div class="note-edit-acts"><button class="btn btn-sm btn-primary" type="button" data-note-save>Lưu</button><button class="btn btn-sm" type="button" data-note-cancel>Hủy</button></div>`;
+        const ta = box.querySelector("textarea");
+        ta.focus();
+        ta.setSelectionRange(ta.value.length, ta.value.length);
+        ta.addEventListener("keydown", e => {
+            if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); saveNote(box); }
+            else if (e.key === "Escape") { e.stopPropagation(); fillNoteBox(box); }
+        });
+    }
+    function saveNote(box) {
+        const ta = box.querySelector("textarea");
+        if (!ta) return;
+        const v = ta.value;
+        HocNotes.set(box.dataset.hz, v);
+        fillNoteBox(box);
+        toast(v.trim() ? "Đã lưu ghi chú gợi nhớ" : "Đã xóa ghi chú");
+    }
+    document.addEventListener("click", e => {
+        const box = e.target.closest && e.target.closest(".note-box");
+        if (!box || !window.HocNotes) return;
+        if (e.target.closest("[data-note-edit]")) editNote(box);
+        else if (e.target.closest("[data-note-save]")) saveNote(box);
+        else if (e.target.closest("[data-note-cancel]")) fillNoteBox(box);
+        else if (e.target.closest("[data-note-del]")) { HocNotes.set(box.dataset.hz, ""); fillNoteBox(box); toast("Đã xóa ghi chú"); }
+    });
+
+    // ====================================================================== Từ cứng đầu (trang chính)
+    let hardAll = false;
+    function renderHard() {
+        const list = collectHard();
+        $("hard-box").hidden = !list.length;
+        if (!list.length) return;
+        const noNote = list.filter(g => !(window.HocNotes && HocNotes.get(g.hz))).length;
+        $("hard-title").textContent = `🧠 Từ cứng đầu (${list.length})`;
+        $("hard-note").innerHTML = `Những từ bạn đã quên từ ${HARD_MIN} lần trở lên. `
+            + (noNote ? `<b>${fmt(noNote)}</b> từ chưa có ghi chú gợi nhớ, hãy viết một câu liên tưởng để nhớ lâu hơn. ` : "")
+            + `“Luyện riêng” chỉ để luyện thêm, <b>không thay đổi lịch ôn</b>.`;
+        const shown = hardAll ? list : list.slice(0, HARD_SHOW);
+        $("hard-list").innerHTML = shown.map(g => `
+            <div class="hard-item">
+                <div class="hard-main">
+                    <span class="hard-hz">${zizuHTML(g.hz)}</span>
+                    <span class="hard-info">
+                        <span class="hard-line"><span class="py">${esc(g.py || "")}</span>${g.hv ? `<span class="hv">${esc(g.hv.toUpperCase())}</span>` : ""}</span>
+                        <span class="vi">${esc(meaningOnly(g.vi) || g.vi || "")}</span>
+                    </span>
+                    <span class="hard-side">
+                        <span class="hard-n" title="Số lần quên">quên ${g.forgot}×</span>
+                        <button class="say sm" type="button" data-say="${esc(g.hz)}" title="Nghe" aria-label="Nghe">🔊</button>
+                    </span>
+                </div>
+                <div class="note-box" data-hz="${esc(g.hz)}" data-hard="0">${noteBoxHTML(g.hz, false)}</div>
+            </div>`).join("");
+        $("hard-more").hidden = list.length <= HARD_SHOW;
+        $("hard-more").textContent = hardAll ? "Thu gọn ▲" : `Xem tất cả ${fmt(list.length)} từ ▼`;
     }
 
     // ====================================================================== Bước 2 & 3 (đọc tiến độ các trang)
@@ -793,6 +1008,8 @@
         $("btn-review").textContent = reviewDone && due.length ? `🔁 Ôn tiếp (${fmt(due.length)})` : `▶ Bắt đầu ôn${lim && due.length > lim ? ` ${lim} thẻ` : ""}`;
         $("opt-limit").value = String(lim);
         $("opt-speak").checked = !!S.settings.speak;
+        $("opt-mode").value = MODES[S.settings.cardMode] ? S.settings.cardMode : "mix";
+        renderHard();
 
         // Bước 2
         setTag("learn-tag", st.learn.done, st.learn.done ? `${fmt(st.learn.n)} từ mới` : "Chưa học");
@@ -820,8 +1037,20 @@
     $("btn-review").onclick = startReview;
     $("opt-limit").onchange = e => { S.settings.limit = +e.target.value; save(); renderHome(); };
     $("opt-speak").onchange = e => { S.settings.speak = e.target.checked; save(); };
+    $("opt-mode").onchange = e => { S.settings.cardMode = e.target.value; save(); };
+    $("btn-hard").onclick = startPractice;
+    $("hard-more").onclick = () => { hardAll = !hardAll; renderHard(); };
+    $("hard-list").addEventListener("click", e => {
+        const say = e.target.closest("[data-say]");
+        if (say) speak(say.dataset.say);
+    });
+    if (window.HocNotes) HocNotes.onChange(() => { if (!$("home").hidden && !document.querySelector("#hard-list textarea")) renderHard(); });
     $("btn-flip").onclick = flip;
     $("fcard").addEventListener("click", e => {
+        if (e.target.closest(".note-box") || e.target.closest("[data-zizu]")) return;   // ghi chú / Họ chữ tự xử lý
+        if (e.target.closest("[data-say-word]")) { e.stopPropagation(); const it = curItem(); if (it) speak(it.g.hz); return; }
+        if (e.target.closest("[data-say-slow]")) { e.stopPropagation(); const it = curItem(); if (it) speak(it.g.hz, 0.5); return; }
+        if (e.target.closest("[data-hint]")) { e.stopPropagation(); showHint(); return; }
         const say = e.target.closest("[data-say]");
         if (say) { e.stopPropagation(); speak(say.dataset.say); return; }
         if (e.target.closest("#fc-say")) { e.stopPropagation(); const it = curItem(); if (it) speak(it.g.hz); return; }
@@ -829,17 +1058,24 @@
     });
     $("rate-row").addEventListener("click", e => { const b = e.target.closest("[data-rate]"); if (b) rate(+b.dataset.rate); });
     $("btn-quit").onclick = () => { if (session) finishReview(true); };
+    // Bảng Họ chữ đang mở thì phím tắt thuộc về bảng (zizu.js đóng bảng bằng Esc trước khi tới đây nên phải ghi nhận ở pha capture)
+    let zzOpenAtKey = false;
+    window.addEventListener("keydown", () => { zzOpenAtKey = !!document.getElementById("zz-ov"); }, true);
     document.addEventListener("keydown", e => {
-        if (!session || $("review").hidden) return;
+        if (!session || $("review").hidden || zzOpenAtKey) return;
         if (e.ctrlKey || e.metaKey || e.altKey) return;
         const tag = e.target && e.target.tagName;
         if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
         if (e.key === " " || e.key === "Enter") {
             e.preventDefault();
             if (!session.flipped) flip(); else if (e.key === " ") { const it = curItem(); if (it) speak(it.g.hz); }
-        } else if (/^[1-4]$/.test(e.key) && session.flipped) { e.preventDefault(); rate(+e.key); }
+        } else if ((e.key === "h" || e.key === "H") && !session.flipped) showHint();
+        else if (/^[1-4]$/.test(e.key) && session.flipped) { e.preventDefault(); rate(+e.key); }
         else if (e.key === "Escape") finishReview(true);
-        else if (e.key === "r" || e.key === "R") { const it = curItem(); if (it) speak(it.g.hz); }
+        else if (e.key === "r" || e.key === "R") {
+            const it = curItem();
+            if (it && (session.flipped || it.mode !== "vi")) speak(it.g.hz);   // Nghĩa → chữ: không đọc trước khi lật (lộ đáp án)
+        }
     });
 
     let toastTimer;
@@ -855,5 +1091,5 @@
 
     show("home");
     // test tự động có thể dùng
-    window.__HN = { collectDue, startReview, flip, rate, finishReview, stepState, state: () => S, session: () => session, SOURCES };
+    window.__HN = { collectDue, collectHard, startReview, startPractice, flip, rate, finishReview, stepState, renderHard, pickMode, meaningOnly, state: () => S, session: () => session, SOURCES };
 })();

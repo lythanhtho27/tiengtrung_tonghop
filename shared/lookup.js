@@ -175,6 +175,8 @@
         ".lk-hv{font-weight:700;font-size:13px;letter-spacing:.03em;color:var(--ui-text-2,#334155);margin-top:4px}" +
         ".lk-vi{margin-top:4px}.lk-none{color:var(--ui-muted,#64748b);font-style:italic}" +
         ".lk-chars{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}" +
+        ".lk-note{margin-top:6px;font-size:13px;background:var(--ui-warning-soft,#fef3c7);border-radius:8px;padding:4px 8px}" +
+        ".lk-zz-hint{align-self:center;font-size:11.5px;color:var(--ui-muted,#64748b)}.lk-ch[data-zizu]{cursor:pointer}.lk-ch[data-zizu]:hover{border-color:var(--ui-primary,#4f46e5)}" +
         ".lk-ch{border:1px solid var(--ui-border,#ddd);border-radius:10px;padding:4px 8px;text-align:center;min-width:52px}" +
         ".lk-ch b{display:block;font-family:var(--ui-font-cn,serif);font-size:20px}.lk-ch span{display:block;font-size:12px;color:var(--ui-pinyin,#0369a1)}.lk-ch i{display:block;font-style:normal;font-size:11px;font-weight:700;color:var(--ui-muted,#64748b)}" +
         ".lk-alts{margin-top:10px;font-size:13px;color:var(--ui-muted,#64748b);display:flex;gap:6px;flex-wrap:wrap;align-items:center}" +
@@ -227,7 +229,9 @@
             '<div class="lk-head"><span class="lk-hz">' + esc(I.hz) + '</span><span class="lk-py">' + esc(I.py) + "</span></div>" +
             (I.hv ? '<div class="lk-hv">' + esc(I.hv) + "</div>" : "") +
             '<div class="lk-vi">' + (I.vi ? esc(I.vi) : '<span class="lk-none">' + (D() ? "Chưa có nghĩa trong từ điển." : "Đang tải từ điển…") + "</span>") + "</div>" +
-            (I.hz.length > 1 ? '<div class="lk-chars">' + I.chars.map(function (x) { return '<div class="lk-ch"><b>' + esc(x.c) + "</b><span>" + esc(x.py) + "</span><i>" + esc(x.hv) + "</i></div>"; }).join("") + "</div>" : "") +
+            (window.HocNotes && HocNotes.get(I.hz) ? '<div class="lk-note">📝 ' + esc(HocNotes.get(I.hz)) + "</div>" : "") +
+            '<div class="lk-chars">' + I.chars.map(function (x) { return '<div class="lk-ch"' + (window.HocZizu ? ' data-zizu="' + esc(x.c) + '" title="Họ chữ: mọi từ có chữ ' + esc(x.c) + '"' : "") + "><b>" + esc(x.c) + "</b><span>" + esc(x.py) + "</span><i>" + esc(x.hv) + "</i></div>"; }).join("") +
+            (window.HocZizu ? '<span class="lk-zz-hint">👆 chạm chữ để xem họ chữ</span>' : "") + "</div>" +
             (c.alts.length > 1 ? '<div class="lk-alts">Cách tách khác: ' + c.alts.map(function (a, k) { return '<button data-k="' + k + '" class="' + (a.word === c.word && a.start === c.start ? "on" : "") + '">' + esc(a.word) + "</button>"; }).join("") + "</div>" : "") +
             '<div class="lk-act"><button class="lk-say">🔊 Nghe</button>' +
             (window.HocMyWords ? '<button class="lk-add' + (inBook ? " in" : "") + '">' + (inBook ? "✓ Đã trong sổ" : "＋ Từ của tôi") + "</button>" : "") + "</div>";

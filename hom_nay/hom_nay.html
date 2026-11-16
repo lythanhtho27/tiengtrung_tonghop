@@ -62,6 +62,14 @@
                                     <option value="0">Tất cả</option>
                                 </select>
                             </label>
+                            <label class="field-inline">Kiểu thẻ
+                                <select id="opt-mode">
+                                    <option value="mix">Trộn (khuyên dùng)</option>
+                                    <option value="hz">Chữ → nghĩa</option>
+                                    <option value="vi">Nghĩa → chữ</option>
+                                    <option value="listen">Nghe → nghĩa</option>
+                                </select>
+                            </label>
                             <label class="check"><input type="checkbox" id="opt-speak"> Tự đọc khi lật thẻ</label>
                         </div>
                     </div>
@@ -91,6 +99,17 @@
                     </div>
                 </li>
             </ol>
+
+            <!-- Từ cứng đầu: quên ≥ 4 lần ở bất kỳ nguồn nào -->
+            <div class="card hard-box" id="hard-box" hidden>
+                <div class="step-head">
+                    <h2 id="hard-title">🧠 Từ cứng đầu</h2>
+                    <button class="btn btn-sm" id="btn-hard">🎯 Luyện riêng nhóm này</button>
+                </div>
+                <p class="muted" id="hard-note"></p>
+                <div class="hard-list" id="hard-list"></div>
+                <button class="btn btn-ghost btn-sm" id="hard-more" hidden></button>
+            </div>
         </section>
 
         <!-- Phiên ôn tập -->
@@ -100,19 +119,21 @@
                 <div class="progress"><i id="prog-bar"></i></div>
                 <span class="prog-text" id="prog-text">0/0</span>
             </div>
+            <div class="practice-note" id="practice-note" hidden>🎯 Luyện riêng từ cứng đầu · <b>không thay đổi lịch ôn</b> (chấm “Quên” cũng không sao)</div>
             <div class="fcard" id="fcard" tabindex="0">
                 <div class="fc-meta">
+                    <span class="fc-mode" id="fc-mode"></span>
                     <span class="fc-src" id="fc-src"></span>
                     <span class="fc-again" id="fc-again" hidden>Ôn lại</span>
+                    <span class="fc-hard" id="fc-hard" hidden></span>
                 </div>
-                <div class="fc-front">
-                    <div class="fc-hz" id="fc-hz"></div>
-                    <button class="say" id="fc-say" title="Nghe phát âm" aria-label="Nghe phát âm">🔊</button>
-                </div>
+                <div class="fc-front" id="fc-front"></div>
                 <div class="fc-back" id="fc-back" hidden>
                     <div class="fc-py" id="fc-py"></div>
                     <div class="fc-hv" id="fc-hv"></div>
                     <div class="fc-vi" id="fc-vi"></div>
+                    <div class="zz-tip">👆 Chạm chữ để xem họ chữ</div>
+                    <div class="note-box" id="fc-note"></div>
                     <div class="fc-ex" id="fc-ex"></div>
                 </div>
                 <div class="fc-hint" id="fc-hint">Chạm vào thẻ hoặc nhấn <kbd>Space</kbd> để lật</div>
@@ -148,6 +169,8 @@
 
     <script src="../shared/progress.js"></script>
     <script src="../shared/mywords.js"></script>
+    <script src="../shared/notes.js"></script>
+    <script src="../shared/zizu.js"></script>
     <script src="../luyen_tap/lt_data.js"></script>
     <script src="../shared/dict_vi.js"></script>
     <script src="hom_nay.js"></script>

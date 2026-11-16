@@ -1,0 +1,204 @@
+/* Trang Thống kê & dự báo — dùng bảng màu chung shared/theme.css */
+:root {
+    --bg: var(--ui-bg);
+    --surface: var(--ui-surface);
+    --surface-2: var(--ui-surface-2);
+    --border: var(--ui-border);
+    --text: var(--ui-text);
+    --muted: var(--ui-muted);
+    --primary: var(--ui-primary);
+    --ok: var(--ui-success);
+    --ok-soft: var(--ui-success-soft);
+    --bad: var(--ui-danger);
+    --bad-soft: var(--ui-danger-soft);
+    --warn: var(--ui-warning);
+    --warn-soft: var(--ui-warning-soft);
+    --cn: var(--ui-font-cn);
+    --series-2: var(--ui-hsk-2);      /* lượt ôn mỗi tuần */
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--text); font-family: var(--ui-font-sans); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+button, input, select { font: inherit; color: inherit; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+
+/* Thanh trên (giống hom_nay) */
+.topbar { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
+.topbar-inner { max-width: 860px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+.back { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); display: grid; place-items: center; text-decoration: none; font-size: 18px; flex: none; }
+.back:hover { border-color: var(--primary); }
+.brand { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+.brand strong { font-size: 17px; white-space: nowrap; }
+.brand small { color: var(--muted); font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.account-btn { margin-left: auto; height: 38px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); font-weight: 600; font-size: 14px; max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; }
+.account-btn:hover { border-color: var(--primary); }
+.ui-theme-toggle, .ui-voice-btn { flex: none; }
+
+.container { max-width: 860px; margin: 0 auto; padding: 18px 16px 60px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--ui-radius-lg); padding: 18px; box-shadow: var(--ui-shadow-sm); margin-bottom: 16px; min-width: 0; }
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px 12px; flex-wrap: wrap; margin-bottom: 8px; }
+.sec-head h2 { margin: 0; font-size: 18px; }
+.sub { margin: 16px 0 4px; font-size: 14px; font-weight: 600; color: var(--ui-text-2); }
+.link { color: var(--primary); font-weight: 600; font-size: 14px; text-decoration: none; }
+.link:hover { text-decoration: underline; }
+p.small { margin: 0 0 8px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--ui-border-strong); background: var(--surface); border-radius: 12px; padding: 10px 16px; cursor: pointer; font-weight: 600; font-size: 15px; text-decoration: none; }
+.btn:hover { border-color: var(--primary); }
+.btn-primary { background: var(--primary); border-color: transparent; color: var(--ui-on-primary); }
+.btn-primary:hover { background: var(--ui-primary-hover); }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 16px; }
+
+/* Chưa có dữ liệu */
+.empty-hero { text-align: center; padding: 34px 20px; }
+.empty-hero h1 { font-size: 21px; margin: 6px 0; }
+.empty-hero p { max-width: 520px; margin: 0 auto; }
+.empty-ic { font-size: 44px; }
+.empty { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; padding: 18px 10px; border: 1px dashed var(--ui-border-strong); border-radius: var(--ui-radius); color: var(--muted); }
+.empty span { font-size: 28px; }
+.empty p { margin: 0; max-width: 460px; font-size: 14px; }
+
+/* 1. Tổng quan */
+.tiles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.tile { display: flex; flex-direction: column; gap: 2px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--ui-radius); padding: 12px; text-decoration: none; min-width: 0; }
+.tile b { font-size: 26px; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.tile .t-l { font-weight: 600; font-size: 14px; }
+.tile .t-s { font-size: 12px; color: var(--muted); line-height: 1.35; }
+.tile.ok b { color: var(--ok); }
+.tile.warn b { color: var(--warn); }
+.tile.warn b::before { content: "🔥 "; font-size: 18px; }
+.tile.pri b { color: var(--primary); }
+.tile.bad b { color: var(--bad); }
+a.tile:hover { border-color: var(--primary); }
+.src-chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 12px; }
+.src-chip { font-size: 12.5px; padding: 2px 10px; border-radius: 99px; background: var(--surface-2); border: 1px solid var(--border); }
+.src-chip b { margin-left: 5px; }
+
+/* Biểu đồ SVG */
+.chart { width: 100%; overflow: hidden; }
+.chart svg { display: block; overflow: visible; }
+.chart .grid { stroke: var(--border); stroke-width: 1; }
+.chart .axis { stroke: var(--ui-border-strong); stroke-width: 1; }
+.chart .ax { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.chart .ax.strong { fill: var(--text); font-weight: 700; }
+.chart .val { fill: var(--ui-text-2); font-size: 11.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.chart .bar { fill: var(--primary); }
+.chart .bar.over { fill: var(--warn); }
+.chart .ref { stroke: var(--warn); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.chart .ref-t { fill: var(--warn); font-weight: 600; }
+.chart .line { fill: none; stroke: var(--series-2); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart .area { fill: var(--series-2); opacity: .12; }
+.chart .dot { fill: var(--series-2); stroke: var(--surface); stroke-width: 2; }
+.chart .trend { stroke: var(--ui-text-2); stroke-width: 2; stroke-dasharray: 6 4; }
+.chart .pt { stroke: var(--surface); stroke-width: 2; }
+.chart .pt.dt, .pt-k.dt { fill: var(--primary); background: var(--primary); }
+.chart .pt.boya, .pt-k.boya { fill: var(--ui-hsk-5); background: var(--ui-hsk-5); }
+.chart .hit { fill: transparent; cursor: pointer; }
+.chart .hit:hover { fill: var(--ui-text); fill-opacity: .05; }
+#fc-30 .ax { font-size: 10px; }
+
+.alert { display: flex; gap: 10px; align-items: flex-start; background: var(--warn-soft); color: var(--text); border: 1px solid var(--warn); border-radius: var(--ui-radius); padding: 10px 12px; font-size: 14px; margin: 6px 0 4px; }
+.alert b { color: var(--warn); }
+.ok-note { margin: 6px 0 4px; font-size: 14px; color: var(--ok); font-weight: 600; }
+
+/* 4. Theo cấp */
+.lv-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.lv { border: 1px solid var(--border); border-left: 4px solid var(--c); border-radius: var(--ui-radius); padding: 10px 12px; background: var(--surface-2); min-width: 0; }
+.lv.dim { opacity: .62; }
+.lv-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.lv-name { font-weight: 700; display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
+.sw { width: 10px; height: 10px; border-radius: 3px; background: var(--c); flex: none; }
+.lv-count b { font-size: 17px; font-variant-numeric: tabular-nums; }
+.lv-bar { position: relative; height: 10px; border-radius: 99px; background: var(--ui-surface-3); overflow: hidden; margin: 8px 0 6px; cursor: pointer; }
+.lv-bar i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 99px; }
+.lv-bar i.l { background: var(--c); opacity: .35; }
+.lv-bar i.m { background: var(--c); }
+.lv-stats { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; color: var(--ui-text-2); }
+.ret.good { color: var(--ok); }
+.ret.mid { color: var(--warn); }
+.ret.low { color: var(--bad); }
+.lv-legend { grid-column: 1 / -1; display: flex; gap: 14px; }
+.lv-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.lg { width: 16px; height: 8px; border-radius: 99px; background: var(--ui-text-2); display: inline-block; }
+.lg.l { opacity: .35; }
+
+/* 5. Heatmap */
+.heat-wrap { display: flex; gap: 6px; margin-top: 6px; }
+.heat-days { display: grid; grid-template-rows: 16px repeat(7, 1fr); gap: 3px; font-size: 10.5px; color: var(--muted); padding-top: 0; }
+.heat-days span { line-height: 1; display: flex; align-items: center; }
+.heat-days::before { content: ""; }
+.heat-main { flex: 1; min-width: 0; }
+.heat-months { display: grid; gap: 3px; height: 16px; margin-bottom: 3px; font-size: 10.5px; color: var(--muted); }
+.heat-months span { white-space: nowrap; overflow: visible; }
+.heat-grid { display: grid; grid-template-rows: repeat(7, 1fr); gap: 3px; }
+.heat-grid i, .heat-legend i { display: block; aspect-ratio: 1; border-radius: 3px; background: var(--ui-surface-3); }
+.heat-grid i { cursor: pointer; }
+.heat-grid i.today { outline: 2px solid var(--text); outline-offset: -1px; }
+.heat-grid i.sel { outline: 2px solid var(--primary); outline-offset: 0; }
+.heat-grid i.hf { background: transparent; border: 1px dashed var(--border); cursor: default; }
+.h1 { background: color-mix(in srgb, var(--primary) 28%, var(--ui-surface-3)) !important; }
+.h2 { background: color-mix(in srgb, var(--primary) 52%, var(--ui-surface-3)) !important; }
+.h3 { background: color-mix(in srgb, var(--primary) 76%, var(--ui-surface-3)) !important; }
+.h4 { background: var(--primary) !important; }
+.heat-legend { display: flex; align-items: center; justify-content: flex-end; gap: 4px; margin-top: 8px; }
+.heat-legend i { width: 13px; height: 13px; }
+.heat-detail { margin: 8px 0 0; min-height: 1.5em; color: var(--ui-text-2); }
+
+/* 6. Tốc độ */
+.rt-rows { display: flex; flex-direction: column; gap: 8px; margin: 6px 0 8px; }
+.rt-row { display: grid; grid-template-columns: 92px 1fr 78px; gap: 10px; align-items: center; cursor: default; }
+.rt-name { font-size: 13.5px; font-weight: 600; display: flex; align-items: center; gap: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rt-name::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--c); flex: none; }
+.rt-track { position: relative; height: 12px; border-radius: 99px; background: var(--ui-surface-3); }
+.rt-track i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 99px; background: var(--c); }
+.rt-track em { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--ui-text-2); border-radius: 2px; }
+.rt-v { font-size: 13px; display: flex; flex-direction: column; line-height: 1.2; text-align: right; font-variant-numeric: tabular-nums; }
+.rt-v small { color: var(--warn); font-size: 11.5px; font-weight: 600; }
+.mini-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; margin: 6px 0 8px; }
+.mini-stats div { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--ui-radius); padding: 8px 10px; display: flex; flex-direction: column; }
+.mini-stats b { font-size: 20px; font-variant-numeric: tabular-nums; }
+.mini-stats b.up { color: var(--ok); }
+.mini-stats b.down { color: var(--bad); }
+.mini-stats span { font-size: 12px; color: var(--muted); }
+.cpm-legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 4px; }
+.cpm-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.pt-k { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.tr-k { width: 18px; border-top: 2px dashed var(--ui-text-2); display: inline-block; }
+
+/* 7. Hay quên */
+.hard { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.hard li { display: grid; grid-template-columns: 24px auto 1fr 96px 40px; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.hard li:last-child { border-bottom: 0; }
+.rank { color: var(--muted); font-size: 13px; text-align: right; font-variant-numeric: tabular-nums; }
+.hz { font-family: var(--cn); font-size: 22px; font-weight: 600; line-height: 1.2; }
+.hw { display: flex; flex-direction: column; min-width: 0; line-height: 1.3; }
+.py { color: var(--ui-pinyin); font-size: 13.5px; }
+.vi { font-size: 13.5px; color: var(--ui-text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hf { position: relative; display: flex; align-items: center; gap: 6px; }
+.hf i { display: block; height: 8px; border-radius: 99px; background: var(--bad); opacity: .75; max-width: 64px; flex: none; }
+.hf b { font-size: 13.5px; color: var(--bad); font-variant-numeric: tabular-nums; }
+.say { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); cursor: pointer; font-size: 16px; }
+.say:hover { border-color: var(--primary); }
+
+/* Tooltip */
+.tip { position: fixed; z-index: 50; pointer-events: none; max-width: 260px; background: var(--ui-text); color: var(--ui-bg); font-size: 12.5px; font-weight: 500; line-height: 1.4; padding: 6px 10px; border-radius: 8px; box-shadow: var(--ui-shadow); }
+
+@media (max-width: 720px) {
+    .tiles { grid-template-columns: repeat(2, 1fr); }
+    .tiles .tile:first-child { grid-column: 1 / -1; }
+    .lv-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+    .container { padding: 12px 12px 48px; }
+    .card { padding: 14px; }
+    .brand small { display: none; }
+    .account-btn { max-width: 96px; padding: 0 10px; }
+    .tile b { font-size: 23px; }
+    .rt-row { grid-template-columns: 70px 1fr 64px; gap: 8px; }
+    .hard li { grid-template-columns: 20px auto 1fr 44px 38px; gap: 8px; }
+    .hf i { display: none; }
+    .hz { font-size: 20px; }
+}

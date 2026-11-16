@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống kê & dự báo</title>
+    <meta name="description" content="Thống kê tiến độ học từ mọi trang: số từ đã học, từ theo tuần, dự báo ôn tập, tỉ lệ nhớ theo cấp HSK, lịch học, tốc độ và từ hay quên.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/theme.css">
+    <script src="../shared/theme.js"></script>
+    <script src="../shared/sync.js"></script>
+    <script src="../shared/tts.js"></script>
+    <link rel="stylesheet" href="thong_ke.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="back" href="../index.html" title="Về trang chủ">←</a>
+            <div class="brand"><strong>Thống kê & dự báo</strong><small id="brand-sub">Tiến độ học từ mọi trang</small></div>
+            <button class="account-btn" data-hoc-account type="button">Đăng nhập</button>
+            <button class="ui-voice-btn" data-hoc-voice title="Giọng đọc (chọn giọng, luân phiên, đọc nhập vai)" aria-label="Giọng đọc">🔊</button>
+            <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Chưa có dữ liệu -->
+        <section class="card empty-hero" id="empty" hidden>
+            <div class="empty-ic">🌱</div>
+            <h1>Chưa có dữ liệu để thống kê</h1>
+            <p class="muted">Học vài từ đầu tiên ở một trang bất kỳ, số liệu sẽ hiện ở đây: số từ đã học, lịch ôn tập sắp tới, tỉ lệ nhớ theo cấp…</p>
+            <div class="actions">
+                <a class="btn btn-primary" href="../hom_nay/hom_nay.html">Buổi học hôm nay</a>
+                <a class="btn" href="../hsk_lotrinh/hsk_lotrinh.html?level=1">Bắt đầu HSK 1</a>
+            </div>
+        </section>
+
+        <!-- 1. Tổng quan -->
+        <section class="card" id="sec-overview">
+            <div class="sec-head"><h2>Tổng quan</h2><span class="muted small" id="ov-note"></span></div>
+            <div class="tiles" id="ov-tiles"></div>
+            <div class="src-chips" id="ov-src"></div>
+        </section>
+
+        <!-- 3. Dự báo -->
+        <section class="card" id="sec-forecast">
+            <div class="sec-head"><h2>Dự báo ôn tập</h2><a class="link" href="../hom_nay/hom_nay.html">Ôn ngay →</a></div>
+            <p class="muted small">Số từ đến hạn mỗi ngày (cùng chữ ở nhiều trang chỉ tính một lần). Hôm nay gồm cả từ quá hạn.</p>
+            <div id="fc-alert"></div>
+            <div class="chart" id="fc-7"></div>
+            <h3 class="sub">30 ngày tới</h3>
+            <div class="chart" id="fc-30"></div>
+        </section>
+
+        <!-- 2. Theo tuần -->
+        <section class="card" id="sec-weekly">
+            <div class="sec-head"><h2>Học theo tuần</h2><span class="muted small">12 tuần gần nhất</span></div>
+            <h3 class="sub">Từ mới mỗi tuần</h3>
+            <div class="chart" id="wk-new"></div>
+            <h3 class="sub">Lượt ôn mỗi tuần</h3>
+            <div class="chart" id="wk-rev"></div>
+            <p class="muted small" id="wk-note"></p>
+        </section>
+
+        <!-- 4. Theo cấp -->
+        <section class="card" id="sec-levels">
+            <div class="sec-head"><h2>Tỉ lệ nhớ theo cấp</h2></div>
+            <p class="muted small">Từ được xếp vào cấp HSK nếu có trong danh sách HSK 1–6 (học ở trang nào cũng tính), không thì vào nhóm của trang đã học. <b>Đã thuộc</b>: khoảng ôn ≥ 21 ngày. <b>Tỉ lệ nhớ</b> ước tính = 1 − quên ÷ (lượt nhớ + quên).</p>
+            <div class="lv-list" id="lv-list"></div>
+        </section>
+
+        <!-- 5. Lịch học -->
+        <section class="card" id="sec-heat">
+            <div class="sec-head"><h2>Lịch học</h2><span class="muted small" id="heat-note"></span></div>
+            <div class="heat-wrap" id="heat"></div>
+            <div class="heat-legend"><span class="muted small">Ít</span><i class="h0"></i><i class="h1"></i><i class="h2"></i><i class="h3"></i><i class="h4"></i><span class="muted small">Nhiều</span></div>
+            <p class="small heat-detail" id="heat-detail">Chạm vào một ô để xem chi tiết ngày đó.</p>
+        </section>
+
+        <!-- 6. Tốc độ -->
+        <section class="card" id="sec-speed">
+            <div class="sec-head"><h2>Tốc độ</h2></div>
+            <h3 class="sub">Nhận diện từ (thời gian nhìn chữ Hán đến khi nhớ ra)</h3>
+            <div id="rt-list"></div>
+            <h3 class="sub">Tốc độ đọc (chữ Hán / phút)</h3>
+            <div id="cpm-summary"></div>
+            <div class="chart" id="cpm-chart"></div>
+        </section>
+
+        <!-- 7. Hay quên -->
+        <section class="card" id="sec-hard">
+            <div class="sec-head"><h2>Từ hay quên nhất</h2><a class="link" href="../hom_nay/hom_nay.html">Luyện ở trang Hôm nay →</a></div>
+            <div id="hard-list"></div>
+        </section>
+    </main>
+
+    <div class="tip" id="tip" role="tooltip" hidden></div>
+
+    <script src="../luyen_tap/lt_data.js"></script>
+    <script src="thong_ke.js"></script>
+</body>
+</html>

@@ -30,6 +30,8 @@ hsk_lotrinh/          Lộ trình từ vựng HSK 1–6 (SRS, đọc nhanh)
   hsk_lotrinh.html/.css/.js, hsk_vocab_data.js
 doc_them/             Đọc thêm: thư viện 30 bài đọc phân cấp HSK 1–6, bài tự dán, đọc lại bài khóa Boya
   doc_them.html/.css/.js, doc_data.js (sinh tự động)
+thong_ke/             Thống kê & dự báo (chỉ đọc localStorage của mọi trang): tổng quan, dự báo ôn 7/30 ngày, theo tuần, theo cấp, heatmap, tốc độ, từ hay quên
+  thong_ke.html/.css/.js
 luyen_tap/            Luyện tập: sắp xếp câu (Việt→Trung), nghe – viết từ/câu, 14 trò chơi; lấy từ đã học ở mọi trang
   luyen_tap.html/.css/.js, lt_data.js, lt_data_wl.js (sinh tự động), lt_games_data.js (dữ liệu trò chơi viết sẵn)
   games/<id>.js       Mỗi trò chơi một file, tự đăng ký vào window.LT_GAMES (API: games/README.md)
@@ -70,6 +72,11 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
   - Utterance tạo bởi chính `HocTTS.speak` có cờ `__hocManaged` để wrapper không ghi đè.
 - **`mywords.js`**: sổ "Từ của tôi" (key `hoc_mywords_v1`), chứa các từ người học tự thêm khi tra trong bài khóa. Mỗi từ có thẻ SM-2 riêng (`schedule()` giống `hsk_lotrinh`). API: `HocMyWords.all/get/has/add/remove/update/due/schedule/ivLabel`. Thẻ được ôn ở `hom_nay`, và trang `luyen_tap` cũng dùng các từ này.
 - **`lookup.js`** (`HocLookup`): tách từ khớp dài nhất theo `HOC_DICT`; `pinyinOf(text)` sinh pinyin cho văn bản bất kỳ (tách âm tiết pinyin theo quy tắc thanh mẫu + vận mẫu); `rubyHTML()`; `attach(container, opts)` bật chạm-để-tra (khung tra + thêm vào Từ của tôi). Mỗi đoạn cần có `data-lk-text`, mỗi chữ là `.lk-c[data-i]`. Hiện `doc_them` dùng module này; `boya_learning` vẫn dùng bản tra từ riêng.
+- **`notes.js`** (`HocNotes.get/set/all`): ghi chú gợi nhớ theo chữ Hán, key `hoc_notes_v1` (được đồng bộ). Ghi chú hiện ở thẻ ôn của `hom_nay`, khung tra từ (`lookup.js`) và bảng Họ chữ.
+- **`zizu.js`** (`HocZizu.open(ch)`): bảng "Họ chữ" (字族) liệt kê mọi từ chứa một chữ.
+  - Phần tử có `data-zizu="字"` tự thành nút mở bảng (bắt sự kiện ở pha capture). Các trang đang có nút này: khung tra từ của `doc_them` và `boya_learning`, mặt sau thẻ và danh sách từ cứng đầu ở `hom_nay`.
+  - Bảng chia hai phần: Đã học (có thẻ SRS ở bất kỳ trang nào hoặc trong Từ của tôi) và Chưa học (sắp theo cấp HSK, có nút ＋ thêm vào Từ của tôi).
+  - Tự nạp lười `shared/dict_vi.js` và `luyen_tap/lt_data.js` (dùng để biết cấp HSK và đổi id thẻ Boya sang chữ Hán), với đường dẫn tính theo vị trí file `zizu.js`.
 - **`dict_vi.js`** (khoảng 0,9MB, sinh bởi `tools/build_dict.py`): `HOC_DICT = {m, w: {từ: [pinyin, HÁN VIỆT, nghĩa]}, c: {chữ: [pinyin, HÁN VIỆT]}}`, gộp khoảng 13.000 từ của HSK, Boya và HSK 3.0. Các trang nạp lười file này (`boya_learning` nạp khi mở Bài khóa).
 
 ## Tài khoản & đồng bộ (`shared/sync.js`, Supabase)
@@ -120,7 +127,7 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
 
 - Chặng hiện tại là chặng đầu tiên chưa hoàn thành.
 - Khung "Ôn tập hôm nay" cộng `due` của mọi trang.
-- Mục "Công cụ bổ trợ": `doc_them`, `luyen_tap`, `word_learning`.
+- Mục "Công cụ bổ trợ": `doc_them`, `luyen_tap`, `thong_ke`, `word_learning`.
 - `tuvung` và `sach_boya` đã ẩn khỏi trang chủ: nội dung trùng với `boya_learning`, file vẫn giữ và có dải thông báo chuyển trang. Thẻ SRS cũ của `tuvung` (`boya_tv_srs`) vẫn được ôn ở `hom_nay`; dòng "tuvung" trong khung "Ôn tập hôm nay" trỏ tới `hom_nay`.
 - **Link vào trang con:** `hsk_lotrinh.html?level=N`, `boya_learning.html?book=<id>&lesson=N`.
 
@@ -161,6 +168,13 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
 - **Bước 2 · Học bài mới:** gợi ý bài tiếp theo của chặng hiện tại (logic chặng chép từ `index.html`). Xong khi hôm nay có học từ mới.
 - **Bước 3 · Luyện tập:** xong khi làm ≥ 10 câu ở `luyen_tap`.
 - **Key lưu:** `hom_nay_v1` = `{settings{limit, speak}, days{date:{r, ok, steps}}, streak}`. Streak tăng khi ôn ≥ 10 lượt hoặc xong bước 2/3. Tóm tắt ghi qua `HocProgress("hom_nay")`.
+- **Ba kiểu thẻ** (`settings.cardMode`):
+  - Kiểu thẻ: Chữ → nghĩa, Nghĩa → chữ (mặt trước đã bỏ phần Hán Việt viết hoa của nghĩa Boya để không lộ đáp án; nút Gợi ý hiện ghi chú hoặc chữ cái đầu của pinyin), và Nghe → nghĩa.
+  - Chế độ Trộn chia 50/30/20; thẻ có `reps ≤ 1` luôn hỏi Chữ → nghĩa. `rt` chỉ đo ở kiểu Chữ → nghĩa.
+- **Mặt sau thẻ:** mỗi chữ có `data-zizu`, kèm khung ghi chú gợi nhớ (`HocNotes`).
+- **Từ cứng đầu:** từ có `max(lapses, wrong) ≥ 4` (lấy giá trị lớn nhất giữa các nguồn, gộp theo chữ Hán) vào khối "🧠 Từ cứng đầu".
+  - Nút "Luyện riêng" mở phiên luyện thêm, **không ghi** vào SRS hay bộ đếm ngày.
+  - Thẻ ôn thường của từ cứng đầu có nhãn 🧠.
 - **Giới hạn:** XP/streak của HSK 3.0 (`hsk_wl_gamify_data_v2`) không được cộng khi ôn ở đây. Nếu tab trang gốc đang mở cùng lúc thì tab đó có thể ghi đè lên.
 
 ## Tra từ trong bài khóa (`boya_learning`)
@@ -204,6 +218,10 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
 - **Trò chơi (14 trò, chuyển từ `tuvung`, viết lại theo API mới):** mỗi trò là một file `luyen_tap/games/<id>.js`, tự đăng ký vào `window.LT_GAMES`. Khung (`openGame`/`finishGame` trong `luyen_tap.js`) truyền vào `ctx` gồm: từ đã học theo "Nguồn từ", câu ví dụ, `ctx.data` = `lt_games_data.js`, TTS, các hàm hẹn giờ tự hủy, `finish()`. Khung hiện màn kết quả chuẩn, lưu kỷ lục ở `S.games[id] = {plays, best, last}`. Đặc tả nằm trong `games/README.md`.
   - Trò dùng từ đã học: match, tf, scramble, hunter, falling, cloze, boss, wordle, wordsearch, chain (chain thêm `word_chain` khi cần).
   - Trò dùng dữ liệu Boya viết sẵn (`ownData`): synonyms, antonyms, collocation, radicals.
+  - **`synonyms` = "Phân biệt từ dễ nhầm":** dùng `LT_GAMES_DATA.confusables`, gồm 68 nhóm từ dễ nhầm HSK 4–6 (cặp hoặc bộ ba), tự viết.
+    - Cấu trúc mỗi nhóm: `{id, level, words:[{hz,py,hv,mean}], explain, items:[{sentence có "＿＿", answer, py, vi, why}]}`.
+    - Trò có chọn cấp và số câu; câu sai được hỏi lại; có nút "📖 Xem phân biệt" và chế độ "📚 Xem danh sách" (tìm theo chữ, pinyin hoặc Hán Việt).
+    - Muốn thêm nhóm thì sửa thẳng `lt_games_data.js`; file này viết tay, không sinh tự động.
   - Trò chơi không ghi vào SRS. Thêm trò mới: tạo file theo README rồi thêm thẻ `<script>` vào `luyen_tap.html`.
 - **Test:** `window.__LT` để lộ `buildPool`, `sentencesFor`, `buildItems`, `startSession`, `openGame`, `gameList`, `state`, `session`.
 

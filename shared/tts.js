@@ -20,10 +20,39 @@
    ========================================================================== */
 (function () {
     "use strict";
+    // ---------- Hướng dẫn khi không nghe thấy tiếng (máy Huawei/HarmonyOS không có dịch vụ Google…) ----------
+    var HELP_HTML = '<h4>🔇 Không nghe thấy tiếng?</h4>' +
+        '<p>Web dùng bộ đọc văn bản (TTS) của <b>hệ điều hành</b>. Máy không có giọng tiếng Trung (hay gặp ở máy Huawei/Honor không có dịch vụ Google) thì bấm 🔊 sẽ không có tiếng. Thử lần lượt:</p>' +
+        '<ol class="tts-help">' +
+        '<li><b>Bật bộ đọc tiếng Trung của máy:</b> Cài đặt → <i>Hỗ trợ / Trợ năng</i> → <i>Chuyển văn bản thành giọng nói</i> (hoặc <i>Đầu ra văn bản thành giọng nói</i>) → chọn công cụ (Huawei TTS / Speech Services…) → ⚙ → <i>Cài đặt dữ liệu giọng nói</i> → tải <b>Tiếng Trung (普通话)</b> → bấm <i>Nghe thử</i>. Tìm nhanh bằng ô tìm kiếm trong Cài đặt: gõ “văn bản thành giọng nói” hoặc “TTS”.</li>' +
+        '<li><b>Đổi trình duyệt:</b> cài <b>Microsoft Edge</b> hoặc <b>Firefox</b> từ AppGallery rồi mở web bằng trình duyệt đó (Huawei Browser thường không hỗ trợ đọc văn bản).</li>' +
+        '<li><b>Cài thêm bộ TTS có tiếng Trung</b> nếu mục 1 không có tiếng Trung: “Speech Services by Google” (tìm trong AppGallery hoặc kho ứng dụng khác), sau đó quay lại mục 1 chọn công cụ này và tải giọng Tiếng Trung.</li>' +
+        '<li>Kiểm tra âm lượng <b>phương tiện</b> (không phải chuông), tắt chế độ im lặng; đóng hẳn trình duyệt rồi mở lại sau khi cài.</li>' +
+        '</ol>';
+    function diagHTML() {
+        var ok = "speechSynthesis" in window, all = ok ? window.speechSynthesis.getVoices() : [];
+        var zh = all.filter(function (v) { return /^(zh|cmn|yue)/i.test(v.lang || ""); });
+        var ua = navigator.userAgent, huawei = /huawei|honor|harmony|hmscore|HBP/i.test(ua);
+        return '<div class="tts-diag"><b>Kiểm tra máy này:</b>' +
+            '<div>' + (ok ? "✅" : "❌") + " Trình duyệt " + (ok ? "hỗ trợ" : "KHÔNG hỗ trợ") + " đọc văn bản</div>" +
+            (ok ? "<div>" + (all.length ? "✅" : "⚠️") + " Số giọng trên máy: " + all.length + (all.length ? "" : " (có thể đang tải — mở lại hộp này sau vài giây)") + "</div>" +
+                  "<div>" + (zh.length ? "✅" : "❌") + " Giọng tiếng Trung: " + zh.length + "</div>" : "") +
+            (huawei ? "<div>📱 Máy Huawei/Honor: xem hướng dẫn bên dưới.</div>" : "") +
+            (ok ? '<button class="tts-btn" type="button" id="tts-test">▶ Phát thử “你好”</button> <span id="tts-test-r"></span>' : "") + "</div>";
+    }
     if (!("speechSynthesis" in window)) {
+        var openHelp = function () {
+            var o = document.createElement("div");
+            o.setAttribute("style", "position:fixed;inset:0;background:rgba(15,23,42,.5);z-index:99990;display:flex;align-items:center;justify-content:center;padding:12px");
+            o.innerHTML = '<div style="background:var(--ui-surface,#fff);color:var(--ui-text,#0f172a);border-radius:16px;max-width:460px;max-height:90vh;overflow:auto;padding:18px;font:14px/1.5 system-ui,sans-serif">' +
+                '<h3 style="margin:0 0 6px">🔊 Giọng đọc</h3>' + diagHTML() + HELP_HTML + '<button style="margin-top:10px;padding:8px 14px;border-radius:10px">Đóng</button></div>';
+            o.onclick = function (e) { if (e.target === o || e.target.tagName === "BUTTON") o.remove(); };
+            document.body.appendChild(o);
+        };
+        document.addEventListener("click", function (e) { var t = e.target.closest && e.target.closest("[data-hoc-voice]"); if (t) { e.preventDefault(); openHelp(); } });
         window.HocTTS = { voices: function () { return []; }, settings: function () { return {}; }, set: function () {}, speak: function () {},
             stop: function () {}, dialogueSegments: function () { return []; }, readDialogue: function () { return { stop: function () {} }; },
-            open: function () { alert("Trình duyệt này không hỗ trợ đọc văn bản."); }, gender: function () { return ""; } };
+            open: openHelp, gender: function () { return ""; }, onChange: function () {} };
         return;
     }
     var KEY = "hoc_tts_v1";
@@ -72,6 +101,7 @@
         return defaultVoice();
     }
 
+
     // ---------- Bọc speechSynthesis.speak ----------
     var HAN = /[㐀-鿿]/;
     synth.speak = function (u) {
@@ -82,9 +112,38 @@
                 u.rate = clamp((u.rate || 1) * (S.rate || 1), 0.3, 2.5);
                 u.pitch = clamp((u.pitch || 1) * (S.pitch || 1), 0.5, 1.8);
             }
+            if (u && (/^zh|^cmn/i.test(u.lang || "") || HAN.test(u.text || ""))) watchSilence(u);
         } catch (e) {}
         return rawSpeak(u);
     };
+    var warned = false;
+    function watchSilence(u) {
+        if (warned) return;
+        var started = false;
+        try { u.addEventListener("start", function () { started = true; }); } catch (e) {}
+        setTimeout(function () {
+            if (started || warned || synth.speaking) return;
+            var zh = synth.getVoices().filter(function (v) { return /^(zh|cmn|yue)/i.test(v.lang || ""); });
+            if (!zh.length || !started) showSilenceBanner(zh.length);
+        }, 3000);
+    }
+    function showSilenceBanner(nZh) {
+        if (warned) return;
+        warned = true;
+        try { if (Date.now() - (+localStorage.getItem("hoc_tts_warn") || 0) < 6 * 3600000) return; } catch (e) {}
+        var b = document.createElement("div");
+        b.setAttribute("style", "position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:99980;max-width:calc(100% - 24px);" +
+            "background:var(--ui-surface,#fff);color:var(--ui-text,#0f172a);border:1px solid var(--ui-border-strong,#ccc);border-radius:12px;" +
+            "box-shadow:0 10px 30px rgba(0,0,0,.25);padding:10px 12px;display:flex;gap:10px;align-items:center;font:14px/1.4 system-ui,sans-serif");
+        b.innerHTML = "<span>🔇 " + (nZh ? "Không phát được tiếng đọc." : "Máy chưa có giọng đọc tiếng Trung nên không phát được tiếng.") + "</span>" +
+            '<button style="border:0;background:var(--ui-primary,#4f46e5);color:#fff;border-radius:8px;padding:6px 10px;font:inherit;cursor:pointer">Cách khắc phục</button>' +
+            '<button style="border:0;background:none;font-size:20px;cursor:pointer;color:inherit" aria-label="Đóng">×</button>';
+        var btns = b.querySelectorAll("button");
+        btns[0].onclick = function () { b.remove(); open(); };
+        btns[1].onclick = function () { b.remove(); try { localStorage.setItem("hoc_tts_warn", String(Date.now())); } catch (e) {} };
+        document.body.appendChild(b);
+        setTimeout(function () { if (b.parentNode) b.remove(); }, 15000);
+    }
     function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
 
     function speak(text, o) {
@@ -190,6 +249,8 @@
         ".tts-row{display:flex;align-items:center;gap:10px;margin:6px 0}.tts-row label{min-width:78px;font-weight:600;font-size:13.5px}.tts-row input[type=range]{flex:1;accent-color:var(--ui-primary,#4f46e5)}" +
         ".tts-row select{flex:1;min-width:0;padding:6px 8px;border-radius:8px;border:1px solid var(--ui-border-strong,#ccc);background:var(--ui-surface-2,#f1f5f9);color:inherit}" +
         ".tts-chk{display:flex;gap:8px;align-items:flex-start;margin:6px 0;font-size:13.5px;cursor:pointer}.tts-chk input{margin-top:3px;accent-color:var(--ui-primary,#4f46e5)}" +
+        ".tts-diag{background:var(--ui-surface-2,#f1f5f9);border-radius:10px;padding:8px 10px;font-size:13px;margin:8px 0}.tts-diag div{margin:2px 0}.tts-diag .tts-btn{margin-top:6px}" +
+        ".tts-help{margin:4px 0 0;padding-left:20px;font-size:13px}.tts-help li{margin:4px 0}" +
         ".tts-tip{background:var(--ui-surface-2,#f1f5f9);border-radius:10px;padding:8px 10px;font-size:12.5px;color:var(--ui-text-2,#334155);margin-top:12px}" +
         ".tts-rot{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}.tts-rot label{font-size:12.5px;border:1px solid var(--ui-border,#ddd);border-radius:99px;padding:2px 8px;cursor:pointer}" +
         "[data-hoc-voice]{cursor:pointer}";
@@ -213,6 +274,7 @@
         var opts = function (sel) { return '<option value="">Tự động</option>' + vs.map(function (v) { var l = label(v); return '<option value="' + esc(v.name) + '"' + (v.name === sel ? " selected" : "") + ">" + esc(l.name + " (" + l.sub.split(" · ")[0] + ")") + "</option>"; }).join(""); };
         ov.innerHTML = '<div class="tts-box" role="dialog" aria-modal="true"><button class="tts-x" aria-label="Đóng">×</button>' +
             "<h3>🔊 Giọng đọc</h3><p>Áp dụng cho mọi trang trên thiết bị này. Bấm ▶ để nghe thử.</p>" +
+            (vs.length ? "" : diagHTML() + HELP_HTML) +
             (vs.length ? vs.map(function (v) { var l = label(v); return '<label class="tts-v' + (cur && v.name === cur.name ? " on" : "") + '"><input type="radio" name="tts-v" value="' + esc(v.name) + '"' + (cur && v.name === cur.name ? " checked" : "") + '><span class="nm"><b>' + esc(l.name) + "</b><small>" + esc(l.sub) + '</small></span><button type="button" data-try="' + esc(v.name) + '">▶</button></label>'; }).join("")
                 : "<p><b>Chưa thấy giọng tiếng Trung nào trên máy.</b> Thử mở bằng Microsoft Edge, hoặc cài giọng tiếng Trung trong cài đặt hệ điều hành.</p>") +
             '<label class="tts-chk"><input type="checkbox" id="tts-others"' + (S.others ? " checked" : "") + "> Hiện cả giọng Quảng Đông / Đài Loan</label>" +
@@ -227,8 +289,16 @@
             '<div class="tts-row"><label>Vai 1</label><select data-role="a">' + opts(S.roles.a) + "</select></div>" +
             '<div class="tts-row"><label>Vai 2</label><select data-role="b">' + opts(S.roles.b) + '</select></div>' +
             '<div class="tts-row"><button class="tts-btn" id="tts-try-roles" type="button">▶ Nghe thử 3 vai</button></div>' +
-            '<div class="tts-tip">💡 Giọng hay nhất: mở web bằng <b>Microsoft Edge</b> (máy tính hoặc Android) để có các giọng tự nhiên Xiaoxiao, Yunxi, Xiaoyi… iPhone: Cài đặt → Trợ năng → Nội dung được đọc → Giọng nói → Tiếng Trung để tải thêm giọng.</div></div>';
+            '<div class="tts-tip">💡 Giọng hay nhất: mở web bằng <b>Microsoft Edge</b> (máy tính hoặc Android) để có các giọng tự nhiên Xiaoxiao, Yunxi, Xiaoyi… iPhone: Cài đặt → Trợ năng → Nội dung được đọc → Giọng nói → Tiếng Trung để tải thêm giọng.</div>' +
+            (vs.length ? '<details style="margin-top:10px"><summary style="cursor:pointer;font-weight:600">🔇 Không nghe thấy tiếng?</summary>' + diagHTML() + HELP_HTML + "</details>" : "") + "</div>";
         ov.querySelector(".tts-x").onclick = close;
+        var tb = ov.querySelector("#tts-test");
+        if (tb) tb.onclick = function () {
+            var r = ov.querySelector("#tts-test-r"); r.textContent = "đang phát…";
+            var u = speak("你好", { rate: 0.9 }); if (!u) return;
+            var st = false; u.onstart = function () { st = true; r.textContent = "✅ đã bắt đầu đọc — nếu vẫn không nghe thấy, kiểm tra âm lượng phương tiện"; };
+            setTimeout(function () { if (!st) r.textContent = "❌ không phát được — làm theo hướng dẫn bên dưới"; }, 3000);
+        };
         ov.querySelectorAll('input[name="tts-v"]').forEach(function (r) { r.onchange = function () { S.voice = r.value; persist(); render(ov); speak(SAMPLE, { voice: r.value }); }; });
         ov.querySelectorAll("[data-try]").forEach(function (b) { b.onclick = function (e) { e.preventDefault(); e.stopPropagation(); stop(); speak(SAMPLE, { voice: b.getAttribute("data-try") }); }; });
         ov.querySelector("#tts-others").onchange = function (e) { S.others = e.target.checked; persist(); render(ov); };

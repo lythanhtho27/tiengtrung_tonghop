@@ -1875,7 +1875,7 @@
         const charsHtml = info.chars.length > 1 ? `
             <div class="lk-chars">
                 ${info.chars.map(x => `
-                    <div class="lk-ch">
+                    <div class="lk-ch" data-zizu="${escapeHtml(x.ch)}" title="Họ chữ: mọi từ có chữ ${escapeHtml(x.ch)}" style="cursor:pointer">
                         <span class="lk-ch-hz">${escapeHtml(x.ch)}</span>
                         <span class="lk-ch-py">${escapeHtml(x.py)}</span>
                         <span class="lk-ch-hv">${escapeHtml(String(x.hv || '').toUpperCase()) || '—'}</span>
