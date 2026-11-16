@@ -16,7 +16,7 @@
     <header class="topbar">
         <div class="topbar-inner">
             <a class="back" href="../index.html" title="Về trang chủ">←</a>
-            <div class="brand"><strong>Luyện tập</strong><small>Sắp xếp câu · Nghe – viết</small></div>
+            <div class="brand"><strong>Luyện tập</strong><small>Sắp xếp câu · Nghe – viết · Trò chơi</small></div>
             <button class="account-btn" data-hoc-account type="button">Đăng nhập</button>
             <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
         </div>
@@ -89,6 +89,12 @@
                 <button class="btn" id="btn-wrong" hidden>🔁 Luyện câu hay sai (<span id="wrong-n">0</span>)</button>
             </div>
 
+            <div class="card" id="games-card" hidden>
+                <h2>🎮 Trò chơi</h2>
+                <p class="muted games-note">Ôn từ đã học theo cách vui hơn (dùng chung mục "Nguồn từ" ở trên). Trò chơi không ghi vào lịch ôn tập.</p>
+                <div class="games-grid" id="games-grid"></div>
+            </div>
+
             <div class="card">
                 <h2>Kết quả theo dạng bài</h2>
                 <div class="stats" id="stats"></div>
@@ -103,6 +109,15 @@
                 <span class="prog-text" id="prog-text">1/20</span>
             </div>
             <div class="card qcard" id="qcard"></div>
+        </section>
+
+        <!-- Trò chơi -->
+        <section id="game" hidden>
+            <div class="session-top">
+                <button class="btn btn-ghost" id="btn-game-quit" title="Về danh sách trò chơi">✕</button>
+                <h2 class="game-title" id="game-title"></h2>
+            </div>
+            <div class="card game-body" id="game-body"></div>
         </section>
 
         <!-- Kết quả -->
@@ -131,6 +146,21 @@
     <script src="../shared/progress.js"></script>
     <script src="../shared/mywords.js"></script>
     <script src="lt_data.js"></script>
+    <script src="lt_games_data.js"></script>
+    <script src="games/match.js"></script>
+    <script src="games/tf.js"></script>
+    <script src="games/scramble.js"></script>
+    <script src="games/hunter.js"></script>
+    <script src="games/falling.js"></script>
+    <script src="games/cloze.js"></script>
+    <script src="games/wordle.js"></script>
+    <script src="games/wordsearch.js"></script>
+    <script src="games/boss.js"></script>
+    <script src="games/chain.js"></script>
+    <script src="games/synonyms.js"></script>
+    <script src="games/antonyms.js"></script>
+    <script src="games/collocation.js"></script>
+    <script src="games/radicals.js"></script>
     <script src="luyen_tap.js"></script>
 </body>
 </html>

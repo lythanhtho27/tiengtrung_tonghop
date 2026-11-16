@@ -37,10 +37,10 @@
 
     // ---------------------------------------------------------------- Trạng thái
     const DEFAULT = { settings: { types: ["order", "dword", "dsent"], count: 20, rate: 0.9, src: "all", distract: false, showpy: false },
-                      items: {}, types: {}, days: {} };
+                      items: {}, types: {}, days: {}, games: {} };
     let S = Object.assign({}, DEFAULT, readJSON(STORE, {}));
     S.settings = Object.assign({}, DEFAULT.settings, S.settings || {});
-    ["items", "types", "days"].forEach(k => { if (!S[k] || typeof S[k] !== "object") S[k] = {}; });
+    ["items", "types", "days", "games"].forEach(k => { if (!S[k] || typeof S[k] !== "object") S[k] = {}; });
     function save() {
         try { localStorage.setItem(STORE, JSON.stringify(S)); } catch (e) {}
         writeSummary();
@@ -175,8 +175,8 @@
         return shuffle(items).slice(0, count);
     }
 
-    async function startSession(opts) {
-        opts = opts || {};
+    // Pool từ theo mục "Nguồn từ" (dùng cho phiên luyện và trò chơi)
+    async function currentPool() {
         const st = S.settings;
         let pool;
         if (st.src.indexOf("free") === 0) pool = freePool(+st.src.slice(4));
@@ -185,6 +185,12 @@
             if (st.src !== "all") pool = new Map(Array.from(pool).filter(([, w]) => w.src === st.src));
         }
         if (Array.from(pool.values()).some(w => w.src === "wl")) await ensureWL();
+        return pool;
+    }
+    async function startSession(opts) {
+        opts = opts || {};
+        const st = S.settings;
+        const pool = await currentPool();
         if (!pool.size) { toast("Chưa có từ đã học ở nguồn này. Hãy chọn \"Luyện tự do\" hoặc học vài bài trước."); return; }
         const types = opts.types || st.types;
         if (!types.length) { toast("Hãy chọn ít nhất một dạng bài."); return; }
@@ -493,7 +499,8 @@
 
     // ---------------------------------------------------------------- Màn hình chính
     function show(view) {
-        ["home", "session", "result"].forEach(v => { $(v).hidden = v !== view; });
+        if (view !== "game") closeGame();
+        ["home", "session", "result", "game"].forEach(v => { $(v).hidden = v !== view; });
         window.scrollTo(0, 0);
         if (view === "home") renderHome();
     }
@@ -525,6 +532,95 @@
         const wrongKeys = Object.keys(S.items).filter(k => (S.items[k].w || 0) > (S.items[k].c || 0));
         $("wrong-n").textContent = wrongKeys.length;
         $("btn-wrong").hidden = !wrongKeys.length;
+        renderGamesHub();
+    }
+
+    // ---------------------------------------------------------------- Trò chơi
+    // Mỗi trò là một file luyen_tap/games/<id>.js tự đăng ký vào window.LT_GAMES (xem games/README.md).
+    let game = null;   // { def, cleanups: [] }
+    function gameList() { return (window.LT_GAMES || []).slice().sort((a, b) => (a.order || 99) - (b.order || 99)); }
+    function renderGamesHub() {
+        const list = gameList();
+        $("games-card").hidden = !list.length;
+        $("games-grid").innerHTML = list.map(g => {
+            const st = S.games[g.id];
+            return `<button class="game-tile" data-game="${esc(g.id)}"><span class="gt-ic">${g.ic || "🎮"}</span>
+                <span class="gt-body"><b>${esc(g.name)}</b><small>${esc(g.desc || "")}</small>
+                ${st && st.plays ? `<em>Kỷ lục ${st.best}${esc(g.unit || " điểm")} · ${st.plays} lượt</em>` : ""}</span></button>`;
+        }).join("");
+    }
+    function distractors(words, w, n, key) {
+        key = key || "mean";
+        const seen = new Set([String(w[key])]);
+        const out = [];
+        for (const x of shuffle(words.slice())) {
+            const v = String(x[key] || "");
+            if (!v || seen.has(v) || x.hz === w.hz) continue;
+            seen.add(v); out.push(x);
+            if (out.length >= n) break;
+        }
+        return out;
+    }
+    async function openGame(id) {
+        const def = gameList().find(g => g.id === id);
+        if (!def) return;
+        const pool = await currentPool();
+        const words = Array.from(pool.values()).filter(w => w.hz && w.mean);
+        if (!def.ownData && words.length < (def.minWords || 8)) {
+            toast(`Trò này cần ít nhất ${def.minWords || 8} từ. Hãy chọn "Luyện tự do" ở mục Nguồn từ hoặc học thêm.`);
+            return;
+        }
+        closeGame();
+        game = { def, cleanups: [] };
+        show("game");
+        $("game-title").textContent = (def.ic || "🎮") + " " + def.name;
+        const el = $("game-body");
+        el.innerHTML = "";
+        let sentCache = null;
+        const ctx = {
+            el, words: shuffle(words.slice()), data: window.LT_GAMES_DATA || {},
+            sents: () => sentCache || (sentCache = sentencesFor(pool)),
+            speak, shuffle, esc, toast,
+            distractors: (w, n, key) => distractors(words, w, n, key),
+            pick: (n, filter) => shuffle(words.filter(filter || (() => true))).slice(0, n),
+            onCleanup: fn => { if (game) game.cleanups.push(fn); },
+            setTimeout: (f, ms) => { const t = setTimeout(f, ms); ctx.onCleanup(() => clearTimeout(t)); return t; },
+            setInterval: (f, ms) => { const t = setInterval(f, ms); ctx.onCleanup(() => clearInterval(t)); return t; },
+            finish: res => finishGame(def, res || {}),
+            best: () => (S.games[def.id] || {}).best || 0,
+        };
+        try { def.start(ctx); }
+        catch (e) { console.error(e); el.innerHTML = `<p class="muted">Trò chơi gặp lỗi: ${esc(e.message)}</p>`; }
+    }
+    function closeGame() {
+        if (!game) return;
+        game.cleanups.forEach(f => { try { f(); } catch (e) {} });
+        if ("speechSynthesis" in window) speechSynthesis.cancel();
+        game = null;
+    }
+    // res: { score, unit?, correct?, total?, wrong?: [{hz, py, mean}], note?, title? }
+    function finishGame(def, res) {
+        closeGame();
+        const st = S.games[def.id] || (S.games[def.id] = { plays: 0, best: 0 });
+        const score = Math.round(res.score || 0);
+        const isBest = score > (st.best || 0);
+        st.plays++; st.last = Date.now(); if (isBest) st.best = score;
+        const d = today(); d.g = (d.g || 0) + 1;
+        save();
+        const unit = res.unit || def.unit || " điểm";
+        const wrong = (res.wrong || []).filter((w, i, a) => w && w.hz && a.findIndex(x => x.hz === w.hz) === i);
+        $("game-body").innerHTML = `
+            <div class="game-result">
+                <div class="score">${score}<small>${esc(unit)}</small></div>
+                <h2>${isBest && st.plays > 1 ? "🏆 Kỷ lục mới!" : esc(res.title || "Hoàn thành!")}</h2>
+                <p class="muted">${res.total ? `Đúng ${res.correct || 0}/${res.total}. ` : ""}${esc(res.note || "")} Kỷ lục: ${st.best}${esc(unit)} · ${st.plays} lượt chơi.</p>
+                ${wrong.length ? `<h3>Từ cần xem lại</h3><ul class="mistakes">${wrong.map((w, i) => `<li><button class="btn btn-sm" data-say="${i}">🔊</button>
+                    <span class="zh">${esc(w.hz)}</span> <span class="py">${esc(w.py || "")}</span><div class="vi">${esc(w.mean || "")}</div></li>`).join("")}</ul>` : ""}
+                <div class="actions"><button class="btn btn-primary" id="g-again">▶ Chơi lại</button><button class="btn" id="g-back">🎮 Trò khác</button></div>
+            </div>`;
+        $("game-body").querySelectorAll("[data-say]").forEach(b => b.onclick = () => speak(wrong[+b.dataset.say].hz));
+        $("g-again").onclick = () => openGame(def.id);
+        $("g-back").onclick = () => show("home");
     }
     function setSeg(id, v) { document.querySelectorAll("#" + id + " button").forEach(b => b.classList.toggle("on", +b.dataset.v === +v)); }
 
@@ -538,6 +634,8 @@
     $("opt-distract").addEventListener("change", e => { S.settings.distract = e.target.checked; save(); });
     $("opt-showpy").addEventListener("change", e => { S.settings.showpy = e.target.checked; save(); });
     $("btn-start").onclick = () => startSession();
+    $("games-grid").addEventListener("click", e => { const b = e.target.closest("[data-game]"); if (b) openGame(b.dataset.game); });
+    $("btn-game-quit").onclick = () => show("home");
     $("btn-wrong").onclick = () => {
         const keys = new Set(Object.keys(S.items).filter(k => (S.items[k].w || 0) > (S.items[k].c || 0)));
         startSession({ onlyKeys: keys, types: Object.keys(TYPES), count: Math.min(30, keys.size * 2) });
@@ -578,5 +676,5 @@
     show("home");
     writeSummary();
     // test tự động có thể dùng
-    window.__LT = { buildPool, sentencesFor, buildItems, startSession, state: () => S, session: () => session };
+    window.__LT = { buildPool, sentencesFor, buildItems, startSession, openGame, gameList, state: () => S, session: () => session };
 })();

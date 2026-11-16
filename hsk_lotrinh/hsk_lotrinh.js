@@ -98,6 +98,7 @@
         days: {},      // yyyy-mm-dd -> { n: từ mới, r: lượt ôn, c: đúng, t: tổng câu, ms/mc: tổng thời gian & số lần nhận diện đúng }
         speed: { best: null, runs: 0 }, // kỷ lục chế độ đọc nhanh
         lastLevel: 1,
+        placement: null, // kết quả kiểm tra xếp lớp gần nhất: { at, range, result }
     };
     let S = load();
     function load() {
@@ -364,6 +365,7 @@
             S.lastLevel = +b.dataset.lv; save(); renderPath();
         };
         renderLevelPanel(S.lastLevel);
+        renderPlacementCTA();
     }
 
     function renderHeatmap() {
@@ -492,7 +494,18 @@
         setProgress(0, "");
     }
     function closeSession(force) {
-        if (session && session.dirty && !force && !confirm("Thoát phiên học? Kết quả của phần đang làm sẽ không được lưu.")) return;
+        if (session && session.dirty && !force) {
+            const pl = session.kind === "placement";
+            if (pl) clearTimeout(session.timer);
+            const msg = pl
+                ? (session.stage === "result" ? "Thoát mà không áp dụng kết quả kiểm tra xếp lớp?" : "Thoát bài kiểm tra xếp lớp? Các câu đã làm sẽ không được lưu.")
+                : "Thoát phiên học? Kết quả của phần đang làm sẽ không được lưu.";
+            if (!confirm(msg)) {
+                // tiếp tục câu đang làm với đồng hồ mới
+                if (pl && session.stage === "quiz") renderPlacementQ();
+                return;
+            }
+        }
         document.body.classList.remove("fb-open");
         if ("speechSynthesis" in window) speechSynthesis.cancel();
         if (session && session.timer) clearTimeout(session.timer);
@@ -1084,6 +1097,343 @@
         };
     }
 
+    // ================================================================ KIỂM TRA XẾP LỚP
+    // Dành cho người đã có nền tảng: hỏi nhanh 3–4 từ mỗi bài (thấy chữ Hán → chọn nghĩa, 8 giây/câu).
+    // Bài đạt (đúng hết, bài hỏi 4 từ được sai 1; TB thời gian các câu đúng ≤ 4 giây) được đánh dấu hoàn thành,
+    // từ của bài vào lịch ôn với khoảng cách dài. Kiểm tra lần lượt từ cấp thấp, cấp nào đúng < 60% thì dừng.
+    const PL_LIMIT = 8000;        // giới hạn mỗi câu (ms)
+    const PL_FAST = 4000;         // thời gian trung bình tối đa để bài được tính là đạt (ms)
+    const PL_LEVEL_MIN = 0.6;     // tỉ lệ đúng tối thiểu của một cấp để kiểm tra tiếp cấp cao hơn
+    function plAskCount(u) { return u.words.length >= 20 ? 4 : 3; }
+    function plRangeInfo(maxLv) {
+        let units = 0, qs = 0;
+        for (let lv = 1; lv <= maxLv; lv++) LEVELS[lv].units.forEach(u => { units++; qs += plAskCount(u); });
+        return { units, qs, min: Math.max(5, Math.round(qs * 4.5 / 60)) };
+    }
+    function openPlacementIntro() {
+        if (session && !$("session").hidden) return;
+        session = { kind: "placement", stage: "intro", dirty: false, maxLv: (S.placement && S.placement.range) || 3 };
+        openSession("🎯 Kiểm tra xếp lớp");
+        setProgress(0, "");
+        renderPlacementIntro();
+    }
+    function renderPlacementIntro() {
+        const s = session;
+        const last = S.placement && S.placement.at
+            ? `<p class="pl-last">Lần trước: ${fmtDate(S.placement.at)} · phạm vi HSK 1–${S.placement.range}${S.placement.result && S.placement.result.passed !== undefined ? ` · đạt ${S.placement.result.passed} bài` : ""}</p>` : "";
+        body().innerHTML = `<div class="pl-intro">
+            <div class="pl-badge">🎯</div>
+            <h2>Kiểm tra xếp lớp</h2>
+            <p class="muted">Đã học tiếng Trung trước đây? Làm bài kiểm tra nhanh để bỏ qua những bài bạn đã biết và bắt đầu đúng trình độ.</p>
+            <ul class="pl-points">
+                <li>⏱ Khoảng <b>15–20 phút</b> (HSK 1–3). Mỗi bài trong lộ trình hỏi 3–4 từ: thấy chữ Hán, chọn nghĩa đúng trong <b>8 giây</b>.</li>
+                <li>🤷 Không chắc thì bấm <b>Không biết</b>. Đừng đoán, kết quả sẽ chính xác hơn.</li>
+                <li>✅ Bài nào đạt (đúng hết và trả lời nhanh) sẽ được <b>đánh dấu hoàn thành</b>. Từ của bài vào lịch ôn với khoảng cách dài (20–45 ngày).</li>
+                <li>📚 Bài chưa đạt được giữ lại để bạn học. Từ trả lời sai được đưa vào ôn tập ngay.</li>
+                <li>🛑 Nếu một cấp đúng dưới 60%, bài kiểm tra tự dừng ở cấp đó. Bạn có thể dừng và xem kết quả bất cứ lúc nào.</li>
+            </ul>
+            <div class="pl-ranges" role="radiogroup" aria-label="Phạm vi kiểm tra">
+                ${[3, 4, 5].map(m => { const r = plRangeInfo(m); return `<button class="pl-range ${s.maxLv === m ? "active" : ""}" data-max="${m}" role="radio" aria-checked="${s.maxLv === m}">
+                    <b>HSK 1–${m}</b><small>${r.units} bài · ${r.qs} câu · ~${r.min} phút</small></button>`; }).join("")}
+            </div>
+            ${last}
+            <div class="btn-row center"><button class="btn btn-primary btn-lg pl-start" id="pl-start">Bắt đầu</button></div>
+            <div class="kbd-hint">Trên máy tính: phím 1–4 để chọn, phím 0 = Không biết</div>
+        </div>`;
+        body().onclick = e => {
+            const r = e.target.closest(".pl-range");
+            if (r) { s.maxLv = +r.dataset.max; renderPlacementIntro(); return; }
+            if (e.target.closest("#pl-start")) startPlacement(s.maxLv);
+        };
+    }
+    function startPlacement(maxLv) {
+        const plan = [];
+        for (let lv = 1; lv <= maxLv; lv++) {
+            const items = [];
+            LEVELS[lv].units.forEach(u => shuffle(u.words).slice(0, plAskCount(u)).forEach(w => items.push({ w, u })));
+            plan.push({ lv, items: shuffle(items) });
+        }
+        session = {
+            kind: "placement", stage: "quiz", dirty: true, maxLv, plan, li: 0, i: 0,
+            total: plan.reduce((a, p) => a + p.items.length, 0), answered: 0,
+            ans: {},          // unitKey -> [{ id, ok, ms, dk }]
+            stopReason: "", timer: null, locked: false,
+        };
+        openSession(`🎯 Kiểm tra xếp lớp · HSK 1–${maxLv}`);
+        renderPlacementQ();
+    }
+    function renderPlacementQ() {
+        const s = session; if (!s || s.kind !== "placement") return;
+        const P = s.plan[s.li];
+        if (s.i >= P.items.length) { placementLevelEnd(); return; }
+        const it = P.items[s.i], w = it.w;
+        const ds = pickDistractors(w, 3, LEVELS[w.level].words, "vi");
+        s.opts = shuffle([w].concat(ds));
+        s.answer = s.opts.indexOf(w);
+        s.locked = false;
+        s.stage = "quiz";
+        setProgress(s.answered / s.total, `${s.answered + 1}/${s.total}`);
+        body().innerHTML = `<div class="pl-q">
+            <div class="pl-top">
+                <span class="chip" style="--c:${LEVEL_COLORS[P.lv]}">Đang kiểm tra HSK ${P.lv}</span>
+                <span class="muted">Câu ${s.i + 1}/${P.items.length} của cấp</span>
+            </div>
+            <div class="sp-timer"><i style="animation-duration:${PL_LIMIT}ms"></i></div>
+            <div class="pl-hz">${esc(w.hz)}</div>
+            <div class="pl-py" id="pl-py">Nghĩa của từ này là gì?</div>
+            <div class="opts pl-opts">${s.opts.map((o, k) => `<button class="opt" data-i="${k}"><kbd>${k + 1}</kbd><span>${esc(o.vi)}</span></button>`).join("")}</div>
+            <button class="btn pl-dk" data-dk>🤷 Không biết <kbd class="kbd-only">0</kbd></button>
+            <div class="pl-foot"><button class="pl-link" data-stop>Dừng &amp; xem kết quả</button></div>
+        </div>`;
+        body().onclick = e => {
+            if (e.target.closest("[data-stop]")) { placementStop(); return; }
+            if (e.target.closest("[data-dk]")) { placementAnswer(-2); return; }
+            const o = e.target.closest(".opt"); if (o) placementAnswer(+o.dataset.i);
+        };
+        s.t0 = performance.now();
+        clearTimeout(s.timer);
+        s.timer = setTimeout(() => placementAnswer(-1), PL_LIMIT);
+    }
+    // k: chỉ số đáp án; -1 = hết giờ; -2 = "Không biết"
+    function placementAnswer(k) {
+        const s = session; if (!s || s.kind !== "placement" || s.stage !== "quiz" || s.locked) return;
+        s.locked = true;
+        clearTimeout(s.timer);
+        const ms = k === -1 ? PL_LIMIT : Math.min(performance.now() - s.t0, PL_LIMIT);
+        const it = s.plan[s.li].items[s.i], w = it.w;
+        const ok = k === s.answer;
+        (s.ans[it.u.key] = s.ans[it.u.key] || []).push({ id: w.id, ok, ms: Math.round(ms), dk: k === -2 });
+        s.answered++;
+        body().querySelectorAll(".opt, .pl-dk").forEach(b => { b.disabled = true; });
+        body().querySelectorAll(".opt").forEach((b, i) => { if (i === s.answer) b.classList.add("correct"); else if (i === k) b.classList.add("wrong"); });
+        const tm = body().querySelector(".sp-timer i"); if (tm) tm.style.animationPlayState = "paused";
+        const py = $("pl-py");
+        py.innerHTML = `<span class="py">${esc(w.py)}</span>${ok ? " ✓" : k === -1 ? " · <b class='pl-late'>hết giờ</b>" : ""}`;
+        setProgress(s.answered / s.total, `${Math.min(s.answered + 1, s.total)}/${s.total}`);
+        s.i++;
+        s.timer = setTimeout(renderPlacementQ, ok ? 450 : 1300);
+    }
+    function placementLevelStats(lv) {
+        const s = session;
+        let n = 0, c = 0;
+        LEVELS[lv].units.forEach(u => (s.ans[u.key] || []).forEach(a => { n++; if (a.ok) c++; }));
+        return { n, c, acc: n ? c / n : 0 };
+    }
+    function placementLevelEnd() {
+        const s = session;
+        const P = s.plan[s.li];
+        const st = placementLevelStats(P.lv);
+        const pct = Math.round(st.acc * 100);
+        if (st.acc < PL_LEVEL_MIN) {
+            if (s.li < s.plan.length - 1) s.stopReason = `HSK ${P.lv} chỉ đúng ${pct}% (dưới ${PL_LEVEL_MIN * 100}%), nên bài kiểm tra dừng ở đây. Các cấp cao hơn chưa được kiểm tra.`;
+            placementFinish(); return;
+        }
+        if (s.li >= s.plan.length - 1) { placementFinish(); return; }
+        // nghỉ giữa hai cấp
+        s.stage = "between";
+        const nextLv = s.plan[s.li + 1].lv;
+        body().innerHTML = `<div class="result pass pl-between">
+            <h2>Xong HSK ${P.lv}</h2>
+            <div class="score-big">${pct}%</div>
+            <div class="muted">${st.c}/${st.n} câu đúng</div>
+            <p>Tiếp theo: <b>HSK ${nextLv}</b> · ${s.plan[s.li + 1].items.length} câu.</p>
+            <div class="btn-row center">
+                <button class="btn btn-primary btn-lg" data-go="next">Tiếp tục HSK ${nextLv} →</button>
+                <button class="btn" data-stop>Dừng &amp; xem kết quả</button>
+            </div>
+        </div>`;
+        body().onclick = e => {
+            if (e.target.closest("[data-stop]")) { placementFinish(); return; }
+            if (e.target.closest("[data-go]")) { s.li++; s.i = 0; renderPlacementQ(); }
+        };
+    }
+    function placementStop() {
+        const s = session;
+        clearTimeout(s.timer);
+        s.stage = "paused";
+        if (!confirm("Dừng kiểm tra và xem kết quả? Chỉ những bài đã trả lời đủ câu mới được chấm.")) {
+            // làm lại câu hiện tại với đồng hồ mới (câu chưa được ghi)
+            renderPlacementQ();
+            return;
+        }
+        if (!s.stopReason) s.stopReason = "Bạn đã dừng giữa chừng. Các bài chưa trả lời đủ câu chưa được chấm.";
+        placementFinish();
+    }
+    // Chấm kết quả từ s.ans
+    function computePlacement(s) {
+        const levels = [];
+        const passedUnits = [];
+        const tested = new Set();
+        s.plan.forEach(P => {
+            const L = LEVELS[P.lv];
+            const st = placementLevelStats(P.lv);
+            const lvRes = { lv: P.lv, total: L.units.length, tested: 0, passed: 0, n: st.n, c: st.c, acc: st.acc, failed: [] };
+            L.units.forEach(u => {
+                const a = s.ans[u.key] || [];
+                if (a.length < plAskCount(u) || a.length === 0) return; // chưa trả lời đủ -> chưa chấm
+                lvRes.tested++;
+                tested.add(u.key);
+                const wrong = a.filter(x => !x.ok);
+                const okA = a.filter(x => x.ok);
+                const avg = okA.length ? okA.reduce((t, x) => t + x.ms, 0) / okA.length : PL_LIMIT;
+                const accOk = wrong.length === 0 || (a.length >= 4 && wrong.length <= 1);
+                const fast = avg <= PL_FAST;
+                const score = Math.round(okA.length / a.length * 100);
+                if (accOk && fast) { lvRes.passed++; passedUnits.push({ u, score, a }); }
+                else lvRes.failed.push({ u, wrong: wrong.map(x => BY_ID.get(x.id)), slow: accOk && !fast, avg });
+            });
+            if (st.n > 0) levels.push(lvRes);
+        });
+        // gợi ý: bài đầu tiên chưa đạt (hoặc chưa kiểm tra) trong phạm vi
+        let suggest = null;
+        const passedSet = new Set(passedUnits.map(p => p.u.key));
+        for (let lv = 1; lv <= s.maxLv && !suggest; lv++) {
+            const u = LEVELS[lv].units.find(x => !passedSet.has(x.key) && !unitDone(x));
+            if (u) suggest = { lv, u };
+        }
+        if (!suggest && s.maxLv < 6) suggest = { lv: s.maxLv + 1, u: LEVELS[s.maxLv + 1].units.find(x => !unitDone(x)) || LEVELS[s.maxLv + 1].units[0], beyond: true };
+        return { levels, passedUnits, tested, suggest };
+    }
+    function placementFinish() {
+        const s = session;
+        clearTimeout(s.timer);
+        s.stage = "result";
+        if (!s.stopReason && s.answered < s.total) s.stopReason = "Bạn đã dừng trước khi hết phạm vi. Các bài chưa trả lời đủ câu chưa được chấm và giữ nguyên.";
+        s.result = computePlacement(s);
+        setProgress(1, "Kết quả");
+        const R = s.result;
+        const lvHtml = R.levels.map(L => {
+            const pct = Math.round(L.acc * 100);
+            const complete = L.tested === L.total;
+            return `<div class="pl-lv" style="--c:${LEVEL_COLORS[L.lv]}">
+                <div class="pl-lv-head">
+                    <b>HSK ${L.lv}</b>
+                    <span>${L.passed}/${L.total} bài đạt</span>
+                    <span class="pl-acc ${pct >= 80 ? "good" : pct >= PL_LEVEL_MIN * 100 ? "mid" : "low"}">${pct}% đúng</span>
+                </div>
+                <div class="lvl-bar"><i style="width:${Math.round(L.passed / L.total * 100)}%"></i></div>
+                ${!complete ? `<div class="pl-note">Mới chấm ${L.tested}/${L.total} bài.</div>` : ""}
+                ${L.failed.length ? `<details class="pl-fail" ${L.failed.length <= 6 ? "open" : ""}><summary>${L.failed.length} bài chưa đạt</summary>
+                    <ul>${L.failed.map(f => `<li><b>Bài ${f.u.n + 1}</b> ${f.wrong.length
+                        ? f.wrong.slice(0, 3).map(w => `<span class="pl-w" data-say="${esc(w.clean)}">${esc(w.clean)}</span>`).join(" ") + (f.wrong.length > 3 ? " …" : "")
+                        : ""}${f.slow ? ` <span class="muted">· trả lời chậm (TB ${fmtSec(f.avg)})</span>` : ""}</li>`).join("")}</ul></details>` : ""}
+            </div>`;
+        }).join("");
+        const totalPassed = R.passedUnits.length;
+        const sg = R.suggest;
+        const sgHtml = sg
+            ? (sg.beyond
+                ? `Bạn đã vững toàn bộ HSK 1–${s.maxLv}. Nên học tiếp <b>HSK ${sg.lv}</b>${s.maxLv < 5 ? ", hoặc làm lại kiểm tra với phạm vi rộng hơn" : ""}.`
+                : `Nên học tiếp: <b>HSK ${sg.lv} · Bài ${sg.u.n + 1}</b>.`)
+            : "Bạn đã hoàn thành toàn bộ lộ trình!";
+        body().innerHTML = `<div class="result pl-result ${totalPassed ? "pass" : "fail"}">
+            <div class="pl-badge">🎯</div>
+            <h2>Kết quả kiểm tra xếp lớp</h2>
+            <div class="score-big">${totalPassed} bài</div>
+            <div class="muted">đạt trên ${R.tested.size} bài đã chấm · ${s.answered} câu đã trả lời</div>
+            ${s.stopReason ? `<p class="pl-stop">${esc(s.stopReason)}</p>` : ""}
+            <div class="pl-levels">${lvHtml || `<p class="muted">Chưa có bài nào được chấm.</p>`}</div>
+            <p class="pl-suggest">👉 ${sgHtml}</p>
+            <p class="muted pl-apply-note">Áp dụng: ${totalPassed} bài đạt được đánh dấu hoàn thành, từ của các bài này vào lịch ôn sau 20–45 ngày. Từ trả lời sai được đưa vào ôn tập ngay. Không có tiến độ nào bị giảm.</p>
+            <div class="btn-row center">
+                <button class="btn btn-primary btn-lg" data-res="apply" ${s.answered ? "" : "disabled"}>✓ Áp dụng kết quả</button>
+                <button class="btn btn-lg" data-res="skip">Bỏ qua</button>
+            </div>
+        </div>`;
+        body().onclick = e => {
+            const say = e.target.closest("[data-say]"); if (say) { speak(say.dataset.say); return; }
+            const b = e.target.closest("[data-res]"); if (!b || b.disabled) return;
+            if (b.dataset.res === "apply") applyPlacement();
+            else { s.dirty = false; closeSession(true); }
+        };
+    }
+    function applyPlacement() {
+        const s = session, R = s.result;
+        const now = Date.now(), sod = startOfDay();
+        const passedSet = new Set(R.passedUnits.map(p => p.u.key));
+        let newCards = 0, dueNow = 0;
+        // 1. Bài đạt
+        R.passedUnits.forEach(({ u, score }) => {
+            const prev = S.units[u.key] || {};
+            S.units[u.key] = Object.assign({}, prev, {
+                done: true, best: Math.max(prev.best || 0, score), stars: Math.max(prev.stars || 0, starsFor(score)), placed: true, at: now,
+            });
+        });
+        // 2. Thẻ SRS: từ sai -> ôn ngay; từ đúng -> cập nhật tốc độ nhận diện; từ còn lại của bài đạt -> thẻ "đã thuộc"
+        const wrongIds = new Set();
+        Object.keys(s.ans).forEach(k => s.ans[k].forEach(a => {
+            if (!BY_ID.has(a.id)) return;
+            if (!a.ok) {
+                wrongIds.add(a.id);
+                if (S.srs[a.id]) S.srs[a.id] = schedule(S.srs[a.id], 1);
+                else { S.srs[a.id] = { ef: 2.5, iv: 0, reps: 0, lapses: 0, first: now, last: now, due: now, placed: true }; newCards++; }
+                dueNow++;
+            } else if (S.srs[a.id]) updateRT(a.id, a.ms, true);
+        }));
+        R.passedUnits.forEach(({ u, a }) => {
+            const rtById = new Map(a.filter(x => x.ok).map(x => [x.id, x.ms]));
+            u.words.forEach(w => {
+                if (S.srs[w.id] || wrongIds.has(w.id)) return;
+                const iv = 20 + Math.floor(Math.random() * 26);   // 20–45 ngày, rải đều để không dồn ngày ôn
+                S.srs[w.id] = { ef: 2.5, iv, reps: 3, lapses: 0, first: now, last: now, due: sod + iv * DAY, placed: true };
+                if (rtById.has(w.id)) S.srs[w.id].rt = Math.max(150, rtById.get(w.id));
+                newCards++;
+            });
+        });
+        // 3. Chặng có mọi bài đã hoàn thành (ít nhất một bài vừa đạt) -> qua chặng
+        let stagesDone = 0;
+        for (let lv = 1; lv <= s.maxLv; lv++) {
+            LEVELS[lv].stages.forEach(st => {
+                if (stageDone(st) || !st.units.every(unitDone) || !st.units.some(u => passedSet.has(u.key))) return;
+                const prev = S.stages[st.key] || {};
+                const sc = R.passedUnits.filter(p => p.u.stage === st);
+                const avg = sc.length ? Math.round(sc.reduce((t, p) => t + p.score, 0) / sc.length) : 100;
+                S.stages[st.key] = Object.assign({}, prev, { done: true, best: Math.max(prev.best || 0, avg), placed: true, at: now });
+                stagesDone++;
+            });
+        }
+        // 4. Mở khóa cấp: mọi cấp đã kiểm tra; cấp đã xong hết -> mở cấp kế tiếp
+        R.levels.forEach(L => {
+            if (L.lv > 1) S.unlocked[L.lv] = true;
+            if (levelDone(L.lv) && L.lv < 6) S.unlocked[L.lv + 1] = true;
+        });
+        if (R.suggest) { if (R.suggest.lv > 1) S.unlocked[R.suggest.lv] = true; S.lastLevel = R.suggest.lv; }
+        // 5. Lưu kết quả kiểm tra
+        S.placement = {
+            at: now, range: s.maxLv,
+            result: {
+                passed: R.passedUnits.length, tested: R.tested.size, answered: s.answered, stopped: s.stopReason || "",
+                levels: R.levels.map(L => ({ lv: L.lv, passed: L.passed, tested: L.tested, total: L.total, acc: Math.round(L.acc * 100) })),
+                suggest: R.suggest ? { lv: R.suggest.lv, unit: R.suggest.u ? R.suggest.u.n : 0 } : null,
+            },
+        };
+        save();
+        s.dirty = false;
+        closeSession(true);
+        showView("path");
+        toast(`Đã áp dụng: ${R.passedUnits.length} bài hoàn thành${stagesDone ? `, ${stagesDone} chặng` : ""} · ${newCards} từ vào lịch ôn${dueNow ? ` (${dueNow} từ ôn ngay)` : ""}`);
+    }
+    function placementKey(e) {
+        const s = session;
+        if (s.stage === "quiz" && !s.locked) {
+            if (/^[1-4]$/.test(e.key)) { e.preventDefault(); placementAnswer(+e.key - 1); }
+            else if (e.key === "0" || e.key === "?") { e.preventDefault(); placementAnswer(-2); }
+        } else if (s.stage === "intro" && e.key === "Enter") { e.preventDefault(); startPlacement(s.maxLv); }
+    }
+    function renderPlacementCTA() {
+        const el = $("placement-cta"); if (!el) return;
+        const p = S.placement;
+        el.innerHTML = `<div class="pl-cta-ic">🎯</div>
+            <div class="pl-cta-txt">
+                <b>Kiểm tra xếp lớp</b>
+                <span>${p && p.at
+                    ? `Đã làm ngày ${fmtDate(p.at)} (HSK 1–${p.range}${p.result ? `, đạt ${p.result.passed} bài` : ""}). Làm lại để cập nhật trình độ.`
+                    : "Đã có nền tảng? Làm bài kiểm tra 15–20 phút để bỏ qua các bài đã biết."}</span>
+            </div>
+            <button class="btn ${p && p.at ? "" : "btn-primary"} pl-cta-btn" id="btn-placement">${p && p.at ? "Làm lại" : "Bắt đầu"}</button>`;
+        $("btn-placement").onclick = openPlacementIntro;
+    }
+
     // ---------- Luyện tập tự do (không ảnh hưởng tiến độ bài)
     function startFreeQuiz(all, title, types) {
         const words = shuffle(all).slice(0, 20);
@@ -1236,6 +1586,7 @@
         if (!session || $("session").hidden) return;
         if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
         if (e.key === "Escape") { closeSession(); return; }
+        if (session.kind === "placement") { placementKey(e); return; }
         if (session.kind === "speed") {
             if (body().querySelector(".sp-opts")) {
                 if (e.key === "ArrowLeft" || e.key === "1") { e.preventDefault(); speedAnswer(0); }
@@ -1295,6 +1646,8 @@
         bindSettings();
         renderPath();
         writeSummary(); // cập nhật số từ đến hạn cho trang chủ mỗi lần mở trang
+        // Mở thẳng kiểm tra xếp lớp: hsk_lotrinh.html?placement=1
+        if (new URLSearchParams(location.search).get("placement")) openPlacementIntro();
     }
     init();
 })();

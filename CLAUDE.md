@@ -20,9 +20,9 @@ hom_nay/              Buổi học hôm nay: ôn mọi thẻ đến hạn (gộp
 audio/                MP3 bài khóa Boya (Trung cap 1–4, Cao cap 1–2), DÙNG CHUNG (~613MB)
 boya_learning/        Boya Learning: bài khóa 6 quyển + audio + từ vựng
   boya_learning.html/.css/.js, boya_data.js (+ .json)
-sach_boya/            Sách Boya TC1–4 bản đọc tĩnh (trùng nội dung boya_learning, không link từ trang chủ)
+sach_boya/            [ĐÃ ẨN] Sách Boya TC1–4 bản đọc tĩnh (trùng boya_learning), có dải thông báo chuyển trang
   tc1.html … tc4.html, script.js, style.css
-tuvung/               Ôn từ vựng Boya TC1–4 (flashcard, quiz, ghép thẻ)
+tuvung/               [ĐÃ ẨN] Ôn từ vựng Boya TC1–4 — đã gộp vào hom_nay (ôn thẻ) + luyen_tap (trò chơi); có dải thông báo, vẫn mở được
   tuvung.html/.css/.js, vocab_data.js (+ .json)
 word_learning/        Giáo trình HSK 3.0 (词汇速记速练手册)
   word_learning.html/.css/.js, hsk_book_data.js, json_data/quyen_*.js(.json)
@@ -30,8 +30,9 @@ hsk_lotrinh/          Lộ trình từ vựng HSK 1–6 (SRS, đọc nhanh)
   hsk_lotrinh.html/.css/.js, hsk_vocab_data.js
 doc_them/             Đọc thêm: thư viện 30 bài đọc phân cấp HSK 1–6, bài tự dán, đọc lại bài khóa Boya
   doc_them.html/.css/.js, doc_data.js (sinh tự động)
-luyen_tap/            Luyện tập: sắp xếp câu (Việt→Trung), nghe – viết từ/câu, lấy từ đã học ở mọi trang
-  luyen_tap.html/.css/.js, lt_data.js, lt_data_wl.js (sinh tự động)
+luyen_tap/            Luyện tập: sắp xếp câu (Việt→Trung), nghe – viết từ/câu, 14 trò chơi; lấy từ đã học ở mọi trang
+  luyen_tap.html/.css/.js, lt_data.js, lt_data_wl.js (sinh tự động), lt_games_data.js (dữ liệu trò chơi viết sẵn)
+  games/<id>.js       Mỗi trò chơi một file, tự đăng ký vào window.LT_GAMES (API: games/README.md)
 anh_ngu_3/            Bài luyện tiếng Anh HUTECH (an3*.html), trang độc lập, không liên quan tiếng Trung
 shared/               Tài nguyên dùng chung: theme, progress, sync, mywords (sổ Từ của tôi), lookup (tách từ/pinyin/tra từ), dict_vi.js (từ điển, sinh tự động)
 tools/                Script sinh dữ liệu + dữ liệu nguồn
@@ -113,8 +114,8 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
 
 - Chặng hiện tại là chặng đầu tiên chưa hoàn thành.
 - Khung "Ôn tập hôm nay" cộng `due` của mọi trang.
-- `tuvung` và `word_learning` nằm ở mục "Công cụ bổ trợ".
-- `sach_boya` không còn link từ trang chủ, vì nội dung trùng với `boya_learning`, nhưng file vẫn giữ.
+- Mục "Công cụ bổ trợ": `doc_them`, `luyen_tap`, `word_learning`.
+- `tuvung` và `sach_boya` đã ẩn khỏi trang chủ: nội dung trùng với `boya_learning`, file vẫn giữ và có dải thông báo chuyển trang. Thẻ SRS cũ của `tuvung` (`boya_tv_srs`) vẫn được ôn ở `hom_nay`; dòng "tuvung" trong khung "Ôn tập hôm nay" trỏ tới `hom_nay`.
 - **Link vào trang con:** `hsk_lotrinh.html?level=N`, `boya_learning.html?book=<id>&lesson=N`.
 
 Tên quyển thống nhất theo Boya Learning: `tc1/tc2` = Chuẩn Trung cấp 1/2, `tc3/tc4` = Trung cấp 1/2 (冲刺), `gc1/gc2` = Cao cấp 1/2.
@@ -193,8 +194,12 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
   - `lt_data_wl.js` (khoảng 1,8MB) chỉ nạp khi có thẻ HSK 3.0.
 - **Chọn câu:** ưu tiên từ đến hạn ôn, hay quên (`lapses`/`wrong`), nhận diện chậm (`rt`) và câu từng sai ở trang này.
 - **Trong phiên:** câu sai được hỏi lại một lần ở cuối phiên; điểm tính theo lần đầu. Dùng gợi ý thì không tính là đúng. Nút "Tôi đúng" dùng khi người học xếp hoặc viết theo cách khác cũng đúng.
-- **Key lưu:** `luyen_tap_v1` = `{settings, items{key:{w,c,t}}, types, days}`, được đồng bộ qua `sync.js`. Tóm tắt ghi qua `HocProgress("luyen_tap")`. Trang chủ có link trong mục "Công cụ bổ trợ".
-- **Test:** `window.__LT` để lộ `buildPool`, `sentencesFor`, `buildItems`, `startSession`, `state`, `session`.
+- **Key lưu:** `luyen_tap_v1` = `{settings, items{key:{w,c,t}}, types, days, games}`, được đồng bộ qua `sync.js`. Tóm tắt ghi qua `HocProgress("luyen_tap")`. Trang chủ có link trong mục "Công cụ bổ trợ".
+- **Trò chơi (14 trò, chuyển từ `tuvung`, viết lại theo API mới):** mỗi trò là một file `luyen_tap/games/<id>.js`, tự đăng ký vào `window.LT_GAMES`. Khung (`openGame`/`finishGame` trong `luyen_tap.js`) truyền vào `ctx` gồm: từ đã học theo "Nguồn từ", câu ví dụ, `ctx.data` = `lt_games_data.js`, TTS, các hàm hẹn giờ tự hủy, `finish()`. Khung hiện màn kết quả chuẩn, lưu kỷ lục ở `S.games[id] = {plays, best, last}`. Đặc tả nằm trong `games/README.md`.
+  - Trò dùng từ đã học: match, tf, scramble, hunter, falling, cloze, boss, wordle, wordsearch, chain (chain thêm `word_chain` khi cần).
+  - Trò dùng dữ liệu Boya viết sẵn (`ownData`): synonyms, antonyms, collocation, radicals.
+  - Trò chơi không ghi vào SRS. Thêm trò mới: tạo file theo README rồi thêm thẻ `<script>` vào `luyen_tap.html`.
+- **Test:** `window.__LT` để lộ `buildPool`, `sentencesFor`, `buildItems`, `startSession`, `openGame`, `gameList`, `state`, `session`.
 
 ## Lộ trình từ vựng HSK (`hsk_lotrinh/`)
 
@@ -209,6 +214,15 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
 - **Đo tốc độ nhận diện:** `card.rt` (ms) là trung bình trượt (0,6 × cũ + 0,4 × mới), cập nhật khi ôn thẻ có mặt trước là chữ Hán và khi luyện Đọc nhanh. Từ có `rt ≥ SLOW_MS` (3000ms) thuộc nhóm "cần tăng tốc".
 - **Đọc nhanh** (`startSpeed`): chọn 1 trong 2 nghĩa trong thời gian giới hạn, tốc độ tự điều chỉnh ±15% trong khoảng `SPEED_MIN`–`SPEED_MAX`. Kỷ lục lưu ở `S.speed.best` (chỉ tính khi độ chính xác ≥ 80%).
 - **State (localStorage `hsk_lotrinh_v1`):** `{ settings, units, stages, unlocked, srs, days, speed, lastLevel }`. `save()` đồng thời ghi tóm tắt cho trang chủ (`writeSummary()`). Sáng/tối dùng `HocTheme`, không còn `settings.theme`. Khi thêm trường mới, nhớ thêm vào `DEFAULT_STATE`. Người dùng chuyển tiến độ giữa các máy bằng nút Xuất/Nhập JSON.
+- **Kiểm tra xếp lớp** (`?placement=1`, thẻ lối vào ở đầu tab Lộ trình; trang chủ có link khi còn ở Chặng 1):
+  - Mỗi bài hỏi 3 từ (bài 20 từ hỏi 4): chọn nghĩa, 8 giây/câu, có nút "Không biết". Phạm vi chọn được: HSK 1–3, 1–4 hoặc 1–5. Cấp nào đúng dưới 60% thì dừng.
+  - Bài đạt khi đúng hết (bài 4 từ được sai 1) và trung bình câu đúng ≤ 4 giây.
+  - Áp dụng kết quả:
+    - bài đạt có `done:true, placed:true`; chặng đủ bài thì xong; mở khóa các cấp đã kiểm tra;
+    - từ của bài đạt vào SRS với `iv` 20–45 ngày (rải hạn ôn);
+    - từ sai thì đến hạn ngay;
+    - không bao giờ hạ cấp dữ liệu đã có.
+  - Lưu `S.placement = {at, range, result}`.
 - **Phát âm:** Web Speech API (`speechSynthesis`, giọng `zh-CN`).
 - **Lưu ý CSS:** không dùng `opacity: 0` trong `@keyframes` cho phần tử được hiện ra từ `hidden` / `display:none`. Từng có lỗi thẻ bị kẹt ở trạng thái trong suốt, vì vậy các animation `pop` và `fade` chỉ dùng `transform`.
 
@@ -233,7 +247,7 @@ Khi sửa logic SRS ở một trang, cân nhắc sửa đồng bộ ở các tra
 - **Màu theo quyển:** JS đặt `--book: var(--ui-book-<id>)`, các màu `--primary-*` suy ra từ biến này.
 - **Ghi chú:** Chrome headless không phát sự kiện cuộn, nên test phải tự phát `scroll`.
 
-### `tuvung/` (Boya TC1–4, 54 bài, 2.565 từ)
+### `tuvung/` (Boya TC1–4, 54 bài, 2.565 từ) — ĐÃ ẨN, không phát triển thêm
 - **Tab:** Học tiếp (mặc định) / Flashcard & SRS / Quiz / Từ vựng / Thêm trò chơi.
 - **Hoàn thành bài:** khi quiz Tiêu chuẩn của bài đạt ≥ 85% (tối thiểu 10 câu) và mọi từ của bài đã có thẻ SRS.
 - **Giới hạn từ mới mỗi ngày:** 10–30 từ.

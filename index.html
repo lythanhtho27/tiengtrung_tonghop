@@ -279,13 +279,13 @@
             <p class="muted">${esc(cur.desc)}</p>
             <div class="stage-progress"><div class="bar"><i style="width:${cur.pct}%"></i></div><b>${cur.pct}%</b></div>
             <div class="hero-actions">${actions.join("") || `<span class="muted">🎉 Bạn đã hoàn thành toàn bộ lộ trình!</span>`}</div>
-            ${curIdx === 0 && !started ? `<p class="muted" style="margin-top:12px;font-size:13.5px">Đã có nền tảng? Chọn thẳng chặng phù hợp ở lộ trình bên dưới.</p>` : ""}`;
+            ${curIdx === 0 ? `<p class="muted" style="margin-top:12px;font-size:13.5px">Đã có nền tảng? <a href="hsk_lotrinh/hsk_lotrinh.html?placement=1" style="color:var(--ui-primary);font-weight:600">🎯 Làm Kiểm tra xếp lớp</a> (15–20 phút) để bỏ qua các bài HSK đã biết và nhảy tới đúng chặng.</p>` : ""}`;
 
         // ----- Ôn tập hôm nay
         const REVIEW = [
             { key: "hsk_lotrinh", name: "Từ vựng HSK", url: "hsk_lotrinh/hsk_lotrinh.html" },
             { key: "boya_learning", name: "Từ vựng & bài khóa Boya", url: "boya_learning/boya_learning.html" },
-            { key: "tuvung", name: "Ôn từ vựng Boya TC1–4", url: "tuvung/tuvung.html" },
+            { key: "tuvung", name: "Thẻ cũ của trang Ôn từ vựng TC1–4 (ôn ở Hôm nay)", url: "hom_nay/hom_nay.html" },
             { key: "word_learning", name: "Giáo trình HSK 3.0", url: "word_learning/word_learning.html" },
         ].filter(r => P[r.key]);
         const totalDue = REVIEW.reduce((a, r) => a + (P[r.key].due || 0), 0);
@@ -346,10 +346,8 @@
         const TOOLS = [
             { key: "doc_them", ic: "📖", name: "Đọc thêm: thư viện bài đọc & tự dán bài", url: "doc_them/doc_them.html",
               desc: "30 bài đọc phân cấp HSK 1–6 (có dịch, câu hỏi đọc hiểu), dán bài báo/truyện bất kỳ để đọc có pinyin, chạm chữ để tra Hán Việt, đọc tính giờ." },
-            { key: "luyen_tap", ic: "✍️", name: "Luyện tập: sắp xếp câu & nghe – viết", url: "luyen_tap/luyen_tap.html",
-              desc: "Mỗi ngày 10 phút: ghép câu tiếng Trung theo nghĩa tiếng Việt, nghe rồi gõ lại từ và câu. Lấy từ bạn đã học ở mọi trang, ưu tiên từ hay quên." },
-            { key: "tuvung", ic: "🏮", name: "Ôn từ vựng Boya TC1–4", url: "tuvung/tuvung.html",
-              desc: "2.565 từ của 4 quyển Trung cấp: flashcard, trắc nghiệm, luyện nói, trò chơi. Dùng để ôn thêm từ của bài khóa đã học." },
+            { key: "luyen_tap", ic: "✍️", name: "Luyện tập & trò chơi", url: "luyen_tap/luyen_tap.html",
+              desc: "Sắp xếp câu, nghe – viết và 14 trò chơi (ghép thẻ, đúng/sai, từ rơi, wordle chữ Hán…) bằng chính các từ bạn đã học ở mọi trang, ưu tiên từ hay quên." },
             { key: "word_learning", ic: "📚", name: "Giáo trình từ vựng HSK 3.0", url: "word_learning/word_learning.html",
               desc: "Chuẩn HSK mới (9 cấp): 8 quyển · 368 bài · 11.092 từ. Dùng để tham khảo, hoặc học tiếp lên cấp 7–9 sau khi xong lộ trình." },
         ];
