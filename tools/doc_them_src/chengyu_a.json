@@ -1,0 +1,1675 @@
+[
+ {
+  "id": "c-01",
+  "kind": "chengyu",
+  "level": 5,
+  "title": "守株待兔",
+  "title_vi": "Ôm cây đợi thỏ",
+  "topic": "thành ngữ · ngụ ngôn",
+  "idiom": {
+   "hz": "守株待兔",
+   "py": "shǒu zhū dài tù",
+   "hv": "THỦ CHU ĐÃI THỐ",
+   "meaning": "Giữ gốc cây chờ thỏ; ví người không chịu cố gắng, chỉ mong may mắn tự đến, hoặc khư khư giữ kinh nghiệm cũ không biết thay đổi.",
+   "usage": "Mang nghĩa chê (贬义). Dùng phê phán thái độ thụ động, ăn may, hoặc cứng nhắc lặp lại một lần thành công tình cờ. Thường làm vị ngữ hoặc định ngữ: 守株待兔的想法、不能守株待兔。",
+   "examples": [
+    {
+     "zh": "找工作要主动投简历，在家守株待兔是不会有结果的。",
+     "vi": "Tìm việc phải chủ động gửi hồ sơ, ngồi nhà ôm cây đợi thỏ thì sẽ chẳng có kết quả gì."
+    },
+    {
+     "zh": "市场变化这么快，公司如果还守株待兔，很快就会被淘汰。",
+     "vi": "Thị trường thay đổi nhanh như vậy, công ty nếu vẫn ôm cây đợi thỏ thì sẽ sớm bị đào thải."
+    }
+   ]
+  },
+  "paragraphs": [
+   "很久以前，宋国有一个农民，每天早上到田里干活，太阳下山才回家。他的地旁边有一棵大树，干累了，他就坐在树下休息一会儿。",
+   "有一天，他正在地里忙着，忽然看见一只兔子从草丛里飞快地跑出来。也许是太着急了，兔子没看清前面的路，一头撞在那棵大树上，马上就倒在地上不动了。农民跑过去一看，兔子已经死了。",
+   "他高兴极了，把兔子拿回家，美美地吃了一顿。晚上躺在床上，他心想：“种地又累又辛苦，一年也挣不了多少钱。要是每天都能捡到一只兔子，那该多好啊！”",
+   "从第二天起，他不再去种地了，而是每天坐在那棵树下，眼睛一直盯着草丛，等着第二只兔子撞上来。一天过去了，一个月过去了，他连一只兔子的影子也没看见。",
+   "可是他的田里早就长满了野草，庄稼全都死了。村里的人知道了这件事，都笑他太傻。",
+   "后来，人们用“守株待兔”比喻不主动努力、只希望靠运气得到好处的人，也比喻死守过去的经验、不懂得变化的做法。比如有人说：“机会不会自己来敲门，守株待兔是不行的。”"
+  ],
+  "translations": [
+   "Ngày xưa, nước Tống có một người nông dân, sáng nào cũng ra đồng làm việc, mặt trời lặn mới về nhà. Cạnh ruộng của ông có một cái cây lớn, làm mệt thì ông ngồi dưới gốc cây nghỉ một lát.",
+   "Một hôm, khi ông đang bận rộn ngoài ruộng, bỗng thấy một con thỏ từ trong bụi cỏ lao vọt ra. Có lẽ vì quá vội, con thỏ không nhìn rõ đường phía trước, đâm sầm vào cái cây lớn, lập tức ngã xuống đất bất động. Người nông dân chạy lại xem thì con thỏ đã chết.",
+   "Ông mừng lắm, mang con thỏ về nhà, ăn một bữa ngon lành. Tối nằm trên giường, ông nghĩ thầm: “Làm ruộng vừa mệt vừa vất vả, cả năm cũng chẳng kiếm được bao nhiêu. Giá mà ngày nào cũng nhặt được một con thỏ thì tốt biết mấy!”",
+   "Từ hôm sau, ông không đi làm ruộng nữa mà ngày ngày ngồi dưới gốc cây đó, mắt dán chặt vào bụi cỏ, chờ con thỏ thứ hai đâm vào. Một ngày trôi qua, một tháng trôi qua, đến cái bóng của con thỏ ông cũng chẳng thấy.",
+   "Còn ruộng của ông thì từ lâu đã mọc đầy cỏ dại, hoa màu chết sạch. Người trong làng biết chuyện đều cười ông quá ngốc.",
+   "Về sau, người ta dùng “thủ chu đãi thố” để ví những người không chủ động cố gắng, chỉ mong dựa vào vận may mà có lợi, cũng ví cách làm khư khư giữ kinh nghiệm cũ, không biết thay đổi. Ví dụ có người nói: “Cơ hội sẽ không tự đến gõ cửa, ôm cây đợi thỏ là không được đâu.”"
+  ],
+  "questions": [
+   {
+    "q": "农民为什么不去种地了？",
+    "q_vi": "Vì sao người nông dân không đi làm ruộng nữa?",
+    "options": [
+     "他生病了，干不动活",
+     "他想每天在树下等兔子",
+     "庄稼已经全死了",
+     "村里人不让他种地"
+    ],
+    "answer": 1,
+    "explain_vi": "Sau khi nhặt được một con thỏ, ông mong ngày nào cũng nhặt được nên bỏ ruộng ra ngồi chờ dưới gốc cây."
+   },
+   {
+    "q": "下面哪种做法可以说是“守株待兔”？",
+    "q_vi": "Cách làm nào dưới đây có thể gọi là “ôm cây đợi thỏ”?",
+    "options": [
+     "每天坚持复习生词",
+     "主动去公司面试",
+     "买彩票中了一次奖，就辞职天天买彩票",
+     "发现方法不对，马上改变"
+    ],
+    "answer": 2,
+    "explain_vi": "Trúng xổ số một lần rồi bỏ việc chờ trúng tiếp chính là trông vào may mắn ngẫu nhiên, giống người nông dân trong truyện."
+   }
+  ]
+ },
+ {
+  "id": "c-02",
+  "kind": "chengyu",
+  "level": 5,
+  "title": "画蛇添足",
+  "title_vi": "Vẽ rắn thêm chân",
+  "topic": "thành ngữ · ngụ ngôn",
+  "idiom": {
+   "hz": "画蛇添足",
+   "py": "huà shé tiān zú",
+   "hv": "HỌA XÀ THIÊM TÚC",
+   "meaning": "Vẽ rắn lại thêm chân; ví làm việc thừa thãi, không cần thiết, ngược lại làm hỏng việc.",
+   "usage": "Nghĩa chê. Dùng khi ai đó thêm thắt chi tiết không cần, khiến kết quả tệ đi. Hay gặp trong nhận xét bài viết, thiết kế, phát biểu: 这句话有点儿画蛇添足。",
+   "examples": [
+    {
+     "zh": "这篇文章已经写得很好了，最后再加一段总结反而是画蛇添足。",
+     "vi": "Bài văn này đã viết rất tốt rồi, cuối cùng thêm một đoạn tóm tắt nữa lại thành vẽ rắn thêm chân."
+    },
+    {
+     "zh": "海报设计简单一点儿更好看，别画蛇添足放那么多图片。",
+     "vi": "Thiết kế poster đơn giản một chút đẹp hơn, đừng vẽ rắn thêm chân mà đặt nhiều hình như thế."
+    }
+   ]
+  },
+  "paragraphs": [
+   "古时候，楚国有一户人家祭祀完祖先，把一壶酒送给了帮忙的几个客人。客人们一看，酒只有一壶，人却有好几个，大家都喝的话，每人只能喝一小口；要是一个人喝，倒是正好。",
+   "怎么分呢？有人想出一个办法：“咱们每个人在地上画一条蛇，谁先画好，这壶酒就归谁。”大家都觉得这个主意不错。",
+   "比赛一开始，每个人都拿起树枝，在地上认真地画起来。其中有一个人画得特别快，没过多久就把蛇画好了。他拿起酒壶，正准备喝，回头一看，别人都还没画完。他得意地说：“你们太慢了！我还有时间给蛇添上几只脚呢。”于是他左手拿着酒壶，右手继续给蛇画脚。",
+   "脚还没画完，另一个人已经把蛇画好了。那个人一把抢过酒壶，说：“蛇本来就没有脚，你给它画上脚，那还是蛇吗？所以第一个画好蛇的是我！”说完，他就把酒喝光了。给蛇画脚的人只好在一旁后悔。",
+   "今天，“画蛇添足”用来比喻做了多余的事，不但没有好处，反而把事情弄糟了。它提醒我们：做事要恰到好处，知道什么时候该停下来。"
+  ],
+  "translations": [
+   "Thời xưa, ở nước Sở có một gia đình cúng tổ tiên xong, đem một bình rượu tặng mấy người khách đến giúp việc. Các vị khách nhìn thấy chỉ có một bình rượu mà người lại có mấy người, nếu ai cũng uống thì mỗi người chỉ được một ngụm nhỏ; còn nếu một người uống thì lại vừa đủ.",
+   "Chia thế nào đây? Có người nghĩ ra một cách: “Mỗi người chúng ta vẽ một con rắn trên đất, ai vẽ xong trước thì bình rượu này thuộc về người đó.” Mọi người đều thấy ý kiến này hay.",
+   "Cuộc thi vừa bắt đầu, ai nấy cầm cành cây cặm cụi vẽ trên mặt đất. Trong đó có một người vẽ rất nhanh, chẳng bao lâu đã vẽ xong con rắn. Anh ta cầm bình rượu lên định uống, quay đầu lại thấy người khác vẫn chưa vẽ xong. Anh ta đắc ý nói: “Các anh chậm quá! Tôi vẫn còn thời gian vẽ thêm cho rắn mấy cái chân nữa đấy.” Thế là anh tay trái cầm bình rượu, tay phải tiếp tục vẽ chân cho rắn.",
+   "Chân còn chưa vẽ xong thì một người khác đã vẽ xong rắn. Người đó giật lấy bình rượu, nói: “Rắn vốn không có chân, anh vẽ chân cho nó thì đó còn là rắn sao? Vậy người vẽ xong rắn đầu tiên là tôi!” Nói xong, anh ta uống cạn bình rượu. Người vẽ chân cho rắn đành đứng bên cạnh hối hận.",
+   "Ngày nay, “họa xà thiêm túc” dùng để ví việc làm thừa thãi, không những chẳng có lợi mà còn làm hỏng việc. Nó nhắc nhở chúng ta: làm việc phải vừa đúng mức, biết lúc nào nên dừng lại."
+  ],
+  "questions": [
+   {
+    "q": "第一个画好蛇的人为什么没喝到酒？",
+    "q_vi": "Vì sao người vẽ xong rắn đầu tiên lại không được uống rượu?",
+    "options": [
+     "他给蛇画了脚，画的已经不是蛇了",
+     "他的蛇画得太难看",
+     "酒壶被他不小心打破了",
+     "主人不同意给他酒"
+    ],
+    "answer": 0,
+    "explain_vi": "Anh ta vẽ thêm chân, người kia lập luận rắn không có chân nên hình vẽ không còn là rắn, rồi giành lấy bình rượu."
+   },
+   {
+    "q": "这个故事主要告诉我们什么？",
+    "q_vi": "Câu chuyện này chủ yếu muốn nói với chúng ta điều gì?",
+    "options": [
+     "做事一定要比别人快",
+     "比赛的规则要说清楚",
+     "画画要有想象力",
+     "做多余的事会把事情弄糟"
+    ],
+    "answer": 3,
+    "explain_vi": "Ý chính: làm việc thừa không cần thiết sẽ phản tác dụng, cần biết dừng đúng lúc."
+   }
+  ]
+ },
+ {
+  "id": "c-03",
+  "kind": "chengyu",
+  "level": 5,
+  "title": "亡羊补牢",
+  "title_vi": "Mất bò mới lo làm chuồng (nhưng vẫn chưa muộn)",
+  "topic": "thành ngữ · ngụ ngôn",
+  "idiom": {
+   "hz": "亡羊补牢",
+   "py": "wáng yáng bǔ láo",
+   "hv": "VONG DƯƠNG BỔ LAO",
+   "meaning": "Mất dê rồi mới sửa chuồng; ví sau khi sai sót kịp thời sửa chữa thì vẫn còn kịp, tránh tổn thất tiếp.",
+   "usage": "Khác với câu tiếng Việt “mất bò mới lo làm chuồng” (thường mang ý chê muộn), 亡羊补牢 chủ yếu mang ý tích cực: sửa sai kịp thời vẫn có ích. Hay đi với vế sau: 亡羊补牢，为时未晚 (vẫn chưa muộn).",
+   "examples": [
+    {
+     "zh": "这次考试没考好，现在开始认真复习，亡羊补牢，为时未晚。",
+     "vi": "Kỳ thi này làm không tốt, giờ bắt đầu ôn tập nghiêm túc, mất dê sửa chuồng vẫn chưa muộn."
+    },
+    {
+     "zh": "系统出了问题以后，公司马上加强了安全管理，总算是亡羊补牢。",
+     "vi": "Sau khi hệ thống gặp sự cố, công ty lập tức tăng cường quản lý an ninh, dù sao cũng là kịp sửa sai."
+    }
+   ]
+  },
+  "paragraphs": [
+   "从前有个人养了一群羊。一天早上，他去羊圈里数羊，发现少了一只。他仔细一看，原来羊圈的墙上破了一个洞，晚上狼从洞里钻进来，把一只羊叼走了。",
+   "邻居听说了，好心地劝他：“你赶快把羊圈修一修，把那个洞堵上吧！”他却不在乎地说：“羊已经丢了，现在修羊圈还有什么用呢？”说完，就去干别的事了。",
+   "没想到，第二天早上，他又发现少了一只羊。狼还是从那个洞里钻进来的。这一次他着急了，心里很后悔：“要是昨天听了邻居的话，就不会再丢一只羊了。现在修还来得及，不然剩下的羊也保不住。”",
+   "于是，他马上找来石头和泥土，把墙上的洞堵得严严实实，又把羊圈其他地方也检查了一遍。从那以后，狼再也进不来了，他的羊一只也没再丢过。",
+   "“亡羊补牢”的意思是：出了问题以后，及时想办法补救，还不算太晚。人们常说“亡羊补牢，为时未晚”。犯错误并不可怕，可怕的是知道错了还不改。"
+  ],
+  "translations": [
+   "Ngày xưa có một người nuôi một đàn dê. Một buổi sáng, ông vào chuồng đếm dê thì thấy thiếu mất một con. Nhìn kỹ thì ra tường chuồng bị thủng một lỗ, ban đêm sói chui qua lỗ vào tha mất một con dê.",
+   "Hàng xóm nghe chuyện, tốt bụng khuyên ông: “Ông mau sửa chuồng dê đi, bịt cái lỗ đó lại!” Ông lại thản nhiên nói: “Dê mất rồi, giờ sửa chuồng thì còn ích gì nữa?” Nói xong, ông đi làm việc khác.",
+   "Không ngờ sáng hôm sau, ông lại phát hiện thiếu một con dê. Sói vẫn chui vào qua cái lỗ ấy. Lần này ông sốt ruột, trong lòng rất hối hận: “Giá hôm qua nghe lời hàng xóm thì đã không mất thêm một con. Bây giờ sửa vẫn còn kịp, nếu không thì số dê còn lại cũng không giữ được.”",
+   "Thế là ông lập tức tìm đá và đất, bịt cái lỗ trên tường thật kín, lại kiểm tra một lượt những chỗ khác của chuồng. Từ đó về sau, sói không vào được nữa, dê của ông không mất thêm con nào.",
+   "“Vong dương bổ lao” có nghĩa là: sau khi xảy ra vấn đề, kịp thời tìm cách khắc phục thì vẫn chưa quá muộn. Người ta hay nói “mất dê sửa chuồng, vẫn chưa muộn”. Mắc lỗi không đáng sợ, đáng sợ là biết sai rồi mà vẫn không sửa."
+  ],
+  "questions": [
+   {
+    "q": "第一次丢羊以后，那个人是怎么想的？",
+    "q_vi": "Sau lần mất dê đầu tiên, người đó nghĩ thế nào?",
+    "options": [
+     "应该马上修羊圈",
+     "羊已经丢了，修羊圈没有用",
+     "应该去找那只狼",
+     "应该把羊都卖掉"
+    ],
+    "answer": 1,
+    "explain_vi": "Ông nói: “Dê đã mất rồi, giờ sửa chuồng còn ích gì nữa?”"
+   },
+   {
+    "q": "“亡羊补牢”在今天多用来表达什么意思？",
+    "q_vi": "“Vong dương bổ lao” ngày nay thường dùng để diễn đạt ý gì?",
+    "options": [
+     "做事以前要准备好",
+     "丢了的东西找不回来",
+     "出了问题及时补救还来得及",
+     "不要相信邻居的话"
+    ],
+    "answer": 2,
+    "explain_vi": "Thành ngữ nhấn mạnh sửa sai kịp thời vẫn chưa muộn (亡羊补牢，为时未晚)."
+   }
+  ]
+ },
+ {
+  "id": "c-04",
+  "kind": "chengyu",
+  "level": 5,
+  "title": "对牛弹琴",
+  "title_vi": "Đàn gảy tai trâu",
+  "topic": "thành ngữ · điển tích",
+  "idiom": {
+   "hz": "对牛弹琴",
+   "py": "duì niú tán qín",
+   "hv": "ĐỐI NGƯU ĐÀN CẦM",
+   "meaning": "Gảy đàn cho trâu nghe; ví nói chuyện sâu xa với người không hiểu, nói mà người nghe chẳng tiếp thu; cũng chê người nói không xem đối tượng.",
+   "usage": "Nghĩa chê, có thể chê người nghe (không hiểu) hoặc chê người nói (không biết chọn cách nói phù hợp). Dùng trong khẩu ngữ, có sắc thái hơi châm biếm, nên cẩn thận khi nói trực tiếp với người khác.",
+   "examples": [
+    {
+     "zh": "跟他讲那么多专业知识，简直是对牛弹琴，他一句也没听懂。",
+     "vi": "Nói với anh ta nhiều kiến thức chuyên môn như thế đúng là đàn gảy tai trâu, anh ta chẳng hiểu câu nào."
+    },
+    {
+     "zh": "给小学生上课要用简单的例子，否则就成了对牛弹琴。",
+     "vi": "Dạy học sinh tiểu học phải dùng ví dụ đơn giản, nếu không sẽ thành đàn gảy tai trâu."
+    }
+   ]
+  },
+  "paragraphs": [
+   "古时候有一位音乐家，名叫公明仪，他弹琴弹得非常好，很多人都喜欢听他弹琴。",
+   "一个春天的下午，天气很好，公明仪带着琴来到郊外散步。他看见草地上有一头牛正在低头吃草，心里一高兴，就想：“这么美的风景，我给这头牛弹一首曲子吧。”",
+   "于是，他坐下来，弹了一首非常高雅、非常复杂的古曲。琴声优美动听，可是那头牛好像什么也没听见，还是低着头，一口一口地吃草，连头都不抬一下。",
+   "公明仪很失望。他想了想，换了一种弹法，用琴模仿蚊子“嗡嗡”的叫声，又模仿小牛找妈妈时“哞哞”的叫声。这一次，牛马上停止了吃草，竖起耳朵，甩着尾巴，走来走去地听起来。",
+   "公明仪终于明白了：不是牛没有耳朵，而是高雅的音乐它根本听不懂；只有它熟悉的声音，它才会有反应。",
+   "后来，人们用“对牛弹琴”比喻对不懂道理的人讲道理，白费力气。这个成语有时也用来批评说话的人不看对象。所以说话、写文章都要考虑听的人是谁，用他们能听懂的方式去表达。"
+  ],
+  "translations": [
+   "Thời xưa có một nhạc sĩ tên là Công Minh Nghi, ông gảy đàn rất hay, nhiều người thích nghe ông đàn.",
+   "Một buổi chiều mùa xuân, trời đẹp, Công Minh Nghi mang đàn ra ngoại ô dạo chơi. Ông thấy trên bãi cỏ có một con trâu đang cúi đầu gặm cỏ, trong lòng vui vẻ liền nghĩ: “Cảnh đẹp thế này, mình gảy cho con trâu này một khúc nhạc vậy.”",
+   "Thế là ông ngồi xuống, gảy một khúc cổ nhạc vô cùng thanh nhã, vô cùng phức tạp. Tiếng đàn du dương êm tai, nhưng con trâu dường như chẳng nghe thấy gì, vẫn cúi đầu gặm từng miếng cỏ, đến đầu cũng chẳng ngẩng lên.",
+   "Công Minh Nghi rất thất vọng. Ông nghĩ một lúc rồi đổi cách đàn, dùng đàn mô phỏng tiếng muỗi “o o”, lại mô phỏng tiếng nghé con “ò ò” gọi mẹ. Lần này, con trâu lập tức ngừng gặm cỏ, vểnh tai, vẫy đuôi, đi qua đi lại lắng nghe.",
+   "Công Minh Nghi cuối cùng đã hiểu: không phải trâu không có tai, mà là nhạc thanh nhã nó hoàn toàn không hiểu; chỉ có âm thanh quen thuộc thì nó mới phản ứng.",
+   "Về sau, người ta dùng “đối ngưu đàn cầm” để ví việc giảng đạo lý cho người không hiểu, tốn công vô ích. Thành ngữ này đôi khi cũng dùng để phê bình người nói không xem đối tượng. Vì vậy nói chuyện hay viết bài đều phải nghĩ xem người nghe là ai, dùng cách họ có thể hiểu được để diễn đạt."
+  ],
+  "questions": [
+   {
+    "q": "公明仪换了弹法以后，牛有什么反应？",
+    "q_vi": "Sau khi Công Minh Nghi đổi cách đàn, con trâu phản ứng thế nào?",
+    "options": [
+     "还是低头吃草",
+     "马上跑开了",
+     "停止吃草，竖起耳朵听",
+     "躺在草地上睡着了"
+    ],
+    "answer": 2,
+    "explain_vi": "Khi nghe tiếng muỗi và tiếng nghé quen thuộc, trâu ngừng ăn, vểnh tai, vẫy đuôi lắng nghe."
+   },
+   {
+    "q": "根据最后一段，这个故事给说话的人什么启发？",
+    "q_vi": "Theo đoạn cuối, câu chuyện gợi ý gì cho người nói?",
+    "options": [
+     "要根据听的人选择表达方式",
+     "音乐比语言更有用",
+     "不要和动物说话",
+     "说话的声音要大一些"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn cuối nói: nói hay viết đều phải xem người nghe là ai, dùng cách họ hiểu được."
+   }
+  ]
+ },
+ {
+  "id": "c-05",
+  "kind": "chengyu",
+  "level": 5,
+  "title": "井底之蛙",
+  "title_vi": "Ếch ngồi đáy giếng",
+  "topic": "thành ngữ · ngụ ngôn",
+  "idiom": {
+   "hz": "井底之蛙",
+   "py": "jǐng dǐ zhī wā",
+   "hv": "TỈNH ĐỂ CHI OA",
+   "meaning": "Con ếch dưới đáy giếng; ví người hiểu biết hạn hẹp, tầm nhìn ngắn mà lại tự cho mình là giỏi.",
+   "usage": "Nghĩa chê, thường làm tân ngữ/vị ngữ: 做井底之蛙、像井底之蛙一样。Hay dùng để tự nhắc mình phải mở rộng tầm nhìn, hoặc phê bình người tự mãn.",
+   "examples": [
+    {
+     "zh": "多出去走走，看看外面的世界，别做井底之蛙。",
+     "vi": "Hãy ra ngoài đi đây đi đó, xem thế giới bên ngoài, đừng làm ếch ngồi đáy giếng."
+    },
+    {
+     "zh": "出国留学以后，我才发现自己以前真是井底之蛙。",
+     "vi": "Sau khi đi du học, tôi mới nhận ra trước đây mình đúng là ếch ngồi đáy giếng."
+    }
+   ]
+  },
+  "paragraphs": [
+   "一口废弃的老井里住着一只青蛙。它每天在井底跳来跳去，有时候在水里游一游，有时候趴在井边的石头上晒太阳，觉得日子过得舒服极了。",
+   "有一天，一只从东海来的大海龟路过井边。青蛙看见了，得意地对它说：“海龟先生，你看我住的地方多好啊！高兴了，我就跳到井边玩儿；累了，我就回到水里休息。这口井里的水全是我的，没有谁比我更快乐了。你也下来看看吧！”",
+   "海龟听了，想下去看看。可是它的左脚还没伸进去，右腿就被井口卡住了。它只好退回来，慢慢地对青蛙说：“你见过大海吗？大海有多宽，用一千里也说不清楚；大海有多深，用一千丈也量不出来。古时候十年里有九年发大水，海水并没有因此多一点儿；八年里有七年大旱，海水也没有因此少一点儿。住在大海里，那才是真正的快乐啊！”",
+   "青蛙听了，吃惊地瞪大了眼睛，半天说不出话来。它这才知道，原来井外的世界那么大，自己知道的东西实在太少了。",
+   "后来，人们就用“井底之蛙”比喻见识少、眼光窄，却又自以为了不起的人。世界很大，知识无穷，我们应该常常走出自己的“井”，多看、多听、多学习。"
+  ],
+  "translations": [
+   "Trong một cái giếng cũ bỏ hoang có một con ếch sống. Mỗi ngày nó nhảy qua nhảy lại dưới đáy giếng, có lúc bơi trong nước, có lúc nằm phơi nắng trên tảng đá cạnh giếng, cảm thấy cuộc sống thoải mái vô cùng.",
+   "Một hôm, một con rùa biển lớn từ biển Đông đi ngang qua giếng. Ếch nhìn thấy liền đắc ý nói: “Ông rùa ơi, ông xem chỗ tôi ở tuyệt chưa! Vui thì tôi nhảy lên miệng giếng chơi; mệt thì tôi về nước nghỉ ngơi. Nước trong giếng này đều là của tôi, chẳng ai sung sướng hơn tôi cả. Ông cũng xuống xem đi!”",
+   "Rùa nghe vậy muốn xuống xem. Nhưng chân trái còn chưa thò vào thì chân phải đã bị miệng giếng kẹt lại. Nó đành lùi lại, chậm rãi nói với ếch: “Anh đã thấy biển bao giờ chưa? Biển rộng thế nào, dùng nghìn dặm cũng không nói hết; biển sâu bao nhiêu, dùng nghìn trượng cũng không đo được. Thời xưa mười năm có chín năm lụt lội, nước biển không vì thế mà nhiều thêm chút nào; tám năm có bảy năm hạn hán, nước biển cũng không vì thế mà ít đi chút nào. Sống ở biển cả, đó mới là niềm vui thật sự!”",
+   "Ếch nghe xong, kinh ngạc trợn tròn mắt, mãi không nói được lời nào. Lúc này nó mới biết, hóa ra thế giới ngoài giếng rộng lớn đến thế, những gì mình biết thật quá ít ỏi.",
+   "Về sau, người ta dùng “tỉnh để chi oa” để ví người kiến thức ít, tầm nhìn hẹp mà lại tự cho mình là ghê gớm. Thế giới rất rộng lớn, tri thức là vô tận, chúng ta nên thường xuyên bước ra khỏi “cái giếng” của mình, nhìn nhiều, nghe nhiều, học nhiều."
+  ],
+  "questions": [
+   {
+    "q": "海龟为什么没有下到井里去？",
+    "q_vi": "Vì sao rùa biển không xuống giếng được?",
+    "options": [
+     "它不喜欢井里的水",
+     "青蛙不让它下去",
+     "它怕井里太黑",
+     "井口太小，它的腿被卡住了"
+    ],
+    "answer": 3,
+    "explain_vi": "Chân trái chưa thò vào thì chân phải đã bị miệng giếng kẹt lại."
+   },
+   {
+    "q": "下面哪句话最符合“井底之蛙”的意思？",
+    "q_vi": "Câu nào dưới đây sát nhất với nghĩa của “tỉnh để chi oa”?",
+    "options": [
+     "他见识很少，还觉得自己什么都懂",
+     "他住的地方又小又旧",
+     "他很喜欢游泳和晒太阳",
+     "他从小就想去海边旅行"
+    ],
+    "answer": 0,
+    "explain_vi": "Thành ngữ ví người hiểu biết hạn hẹp nhưng tự cho mình giỏi."
+   }
+  ]
+ },
+ {
+  "id": "c-06",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "掩耳盗铃",
+  "title_vi": "Bịt tai trộm chuông",
+  "topic": "thành ngữ · ngụ ngôn",
+  "idiom": {
+   "hz": "掩耳盗铃",
+   "py": "yǎn ěr dào líng",
+   "hv": "YỂM NHĨ ĐẠO LINH",
+   "meaning": "Bịt tai mình lại để trộm chuông; ví tự lừa dối mình, cố che giấu điều ai cũng biết, tưởng mình không nghe thấy thì người khác cũng không nghe thấy.",
+   "usage": "Nghĩa chê. Dùng phê phán hành vi che giấu vụng về, tự dối mình dối người. Tương đương “lạy ông tôi ở bụi này” / “tự lừa mình”.",
+   "examples": [
+    {
+     "zh": "把成绩单藏起来不给父母看，这不是掩耳盗铃吗？",
+     "vi": "Giấu bảng điểm không cho bố mẹ xem, chẳng phải là bịt tai trộm chuông sao?"
+    },
+    {
+     "zh": "问题明明存在，不去解决只是不让别人说，这种做法就是掩耳盗铃。",
+     "vi": "Vấn đề rõ ràng có đó, không giải quyết mà chỉ cấm người khác nói, cách làm ấy chính là bịt tai trộm chuông."
+    }
+   ]
+  },
+  "paragraphs": [
+   "春秋时期，晋国有一个大户人家败落了，家里的东西被人拿得差不多了。有个小偷听说他家门口还挂着一口很大的铜钟，心想：“这口钟要是能偷回去卖掉，一定能换不少钱。”",
+   "一天夜里，小偷悄悄地来到那户人家门口。他抬头一看，钟又大又重，一个人根本搬不动。他想了半天，终于想出一个办法：先把钟砸成一块一块的，再分几次背回家。",
+   "他找来一把大锤子，用力向钟砸去。“当——”的一声，钟声又响又长。小偷吓了一大跳，心想：“糟糕！这么大的声音，别人听见了，一定会跑过来抓我的。”",
+   "他急忙扑上去抱住钟，想不让它响，可是钟声还在继续。忽然，他想到了一个“好主意”：“钟声是用耳朵听见的，只要我把自己的耳朵堵上，不就听不见了吗？”于是他找来两团棉花，把耳朵塞得紧紧的，果然什么也听不见了。他放心地抡起锤子，一下一下地砸起来。",
+   "响亮的钟声传遍了四周，附近的人们都被吵醒了，纷纷跑过来，一下子就把小偷抓住了。",
+   "“掩耳盗铃”原来说的是“掩耳盗钟”，后来才变成了“铃”。这个成语比喻自己欺骗自己，明明掩盖不了的事情却偏要想办法掩盖。生活中，有问题就应该面对，自欺欺人只会让事情变得更糟。"
+  ],
+  "translations": [
+   "Thời Xuân Thu, ở nước Tấn có một gia đình giàu có sa sút, đồ đạc trong nhà bị người ta lấy gần hết. Có một tên trộm nghe nói trước cửa nhà ấy vẫn còn treo một cái chuông đồng rất lớn, bèn nghĩ: “Nếu trộm được cái chuông này đem bán, chắc chắn đổi được khối tiền.”",
+   "Một đêm, tên trộm lén lút đến trước cửa nhà ấy. Hắn ngẩng lên nhìn, chuông vừa to vừa nặng, một người hoàn toàn không khiêng nổi. Nghĩ hồi lâu, cuối cùng hắn nghĩ ra một cách: đập vỡ chuông thành từng mảnh, rồi chia làm mấy lần vác về nhà.",
+   "Hắn tìm một cái búa lớn, ra sức đập vào chuông. “Boong——” một tiếng, tiếng chuông vừa to vừa dài. Tên trộm giật nảy mình, nghĩ bụng: “Hỏng rồi! Tiếng to thế này, người ta nghe thấy chắc chắn sẽ chạy tới bắt mình.”",
+   "Hắn vội nhào tới ôm lấy chuông, muốn cho nó không kêu, nhưng tiếng chuông vẫn tiếp tục ngân. Bỗng hắn nghĩ ra một “cao kiến”: “Tiếng chuông là nghe bằng tai, chỉ cần mình bịt tai mình lại thì chẳng phải sẽ không nghe thấy sao?” Thế là hắn tìm hai nắm bông, nhét chặt vào tai, quả nhiên chẳng nghe thấy gì nữa. Hắn yên tâm vung búa, đập hết nhát này đến nhát khác.",
+   "Tiếng chuông vang dội khắp xung quanh, người ở gần đều bị đánh thức, lũ lượt chạy tới, bắt ngay được tên trộm.",
+   "“Yểm nhĩ đạo linh” vốn là “bịt tai trộm chuông đồng (钟)”, về sau mới đổi thành “chuông nhỏ (铃)”. Thành ngữ này ví việc tự lừa dối mình, điều rõ ràng không che giấu được lại cứ tìm cách che giấu. Trong cuộc sống, có vấn đề thì nên đối mặt, tự lừa mình lừa người chỉ khiến sự việc tệ hơn."
+  ],
+  "questions": [
+   {
+    "q": "小偷为什么把自己的耳朵堵上？",
+    "q_vi": "Vì sao tên trộm bịt tai mình lại?",
+    "options": [
+     "他怕钟声把耳朵震坏",
+     "他以为自己听不见，别人也就听不见",
+     "他想睡一会儿再干活",
+     "主人让他这样做"
+    ],
+    "answer": 1,
+    "explain_vi": "Hắn nghĩ tiếng chuông nghe bằng tai, mình không nghe thấy thì coi như không ai nghe — đó chính là tự lừa mình."
+   },
+   {
+    "q": "下面哪种情况可以用“掩耳盗铃”来形容？",
+    "q_vi": "Tình huống nào dưới đây có thể dùng “bịt tai trộm chuông” để miêu tả?",
+    "options": [
+     "他每天早上去公园跑步",
+     "他发现钱包丢了，马上报警",
+     "他体检有问题，就不再看报告，假装自己很健康",
+     "他借了朋友的书，按时还了回去"
+    ],
+    "answer": 2,
+    "explain_vi": "Không xem kết quả khám để giả vờ mình khỏe là tự dối mình, vấn đề vẫn còn đó."
+   }
+  ]
+ },
+ {
+  "id": "c-07",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "刻舟求剑",
+  "title_vi": "Khắc thuyền tìm gươm",
+  "topic": "thành ngữ · ngụ ngôn",
+  "idiom": {
+   "hz": "刻舟求剑",
+   "py": "kè zhōu qiú jiàn",
+   "hv": "KHẮC CHU CẦU KIẾM",
+   "meaning": "Khắc dấu lên mạn thuyền để tìm gươm đã rơi; ví người cứng nhắc, không biết sự vật đã thay đổi, vẫn dùng cách cũ để giải quyết vấn đề mới.",
+   "usage": "Nghĩa chê. Dùng phê phán lối suy nghĩ máy móc, bảo thủ, không theo kịp hoàn cảnh. Hay gặp trong bài bình luận về quản lý, giáo dục.",
+   "examples": [
+    {
+     "zh": "现在的学生和十年前不一样了，还用老办法教，就是刻舟求剑。",
+     "vi": "Học sinh bây giờ khác mười năm trước rồi, vẫn dạy theo cách cũ thì chính là khắc thuyền tìm gươm."
+    },
+    {
+     "zh": "市场早就变了，他还按照过去的经验做生意，难免刻舟求剑。",
+     "vi": "Thị trường đã thay đổi từ lâu, anh ta vẫn làm ăn theo kinh nghiệm cũ, khó tránh khỏi khắc thuyền tìm gươm."
+    }
+   ]
+  },
+  "paragraphs": [
+   "战国时期，楚国有一个人要坐船过江。他身上带着一把宝剑，这把剑是他花了很多钱买来的，平时特别爱惜。",
+   "船开到江中间的时候，风浪突然大了起来，船晃了一下。那个人没站稳，手一松，宝剑“扑通”一声掉进了江里。船上的人都替他着急，喊道：“快想办法把剑捞上来啊！”",
+   "没想到，他一点儿也不慌，不慌不忙地从口袋里拿出一把小刀，在船边上刻了一个记号。大家奇怪地问他这是干什么。他得意地说：“我的剑是从这个地方掉下去的。等船停下来，我从刻记号的地方跳下去，就能把剑找回来了。”",
+   "船继续往前开，到了对岸才停下来。那个人马上从刻着记号的地方跳进水里，在水底找了半天，可是哪里有宝剑的影子呢？船上的人看了都忍不住笑起来。",
+   "其实道理很简单：船一直在往前走，而掉进江里的剑是不会跟着船走的。船早就离开了剑掉下去的地方，按照船上的记号去找，怎么可能找得到呢？",
+   "“刻舟求剑”比喻不懂得事物已经发生了变化，还用老眼光、老办法去处理问题。时代在变，情况在变，我们的想法和做法也要跟着改变。"
+  ],
+  "translations": [
+   "Thời Chiến Quốc, nước Sở có một người muốn đi thuyền qua sông. Trên người anh ta mang một thanh bảo kiếm, là thanh kiếm anh bỏ rất nhiều tiền mua về, ngày thường vô cùng quý trọng.",
+   "Khi thuyền ra đến giữa sông, sóng gió bỗng nổi lớn, thuyền chao một cái. Người đó đứng không vững, tay lỏng ra, thanh bảo kiếm rơi “tõm” xuống sông. Người trên thuyền đều sốt ruột thay anh, hét lên: “Mau nghĩ cách vớt kiếm lên đi!”",
+   "Không ngờ anh ta chẳng hoảng chút nào, thong thả rút trong túi ra một con dao nhỏ, khắc một dấu lên mạn thuyền. Mọi người lấy làm lạ hỏi anh làm gì vậy. Anh đắc ý nói: “Kiếm của tôi rơi xuống từ chỗ này. Đợi thuyền dừng lại, tôi nhảy xuống từ chỗ khắc dấu là sẽ tìm lại được kiếm.”",
+   "Thuyền tiếp tục đi, đến bờ bên kia mới dừng. Người đó lập tức nhảy xuống nước từ chỗ có khắc dấu, mò dưới đáy hồi lâu, nhưng nào thấy bóng dáng thanh kiếm đâu? Người trên thuyền nhìn thấy đều không nhịn được cười.",
+   "Thực ra đạo lý rất đơn giản: thuyền vẫn luôn đi về phía trước, còn thanh kiếm rơi xuống sông thì không đi theo thuyền. Thuyền đã rời xa chỗ kiếm rơi từ lâu, theo dấu trên thuyền mà tìm thì làm sao tìm thấy được?",
+   "“Khắc chu cầu kiếm” ví việc không hiểu sự vật đã thay đổi mà vẫn dùng con mắt cũ, cách cũ để xử lý vấn đề. Thời đại thay đổi, hoàn cảnh thay đổi, suy nghĩ và cách làm của chúng ta cũng phải thay đổi theo."
+  ],
+  "questions": [
+   {
+    "q": "那个人为什么没有找到宝剑？",
+    "q_vi": "Vì sao người đó không tìm được thanh kiếm?",
+    "options": [
+     "江水太深太冷",
+     "宝剑被别人捡走了",
+     "他跳水的时候太晚了",
+     "船已经离开了剑掉下去的地方"
+    ],
+    "answer": 3,
+    "explain_vi": "Thuyền đã đi xa, còn kiếm vẫn nằm ở chỗ cũ, nên dấu khắc trên thuyền không còn đúng vị trí."
+   },
+   {
+    "q": "“刻舟求剑”批评的是哪一种人？",
+    "q_vi": "“Khắc chu cầu kiếm” phê phán loại người nào?",
+    "options": [
+     "不爱惜东西的人",
+     "不懂得情况已经变化、做法死板的人",
+     "做事太着急的人",
+     "不会游泳的人"
+    ],
+    "answer": 1,
+    "explain_vi": "Thành ngữ phê phán người không thấy hoàn cảnh đã đổi mà vẫn dùng cách cũ, máy móc."
+   }
+  ]
+ },
+ {
+  "id": "c-08",
+  "kind": "chengyu",
+  "level": 5,
+  "title": "拔苗助长",
+  "title_vi": "Nhổ mạ giúp lúa mau lớn",
+  "topic": "thành ngữ · ngụ ngôn",
+  "idiom": {
+   "hz": "拔苗助长",
+   "py": "bá miáo zhù zhǎng",
+   "hv": "BẠT MIÊU TRỢ TRƯỞNG",
+   "meaning": "Nhổ cây mạ lên cho nó mau lớn; ví làm trái quy luật tự nhiên, nóng vội muốn nhanh nên ngược lại làm hỏng việc. (Còn viết 揠苗助长.)",
+   "usage": "Nghĩa chê. Rất hay dùng khi bàn về giáo dục trẻ em, học tập, phát triển kinh tế: 教育孩子不能拔苗助长。Gần với tiếng Việt “dục tốc bất đạt”.",
+   "examples": [
+    {
+     "zh": "孩子才三岁，就让他每天学五个小时，这不是拔苗助长吗？",
+     "vi": "Đứa trẻ mới ba tuổi đã bắt học mỗi ngày năm tiếng, đó chẳng phải là nhổ mạ giúp lúa lớn sao?"
+    },
+    {
+     "zh": "学外语要一步一步来，拔苗助长只会让你越学越累。",
+     "vi": "Học ngoại ngữ phải từng bước một, nóng vội ép nhanh chỉ khiến bạn càng học càng mệt."
+    }
+   ]
+  },
+  "paragraphs": [
+   "古时候，宋国有一个农民，他做什么事都很着急。春天，他在田里种下了禾苗，从那天起，他每天都要跑到地里去看好几次。",
+   "可是，禾苗好像一点儿也没长高。他越看越着急，心想：“别人家的禾苗是不是比我的长得快？有什么办法能让它们快点儿长高呢？”他吃不下饭，睡不好觉，一直在想这个问题。",
+   "有一天，他终于想出了一个“好办法”。他跑到田里，把禾苗一棵一棵地往上拔高一点儿。从早上一直忙到太阳下山，他才把所有的禾苗都拔了一遍。",
+   "回到家，他累得满头大汗，却十分高兴地对家里人说：“今天可把我累坏了！不过，我帮禾苗长高了一大截！”他的儿子听了，觉得不对劲，赶紧跑到田里去看。到了地里一看，所有的禾苗都已经低着头，叶子也干了。",
+   "原来，禾苗被拔起来以后，根离开了土，喝不到水，很快就死了。农民本来想让禾苗长得快一点儿，结果却一棵也没留下。",
+   "“拔苗助长”比喻违反事物的发展规律，急于求成，反而把事情办坏了。不管是学习、工作，还是教育孩子，都需要时间，一步一步来，才能真正有收获。"
+  ],
+  "translations": [
+   "Thời xưa, nước Tống có một người nông dân làm việc gì cũng rất nóng vội. Mùa xuân, ông gieo mạ ngoài ruộng, từ hôm đó trở đi ngày nào ông cũng chạy ra ruộng xem mấy lần.",
+   "Nhưng cây mạ dường như chẳng cao thêm chút nào. Ông càng nhìn càng sốt ruột, nghĩ bụng: “Có phải mạ nhà người ta mọc nhanh hơn của mình không? Có cách gì làm chúng cao nhanh hơn không nhỉ?” Ông ăn không ngon, ngủ không yên, cứ nghĩ mãi chuyện này.",
+   "Một hôm, cuối cùng ông nghĩ ra một “cách hay”. Ông chạy ra ruộng, kéo từng cây mạ cao lên một chút. Từ sáng sớm bận đến khi mặt trời lặn, ông mới kéo hết một lượt tất cả cây mạ.",
+   "Về đến nhà, ông mệt đến mồ hôi đầm đìa nhưng rất vui vẻ nói với người nhà: “Hôm nay mệt chết đi được! Nhưng tôi đã giúp mạ cao thêm một đoạn dài!” Con trai ông nghe xong thấy có gì đó không ổn, vội chạy ra ruộng xem. Ra đến nơi thì tất cả cây mạ đều đã gục đầu, lá cũng khô héo.",
+   "Thì ra, cây mạ bị kéo lên rồi, rễ rời khỏi đất, không hút được nước nên chết rất nhanh. Người nông dân vốn muốn mạ lớn nhanh hơn, kết quả lại chẳng còn lấy một cây.",
+   "“Bạt miêu trợ trưởng” ví việc làm trái quy luật phát triển của sự vật, nóng vội muốn thành công nhanh nên ngược lại làm hỏng việc. Dù là học tập, làm việc hay dạy con, đều cần thời gian, từng bước một mới có thể thực sự gặt hái."
+  ],
+  "questions": [
+   {
+    "q": "禾苗为什么都死了？",
+    "q_vi": "Vì sao cây mạ đều chết cả?",
+    "options": [
+     "根离开了土，喝不到水",
+     "天气太热了",
+     "儿子把禾苗踩坏了",
+     "农民忘了浇水"
+    ],
+    "answer": 0,
+    "explain_vi": "Mạ bị kéo lên, rễ rời đất, không hút được nước nên chết."
+   },
+   {
+    "q": "作者最后想说明什么道理？",
+    "q_vi": "Cuối bài tác giả muốn nói lên đạo lý gì?",
+    "options": [
+     "种地要多用新办法",
+     "做事要勤劳，不怕辛苦",
+     "要听家里人的意见",
+     "做事要按规律来，不能急于求成"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn cuối: làm trái quy luật, nóng vội sẽ hỏng việc; cần từng bước một."
+   }
+  ]
+ },
+ {
+  "id": "c-09",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "杯弓蛇影",
+  "title_vi": "Thấy bóng cung trong chén tưởng rắn",
+  "topic": "thành ngữ · điển tích",
+  "idiom": {
+   "hz": "杯弓蛇影",
+   "py": "bēi gōng shé yǐng",
+   "hv": "BÔI CUNG XÀ ẢNH",
+   "meaning": "Bóng cây cung trong chén rượu tưởng là rắn; ví người đa nghi, tự mình hoảng sợ vì những chuyện không có thật.",
+   "usage": "Thường dùng để khuyên ai đó đừng quá lo lắng, nghi ngờ vô căn cứ; làm vị ngữ hoặc định ngữ. Gần với “trông gà hóa cuốc”, “sợ bóng sợ gió”.",
+   "examples": [
+    {
+     "zh": "网上说吃这个会生病，你也别杯弓蛇影，先看看医生怎么说。",
+     "vi": "Trên mạng nói ăn cái này sẽ bị bệnh, bạn cũng đừng sợ bóng sợ gió, trước hết xem bác sĩ nói thế nào."
+    },
+    {
+     "zh": "他上次被骗过一次，现在接到陌生电话就杯弓蛇影，紧张得不得了。",
+     "vi": "Lần trước anh ấy bị lừa một lần, bây giờ nhận cuộc gọi lạ là sợ bóng sợ gió, căng thẳng vô cùng."
+    }
+   ]
+  },
+  "paragraphs": [
+   "晋朝有一个叫乐广的人。有一次，他请一位好朋友到家里喝酒，两个人一边喝酒一边聊天，非常开心。",
+   "朋友正要喝酒的时候，突然发现酒杯里好像有一条小蛇在游来游去。他心里很害怕，可是又不好意思拒绝主人的好意，只好闭上眼睛，把酒喝了下去。",
+   "回到家以后，他总觉得肚子不舒服，好像那条蛇还在肚子里一样。他越想越害怕，吃不下饭，睡不着觉，没过几天就病倒了，吃了很多药也不见好。",
+   "乐广听说朋友病了，就去看他，问他得了什么病。朋友把那天喝酒时看到蛇的事说了出来。乐广觉得很奇怪：自己家里怎么会有蛇呢？",
+   "他回到家，坐在朋友那天坐过的地方，仔细地看来看去。原来，墙上挂着一张弓，弓上画着彩色的花纹，它的影子正好照在酒杯里，看起来就像一条蛇。",
+   "乐广马上又把朋友请到家里，让他坐在原来的位子上，倒了一杯酒，问他：“你看，杯子里还有蛇吗？”朋友一看，还有。乐广把墙上的弓拿下来，杯子里的“蛇”就不见了。朋友终于明白了，心里的疙瘩一下子解开了，病也很快就好了。",
+   "后来，人们用“杯弓蛇影”比喻疑神疑鬼，为不存在的事情担惊受怕。"
+  ],
+  "translations": [
+   "Đời Tấn có một người tên là Nhạc Quảng. Có lần ông mời một người bạn thân đến nhà uống rượu, hai người vừa uống vừa trò chuyện, rất vui vẻ.",
+   "Lúc người bạn sắp uống rượu, bỗng thấy trong chén hình như có một con rắn nhỏ đang bơi qua bơi lại. Anh rất sợ, nhưng lại ngại từ chối thịnh tình của chủ nhà, đành nhắm mắt uống cạn chén rượu.",
+   "Về nhà, anh luôn cảm thấy bụng khó chịu, như thể con rắn vẫn còn trong bụng. Càng nghĩ càng sợ, anh ăn không vào, ngủ không được, chẳng mấy ngày thì đổ bệnh, uống bao nhiêu thuốc cũng không đỡ.",
+   "Nhạc Quảng nghe tin bạn ốm liền đến thăm, hỏi bạn mắc bệnh gì. Người bạn kể lại chuyện hôm uống rượu nhìn thấy rắn. Nhạc Quảng thấy rất lạ: sao nhà mình lại có rắn được?",
+   "Ông về nhà, ngồi đúng chỗ bạn đã ngồi hôm đó, chăm chú nhìn quanh. Thì ra trên tường treo một cây cung, trên cung vẽ hoa văn nhiều màu, bóng của nó vừa vặn chiếu vào chén rượu, trông giống hệt một con rắn.",
+   "Nhạc Quảng lập tức mời bạn đến nhà lần nữa, để bạn ngồi đúng chỗ cũ, rót một chén rượu rồi hỏi: “Anh xem, trong chén còn rắn không?” Người bạn nhìn, vẫn còn. Nhạc Quảng gỡ cây cung trên tường xuống, “con rắn” trong chén liền biến mất. Người bạn cuối cùng đã hiểu, khúc mắc trong lòng lập tức được gỡ bỏ, bệnh cũng nhanh chóng khỏi.",
+   "Về sau, người ta dùng “bôi cung xà ảnh” để ví việc đa nghi, lo sợ vì những chuyện không hề có."
+  ],
+  "questions": [
+   {
+    "q": "朋友为什么会生病？",
+    "q_vi": "Vì sao người bạn bị ốm?",
+    "options": [
+     "他真的喝下了一条蛇",
+     "乐广家的酒有问题",
+     "他以为自己喝下了蛇，心里害怕",
+     "他那天喝酒喝得太多了"
+    ],
+    "answer": 2,
+    "explain_vi": "Không có rắn thật, anh chỉ tưởng mình đã nuốt rắn nên lo sợ mà sinh bệnh."
+   },
+   {
+    "q": "乐广是怎么治好朋友的病的？",
+    "q_vi": "Nhạc Quảng đã chữa khỏi bệnh cho bạn bằng cách nào?",
+    "options": [
+     "请了一位有名的医生",
+     "让朋友亲眼看到“蛇”只是弓的影子",
+     "给朋友买了很多药",
+     "让朋友以后不要再喝酒"
+    ],
+    "answer": 1,
+    "explain_vi": "Ông cho bạn ngồi lại chỗ cũ, rồi gỡ cung xuống để bạn thấy “rắn” chỉ là bóng cây cung."
+   }
+  ]
+ },
+ {
+  "id": "c-10",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "叶公好龙",
+  "title_vi": "Diệp Công thích rồng",
+  "topic": "thành ngữ · điển tích",
+  "idiom": {
+   "hz": "叶公好龙",
+   "py": "yè gōng hào lóng",
+   "hv": "DIỆP CÔNG HIẾU LONG",
+   "meaning": "Diệp Công thích rồng; ví người ngoài miệng nói yêu thích một điều gì đó, nhưng thật ra không thích, khi điều đó đến thật thì lại sợ hãi, né tránh.",
+   "usage": "Nghĩa chê. Dùng phê phán sự yêu thích giả tạo, “nói một đằng làm một nẻo”. Chú ý: 好 đọc hào (thích), 叶 ở đây xưa đọc shè, nay phổ biến đọc yè.",
+   "examples": [
+    {
+     "zh": "他总说喜欢运动，可一叫他去爬山就找借口，真是叶公好龙。",
+     "vi": "Anh ta cứ nói thích thể thao, nhưng hễ rủ đi leo núi là kiếm cớ, đúng là Diệp Công thích rồng."
+    },
+    {
+     "zh": "有的公司嘴上说重视人才，真有人提出新想法时却不愿意听，这就是叶公好龙。",
+     "vi": "Có công ty ngoài miệng nói coi trọng nhân tài, nhưng khi có người đưa ra ý tưởng mới thật thì lại không muốn nghe, đó chính là Diệp Công thích rồng."
+    }
+   ]
+  },
+  "paragraphs": [
+   "古时候，有一位叶公，他逢人就说自己最喜欢龙。为了表示他对龙的热爱，他家里到处都是龙：墙上画着龙，柱子上刻着龙，门窗上雕着龙，连衣服、被子、杯子和碗上也都绣着、画着龙。",
+   "叶公喜欢龙的事情越传越远，最后传到了天上。天上的真龙听说了，非常感动，心想：“人间竟然有这么喜欢我的人，我一定要下去看看他。”",
+   "一天，真龙从天上飞下来，来到叶公的家。它把头从窗户伸进屋里，长长的尾巴还拖在院子里。龙想给叶公一个惊喜，就大声地打了个招呼。",
+   "叶公正在屋里看书，听见声音抬头一看，一条又大又长的真龙正瞪着眼睛看着他。他吓得脸色发白，浑身发抖，扔下书就往外跑，连鞋都跑掉了，一边跑一边大喊：“救命啊！有怪物！”",
+   "真龙看着叶公逃走的样子，觉得莫名其妙，又很失望：“原来他喜欢的不是真正的龙，而是那些像龙又不是龙的东西啊！”说完，它就飞回天上去了。",
+   "后来，人们用“叶公好龙”比喻嘴上说喜欢某种东西，实际上并不是真的喜欢，甚至害怕它。真正的喜欢，不是挂在嘴上，而是要经得起考验。"
+  ],
+  "translations": [
+   "Thời xưa có một vị Diệp Công, gặp ai ông cũng nói mình thích rồng nhất. Để tỏ lòng yêu rồng, nhà ông đâu đâu cũng có rồng: trên tường vẽ rồng, trên cột khắc rồng, trên cửa chạm rồng, đến cả quần áo, chăn, chén, bát cũng thêu rồng, vẽ rồng.",
+   "Chuyện Diệp Công thích rồng càng truyền càng xa, cuối cùng truyền đến tận trời. Con rồng thật trên trời nghe được, rất cảm động, nghĩ bụng: “Dưới trần gian lại có người thích mình đến thế, mình nhất định phải xuống thăm ông ấy.”",
+   "Một hôm, rồng thật từ trên trời bay xuống, đến nhà Diệp Công. Nó thò đầu qua cửa sổ vào nhà, cái đuôi dài vẫn còn kéo ngoài sân. Rồng muốn tạo bất ngờ cho Diệp Công nên lớn tiếng chào hỏi.",
+   "Diệp Công đang đọc sách trong nhà, nghe tiếng ngẩng đầu lên nhìn, thấy một con rồng thật vừa to vừa dài đang trợn mắt nhìn mình. Ông sợ đến tái mặt, run lẩy bẩy, vứt sách chạy ra ngoài, rơi cả giày, vừa chạy vừa la: “Cứu với! Có quái vật!”",
+   "Rồng thật nhìn dáng Diệp Công chạy trốn, thấy khó hiểu vô cùng, lại rất thất vọng: “Hóa ra thứ ông ấy thích không phải là rồng thật, mà là những thứ giống rồng nhưng không phải rồng!” Nói xong, nó bay về trời.",
+   "Về sau, người ta dùng “Diệp Công hiếu long” để ví người ngoài miệng nói thích một thứ gì đó, thực ra không thật lòng thích, thậm chí còn sợ nó. Thích thật sự không phải để treo trên cửa miệng, mà phải chịu được thử thách."
+  ],
+  "questions": [
+   {
+    "q": "真龙为什么要到叶公家里来？",
+    "q_vi": "Vì sao rồng thật lại đến nhà Diệp Công?",
+    "options": [
+     "它想吓唬叶公",
+     "叶公请它来做客",
+     "它迷路了",
+     "它听说叶公很喜欢龙，很感动"
+    ],
+    "answer": 3,
+    "explain_vi": "Rồng nghe nói Diệp Công rất thích rồng nên cảm động, muốn xuống thăm."
+   },
+   {
+    "q": "“叶公好龙”的意思最接近下面哪一句？",
+    "q_vi": "Nghĩa của “Diệp Công hiếu long” gần nhất với câu nào dưới đây?",
+    "options": [
+     "嘴上说喜欢，其实并不是真喜欢",
+     "喜欢一样东西就要坚持下去",
+     "不要相信传说中的东西",
+     "每个人都有自己的爱好"
+    ],
+    "answer": 0,
+    "explain_vi": "Thành ngữ chỉ sự yêu thích ngoài miệng, khi gặp thật thì sợ hãi né tránh."
+   }
+  ]
+ },
+ {
+  "id": "c-11",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "塞翁失马",
+  "title_vi": "Tái ông mất ngựa (họa phúc khó lường)",
+  "topic": "thành ngữ · điển tích",
+  "idiom": {
+   "hz": "塞翁失马",
+   "py": "sài wēng shī mǎ",
+   "hv": "TÁI ÔNG THẤT MÃ",
+   "meaning": "Ông lão biên ải mất ngựa; ví chuyện xấu có thể biến thành chuyện tốt, họa phúc khó lường trước.",
+   "usage": "Thường dùng để an ủi người gặp chuyện không may, hoặc nhìn lại một biến cố đã thành may mắn. Hay đi với vế sau: 塞翁失马，焉知非福 (biết đâu chẳng phải là phúc).",
+   "examples": [
+    {
+     "zh": "别太难过了，没考上那所大学也许是塞翁失马，焉知非福。",
+     "vi": "Đừng buồn quá, không đỗ trường đại học đó có khi là tái ông mất ngựa, biết đâu lại là phúc."
+    },
+    {
+     "zh": "那次失业对他来说是塞翁失马，他后来自己开了公司，生意很好。",
+     "vi": "Lần thất nghiệp ấy với anh là tái ông mất ngựa, sau đó anh tự mở công ty, làm ăn rất tốt."
+    }
+   ]
+  },
+  "paragraphs": [
+   "古时候，在北方的边塞住着一位老人，大家叫他“塞翁”。他家养了很多马。",
+   "有一天，他家的一匹马跑丢了，一直跑到了边境外面。邻居们听说了，都来安慰他。塞翁却不怎么难过，笑着说：“丢了一匹马，谁知道这不是一件好事呢？”大家听了，都觉得他太奇怪了。",
+   "过了几个月，那匹丢了的马竟然自己跑回来了，还带回来一匹又高又壮的好马。邻居们纷纷来祝贺他。塞翁却一点儿也不高兴，说：“白白得到一匹好马，谁知道这不会变成一件坏事呢？”",
+   "塞翁的儿子特别喜欢骑马，他天天骑着那匹新来的好马到处跑。有一天，马跑得太快，他从马上摔了下来，把腿摔断了。邻居们又来安慰塞翁。塞翁却平静地说：“腿摔断了，谁知道这不是一件好事呢？”",
+   "一年以后，边境上打起仗来，村里的年轻人都被叫去当兵，大部分人都死在了战场上。塞翁的儿子因为腿受了伤，不用去当兵，所以活了下来，和父亲一起平平安安地生活。",
+   "这个故事告诉我们，好事和坏事是可以互相转化的。“塞翁失马，焉知非福”常常用来安慰遇到不幸的人：眼前的损失，也许会带来意想不到的好处。"
+  ],
+  "translations": [
+   "Thời xưa, ở vùng biên ải phía bắc có một ông lão, mọi người gọi ông là “Tái ông”. Nhà ông nuôi rất nhiều ngựa.",
+   "Một hôm, một con ngựa nhà ông chạy mất, chạy tận ra ngoài biên giới. Hàng xóm nghe tin đều đến an ủi ông. Tái ông lại chẳng buồn mấy, cười nói: “Mất một con ngựa, ai biết được đó không phải là chuyện tốt?” Mọi người nghe xong đều thấy ông thật kỳ quặc.",
+   "Mấy tháng sau, con ngựa bị mất lại tự chạy về, còn dẫn theo một con ngựa tốt vừa cao vừa khỏe. Hàng xóm lũ lượt đến chúc mừng. Tái ông lại chẳng vui chút nào, nói: “Không mất gì mà được một con ngựa tốt, ai biết được nó sẽ không biến thành chuyện xấu?”",
+   "Con trai Tái ông rất thích cưỡi ngựa, ngày nào cũng cưỡi con ngựa tốt mới đến chạy khắp nơi. Một hôm, ngựa chạy quá nhanh, anh ngã từ trên lưng ngựa xuống, gãy chân. Hàng xóm lại đến an ủi Tái ông. Tái ông lại bình thản nói: “Gãy chân, ai biết được đó không phải là chuyện tốt?”",
+   "Một năm sau, ở biên giới nổ ra chiến tranh, thanh niên trong làng đều bị gọi đi lính, phần lớn đều chết ngoài chiến trường. Con trai Tái ông vì bị thương ở chân nên không phải đi lính, nhờ vậy sống sót, cùng cha sống bình yên.",
+   "Câu chuyện này cho chúng ta biết chuyện tốt và chuyện xấu có thể chuyển hóa lẫn nhau. “Tái ông mất ngựa, biết đâu chẳng phải là phúc” thường dùng để an ủi người gặp chuyện không may: tổn thất trước mắt có khi lại mang đến lợi ích không ngờ."
+  ],
+  "questions": [
+   {
+    "q": "塞翁的儿子为什么没有去当兵？",
+    "q_vi": "Vì sao con trai Tái ông không phải đi lính?",
+    "options": [
+     "他年纪太小了",
+     "他的腿摔断了",
+     "塞翁不让他去",
+     "他骑马逃走了"
+    ],
+    "answer": 1,
+    "explain_vi": "Anh bị ngã ngựa gãy chân nên không phải đi lính và sống sót."
+   },
+   {
+    "q": "朋友丢了工作，你想用这个成语安慰他，下面哪句话最合适？",
+    "q_vi": "Bạn của bạn mất việc, bạn muốn dùng thành ngữ này để an ủi, câu nào phù hợp nhất?",
+    "options": [
+     "你这是叶公好龙。",
+     "你这样做是画蛇添足。",
+     "塞翁失马，焉知非福，说不定能找到更好的。",
+     "别守株待兔了。"
+    ],
+    "answer": 2,
+    "explain_vi": "Câu “塞翁失马，焉知非福” dùng để an ủi: chuyện không may biết đâu lại thành may."
+   }
+  ]
+ },
+ {
+  "id": "c-12",
+  "kind": "chengyu",
+  "level": 5,
+  "title": "狐假虎威",
+  "title_vi": "Cáo mượn oai hùm",
+  "topic": "thành ngữ · ngụ ngôn",
+  "idiom": {
+   "hz": "狐假虎威",
+   "py": "hú jiǎ hǔ wēi",
+   "hv": "HỒ GIẢ HỔ UY",
+   "meaning": "Cáo mượn oai hổ; ví kẻ dựa vào thế lực của người khác để dọa nạt, ức hiếp người.",
+   "usage": "Nghĩa chê. 假 ở đây nghĩa là “mượn” (jiǎ). Dùng phê phán người cậy quan hệ, cậy cấp trên để ra oai. Giống hệt câu tiếng Việt “cáo mượn oai hùm”.",
+   "examples": [
+    {
+     "zh": "他仗着自己的舅舅是经理，在公司里狐假虎威，大家都很讨厌他。",
+     "vi": "Anh ta cậy cậu mình là giám đốc, ở công ty cáo mượn oai hùm, ai cũng ghét."
+    },
+    {
+     "zh": "保安只是狐假虎威，真正做决定的不是他。",
+     "vi": "Anh bảo vệ chỉ là cáo mượn oai hùm thôi, người thật sự quyết định không phải anh ta."
+    }
+   ]
+  },
+  "paragraphs": [
+   "在一片大森林里，老虎是百兽之王，所有的动物见了它都很害怕。",
+   "有一天，老虎饿了，出来找吃的，正好抓住了一只狐狸。它张开大嘴，准备把狐狸吃掉。狐狸心里怕得要命，可是它眼珠一转，马上想出了一个主意。",
+   "狐狸挺起胸，大声地说：“你敢吃我？我是天上派来管理百兽的！你要是吃了我，就是违反了天帝的命令，会受到惩罚的！”老虎一听，愣住了，半信半疑地看着它。",
+   "狐狸接着说：“你要是不相信，就跟在我后面，到森林里走一圈。看看动物们见了我，有哪一个不害怕、不逃跑的？”老虎想：“那就去看看吧。”",
+   "于是，狐狸大摇大摆地走在前面，老虎小心地跟在后面。一路上，兔子、小鹿、野猪……看见它们走过来，都吓得拼命地逃跑了。老虎看了，真的以为动物们是害怕狐狸，就不敢吃它了。",
+   "其实，动物们害怕的根本不是狐狸，而是走在它后面的老虎。狐狸只不过是借了老虎的威风罢了。",
+   "“狐假虎威”这个成语比喻依靠别人的势力去吓唬、欺负别人。这样的人看起来很厉害，可是一旦失去了背后的“老虎”，就什么也不是了。"
+  ],
+  "translations": [
+   "Trong một khu rừng lớn, hổ là chúa tể muôn loài, con vật nào thấy nó cũng rất sợ.",
+   "Một hôm, hổ đói bụng ra ngoài kiếm ăn, vừa hay bắt được một con cáo. Nó há to miệng định ăn thịt cáo. Cáo sợ muốn chết, nhưng đảo mắt một cái liền nghĩ ra một kế.",
+   "Cáo ưỡn ngực, lớn tiếng nói: “Ngươi dám ăn ta à? Ta là do trời phái xuống cai quản muôn thú! Nếu ngươi ăn ta là trái lệnh Thiên đế, sẽ bị trừng phạt đấy!” Hổ nghe vậy sững người, nửa tin nửa ngờ nhìn cáo.",
+   "Cáo nói tiếp: “Nếu ngươi không tin thì đi theo sau ta một vòng quanh rừng. Xem các con vật thấy ta, có con nào không sợ, không bỏ chạy?” Hổ nghĩ: “Vậy thì đi xem thử.”",
+   "Thế là cáo nghênh ngang đi trước, hổ cẩn thận theo sau. Dọc đường, thỏ, nai con, lợn rừng… thấy chúng đi tới đều sợ hãi chạy bán sống bán chết. Hổ nhìn thấy, tưởng thật là các con vật sợ cáo, nên không dám ăn nó nữa.",
+   "Thực ra, thứ các con vật sợ hoàn toàn không phải là cáo, mà là con hổ đi sau nó. Cáo chẳng qua chỉ mượn oai của hổ mà thôi.",
+   "Thành ngữ “hồ giả hổ uy” ví việc dựa vào thế lực của người khác để dọa nạt, ức hiếp người. Loại người này trông có vẻ ghê gớm, nhưng một khi mất đi “con hổ” phía sau thì chẳng là gì cả."
+  ],
+  "questions": [
+   {
+    "q": "动物们为什么见了就逃跑？",
+    "q_vi": "Vì sao các con vật nhìn thấy liền bỏ chạy?",
+    "options": [
+     "它们害怕的是狐狸后面的老虎",
+     "狐狸真的是天上派来的",
+     "狐狸跑得比它们快",
+     "森林里着火了"
+    ],
+    "answer": 0,
+    "explain_vi": "Các con vật sợ con hổ đi sau, không phải sợ cáo."
+   },
+   {
+    "q": "根据故事，狐狸是一个什么样的动物？",
+    "q_vi": "Theo câu chuyện, cáo là con vật như thế nào?",
+    "options": [
+     "诚实勇敢",
+     "力气很大",
+     "胆小又笨",
+     "聪明但狡猾，会借别人的势力"
+    ],
+    "answer": 3,
+    "explain_vi": "Cáo nhanh trí nghĩ ra mưu kế, nhưng xảo quyệt, mượn oai hổ để thoát thân và ra oai."
+   }
+  ]
+ },
+ {
+  "id": "c-13",
+  "kind": "chengyu",
+  "level": 5,
+  "title": "自相矛盾",
+  "title_vi": "Tự mâu thuẫn",
+  "topic": "thành ngữ · ngụ ngôn",
+  "idiom": {
+   "hz": "自相矛盾",
+   "py": "zì xiāng máo dùn",
+   "hv": "TỰ TƯƠNG MÂU THUẪN",
+   "meaning": "Cây giáo và tấm khiên tự chống lại nhau; ví lời nói hoặc việc làm trước sau trái ngược nhau.",
+   "usage": "Rất thông dụng, dùng cả trong văn nói lẫn văn viết, nhất là khi phân tích lập luận: 他的说法自相矛盾。Từ 矛盾 (mâu thuẫn) trong tiếng Trung và tiếng Việt đều bắt nguồn từ câu chuyện này.",
+   "examples": [
+    {
+     "zh": "你刚才说没去过北京，现在又说在北京吃过烤鸭，这不是自相矛盾吗？",
+     "vi": "Vừa nãy bạn nói chưa từng đến Bắc Kinh, giờ lại nói từng ăn vịt quay ở Bắc Kinh, thế chẳng phải tự mâu thuẫn sao?"
+    },
+    {
+     "zh": "这份报告前后的数字自相矛盾，需要重新检查。",
+     "vi": "Số liệu trước sau của bản báo cáo này mâu thuẫn nhau, cần kiểm tra lại."
+    }
+   ]
+  },
+  "paragraphs": [
+   "战国时期，楚国有一个卖兵器的人。有一天，他拿着一支矛和一面盾到集市上去卖。",
+   "为了吸引顾客，他先举起盾，大声地吆喝：“大家快来看哪！我的盾是世界上最坚固的，不管用什么锋利的东西，都刺不穿它！”很多人围过来看，有人还用手敲了敲，点头说：“嗯，看起来确实挺结实。”",
+   "接着，他又举起矛，更加得意地喊：“再来看看我的矛！我的矛是世界上最锋利的，不管多么坚固的东西，它都能一下子刺穿！”",
+   "这时候，人群里有一个人笑着问他：“那么，用你的矛去刺你的盾，结果会怎么样呢？”",
+   "卖兵器的人一下子愣住了，脸涨得通红，张着嘴，半天也回答不上来。因为如果矛刺穿了盾，那盾就不是最坚固的；如果矛刺不穿盾，那矛就不是最锋利的。不管怎么回答，他前面说的话都有一句是假的。围观的人都哈哈大笑起来，他只好收起东西，灰溜溜地走了。",
+   "后来，人们用“自相矛盾”比喻一个人说话或做事前后不一致，互相冲突。我们今天常说的“矛盾”这个词，就是从这个故事来的。说话、写文章的时候，要注意前后一致，不能夸大其词。"
+  ],
+  "translations": [
+   "Thời Chiến Quốc, nước Sở có một người bán binh khí. Một hôm, anh ta mang một cây giáo và một tấm khiên ra chợ bán.",
+   "Để thu hút khách, trước tiên anh giơ tấm khiên lên, lớn tiếng rao: “Mọi người mau đến xem này! Khiên của tôi là chắc nhất thế giới, dù dùng thứ sắc bén gì cũng không đâm thủng được nó!” Nhiều người vây lại xem, có người còn gõ gõ bằng tay, gật đầu nói: “Ừ, trông đúng là chắc chắn lắm.”",
+   "Tiếp đó, anh lại giơ cây giáo lên, càng đắc ý hô: “Xem tiếp cây giáo của tôi! Giáo của tôi là sắc bén nhất thế giới, dù vật chắc chắn đến đâu nó cũng đâm thủng ngay lập tức!”",
+   "Lúc đó, trong đám đông có một người cười hỏi anh: “Vậy lấy giáo của anh đâm vào khiên của anh thì kết quả sẽ thế nào?”",
+   "Người bán binh khí lập tức sững lại, mặt đỏ bừng, há miệng mãi không trả lời được. Bởi vì nếu giáo đâm thủng khiên thì khiên không phải là chắc nhất; nếu giáo không đâm thủng khiên thì giáo không phải là sắc nhất. Trả lời thế nào thì trong những lời anh nói trước đó cũng có một câu là giả. Người xem đều cười ầm lên, anh đành thu dọn đồ đạc, cụp đuôi bỏ đi.",
+   "Về sau, người ta dùng “tự tương mâu thuẫn” để ví lời nói hay việc làm của một người trước sau không nhất quán, xung đột lẫn nhau. Từ “mâu thuẫn” chúng ta hay nói ngày nay chính là từ câu chuyện này mà ra. Khi nói hay viết, phải chú ý trước sau nhất quán, không được nói quá sự thật."
+  ],
+  "questions": [
+   {
+    "q": "卖兵器的人为什么回答不上来？",
+    "q_vi": "Vì sao người bán binh khí không trả lời được?",
+    "options": [
+     "他没听清别人的问题",
+     "他的矛和盾都是借来的",
+     "不管怎么回答，他前面的话都有一句是假的",
+     "他从来没用过矛和盾"
+    ],
+    "answer": 2,
+    "explain_vi": "Dù giáo có đâm thủng khiên hay không thì một trong hai lời quảng cáo cũng sai."
+   },
+   {
+    "q": "下面哪一句话是“自相矛盾”的？",
+    "q_vi": "Câu nào dưới đây là “tự mâu thuẫn”?",
+    "options": [
+     "我每天早上都喝咖啡。",
+     "我从来不说谎，昨天我骗了我妈妈。",
+     "这本书很有意思，我推荐你看。",
+     "今天下雨，所以我带了伞。"
+    ],
+    "answer": 1,
+    "explain_vi": "Nói “không bao giờ nói dối” rồi lại kể “hôm qua lừa mẹ” là hai vế trái ngược nhau."
+   }
+  ]
+ },
+ {
+  "id": "c-14",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "滥竽充数",
+  "title_vi": "Thổi sáo cho đủ số (lập lờ đánh lận con đen)",
+  "topic": "thành ngữ · điển tích",
+  "idiom": {
+   "hz": "滥竽充数",
+   "py": "làn yú chōng shù",
+   "hv": "LẠM VU SUNG SỐ",
+   "meaning": "Người không biết thổi kèn vu lẫn vào dàn nhạc cho đủ số; ví người không có tài thật mà trà trộn vào hàng ngũ người có năng lực, hoặc đồ kém chất lượng lẫn vào đồ tốt cho đủ số.",
+   "usage": "Nghĩa chê; cũng hay dùng để tự khiêm tốn: 我只是滥竽充数 (tôi chỉ góp mặt cho đủ số thôi). Dùng cho người lẫn đồ vật.",
+   "examples": [
+    {
+     "zh": "这次比赛我是被朋友拉来滥竽充数的，没想到还拿了奖。",
+     "vi": "Cuộc thi lần này tôi bị bạn kéo đến cho đủ số, không ngờ lại đoạt giải."
+    },
+    {
+     "zh": "这箱苹果上面都是大的，下面却有不少小的在滥竽充数。",
+     "vi": "Thùng táo này bên trên toàn quả to, bên dưới lại có không ít quả nhỏ lẫn vào cho đủ số."
+    }
+   ]
+  },
+  "paragraphs": [
+   "战国时期，齐国的国王齐宣王特别喜欢听人吹竽。竽是一种古代的乐器，声音很好听。齐宣王有一个习惯：每次听吹竽，都要三百个人一起吹给他听，他觉得这样才够热闹、够气派。",
+   "有一个叫南郭先生的人，根本不会吹竽。可是他听说给国王吹竽待遇特别好，就想办法混进了乐队。每次演奏的时候，他就拿着竽坐在人群中间，别人摇头晃脑，他也摇头晃脑；别人鼓起腮帮子，他也鼓起腮帮子，其实一点儿声音也没吹出来。",
+   "因为是三百个人一起吹，谁也没有发现他是在假装。就这样，南郭先生和其他乐师一样，拿着丰厚的报酬，过了好几年舒服的日子。",
+   "后来，齐宣王去世了，他的儿子齐湣王当了国王。齐湣王也喜欢听吹竽，可是他和父亲不一样，不喜欢听合奏，而是喜欢让乐师一个一个地单独吹给他听。",
+   "命令一下来，乐师们都开始认真练习，只有南郭先生急得像热锅上的蚂蚁。他知道自己再也混不下去了，于是连夜收拾东西逃走了。",
+   "“滥竽充数”比喻没有真本事的人混在行家里面凑数，也比喻用不好的东西冒充好东西。这个故事提醒我们：只有真正的本领才靠得住，装出来的样子早晚会被发现。"
+  ],
+  "translations": [
+   "Thời Chiến Quốc, vua nước Tề là Tề Tuyên Vương rất thích nghe thổi kèn vu. Vu là một loại nhạc cụ cổ, âm thanh rất hay. Tề Tuyên Vương có một thói quen: mỗi lần nghe thổi vu đều muốn ba trăm người cùng thổi cho ông nghe, ông cho rằng như vậy mới đủ náo nhiệt, đủ khí thế.",
+   "Có một người tên là Nam Quách tiên sinh, hoàn toàn không biết thổi vu. Nhưng nghe nói thổi vu cho vua được đãi ngộ rất tốt, ông bèn tìm cách trà trộn vào dàn nhạc. Mỗi lần biểu diễn, ông cầm kèn ngồi giữa đám đông, người khác lắc lư đầu thì ông cũng lắc lư đầu; người khác phồng má thì ông cũng phồng má, thực ra chẳng thổi ra chút tiếng nào.",
+   "Vì ba trăm người cùng thổi nên chẳng ai phát hiện ông đang giả vờ. Cứ thế, Nam Quách tiên sinh cũng như các nhạc công khác, nhận thù lao hậu hĩnh, sống thoải mái mấy năm liền.",
+   "Về sau, Tề Tuyên Vương qua đời, con trai ông là Tề Mẫn Vương lên làm vua. Tề Mẫn Vương cũng thích nghe thổi vu, nhưng khác với cha, ông không thích nghe hòa tấu mà thích cho nhạc công lần lượt thổi riêng từng người.",
+   "Lệnh vừa ban xuống, các nhạc công đều bắt đầu chăm chỉ luyện tập, chỉ có Nam Quách tiên sinh cuống như kiến bò chảo nóng. Ông biết mình không thể trà trộn được nữa, bèn thu dọn đồ đạc bỏ trốn ngay trong đêm.",
+   "“Lạm vu sung số” ví người không có bản lĩnh thật trà trộn vào giữa những người giỏi cho đủ số, cũng ví việc dùng đồ kém mạo nhận là đồ tốt. Câu chuyện nhắc nhở chúng ta: chỉ có bản lĩnh thật mới đáng tin cậy, vẻ ngoài giả vờ sớm muộn cũng bị phát hiện."
+  ],
+  "questions": [
+   {
+    "q": "南郭先生为什么能在乐队里混好几年？",
+    "q_vi": "Vì sao Nam Quách tiên sinh có thể trà trộn trong dàn nhạc mấy năm liền?",
+    "options": [
+     "他偷偷地练会了吹竽",
+     "他是国王的好朋友",
+     "三百个人一起吹，没人发现他在假装",
+     "其他乐师帮他吹"
+    ],
+    "answer": 2,
+    "explain_vi": "Ba trăm người cùng thổi nên không ai nhận ra ông chỉ giả vờ."
+   },
+   {
+    "q": "南郭先生最后为什么逃走了？",
+    "q_vi": "Vì sao cuối cùng Nam Quách tiên sinh bỏ trốn?",
+    "options": [
+     "新国王要求乐师一个一个单独吹",
+     "他不想再拿报酬了",
+     "国王不喜欢听吹竽了",
+     "其他乐师告发了他"
+    ],
+    "answer": 0,
+    "explain_vi": "Tề Mẫn Vương thích nghe từng người thổi riêng, ông không thể giả vờ được nữa."
+   }
+  ]
+ },
+ {
+  "id": "c-15",
+  "kind": "chengyu",
+  "level": 5,
+  "title": "画龙点睛",
+  "title_vi": "Vẽ rồng điểm mắt",
+  "topic": "thành ngữ · điển tích",
+  "idiom": {
+   "hz": "画龙点睛",
+   "py": "huà lóng diǎn jīng",
+   "hv": "HỌA LONG ĐIỂM TINH",
+   "meaning": "Vẽ rồng xong chấm mắt cho rồng; ví khi nói, viết hay làm việc, thêm một chi tiết then chốt khiến toàn bộ trở nên sinh động, có hồn.",
+   "usage": "Nghĩa khen (褒义). Hay dùng khi nhận xét văn chương, thiết kế, phát biểu: 起到画龙点睛的作用 (có tác dụng điểm nhãn), 画龙点睛之笔 (nét bút điểm nhãn).",
+   "examples": [
+    {
+     "zh": "文章最后一句话写得非常好，起到了画龙点睛的作用。",
+     "vi": "Câu cuối bài văn viết rất hay, có tác dụng như nét điểm mắt cho rồng."
+    },
+    {
+     "zh": "房间布置得很简单，墙上那幅画是画龙点睛之笔。",
+     "vi": "Căn phòng bày trí rất đơn giản, bức tranh trên tường chính là điểm nhấn làm sáng cả căn phòng."
+    }
+   ]
+  },
+  "paragraphs": [
+   "南北朝时期，有一位非常有名的画家，叫张僧繇。他画什么像什么，尤其是画龙，画得特别生动。",
+   "有一次，一座寺庙请他在墙上画龙。张僧繇用了好几天的时间，在墙上画了四条白龙。这四条龙身子长长的，鳞片闪闪发光，好像随时都要飞起来一样。来看画的人越来越多，大家都称赞不已。",
+   "可是，有人仔细一看，发现了一个奇怪的地方：这四条龙都没有画眼睛。大家纷纷问张僧繇为什么不画。张僧繇认真地说：“眼睛是龙的灵魂。如果给它们画上眼睛，它们就会飞走的。”",
+   "大家听了，都哈哈大笑，觉得他在吹牛。有人说：“画出来的龙怎么会飞呢？你就画给我们看看吧！”大家一再要求，张僧繇没办法，只好拿起笔，给其中两条龙点上了眼睛。",
+   "刚点完，天空突然乌云密布，电闪雷鸣，墙壁“轰”的一声裂开了。那两条点了眼睛的龙从墙上腾空而起，飞上了天空。等到雷雨停了，人们再看墙上，只剩下两条没有眼睛的龙了。",
+   "这当然只是一个传说。后来，人们用“画龙点睛”比喻在说话、写文章或做事时，在关键的地方加上一两句精彩的话或一个重要的细节，使内容更加生动、有力。"
+  ],
+  "translations": [
+   "Thời Nam Bắc triều, có một họa sĩ rất nổi tiếng tên là Trương Tăng Do. Ông vẽ gì giống nấy, đặc biệt là vẽ rồng, vẽ vô cùng sống động.",
+   "Có lần, một ngôi chùa mời ông vẽ rồng lên tường. Trương Tăng Do mất mấy ngày, vẽ bốn con rồng trắng trên tường. Bốn con rồng mình dài, vảy lấp lánh, như thể có thể bay lên bất cứ lúc nào. Người đến xem tranh càng lúc càng đông, ai nấy đều khen không ngớt.",
+   "Nhưng có người nhìn kỹ, phát hiện một chỗ lạ: cả bốn con rồng đều không được vẽ mắt. Mọi người lần lượt hỏi Trương Tăng Do vì sao không vẽ. Ông nghiêm túc nói: “Mắt là linh hồn của rồng. Nếu vẽ mắt cho chúng, chúng sẽ bay đi mất.”",
+   "Mọi người nghe xong đều cười ồ, cho rằng ông nói khoác. Có người bảo: “Rồng vẽ ra làm sao bay được? Ông cứ vẽ cho chúng tôi xem đi!” Mọi người nài nỉ mãi, Trương Tăng Do hết cách, đành cầm bút chấm mắt cho hai trong số bốn con rồng.",
+   "Vừa chấm xong, bầu trời bỗng mây đen dày đặc, sấm chớp ầm ầm, bức tường “ầm” một tiếng nứt toác. Hai con rồng được chấm mắt từ trên tường vút lên, bay lên trời. Đến khi mưa bão tạnh, người ta nhìn lên tường thì chỉ còn lại hai con rồng không có mắt.",
+   "Đây đương nhiên chỉ là truyền thuyết. Về sau, người ta dùng “họa long điểm tinh” để ví việc khi nói, viết hay làm việc, thêm vào chỗ then chốt một hai câu đặc sắc hoặc một chi tiết quan trọng, khiến nội dung sinh động, mạnh mẽ hơn."
+  ],
+  "questions": [
+   {
+    "q": "张僧繇一开始为什么不给龙画眼睛？",
+    "q_vi": "Ban đầu vì sao Trương Tăng Do không vẽ mắt cho rồng?",
+    "options": [
+     "他不会画眼睛",
+     "他说画了眼睛龙就会飞走",
+     "寺庙不让他画",
+     "他没有时间了"
+    ],
+    "answer": 1,
+    "explain_vi": "Ông nói mắt là linh hồn của rồng, vẽ mắt vào rồng sẽ bay đi."
+   },
+   {
+    "q": "“画龙点睛”在今天常用来称赞什么？",
+    "q_vi": "Ngày nay “họa long điểm tinh” thường dùng để khen điều gì?",
+    "options": [
+     "画画的速度很快",
+     "说话的声音很大",
+     "故事里有神奇的情节",
+     "关键处的一笔使整体更生动"
+    ],
+    "answer": 3,
+    "explain_vi": "Thành ngữ mang nghĩa khen: thêm chi tiết then chốt làm toàn bộ thêm sinh động."
+   }
+  ]
+ },
+ {
+  "id": "c-16",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "卧薪尝胆",
+  "title_vi": "Nằm gai nếm mật",
+  "topic": "thành ngữ · lịch sử",
+  "idiom": {
+   "hz": "卧薪尝胆",
+   "py": "wò xīn cháng dǎn",
+   "hv": "NGỌA TÂN THƯỜNG ĐẢM",
+   "meaning": "Nằm trên củi, nếm mật đắng; ví chịu đựng gian khổ, tự rèn luyện, nuôi chí lớn để rửa nhục, phục thù hoặc làm nên sự nghiệp.",
+   "usage": "Nghĩa khen, sắc thái trang trọng. Dùng cho người kiên trì vượt qua thất bại, âm thầm nỗ lực trong thời gian dài. Tiếng Việt cũng có “nằm gai nếm mật”.",
+   "examples": [
+    {
+     "zh": "球队去年输得很惨，队员们卧薪尝胆，今年终于拿到了冠军。",
+     "vi": "Năm ngoái đội bóng thua rất thảm, các cầu thủ nằm gai nếm mật, năm nay cuối cùng đã giành chức vô địch."
+    },
+    {
+     "zh": "他创业失败后卧薪尝胆三年，重新开了一家公司。",
+     "vi": "Sau khi khởi nghiệp thất bại, anh nằm gai nếm mật ba năm, mở lại một công ty mới."
+    }
+   ]
+  },
+  "paragraphs": [
+   "春秋时期，吴国和越国是邻国，两国经常打仗。有一次，越国被吴国打败了，越王勾践成了吴王夫差的俘虏。",
+   "为了保住国家，勾践只好带着妻子来到吴国，给吴王当仆人。他每天给吴王养马、打扫，吴王出门时，他还要在前面为吴王牵马。吴国的人常常嘲笑他，可是他一句怨言也没有，表现得非常顺从。",
+   "三年以后，吴王觉得勾践已经真心服了自己，就把他放回了越国。",
+   "回到越国以后，勾践一刻也没有忘记自己受过的耻辱。他担心舒服的生活会让自己忘了报仇，于是晚上不睡柔软的床，而是睡在一堆柴草上；他还在屋里挂了一个苦胆，吃饭前、睡觉前都要尝一尝苦味，并问自己：“你忘了在吴国受的苦吗？”",
+   "同时，他和百姓一起种地，让妻子亲自织布，减轻百姓的负担，鼓励大家多生孩子，认真训练军队。经过十多年的努力，越国慢慢变得富强起来。最后，勾践带兵打败了吴国，报了当年的仇。",
+   "后来，人们用“卧薪尝胆”形容一个人刻苦自励，不怕吃苦，下定决心要成就一番事业。失败并不可怕，只要不放弃，一步一步努力，总有一天能站起来。"
+  ],
+  "translations": [
+   "Thời Xuân Thu, nước Ngô và nước Việt là hai nước láng giềng, thường xuyên đánh nhau. Có lần, nước Việt bị nước Ngô đánh bại, Việt vương Câu Tiễn trở thành tù binh của Ngô vương Phù Sai.",
+   "Để giữ lấy đất nước, Câu Tiễn đành đưa vợ sang nước Ngô làm người hầu cho Ngô vương. Ngày ngày ông nuôi ngựa, quét dọn cho Ngô vương, khi Ngô vương ra ngoài, ông còn phải đi trước dắt ngựa. Người nước Ngô thường chế giễu ông, nhưng ông không một lời oán thán, tỏ ra vô cùng phục tùng.",
+   "Ba năm sau, Ngô vương cho rằng Câu Tiễn đã thật lòng thần phục mình nên thả ông về nước Việt.",
+   "Về đến nước Việt, Câu Tiễn không lúc nào quên nỗi nhục mình từng chịu. Ông lo cuộc sống thoải mái sẽ làm mình quên việc báo thù, nên ban đêm không ngủ giường êm mà ngủ trên một đống củi rơm; ông còn treo một cái mật đắng trong phòng, trước khi ăn, trước khi ngủ đều nếm vị đắng, tự hỏi mình: “Ngươi quên những khổ cực ở nước Ngô rồi sao?”",
+   "Đồng thời, ông cùng dân cày ruộng, để vợ tự tay dệt vải, giảm gánh nặng cho dân, khuyến khích mọi người sinh nhiều con, chăm chỉ luyện quân. Trải qua hơn mười năm nỗ lực, nước Việt dần dần giàu mạnh. Cuối cùng, Câu Tiễn dẫn quân đánh bại nước Ngô, báo được mối thù năm xưa.",
+   "Về sau, người ta dùng “ngọa tân thường đảm” để miêu tả một người khắc khổ tự rèn luyện, không ngại gian khổ, quyết tâm làm nên sự nghiệp. Thất bại không đáng sợ, chỉ cần không bỏ cuộc, từng bước nỗ lực thì sẽ có ngày đứng dậy được."
+  ],
+  "questions": [
+   {
+    "q": "勾践为什么要睡在柴草上、尝苦胆？",
+    "q_vi": "Vì sao Câu Tiễn ngủ trên củi rơm và nếm mật đắng?",
+    "options": [
+     "越国太穷，买不起床",
+     "医生说这样对身体好",
+     "吴王要求他这样做",
+     "提醒自己不要忘记耻辱和报仇"
+    ],
+    "answer": 3,
+    "explain_vi": "Ông sợ cuộc sống sung sướng làm mình quên mối nhục, nên tự hành khổ để luôn nhắc mình."
+   },
+   {
+    "q": "下面哪种情况最适合用“卧薪尝胆”？",
+    "q_vi": "Tình huống nào dưới đây hợp nhất để dùng “ngọa tân thường đảm”?",
+    "options": [
+     "他考试失败后，刻苦学习了两年，终于考上了理想的大学",
+     "他每天早上喝一杯苦咖啡",
+     "他喜欢在山上露营",
+     "他把朋友送的礼物藏起来了"
+    ],
+    "answer": 0,
+    "explain_vi": "Thất bại rồi kiên trì chịu khổ, nỗ lực lâu dài để thành công là đúng nghĩa thành ngữ."
+   }
+  ]
+ },
+ {
+  "id": "c-17",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "破釜沉舟",
+  "title_vi": "Đập nồi dìm thuyền",
+  "topic": "thành ngữ · lịch sử",
+  "idiom": {
+   "hz": "破釜沉舟",
+   "py": "pò fǔ chén zhōu",
+   "hv": "PHÁ PHỦ TRẦM CHU",
+   "meaning": "Đập vỡ nồi, đánh chìm thuyền; ví hạ quyết tâm làm đến cùng, tự cắt đường lui, không thắng không thôi.",
+   "usage": "Nghĩa khen, thể hiện quyết tâm rất lớn. Hay dùng: 有破釜沉舟的决心、破釜沉舟地拼一次。Gần với “được ăn cả, ngã về không” nhưng sắc thái tích cực hơn.",
+   "examples": [
+    {
+     "zh": "他辞去了稳定的工作，破釜沉舟，全心全意准备考研。",
+     "vi": "Anh bỏ công việc ổn định, đập nồi dìm thuyền, toàn tâm toàn ý ôn thi cao học."
+    },
+    {
+     "zh": "比赛只剩最后十分钟，教练让队员们拿出破釜沉舟的勇气。",
+     "vi": "Trận đấu chỉ còn mười phút cuối, huấn luyện viên bảo các cầu thủ hãy lấy dũng khí của người đập nồi dìm thuyền."
+    }
+   ]
+  },
+  "paragraphs": [
+   "秦朝末年，各地的人纷纷起来反抗秦朝的统治。有一次，秦朝的大军把赵国围住了，赵国急忙向楚国求救。楚国派项羽带着军队去救赵国。",
+   "秦军人多势众，而且非常强大，很多来救赵国的军队都不敢上前，只是远远地看着。项羽的士兵也有些害怕，不知道这一仗能不能打赢。",
+   "项羽带着军队渡过了一条大河。全军刚一上岸，他就下了一道让大家都很吃惊的命令：把渡河用的船全部凿沉，把做饭用的锅全部砸破，把附近的房子也都烧掉，每个士兵只带三天的干粮。",
+   "士兵们明白了项羽的意思：船沉了，就没有退路了；锅破了，就不能在这里长期待下去了。三天之内，要么打败敌人，要么死在这里，没有第三条路可以走。",
+   "于是，每个士兵都下定了决心，作战时一个人能顶十个人。他们和秦军打了九次仗，次次都打赢了，最后彻底打败了秦朝的主力部队。从此，项羽的名声传遍了天下。",
+   "后来，人们用“破釜沉舟”比喻下定决心，不留后路，一定要干到底。当然，这个成语也提醒我们：只有在认真考虑之后，才能做出这样的决定。"
+  ],
+  "translations": [
+   "Cuối đời Tần, người khắp nơi lũ lượt nổi dậy chống lại ách thống trị của nhà Tần. Có lần, đại quân nhà Tần bao vây nước Triệu, nước Triệu vội cầu cứu nước Sở. Nước Sở cử Hạng Vũ dẫn quân đi cứu Triệu.",
+   "Quân Tần đông người, thế mạnh, lại vô cùng hùng mạnh, nhiều đạo quân đến cứu Triệu đều không dám tiến lên, chỉ đứng xa nhìn. Binh sĩ của Hạng Vũ cũng có phần sợ hãi, không biết trận này có thắng được không.",
+   "Hạng Vũ dẫn quân vượt qua một con sông lớn. Toàn quân vừa lên bờ, ông liền ra một mệnh lệnh khiến ai cũng kinh ngạc: đục chìm toàn bộ thuyền dùng để qua sông, đập vỡ hết nồi nấu cơm, đốt luôn nhà cửa gần đó, mỗi binh sĩ chỉ mang lương khô đủ ba ngày.",
+   "Binh sĩ hiểu ý Hạng Vũ: thuyền chìm rồi thì không còn đường lui; nồi vỡ rồi thì không thể ở lâu nơi đây. Trong ba ngày, hoặc đánh bại kẻ thù, hoặc chết ở đây, không có con đường thứ ba.",
+   "Thế là mỗi binh sĩ đều hạ quyết tâm, khi chiến đấu một người địch nổi mười người. Họ đánh với quân Tần chín trận, trận nào cũng thắng, cuối cùng đánh tan hoàn toàn đội quân chủ lực nhà Tần. Từ đó, danh tiếng Hạng Vũ vang khắp thiên hạ.",
+   "Về sau, người ta dùng “phá phủ trầm chu” để ví việc hạ quyết tâm, không chừa đường lui, nhất định làm đến cùng. Đương nhiên, thành ngữ này cũng nhắc chúng ta: chỉ sau khi cân nhắc kỹ lưỡng mới nên đưa ra quyết định như vậy."
+  ],
+  "questions": [
+   {
+    "q": "项羽为什么要把船凿沉、把锅砸破？",
+    "q_vi": "Vì sao Hạng Vũ cho đục chìm thuyền, đập vỡ nồi?",
+    "options": [
+     "船和锅都已经坏了",
+     "他想让敌人以为楚军很穷",
+     "让士兵没有退路，只能拼命打赢",
+     "因为士兵们不会做饭"
+    ],
+    "answer": 2,
+    "explain_vi": "Cắt đường lui để binh sĩ chỉ còn cách liều chết chiến thắng."
+   },
+   {
+    "q": "根据最后一段，作者对“破釜沉舟”还有什么提醒？",
+    "q_vi": "Theo đoạn cuối, tác giả còn nhắc nhở gì về “phá phủ trầm chu”?",
+    "options": [
+     "打仗时一定要多带粮食",
+     "做这样的决定之前要认真考虑",
+     "这种做法已经过时了",
+     "只有将军才能这样做"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn cuối nhắc: chỉ nên quyết định như vậy sau khi cân nhắc kỹ."
+   }
+  ]
+ },
+ {
+  "id": "c-18",
+  "kind": "chengyu",
+  "level": 5,
+  "title": "纸上谈兵",
+  "title_vi": "Bàn binh trên giấy (lý thuyết suông)",
+  "topic": "thành ngữ · lịch sử",
+  "idiom": {
+   "hz": "纸上谈兵",
+   "py": "zhǐ shàng tán bīng",
+   "hv": "CHỈ THƯỢNG ĐÀM BINH",
+   "meaning": "Bàn chuyện đánh trận trên giấy; ví chỉ nói lý thuyết suông, không có kinh nghiệm thực tế, không giải quyết được vấn đề thật.",
+   "usage": "Nghĩa chê. Rất hay dùng trong học tập, công việc để nhấn mạnh tầm quan trọng của thực hành: 光学理论不实践，就是纸上谈兵。",
+   "examples": [
+    {
+     "zh": "学开车光看书没用，不上路练习就是纸上谈兵。",
+     "vi": "Học lái xe chỉ đọc sách thì vô ích, không ra đường tập thì chỉ là lý thuyết suông."
+    },
+    {
+     "zh": "这个计划听起来很好，但没有考虑实际情况，恐怕只是纸上谈兵。",
+     "vi": "Kế hoạch này nghe thì hay, nhưng không tính đến tình hình thực tế, e chỉ là bàn binh trên giấy."
+    }
+   ]
+  },
+  "paragraphs": [
+   "战国时期，赵国有一位很有名的将军叫赵奢，他打过很多胜仗。赵奢有个儿子叫赵括，从小就喜欢读兵书，把很多兵书背得滚瓜烂熟。",
+   "赵括谈起打仗来头头是道，什么时候进攻，什么时候撤退，怎么布置军队，他都说得清清楚楚。别人都夸赵括了不起，可是赵奢却一点儿也不高兴。",
+   "赵括的母亲问赵奢为什么。赵奢说：“打仗是关系到生死的大事，他却说得那么轻松。他只会讲书本上的东西，从来没有真正上过战场。如果有一天赵国让他当大将，赵国一定会败在他手里。”",
+   "几年以后，赵奢去世了。秦国派大军来攻打赵国，赵王不听劝告，让赵括代替有经验的老将军廉颇去指挥军队。赵括一到前线，就把廉颇的作战方法全部改掉，完全按照兵书上写的去做。",
+   "秦国的将军看出赵括没有实战经验，就故意假装失败，引赵军追赶，然后切断了赵军的粮道，把四十多万赵军团团围住。赵军没有粮食，坚持了四十多天，最后赵括在突围时被射死，赵军大败。",
+   "后来，人们用“纸上谈兵”比喻只会空谈理论，不能解决实际问题。读书很重要，但是只有把知识用到实践中去，才能真正有本领。"
+  ],
+  "translations": [
+   "Thời Chiến Quốc, nước Triệu có một vị tướng rất nổi tiếng tên là Triệu Xa, ông từng thắng rất nhiều trận. Triệu Xa có một người con trai tên là Triệu Quát, từ nhỏ đã thích đọc binh thư, thuộc làu làu rất nhiều sách binh pháp.",
+   "Triệu Quát hễ bàn chuyện đánh trận là nói đâu ra đấy: lúc nào tiến công, lúc nào rút lui, bố trí quân thế nào, anh đều nói rõ ràng rành mạch. Người khác đều khen Triệu Quát giỏi giang, nhưng Triệu Xa lại chẳng vui chút nào.",
+   "Mẹ Triệu Quát hỏi Triệu Xa vì sao. Triệu Xa nói: “Đánh trận là việc lớn liên quan đến sống chết, nó lại nói nhẹ nhàng đến thế. Nó chỉ biết giảng những gì trong sách, chưa từng thật sự ra chiến trường. Nếu một ngày nước Triệu để nó làm đại tướng, nước Triệu nhất định sẽ thua trong tay nó.”",
+   "Mấy năm sau, Triệu Xa qua đời. Nước Tần phái đại quân đến đánh nước Triệu, Triệu vương không nghe can ngăn, để Triệu Quát thay lão tướng giàu kinh nghiệm Liêm Pha chỉ huy quân đội. Triệu Quát vừa ra tiền tuyến đã thay đổi toàn bộ cách đánh của Liêm Pha, hoàn toàn làm theo những gì binh thư viết.",
+   "Tướng nước Tần nhận ra Triệu Quát không có kinh nghiệm thực chiến, bèn cố ý giả thua, dụ quân Triệu đuổi theo, rồi cắt đứt đường lương của quân Triệu, vây chặt hơn bốn mươi vạn quân Triệu. Quân Triệu không có lương thực, cầm cự hơn bốn mươi ngày, cuối cùng Triệu Quát bị bắn chết khi phá vây, quân Triệu đại bại.",
+   "Về sau, người ta dùng “chỉ thượng đàm binh” để ví việc chỉ biết nói lý thuyết suông, không giải quyết được vấn đề thực tế. Đọc sách rất quan trọng, nhưng chỉ khi đem kiến thức vận dụng vào thực tiễn mới thật sự có bản lĩnh."
+  ],
+  "questions": [
+   {
+    "q": "赵奢为什么不放心自己的儿子？",
+    "q_vi": "Vì sao Triệu Xa không yên tâm về con trai mình?",
+    "options": [
+     "赵括只懂书本知识，没有实战经验",
+     "赵括不爱读兵书",
+     "赵括身体不好",
+     "赵括常常和他吵架"
+    ],
+    "answer": 0,
+    "explain_vi": "Triệu Xa nói con chỉ biết giảng sách, chưa từng ra chiến trường, lại xem nhẹ chuyện sống chết."
+   },
+   {
+    "q": "这个成语最适合批评下面哪种人？",
+    "q_vi": "Thành ngữ này hợp nhất để phê bình loại người nào?",
+    "options": [
+     "常常迟到的人",
+     "不爱说话的人",
+     "花钱太多的人",
+     "理论说得很好，却不会实际操作的人"
+    ],
+    "answer": 3,
+    "explain_vi": "“Chỉ thượng đàm binh” chê người chỉ giỏi lý thuyết, thiếu thực hành."
+   }
+  ]
+ },
+ {
+  "id": "c-19",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "三顾茅庐",
+  "title_vi": "Ba lần đến lều tranh (cầu hiền)",
+  "topic": "thành ngữ · lịch sử",
+  "idiom": {
+   "hz": "三顾茅庐",
+   "py": "sān gù máo lú",
+   "hv": "TAM CỐ MAO LƯ",
+   "meaning": "Ba lần đến thăm lều tranh; ví thành tâm, kiên nhẫn nhiều lần đến mời người tài giỏi.",
+   "usage": "Nghĩa khen. Dùng khi ai đó nhiều lần thành khẩn mời người tài về làm việc, hợp tác. Có thể nói 三顾茅庐地请 hoặc 经过三顾茅庐。",
+   "examples": [
+    {
+     "zh": "为了请这位专家来公司工作，老板三顾茅庐，终于打动了他。",
+     "vi": "Để mời vị chuyên gia này về công ty làm việc, ông chủ ba lần đến tận nơi, cuối cùng đã thuyết phục được ông ấy."
+    },
+    {
+     "zh": "学校三顾茅庐，才请到这位著名的老师来讲课。",
+     "vi": "Nhà trường phải nhiều lần thành tâm đến mời mới mời được vị thầy nổi tiếng này đến giảng."
+    }
+   ]
+  },
+  "paragraphs": [
+   "东汉末年，天下大乱。刘备想干一番大事业，可是身边缺少能出谋划策的人才。有人告诉他，隆中住着一个叫诸葛亮的年轻人，非常有才华，如果能请他帮忙，大事一定能成功。",
+   "刘备听了很高兴，马上带着关羽和张飞，带上礼物，去隆中拜访诸葛亮。他们走了很远的路，来到诸葛亮住的茅屋前，可是看门的童子说：“先生今天一早就出门了，不知道什么时候回来。”刘备只好失望地回去了。",
+   "过了一些日子，刘备听说诸葛亮回来了，又冒着大风雪去拜访。可是到了那里，诸葛亮又出门了。刘备只好留下一封信，说明自己的想法。",
+   "第二年春天，刘备第三次来到隆中。这一次，诸葛亮在家，正在睡午觉。刘备不让人叫醒他，自己恭恭敬敬地站在门外，一直等到诸葛亮醒来。",
+   "诸葛亮被刘备的诚意深深感动了。两个人谈了很久，诸葛亮为刘备分析了天下的形势，提出了自己的计划。从此，诸葛亮离开隆中，全心全意地帮助刘备，后来帮刘备建立了蜀国。",
+   "后来，人们用“三顾茅庐”比喻真心诚意，一次又一次地邀请有才能的人。对待人才，要有耐心和诚意，这个道理到今天也没有过时。"
+  ],
+  "translations": [
+   "Cuối thời Đông Hán, thiên hạ đại loạn. Lưu Bị muốn làm nên sự nghiệp lớn, nhưng bên cạnh thiếu người tài bày mưu tính kế. Có người nói với ông rằng ở Long Trung có một chàng trai trẻ tên là Gia Cát Lượng, rất có tài, nếu mời được anh giúp sức thì việc lớn nhất định thành công.",
+   "Lưu Bị nghe vậy rất vui, lập tức đưa Quan Vũ và Trương Phi, mang theo lễ vật đến Long Trung thăm Gia Cát Lượng. Họ đi một quãng đường rất xa, đến trước lều tranh nơi Gia Cát Lượng ở, nhưng tiểu đồng giữ cửa nói: “Tiên sinh hôm nay đã ra ngoài từ sáng sớm, không biết khi nào về.” Lưu Bị đành thất vọng quay về.",
+   "Ít lâu sau, Lưu Bị nghe tin Gia Cát Lượng đã về, lại đội gió tuyết lớn đến thăm. Nhưng đến nơi thì Gia Cát Lượng lại đi vắng. Lưu Bị đành để lại một bức thư, trình bày suy nghĩ của mình.",
+   "Mùa xuân năm sau, Lưu Bị đến Long Trung lần thứ ba. Lần này Gia Cát Lượng có nhà, đang ngủ trưa. Lưu Bị không cho người đánh thức, tự mình cung kính đứng ngoài cửa, đợi mãi đến khi Gia Cát Lượng tỉnh dậy.",
+   "Gia Cát Lượng vô cùng cảm động trước thành ý của Lưu Bị. Hai người trò chuyện rất lâu, Gia Cát Lượng phân tích cục diện thiên hạ cho Lưu Bị, đưa ra kế hoạch của mình. Từ đó, Gia Cát Lượng rời Long Trung, toàn tâm toàn ý giúp Lưu Bị, sau này giúp Lưu Bị lập nên nước Thục.",
+   "Về sau, người ta dùng “tam cố mao lư” để ví việc thật lòng thành ý, hết lần này đến lần khác mời người có tài. Đối với nhân tài phải có kiên nhẫn và thành ý, đạo lý này đến nay vẫn chưa lỗi thời."
+  ],
+  "questions": [
+   {
+    "q": "刘备第三次去的时候，诸葛亮在做什么？",
+    "q_vi": "Lần thứ ba Lưu Bị đến, Gia Cát Lượng đang làm gì?",
+    "options": [
+     "在外面种地",
+     "在睡午觉",
+     "在给刘备写信",
+     "在和朋友喝酒"
+    ],
+    "answer": 1,
+    "explain_vi": "Lần thứ ba Gia Cát Lượng đang ngủ trưa, Lưu Bị đứng đợi ngoài cửa."
+   },
+   {
+    "q": "诸葛亮最后为什么愿意帮助刘备？",
+    "q_vi": "Vì sao cuối cùng Gia Cát Lượng đồng ý giúp Lưu Bị?",
+    "options": [
+     "刘备给了他很多钱",
+     "张飞强迫他去",
+     "他被刘备的诚意感动了",
+     "他在隆中待不下去了"
+    ],
+    "answer": 2,
+    "explain_vi": "Gia Cát Lượng cảm động trước thành ý ba lần đến mời của Lưu Bị."
+   }
+  ]
+ },
+ {
+  "id": "c-20",
+  "kind": "chengyu",
+  "level": 5,
+  "title": "望梅止渴",
+  "title_vi": "Nhìn mơ đỡ khát",
+  "topic": "thành ngữ · lịch sử",
+  "idiom": {
+   "hz": "望梅止渴",
+   "py": "wàng méi zhǐ kě",
+   "hv": "VỌNG MAI CHỈ KHÁT",
+   "meaning": "Nghĩ tới quả mơ chua mà đỡ khát; ví dùng ảo tưởng, hy vọng không thực để tự an ủi.",
+   "usage": "Thường mang sắc thái hơi chê hoặc tự giễu: chỉ an ủi bằng tưởng tượng, không giải quyết thật. Cũng có thể kể như một ví dụ về sức mạnh của tâm lý.",
+   "examples": [
+    {
+     "zh": "减肥的时候不能吃蛋糕，我只好看看美食视频，望梅止渴。",
+     "vi": "Lúc giảm cân không được ăn bánh ngọt, tôi đành xem video ẩm thực cho đỡ thèm."
+    },
+    {
+     "zh": "老板只说明年会加工资，大家知道这不过是望梅止渴。",
+     "vi": "Ông chủ chỉ nói năm sau sẽ tăng lương, mọi người biết đó chẳng qua là cho “nhìn mơ đỡ khát”."
+    }
+   ]
+  },
+  "paragraphs": [
+   "东汉末年，有一年夏天，曹操带着军队去打仗。那天天气特别热，太阳像火一样烤着大地，一丝风也没有。",
+   "士兵们穿着厚厚的衣服，背着沉重的武器，走了整整一天。大家带的水早就喝完了，一路上又找不到水源。很多士兵嘴唇都干裂了，走得越来越慢，有的人甚至热得倒在了路边。",
+   "曹操看在眼里，急在心里。他知道，如果再这样下去，军队就走不动了，更别说打仗了。可是附近没有河，也没有井，到哪里去找水呢？",
+   "曹操骑在马上，想了一会儿，忽然有了主意。他用马鞭指着前方，大声喊道：“大家再坚持一下！我记得前面有一大片梅树林，树上结满了又大又酸的梅子，到了那里，大家就可以吃梅子解渴了！”",
+   "士兵们一听到“梅子”，就想起了梅子那酸酸的味道，嘴里不由自主地流出了口水，好像一下子就不那么渴了。大家重新打起精神，加快了脚步，终于坚持走到了有水的地方。",
+   "“望梅止渴”原来说的是用想象来暂时解决困难，后来多用来比喻用空想来安慰自己。有意思的是，这个故事也说明了一个科学道理：想到酸的食物，人真的会流口水。"
+  ],
+  "translations": [
+   "Cuối thời Đông Hán, vào một mùa hè, Tào Tháo dẫn quân đi đánh trận. Hôm đó trời nóng vô cùng, mặt trời như lửa nung đốt mặt đất, không một chút gió.",
+   "Binh sĩ mặc quần áo dày, vác vũ khí nặng nề, đi suốt cả ngày. Nước mọi người mang theo đã uống hết từ lâu, dọc đường lại không tìm được nguồn nước. Nhiều binh sĩ môi nứt nẻ, đi càng lúc càng chậm, có người thậm chí nóng quá ngã gục bên đường.",
+   "Tào Tháo nhìn thấy mà lòng như lửa đốt. Ông biết, nếu cứ thế này thì quân đội sẽ không đi nổi, nói gì đến đánh trận. Nhưng gần đó không có sông, cũng không có giếng, biết tìm nước ở đâu?",
+   "Tào Tháo ngồi trên lưng ngựa suy nghĩ một lúc, bỗng nghĩ ra một kế. Ông chỉ roi ngựa về phía trước, lớn tiếng hô: “Mọi người cố thêm chút nữa! Ta nhớ phía trước có một rừng mơ lớn, trên cây trĩu những quả mơ vừa to vừa chua, đến đó mọi người có thể ăn mơ cho đỡ khát!”",
+   "Binh sĩ vừa nghe đến “quả mơ” liền nhớ đến vị chua chua của mơ, trong miệng bất giác tứa nước bọt, dường như lập tức bớt khát hẳn. Mọi người lại phấn chấn tinh thần, rảo bước nhanh hơn, cuối cùng cố gắng đi đến được nơi có nước.",
+   "“Vọng mai chỉ khát” vốn nói việc dùng tưởng tượng để tạm thời vượt qua khó khăn, về sau thường dùng để ví việc dùng mơ tưởng để tự an ủi. Điều thú vị là câu chuyện này cũng cho thấy một đạo lý khoa học: nghĩ đến đồ ăn chua, con người thật sự sẽ tiết nước bọt."
+  ],
+  "questions": [
+   {
+    "q": "士兵们听到“梅子”以后，为什么觉得不那么渴了？",
+    "q_vi": "Vì sao binh sĩ nghe đến “quả mơ” lại thấy bớt khát?",
+    "options": [
+     "他们真的吃到了梅子",
+     "曹操给他们分了水",
+     "天突然下雨了",
+     "想到梅子的酸味，嘴里流出了口水"
+    ],
+    "answer": 3,
+    "explain_vi": "Nghĩ đến vị chua của mơ làm tiết nước bọt, nên thấy bớt khát."
+   },
+   {
+    "q": "下面哪个说法符合文章内容？",
+    "q_vi": "Nhận định nào dưới đây phù hợp với nội dung bài?",
+    "options": [
+     "曹操用一个想象中的梅林鼓励了士兵",
+     "前面真的有一大片梅树林",
+     "士兵们最后都渴死了",
+     "这件事发生在冬天"
+    ],
+    "answer": 0,
+    "explain_vi": "Tào Tháo nói có rừng mơ để khích lệ binh sĩ; bài không nói rừng mơ có thật, chỉ nói họ đi tới chỗ có nước."
+   }
+  ]
+ },
+ {
+  "id": "c-21",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "胸有成竹",
+  "title_vi": "Trong lòng đã có sẵn cây trúc (định liệu trước)",
+  "topic": "thành ngữ · điển tích",
+  "idiom": {
+   "hz": "胸有成竹",
+   "py": "xiōng yǒu chéng zhú",
+   "hv": "HUNG HỮU THÀNH TRÚC",
+   "meaning": "Trong lòng đã có hình cây trúc hoàn chỉnh; ví trước khi làm việc đã có tính toán, kế hoạch đầy đủ nên rất tự tin, nắm chắc phần thắng.",
+   "usage": "Nghĩa khen. Hay làm vị ngữ hoặc trạng ngữ: 他胸有成竹地说……、对这次考试胸有成竹。",
+   "examples": [
+    {
+     "zh": "他准备得很充分，走进考场时胸有成竹。",
+     "vi": "Anh ấy chuẩn bị rất kỹ, bước vào phòng thi với tâm thế nắm chắc phần thắng."
+    },
+    {
+     "zh": "看她胸有成竹的样子，这个项目一定没问题。",
+     "vi": "Nhìn dáng vẻ tự tin đã liệu trước của cô ấy, dự án này chắc chắn không có vấn đề gì."
+    }
+   ]
+  },
+  "paragraphs": [
+   "北宋时期，有一位很有名的画家，叫文与可。他最擅长画竹子，他画的竹子就像真的一样，好像风一吹，叶子就会动起来。很多人都想向他学习画竹子的秘诀。",
+   "其实，文与可的秘诀很简单。他在自己家的房前屋后种了很多竹子。不管是春夏秋冬，还是刮风下雨，他都常常到竹林里去，仔细观察竹子的样子。",
+   "他看竹子怎么从土里长出来，看竹叶在阳光下是什么颜色，看风吹过来的时候竹枝怎么弯，下雨以后竹子又是什么样子。每一个细小的变化，他都认真地记在心里。",
+   "时间长了，竹子在不同季节、不同天气、不同时间的样子，他都了如指掌。所以每次画竹子以前，他脑子里早就有了一幅完整的竹子图。拿起笔来，用不了多长时间，一幅生动的竹子画就完成了。",
+   "有一位年轻人很佩服他，写了一首诗称赞他：“与可画竹时，胸中有成竹。”意思是说，文与可画竹子的时候，心里早就有了竹子的样子。",
+   "后来，人们用“胸有成竹”比喻做事之前已经有了全面的考虑和准备，所以很有把握。这个故事也告诉我们：自信不是凭空来的，而是来自平时认真的观察和积累。"
+  ],
+  "translations": [
+   "Thời Bắc Tống, có một họa sĩ rất nổi tiếng tên là Văn Dữ Khả. Ông giỏi nhất là vẽ trúc, trúc ông vẽ giống như thật, tưởng như gió thổi qua là lá sẽ lay động. Nhiều người muốn học ông bí quyết vẽ trúc.",
+   "Thực ra bí quyết của Văn Dữ Khả rất đơn giản. Ông trồng rất nhiều trúc quanh nhà. Dù là xuân hạ thu đông hay mưa gió, ông đều thường xuyên vào rừng trúc, tỉ mỉ quan sát hình dáng cây trúc.",
+   "Ông xem trúc mọc lên từ đất thế nào, xem lá trúc dưới ánh nắng có màu gì, xem khi gió thổi qua cành trúc uốn cong ra sao, sau cơn mưa trúc trông thế nào. Mỗi thay đổi nhỏ, ông đều chăm chú ghi nhớ trong lòng.",
+   "Lâu dần, hình dáng cây trúc ở các mùa khác nhau, thời tiết khác nhau, thời điểm khác nhau, ông đều nắm rõ như lòng bàn tay. Vì vậy, mỗi lần trước khi vẽ trúc, trong đầu ông đã có sẵn một bức tranh trúc hoàn chỉnh. Cầm bút lên, chẳng mất bao lâu, một bức tranh trúc sống động đã hoàn thành.",
+   "Có một chàng trai trẻ rất khâm phục ông, viết một bài thơ khen ngợi: “Dữ Khả khi vẽ trúc, trong lòng đã có trúc.” Ý nói khi Văn Dữ Khả vẽ trúc, trong lòng ông đã có sẵn hình dáng cây trúc.",
+   "Về sau, người ta dùng “hung hữu thành trúc” để ví việc trước khi làm đã có suy tính và chuẩn bị toàn diện, nên rất nắm chắc. Câu chuyện cũng cho chúng ta biết: sự tự tin không tự nhiên mà có, mà đến từ sự quan sát và tích lũy nghiêm túc hằng ngày."
+  ],
+  "questions": [
+   {
+    "q": "文与可画竹子画得好的主要原因是什么？",
+    "q_vi": "Nguyên nhân chính khiến Văn Dữ Khả vẽ trúc đẹp là gì?",
+    "options": [
+     "他用的笔和纸特别好",
+     "他长期认真观察竹子",
+     "有名的老师教过他",
+     "他每天画很多张"
+    ],
+    "answer": 1,
+    "explain_vi": "Ông trồng trúc và quan sát tỉ mỉ quanh năm, nên trong lòng đã có sẵn hình cây trúc."
+   },
+   {
+    "q": "下面哪个句子用“胸有成竹”用得对？",
+    "q_vi": "Câu nào dưới đây dùng “hung hữu thành trúc” đúng?",
+    "options": [
+     "他昨天买了一棵竹子，胸有成竹。",
+     "这道菜胸有成竹，很好吃。",
+     "明天要考试了，他什么也没复习，胸有成竹。",
+     "面试前他做了充分的准备，所以胸有成竹。"
+    ],
+    "answer": 3,
+    "explain_vi": "Thành ngữ chỉ sự tự tin nhờ chuẩn bị đầy đủ; câu D đúng, câu C mâu thuẫn vì không ôn gì."
+   }
+  ]
+ },
+ {
+  "id": "c-22",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "一鸣惊人",
+  "title_vi": "Một tiếng hót làm kinh động mọi người",
+  "topic": "thành ngữ · lịch sử",
+  "idiom": {
+   "hz": "一鸣惊人",
+   "py": "yì míng jīng rén",
+   "hv": "NHẤT MINH KINH NHÂN",
+   "meaning": "Đã kêu thì một tiếng làm kinh động mọi người; ví người ngày thường không có gì nổi bật, bỗng làm nên thành tích khiến ai cũng kinh ngạc.",
+   "usage": "Nghĩa khen. Hay dùng cho người mới, người vô danh bất ngờ thành công. Cũng gặp dạng đầy đủ 不鸣则已，一鸣惊人 (không kêu thì thôi, đã kêu thì kinh người).",
+   "examples": [
+    {
+     "zh": "这位年轻导演的第一部电影就获了大奖，真是一鸣惊人。",
+     "vi": "Bộ phim đầu tay của vị đạo diễn trẻ này đã đoạt giải lớn, đúng là một tiếng hót làm kinh động mọi người."
+    },
+    {
+     "zh": "他平时不爱说话，可是在比赛中一鸣惊人，拿了第一名。",
+     "vi": "Ngày thường anh ít nói, nhưng trong cuộc thi bỗng tỏa sáng, giành giải nhất."
+    }
+   ]
+  },
+  "paragraphs": [
+   "战国时期，齐国有一位国王叫齐威王。他刚当上国王的时候，整天喝酒玩乐，一点儿也不关心国家大事，把事情全交给大臣们去办。",
+   "三年过去了，大臣们有的不好好工作，有的趁机为自己捞好处，国家越来越乱，周围的国家也趁机来侵占齐国的土地。很多人心里着急，可是谁也不敢去劝国王，怕惹他生气。",
+   "有一个叫淳于髡的大臣，说话很幽默。他知道齐威王喜欢猜谜语，就去见齐威王，说：“大王，我有一个谜语想请您猜一猜。我们国家有一只大鸟，停在王宫里已经三年了，既不飞，也不叫。您知道这是一只什么鸟吗？”",
+   "齐威王是个聪明人，马上就听出淳于髡说的是自己。他想了想，笑着回答：“这只鸟啊，不飞则已，一飞冲天；不鸣则已，一鸣惊人。你就等着看吧！”",
+   "从那天起，齐威王像变了一个人。他把全国的地方官都叫来，奖励了认真做事的，惩罚了不负责任的，又整顿军队，出兵收回了被抢走的土地。没过几年，齐国就变得强大起来，别的国家再也不敢小看齐国了。",
+   "后来，人们用“一鸣惊人”比喻平时默默无闻的人，突然做出了让人吃惊的成绩。不过，“一鸣”之前，往往需要长时间的准备和积累。"
+  ],
+  "translations": [
+   "Thời Chiến Quốc, nước Tề có một vị vua tên là Tề Uy Vương. Khi mới lên ngôi, ông suốt ngày uống rượu vui chơi, chẳng hề quan tâm việc nước, giao hết mọi việc cho các đại thần.",
+   "Ba năm trôi qua, các đại thần người thì không chịu làm việc tử tế, người thì nhân cơ hội vơ vét lợi ích cho bản thân, đất nước ngày càng rối ren, các nước xung quanh cũng nhân dịp đến chiếm đất của nước Tề. Nhiều người trong lòng sốt ruột nhưng không ai dám đi can vua, sợ làm vua nổi giận.",
+   "Có một vị đại thần tên là Thuần Vu Khôn, ăn nói rất hài hước. Ông biết Tề Uy Vương thích đoán câu đố, liền đến gặp vua, nói: “Thưa đại vương, thần có một câu đố muốn mời ngài đoán thử. Nước ta có một con chim lớn, đậu trong cung vua đã ba năm, không bay cũng không kêu. Ngài có biết đó là con chim gì không?”",
+   "Tề Uy Vương là người thông minh, lập tức nghe ra Thuần Vu Khôn đang nói mình. Ông nghĩ một lát rồi cười đáp: “Con chim ấy à, không bay thì thôi, đã bay thì vút tận trời; không kêu thì thôi, đã kêu thì làm kinh động mọi người. Khanh cứ chờ xem!”",
+   "Từ hôm đó, Tề Uy Vương như biến thành người khác. Ông triệu tập quan địa phương cả nước, thưởng người làm việc chăm chỉ, phạt kẻ vô trách nhiệm, lại chấn chỉnh quân đội, xuất quân thu hồi đất đai bị chiếm. Chẳng mấy năm, nước Tề trở nên hùng mạnh, các nước khác không dám coi thường nước Tề nữa.",
+   "Về sau, người ta dùng “nhất minh kinh nhân” để ví người ngày thường lặng lẽ vô danh bỗng làm nên thành tích khiến người khác kinh ngạc. Tuy nhiên, trước “một tiếng hót” ấy thường cần thời gian dài chuẩn bị và tích lũy."
+  ],
+  "questions": [
+   {
+    "q": "淳于髡为什么用谜语的方式劝国王？",
+    "q_vi": "Vì sao Thuần Vu Khôn dùng cách ra câu đố để can vua?",
+    "options": [
+     "他自己也不知道该说什么",
+     "国王喜欢猜谜语，这样说不容易惹他生气",
+     "他想考考国王聪明不聪明",
+     "大臣们让他去讲笑话"
+    ],
+    "answer": 1,
+    "explain_vi": "Mọi người sợ can thẳng làm vua giận; ông biết vua thích đố nên khéo léo nói bằng câu đố."
+   },
+   {
+    "q": "齐威王说“一鸣惊人”，表达了什么？",
+    "q_vi": "Tề Uy Vương nói “nhất minh kinh nhân” là để thể hiện điều gì?",
+    "options": [
+     "他很喜欢听鸟叫",
+     "他想养一只大鸟",
+     "他下决心要做出让人吃惊的成绩",
+     "他要惩罚淳于髡"
+    ],
+    "answer": 2,
+    "explain_vi": "Câu trả lời cho thấy ông quyết tâm thay đổi, làm nên việc lớn khiến người kinh ngạc."
+   }
+  ]
+ },
+ {
+  "id": "c-23",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "惊弓之鸟",
+  "title_vi": "Chim sợ cành cong",
+  "topic": "thành ngữ · điển tích",
+  "idiom": {
+   "hz": "惊弓之鸟",
+   "py": "jīng gōng zhī niǎo",
+   "hv": "KINH CUNG CHI ĐIỂU",
+   "meaning": "Con chim từng bị tên bắn, nghe tiếng dây cung đã hoảng sợ; ví người từng gặp nạn, gặp chút động tĩnh đã sợ hãi.",
+   "usage": "Thường làm tân ngữ: 成了惊弓之鸟、像惊弓之鸟一样。Sắc thái miêu tả trạng thái hoảng sợ sau tổn thương. Tương đương tiếng Việt “chim sợ cành cong”.",
+   "examples": [
+    {
+     "zh": "经历过那次地震，他成了惊弓之鸟，楼上有点儿声音就紧张。",
+     "vi": "Trải qua trận động đất đó, anh thành chim sợ cành cong, trên lầu có chút tiếng động là căng thẳng."
+    },
+    {
+     "zh": "股市大跌以后，很多投资者像惊弓之鸟一样，不敢再买股票了。",
+     "vi": "Sau khi chứng khoán lao dốc, nhiều nhà đầu tư như chim sợ cành cong, không dám mua cổ phiếu nữa."
+    }
+   ]
+  },
+  "paragraphs": [
+   "战国时期，魏国有一个射箭能手，叫更羸。有一天，他陪魏王在城外散步，抬头看见一只大雁从远处飞过来。",
+   "更羸对魏王说：“大王，我不用箭，只要拉一下弓，就能让这只大雁掉下来。”魏王不相信，说：“射箭的本领难道能高到这种程度吗？”更羸说：“请您看着吧。”",
+   "过了一会儿，大雁飞近了。更羸举起弓，并没有放箭，只是用力拉了一下弓弦。只听见“嘣”的一声，那只大雁拼命往高处飞了两下，就从空中直直地掉了下来。",
+   "魏王看呆了，惊讶地问：“你真有这样的本事！你是怎么做到的？”更羸笑着说：“不是我的本事大，而是因为这是一只受过伤的大雁。”",
+   "魏王更奇怪了：“你怎么知道它受过伤？”更羸解释说：“它飞得很慢，叫声也很悲惨。飞得慢，是因为旧伤口还在疼；叫得悲惨，是因为它离开同伴很久了。伤口没好，心里又害怕，一听到弓弦响，它就拼命往高处飞，结果伤口裂开，就掉下来了。”",
+   "后来，人们用“惊弓之鸟”比喻受过惊吓的人，遇到一点儿动静就非常害怕。这个故事也告诉我们，更羸成功的关键在于细心观察和分析。"
+  ],
+  "translations": [
+   "Thời Chiến Quốc, nước Ngụy có một tay thiện xạ tên là Canh Luy. Một hôm, ông theo Ngụy vương dạo chơi ngoài thành, ngẩng đầu thấy một con nhạn lớn từ xa bay tới.",
+   "Canh Luy nói với Ngụy vương: “Thưa đại vương, thần không cần tên, chỉ cần kéo dây cung một cái là có thể làm con nhạn này rơi xuống.” Ngụy vương không tin, nói: “Tài bắn cung lẽ nào lại cao đến mức ấy?” Canh Luy nói: “Xin ngài cứ xem.”",
+   "Một lát sau, nhạn bay đến gần. Canh Luy giương cung, không hề bắn tên, chỉ ra sức kéo dây cung một cái. Chỉ nghe “phựt” một tiếng, con nhạn cố sức bay vọt lên cao hai cái rồi rơi thẳng từ trên không xuống.",
+   "Ngụy vương nhìn sững sờ, kinh ngạc hỏi: “Khanh thật có bản lĩnh như vậy! Khanh làm thế nào vậy?” Canh Luy cười nói: “Không phải bản lĩnh của thần lớn, mà vì đây là một con nhạn từng bị thương.”",
+   "Ngụy vương càng lấy làm lạ: “Sao khanh biết nó từng bị thương?” Canh Luy giải thích: “Nó bay rất chậm, tiếng kêu cũng rất thê lương. Bay chậm là vì vết thương cũ vẫn còn đau; kêu thê lương là vì nó đã lạc bầy lâu rồi. Vết thương chưa lành, trong lòng lại sợ hãi, vừa nghe tiếng dây cung, nó liền liều mạng bay lên cao, kết quả vết thương toác ra nên rơi xuống.”",
+   "Về sau, người ta dùng “kinh cung chi điểu” để ví người từng bị hoảng sợ, gặp chút động tĩnh đã vô cùng sợ hãi. Câu chuyện cũng cho thấy chìa khóa thành công của Canh Luy nằm ở sự quan sát và phân tích tỉ mỉ."
+  ],
+  "questions": [
+   {
+    "q": "大雁为什么听到弓弦声就掉下来了？",
+    "q_vi": "Vì sao con nhạn nghe tiếng dây cung liền rơi xuống?",
+    "options": [
+     "更羸偷偷射了一箭",
+     "大雁飞累了",
+     "它受过伤，害怕得拼命高飞，伤口裂开了",
+     "天上突然刮起了大风"
+    ],
+    "answer": 2,
+    "explain_vi": "Nhạn có vết thương cũ, sợ hãi vọt lên cao làm vết thương toác ra nên rơi."
+   },
+   {
+    "q": "更羸是根据什么判断大雁受过伤的？",
+    "q_vi": "Canh Luy dựa vào đâu để phán đoán con nhạn từng bị thương?",
+    "options": [
+     "它飞得慢，叫声悲惨",
+     "它的羽毛上有血",
+     "它飞得特别高",
+     "它是从魏王的宫里飞出来的"
+    ],
+    "answer": 0,
+    "explain_vi": "Bay chậm vì vết thương còn đau, kêu thê lương vì lạc bầy lâu."
+   }
+  ]
+ },
+ {
+  "id": "c-24",
+  "kind": "chengyu",
+  "level": 6,
+  "title": "邯郸学步",
+  "title_vi": "Học đi ở Hàm Đan",
+  "topic": "thành ngữ · ngụ ngôn",
+  "idiom": {
+   "hz": "邯郸学步",
+   "py": "hán dān xué bù",
+   "hv": "HÀM ĐAN HỌC BỘ",
+   "meaning": "Học cách đi ở Hàm Đan; ví bắt chước người khác một cách máy móc, không học được cái hay của người mà còn đánh mất cái vốn có của mình.",
+   "usage": "Nghĩa chê. Dùng phê phán sự bắt chước mù quáng trong học tập, nghệ thuật, kinh doanh, thời trang. Gần với “bắt chước như khỉ”, “mất gốc”.",
+   "examples": [
+    {
+     "zh": "写作要有自己的风格，一味模仿名家，只会邯郸学步。",
+     "vi": "Viết văn phải có phong cách riêng, cứ một mực bắt chước danh gia thì chỉ thành học đi ở Hàm Đan."
+    },
+    {
+     "zh": "学习别人的经验是好事，但要结合自己的情况，不能邯郸学步。",
+     "vi": "Học hỏi kinh nghiệm người khác là tốt, nhưng phải kết hợp với hoàn cảnh của mình, không được bắt chước máy móc."
+    }
+   ]
+  },
+  "paragraphs": [
+   "战国时期，燕国有一个年轻人。他总觉得自己什么都不如别人：衣服不如别人的好看，说话不如别人的好听，就连走路的样子也不如别人的优美。",
+   "有一天，他听人说，赵国的首都邯郸，人们走路的姿势特别好看，又轻松又潇洒。他羡慕得不得了，决定到邯郸去学走路。他收拾好行李，走了很远的路来到了邯郸。",
+   "一到邯郸，他就站在大街上，看着来来往往的人。果然，这里的人走起路来都很好看。他马上跟在别人后面，一步一步地模仿起来。别人迈左脚，他也迈左脚；别人摆手，他也摆手。",
+   "可是，学了好几天，他总是学得不像。他想：“一定是我原来走路的习惯太差了，我得把以前的走法全部忘掉，从头开始学。”于是，他每走一步，都要想一想手该怎么摆，脚该怎么迈，腰该怎么扭，走得又慢又别扭。",
+   "就这样过了几个月，他不但没有学会邯郸人走路的样子，反而连自己原来怎么走路都忘了。最后，他身上的钱也花光了，只好趴在地上，一点儿一点儿地爬回了燕国。",
+   "后来，人们用“邯郸学步”比喻盲目地模仿别人，不但没学到别人的长处，反而把自己原有的本领也丢了。学习别人，要学会思考，找到适合自己的方法。"
+  ],
+  "translations": [
+   "Thời Chiến Quốc, nước Yên có một chàng trai trẻ. Anh luôn cảm thấy mình cái gì cũng không bằng người khác: quần áo không đẹp bằng người ta, nói năng không hay bằng người ta, đến cả dáng đi cũng không duyên dáng bằng người ta.",
+   "Một hôm, anh nghe người ta nói ở Hàm Đan, kinh đô nước Triệu, người dân có dáng đi đặc biệt đẹp, vừa nhẹ nhàng vừa phóng khoáng. Anh ngưỡng mộ vô cùng, quyết định đến Hàm Đan học đi. Anh thu dọn hành lý, đi một quãng đường rất xa đến Hàm Đan.",
+   "Vừa đến Hàm Đan, anh liền đứng trên phố lớn, nhìn người qua lại. Quả nhiên người ở đây đi đứng rất đẹp. Anh lập tức đi theo sau người khác, bắt chước từng bước một. Người ta bước chân trái, anh cũng bước chân trái; người ta vung tay, anh cũng vung tay.",
+   "Nhưng học mấy ngày liền, anh vẫn học không giống. Anh nghĩ: “Chắc chắn là thói quen đi đứng cũ của mình quá tệ, mình phải quên hết cách đi trước đây, học lại từ đầu.” Thế là mỗi bước đi anh đều phải nghĩ xem tay vung thế nào, chân bước ra sao, eo uốn thế nào, đi vừa chậm vừa gượng gạo.",
+   "Cứ thế mấy tháng trôi qua, anh không những không học được dáng đi của người Hàm Đan, mà ngay cả cách đi vốn có của mình cũng quên mất. Cuối cùng, tiền trong người cũng tiêu hết, anh đành bò dưới đất, từng chút từng chút bò về nước Yên.",
+   "Về sau, người ta dùng “Hàm Đan học bộ” để ví việc bắt chước người khác một cách mù quáng, không những không học được ưu điểm của người, mà còn đánh mất cả bản lĩnh vốn có của mình. Học người khác phải biết suy nghĩ, tìm ra phương pháp phù hợp với mình."
+  ],
+  "questions": [
+   {
+    "q": "燕国年轻人最后是怎么回到燕国的？",
+    "q_vi": "Chàng trai nước Yên cuối cùng trở về nước Yên bằng cách nào?",
+    "options": [
+     "坐马车回去的",
+     "邯郸人送他回去的",
+     "用邯郸人的姿势走回去的",
+     "忘了怎么走路，只好爬回去"
+    ],
+    "answer": 3,
+    "explain_vi": "Anh quên cả cách đi vốn có nên phải bò về."
+   },
+   {
+    "q": "作者认为应该怎样向别人学习？",
+    "q_vi": "Tác giả cho rằng nên học hỏi người khác như thế nào?",
+    "options": [
+     "要学会思考，找到适合自己的方法",
+     "别人怎么做，自己就怎么做",
+     "最好不要向别人学习",
+     "要去大城市学习"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn cuối: học người khác phải biết suy nghĩ, tìm cách phù hợp với mình."
+   }
+  ]
+ },
+ {
+  "id": "c-25",
+  "kind": "chengyu",
+  "level": 5,
+  "title": "朝三暮四",
+  "title_vi": "Sáng ba chiều bốn (thay đổi thất thường)",
+  "topic": "thành ngữ · ngụ ngôn",
+  "idiom": {
+   "hz": "朝三暮四",
+   "py": "zhāo sān mù sì",
+   "hv": "TRIÊU TAM MỘ TỨ",
+   "meaning": "Sáng ba chiều bốn; nghĩa gốc: dùng thủ đoạn lừa người, thay hình thức mà thực chất không đổi. Nghĩa thường dùng ngày nay: thay đổi thất thường, không chuyên tâm, hay đổi ý.",
+   "usage": "Nghĩa chê. Ngày nay chủ yếu chê người làm việc không kiên định hoặc tình cảm không chung thủy: 做事不能朝三暮四。Chú ý 朝 đọc zhāo (buổi sáng).",
+   "examples": [
+    {
+     "zh": "学一门语言要坚持，不能朝三暮四，今天学日语，明天又学法语。",
+     "vi": "Học một ngoại ngữ phải kiên trì, không thể sáng ba chiều bốn, hôm nay học tiếng Nhật, mai lại học tiếng Pháp."
+    },
+    {
+     "zh": "他换工作太频繁了，老板觉得他有点儿朝三暮四。",
+     "vi": "Anh ta đổi việc quá thường xuyên, ông chủ thấy anh có phần thay đổi thất thường."
+    }
+   ]
+  },
+  "paragraphs": [
+   "古时候，宋国有一位老人，特别喜欢猴子，家里养了一大群。时间长了，他能听懂猴子的意思，猴子也能明白他说的话。",
+   "老人每天都要给猴子们喂橡子。猴子越来越多，吃的东西也越来越多，家里慢慢地变穷了。老人想：“再这样下去可不行，得让猴子们少吃一点儿。”可是他又怕猴子们不高兴，不听他的话。",
+   "于是，他想了一个办法。他把猴子们叫到一起，对它们说：“从今天起，我每天早上给你们每个三颗橡子，晚上给四颗，够不够？”猴子们一听，早上只有三颗，比以前少多了，都非常生气，一个个跳来跳去，大声地叫着表示反对。",
+   "老人看了，笑着说：“好吧，好吧，那就改一改：早上给你们四颗，晚上给三颗，这样总可以了吧？”猴子们一听，早上变成四颗了，以为自己多得了，都高兴地趴在地上，向老人表示感谢。",
+   "其实，不管是“早三晚四”还是“早四晚三”，每天加起来都是七颗，一颗也没多，一颗也没少。猴子们只看到了眼前的变化，却没有算清楚总数。",
+   "“朝三暮四”原来比喻用欺骗的手段让人上当，后来多用来比喻一个人经常变来变去，没有定性。不管是学习还是工作，确定了目标，就要坚持下去，不能朝三暮四。"
+  ],
+  "translations": [
+   "Thời xưa, nước Tống có một ông lão rất thích khỉ, nuôi trong nhà cả một đàn lớn. Lâu dần, ông hiểu được ý của khỉ, khỉ cũng hiểu được lời ông nói.",
+   "Ngày nào ông lão cũng cho khỉ ăn hạt dẻ sồi. Khỉ ngày càng đông, thức ăn cũng ngày càng tốn, nhà ông dần dần nghèo đi. Ông lão nghĩ: “Cứ thế này mãi thì không được, phải cho lũ khỉ ăn ít đi một chút.” Nhưng ông lại sợ lũ khỉ không vui, không nghe lời ông.",
+   "Thế là ông nghĩ ra một cách. Ông gọi lũ khỉ lại, nói với chúng: “Từ hôm nay, mỗi sáng ta cho mỗi đứa ba hạt, buổi tối cho bốn hạt, đủ không?” Lũ khỉ nghe buổi sáng chỉ có ba hạt, ít hơn trước nhiều, đều rất tức giận, con nào con nấy nhảy nhót, la hét ầm ĩ phản đối.",
+   "Ông lão thấy vậy cười nói: “Thôi được, thôi được, vậy đổi lại: buổi sáng cho các ngươi bốn hạt, buổi tối ba hạt, thế thì được rồi chứ?” Lũ khỉ nghe buổi sáng thành bốn hạt, tưởng mình được thêm, đều vui vẻ nằm rạp xuống đất cảm ơn ông lão.",
+   "Thật ra, dù là “sáng ba tối bốn” hay “sáng bốn tối ba”, mỗi ngày cộng lại đều là bảy hạt, không thêm hạt nào, cũng không bớt hạt nào. Lũ khỉ chỉ thấy sự thay đổi trước mắt mà không tính rõ tổng số.",
+   "“Triêu tam mộ tứ” vốn ví việc dùng thủ đoạn lừa gạt khiến người ta mắc lừa, về sau thường dùng để ví người hay thay đổi, không có lập trường. Dù học tập hay làm việc, đã xác định mục tiêu thì phải kiên trì, không được sáng ba chiều bốn."
+  ],
+  "questions": [
+   {
+    "q": "猴子们为什么后来高兴了？",
+    "q_vi": "Vì sao về sau lũ khỉ lại vui vẻ?",
+    "options": [
+     "老人每天多给了它们橡子",
+     "它们以为早上多了一颗，自己多得了",
+     "老人给它们换了更好吃的东西",
+     "它们找到了别的食物"
+    ],
+    "answer": 1,
+    "explain_vi": "Chúng tưởng được thêm vì sáng có bốn hạt, thực ra tổng số vẫn là bảy."
+   },
+   {
+    "q": "“朝三暮四”今天多用来形容什么样的人？",
+    "q_vi": "Ngày nay “triêu tam mộ tứ” thường dùng để miêu tả người như thế nào?",
+    "options": [
+     "很会算数的人",
+     "喜欢养动物的人",
+     "经常变来变去、不能坚持的人",
+     "早上起得很早的人"
+    ],
+    "answer": 2,
+    "explain_vi": "Nghĩa thông dụng hiện nay: người hay thay đổi, không kiên định."
+   }
+  ]
+ }
+]

@@ -1,0 +1,778 @@
+[
+ {
+  "id": "h3-11",
+  "level": 3,
+  "kind": "article",
+  "title": "门口的十把伞",
+  "title_vi": "Mười chiếc ô trước cửa",
+  "topic": "đời sống – thời tiết",
+  "paragraphs": [
+   "我家附近有一个很小的超市，开超市的是一位五十多岁的阿姨，大家都叫她王阿姨。她的超市不大，东西也不多，但是来买东西的人总是很多。",
+   "上个星期五下午，天突然阴了，然后就刮风、下雨。我刚下课，没带伞，就跑进王阿姨的超市。我站在门口，看着外面的大雨，心里很着急，因为晚上七点我还要去参加朋友的生日会。",
+   "王阿姨看见了，笑着对我说：“没带伞吧？门口有伞，你拿一把走吧。”我这才发现，门旁边放着一个旧箱子，里面有十几把伞，颜色都不一样。",
+   "我问她：“阿姨，借伞要多少钱？”她笑着说：“不要钱。用完了，记得拿回来就行。”我有点儿不相信：“如果别人借了不还呢？”王阿姨说：“三年前我只放了五把，现在有十几把了。你说奇怪不奇怪？”",
+   "后来我才知道，很多人借了伞以后，不但还回来了，而且还会多送一把。有的伞是新买的，有的是自己家里不用的。一位老爷爷还在伞上写了一句话：“下雨的时候，别忘了帮助别人。”",
+   "第二天是周末，天晴了，太阳很好。我拿着那把蓝色的伞回到超市，又在附近的商店买了一把新的黄伞，一起放进了门口的箱子里。",
+   "王阿姨看见了，高兴地说：“你看，又多了一把。”我笑了。我想，这十几把伞能让人在下雨天不用着急，也能让一条街道变得更热情。"
+  ],
+  "translations": [
+   "Gần nhà tôi có một siêu thị rất nhỏ, người mở siêu thị là một cô hơn năm mươi tuổi, mọi người đều gọi bà là cô Vương. Siêu thị của cô không lớn, hàng cũng không nhiều, nhưng người đến mua thì lúc nào cũng đông.",
+   "Chiều thứ Sáu tuần trước, trời bỗng nhiên tối sầm lại, rồi nổi gió, đổ mưa. Tôi vừa tan học, không mang ô, đành chạy vào siêu thị của cô Vương. Tôi đứng ở cửa nhìn trận mưa to bên ngoài, trong lòng rất sốt ruột, vì bảy giờ tối tôi còn phải đi dự tiệc sinh nhật của bạn.",
+   "Cô Vương thấy vậy, cười nói với tôi: “Không mang ô à? Ở cửa có ô đấy, cháu cầm một chiếc mà đi.” Lúc ấy tôi mới để ý, cạnh cửa có đặt một cái hộp cũ, bên trong có hơn chục chiếc ô, màu nào cũng khác nhau.",
+   "Tôi hỏi cô: “Cô ơi, mượn ô mất bao nhiêu tiền ạ?” Cô cười nói: “Không mất tiền. Dùng xong nhớ mang lại là được.” Tôi hơi không tin: “Nếu người ta mượn mà không trả thì sao ạ?” Cô Vương nói: “Ba năm trước cô chỉ để năm chiếc, giờ thì có hơn chục chiếc rồi. Cháu thấy có lạ không?”",
+   "Sau này tôi mới biết, rất nhiều người mượn ô xong không những mang trả mà còn tặng thêm một chiếc. Có chiếc mới mua, có chiếc là đồ nhà không dùng đến. Một ông cụ còn viết lên ô một câu: “Khi trời mưa, đừng quên giúp đỡ người khác.”",
+   "Hôm sau là cuối tuần, trời nắng, mặt trời rất đẹp. Tôi cầm chiếc ô màu xanh quay lại siêu thị, còn mua thêm một chiếc ô vàng mới ở cửa hàng gần đó, rồi cùng bỏ vào chiếc hộp trước cửa.",
+   "Cô Vương nhìn thấy, vui vẻ nói: “Cháu xem, lại thêm một chiếc nữa rồi.” Tôi bật cười. Tôi nghĩ, hơn chục chiếc ô này không chỉ giúp người ta không phải sốt ruột trong ngày mưa, mà còn làm cho cả một con phố trở nên ấm áp hơn."
+  ],
+  "questions": [
+   {
+    "q": "“我”为什么很着急？",
+    "q_vi": "Vì sao “tôi” rất sốt ruột?",
+    "options": [
+     "因为考试要迟到了",
+     "因为晚上要去朋友的生日会",
+     "因为超市马上要关门",
+     "因为“我”的伞坏了"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2: bảy giờ tối “tôi” còn phải đi dự tiệc sinh nhật bạn mà trời đang mưa to."
+   },
+   {
+    "q": "在王阿姨的超市借伞，需要做什么？",
+    "q_vi": "Mượn ô ở siêu thị cô Vương cần làm gì?",
+    "options": [
+     "给五块钱",
+     "写下自己的名字",
+     "买一些东西",
+     "用完以后还回来"
+    ],
+    "answer": 3,
+    "explain_vi": "Cô Vương nói không mất tiền, dùng xong nhớ mang lại là được."
+   },
+   {
+    "q": "为什么伞越来越多了？",
+    "q_vi": "Vì sao ô ngày càng nhiều?",
+    "options": [
+     "很多人还伞的时候又多送了一把",
+     "王阿姨每年都去买新伞",
+     "老爷爷卖给她很多伞",
+     "超市开始卖伞了"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 5: nhiều người mượn xong không những trả lại mà còn tặng thêm một chiếc."
+   },
+   {
+    "q": "这篇文章主要想说什么？",
+    "q_vi": "Bài văn chủ yếu muốn nói điều gì?",
+    "options": [
+     "下雨天一定要带伞",
+     "小超市的东西很便宜",
+     "帮助别人，别人也会帮助更多的人",
+     "王阿姨的生意越来越好"
+    ],
+    "answer": 2,
+    "explain_vi": "Câu chuyện cho thấy lòng tốt lan truyền: được giúp thì người ta lại giúp thêm người khác, làm con phố ấm áp hơn."
+   }
+  ]
+ },
+ {
+  "id": "h3-12",
+  "level": 3,
+  "kind": "article",
+  "title": "班长的秘密",
+  "title_vi": "Bí mật của lớp trưởng",
+  "topic": "trường học – truyện ngắn",
+  "paragraphs": [
+   "我们班的班长叫李文，他学习好，人也很热情。但是他有一个奇怪的习惯：每天早上，他都是第一个到学校的。我七点二十到教室，他已经坐在那儿了；我七点到，他还是比我早。",
+   "我很想知道这是为什么。有一天，我六点半就起床了，没吃早饭就骑车去学校。到了学校门口，天还不太亮，我看见李文从学校后面的小花园里走出来，手里拿着一个空碗。",
+   "第二天，我去得更早。这次我没进教室，而是先跑到小花园里，站在大树后面。没过一会儿，李文来了。他从包里拿出牛奶和面包，放进碗里，然后小声说：“小黑，快出来，吃早饭了！”",
+   "草里马上跑出来一只黑色的小猫。它很瘦，一条腿还有点儿问题，走路很慢。李文一边看着它吃，一边跟它说话，像在跟好朋友说话。",
+   "我从树后面走出来。李文的脸一下子红了：“你……你别告诉别人，好吗？学校不让带动物进来，我担心校长会把它送走。”我点点头，说：“放心吧，我不会说的。但是明天我也想带点儿东西来。”",
+   "从那天起，小花园里就有了两个“早到的人”。我们每天一起给小黑带早饭，还用旧衣服给它做了一个小房子。",
+   "一个月以后的早上，我们走进花园，发现小黑的碗里已经有了鱼和牛奶。我们觉得很奇怪，这时听见身后有人说：“你们来晚了。”我们回头一看，站在那儿的是校长！",
+   "校长笑着说：“我每天早上六点就来了，已经给它做了半年的早饭了。你们两个以后要不要跟我一起照顾它？”"
+  ],
+  "translations": [
+   "Lớp trưởng lớp tôi tên là Lý Văn, học giỏi, tính tình cũng rất nhiệt tình. Nhưng cậu ấy có một thói quen lạ: sáng nào cậu cũng là người đến trường đầu tiên. Tôi đến lớp lúc bảy giờ hai mươi, cậu đã ngồi đó rồi; tôi đến lúc bảy giờ, cậu vẫn sớm hơn tôi.",
+   "Tôi rất muốn biết vì sao. Một hôm, tôi dậy từ sáu rưỡi, chưa ăn sáng đã đạp xe đến trường. Tới cổng trường, trời còn chưa sáng hẳn, tôi thấy Lý Văn từ khu vườn nhỏ sau trường đi ra, tay cầm một cái bát rỗng.",
+   "Hôm sau, tôi đi còn sớm hơn. Lần này tôi không vào lớp mà chạy ngay ra vườn nhỏ, đứng nấp sau một cái cây to. Chẳng bao lâu, Lý Văn đến. Cậu lấy sữa và bánh mì trong cặp ra, cho vào bát, rồi nói khẽ: “Tiểu Hắc ơi, ra nhanh lên, ăn sáng nào!”",
+   "Từ trong bụi cỏ lập tức chạy ra một con mèo đen nhỏ. Nó rất gầy, một chân còn hơi tật, đi lại chậm chạp. Lý Văn vừa nhìn nó ăn vừa nói chuyện với nó, như đang trò chuyện với bạn vậy.",
+   "Tôi bước ra từ sau gốc cây. Mặt Lý Văn đỏ bừng: “Cậu… cậu đừng nói với ai nhé? Trường không cho mang động vật vào, tớ sợ thầy hiệu trưởng sẽ đem nó đi.” Tôi gật đầu: “Yên tâm, tớ sẽ không nói đâu. Nhưng mai tớ cũng muốn mang chút gì đến.”",
+   "Từ hôm đó, khu vườn nhỏ có hai “người đến sớm”. Ngày nào chúng tôi cũng cùng mang đồ ăn sáng cho Tiểu Hắc, còn lấy quần áo cũ làm cho nó một ngôi nhà nhỏ.",
+   "Một tháng sau, vào một buổi sáng, chúng tôi bước vào vườn thì thấy trong bát của Tiểu Hắc đã có cá và sữa. Chúng tôi thấy rất lạ, đúng lúc đó nghe sau lưng có người nói: “Các em đến muộn rồi.” Quay lại nhìn, người đứng đó là thầy hiệu trưởng!",
+   "Thầy hiệu trưởng cười nói: “Sáng nào thầy cũng đến từ sáu giờ, nấu bữa sáng cho nó nửa năm nay rồi. Hai em sau này có muốn cùng thầy chăm sóc nó không?”"
+  ],
+  "questions": [
+   {
+    "q": "“我”觉得李文哪一点很奇怪？",
+    "q_vi": "“Tôi” thấy Lý Văn lạ ở điểm nào?",
+    "options": [
+     "他每天都迟到",
+     "他每天都是第一个到学校的",
+     "他不喜欢跟同学说话",
+     "他从来不吃早饭"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 1: sáng nào Lý Văn cũng là người đến trường đầu tiên."
+   },
+   {
+    "q": "李文为什么不想让别人知道小黑的事？",
+    "q_vi": "Vì sao Lý Văn không muốn người khác biết chuyện Tiểu Hắc?",
+    "options": [
+     "他想自己一个人养小黑",
+     "小黑不喜欢见人",
+     "他怕老师说他迟到",
+     "学校不让带动物，他担心小黑被送走"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 5: trường không cho mang động vật vào, cậu sợ hiệu trưởng đem mèo đi."
+   },
+   {
+    "q": "最后，谁也在照顾小黑？",
+    "q_vi": "Cuối cùng, ai cũng đang chăm sóc Tiểu Hắc?",
+    "options": [
+     "校长",
+     "李文的妈妈",
+     "班里的其他同学",
+     "学校的司机"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 7–8: người đứng sau lưng là thầy hiệu trưởng, thầy đã cho mèo ăn nửa năm."
+   },
+   {
+    "q": "这个故事最有意思的地方是什么？",
+    "q_vi": "Điều thú vị nhất của câu chuyện là gì?",
+    "options": [
+     "李文的学习成绩很好",
+     "“我”每天起得很早",
+     "李文最担心的人，其实早就在帮助小黑",
+     "小黑最后被送走了"
+    ],
+    "answer": 2,
+    "explain_vi": "Lý Văn sợ nhất là hiệu trưởng, nhưng hóa ra chính thầy đã âm thầm chăm mèo từ lâu — đó là cái kết bất ngờ."
+   }
+  ]
+ },
+ {
+  "id": "h3-13",
+  "level": 3,
+  "kind": "article",
+  "title": "甜甜的鸡蛋面",
+  "title_vi": "Bát mì trứng ngọt lịm",
+  "topic": "gia đình – truyện ngắn",
+  "paragraphs": [
+   "下个星期六是妈妈的生日。我和爸爸决定给她一个特别的礼物：爸爸要自己给妈妈做一碗鸡蛋面。",
+   "我有点儿担心，因为我几乎没见过爸爸进厨房。但是爸爸说：“你别看我现在不做饭，年轻的时候，我做的鸡蛋面是最有名的！”",
+   "星期六早上，妈妈刚出门去买东西，爸爸就走进了厨房。他一会儿找碗，一会儿找筷子，一会儿又问我：“鸡蛋放在冰箱的哪一层？”半个小时以后，厨房像刚刮过大风一样，桌子上、地上都是东西。",
+   "中午，妈妈回来了。爸爸把一碗面放在她面前，很认真地说：“生日快乐！这是我给你做的。”面条的颜色有点儿黄，鸡蛋也有点儿黑，我在旁边看着，心里真为爸爸着急。",
+   "妈妈吃了一口，突然不吃了。我和爸爸都不敢说话。过了一会儿，妈妈的眼睛红了。爸爸更着急了：“是不是很难吃？我们马上去饭馆！”",
+   "妈妈笑着说：“你又把糖当成盐了。二十年前你第一次给我做饭，也是一碗甜甜的鸡蛋面。我那时候就想，这个人做饭真不怎么样，但是他很认真，我可以跟他结婚。”",
+   "爸爸的脸一下子红了。我这才明白，爸爸说的“最有名”，只在妈妈一个人那里有名。",
+   "那天，妈妈把那碗甜甜的面全吃完了。她说，这是她过得最快乐的一个生日。"
+  ],
+  "translations": [
+   "Thứ Bảy tuần sau là sinh nhật mẹ. Tôi và bố quyết định tặng mẹ một món quà đặc biệt: bố sẽ tự tay nấu cho mẹ một bát mì trứng.",
+   "Tôi hơi lo, vì tôi gần như chưa bao giờ thấy bố vào bếp. Nhưng bố nói: “Con đừng thấy bây giờ bố không nấu cơm mà nghĩ vậy, hồi trẻ, mì trứng bố nấu là nổi tiếng nhất đấy!”",
+   "Sáng thứ Bảy, mẹ vừa ra ngoài đi mua đồ, bố liền bước vào bếp. Bố lúc thì tìm bát, lúc thì tìm đũa, lúc lại hỏi tôi: “Trứng để ở ngăn nào trong tủ lạnh nhỉ?” Nửa tiếng sau, căn bếp như vừa có gió lớn thổi qua, trên bàn, dưới đất đâu đâu cũng là đồ.",
+   "Buổi trưa, mẹ về. Bố đặt một bát mì trước mặt mẹ, nghiêm túc nói: “Chúc mừng sinh nhật! Đây là anh nấu cho em.” Sợi mì hơi vàng, trứng cũng hơi cháy đen, tôi đứng bên cạnh nhìn mà trong lòng sốt ruột thay cho bố.",
+   "Mẹ ăn một miếng, bỗng không ăn nữa. Tôi và bố đều không dám nói gì. Một lúc sau, mắt mẹ đỏ hoe. Bố càng cuống: “Có phải dở lắm không? Mình đi nhà hàng ngay!”",
+   "Mẹ cười nói: “Anh lại nhầm đường thành muối rồi. Hai mươi năm trước, lần đầu anh nấu cơm cho em cũng là một bát mì trứng ngọt lịm. Lúc đó em đã nghĩ: người này nấu ăn chẳng ra sao, nhưng anh ấy rất chân thành, mình có thể lấy anh ấy.”",
+   "Mặt bố đỏ bừng. Lúc này tôi mới hiểu, cái “nổi tiếng nhất” mà bố nói chỉ nổi tiếng với một mình mẹ mà thôi.",
+   "Hôm đó, mẹ ăn hết sạch bát mì ngọt lịm ấy. Mẹ nói đây là sinh nhật vui nhất mà mẹ từng có."
+  ],
+  "questions": [
+   {
+    "q": "为什么“我”有点儿担心？",
+    "q_vi": "Vì sao “tôi” hơi lo lắng?",
+    "options": [
+     "妈妈不喜欢吃面条",
+     "家里没有鸡蛋了",
+     "“我”记得爸爸从来没做过饭",
+     "妈妈很快就要回来了"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 2: “tôi” gần như chưa bao giờ thấy bố vào bếp."
+   },
+   {
+    "q": "妈妈吃了面以后，为什么眼睛红了？",
+    "q_vi": "Sau khi ăn mì, vì sao mắt mẹ đỏ lên?",
+    "options": [
+     "面太难吃了",
+     "她想起了二十年前爸爸第一次给她做的饭",
+     "她生爸爸的气了",
+     "她感冒了"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 6: vị mì ngọt làm mẹ nhớ lại bát mì trứng ngọt bố nấu lần đầu cách đây hai mươi năm."
+   },
+   {
+    "q": "这碗面为什么是甜的？",
+    "q_vi": "Vì sao bát mì có vị ngọt?",
+    "options": [
+     "爸爸觉得甜的面更好吃",
+     "妈妈喜欢吃甜的",
+     "“我”在面里放了糖",
+     "爸爸又把糖当成了盐"
+    ],
+    "answer": 3,
+    "explain_vi": "Mẹ nói: “Anh lại nhầm đường thành muối rồi.”"
+   },
+   {
+    "q": "“只在妈妈一个人那里有名”是什么意思？",
+    "q_vi": "“Chỉ nổi tiếng với một mình mẹ” nghĩa là gì?",
+    "options": [
+     "爸爸的面其实做得不好，只有妈妈喜欢",
+     "妈妈经常告诉别人爸爸的面好吃",
+     "爸爸以前开过饭馆",
+     "很多人都吃过爸爸做的面"
+    ],
+    "answer": 0,
+    "explain_vi": "Bố không hề nấu ngon; món mì “nổi tiếng” chỉ vì mẹ trân trọng tấm lòng của bố."
+   }
+  ]
+ },
+ {
+  "id": "h3-14",
+  "level": 3,
+  "kind": "article",
+  "title": "楼上的纸条",
+  "title_vi": "Mẩu giấy của nhà trên lầu",
+  "topic": "sở thích – hàng xóm",
+  "paragraphs": [
+   "我的爱好是唱歌。白天要上班，所以我只能晚上在家里练习。每天吃完晚饭，我就打开音乐，一唱就是一个小时。",
+   "上个月，我搬进了一个新的小区。住进来的第三天晚上，我正唱得高兴，突然听见门外有声音。我打开门，外面没有人，只有地上放着一张纸条。",
+   "纸条上写着：“你好！第二首歌的最后一句，你唱得太快了。”下面没有名字，只画了一个笑脸。我的脸一下子红了。我想，这一定是邻居生气了，不好意思跟我说，所以才这样告诉我。",
+   "从那以后，我唱歌的声音小了很多，还把时间换到了晚上七点到八点。但是，第二个星期，门口又出现了一张纸条：“今天声音太小了，我听不清楚。这首歌，你可以试试用低一点儿的声音唱。”",
+   "我更奇怪了：这个人不是生我的气，而是在教我唱歌。我决定找到他。星期五晚上，我唱完歌，马上打开门，看见一位头发白白的爷爷正要上楼。",
+   "爷爷笑着说：“被你发现了！我住在你楼上，以前是音乐老师，离开学校以后，已经很久没人听我讲课了。听见你唱歌，我就很想说几句。”",
+   "从那天起，每个星期五晚上，我都去楼上跟爷爷练习一个小时。三个月以后，小区举行唱歌比赛，我得了第一名。",
+   "比赛结束的时候，我在台上说：“谢谢我的老师。”大家都在找“老师”是谁，只有坐在最后一排的爷爷，笑着画了一个笑脸。"
+  ],
+  "translations": [
+   "Sở thích của tôi là ca hát. Ban ngày phải đi làm nên tôi chỉ có thể luyện ở nhà vào buổi tối. Hôm nào ăn tối xong, tôi cũng bật nhạc lên, hát một mạch cả tiếng đồng hồ.",
+   "Tháng trước, tôi chuyển đến một khu chung cư mới. Tối thứ ba sau khi dọn vào, tôi đang hát say sưa thì bỗng nghe ngoài cửa có tiếng động. Mở cửa ra, bên ngoài không có ai, chỉ có một mẩu giấy đặt dưới đất.",
+   "Trên giấy viết: “Chào bạn! Câu cuối của bài thứ hai, bạn hát nhanh quá.” Bên dưới không ký tên, chỉ vẽ một khuôn mặt cười. Mặt tôi đỏ bừng. Tôi nghĩ, chắc chắn là hàng xóm bực mình, ngại nói với tôi nên mới nhắc tôi kiểu này.",
+   "Từ đó, tôi hát nhỏ hơn hẳn, còn đổi giờ sang từ bảy đến tám giờ tối. Thế nhưng tuần thứ hai, trước cửa lại xuất hiện một mẩu giấy: “Hôm nay bạn hát nhỏ quá, tôi nghe không rõ. Bài này bạn có thể thử hát giọng thấp hơn một chút.”",
+   "Tôi càng thấy lạ: người này không phải giận tôi, mà là đang dạy tôi hát. Tôi quyết định tìm ra người đó. Tối thứ Sáu, hát xong, tôi lập tức mở cửa và thấy một ông cụ tóc bạc trắng đang định lên lầu.",
+   "Ông cười nói: “Bị cháu phát hiện rồi! Ông ở tầng trên nhà cháu, trước đây là giáo viên âm nhạc. Từ khi rời trường, đã lâu lắm không có ai nghe ông giảng bài. Nghe cháu hát, ông rất muốn góp vài câu.”",
+   "Từ hôm đó, tối thứ Sáu nào tôi cũng lên lầu luyện với ông một tiếng. Ba tháng sau, khu chung cư tổ chức cuộc thi hát, tôi đoạt giải nhất.",
+   "Lúc cuộc thi kết thúc, tôi đứng trên sân khấu nói: “Cảm ơn thầy của tôi.” Mọi người đều tìm xem “thầy” là ai, chỉ có ông cụ ngồi ở hàng cuối cùng mỉm cười vẽ một khuôn mặt cười."
+  ],
+  "questions": [
+   {
+    "q": "看到第一张纸条以后，“我”是怎么想的？",
+    "q_vi": "Sau khi thấy mẩu giấy đầu tiên, “tôi” đã nghĩ gì?",
+    "options": [
+     "邻居想跟“我”一起唱歌",
+     "邻居生气了，觉得“我”太吵",
+     "有人想请“我”参加比赛",
+     "纸条是朋友写的"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 3: “tôi” nghĩ hàng xóm bực mình nhưng ngại nói với tôi."
+   },
+   {
+    "q": "第二张纸条说了什么？",
+    "q_vi": "Mẩu giấy thứ hai nói gì?",
+    "options": [
+     "请“我”不要再唱了",
+     "请“我”换一首歌",
+     "“我”唱得太快了",
+     "声音太小，可以试试低一点儿的声音"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 4: “Hôm nay hát nhỏ quá, nghe không rõ… thử hát giọng thấp hơn.”"
+   },
+   {
+    "q": "爷爷为什么给“我”写纸条？",
+    "q_vi": "Vì sao ông cụ viết giấy cho “tôi”?",
+    "options": [
+     "他以前是音乐老师，很想教人唱歌",
+     "他觉得“我”唱歌太吵",
+     "他想参加小区的比赛",
+     "他认识“我”的父母"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 6: ông từng là giáo viên âm nhạc, lâu rồi không có ai nghe ông giảng nên muốn góp ý."
+   },
+   {
+    "q": "文章最后，爷爷为什么画了一个笑脸？",
+    "q_vi": "Cuối bài, vì sao ông cụ vẽ một khuôn mặt cười?",
+    "options": [
+     "他想再给“我”写纸条",
+     "他觉得比赛很没意思",
+     "这是他和“我”之间的小秘密，他很高兴",
+     "他想告诉大家他是老师"
+    ],
+    "answer": 2,
+    "explain_vi": "Khuôn mặt cười là “chữ ký” trên các mẩu giấy — ông vui vì học trò thành công và đó là bí mật riêng của hai người."
+   }
+  ]
+ },
+ {
+  "id": "h3-15",
+  "level": 3,
+  "kind": "article",
+  "title": "发错的邮件",
+  "title_vi": "Bức thư gửi nhầm",
+  "topic": "bạn bè – truyện vui",
+  "paragraphs": [
+   "我和张明是最好的朋友。我们从一年级开始就在一个班，每天一起上学，一起回家，周末还经常一起去打篮球。",
+   "但是上个星期，我们为了一件小事生气了。那天是我的生日，我等了一天，张明一句“生日快乐”也没说。晚上，我生气地对他说：“你一点儿也不关心我！”他也生气了：“你就知道你自己！”说完，他就走了。",
+   "那以后，我们谁也不跟谁说话。上课的时候，他坐在我前面，我看着他的头发，心里很难过。其实我早就不生气了，只是不知道怎么开口。",
+   "星期天晚上，我终于决定给他写电子邮件。我写了很长很长，说那天是我不对，说我很想跟他一起打篮球。写完以后，我的手都有点儿冷，没再检查就点了“发送”。",
+   "第二天早上，数学老师走进教室，笑着看了我一眼，说：“有同学昨天晚上给我写了很长的信，说很想跟我一起打篮球。”同学们都笑了。我的脸一下子红了——我把邮件发给老师了！",
+   "下课以后，张明走到我旁边，小声说：“你也发错了？”我奇怪地看着他。他拿出手机给我看：他也给我写了邮件，说那天他是去给我买礼物，回来晚了，但是邮件发到了……我妈妈的邮箱里。",
+   "我们两个人你看看我，我看看你，都大笑起来。那天下午，我们又一起去打篮球了。我妈妈晚上还问我：“张明为什么给我写信，说要送我一个篮球？”"
+  ],
+  "translations": [
+   "Tôi và Trương Minh là bạn thân nhất. Chúng tôi học cùng lớp từ năm lớp một, ngày nào cũng cùng đi học, cùng về nhà, cuối tuần còn hay cùng đi chơi bóng rổ.",
+   "Nhưng tuần trước, chúng tôi giận nhau vì một chuyện nhỏ. Hôm đó là sinh nhật tôi, tôi đợi cả ngày mà Trương Minh không nói lấy một câu “chúc mừng sinh nhật”. Buổi tối, tôi giận dữ nói với cậu ấy: “Cậu chẳng quan tâm gì đến tớ cả!” Cậu ấy cũng nổi giận: “Cậu chỉ biết có bản thân thôi!” Nói xong, cậu bỏ đi.",
+   "Từ đó, chúng tôi không ai nói chuyện với ai. Trong giờ học, cậu ngồi ngay trước tôi, tôi nhìn mái tóc cậu mà lòng buồn rười rượi. Thật ra tôi đã hết giận từ lâu, chỉ là không biết mở lời thế nào.",
+   "Tối Chủ nhật, cuối cùng tôi quyết định viết cho cậu một bức thư điện tử. Tôi viết rất rất dài, nói hôm đó là lỗi của tôi, nói tôi rất muốn cùng cậu chơi bóng rổ. Viết xong, tay tôi hơi lạnh, chẳng kiểm tra lại đã bấm “Gửi”.",
+   "Sáng hôm sau, thầy dạy toán bước vào lớp, cười liếc nhìn tôi một cái rồi nói: “Tối qua có một bạn viết cho thầy một bức thư rất dài, nói rất muốn cùng thầy chơi bóng rổ.” Cả lớp cười ồ. Mặt tôi đỏ bừng — tôi đã gửi thư cho thầy!",
+   "Tan học, Trương Minh đến bên tôi, nói khẽ: “Cậu cũng gửi nhầm à?” Tôi ngạc nhiên nhìn cậu. Cậu lấy điện thoại ra cho tôi xem: cậu cũng viết cho tôi một bức thư, kể rằng hôm đó cậu đi mua quà cho tôi nên về muộn, nhưng thư lại gửi vào… hộp thư của mẹ tôi.",
+   "Hai đứa nhìn nhau rồi cùng phá lên cười. Chiều hôm đó, chúng tôi lại cùng đi chơi bóng rổ. Tối đến, mẹ tôi còn hỏi: “Sao Trương Minh lại viết thư cho mẹ, nói là muốn tặng mẹ một quả bóng rổ thế?”"
+  ],
+  "questions": [
+   {
+    "q": "“我”和张明为什么生气了？",
+    "q_vi": "Vì sao “tôi” và Trương Minh giận nhau?",
+    "options": [
+     "张明打篮球打得不好",
+     "张明在“我”生日那天没说“生日快乐”",
+     "张明拿了“我”的手机",
+     "“我”不想跟张明一起回家"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2: sinh nhật “tôi”, Trương Minh không nói câu chúc mừng nào."
+   },
+   {
+    "q": "“我”把邮件发给了谁？",
+    "q_vi": "“Tôi” đã gửi thư cho ai?",
+    "options": [
+     "数学老师",
+     "张明",
+     "妈妈",
+     "班长"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 5: thầy dạy toán nhận được bức thư dài, “tôi” đã gửi nhầm cho thầy."
+   },
+   {
+    "q": "那天张明为什么没说“生日快乐”？",
+    "q_vi": "Hôm đó vì sao Trương Minh không nói “chúc mừng sinh nhật”?",
+    "options": [
+     "他忘了“我”的生日",
+     "他生病了",
+     "他不想跟“我”做朋友了",
+     "他去给“我”买礼物，回来晚了"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 6: trong thư cậu ấy kể hôm đó đi mua quà nên về muộn."
+   },
+   {
+    "q": "从最后一段可以知道，张明想送“我”什么礼物？",
+    "q_vi": "Từ đoạn cuối có thể biết Trương Minh muốn tặng “tôi” món quà gì?",
+    "options": [
+     "一封信",
+     "一部手机",
+     "一个篮球",
+     "一本书"
+    ],
+    "answer": 2,
+    "explain_vi": "Thư gửi nhầm cho mẹ có nói muốn tặng một quả bóng rổ — đó chính là quà sinh nhật dành cho “tôi”."
+   }
+  ]
+ },
+ {
+  "id": "h3-16",
+  "level": 3,
+  "kind": "article",
+  "title": "奶奶的十箱牛奶",
+  "title_vi": "Mười thùng sữa của bà",
+  "topic": "mua sắm – gia đình",
+  "paragraphs": [
+   "我奶奶什么都好，就是有一个习惯：如果东西便宜，她就一定要买。家里的冰箱里，总是放满了她买回来的“便宜东西”。",
+   "上个周末，附近的超市里，牛奶比以前便宜了一半。奶奶早上六点就起床了，七点就站在超市门口等着。中午，一辆车开到了我家楼下，司机叔叔一箱一箱地往上搬——奶奶一共买了十箱牛奶！",
+   "爸爸看着房间里的牛奶，问：“妈，我们家只有四个人，这么多牛奶，什么时候才能喝完？”奶奶很满意地说：“一箱才二十块，多便宜啊！你们每天多喝几杯，对身体好。”",
+   "从那天起，我们家的早饭有牛奶，午饭有牛奶，晚饭还是牛奶。妈妈用牛奶做蛋糕，爸爸用牛奶做面条，我喝果汁的机会都没有了。一个星期以后，我们才喝完了一箱。",
+   "妈妈有点儿着急了：“牛奶不能放太久，再过两个星期就坏了。”这时候，我想了一个办法：“我们把牛奶送给邻居吧！”奶奶一开始不同意，后来想了想，也同意了。",
+   "那天下午，我们一家一家地去送牛奶。楼下的阿姨送来了一盘面包，对门的叔叔拿来了一条鱼，三楼的爷爷还送了奶奶一大包新鲜的水果。",
+   "晚上，我们家的桌子上放满了菜。奶奶一边吃面包，一边笑着说：“你们看，我买的牛奶多便宜！二十块一箱，换回来这么多好吃的。”",
+   "第二天，奶奶又出门了。爸爸问她去哪儿，她说：“超市的鸡蛋今天也很便宜，楼下的阿姨让我帮她也买一些。”"
+  ],
+  "translations": [
+   "Bà nội tôi cái gì cũng tốt, chỉ có một thói quen: hễ đồ rẻ là bà nhất định phải mua. Tủ lạnh nhà tôi lúc nào cũng chất đầy “đồ rẻ” bà mua về.",
+   "Cuối tuần trước, sữa ở siêu thị gần nhà rẻ hơn trước một nửa. Bà dậy từ sáu giờ sáng, bảy giờ đã đứng chờ ở cửa siêu thị. Buổi trưa, một chiếc xe đỗ dưới nhà tôi, chú tài xế khuân từng thùng một lên lầu — bà mua tổng cộng mười thùng sữa!",
+   "Bố nhìn đống sữa trong phòng, hỏi: “Mẹ ơi, nhà mình có bốn người, nhiều sữa thế này bao giờ mới uống hết?” Bà rất hài lòng nói: “Một thùng chỉ hai mươi tệ, rẻ biết bao! Các con mỗi ngày uống thêm mấy cốc, tốt cho sức khỏe.”",
+   "Từ hôm đó, bữa sáng nhà tôi có sữa, bữa trưa có sữa, bữa tối vẫn là sữa. Mẹ dùng sữa làm bánh kem, bố dùng sữa nấu mì, tôi đến cơ hội uống nước hoa quả cũng không còn. Một tuần sau, chúng tôi mới uống hết một thùng.",
+   "Mẹ bắt đầu sốt ruột: “Sữa không để lâu được, hai tuần nữa là hỏng.” Lúc này, tôi nghĩ ra một cách: “Mình đem sữa tặng hàng xóm đi!” Lúc đầu bà không đồng ý, sau nghĩ đi nghĩ lại cũng đồng ý.",
+   "Chiều hôm đó, chúng tôi đến từng nhà để tặng sữa. Cô ở tầng dưới mang sang một đĩa bánh mì, chú nhà đối diện mang đến một con cá, ông cụ tầng ba còn tặng bà một túi to hoa quả tươi.",
+   "Buổi tối, bàn nhà tôi bày đầy thức ăn. Bà vừa ăn bánh mì vừa cười nói: “Các con xem, sữa bà mua rẻ biết bao! Hai mươi tệ một thùng mà đổi về được bao nhiêu món ngon thế này.”",
+   "Hôm sau, bà lại ra ngoài. Bố hỏi bà đi đâu, bà nói: “Hôm nay trứng ở siêu thị cũng rẻ lắm, cô tầng dưới nhờ mẹ mua giúp ít nữa.”"
+  ],
+  "questions": [
+   {
+    "q": "奶奶为什么买了十箱牛奶？",
+    "q_vi": "Vì sao bà mua mười thùng sữa?",
+    "options": [
+     "家里的人都很喜欢喝牛奶",
+     "医生让她多喝牛奶",
+     "超市的牛奶比平时便宜一半",
+     "她想送给邻居"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 2: sữa ở siêu thị rẻ một nửa, mà bà thì hễ rẻ là mua."
+   },
+   {
+    "q": "妈妈为什么着急？",
+    "q_vi": "Vì sao mẹ sốt ruột?",
+    "options": [
+     "牛奶太多，放久了会坏",
+     "家里的冰箱坏了",
+     "奶奶生病了",
+     "牛奶太贵了"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 5: sữa không để lâu được, hai tuần nữa sẽ hỏng."
+   },
+   {
+    "q": "送完牛奶以后，发生了什么事？",
+    "q_vi": "Sau khi tặng sữa xong, chuyện gì đã xảy ra?",
+    "options": [
+     "邻居们都不要牛奶",
+     "奶奶很生气",
+     "超市又来送牛奶了",
+     "邻居们也送来了很多好吃的"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 6: hàng xóm mang sang bánh mì, cá, hoa quả."
+   },
+   {
+    "q": "从最后一段可以知道什么？",
+    "q_vi": "Từ đoạn cuối có thể biết điều gì?",
+    "options": [
+     "奶奶不再买便宜东西了",
+     "奶奶和邻居的关系变得更好了",
+     "楼下的阿姨不喜欢奶奶",
+     "爸爸不让奶奶出门"
+    ],
+    "answer": 1,
+    "explain_vi": "Cô hàng xóm nhờ bà mua trứng giúp, cho thấy sau chuyện tặng sữa, bà và hàng xóm đã thân thiết hơn."
+   }
+  ]
+ },
+ {
+  "id": "h3-17",
+  "level": 3,
+  "kind": "article",
+  "title": "爷爷的“天气预报”",
+  "title_vi": "“Dự báo thời tiết” của ông",
+  "topic": "thời tiết – truyện vui",
+  "paragraphs": [
+   "我们家有两个“天气预报”：一个是电视里的，一个是我爷爷的腿。每次爷爷说“我的腿有点儿疼”，第二天几乎都会下雨。邻居们都说，爷爷的腿比电视还准。",
+   "上个星期六，爸爸说要带我们去公园爬山。星期五晚上，电视里的天气预报说：“明天晴，不刮风。”爸爸高兴地说：“太好了，明天一定是个好天气！”",
+   "但是爷爷坐在椅子上，慢慢地说：“我的腿又疼了，明天会下雨。”爸爸笑了：“爸，现在的天气预报很准，您就放心吧。”爷爷没再说话，但是他回到房间，拿出了四把伞，放在了门口。",
+   "第二天早上，太阳很好，天上一片云也没有。爸爸看着门口的伞，说：“今天还要带伞吗？”爷爷说：“带上，又不重。”爸爸没办法，就把伞都放进了包里。",
+   "我们上午爬了山，中午在山上吃了面包和水果。下午两点，天突然阴了，刮起了大风，然后就下起了大雨。山上的人都在着急地找地方，只有我们一家人打开伞，慢慢地走下了山。",
+   "爸爸一边走一边说：“爸，您的腿真是比电视里的天气预报还准！”爷爷笑了笑，没有回答。",
+   "晚上回到家，我帮爷爷拿包的时候，看见了他的手机。手机上写着：“下午两点，有大雨。”我问爷爷：“您的腿……真的疼吗？”",
+   "爷爷小声对我说：“我的腿啊，一点儿也不疼。但是如果我说是手机说的，你爸爸会听吗？”"
+  ],
+  "translations": [
+   "Nhà tôi có hai “bản tin dự báo thời tiết”: một là trên ti vi, một là cái chân của ông tôi. Mỗi lần ông nói “chân ông hơi đau”, hôm sau gần như đều có mưa. Hàng xóm ai cũng bảo chân ông còn chuẩn hơn cả ti vi.",
+   "Thứ Bảy tuần trước, bố nói sẽ đưa cả nhà đi công viên leo núi. Tối thứ Sáu, bản tin thời tiết trên ti vi nói: “Ngày mai trời nắng, không có gió.” Bố vui vẻ nói: “Tuyệt quá, mai chắc chắn là một ngày đẹp trời!”",
+   "Nhưng ông ngồi trên ghế, chậm rãi nói: “Chân bố lại đau rồi, mai sẽ mưa.” Bố cười: “Bố ơi, dự báo thời tiết bây giờ chuẩn lắm, bố cứ yên tâm.” Ông không nói gì nữa, nhưng ông về phòng lấy ra bốn chiếc ô, đặt ở cửa.",
+   "Sáng hôm sau, nắng rất đẹp, trên trời không một gợn mây. Bố nhìn mấy chiếc ô ở cửa, nói: “Hôm nay vẫn phải mang ô ạ?” Ông nói: “Cứ mang đi, có nặng đâu.” Bố hết cách, bèn cho hết ô vào túi.",
+   "Buổi sáng chúng tôi leo núi, trưa ăn bánh mì và hoa quả trên núi. Hai giờ chiều, trời bỗng tối sầm, nổi gió to, rồi đổ mưa lớn. Người trên núi ai cũng cuống quýt tìm chỗ trú, chỉ có nhà tôi giương ô, thong thả đi xuống núi.",
+   "Bố vừa đi vừa nói: “Bố ơi, cái chân của bố đúng là còn chuẩn hơn cả dự báo thời tiết trên ti vi!” Ông chỉ cười cười, không trả lời.",
+   "Tối về nhà, lúc giúp ông cầm túi, tôi nhìn thấy điện thoại của ông. Trên điện thoại ghi: “Hai giờ chiều, có mưa to.” Tôi hỏi ông: “Chân ông… có đau thật không ạ?”",
+   "Ông khẽ nói với tôi: “Chân ông ấy à, chẳng đau tí nào. Nhưng nếu ông bảo là điện thoại nói, bố cháu có chịu nghe không?”"
+  ],
+  "questions": [
+   {
+    "q": "邻居们为什么说爷爷的腿“比电视还准”？",
+    "q_vi": "Vì sao hàng xóm nói chân ông “còn chuẩn hơn cả ti vi”?",
+    "options": [
+     "爷爷每天都看天气预报",
+     "爷爷说腿疼以后，第二天常常下雨",
+     "爷爷的腿从来不疼",
+     "爷爷以前在电视台工作"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 1: mỗi lần ông kêu đau chân, hôm sau gần như đều mưa."
+   },
+   {
+    "q": "星期六早上的天气怎么样？",
+    "q_vi": "Thời tiết sáng thứ Bảy thế nào?",
+    "options": [
+     "阴天，刮大风",
+     "下着大雨",
+     "下雪了",
+     "太阳很好，没有云"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 4: nắng rất đẹp, trên trời không một gợn mây."
+   },
+   {
+    "q": "爷爷是怎么知道下午会下雨的？",
+    "q_vi": "Ông làm sao biết chiều sẽ mưa?",
+    "options": [
+     "他看了手机上的天气预报",
+     "他的腿真的疼了",
+     "邻居告诉他的",
+     "他看见天上有很多云"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 7–8: điện thoại của ông báo “hai giờ chiều có mưa to”, chân ông không hề đau."
+   },
+   {
+    "q": "爷爷为什么说是腿告诉他的？",
+    "q_vi": "Vì sao ông nói là cái chân báo cho ông?",
+    "options": [
+     "他不会用手机",
+     "他想让大家去看医生",
+     "他觉得这样说，儿子更愿意听",
+     "他忘了自己看过手机"
+    ],
+    "answer": 2,
+    "explain_vi": "Ông nói: nếu bảo là điện thoại nói thì bố cháu có chịu nghe không — ông biết con trai tin “cái chân” hơn."
+   }
+  ]
+ },
+ {
+  "id": "h3-18",
+  "level": 3,
+  "kind": "article",
+  "title": "会回答问题的鸟",
+  "title_vi": "Con chim biết trả lời câu hỏi",
+  "topic": "chuyện vui ngắn",
+  "paragraphs": [
+   "去年生日，叔叔送了我一只小鸟。它是白色的，眼睛又黑又亮，最特别的是——它会学人说话。我给它起名叫“小白”。",
+   "小白非常聪明。你说什么，它听几次就能记住。爸爸每天下班回家都说“我回来了”，没过一个星期，小白也会说“我回来了”。有时候家里没有人，它也会大声说，奶奶还以为家里来了客人。",
+   "我妈妈每天晚上说得最多的一句话是：“作业写完了吗？”我一听到这句话就头疼。有一天，我突然想到了一个好办法：如果小白能帮我回答，那多好啊！",
+   "从那天起，我每天放学回家，第一件事就是教小白说：“写完了！写完了！”教了半个月，它终于学会了。",
+   "那天晚上，我正在房间里玩游戏，就听见妈妈在外面问：“作业写完了吗？”小白马上大声回答：“写完了！写完了！”妈妈说：“真的吗？那太好了。”我在房间里笑了半天。",
+   "这样过了一个星期，我每天晚上都很舒服。但是星期五，老师给妈妈打了一个电话，说我已经五天没写作业了。",
+   "妈妈没有生气，也没有说我。她只是每天晚上在小白旁边站一会儿，小声地说着什么。我想，她可能在跟小白说话吧。",
+   "又过了一个星期，晚上我刚拿起手机，就听见小白问：“作业写完了吗？”我说：“写完了。”小白马上说：“那拿来给我看看！”我回头一看，妈妈正站在门口，笑着看我。"
+  ],
+  "translations": [
+   "Sinh nhật năm ngoái, chú tặng tôi một chú chim nhỏ. Nó có màu trắng, mắt vừa đen vừa sáng, đặc biệt nhất là — nó biết bắt chước người nói. Tôi đặt tên cho nó là “Tiểu Bạch”.",
+   "Tiểu Bạch cực kỳ thông minh. Bạn nói gì, nó nghe vài lần là nhớ. Ngày nào bố đi làm về cũng nói “Bố về rồi đây”, chưa đầy một tuần, Tiểu Bạch cũng biết nói “Bố về rồi đây”. Có lúc nhà không có ai, nó cũng nói to, bà tôi còn tưởng nhà có khách.",
+   "Câu mẹ tôi nói nhiều nhất mỗi tối là: “Làm bài tập xong chưa?” Tôi cứ nghe câu này là đau đầu. Một hôm, tôi chợt nghĩ ra một cách hay: nếu Tiểu Bạch trả lời thay tôi thì hay biết mấy!",
+   "Từ hôm đó, ngày nào tan học về, việc đầu tiên của tôi là dạy Tiểu Bạch nói: “Xong rồi! Xong rồi!” Dạy nửa tháng, cuối cùng nó cũng học được.",
+   "Tối hôm đó, tôi đang chơi game trong phòng thì nghe mẹ hỏi ở bên ngoài: “Làm bài tập xong chưa?” Tiểu Bạch lập tức đáp to: “Xong rồi! Xong rồi!” Mẹ nói: “Thật à? Thế thì tốt quá.” Trong phòng, tôi cười mãi không thôi.",
+   "Cứ thế được một tuần, tối nào tôi cũng rất nhàn. Nhưng thứ Sáu, cô giáo gọi điện cho mẹ, nói tôi đã năm ngày không làm bài tập rồi.",
+   "Mẹ không giận, cũng không nói gì tôi. Mẹ chỉ mỗi tối đứng cạnh Tiểu Bạch một lúc, khẽ nói gì đó. Tôi nghĩ chắc mẹ đang nói chuyện với Tiểu Bạch.",
+   "Thêm một tuần nữa trôi qua, buổi tối tôi vừa cầm điện thoại lên thì nghe Tiểu Bạch hỏi: “Làm bài tập xong chưa?” Tôi nói: “Xong rồi.” Tiểu Bạch lập tức nói: “Thế mang ra đây xem nào!” Tôi quay lại nhìn, mẹ đang đứng ở cửa, cười nhìn tôi."
+  ],
+  "questions": [
+   {
+    "q": "小白最特别的地方是什么？",
+    "q_vi": "Điểm đặc biệt nhất của Tiểu Bạch là gì?",
+    "options": [
+     "它是白色的",
+     "它的眼睛很大",
+     "它会学人说话",
+     "它不怕人"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 1: đặc biệt nhất là nó biết bắt chước người nói."
+   },
+   {
+    "q": "“我”为什么教小白说“写完了”？",
+    "q_vi": "Vì sao “tôi” dạy Tiểu Bạch nói “Xong rồi”?",
+    "options": [
+     "想让小白替“我”回答妈妈的问题",
+     "想让小白帮“我”写作业",
+     "想参加学校的比赛",
+     "老师让“我”这样做"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 3: “tôi” muốn Tiểu Bạch trả lời thay mỗi khi mẹ hỏi làm bài xong chưa."
+   },
+   {
+    "q": "妈妈是怎么知道“我”没写作业的？",
+    "q_vi": "Mẹ biết “tôi” không làm bài tập bằng cách nào?",
+    "options": [
+     "小白告诉她的",
+     "奶奶告诉她的",
+     "她看了“我”的书包",
+     "老师给她打了电话"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 6: cô giáo gọi điện báo “tôi” năm ngày không làm bài."
+   },
+   {
+    "q": "妈妈每天晚上在小白旁边做什么？",
+    "q_vi": "Mỗi tối mẹ làm gì bên cạnh Tiểu Bạch?",
+    "options": [
+     "给小白吃东西",
+     "教小白说“那拿来给我看看”",
+     "跟小白生气",
+     "给小白唱歌"
+    ],
+    "answer": 1,
+    "explain_vi": "Kết truyện cho thấy mẹ đã dạy Tiểu Bạch câu “Thế mang ra đây xem nào!” để “trị” lại con."
+   }
+  ]
+ },
+ {
+  "id": "h3-19",
+  "level": 3,
+  "kind": "article",
+  "title": "从越南来的新同学",
+  "title_vi": "Bạn mới đến từ Việt Nam",
+  "topic": "trường học – bạn bè",
+  "paragraphs": [
+   "九月开学的第一天，校长带着一个女孩子走进我们班。她个子不高，头发长长的，看起来有点儿害怕。老师说：“这是阮兰，她从越南来，以后就在我们班学习了。”",
+   "阮兰的汉语说得不太好。第一节课，老师问她：“你几岁了？”她想了很久，回答：“我十五块。”大家都笑了。她的脸一下子红了，低着头，一句话也不说了。",
+   "下课以后，我走到她旁边说：“别难过，谁刚开始学的时候都会说错。以后你有不懂的，就来问我吧。”她看着我，小声地说了一句：“谢谢你，你是好人。”",
+   "从那天起，我每天中午都帮她练习说汉语。她非常努力，带着一个小本子，听到新的词语就马上写下来。有时候她也会说错。有一次，她想请我吃饭，说成了：“我想吃你。”我们两个人笑了很久。",
+   "半年很快就过去了。阮兰的汉语比以前好多了，已经能跟同学们说说笑笑，还有了很多朋友。",
+   "期末考试以后，老师在班里说：“这次数学考试，第一名是阮兰，一百分！”同学们都看着她，教室里非常安静。我的数学一直不好，这次只考了六十分。",
+   "那天放学的时候，阮兰拿着她的小本子走到我旁边，笑着说：“以前你帮我练习汉语，现在，我帮你复习数学，好吗？”",
+   "我看着她的小本子，第一页上用汉语写着：“我在中国的第一个朋友。”下面，是我的名字。"
+  ],
+  "translations": [
+   "Ngày khai giảng tháng Chín, thầy hiệu trưởng dẫn một bạn nữ vào lớp tôi. Bạn ấy không cao, tóc dài, trông có vẻ hơi sợ. Cô giáo nói: “Đây là Nguyễn Lan, bạn ấy đến từ Việt Nam, từ nay sẽ học ở lớp mình.”",
+   "Nguyễn Lan nói tiếng Trung chưa giỏi lắm. Tiết học đầu tiên, cô hỏi: “Em bao nhiêu tuổi?” Bạn nghĩ rất lâu rồi trả lời: “Em mười lăm đồng.” Cả lớp cười ồ. Mặt bạn đỏ bừng, cúi đầu, không nói thêm câu nào nữa.",
+   "Tan học, tôi đến bên bạn nói: “Đừng buồn, ai mới học cũng nói sai cả mà. Sau này có gì không hiểu cứ hỏi tớ.” Bạn nhìn tôi, khẽ nói một câu: “Cảm ơn cậu, cậu là người tốt.”",
+   "Từ hôm đó, trưa nào tôi cũng giúp bạn luyện nói tiếng Trung. Bạn rất chăm chỉ, luôn mang theo một cuốn sổ nhỏ, nghe được từ mới là ghi ngay. Đôi khi bạn cũng nói sai, có lần bạn muốn mời tôi ăn cơm lại nói thành: “Tớ muốn ăn cậu.” Hai đứa cười mãi.",
+   "Nửa năm trôi qua rất nhanh. Tiếng Trung của Nguyễn Lan đã khá hơn trước nhiều, bạn đã có thể nói nói cười cười với các bạn, còn có thêm rất nhiều bạn bè.",
+   "Sau kỳ thi cuối kỳ, cô giáo nói trước lớp: “Bài thi toán lần này, người đứng đầu là Nguyễn Lan, một trăm điểm!” Cả lớp đều nhìn bạn, phòng học im phăng phắc. Môn toán của tôi xưa nay vẫn kém, lần này chỉ được sáu mươi điểm.",
+   "Chiều hôm đó tan học, Nguyễn Lan cầm cuốn sổ nhỏ đến bên tôi, cười nói: “Trước đây cậu giúp tớ luyện tiếng Trung, giờ tớ giúp cậu ôn toán nhé?”",
+   "Tôi nhìn cuốn sổ nhỏ của bạn, trang đầu tiên viết bằng tiếng Trung: “Người bạn đầu tiên của tớ ở Trung Quốc.” Bên dưới là tên tôi."
+  ],
+  "questions": [
+   {
+    "q": "阮兰说“我十五块”，大家为什么笑了？",
+    "q_vi": "Nguyễn Lan nói “Em mười lăm đồng”, vì sao mọi người cười?",
+    "options": [
+     "她说的数字不对",
+     "她说的声音太小",
+     "她把“岁”说成了“块”",
+     "她说的是越南语"
+    ],
+    "answer": 2,
+    "explain_vi": "Hỏi tuổi phải trả lời bằng “岁”, bạn ấy nhầm thành “块” (đồng tiền)."
+   },
+   {
+    "q": "阮兰是怎么学习汉语的？",
+    "q_vi": "Nguyễn Lan học tiếng Trung như thế nào?",
+    "options": [
+     "每天晚上看中国电影",
+     "带着小本子，听到新词语就写下来",
+     "只跟老师说汉语",
+     "每个周末去上课"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 4: bạn luôn mang sổ nhỏ, nghe từ mới là ghi ngay, trưa nào cũng luyện nói với “tôi”."
+   },
+   {
+    "q": "期末考试中，“我”的数学考得怎么样？",
+    "q_vi": "Kỳ thi cuối kỳ, môn toán của “tôi” thế nào?",
+    "options": [
+     "不太好，只考了六十分",
+     "考了第一名",
+     "考了一百分",
+     "没参加考试"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 6: “tôi” chỉ được sáu mươi điểm."
+   },
+   {
+    "q": "这篇文章主要想告诉我们什么？",
+    "q_vi": "Bài văn chủ yếu muốn nói với chúng ta điều gì?",
+    "options": [
+     "学汉语非常难",
+     "数学比汉语更重要",
+     "外国学生的成绩都很好",
+     "朋友之间应该互相帮助"
+    ],
+    "answer": 3,
+    "explain_vi": "“Tôi” giúp Lan học tiếng Trung, Lan lại giúp “tôi” ôn toán — tình bạn là giúp đỡ lẫn nhau."
+   }
+  ]
+ },
+ {
+  "id": "h3-20",
+  "level": 3,
+  "kind": "article",
+  "title": "爷爷的旧自行车",
+  "title_vi": "Chiếc xe đạp cũ của ông",
+  "topic": "gia đình – truyện ngắn",
+  "paragraphs": [
+   "我爷爷有一辆很旧很旧的自行车。车是黑色的，骑起来声音很大，还常常出问题。家里人都说它太老了，应该换一辆新的，但是爷爷总是不同意。",
+   "今年爷爷七十岁生日，爸爸给他买了一辆漂亮的新自行车，蓝色的，又新又快。爸爸想，有了新车，爷爷一定会把那辆旧车送走。",
+   "没想到，爷爷看了新车以后，只说了一句“谢谢”，第二天还是骑着那辆旧车出门了。爸爸有点儿不高兴：“这辆旧车有什么好的？”",
+   "晚上吃饭的时候，奶奶笑着说：“你们不知道吧？这辆车，比你爸爸的年龄还大。”五十年前，爷爷就是骑着这辆车去城里工作的。",
+   "爷爷有点儿不好意思，慢慢地讲起了过去的事：“那年秋天，我骑车骑得太快，在一个路口撞到了一个年轻的女孩子，她手里的苹果掉了一地。我一边说对不起，一边帮她把苹果一个一个找回来。后来，我每天都骑车送她去上班……”",
+   "“那个女孩子，就是奶奶吧？”我大声问。爷爷点了点头，脸红得像个苹果。",
+   "这时候，奶奶喝了一口茶，慢慢地说：“其实，那天我在路口已经等了半个小时了。我早就知道，每天八点，有一个骑黑色自行车的年轻人会从那里经过。”",
+   "爷爷奇怪地看着奶奶，半天说不出话来。我们一家人都大笑起来。从那以后，再也没有人说要把那辆旧自行车送走了。"
+  ],
+  "translations": [
+   "Ông tôi có một chiếc xe đạp rất rất cũ. Xe màu đen, đạp lên kêu rất to, lại hay hỏng. Cả nhà đều bảo nó già quá rồi, nên đổi chiếc mới, nhưng ông lúc nào cũng không đồng ý.",
+   "Năm nay sinh nhật bảy mươi tuổi của ông, bố mua cho ông một chiếc xe đạp mới rất đẹp, màu xanh, vừa mới vừa nhanh. Bố nghĩ có xe mới rồi, chắc chắn ông sẽ bỏ chiếc xe cũ kia đi.",
+   "Không ngờ ông xem xe mới xong chỉ nói một câu “Cảm ơn”, hôm sau vẫn đạp chiếc xe cũ ra ngoài. Bố hơi không vui: “Chiếc xe cũ này thì có gì hay chứ?”",
+   "Bữa tối, bà cười nói: “Các con không biết à? Chiếc xe này còn nhiều tuổi hơn cả bố con đấy.” Năm mươi năm trước, ông đã đạp chiếc xe này lên thành phố làm việc.",
+   "Ông hơi ngượng, chậm rãi kể lại chuyện xưa: “Mùa thu năm ấy, ông đạp xe nhanh quá, ở một ngã tư đâm phải một cô gái trẻ, táo trong tay cô rơi đầy đất. Ông vừa xin lỗi vừa giúp cô nhặt lại từng quả táo. Về sau, ngày nào ông cũng đạp xe đưa cô đi làm…”",
+   "“Cô gái đó chính là bà phải không ạ?” Tôi hỏi to. Ông gật đầu, mặt đỏ như quả táo.",
+   "Lúc này, bà nhấp một ngụm trà, chậm rãi nói: “Thật ra hôm đó bà đã đứng đợi ở ngã tư nửa tiếng rồi. Bà biết từ lâu, cứ tám giờ sáng là có một chàng trai đi xe đạp đen chạy qua đó.”",
+   "Ông ngơ ngác nhìn bà, mãi không nói nên lời. Cả nhà tôi phá lên cười. Từ đó trở đi, không còn ai đòi bỏ chiếc xe đạp cũ ấy nữa."
+  ],
+  "questions": [
+   {
+    "q": "爸爸为什么给爷爷买新自行车？",
+    "q_vi": "Vì sao bố mua xe đạp mới cho ông?",
+    "options": [
+     "爷爷的旧车被别人拿走了",
+     "爷爷说他想要一辆蓝色的车",
+     "爷爷七十岁生日，爸爸觉得旧车太老了",
+     "爸爸自己不想骑了"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 1–2: cả nhà thấy xe cũ quá, nhân sinh nhật 70 tuổi bố mua xe mới tặng ông."
+   },
+   {
+    "q": "爷爷和奶奶是怎么认识的？",
+    "q_vi": "Ông và bà quen nhau thế nào?",
+    "options": [
+     "爷爷骑车撞到了奶奶",
+     "他们在同一个公司工作",
+     "奶奶在路口卖苹果",
+     "朋友给他们介绍的"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 5: ông đạp xe nhanh, đâm phải bà ở ngã tư."
+   },
+   {
+    "q": "奶奶最后说的话，让我们知道了什么？",
+    "q_vi": "Lời bà nói cuối cùng cho ta biết điều gì?",
+    "options": [
+     "奶奶那天迟到了",
+     "奶奶不喜欢那辆自行车",
+     "爷爷那天是故意撞奶奶的",
+     "奶奶那天是特意在路口等爷爷的"
+    ],
+    "answer": 3,
+    "explain_vi": "Bà đã đứng đợi nửa tiếng vì biết tám giờ chàng trai đi xe đạp đen sẽ qua — cuộc “gặp tình cờ” là do bà sắp đặt."
+   },
+   {
+    "q": "为什么最后没有人再说要送走旧自行车了？",
+    "q_vi": "Vì sao cuối cùng không ai đòi bỏ chiếc xe cũ nữa?",
+    "options": [
+     "新自行车坏了",
+     "大家明白了这辆车对爷爷奶奶很重要",
+     "爷爷把旧车修好了",
+     "奶奶也想骑这辆车"
+    ],
+    "answer": 1,
+    "explain_vi": "Chiếc xe gắn với chuyện tình của ông bà, cả nhà hiểu nó rất quý giá."
+   }
+  ]
+ }
+]

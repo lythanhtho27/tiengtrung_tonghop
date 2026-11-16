@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đọc thêm</title>
-    <meta name="description" content="Đọc thêm tiếng Trung theo cấp HSK, bài tự dán và bài khóa Boya đã học: pinyin, chạm để tra, nghe, đọc tính giờ, câu hỏi đọc hiểu.">
+    <meta name="description" content="Đọc thêm tiếng Trung theo cấp HSK: bài đọc, truyện dài, hội thoại, thành ngữ, đề luyện đọc HSK, bài tự dán và bài khóa Boya: pinyin, chạm để tra, nghe, nhập vai, đọc tính giờ.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,24 +18,29 @@
     <header class="topbar">
         <div class="topbar-inner">
             <a class="back" id="btn-back" href="../index.html" title="Về trang chủ">←</a>
-            <div class="brand"><strong id="brand-title">Đọc thêm</strong><small id="brand-sub">Bài đọc theo cấp · Bài của tôi · Bài khóa</small></div>
+            <div class="brand"><strong id="brand-title">Đọc thêm</strong><small id="brand-sub">Bài đọc · Truyện · Hội thoại · Thành ngữ · Luyện thi</small></div>
             <button class="account-btn" data-hoc-account type="button">Đăng nhập</button>
             <button class="ui-voice-btn" data-hoc-voice title="Giọng đọc (chọn giọng, luân phiên, đọc nhập vai)" aria-label="Giọng đọc">🔊</button>
             <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
         </div>
     </header>
 
-    <!-- ================= Danh sách (3 tab) ================= -->
+    <!-- ================= Danh sách (4 tab) ================= -->
     <main class="container" id="list-view">
         <nav class="tabs" role="tablist">
             <button class="tab" data-tab="lib" role="tab">📚 Thư viện</button>
             <button class="tab" data-tab="mine" role="tab">✍️ Bài của tôi</button>
             <button class="tab" data-tab="boya" role="tab">📖 Bài khóa đã học</button>
+            <button class="tab" data-tab="exam" role="tab">📝 Luyện thi HSK</button>
         </nav>
 
         <!-- Tab 1: Thư viện -->
         <section id="tab-lib" class="tab-pane">
             <div class="summary card" id="lib-summary"></div>
+            <div class="chips kinds" id="lib-kinds"></div>
+            <div class="lib-tools">
+                <input type="search" id="lib-search" placeholder="🔎 Tìm theo tiêu đề (Trung / Việt), chủ đề, thành ngữ…" aria-label="Tìm bài" autocomplete="off">
+            </div>
             <div class="chips" id="lib-levels"></div>
             <div class="text-list" id="lib-list"></div>
         </section>
@@ -62,6 +67,13 @@
         <!-- Tab 3: Bài khóa Boya đã học -->
         <section id="tab-boya" class="tab-pane" hidden>
             <div id="boya-list"></div>
+        </section>
+
+        <!-- Tab 4: Luyện thi HSK -->
+        <section id="tab-exam" class="tab-pane" hidden>
+            <div class="summary card" id="exam-summary"></div>
+            <div class="chips" id="exam-levels"></div>
+            <div class="text-list" id="exam-list"></div>
         </section>
     </main>
 
@@ -107,6 +119,9 @@
                 <div class="doc-sub" id="doc-sub"></div>
                 <div class="doc-meta" id="doc-meta"></div>
             </header>
+            <nav class="ser-nav" id="doc-sernav" hidden></nav>
+            <div class="card dlg-bar" id="doc-dlg" hidden></div>
+            <div class="card idiom" id="doc-idiom" hidden></div>
 
             <div id="doc-result"></div>
             <details class="card beyond" id="doc-beyond" hidden></details>
@@ -114,6 +129,18 @@
             <section class="quiz" id="doc-quiz" hidden></section>
             <div class="doc-end" id="doc-end"></div>
         </div>
+    </main>
+
+    <!-- ================= Làm đề luyện thi ================= -->
+    <main class="reader-wrap exam-wrap no-py" id="exam-view" hidden>
+        <div class="toolbar ex-bar" role="toolbar" aria-label="Làm đề">
+            <span class="ex-prog" id="ex-prog">Đã làm 0/0</span>
+            <button class="tb" id="ex-timer" title="Bấm giờ (gợi ý ~1 phút/câu)">⏱ <span id="ex-timer-label">Bấm giờ</span></button>
+            <button class="tb" id="ex-py" title="Bật/tắt pinyin"><b class="cn">拼</b></button>
+            <button class="tb" id="ex-lk" title="Chạm chữ để tra từ">🔍</button>
+            <button class="btn btn-primary btn-sm" id="ex-submit">📤 Nộp bài</button>
+        </div>
+        <div class="reader exam" id="exam-body"></div>
     </main>
 
     <div class="toast" id="toast" hidden></div>

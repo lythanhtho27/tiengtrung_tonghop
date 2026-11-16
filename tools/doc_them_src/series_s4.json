@@ -1,0 +1,842 @@
+[
+ {
+  "id": "s4-01",
+  "kind": "series",
+  "level": 4,
+  "series": "s4",
+  "series_title": "隔着一千三百年",
+  "series_title_vi": "Cách nhau một nghìn ba trăm năm",
+  "chapter": 1,
+  "title": "博物馆里的铜镜",
+  "title_vi": "Chiếc gương đồng trong viện bảo tàng",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "林晓是西安一所大学历史系的二年级学生。她性格活泼，什么都想试一试，就是不太喜欢背历史书上的年份。为了多了解一些真实的历史，这个暑假她去博物馆当了志愿者，每天给游客介绍唐朝的文物。",
+   "那天下午，博物馆马上就要关门了，游客都走了。负责人王老师让她帮忙整理一间小房间里的东西。房间里放着一个木盒子，盒子里是一面只剩下一半的铜镜。镜子背面有很漂亮的花和鸟，旁边还刻着一句诗：“一镜分两半，明月照长安。”",
+   "“这面镜子为什么只有一半？”林晓好奇地问。王老师笑着说：“谁也不知道。有人说，它原来是一对年轻人分别时留下的，一人拿一半，约好以后再见面。可惜另一半一直没有找到。”说完，王老师接了一个电话，就出去了。",
+   "房间里只剩下林晓一个人。她戴上手套，小心地把镜子拿起来。奇怪的是，镜子明明很旧了，她却在里面清楚地看到了自己的脸，后面好像还有一轮又大又圆的月亮。她以为自己太累了，就用手轻轻地擦了擦镜面。",
+   "突然，镜子发出一道白光，林晓觉得头很晕，耳朵里全是风的声音。等她再睁开眼睛的时候，博物馆不见了。她坐在一条又宽又长的土路旁边，周围是高高的城墙，街上的人都穿着长长的衣服，有人骑马，有人赶着骆驼，还有人推着装满东西的车。",
+   "林晓第一个反应是：“原来附近有个影视城！拍得真像啊！”她站起来，想找工作人员问问怎么出去。她走到一个卖饼的老人面前，热情地说：“叔叔您好，请问这部电视剧叫什么名字？导演在哪儿？”老人看了看她的短袖和牛仔裤，吓得往后退了两步，好像看见了怪物。",
+   "这时候，两个拿着长刀的士兵走了过来，大声问：“你是哪里人？为什么穿得这么奇怪？把你的过所拿出来！”林晓不知道“过所”是什么，只好从包里拿出学生证，又拿出手机说：“我是学生，这是我的证件。你们演得真好！”",
+   "士兵拿着学生证看了半天，又看了看手机上亮着的屏幕，脸色越来越难看。其中一个人小声说：“这个人身上有会发光的东西，一定不是普通人，先把她带走！”林晓这才发现，事情好像没有她想的那么简单。"
+  ],
+  "translations": [
+   "Lâm Hiểu là sinh viên năm hai khoa Lịch sử của một trường đại học ở Tây An. Cô hoạt bát, cái gì cũng muốn thử, chỉ có điều không thích học thuộc các mốc năm trong sách sử lắm. Để hiểu thêm về lịch sử thật, mùa hè này cô đến bảo tàng làm tình nguyện viên, ngày nào cũng giới thiệu cổ vật thời Đường cho du khách.",
+   "Chiều hôm đó, bảo tàng sắp đóng cửa, du khách đã về hết. Người phụ trách là thầy Vương nhờ cô sắp xếp đồ đạc trong một căn phòng nhỏ. Trong phòng có một chiếc hộp gỗ, trong hộp là một chiếc gương đồng chỉ còn một nửa. Mặt sau gương có hoa và chim rất đẹp, bên cạnh còn khắc một câu thơ: \"Một gương chia hai nửa, trăng sáng soi Trường An.\"",
+   "\"Sao chiếc gương này chỉ có một nửa ạ?\" Lâm Hiểu tò mò hỏi. Thầy Vương cười nói: \"Không ai biết cả. Có người bảo nó vốn do một đôi trẻ để lại khi chia tay, mỗi người giữ một nửa, hẹn sau này gặp lại. Tiếc là nửa kia vẫn chưa bao giờ tìm thấy.\" Nói xong, thầy Vương nghe một cuộc điện thoại rồi đi ra ngoài.",
+   "Trong phòng chỉ còn lại một mình Lâm Hiểu. Cô đeo găng tay, cẩn thận cầm chiếc gương lên. Lạ thay, chiếc gương rõ ràng đã rất cũ, vậy mà cô lại nhìn thấy rõ mặt mình trong đó, phía sau dường như còn có một vầng trăng vừa to vừa tròn. Cô tưởng mình mệt quá, liền lấy tay khẽ lau mặt gương.",
+   "Đột nhiên, chiếc gương phát ra một luồng sáng trắng, Lâm Hiểu thấy đầu choáng váng, trong tai toàn tiếng gió. Khi cô mở mắt ra lần nữa, bảo tàng đã biến mất. Cô đang ngồi bên một con đường đất vừa rộng vừa dài, xung quanh là tường thành cao ngất, người trên phố đều mặc áo dài thướt tha, có người cưỡi ngựa, có người dắt lạc đà, còn có người đẩy những chiếc xe chất đầy hàng.",
+   "Phản ứng đầu tiên của Lâm Hiểu là: \"Hóa ra gần đây có phim trường! Dựng giống thật đấy!\" Cô đứng dậy, định tìm nhân viên hỏi đường ra. Cô đến trước mặt một ông lão bán bánh, nhiệt tình nói: \"Chào chú ạ, cho cháu hỏi bộ phim này tên là gì? Đạo diễn ở đâu ạ?\" Ông lão nhìn chiếc áo cộc tay và quần bò của cô, sợ hãi lùi lại hai bước, như thể vừa nhìn thấy quái vật.",
+   "Lúc này, hai người lính cầm đao dài đi tới, lớn tiếng hỏi: \"Ngươi là người ở đâu? Sao ăn mặc kỳ quái thế này? Đưa giấy thông hành ra đây!\" Lâm Hiểu không biết \"giấy thông hành\" là gì, đành lấy thẻ sinh viên trong túi ra, rồi lấy cả điện thoại ra nói: \"Cháu là sinh viên, đây là giấy tờ của cháu. Các chú diễn hay thật đấy!\"",
+   "Người lính cầm thẻ sinh viên xem hồi lâu, lại nhìn màn hình điện thoại đang sáng, sắc mặt càng lúc càng khó coi. Một người trong số đó nói nhỏ: \"Trên người kẻ này có thứ biết phát sáng, chắc chắn không phải người thường, bắt đi trước đã!\" Đến lúc này Lâm Hiểu mới nhận ra, mọi chuyện hình như không đơn giản như cô nghĩ."
+  ],
+  "questions": [
+   {
+    "q": "林晓为什么去博物馆当志愿者？",
+    "q_vi": "Vì sao Lâm Hiểu đến bảo tàng làm tình nguyện viên?",
+    "options": [
+     "她想多了解一些真实的历史",
+     "博物馆给她很多钱",
+     "王老师是她的父亲",
+     "她要找另一半铜镜"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 1 nói cô làm tình nguyện viên để hiểu thêm về lịch sử thật."
+   },
+   {
+    "q": "林晓刚到长安的时候，以为自己在哪儿？",
+    "q_vi": "Khi vừa đến Trường An, Lâm Hiểu tưởng mình đang ở đâu?",
+    "options": [
+     "在博物馆的另一个房间",
+     "在梦里",
+     "在拍电视剧的影视城",
+     "在国外旅游"
+    ],
+    "answer": 2,
+    "explain_vi": "Cô nghĩ gần đó có phim trường và hỏi tên bộ phim, đạo diễn ở đâu."
+   },
+   {
+    "q": "士兵为什么要把林晓带走？",
+    "q_vi": "Vì sao những người lính muốn bắt Lâm Hiểu đi?",
+    "options": [
+     "她偷了老人的饼",
+     "她骑马骑得太快",
+     "她没有学生证",
+     "她穿得奇怪，身上还有会发光的东西"
+    ],
+    "answer": 3,
+    "explain_vi": "Lính thấy cô ăn mặc lạ, lại có điện thoại phát sáng nên nghĩ cô không phải người thường."
+   }
+  ]
+ },
+ {
+  "id": "s4-02",
+  "kind": "series",
+  "level": 4,
+  "series": "s4",
+  "series_title": "隔着一千三百年",
+  "series_title_vi": "Cách nhau một nghìn ba trăm năm",
+  "chapter": 2,
+  "title": "西市的茶摊",
+  "title_vi": "Quán trà ở Tây Thị",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "士兵正要把林晓带走，一个十六七岁的女孩突然从旁边跑了过来，一把拉住林晓的手，大声说：“表妹！你怎么跑到这儿来了？我找了你一上午！”林晓愣住了，她根本不认识这个女孩。",
+   "女孩不停地向士兵道歉：“两位大哥，这是我表妹，刚从岭南来，路上生了一场大病，脑子有点儿不清楚，常常说些奇怪的话。她手里那个发光的东西是一面小镜子，太阳一照就亮。”说着，她又端出两碗热茶：“天气这么热，两位大哥先喝碗茶吧，不要钱。”士兵喝了茶，看了看林晓，摇摇头走了。",
+   "等士兵走远了，林晓才松了一口气：“谢谢你！可是你为什么要帮我？”女孩笑了：“我叫阿青，在西市卖茶。我刚才看见你包里露出半面铜镜，上面的花和鸟，跟我奶奶讲过的一个故事里的一模一样。我觉得你一定不是坏人。”",
+   "阿青的茶摊不大，只有一张桌子和几个小凳子。林晓又累又渴，坐下来就说：“麻烦给我来一杯奶茶，少糖，多加冰，谢谢！”阿青眨了眨眼睛：“奶茶？牛奶和茶怎么能放在一起？冰倒是有，可是夏天的冰比肉还贵，只有大官家里才用得起。”",
+   "林晓只好说：“那……就来一杯普通的茶吧。”阿青先把一块硬硬的茶饼放在火上烤，然后把它弄成细细的粉，放进开水里煮，最后还加了一点儿盐。林晓喝了一大口，差点儿吐出来：“怎么是咸的？”阿青也很吃惊：“茶当然要放盐啊，有的人还加姜和葱呢。你们岭南人喝茶不放盐吗？”",
+   "喝完茶，林晓终于弄明白了：这里不是影视城，而是一千三百多年前的唐朝，是真正的长安城。西市是长安最热闹的地方，来自各国的商人都在这儿做生意。她看着街上来来往往的人，心里又害怕又兴奋——这可是她在历史书上读了无数次的长安啊！",
+   "林晓偷偷看了一眼手机，电只剩下百分之二十三了。她想：“没有电，没有网络，也没有妈妈，我该怎么回去呢？”她把那半面铜镜拿出来，放在桌子上，问阿青：“你奶奶讲的那个故事，到底是什么样的？”",
+   "阿青认真地看了看镜子，说：“我奶奶说，很多年以前，有人把一面镜子分成了两半。只要两半镜子合在一起，在月亮最圆的晚上，就会发生神奇的事情。”她停了一下，又压低声音说：“奶奶还说，另一半镜子，在一个会写诗的人手里。”"
+  ],
+  "translations": [
+   "Lính đang định bắt Lâm Hiểu đi thì một cô gái mười sáu mười bảy tuổi đột nhiên chạy từ bên cạnh tới, nắm chặt tay Lâm Hiểu, nói to: \"Em họ! Sao em chạy tới tận đây? Chị tìm em cả buổi sáng!\" Lâm Hiểu sững người, cô hoàn toàn không quen cô gái này.",
+   "Cô gái không ngừng xin lỗi lính: \"Hai đại ca, đây là em họ tôi, vừa từ Lĩnh Nam lên, trên đường bị một trận ốm nặng, đầu óc hơi không tỉnh táo, hay nói mấy lời kỳ quặc. Thứ phát sáng trong tay nó là một chiếc gương nhỏ, nắng chiếu vào là sáng.\" Vừa nói, cô vừa bưng ra hai bát trà nóng: \"Trời nóng thế này, hai đại ca uống bát trà trước đã, không lấy tiền đâu.\" Lính uống trà xong, nhìn Lâm Hiểu, lắc đầu bỏ đi.",
+   "Đợi lính đi xa, Lâm Hiểu mới thở phào: \"Cảm ơn chị! Nhưng sao chị lại giúp em?\" Cô gái cười: \"Chị tên A Thanh, bán trà ở Tây Thị. Lúc nãy chị thấy trong túi em lộ ra nửa chiếc gương đồng, hoa và chim trên đó giống hệt trong một câu chuyện bà chị từng kể. Chị nghĩ em chắc chắn không phải người xấu.\"",
+   "Quán trà của A Thanh không lớn, chỉ có một cái bàn và mấy cái ghế đẩu nhỏ. Lâm Hiểu vừa mệt vừa khát, ngồi xuống liền nói: \"Phiền chị cho em một ly trà sữa, ít đường, nhiều đá, cảm ơn!\" A Thanh chớp chớp mắt: \"Trà sữa? Sữa với trà sao để chung được? Đá thì có, nhưng đá mùa hè còn đắt hơn thịt, chỉ nhà quan lớn mới dùng nổi.\"",
+   "Lâm Hiểu đành nói: \"Vậy... cho em một ly trà bình thường ạ.\" A Thanh trước tiên đặt một bánh trà cứng lên lửa nướng, sau đó nghiền thành bột mịn, cho vào nước sôi nấu, cuối cùng còn thêm chút muối. Lâm Hiểu uống một ngụm lớn, suýt nữa thì phun ra: \"Sao lại mặn thế?\" A Thanh cũng rất ngạc nhiên: \"Trà đương nhiên phải bỏ muối chứ, có người còn thêm gừng và hành nữa kìa. Người Lĩnh Nam các em uống trà không bỏ muối à?\"",
+   "Uống trà xong, Lâm Hiểu cuối cùng cũng hiểu ra: đây không phải phim trường, mà là thời Đường hơn một nghìn ba trăm năm trước, là thành Trường An thật sự. Tây Thị là nơi náo nhiệt nhất Trường An, thương nhân từ khắp các nước đều buôn bán ở đây. Cô nhìn dòng người qua lại trên phố, trong lòng vừa sợ vừa phấn khích — đây chính là Trường An mà cô đã đọc không biết bao nhiêu lần trong sách sử!",
+   "Lâm Hiểu lén nhìn điện thoại, pin chỉ còn hai mươi ba phần trăm. Cô nghĩ: \"Không có điện, không có mạng, cũng không có mẹ, mình phải làm sao để về đây?\" Cô lấy nửa chiếc gương đồng ra, đặt lên bàn, hỏi A Thanh: \"Câu chuyện bà chị kể rốt cuộc là như thế nào?\"",
+   "A Thanh chăm chú nhìn chiếc gương, nói: \"Bà chị kể, nhiều năm trước, có người chia một chiếc gương thành hai nửa. Chỉ cần ghép hai nửa lại với nhau, vào đêm trăng tròn nhất, sẽ xảy ra chuyện kỳ diệu.\" Cô ngừng một chút, rồi hạ giọng nói: \"Bà còn nói, nửa gương kia nằm trong tay một người biết làm thơ.\""
+  ],
+  "questions": [
+   {
+    "q": "阿青对士兵说林晓是什么人？",
+    "q_vi": "A Thanh nói với lính Lâm Hiểu là ai?",
+    "options": [
+     "她的妹妹，在长安上学",
+     "她的表妹，刚从岭南来，生过病",
+     "从西边来的商人",
+     "大官家里的女儿"
+    ],
+    "answer": 1,
+    "explain_vi": "A Thanh nói Lâm Hiểu là em họ từ Lĩnh Nam lên, bị ốm nên nói năng kỳ quặc."
+   },
+   {
+    "q": "林晓喝唐朝的茶时为什么差点儿吐出来？",
+    "q_vi": "Vì sao Lâm Hiểu suýt phun trà thời Đường ra?",
+    "options": [
+     "茶太烫了",
+     "茶里有冰",
+     "茶里放了牛奶",
+     "茶是咸的，里面加了盐"
+    ],
+    "answer": 3,
+    "explain_vi": "Trà thời Đường nấu có thêm muối nên có vị mặn, khác hẳn thói quen của cô."
+   },
+   {
+    "q": "根据阿青奶奶的故事，林晓下一步最可能做什么？",
+    "q_vi": "Theo câu chuyện của bà A Thanh, bước tiếp theo Lâm Hiểu có khả năng làm gì nhất?",
+    "options": [
+     "去找一个会写诗的人",
+     "马上回到博物馆",
+     "去岭南找亲戚",
+     "把镜子卖给商人"
+    ],
+    "answer": 0,
+    "explain_vi": "Nửa gương kia ở trong tay một người biết làm thơ, nên cô cần tìm người đó."
+   }
+  ]
+ },
+ {
+  "id": "s4-03",
+  "kind": "series",
+  "level": 4,
+  "series": "s4",
+  "series_title": "隔着一千三百年",
+  "series_title_vi": "Cách nhau một nghìn ba trăm năm",
+  "chapter": 3,
+  "title": "会唱歌的盒子",
+  "title_vi": "Chiếc hộp biết hát",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "那天晚上，林晓住在阿青家。阿青的父母早就不在了，奶奶去年也去世了，她一个人靠卖茶生活。第二天一大早，林晓就跟着阿青去西市帮忙。可是那天客人特别少，阿青看着空空的桌子，叹了一口气。",
+   "林晓想了想，拿出手机，放了一首节奏很快的流行歌。音乐一响，周围的人都停下了脚步。一会儿工夫，茶摊前就站满了人。大家你看看我，我看看你，谁也不明白这么小的盒子里怎么会有人唱歌，还有鼓和琴的声音。有个小孩子大声问：“盒子里住着几个人啊？”",
+   "人们一边听，一边买茶，阿青忙得连话都说不完整。这时，一个高鼻子、蓝眼睛、留着大胡子的男人挤到了前面。他穿着跟别人不一样的衣服，说的汉语带着奇怪的口音：“小姑娘，这个会唱歌的盒子，我用十匹马跟你换，怎么样？”",
+   "阿青小声告诉林晓，这是康大叔，是从很远的西边来的粟特商人。他们沿着丝绸之路，走过沙漠和高山，把玻璃、香料和好马带到长安，再把中国的丝绸、茶叶和瓷器带回去卖。一趟来回，常常要花好几年的时间。",
+   "林晓赶紧把手机收起来：“对不起，大叔，这个不能卖。不过我可以送您一样别的东西。”她打开相机，给康大叔拍了一张照片，然后把屏幕给他看。康大叔看见屏幕里的自己，吃惊得说不出话来，过了好久才说：“我走过那么多国家，从来没见过这么神奇的东西！”",
+   "为了表示感谢，康大叔坐下来喝茶，跟她们聊起了路上的故事。林晓顺便把那半面铜镜拿给他看。康大叔看了半天，指着镜子上的葡萄说：“你看，这种葡萄，本来是我们西边的东西，后来才沿着丝绸之路传到中原。能把葡萄刻在镜子上，这面镜子一定很有来头。”",
+   "他又想了想，突然拍了一下桌子：“我想起来了！去年春天，我在东市的一家酒楼里，看见一个年轻的诗人，喝醉了酒，手里也拿着半面这样的镜子。他说谁能写出比他更好的诗，他就把镜子送给谁。”",
+   "林晓高兴得差点儿跳起来：“那个诗人叫什么名字？在哪儿能找到他？”康大叔摸着胡子说：“大家都叫他裴十二。听说他每天晚上都在那家酒楼喝酒。不过你们要小心，东市离这儿很远，天黑以前要是回不来，可就麻烦了。”林晓看了看手机，电量只剩百分之十八。"
+  ],
+  "translations": [
+   "Tối hôm đó, Lâm Hiểu ở nhà A Thanh. Bố mẹ A Thanh mất từ lâu, năm ngoái bà cũng qua đời, cô sống một mình nhờ bán trà. Sáng sớm hôm sau, Lâm Hiểu theo A Thanh đến Tây Thị phụ giúp. Nhưng hôm ấy khách đặc biệt ít, A Thanh nhìn những chiếc bàn trống trơn, thở dài.",
+   "Lâm Hiểu nghĩ một lát, lấy điện thoại ra, mở một bài hát thịnh hành nhịp rất nhanh. Nhạc vừa vang lên, người xung quanh đều dừng bước. Chỉ một lúc sau, trước quán trà đã chật kín người. Mọi người nhìn nhau, không ai hiểu sao trong cái hộp nhỏ thế này lại có người hát, còn có cả tiếng trống tiếng đàn. Có một đứa trẻ hỏi to: \"Trong hộp có mấy người sống thế ạ?\"",
+   "Mọi người vừa nghe vừa mua trà, A Thanh bận đến mức nói không hết câu. Lúc này, một người đàn ông mũi cao, mắt xanh, để râu rậm chen lên phía trước. Ông mặc quần áo khác mọi người, nói tiếng Hán với giọng lơ lớ kỳ lạ: \"Cô bé, cái hộp biết hát này, ta đổi cho cô mười con ngựa, thế nào?\"",
+   "A Thanh khẽ nói với Lâm Hiểu, đây là chú Khang, thương nhân người Túc Đặc đến từ phương Tây rất xa. Họ đi theo Con đường tơ lụa, vượt qua sa mạc và núi cao, mang thủy tinh, hương liệu và ngựa tốt đến Trường An, rồi lại mang tơ lụa, lá trà và đồ sứ của Trung Quốc về bán. Mỗi chuyến đi về thường mất mấy năm trời.",
+   "Lâm Hiểu vội cất điện thoại đi: \"Xin lỗi chú, cái này không bán được ạ. Nhưng cháu có thể tặng chú thứ khác.\" Cô mở máy ảnh, chụp cho chú Khang một tấm ảnh, rồi đưa màn hình cho chú xem. Chú Khang nhìn thấy mình trong màn hình, kinh ngạc đến không nói nên lời, mãi lâu sau mới nói: \"Ta đi qua bao nhiêu nước, chưa bao giờ thấy thứ gì kỳ diệu như thế này!\"",
+   "Để tỏ lòng cảm ơn, chú Khang ngồi xuống uống trà, kể cho hai cô nghe chuyện trên đường. Lâm Hiểu nhân tiện đưa nửa chiếc gương đồng cho chú xem. Chú Khang xem hồi lâu, chỉ vào chùm nho trên gương nói: \"Cháu xem, loại nho này vốn là thứ của phương Tây chúng ta, về sau mới theo Con đường tơ lụa truyền vào Trung Nguyên. Khắc được nho lên gương, chiếc gương này chắc chắn có lai lịch không tầm thường.\"",
+   "Chú lại nghĩ ngợi, đột nhiên vỗ bàn một cái: \"Ta nhớ ra rồi! Mùa xuân năm ngoái, ở một tửu lâu tại Đông Thị, ta thấy một nhà thơ trẻ uống say, trong tay cũng cầm nửa chiếc gương như thế này. Cậu ta nói ai viết được bài thơ hay hơn cậu ta, cậu ta sẽ tặng chiếc gương cho người đó.\"",
+   "Lâm Hiểu mừng đến suýt nhảy cẫng lên: \"Nhà thơ đó tên là gì ạ? Tìm cậu ấy ở đâu được ạ?\" Chú Khang vuốt râu nói: \"Mọi người đều gọi cậu ta là Bùi Thập Nhị. Nghe nói tối nào cậu ta cũng uống rượu ở tửu lâu đó. Nhưng các cháu phải cẩn thận, Đông Thị cách đây rất xa, nếu trước khi trời tối mà không về kịp thì phiền lắm đấy.\" Lâm Hiểu nhìn điện thoại, pin chỉ còn mười tám phần trăm."
+  ],
+  "questions": [
+   {
+    "q": "林晓用手机放音乐，是为了什么？",
+    "q_vi": "Lâm Hiểu mở nhạc bằng điện thoại để làm gì?",
+    "options": [
+     "她自己想听歌",
+     "吸引客人，帮阿青卖茶",
+     "让康大叔买她的手机",
+     "告诉别人她是从未来来的"
+    ],
+    "answer": 1,
+    "explain_vi": "Hôm đó quán vắng khách, cô mở nhạc để thu hút mọi người tới mua trà."
+   },
+   {
+    "q": "关于康大叔，下面哪一项是正确的？",
+    "q_vi": "Về chú Khang, điều nào dưới đây là đúng?",
+    "options": [
+     "他是长安本地人",
+     "他想用金子买镜子",
+     "他沿着丝绸之路来长安做生意",
+     "他是阿青的亲戚"
+    ],
+    "answer": 2,
+    "explain_vi": "Chú Khang là thương nhân Túc Đặc đi theo Con đường tơ lụa đến Trường An buôn bán."
+   },
+   {
+    "q": "康大叔最后为什么提醒她们要小心？",
+    "q_vi": "Vì sao cuối cùng chú Khang nhắc hai cô phải cẩn thận?",
+    "options": [
+     "裴十二脾气很不好",
+     "酒楼里有很多坏人",
+     "手机快没电了",
+     "东市很远，天黑前回不来会有麻烦"
+    ],
+    "answer": 3,
+    "explain_vi": "Chú nói Đông Thị rất xa, nếu không về trước khi trời tối thì sẽ phiền."
+   }
+  ]
+ },
+ {
+  "id": "s4-04",
+  "kind": "series",
+  "level": 4,
+  "series": "s4",
+  "series_title": "隔着一千三百年",
+  "series_title_vi": "Cách nhau một nghìn ba trăm năm",
+  "chapter": 4,
+  "title": "关门的鼓声",
+  "title_vi": "Tiếng trống đóng cửa",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "下午，阿青早早收了茶摊，带着林晓去东市。林晓本来以为走二十分钟就到了，没想到长安城大得吓人。光是城中间那条朱雀大街，就有一百多米宽，比现在很多城市的马路还要宽。她们走了一个多小时，林晓的脚已经疼得不行了。",
+   "一路上，林晓发现长安城像一张大棋盘，被一条条笔直的大街分成了一百多个方方正正的“坊”。每个坊四周都有墙，墙上有门。阿青告诉她，人们住在坊里，买东西要去东市和西市。“天一黑，街上就会打鼓，鼓声一停，所有的坊门都要关上，谁也不能再在大街上走。”",
+   "“那要是有急事怎么办？”林晓问。“除非有官府的证明，否则被巡逻的士兵抓到，可是要挨打的。”阿青说。林晓吐了吐舌头，心想：原来唐朝也有“晚上不许出门”的规定，比学校宿舍的管理还严格。",
+   "好不容易到了东市，她们找到了康大叔说的那家酒楼。服务员一听她们要找裴十二，就笑了：“那位公子啊，今天没来。他说今天天气好，要去看晚霞，找写诗的感觉。去哪儿看，就不知道了。”林晓和阿青失望极了。",
+   "就在这时，远处传来了“咚——咚——”的鼓声。阿青的脸色一下子变了：“糟糕！是关门的鼓！我们回不去西市了！”街上的人纷纷加快脚步往家里赶，商店也一家接一家地关了门。鼓声越来越急，好像在催着每一个人。",
+   "两个人拉着手拼命地跑。眼看鼓声快要停了，前面有一个坊门还没关。看门的老人正要推门，阿青大声喊：“等一等！”她们像两条鱼一样钻了进去，门在她们身后“砰”的一声关上了。两个人坐在地上，累得半天说不出话来。",
+   "坊里很安静，只有几盏灯还亮着。忽然，她们听见头上传来一个人念诗的声音，声音不大，却很好听。林晓抬头一看，一个穿白衣服的年轻人正坐在一座小楼的屋顶上，一手拿着酒壶，一手指着天上刚出来的月亮。",
+   "阿青小声说：“看他的样子，会不会就是裴十二？”林晓壮着胆子喊：“请问，您是裴十二吗？”年轻人低头看了看她们，没有回答，却一下子跳了下来。他的目光落在林晓手里的半面铜镜上，脸色突然变得非常严肃：“这面镜子……你是从哪儿得到的？”"
+  ],
+  "translations": [
+   "Buổi chiều, A Thanh dọn quán trà sớm, đưa Lâm Hiểu đi Đông Thị. Lâm Hiểu vốn tưởng đi bộ hai mươi phút là đến, không ngờ thành Trường An rộng đến đáng sợ. Chỉ riêng đại lộ Chu Tước ở giữa thành đã rộng hơn một trăm mét, còn rộng hơn đường phố của nhiều thành phố bây giờ. Hai người đi hơn một tiếng, chân Lâm Hiểu đã đau không chịu nổi.",
+   "Dọc đường, Lâm Hiểu phát hiện thành Trường An giống như một bàn cờ lớn, bị từng con đại lộ thẳng tắp chia thành hơn một trăm \"phường\" vuông vức. Bốn phía mỗi phường đều có tường, trên tường có cổng. A Thanh nói với cô, mọi người sống trong phường, mua đồ thì phải đến Đông Thị và Tây Thị. \"Trời vừa tối, trên phố sẽ đánh trống, tiếng trống dừng là mọi cổng phường đều phải đóng, không ai được đi trên đại lộ nữa.\"",
+   "\"Thế nếu có việc gấp thì sao?\" Lâm Hiểu hỏi. \"Trừ khi có giấy chứng nhận của quan phủ, nếu không bị lính tuần tra bắt được là bị đánh đòn đấy.\" A Thanh nói. Lâm Hiểu lè lưỡi, thầm nghĩ: hóa ra thời Đường cũng có quy định \"buổi tối không được ra ngoài\", còn nghiêm hơn cả quản lý ký túc xá trường mình.",
+   "Vất vả lắm mới đến được Đông Thị, hai người tìm thấy tửu lâu mà chú Khang nói. Người phục vụ vừa nghe họ tìm Bùi Thập Nhị liền cười: \"Vị công tử đó à, hôm nay không đến. Cậu ấy bảo hôm nay trời đẹp, phải đi ngắm ráng chiều, tìm cảm hứng làm thơ. Còn đi đâu ngắm thì không biết.\" Lâm Hiểu và A Thanh thất vọng vô cùng.",
+   "Đúng lúc đó, từ xa vọng lại tiếng trống \"tùng — tùng —\". Sắc mặt A Thanh lập tức biến đổi: \"Hỏng rồi! Là trống đóng cổng! Chúng ta không về Tây Thị được nữa!\" Người trên phố lần lượt rảo bước về nhà, các cửa hàng cũng đóng cửa hết nhà này đến nhà khác. Tiếng trống càng lúc càng dồn dập, như đang thúc giục từng người.",
+   "Hai người nắm tay nhau chạy thục mạng. Thấy tiếng trống sắp dừng, phía trước có một cổng phường vẫn chưa đóng. Ông lão gác cổng đang định đẩy cửa, A Thanh hét to: \"Đợi đã!\" Hai người lách vào như hai con cá, cánh cổng sau lưng đóng \"rầm\" một tiếng. Hai người ngồi bệt xuống đất, mệt đến hồi lâu không nói nổi.",
+   "Trong phường rất yên tĩnh, chỉ còn vài ngọn đèn sáng. Bỗng hai người nghe thấy trên đầu vọng xuống tiếng một người đọc thơ, giọng không to nhưng rất hay. Lâm Hiểu ngẩng lên nhìn, một chàng trai mặc áo trắng đang ngồi trên mái một căn lầu nhỏ, một tay cầm bình rượu, một tay chỉ vầng trăng vừa ló trên trời.",
+   "A Thanh khẽ nói: \"Nhìn dáng vẻ anh ta, liệu có phải Bùi Thập Nhị không?\" Lâm Hiểu lấy hết can đảm gọi: \"Xin hỏi, anh có phải Bùi Thập Nhị không ạ?\" Chàng trai cúi xuống nhìn họ, không trả lời mà nhảy phắt xuống. Ánh mắt anh dừng lại trên nửa chiếc gương đồng trong tay Lâm Hiểu, sắc mặt đột nhiên trở nên vô cùng nghiêm túc: \"Chiếc gương này... cô lấy được từ đâu?\""
+  ],
+  "questions": [
+   {
+    "q": "根据这一章，唐朝长安城是什么样子的？",
+    "q_vi": "Theo chương này, thành Trường An thời Đường trông như thế nào?",
+    "options": [
+     "像一张大棋盘，分成很多有墙的坊",
+     "街道又窄又弯",
+     "城很小，走二十分钟就能走完",
+     "人们可以晚上随便在大街上走"
+    ],
+    "answer": 0,
+    "explain_vi": "Trường An như bàn cờ, chia thành hơn trăm phường có tường bao quanh."
+   },
+   {
+    "q": "听到鼓声以后，阿青为什么着急？",
+    "q_vi": "Sau khi nghe tiếng trống, vì sao A Thanh lo lắng?",
+    "options": [
+     "她忘了收茶摊",
+     "鼓声停了以后坊门会关，她们回不了西市",
+     "她怕裴十二走了",
+     "她不喜欢鼓的声音"
+    ],
+    "answer": 1,
+    "explain_vi": "Trống báo đóng cổng phường, sau đó không được đi lại trên phố, nên họ không về được Tây Thị."
+   },
+   {
+    "q": "年轻人看到铜镜后的反应说明了什么？",
+    "q_vi": "Phản ứng của chàng trai khi thấy gương đồng cho thấy điều gì?",
+    "options": [
+     "他想把镜子买下来",
+     "他觉得镜子很普通",
+     "这面镜子可能跟他有特别的关系",
+     "他不认识什么铜镜"
+    ],
+    "answer": 2,
+    "explain_vi": "Anh ta lập tức nghiêm mặt hỏi gương từ đâu ra, chứng tỏ chiếc gương có liên quan đặc biệt tới anh."
+   }
+  ]
+ },
+ {
+  "id": "s4-05",
+  "kind": "series",
+  "level": 4,
+  "series": "s4",
+  "series_title": "隔着一千三百年",
+  "series_title_vi": "Cách nhau một nghìn ba trăm năm",
+  "chapter": 5,
+  "title": "一首没写完的诗",
+  "title_vi": "Bài thơ chưa viết xong",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "林晓犹豫了很久，最后决定说实话。她深吸一口气，说：“我知道这听起来很难相信，可是我是从一千三百年以后来的。我是摸了这面镜子，才来到这里的。”阿青吃惊地张大了嘴，年轻人却没有笑，只是静静地看着她。",
+   "为了证明自己没有说谎，林晓打开手机，给他们看她在西安拍的照片：高楼、地铁、灯光明亮的夜晚，还有一座熟悉的塔。“这是大雁塔，”林晓说，“一千三百年以后，它还站在这里。”年轻人盯着那座塔，眼睛慢慢红了：“原来长安还在……真好。”",
+   "年轻人说，他就是裴十二。他家里也有半面这样的铜镜，是爷爷的爷爷留下来的。家里一直有一个传说：很久以前，一位做镜子的师傅为他的妻子做了这面镜子，可是镜子背面的诗只写了一半，他就离开了长安，再也没有回来。后来，镜子被分成了两半。",
+   "“传说只要有人用真心写出后面两句诗，再在中秋节的晚上，让两半镜子合在一起照着月亮，”裴十二慢慢地说，“那个不属于这里的人，就能回到自己的地方。”林晓听了，心跳得特别快：“那太好了！快把你的那一半给我看看！”",
+   "裴十二的脸一下子红了，低下头说：“这个……上个月我喝多了酒，跟人比赛写诗，输了，就把镜子给了别人。”阿青忍不住说：“你怎么能拿这么重要的东西去比赛呢？”裴十二很不好意思：“当时我以为自己一定会赢……”",
+   "林晓又着急又生气，可是想了想，觉得现在生气也没有用。她问：“那你说，后面的两句诗，难不难写？”裴十二苦笑着说：“我写了五年，写了几百首，都觉得不对。你是从后世来的，一定读过很多好诗，说一首来听听？”",
+   "林晓想也没想，就念道：“床前明月光，疑是地上霜。举头望明月，低头思故乡。”裴十二听完，激动地站了起来：“好诗！简单又自然，太好了！这是谁写的？”林晓说：“李白啊，你们唐朝最有名的诗人！”",
+   "裴十二愣了一下：“李白？就是那个从四川来、每天喝酒的李白？他最近确实在长安，可是这首诗我从来没听人说过。”林晓一下子捂住了嘴——难道李白还没写这首诗？要是她把它说出去了，历史会不会因此发生变化？她不敢再往下想了。"
+  ],
+  "translations": [
+   "Lâm Hiểu do dự rất lâu, cuối cùng quyết định nói thật. Cô hít một hơi sâu rồi nói: \"Em biết chuyện này nghe rất khó tin, nhưng em đến từ một nghìn ba trăm năm sau. Em chạm vào chiếc gương này rồi mới đến đây.\" A Thanh há hốc miệng kinh ngạc, còn chàng trai không cười, chỉ lặng lẽ nhìn cô.",
+   "Để chứng minh mình không nói dối, Lâm Hiểu mở điện thoại, cho họ xem những bức ảnh cô chụp ở Tây An: nhà cao tầng, tàu điện ngầm, những đêm đèn sáng rực, và cả một ngọn tháp quen thuộc. \"Đây là tháp Đại Nhạn,\" Lâm Hiểu nói, \"một nghìn ba trăm năm sau, nó vẫn đứng ở đây.\" Chàng trai nhìn chằm chằm ngọn tháp, mắt dần đỏ hoe: \"Hóa ra Trường An vẫn còn... tốt quá.\"",
+   "Chàng trai nói anh chính là Bùi Thập Nhị. Nhà anh cũng có nửa chiếc gương đồng như thế, do ông của ông anh để lại. Trong nhà luôn lưu truyền một câu chuyện: rất lâu trước kia, một người thợ làm gương làm chiếc gương này cho vợ mình, nhưng bài thơ sau gương mới viết được một nửa thì ông đã rời Trường An, không bao giờ trở lại. Về sau, chiếc gương bị chia làm hai nửa.",
+   "\"Truyền thuyết nói chỉ cần có người dùng tấm lòng chân thật viết ra hai câu thơ sau, rồi vào đêm Trung thu ghép hai nửa gương lại soi vào trăng,\" Bùi Thập Nhị chậm rãi nói, \"thì người không thuộc về nơi này sẽ trở về được nơi của mình.\" Lâm Hiểu nghe xong, tim đập rất nhanh: \"Tốt quá! Mau cho em xem nửa của anh đi!\"",
+   "Mặt Bùi Thập Nhị lập tức đỏ bừng, cúi đầu nói: \"Cái này... tháng trước tôi uống say, thi làm thơ với người ta, thua, nên đã đưa chiếc gương cho người khác.\" A Thanh không nhịn được nói: \"Sao anh lại mang thứ quan trọng thế đi thi chứ?\" Bùi Thập Nhị rất ngượng: \"Lúc đó tôi tưởng mình chắc chắn sẽ thắng...\"",
+   "Lâm Hiểu vừa sốt ruột vừa tức, nhưng nghĩ lại thấy bây giờ có tức cũng vô ích. Cô hỏi: \"Vậy anh nói xem, hai câu thơ sau có khó viết không?\" Bùi Thập Nhị cười khổ: \"Tôi viết năm năm, viết mấy trăm bài, đều thấy không đúng. Cô đến từ đời sau, chắc đã đọc nhiều thơ hay, đọc một bài nghe thử xem?\"",
+   "Lâm Hiểu chẳng cần nghĩ, đọc luôn: \"Đầu giường ánh trăng rọi, ngỡ mặt đất phủ sương. Ngẩng đầu nhìn trăng sáng, cúi đầu nhớ cố hương.\" Bùi Thập Nhị nghe xong, xúc động đứng bật dậy: \"Thơ hay! Đơn giản mà tự nhiên, hay quá! Ai viết vậy?\" Lâm Hiểu nói: \"Lý Bạch chứ ai, nhà thơ nổi tiếng nhất thời Đường của các anh!\"",
+   "Bùi Thập Nhị sững lại: \"Lý Bạch? Chính là cái gã từ Tứ Xuyên tới, ngày nào cũng uống rượu ấy à? Gần đây hắn đúng là đang ở Trường An, nhưng bài thơ này tôi chưa từng nghe ai nói tới.\" Lâm Hiểu lập tức bịt miệng — chẳng lẽ Lý Bạch còn chưa viết bài thơ này? Nếu cô đã nói nó ra, liệu lịch sử có vì thế mà thay đổi không? Cô không dám nghĩ tiếp nữa."
+  ],
+  "questions": [
+   {
+    "q": "林晓给他们看大雁塔的照片，是为了什么？",
+    "q_vi": "Lâm Hiểu cho họ xem ảnh tháp Đại Nhạn để làm gì?",
+    "options": [
+     "告诉他们大雁塔很漂亮",
+     "证明自己真的是从未来来的",
+     "请他们带她去大雁塔",
+     "想把照片送给裴十二"
+    ],
+    "answer": 1,
+    "explain_vi": "Cô muốn chứng minh mình không nói dối về việc đến từ 1300 năm sau."
+   },
+   {
+    "q": "裴十二的那半面镜子现在在哪儿？",
+    "q_vi": "Nửa gương của Bùi Thập Nhị hiện ở đâu?",
+    "options": [
+     "在他家里",
+     "被小偷偷走了",
+     "被他卖给了康大叔",
+     "比赛写诗输了，给了别人"
+    ],
+    "answer": 3,
+    "explain_vi": "Anh say rượu thi làm thơ, thua nên đưa gương cho người khác."
+   },
+   {
+    "q": "这一章最后，林晓为什么捂住了嘴？",
+    "q_vi": "Cuối chương, vì sao Lâm Hiểu bịt miệng lại?",
+    "options": [
+     "她担心自己说出李白还没写的诗，会改变历史",
+     "她觉得裴十二说错了话",
+     "她突然想哭",
+     "她不想让阿青听见"
+    ],
+    "answer": 0,
+    "explain_vi": "Bùi Thập Nhị chưa nghe bài thơ này, cô sợ mình đọc trước sẽ làm thay đổi lịch sử."
+   }
+  ]
+ },
+ {
+  "id": "s4-06",
+  "kind": "series",
+  "level": 4,
+  "series": "s4",
+  "series_title": "隔着一千三百年",
+  "series_title_vi": "Cách nhau một nghìn ba trăm năm",
+  "chapter": 6,
+  "title": "曲江边的诗会",
+  "title_vi": "Hội thơ bên bờ Khúc Giang",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "裴十二告诉她们，赢走镜子的是长安一位大商人的女儿，叫周婉。周婉从小爱读书，诗写得比很多男人还好。三天以后，她要在曲江边举办一场诗会，请全城的年轻人来比赛写诗，第一名的奖品，正是那半面铜镜。",
+   "林晓算了算，离中秋节只有十天了，这是她唯一的机会。可是诗会只请读书人，她和阿青怎么进去呢？阿青眼睛一亮：“周家每次办活动都要请人送茶，我去问问，说不定能让我们去帮忙。”第二天，她果然带回来了好消息。",
+   "诗会那天，曲江边热闹极了。水面又宽又亮，岸上开满了花，到处都是穿着漂亮衣服的人。裴十二说，每年考上进士的人，都会在这里举行宴会。大家坐在水边，把酒杯放在水里，酒杯漂到谁面前停下来，谁就要喝酒写诗。林晓听了，觉得唐朝人真是太浪漫了。",
+   "林晓和阿青在一边煮茶，一边听大家念诗。过了一会儿，周婉站起来，手里拿着那半面铜镜，笑着说：“今天的题目是‘月’。谁的诗最好，这面镜子就送给谁。”林晓紧张得手心都出汗了。",
+   "阿青小声对她说：“你不是记得很多后世的好诗吗？随便说一首，肯定能拿第一。”林晓心里确实想过。她脑子里有很多关于月亮的名句，任何一句拿出来，都能让这里的人大吃一惊。",
+   "可是她想起了昨天晚上的事。那首《静夜思》本来应该是李白的，她却先说了出来，这让她难受了一整夜。“那些诗不是我的，”她摇了摇头，“就算能回家，我也不能拿别人的东西来换。”阿青看着她，没有再说什么，只是轻轻地握了握她的手。",
+   "轮到裴十二了。他看了看林晓，又看了看天上淡淡的月亮，慢慢地念出了一首新写的诗。诗里写的是一个远方来的女孩，在陌生的城市里抬头看月亮，想念自己的家人。全场一下子安静了，连周婉的眼睛都湿了。",
+   "“第一名是裴公子！”周婉宣布。大家热烈地鼓掌，裴十二走上前去，伸手要接那半面铜镜。就在这时，一个瘦小的男孩不知道从哪里钻了出来，一把抢过镜子，转身就跑，很快就消失在了人群里。"
+  ],
+  "translations": [
+   "Bùi Thập Nhị nói với hai cô, người thắng chiếc gương là con gái một thương nhân lớn ở Trường An, tên Chu Uyển. Chu Uyển từ nhỏ đã thích đọc sách, làm thơ còn hay hơn nhiều đàn ông. Ba ngày nữa, cô ấy sẽ tổ chức một hội thơ bên bờ Khúc Giang, mời thanh niên cả thành đến thi làm thơ, phần thưởng giải nhất chính là nửa chiếc gương đồng đó.",
+   "Lâm Hiểu tính toán, chỉ còn mười ngày nữa là đến Trung thu, đây là cơ hội duy nhất của cô. Nhưng hội thơ chỉ mời người đọc sách, cô và A Thanh làm sao vào được? Mắt A Thanh sáng lên: \"Nhà họ Chu mỗi lần tổ chức đều thuê người pha trà, để chị đi hỏi, biết đâu họ cho chúng ta vào phụ giúp.\" Ngày hôm sau, quả nhiên cô mang tin vui về.",
+   "Ngày hội thơ, bờ Khúc Giang náo nhiệt vô cùng. Mặt nước vừa rộng vừa sáng, trên bờ hoa nở khắp nơi, đâu đâu cũng là người mặc quần áo đẹp. Bùi Thập Nhị kể, mỗi năm những người đỗ tiến sĩ đều tổ chức yến tiệc ở đây. Mọi người ngồi bên nước, thả chén rượu xuống dòng, chén trôi dừng trước mặt ai thì người đó phải uống rượu làm thơ. Lâm Hiểu nghe xong, thấy người thời Đường thật là lãng mạn quá.",
+   "Lâm Hiểu và A Thanh vừa nấu trà ở một góc, vừa nghe mọi người đọc thơ. Một lát sau, Chu Uyển đứng dậy, cầm nửa chiếc gương đồng, cười nói: \"Đề hôm nay là 'Trăng'. Bài thơ của ai hay nhất, chiếc gương này sẽ tặng cho người đó.\" Lâm Hiểu căng thẳng đến toát mồ hôi tay.",
+   "A Thanh khẽ nói với cô: \"Chẳng phải em nhớ nhiều thơ hay của đời sau sao? Cứ đọc đại một bài, chắc chắn giành giải nhất.\" Trong lòng Lâm Hiểu quả thật đã từng nghĩ tới. Trong đầu cô có rất nhiều câu thơ nổi tiếng về trăng, câu nào đưa ra cũng đủ khiến mọi người ở đây kinh ngạc.",
+   "Nhưng cô nhớ lại chuyện tối hôm qua. Bài \"Tĩnh dạ tứ\" lẽ ra phải là của Lý Bạch, vậy mà cô lại nói ra trước, khiến cô day dứt suốt cả đêm. \"Những bài thơ đó không phải của em,\" cô lắc đầu, \"dù có về được nhà, em cũng không thể lấy đồ của người khác để đổi.\" A Thanh nhìn cô, không nói thêm gì, chỉ khẽ nắm lấy tay cô.",
+   "Đến lượt Bùi Thập Nhị. Anh nhìn Lâm Hiểu, lại nhìn vầng trăng nhàn nhạt trên trời, chậm rãi đọc một bài thơ mới viết. Bài thơ kể về một cô gái từ phương xa đến, giữa thành phố xa lạ ngẩng đầu nhìn trăng, nhớ thương gia đình mình. Cả hội trường lập tức lặng đi, ngay cả mắt Chu Uyển cũng ướt.",
+   "\"Giải nhất là Bùi công tử!\" Chu Uyển tuyên bố. Mọi người vỗ tay nhiệt liệt, Bùi Thập Nhị bước lên, đưa tay định nhận nửa chiếc gương đồng. Đúng lúc đó, một cậu bé gầy nhỏ không biết từ đâu chui ra, giật lấy chiếc gương, quay người bỏ chạy, chẳng mấy chốc đã biến mất trong đám đông."
+  ],
+  "questions": [
+   {
+    "q": "林晓和阿青是怎么进入诗会的？",
+    "q_vi": "Lâm Hiểu và A Thanh vào được hội thơ bằng cách nào?",
+    "options": [
+     "周婉亲自请她们去",
+     "她们考上了进士",
+     "她们去帮周家送茶、煮茶",
+     "裴十二把她们带进去"
+    ],
+    "answer": 2,
+    "explain_vi": "Nhà họ Chu thuê người lo trà, A Thanh xin được việc nên hai người vào phụ giúp."
+   },
+   {
+    "q": "林晓为什么不念后世的名诗？",
+    "q_vi": "Vì sao Lâm Hiểu không đọc những bài thơ nổi tiếng của đời sau?",
+    "options": [
+     "她一首也想不起来",
+     "她觉得那是别人的东西，不能拿来换",
+     "周婉不让她参加",
+     "她怕阿青笑她"
+    ],
+    "answer": 1,
+    "explain_vi": "Cô cho rằng thơ đó không phải của mình, không thể lấy đồ của người khác để đổi."
+   },
+   {
+    "q": "裴十二的诗为什么能感动大家？",
+    "q_vi": "Vì sao thơ của Bùi Thập Nhị khiến mọi người xúc động?",
+    "options": [
+     "诗写得很长",
+     "他念诗的声音很大",
+     "诗里有很多难懂的词",
+     "他写了一个远方女孩想家的真实感情"
+    ],
+    "answer": 3,
+    "explain_vi": "Bài thơ viết về cô gái phương xa nhìn trăng nhớ nhà — chính là cảm xúc thật của Lâm Hiểu."
+   }
+  ]
+ },
+ {
+  "id": "s4-07",
+  "kind": "series",
+  "level": 4,
+  "series": "s4",
+  "series_title": "隔着一千三百年",
+  "series_title_vi": "Cách nhau một nghìn ba trăm năm",
+  "chapter": 7,
+  "title": "小偷的秘密",
+  "title_vi": "Bí mật của tên trộm nhỏ",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "“快追！”三个人马上追了出去。男孩跑得很快，在人群中钻来钻去。幸好阿青从小在长安长大，对每条小路都很熟悉。她带着林晓和裴十二抄近路，穿过两条小巷，终于在一个又破又旧的坊里，看见男孩跑进了一间低矮的小屋。",
+   "裴十二正要冲进去，林晓拉住了他：“等一下，你听。”屋子里传来一个小女孩的哭声，还有男孩着急的声音：“妹妹，你别怕，哥哥拿到钱了，明天就给你买药。”三个人互相看了看，轻轻地推开了门。",
+   "屋子里又黑又小，地上铺着一些草。一个五六岁的小女孩躺在草上，脸红红的，嘴唇却很干。男孩看见他们，吓得把镜子藏到身后，挡在妹妹前面：“镜子是我拿的，跟我妹妹没关系！你们要打就打我吧！”",
+   "林晓蹲下来，摸了摸小女孩的头，烫得厉害。她想起妈妈以前照顾发烧的自己的样子，赶紧对阿青说：“快去打一盆凉水来，再找一块干净的布。”她把湿布放在小女孩的头上，又让男孩把窗户打开，让屋子里的空气流通，还一点儿一点儿地喂小女孩喝温水。",
+   "阿青去附近借了一个炉子，煮了一碗热热的姜汤。裴十二二话没说，跑出去请来了一位老大夫。大夫看过以后说，幸好你们来得早，再晚一两天，就危险了。他开了药，裴十二把自己身上所有的钱都拿了出来。",
+   "那天晚上，小女孩的烧终于退了，安安静静地睡着了。男孩叫小石头，父母都不在了，他靠帮人搬东西养活妹妹。妹妹病了好几天，他实在没有办法，才想到去偷东西。他红着眼睛，把那半面铜镜放到林晓手里：“姐姐，对不起。我以后再也不偷了。”",
+   "林晓把自己的半面镜子也拿了出来。两半镜子慢慢靠近，裂开的地方竟然完全合在了一起，一点儿缝也看不出来。镜子背面的花和鸟连成了一幅完整的画，那句“一镜分两半，明月照长安”的后面，还空着一块地方，好像在等着什么。",
+   "大家都等着镜子发光，可是过了很久，什么也没有发生。林晓有点儿失望。裴十二看着那块空着的地方，认真地说：“我明白了。我写了五年都写不出来，是因为那两句诗本来就不该由我来写。镜子等的人，也许就是你。”"
+  ],
+  "translations": [
+   "\"Mau đuổi theo!\" Ba người lập tức đuổi theo. Cậu bé chạy rất nhanh, len lỏi trong đám đông. May mà A Thanh lớn lên ở Trường An từ nhỏ, thuộc từng con đường nhỏ. Cô dẫn Lâm Hiểu và Bùi Thập Nhị đi đường tắt, băng qua hai con hẻm, cuối cùng ở một phường vừa nát vừa cũ, thấy cậu bé chạy vào một căn nhà nhỏ thấp lè tè.",
+   "Bùi Thập Nhị định xông vào, Lâm Hiểu kéo anh lại: \"Đợi đã, anh nghe xem.\" Trong nhà vọng ra tiếng khóc của một bé gái, và giọng sốt ruột của cậu bé: \"Em gái, em đừng sợ, anh có tiền rồi, ngày mai sẽ mua thuốc cho em.\" Ba người nhìn nhau, nhẹ nhàng đẩy cửa.",
+   "Căn nhà vừa tối vừa chật, dưới đất trải ít rơm. Một bé gái năm sáu tuổi nằm trên rơm, mặt đỏ bừng, môi lại khô khốc. Cậu bé thấy họ, sợ hãi giấu chiếc gương ra sau lưng, đứng chắn trước em gái: \"Gương là tôi lấy, không liên quan đến em tôi! Muốn đánh thì đánh tôi đi!\"",
+   "Lâm Hiểu ngồi xuống, sờ trán bé gái, nóng hầm hập. Cô nhớ lại dáng vẻ mẹ chăm sóc mình mỗi khi sốt, vội nói với A Thanh: \"Mau đi lấy một chậu nước mát, tìm thêm một mảnh vải sạch.\" Cô đặt khăn ướt lên trán bé gái, lại bảo cậu bé mở cửa sổ cho không khí trong nhà lưu thông, còn đút cho bé gái uống nước ấm từng chút một.",
+   "A Thanh sang hàng xóm mượn một cái lò, nấu một bát canh gừng nóng hổi. Bùi Thập Nhị không nói một lời, chạy đi mời về một ông thầy thuốc già. Thầy thuốc khám xong nói may mà các cháu đến sớm, muộn thêm một hai ngày là nguy hiểm rồi. Ông kê thuốc, Bùi Thập Nhị móc hết tiền trên người ra trả.",
+   "Tối hôm đó, cơn sốt của bé gái cuối cùng cũng hạ, bé ngủ yên lành. Cậu bé tên Tiểu Thạch Đầu, bố mẹ đều đã mất, cậu sống nhờ khuân vác thuê để nuôi em. Em gái ốm mấy ngày, cậu thật sự hết cách mới nghĩ đến chuyện ăn trộm. Cậu đỏ mắt, đặt nửa chiếc gương đồng vào tay Lâm Hiểu: \"Chị ơi, em xin lỗi. Sau này em sẽ không bao giờ ăn trộm nữa.\"",
+   "Lâm Hiểu cũng lấy nửa chiếc gương của mình ra. Hai nửa gương từ từ lại gần, chỗ vỡ thế mà khớp hoàn toàn với nhau, không nhìn ra một vết nứt nào. Hoa và chim sau gương nối thành một bức tranh hoàn chỉnh, phía sau câu \"Một gương chia hai nửa, trăng sáng soi Trường An\" vẫn còn trống một khoảng, như đang chờ đợi điều gì.",
+   "Mọi người đều chờ chiếc gương phát sáng, nhưng đợi rất lâu mà chẳng có gì xảy ra. Lâm Hiểu hơi thất vọng. Bùi Thập Nhị nhìn khoảng trống đó, nghiêm túc nói: \"Tôi hiểu rồi. Tôi viết năm năm mà không viết ra được, là vì hai câu thơ đó vốn dĩ không phải do tôi viết. Người mà chiếc gương chờ, có lẽ chính là cô.\""
+  ],
+  "questions": [
+   {
+    "q": "小石头为什么要偷镜子？",
+    "q_vi": "Vì sao Tiểu Thạch Đầu lấy trộm chiếc gương?",
+    "options": [
+     "他想把镜子送给妹妹玩",
+     "有人让他去偷",
+     "他想卖了镜子给生病的妹妹买药",
+     "他也想回到未来"
+    ],
+    "answer": 2,
+    "explain_vi": "Em gái ốm nặng, cậu hết cách nên định bán gương lấy tiền mua thuốc."
+   },
+   {
+    "q": "林晓是怎么照顾小女孩的？",
+    "q_vi": "Lâm Hiểu chăm sóc bé gái thế nào?",
+    "options": [
+     "用湿布放在头上，开窗通风，喂她喝温水",
+     "让她多穿衣服，关上窗户",
+     "给她吃手机里的药",
+     "带她去博物馆"
+    ],
+    "answer": 0,
+    "explain_vi": "Cô đắp khăn ướt, mở cửa sổ cho thoáng và cho bé uống nước ấm từng chút."
+   },
+   {
+    "q": "两半镜子合在一起以后，裴十二明白了什么？",
+    "q_vi": "Sau khi ghép hai nửa gương, Bùi Thập Nhị hiểu ra điều gì?",
+    "options": [
+     "镜子是假的",
+     "要找一位更有名的诗人来写",
+     "镜子要在白天才会发光",
+     "后面两句诗应该由林晓自己来写"
+    ],
+    "answer": 3,
+    "explain_vi": "Anh cho rằng hai câu thơ không phải do mình viết, người gương chờ đợi chính là Lâm Hiểu."
+   }
+  ]
+ },
+ {
+  "id": "s4-08",
+  "kind": "series",
+  "level": 4,
+  "series": "s4",
+  "series_title": "隔着一千三百年",
+  "series_title_vi": "Cách nhau một nghìn ba trăm năm",
+  "chapter": 8,
+  "title": "一杯茶的学问",
+  "title_vi": "Học vấn trong một chén trà",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "接下来的几天，林晓每天都在想那两句诗。她在纸上写了又擦，擦了又写，可是怎么写都觉得不满意。阿青看她愁得吃不下饭，就说：“写不出来就先别写了，来帮我煮茶吧。煮茶的时候，心会慢慢静下来。”",
+   "阿青煮茶非常讲究。她告诉林晓，茶叶本来长在南方，到了唐朝，从皇帝到普通人都爱上了喝茶。好茶要先做成茶饼，喝的时候烤一烤，再弄成粉。水也很重要，山里的泉水最好，江里的水第二，井水最差。",
+   "“你看，”阿青指着锅里的水，“水里冒出像鱼眼睛一样的小泡，这是第一沸，要加一点儿盐；锅边的泡像一串串珍珠，这是第二沸，要把茶粉放进去；等到水像海浪一样翻起来，就是第三沸，茶就煮好了，不能再煮。”林晓听得入了迷，没想到一杯茶里有这么多学问。",
+   "看着阿青认真的样子，林晓突然有了一个想法。她请康大叔帮忙，买来了新鲜的羊奶，又用蜂蜜代替了盐。她把煮好的茶和热羊奶混在一起，再加一勺蜂蜜，最后放进井水里冰一冰。阿青半信半疑地尝了一口，眼睛一下子亮了：“又香又甜，太好喝了！”",
+   "她们给这种新茶起了个名字，叫“林家奶茶”。第二天一摆出来，客人就排起了长队。有人说喝了以后一整天都有精神，有人特意从城东跑来买。小石头也来帮忙，他负责洗杯子和收钱，干得又快又好。他的妹妹病好了，每天坐在摊子旁边，笑着给客人唱歌。",
+   "晚上收摊以后，大家坐在一起数钱，一边数一边笑。阿青说，这是她卖茶这么多年来，最开心的一段日子。林晓看着大家的笑脸，心里暖暖的，却又有点儿酸：要是回去了，就再也见不到他们了。她第一次开始犹豫，自己到底想不想回家。",
+   "她拿出手机，电量只剩下百分之三了。“来，我们拍一张照片吧！”她让阿青、裴十二、小石头和他妹妹都靠过来，大家对着小小的屏幕，笑得特别开心。“咔嚓”一声，照片拍好了。下一秒，屏幕就黑了，再也没有亮起来。",
+   "林晓把黑了的手机握在手里，半天没说话。她没有注意到，街对面那家大茶馆的钱老板，已经站在门口看了她们很久。看着她们摊子前长长的队伍，又看看自己店里空空的桌子，钱老板的脸色越来越难看。"
+  ],
+  "translations": [
+   "Mấy ngày tiếp theo, ngày nào Lâm Hiểu cũng nghĩ về hai câu thơ đó. Cô viết lên giấy rồi xóa, xóa rồi lại viết, nhưng viết thế nào cũng thấy không vừa ý. A Thanh thấy cô buồn rầu đến ăn không nổi, liền nói: \"Không viết ra được thì tạm đừng viết, lại đây giúp chị nấu trà đi. Lúc nấu trà, lòng sẽ dần lắng xuống.\"",
+   "A Thanh nấu trà rất cầu kỳ. Cô kể với Lâm Hiểu, cây chè vốn mọc ở phương Nam, đến thời Đường, từ hoàng đế đến người thường đều mê uống trà. Trà ngon phải làm thành bánh trà trước, khi uống thì nướng lên rồi nghiền thành bột. Nước cũng rất quan trọng, nước suối trên núi là tốt nhất, nước sông xếp thứ hai, nước giếng kém nhất.",
+   "\"Em xem,\" A Thanh chỉ vào nước trong nồi, \"trong nước nổi lên bọt nhỏ như mắt cá, đó là lần sôi thứ nhất, phải thêm chút muối; bọt ở mép nồi như từng chuỗi ngọc trai, đó là lần sôi thứ hai, phải cho bột trà vào; đợi đến khi nước cuộn lên như sóng biển, là lần sôi thứ ba, trà đã nấu xong, không được nấu thêm.\" Lâm Hiểu nghe say mê, không ngờ trong một chén trà lại có nhiều học vấn đến vậy.",
+   "Nhìn dáng vẻ chăm chú của A Thanh, Lâm Hiểu đột nhiên nảy ra một ý. Cô nhờ chú Khang mua giúp sữa dê tươi, lại dùng mật ong thay cho muối. Cô trộn trà đã nấu với sữa dê nóng, thêm một thìa mật ong, cuối cùng ngâm vào nước giếng cho mát lạnh. A Thanh nửa tin nửa ngờ nếm thử một ngụm, mắt lập tức sáng lên: \"Vừa thơm vừa ngọt, ngon quá!\"",
+   "Hai người đặt cho loại trà mới này một cái tên: \"Trà sữa nhà Lâm\". Hôm sau vừa bày ra, khách đã xếp hàng dài. Có người nói uống xong cả ngày đều tỉnh táo, có người cất công từ phía đông thành chạy tới mua. Tiểu Thạch Đầu cũng đến giúp, cậu lo rửa chén và thu tiền, làm vừa nhanh vừa tốt. Em gái cậu đã khỏi bệnh, ngày nào cũng ngồi cạnh quán, cười hát cho khách nghe.",
+   "Tối dọn hàng xong, mọi người ngồi quây quần đếm tiền, vừa đếm vừa cười. A Thanh nói đây là quãng thời gian vui nhất trong bao nhiêu năm cô bán trà. Lâm Hiểu nhìn những gương mặt tươi cười, lòng thấy ấm áp nhưng cũng hơi chua xót: nếu trở về rồi thì sẽ không bao giờ gặp lại họ nữa. Lần đầu tiên cô bắt đầu do dự, rốt cuộc mình có muốn về nhà hay không.",
+   "Cô lấy điện thoại ra, pin chỉ còn ba phần trăm. \"Nào, chúng ta chụp một tấm ảnh đi!\" Cô bảo A Thanh, Bùi Thập Nhị, Tiểu Thạch Đầu và em gái cậu xích lại gần, mọi người hướng về màn hình nhỏ xíu, cười thật tươi. \"Tách\" một tiếng, ảnh đã chụp xong. Giây tiếp theo, màn hình tắt ngấm, không bao giờ sáng lại nữa.",
+   "Lâm Hiểu nắm chiếc điện thoại đã tắt trong tay, hồi lâu không nói gì. Cô không để ý rằng ông chủ Tiền của quán trà lớn bên kia đường đã đứng ở cửa nhìn họ từ rất lâu. Nhìn hàng người dài dằng dặc trước quán của họ, rồi lại nhìn những chiếc bàn trống trơn trong tiệm mình, sắc mặt ông chủ Tiền càng lúc càng khó coi."
+  ],
+  "questions": [
+   {
+    "q": "根据阿青的介绍，煮茶时什么时候放茶粉？",
+    "q_vi": "Theo A Thanh, khi nấu trà thì cho bột trà vào lúc nào?",
+    "options": [
+     "水还没有开的时候",
+     "第一沸，水里有鱼眼睛一样的小泡时",
+     "第二沸，锅边的泡像珍珠一样时",
+     "第三沸，水像海浪一样翻起来时"
+    ],
+    "answer": 2,
+    "explain_vi": "Lần sôi thứ hai, bọt ở mép nồi như chuỗi ngọc trai thì cho bột trà vào."
+   },
+   {
+    "q": "林晓做的“林家奶茶”和唐朝普通的茶有什么不同？",
+    "q_vi": "\"Trà sữa nhà Lâm\" khác trà thường thời Đường ở điểm nào?",
+    "options": [
+     "用羊奶和蜂蜜，不放盐，还用井水冰过",
+     "不用茶叶，只用牛奶",
+     "要放很多盐和姜",
+     "只在晚上卖"
+    ],
+    "answer": 0,
+    "explain_vi": "Cô trộn trà với sữa dê, dùng mật ong thay muối và ngâm nước giếng cho mát."
+   },
+   {
+    "q": "这一章最后，钱老板的表现说明了什么？",
+    "q_vi": "Cuối chương, biểu hiện của ông chủ Tiền cho thấy điều gì?",
+    "options": [
+     "他想跟她们一起做生意",
+     "他很喜欢喝林家奶茶",
+     "他准备请她们去他的店工作",
+     "他很嫉妒，可能会给她们带来麻烦"
+    ],
+    "answer": 3,
+    "explain_vi": "Thấy quán mình vắng còn quán họ đông, mặt ông càng khó coi — dấu hiệu sắp gây rắc rối."
+   }
+  ]
+ },
+ {
+  "id": "s4-09",
+  "kind": "series",
+  "level": 4,
+  "series": "s4",
+  "series_title": "隔着一千三百年",
+  "series_title_vi": "Cách nhau một nghìn ba trăm năm",
+  "chapter": 9,
+  "title": "城门外的驼铃",
+  "title_vi": "Tiếng chuông lạc đà ngoài cổng thành",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "离中秋节还有两天，康大叔要回西边了。他的骆驼队已经装满了丝绸、茶叶和瓷器。一大早，林晓和阿青去开远门送他。阿青告诉林晓，从长安往西去的商人，大多从这个门出城，丝绸之路就是从这里开始的。",
+   "城门外，几十头骆驼排成长长的一队，脖子上挂着铜铃，一走就“叮当叮当”地响。康大叔说：“这条路，我走了二十年。从长安出发，经过河西走廊，再到敦煌，然后进入沙漠。白天热得像火，晚上冷得像冰，有时候走好几天都找不到一口水。”",
+   "“那你们在沙漠里怎么认路呢？”林晓问。康大叔笑着指了指天：“晚上看星星，白天看太阳，还要听骆驼的。骆驼比人聪明，它们闻得到哪里有水。”他还说，这条路上走的不只是货物。葡萄、玻璃和琵琶从西边来到中原，丝绸、纸和茶叶又从中原走向世界。",
+   "林晓想了想，说：“大叔，一千多年以后，从西安到您的家乡，坐火车只要十几天，飞机几个小时就到了。”康大叔先是一愣，然后哈哈大笑：“要是真有那一天，我一定天天来长安喝你的奶茶！”大家都被他逗笑了。",
+   "笑完了，康大叔从怀里拿出一颗蓝色的玻璃珠，放在林晓手心里：“这是我家乡的东西，送给你。我每次在沙漠里迷路，害怕的时候，就会想起家里的灯。路再远，只要心里记着回家的方向，就一定能走回去。”林晓握着那颗冰凉的珠子，眼睛有点儿湿。",
+   "骆驼队慢慢地走远了，铃声也越来越小，最后只剩下黄色的大路和蓝色的天。林晓站在城门口，心里好像有什么东西被轻轻地碰了一下。她想起裴十二的诗，想起阿青的茶，想起康大叔说的“回家的方向”，那两句诗好像离她近了一点点。",
+   "可是，当她们回到西市的时候，眼前的情况让两个人都愣住了。茶摊的桌子和凳子倒了一地，杯子碎得到处都是，墙上还贴着一张官府的告示。小石头哭着跑过来：“青姐姐，钱老板带着官差来了，说你们卖的是‘妖茶’！”",
+   "原来，钱老板跟官府说，林家奶茶里放了奇怪的东西，喝了会让人上瘾，做茶的林晓是个来历不明的妖女。小石头压低声音说：“官差说了，明天一早要来抓林姐姐。要是被抓走了，中秋节晚上可就出不来了！”"
+  ],
+  "translations": [
+   "Còn hai ngày nữa là đến Trung thu, chú Khang sắp trở về phương Tây. Đoàn lạc đà của chú đã chất đầy tơ lụa, lá trà và đồ sứ. Sáng sớm, Lâm Hiểu và A Thanh đến cổng Khai Viễn tiễn chú. A Thanh kể với Lâm Hiểu, thương nhân từ Trường An đi về phía tây phần lớn đều ra khỏi thành qua cổng này, Con đường tơ lụa bắt đầu từ chính nơi đây.",
+   "Ngoài cổng thành, mấy chục con lạc đà xếp thành một hàng dài, cổ đeo chuông đồng, bước đi là kêu \"leng keng leng keng\". Chú Khang nói: \"Con đường này, ta đã đi hai mươi năm. Xuất phát từ Trường An, qua hành lang Hà Tây, rồi đến Đôn Hoàng, sau đó tiến vào sa mạc. Ban ngày nóng như lửa, ban đêm lạnh như băng, có khi đi mấy ngày liền không tìm được một ngụm nước.\"",
+   "\"Vậy trong sa mạc chú nhận đường bằng cách nào ạ?\" Lâm Hiểu hỏi. Chú Khang cười chỉ lên trời: \"Ban đêm nhìn sao, ban ngày nhìn mặt trời, còn phải nghe lạc đà nữa. Lạc đà thông minh hơn người, chúng ngửi được chỗ nào có nước.\" Chú còn nói, trên con đường này không chỉ có hàng hóa đi lại. Nho, thủy tinh và đàn tỳ bà từ phương Tây đến Trung Nguyên, còn tơ lụa, giấy và trà lại từ Trung Nguyên đi ra thế giới.",
+   "Lâm Hiểu nghĩ một lát rồi nói: \"Chú ơi, hơn một nghìn năm sau, từ Tây An đến quê chú, đi tàu hỏa chỉ mất mười mấy ngày, máy bay vài tiếng là tới.\" Chú Khang thoạt tiên sững người, rồi cười ha hả: \"Nếu thật có ngày đó, ta nhất định ngày nào cũng đến Trường An uống trà sữa của cháu!\" Mọi người đều bị chú làm cho bật cười.",
+   "Cười xong, chú Khang lấy từ trong ngực áo ra một hạt thủy tinh màu xanh lam, đặt vào lòng bàn tay Lâm Hiểu: \"Đây là đồ ở quê ta, tặng cháu. Mỗi lần lạc đường trong sa mạc, lúc sợ hãi, ta lại nhớ đến ngọn đèn trong nhà. Đường dù xa đến mấy, chỉ cần trong lòng nhớ hướng về nhà, nhất định sẽ đi về được.\" Lâm Hiểu nắm hạt thủy tinh mát lạnh, mắt hơi ướt.",
+   "Đoàn lạc đà chầm chậm đi xa, tiếng chuông cũng nhỏ dần, cuối cùng chỉ còn lại con đường vàng và bầu trời xanh. Lâm Hiểu đứng ở cổng thành, trong lòng như có gì đó vừa được chạm nhẹ. Cô nhớ đến thơ của Bùi Thập Nhị, nhớ đến trà của A Thanh, nhớ đến \"hướng về nhà\" mà chú Khang nói, hai câu thơ kia dường như đã gần cô thêm một chút.",
+   "Thế nhưng khi họ quay về Tây Thị, cảnh tượng trước mắt khiến cả hai sững sờ. Bàn ghế của quán trà đổ ngổn ngang, chén vỡ khắp nơi, trên tường còn dán một tờ cáo thị của quan phủ. Tiểu Thạch Đầu khóc chạy tới: \"Chị Thanh ơi, ông chủ Tiền dẫn quan sai đến, nói các chị bán 'trà yêu'!\"",
+   "Hóa ra ông chủ Tiền báo với quan phủ rằng trong trà sữa nhà Lâm có bỏ thứ kỳ lạ, uống vào sẽ nghiện, còn người làm trà là Lâm Hiểu là một yêu nữ không rõ lai lịch. Tiểu Thạch Đầu hạ giọng nói: \"Quan sai bảo sáng sớm mai sẽ đến bắt chị Lâm. Nếu bị bắt đi thì tối Trung thu không ra được nữa đâu!\""
+  ],
+  "questions": [
+   {
+    "q": "关于丝绸之路，下面哪一项是康大叔说过的？",
+    "q_vi": "Về Con đường tơ lụa, điều nào dưới đây chú Khang đã nói?",
+    "options": [
+     "这条路很近，几天就能走完",
+     "葡萄和琵琶从西边来，丝绸和纸从中原走向世界",
+     "沙漠里到处都有水",
+     "商人只用马，不用骆驼"
+    ],
+    "answer": 1,
+    "explain_vi": "Chú nói nho, thủy tinh, tỳ bà từ Tây đến; tơ lụa, giấy, trà từ Trung Nguyên đi ra."
+   },
+   {
+    "q": "康大叔送玻璃珠时说的话，主要想告诉林晓什么？",
+    "q_vi": "Lời chú Khang nói khi tặng hạt thủy tinh chủ yếu muốn nhắn Lâm Hiểu điều gì?",
+    "options": [
+     "玻璃珠很值钱，可以卖掉",
+     "沙漠里很危险，不要去",
+     "只要心里记着回家的方向，就能回家",
+     "他以后不会再来长安了"
+    ],
+    "answer": 2,
+    "explain_vi": "Chú nhắn: đường dù xa, nhớ hướng về nhà thì nhất định về được."
+   },
+   {
+    "q": "回到西市后，她们遇到了什么麻烦？",
+    "q_vi": "Về đến Tây Thị, họ gặp rắc rối gì?",
+    "options": [
+     "钱老板告她们卖“妖茶”，官差明天要来抓林晓",
+     "小石头的妹妹又生病了",
+     "那面铜镜被偷了",
+     "康大叔的骆驼跑了"
+    ],
+    "answer": 0,
+    "explain_vi": "Ông chủ Tiền vu cáo trà của họ là 'trà yêu', quan sai sáng mai sẽ đến bắt Lâm Hiểu."
+   }
+  ]
+ },
+ {
+  "id": "s4-10",
+  "kind": "series",
+  "level": 4,
+  "series": "s4",
+  "series_title": "隔着一千三百年",
+  "series_title_vi": "Cách nhau một nghìn ba trăm năm",
+  "chapter": 10,
+  "title": "公堂上的一杯茶",
+  "title_vi": "Chén trà trên công đường",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "那天晚上，大家坐在阿青家里，谁也睡不着。阿青急得直哭：“都怪我，要是不卖奶茶就好了。”小石头说：“林姐姐，你快躲起来吧，我知道一个地方，谁也找不到。”林晓却摇了摇头：“躲起来，就等于承认我们做了坏事。我们没有错，为什么要躲？”",
+   "裴十二想了想，说：“你说得对。与其等他们来抓，不如我们明天一早自己去县衙，把事情说清楚。”他又说，长安的县令是个讲道理的人，最讨厌别人说谎。林晓点点头，心里已经有了一个计划。",
+   "第二天早上，县衙门口围满了看热闹的人。钱老板也来了，他指着林晓大声说：“大人，就是这个女人！她的茶里一定放了妖法，不然为什么那么多人天天去喝？”周围的人小声议论起来，有人害怕地看着林晓。",
+   "林晓不慌不忙地走上前，说：“大人，我的茶里没有任何秘密。今天我就在这里，当着大家的面，把它做出来。”她请阿青把炉子、茶饼、羊奶、蜂蜜和一桶井水都搬了上来，一边做，一边把每一步都讲得清清楚楚。",
+   "茶做好了，她先自己喝了一大口，然后端给县令。县令犹豫了一下，尝了一口，眉毛慢慢地扬了起来：“嗯……香、甜，还很凉快。这里面的东西，确实都很普通。”这时，周婉也来了，她说：“大人，我家也天天买这种茶，家里的人都很喜欢，谁也没有生病。”很多客人也纷纷站出来为她们说话。",
+   "县令看了看钱老板，冷冷地说：“做生意，应该靠自己的本事，不应该靠说别人的坏话。”钱老板的脸一下子红到了耳朵，低着头不敢说话。县令宣布：茶摊可以继续开，钱老板要赔偿所有被打坏的东西。",
+   "大家都欢呼起来。可是林晓走到钱老板面前，说：“钱老板，如果您愿意，我可以把做法教给您。长安这么大，喜欢喝茶的人这么多，好东西应该大家一起做。”钱老板愣了半天，最后深深地向她鞠了一躬：“姑娘，是我心胸太小了，对不起。”",
+   "走出县衙的时候，太阳已经快落山了。裴十二提醒她：“明天就是中秋节。传说中那位做镜子的师傅，他的妻子就住在大雁塔附近。明天晚上，我们就去那里。”林晓点点头，手里紧紧握着那面合好的铜镜。明天晚上，就是最后的机会了，可是那两句诗，她还一个字都没有写出来。"
+  ],
+  "translations": [
+   "Tối hôm đó, mọi người ngồi trong nhà A Thanh, không ai ngủ được. A Thanh sốt ruột đến phát khóc: \"Đều tại chị, giá mà không bán trà sữa thì tốt rồi.\" Tiểu Thạch Đầu nói: \"Chị Lâm, chị mau trốn đi, em biết một chỗ, không ai tìm được đâu.\" Nhưng Lâm Hiểu lắc đầu: \"Trốn đi tức là thừa nhận chúng ta làm chuyện xấu. Chúng ta không sai, sao phải trốn?\"",
+   "Bùi Thập Nhị nghĩ một lát rồi nói: \"Cô nói đúng. Thay vì đợi họ đến bắt, chi bằng sáng sớm mai chúng ta tự đến huyện nha, nói rõ mọi chuyện.\" Anh còn nói, huyện lệnh Trường An là người biết lý lẽ, ghét nhất người khác nói dối. Lâm Hiểu gật đầu, trong lòng đã có một kế hoạch.",
+   "Sáng hôm sau, trước cổng huyện nha đông nghịt người xem. Ông chủ Tiền cũng đến, chỉ vào Lâm Hiểu nói to: \"Thưa đại nhân, chính là người đàn bà này! Trà của ả chắc chắn có bỏ yêu thuật, nếu không sao nhiều người ngày nào cũng đến uống thế?\" Người xung quanh xì xào bàn tán, có người sợ hãi nhìn Lâm Hiểu.",
+   "Lâm Hiểu thong thả bước lên, nói: \"Thưa đại nhân, trà của tôi không có bí mật gì cả. Hôm nay tôi sẽ làm nó ngay tại đây, trước mặt mọi người.\" Cô nhờ A Thanh mang lò, bánh trà, sữa dê, mật ong và một thùng nước giếng lên, vừa làm vừa giải thích rõ ràng từng bước.",
+   "Trà làm xong, cô tự uống một ngụm lớn trước, rồi bưng cho huyện lệnh. Huyện lệnh do dự một chút, nếm một ngụm, lông mày từ từ nhướng lên: \"Ừm... thơm, ngọt, lại mát nữa. Những thứ trong này đúng là đều rất bình thường.\" Lúc đó, Chu Uyển cũng đến, cô nói: \"Thưa đại nhân, nhà tôi cũng ngày nào cũng mua trà này, người nhà đều rất thích, chẳng ai bị bệnh cả.\" Nhiều khách hàng cũng lần lượt đứng ra nói giúp họ.",
+   "Huyện lệnh nhìn ông chủ Tiền, lạnh lùng nói: \"Làm ăn phải dựa vào bản lĩnh của mình, không nên dựa vào việc nói xấu người khác.\" Mặt ông chủ Tiền lập tức đỏ đến tận mang tai, cúi đầu không dám nói gì. Huyện lệnh tuyên bố: quán trà được tiếp tục mở, ông chủ Tiền phải bồi thường mọi thứ bị đập hỏng.",
+   "Mọi người đều reo hò. Nhưng Lâm Hiểu bước đến trước mặt ông chủ Tiền, nói: \"Ông chủ Tiền, nếu ông muốn, tôi có thể dạy ông cách làm. Trường An rộng thế này, người thích uống trà nhiều thế này, đồ tốt nên để mọi người cùng làm.\" Ông chủ Tiền sững người hồi lâu, cuối cùng cúi người thật sâu trước cô: \"Cô nương, là lòng dạ tôi quá hẹp hòi, xin lỗi cô.\"",
+   "Lúc bước ra khỏi huyện nha, mặt trời đã sắp lặn. Bùi Thập Nhị nhắc cô: \"Ngày mai là Trung thu rồi. Trong truyền thuyết, vợ của người thợ làm gương sống gần tháp Đại Nhạn. Tối mai chúng ta sẽ đến đó.\" Lâm Hiểu gật đầu, tay nắm chặt chiếc gương đồng đã ghép lành. Tối mai là cơ hội cuối cùng, vậy mà hai câu thơ kia, cô vẫn chưa viết ra được chữ nào."
+  ],
+  "questions": [
+   {
+    "q": "林晓为什么不愿意躲起来？",
+    "q_vi": "Vì sao Lâm Hiểu không chịu trốn đi?",
+    "options": [
+     "她不知道该躲在哪儿",
+     "她觉得躲起来就等于承认做了坏事",
+     "她想快点儿被抓走",
+     "裴十二不让她躲"
+    ],
+    "answer": 1,
+    "explain_vi": "Cô cho rằng trốn là thừa nhận làm sai, trong khi họ không có lỗi."
+   },
+   {
+    "q": "林晓用什么办法证明她的茶没有问题？",
+    "q_vi": "Lâm Hiểu dùng cách gì để chứng minh trà của mình không có vấn đề?",
+    "options": [
+     "请康大叔回来帮忙",
+     "给县令送钱",
+     "说钱老板的茶更不好",
+     "当着大家的面把茶做出来，讲清楚每一步"
+    ],
+    "answer": 3,
+    "explain_vi": "Cô làm trà công khai trước mọi người, giải thích từng bước và tự uống trước."
+   },
+   {
+    "q": "从林晓对钱老板说的话，可以看出她是一个什么样的人？",
+    "q_vi": "Qua lời Lâm Hiểu nói với ông chủ Tiền, có thể thấy cô là người thế nào?",
+    "options": [
+     "心胸宽，愿意跟别人分享",
+     "很会做生意，想赚更多钱",
+     "很生气，想报复钱老板",
+     "很胆小，怕得罪人"
+    ],
+    "answer": 0,
+    "explain_vi": "Cô không oán giận mà còn muốn dạy cách làm cho ông ta — người rộng lượng, biết chia sẻ."
+   }
+  ]
+ },
+ {
+  "id": "s4-11",
+  "kind": "series",
+  "level": 4,
+  "series": "s4",
+  "series_title": "隔着一千三百年",
+  "series_title_vi": "Cách nhau một nghìn ba trăm năm",
+  "chapter": 11,
+  "title": "大雁塔下的月亮",
+  "title_vi": "Vầng trăng dưới tháp Đại Nhạn",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "中秋节这天，长安城到处都是过节的气氛。街上挂满了灯笼，人们买了水果和各种点心，准备晚上一家人一起赏月。林晓问阿青：“你们中秋节吃月饼吗？”阿青眨着眼睛：“月饼是什么？”林晓笑了，原来这个时候，月饼还没有流行起来。",
+   "听说一千多年以后，每个人中秋节都要吃月饼，阿青马上说：“那我今天就做第一个！”她用面做了一个又大又圆的饼，上面放了芝麻和蜂蜜，烤得金黄金黄的。“像不像月亮？”她得意地问。林晓咬了一口，又香又甜，眼泪却差点儿掉了下来。",
+   "傍晚，大家一起来到大雁塔下。小石头送给林晓一只自己刻的小木鸟：“姐姐，它会替我飞到你的家乡去看你。”阿青送给她一块茶饼，上面印着一个“青”字：“以后喝茶的时候，就想想我。”林晓把自己头上的发绳取下来，给阿青戴上，两个人抱在一起，谁也不想放开。",
+   "月亮慢慢地升起来了，又大又圆，照得大雁塔像一座银色的山。林晓拿出铜镜，摆在一块石头上，又铺开一张纸，手里的笔却一直落不下去。离开的时间越来越近，她的心越来越乱：她想回家，想妈妈，可是她也舍不得这里的每一个人。",
+   "裴十二走过来，在她身边坐下，指着天上的月亮说：“你看，一千三百年以后，你在西安看到的月亮，也是这一个吧？”林晓抬起头，愣住了。是啊，长安会变成西安，土路会变成马路，可是天上的月亮从来没有变过。",
+   "她想起了康大叔说的“回家的方向”，想起了大家一起喝茶时的笑声。她突然明白了：真正的分别，不是看不见对方，而是忘了对方。只要还记得，就算隔着一千三百年，大家也在看着同一个月亮。她拿起笔，在纸上写下了两句诗：“千年人不见，此月共君看。”",
+   "最后一个字写完的时候，铜镜突然亮了起来。镜子背面那块空着的地方，慢慢地出现了她刚刚写下的两句诗，好像有人用刀一笔一笔地刻了上去。白色的光越来越亮，把四个人都照得清清楚楚。裴十二轻声念着这首完整的诗，声音有些发抖。",
+   "林晓觉得身体越来越轻，周围的一切开始变得模糊。她看见阿青哭着向她跑过来，看见小石头使劲地挥着手，看见裴十二站在月光里，对她深深地行了一个礼。就在光完全吞没她之前，她听见阿青大声喊：“林晓——别忘了，我们会……”后面的话，她再也没有听清。"
+  ],
+  "translations": [
+   "Ngày Trung thu, khắp thành Trường An tràn ngập không khí lễ hội. Đường phố treo đầy đèn lồng, mọi người mua hoa quả và đủ loại bánh trái, chuẩn bị tối đến cả nhà cùng ngắm trăng. Lâm Hiểu hỏi A Thanh: \"Trung thu mọi người có ăn bánh trung thu không?\" A Thanh chớp mắt: \"Bánh trung thu là gì?\" Lâm Hiểu bật cười, hóa ra thời này bánh trung thu vẫn chưa phổ biến.",
+   "Nghe nói hơn một nghìn năm sau, Trung thu ai cũng ăn bánh trung thu, A Thanh liền nói: \"Vậy hôm nay chị làm cái đầu tiên!\" Cô dùng bột làm một chiếc bánh vừa to vừa tròn, bên trên rắc vừng và mật ong, nướng vàng ruộm. \"Có giống mặt trăng không?\" Cô đắc ý hỏi. Lâm Hiểu cắn một miếng, vừa thơm vừa ngọt, mà nước mắt suýt nữa rơi xuống.",
+   "Chiều tối, mọi người cùng đến dưới chân tháp Đại Nhạn. Tiểu Thạch Đầu tặng Lâm Hiểu một chú chim gỗ nhỏ tự tay khắc: \"Chị ơi, nó sẽ thay em bay đến quê chị thăm chị.\" A Thanh tặng cô một bánh trà, trên đó in một chữ \"Thanh\": \"Sau này lúc uống trà, hãy nghĩ đến chị nhé.\" Lâm Hiểu tháo dây buộc tóc trên đầu xuống, đeo cho A Thanh, hai người ôm chầm lấy nhau, không ai muốn buông ra.",
+   "Mặt trăng từ từ nhô lên, vừa to vừa tròn, chiếu tháp Đại Nhạn như một ngọn núi bạc. Lâm Hiểu lấy chiếc gương đồng ra, đặt lên một tảng đá, lại trải một tờ giấy, nhưng ngòi bút trong tay mãi không hạ xuống được. Giờ chia tay càng lúc càng gần, lòng cô càng lúc càng rối: cô muốn về nhà, nhớ mẹ, nhưng cũng không nỡ rời xa từng người ở đây.",
+   "Bùi Thập Nhị đi tới, ngồi xuống bên cạnh cô, chỉ lên mặt trăng nói: \"Cô xem, một nghìn ba trăm năm sau, vầng trăng cô thấy ở Tây An cũng là vầng trăng này nhỉ?\" Lâm Hiểu ngẩng đầu, sững người. Đúng vậy, Trường An sẽ thành Tây An, đường đất sẽ thành đường nhựa, nhưng mặt trăng trên trời chưa bao giờ thay đổi.",
+   "Cô nhớ đến \"hướng về nhà\" mà chú Khang nói, nhớ đến tiếng cười khi mọi người cùng uống trà. Cô chợt hiểu ra: chia ly thật sự không phải là không nhìn thấy nhau, mà là quên nhau. Chỉ cần còn nhớ, dù cách nhau một nghìn ba trăm năm, mọi người vẫn đang ngắm cùng một vầng trăng. Cô cầm bút, viết lên giấy hai câu thơ: \"Nghìn năm người chẳng gặp, trăng này cùng người ngắm.\"",
+   "Khi chữ cuối cùng vừa viết xong, chiếc gương đồng đột nhiên sáng lên. Khoảng trống phía sau gương dần dần hiện ra hai câu thơ cô vừa viết, như có ai dùng dao khắc lên từng nét một. Ánh sáng trắng càng lúc càng rực, chiếu rõ cả bốn người. Bùi Thập Nhị khẽ đọc bài thơ đã trọn vẹn, giọng hơi run.",
+   "Lâm Hiểu thấy cơ thể càng lúc càng nhẹ, mọi thứ xung quanh bắt đầu nhòe đi. Cô thấy A Thanh khóc chạy về phía mình, thấy Tiểu Thạch Đầu ra sức vẫy tay, thấy Bùi Thập Nhị đứng trong ánh trăng, cúi mình thật sâu chào cô. Ngay trước khi ánh sáng nuốt trọn lấy cô, cô nghe thấy A Thanh hét to: \"Lâm Hiểu — đừng quên nhé, chúng ta sẽ...\" Những lời phía sau, cô không còn nghe rõ nữa."
+  ],
+  "questions": [
+   {
+    "q": "阿青为什么要做一个又大又圆的饼？",
+    "q_vi": "Vì sao A Thanh làm một chiếc bánh vừa to vừa tròn?",
+    "options": [
+     "这是唐朝中秋节一定要吃的东西",
+     "钱老板让她做的",
+     "听说以后中秋节都吃月饼，她想做第一个",
+     "她想拿到西市去卖"
+    ],
+    "answer": 2,
+    "explain_vi": "Nghe nói đời sau Trung thu ai cũng ăn bánh trung thu, A Thanh muốn làm chiếc đầu tiên."
+   },
+   {
+    "q": "是什么帮助林晓想出了最后两句诗？",
+    "q_vi": "Điều gì giúp Lâm Hiểu nghĩ ra hai câu thơ cuối?",
+    "options": [
+     "裴十二直接告诉了她",
+     "她想起了李白的诗",
+     "镜子上本来就有",
+     "裴十二提醒她，一千三百年后的月亮还是同一个"
+    ],
+    "answer": 3,
+    "explain_vi": "Lời Bùi Thập Nhị về vầng trăng không đổi khiến cô hiểu ra và viết được hai câu thơ."
+   },
+   {
+    "q": "林晓认为“真正的分别”是什么？",
+    "q_vi": "Lâm Hiểu cho rằng \"chia ly thật sự\" là gì?",
+    "options": [
+     "忘了对方",
+     "看不见对方",
+     "住在不同的城市",
+     "不能一起喝茶"
+    ],
+    "answer": 0,
+    "explain_vi": "Cô hiểu ra chia ly thật sự không phải là không thấy nhau mà là quên nhau."
+   }
+  ]
+ },
+ {
+  "id": "s4-12",
+  "kind": "series",
+  "level": 4,
+  "series": "s4",
+  "series_title": "隔着一千三百年",
+  "series_title_vi": "Cách nhau một nghìn ba trăm năm",
+  "chapter": 12,
+  "title": "同一个月亮",
+  "title_vi": "Cùng một vầng trăng",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "“林晓？林晓！你怎么坐在地上？”林晓睁开眼睛，看见王老师正着急地看着她。周围是熟悉的白墙和灯光，墙上的钟显示晚上六点十分。王老师说：“我才出去打了五分钟电话，你就睡着了？是不是这几天太累了？”",
+   "五分钟？林晓愣住了。她在长安明明过了二十多天啊！难道一切只是一场梦？她低头一看，那个木盒子还在桌子上。可是盒子里的铜镜，不再是半面，而是一面完整的圆镜子，背面刻着四句诗：“一镜分两半，明月照长安。千年人不见，此月共君看。”",
+   "“王老师，这面镜子……不是只有一半吗？”王老师奇怪地看着她：“你睡糊涂了吧？它一直是完整的，是我们馆里最有名的宝贝之一。据说后面两句诗是谁写的，到现在还是个谜呢。”林晓把手伸进口袋，摸到了一颗冰凉的玻璃珠、一只小木鸟，还有一块印着“青”字的茶饼。",
+   "她跑回家，给手机充上电。屏幕亮起来的那一刻，她的心跳得特别快。相册里，那张照片还在：阿青、裴十二、小石头和他的妹妹，挤在小小的茶摊前，笑得那么开心。她看着照片，哭了很久。她又紧张地上网查了查，还好，《静夜思》的作者仍然是李白。她这才松了一口气，忍不住笑了出来。",
+   "第二天，林晓去图书馆查了一整天资料。在一本很旧的书里，她发现了一段关于长安西市的记录：西市有一家“青记茶铺”，卖一种加了羊奶和蜂蜜的茶，客人很多，一直开了一百多年。茶铺的主人是一位叫阿青的女子，她一辈子都把一根奇怪的发绳戴在头上。",
+   "她又找到了裴十二留下来的几首诗。其中一首的题目叫《中秋送友》，最后两句写道：“君归千载后，莫忘长安茶。”林晓终于知道，那天晚上阿青没说完的话是什么了——“我们会记住你的。”",
+   "从那以后，林晓好像变了一个人。她不再觉得历史只是书上一个个无聊的年份，因为她知道，每一个年份后面，都是一个个像阿青、裴十二、康大叔一样，真实地生活过、笑过、哭过的人。她决定毕业以后继续读研究生，专门研究唐朝的城市生活。",
+   "中秋节那天晚上，林晓一个人来到大雁塔下。广场上人很多，音乐声、笑声和孩子们的叫声混在一起。她买了一杯奶茶，抬头看着天上又大又圆的月亮。她轻轻地说：“阿青，裴十二，小石头，你们看见了吗？我们在看同一个月亮。”月光静静地照在她的脸上，就像一千三百年前那个晚上一样。"
+  ],
+  "translations": [
+   "\"Lâm Hiểu? Lâm Hiểu! Sao em lại ngồi dưới đất?\" Lâm Hiểu mở mắt, thấy thầy Vương đang lo lắng nhìn mình. Xung quanh là bức tường trắng và ánh đèn quen thuộc, đồng hồ trên tường chỉ sáu giờ mười tối. Thầy Vương nói: \"Thầy mới ra ngoài nghe điện thoại năm phút mà em đã ngủ rồi à? Có phải mấy hôm nay mệt quá không?\"",
+   "Năm phút? Lâm Hiểu sững người. Rõ ràng cô đã sống ở Trường An hơn hai mươi ngày cơ mà! Chẳng lẽ tất cả chỉ là một giấc mơ? Cô cúi xuống nhìn, chiếc hộp gỗ vẫn nằm trên bàn. Nhưng chiếc gương đồng trong hộp không còn là một nửa nữa, mà là một chiếc gương tròn nguyên vẹn, mặt sau khắc bốn câu thơ: \"Một gương chia hai nửa, trăng sáng soi Trường An. Nghìn năm người chẳng gặp, trăng này cùng người ngắm.\"",
+   "\"Thầy Vương, chiếc gương này... chẳng phải chỉ có một nửa sao ạ?\" Thầy Vương ngạc nhiên nhìn cô: \"Em ngủ mơ hồ đồ rồi à? Nó luôn nguyên vẹn mà, là một trong những bảo vật nổi tiếng nhất của bảo tàng mình. Nghe nói hai câu thơ sau là ai viết, đến giờ vẫn còn là một bí ẩn đấy.\" Lâm Hiểu thò tay vào túi, chạm phải một hạt thủy tinh mát lạnh, một chú chim gỗ nhỏ, và một bánh trà in chữ \"Thanh\".",
+   "Cô chạy về nhà, sạc điện thoại. Khoảnh khắc màn hình sáng lên, tim cô đập rất nhanh. Trong album ảnh, tấm ảnh ấy vẫn còn: A Thanh, Bùi Thập Nhị, Tiểu Thạch Đầu và em gái cậu, chen chúc trước quán trà nhỏ, cười thật vui. Cô nhìn bức ảnh, khóc rất lâu. Cô lại hồi hộp lên mạng tra thử, may quá, tác giả của \"Tĩnh dạ tứ\" vẫn là Lý Bạch. Lúc này cô mới thở phào, không nhịn được bật cười.",
+   "Hôm sau, Lâm Hiểu đến thư viện tra tài liệu cả ngày. Trong một cuốn sách rất cũ, cô tìm thấy một đoạn ghi chép về Tây Thị Trường An: Tây Thị có một tiệm trà tên \"Thanh Ký\", bán một loại trà thêm sữa dê và mật ong, khách rất đông, mở suốt hơn một trăm năm. Chủ tiệm là một người phụ nữ tên A Thanh, cả đời bà luôn đeo trên đầu một sợi dây buộc tóc kỳ lạ.",
+   "Cô còn tìm được mấy bài thơ Bùi Thập Nhị để lại. Một bài trong số đó có tựa \"Trung thu tiễn bạn\", hai câu cuối viết: \"Người về nghìn năm sau, chớ quên trà Trường An.\" Cuối cùng Lâm Hiểu cũng biết, câu nói dang dở của A Thanh đêm hôm ấy là gì — \"Chúng ta sẽ nhớ em.\"",
+   "Từ đó về sau, Lâm Hiểu như biến thành một con người khác. Cô không còn thấy lịch sử chỉ là những con số năm tháng nhàm chán trong sách, bởi cô biết, sau mỗi mốc năm là những con người như A Thanh, Bùi Thập Nhị, chú Khang, đã từng sống thật, cười thật, khóc thật. Cô quyết định sau khi tốt nghiệp sẽ học tiếp cao học, chuyên nghiên cứu đời sống đô thị thời Đường.",
+   "Tối Trung thu năm ấy, Lâm Hiểu một mình đến dưới chân tháp Đại Nhạn. Quảng trường rất đông người, tiếng nhạc, tiếng cười và tiếng trẻ con í ới hòa vào nhau. Cô mua một ly trà sữa, ngẩng đầu ngắm vầng trăng vừa to vừa tròn trên trời. Cô khẽ nói: \"A Thanh, Bùi Thập Nhị, Tiểu Thạch Đầu, mọi người có thấy không? Chúng ta đang ngắm cùng một vầng trăng.\" Ánh trăng lặng lẽ chiếu lên gương mặt cô, hệt như đêm hôm ấy của một nghìn ba trăm năm trước."
+  ],
+  "questions": [
+   {
+    "q": "林晓回来以后，博物馆里的铜镜有什么变化？",
+    "q_vi": "Sau khi Lâm Hiểu trở về, chiếc gương đồng trong bảo tàng có gì thay đổi?",
+    "options": [
+     "铜镜不见了",
+     "变成了完整的镜子，背面有四句诗",
+     "镜子上多了阿青的名字",
+     "镜子还是只有一半"
+    ],
+    "answer": 1,
+    "explain_vi": "Gương giờ đã nguyên vẹn, mặt sau khắc đủ bốn câu thơ, kể cả hai câu cô viết."
+   },
+   {
+    "q": "从旧书的记录可以知道什么？",
+    "q_vi": "Từ ghi chép trong sách cũ có thể biết điều gì?",
+    "options": [
+     "钱老板后来开了很多茶馆",
+     "裴十二成了大官",
+     "康大叔再也没有回长安",
+     "阿青的茶铺卖林家奶茶，开了一百多年"
+    ],
+    "answer": 3,
+    "explain_vi": "Tiệm 'Thanh Ký' bán trà sữa dê mật ong, mở hơn trăm năm, chủ tiệm đeo dây buộc tóc lạ — chính là A Thanh."
+   },
+   {
+    "q": "这次经历让林晓对历史有了什么新的认识？",
+    "q_vi": "Trải nghiệm này cho Lâm Hiểu nhận thức mới gì về lịch sử?",
+    "options": [
+     "历史就是背年份",
+     "历史和现在没有关系",
+     "每个年份后面都是真实生活过的人",
+     "历史书上写的都是错的"
+    ],
+    "answer": 2,
+    "explain_vi": "Cô hiểu sau mỗi mốc năm là những con người thật đã sống, cười, khóc."
+   }
+  ]
+ }
+]

@@ -12,7 +12,7 @@
        settings() / set(patch)        đọc / ghi cài đặt
        speak(text, { voice, rate, pitch, onend })   đọc một câu (rate là tốc độ gốc của trang, sẽ nhân với rate chung)
        stop()
-       dialogueSegments(paragraphs)   tách lời dẫn / lời thoại (trong “…” 「…」) và gán vai: [{ p, text, role }]
+       dialogueSegments(paragraphs)   tách lời dẫn / lời thoại (trong “…” 「…」, hoặc kịch bản "Tên：lời") và gán vai: [{ p, text, role, name? }]
        readDialogue(paragraphs, { rate, onPara(i), onEnd, onStop })  đọc nhập vai: người dẫn + 2 vai luân phiên; trả về { stop() }
                                       (onEnd: đọc hết bài; onStop: bị speechSynthesis.cancel() từ chỗ khác cắt ngang)
        open()                         mở hộp chọn giọng
@@ -167,9 +167,16 @@
     // Gán vai: đoạn có lời thoại mới → đổi người nói (A ↔ B); các câu thoại trong cùng đoạn giữ cùng người nói.
     var QUOTE = /(“[^”]*”|「[^」]*」|『[^』]*』|"[^"]*")/g;
     function dialogueSegments(paragraphs) {
-        var out = [], speaker = "b";
+        var out = [], speaker = "b", names = {}, nNames = 0;
         (paragraphs || []).forEach(function (para, p) {
             var text = String(para || "");
+            // Kịch bản hội thoại "Tên：lời nói": mỗi tên luôn cùng một vai (tên thứ 1 → Vai 1, thứ 2 → Vai 2, sau đó xen kẽ)
+            var sp = /^\s*([㐀-鿿A-Za-z]{1,6})\s*[：:]\s*(.+)$/.exec(text);
+            if (sp && HAN.test(sp[2])) {
+                if (!names[sp[1]]) names[sp[1]] = ["a", "b", "c", "d"][nNames++ % 4];   // mỗi người nói một vai (tối đa 4 giọng khác nhau)
+                out.push({ p: p, text: sp[2].replace(/^[“「『"]|[”」』"]$/g, ""), role: names[sp[1]], name: sp[1] });
+                return;
+            }
             var parts = text.split(QUOTE).filter(function (x) { return x && x.trim(); });
             var hasQuote = parts.some(function (x) { return /^[“「『"]/.test(x) && HAN.test(x); });
             if (hasQuote) speaker = speaker === "a" ? "b" : "a";   // mỗi đoạn có lời thoại mới: đổi người nói
@@ -192,10 +199,18 @@
         var nar = byName(S.voice) || vs[0];
         if (role === "narrator") return nar;
         if (role === "a") return (m.filter(function (x) { return x !== nar; })[0]) || m[0] || vs.filter(function (x) { return x !== nar; })[0] || nar;
-        // vai B: khác vai A và (nếu được) khác người dẫn
         var a = roleVoice("a");
-        return (f.filter(function (x) { return x !== nar && x !== a; })[0]) || f.filter(function (x) { return x !== a; })[0] ||
-               vs.filter(function (x) { return x !== a && x !== nar; })[0] || vs.filter(function (x) { return x !== a; })[0] || nar;
+        if (role === "b") {
+            // vai B: khác vai A và (nếu được) khác người dẫn
+            return (f.filter(function (x) { return x !== nar && x !== a; })[0]) || f.filter(function (x) { return x !== a; })[0] ||
+                   vs.filter(function (x) { return x !== a && x !== nar; })[0] || vs.filter(function (x) { return x !== a; })[0] || nar;
+        }
+        // vai C, D (hội thoại 3–4 người): ưu tiên giọng chưa dùng; hết giọng thì quay vòng
+        var used = [nar, a, roleVoice("b")];
+        if (role === "d") used.push(roleVoice("c"));
+        var free = vs.filter(function (x) { return used.indexOf(x) < 0; });
+        if (free.length) return role === "c" ? (m.filter(function (x) { return free.indexOf(x) >= 0; })[0] || free[0]) : (f.filter(function (x) { return free.indexOf(x) >= 0; })[0] || free[0]);
+        return role === "c" ? a : roleVoice("b");
     }
     function readDialogue(paragraphs, o) {
         o = o || {};
@@ -326,7 +341,7 @@
     window.HocTTS = {
         voices: voices, settings: function () { return S; },
         set: function (p) { Object.assign(S, p || {}); persist(); },
-        speak: speak, stop: stop, dialogueSegments: dialogueSegments, readDialogue: readDialogue, open: open, gender: gender,
+        speak: speak, stop: stop, dialogueSegments: dialogueSegments, readDialogue: readDialogue, open: open, gender: gender, roleVoice: roleVoice,
         onChange: function (f) { if (typeof f === "function") listeners.push(f); }
     };
 })();

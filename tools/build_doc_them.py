@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Gom bài đọc phân cấp (tools/doc_them_src/hsk1.json … hsk6.json) thành doc_them/doc_data.js:
+Gom tài liệu đọc (mọi tools/doc_them_src/*.json; exam*.json là đề luyện thi) thành doc_them/doc_data.js:
+  window.DOC_LIBRARY.exams = [đề luyện thi, xem BRIEF_MORE.md]; mỗi bài có thêm "kind" (article/series/dialogue/chengyu)
+  và các trường riêng của loại đó (series, series_title, chapter, speakers, scene_vi, idiom).
   window.DOC_LIBRARY = { texts: [ {
       id, level, title, title_vi, topic, chars,            # chars: số chữ Hán
       paragraphs: [zh…], pinyin: ["xiǎo shí hou …" …],     # pinyin: mỗi đoạn một chuỗi, đúng THỨ TỰ các chữ Hán trong đoạn, cách nhau 1 dấu cách
@@ -9,6 +11,7 @@ Gom bài đọc phân cấp (tools/doc_them_src/hsk1.json … hsk6.json) thành 
   } … ] }
 Chạy (cần pypinyin, jieba):  python tools/build_doc_them.py
 """
+import glob
 import json
 import os
 import re
@@ -89,12 +92,20 @@ def main():
     # chữ đã gặp trong các từ ≤ cấp N (để bỏ qua chữ lẻ quen thuộc)
     known_chars_by_level = {L: set(c for w, lv in level_of.items() if lv <= L for c in w) for L in range(1, 7)}
 
-    texts = []
-    for lv in range(1, 7):
-        p = os.path.join(SRC, f"hsk{lv}.json")
-        if not os.path.exists(p):
+    texts, exams, seen_ids = [], [], set()
+    # Mọi file *.json trong doc_them_src: file tên exam*.json là đề luyện thi, còn lại là mảng bài (kind: article/series/dialogue/chengyu)
+    files = sorted(glob.glob(os.path.join(SRC, "*.json")))
+    for p in files:
+        data = json.load(open(p, encoding="utf-8"))
+        if os.path.basename(p).startswith("exam"):
+            for e in data:
+                assert e["id"] not in seen_ids, ("trùng id", e["id"])
+                seen_ids.add(e["id"])
+                exams.append(e)
             continue
-        for t in json.load(open(p, encoding="utf-8")):
+        for t in data:
+            assert t["id"] not in seen_ids, ("trùng id", t["id"], p)
+            seen_ids.add(t["id"])
             paras = [x.strip() for x in t["paragraphs"]]
             trans = [x.strip() for x in t.get("translations", [])]
             assert len(paras) == len(trans), (t["id"], len(paras), len(trans))
@@ -127,21 +138,29 @@ def main():
                             continue   # cụm/tên riêng không có trong từ điển
                         info = dic[w]
                         beyond.append([w, info[0], info[1] or word_hv(w), info[2]])
-            texts.append({
-                "id": t["id"], "level": t["level"], "title": t["title"], "title_vi": t.get("title_vi", ""),
+            item = {
+                "id": t["id"], "kind": t.get("kind", "article"), "level": t["level"], "title": t["title"], "title_vi": t.get("title_vi", ""),
                 "topic": t.get("topic", ""), "chars": sum(len(HAN.findall(x)) for x in paras),
                 "paragraphs": paras, "pinyin": [han_pinyin(x) for x in paras], "translations": trans,
                 "questions": t.get("questions", []), "beyond": beyond,
-            })
+            }
+            for k in ("series", "series_title", "series_title_vi", "chapter", "speakers", "scene_vi", "idiom"):
+                if k in t:
+                    item[k] = t[k]
+            texts.append(item)
+    KIND_ORDER = {"article": 0, "series": 1, "dialogue": 2, "chengyu": 3}
+    texts.sort(key=lambda t: (KIND_ORDER.get(t["kind"], 9), t.get("series", ""), t["level"] if t["kind"] != "series" else 0, t.get("chapter", 0), t["id"]))
+    exams.sort(key=lambda e: (e.get("level", 0), e["id"]))
     out = os.path.join(ROOT, "doc_them", "doc_data.js")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         f.write("/* Sinh tự động bởi tools/build_doc_them.py từ tools/doc_them_src/ — không sửa tay */\nwindow.DOC_LIBRARY = ")
-        json.dump({"texts": texts}, f, ensure_ascii=False, separators=(",", ":"))
+        json.dump({"texts": texts, "exams": exams}, f, ensure_ascii=False, separators=(",", ":"))
         f.write(";\n")
     for t in texts:
-        print(f"{t['id']} HSK{t['level']} {t['chars']:5d} chữ  {len(t['paragraphs']):2d} đoạn  {len(t['questions'])} câu hỏi  ngoài cấp {len(t['beyond'])}  {t['title']}")
-    print(f"-> {out}: {len(texts)} bài")
+        print(f"{t['id']:8s} {t['kind']:8s} HSK{t['level']} {t['chars']:5d} chữ  {len(t['paragraphs']):2d} đoạn  {len(t['questions'])} câu hỏi  ngoài cấp {len(t['beyond'])}  {t['title']}")
+    from collections import Counter
+    print(f"-> {out}: {len(texts)} bài {dict(Counter(t['kind'] for t in texts))}, {len(exams)} đề luyện thi")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,708 @@
+[
+ {
+  "id": "s5-01",
+  "kind": "series",
+  "level": 3,
+  "series": "s5",
+  "series_title": "街角的小咖啡馆",
+  "series_title_vi": "Quán cà phê nhỏ ở góc phố",
+  "topic": "truyện dài",
+  "chapter": 1,
+  "title": "开门的第一天",
+  "title_vi": "Ngày đầu tiên mở cửa",
+  "paragraphs": [
+   "小雨今年二十六岁。以前她在大城市的一家公司上班，每天忙得连吃饭的时间都没有。去年冬天，她终于做了一个决定：回到自己从小长大的小城，开一家小咖啡馆。",
+   "咖啡馆在一条老街的拐角，很小，只有五张桌子，可是窗户很大，阳光可以照进来。小雨自己刷墙，自己买桌子和椅子，还在门口放了两盆花。她给咖啡馆起了一个简单的名字，叫“街角咖啡”。",
+   "开门的第一天，小雨早上六点就起床了。她把每张桌子都擦得干干净净，又做了一遍咖啡，尝了尝，觉得还不错。七点半，她打开门，笑着站在门口，等第一位客人。",
+   "可是，八点过去了，九点也过去了，一个客人都没有来。街上的人走得很快，有的看了一眼就走了。小雨有点儿着急，她想：“是不是我的咖啡太贵了？”",
+   "十点的时候，门终于开了。进来的是一位头发全白的老人，手里拿着一张报纸。他在窗边坐下，看了看桌上的菜单，不太高兴地说：“咖啡？我不喝这个。有热水吗？”",
+   "小雨笑着说：“有，您等一下。”她给老人倒了一杯热水。老人没说谢谢，只是一边喝水一边看报纸，一直看到十二点才走。走以前，他在桌上放了两块钱。",
+   "晚上关门的时候，小雨数了数，这一天她只卖出了三杯咖啡，还有那杯热水。她叹了口气，心里有点儿难过。就在她准备锁门的时候，她发现门口的花盆旁边，坐着一只橘黄色的小猫。它正用一双大眼睛，安静地看着她。"
+  ],
+  "translations": [
+   "Tiểu Vũ năm nay hai mươi sáu tuổi. Trước đây cô làm việc ở một công ty tại thành phố lớn, ngày nào cũng bận đến mức không có cả thời gian ăn cơm. Mùa đông năm ngoái, cô cuối cùng cũng đưa ra một quyết định: trở về thị trấn nhỏ nơi mình lớn lên, mở một quán cà phê nhỏ.",
+   "Quán cà phê nằm ở góc một con phố cũ, rất nhỏ, chỉ có năm cái bàn, nhưng cửa sổ rất lớn, ánh nắng có thể chiếu vào. Tiểu Vũ tự mình quét vôi tường, tự mua bàn ghế, còn đặt hai chậu hoa ở cửa. Cô đặt cho quán một cái tên đơn giản: “Cà phê Góc Phố”.",
+   "Ngày đầu tiên mở cửa, Tiểu Vũ dậy từ sáu giờ sáng. Cô lau từng chiếc bàn sạch bong, rồi pha thử một lượt cà phê, nếm thử, thấy cũng khá ngon. Bảy giờ rưỡi, cô mở cửa, mỉm cười đứng ở cửa đợi vị khách đầu tiên.",
+   "Thế nhưng tám giờ trôi qua, chín giờ cũng trôi qua, không có lấy một vị khách nào. Người trên phố đi rất nhanh, có người liếc nhìn một cái rồi đi. Tiểu Vũ hơi sốt ruột, cô nghĩ: “Có phải cà phê của mình đắt quá không?”",
+   "Lúc mười giờ, cửa cuối cùng cũng mở. Người bước vào là một ông cụ tóc bạc trắng, tay cầm một tờ báo. Ông ngồi xuống cạnh cửa sổ, nhìn thực đơn trên bàn, nói với vẻ không vui lắm: “Cà phê à? Tôi không uống thứ này. Có nước nóng không?”",
+   "Tiểu Vũ mỉm cười nói: “Có ạ, ông đợi một chút.” Cô rót cho ông một cốc nước nóng. Ông cụ không nói cảm ơn, chỉ vừa uống nước vừa đọc báo, đọc mãi đến mười hai giờ mới đi. Trước khi đi, ông để lại hai đồng trên bàn.",
+   "Buổi tối lúc đóng cửa, Tiểu Vũ đếm lại, cả ngày cô chỉ bán được ba cốc cà phê, cộng thêm cốc nước nóng kia. Cô thở dài, trong lòng hơi buồn. Đúng lúc chuẩn bị khóa cửa, cô phát hiện bên cạnh chậu hoa trước cửa có một chú mèo nhỏ màu vàng cam đang ngồi. Nó đang dùng đôi mắt to tròn lặng lẽ nhìn cô."
+  ],
+  "questions": [
+   {
+    "q": "小雨为什么回到小城？",
+    "q_vi": "Vì sao Tiểu Vũ trở về thị trấn nhỏ?",
+    "options": [
+     "她在大城市找不到工作",
+     "她想开一家自己的咖啡馆",
+     "她的家人生病了",
+     "公司让她去小城工作"
+    ],
+    "answer": 1,
+    "explain_vi": "Cô làm việc quá bận ở thành phố lớn nên quyết định về quê mở một quán cà phê nhỏ."
+   },
+   {
+    "q": "那位老人在咖啡馆里喝了什么？",
+    "q_vi": "Ông cụ uống gì trong quán?",
+    "options": [
+     "一杯咖啡",
+     "一杯茶",
+     "一杯热水",
+     "什么也没喝"
+    ],
+    "answer": 2,
+    "explain_vi": "Ông nói không uống cà phê và hỏi có nước nóng không, Tiểu Vũ rót cho ông một cốc nước nóng."
+   },
+   {
+    "q": "第一天结束的时候，小雨的心情怎么样？",
+    "q_vi": "Cuối ngày đầu tiên, tâm trạng Tiểu Vũ thế nào?",
+    "options": [
+     "非常高兴，因为客人很多",
+     "很生气，因为老人没说谢谢",
+     "不太在意，因为她很累",
+     "有点儿难过，因为客人太少"
+    ],
+    "answer": 3,
+    "explain_vi": "Cả ngày chỉ bán được ba cốc cà phê nên cô thở dài, hơi buồn."
+   }
+  ]
+ },
+ {
+  "id": "s5-02",
+  "kind": "series",
+  "level": 3,
+  "series": "s5",
+  "series_title": "街角的小咖啡馆",
+  "series_title_vi": "Quán cà phê nhỏ ở góc phố",
+  "topic": "truyện dài",
+  "chapter": 2,
+  "title": "不走的小猫",
+  "title_vi": "Chú mèo không chịu đi",
+  "paragraphs": [
+   "小猫很瘦，身上的毛有点儿脏，一看就知道是一只没有家的猫。小雨走过去，轻轻地问它：“你饿了吗？”小猫“喵”了一声，好像听懂了。小雨回到店里，给它倒了一小碗牛奶。小猫很快就喝完了，然后坐在门口不走了。",
+   "第二天早上，小雨来开门的时候，小猫还在那儿。第三天也一样。小雨笑了：“好吧，看来你是想住在这里了。”因为它的颜色像一个橘子，小雨就叫它“橘子”。",
+   "十点，那位白头发的老人又来了。还是坐在窗边，还是要一杯热水，还是看他的报纸。小雨这才知道，他姓王，就住在旁边的楼里，大家都叫他王爷爷。",
+   "王爷爷看见橘子在店里跑来跑去，马上说：“开咖啡馆的，怎么能养猫？客人会觉得不干净。猫毛到处都是，谁还来喝咖啡？”小雨想了想，觉得他说得也有道理，心里很为难。",
+   "可是那天晚上下起了大雨，风也很大。小雨看着外面的橘子，怎么也不能把它关在门外。她找了一个旧纸箱，放了一条毛巾，在店里给橘子做了一个小小的家。",
+   "第二天，王爷爷来的时候，看了看那个纸箱，什么也没说。小雨以为他生气了。可是他走了以后，小雨在窗边的桌子下面发现了一个小碗，碗里是两条小鱼，已经做熟了，没有放盐。",
+   "小雨拿着那两条鱼，站在门口，看着王爷爷慢慢走远的样子，忍不住笑了。橘子在她脚边“喵喵”地叫着，好像也闻到了鱼的味道。"
+  ],
+  "translations": [
+   "Chú mèo rất gầy, lông trên người hơi bẩn, nhìn qua là biết một con mèo không có nhà. Tiểu Vũ bước lại gần, khẽ hỏi nó: “Em đói không?” Chú mèo “meo” một tiếng, như thể hiểu được. Tiểu Vũ quay vào quán, rót cho nó một bát sữa nhỏ. Chú mèo uống hết rất nhanh, rồi ngồi ở cửa không chịu đi.",
+   "Sáng hôm sau, lúc Tiểu Vũ đến mở cửa, chú mèo vẫn ở đó. Ngày thứ ba cũng vậy. Tiểu Vũ bật cười: “Được rồi, xem ra em muốn ở lại đây rồi.” Vì màu lông của nó giống quả quýt, Tiểu Vũ gọi nó là “Quýt”.",
+   "Mười giờ, ông cụ tóc bạc lại đến. Vẫn ngồi cạnh cửa sổ, vẫn gọi một cốc nước nóng, vẫn đọc báo của ông. Đến lúc này Tiểu Vũ mới biết ông họ Vương, sống ngay ở tòa nhà bên cạnh, mọi người đều gọi ông là ông Vương.",
+   "Ông Vương thấy Quýt chạy tới chạy lui trong quán, lập tức nói: “Mở quán cà phê mà sao lại nuôi mèo? Khách sẽ thấy không sạch sẽ. Lông mèo khắp nơi, ai còn đến uống cà phê nữa?” Tiểu Vũ nghĩ một lúc, thấy ông nói cũng có lý, trong lòng rất khó xử.",
+   "Nhưng tối hôm đó trời đổ mưa to, gió cũng rất lớn. Tiểu Vũ nhìn Quýt ở bên ngoài, thế nào cũng không nỡ để nó ngoài cửa. Cô tìm một cái thùng giấy cũ, lót một chiếc khăn, làm cho Quýt một ngôi nhà nhỏ xíu trong quán.",
+   "Hôm sau, khi ông Vương đến, ông nhìn cái thùng giấy kia nhưng không nói gì. Tiểu Vũ tưởng ông giận. Nhưng sau khi ông đi, Tiểu Vũ phát hiện dưới gầm bàn cạnh cửa sổ có một cái bát nhỏ, trong bát là hai con cá nhỏ đã nấu chín, không bỏ muối.",
+   "Tiểu Vũ cầm hai con cá, đứng ở cửa, nhìn dáng ông Vương chậm rãi đi xa dần, không nhịn được cười. Quýt kêu “meo meo” bên chân cô, như thể cũng đã ngửi thấy mùi cá."
+  ],
+  "questions": [
+   {
+    "q": "小雨为什么叫小猫“橘子”？",
+    "q_vi": "Vì sao Tiểu Vũ gọi chú mèo là “Quýt”?",
+    "options": [
+     "因为小猫喜欢吃橘子",
+     "因为王爷爷给它起了这个名字",
+     "因为它的颜色像橘子",
+     "因为它是在橘子树下找到的"
+    ],
+    "answer": 2,
+    "explain_vi": "Bài viết: vì màu lông của nó giống quả quýt nên Tiểu Vũ gọi nó là “Quýt”."
+   },
+   {
+    "q": "王爷爷一开始为什么不同意小雨养猫？",
+    "q_vi": "Ban đầu vì sao ông Vương không đồng ý cho Tiểu Vũ nuôi mèo?",
+    "options": [
+     "他觉得客人会觉得不干净",
+     "他自己很怕猫",
+     "猫吃了他的鱼",
+     "他想把猫带回家"
+    ],
+    "answer": 0,
+    "explain_vi": "Ông nói khách sẽ thấy không sạch sẽ, lông mèo khắp nơi thì ai còn đến uống cà phê."
+   },
+   {
+    "q": "从桌子下面的两条鱼，可以知道什么？",
+    "q_vi": "Từ hai con cá dưới gầm bàn, có thể biết điều gì?",
+    "options": [
+     "王爷爷忘了带走自己的午饭",
+     "王爷爷其实也关心橘子",
+     "小雨想让王爷爷吃鱼",
+     "有客人想买橘子"
+    ],
+    "answer": 1,
+    "explain_vi": "Cá đã nấu chín, không bỏ muối — rõ ràng ông Vương làm cho mèo ăn; ngoài miệng phản đối nhưng thực ra ông cũng quan tâm đến Quýt."
+   }
+  ]
+ },
+ {
+  "id": "s5-03",
+  "kind": "series",
+  "level": 3,
+  "series": "s5",
+  "series_title": "街角的小咖啡馆",
+  "series_title_vi": "Quán cà phê nhỏ ở góc phố",
+  "topic": "truyện dài",
+  "chapter": 3,
+  "title": "难看的蛋糕",
+  "title_vi": "Chiếc bánh xấu xí",
+  "paragraphs": [
+   "有了橘子以后，咖啡馆热闹了一点儿。最常来的是一个叫小东的男孩子，他八岁，住在王爷爷楼上。他的爸爸妈妈下班很晚，所以他每天放学以后就跑过来，一边写作业，一边跟橘子玩儿。",
+   "可是，客人还是不多。一天晚上，小雨对小东说：“我想做蛋糕。有了好吃的蛋糕，客人可能会多一些。”小东眼睛一亮：“好啊！我来尝！”",
+   "小雨在网上学了做蛋糕的方法。可是第一个蛋糕从里面拿出来的时候，又黑又硬，像一块石头。第二个蛋糕一点儿也没有长高，平平的，像一张饼。小东吃了一口，小声说：“小雨姐姐，这个……有点儿像鞋。”",
+   "小雨又生气又想笑。她坐在椅子上，说：“算了，我可能不会做蛋糕。”小东却说：“别放弃！我们再试一次吧。这次我帮你看时间，你认真放糖和鸡蛋。”",
+   "他们一起试了一次又一次。晚上九点，第五个蛋糕终于成功了，又软又香。可是它的样子还是很奇怪，一边高一边低。小东看了半天，突然说：“它像橘子的脸！”",
+   "小雨一看，真的很像。她干脆用巧克力给蛋糕画上了两只眼睛、一个小鼻子和几根胡子。一个难看的蛋糕，一下子变成了一个可爱的“猫脸蛋糕”。",
+   "第二天，小东把猫脸蛋糕的照片给同学们看。下午放学，七八个孩子拉着爸爸妈妈来到了街角咖啡。小小的店里第一次坐满了人。小雨忙得不得了，心里却非常开心。",
+   "关门的时候，小雨忽然想起一件事：今天十点，王爷爷没有来。这是咖啡馆开门以后，他第一次没有来。"
+  ],
+  "translations": [
+   "Từ khi có Quýt, quán cà phê đông vui hơn một chút. Người hay đến nhất là một cậu bé tên Tiểu Đông, tám tuổi, sống ở tầng trên nhà ông Vương. Bố mẹ cậu tan làm rất muộn, nên ngày nào tan học cậu cũng chạy sang đây, vừa làm bài tập vừa chơi với Quýt.",
+   "Nhưng khách vẫn không nhiều. Một buổi tối, Tiểu Vũ nói với Tiểu Đông: “Chị muốn làm bánh ngọt. Có bánh ngon thì có lẽ khách sẽ đông hơn một chút.” Mắt Tiểu Đông sáng lên: “Hay quá! Để em nếm!”",
+   "Tiểu Vũ học cách làm bánh trên mạng. Thế nhưng chiếc bánh đầu tiên lúc lấy ra thì vừa đen vừa cứng, như một hòn đá. Chiếc thứ hai chẳng nở lên chút nào, dẹt lép, như một cái bánh đa. Tiểu Đông ăn một miếng, nói nhỏ: “Chị Tiểu Vũ ơi, cái này… hơi giống chiếc giày.”",
+   "Tiểu Vũ vừa tức vừa buồn cười. Cô ngồi xuống ghế, nói: “Thôi, có lẽ chị không biết làm bánh.” Tiểu Đông lại nói: “Đừng bỏ cuộc! Mình thử lại lần nữa đi. Lần này em giúp chị canh giờ, chị chú ý cho đường và trứng cho đúng.”",
+   "Hai chị em thử hết lần này đến lần khác. Chín giờ tối, chiếc bánh thứ năm cuối cùng cũng thành công, vừa mềm vừa thơm. Nhưng hình dáng của nó vẫn rất kỳ quặc, bên cao bên thấp. Tiểu Đông nhìn một lúc lâu, bỗng nói: “Nó giống mặt của Quýt!”",
+   "Tiểu Vũ nhìn kỹ, đúng là rất giống. Cô dứt khoát dùng sô-cô-la vẽ lên bánh hai con mắt, một cái mũi nhỏ và mấy sợi ria. Một chiếc bánh xấu xí, bỗng chốc biến thành một chiếc “bánh mặt mèo” đáng yêu.",
+   "Hôm sau, Tiểu Đông cho các bạn cùng lớp xem ảnh chiếc bánh mặt mèo. Chiều tan học, bảy tám đứa trẻ kéo bố mẹ đến Cà phê Góc Phố. Lần đầu tiên quán nhỏ chật kín người. Tiểu Vũ bận tối mắt tối mũi, nhưng trong lòng vô cùng vui vẻ.",
+   "Lúc đóng cửa, Tiểu Vũ chợt nhớ ra một chuyện: mười giờ hôm nay, ông Vương không đến. Đây là lần đầu tiên ông không đến kể từ ngày quán mở cửa."
+  ],
+  "questions": [
+   {
+    "q": "小东为什么每天放学以后来咖啡馆？",
+    "q_vi": "Vì sao ngày nào tan học Tiểu Đông cũng đến quán?",
+    "options": [
+     "他想学做咖啡",
+     "小雨是他的老师",
+     "他的爸爸妈妈下班很晚",
+     "他家就在咖啡馆里"
+    ],
+    "answer": 2,
+    "explain_vi": "Bố mẹ Tiểu Đông tan làm rất muộn nên cậu sang quán làm bài tập và chơi với Quýt."
+   },
+   {
+    "q": "“猫脸蛋糕”是怎么来的？",
+    "q_vi": "“Bánh mặt mèo” ra đời thế nào?",
+    "options": [
+     "蛋糕样子奇怪，像橘子的脸",
+     "小雨从网上学的",
+     "客人要求做的",
+     "王爷爷教小雨做的"
+    ],
+    "answer": 0,
+    "explain_vi": "Chiếc bánh thứ năm bên cao bên thấp, Tiểu Đông thấy giống mặt Quýt, Tiểu Vũ liền vẽ mắt, mũi, ria lên."
+   },
+   {
+    "q": "这一章最后，小雨发现了什么不一样的事？",
+    "q_vi": "Cuối chương này, Tiểu Vũ nhận ra điều gì khác thường?",
+    "options": [
+     "橘子不见了",
+     "王爷爷第一次没有来",
+     "蛋糕都卖完了",
+     "小东没有回家"
+    ],
+    "answer": 1,
+    "explain_vi": "Lúc đóng cửa cô nhớ ra hôm nay ông Vương không đến — lần đầu tiên kể từ khi quán mở."
+   }
+  ]
+ },
+ {
+  "id": "s5-04",
+  "kind": "series",
+  "level": 3,
+  "series": "s5",
+  "series_title": "街角的小咖啡馆",
+  "series_title_vi": "Quán cà phê nhỏ ở góc phố",
+  "topic": "truyện dài",
+  "chapter": 4,
+  "title": "王爷爷的秘密",
+  "title_vi": "Bí mật của ông Vương",
+  "paragraphs": [
+   "第二天，王爷爷还是没有来。小雨有点儿担心，下午就和小东带着一块猫脸蛋糕，去敲王爷爷家的门。",
+   "开门的王爷爷声音很小。原来他感冒发烧了，已经在家躺了两天。看到他们，他有点儿意外，说：“我没事，你们来干什么？”可是他还是让他们进了门。",
+   "王爷爷的家很安静，墙上挂着很多照片。小雨看见其中一张，一下子停住了：照片上是一位笑得很好看的奶奶，站在一家小书店门口。那家书店的大窗户，那个拐角，她太熟悉了——就是现在的街角咖啡。",
+   "王爷爷慢慢坐下来，说：“那是我老伴儿。她在那里开了三十年书店。她最喜欢喝咖啡，总是说，等老了，就把书店变成一个小咖啡馆。我呢，总说咖啡太苦，一次也没有陪她喝过。”",
+   "他又说：“三年前她走了，书店也关了。后来听说有人在那里开咖啡馆，我就想去看看。每天坐在窗边，好像她还在一样。”",
+   "小雨的眼睛红了。小东也没说话，把蛋糕轻轻地放在桌子上。",
+   "一个星期以后，王爷爷的感冒好了，十点钟又准时出现在窗边。这一次，小雨没有给他热水，而是端来一杯咖啡，里面放了很多牛奶和一点儿糖。她说：“王爷爷，这是专门为您做的，不苦。”",
+   "王爷爷看着杯子，看了很久。然后他慢慢地喝了一口，又喝了一口。他说：“嗯……不苦，有点儿甜。原来是这个味道。”说完，他笑了。这是小雨第一次看见王爷爷笑。",
+   "就在这时，小东从外面跑进来，大声喊：“小雨姐姐，不好了！橘子不见了！”"
+  ],
+  "translations": [
+   "Hôm sau, ông Vương vẫn không đến. Tiểu Vũ hơi lo, chiều hôm đó cô cùng Tiểu Đông mang theo một miếng bánh mặt mèo đến gõ cửa nhà ông.",
+   "Ông Vương ra mở cửa, giọng rất nhỏ. Hóa ra ông bị cảm sốt, đã nằm ở nhà hai ngày rồi. Thấy hai chị em, ông hơi bất ngờ, nói: “Tôi không sao, các cô cậu đến làm gì?” Nhưng rồi ông vẫn cho họ vào nhà.",
+   "Nhà ông Vương rất yên tĩnh, trên tường treo rất nhiều ảnh. Tiểu Vũ nhìn thấy một tấm trong số đó, bỗng khựng lại: trong ảnh là một bà cụ cười rất tươi, đứng trước cửa một hiệu sách nhỏ. Ô cửa sổ lớn của hiệu sách ấy, cái góc phố ấy, cô quá quen thuộc — chính là Cà phê Góc Phố bây giờ.",
+   "Ông Vương chậm rãi ngồi xuống, nói: “Đó là bà nhà tôi. Bà ấy mở hiệu sách ở đó ba mươi năm. Bà thích uống cà phê nhất, lúc nào cũng nói đợi khi về già sẽ biến hiệu sách thành một quán cà phê nhỏ. Còn tôi thì lúc nào cũng chê cà phê đắng quá, chưa một lần nào uống cùng bà.”",
+   "Ông nói tiếp: “Ba năm trước bà ấy mất, hiệu sách cũng đóng cửa. Sau đó nghe nói có người mở quán cà phê ở đó, tôi muốn đến xem thử. Ngày nào cũng ngồi bên cửa sổ, cứ như bà ấy vẫn còn ở đó.”",
+   "Mắt Tiểu Vũ đỏ hoe. Tiểu Đông cũng không nói gì, nhẹ nhàng đặt chiếc bánh lên bàn.",
+   "Một tuần sau, ông Vương khỏi cảm, mười giờ lại xuất hiện đúng giờ bên cửa sổ. Lần này Tiểu Vũ không mang nước nóng cho ông, mà bưng ra một cốc cà phê có thật nhiều sữa và một chút đường. Cô nói: “Ông Vương, cốc này cháu pha riêng cho ông, không đắng đâu.”",
+   "Ông Vương nhìn cái cốc, nhìn rất lâu. Rồi ông chậm rãi uống một ngụm, rồi thêm một ngụm. Ông nói: “Ừm… không đắng, hơi ngọt. Hóa ra là vị này.” Nói xong, ông mỉm cười. Đây là lần đầu tiên Tiểu Vũ thấy ông Vương cười.",
+   "Đúng lúc đó, Tiểu Đông từ ngoài chạy vào, hét lớn: “Chị Tiểu Vũ ơi, nguy rồi! Quýt biến mất rồi!”"
+  ],
+  "questions": [
+   {
+    "q": "王爷爷为什么两天没来咖啡馆？",
+    "q_vi": "Vì sao ông Vương hai ngày không đến quán?",
+    "options": [
+     "他生小雨的气了",
+     "他去外地看孩子了",
+     "他不喜欢猫脸蛋糕",
+     "他感冒发烧了"
+    ],
+    "answer": 3,
+    "explain_vi": "Hóa ra ông bị cảm sốt, nằm ở nhà hai ngày."
+   },
+   {
+    "q": "街角咖啡以前是什么地方？",
+    "q_vi": "Cà phê Góc Phố trước đây là nơi nào?",
+    "options": [
+     "王奶奶开的书店",
+     "一家小饭馆",
+     "王爷爷的家",
+     "小东的学校"
+    ],
+    "answer": 0,
+    "explain_vi": "Bức ảnh cho thấy hiệu sách nhỏ của bà Vương nằm ngay ở góc phố đó, bà mở ba mươi năm."
+   },
+   {
+    "q": "王爷爷最后喝了咖啡，说明了什么？",
+    "q_vi": "Cuối cùng ông Vương uống cà phê, điều đó cho thấy gì?",
+    "options": [
+     "他其实一直很喜欢喝咖啡",
+     "他觉得热水太贵了",
+     "他心里慢慢打开了，也想起了老伴儿",
+     "他想让小雨多卖咖啡"
+    ],
+    "answer": 2,
+    "explain_vi": "Ông chưa từng uống cà phê cùng vợ; nay uống cốc Tiểu Vũ pha riêng và nói “hóa ra là vị này”, rồi mỉm cười — ông đã mở lòng và nhớ đến người vợ."
+   }
+  ]
+ },
+ {
+  "id": "s5-05",
+  "kind": "series",
+  "level": 3,
+  "series": "s5",
+  "series_title": "街角的小咖啡馆",
+  "series_title_vi": "Quán cà phê nhỏ ở góc phố",
+  "topic": "truyện dài",
+  "chapter": 5,
+  "title": "树上的橘子",
+  "title_vi": "Quýt trên cây",
+  "paragraphs": [
+   "小雨马上放下手里的杯子，跑到外面。门口没有，店里也没有，柜子下面、椅子后面，哪儿都找不到。小东快要哭了：“我刚才开门的时候，它就跑出去了，都是我不好。”",
+   "王爷爷站起来说：“别着急，猫不会走太远。我们分开找。”小东去找楼下的大门，王爷爷去找对面的小公园，小雨就沿着老街一家一家地问。",
+   "旁边花店的李阿姨听说了，也放下手里的花，跟着一起找。她一边走一边叫：“橘子！橘子！”街上的人都回过头来看她，以为她在卖水果。",
+   "他们找了整整一个下午，太阳都快下山了，还是没有看到橘子。小雨又累又难过，坐在路边，想起橘子刚来时那双大眼睛，心里很不舒服。",
+   "这时，王爷爷在公园里大声叫他们。大家跑过去一看，在一棵很高的树上，一只橘黄色的小猫正抱着树枝，一动也不敢动。树下有一只大狗，还在对着树上叫。原来橘子是被大狗吓到了，才爬到那么高的地方。",
+   "李阿姨赶走了大狗，又跑回花店拿来一个长梯子。可是橘子太害怕了，谁叫它都不下来。王爷爷想了想，从口袋里拿出一条小鱼，放在梯子上，轻轻地说：“下来吧，回家了。”",
+   "橘子闻了闻，慢慢地，一步一步地走下来，最后跳进了王爷爷的怀里。大家都笑了，小东高兴得跳了起来。",
+   "他们一起回到咖啡馆。可是走到门口，小雨发现门上贴着一张纸。纸上有一张照片，照片上的猫和橘子长得一模一样。下面写着几个大字：“找猫！它叫豆豆，请帮帮我！——朵朵”"
+  ],
+  "translations": [
+   "Tiểu Vũ lập tức đặt cốc xuống, chạy ra ngoài. Trước cửa không có, trong quán cũng không, dưới tủ, sau ghế, chỗ nào cũng không tìm thấy. Tiểu Đông sắp khóc: “Lúc nãy em mở cửa thì nó chạy ra ngoài, tất cả là tại em.”",
+   "Ông Vương đứng dậy nói: “Đừng cuống, mèo không đi xa lắm đâu. Chúng ta chia nhau ra tìm.” Tiểu Đông đi tìm ở cổng tòa nhà, ông Vương ra công viên nhỏ đối diện, còn Tiểu Vũ thì đi dọc con phố cũ hỏi từng nhà một.",
+   "Cô Lý ở tiệm hoa bên cạnh nghe chuyện, cũng đặt bó hoa đang cầm xuống, đi tìm cùng. Cô vừa đi vừa gọi: “Quýt ơi! Quýt ơi!” Người trên phố đều quay đầu lại nhìn, tưởng cô đang bán hoa quả.",
+   "Họ tìm suốt cả buổi chiều, mặt trời sắp lặn rồi mà vẫn không thấy Quýt đâu. Tiểu Vũ vừa mệt vừa buồn, ngồi bên đường, nhớ lại đôi mắt to tròn của Quýt hôm mới đến, trong lòng rất khó chịu.",
+   "Đúng lúc đó, ông Vương ở trong công viên gọi to. Mọi người chạy tới xem, trên một cái cây rất cao, một chú mèo nhỏ màu vàng cam đang ôm chặt cành cây, không dám nhúc nhích. Dưới gốc có một con chó to vẫn đang sủa lên. Hóa ra Quýt bị con chó to dọa sợ nên mới trèo lên chỗ cao như vậy.",
+   "Cô Lý đuổi con chó đi, rồi chạy về tiệm hoa lấy một chiếc thang dài. Nhưng Quýt sợ quá, ai gọi cũng không chịu xuống. Ông Vương nghĩ một lát, lấy từ trong túi ra một con cá nhỏ, đặt lên thang, khẽ nói: “Xuống đi nào, về nhà thôi.”",
+   "Quýt ngửi ngửi, chầm chậm, từng bước từng bước đi xuống, cuối cùng nhảy vào lòng ông Vương. Mọi người đều cười, Tiểu Đông vui đến nhảy cẫng lên.",
+   "Họ cùng nhau trở về quán cà phê. Nhưng vừa đến cửa, Tiểu Vũ phát hiện trên cửa dán một tờ giấy. Trên giấy có một tấm ảnh, con mèo trong ảnh giống hệt Quýt. Bên dưới viết mấy chữ to: “Tìm mèo! Nó tên là Đậu Đậu, xin hãy giúp em! — Đóa Đóa”"
+  ],
+  "questions": [
+   {
+    "q": "李阿姨找猫的时候，街上的人为什么回头看她？",
+    "q_vi": "Khi cô Lý đi tìm mèo, vì sao người trên phố quay lại nhìn cô?",
+    "options": [
+     "她的声音太大了",
+     "他们以为她在卖水果",
+     "她手里拿着很多花",
+     "她在跟大狗说话"
+    ],
+    "answer": 1,
+    "explain_vi": "Cô gọi “Quýt ơi!” (橘子 cũng là quả quýt), nên người ta tưởng cô đang bán hoa quả."
+   },
+   {
+    "q": "橘子为什么在树上不下来？",
+    "q_vi": "Vì sao Quýt ở trên cây không chịu xuống?",
+    "options": [
+     "它在树上睡着了",
+     "它想吃树上的鸟",
+     "它被大狗吓坏了，很害怕",
+     "它在等小东"
+    ],
+    "answer": 2,
+    "explain_vi": "Quýt bị con chó to dọa nên trèo lên cao, sợ đến mức ai gọi cũng không xuống."
+   },
+   {
+    "q": "门上那张纸可能说明了什么？",
+    "q_vi": "Tờ giấy trên cửa có thể cho thấy điều gì?",
+    "options": [
+     "橘子可能是别人丢的猫",
+     "有人想买咖啡馆",
+     "李阿姨想养一只猫",
+     "小东要搬家了"
+    ],
+    "answer": 0,
+    "explain_vi": "Tờ giấy tìm mèo có ảnh con mèo giống hệt Quýt, tên Đậu Đậu — rất có thể Quýt là mèo bị lạc của một cô bé tên Đóa Đóa."
+   }
+  ]
+ },
+ {
+  "id": "s5-06",
+  "kind": "series",
+  "level": 3,
+  "series": "s5",
+  "series_title": "街角的小咖啡馆",
+  "series_title_vi": "Quán cà phê nhỏ ở góc phố",
+  "topic": "truyện dài",
+  "chapter": 6,
+  "title": "一个电话",
+  "title_vi": "Một cuộc điện thoại",
+  "paragraphs": [
+   "那天晚上，小雨睡不着。那张纸就放在她的桌子上，纸的下面写着一个电话号码。橘子在床边睡得很香。",
+   "小雨心里很乱。她想：“也许它只是长得像豆豆呢？橘黄色的猫那么多。”可是她又想起照片上那只猫，左耳朵上也有一块白色的毛，和橘子一模一样。",
+   "第二天，她把这件事告诉了王爷爷。王爷爷喝了一口咖啡，问她：“如果你丢了一只猫，你会怎么样？”小雨想了一会儿，小声说：“我会每天找它，每天都很难过。”王爷爷点点头，没有再说话。",
+   "小雨明白了。她拿出手机，给那个号码打了电话。接电话的是一位阿姨，她是朵朵的妈妈。",
+   "朵朵的妈妈告诉小雨，朵朵今年七岁，豆豆是她五岁生日的时候得到的礼物。一个多月以前，她们搬家，门开着的时候，豆豆跑了出去，再也没有回来。她们的新家离这里很远，朵朵每个周末都让妈妈带她来这边找猫。",
+   "“她每天晚上都哭，”朵朵的妈妈说，“如果真的是豆豆，那太感谢您了！我们星期六上午就过去。”",
+   "放下电话，小雨坐了很久。小东知道了以后，生气地说：“橘子是我们的！我不要它走！”说完就跑回家了，第二天也没有来写作业。",
+   "接下来的几天，小雨给橘子拍了很多照片，还给它买了一个新的小球。王爷爷每天都带来两条小鱼，比以前多一条。",
+   "星期六的早上，天气很好。小雨刚打开门，就看见门口站着一个背着红书包的小女孩，眼睛大大的，手里紧紧地拿着一张照片。"
+  ],
+  "translations": [
+   "Đêm hôm đó, Tiểu Vũ không ngủ được. Tờ giấy đặt ngay trên bàn cô, phía dưới có ghi một số điện thoại. Quýt ngủ say bên giường.",
+   "Lòng Tiểu Vũ rối bời. Cô nghĩ: “Biết đâu nó chỉ trông giống Đậu Đậu thôi? Mèo màu vàng cam nhiều thế cơ mà.” Nhưng rồi cô lại nhớ đến con mèo trong ảnh, trên tai trái cũng có một mảng lông trắng, giống hệt Quýt.",
+   "Hôm sau, cô kể chuyện này với ông Vương. Ông Vương uống một ngụm cà phê, hỏi cô: “Nếu cháu bị mất một con mèo, cháu sẽ thế nào?” Tiểu Vũ nghĩ một lúc, nói khẽ: “Cháu sẽ ngày nào cũng đi tìm nó, ngày nào cũng rất buồn.” Ông Vương gật đầu, không nói gì thêm.",
+   "Tiểu Vũ hiểu rồi. Cô lấy điện thoại ra, gọi vào số đó. Người nghe máy là một người phụ nữ, mẹ của Đóa Đóa.",
+   "Mẹ Đóa Đóa kể với Tiểu Vũ rằng Đóa Đóa năm nay bảy tuổi, Đậu Đậu là món quà con bé nhận được vào sinh nhật năm tuổi. Hơn một tháng trước, nhà cô chuyển nhà, lúc cửa để mở, Đậu Đậu chạy ra ngoài rồi không bao giờ quay lại nữa. Nhà mới của họ cách đây rất xa, cuối tuần nào Đóa Đóa cũng bắt mẹ đưa sang bên này tìm mèo.",
+   "“Tối nào con bé cũng khóc,” mẹ Đóa Đóa nói, “nếu đúng là Đậu Đậu thì cảm ơn cô nhiều lắm! Sáng thứ Bảy chúng tôi sẽ qua.”",
+   "Đặt điện thoại xuống, Tiểu Vũ ngồi rất lâu. Tiểu Đông biết chuyện thì giận dỗi nói: “Quýt là của chúng ta! Em không muốn nó đi!” Nói xong cậu chạy về nhà, hôm sau cũng không sang làm bài tập.",
+   "Mấy ngày tiếp theo, Tiểu Vũ chụp rất nhiều ảnh cho Quýt, còn mua cho nó một quả bóng nhỏ mới. Ngày nào ông Vương cũng mang đến hai con cá nhỏ — nhiều hơn trước một con.",
+   "Sáng thứ Bảy, trời rất đẹp. Tiểu Vũ vừa mở cửa đã thấy trước cửa có một cô bé đeo cặp sách màu đỏ, đôi mắt to tròn, tay nắm chặt một tấm ảnh."
+  ],
+  "questions": [
+   {
+    "q": "小雨为什么觉得橘子可能就是豆豆？",
+    "q_vi": "Vì sao Tiểu Vũ cho rằng Quýt có thể chính là Đậu Đậu?",
+    "options": [
+     "橘子听到“豆豆”就跑过来",
+     "李阿姨见过朵朵",
+     "豆豆和橘子的左耳朵上都有一块白毛",
+     "照片上写着咖啡馆的名字"
+    ],
+    "answer": 2,
+    "explain_vi": "Con mèo trong ảnh cũng có một mảng lông trắng trên tai trái, giống hệt Quýt."
+   },
+   {
+    "q": "王爷爷问小雨“如果你丢了一只猫”，是想让她怎么做？",
+    "q_vi": "Ông Vương hỏi “nếu cháu mất một con mèo” là muốn cô làm gì?",
+    "options": [
+     "想想朵朵的心情，给她打电话",
+     "把橘子送给王爷爷",
+     "再养一只新的猫",
+     "别管那张纸"
+    ],
+    "answer": 0,
+    "explain_vi": "Ông muốn Tiểu Vũ đặt mình vào vị trí người mất mèo; cô hiểu ra và gọi điện cho nhà Đóa Đóa."
+   },
+   {
+    "q": "小东知道这件事以后，有什么反应？",
+    "q_vi": "Tiểu Đông biết chuyện thì phản ứng thế nào?",
+    "options": [
+     "他很高兴，想认识朵朵",
+     "他帮小雨给朵朵打电话",
+     "他马上把橘子藏起来了",
+     "他很生气，不想让橘子走"
+    ],
+    "answer": 3,
+    "explain_vi": "Cậu giận dỗi nói “Quýt là của chúng ta, em không muốn nó đi”, rồi chạy về nhà, hôm sau không sang nữa."
+   }
+  ]
+ },
+ {
+  "id": "s5-07",
+  "kind": "series",
+  "level": 3,
+  "series": "s5",
+  "series_title": "街角的小咖啡馆",
+  "series_title_vi": "Quán cà phê nhỏ ở góc phố",
+  "topic": "truyện dài",
+  "chapter": 7,
+  "title": "两个名字的猫",
+  "title_vi": "Chú mèo có hai cái tên",
+  "paragraphs": [
+   "小女孩后面站着她的妈妈。妈妈笑着说：“你好，我们是朵朵和朵朵妈妈。”朵朵没有说话，她的眼睛一直看着店里。",
+   "这时，橘子从桌子下面走了出来。朵朵一下子叫了起来：“豆豆！”橘子停住了，耳朵动了动，然后“喵”的一声，跑到朵朵的脚边，用头不停地碰她的腿。",
+   "朵朵蹲下来，把橘子抱在怀里，哭了，又笑了。她一边哭一边说：“豆豆，你去哪儿了？我每天都想你。”小雨站在旁边，眼睛也湿了。她知道，橘子真的是豆豆。",
+   "朵朵妈妈拿出一个红包，说：“谢谢您这么长时间照顾它，这是我们的一点儿心意。”小雨马上摇头：“不用不用，它给我们带来了很多快乐，应该是我谢谢它。”",
+   "门口有一个小小的头在往里看，是小东。他慢慢走进来，手里拿着那个新的小球。他看了看朵朵，把球放在她手里，小声说：“它最喜欢玩这个。还有，它不喜欢大狗，你要小心。”",
+   "朵朵认真地点点头，问：“它在这里叫什么名字？”小东说：“叫橘子。”朵朵想了想，笑着说：“那它现在有两个名字了，一个是豆豆，一个是橘子。”",
+   "十点的时候，王爷爷也来了。他什么也没说，只是摸了摸橘子的头，把一小碗鱼放在它面前。橘子吃得很香。",
+   "中午，朵朵和妈妈带着橘子走了。小雨、小东和王爷爷站在门口，看着她们走远。小东一直挥手，直到看不见了，还在挥。",
+   "回到店里，小雨看着那个空空的纸箱，突然觉得咖啡馆变得好大，好安静。"
+  ],
+  "translations": [
+   "Phía sau cô bé là mẹ của em. Người mẹ mỉm cười nói: “Chào cô, chúng tôi là Đóa Đóa và mẹ Đóa Đóa.” Đóa Đóa không nói gì, đôi mắt cứ nhìn chăm chăm vào trong quán.",
+   "Lúc đó, Quýt từ dưới gầm bàn đi ra. Đóa Đóa bỗng kêu lên: “Đậu Đậu!” Quýt khựng lại, tai khẽ động đậy, rồi “meo” một tiếng, chạy đến bên chân Đóa Đóa, không ngừng dụi đầu vào chân em.",
+   "Đóa Đóa ngồi xuống, ôm Quýt vào lòng, khóc rồi lại cười. Em vừa khóc vừa nói: “Đậu Đậu, mày đi đâu vậy? Ngày nào tao cũng nhớ mày.” Tiểu Vũ đứng bên cạnh, mắt cũng ướt. Cô biết, Quýt đúng là Đậu Đậu.",
+   "Mẹ Đóa Đóa lấy ra một phong bao đỏ, nói: “Cảm ơn cô đã chăm sóc nó lâu như vậy, đây là chút lòng thành của chúng tôi.” Tiểu Vũ lập tức lắc đầu: “Không cần đâu ạ, nó mang lại cho chúng tôi rất nhiều niềm vui, đáng lẽ tôi phải cảm ơn nó mới đúng.”",
+   "Ở cửa có một cái đầu nhỏ đang ngó vào, là Tiểu Đông. Cậu chậm rãi bước vào, tay cầm quả bóng nhỏ mới. Cậu nhìn Đóa Đóa, đặt quả bóng vào tay em, nói khẽ: “Nó thích chơi cái này nhất. Còn nữa, nó không thích chó to, em phải cẩn thận.”",
+   "Đóa Đóa nghiêm túc gật đầu, hỏi: “Ở đây nó tên là gì ạ?” Tiểu Đông nói: “Tên là Quýt.” Đóa Đóa nghĩ một lát, cười nói: “Vậy bây giờ nó có hai cái tên rồi, một là Đậu Đậu, một là Quýt.”",
+   "Mười giờ, ông Vương cũng đến. Ông không nói gì, chỉ xoa đầu Quýt, đặt một bát cá nhỏ trước mặt nó. Quýt ăn rất ngon lành.",
+   "Buổi trưa, Đóa Đóa và mẹ mang Quýt đi. Tiểu Vũ, Tiểu Đông và ông Vương đứng ở cửa nhìn hai mẹ con đi xa dần. Tiểu Đông vẫy tay mãi, đến khi không còn thấy nữa vẫn còn vẫy.",
+   "Trở vào quán, Tiểu Vũ nhìn cái thùng giấy trống trơn, bỗng thấy quán cà phê trở nên thật rộng, thật yên ắng."
+  ],
+  "questions": [
+   {
+    "q": "小雨为什么不要朵朵妈妈的红包？",
+    "q_vi": "Vì sao Tiểu Vũ không nhận phong bao của mẹ Đóa Đóa?",
+    "options": [
+     "她觉得钱太少了",
+     "她觉得橘子给她带来了很多快乐",
+     "王爷爷不让她要",
+     "她想把橘子留下来"
+    ],
+    "answer": 1,
+    "explain_vi": "Cô nói Quýt mang lại cho mọi người rất nhiều niềm vui, cô mới là người nên cảm ơn nó."
+   },
+   {
+    "q": "小东把小球给朵朵，说明了什么？",
+    "q_vi": "Tiểu Đông đưa quả bóng cho Đóa Đóa cho thấy điều gì?",
+    "options": [
+     "他不喜欢这个球了",
+     "他想跟朵朵换东西",
+     "他还在生朵朵的气",
+     "他虽然舍不得，但是接受了橘子要走"
+    ],
+    "answer": 3,
+    "explain_vi": "Cậu từng giận dỗi, nhưng giờ tự mang quả bóng đến, còn dặn dò cách chăm Quýt — cậu đã chấp nhận dù vẫn tiếc nuối."
+   },
+   {
+    "q": "为什么朵朵说猫“有两个名字”？",
+    "q_vi": "Vì sao Đóa Đóa nói con mèo “có hai cái tên”?",
+    "options": [
+     "它以前叫豆豆，在咖啡馆叫橘子",
+     "因为它有两个主人的照片",
+     "因为妈妈给它起了新名字",
+     "因为它是两只猫"
+    ],
+    "answer": 0,
+    "explain_vi": "Ở nhà Đóa Đóa nó tên Đậu Đậu, ở quán nó tên Quýt."
+   }
+  ]
+ },
+ {
+  "id": "s5-08",
+  "kind": "series",
+  "level": 3,
+  "series": "s5",
+  "series_title": "街角的小咖啡馆",
+  "series_title_vi": "Quán cà phê nhỏ ở góc phố",
+  "topic": "truyện dài",
+  "chapter": 8,
+  "title": "没有橘子的日子",
+  "title_vi": "Những ngày không có Quýt",
+  "paragraphs": [
+   "橘子走了以后，街角咖啡好像少了点儿什么。孩子们进门的第一句话总是：“橘子呢？”听说橘子回家了，有的孩子不高兴，坐一会儿就走了。来店里的人一天比一天少。",
+   "小雨也没有精神。她做咖啡的时候常常忘了放糖，有一次还把盐当成了糖。",
+   "王爷爷都看在眼里。有一天，他喝完咖啡，没有马上走，而是对小雨说：“我老伴儿以前常说，书店热闹，不是因为书多，是因为人。人来了，是因为这里让他们觉得舒服。”",
+   "小雨想了很久。她问自己：大家喜欢街角咖啡，只是因为橘子吗？还是因为在这里，大家可以坐下来，说说话，笑一笑？",
+   "第二天，她又开始认真地做咖啡、做蛋糕。小东也有了一个好主意。他拿来很多彩色的笔，在一面白墙上画了一只大大的橘子猫，旁边写着：“你和橘子有什么故事？请写下来！”",
+   "没想到，大家都很喜欢。孩子们在墙上画橘子吃鱼、橘子睡觉、橘子爬树。李阿姨写：“它把我的花盆打破了三次，但是我还是想它。”王爷爷想了很久，只写了一句：“它让我喝了第一杯咖啡。”",
+   "慢慢地，客人又多了起来。有的人来看墙，有的人来写字。小雨每天看着那面墙，觉得橘子好像还在。",
+   "三个星期以后的一个晚上，外面下着大雨。小雨正准备关门，忽然听到门外有很轻的声音，好像有什么东西在抓门。她打开门一看，愣住了：一只又湿又脏的橘黄色小猫正坐在门口，看着她，轻轻地“喵”了一声。"
+  ],
+  "translations": [
+   "Từ khi Quýt đi, Cà phê Góc Phố như thiếu mất thứ gì đó. Câu đầu tiên lũ trẻ nói khi bước vào luôn là: “Quýt đâu rồi ạ?” Nghe nói Quýt đã về nhà, có đứa không vui, ngồi một lát rồi đi. Người đến quán mỗi ngày một ít đi.",
+   "Tiểu Vũ cũng chẳng còn hứng khởi. Lúc pha cà phê, cô thường quên cho đường, có lần còn nhầm muối thành đường.",
+   "Ông Vương đều nhìn thấy hết. Một hôm, uống xong cà phê, ông không đi ngay mà nói với Tiểu Vũ: “Bà nhà tôi ngày trước hay nói, hiệu sách đông vui không phải vì nhiều sách, mà là vì con người. Người ta đến, là vì nơi này khiến họ thấy dễ chịu.”",
+   "Tiểu Vũ nghĩ rất lâu. Cô tự hỏi: mọi người thích Cà phê Góc Phố chỉ vì Quýt thôi sao? Hay là vì ở đây, mọi người có thể ngồi xuống, trò chuyện, cười với nhau?",
+   "Hôm sau, cô lại bắt đầu chăm chút pha cà phê, làm bánh. Tiểu Đông cũng nảy ra một ý hay. Cậu mang đến rất nhiều bút màu, vẽ lên một bức tường trắng một chú mèo màu cam thật to, bên cạnh viết: “Bạn và Quýt có câu chuyện gì? Hãy viết ra nhé!”",
+   "Không ngờ mọi người đều rất thích. Lũ trẻ vẽ lên tường cảnh Quýt ăn cá, Quýt ngủ, Quýt trèo cây. Cô Lý viết: “Nó làm vỡ chậu hoa của tôi ba lần, nhưng tôi vẫn nhớ nó.” Ông Vương nghĩ rất lâu, chỉ viết một câu: “Nó đã cho tôi uống cốc cà phê đầu tiên.”",
+   "Dần dần, khách lại đông lên. Có người đến để xem bức tường, có người đến để viết. Ngày nào Tiểu Vũ cũng nhìn bức tường ấy, thấy như Quýt vẫn còn ở đây.",
+   "Ba tuần sau, vào một buổi tối, bên ngoài mưa rất to. Tiểu Vũ đang chuẩn bị đóng cửa thì bỗng nghe ngoài cửa có tiếng động rất khẽ, như có thứ gì đang cào cửa. Cô mở cửa ra nhìn thì sững người: một chú mèo nhỏ màu vàng cam, vừa ướt vừa bẩn, đang ngồi trước cửa nhìn cô, khẽ kêu “meo” một tiếng."
+  ],
+  "questions": [
+   {
+    "q": "橘子走了以后，咖啡馆发生了什么变化？",
+    "q_vi": "Sau khi Quýt đi, quán cà phê thay đổi thế nào?",
+    "options": [
+     "客人比以前多了很多",
+     "王爷爷不来了",
+     "客人越来越少，小雨也没有精神",
+     "小东每天都在店里哭"
+    ],
+    "answer": 2,
+    "explain_vi": "Người đến quán mỗi ngày một ít, Tiểu Vũ cũng uể oải, hay quên cho đường."
+   },
+   {
+    "q": "王爷爷说的话，主要是想告诉小雨什么？",
+    "q_vi": "Lời ông Vương nói chủ yếu muốn nhắn Tiểu Vũ điều gì?",
+    "options": [
+     "应该再养一只猫",
+     "一个地方让人觉得舒服，人就会来",
+     "书店比咖啡馆好",
+     "咖啡里要多放糖"
+    ],
+    "answer": 1,
+    "explain_vi": "Ông kể lời vợ: nơi đông vui là vì con người, người ta đến vì thấy dễ chịu — không chỉ vì con mèo."
+   },
+   {
+    "q": "大家在墙上做什么？",
+    "q_vi": "Mọi người làm gì trên bức tường?",
+    "options": [
+     "写自己和橘子的故事，画橘子",
+     "写咖啡馆的菜单",
+     "贴找猫的纸",
+     "给小雨写意见"
+    ],
+    "answer": 0,
+    "explain_vi": "Tiểu Đông vẽ mèo và mời mọi người viết câu chuyện của mình với Quýt; lũ trẻ vẽ Quýt, cô Lý và ông Vương viết kỷ niệm."
+   }
+  ]
+ },
+ {
+  "id": "s5-09",
+  "kind": "series",
+  "level": 3,
+  "series": "s5",
+  "series_title": "街角的小咖啡馆",
+  "series_title_vi": "Quán cà phê nhỏ ở góc phố",
+  "topic": "truyện dài",
+  "chapter": 9,
+  "title": "雨夜回来的猫",
+  "title_vi": "Chú mèo trở về trong đêm mưa",
+  "paragraphs": [
+   "“橘子？”小雨不敢相信自己的眼睛。小猫又“喵”了一声，自己走进了店里，在那个旧纸箱里躺了下来，好像回到了自己的家。",
+   "小雨赶快拿来毛巾，把它身上的水擦干。它比以前瘦了很多，脚也受伤了，有一点儿红。小雨给它倒了牛奶，它一口气就喝完了。",
+   "小雨马上给朵朵妈妈打电话。电话一通，朵朵妈妈就着急地说：“豆豆是不是在您那儿？它三天前又跑出去了！我们找了好久！”",
+   "原来，豆豆回到新家以后，一直不太高兴。它不怎么吃东西，每天都坐在窗户前面，看着外面。朵朵给它买了新玩具，它也不玩。三天前，有人开门的时候，它就跑了出去。",
+   "“这么远的路，它是怎么找回来的？”小雨问。朵朵妈妈也不知道。从新家到老街，坐公共汽车都要一个多小时。没有人知道，这只小猫走了多少路，过了多少条马路。",
+   "第二天一早，朵朵和妈妈就来了。王爷爷、小东和李阿姨听说了，也都来了。小小的咖啡馆里站满了人，大家都看着纸箱里睡觉的小猫。",
+   "朵朵蹲在纸箱旁边，看了它很久。小猫睁开眼睛，舔了舔朵朵的手，又转过头去，看了看墙上那只大大的橘子猫，还有小东，还有王爷爷。",
+   "朵朵轻轻地问它：“豆豆，你是不是更喜欢这里？”小猫当然不会回答，只是“喵”了一声。",
+   "朵朵站起来，擦了擦眼睛。她走到妈妈面前，声音很小，但是很认真：“妈妈，我想好了。我想让豆豆住在这里。”"
+  ],
+  "translations": [
+   "“Quýt?” Tiểu Vũ không dám tin vào mắt mình. Chú mèo lại “meo” một tiếng, tự đi vào quán, nằm xuống trong cái thùng giấy cũ, như thể đã về đến nhà mình.",
+   "Tiểu Vũ vội lấy khăn lau khô nước trên người nó. Nó gầy đi nhiều so với trước, chân còn bị thương, hơi đỏ. Tiểu Vũ rót sữa cho nó, nó uống một hơi hết sạch.",
+   "Tiểu Vũ lập tức gọi điện cho mẹ Đóa Đóa. Điện thoại vừa thông, mẹ Đóa Đóa đã cuống quýt nói: “Đậu Đậu có phải đang ở chỗ cô không? Ba ngày trước nó lại chạy mất rồi! Chúng tôi tìm mãi!”",
+   "Hóa ra, từ khi về nhà mới, Đậu Đậu lúc nào cũng không vui. Nó chẳng mấy khi ăn, ngày nào cũng ngồi trước cửa sổ nhìn ra ngoài. Đóa Đóa mua đồ chơi mới cho nó, nó cũng không chơi. Ba ngày trước, lúc có người mở cửa, nó liền chạy ra ngoài.",
+   "“Đường xa như vậy, nó tìm về bằng cách nào nhỉ?” Tiểu Vũ hỏi. Mẹ Đóa Đóa cũng không biết. Từ nhà mới đến phố cũ, đi xe buýt cũng mất hơn một tiếng. Không ai biết chú mèo nhỏ ấy đã đi bao nhiêu đường, băng qua bao nhiêu con phố.",
+   "Sáng sớm hôm sau, Đóa Đóa và mẹ đã đến. Ông Vương, Tiểu Đông và cô Lý nghe tin cũng đều đến. Quán cà phê nhỏ chật kín người, ai nấy đều nhìn chú mèo đang ngủ trong thùng giấy.",
+   "Đóa Đóa ngồi xổm bên thùng giấy, nhìn nó rất lâu. Chú mèo mở mắt, liếm liếm tay Đóa Đóa, rồi quay đầu đi, nhìn chú mèo cam thật to trên bức tường, rồi nhìn Tiểu Đông, nhìn ông Vương.",
+   "Đóa Đóa khẽ hỏi nó: “Đậu Đậu, có phải mày thích ở đây hơn không?” Chú mèo dĩ nhiên không biết trả lời, chỉ “meo” một tiếng.",
+   "Đóa Đóa đứng dậy, lau mắt. Em đến trước mặt mẹ, giọng rất nhỏ nhưng rất nghiêm túc: “Mẹ ơi, con nghĩ kỹ rồi. Con muốn để Đậu Đậu ở lại đây.”"
+  ],
+  "questions": [
+   {
+    "q": "豆豆在新家过得怎么样？",
+    "q_vi": "Đậu Đậu sống ở nhà mới thế nào?",
+    "options": [
+     "很开心，每天都玩新玩具",
+     "一直不太高兴，不怎么吃东西",
+     "总是和朵朵在外面玩",
+     "每天都在睡觉，吃得很多"
+    ],
+    "answer": 1,
+    "explain_vi": "Bài viết: nó lúc nào cũng không vui, ít ăn, ngày nào cũng ngồi nhìn ra ngoài cửa sổ, đồ chơi mới cũng không chơi."
+   },
+   {
+    "q": "从新家到老街有多远？",
+    "q_vi": "Từ nhà mới đến phố cũ xa bao nhiêu?",
+    "options": [
+     "走路十分钟",
+     "就在旁边",
+     "坐公共汽车要一个多小时",
+     "坐飞机要一个小时"
+    ],
+    "answer": 2,
+    "explain_vi": "Đi xe buýt cũng mất hơn một tiếng — vì vậy mọi người đều ngạc nhiên con mèo tự tìm về được."
+   },
+   {
+    "q": "朵朵最后为什么想让豆豆住在咖啡馆？",
+    "q_vi": "Vì sao cuối cùng Đóa Đóa muốn để Đậu Đậu ở lại quán?",
+    "options": [
+     "她不喜欢豆豆了",
+     "妈妈不让她养猫",
+     "她要去别的城市上学",
+     "她看出豆豆更喜欢这里，希望它快乐"
+    ],
+    "answer": 3,
+    "explain_vi": "Thấy Đậu Đậu vượt đường xa tìm về và quyến luyến mọi người ở quán, Đóa Đóa hiểu nó thích nơi đây hơn và chọn để nó được vui."
+   }
+  ]
+ },
+ {
+  "id": "s5-10",
+  "kind": "series",
+  "level": 3,
+  "series": "s5",
+  "series_title": "街角的小咖啡馆",
+  "series_title_vi": "Quán cà phê nhỏ ở góc phố",
+  "topic": "truyện dài",
+  "chapter": 10,
+  "title": "一周年快乐",
+  "title_vi": "Chúc mừng tròn một năm",
+  "paragraphs": [
+   "朵朵的妈妈抱住了女儿：“好，妈妈听你的。”大家都没想到，这个七岁的小女孩会做出这样的决定。",
+   "小雨走过去，对朵朵说：“谢谢你。不过，它永远是你的豆豆。你什么时候想它，就什么时候来。”她想了想，又拿出一张小卡片，在上面写了四个字：“小小店长”，送给了朵朵。朵朵终于笑了。",
+   "从那以后，每个星期六，朵朵都会来街角咖啡。她和小东一起写作业，一起给猫洗澡。小猫也习惯了自己的两个名字：朵朵叫它豆豆，别人叫它橘子，它都会跑过去。",
+   "时间过得很快，一年过去了。又是一个冬天的早上，街角咖啡一周年了。",
+   "这一天，店里坐满了人。李阿姨送来了一大束花，放在门口。小东和朵朵在墙上画了一个大蛋糕，上面写着：“生日快乐，街角咖啡！生日快乐，橘子！”孩子们一边吃猫脸蛋糕，一边大声地唱歌。",
+   "十点钟，王爷爷准时来了。他还是坐在窗边，但是桌上已经不是热水了，而是一杯放了很多牛奶的咖啡。他看着热热闹闹的店，对小雨说：“我老伴儿要是能看到今天，一定会很高兴。”",
+   "小雨想起了一年前开门的第一天：一个客人都没有，她一个人站在门口，心里又着急又难过。那时候的她，怎么也不会想到，一只小猫会给这家小店带来这么多朋友。",
+   "阳光从大窗户照进来，照在每个人的脸上。橘子在窗边睡着了。小雨给自己做了一杯咖啡，坐在王爷爷旁边，慢慢地喝了一口。",
+   "她觉得，这是她喝过的最好喝的一杯咖啡。"
+  ],
+  "translations": [
+   "Mẹ Đóa Đóa ôm lấy con gái: “Được, mẹ nghe con.” Không ai ngờ cô bé bảy tuổi ấy lại đưa ra một quyết định như vậy.",
+   "Tiểu Vũ bước tới, nói với Đóa Đóa: “Cảm ơn em. Nhưng nó mãi mãi là Đậu Đậu của em. Lúc nào nhớ nó thì em cứ đến.” Cô nghĩ một lát, rồi lấy ra một tấm thẻ nhỏ, viết lên đó bốn chữ: “Bé Chủ Quán”, tặng cho Đóa Đóa. Đóa Đóa cuối cùng cũng mỉm cười.",
+   "Từ đó trở đi, thứ Bảy nào Đóa Đóa cũng đến Cà phê Góc Phố. Em và Tiểu Đông cùng làm bài tập, cùng tắm cho mèo. Chú mèo cũng quen với hai cái tên của mình: Đóa Đóa gọi nó là Đậu Đậu, người khác gọi nó là Quýt, nó đều chạy tới.",
+   "Thời gian trôi qua rất nhanh, một năm đã qua. Lại là một buổi sáng mùa đông, Cà phê Góc Phố tròn một năm tuổi.",
+   "Hôm ấy, quán chật kín người. Cô Lý mang đến một bó hoa lớn, đặt ở cửa. Tiểu Đông và Đóa Đóa vẽ lên tường một chiếc bánh kem thật to, bên trên viết: “Chúc mừng sinh nhật Cà phê Góc Phố! Chúc mừng sinh nhật Quýt!” Lũ trẻ vừa ăn bánh mặt mèo vừa hát vang.",
+   "Mười giờ, ông Vương đến đúng giờ. Ông vẫn ngồi bên cửa sổ, nhưng trên bàn không còn là nước nóng nữa, mà là một cốc cà phê có thật nhiều sữa. Ông nhìn quán đông vui, nói với Tiểu Vũ: “Nếu bà nhà tôi được thấy ngày hôm nay, chắc chắn sẽ rất vui.”",
+   "Tiểu Vũ nhớ lại ngày đầu tiên mở cửa một năm trước: không có lấy một vị khách, cô đứng một mình ở cửa, lòng vừa sốt ruột vừa buồn. Cô của lúc ấy có nghĩ thế nào cũng không ngờ rằng một chú mèo nhỏ lại mang đến cho quán nhỏ này nhiều bạn bè đến vậy.",
+   "Ánh nắng chiếu qua ô cửa sổ lớn, rọi lên gương mặt mỗi người. Quýt ngủ say bên cửa sổ. Tiểu Vũ pha cho mình một cốc cà phê, ngồi cạnh ông Vương, chậm rãi uống một ngụm.",
+   "Cô thấy đây là cốc cà phê ngon nhất mà cô từng uống."
+  ],
+  "questions": [
+   {
+    "q": "小雨送给朵朵的卡片上写着什么？",
+    "q_vi": "Tấm thẻ Tiểu Vũ tặng Đóa Đóa ghi gì?",
+    "options": [
+     "生日快乐",
+     "谢谢豆豆",
+     "街角咖啡",
+     "小小店长"
+    ],
+    "answer": 3,
+    "explain_vi": "Tiểu Vũ viết bốn chữ “小小店长” (Bé Chủ Quán) tặng Đóa Đóa."
+   },
+   {
+    "q": "一年以后，王爷爷有什么变化？",
+    "q_vi": "Một năm sau, ông Vương có gì thay đổi?",
+    "options": [
+     "他不再来咖啡馆了",
+     "他开始喝放了很多牛奶的咖啡",
+     "他自己开了一家书店",
+     "他每天都喝热水"
+    ],
+    "answer": 1,
+    "explain_vi": "Trên bàn ông không còn là nước nóng nữa mà là cốc cà phê có thật nhiều sữa."
+   },
+   {
+    "q": "这个故事最想告诉我们什么？",
+    "q_vi": "Câu chuyện này muốn nói với chúng ta điều gì nhất?",
+    "options": [
+     "人和人互相关心，小地方也能变得很温暖",
+     "开咖啡馆很容易赚钱",
+     "养猫一定要很小心",
+     "做蛋糕要多试几次"
+    ],
+    "answer": 0,
+    "explain_vi": "Từ một quán vắng khách, nhờ chú mèo và sự quan tâm lẫn nhau của Tiểu Vũ, ông Vương, Tiểu Đông, Đóa Đóa, cô Lý, quán nhỏ trở thành nơi ấm áp đầy bạn bè."
+   }
+  ]
+ }
+]

@@ -1,0 +1,1124 @@
+[
+ {
+  "id": "s2-01",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 1,
+  "title": "雨中的钟表馆",
+  "title_vi": "Bảo tàng đồng hồ trong mưa",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "十一月的江南，雨下个不停。林小满从上海坐了两个小时的大巴，在青溪镇车站下车的时候，天已经有些暗了。她今年二十八岁，是一名钟表修理师，个子不高，背着一个旧旧的工具包。表哥周然打着伞在出口等她，远远地就挥手：“小满！这儿！”周然是镇上派出所的警察，性格热情，说话声音很大，和不爱说话的林小满正好相反。",
+   "“你可真难请啊，”周然一边帮她拿包一边说，“我请你来玩了三年，你都说忙。这次顾老先生一个电话，你就来了。”林小满从口袋里拿出一颗薄荷糖，放进嘴里：“我不是来玩的，是来工作的。”她有个习惯：一遇到需要动脑子的事，就要吃糖。周然笑了：“知道知道，你眼里只有钟。”",
+   "顾老先生叫顾文山，七十二岁，是镇上有名的收藏家。十年前，他把顾家的老宅改成了一个小小的钟表馆，里面收藏了一百多件老钟表。其中最有名的，是一座清代的铜钟，叫“金鹤钟”。钟顶上站着一只金色的仙鹤，每到整点，仙鹤就会张开翅膀，钟里还会响起一段好听的音乐。下个月馆里要办一个展览，顾老先生想请人先把这座钟好好检查一遍。",
+   "钟表馆在小镇最深处，是一座白墙黑瓦的两层老房子，门前是一条小河，要过一座石桥才能到。开门的是一位三十多岁的女人，穿着整齐的灰色外套，头发梳得一丝不乱。“您就是林师傅吧？我是这里的经理，苏晴。”她说话不快不慢，却让人觉得什么事都安排得清清楚楚。周然小声说：“苏经理在这儿干了十年，馆里的事，她比顾老先生还熟悉。”",
+   "大厅里有一台电视，正在放钟表馆的宣传片。画面里，那只金鹤慢慢张开翅膀，一段清脆的音乐响了起来，叮叮咚咚，像山里的泉水。林小满停下脚步，认真地听完了。“这是五年前我拍的，”苏晴说，“那时候想多吸引一些游客。”林小满点点头：“音乐很完整，看来钟的状态不错。”苏晴笑了笑，没有说话。",
+   "这时，一个头发花白的老人从院子里走进来，手里拿着一把大扫帚。他的左腿不太方便，走起路来一高一低，右脚落得很重，左脚总是拖在地上。“这是何师傅，”苏晴介绍，“在顾家工作三十多年了，院子、门窗、电路，都是他管。”何师傅看了林小满一眼，只“嗯”了一声，就又走进了雨里。",
+   "晚饭前，顾文山在书房见了她。老人很瘦，眼睛却很亮。他告诉林小满，有一位北京来的收藏家想出高价买金鹤钟，他的儿子很希望他卖，可他自己还没有决定。“所以，在做决定以前，我想先请一位真正懂钟的人看看它。”他说，“明天上午，我亲自打开展柜。展柜的钥匙，只有我有。”",
+   "林小满答应了。她站起来要走的时候，顾文山忽然叫住她，声音压得很低：“林师傅，明天看钟的时候，不管你发现了什么，请先只告诉我一个人。”林小满愣了一下，想问为什么，老人却已经转过身去，望着窗外的雨，不再说话了。"
+  ],
+  "translations": [
+   "Tháng mười một ở Giang Nam, mưa rơi không ngớt. Lâm Tiểu Mãn ngồi xe khách hai tiếng từ Thượng Hải, khi xuống xe ở bến thị trấn Thanh Khê thì trời đã hơi tối. Năm nay cô hai mươi tám tuổi, là thợ sửa đồng hồ, dáng người không cao, đeo một chiếc túi đồ nghề cũ kỹ. Anh họ Chu Nhiên cầm ô đứng đợi ở cửa ra, từ xa đã vẫy tay: “Tiểu Mãn! Đây này!” Chu Nhiên là cảnh sát ở đồn công an thị trấn, tính tình nhiệt tình, nói rất to, hoàn toàn trái ngược với Lâm Tiểu Mãn ít nói.",
+   "“Mời được em đúng là khó thật,” Chu Nhiên vừa xách túi giúp cô vừa nói, “anh mời em đến chơi suốt ba năm, lần nào em cũng bảo bận. Lần này ông Cố chỉ gọi một cuộc điện thoại là em đến ngay.” Lâm Tiểu Mãn lấy từ túi áo ra một viên kẹo bạc hà bỏ vào miệng: “Em không đến chơi, em đến làm việc.” Cô có một thói quen: hễ gặp chuyện cần động não là phải ăn kẹo. Chu Nhiên cười: “Biết rồi, biết rồi, trong mắt em chỉ có đồng hồ.”",
+   "Ông Cố tên là Cố Văn Sơn, bảy mươi hai tuổi, là nhà sưu tầm nổi tiếng trong thị trấn. Mười năm trước, ông biến ngôi nhà cổ của họ Cố thành một bảo tàng đồng hồ nhỏ, sưu tầm hơn một trăm chiếc đồng hồ cổ. Nổi tiếng nhất trong số đó là một chiếc đồng hồ đồng thời Thanh, gọi là “đồng hồ Hạc Vàng”. Trên đỉnh đồng hồ có một con tiên hạc màu vàng, cứ đến giờ chẵn, con hạc sẽ dang cánh, và bên trong vang lên một đoạn nhạc rất hay. Tháng sau bảo tàng tổ chức triển lãm, ông Cố muốn mời người kiểm tra kỹ chiếc đồng hồ này trước.",
+   "Bảo tàng đồng hồ nằm ở tận cùng thị trấn, là một ngôi nhà cổ hai tầng tường trắng ngói đen, trước cửa có một con sông nhỏ, phải qua một cây cầu đá mới tới. Người ra mở cửa là một phụ nữ ngoài ba mươi, mặc áo khoác xám chỉnh tề, tóc chải gọn gàng không một sợi rối. “Cô là thợ Lâm phải không? Tôi là quản lý ở đây, Tô Tình.” Cô nói không nhanh không chậm, nhưng khiến người ta cảm thấy việc gì cũng được sắp xếp rõ ràng đâu ra đấy. Chu Nhiên nói nhỏ: “Quản lý Tô làm ở đây mười năm rồi, việc trong bảo tàng cô ấy còn rành hơn cả ông Cố.”",
+   "Trong sảnh có một chiếc tivi đang chiếu phim quảng bá của bảo tàng. Trên màn hình, con hạc vàng từ từ dang cánh, một đoạn nhạc trong trẻo vang lên, tinh tang tinh tang, như suối nước trong núi. Lâm Tiểu Mãn dừng bước, chăm chú nghe hết. “Đây là phim tôi quay năm năm trước,” Tô Tình nói, “lúc đó muốn thu hút thêm du khách.” Lâm Tiểu Mãn gật đầu: “Bản nhạc rất trọn vẹn, xem ra tình trạng đồng hồ khá tốt.” Tô Tình mỉm cười, không nói gì.",
+   "Đúng lúc ấy, một ông già tóc hoa râm từ trong sân bước vào, tay cầm một cây chổi lớn. Chân trái ông hơi tật, đi một bước cao một bước thấp, chân phải đặt xuống rất mạnh, còn chân trái thì luôn lê trên đất. “Đây là bác Hà,” Tô Tình giới thiệu, “làm việc cho nhà họ Cố hơn ba mươi năm rồi, sân vườn, cửa nẻo, đường điện đều do bác ấy lo.” Bác Hà liếc nhìn Lâm Tiểu Mãn một cái, chỉ “ừm” một tiếng rồi lại bước ra ngoài mưa.",
+   "Trước bữa tối, Cố Văn Sơn gặp cô trong thư phòng. Ông già rất gầy nhưng đôi mắt rất sáng. Ông cho Lâm Tiểu Mãn biết có một nhà sưu tầm từ Bắc Kinh muốn trả giá cao mua đồng hồ Hạc Vàng, con trai ông rất mong ông bán, nhưng bản thân ông vẫn chưa quyết định. “Vì vậy, trước khi quyết định, tôi muốn mời một người thật sự hiểu đồng hồ xem nó trước,” ông nói. “Sáng mai, chính tôi sẽ mở tủ trưng bày. Chìa khóa tủ chỉ mình tôi có.”",
+   "Lâm Tiểu Mãn nhận lời. Khi cô đứng dậy định đi, Cố Văn Sơn bỗng gọi cô lại, hạ giọng thật thấp: “Thợ Lâm, ngày mai khi xem đồng hồ, dù cô phát hiện ra điều gì, xin hãy chỉ nói với một mình tôi trước.” Lâm Tiểu Mãn sững người, định hỏi tại sao, nhưng ông già đã quay người đi, nhìn ra màn mưa ngoài cửa sổ, không nói thêm gì nữa."
+  ],
+  "questions": [
+   {
+    "q": "林小满这次来青溪镇的主要目的是什么？",
+    "q_vi": "Mục đích chính của Lâm Tiểu Mãn khi đến thị trấn Thanh Khê lần này là gì?",
+    "options": [
+     "看望表哥周然",
+     "检查金鹤钟",
+     "参加钟表馆的展览",
+     "买一座老钟"
+    ],
+    "answer": 1,
+    "explain_vi": "Ông Cố mời cô đến để kiểm tra kỹ đồng hồ Hạc Vàng trước triển lãm và trước khi quyết định có bán hay không."
+   },
+   {
+    "q": "关于何师傅，下面哪一项是正确的？",
+    "q_vi": "Về bác Hà, điều nào dưới đây là đúng?",
+    "options": [
+     "他是钟表馆的经理",
+     "他拍了钟表馆的宣传片",
+     "他走路时左脚拖在地上",
+     "他对林小满非常热情"
+    ],
+    "answer": 2,
+    "explain_vi": "Bài viết: chân trái bác Hà không tiện, chân phải đặt mạnh, chân trái luôn lê trên đất. Quản lý là Tô Tình, phim quảng bá cũng do cô quay."
+   },
+   {
+    "q": "从顾文山最后的话可以推测出什么？",
+    "q_vi": "Từ câu nói cuối cùng của Cố Văn Sơn có thể suy ra điều gì?",
+    "options": [
+     "他担心钟可能有问题，而且不想让别人先知道",
+     "他不相信林小满的技术",
+     "他已经决定把钟卖掉了",
+     "他希望林小满少收修理费"
+    ],
+    "answer": 0,
+    "explain_vi": "Ông dặn dù phát hiện gì cũng chỉ nói riêng với ông, cho thấy ông nghi ngờ chiếc đồng hồ có vấn đề và muốn giữ kín."
+   }
+  ]
+ },
+ {
+  "id": "s2-02",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 2,
+  "title": "少了一个音",
+  "title_vi": "Thiếu một nốt nhạc",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "六点差五分，苏晴带林小满来到二楼的展厅。金鹤钟放在展厅正中间的玻璃展柜里，比林小满想象的还要漂亮：铜做的钟身已经发暗，顶上的仙鹤却闪着金光。展厅里还有两个人。一个二十岁左右的女孩举着手机，正对着展柜拍；另一个是戴眼镜的中年男人，穿得很讲究，安静地站在一边。",
+   "“这是顾老先生的孙女，顾小雨，在美术学院读书。”苏晴介绍，“这位是从北京来的方立先生。”方立礼貌地和林小满握了握手：“听说您是专门来修钟的？太好了，我也很想知道它现在的情况。”顾小雨笑着说：“我在做毕业作品，想把金鹤钟做成一个动画，所以每天都来录它的声音。”",
+   "六点整，仙鹤慢慢张开了翅膀，音乐响了起来。大家都安静下来。林小满却皱起了眉头。音乐结束后，她说：“第五个音没有响。里面的音梳应该断了一个齿。”顾小雨吃惊地看着她：“你听一遍就知道？我录了好几天，只觉得有个地方怪怪的。”苏晴轻声说：“是吗？那明天就麻烦林师傅了。”",
+   "方立推了推眼镜，像是随口问道：“这座钟以前修过吗？”苏晴回答：“三年前送到苏州修过一次，是我联系的师傅，前后去了两个多月。”方立又问是哪位师傅，苏晴说那位师傅年纪大了，已经回老家了。方立“哦”了一声，没再问下去，可林小满注意到，他在手机上记了几个字。",
+   "晚饭在一楼的饭厅吃。顾老先生坐在中间，他的儿子顾明远坐在他右边。顾明远四十五岁，是做生意的，看起来很累，一直在看手机。周然也被留下来吃饭，他悄悄告诉林小满：“听说顾明远的公司这两年亏了很多钱，到处借钱。”",
+   "吃到一半，顾明远终于忍不住了：“爸，方先生开的价已经很高了。一座钟放在那儿，又不能吃又不能用，为什么不卖？”顾老先生放下筷子：“这不是钱的问题。”“那是什么问题？”顾明远的声音越来越大，“您是不是想看着我的公司倒闭？”饭厅里一下子没人说话了，只听得见窗外哗哗的雨声。",
+   "苏晴赶紧站起来给大家倒茶，转移话题。她说自己的旧手机上个星期不知道丢在哪儿了，里面还有很多馆里的老照片，真可惜。顾小雨问起她妈妈的身体，苏晴笑了笑：“还是老样子。三年前那次手术以后，好多了。”说完，她低下头，看了看自己的手表。",
+   "这时，周然的电话响了。他听了几句，脸色变了：“河水涨得太快，镇口那座桥被淹了，今晚谁也出不去，也进不来。”他看了看外面黑乎乎的雨夜，无奈地说：“看来我也只能住在这儿了。”",
+   "晚饭快结束时，顾老先生慢慢站起来，看着每一个人：“明天上午，林师傅看完钟以后，我会宣布一个决定。这个决定，可能会让你们中间的有些人很意外。”说完，他拄着拐杖上楼了。饭桌上，几个人互相看了看，谁也没有开口。林小满把一颗薄荷糖放进嘴里，心里想：他说的“有些人”，到底指的是谁呢？"
+  ],
+  "translations": [
+   "Năm phút trước sáu giờ, Tô Tình đưa Lâm Tiểu Mãn lên phòng trưng bày tầng hai. Đồng hồ Hạc Vàng đặt trong tủ kính chính giữa phòng, đẹp hơn cả Lâm Tiểu Mãn tưởng tượng: thân đồng hồ bằng đồng đã xỉn màu, nhưng con hạc trên đỉnh vẫn lấp lánh ánh vàng. Trong phòng còn có hai người nữa. Một cô gái khoảng hai mươi tuổi đang giơ điện thoại quay về phía tủ kính; người kia là một người đàn ông trung niên đeo kính, ăn mặc rất chỉn chu, lặng lẽ đứng một bên.",
+   "“Đây là cháu gái của ông Cố, Cố Tiểu Vũ, đang học ở Học viện Mỹ thuật,” Tô Tình giới thiệu, “còn đây là anh Phương Lập từ Bắc Kinh đến.” Phương Lập lịch sự bắt tay Lâm Tiểu Mãn: “Nghe nói cô đến đây chuyên để sửa đồng hồ? Tốt quá, tôi cũng rất muốn biết tình trạng hiện giờ của nó.” Cố Tiểu Vũ cười nói: “Em đang làm đồ án tốt nghiệp, muốn làm đồng hồ Hạc Vàng thành một đoạn phim hoạt hình, nên ngày nào cũng đến thu âm tiếng của nó.”",
+   "Đúng sáu giờ, con tiên hạc từ từ dang cánh, tiếng nhạc vang lên. Mọi người đều im lặng. Thế nhưng Lâm Tiểu Mãn lại cau mày. Nhạc dứt, cô nói: “Nốt thứ năm không kêu. Lược âm bên trong chắc đã gãy một răng.” Cố Tiểu Vũ ngạc nhiên nhìn cô: “Chị nghe một lần là biết ư? Em thu mấy ngày rồi mà chỉ thấy có chỗ nào đó là lạ.” Tô Tình nói khẽ: “Vậy sao? Thế thì mai phiền thợ Lâm rồi.”",
+   "Phương Lập đẩy gọng kính, như thể hỏi bâng quơ: “Chiếc đồng hồ này trước đây từng sửa chưa?” Tô Tình đáp: “Ba năm trước từng gửi đi Tô Châu sửa một lần, là tôi liên hệ thợ, trước sau mất hơn hai tháng.” Phương Lập lại hỏi là thợ nào, Tô Tình nói ông thợ ấy đã có tuổi, đã về quê rồi. Phương Lập “ồ” một tiếng, không hỏi tiếp, nhưng Lâm Tiểu Mãn để ý thấy anh ta ghi mấy chữ vào điện thoại.",
+   "Bữa tối ăn ở phòng ăn tầng một. Ông Cố ngồi giữa, con trai ông là Cố Minh Viễn ngồi bên phải. Cố Minh Viễn bốn mươi lăm tuổi, làm kinh doanh, trông rất mệt mỏi, cứ chăm chăm nhìn điện thoại. Chu Nhiên cũng được giữ lại ăn cơm, anh khẽ nói với Lâm Tiểu Mãn: “Nghe nói hai năm nay công ty của Cố Minh Viễn lỗ rất nhiều tiền, đi vay khắp nơi.”",
+   "Ăn được một nửa, Cố Minh Viễn cuối cùng không nhịn được nữa: “Bố, giá anh Phương đưa ra đã rất cao rồi. Một chiếc đồng hồ đặt ở đó, chẳng ăn được cũng chẳng dùng được, sao không bán?” Ông Cố đặt đũa xuống: “Đây không phải chuyện tiền.” “Thế thì là chuyện gì?” Giọng Cố Minh Viễn mỗi lúc một to, “Có phải bố muốn trơ mắt nhìn công ty con phá sản không?” Phòng ăn lập tức im phăng phắc, chỉ nghe thấy tiếng mưa rào rào ngoài cửa sổ.",
+   "Tô Tình vội đứng dậy rót trà cho mọi người, lái sang chuyện khác. Cô kể chiếc điện thoại cũ của mình tuần trước chẳng biết đánh rơi ở đâu, trong đó còn nhiều ảnh cũ của bảo tàng, thật tiếc. Cố Tiểu Vũ hỏi thăm sức khỏe mẹ cô, Tô Tình mỉm cười: “Vẫn vậy thôi. Từ sau ca phẫu thuật ba năm trước thì đỡ nhiều rồi.” Nói xong, cô cúi đầu nhìn đồng hồ đeo tay của mình.",
+   "Đúng lúc đó, điện thoại của Chu Nhiên reo. Anh nghe vài câu, sắc mặt thay đổi: “Nước sông lên nhanh quá, cây cầu ở đầu thị trấn bị ngập rồi, tối nay không ai ra được, cũng không ai vào được.” Anh nhìn màn đêm mưa tối om bên ngoài, bất lực nói: “Xem ra anh cũng chỉ có thể ngủ lại đây thôi.”",
+   "Bữa tối sắp kết thúc, ông Cố chậm rãi đứng dậy, nhìn từng người một: “Sáng mai, sau khi thợ Lâm xem xong đồng hồ, tôi sẽ công bố một quyết định. Quyết định này có thể sẽ khiến vài người trong số các người rất bất ngờ.” Nói xong, ông chống gậy lên lầu. Bên bàn ăn, mấy người nhìn nhau, không ai mở miệng. Lâm Tiểu Mãn bỏ một viên kẹo bạc hà vào miệng, thầm nghĩ: “vài người” mà ông nói rốt cuộc là ai?"
+  ],
+  "questions": [
+   {
+    "q": "林小满听完六点的钟声，发现了什么？",
+    "q_vi": "Nghe xong tiếng chuông lúc sáu giờ, Lâm Tiểu Mãn phát hiện ra điều gì?",
+    "options": [
+     "仙鹤的翅膀坏了",
+     "钟走得比手机慢",
+     "音乐少了一个音，音梳可能断了一个齿",
+     "钟里的音乐和宣传片完全一样"
+    ],
+    "answer": 2,
+    "explain_vi": "Cô nói nốt thứ năm không kêu, lược âm bên trong chắc đã gãy một răng."
+   },
+   {
+    "q": "顾明远为什么和父亲吵起来？",
+    "q_vi": "Vì sao Cố Minh Viễn cãi nhau với bố?",
+    "options": [
+     "他想把钟表馆搬到北京",
+     "他反对父亲请林小满来修钟",
+     "他不喜欢方立这个人",
+     "他希望父亲把钟卖掉，帮他解决公司的困难"
+    ],
+    "answer": 3,
+    "explain_vi": "Công ty anh ta lỗ nặng, phải vay nợ, nên muốn bố bán đồng hồ với giá cao mà Phương Lập đưa ra."
+   },
+   {
+    "q": "关于这一章，下面哪种说法是正确的？",
+    "q_vi": "Về chương này, cách nói nào dưới đây là đúng?",
+    "options": [
+     "金鹤钟三年前是方立送去修的",
+     "因为桥被淹了，今晚大家都离不开钟表馆",
+     "苏晴的新手机丢了",
+     "顾老先生已经宣布了他的决定"
+    ],
+    "answer": 1,
+    "explain_vi": "Chu Nhiên báo cầu ở đầu thị trấn bị ngập, tối nay không ai ra vào được. Đồng hồ do Tô Tình gửi đi sửa; cái mất là điện thoại cũ; ông Cố hẹn sáng mai mới công bố."
+   }
+  ]
+ },
+ {
+  "id": "s2-03",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 3,
+  "title": "十一点的钟声",
+  "title_vi": "Tiếng chuông lúc mười một giờ",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "林小满的房间在二楼走廊的东头，展厅在走廊的西头。展厅有两个门：前门对着走廊，后门外面是一道又窄又陡的木楼梯，可以直接下到一楼的厨房和后院。苏晴带她看房间时说：“以前这是佣人走的楼梯，现在除了何师傅，很少有人用。”",
+   "九点半，大家各自回了房间。林小满坐在床上，打开随身带的小本子，把今天看到的东西一条一条记下来：第五个音、三年前的修理、顾老先生的话……这是她多年的习惯。她相信，大部分问题的答案，早就藏在人们没注意的小事里。写完最后一行，她又在“第五个音”下面画了一条线。",
+   "窗外的雨越下越大，风把窗户吹得咔咔响。大概十点十分的时候，她好像听见走廊那头传来“咚”的一声，像是什么重东西掉在了地上。可是几乎在同一时间，天上响起了一个大雷。她抬头听了一会儿，外面再也没有别的声音，就以为刚才只是雷声。",
+   "不知过了多久，她迷迷糊糊地睡着了。把她叫醒的，是一阵熟悉的音乐。那声音从走廊西头的展厅传过来，叮叮咚咚，像山里的泉水。她看了看手机，正好十一点。“金鹤又张开翅膀了。”她心里想着，翻了个身。可是嗓子干得厉害，她发现保温杯里的水已经喝完了，只好起床下楼。",
+   "十一点零五分，厨房里亮着灯。苏晴正站在炉子前搅一锅汤，顾小雨坐在桌边吃饼干，周然也在，手里拿着一个苹果。“睡不着吧？”苏晴笑着说，“我九点三刻就开始炖排骨汤了，给大家当夜宵。”她的头发梢有点儿湿。看见林小满在看她，她解释说：“刚才后门的窗户没关好，我去关窗，被雨打湿了。”",
+   "林小满接了热水，又尝了一口汤。汤的味道还很淡，排骨也硬硬的，咬不动。她看了一眼炉子上的火，没说什么。周然在一旁边吃苹果边说：“刚才十一点钟响的时候，苏经理还说了一句‘十一点了’，我才发现已经这么晚了。”顾小雨笑他：“表哥，你一个警察，晚上还吃这么多。”",
+   "十一点二十分，苏晴把火关小，说：“我每天睡觉前都要去展厅看一眼，你们先坐。”她拿着手电筒上了楼。还不到一分钟，楼上突然传来一声尖叫。林小满手里的杯子差点儿掉在地上。周然第一个站了起来：“出事了！”",
+   "三个人冲上二楼。展厅的前门开着，灯也亮了。玻璃展柜的门开着，里面空空的，金鹤钟不见了！苏晴脸色发白，指着后门的方向，说不出话来。在后门里面那个黑暗的角落，楼梯口的地板上，顾老先生一动不动地躺着，拐杖倒在一边。",
+   "周然马上跑过去，摸了摸老人的脖子：“还有呼吸！快打急救电话！”很快，顾明远、方立和何师傅也被吵醒了，一个个跑了过来。林小满却没有动。她蹲在展柜前，仔细地看着那把锁。锁好好的，没有一点儿被撬过的痕迹。她想起了顾老先生说过的话：“展柜的钥匙，只有我有。”那么，今天晚上打开这把锁的人，到底是谁呢？"
+  ],
+  "translations": [
+   "Phòng của Lâm Tiểu Mãn ở đầu phía đông hành lang tầng hai, phòng trưng bày ở đầu phía tây. Phòng trưng bày có hai cửa: cửa trước nhìn ra hành lang, ngoài cửa sau là một cầu thang gỗ vừa hẹp vừa dốc, có thể xuống thẳng nhà bếp và sân sau ở tầng một. Lúc dẫn cô đi xem phòng, Tô Tình nói: “Trước đây đó là cầu thang cho người giúp việc đi, bây giờ ngoài bác Hà ra thì rất ít người dùng.”",
+   "Chín rưỡi, mọi người ai về phòng nấy. Lâm Tiểu Mãn ngồi trên giường, mở cuốn sổ nhỏ mang theo bên người, ghi lại từng điều cô thấy hôm nay: nốt thứ năm, lần sửa chữa ba năm trước, lời của ông Cố… Đây là thói quen nhiều năm của cô. Cô tin rằng phần lớn câu trả lời cho các vấn đề từ lâu đã nấp sẵn trong những chuyện nhỏ mà người ta không để ý. Viết xong dòng cuối, cô lại gạch chân dưới chữ “nốt thứ năm”.",
+   "Mưa ngoài cửa sổ mỗi lúc một to, gió thổi cửa sổ kêu lạch cạch. Khoảng mười giờ mười phút, hình như cô nghe thấy từ đầu kia hành lang vọng lại một tiếng “huỵch”, như có vật gì nặng rơi xuống sàn. Nhưng gần như cùng lúc, trên trời vang lên một tiếng sấm lớn. Cô ngẩng đầu nghe một lúc, bên ngoài không còn tiếng động nào khác, nên cho rằng vừa rồi chỉ là tiếng sấm.",
+   "Không biết bao lâu sau, cô thiu thiu ngủ. Đánh thức cô là một đoạn nhạc quen thuộc. Âm thanh ấy truyền đến từ phòng trưng bày ở đầu phía tây hành lang, tinh tang tinh tang, như suối nước trong núi. Cô nhìn điện thoại, đúng mười một giờ. “Hạc vàng lại dang cánh rồi,” cô nghĩ, rồi trở mình. Nhưng cổ họng khô khốc, cô thấy nước trong bình giữ nhiệt đã uống hết, đành dậy xuống lầu.",
+   "Mười một giờ năm phút, nhà bếp còn sáng đèn. Tô Tình đang đứng trước bếp khuấy một nồi canh, Cố Tiểu Vũ ngồi bên bàn ăn bánh quy, Chu Nhiên cũng ở đó, tay cầm một quả táo. “Không ngủ được à?” Tô Tình cười nói, “Tôi bắt đầu hầm canh sườn từ chín giờ bốn lăm, làm đồ ăn khuya cho mọi người.” Đuôi tóc cô hơi ướt. Thấy Lâm Tiểu Mãn nhìn mình, cô giải thích: “Lúc nãy cửa sổ ở cửa sau đóng chưa kỹ, tôi ra đóng, bị mưa hắt ướt.”",
+   "Lâm Tiểu Mãn rót nước nóng, rồi nếm thử một ngụm canh. Canh vẫn còn rất nhạt, sườn cũng còn cứng, cắn không nổi. Cô liếc nhìn ngọn lửa trên bếp, không nói gì. Chu Nhiên ở bên cạnh vừa ăn táo vừa nói: “Lúc nãy chuông điểm mười một giờ, quản lý Tô còn nói một câu ‘mười một giờ rồi’, anh mới biết đã muộn thế này.” Cố Tiểu Vũ trêu anh: “Anh họ ơi, anh là cảnh sát mà tối còn ăn nhiều thế.”",
+   "Mười một giờ hai mươi, Tô Tình vặn nhỏ lửa, nói: “Tối nào trước khi ngủ tôi cũng lên phòng trưng bày xem một lượt, mọi người cứ ngồi đi.” Cô cầm đèn pin lên lầu. Chưa đầy một phút sau, trên lầu đột nhiên vang lên một tiếng thét. Chiếc cốc trong tay Lâm Tiểu Mãn suýt rơi xuống đất. Chu Nhiên là người đầu tiên đứng bật dậy: “Có chuyện rồi!”",
+   "Ba người lao lên tầng hai. Cửa trước phòng trưng bày mở, đèn cũng đã bật. Cửa tủ kính mở toang, bên trong trống trơn, đồng hồ Hạc Vàng biến mất rồi! Tô Tình mặt trắng bệch, chỉ về phía cửa sau, không nói nên lời. Trong góc tối phía trong cửa sau, trên sàn ở đầu cầu thang, ông Cố nằm bất động, cây gậy đổ sang một bên.",
+   "Chu Nhiên lập tức chạy tới, sờ cổ ông già: “Vẫn còn thở! Mau gọi cấp cứu!” Rất nhanh, Cố Minh Viễn, Phương Lập và bác Hà cũng bị đánh thức, lần lượt chạy tới. Lâm Tiểu Mãn lại không nhúc nhích. Cô ngồi xổm trước tủ kính, xem kỹ chiếc khóa. Khóa vẫn nguyên vẹn, không có chút dấu vết bị cạy nào. Cô nhớ lại lời ông Cố từng nói: “Chìa khóa tủ chỉ mình tôi có.” Vậy thì người đã mở chiếc khóa này tối nay rốt cuộc là ai?"
+  ],
+  "questions": [
+   {
+    "q": "十点十分左右，林小满听到“咚”的一声，她为什么没有去看？",
+    "q_vi": "Khoảng mười giờ mười, Lâm Tiểu Mãn nghe tiếng “huỵch”, vì sao cô không đi xem?",
+    "options": [
+     "她已经睡着了",
+     "她以为那是雷声",
+     "周然告诉她没事",
+     "她不敢一个人出门"
+    ],
+    "answer": 1,
+    "explain_vi": "Gần như cùng lúc có tiếng sấm lớn, sau đó không còn tiếng gì nữa nên cô tưởng đó chỉ là sấm."
+   },
+   {
+    "q": "林小满在厨房里注意到了什么？",
+    "q_vi": "Ở trong bếp, Lâm Tiểu Mãn để ý thấy điều gì?",
+    "options": [
+     "周然一直在打电话",
+     "顾小雨的衣服湿了",
+     "苏晴的头发湿了，汤也还没炖好",
+     "厨房的后门被打开了"
+    ],
+    "answer": 2,
+    "explain_vi": "Đuôi tóc Tô Tình hơi ướt; canh còn nhạt, sườn còn cứng dù cô nói đã hầm từ 9 giờ 45."
+   },
+   {
+    "q": "这一章最后，展柜的锁说明了什么？",
+    "q_vi": "Cuối chương, chiếc khóa tủ kính cho thấy điều gì?",
+    "options": [
+     "拿走钟的人很可能是用钥匙打开展柜的",
+     "小偷是从窗户进来的",
+     "展柜本来就没有锁",
+     "钟是自己掉下去的"
+    ],
+    "answer": 0,
+    "explain_vi": "Khóa nguyên vẹn, không có dấu bị cạy, nên người lấy đồng hồ nhiều khả năng đã mở bằng chìa khóa."
+   }
+  ]
+ },
+ {
+  "id": "s2-04",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 4,
+  "title": "停住的手表",
+  "title_vi": "Chiếc đồng hồ đeo tay ngừng chạy",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "急救电话打通了，可是对方说，镇口的桥被淹了，救护车最快也要明天早上才能过来。医生在电话里告诉他们：老人头部可能受了伤，现在不要随便摇他、叫他，要让他平躺，注意保暖，每隔十分钟看一次呼吸。周然和顾明远小心地把老人抬到旁边的房间，放在床上。顾小雨一边哭一边给爷爷盖被子。",
+   "林小满站在床边，注意到老人左手腕上戴着一块旧式机械表。表面的玻璃已经裂了，指针停在十一点十五分。周然也看见了，他马上拿出本子记下来：“老先生应该是十一点十五分摔倒的，摔倒的时候把表撞坏了。”他想了想，又说：“十一点的时候大家都听见钟响了，说明那时候钟还在展柜里。所以，钟是在十一点到十一点二十分之间被偷走的。”",
+   "林小满没有回答。她低下头，盯着那块表看了很久。表的右边，那个用来调时间的小圆头，比平时往外突出了一点儿。她看了一会儿，又抬头看了看老人的脸，然后从口袋里拿出一颗薄荷糖，慢慢放进了嘴里。",
+   "周然在老人睡衣的口袋里找到了一串钥匙，其中一把小铜钥匙，正是展柜的钥匙。“钥匙还在他身上，”周然皱着眉头，“难道是老先生自己打开展柜的？或者，小偷用完以后又放回了他的口袋？”",
+   "周然是这里唯一的警察，他让大家都到一楼的饭厅集合，把展厅的门锁上，谁也不许进去。然后，他请每个人说一说，十一点到十一点二十分之间自己在哪儿、在做什么。",
+   "厨房里的人很好说：苏晴、顾小雨和周然自己一直在一起，林小满十一点零五分也下来了。剩下的三个人，都说自己在房间里睡觉。顾明远说他吃了晚饭心情不好，喝了点儿酒就睡了；方立说他十点多就关灯了；何师傅住在一楼大门旁边的小房间，他说他耳朵不好，什么也没听见，是被大家跑上楼的声音吵醒的。",
+   "“也就是说，”周然看着那三个人，“你们三位，都没有人能证明。”顾明远一下子站了起来：“你什么意思？那是我爸！我会去偷我爸的钟，还把他推下去吗？”方立推了推眼镜，什么也没说。何师傅低着头，两只粗糙的手紧紧地握在一起。",
+   "趁大家吵的时候，林小满拉着周然从厨房那边走到后门。展厅后面那道窄窄的木楼梯，下来就正好是这里。后门没有锁，被风吹得一开一合。门外是后院，雨还在下，地上很软，隐约能看见几个泥脚印，一直通向院子深处，但已经被雨水冲得看不太清楚了。",
+   "后门旁边有一个旧木架，上面放着四双黑色的大雨靴，是给去后院干活的人准备的，谁都可以穿。周然打着手电筒一双一双地看。看到最后一双时，他停住了。这双雨靴上全是新鲜的泥，靴子下面已经流出了一小片水。",
+   "“有人今天晚上穿着它出去过。”林小满轻声说，“而且，就在不久以前。”周然抬起头，看了看那道通往展厅的木楼梯，又看了看外面黑乎乎的院子，后背一阵发冷。"
+  ],
+  "translations": [
+   "Gọi được cấp cứu, nhưng đầu dây bên kia nói cầu ở đầu thị trấn đã bị ngập, xe cứu thương sớm nhất cũng phải sáng mai mới đến được. Bác sĩ dặn qua điện thoại: đầu ông cụ có thể bị thương, bây giờ đừng tùy tiện lay hay gọi ông, phải để ông nằm ngửa, giữ ấm, cứ mười phút kiểm tra hơi thở một lần. Chu Nhiên và Cố Minh Viễn cẩn thận khiêng ông cụ sang phòng bên cạnh, đặt lên giường. Cố Tiểu Vũ vừa khóc vừa đắp chăn cho ông nội.",
+   "Lâm Tiểu Mãn đứng bên giường, để ý thấy trên cổ tay trái ông cụ đeo một chiếc đồng hồ cơ kiểu cũ. Mặt kính đã nứt, kim dừng ở mười một giờ mười lăm. Chu Nhiên cũng thấy, anh lập tức lấy sổ ra ghi: “Ông cụ chắc bị ngã lúc mười một giờ mười lăm, khi ngã thì va hỏng đồng hồ.” Anh nghĩ một lúc rồi nói thêm: “Lúc mười một giờ mọi người đều nghe chuông đồng hồ kêu, chứng tỏ khi đó đồng hồ vẫn còn trong tủ. Vậy đồng hồ bị lấy trộm trong khoảng từ mười một giờ đến mười một giờ hai mươi.”",
+   "Lâm Tiểu Mãn không đáp. Cô cúi đầu, nhìn chằm chằm chiếc đồng hồ rất lâu. Ở bên phải đồng hồ, cái núm tròn nhỏ dùng để chỉnh giờ nhô ra ngoài hơn bình thường một chút. Cô nhìn một lúc, lại ngẩng lên nhìn mặt ông cụ, rồi lấy từ túi ra một viên kẹo bạc hà, chậm rãi bỏ vào miệng.",
+   "Chu Nhiên tìm thấy trong túi áo ngủ của ông cụ một chùm chìa khóa, trong đó có một chiếc chìa nhỏ bằng đồng, chính là chìa khóa tủ kính. “Chìa khóa vẫn ở trên người ông,” Chu Nhiên cau mày, “chẳng lẽ chính ông cụ mở tủ? Hay là tên trộm dùng xong lại bỏ vào túi ông?”",
+   "Chu Nhiên là cảnh sát duy nhất ở đây, anh bảo mọi người tập trung ở phòng ăn tầng một, khóa cửa phòng trưng bày lại, không ai được vào. Sau đó anh mời từng người nói xem từ mười một giờ đến mười một giờ hai mươi mình ở đâu, làm gì.",
+   "Những người ở trong bếp thì dễ nói: Tô Tình, Cố Tiểu Vũ và chính Chu Nhiên luôn ở cùng nhau, Lâm Tiểu Mãn cũng xuống lúc mười một giờ năm phút. Ba người còn lại đều nói mình ngủ trong phòng. Cố Minh Viễn nói ăn tối xong tâm trạng không tốt, uống chút rượu rồi ngủ; Phương Lập nói hơn mười giờ anh đã tắt đèn; bác Hà ở căn phòng nhỏ cạnh cổng lớn tầng một, bác nói tai mình không tốt, chẳng nghe thấy gì, bị tiếng mọi người chạy lên lầu đánh thức.",
+   "“Nói cách khác,” Chu Nhiên nhìn ba người, “cả ba vị đều không có ai làm chứng.” Cố Minh Viễn đứng phắt dậy: “Anh có ý gì? Đó là bố tôi! Tôi lại đi trộm đồng hồ của bố tôi, còn đẩy ông ngã sao?” Phương Lập đẩy gọng kính, không nói gì. Bác Hà cúi đầu, hai bàn tay thô ráp nắm chặt vào nhau.",
+   "Nhân lúc mọi người cãi nhau, Lâm Tiểu Mãn kéo Chu Nhiên đi từ phía nhà bếp ra cửa sau. Cầu thang gỗ hẹp phía sau phòng trưng bày đi xuống đúng chỗ này. Cửa sau không khóa, bị gió thổi đóng mở liên hồi. Ngoài cửa là sân sau, mưa vẫn rơi, mặt đất mềm nhũn, lờ mờ thấy mấy dấu chân bùn, kéo dài vào sâu trong sân, nhưng đã bị nước mưa xóa gần hết.",
+   "Cạnh cửa sau có một cái giá gỗ cũ, trên đặt bốn đôi ủng đi mưa lớn màu đen, chuẩn bị cho người ra sân sau làm việc, ai cũng có thể đi. Chu Nhiên soi đèn pin xem từng đôi một. Đến đôi cuối cùng, anh dừng lại. Đôi ủng này dính đầy bùn mới, dưới ủng đã chảy ra một vũng nước nhỏ.",
+   "“Tối nay có người đã đi đôi ủng này ra ngoài,” Lâm Tiểu Mãn nói khẽ, “hơn nữa, là chỉ mới đây thôi.” Chu Nhiên ngẩng đầu, nhìn cầu thang gỗ dẫn lên phòng trưng bày, rồi lại nhìn khoảng sân tối om bên ngoài, sống lưng lạnh toát."
+  ],
+  "questions": [
+   {
+    "q": "周然根据什么认为钟是在十一点到十一点二十分之间被偷的？",
+    "q_vi": "Chu Nhiên dựa vào đâu để cho rằng đồng hồ bị trộm trong khoảng 11 giờ đến 11 giờ 20?",
+    "options": [
+     "何师傅十一点看见了钟",
+     "十一点大家都听见了钟声，十一点二十分苏晴发现钟不见了",
+     "方立十一点还在展厅里",
+     "监控录像拍到了"
+    ],
+    "answer": 1,
+    "explain_vi": "Mọi người nghe chuông lúc 11 giờ nên tưởng đồng hồ vẫn còn, và 11 giờ 20 Tô Tình phát hiện nó đã mất."
+   },
+   {
+    "q": "林小满在老人的手表上注意到了什么细节？",
+    "q_vi": "Lâm Tiểu Mãn để ý thấy chi tiết gì trên đồng hồ đeo tay của ông cụ?",
+    "options": [
+     "表带断了",
+     "手表走得比别的表快",
+     "表上有别人的指纹",
+     "调时间的小圆头往外突出了一点儿"
+    ],
+    "answer": 3,
+    "explain_vi": "Cô nhìn rất lâu cái núm chỉnh giờ nhô ra hơn bình thường — một manh mối cô chưa nói ra."
+   },
+   {
+    "q": "关于十一点到十一点二十分之间，哪些人没有人能证明他们在哪儿？",
+    "q_vi": "Trong khoảng 11 giờ đến 11 giờ 20, những ai không có người làm chứng?",
+    "options": [
+     "苏晴、顾小雨和周然",
+     "林小满和苏晴",
+     "顾明远、方立和何师傅",
+     "顾小雨和方立"
+    ],
+    "answer": 2,
+    "explain_vi": "Ba người này đều nói mình ngủ trong phòng, không ai làm chứng; những người ở bếp thì có nhau làm chứng."
+   }
+  ]
+ },
+ {
+  "id": "s2-05",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 5,
+  "title": "说谎的儿子",
+  "title_vi": "Người con trai nói dối",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "夜里一点，周然决定一个一个地单独谈话。地点选在顾老先生的书房，林小满坐在角落里，手里拿着她的小本子。周然小声问她：“你一个修钟的，跟着我干什么？”林小满头也不抬：“钟丢了，我当然要找。”周然拿她没办法，只好让她留下。",
+   "第一个进来的是顾明远。他坐下以后，第一句话就是：“我知道你们怀疑我。”他的眼睛红红的，身上还有一股酒味。周然问他晚上做了什么，他还是那句话：喝了点儿酒，回房间睡觉了。",
+   "林小满一直在看他的鞋。顾明远穿的是一双皮鞋，鞋边上沾着一圈黄色的细沙，还没有完全干。她合上本子，开口问道：“顾先生，你睡觉的时候穿着皮鞋吗？”顾明远愣住了，低头看了看自己的脚，脸一下子红了。",
+   "“前院的路是用黄沙铺的，”林小满接着说，“后院的地是黑色的泥土。你的鞋上只有黄沙，没有黑泥。所以，你今天晚上出去过，但去的是前院，不是后院。”周然吃惊地看着表妹，又转过头看着顾明远：“是这样吗？你为什么说谎？”",
+   "顾明远沉默了半天，终于叹了一口气。他承认，十点左右，他一个人去了停在大门外的车里，给一个借钱给他的人打电话。“对方说，下个月再还不上钱，就要去法院告我。我不想让家里人听见，所以才去车里打。”他拿出手机，通话记录显示，他从十点零五分打到了十点半。",
+   "“那你为什么不早说？”周然问。“钟丢了，我爸又出了事，我这个时候说自己欠了一大笔钱，谁会相信我？”顾明远苦笑了一下，“你们只会觉得，我更有理由偷钟了。”",
+   "周然拿过他的手机，看了看那个号码，又把通话时间抄在本子上。“明天我会去查这个人，”他说，“如果你说的是真的，十点到十点半你就不在展厅附近。不过，十一点以后你在哪儿，还是没有人能证明。”顾明远点点头，没有再争辩。他看起来好像一下子老了好几岁。",
+   "林小满问他：“你从车里回来的时候，有没有看见什么？”顾明远想了想：“回来的时候，大概十点四十吧，我在前院抬头看了一眼，二楼展厅的窗户里好像有一点儿光，一晃一晃的，像是手电筒。我当时以为是苏晴在检查，没有多想。”",
+   "周然在本子上写下“十点四十，展厅，手电筒”，然后在后面打了一个大大的问号。苏晴说过，她每天是睡觉前，也就是十一点二十分才去展厅的。那么，十点四十在展厅里拿着手电筒的人，是谁呢？而且，那时候离钟响还有二十分钟。",
+   "谈话快结束时，顾明远站在门口，犹豫了一下，又转过身来。“还有一件事，我不知道有没有用。”他压低了声音，“我爸最近很奇怪。上个月，他一个人去了一趟香港，谁也没告诉。回来以后，他总是一个人坐在展厅里发呆，还跟我说过一句话。”",
+   "“什么话？”林小满问。顾明远看着她，慢慢地说：“他说：‘这个馆里，有人对不起我。’”说完，他关上门走了。书房里很安静，只有墙上的老钟在嘀嗒嘀嗒地走着。"
+  ],
+  "translations": [
+   "Một giờ đêm, Chu Nhiên quyết định nói chuyện riêng với từng người. Địa điểm chọn ở thư phòng của ông Cố, Lâm Tiểu Mãn ngồi trong góc, tay cầm cuốn sổ nhỏ. Chu Nhiên khẽ hỏi cô: “Em là thợ sửa đồng hồ, đi theo anh làm gì?” Lâm Tiểu Mãn chẳng buồn ngẩng đầu: “Đồng hồ mất thì em đương nhiên phải tìm.” Chu Nhiên hết cách với cô, đành để cô ở lại.",
+   "Người đầu tiên bước vào là Cố Minh Viễn. Ngồi xuống xong, câu đầu tiên anh ta nói là: “Tôi biết các người nghi ngờ tôi.” Mắt anh ta đỏ hoe, người vẫn còn mùi rượu. Chu Nhiên hỏi tối nay anh ta làm gì, anh ta vẫn câu cũ: uống chút rượu, về phòng ngủ.",
+   "Lâm Tiểu Mãn cứ nhìn giày của anh ta. Cố Minh Viễn đi một đôi giày da, mép giày dính một vòng cát vàng mịn, vẫn chưa khô hẳn. Cô gập sổ lại, lên tiếng hỏi: “Anh Cố, lúc ngủ anh đi giày da à?” Cố Minh Viễn sững người, cúi xuống nhìn chân mình, mặt lập tức đỏ bừng.",
+   "“Con đường ở sân trước được rải cát vàng,” Lâm Tiểu Mãn nói tiếp, “còn đất ở sân sau là bùn đen. Giày của anh chỉ có cát vàng, không có bùn đen. Vậy tối nay anh có ra ngoài, nhưng là ra sân trước, không phải sân sau.” Chu Nhiên kinh ngạc nhìn cô em họ, rồi quay sang nhìn Cố Minh Viễn: “Có phải vậy không? Sao anh nói dối?”",
+   "Cố Minh Viễn im lặng hồi lâu, cuối cùng thở dài. Anh ta thừa nhận khoảng mười giờ đã một mình ra chiếc xe đậu ngoài cổng lớn, gọi điện cho một người cho anh ta vay tiền. “Bên kia nói tháng sau còn không trả được tiền thì sẽ kiện tôi ra tòa. Tôi không muốn người nhà nghe thấy nên mới ra xe gọi.” Anh ta lấy điện thoại ra, nhật ký cuộc gọi cho thấy anh ta gọi từ mười giờ năm phút đến mười giờ rưỡi.",
+   "“Vậy sao anh không nói sớm?” Chu Nhiên hỏi. “Đồng hồ mất, bố tôi lại gặp chuyện, lúc này tôi mà nói mình đang nợ một khoản lớn thì ai tin tôi?” Cố Minh Viễn cười khổ, “Các người chỉ thấy tôi càng có lý do để trộm đồng hồ thôi.”",
+   "Chu Nhiên cầm lấy điện thoại của anh ta, xem số máy ấy, rồi chép thời gian cuộc gọi vào sổ. “Mai tôi sẽ kiểm tra người này,” anh nói, “nếu anh nói thật thì từ mười giờ đến mười giờ rưỡi anh không ở gần phòng trưng bày. Có điều, sau mười một giờ anh ở đâu thì vẫn không ai làm chứng được.” Cố Minh Viễn gật đầu, không cãi nữa. Trông anh ta như bỗng già đi mấy tuổi.",
+   "Lâm Tiểu Mãn hỏi anh ta: “Lúc từ xe quay về, anh có thấy gì không?” Cố Minh Viễn nghĩ một lúc: “Lúc quay về, chắc khoảng mười giờ bốn mươi, tôi đứng ở sân trước ngẩng lên nhìn, trong cửa sổ phòng trưng bày tầng hai hình như có chút ánh sáng, cứ lắc lư, giống đèn pin. Lúc đó tôi tưởng Tô Tình đang kiểm tra nên không nghĩ nhiều.”",
+   "Chu Nhiên ghi vào sổ “mười giờ bốn mươi, phòng trưng bày, đèn pin”, rồi đánh một dấu hỏi thật to phía sau. Tô Tình từng nói mỗi ngày cô lên phòng trưng bày trước khi ngủ, tức là lúc mười một giờ hai mươi. Vậy người cầm đèn pin trong phòng trưng bày lúc mười giờ bốn mươi là ai? Hơn nữa, lúc đó còn hai mươi phút nữa chuông mới điểm.",
+   "Cuộc nói chuyện sắp kết thúc, Cố Minh Viễn đứng ở cửa, ngập ngừng một chút rồi quay người lại. “Còn một chuyện, không biết có ích không.” Anh ta hạ giọng, “Dạo này bố tôi rất lạ. Tháng trước ông một mình đi Hồng Kông một chuyến, không nói với ai. Về rồi ông cứ ngồi một mình thẫn thờ trong phòng trưng bày, còn nói với tôi một câu.”",
+   "“Câu gì?” Lâm Tiểu Mãn hỏi. Cố Minh Viễn nhìn cô, chậm rãi nói: “Ông nói: ‘Trong bảo tàng này có người phụ lòng tôi.’” Nói xong, anh ta đóng cửa đi ra. Thư phòng rất yên tĩnh, chỉ có chiếc đồng hồ cổ trên tường vẫn tích tắc tích tắc chạy."
+  ],
+  "questions": [
+   {
+    "q": "林小满是怎么发现顾明远说谎的？",
+    "q_vi": "Lâm Tiểu Mãn phát hiện Cố Minh Viễn nói dối bằng cách nào?",
+    "options": [
+     "她闻到了他身上的酒味",
+     "何师傅看见他出去了",
+     "周然查了他的手机",
+     "她看见他的皮鞋上有前院的黄沙"
+    ],
+    "answer": 3,
+    "explain_vi": "Anh ta nói đã đi ngủ nhưng giày da lại dính cát vàng của sân trước, chứng tỏ có ra ngoài."
+   },
+   {
+    "q": "顾明远为什么要一个人去车里打电话？",
+    "q_vi": "Vì sao Cố Minh Viễn phải một mình ra xe gọi điện?",
+    "options": [
+     "房间里手机没有信号",
+     "他想给方立打电话谈价钱",
+     "他欠了别人钱，不想让家里人听见",
+     "他要给医院打电话"
+    ],
+    "answer": 2,
+    "explain_vi": "Anh ta gọi cho người cho vay tiền, bị dọa kiện, không muốn gia đình biết."
+   },
+   {
+    "q": "顾明远提供的哪条信息让人觉得奇怪？",
+    "q_vi": "Thông tin nào Cố Minh Viễn cung cấp khiến người ta thấy lạ?",
+    "options": [
+     "十点四十，展厅里好像有人拿着手电筒",
+     "苏晴十一点二十分去了展厅",
+     "方立十点就关灯了",
+     "后门没有锁"
+    ],
+    "answer": 0,
+    "explain_vi": "Lúc 10 giờ 40 — trước khi chuông điểm 11 giờ — đã có ánh đèn pin trong phòng trưng bày, trong khi Tô Tình nói 11 giờ 20 mới lên."
+   }
+  ]
+ },
+ {
+  "id": "s2-06",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 6,
+  "title": "北京来的客人",
+  "title_vi": "Vị khách đến từ Bắc Kinh",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "第二个进来的是方立。和顾明远不一样，他看起来非常冷静，衣服整整齐齐，连头发都没有乱。他坐下以后，先问了一句顾老先生的情况，然后才说：“我十点就睡了，什么也没听见。我来这里是谈生意的，钟丢了，对我也没有任何好处。”",
+   "周然问他为什么对金鹤钟这么感兴趣。方立笑了笑：“我是做收藏的，看见好东西，当然想买。”林小满在一边问：“那你昨天为什么一直打听三年前修钟的事？连修钟师傅的名字都想知道？”方立看了她一眼，回答得很慢：“买东西以前，了解一下它的历史，这很正常。”",
+   "林小满注意到，方立外套的口袋里露出一支小小的手电筒，样子很特别，是紫色的。她知道这种手电筒，做古董生意的人常常用它来检查东西是不是被修补过、是不是假的。她没有说出来，只是在本子上画了一个小小的手电筒。",
+   "方立出去以后，周然伸了个懒腰：“这个人说话滴水不漏，我看不出什么。”林小满说：“滴水不漏，本身就不太正常。一个刚刚丢了生意的人，应该着急才对，可他一点儿也不着急，好像早就知道这笔生意做不成。”",
+   "第三个进来的是顾小雨。她的眼睛哭肿了，坐下就问：“爷爷会不会有事？”周然安慰了她几句，才开始问话。顾小雨说，九点四十到十点半，她一直在房间里和同学视频聊天，讨论毕业作品。“我们把视频录下来了，你们可以看。”十点半以后，她觉得饿，就下楼去了厨房，那时苏晴已经在厨房里了。",
+   "“苏姐说她一晚上都在厨房炖汤，我就陪她聊天。”顾小雨想了想，又说，“对了，我下楼的时候，还看了一眼厨房门后面，我的红雨衣还挂在那儿。我本来想穿它去后院看看雨下得多大，后来懒得去了。”林小满把“红雨衣”三个字写进了本子里。",
+   "周然问她做毕业作品用什么工具。顾小雨从包里拿出一个盒子，里面有刻刀、颜料，还有一只用木头刻的小仙鹤，和金鹤钟上的那只几乎一模一样。“我想先做模型，再拍成动画。”周然拿起那只小仙鹤看了半天，表情有点儿复杂。林小满却问：“你昨天录的钟声，能发给我吗？”顾小雨点点头，马上把文件发给了她。",
+   "谈完话，已经快三点了。周然和林小满从书房出来，经过方立的房间时，发现门没有关紧，里面亮着灯，人却不在，可能去洗手间了。桌上放着一个打开的黑色文件包，几张纸露在外面。",
+   "周然犹豫了一下，还是推开了门：“我是警察，现在有人受伤，有东西被偷，我有责任了解情况。”林小满跟在后面。最上面的一张纸，是从一本拍卖会的图录上复印下来的，上面印着一座钟的大照片，旁边写着日期：两年前，香港。",
+   "林小满拿起那张纸，手微微发抖。照片里的钟，铜做的钟身，顶上站着一只张开翅膀的金色仙鹤，和展柜里那座金鹤钟一模一样。照片下面写着：“清代金鹤钟，成交价八百万元。”",
+   "“这……这是怎么回事？”周然瞪大了眼睛，“金鹤钟不是一直在顾家吗？怎么会两年前在香港被卖掉？”这时，走廊上传来了脚步声。林小满赶紧把纸放回原处，拉着周然退了出去。在走廊的拐角，方立正好迎面走来，他看了看两个人，又看了看自己房间的门，什么话也没说。"
+  ],
+  "translations": [
+   "Người thứ hai bước vào là Phương Lập. Khác với Cố Minh Viễn, anh ta trông vô cùng bình tĩnh, quần áo chỉnh tề, đến tóc cũng không rối. Ngồi xuống xong, anh ta hỏi thăm tình hình ông Cố trước, rồi mới nói: “Mười giờ tôi đã ngủ, không nghe thấy gì. Tôi đến đây để bàn chuyện làm ăn, đồng hồ mất thì tôi cũng chẳng được lợi gì.”",
+   "Chu Nhiên hỏi vì sao anh ta lại quan tâm đến đồng hồ Hạc Vàng như vậy. Phương Lập mỉm cười: “Tôi làm nghề sưu tầm, thấy đồ tốt đương nhiên muốn mua.” Lâm Tiểu Mãn hỏi chen vào: “Vậy sao hôm qua anh cứ dò hỏi chuyện sửa đồng hồ ba năm trước? Đến cả tên thợ sửa cũng muốn biết?” Phương Lập nhìn cô một cái, đáp rất chậm: “Trước khi mua đồ, tìm hiểu lịch sử của nó là chuyện bình thường.”",
+   "Lâm Tiểu Mãn để ý thấy trong túi áo khoác của Phương Lập lộ ra một chiếc đèn pin nhỏ, kiểu dáng rất đặc biệt, màu tím. Cô biết loại đèn pin này, người buôn đồ cổ thường dùng nó để kiểm tra xem đồ vật có bị tu bổ hay là đồ giả không. Cô không nói ra, chỉ vẽ một chiếc đèn pin nhỏ vào sổ.",
+   "Phương Lập đi ra rồi, Chu Nhiên vươn vai: “Người này nói năng kín kẽ quá, anh chẳng nhìn ra gì.” Lâm Tiểu Mãn nói: “Kín kẽ như vậy, bản thân nó đã không bình thường. Một người vừa mất vụ làm ăn lẽ ra phải sốt ruột, vậy mà anh ta chẳng sốt ruột chút nào, cứ như đã biết từ trước vụ này không thành.”",
+   "Người thứ ba vào là Cố Tiểu Vũ. Mắt cô khóc sưng cả lên, vừa ngồi xuống đã hỏi: “Ông nội có sao không ạ?” Chu Nhiên an ủi vài câu rồi mới bắt đầu hỏi. Cố Tiểu Vũ kể từ chín giờ bốn mươi đến mười giờ rưỡi, cô luôn ở trong phòng gọi video với bạn học, bàn về đồ án tốt nghiệp. “Bọn em có ghi lại video, anh chị có thể xem.” Sau mười giờ rưỡi, cô thấy đói nên xuống bếp, lúc đó Tô Tình đã ở trong bếp rồi.",
+   "“Chị Tô nói chị ấy ở trong bếp hầm canh cả tối, em ngồi nói chuyện với chị ấy.” Cố Tiểu Vũ nghĩ một lúc rồi nói thêm, “À đúng rồi, lúc xuống lầu em còn liếc ra sau cửa bếp, áo mưa đỏ của em vẫn treo ở đó. Em định mặc nó ra sân sau xem mưa to cỡ nào, sau lại lười không đi.” Lâm Tiểu Mãn ghi ba chữ “áo mưa đỏ” vào sổ.",
+   "Chu Nhiên hỏi cô làm đồ án tốt nghiệp dùng dụng cụ gì. Cố Tiểu Vũ lấy từ trong túi ra một cái hộp, trong có dao khắc, màu vẽ, và một con tiên hạc nhỏ khắc bằng gỗ, gần như giống hệt con hạc trên đồng hồ Hạc Vàng. “Em muốn làm mô hình trước, rồi mới quay thành phim hoạt hình.” Chu Nhiên cầm con hạc nhỏ ngắm nghía hồi lâu, vẻ mặt có chút phức tạp. Còn Lâm Tiểu Mãn lại hỏi: “Tiếng chuông em thu hôm qua có gửi cho chị được không?” Cố Tiểu Vũ gật đầu, gửi tệp cho cô ngay.",
+   "Nói chuyện xong đã gần ba giờ. Chu Nhiên và Lâm Tiểu Mãn ra khỏi thư phòng, đi ngang phòng Phương Lập thì thấy cửa không đóng chặt, bên trong sáng đèn nhưng không có người, có lẽ đi vệ sinh. Trên bàn đặt một chiếc cặp tài liệu màu đen đang mở, mấy tờ giấy lòi ra ngoài.",
+   "Chu Nhiên do dự một chút rồi vẫn đẩy cửa: “Tôi là cảnh sát, bây giờ có người bị thương, có đồ bị mất, tôi có trách nhiệm tìm hiểu tình hình.” Lâm Tiểu Mãn theo sau. Tờ giấy trên cùng là bản photo từ một cuốn catalogue đấu giá, trên in ảnh lớn một chiếc đồng hồ, bên cạnh ghi ngày tháng: hai năm trước, Hồng Kông.",
+   "Lâm Tiểu Mãn cầm tờ giấy lên, tay hơi run. Chiếc đồng hồ trong ảnh có thân bằng đồng, trên đỉnh đứng một con tiên hạc vàng đang dang cánh, giống hệt chiếc đồng hồ Hạc Vàng trong tủ kính. Dưới ảnh ghi: “Đồng hồ Hạc Vàng thời Thanh, giá chốt tám triệu tệ.”",
+   "“Cái… cái này là sao?” Chu Nhiên trợn tròn mắt, “Đồng hồ Hạc Vàng chẳng phải vẫn luôn ở nhà họ Cố sao? Sao hai năm trước lại bị bán ở Hồng Kông?” Đúng lúc đó, ngoài hành lang vang lên tiếng bước chân. Lâm Tiểu Mãn vội đặt tờ giấy về chỗ cũ, kéo Chu Nhiên lui ra. Ở góc rẽ hành lang, Phương Lập vừa hay đi tới trước mặt, anh ta nhìn hai người, lại nhìn cửa phòng mình, không nói một lời."
+  ],
+  "questions": [
+   {
+    "q": "林小满为什么觉得方立“滴水不漏”反而不正常？",
+    "q_vi": "Vì sao Lâm Tiểu Mãn cho rằng việc Phương Lập “kín kẽ” lại là không bình thường?",
+    "options": [
+     "因为他说的话前后不一样",
+     "因为他丢了生意却一点儿也不着急",
+     "因为他对顾老先生很冷淡",
+     "因为他承认自己去过展厅"
+    ],
+    "answer": 1,
+    "explain_vi": "Người vừa mất vụ mua bán lẽ ra phải sốt ruột, nhưng anh ta bình thản như đã biết trước vụ này không thành."
+   },
+   {
+    "q": "顾小雨说十点半以后她在做什么？",
+    "q_vi": "Cố Tiểu Vũ nói sau 10 giờ 30 cô làm gì?",
+    "options": [
+     "穿着红雨衣去后院看雨",
+     "一直在房间里和同学视频",
+     "在展厅录钟的声音",
+     "在厨房陪苏晴聊天"
+    ],
+    "answer": 3,
+    "explain_vi": "Cô đói nên xuống bếp, lúc đó Tô Tình đã ở đó, và cô ngồi nói chuyện với Tô Tình. Áo mưa đỏ thì cô định mặc nhưng lại thôi."
+   },
+   {
+    "q": "方立文件包里的那张纸为什么让人吃惊？",
+    "q_vi": "Vì sao tờ giấy trong cặp của Phương Lập khiến người ta kinh ngạc?",
+    "options": [
+     "上面的钟和金鹤钟一模一样，两年前已经在香港被卖掉了",
+     "上面写着方立要用八百万买金鹤钟",
+     "上面有顾老先生的签名",
+     "上面是展柜钥匙的照片"
+    ],
+    "answer": 0,
+    "explain_vi": "Ảnh đấu giá ở Hồng Kông hai năm trước là một chiếc đồng hồ giống hệt Hạc Vàng, bán giá tám triệu tệ — trong khi đồng hồ được cho là vẫn ở nhà họ Cố."
+   }
+  ]
+ },
+ {
+  "id": "s2-07",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 7,
+  "title": "沉默的何师傅",
+  "title_vi": "Bác Hà lặng im",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "回到房间，林小满一点儿睡意也没有。她戴上耳机，打开顾小雨发来的录音。录音是昨天下午拍的，先是展厅里轻轻的脚步声，然后是金鹤钟的音乐。到第五个音的地方，果然只有一下很轻的“嗒”，像一个人说话说到一半，突然停住了。",
+   "她把录音听了一遍又一遍。不知道为什么，她总觉得有一件很重要的事，就在嘴边，却怎么也想不起来。她太累了，脑子像一块吸满了水的海绵。她把这种感觉写在本子上：“钟声，哪里不对？”然后在后面画了三个问号。",
+   "四点多，楼下传来扫地的声音。林小满下楼一看，是何师傅。别人都还在睡，他已经在大厅里扫地了，左脚拖在地上，扫帚一下一下地响。周然也被吵醒了，揉着眼睛走过来：“何师傅，正好，我有几句话想问您。”",
+   "何师傅放下扫帚，坐在了门边的一把旧椅子上。周然问他昨天晚上几点睡的，他说九点就睡了，一觉睡到大家吵醒他。周然又问他后门架子上那双有泥的雨靴是谁穿的，他摇摇头：“那几双靴子谁都能穿。我有自己的雨靴，从来不穿那些。”",
+   "林小满的目光落在他房间的门口。门边挂着一件灰色的旧雨衣，下面摆着一双旧雨靴。雨衣还在往下滴水，雨靴上沾满了黑色的泥。她轻声问：“何师傅，后院的泥是黑色的。您九点就睡了，您的雨靴上怎么会有后院的泥呢？”",
+   "何师傅的脸一下子变得很难看。他张了张嘴，过了好一会儿才说：“雨太大，我……我半夜起来去看了看后院的排水沟，怕水进屋子。”“几点？”周然马上问。“记不清了。”何师傅说完，就把头低了下去，不管周然再问什么，他都不再开口了。",
+   "周然把林小满拉到一边，压低声音说：“他在说谎。他有所有房间的钥匙，又在顾家干了三十多年，最清楚哪里能藏东西。而且他昨天晚上去过后院，就是那双靴子走过的地方。”林小满却摇了摇头：“他确实有事情瞒着我们。可是一个想偷东西的人，为什么要把自己的雨靴摆在门口，让所有人都看见？”",
+   "“也许他太慌了，没想到。”周然说。林小满没有回答。她回头看了一眼何师傅。老人坐在椅子上，望着窗外，两只手还是紧紧地握在一起，那样子不像是害怕，倒像是在为什么人担心。",
+   "回到楼上，林小满轻轻推开顾老先生的房门。顾小雨趴在床边睡着了，手里还握着爷爷的手。老人的呼吸很平稳，脸色却还是很白。林小满站了一会儿，又看了一眼他手腕上那块停住的表。她想：如果您现在能说话就好了，您一定知道昨天晚上发生了什么。",
+   "天渐渐亮了，雨小了一些。六点左右，周然的手机响了，是镇上开小船的老王打来的：“周警官，你们顾家那个北京来的客人，刚才跑到河边，说要出一千块钱让我马上送他走，说是有急事。我觉得不对劲，就先给你打个电话。”",
+   "周然挂了电话，一边穿外套一边往外跑：“这个方立，果然有问题！”林小满也跟着跑了出去。河边的雾很大，远远地，她看见一个穿着黑色外套的人站在石阶上，手里提着那个黑色的文件包，正焦急地朝河面上张望。"
+  ],
+  "translations": [
+   "Về đến phòng, Lâm Tiểu Mãn chẳng buồn ngủ chút nào. Cô đeo tai nghe, mở đoạn ghi âm Cố Tiểu Vũ gửi. Đoạn ghi âm quay chiều hôm qua, đầu tiên là tiếng bước chân khe khẽ trong phòng trưng bày, rồi đến tiếng nhạc của đồng hồ Hạc Vàng. Đến chỗ nốt thứ năm, quả nhiên chỉ có một tiếng “tạch” rất khẽ, như một người đang nói nửa chừng bỗng ngừng bặt.",
+   "Cô nghe đi nghe lại đoạn ghi âm. Chẳng hiểu sao, cô cứ cảm thấy có một chuyện rất quan trọng đã ở ngay đầu lưỡi mà nghĩ mãi không ra. Cô mệt quá, đầu óc như một miếng bọt biển ngấm đầy nước. Cô viết cảm giác ấy vào sổ: “Tiếng chuông, chỗ nào không đúng?” rồi vẽ ba dấu hỏi phía sau.",
+   "Hơn bốn giờ, dưới lầu vọng lên tiếng quét nhà. Lâm Tiểu Mãn xuống xem thì là bác Hà. Mọi người vẫn còn ngủ, bác đã quét nhà ở sảnh, chân trái lê trên đất, cây chổi kêu sột soạt từng nhịp. Chu Nhiên cũng bị đánh thức, dụi mắt bước tới: “Bác Hà, vừa hay, cháu có vài câu muốn hỏi bác.”",
+   "Bác Hà đặt chổi xuống, ngồi lên chiếc ghế cũ cạnh cửa. Chu Nhiên hỏi tối qua mấy giờ bác ngủ, bác nói chín giờ đã ngủ, ngủ một mạch đến khi mọi người đánh thức. Chu Nhiên lại hỏi đôi ủng dính bùn trên giá ở cửa sau là ai đi, bác lắc đầu: “Mấy đôi ủng đó ai cũng đi được. Tôi có ủng riêng, chưa bao giờ đi mấy đôi đó.”",
+   "Ánh mắt Lâm Tiểu Mãn dừng ở cửa phòng bác. Cạnh cửa treo một chiếc áo mưa cũ màu xám, bên dưới đặt một đôi ủng cũ. Áo mưa vẫn đang nhỏ nước, đôi ủng dính đầy bùn đen. Cô khẽ hỏi: “Bác Hà, bùn ở sân sau màu đen. Chín giờ bác đã ngủ, sao ủng của bác lại dính bùn sân sau?”",
+   "Sắc mặt bác Hà lập tức trở nên rất khó coi. Bác há miệng, một lúc lâu mới nói: “Mưa to quá, tôi… nửa đêm tôi dậy ra xem cái rãnh thoát nước ở sân sau, sợ nước tràn vào nhà.” “Mấy giờ?” Chu Nhiên hỏi ngay. “Không nhớ rõ.” Nói xong, bác Hà cúi gằm mặt, dù Chu Nhiên hỏi gì nữa, bác cũng không mở miệng.",
+   "Chu Nhiên kéo Lâm Tiểu Mãn ra một bên, hạ giọng: “Ông ấy nói dối. Ông ấy có chìa khóa mọi phòng, lại làm cho nhà họ Cố hơn ba mươi năm, biết rõ nhất chỗ nào giấu được đồ. Hơn nữa tối qua ông ấy có ra sân sau, đúng chỗ đôi ủng kia đã đi qua.” Nhưng Lâm Tiểu Mãn lắc đầu: “Bác ấy đúng là có chuyện giấu chúng ta. Nhưng một người định trộm đồ, sao lại đặt ủng của mình ngay trước cửa cho mọi người đều thấy?”",
+   "“Có lẽ ông ấy hoảng quá nên không nghĩ tới,” Chu Nhiên nói. Lâm Tiểu Mãn không đáp. Cô ngoái lại nhìn bác Hà. Ông già ngồi trên ghế, nhìn ra cửa sổ, hai bàn tay vẫn nắm chặt vào nhau, dáng vẻ ấy không giống sợ hãi, mà giống như đang lo lắng cho ai đó.",
+   "Trở lên lầu, Lâm Tiểu Mãn khẽ đẩy cửa phòng ông Cố. Cố Tiểu Vũ gục bên giường ngủ thiếp đi, tay vẫn nắm tay ông nội. Hơi thở ông cụ rất đều, nhưng sắc mặt vẫn trắng bệch. Lâm Tiểu Mãn đứng một lúc, lại nhìn chiếc đồng hồ đã ngừng chạy trên cổ tay ông. Cô nghĩ: giá mà bây giờ ông nói được thì tốt biết mấy, ông nhất định biết tối qua đã xảy ra chuyện gì.",
+   "Trời dần sáng, mưa nhỏ bớt. Khoảng sáu giờ, điện thoại Chu Nhiên reo, là lão Vương chèo thuyền nhỏ trong thị trấn gọi tới: “Cảnh sát Chu, vị khách Bắc Kinh ở nhà họ Cố vừa chạy ra bờ sông, nói trả một nghìn tệ để tôi chở đi ngay, bảo là có việc gấp. Tôi thấy không ổn nên gọi cho anh trước.”",
+   "Chu Nhiên cúp máy, vừa mặc áo khoác vừa chạy ra ngoài: “Cái tay Phương Lập này, quả nhiên có vấn đề!” Lâm Tiểu Mãn cũng chạy theo. Bên bờ sông sương mù dày đặc, từ xa cô thấy một người mặc áo khoác đen đứng trên bậc đá, tay xách chiếc cặp tài liệu màu đen, đang sốt ruột ngóng ra mặt sông."
+  ],
+  "questions": [
+   {
+    "q": "林小满听录音以后有什么感觉？",
+    "q_vi": "Sau khi nghe ghi âm, Lâm Tiểu Mãn có cảm giác gì?",
+    "options": [
+     "她确定录音是假的",
+     "她觉得钟声有什么地方不对，但一时想不起来",
+     "她发现录音里有人说话",
+     "她觉得第五个音其实没有问题"
+    ],
+    "answer": 1,
+    "explain_vi": "Cô cảm thấy có điều quan trọng ở ngay đầu lưỡi mà nghĩ không ra, nên ghi “Tiếng chuông, chỗ nào không đúng?”."
+   },
+   {
+    "q": "林小满根据什么判断何师傅说了谎？",
+    "q_vi": "Lâm Tiểu Mãn dựa vào đâu để biết bác Hà nói dối?",
+    "options": [
+     "他的雨靴上有后院的黑泥",
+     "他的左脚受伤了",
+     "他有所有房间的钥匙",
+     "他四点就起床扫地"
+    ],
+    "answer": 0,
+    "explain_vi": "Bác nói chín giờ đã ngủ nhưng ủng riêng của bác lại dính bùn đen của sân sau, áo mưa vẫn nhỏ nước."
+   },
+   {
+    "q": "林小满为什么不同意周然对何师傅的看法？",
+    "q_vi": "Vì sao Lâm Tiểu Mãn không đồng ý với nhận định của Chu Nhiên về bác Hà?",
+    "options": [
+     "因为何师傅年纪太大了",
+     "因为何师傅耳朵不好",
+     "因为何师傅有人证明",
+     "因为小偷不会把有泥的雨靴摆在门口让人看见，而且他像是在为别人担心"
+    ],
+    "answer": 3,
+    "explain_vi": "Kẻ trộm sẽ không để ủng dính bùn ngay trước cửa; hơn nữa vẻ mặt bác giống như đang lo cho ai đó chứ không phải sợ."
+   }
+  ]
+ },
+ {
+  "id": "s2-08",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 8,
+  "title": "空了的展柜",
+  "title_vi": "Tủ kính trống rỗng",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "方立看见周然跑过来，并没有逃。他站在石阶上，叹了一口气，好像终于放下了一块大石头。“我知道你们会来，”他说，“回去吧，我把知道的都告诉你们。”回钟表馆的路上，三个人谁也没说话，只有脚下的石板路发出湿湿的声音。",
+   "在书房里，方立打开那个黑色文件包，拿出一张名片放在桌上。名片上写着香港一家拍卖公司的名字，下面是他的职位：鉴定部经理。“我不是收藏家，”他说，“我的工作是鉴定古董的真假。所谓出高价买钟，只是一个借口。”",
+   "他解释说，两年前，他们公司拍卖过一座金鹤钟。那座钟经过了很严格的鉴定，有清代的老记录，有专家的报告，绝对是真的。“世界上只有一座金鹤钟。”方立看着他们，“如果香港那座是真的，那么，顾家展柜里的这一座是什么？”",
+   "周然听得目瞪口呆：“你的意思是……顾家的钟是假的？”方立点点头：“我怀疑，三年前它被送去苏州修理的那两个多月里，有人做了一座复制品，把真的换走了。我这次来，就是要确认这件事。”周然问是谁请他来的，方立摇摇头：“对不起，委托人要求我保密。”",
+   "林小满一直安静地听着，这时才开口：“你为什么要逃？”方立的脸色变了。他沉默了一会儿，终于说：“因为昨天晚上，我去过展厅。”周然一下子站了起来，方立赶紧摆手：“你先听我说完。”",
+   "原来，方立担心林小满第二天检查时，有人会提前做手脚，所以想在晚上先偷偷用自己的紫光手电筒看一看。“复制品的焊接痕迹，在紫光下面是能看出来的。”十点四十左右，他拿着手电筒，轻轻走到展厅。让他没想到的是，展厅的前门没有锁，一推就开了。",
+   "“我用手电筒一照，”方立的声音有点儿发抖，“展柜的门是开着的，里面是空的。那时候，金鹤钟就已经不见了。”他说，他当时吓坏了。一个陌生人，半夜出现在丢了宝贝的展厅里，谁会相信他是清白的？所以他什么也没碰，马上回了房间，关上门，假装一直在睡觉。",
+   "周然和林小满互相看了一眼。顾明远说过，十点四十，他在前院看见展厅里有手电筒的光。现在，这个光是谁的，终于清楚了。可是，新的问题又来了。",
+   "“更可怕的是后来，”方立看着窗外，好像还能看见昨天晚上的情景，“我躺在床上，一直睡不着。到了十一点，我听见了钟声，就是金鹤钟的音乐，从展厅那边传过来。可是，钟明明已经不在了！我越想越害怕，觉得这里有人在设计什么，我很可能会成为替罪羊。所以天一亮，我就想离开。”",
+   "周然在本子上把“十一点到十一点二十分”那几个字划掉了，喃喃地说：“如果方立说的是真的，钟十点四十就不见了。那十一点响的是什么？难道是鬼吗？”他转过头，想问问表妹的意见，却发现林小满一动不动地坐着，眼睛直直地盯着桌上的某一个地方。",
+   "过了好一会儿，林小满慢慢站了起来，嘴里的薄荷糖“咔”的一声被她咬碎了。“我想起来了，”她说，声音很轻，却很清楚，“我终于知道，昨天晚上那段钟声，哪里不对了。”"
+  ],
+  "translations": [
+   "Thấy Chu Nhiên chạy tới, Phương Lập không bỏ chạy. Anh ta đứng trên bậc đá, thở dài, như cuối cùng đã trút được tảng đá lớn. “Tôi biết các người sẽ tới,” anh ta nói, “về thôi, tôi sẽ kể hết những gì tôi biết.” Trên đường về bảo tàng, ba người không ai nói gì, chỉ có con đường lát đá dưới chân phát ra những tiếng ướt át.",
+   "Trong thư phòng, Phương Lập mở chiếc cặp đen, lấy ra một tấm danh thiếp đặt lên bàn. Trên danh thiếp in tên một công ty đấu giá ở Hồng Kông, bên dưới là chức vụ của anh ta: trưởng phòng giám định. “Tôi không phải nhà sưu tầm,” anh ta nói, “công việc của tôi là giám định đồ cổ thật hay giả. Cái gọi là trả giá cao mua đồng hồ chỉ là một cái cớ.”",
+   "Anh ta giải thích, hai năm trước công ty anh từng đấu giá một chiếc đồng hồ Hạc Vàng. Chiếc đồng hồ đó đã qua giám định rất nghiêm ngặt, có ghi chép cũ từ thời Thanh, có báo cáo của chuyên gia, chắc chắn là thật. “Trên đời chỉ có một chiếc đồng hồ Hạc Vàng.” Phương Lập nhìn họ, “Nếu chiếc ở Hồng Kông là thật, vậy chiếc trong tủ kính nhà họ Cố là gì?”",
+   "Chu Nhiên nghe mà sững sờ: “Ý anh là… đồng hồ nhà họ Cố là giả?” Phương Lập gật đầu: “Tôi nghi rằng ba năm trước, trong hơn hai tháng nó được gửi đi Tô Châu sửa, có người đã làm một bản sao rồi đánh tráo lấy chiếc thật. Lần này tôi đến chính là để xác nhận chuyện đó.” Chu Nhiên hỏi ai mời anh ta đến, Phương Lập lắc đầu: “Xin lỗi, người ủy thác yêu cầu tôi giữ bí mật.”",
+   "Lâm Tiểu Mãn vẫn lặng lẽ lắng nghe, lúc này mới lên tiếng: “Sao anh lại bỏ trốn?” Sắc mặt Phương Lập thay đổi. Anh ta im lặng một lúc, cuối cùng nói: “Vì tối qua tôi đã đến phòng trưng bày.” Chu Nhiên đứng phắt dậy, Phương Lập vội xua tay: “Anh nghe tôi nói hết đã.”",
+   "Thì ra, Phương Lập lo hôm sau khi Lâm Tiểu Mãn kiểm tra, sẽ có người giở trò trước, nên muốn buổi tối lén dùng đèn pin tia tím của mình xem trước. “Vết hàn của đồ sao chép dưới ánh tím là nhìn ra được.” Khoảng mười giờ bốn mươi, anh ta cầm đèn pin, nhẹ nhàng đi đến phòng trưng bày. Điều anh không ngờ là cửa trước phòng trưng bày không khóa, đẩy nhẹ là mở.",
+   "“Tôi rọi đèn pin,” giọng Phương Lập hơi run, “cửa tủ kính đang mở, bên trong trống trơn. Lúc đó đồng hồ Hạc Vàng đã biến mất rồi.” Anh ta nói lúc ấy mình sợ chết khiếp. Một người lạ nửa đêm xuất hiện trong phòng trưng bày vừa mất bảo vật, ai tin anh ta trong sạch? Nên anh không chạm vào thứ gì, lập tức về phòng, đóng cửa, giả vờ đã ngủ từ lâu.",
+   "Chu Nhiên và Lâm Tiểu Mãn nhìn nhau. Cố Minh Viễn từng nói, lúc mười giờ bốn mươi, anh ta ở sân trước thấy ánh đèn pin trong phòng trưng bày. Giờ đây, ánh sáng đó là của ai cuối cùng đã rõ. Nhưng một câu hỏi mới lại xuất hiện.",
+   "“Đáng sợ hơn là chuyện sau đó,” Phương Lập nhìn ra cửa sổ, như vẫn còn thấy cảnh đêm qua, “tôi nằm trên giường, mãi không ngủ được. Đến mười một giờ, tôi nghe thấy tiếng chuông, chính là bản nhạc của đồng hồ Hạc Vàng, vọng lại từ phía phòng trưng bày. Nhưng rõ ràng đồng hồ đã không còn ở đó! Càng nghĩ tôi càng sợ, cảm thấy ở đây có người đang sắp đặt điều gì, rất có thể tôi sẽ thành kẻ chịu tội thay. Vì vậy trời vừa sáng tôi đã muốn rời đi.”",
+   "Chu Nhiên gạch bỏ mấy chữ “từ mười một giờ đến mười một giờ hai mươi” trong sổ, lẩm bẩm: “Nếu Phương Lập nói thật, mười giờ bốn mươi đồng hồ đã biến mất. Vậy lúc mười một giờ cái gì kêu? Chẳng lẽ là ma?” Anh quay sang định hỏi ý cô em họ, thì thấy Lâm Tiểu Mãn ngồi bất động, mắt nhìn chằm chằm vào một chỗ nào đó trên bàn.",
+   "Một lúc lâu sau, Lâm Tiểu Mãn từ từ đứng dậy, viên kẹo bạc hà trong miệng bị cô cắn vỡ đánh “rắc” một tiếng. “Em nhớ ra rồi,” cô nói, giọng rất khẽ nhưng rất rõ ràng, “cuối cùng em đã biết tiếng chuông tối qua sai ở chỗ nào.”"
+  ],
+  "questions": [
+   {
+    "q": "方立的真实身份是什么？",
+    "q_vi": "Thân phận thật của Phương Lập là gì?",
+    "options": [
+     "北京的收藏家",
+     "顾明远的朋友",
+     "香港一家拍卖公司的鉴定部经理",
+     "苏州的修钟师傅"
+    ],
+    "answer": 2,
+    "explain_vi": "Danh thiếp ghi anh ta là trưởng phòng giám định của một công ty đấu giá ở Hồng Kông; việc “mua đồng hồ” chỉ là cái cớ."
+   },
+   {
+    "q": "方立为什么怀疑顾家的金鹤钟是假的？",
+    "q_vi": "Vì sao Phương Lập nghi đồng hồ Hạc Vàng nhà họ Cố là giả?",
+    "options": [
+     "因为它的音乐少了一个音",
+     "因为两年前他们公司拍卖过一座经过严格鉴定的真金鹤钟",
+     "因为顾老先生亲口告诉了他",
+     "因为钟上没有仙鹤"
+    ],
+    "answer": 1,
+    "explain_vi": "Chiếc ở Hồng Kông đã được giám định chắc chắn là thật, mà trên đời chỉ có một chiếc, nên chiếc ở nhà họ Cố đáng ngờ."
+   },
+   {
+    "q": "方立的话给案子带来了什么新问题？",
+    "q_vi": "Lời của Phương Lập đặt ra câu hỏi mới gì cho vụ án?",
+    "options": [
+     "何师傅为什么去后院",
+     "谁有展柜的钥匙",
+     "顾明远为什么去车里打电话",
+     "钟十点四十就不见了，那十一点响的是什么"
+    ],
+    "answer": 3,
+    "explain_vi": "Nếu lúc 10 giờ 40 tủ đã trống, thì tiếng nhạc lúc 11 giờ mà mọi người nghe thấy không thể do chiếc đồng hồ phát ra."
+   }
+  ]
+ },
+ {
+  "id": "s2-09",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 9,
+  "title": "太完整的音乐",
+  "title_vi": "Bản nhạc quá trọn vẹn",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "“哪里不对？”周然和方立几乎同时问。林小满没有马上回答，而是拿出手机，放在桌子中间。“先听这个。”她打开顾小雨的录音。金鹤钟的音乐响了起来，到第五个音的时候，只有一声轻轻的“嗒”，就像一句话缺了一个字。",
+   "“这是昨天下午录的，”林小满说，“我昨天六点在展厅亲耳听过，也是这样，少了第五个音。音梳断了一个齿，这种毛病不会自己好，只会越来越严重。”她停了一下，又打开了另一个视频，是钟表馆网站上的那个宣传片。",
+   "这一次，音乐完完整整，一个音也不少，叮叮咚咚，清清楚楚，像山里的泉水。“这是五年前拍的。”林小满说，“那时候，钟还是好的。”她看着周然：“现在你告诉我，昨天晚上十一点，你在厨房里听到的音乐，是哪一种？”",
+   "周然张着嘴，想了很久，脸色慢慢变了：“我当时没有注意……可是，好像……好像很好听，很顺，没有哪里卡住。”林小满点点头：“我也是。那时候我半睡半醒，脑子里只有一句话：像山里的泉水。这句话，是我第一天在大厅看宣传片的时候想到的。昨天晚上我又想到了它，因为我听到的，根本就是同一段声音。”",
+   "方立恍然大悟：“所以，十一点响的不是钟，是录音！”“对，”林小满说，“一座断了齿的钟，不可能在十一点突然变好，十一点二十分又被偷走。十一点的钟声，是有人故意放给我们听的。”",
+   "三个人马上来到二楼的展厅。周然打开门上的锁，展厅里还是昨天晚上的样子，空空的玻璃展柜立在中间。林小满站在展柜旁边，闭上眼睛，回想昨晚声音传来的方向。“声音离展柜很近，可是不在展柜里面。如果是我，我会把东西藏在一个大家不会去碰的地方。”",
+   "她慢慢睁开眼睛，目光停在展柜后面的角落里。那里放着一个一米多高的青花大花瓶，瓶口很小，里面黑黑的，平时只是用来装饰，谁也不会往里面看。林小满走过去，把手电筒对着瓶口照了照，然后挽起袖子，把手伸了进去。",
+   "过了几秒钟，她拿出来一部旧手机。手机的屏幕有一道裂缝，电量只剩下百分之十二。周然戴上手套，接过来一看，屏幕上显示着一个闹钟：二十三点整。他按了一下试听，展厅里立刻响起了熟悉的音乐，叮叮咚咚，一个音也不少。",
+   "周然的手有点儿发抖：“有人在十点多就偷走了钟，然后把这个手机放在花瓶里，设好闹钟。到了十一点，它一响，我们都以为钟还在展柜里。”方立接着说：“这样，偷钟的时间就被‘推’到了十一点以后。”",
+   "林小满看着周然，慢慢地说：“你想一想，这样做，对谁最有好处？”周然愣住了。一个人花这么大的力气，让大家相信钟是十一点以后才丢的，只能有一个原因：他十一点以后有人能证明。而十一点以后有人证明的，只有厨房里的那几个人。周然觉得后背一阵发凉，因为那几个人里，也包括他自己。",
+   "就在这时，展厅门口传来一声轻轻的惊叫。三个人回过头，只见苏晴站在门口，手里端着一个放着早饭的盘子。她看着周然手里的手机，脸一下子白了，盘子差点儿掉在地上。“这……这是我丢的那部旧手机！”她说，“它怎么会在这里？”"
+  ],
+  "translations": [
+   "“Sai ở chỗ nào?” Chu Nhiên và Phương Lập gần như cùng hỏi. Lâm Tiểu Mãn không trả lời ngay mà lấy điện thoại ra đặt giữa bàn. “Nghe cái này trước đã.” Cô mở đoạn ghi âm của Cố Tiểu Vũ. Tiếng nhạc đồng hồ Hạc Vàng vang lên, đến nốt thứ năm thì chỉ có một tiếng “tạch” khe khẽ, như một câu nói bị thiếu mất một chữ.",
+   "“Đây là ghi âm chiều hôm qua,” Lâm Tiểu Mãn nói, “sáu giờ hôm qua em tận tai nghe ở phòng trưng bày, cũng như vậy, thiếu nốt thứ năm. Lược âm gãy một răng, bệnh này không tự khỏi được, chỉ ngày càng nặng thêm.” Cô dừng một chút rồi mở một video khác, chính là phim quảng bá trên trang web của bảo tàng.",
+   "Lần này, bản nhạc trọn vẹn, không thiếu một nốt nào, tinh tang tinh tang, rõ ràng trong trẻo, như suối nước trong núi. “Cái này quay năm năm trước,” Lâm Tiểu Mãn nói, “lúc đó đồng hồ vẫn còn tốt.” Cô nhìn Chu Nhiên: “Bây giờ anh nói em nghe, đêm qua lúc mười một giờ, bản nhạc anh nghe thấy trong bếp là loại nào?”",
+   "Chu Nhiên há miệng, nghĩ rất lâu, sắc mặt dần thay đổi: “Lúc ấy anh không để ý… nhưng hình như… hình như rất hay, rất trơn tru, không bị vấp chỗ nào.” Lâm Tiểu Mãn gật đầu: “Em cũng vậy. Lúc đó em đang nửa tỉnh nửa mơ, trong đầu chỉ có một câu: như suối nước trong núi. Câu đó là em nghĩ ra hôm đầu tiên xem phim quảng bá ở sảnh. Đêm qua em lại nghĩ tới nó, vì cái em nghe thấy vốn chính là cùng một đoạn âm thanh.”",
+   "Phương Lập chợt hiểu ra: “Vậy thứ kêu lúc mười một giờ không phải đồng hồ, mà là bản ghi âm!” “Đúng,” Lâm Tiểu Mãn nói, “một chiếc đồng hồ gãy răng lược không thể đến mười một giờ bỗng dưng lành lại, rồi mười một giờ hai mươi lại bị trộm. Tiếng chuông mười một giờ là có người cố tình phát cho chúng ta nghe.”",
+   "Ba người lập tức lên phòng trưng bày tầng hai. Chu Nhiên mở khóa cửa, căn phòng vẫn y như đêm qua, chiếc tủ kính trống rỗng đứng ở giữa. Lâm Tiểu Mãn đứng cạnh tủ, nhắm mắt, nhớ lại hướng âm thanh vọng tới đêm qua. “Âm thanh rất gần tủ kính, nhưng không ở trong tủ. Nếu là em, em sẽ giấu đồ ở một chỗ mà mọi người không động tới.”",
+   "Cô từ từ mở mắt, ánh nhìn dừng lại ở góc phía sau tủ kính. Ở đó đặt một chiếc bình hoa men lam lớn cao hơn một mét, miệng bình rất nhỏ, bên trong tối om, bình thường chỉ để trang trí, chẳng ai nhìn vào trong. Lâm Tiểu Mãn bước tới, rọi đèn pin vào miệng bình, rồi xắn tay áo, thò tay vào.",
+   "Vài giây sau, cô lấy ra một chiếc điện thoại cũ. Màn hình có một vết nứt, pin chỉ còn mười hai phần trăm. Chu Nhiên đeo găng tay, cầm lấy xem, trên màn hình hiện một chuông báo thức: đúng hai mươi ba giờ. Anh bấm nghe thử, trong phòng trưng bày lập tức vang lên bản nhạc quen thuộc, tinh tang tinh tang, không thiếu một nốt nào.",
+   "Tay Chu Nhiên hơi run: “Có người đã trộm đồng hồ từ hơn mười giờ, rồi đặt chiếc điện thoại này vào bình hoa, cài báo thức. Đến mười một giờ nó kêu, chúng ta đều tưởng đồng hồ vẫn còn trong tủ.” Phương Lập nói tiếp: “Như vậy, thời gian trộm đồng hồ bị ‘đẩy’ sang sau mười một giờ.”",
+   "Lâm Tiểu Mãn nhìn Chu Nhiên, chậm rãi nói: “Anh thử nghĩ xem, làm như vậy có lợi nhất cho ai?” Chu Nhiên sững người. Một người tốn bao công sức để mọi người tin đồng hồ mất sau mười một giờ, chỉ có thể vì một lý do: sau mười một giờ người đó có người làm chứng. Mà những người có người làm chứng sau mười một giờ chỉ có mấy người trong bếp. Chu Nhiên thấy sống lưng lạnh toát, vì trong mấy người đó có cả chính anh.",
+   "Đúng lúc ấy, ở cửa phòng trưng bày vang lên một tiếng kêu khẽ. Ba người quay lại, thấy Tô Tình đứng ở cửa, tay bưng một khay bữa sáng. Cô nhìn chiếc điện thoại trong tay Chu Nhiên, mặt lập tức trắng bệch, cái khay suýt rơi xuống đất. “Cái… cái này là chiếc điện thoại cũ tôi đánh mất!” cô nói, “Sao nó lại ở đây?”"
+  ],
+  "questions": [
+   {
+    "q": "林小满是怎么知道十一点的钟声是录音的？",
+    "q_vi": "Lâm Tiểu Mãn làm sao biết tiếng chuông lúc 11 giờ là bản ghi âm?",
+    "options": [
+     "她在花瓶里看见了录音机",
+     "方立告诉她的",
+     "钟坏了一个音，可十一点的音乐却很完整，和五年前的宣传片一样",
+     "十一点的音乐比平时声音大"
+    ],
+    "answer": 2,
+    "explain_vi": "Chiếc đồng hồ hiện tại thiếu nốt thứ năm, còn tiếng nhạc lúc 11 giờ trọn vẹn y như phim quảng bá quay năm năm trước khi đồng hồ còn tốt."
+   },
+   {
+    "q": "有人把手机藏在花瓶里，目的是什么？",
+    "q_vi": "Người giấu điện thoại trong bình hoa nhằm mục đích gì?",
+    "options": [
+     "让大家以为钟十一点还在，把偷钟的时间推到十一点以后",
+     "给顾老先生打电话",
+     "录下展厅里的声音",
+     "让手机充电"
+    ],
+    "answer": 0,
+    "explain_vi": "Báo thức 23:00 phát tiếng nhạc khiến mọi người tưởng đồng hồ còn đó, nhờ vậy thời điểm trộm bị đẩy sang sau 11 giờ."
+   },
+   {
+    "q": "为什么周然觉得后背发凉？",
+    "q_vi": "Vì sao Chu Nhiên thấy sống lưng lạnh toát?",
+    "options": [
+     "因为展厅里太冷了",
+     "因为他发现这个手机是他自己的",
+     "因为他怕顾老先生出事",
+     "因为这个办法对十一点以后有人证明的人最有利，也就是厨房里的人"
+    ],
+    "answer": 3,
+    "explain_vi": "Kẻ dựng màn này phải là người có chứng cứ ngoại phạm sau 11 giờ — tức những người trong bếp, gồm cả chính anh."
+   }
+  ]
+ },
+ {
+  "id": "s2-10",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 10,
+  "title": "被改过的时间",
+  "title_vi": "Thời gian đã bị sửa",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "苏晴放下盘子，快步走过来，盯着那部手机看了又看。“没错，就是我的。屏幕上这道裂缝，是去年我不小心摔的。”她的声音有点儿激动，“我上个星期就丢了，昨天吃晚饭的时候还跟大家说过，你们都听见了。一定是有人捡到了它，故意放在这里，想让你们怀疑我！”",
+   "周然想了想，点点头：“这倒也有可能。如果真是你干的，你为什么要用自己的手机？这不是给自己找麻烦吗？”苏晴松了一口气，眼圈红了：“周警官，我在这里工作了十年，顾老先生对我像亲人一样，我怎么可能……”她说不下去了，转过身擦眼泪。",
+   "林小满一句话也没说。她只是想起了昨天的晚饭：苏晴为了转移话题，主动提起了丢手机的事，说得自然又随意。当时谁也没在意，可是现在回头看，那句话出现得太是时候了，就好像，她早就知道这部手机会被人找到一样。林小满把这个想法写进了本子里，没有说出来。",
+   "苏晴下楼以后，周然把门关上，在白板上重新画了一张时间表。钟丢的时间，已经不是十一点以后，而是十点到十点四十之间。他一个一个地看：顾明远十点零五分到十点半在车里打电话，那个借钱给他的人今天早上已经在电话里证明了；顾小雨九点四十到十点半在和同学视频，视频录像上有时间。",
+   "“剩下的人呢？”方立问。周然在白板上写下三个名字：方立、何师傅、苏晴。“方立说自己十点四十才来展厅，没人能证明；何师傅说了谎，去过后院；苏晴说自己一直在厨房炖汤，可是十点半顾小雨下楼以前，厨房里只有她一个人。”方立苦笑了一下：“好吧，我也在名单上，这很公平。”",
+   "这时，林小满开口了：“还有一件事，我一直没说。”她把周然带到顾老先生的房间，轻轻抬起老人的左手，指着那块停住的表：“你看这个小圆头。平时，它是紧紧贴着表壳的。只有在调时间的时候，才需要把它拉出来。现在，它被拉出来了，没有推回去。”",
+   "周然弯下腰仔细看，果然是这样。“你的意思是……”“有人在老先生摔倒以后，把表上的时间调到了十一点十五分。”林小满说，“真正摔倒的时间，应该早得多。我记得十点十分左右，我听见展厅那边‘咚’的一声，当时正好打雷，我以为是雷声。现在想起来，那很可能就是老先生摔倒的声音。”",
+   "周然倒吸了一口凉气：“改表，放录音，都是为了让我们相信，所有事情都发生在十一点以后。这个人想得太周到了。”林小满说：“对。所以，我们要找的，是一个知道我们一定会看那块表、也一定会听到那段钟声的人。”",
+   "上午九点，雨终于停了。阳光从云里照下来，后院的泥地上，几行脚印比晚上清楚了很多。脚印从后门出发，穿过院子，一直通到院子东北角的一间小木屋。那是何师傅放工具的地方，平时总是锁着，钥匙只有他有。",
+   "周然找何师傅要钥匙，何师傅站在原地，半天没有动，最后还是把钥匙交了出来。木屋里很暗，到处是灰尘，堆满了锄头、水桶和旧花盆。在最里面的角落，有一块旧帆布盖着什么东西。周然走过去，把帆布掀开。下面是一件何师傅常穿的旧棉袄，棉袄里，包着一座铜钟，顶上站着一只金色的仙鹤。",
+   "大家都站在门口，谁也说不出话来。过了很久，周然转过身，看着脸色苍白的何师傅，声音很低，却很坚定：“何师傅，对不起，请您跟我走一趟吧。”"
+  ],
+  "translations": [
+   "Tô Tình đặt khay xuống, bước nhanh tới, nhìn đi nhìn lại chiếc điện thoại. “Đúng rồi, chính là của tôi. Vết nứt trên màn hình này là năm ngoái tôi lỡ tay làm rơi.” Giọng cô hơi kích động, “Tuần trước tôi đã đánh mất nó, tối qua lúc ăn cơm còn kể với mọi người, mọi người đều nghe thấy. Chắc chắn có người nhặt được rồi cố ý đặt ở đây, muốn các anh nghi ngờ tôi!”",
+   "Chu Nhiên nghĩ một lúc rồi gật đầu: “Cũng có thể lắm. Nếu thật là cô làm, sao cô lại dùng điện thoại của chính mình? Thế chẳng phải tự chuốc rắc rối sao?” Tô Tình thở phào, mắt đỏ hoe: “Cảnh sát Chu, tôi làm ở đây mười năm, ông Cố đối với tôi như người thân, sao tôi có thể…” Cô không nói tiếp được, quay người lau nước mắt.",
+   "Lâm Tiểu Mãn không nói một lời. Cô chỉ nhớ lại bữa tối hôm qua: Tô Tình, để lái sang chuyện khác, đã chủ động nhắc đến chuyện mất điện thoại, nói một cách tự nhiên và bâng quơ. Lúc ấy chẳng ai để ý, nhưng giờ nhìn lại, câu nói ấy xuất hiện đúng lúc quá, cứ như thể cô ấy đã biết trước chiếc điện thoại này sẽ bị người ta tìm thấy. Lâm Tiểu Mãn ghi suy nghĩ ấy vào sổ, không nói ra.",
+   "Tô Tình xuống lầu rồi, Chu Nhiên đóng cửa lại, vẽ lại một bảng thời gian trên bảng trắng. Thời điểm đồng hồ mất giờ không còn là sau mười một giờ nữa, mà là trong khoảng mười giờ đến mười giờ bốn mươi. Anh xem từng người: Cố Minh Viễn từ mười giờ năm phút đến mười giờ rưỡi ngồi trong xe gọi điện, người cho anh ta vay tiền sáng nay đã xác nhận qua điện thoại; Cố Tiểu Vũ từ chín giờ bốn mươi đến mười giờ rưỡi gọi video với bạn, video ghi hình có thời gian.",
+   "“Còn những người còn lại?” Phương Lập hỏi. Chu Nhiên viết ba cái tên lên bảng: Phương Lập, bác Hà, Tô Tình. “Phương Lập nói mười giờ bốn mươi mới đến phòng trưng bày, không ai làm chứng; bác Hà nói dối, đã ra sân sau; Tô Tình nói mình ở trong bếp hầm canh suốt, nhưng trước khi Cố Tiểu Vũ xuống lầu lúc mười giờ rưỡi, trong bếp chỉ có mình cô ấy.” Phương Lập cười khổ: “Được thôi, tôi cũng có tên trong danh sách, thế là công bằng.”",
+   "Lúc này, Lâm Tiểu Mãn lên tiếng: “Còn một chuyện em vẫn chưa nói.” Cô dẫn Chu Nhiên vào phòng ông Cố, nhẹ nhàng nâng tay trái của ông, chỉ vào chiếc đồng hồ đã dừng: “Anh nhìn cái núm tròn nhỏ này. Bình thường nó áp sát vào vỏ đồng hồ. Chỉ khi chỉnh giờ mới cần kéo nó ra. Bây giờ nó đang bị kéo ra, chưa được đẩy vào.”",
+   "Chu Nhiên cúi xuống nhìn kỹ, quả đúng như vậy. “Ý em là…” “Có người, sau khi ông cụ ngã, đã chỉnh giờ trên đồng hồ thành mười một giờ mười lăm,” Lâm Tiểu Mãn nói. “Thời điểm ngã thật sự phải sớm hơn nhiều. Em nhớ khoảng mười giờ mười, em nghe thấy một tiếng ‘huỵch’ từ phía phòng trưng bày, lúc đó đúng lúc có sấm nên em tưởng là sấm. Giờ nghĩ lại, rất có thể đó chính là tiếng ông cụ ngã.”",
+   "Chu Nhiên hít một hơi lạnh: “Sửa đồng hồ, phát ghi âm, đều là để chúng ta tin mọi chuyện xảy ra sau mười một giờ. Người này tính toán chu đáo quá.” Lâm Tiểu Mãn nói: “Đúng vậy. Cho nên người chúng ta cần tìm là một người biết chắc chúng ta sẽ xem chiếc đồng hồ đó, và chắc chắn sẽ nghe thấy đoạn chuông kia.”",
+   "Chín giờ sáng, mưa cuối cùng cũng tạnh. Ánh nắng chiếu xuống từ trong mây, trên nền đất bùn ở sân sau, mấy hàng dấu chân rõ hơn ban đêm nhiều. Dấu chân bắt đầu từ cửa sau, băng qua sân, dẫn thẳng tới một căn nhà gỗ nhỏ ở góc đông bắc sân. Đó là nơi bác Hà để dụng cụ, bình thường luôn khóa, chìa khóa chỉ bác có.",
+   "Chu Nhiên xin bác Hà chìa khóa, bác Hà đứng yên tại chỗ hồi lâu không nhúc nhích, cuối cùng vẫn đưa chìa khóa ra. Trong nhà gỗ rất tối, khắp nơi bụi bặm, chất đầy cuốc, xô nước và chậu hoa cũ. Ở góc trong cùng có một tấm vải bạt cũ phủ lên thứ gì đó. Chu Nhiên bước tới, lật tấm bạt lên. Bên dưới là chiếc áo bông cũ bác Hà hay mặc, trong áo bông bọc một chiếc đồng hồ đồng, trên đỉnh đứng một con tiên hạc màu vàng.",
+   "Mọi người đứng ở cửa, không ai nói nên lời. Rất lâu sau, Chu Nhiên quay người, nhìn bác Hà mặt tái nhợt, giọng rất trầm nhưng rất kiên quyết: “Bác Hà, xin lỗi bác, mời bác đi với cháu một chuyến.”"
+  ],
+  "questions": [
+   {
+    "q": "苏晴看到手机以后是怎么解释的？",
+    "q_vi": "Thấy chiếc điện thoại, Tô Tình giải thích thế nào?",
+    "options": [
+     "她说手机是方立的",
+     "她说手机上个星期丢了，有人故意放在这里陷害她",
+     "她说是她让何师傅放的",
+     "她说她从来没见过这部手机"
+    ],
+    "answer": 1,
+    "explain_vi": "Cô nhận là điện thoại của mình, nhưng nói đã mất từ tuần trước và có người cố tình đặt ở đó để vu cho cô."
+   },
+   {
+    "q": "林小满认为老人手表上的时间说明了什么？",
+    "q_vi": "Lâm Tiểu Mãn cho rằng thời gian trên đồng hồ của ông cụ cho thấy điều gì?",
+    "options": [
+     "表本来就走得不准",
+     "老人自己在摔倒前调了表",
+     "有人在老人摔倒后把时间改成了十一点十五分，真正的时间要早得多",
+     "老人是十一点十五分摔倒的"
+    ],
+    "answer": 2,
+    "explain_vi": "Núm chỉnh giờ bị kéo ra, nghĩa là có người đã chỉnh kim; tiếng “huỵch” lúc khoảng 10 giờ 10 mới có thể là lúc ông ngã."
+   },
+   {
+    "q": "在何师傅的工具屋里发现了什么？",
+    "q_vi": "Trong nhà để dụng cụ của bác Hà phát hiện ra thứ gì?",
+    "options": [
+     "用何师傅的旧棉袄包着的金鹤钟",
+     "顾老先生的拐杖",
+     "苏晴的红雨衣",
+     "展柜的钥匙"
+    ],
+    "answer": 0,
+    "explain_vi": "Dưới tấm bạt là chiếc áo bông cũ của bác Hà, bên trong bọc chiếc đồng hồ đồng có con hạc vàng."
+   }
+  ]
+ },
+ {
+  "id": "s2-11",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 11,
+  "title": "不会拖地的脚印",
+  "title_vi": "Dấu chân không lê trên đất",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "何师傅被带到一楼的一个小房间里，周然让顾明远在门口看着。消息很快传开了。顾小雨听说以后，哭着跑来：“不可能！何爷爷从小看着我长大，他连一只鸡都不敢杀，怎么会推我爷爷？”可是何师傅坐在里面，低着头，一句话也不说。",
+   "方立把找到的钟放在书房的桌子上，拉上窗帘，打开了他的紫光手电筒。紫色的光照在钟身上，好几个地方立刻出现了一条条发亮的细线。方立看了很久，抬起头：“和我想的一样。这是一座复制品，做得很好，但是这些焊接的地方，最多只有三四年。真正的清代老钟，不可能有这样的痕迹。”",
+   "林小满也打开钟的后盖看了看。里面的音梳是普通的铜做的，第五个齿果然断了，断口很新。“真正的金鹤钟，音梳是好钢做的，两百年都不会断。”她说，“做复制品的人为了省钱，用了便宜的材料，所以才用了三年就坏了。”",
+   "周然坐在椅子上，抓了抓头发：“我现在完全糊涂了。小偷费了这么大的力气，改表、放录音、藏东西，结果偷走的是一个假的？这有什么意义？”方立推了推眼镜：“也许小偷不知道它是假的。”林小满却慢慢地说：“也可能，正是因为小偷知道它是假的，才必须把它偷走。”周然愣了一下，还想问，林小满已经往后院走去了。",
+   "林小满一个人回到小木屋。屋里的地上积着厚厚的一层灰，所以每一个脚印都看得很清楚。门口有几行乱乱的脚印，是早上大家进来时留下的。她蹲下来，一个一个地看。其中有一行脚印很特别：右脚的印子很深，左脚的印子后面，都拖着一条长长的痕迹。那是何师傅的脚印，是他早上跟着周然进来时留下的。",
+   "可是，从门口一直通到角落、通到那块帆布前面的，是另外一行脚印。那是大雨靴的印子，和后门架子上那几双一样大。这一行脚印，左右两只一样深，一步一步，距离都差不多，没有一个拖在地上的痕迹。",
+   "林小满站起来，心里一下子亮了。何师傅的左腿不方便，走了几十年的路，左脚总是拖在地上，就算换了一双靴子，也改不了。昨天晚上把钟抱进木屋的人，走路很正常。那个人，不是何师傅。",
+   "她回到屋里，问何师傅木屋的钥匙平时放在哪儿。何师傅终于开口了，声音沙哑：“我身上一把，还有一把备用的，挂在厨房门后面的钉子上。”林小满点点头。厨房门后面，就是顾小雨挂红雨衣的地方。也就是说，住在这座房子里的人，只要知道那颗钉子，谁都能打开木屋。",
+   "她把发现告诉了周然。周然听完，沉默了很久：“你说得有道理。可是他为什么要说谎？他昨天晚上为什么去后院？为什么一个字也不肯说？一个人如果是清白的，为什么要这样？”这几个问题，林小满也回答不了。",
+   "下午一点，周然决定再和何师傅谈一次。他刚推开小房间的门，何师傅就抬起头来。老人的眼睛红红的，好像下了很大的决心。他看着周然，一个字一个字地说：“不用再问了。钟是我偷的，老爷也是我推的。你们把我带走吧。”"
+  ],
+  "translations": [
+   "Bác Hà được đưa vào một căn phòng nhỏ ở tầng một, Chu Nhiên nhờ Cố Minh Viễn trông ở cửa. Tin tức lan ra rất nhanh. Cố Tiểu Vũ nghe xong vừa khóc vừa chạy tới: “Không thể nào! Ông Hà trông cháu lớn lên từ bé, đến một con gà ông còn không dám giết, sao có thể đẩy ông nội cháu?” Nhưng bác Hà ngồi bên trong, cúi đầu, không nói một lời.",
+   "Phương Lập đặt chiếc đồng hồ tìm được lên bàn trong thư phòng, kéo rèm cửa, bật chiếc đèn pin tia tím. Ánh tím chiếu lên thân đồng hồ, mấy chỗ lập tức hiện ra những đường mảnh sáng lên. Phương Lập xem rất lâu rồi ngẩng đầu: “Đúng như tôi nghĩ. Đây là một bản sao, làm rất khéo, nhưng những chỗ hàn này nhiều nhất chỉ ba bốn năm. Đồng hồ cổ thời Thanh thật sự không thể có dấu vết như thế.”",
+   "Lâm Tiểu Mãn cũng mở nắp sau đồng hồ xem. Lược âm bên trong làm bằng đồng thường, răng thứ năm quả nhiên đã gãy, vết gãy còn rất mới. “Đồng hồ Hạc Vàng thật có lược âm làm bằng thép tốt, hai trăm năm cũng không gãy,” cô nói. “Người làm bản sao vì tiết kiệm tiền đã dùng vật liệu rẻ, nên mới dùng ba năm đã hỏng.”",
+   "Chu Nhiên ngồi trên ghế, gãi đầu: “Giờ anh hoàn toàn rối tung rồi. Kẻ trộm tốn bao công sức, sửa đồng hồ, phát ghi âm, giấu đồ, rốt cuộc lấy đi một cái đồ giả? Thế thì có ý nghĩa gì?” Phương Lập đẩy gọng kính: “Có lẽ kẻ trộm không biết nó là giả.” Lâm Tiểu Mãn lại chậm rãi nói: “Cũng có thể chính vì kẻ trộm biết nó là giả nên mới buộc phải lấy nó đi.” Chu Nhiên sững người, còn định hỏi thì Lâm Tiểu Mãn đã đi ra sân sau.",
+   "Lâm Tiểu Mãn một mình quay lại căn nhà gỗ nhỏ. Sàn nhà phủ một lớp bụi dày, nên dấu chân nào cũng thấy rất rõ. Ở cửa có mấy hàng dấu chân lộn xộn, là do mọi người để lại khi vào sáng nay. Cô ngồi xổm xuống, xem từng dấu một. Trong đó có một hàng dấu chân rất đặc biệt: dấu chân phải rất sâu, sau mỗi dấu chân trái đều kéo theo một vệt dài. Đó là dấu chân bác Hà, để lại khi bác theo Chu Nhiên vào sáng nay.",
+   "Nhưng hàng dấu chân dẫn từ cửa thẳng vào góc, tới trước tấm vải bạt, lại là một hàng khác. Đó là dấu ủng lớn, cỡ bằng mấy đôi trên giá ở cửa sau. Hàng dấu chân này, hai bên trái phải sâu như nhau, từng bước từng bước, khoảng cách gần như đều nhau, không có một vệt lê nào.",
+   "Lâm Tiểu Mãn đứng dậy, trong lòng bỗng sáng tỏ. Chân trái bác Hà không tiện, mấy chục năm đi đường, chân trái lúc nào cũng lê trên đất, dù đổi sang đôi ủng khác cũng không thay đổi được. Người ôm đồng hồ vào nhà gỗ đêm qua đi lại hoàn toàn bình thường. Người đó không phải bác Hà.",
+   "Cô quay vào nhà, hỏi bác Hà bình thường để chìa khóa nhà gỗ ở đâu. Bác Hà cuối cùng mở miệng, giọng khàn khàn: “Tôi giữ một chiếc, còn một chiếc dự phòng treo trên cái đinh sau cửa bếp.” Lâm Tiểu Mãn gật đầu. Sau cửa bếp chính là chỗ Cố Tiểu Vũ treo áo mưa đỏ. Nghĩa là, người sống trong ngôi nhà này, chỉ cần biết cái đinh đó, ai cũng mở được nhà gỗ.",
+   "Cô kể phát hiện cho Chu Nhiên. Chu Nhiên nghe xong, im lặng rất lâu: “Em nói có lý. Nhưng sao ông ấy lại nói dối? Tối qua ông ấy ra sân sau làm gì? Sao một chữ cũng không chịu nói? Một người nếu trong sạch, sao lại như vậy?” Những câu hỏi này, Lâm Tiểu Mãn cũng không trả lời được.",
+   "Một giờ chiều, Chu Nhiên quyết định nói chuyện với bác Hà thêm lần nữa. Anh vừa đẩy cửa căn phòng nhỏ, bác Hà đã ngẩng đầu lên. Mắt ông già đỏ hoe, như đã hạ một quyết tâm rất lớn. Bác nhìn Chu Nhiên, nói từng chữ một: “Không cần hỏi nữa. Đồng hồ là tôi trộm, ông chủ cũng là tôi đẩy. Các anh đưa tôi đi đi.”"
+  ],
+  "questions": [
+   {
+    "q": "方立用紫光手电筒检查后，得出了什么结论？",
+    "q_vi": "Sau khi kiểm tra bằng đèn pin tia tím, Phương Lập kết luận gì?",
+    "options": [
+     "这是真正的清代金鹤钟",
+     "钟上有何师傅的指纹",
+     "钟被摔坏了",
+     "这是一座只有三四年历史的复制品"
+    ],
+    "answer": 3,
+    "explain_vi": "Các vết hàn phát sáng dưới ánh tím, nhiều nhất chỉ ba bốn năm tuổi, nên đây là bản sao."
+   },
+   {
+    "q": "林小满根据什么认为把钟放进木屋的人不是何师傅？",
+    "q_vi": "Lâm Tiểu Mãn dựa vào đâu để cho rằng người đặt đồng hồ vào nhà gỗ không phải bác Hà?",
+    "options": [
+     "木屋的门是锁着的",
+     "通到帆布前的脚印两边一样深，没有拖地的痕迹，而何师傅走路左脚总是拖着",
+     "何师傅没有雨靴",
+     "何师傅那时候在睡觉"
+    ],
+    "answer": 1,
+    "explain_vi": "Bác Hà luôn lê chân trái, còn hàng dấu ủng dẫn tới tấm bạt thì đều, không có vệt lê, nên là người đi lại bình thường."
+   },
+   {
+    "q": "林小满说“正是因为小偷知道它是假的，才必须把它偷走”，最可能的意思是：",
+    "q_vi": "Lâm Tiểu Mãn nói “chính vì kẻ trộm biết nó là giả nên mới buộc phải lấy nó đi”, ý có thể nhất là:",
+    "options": [
+     "小偷怕第二天的检查会发现钟是假的",
+     "小偷想把假钟卖个好价钱",
+     "小偷想帮顾老先生修钟",
+     "小偷想把假钟送给方立"
+    ],
+    "answer": 0,
+    "explain_vi": "Sáng hôm sau Lâm Tiểu Mãn sẽ kiểm tra đồng hồ; ai biết đó là đồ giả và sợ bị lộ thì phải làm nó “biến mất” trước."
+   }
+  ]
+ },
+ {
+  "id": "s2-12",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 12,
+  "title": "红雨衣",
+  "title_vi": "Chiếc áo mưa đỏ",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "周然愣在门口，不知道该说什么。林小满从他身后走进来，拉了一把椅子，坐在何师傅对面。她的声音很平静：“何师傅，既然是您偷的，那我问您几个问题。您是怎么打开展柜的？”何师傅想了一下：“用……用锤子砸开的。”",
+   "“展柜的锁好好的，玻璃也没有碎。”林小满说，“那您是几点去展厅的？”“十一点多。”“十一点多，我们都在厨房，展厅里的钟已经不在了。”林小满看着他，“何师傅，您连钟是怎么丢的、什么时候丢的都不知道。您不是小偷，您是在保护一个人，对不对？”",
+   "何师傅的嘴唇抖了抖，两只粗糙的手慢慢松开了。过了很久，这个一辈子不爱说话的老人，终于哭了出来。“我对不起老爷，”他说，“可是那孩子是我看着长大的，我不能看着她出事啊。”",
+   "原来，昨天晚上十点十五分左右，何师傅担心工具屋的屋顶漏水，穿上雨衣雨靴去后院看看。刚走到院子中间，他就看见一个人从后门出来，穿着一件红色的雨衣，帽子拉得低低的，怀里抱着一个用东西包着的大包，很吃力地朝工具屋走去。",
+   "“那件红雨衣，这个家里只有小雨穿。”何师傅说，“我躲在树后面，不敢出声。我想，这孩子大概是一时糊涂，等天亮了，我再去劝她。后来听说老爷出了事，我更害怕了。今天早上你们在工具屋找到钟，我想，就让我这个老头子去顶吧，她还年轻。”",
+   "顾小雨站在门口，早已经哭成了一个泪人。她冲进来，抱住何师傅：“何爷爷，不是我！那件雨衣是我的，可是那时候我一直在房间里和同学视频，你们可以看录像！”周然马上把录像找来，从九点四十到十点三十一分，画面里的顾小雨一直坐在书桌前，一分钟也没有离开过。",
+   "“所以，有人穿了小雨的雨衣。”林小满说，“那件雨衣挂在厨房门后面，工具屋的备用钥匙也挂在那里。昨天晚上，从展厅后门下楼梯，正好就到厨房。一个人抱着钟走下来，穿上雨衣，拿上钥匙，从后门出去，再回来，把雨衣挂好。整个过程，只需要十几分钟。”",
+   "他们一起来到厨房。红雨衣还挂在门后面的钉子上，已经干了。林小满把它取下来，在顾小雨身上比了比。雨衣很小，顾小雨个子不高，穿正合适。方立那样的高个子男人，根本穿不进去。顾明远和何师傅也一样，肩膀太宽了。",
+   "林小满把手伸进雨衣的口袋里，摸了摸，忽然停住了。她慢慢地拿出来一样东西，放在手心里：那是一把小小的铜钥匙，颜色很新，边上还有刚刚磨过的痕迹。周然拿出顾老先生的那串钥匙，把展柜钥匙放在旁边一比，两把钥匙一模一样。",
+   "“有人配了一把展柜的钥匙。”周然的声音很低，“而且，昨天晚上太慌了，忘了把它从雨衣口袋里拿出来。”厨房里一下子安静了，只有炉子上那口锅，还放在昨天晚上的地方。",
+   "林小满看着那口锅，过了很久，才轻轻地说：“昨天晚上十点到十点半，离这件雨衣最近、个子穿得下它、而且一直一个人待着、没有任何人能证明的，只有一个人。”她没有说出那个名字。可是周然看着那口锅，脸色一点儿一点儿地白了。"
+  ],
+  "translations": [
+   "Chu Nhiên đứng sững ở cửa, không biết nên nói gì. Lâm Tiểu Mãn từ phía sau anh bước vào, kéo một chiếc ghế, ngồi đối diện bác Hà. Giọng cô rất bình tĩnh: “Bác Hà, nếu đã là bác trộm thì cháu hỏi bác mấy câu. Bác mở tủ kính bằng cách nào?” Bác Hà nghĩ một chút: “Bằng… bằng búa đập vỡ.”",
+   "“Khóa tủ vẫn nguyên, kính cũng không vỡ,” Lâm Tiểu Mãn nói. “Vậy mấy giờ bác lên phòng trưng bày?” “Hơn mười một giờ.” “Hơn mười một giờ thì chúng cháu đều ở trong bếp, đồng hồ trong phòng trưng bày đã không còn nữa.” Lâm Tiểu Mãn nhìn bác, “Bác Hà, đến cả đồng hồ mất thế nào, mất lúc nào bác cũng không biết. Bác không phải kẻ trộm, bác đang che chở cho một người, đúng không ạ?”",
+   "Môi bác Hà run run, hai bàn tay thô ráp từ từ buông ra. Rất lâu sau, ông già cả đời ít nói ấy cuối cùng bật khóc. “Tôi có lỗi với ông chủ,” bác nói, “nhưng đứa nhỏ đó là tôi trông lớn lên, tôi không thể nhìn nó gặp chuyện được.”",
+   "Thì ra, khoảng mười giờ mười lăm tối qua, bác Hà lo mái nhà kho dụng cụ bị dột nên mặc áo mưa, đi ủng ra sân sau xem. Vừa đi đến giữa sân, bác thấy một người từ cửa sau đi ra, mặc chiếc áo mưa màu đỏ, mũ trùm kéo thật thấp, trong lòng ôm một bọc lớn được gói bằng thứ gì đó, khó nhọc đi về phía nhà kho.",
+   "“Chiếc áo mưa đỏ đó, trong nhà này chỉ có Tiểu Vũ mặc,” bác Hà nói. “Tôi nấp sau gốc cây, không dám lên tiếng. Tôi nghĩ có lẽ con bé nhất thời hồ đồ, đợi trời sáng tôi sẽ đi khuyên nó. Sau đó nghe tin ông chủ gặp chuyện, tôi càng sợ hơn. Sáng nay các anh tìm thấy đồng hồ trong nhà kho, tôi nghĩ, cứ để lão già này gánh thay đi, nó còn trẻ.”",
+   "Cố Tiểu Vũ đứng ở cửa, đã khóc như mưa từ lâu. Cô lao vào ôm bác Hà: “Ông Hà ơi, không phải cháu! Áo mưa đó là của cháu, nhưng lúc ấy cháu ở trong phòng gọi video với bạn suốt, mọi người có thể xem video!” Chu Nhiên lập tức lấy video ra xem, từ chín giờ bốn mươi đến mười giờ ba mươi mốt, Cố Tiểu Vũ trong hình luôn ngồi trước bàn học, không rời đi một phút nào.",
+   "“Vậy là có người đã mặc áo mưa của Tiểu Vũ,” Lâm Tiểu Mãn nói. “Chiếc áo mưa ấy treo sau cửa bếp, chìa khóa dự phòng của nhà kho cũng treo ở đó. Tối qua, từ cửa sau phòng trưng bày đi xuống cầu thang là tới ngay nhà bếp. Một người ôm đồng hồ đi xuống, mặc áo mưa, lấy chìa khóa, ra cửa sau, rồi quay lại, treo áo mưa về chỗ cũ. Cả quá trình chỉ cần hơn mười phút.”",
+   "Họ cùng đi vào bếp. Chiếc áo mưa đỏ vẫn treo trên cái đinh sau cửa, đã khô. Lâm Tiểu Mãn lấy nó xuống, ướm thử lên người Cố Tiểu Vũ. Áo mưa rất nhỏ, Cố Tiểu Vũ dáng không cao, mặc vừa khít. Người đàn ông cao lớn như Phương Lập thì hoàn toàn không mặc vừa. Cố Minh Viễn và bác Hà cũng vậy, vai quá rộng.",
+   "Lâm Tiểu Mãn thò tay vào túi áo mưa, sờ sờ, bỗng khựng lại. Cô từ từ lấy ra một vật, đặt trong lòng bàn tay: đó là một chiếc chìa khóa đồng nhỏ, màu còn rất mới, mép vẫn còn vết vừa mài. Chu Nhiên lấy chùm chìa khóa của ông Cố ra, đặt chiếc chìa tủ kính bên cạnh so sánh, hai chiếc giống hệt nhau.",
+   "“Có người đã đánh thêm một chiếc chìa khóa tủ kính,” giọng Chu Nhiên rất trầm, “hơn nữa tối qua vì quá hoảng nên quên lấy nó ra khỏi túi áo mưa.” Nhà bếp bỗng im phăng phắc, chỉ có cái nồi trên bếp vẫn đặt ở chỗ cũ từ tối qua.",
+   "Lâm Tiểu Mãn nhìn cái nồi ấy, rất lâu sau mới khẽ nói: “Tối qua từ mười giờ đến mười giờ rưỡi, người ở gần chiếc áo mưa này nhất, có vóc dáng mặc vừa nó, lại ở một mình suốt, không ai làm chứng được, chỉ có một người.” Cô không nói ra cái tên ấy. Nhưng Chu Nhiên nhìn cái nồi, sắc mặt từng chút từng chút trắng bệch."
+  ],
+  "questions": [
+   {
+    "q": "林小满是怎么证明何师傅不是小偷的？",
+    "q_vi": "Lâm Tiểu Mãn chứng minh bác Hà không phải kẻ trộm bằng cách nào?",
+    "options": [
+     "她找到了何师傅的人证",
+     "何师傅说不出展柜是怎么打开的，时间也说错了",
+     "何师傅的手上没有伤",
+     "何师傅的雨靴是干的"
+    ],
+    "answer": 1,
+    "explain_vi": "Bác nói đập vỡ bằng búa nhưng khóa và kính còn nguyên; bác nói hơn 11 giờ nhưng lúc đó đồng hồ đã mất từ trước."
+   },
+   {
+    "q": "何师傅为什么要说是自己偷的？",
+    "q_vi": "Vì sao bác Hà lại nhận là mình trộm?",
+    "options": [
+     "他想得到一笔钱",
+     "他恨顾老先生",
+     "他看见穿红雨衣的人，以为是顾小雨，想替她承担",
+     "周然逼他说的"
+    ],
+    "answer": 2,
+    "explain_vi": "Bác thấy một người mặc áo mưa đỏ ôm đồ vào nhà kho, tưởng là Tiểu Vũ mà bác trông từ nhỏ, nên muốn gánh tội thay."
+   },
+   {
+    "q": "在红雨衣的口袋里发现的东西说明了什么？",
+    "q_vi": "Vật tìm thấy trong túi áo mưa đỏ cho thấy điều gì?",
+    "options": [
+     "穿雨衣的人配了一把展柜钥匙，用它打开了展柜",
+     "顾小雨就是小偷",
+     "工具屋的钥匙丢了",
+     "顾老先生把钥匙给了别人"
+    ],
+    "answer": 0,
+    "explain_vi": "Đó là chìa khóa tủ kính mới đánh, giống hệt chìa của ông Cố, chứng tỏ người mặc áo mưa đã mở tủ bằng chìa sao chép."
+   }
+  ]
+ },
+ {
+  "id": "s2-13",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 13,
+  "title": "一锅没炖烂的汤",
+  "title_vi": "Nồi canh hầm chưa nhừ",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "林小满把周然拉进书房，关上了门。周然坐在椅子上，半天才开口：“你想说的是苏晴，对吧？”林小满点点头。周然摇摇头：“可是她在这里十年了，对老先生那么好……而且，昨天晚上十一点以后，她一直和我们在一起。”林小满轻声说：“对。这正是她希望你记住的。”",
+   "她打开小本子，一条一条地说。“第一，汤。苏晴说她九点三刻就开始炖排骨汤了。我十一点零五分尝的时候，汤很淡，排骨硬得咬不动。炖了一个多小时的排骨，不会是这个样子。这锅汤最多炖了半个小时，也就是说，她是十点半左右才开始炖的，正好是顾小雨下楼之前。”",
+   "“第二，头发。十一点零五分，她的头发梢是湿的。她说是去关窗户被雨打湿的。可是如果她十点多穿着那件红雨衣去了工具屋，雨衣的帽子小，头发梢被打湿，是很正常的事。顾小雨说过，那件雨衣她穿正合适，苏晴的个子和她差不多。”",
+   "“第三，钟声。”林小满接着说，“那个宣传片是苏晴五年前拍的，原来的录音文件，只有她手里有。那部旧手机也是她的。她在晚饭的时候故意提起手机丢了，就是为了等我们找到它的时候，可以说是有人陷害她。还有，你说过，十一点钟响的时候，是她先说了一句‘十一点了’。她在等那个声音，她要让每一个人都记住那个时间。”",
+   "周然的脸色越来越难看，但他还是问：“那表呢？”“第四，表。”林小满说，“我一开始以为，她是在十一点二十分一个人上楼的时候改的表。其实不用等那么久：老先生十点十分左右摔倒的时候，她很可能就在旁边。她把时间调到十一点十五分，让我们以为老先生是那时候摔倒的。而那时候，她正在厨房里，和一个警察在一起。”",
+   "“最后，也是最重要的，”林小满合上本子，“为什么要偷一座假钟？三年前，金鹤钟送去苏州修理，是苏晴一个人联系的，那位修钟师傅后来也找不到了。同一年，她妈妈做了一次大手术，需要很多钱。两年前，真的金鹤钟出现在香港的拍卖会上。而这一次，顾老先生请我来检查钟，第二天上午就要打开展柜。”",
+   "周然闭上眼睛：“只要你一看，就会发现钟是假的。到时候，第一个被怀疑的，就是三年前送钟去修的人。所以，她必须在你检查以前，让这座假钟‘被偷’。只要钟丢了，就没有人知道它是假的了。”林小满点点头：“她本来的计划也许很简单。可是她没想到，顾老先生也会在那个时候去展厅。”",
+   "书房里安静了很久。周然叹了一口气：“我希望你是错的。”林小满看着窗外，说：“我也希望。”过了一会儿，她又说：“还有一件事。你记不记得，方立说他是受人委托来的？顾老先生上个月一个人去了香港，又对我说‘不管发现什么，先只告诉我一个人’。我想，请方立来的人，就是顾老先生自己。他早就知道了。”",
+   "两个人走出书房去找苏晴。厨房里没有人，她的房间里也没有人。周然急了，正要叫人一起找，林小满却停在了顾老先生房间的门口。门半开着，苏晴跪在床边，两只手紧紧握着老人的手，肩膀一抖一抖的，正在无声地哭。",
+   "就在这时，床上的老人忽然动了一下。他的手指慢慢地动了动，眼睛睁开了一条缝。他看了看跪在床边的苏晴，嘴唇动了动，发出一个很轻很轻的声音：“小晴……”苏晴一下子哭出了声音。",
+   "林小满站在门口，过了很久，才转身对走廊里的周然说：“去叫大家吧。请所有人都到展厅来。”她把最后一颗薄荷糖放进嘴里，“是时候把昨天晚上发生的事，从头说一遍了。”"
+  ],
+  "translations": [
+   "Lâm Tiểu Mãn kéo Chu Nhiên vào thư phòng, đóng cửa lại. Chu Nhiên ngồi xuống ghế, hồi lâu mới lên tiếng: “Em muốn nói là Tô Tình, đúng không?” Lâm Tiểu Mãn gật đầu. Chu Nhiên lắc đầu: “Nhưng cô ấy ở đây mười năm rồi, đối xử với ông cụ tốt như vậy… Hơn nữa, sau mười một giờ tối qua, cô ấy luôn ở cùng bọn anh.” Lâm Tiểu Mãn nói khẽ: “Đúng vậy. Đó chính là điều cô ấy muốn anh nhớ.”",
+   "Cô mở cuốn sổ nhỏ, nói từng điều một. “Thứ nhất, nồi canh. Tô Tình nói chị ấy bắt đầu hầm canh sườn từ chín giờ bốn lăm. Lúc mười một giờ năm phút em nếm thử, canh rất nhạt, sườn cứng cắn không nổi. Sườn hầm hơn một tiếng không thể như thế. Nồi canh ấy nhiều nhất mới hầm được nửa tiếng, nghĩa là khoảng mười giờ rưỡi chị ấy mới bắt đầu hầm, đúng ngay trước khi Cố Tiểu Vũ xuống lầu.”",
+   "“Thứ hai, mái tóc. Lúc mười một giờ năm phút, đuôi tóc chị ấy bị ướt. Chị ấy nói là do đi đóng cửa sổ bị mưa hắt. Nhưng nếu hơn mười giờ chị ấy mặc chiếc áo mưa đỏ ra nhà kho, mũ áo mưa nhỏ, đuôi tóc bị ướt là chuyện rất bình thường. Cố Tiểu Vũ từng nói chiếc áo ấy cô mặc vừa khít, mà Tô Tình có vóc dáng xấp xỉ cô.”",
+   "“Thứ ba, tiếng chuông,” Lâm Tiểu Mãn nói tiếp. “Phim quảng bá đó là Tô Tình quay năm năm trước, tệp ghi âm gốc chỉ chị ấy có. Chiếc điện thoại cũ cũng là của chị ấy. Chị ấy cố ý nhắc chuyện mất điện thoại trong bữa tối, chính là để khi chúng ta tìm thấy nó thì có thể nói có người vu oan. Còn nữa, anh từng nói lúc chuông điểm mười một giờ, chính chị ấy là người nói trước câu ‘mười một giờ rồi’. Chị ấy đang chờ âm thanh đó, chị ấy muốn mọi người đều nhớ thời điểm ấy.”",
+   "Sắc mặt Chu Nhiên càng lúc càng khó coi, nhưng anh vẫn hỏi: “Thế còn chiếc đồng hồ đeo tay?” “Thứ tư, chiếc đồng hồ,” Lâm Tiểu Mãn nói. “Lúc đầu em tưởng chị ấy sửa đồng hồ khi một mình lên lầu lúc mười một giờ hai mươi. Thật ra không cần đợi lâu như vậy: khi ông cụ ngã vào khoảng mười giờ mười, rất có thể chị ấy đang ở ngay bên cạnh. Chị ấy chỉnh kim về mười một giờ mười lăm, để chúng ta tưởng ông cụ ngã vào lúc đó. Mà khi ấy, chị ấy đang ở trong bếp, cùng với một cảnh sát.”",
+   "“Cuối cùng, cũng là quan trọng nhất,” Lâm Tiểu Mãn gập sổ lại, “tại sao phải trộm một chiếc đồng hồ giả? Ba năm trước, đồng hồ Hạc Vàng được gửi đi Tô Châu sửa, do một mình Tô Tình liên hệ, ông thợ đó sau này cũng không tìm được nữa. Cùng năm ấy, mẹ chị ấy làm một ca đại phẫu, cần rất nhiều tiền. Hai năm trước, đồng hồ Hạc Vàng thật xuất hiện ở phiên đấu giá Hồng Kông. Và lần này, ông Cố mời em đến kiểm tra đồng hồ, sáng hôm sau là mở tủ kính.”",
+   "Chu Nhiên nhắm mắt: “Chỉ cần em nhìn là sẽ phát hiện đồng hồ là giả. Đến lúc đó, người đầu tiên bị nghi ngờ chính là người gửi đồng hồ đi sửa ba năm trước. Vì vậy cô ấy buộc phải khiến chiếc đồng hồ giả này ‘bị trộm’ trước khi em kiểm tra. Chỉ cần đồng hồ mất, sẽ không ai biết nó là giả nữa.” Lâm Tiểu Mãn gật đầu: “Kế hoạch ban đầu của chị ấy có lẽ rất đơn giản. Nhưng chị ấy không ngờ ông Cố cũng đến phòng trưng bày vào đúng lúc đó.”",
+   "Thư phòng lặng đi rất lâu. Chu Nhiên thở dài: “Anh mong là em sai.” Lâm Tiểu Mãn nhìn ra cửa sổ: “Em cũng mong vậy.” Một lúc sau, cô lại nói: “Còn một chuyện nữa. Anh có nhớ Phương Lập nói anh ta được người khác ủy thác đến không? Tháng trước ông Cố một mình đi Hồng Kông, rồi lại dặn em ‘dù phát hiện gì cũng chỉ nói riêng với tôi trước’. Em nghĩ người mời Phương Lập đến chính là ông Cố. Ông ấy đã biết từ lâu rồi.”",
+   "Hai người ra khỏi thư phòng đi tìm Tô Tình. Trong bếp không có ai, phòng cô cũng không có ai. Chu Nhiên sốt ruột, đang định gọi mọi người cùng tìm thì Lâm Tiểu Mãn dừng lại trước cửa phòng ông Cố. Cửa khép hờ, Tô Tình quỳ bên giường, hai tay nắm chặt tay ông cụ, đôi vai run lên từng đợt, đang khóc không thành tiếng.",
+   "Đúng lúc đó, ông cụ trên giường bỗng cử động. Ngón tay ông khẽ động đậy, mắt hé mở một khe nhỏ. Ông nhìn Tô Tình đang quỳ bên giường, môi mấp máy, phát ra một âm thanh rất khẽ, rất khẽ: “Tiểu Tình…” Tô Tình lập tức òa khóc thành tiếng.",
+   "Lâm Tiểu Mãn đứng ở cửa, rất lâu sau mới quay sang nói với Chu Nhiên ngoài hành lang: “Đi gọi mọi người đi. Mời tất cả đến phòng trưng bày.” Cô bỏ viên kẹo bạc hà cuối cùng vào miệng, “Đã đến lúc kể lại từ đầu những gì xảy ra đêm qua rồi.”"
+  ],
+  "questions": [
+   {
+    "q": "林小满从那锅汤看出了什么？",
+    "q_vi": "Từ nồi canh, Lâm Tiểu Mãn nhận ra điều gì?",
+    "options": [
+     "苏晴的汤做得不好吃",
+     "汤里被人放了东西",
+     "顾小雨也喝了汤",
+     "汤最多炖了半个小时，苏晴说九点三刻开始炖是假话"
+    ],
+    "answer": 3,
+    "explain_vi": "Lúc 11 giờ 5 canh còn nhạt, sườn còn cứng, nên chỉ mới hầm khoảng nửa tiếng, tức bắt đầu khoảng 10 giờ 30 chứ không phải 9 giờ 45."
+   },
+   {
+    "q": "根据林小满的分析，苏晴偷假钟的原因是什么？",
+    "q_vi": "Theo phân tích của Lâm Tiểu Mãn, vì sao Tô Tình trộm chiếc đồng hồ giả?",
+    "options": [
+     "她想把假钟卖给方立",
+     "她怕林小满第二天检查时发现钟是假的，从而查到三年前是她把真钟换走了",
+     "她想帮顾明远还钱",
+     "她不知道钟是假的"
+    ],
+    "answer": 1,
+    "explain_vi": "Chính cô gửi đồng hồ đi sửa ba năm trước; nếu bị phát hiện là đồ giả, cô sẽ bị nghi đầu tiên, nên phải làm nó “mất” trước buổi kiểm tra."
+   },
+   {
+    "q": "林小满认为是谁请方立来的？",
+    "q_vi": "Lâm Tiểu Mãn cho rằng ai đã mời Phương Lập đến?",
+    "options": [
+     "顾老先生自己",
+     "顾明远",
+     "苏晴",
+     "香港的警察"
+    ],
+    "answer": 0,
+    "explain_vi": "Ông Cố từng một mình đi Hồng Kông và dặn cô chỉ báo riêng cho ông, nên cô đoán ông đã biết từ lâu và chính ông mời Phương Lập."
+   }
+  ]
+ },
+ {
+  "id": "s2-14",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 14,
+  "title": "等了一个月的人",
+  "title_vi": "Người đã đợi suốt một tháng",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "下午三点，所有人都来到了二楼的展厅。阳光从窗户照进来，落在那个空空的玻璃展柜上。顾明远、顾小雨、方立、何师傅站在一边，苏晴一个人站在展柜旁边，脸色苍白，却很平静，好像早就知道会有这一刻。",
+   "林小满没有说很多话。她把那部旧手机、那把新配的铜钥匙，还有自己的小本子，一样一样地放在展柜上。然后，她看着苏晴，轻声说：“苏经理，那段十一点的钟声，太完整了。真正的金鹤钟，三年前就已经不在这里了，对吗？”",
+   "展厅里安静极了。过了很久，苏晴点了点头。“是我。”她说，“都是我做的。”顾明远吃惊地张大了嘴，顾小雨捂住了脸，何师傅闭上了眼睛。",
+   "苏晴慢慢地讲了起来。三年前，她妈妈得了重病，手术需要六十万。她找亲戚朋友借了一圈，还差一大半。就在那时，金鹤钟要送去修理。苏州有一个人找到她，说可以做一座一模一样的复制品，再出一百万买下真的那座。“我对自己说，只是借，等我有了钱，一定把它买回来。”苏晴苦笑了一下，“可是一百万花出去了，就再也回不来了。”",
+   "“这三年，我每天都站在这个展柜前面，看着那座假钟，心里像有一块石头。”她说，“老先生请林师傅来检查的时候，我就知道，藏不住了。我想，只要钟‘丢了’，就没有人会发现它是假的。我准备了那部旧手机，提前设好了闹钟，又在吃饭的时候说手机丢了。我以为，我什么都想到了。”",
+   "“昨天晚上十点，我用三年前偷偷配的钥匙打开了展柜。我刚把钟抱出来，后门那边就有人说话了。”苏晴的声音开始发抖，“是老先生。他一直坐在楼梯口那个黑暗的角落里，等着我。他说：‘小晴，我等了你一个月。我只是想听你自己告诉我。’”",
+   "“我当时脑子一片空白，只想跑。我抱着钟往后门冲过去，老先生伸手想拉住我，他的拐杖一下子滑了……他就倒下去了，头撞在了地板上。”苏晴哭了起来，“正好那时候打了一个大雷。我跪在他旁边，他还有呼吸。我应该马上喊人的，我真的应该马上喊人的……”",
+   "可是她没有。害怕让她做出了最错误的决定：她把老人的手表调到了十一点十五分，把手机藏进了花瓶，穿上顾小雨的红雨衣，把钟送进了工具屋。十点半，她回到厨房，打开了炉子上的火，这时，顾小雨正好下楼。“后来的每一分钟，我都想上楼去救他，可是我不敢。到了十一点二十分，我才敢上去……‘发现’他。”",
+   "苏晴说完，整个人好像一下子没有了力气，靠在了展柜上。没有人说话。何师傅转过头去，用袖子擦了擦眼睛。周然走过去，声音很低：“苏晴，等桥通了，你要跟我去派出所。你知道的。”苏晴点点头：“我知道。我只想知道，老先生会不会好起来。”",
+   "就在这时，一直没有说话的方立往前走了一步。“对不起，还有一件事。顾老先生让我保密，可是我想，现在应该说出来了。”他看了看大家，“上个月，两年前在香港买下金鹤钟的那位收藏家，把钟又卖了出去。买下它的人，就是顾文山先生。”",
+   "所有人都愣住了。方立接着说：“真正的金鹤钟，现在就在这座房子里。顾老先生说，在他亲耳听到那个人说出真相以前，它不会出现在任何人面前。”苏晴抬起头，看着方立，眼泪一下子又流了下来。"
+  ],
+  "translations": [
+   "Ba giờ chiều, tất cả mọi người đều đến phòng trưng bày tầng hai. Ánh nắng chiếu qua cửa sổ, rơi trên chiếc tủ kính trống rỗng. Cố Minh Viễn, Cố Tiểu Vũ, Phương Lập, bác Hà đứng một bên, Tô Tình đứng một mình cạnh tủ kính, mặt tái nhợt nhưng rất bình thản, như thể đã biết từ lâu sẽ có giây phút này.",
+   "Lâm Tiểu Mãn không nói nhiều. Cô đặt chiếc điện thoại cũ, chiếc chìa khóa đồng mới đánh, và cuốn sổ nhỏ của mình lên tủ kính, từng thứ một. Rồi cô nhìn Tô Tình, khẽ nói: “Chị Tô, tiếng chuông lúc mười một giờ ấy quá trọn vẹn. Đồng hồ Hạc Vàng thật đã không còn ở đây từ ba năm trước rồi, đúng không?”",
+   "Phòng trưng bày im lặng tuyệt đối. Rất lâu sau, Tô Tình gật đầu. “Là tôi,” cô nói, “tất cả đều do tôi làm.” Cố Minh Viễn kinh ngạc há hốc miệng, Cố Tiểu Vũ ôm mặt, bác Hà nhắm mắt lại.",
+   "Tô Tình chậm rãi kể. Ba năm trước, mẹ cô mắc bệnh nặng, phẫu thuật cần sáu trăm nghìn tệ. Cô vay hết một vòng họ hàng bạn bè mà vẫn còn thiếu hơn một nửa. Đúng lúc đó, đồng hồ Hạc Vàng phải gửi đi sửa. Một người ở Tô Châu tìm đến cô, nói có thể làm một bản sao giống hệt, rồi trả một triệu tệ mua chiếc thật. “Tôi tự nhủ, chỉ là mượn thôi, đợi có tiền nhất định sẽ mua lại nó.” Tô Tình cười khổ, “Nhưng một triệu tiêu đi rồi thì không bao giờ quay về được nữa.”",
+   "“Ba năm nay, ngày nào tôi cũng đứng trước tủ kính này, nhìn chiếc đồng hồ giả, trong lòng như có tảng đá đè,” cô nói. “Khi ông cụ mời thợ Lâm đến kiểm tra, tôi biết không giấu được nữa. Tôi nghĩ, chỉ cần đồng hồ ‘bị mất’ thì sẽ không ai phát hiện nó là giả. Tôi chuẩn bị chiếc điện thoại cũ, cài sẵn báo thức, rồi trong bữa ăn nói rằng điện thoại bị mất. Tôi tưởng mình đã tính hết mọi thứ.”",
+   "“Mười giờ tối qua, tôi dùng chiếc chìa khóa lén đánh từ ba năm trước để mở tủ kính. Tôi vừa ôm đồng hồ ra thì phía cửa sau có người lên tiếng.” Giọng Tô Tình bắt đầu run rẩy, “Là ông cụ. Ông vẫn ngồi trong góc tối ở đầu cầu thang, chờ tôi. Ông nói: ‘Tiểu Tình, ta đã đợi cháu một tháng rồi. Ta chỉ muốn nghe chính cháu nói với ta.’”",
+   "“Lúc đó đầu óc tôi trống rỗng, chỉ muốn chạy. Tôi ôm đồng hồ lao về phía cửa sau, ông cụ đưa tay định giữ tôi lại, cây gậy của ông trượt đi… và ông ngã xuống, đầu đập xuống sàn.” Tô Tình bật khóc, “Đúng lúc ấy có một tiếng sấm lớn. Tôi quỳ bên ông, ông vẫn còn thở. Lẽ ra tôi phải gọi người ngay, lẽ ra tôi thật sự phải gọi người ngay…”",
+   "Nhưng cô đã không làm thế. Nỗi sợ khiến cô đưa ra quyết định sai lầm nhất: cô chỉnh đồng hồ của ông cụ sang mười một giờ mười lăm, giấu điện thoại vào bình hoa, mặc áo mưa đỏ của Cố Tiểu Vũ, mang đồng hồ vào nhà kho. Mười giờ rưỡi, cô quay về bếp, bật lửa trên bếp, đúng lúc đó Cố Tiểu Vũ xuống lầu. “Từng phút sau đó, tôi đều muốn lên cứu ông, nhưng tôi không dám. Đến mười một giờ hai mươi, tôi mới dám lên… ‘phát hiện’ ra ông.”",
+   "Tô Tình nói xong, cả người như bỗng chốc kiệt sức, tựa vào tủ kính. Không ai nói gì. Bác Hà quay đi, lấy tay áo lau mắt. Chu Nhiên bước tới, giọng rất trầm: “Tô Tình, đợi cầu thông rồi, cô phải theo tôi về đồn công an. Cô biết mà.” Tô Tình gật đầu: “Tôi biết. Tôi chỉ muốn biết ông cụ có khỏe lại không.”",
+   "Đúng lúc ấy, Phương Lập, người nãy giờ không nói gì, bước lên một bước. “Xin lỗi, còn một chuyện nữa. Ông Cố dặn tôi giữ bí mật, nhưng tôi nghĩ bây giờ nên nói ra.” Anh ta nhìn mọi người, “Tháng trước, nhà sưu tầm đã mua đồng hồ Hạc Vàng ở Hồng Kông hai năm trước lại bán nó đi. Người mua nó chính là ông Cố Văn Sơn.”",
+   "Tất cả đều sững sờ. Phương Lập nói tiếp: “Đồng hồ Hạc Vàng thật hiện đang ở ngay trong ngôi nhà này. Ông Cố nói, trước khi chính tai ông nghe người đó nói ra sự thật, nó sẽ không xuất hiện trước mặt bất kỳ ai.” Tô Tình ngẩng lên nhìn Phương Lập, nước mắt lại trào ra."
+  ],
+  "questions": [
+   {
+    "q": "三年前苏晴为什么把真的金鹤钟卖掉？",
+    "q_vi": "Ba năm trước vì sao Tô Tình bán chiếc đồng hồ Hạc Vàng thật?",
+    "options": [
+     "她想自己开一个钟表馆",
+     "她妈妈得了重病，需要钱做手术",
+     "顾明远让她卖的",
+     "她不喜欢这座钟"
+    ],
+    "answer": 1,
+    "explain_vi": "Mẹ cô bệnh nặng, phẫu thuật cần sáu trăm nghìn tệ, cô vay không đủ nên đã bán chiếc thật cho người ở Tô Châu."
+   },
+   {
+    "q": "顾老先生是怎么摔倒的？",
+    "q_vi": "Ông Cố bị ngã như thế nào?",
+    "options": [
+     "苏晴故意把他推下了楼梯",
+     "他自己在黑暗中没看清路",
+     "他想拉住抱着钟逃跑的苏晴，拐杖一滑，摔倒了",
+     "何师傅撞倒了他"
+    ],
+    "answer": 2,
+    "explain_vi": "Tô Tình ôm đồng hồ chạy, ông đưa tay giữ lại thì gậy trượt, ông ngã đập đầu xuống sàn."
+   },
+   {
+    "q": "方立最后说出的秘密是什么？",
+    "q_vi": "Bí mật cuối cùng Phương Lập nói ra là gì?",
+    "options": [
+     "苏晴的妈妈是方立的委托人",
+     "方立自己买下了真钟",
+     "真钟已经被毁了",
+     "顾老先生上个月买回了真正的金鹤钟，它就在这座房子里"
+    ],
+    "answer": 3,
+    "explain_vi": "Nhà sưu tầm ở Hồng Kông đã bán lại chiếc thật, và người mua chính là ông Cố; chiếc đồng hồ thật đang ở trong nhà."
+   }
+  ]
+ },
+ {
+  "id": "s2-15",
+  "kind": "series",
+  "level": 5,
+  "series": "s2",
+  "series_title": "十一点的钟声",
+  "series_title_vi": "Tiếng chuông lúc mười một giờ",
+  "chapter": 15,
+  "title": "完整的钟声",
+  "title_vi": "Tiếng chuông trọn vẹn",
+  "topic": "trinh thám",
+  "paragraphs": [
+   "那天晚上，河水终于退了。救护车开过石桥，把顾老先生送到了县医院。医生说，老人头部受了伤，幸好送来得还算及时，只要好好休息，会慢慢好起来的。第二天一早，苏晴跟着周然去了派出所。走的时候，她回头看了一眼钟表馆，什么也没说。",
+   "三天以后，林小满和周然去医院看顾老先生。老人靠在床上，精神比想象的好很多。顾小雨正在给他削苹果，顾明远坐在一边，眼睛红红的。看见林小满，老人笑了：“林师傅，我请你来修钟，结果让你当了一回侦探。”",
+   "老人慢慢讲起了这件事的开始。一个多月前，香港的一位老朋友给他寄来一本拍卖图录，说上面有一座钟，和他的金鹤钟很像。他一个人去了香港，见到那座钟的第一眼，就知道它才是真的。“自己家的东西，我闭着眼睛都认得出来。”他花了几乎所有的积蓄，把它买了回来。",
+   "“那你为什么不报警？”周然问。老人叹了一口气：“三年前，是谁送钟去修的，我心里清楚。小晴在我身边工作了十年，她妈妈生病的事，我也知道。我想，如果她能自己来告诉我，这件事就可以在家里解决。所以，我请方先生来，请林师傅来，就是想告诉她：时间不多了，你说吧。”",
+   "他停了一下，声音低了下去：“我以为我给了她一个机会，没想到，我给她的是压力。那天晚上，如果我不坐在那个黑角落里等她，也许就不会出事了。”病房里安静了很久。顾明远低着头说：“爸，那天吃饭的时候，我不该那样跟您说话。”老人拍了拍儿子的手，没有说话。",
+   "老人告诉他们，那天晚上他本来要宣布的决定是：把钟表馆送给青溪镇，变成一个所有人都可以免费参观的博物馆。“钟是会走的，人也是会走的。这些东西，不应该只属于一个家。”他还说，他已经给法院写了一封信，希望能对苏晴从轻处理。",
+   "临走的时候，老人从枕头下面拿出那串钥匙，取下其中最大的一把，交给林小满：“书房的书桌下面，有一个旧木箱。林师傅，最后再帮我一个忙，替我看看它。”",
+   "回到钟表馆，林小满打开了那个木箱。在一块深蓝色的布下面，静静地躺着一座铜钟，钟顶上站着一只金色的仙鹤。她打开后盖，里面的音梳闪着钢的光，每一个齿都完好无损。她轻轻地给它上了弦，把它放回了二楼展厅的展柜里。",
+   "中午十二点，展厅里站满了人。何师傅、顾小雨、方立，还有听说消息赶来的镇上的老人。时间一到，仙鹤慢慢张开了翅膀，音乐响了起来。叮叮咚咚，一个音也不少，像山里的泉水。何师傅站在最后面，偷偷地擦着眼泪。顾小雨举着手机，这一次，她录下了完整的钟声。",
+   "离开青溪镇之前，林小满又做了一件事：她把那座复制品里断了的齿修好了。现在，两座钟并排放在展柜里，一真一假，下面的牌子上写着它们的故事。老人说，这样也好，让来参观的人都知道，一座钟值多少钱不重要，重要的是，人不能对自己的心说谎。",
+   "车站上，周然帮她把工具包放上大巴：“你这次来，说是来工作的。结果呢？”林小满从口袋里拿出一颗薄荷糖，想了想，又放了回去。“我修好了两座钟。”她说。车开动了，窗外的小河在阳光下闪着光。她想，时间可以被调快、调慢，可是它从来不会说谎，它只是一直在等，等有人愿意听见真正的声音。"
+  ],
+  "translations": [
+   "Đêm hôm ấy, nước sông cuối cùng cũng rút. Xe cứu thương chạy qua cầu đá, đưa ông Cố đến bệnh viện huyện. Bác sĩ nói đầu ông cụ bị thương, may mà đưa đến vẫn còn kịp, chỉ cần nghỉ ngơi cẩn thận sẽ dần khỏe lại. Sáng sớm hôm sau, Tô Tình theo Chu Nhiên về đồn công an. Lúc đi, cô ngoái lại nhìn bảo tàng đồng hồ một cái, không nói gì.",
+   "Ba ngày sau, Lâm Tiểu Mãn và Chu Nhiên đến bệnh viện thăm ông Cố. Ông cụ tựa lưng trên giường, tinh thần tốt hơn tưởng tượng nhiều. Cố Tiểu Vũ đang gọt táo cho ông, Cố Minh Viễn ngồi một bên, mắt đỏ hoe. Thấy Lâm Tiểu Mãn, ông cụ cười: “Thợ Lâm, tôi mời cô đến sửa đồng hồ, kết quả lại bắt cô làm thám tử một phen.”",
+   "Ông cụ chậm rãi kể về khởi đầu của chuyện này. Hơn một tháng trước, một người bạn cũ ở Hồng Kông gửi cho ông một cuốn catalogue đấu giá, nói trong đó có một chiếc đồng hồ rất giống đồng hồ Hạc Vàng của ông. Ông một mình sang Hồng Kông, vừa nhìn thấy chiếc đồng hồ đó đã biết nó mới là đồ thật. “Đồ của nhà mình, tôi nhắm mắt cũng nhận ra.” Ông bỏ ra gần như toàn bộ tiền tiết kiệm để mua nó về.",
+   "“Vậy sao ông không báo cảnh sát?” Chu Nhiên hỏi. Ông cụ thở dài: “Ba năm trước ai gửi đồng hồ đi sửa, trong lòng tôi rõ cả. Tiểu Tình làm việc bên tôi mười năm, chuyện mẹ nó bị bệnh tôi cũng biết. Tôi nghĩ, nếu nó tự đến nói với tôi, chuyện này có thể giải quyết trong nhà. Vì vậy tôi mời anh Phương đến, mời thợ Lâm đến, chính là muốn nói với nó: thời gian không còn nhiều, cháu nói đi.”",
+   "Ông dừng lại một chút, giọng trầm xuống: “Tôi tưởng mình đã cho nó một cơ hội, không ngờ thứ tôi cho nó lại là áp lực. Đêm hôm đó, nếu tôi không ngồi trong góc tối chờ nó, có lẽ đã không xảy ra chuyện.” Phòng bệnh lặng đi rất lâu. Cố Minh Viễn cúi đầu nói: “Bố, hôm ăn cơm đó, con không nên nói với bố như vậy.” Ông cụ vỗ vỗ tay con trai, không nói gì.",
+   "Ông cụ cho họ biết, quyết định ông định công bố tối hôm đó là: tặng bảo tàng đồng hồ cho thị trấn Thanh Khê, biến nó thành một bảo tàng ai cũng có thể vào tham quan miễn phí. “Đồng hồ thì chạy, con người rồi cũng đi. Những thứ này không nên chỉ thuộc về một gia đình.” Ông còn nói đã viết một lá thư gửi tòa án, mong có thể xử nhẹ cho Tô Tình.",
+   "Lúc ra về, ông cụ lấy chùm chìa khóa từ dưới gối, tháo ra chiếc lớn nhất, đưa cho Lâm Tiểu Mãn: “Dưới bàn làm việc trong thư phòng có một chiếc hòm gỗ cũ. Thợ Lâm, giúp tôi việc cuối cùng, xem nó giúp tôi.”",
+   "Về đến bảo tàng, Lâm Tiểu Mãn mở chiếc hòm gỗ. Dưới một tấm vải xanh thẫm, lặng lẽ nằm một chiếc đồng hồ đồng, trên đỉnh đứng một con tiên hạc màu vàng. Cô mở nắp sau, lược âm bên trong ánh lên màu thép, từng chiếc răng đều nguyên vẹn. Cô nhẹ nhàng lên dây cót cho nó, rồi đặt nó trở lại tủ kính ở phòng trưng bày tầng hai.",
+   "Mười hai giờ trưa, phòng trưng bày chật kín người. Bác Hà, Cố Tiểu Vũ, Phương Lập, cùng những cụ già trong thị trấn nghe tin vội đến. Đúng giờ, con tiên hạc từ từ dang cánh, tiếng nhạc vang lên. Tinh tang tinh tang, không thiếu một nốt nào, như suối nước trong núi. Bác Hà đứng ở cuối cùng, lén lau nước mắt. Cố Tiểu Vũ giơ điện thoại lên, lần này cô đã thu được tiếng chuông trọn vẹn.",
+   "Trước khi rời Thanh Khê, Lâm Tiểu Mãn còn làm một việc nữa: cô sửa lại chiếc răng bị gãy trong bản sao. Bây giờ, hai chiếc đồng hồ đặt cạnh nhau trong tủ kính, một thật một giả, tấm biển bên dưới ghi lại câu chuyện của chúng. Ông cụ nói như vậy cũng tốt, để người đến tham quan đều biết rằng một chiếc đồng hồ đáng giá bao nhiêu không quan trọng, quan trọng là con người không được nói dối chính lòng mình.",
+   "Ở bến xe, Chu Nhiên giúp cô đặt túi đồ nghề lên xe khách: “Lần này em đến, bảo là đến làm việc. Kết quả thì sao?” Lâm Tiểu Mãn lấy từ túi áo ra một viên kẹo bạc hà, nghĩ một chút rồi lại cất vào. “Em đã sửa xong hai chiếc đồng hồ,” cô nói. Xe chuyển bánh, con sông nhỏ ngoài cửa sổ lấp lánh dưới nắng. Cô nghĩ, thời gian có thể bị chỉnh nhanh, chỉnh chậm, nhưng nó chưa bao giờ nói dối; nó chỉ luôn chờ đợi, chờ có người bằng lòng lắng nghe âm thanh thật sự."
+  ],
+  "questions": [
+   {
+    "q": "顾老先生早就知道真相，为什么没有报警？",
+    "q_vi": "Ông Cố đã biết sự thật từ lâu, vì sao không báo cảnh sát?",
+    "options": [
+     "他没有证据",
+     "他想让苏晴自己说出真相，在家里解决这件事",
+     "方立不让他报警",
+     "他怕儿子知道"
+    ],
+    "answer": 1,
+    "explain_vi": "Ông quý Tô Tình sau mười năm làm việc và biết mẹ cô bệnh, nên muốn cô tự thú nhận để giải quyết trong nhà."
+   },
+   {
+    "q": "顾老先生那天晚上本来要宣布的决定是什么？",
+    "q_vi": "Quyết định mà ông Cố định công bố tối hôm đó là gì?",
+    "options": [
+     "把钟卖给方立",
+     "让顾明远管理钟表馆",
+     "把钟表馆送给青溪镇，让大家免费参观",
+     "让苏晴离开钟表馆"
+    ],
+    "answer": 2,
+    "explain_vi": "Ông định tặng bảo tàng cho thị trấn Thanh Khê, biến thành bảo tàng miễn phí cho mọi người."
+   },
+   {
+    "q": "最后两座钟为什么并排放在展柜里？",
+    "q_vi": "Vì sao cuối cùng hai chiếc đồng hồ được đặt cạnh nhau trong tủ kính?",
+    "options": [
+     "因为真钟坏了，需要假钟来报时",
+     "因为游客分不清哪一座是真的",
+     "因为方立要买走假的那座",
+     "为了让人们知道它们的故事：钱不重要，人不能对自己的心说谎"
+    ],
+    "answer": 3,
+    "explain_vi": "Ông Cố muốn khách tham quan biết câu chuyện: giá trị chiếc đồng hồ không quan trọng, quan trọng là con người không được dối lòng."
+   }
+  ]
+ }
+]

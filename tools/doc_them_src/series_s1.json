@@ -1,0 +1,838 @@
+[
+ {
+  "id": "s1-01",
+  "kind": "series",
+  "level": 4,
+  "series": "s1",
+  "series_title": "一碗汤的距离",
+  "series_title_vi": "Khoảng cách một bát canh",
+  "chapter": 1,
+  "title": "到杭州的第一天",
+  "title_vi": "Ngày đầu tiên ở Hàng Châu",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "九月初，二十岁的阮明拉着一个大行李箱，第一次走出了杭州火车站。他是河内一所大学的学生，学了两年中文。这次学校给了他一个好机会，让他来杭州的一所大学交流一年。天气又热又湿，和河内的夏天差不多，可是周围的人说话很快，他只能听懂一半。他一边看手机上的地图，一边对自己说：“别紧张，一年很快就过去了。”",
+   "为了让大家互相帮助学习语言，学校安排中国学生和留学生住在一起。阮明找到三〇八号房间，刚要敲门，门就开了。一个又高又壮的男生站在门口，手里拿着一个篮球，大声说：“你就是新来的室友吧？我叫张磊，哈尔滨人，学经济的。欢迎欢迎！”还没等阮明回答，张磊已经把他的行李箱拉进了房间。",
+   "房间不大，两张床，两张桌子，窗外是一排高高的树。张磊那一边很乱，衣服、书和零食到处都是。他不好意思地笑了笑：“我本来打算昨天收拾的，后来跟朋友打球去了。”阮明也笑了，心里却想：这个人真有意思，跟我完全不一样。",
+   "收拾好东西，已经是晚上八点了。张磊问他：“你吃饭了没有？走，一起去食堂吧！”在越南，别人第一次请你的时候，先客气一下是礼貌，对方一般会再请一次。所以阮明笑着说：“不用了，谢谢，我不饿。”没想到张磊点点头说：“那好，我先去了。”说完就拿着篮球出了门。阮明坐在床上，肚子却叫了起来。看来，这个北方人根本不懂越南的“规矩”。",
+   "他只好一个人出门找吃的。学校后门有一条小街，街上的饭馆大部分已经关门了。走到街的最后，他看见一家小面馆还亮着灯，门上的木牌子写着“周记面馆”四个字。店里没有客人，只有一个四十多岁的男人在擦桌子。",
+   "“请问，还有面吗？”阮明小心地问。男人看了他一眼，说：“只剩下牛肉面了。”几分钟以后，一大碗热热的面放在了他面前。阮明喝了一口汤，一下子停住了。这个味道，他太熟悉了！淡淡的香味里有一点儿甜，还有烤过的姜的味道，和他奶奶做的越南米粉汤几乎完全一样。",
+   "奶奶已经离开他们三年了，他以为自己再也喝不到这样的汤了。阮明抬起头，想问老板这汤是怎么做的，可是老板已经走进了厨房。他这才注意到，墙上挂着一张发黄的老照片。照片里有一个年轻的女人，站在一家商店门口，商店的牌子上好像写着……越南文？"
+  ],
+  "translations": [
+   "Đầu tháng Chín, Nguyễn Minh, hai mươi tuổi, kéo một chiếc vali lớn, lần đầu tiên bước ra khỏi ga tàu Hàng Châu. Cậu là sinh viên một trường đại học ở Hà Nội, đã học tiếng Trung hai năm. Lần này trường cho cậu một cơ hội tốt: sang một trường đại học ở Hàng Châu trao đổi một năm. Trời vừa nóng vừa ẩm, gần giống mùa hè Hà Nội, nhưng người xung quanh nói rất nhanh, cậu chỉ nghe hiểu được một nửa. Cậu vừa xem bản đồ trên điện thoại vừa tự nhủ: “Đừng căng thẳng, một năm trôi qua nhanh thôi.”",
+   "Để mọi người giúp nhau học ngôn ngữ, nhà trường xếp sinh viên Trung Quốc ở cùng lưu học sinh. Minh tìm thấy phòng 308, vừa định gõ cửa thì cửa đã mở. Một cậu con trai vừa cao vừa vạm vỡ đứng ở cửa, tay cầm quả bóng rổ, nói to: “Cậu là bạn cùng phòng mới phải không? Tớ là Trương Lỗi, người Cáp Nhĩ Tân, học kinh tế. Chào mừng, chào mừng!” Minh chưa kịp trả lời, Trương Lỗi đã kéo vali của cậu vào phòng.",
+   "Căn phòng không lớn, hai cái giường, hai cái bàn, ngoài cửa sổ là một hàng cây cao. Phía bên Trương Lỗi rất bừa bộn, quần áo, sách vở và đồ ăn vặt ở khắp nơi. Cậu ấy ngượng ngùng cười: “Tớ định dọn từ hôm qua, rồi lại đi chơi bóng với bạn.” Minh cũng cười, nhưng trong lòng nghĩ: người này thú vị thật, hoàn toàn khác mình.",
+   "Dọn đồ xong thì đã tám giờ tối. Trương Lỗi hỏi cậu: “Cậu ăn cơm chưa? Đi, cùng xuống nhà ăn nào!” Ở Việt Nam, khi người khác mời lần đầu, khách sáo từ chối một chút là lịch sự, người ta thường sẽ mời thêm lần nữa. Vì thế Minh cười nói: “Không cần đâu, cảm ơn, tớ không đói.” Không ngờ Trương Lỗi gật đầu: “Thế thì tớ đi trước nhé.” Nói xong liền cầm bóng ra khỏi cửa. Minh ngồi trên giường, bụng lại sôi lên. Xem ra anh chàng người phương Bắc này hoàn toàn không hiểu “phép tắc” của người Việt.",
+   "Cậu đành một mình ra ngoài tìm đồ ăn. Cổng sau trường có một con phố nhỏ, phần lớn quán ăn trên phố đã đóng cửa. Đi đến cuối phố, cậu thấy một quán mì nhỏ vẫn còn sáng đèn, tấm biển gỗ trên cửa viết bốn chữ “Quán mì nhà Chu”. Trong quán không có khách, chỉ có một người đàn ông hơn bốn mươi tuổi đang lau bàn.",
+   "“Xin hỏi, còn mì không ạ?” Minh rụt rè hỏi. Người đàn ông nhìn cậu một cái rồi nói: “Chỉ còn mì bò thôi.” Vài phút sau, một bát mì lớn nóng hổi được đặt trước mặt cậu. Minh húp một ngụm nước dùng, bỗng khựng lại. Hương vị này cậu quá quen thuộc! Trong mùi thơm thoang thoảng có chút ngọt, lại có vị gừng nướng, gần như giống hệt nồi nước phở bà nội cậu nấu.",
+   "Bà nội đã rời xa gia đình ba năm rồi, cậu cứ nghĩ mình sẽ không bao giờ được ăn lại bát canh như thế nữa. Minh ngẩng đầu, muốn hỏi ông chủ nước dùng này nấu thế nào, nhưng ông đã đi vào bếp. Lúc này cậu mới để ý trên tường treo một tấm ảnh cũ đã ố vàng. Trong ảnh có một người phụ nữ trẻ đứng trước cửa một cửa hàng, tấm biển của cửa hàng hình như viết… chữ tiếng Việt?"
+  ],
+  "questions": [
+   {
+    "q": "张磊离开房间的时候，阮明为什么没有跟他一起去吃饭？",
+    "q_vi": "Khi Trương Lỗi rời phòng, vì sao Minh không đi ăn cùng cậu ấy?",
+    "options": [
+     "他真的一点儿也不饿",
+     "他按越南的习惯客气了一下，张磊却当真了",
+     "他还要收拾行李",
+     "他不喜欢学校的食堂"
+    ],
+    "answer": 1,
+    "explain_vi": "Minh từ chối lấy lệ theo phép lịch sự Việt Nam, chờ được mời lần hai, nhưng Trương Lỗi tin là thật nên đi luôn."
+   },
+   {
+    "q": "阮明喝了面馆的汤以后，为什么那么吃惊？",
+    "q_vi": "Sau khi húp nước dùng ở quán mì, vì sao Minh ngạc nhiên đến thế?",
+    "options": [
+     "汤太咸了",
+     "汤的味道跟河内的饭馆一样",
+     "老板做的面特别便宜",
+     "汤的味道跟奶奶做的米粉汤很像"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 6: vị nước dùng gần như giống hệt nước phở bà nội cậu nấu."
+   },
+   {
+    "q": "根据最后一段，我们可以知道什么？",
+    "q_vi": "Theo đoạn cuối, chúng ta có thể biết điều gì?",
+    "options": [
+     "老板很喜欢照相",
+     "阮明以前见过这张照片",
+     "这张照片可能和越南有关系",
+     "照片里的女人是老板的妻子"
+    ],
+    "answer": 2,
+    "explain_vi": "Tấm biển trong ảnh hình như viết chữ tiếng Việt, nên bức ảnh có thể liên quan đến Việt Nam. Các ý khác không có trong bài."
+   }
+  ]
+ },
+ {
+  "id": "s1-02",
+  "kind": "series",
+  "level": 4,
+  "series": "s1",
+  "series_title": "一碗汤的距离",
+  "series_title_vi": "Khoảng cách một bát canh",
+  "chapter": 2,
+  "title": "消失的照片",
+  "title_vi": "Tấm ảnh biến mất",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "第二天早上，阮明把昨晚的事告诉了张磊。张磊听完，大笑起来：“你说不饿，我当然就信了！我们东北人说话直，想要什么就说什么。以后你饿了就说饿，千万别跟我客气。”阮明也笑了。他想，原来不是张磊不礼貌，只是两个地方的习惯不一样。从那天起，他决定在张磊面前说话也直接一点儿。",
+   "中午下了课，阮明又去了周记面馆。和昨晚不同，这时候店里坐满了学生，非常热闹。一个留着长头发的女孩儿一边端面，一边大声地跟客人开玩笑。她看见阮明站在门口找座位，马上走过来，把他带到角落的一张小桌子旁边。",
+   "“你是留学生吧？第一次来？”女孩儿问。阮明说：“昨天晚上来过一次，你们的汤特别好喝。”女孩儿高兴地说：“我叫周小雨，是这家店老板的女儿，也在你们学校读书，大三，学设计的。我爸做的汤啊，附近没有人比得上！”",
+   "吃完面，客人渐渐少了。老板从厨房出来休息，阮明鼓起勇气走过去问：“叔叔，您的汤是怎么做的？味道很像我们越南的米粉汤。”老周停了一下，看了他好几秒钟，才慢慢地说：“家里传下来的方法，没什么特别的。”说完，他就转身去洗碗了。",
+   "阮明有点儿失望，又看了看墙上的照片。白天光线好，他看得更清楚了：牌子上真的是越南文，虽然有几个字母已经看不清了，但是他能认出“海防”这个地名。照片里的女人穿着越南的传统长衣，笑得很甜。他想问小雨，可是她正忙着收钱。",
+   "离开的时候，他发现门口贴着一张纸：“招聘服务员，每天晚上六点到十点，时间可以商量。”阮明停下了脚步。他的奖学金只够付房租和吃饭，要是能打工，就可以多存一点儿钱。而且，他心里还有一个更重要的原因：他想知道这碗汤和那张照片背后的故事。",
+   "他走回店里，对小雨说：“我想在这儿打工，可以吗？”小雨还没开口，老周就在厨房里回答：“不要外国人。”声音不大，但是很坚决。小雨不高兴地说：“爸，你昨天还说找不到人呢！他中文说得这么好，又能吃苦，就让他试试吧。”老周没有再说话，过了很久，才说了一句：“那就先试一个星期。”",
+   "阮明高兴极了，连声说谢谢。可是，当他第二天晚上六点准时来上班的时候，他吃惊地发现，墙上那张老照片不见了。原来挂照片的地方，只留下了一个颜色比周围浅一点儿的方块。"
+  ],
+  "translations": [
+   "Sáng hôm sau, Minh kể cho Trương Lỗi chuyện tối qua. Nghe xong, Trương Lỗi cười phá lên: “Cậu bảo không đói thì tất nhiên tớ tin rồi! Dân Đông Bắc bọn tớ nói thẳng, muốn gì thì nói nấy. Sau này đói thì cứ nói là đói, nhất định đừng khách sáo với tớ.” Minh cũng cười. Cậu nghĩ, hóa ra không phải Trương Lỗi bất lịch sự, chỉ là thói quen hai nơi khác nhau. Từ hôm đó, cậu quyết định khi nói chuyện với Trương Lỗi cũng sẽ thẳng thắn hơn một chút.",
+   "Trưa tan học, Minh lại đến quán mì nhà Chu. Khác với tối qua, lúc này quán chật kín sinh viên, rất náo nhiệt. Một cô gái tóc dài vừa bưng mì vừa nói đùa rôm rả với khách. Thấy Minh đứng ở cửa tìm chỗ, cô lập tức đi tới, dẫn cậu đến một chiếc bàn nhỏ trong góc.",
+   "“Cậu là lưu học sinh à? Lần đầu đến hả?” cô gái hỏi. Minh nói: “Tối qua tớ đến một lần rồi, nước dùng ở đây ngon lắm.” Cô gái vui vẻ nói: “Tớ là Chu Tiểu Vũ, con gái ông chủ quán, cũng học ở trường cậu, năm ba, ngành thiết kế. Nước dùng bố tớ nấu ấy à, quanh đây không ai bì được!”",
+   "Ăn mì xong, khách thưa dần. Ông chủ từ trong bếp ra nghỉ, Minh lấy hết can đảm bước tới hỏi: “Chú ơi, nước dùng của chú nấu thế nào ạ? Vị rất giống nước phở Việt Nam của cháu.” Ông Chu sững lại, nhìn cậu mấy giây rồi mới chậm rãi nói: “Cách nấu gia truyền thôi, chẳng có gì đặc biệt.” Nói xong, ông quay người đi rửa bát.",
+   "Minh hơi thất vọng, lại nhìn tấm ảnh trên tường. Ban ngày ánh sáng tốt, cậu nhìn rõ hơn: trên biển đúng là chữ tiếng Việt, tuy có vài chữ cái đã mờ, nhưng cậu nhận ra địa danh “Hải Phòng”. Người phụ nữ trong ảnh mặc áo dài truyền thống của Việt Nam, cười rất tươi. Cậu muốn hỏi Tiểu Vũ, nhưng cô đang bận thu tiền.",
+   "Lúc ra về, cậu thấy cửa dán một tờ giấy: “Tuyển nhân viên phục vụ, mỗi tối từ sáu đến mười giờ, thời gian có thể thương lượng.” Minh dừng bước. Học bổng của cậu chỉ đủ trả tiền phòng và tiền ăn, nếu được đi làm thêm thì có thể để dành thêm chút tiền. Hơn nữa, trong lòng cậu còn một lý do quan trọng hơn: cậu muốn biết câu chuyện phía sau bát canh và tấm ảnh kia.",
+   "Cậu quay vào quán, nói với Tiểu Vũ: “Tớ muốn làm thêm ở đây, được không?” Tiểu Vũ chưa kịp mở miệng, ông Chu đã trả lời từ trong bếp: “Không nhận người nước ngoài.” Giọng không to nhưng rất dứt khoát. Tiểu Vũ không vui nói: “Bố, hôm qua bố còn bảo không tìm được người mà! Cậu ấy nói tiếng Trung giỏi thế, lại chịu khó, bố cứ cho cậu ấy thử đi.” Ông Chu không nói gì nữa, rất lâu sau mới buông một câu: “Vậy thử một tuần trước đã.”",
+   "Minh mừng rỡ, rối rít cảm ơn. Nhưng khi tối hôm sau cậu đến làm đúng sáu giờ, cậu ngạc nhiên phát hiện tấm ảnh cũ trên tường đã không còn nữa. Chỗ treo ảnh trước kia chỉ còn lại một ô vuông màu nhạt hơn xung quanh một chút."
+  ],
+  "questions": [
+   {
+    "q": "听了昨晚的事，张磊希望阮明以后怎么做？",
+    "q_vi": "Nghe chuyện tối qua, Trương Lỗi mong sau này Minh làm thế nào?",
+    "options": [
+     "想吃什么就直接说",
+     "每天跟他一起去食堂",
+     "学习东北人的口音",
+     "晚上早点儿回宿舍"
+    ],
+    "answer": 0,
+    "explain_vi": "Trương Lỗi nói: đói thì cứ nói là đói, đừng khách sáo với tớ."
+   },
+   {
+    "q": "阮明想去面馆打工，最重要的原因是什么？",
+    "q_vi": "Lý do quan trọng nhất khiến Minh muốn làm thêm ở quán mì là gì?",
+    "options": [
+     "面馆离学校很近",
+     "他想认识更多中国朋友",
+     "他想知道汤和照片背后的故事",
+     "老板给的工资很高"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 6: ngoài chuyện tiền, “còn một lý do quan trọng hơn” là muốn biết câu chuyện phía sau bát canh và tấm ảnh."
+   },
+   {
+    "q": "从这一章看，老周对阮明的态度怎么样？",
+    "q_vi": "Qua chương này, thái độ của ông Chu với Minh thế nào?",
+    "options": [
+     "非常热情，很快就成了朋友",
+     "很生气，把他赶出了面馆",
+     "完全不在乎他问什么",
+     "有点儿冷淡，好像在回避什么"
+    ],
+    "answer": 3,
+    "explain_vi": "Ông Chu trả lời qua loa, lúc đầu không muốn nhận người nước ngoài, rồi gỡ tấm ảnh xuống, như đang né tránh điều gì đó."
+   }
+  ]
+ },
+ {
+  "id": "s1-03",
+  "kind": "series",
+  "level": 4,
+  "series": "s1",
+  "series_title": "一碗汤的距离",
+  "series_title_vi": "Khoảng cách một bát canh",
+  "chapter": 3,
+  "title": "最后一包咖啡",
+  "title_vi": "Gói cà phê cuối cùng",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "在面馆打工的第一个星期，阮明每天晚上十点多才回到宿舍，累得连话都不想说。可是，宿舍里常常很热闹：张磊和几个朋友一边玩游戏，一边大声地喊。阮明躺在床上，用被子把头包起来，心里很烦，但是一句话也没说。在他看来，直接让别人安静，是一件很不礼貌的事。",
+   "让他更不舒服的，是张磊用东西从来不问。阮明的雨伞、洗发水，甚至毛巾，张磊拿起来就用。有一次，阮明放在桌子上的饼干也少了一半。他看着空空的盒子，什么也没说，只是从那天起，跟张磊说话越来越少了。",
+   "张磊好像也感觉到了。有一天他问：“阮明，你最近怎么了？是不是打工太累了？”阮明低着头说：“没事。”张磊摸了摸头，觉得很奇怪，又说不出哪里奇怪。",
+   "星期五晚上，事情终于发生了。阮明下班回来，打开柜子，发现妈妈从越南给他带的咖啡只剩下一个空袋子。那是最后一包，他一直舍不得喝，打算想家的时候才喝一点儿。这时候，张磊正拿着一杯咖啡，高兴地说：“你这个咖啡太好喝了！我昨天写报告写到半夜，全靠它了。”",
+   "阮明再也忍不住了。“那是我妈妈给我的！”他的声音很大，连他自己都吓了一跳，“你为什么用别人的东西从来不问？雨伞、毛巾、饼干，现在连咖啡也……”说着说着，他的眼睛红了。",
+   "张磊一下子不知道说什么了。过了一会儿，他放下杯子，认真地说：“对不起，我真的不知道这对你这么重要。在我们东北，室友就像兄弟，我的东西就是你的，你的东西就是我的。你看，我的零食一直放在桌子上，就是想让你随便吃。可是你一次也没吃过，我还以为你不喜欢我呢。”",
+   "阮明这才发现，桌子上那一大堆零食，原来是给他准备的。两个人互相看着，忽然都笑了。那天晚上，他们聊到了半夜。阮明说，在越南，不高兴的时候，很多人不会直接说出来；张磊说，在东北，不说出来，别人怎么会知道呢？最后他们约好：以后有什么不满意，就当天说清楚。",
+   "快睡觉的时候，张磊突然问：“对了，你在哪家面馆打工？”“周记面馆。”“周记？”张磊坐了起来，“我听一个学长说过，那家店的老板很奇怪。每年十月的同一天，他都会关门三天，谁也不知道他去了哪儿。”阮明看了看手机上的日历，今天是九月二十八号。"
+  ],
+  "translations": [
+   "Tuần đầu tiên làm thêm ở quán mì, tối nào Minh cũng hơn mười giờ mới về ký túc xá, mệt đến mức chẳng muốn nói câu nào. Thế nhưng trong phòng thường rất ồn: Trương Lỗi và mấy người bạn vừa chơi game vừa la hét ầm ĩ. Minh nằm trên giường, lấy chăn trùm tai, trong lòng rất bực nhưng không nói một lời. Theo cậu, bảo thẳng người khác im lặng là một việc rất bất lịch sự.",
+   "Điều khiến cậu khó chịu hơn là Trương Lỗi dùng đồ chẳng bao giờ hỏi. Ô, dầu gội, thậm chí cả khăn mặt của Minh, Trương Lỗi cứ cầm lên là dùng. Có lần, hộp bánh quy Minh để trên bàn cũng vơi mất một nửa. Cậu nhìn cái hộp trống trơn, không nói gì, chỉ là từ hôm đó, cậu nói chuyện với Trương Lỗi ngày càng ít.",
+   "Trương Lỗi hình như cũng cảm nhận được. Một hôm cậu ấy hỏi: “Minh, dạo này cậu sao thế? Đi làm thêm mệt quá à?” Minh cúi đầu nói: “Không sao.” Trương Lỗi gãi đầu, thấy rất lạ mà không nói ra được lạ ở đâu.",
+   "Tối thứ Sáu, chuyện cuối cùng cũng xảy ra. Minh tan làm về, mở tủ ra thì thấy cà phê mẹ mang từ Việt Nam sang cho cậu chỉ còn lại một cái túi rỗng. Đó là gói cuối cùng, cậu vẫn tiếc không dám uống, định những lúc nhớ nhà mới uống một chút. Đúng lúc đó, Trương Lỗi đang cầm một cốc cà phê, vui vẻ nói: “Cà phê của cậu ngon quá trời! Hôm qua tớ thức đêm viết báo cáo, toàn nhờ nó cả.”",
+   "Minh không nhịn được nữa. “Đó là mẹ tớ cho tớ!” Giọng cậu rất to, đến chính cậu cũng giật mình, “Sao cậu dùng đồ của người khác chẳng bao giờ hỏi vậy? Ô, khăn mặt, bánh quy, giờ đến cả cà phê cũng…” Nói mãi, mắt cậu đỏ hoe.",
+   "Trương Lỗi lập tức sững người. Một lúc sau, cậu ấy đặt cốc xuống, nghiêm túc nói: “Xin lỗi, tớ thật sự không biết cái này quan trọng với cậu đến vậy. Ở Đông Bắc bọn tớ, bạn cùng phòng như anh em, đồ của tớ là của cậu, đồ của cậu là của tớ. Cậu xem, đồ ăn vặt của tớ lúc nào cũng để trên bàn, chính là muốn cậu ăn thoải mái. Thế mà cậu chưa ăn lần nào, tớ còn tưởng cậu không thích tớ cơ.”",
+   "Lúc này Minh mới nhận ra đống đồ ăn vặt to trên bàn hóa ra là chuẩn bị cho mình. Hai người nhìn nhau, bỗng cùng bật cười. Tối hôm đó họ nói chuyện đến nửa đêm. Minh nói, ở Việt Nam, khi không vui, nhiều người sẽ không nói thẳng ra; Trương Lỗi nói, ở Đông Bắc, không nói ra thì người khác làm sao biết được? Cuối cùng họ hẹn nhau: sau này có gì không hài lòng thì nói rõ ngay trong ngày.",
+   "Lúc sắp ngủ, Trương Lỗi bỗng hỏi: “À này, cậu làm thêm ở quán mì nào thế?” “Quán mì nhà Chu.” “Nhà Chu á?” Trương Lỗi ngồi bật dậy, “Tớ từng nghe một anh khóa trên kể, ông chủ quán đó lạ lắm. Năm nào cũng vào cùng một ngày tháng Mười, ông ấy đóng cửa ba ngày, chẳng ai biết ông ấy đi đâu.” Minh nhìn lịch trên điện thoại, hôm nay là ngày hai mươi tám tháng Chín."
+  ],
+  "questions": [
+   {
+    "q": "开始的时候，阮明不高兴为什么不直接告诉张磊？",
+    "q_vi": "Lúc đầu, vì sao Minh không vui mà không nói thẳng với Trương Lỗi?",
+    "options": [
+     "他觉得直接说出来不礼貌",
+     "他怕张磊打他",
+     "他中文说得不好",
+     "他想换一个宿舍"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 1: theo Minh, bảo thẳng người khác là việc rất bất lịch sự."
+   },
+   {
+    "q": "张磊为什么把零食放在桌子上？",
+    "q_vi": "Vì sao Trương Lỗi để đồ ăn vặt trên bàn?",
+    "options": [
+     "他的柜子太小了",
+     "他想卖给同学",
+     "他想让阮明随便吃",
+     "他忘了收起来"
+    ],
+    "answer": 2,
+    "explain_vi": "Trương Lỗi nói: đồ ăn vặt để trên bàn chính là muốn Minh ăn thoải mái."
+   },
+   {
+    "q": "这一章最后，为什么阮明要看手机上的日历？",
+    "q_vi": "Cuối chương, vì sao Minh lại xem lịch trên điện thoại?",
+    "options": [
+     "他想知道哪天发工资",
+     "他突然想起明天有考试",
+     "他要给妈妈打电话",
+     "他想到老周关门的日子快到了"
+    ],
+    "answer": 3,
+    "explain_vi": "Nghe nói ông Chu năm nào cũng đóng cửa ba ngày vào tháng Mười, mà hôm nay đã 28/9, tức là ngày đó sắp đến."
+   }
+  ]
+ },
+ {
+  "id": "s1-04",
+  "kind": "series",
+  "level": 4,
+  "series": "s1",
+  "series_title": "一碗汤的距离",
+  "series_title_vi": "Khoảng cách một bát canh",
+  "chapter": 4,
+  "title": "厨房里的歌声",
+  "title_vi": "Tiếng hát trong bếp",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "打工比阮明想的难多了。第一天，他把客人点的“不要辣”听成了“多要辣”，结果那位客人一边吃一边喝了三瓶水。第二天，他端面的时候太着急，把汤倒在了自己的手上。老周看见了，什么也没说，只是从厨房拿出一支药膏放在桌子上，然后又回去切菜了。",
+   "慢慢地，阮明发现，老周虽然不爱说话，但是心很细。下雨天，他会给没带伞的学生借伞；有的学生钱不够，他就说“下次再给”。他对阮明也很严格：桌子要擦三遍，碗要摆得整整齐齐，客人进门一定要问好。一个星期以后，老周看着干干净净的店，第一次对他点了点头：“明天继续来吧。”",
+   "这天晚上，客人都走了，小雨也回宿舍了。阮明在店外面打扫，忽然听见厨房里传来轻轻的歌声。那声音很低，唱得很慢，好像是一首让孩子睡觉时唱的歌。阮明手里的扫把一下子停住了，因为那不是中文歌，而是一首越南的老歌。他小时候，奶奶每天晚上都在他的床边唱这首歌。",
+   "他悄悄走到厨房门口。老周背对着他，一边洗锅，一边轻轻地唱，虽然发音不太准，但是每一句都唱得很完整。阮明忍不住用越南语接着唱了下一句。歌声马上停了。老周转过身来，脸色很难看：“你听到什么了？”",
+   "“叔叔，这是越南的歌，您怎么会唱？”阮明问。老周把手上的水擦干，低声说：“听别人唱过，随便唱唱。很晚了，你回去吧。”说完，他就关上了厨房的门。阮明站在门外，心里的问题越来越多：一个不会说越南话的中国人，为什么会唱一首只有越南奶奶们才会唱的歌？",
+   "十月一号是国庆节，学校放假七天，面馆的生意特别好。可是到了十月四号早上，店门口贴了一张纸，上面写着：“有事休息三天，请大家原谅。”阮明给小雨发信息，问她爸爸去哪儿了。过了很久，小雨才回复：“每年这三天，他都一个人去海边，坐一整天，看着大海，什么也不做。”",
+   "“为什么是海边？”阮明问。这一次，小雨回复得很快，好像她也想找个人说说：“因为今天是我奶奶去世十年的日子。我爸说，奶奶是从大海的那一边来的。”阮明看着手机，看了很久。大海的那一边……难道是越南？"
+  ],
+  "translations": [
+   "Làm thêm khó hơn Minh tưởng nhiều. Ngày đầu tiên, cậu nghe nhầm “không cay” thành “thêm cay”, kết quả vị khách ấy vừa ăn vừa uống hết ba chai nước. Ngày thứ hai, cậu bưng mì vội quá, làm đổ nước dùng lên tay mình. Ông Chu nhìn thấy, không nói gì, chỉ lấy từ trong bếp ra một tuýp thuốc mỡ đặt lên bàn, rồi lại quay vào thái rau.",
+   "Dần dần, Minh phát hiện ông Chu tuy ít nói nhưng rất tinh tế. Ngày mưa, ông cho sinh viên không mang ô mượn ô; có sinh viên không đủ tiền, ông bảo “lần sau trả cũng được”. Với Minh ông cũng rất nghiêm khắc: bàn phải lau ba lượt, bát phải xếp ngay ngắn, khách vào cửa nhất định phải chào. Một tuần sau, ông Chu nhìn quán sạch sẽ tinh tươm, lần đầu tiên gật đầu với cậu: “Mai cứ tiếp tục đến nhé.”",
+   "Tối hôm ấy, khách đã về hết, Tiểu Vũ cũng đã về ký túc xá. Minh đang quét dọn bên ngoài quán thì chợt nghe tiếng hát khe khẽ vọng ra từ bếp. Giọng hát rất trầm, hát rất chậm, giống như một bài ru trẻ con ngủ. Cây chổi trong tay Minh bỗng khựng lại, vì đó không phải bài hát tiếng Trung, mà là một bài hát cũ của Việt Nam. Hồi nhỏ, tối nào bà nội cũng ngồi bên giường hát bài này cho cậu nghe.",
+   "Cậu khẽ bước đến cửa bếp. Ông Chu quay lưng về phía cậu, vừa rửa nồi vừa khẽ hát, tuy phát âm không chuẩn lắm nhưng câu nào cũng hát trọn vẹn. Minh không kìm được, hát tiếp câu sau bằng tiếng Việt. Tiếng hát lập tức tắt. Ông Chu quay người lại, sắc mặt rất khó coi: “Cậu nghe thấy gì rồi?”",
+   "“Chú ơi, đây là bài hát Việt Nam, sao chú lại biết hát ạ?” Minh hỏi. Ông Chu lau khô tay, nói nhỏ: “Nghe người ta hát thôi, ngâm nga vu vơ ấy mà. Muộn rồi, cậu về đi.” Nói xong, ông đóng cửa bếp lại. Minh đứng ngoài cửa, những câu hỏi trong lòng ngày càng nhiều: một người Trung Quốc không biết nói tiếng Việt, tại sao lại biết hát một bài mà chỉ các bà các mẹ Việt Nam mới biết?",
+   "Ngày mồng một tháng Mười là Quốc khánh, trường nghỉ bảy ngày, quán mì đông khách đặc biệt. Nhưng đến sáng mồng bốn tháng Mười, trước cửa quán dán một tờ giấy ghi: “Có việc nghỉ ba ngày, mong mọi người thông cảm.” Minh nhắn tin cho Tiểu Vũ, hỏi bố cô đi đâu. Rất lâu sau Tiểu Vũ mới trả lời: “Năm nào ba ngày này bố tớ cũng đi ra biển một mình, ngồi suốt cả ngày nhìn biển, không làm gì cả.”",
+   "“Sao lại là biển?” Minh hỏi. Lần này Tiểu Vũ trả lời rất nhanh, như thể cô cũng muốn tìm ai đó để kể: “Vì hôm nay là tròn mười năm ngày bà nội tớ mất. Bố tớ nói, bà nội đến từ phía bên kia biển.” Minh nhìn chằm chằm vào điện thoại rất lâu. Phía bên kia biển… lẽ nào là Việt Nam?"
+  ],
+  "questions": [
+   {
+    "q": "从第二段可以看出，老周是一个什么样的人？",
+    "q_vi": "Từ đoạn hai có thể thấy ông Chu là người thế nào?",
+    "options": [
+     "话很多，喜欢开玩笑",
+     "不爱说话，但是关心别人",
+     "对谁都很冷淡",
+     "只关心面馆能不能赚钱"
+    ],
+    "answer": 1,
+    "explain_vi": "Ông Chu ít nói nhưng cho sinh viên mượn ô, cho trả tiền sau, đưa thuốc cho Minh: rất quan tâm người khác."
+   },
+   {
+    "q": "阮明为什么觉得厨房里的歌声很奇怪？",
+    "q_vi": "Vì sao Minh thấy tiếng hát trong bếp rất lạ?",
+    "options": [
+     "老周唱得非常好听",
+     "那是一首很流行的中文歌",
+     "那是他奶奶以前常唱的越南老歌",
+     "厨房里明明没有人"
+    ],
+    "answer": 2,
+    "explain_vi": "Đó là bài hát ru cũ của Việt Nam mà bà nội cậu từng hát, trong khi ông Chu không biết tiếng Việt."
+   },
+   {
+    "q": "老周每年十月都关门三天，可能是因为什么？",
+    "q_vi": "Hằng năm ông Chu đóng cửa ba ngày vào tháng Mười, có thể vì sao?",
+    "options": [
+     "国庆节太累了，想休息",
+     "要去越南买做汤的东西",
+     "要回老家看朋友",
+     "那几天是他母亲去世的日子，他很想念她"
+    ],
+    "answer": 3,
+    "explain_vi": "Tiểu Vũ nói hôm đó là ngày giỗ thứ mười của bà nội; ông Chu ra biển ngồi nhìn biển, có lẽ vì nhớ mẹ."
+   }
+  ]
+ },
+ {
+  "id": "s1-05",
+  "kind": "series",
+  "level": 4,
+  "series": "s1",
+  "series_title": "一碗汤的距离",
+  "series_title_vi": "Khoảng cách một bát canh",
+  "chapter": 5,
+  "title": "林老师的作业",
+  "title_vi": "Bài tập của cô Lâm",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "国庆节以后，写作课的林老师给留学生们留了一个特别的作业。林老师四十多岁，戴着一副黑框眼镜，上课的时候非常严格，可是同学们都很喜欢她。她在黑板上写下了几个大字：“我身边的一个中国人”。",
+   "“这次的作业，不能在网上找材料，”林老师说，“你们要去采访一个真实的人，听他讲自己的故事，然后写成一篇文章。学期结束的时候，每个人要在班上介绍。记住，最好的故事，往往不在书里，而在普通人的生活里。”",
+   "同学们开始讨论。有人说要采访宿舍的阿姨，有人说要采访出租车司机。阮明的脑子里只出现了一个人：老周。他想，这也许是一个好机会，可以正式地问老周一些问题，而且有了老师的作业，老周说不定会愿意回答。",
+   "十月七号，面馆重新开门了。老周的脸被海风吹得有点儿黑，比以前更沉默了。晚上快关门的时候，阮明擦完最后一张桌子，鼓起勇气说：“叔叔，我们老师让我们采访一个中国人，写他的故事。我想采访您，可以吗？我听小雨说，您的妈妈是从海的那边来的……”",
+   "话还没说完，老周手里的勺子“当”的一声掉在了地上。他的脸一下子变红了：“小雨告诉你的？我家的事跟你没有关系！你到底是来打工的，还是来调查我的？”阮明从来没见过他这么生气，紧张得说不出话来。老周转过身，冷冷地说：“明天你不用来了。”",
+   "阮明走出面馆，外面正下着小雨。他没有打伞，一个人慢慢地走回了宿舍。张磊看见他全身都湿了，吓了一跳，赶紧给他拿毛巾，又倒了一杯热水。听完阮明的话，张磊想了想，说：“我觉得老周不是真的讨厌你。一个人发这么大的火，常常是因为你说到了他最疼的地方。”",
+   "“可是他已经不让我去了。”阮明难过地说。张磊拍拍他的肩膀：“我们东北人有句话，叫‘没有过不去的山’。先睡一觉，明天再想办法。”",
+   "第二天早上，阮明还没起床，手机就响了。是小雨发来的信息：“对不起，昨天的事是我不好，我不该把奶奶的事告诉你，却没告诉我爸。不过，我有一个请求：下个星期六是我爸四十五岁的生日，你能帮我一起给他准备一个惊喜吗？其实，他挺喜欢你的。”"
+  ],
+  "translations": [
+   "Sau Quốc khánh, cô Lâm dạy môn viết giao cho các lưu học sinh một bài tập đặc biệt. Cô Lâm ngoài bốn mươi tuổi, đeo cặp kính gọng đen, lên lớp rất nghiêm khắc, nhưng sinh viên đều rất quý cô. Cô viết lên bảng mấy chữ lớn: “Một người Trung Quốc bên cạnh tôi”.",
+   "“Bài tập lần này không được tìm tài liệu trên mạng,” cô Lâm nói, “các em phải phỏng vấn một người có thật, nghe họ kể câu chuyện của mình, rồi viết thành một bài văn. Cuối học kỳ, mỗi người sẽ giới thiệu trước lớp. Hãy nhớ, những câu chuyện hay nhất thường không nằm trong sách, mà nằm trong cuộc sống của những người bình thường.”",
+   "Cả lớp bắt đầu bàn tán. Có người nói sẽ phỏng vấn cô quản lý ký túc xá, có người nói sẽ phỏng vấn tài xế taxi. Trong đầu Minh chỉ hiện lên một người: ông Chu. Cậu nghĩ, đây có lẽ là một cơ hội tốt để hỏi ông Chu vài câu một cách đàng hoàng, hơn nữa có bài tập của cô giáo, biết đâu ông Chu sẽ chịu trả lời.",
+   "Ngày mồng bảy tháng Mười, quán mì mở cửa trở lại. Mặt ông Chu bị gió biển thổi hơi sạm đi, trầm lặng hơn trước. Tối gần giờ đóng cửa, Minh lau xong chiếc bàn cuối cùng, lấy hết can đảm nói: “Chú ơi, cô giáo bảo chúng cháu phỏng vấn một người Trung Quốc, viết về câu chuyện của người đó. Cháu muốn phỏng vấn chú, được không ạ? Cháu nghe Tiểu Vũ nói mẹ chú đến từ phía bên kia biển…”",
+   "Chưa nói hết câu, chiếc muôi trong tay ông Chu rơi “keng” xuống đất. Mặt ông lập tức đỏ bừng: “Tiểu Vũ nói với cậu à? Chuyện nhà tôi không liên quan đến cậu! Rốt cuộc cậu đến đây làm thêm hay đến điều tra tôi?” Minh chưa bao giờ thấy ông giận đến thế, căng thẳng đến mức không nói nên lời. Ông Chu quay người đi, lạnh lùng nói: “Mai cậu không cần đến nữa.”",
+   "Minh bước ra khỏi quán mì, bên ngoài đang mưa lất phất. Cậu không che ô, một mình chầm chậm đi bộ về ký túc xá. Trương Lỗi thấy cậu ướt sũng cả người, giật mình, vội lấy khăn cho cậu rồi rót một cốc nước nóng. Nghe Minh kể xong, Trương Lỗi nghĩ một lúc rồi nói: “Tớ thấy ông Chu không thật sự ghét cậu đâu. Một người nổi giận lớn như vậy, thường là vì cậu đã chạm vào chỗ đau nhất của người ta.”",
+   "“Nhưng ông ấy không cho tớ đến nữa rồi.” Minh buồn bã nói. Trương Lỗi vỗ vai cậu: “Người Đông Bắc bọn tớ có câu: ‘Không có ngọn núi nào không vượt qua được.’ Ngủ một giấc đã, mai rồi tính tiếp.”",
+   "Sáng hôm sau, Minh còn chưa dậy thì điện thoại đã reo. Là tin nhắn của Tiểu Vũ: “Xin lỗi cậu, chuyện hôm qua là lỗi của tớ, tớ không nên kể chuyện bà nội cho cậu mà lại không nói với bố. Nhưng tớ có một lời nhờ: thứ Bảy tuần sau là sinh nhật lần thứ bốn mươi lăm của bố tớ, cậu giúp tớ chuẩn bị một bất ngờ cho bố được không? Thật ra, bố tớ quý cậu lắm.”"
+  ],
+  "questions": [
+   {
+    "q": "林老师的作业有什么要求？",
+    "q_vi": "Bài tập của cô Lâm có yêu cầu gì?",
+    "options": [
+     "在网上找一个名人的故事",
+     "写一篇介绍自己国家的文章",
+     "采访一个真实的人，写他的故事",
+     "和中国同学一起表演节目"
+    ],
+    "answer": 2,
+    "explain_vi": "Cô Lâm yêu cầu phỏng vấn một người có thật, nghe họ kể chuyện rồi viết thành bài, không được lấy tài liệu trên mạng."
+   },
+   {
+    "q": "张磊认为老周为什么发那么大的火？",
+    "q_vi": "Trương Lỗi cho rằng vì sao ông Chu nổi giận lớn như vậy?",
+    "options": [
+     "阮明说到了他心里最疼的地方",
+     "阮明工作的时候不认真",
+     "老周本来就讨厌外国人",
+     "那天面馆的生意不好"
+    ],
+    "answer": 0,
+    "explain_vi": "Trương Lỗi nói: nổi giận lớn thường là vì bị chạm vào chỗ đau nhất."
+   },
+   {
+    "q": "小雨给阮明发信息，主要是为了什么？",
+    "q_vi": "Tiểu Vũ nhắn tin cho Minh chủ yếu để làm gì?",
+    "options": [
+     "告诉他明天不用上班",
+     "道歉，并请他帮忙准备爸爸的生日",
+     "问他作业写完了没有",
+     "让他别再问奶奶的事"
+    ],
+    "answer": 1,
+    "explain_vi": "Tiểu Vũ xin lỗi và nhờ Minh giúp chuẩn bị bất ngờ cho sinh nhật 45 tuổi của bố."
+   }
+  ]
+ },
+ {
+  "id": "s1-06",
+  "kind": "series",
+  "level": 4,
+  "series": "s1",
+  "series_title": "一碗汤的距离",
+  "series_title_vi": "Khoảng cách một bát canh",
+  "chapter": 6,
+  "title": "送错的礼物",
+  "title_vi": "Món quà tặng nhầm",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "小雨的计划是这样的：星期六下午面馆不开门，她请几个老邻居和老客人来，大家一起给爸爸过生日。她负责买蛋糕和打扫店里，阮明负责想一份特别的礼物。阮明想了好几天，终于想到了：面馆墙上的那个旧钟早就坏了，老周每次煮汤都要看手机上的时间，很不方便。送一个新钟，不是又好看又有用吗？",
+   "他跑了好几家商店，最后买了一个木头做的圆钟，样子很简单，声音也很安静。他还请店员用红纸包得漂漂亮亮的。张磊那天正好有篮球比赛，没看见这份礼物，否则后面的事也许就不会发生了。",
+   "星期六下午，老周被小雨“骗”到店里，一推门，大家一起喊：“生日快乐！”老周站在门口，半天没说出话来，眼睛却有点儿湿了。他马上走进厨房，给每个人煮了一碗长寿面。吃完面，大家开始送礼物。轮到阮明的时候，他双手把礼物递给老周，认真地说：“叔叔，祝您身体健康，生意越来越好！”",
+   "老周打开红纸，看见里面的钟，整个店里一下子安静了。坐在旁边的王阿姨“哎呀”了一声，小声说：“孩子，送什么都行，可不能送钟啊！”阮明完全不明白，看看王阿姨，又看看小雨。小雨赶紧把他拉到一边，解释说：“‘送钟’和‘送终’的发音一样。‘送终’的意思是……陪老人走完生命的最后一段。所以，中国人一般不送别人钟，特别是在生日的时候。”",
+   "阮明的脸一下子红到了耳朵。他拿起钟，着急地说：“对不起，对不起，我真的不知道！我现在就去换……”没想到，老周伸出手，把钟拿了回去。接着，大家听到了一个很少听到的声音：老周哈哈大笑起来。",
+   "“别换了，”他一边笑一边说，“四十多年前，我妈刚从越南来中国的时候，也给邻居送过一个钟。那时候她中文说得不好，人家脸都绿了，她还以为人家不喜欢那个颜色呢。”说到这儿，老周的声音慢慢低了下来，“她是海防人，二十岁就来到这里，一辈子再也没回去过。”",
+   "店里没有人说话。过了一会儿，老周把钟挂在了墙上原来那个坏钟的位置，拍了拍阮明的肩膀：“上次是我不好，不该冲你发火。明天晚上六点来上班，别迟到。”阮明用力地点头，鼻子酸酸的。",
+   "大家走了以后，小雨一边收拾桌子，一边小声地对阮明说：“我爸今天说的，比过去十年说的都多。其实，我家还有一个铁盒子，是奶奶留下来的。我爸从来不让任何人碰，可是我知道他把它放在哪儿。”"
+  ],
+  "translations": [
+   "Kế hoạch của Tiểu Vũ là thế này: chiều thứ Bảy quán mì không bán, cô mời mấy người hàng xóm cũ và khách quen đến, mọi người cùng tổ chức sinh nhật cho bố. Cô lo mua bánh kem và dọn dẹp quán, Minh lo nghĩ một món quà đặc biệt. Minh nghĩ mấy ngày, cuối cùng cũng nghĩ ra: chiếc đồng hồ cũ trên tường quán mì đã hỏng từ lâu, lần nào nấu nước dùng ông Chu cũng phải xem giờ trên điện thoại, rất bất tiện. Tặng một chiếc đồng hồ mới, chẳng phải vừa đẹp vừa có ích sao?",
+   "Cậu chạy mấy cửa hàng, cuối cùng mua một chiếc đồng hồ tròn bằng gỗ, kiểu dáng đơn giản, tiếng kêu cũng rất êm. Cậu còn nhờ nhân viên gói bằng giấy đỏ thật đẹp. Hôm đó Trương Lỗi vừa hay có trận đấu bóng rổ, không nhìn thấy món quà này, nếu không thì chuyện phía sau có lẽ đã không xảy ra.",
+   "Chiều thứ Bảy, ông Chu bị Tiểu Vũ “lừa” đến quán, vừa đẩy cửa, mọi người cùng hô: “Chúc mừng sinh nhật!” Ông Chu đứng ở cửa, hồi lâu không nói được lời nào, nhưng mắt hơi ướt. Ông lập tức vào bếp, nấu cho mỗi người một bát mì trường thọ. Ăn mì xong, mọi người bắt đầu tặng quà. Đến lượt Minh, cậu đưa món quà bằng hai tay cho ông Chu, nghiêm túc nói: “Chú ơi, chúc chú mạnh khỏe, làm ăn ngày càng phát đạt!”",
+   "Ông Chu mở lớp giấy đỏ, nhìn thấy chiếc đồng hồ bên trong, cả quán lập tức im phăng phắc. Dì Vương ngồi bên cạnh “ối” một tiếng, nói nhỏ: “Cháu ơi, tặng gì cũng được, chứ không được tặng đồng hồ đâu!” Minh hoàn toàn không hiểu, nhìn dì Vương rồi lại nhìn Tiểu Vũ. Tiểu Vũ vội kéo cậu ra một bên, giải thích: “‘Tặng đồng hồ’ (sòng zhōng) phát âm giống hệt ‘tống chung’. ‘Tống chung’ nghĩa là… ở bên người già đi hết chặng cuối cùng của cuộc đời. Vì vậy người Trung Quốc thường không tặng đồng hồ cho người khác, nhất là vào dịp sinh nhật.”",
+   "Mặt Minh đỏ bừng đến tận mang tai. Cậu cầm chiếc đồng hồ lên, cuống quýt nói: “Cháu xin lỗi, xin lỗi, cháu thật sự không biết! Cháu đi đổi ngay đây…” Không ngờ ông Chu đưa tay ra, lấy lại chiếc đồng hồ. Tiếp đó, mọi người nghe thấy một âm thanh rất hiếm khi được nghe: ông Chu cười ha hả.",
+   "“Đừng đổi,” ông vừa cười vừa nói, “hơn bốn mươi năm trước, khi mẹ tôi mới từ Việt Nam sang Trung Quốc, bà cũng từng tặng hàng xóm một chiếc đồng hồ. Hồi đó tiếng Trung của bà còn kém, mặt người ta xanh mét, bà còn tưởng người ta không thích màu đó cơ.” Nói đến đây, giọng ông Chu chậm rãi trầm xuống, “Bà là người Hải Phòng, hai mươi tuổi đã đến đây, cả đời không bao giờ quay về nữa.”",
+   "Trong quán không ai nói gì. Một lúc sau, ông Chu treo chiếc đồng hồ lên đúng chỗ chiếc đồng hồ hỏng trước kia, vỗ vai Minh: “Lần trước là chú sai, không nên nổi nóng với cháu. Tối mai sáu giờ đến làm, đừng đến muộn.” Minh gật đầu thật mạnh, sống mũi cay cay.",
+   "Mọi người về hết, Tiểu Vũ vừa dọn bàn vừa nói nhỏ với Minh: “Hôm nay bố tớ nói còn nhiều hơn cả mười năm qua cộng lại. Thật ra nhà tớ còn một chiếc hộp sắt, là bà nội để lại. Bố tớ chưa bao giờ cho ai động vào, nhưng tớ biết bố cất nó ở đâu.”"
+  ],
+  "questions": [
+   {
+    "q": "阮明为什么决定送老周一个钟？",
+    "q_vi": "Vì sao Minh quyết định tặng ông Chu một chiếc đồng hồ?",
+    "options": [
+     "王阿姨让他买的",
+     "钟很便宜",
+     "老周说过很喜欢钟",
+     "店里的旧钟坏了，新钟有用"
+    ],
+    "answer": 3,
+    "explain_vi": "Đồng hồ cũ trong quán đã hỏng, ông Chu nấu nước dùng phải xem giờ trên điện thoại, nên Minh nghĩ tặng đồng hồ mới vừa đẹp vừa có ích."
+   },
+   {
+    "q": "中国人为什么一般不送别人钟？",
+    "q_vi": "Vì sao người Trung Quốc thường không tặng đồng hồ cho người khác?",
+    "options": [
+     "钟太贵了",
+     "“送钟”听起来像“送终”",
+     "钟的声音太吵",
+     "送钟表示不想再见面"
+    ],
+    "answer": 1,
+    "explain_vi": "“送钟” đồng âm với “送终” (lo hậu sự cho người già lúc lâm chung), nên bị kiêng."
+   },
+   {
+    "q": "老周看到钟以后笑了，主要是因为什么？",
+    "q_vi": "Ông Chu thấy chiếc đồng hồ thì bật cười, chủ yếu vì sao?",
+    "options": [
+     "他想起妈妈刚来中国时也送过钟",
+     "他觉得王阿姨太紧张了",
+     "他本来就想买一个新钟",
+     "他不相信“送钟”的说法"
+    ],
+    "answer": 0,
+    "explain_vi": "Ông nhớ lại chuyện mẹ mình mới sang Trung Quốc cũng từng tặng hàng xóm đồng hồ."
+   }
+  ]
+ },
+ {
+  "id": "s1-07",
+  "kind": "series",
+  "level": 4,
+  "series": "s1",
+  "series_title": "一碗汤的距离",
+  "series_title_vi": "Khoảng cách một bát canh",
+  "chapter": 7,
+  "title": "奶奶的铁盒子",
+  "title_vi": "Chiếc hộp sắt của bà",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "星期天早上，老周照例五点就去菜市场买肉和骨头，一般要到八点多才回来。小雨家就住在面馆楼上，她把阮明叫了过去。她搬来一把椅子，站上去，从衣柜最上面拿下来一个旧铁盒子。盒子上画着一朵已经看不清颜色的花，边上有些地方已经坏了。",
+   "“我小时候偷偷打开过一次，被我爸发现了，他三天没跟我说话。”小雨的手有点儿抖，“里面有很多越南文，我一个字也看不懂。今天，就靠你了。”",
+   "盒子打开了。最上面是一张黑白照片：两个穿着长衣的年轻女孩儿站在一家照相馆门口，手拉着手，笑得很开心。阮明认出来，这就是原来挂在面馆墙上的那家店。这一次他看清楚了牌子上的字：“梅兰照相馆·海防”。照片背面用越南文写着：“阿梅和阿兰，一九七七年春天。”",
+   "“阿梅就是我奶奶！”小雨说，“我爸说过，奶奶的名字里有个‘梅’字。那阿兰是谁？”阮明没有回答，又从盒子里拿出一个薄薄的本子。本子上写的是越南文，是一张做汤的方法：牛骨头要煮八个小时，姜和洋葱要先烤一烤，最后放一小段甘蔗，汤才会有那种淡淡的甜味。阮明的心跳得很快，原来那碗汤的秘密就在这里。",
+   "本子下面是一封很旧的信，信纸已经发黄了。阮明慢慢地读，一边读一边翻译：“姐姐：你走了以后，家里很安静，照相馆也很安静。我每天都在门口等送信的人，可是总也等不到你的信。你在那边好吗？习惯吗？有人欺负你吗？等我们再见面的那一天，我们一起煮妈妈的那锅汤，就像小时候一样。妹妹：阿兰。一九七八年十月。”",
+   "小雨听着听着，眼泪流了下来：“原来奶奶有一个妹妹……”阮明又往下翻，发现盒子最下面还有十几封信，信封上写的是中文和越南文，地址都是“海防市桥土街十二号”。每个信封上都盖着一个红色的章：“地址不详，退回”。寄信人的名字是：周建国。",
+   "“周建国……是我爸！”小雨吃惊地说。信上的日期从一九九二年一直到二〇〇〇年，几乎每年一封。阮明明白了：这些年来，老周一直在给那个地址写信，可是每一封都被退了回来。",
+   "就在这时候，楼下传来了开门的声音。“小雨，我的钱包是不是忘在家里了？”是老周的声音！两个人还没来得及把东西放回去，老周已经走上了楼。他站在门口，看着桌子上打开的铁盒子和那些信，脸色变得很白。"
+  ],
+  "translations": [
+   "Sáng Chủ nhật, như thường lệ ông Chu đi chợ từ năm giờ để mua thịt và xương, thường phải hơn tám giờ mới về. Nhà Tiểu Vũ ở ngay trên tầng quán mì, cô gọi Minh sang. Cô mang một cái ghế tới, đứng lên, lấy từ nóc tủ quần áo xuống một chiếc hộp sắt cũ. Trên hộp vẽ một bông hoa đã phai không còn rõ màu, mép hộp có chỗ đã hư.",
+   "“Hồi nhỏ tớ từng lén mở một lần, bị bố phát hiện, ba ngày liền bố không nói chuyện với tớ.” Tay Tiểu Vũ hơi run, “Bên trong có nhiều chữ tiếng Việt lắm, tớ không đọc được chữ nào. Hôm nay trông cả vào cậu đấy.”",
+   "Chiếc hộp được mở ra. Trên cùng là một tấm ảnh đen trắng: hai cô gái trẻ mặc áo dài đứng trước cửa một hiệu ảnh, tay nắm tay, cười rất vui. Minh nhận ra đây chính là cửa hàng trong tấm ảnh từng treo trên tường quán mì. Lần này cậu đọc rõ chữ trên biển: “Hiệu ảnh Mai Lan · Hải Phòng”. Mặt sau tấm ảnh viết bằng tiếng Việt: “Mai và Lan, mùa xuân năm 1977.”",
+   "“Mai chính là bà nội tớ!” Tiểu Vũ nói, “Bố tớ từng bảo tên bà có chữ ‘Mai’. Thế Lan là ai?” Minh không trả lời, lại lấy từ trong hộp ra một cuốn sổ mỏng. Sổ viết bằng tiếng Việt, là cách nấu một nồi nước dùng: xương bò phải ninh tám tiếng, gừng và hành tây phải nướng qua trước, cuối cùng cho một khúc mía nhỏ, nước dùng mới có vị ngọt thanh như thế. Tim Minh đập rất nhanh, hóa ra bí mật của bát canh nằm ở đây.",
+   "Dưới cuốn sổ là một lá thư rất cũ, giấy đã ố vàng. Minh chậm rãi đọc, vừa đọc vừa dịch: “Chị ơi: Từ khi chị đi, nhà cửa vắng lặng, hiệu ảnh cũng vắng lặng. Ngày nào em cũng đứng ở cửa chờ người đưa thư, mà mãi chẳng đợi được thư chị. Bên đó chị có khỏe không? Đã quen chưa? Có ai bắt nạt chị không? Đợi đến ngày chúng mình gặp lại, mình cùng nấu nồi nước dùng của mẹ, giống như hồi nhỏ. Em gái: Lan. Tháng Mười năm 1978.”",
+   "Tiểu Vũ nghe mà nước mắt chảy dài: “Hóa ra bà nội có một người em gái…” Minh lại lật xuống dưới, phát hiện đáy hộp còn hơn chục lá thư, phong bì viết cả chữ Trung lẫn chữ Việt, địa chỉ đều là “Số 12 phố Cầu Đất, thành phố Hải Phòng”. Phong bì nào cũng đóng một con dấu đỏ: “Địa chỉ không rõ, hoàn trả”. Tên người gửi là: Chu Kiến Quốc.",
+   "“Chu Kiến Quốc… là bố tớ!” Tiểu Vũ kinh ngạc nói. Ngày tháng trên thư từ năm 1992 kéo dài đến năm 2000, gần như mỗi năm một lá. Minh hiểu ra: suốt những năm đó, ông Chu vẫn luôn viết thư đến địa chỉ ấy, nhưng lá nào cũng bị trả lại.",
+   "Đúng lúc đó, dưới nhà vang lên tiếng mở cửa. “Tiểu Vũ, có phải bố để quên ví ở nhà không?” Là giọng ông Chu! Hai người chưa kịp cất đồ vào, ông Chu đã lên đến tầng trên. Ông đứng ở cửa, nhìn chiếc hộp sắt đang mở trên bàn cùng những lá thư kia, sắc mặt trở nên trắng bệch."
+  ],
+  "questions": [
+   {
+    "q": "铁盒子里的那个本子上写的是什么？",
+    "q_vi": "Cuốn sổ trong hộp sắt ghi gì?",
+    "options": [
+     "奶奶的日记",
+     "照相馆的账",
+     "一碗汤的做法",
+     "越南歌的歌词"
+    ],
+    "answer": 2,
+    "explain_vi": "Cuốn sổ ghi cách nấu nước dùng: ninh xương bò, nướng gừng và hành tây, cho một khúc mía."
+   },
+   {
+    "q": "阿兰在信里最希望的是什么？",
+    "q_vi": "Trong thư, điều Lan mong mỏi nhất là gì?",
+    "options": [
+     "姐姐给她寄钱",
+     "和姐姐再见面，一起煮汤",
+     "去中国开一家照相馆",
+     "姐姐早点儿结婚"
+    ],
+    "answer": 1,
+    "explain_vi": "Lan viết: đợi đến ngày gặp lại, hai chị em cùng nấu nồi nước dùng của mẹ như hồi nhỏ."
+   },
+   {
+    "q": "那些盖着红章的信说明了什么？",
+    "q_vi": "Những lá thư bị đóng dấu đỏ cho thấy điều gì?",
+    "options": [
+     "阿兰每年都给老周回信",
+     "老周不想和越南的亲人联系",
+     "小雨的奶奶写了很多信却没寄",
+     "老周找过阿兰很多年，但是没有找到"
+    ],
+    "answer": 3,
+    "explain_vi": "Thư do Chu Kiến Quốc gửi từ 1992 đến 2000, lá nào cũng bị trả lại vì không rõ địa chỉ: ông đã tìm dì Lan nhiều năm mà không được."
+   }
+  ]
+ },
+ {
+  "id": "s1-08",
+  "kind": "series",
+  "level": 4,
+  "series": "s1",
+  "series_title": "一碗汤的距离",
+  "series_title_vi": "Khoảng cách một bát canh",
+  "chapter": 8,
+  "title": "等了四十年的信",
+  "title_vi": "Lá thư đợi bốn mươi năm",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "房间里安静得能听见墙上钟的声音。小雨低着头说：“爸，对不起，是我让阮明帮我看的。”阮明以为老周又要发火了，可是老周只是慢慢地走过来，坐在桌子旁边，拿起那张黑白照片，看了很久很久。",
+   "“左边的是我妈，右边的是我小姨，阿兰。”老周终于开口了，声音很轻，“她们家在海防开照相馆。我爸年轻的时候在海防的港口工作，认识了我妈。一九七八年，我妈跟着我爸回到了中国。她以为过一两年就能回去看看，没想到，那以后两边的路就断了，信也寄不过去。这一等，就是一辈子。”",
+   "老周说，他小时候，妈妈常常坐在窗户旁边，一边唱那首越南的歌，一边看着南边。每年小姨生日那天，她都会煮一锅汤，就是现在面馆里的这种汤，煮好了却一口也不喝，只是静静地坐着。“我那时候不懂，还问她为什么做了汤不喝。她说，这锅汤是给阿兰的。”",
+   "九十年代，两边的关系慢慢好起来了。那时老周刚上中学，他开始替妈妈写信，按照照片背面的地址，一年寄一封。可是，每一封信都被退了回来。妈妈的身体越来越差，十年前的十月，她在医院里拉着老周的手说：“汤，你要一直做下去。说不定哪一天，阿兰会找到这碗汤。”",
+   "“后来我就开了这家面馆，”老周看着阮明，“那天你第一次来，说汤的味道像越南的米粉汤，我心里一下子乱了。四十多年了，第一次有人从这碗汤里尝出了越南的味道。可是我也怕。找了这么多年，每一次有了希望，最后都是失望。我累了，不想再失望了。所以，我把照片拿了下来。”",
+   "老周说完，把东西一样一样放回盒子里，下楼去了。小雨擦了擦眼泪，对阮明说：“我从来不知道，我爸心里藏着这么多事。”",
+   "那天晚上，阮明把一切都告诉了张磊。张磊听完，半天没说话，后来一拍桌子：“这事咱们得帮！老周不想再失望，那咱们就先悄悄地找，找到了再告诉他，找不到他也不会知道。”阮明想了想，觉得张磊说得对。他想起来，自己的表哥阿强就住在海防，在一家公司做会计。",
+   "他马上给表哥发了一条很长的信息，还发去了照片和地址。快十二点的时候，手机响了。表哥回复：“桥土街十二号？我知道那条街，离我公司不远。不过，那一带这些年变化很大……明天下班，我去看看。”"
+  ],
+  "translations": [
+   "Căn phòng yên lặng đến mức nghe được cả tiếng đồng hồ trên tường. Tiểu Vũ cúi đầu nói: “Bố, con xin lỗi, là con nhờ Minh đọc giúp.” Minh tưởng ông Chu lại sắp nổi giận, nhưng ông chỉ chậm rãi bước tới, ngồi xuống cạnh bàn, cầm tấm ảnh đen trắng lên, nhìn rất lâu, rất lâu.",
+   "“Bên trái là mẹ tôi, bên phải là dì út tôi, Lan.” Cuối cùng ông Chu cũng lên tiếng, giọng rất khẽ, “Nhà họ mở hiệu ảnh ở Hải Phòng. Hồi trẻ bố tôi làm việc ở cảng Hải Phòng, quen mẹ tôi. Năm 1978, mẹ tôi theo bố tôi về Trung Quốc. Bà tưởng một hai năm sau là có thể về thăm, không ngờ từ đó đường hai bên bị cắt đứt, thư cũng không gửi sang được. Đợi một lần ấy là đợi cả đời.”",
+   "Ông Chu kể, hồi nhỏ, mẹ ông thường ngồi bên cửa sổ, vừa hát bài hát Việt Nam ấy vừa nhìn về phương Nam. Năm nào đến ngày sinh nhật dì út, bà cũng nấu một nồi nước dùng, chính là loại nước dùng ở quán mì bây giờ, nấu xong lại không uống một ngụm, chỉ lặng lẽ ngồi đó. “Hồi ấy tôi không hiểu, còn hỏi mẹ sao nấu canh rồi lại không ăn. Mẹ bảo, nồi canh này là để dành cho Lan.”",
+   "Những năm chín mươi, quan hệ hai bên dần dần tốt lên. Khi ấy ông Chu mới lên trung học, ông bắt đầu viết thư thay mẹ, theo địa chỉ sau tấm ảnh, mỗi năm gửi một lá. Thế nhưng lá thư nào cũng bị trả lại. Sức khỏe của mẹ ngày càng yếu, tháng Mười mười năm trước, trong bệnh viện bà nắm tay ông Chu nói: “Nồi canh, con phải nấu mãi nhé. Biết đâu một ngày nào đó, Lan sẽ tìm thấy bát canh này.”",
+   "“Sau đó chú mở quán mì này,” ông Chu nhìn Minh, “Hôm cháu đến lần đầu, nói vị nước dùng giống phở Việt Nam, lòng chú bỗng rối bời. Hơn bốn mươi năm rồi, lần đầu tiên có người nếm ra hương vị Việt Nam trong bát canh này. Nhưng chú cũng sợ. Tìm bao nhiêu năm, lần nào có hy vọng thì cuối cùng cũng là thất vọng. Chú mệt rồi, không muốn thất vọng thêm nữa. Vì thế chú đã gỡ tấm ảnh xuống.”",
+   "Ông Chu nói xong, cất từng món đồ vào hộp rồi đi xuống nhà. Tiểu Vũ lau nước mắt, nói với Minh: “Tớ chưa bao giờ biết trong lòng bố lại giấu nhiều chuyện đến thế.”",
+   "Tối hôm đó, Minh kể hết mọi chuyện cho Trương Lỗi. Nghe xong, Trương Lỗi im lặng hồi lâu, rồi đập bàn: “Chuyện này bọn mình phải giúp! Ông Chu không muốn thất vọng nữa, thì bọn mình cứ âm thầm tìm trước, tìm được rồi hẵng nói với ông, không tìm được thì ông cũng chẳng biết.” Minh nghĩ một lát, thấy Trương Lỗi nói đúng. Cậu chợt nhớ ra anh họ mình là anh Cường đang sống ở Hải Phòng, làm kế toán cho một công ty.",
+   "Cậu lập tức gửi cho anh họ một tin nhắn rất dài, kèm theo ảnh và địa chỉ. Gần mười hai giờ đêm, điện thoại reo. Anh họ trả lời: “Số 12 Cầu Đất à? Anh biết phố đó, cách công ty anh không xa. Có điều mấy năm nay khu đó thay đổi nhiều lắm… Mai tan làm anh qua xem thử.”"
+  ],
+  "questions": [
+   {
+    "q": "老周的妈妈为什么一辈子没有回越南？",
+    "q_vi": "Vì sao mẹ ông Chu cả đời không về Việt Nam?",
+    "options": [
+     "她不想回去",
+     "那以后两边的路断了，回不去",
+     "她的家人不让她回去",
+     "她在中国工作太忙"
+    ],
+    "answer": 1,
+    "explain_vi": "Bà tưởng một hai năm sau sẽ về, nhưng sau đó đường hai bên bị cắt đứt, thư cũng không gửi được."
+   },
+   {
+    "q": "老周为什么把墙上的照片拿了下来？",
+    "q_vi": "Vì sao ông Chu gỡ tấm ảnh trên tường xuống?",
+    "options": [
+     "他害怕再一次希望以后又失望",
+     "照片已经太旧了",
+     "小雨不喜欢那张照片",
+     "他想把照片送给阮明"
+    ],
+    "answer": 0,
+    "explain_vi": "Ông nói tìm nhiều năm, lần nào hy vọng cũng thành thất vọng, ông mệt rồi, không muốn thất vọng nữa."
+   },
+   {
+    "q": "张磊为什么建议“先悄悄地找”？",
+    "q_vi": "Vì sao Trương Lỗi đề nghị “cứ âm thầm tìm trước”?",
+    "options": [
+     "他想给大家一个惊喜，然后要钱",
+     "他觉得老周不会同意",
+     "找不到的话，老周也不会再一次失望",
+     "他不相信老周说的故事"
+    ],
+    "answer": 2,
+    "explain_vi": "Tìm được thì báo, không tìm được thì ông Chu cũng không biết, nên không phải thất vọng thêm lần nữa."
+   }
+  ]
+ },
+ {
+  "id": "s1-09",
+  "kind": "series",
+  "level": 4,
+  "series": "s1",
+  "series_title": "一碗汤的距离",
+  "series_title_vi": "Khoảng cách một bát canh",
+  "chapter": 9,
+  "title": "海防的老街",
+  "title_vi": "Con phố cũ ở Hải Phòng",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "第二天晚上九点，面馆里的客人不多。阮明的手机突然响了，是表哥阿强打来的视频电话。他看了一眼厨房里的老周，跟小雨使了个眼色，两个人走到门外接电话。张磊也正好下了课，跑过来跟他们站在一起。",
+   "屏幕上出现了一条热闹的街道，到处都是摩托车，路两边是新盖的楼房，一楼大部分是商店和咖啡馆。阿强说：“这就是桥土街。十二号在这儿。”他把手机转过来，大家看到的是一家很现代的咖啡馆，玻璃门，白墙，里面坐着几个用电脑工作的年轻人。照片上那家小小的照相馆，已经一点儿影子都没有了。",
+   "阿强走进咖啡馆问了一圈。店员都是二十多岁的年轻人，听说是四十多年前的事，都摇摇头：“我们是三年前才搬来的，以前这里是什么，真不知道。”小雨在旁边看着，脸上的笑容一点儿一点儿地消失了。",
+   "阿强又问了旁边的几家商店，大家都说不知道。就在他准备回去的时候，街角一个卖茶的老奶奶叫住了他。阿强把手机里的老照片给她看。老奶奶戴上眼镜，看了半天，突然拍了一下手：“梅兰照相馆！我记得！我结婚的时候，就是照相馆的阿兰给我拍的照片。她人好，拍得也好，这条街上的人都喜欢她。”",
+   "大家一下子激动起来。阮明赶紧问：“奶奶，那她现在在哪儿？”老奶奶想了想，说：“九十年代，政府要把这条路修宽，这一边的老房子都拆了。阿兰一家拿了钱，搬到河内去了。走之前她还跟我说，她一直在等她姐姐的信，搬了家，怕姐姐找不到她。后来，就再也没有她的消息了。”",
+   "挂了电话，三个人站在门口，谁也没说话。原来，老周的信被退回来，是因为那个地址已经不存在了。小雨轻轻地说：“我奶奶在这边等，小姨奶奶在那边等，两个人都在等，可是谁也找不到谁。”",
+   "阮明心里也很难过。河内有八百多万人，只知道一个名字，怎么找呢？这时候，厨房里传来老周的声音：“你们三个在外面干什么？面要凉了！”原来，老周给他们每人煮了一碗面。三个人赶紧进去，低头吃面，谁也不敢看老周的眼睛。",
+   "回宿舍的路上，张磊一直在想什么。走到楼下，他突然停了下来，眼睛亮亮地看着阮明：“等等！河内不是你的老家吗？你在河内有那么多同学和朋友，大家又都用手机上网……我有一个办法，说不定能行！”"
+  ],
+  "translations": [
+   "Chín giờ tối hôm sau, quán mì không đông khách lắm. Điện thoại của Minh bỗng đổ chuông, là cuộc gọi video của anh họ Cường. Cậu liếc nhìn ông Chu trong bếp, nháy mắt ra hiệu cho Tiểu Vũ, hai người ra ngoài cửa nghe máy. Trương Lỗi cũng vừa tan học, chạy tới đứng cùng họ.",
+   "Trên màn hình hiện ra một con phố náo nhiệt, đâu đâu cũng là xe máy, hai bên đường là những ngôi nhà mới xây, tầng một phần lớn là cửa hàng và quán cà phê. Anh Cường nói: “Đây là phố Cầu Đất. Số 12 ở đây.” Anh xoay điện thoại lại, mọi người thấy một quán cà phê rất hiện đại, cửa kính, tường trắng, bên trong có mấy người trẻ đang làm việc bằng máy tính. Hiệu ảnh nhỏ trong tấm ảnh kia đã không còn lại chút dấu vết nào.",
+   "Anh Cường vào quán hỏi một vòng. Nhân viên đều là thanh niên hơn hai mươi tuổi, nghe nói là chuyện hơn bốn mươi năm trước thì đều lắc đầu: “Bọn em ba năm trước mới chuyển đến, trước đây chỗ này là gì thật sự không biết.” Tiểu Vũ đứng bên cạnh nhìn, nụ cười trên mặt từng chút một biến mất.",
+   "Anh Cường lại hỏi mấy cửa hàng bên cạnh, ai cũng bảo không biết. Đúng lúc anh định về thì một bà cụ bán nước chè ở góc phố gọi anh lại. Anh Cường đưa tấm ảnh cũ trong điện thoại cho bà xem. Bà cụ đeo kính vào, nhìn hồi lâu, bỗng vỗ tay một cái: “Hiệu ảnh Mai Lan! Tôi nhớ chứ! Hồi tôi cưới, chính cô Lan ở hiệu ảnh chụp ảnh cho tôi. Cô ấy tốt bụng, chụp lại đẹp, người trên phố này ai cũng quý.”",
+   "Mọi người lập tức xôn xao. Minh vội hỏi: “Bà ơi, thế bây giờ cô ấy ở đâu ạ?” Bà cụ nghĩ một lúc rồi nói: “Những năm chín mươi, nhà nước mở rộng con đường này, nhà cũ bên này bị phá hết. Nhà cô Lan nhận tiền đền bù rồi chuyển lên Hà Nội. Trước khi đi cô ấy còn bảo tôi, cô vẫn luôn đợi thư chị gái, chuyển nhà rồi, sợ chị không tìm được mình. Về sau thì không còn tin tức gì của cô ấy nữa.”",
+   "Cúp máy, ba người đứng ở cửa, không ai nói gì. Hóa ra những lá thư của ông Chu bị trả lại là vì địa chỉ đó đã không còn tồn tại. Tiểu Vũ khẽ nói: “Bà nội tớ đợi ở bên này, bà dì đợi ở bên kia, cả hai đều đợi, mà chẳng ai tìm được ai.”",
+   "Minh cũng rất buồn. Hà Nội có hơn tám triệu người, chỉ biết mỗi một cái tên thì tìm thế nào đây? Đúng lúc đó, trong bếp vang lên giọng ông Chu: “Ba đứa đứng ngoài đó làm gì thế? Mì nguội bây giờ!” Hóa ra ông Chu đã nấu cho mỗi người một bát mì. Ba người vội vào trong, cúi đầu ăn mì, chẳng ai dám nhìn vào mắt ông Chu.",
+   "Trên đường về ký túc xá, Trương Lỗi cứ mải nghĩ gì đó. Đến dưới tòa nhà, cậu ấy bỗng dừng lại, mắt sáng rực nhìn Minh: “Khoan đã! Hà Nội chẳng phải là quê cậu sao? Cậu có bao nhiêu bạn học, bạn bè ở Hà Nội, ai cũng lên mạng bằng điện thoại cả… Tớ có một cách, biết đâu lại được!”"
+  ],
+  "questions": [
+   {
+    "q": "桥土街十二号现在是什么地方？",
+    "q_vi": "Số 12 phố Cầu Đất bây giờ là nơi nào?",
+    "options": [
+     "一家照相馆",
+     "一家面馆",
+     "一个卖茶的小店",
+     "一家现代的咖啡馆"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 2: đó là một quán cà phê rất hiện đại, hiệu ảnh cũ không còn dấu vết."
+   },
+   {
+    "q": "老周寄的信为什么都被退了回来？",
+    "q_vi": "Vì sao những lá thư ông Chu gửi đều bị trả lại?",
+    "options": [
+     "阿兰不想收他的信",
+     "信封上的地址写错了",
+     "老房子拆了，阿兰一家搬到了河内",
+     "那时候越南不能收中国的信"
+    ],
+    "answer": 2,
+    "explain_vi": "Những năm 90 con đường được mở rộng, nhà cũ bị phá, gia đình Lan chuyển lên Hà Nội nên địa chỉ không còn."
+   },
+   {
+    "q": "小雨说“两个人都在等，可是谁也找不到谁”，表达了什么心情？",
+    "q_vi": "Tiểu Vũ nói “cả hai đều đợi, mà chẳng ai tìm được ai”, thể hiện tâm trạng gì?",
+    "options": [
+     "难过和遗憾",
+     "生气和着急",
+     "轻松和高兴",
+     "害怕和紧张"
+    ],
+    "answer": 0,
+    "explain_vi": "Hai chị em đều chờ nhau cả đời mà không gặp được, câu nói thể hiện nỗi buồn và tiếc nuối."
+   }
+  ]
+ },
+ {
+  "id": "s1-10",
+  "kind": "series",
+  "level": 4,
+  "series": "s1",
+  "series_title": "一碗汤的距离",
+  "series_title_vi": "Khoảng cách một bát canh",
+  "chapter": 10,
+  "title": "一张传遍网络的照片",
+  "title_vi": "Tấm ảnh lan khắp mạng",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "张磊的办法其实很简单：在网上发一个寻人启事。“现在谁不用手机？”他说，“一个人的朋友圈也许只有几百人，可是一个人转给十个人，十个人再转给一百个人，很快就能传遍整个河内。”",
+   "三个人马上分工。小雨是学设计的，她把那张黑白照片和梅兰照相馆的照片放在一起，做了一张又清楚又好看的图片。阮明用越南语写了一段话：“寻找阿兰奶奶。一九七七年，阿梅和阿兰两姐妹在海防开照相馆。一九七八年，姐姐阿梅去了中国，从此和妹妹失去了联系。姐姐已经去世，但是她的儿子一直在找妹妹。如果您认识照片上的人，请联系我们。”张磊负责把中文版发到中国的网站上。",
+   "晚上十一点，阮明按下了“发送”。他把消息转给了河内所有的同学、老师和亲戚，还请妈妈转到她工作的单位。然后，他躺在床上，一次又一次地刷新手机，一直到凌晨两点才睡着。",
+   "第二天早上醒来，阮明吓了一跳：这条消息已经被转发了一万多次！下面有几千条留言。有人说“太感人了，帮转”，有人说“我奶奶也是海防人，我去问问”，还有人分享了自己家里人失去联系又重新找到的故事。不过，也有人发信息说知道阿兰在哪儿，但要先付五百块钱。张磊看了一眼就说：“骗子！别理他。”",
+   "那几天，阮明上课的时候看手机，打工的时候也看手机。有一次，他把客人要的牛肉面端成了鸡蛋面，老周把他叫到厨房，皱着眉头问：“你最近怎么回事？是不是有什么事瞒着我？”阮明心里一紧，赶紧说：“没有没有，就是快考试了，有点儿紧张。”老周看了他一会儿，没再问，只是往他的碗里多放了几块牛肉。",
+   "第三天晚上，阮明正在洗碗，手机响了一下。是一个叫黎俊的年轻人发来的信息：“你好，我住在河内。照片右边的那个女孩儿，是我外婆年轻的时候。我外婆叫阿兰，以前在海防开照相馆。我们家客厅的墙上，也挂着一模一样的照片。”下面是一张图片：一个木头相框里，两个穿长衣的女孩儿手拉着手，笑得很甜。",
+   "阮明的手一抖，盘子差点儿掉在地上。他放下盘子，走到门外，给小雨和张磊发了一条信息：“找到了！可能找到了！”不到一分钟，两个人的电话就同时打了进来。",
+   "可是没过多久，黎俊又发来了一条信息：“我把这件事告诉了外婆，她哭了很久。不过，她说这些年骗子太多了，她要先问你们一个问题。她说，只有她姐姐的家人，才知道答案。”"
+  ],
+  "translations": [
+   "Cách của Trương Lỗi thật ra rất đơn giản: đăng một thông báo tìm người lên mạng. “Bây giờ ai mà chẳng dùng điện thoại?” cậu ấy nói, “Vòng bạn bè của một người có khi chỉ vài trăm người, nhưng một người chia sẻ cho mười người, mười người lại chia sẻ cho một trăm người, chẳng mấy chốc sẽ lan khắp Hà Nội.”",
+   "Ba người lập tức chia việc. Tiểu Vũ học thiết kế, cô ghép tấm ảnh đen trắng với tấm ảnh hiệu ảnh Mai Lan, làm thành một bức hình vừa rõ ràng vừa đẹp. Minh viết một đoạn bằng tiếng Việt: “Tìm bà Lan. Năm 1977, hai chị em Mai và Lan mở hiệu ảnh ở Hải Phòng. Năm 1978, chị Mai sang Trung Quốc, từ đó mất liên lạc với em gái. Người chị đã qua đời, nhưng con trai bà vẫn luôn tìm người em. Nếu ai biết người trong ảnh, xin hãy liên hệ với chúng tôi.” Trương Lỗi phụ trách đăng bản tiếng Trung lên các trang mạng Trung Quốc.",
+   "Mười một giờ đêm, Minh bấm nút “Gửi”. Cậu chuyển tin cho tất cả bạn học, thầy cô và họ hàng ở Hà Nội, còn nhờ mẹ chuyển vào cơ quan nơi mẹ làm việc. Sau đó cậu nằm trên giường, làm mới điện thoại hết lần này đến lần khác, mãi đến hai giờ sáng mới ngủ được.",
+   "Sáng hôm sau tỉnh dậy, Minh giật mình: tin này đã được chia sẻ hơn một vạn lần! Bên dưới có mấy nghìn bình luận. Có người viết “Cảm động quá, chia sẻ giúp”, có người viết “Bà tôi cũng là người Hải Phòng, để tôi hỏi thử”, còn có người kể câu chuyện người nhà mình mất liên lạc rồi tìm lại được nhau. Tuy vậy, cũng có người nhắn tin nói biết bà Lan ở đâu, nhưng phải trả trước năm trăm tệ. Trương Lỗi liếc qua là nói ngay: “Lừa đảo! Kệ hắn.”",
+   "Mấy ngày đó, Minh lên lớp cũng xem điện thoại, đi làm cũng xem điện thoại. Có lần cậu bưng nhầm mì bò khách gọi thành mì trứng, ông Chu gọi cậu vào bếp, nhíu mày hỏi: “Dạo này cháu làm sao thế? Có phải đang giấu chú chuyện gì không?” Minh giật thót, vội nói: “Không ạ, không ạ, chỉ là sắp thi nên hơi căng thẳng thôi.” Ông Chu nhìn cậu một lúc, không hỏi nữa, chỉ bỏ thêm vào bát cậu mấy miếng thịt bò.",
+   "Tối ngày thứ ba, Minh đang rửa bát thì điện thoại kêu một tiếng. Là tin nhắn của một thanh niên tên Lê Tuấn: “Chào bạn, mình sống ở Hà Nội. Cô gái bên phải trong ảnh là bà ngoại mình hồi trẻ. Bà ngoại mình tên Lan, trước đây mở hiệu ảnh ở Hải Phòng. Trên tường phòng khách nhà mình cũng treo một tấm ảnh giống hệt.” Bên dưới là một bức hình: trong khung ảnh gỗ, hai cô gái mặc áo dài tay nắm tay, cười rất tươi.",
+   "Tay Minh run lên, chiếc đĩa suýt rơi xuống đất. Cậu đặt đĩa xuống, ra ngoài cửa, nhắn cho Tiểu Vũ và Trương Lỗi: “Tìm thấy rồi! Có thể tìm thấy rồi!” Chưa đầy một phút, điện thoại của hai người đã cùng lúc gọi tới.",
+   "Nhưng chẳng bao lâu sau, Lê Tuấn lại gửi thêm một tin nhắn: “Mình đã kể chuyện này với bà, bà khóc rất lâu. Có điều bà nói mấy năm nay lừa đảo nhiều quá, bà muốn hỏi các bạn một câu trước. Bà bảo, chỉ người nhà của chị gái bà mới biết câu trả lời.”"
+  ],
+  "questions": [
+   {
+    "q": "张磊为什么觉得在网上发寻人启事有用？",
+    "q_vi": "Vì sao Trương Lỗi cho rằng đăng tin tìm người lên mạng sẽ hiệu quả?",
+    "options": [
+     "消息能很快传给很多很多人",
+     "网上的人都认识阿兰",
+     "发消息不用花钱",
+     "河内的报纸会报道"
+    ],
+    "answer": 0,
+    "explain_vi": "Một người chia sẻ cho mười người, mười người chia sẻ cho trăm người, tin sẽ nhanh chóng lan khắp Hà Nội."
+   },
+   {
+    "q": "对于“先付五百块钱”的信息，张磊是什么态度？",
+    "q_vi": "Với tin nhắn đòi “trả trước năm trăm tệ”, thái độ của Trương Lỗi thế nào?",
+    "options": [
+     "马上付钱",
+     "让阮明问问老周",
+     "觉得应该报警",
+     "认为是骗子，不用理"
+    ],
+    "answer": 3,
+    "explain_vi": "Trương Lỗi liếc qua là nói ngay: lừa đảo, kệ hắn."
+   },
+   {
+    "q": "阿兰奶奶为什么要先问一个问题？",
+    "q_vi": "Vì sao bà Lan muốn hỏi một câu trước?",
+    "options": [
+     "她不记得姐姐的名字了",
+     "她想确认对方真的是姐姐的家人",
+     "她想考考阮明的越南语",
+     "她不想再见到姐姐的家人"
+    ],
+    "answer": 1,
+    "explain_vi": "Bà sợ lừa đảo nên hỏi một câu mà chỉ người nhà chị gái mới trả lời được, để xác nhận."
+   }
+  ]
+ },
+ {
+  "id": "s1-11",
+  "kind": "series",
+  "level": 4,
+  "series": "s1",
+  "series_title": "一碗汤的距离",
+  "series_title_vi": "Khoảng cách một bát canh",
+  "chapter": 11,
+  "title": "最后放的是什么",
+  "title_vi": "Thứ cho vào cuối cùng là gì",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "黎俊发来的问题只有一句话：“我们小时候，妈妈煮的那锅汤，最后放进去的是什么？”",
+   "阮明一看就知道答案，因为他在铁盒子里的本子上读到过。可是他没有马上回复。他看着小雨，小雨也看着他。两个人都明白：这个问题，不应该由他们来回答。“该告诉我爸了。”小雨说。",
+   "那天晚上关门以后，三个人把老周请到桌子旁边坐下。张磊也来了，他紧张得一直在喝水。阮明把这些天发生的事从头到尾讲了一遍：海防的老街，卖茶的老奶奶，网上的寻人启事，还有黎俊发来的照片。最后，他把手机放在老周面前。屏幕上，是那张挂在河内客厅墙上的黑白照片。",
+   "老周看着照片，很长时间一动也不动。他的手在桌子上轻轻地抖着。小雨握住爸爸的手，小声地说：“爸，对不起，我们没有先告诉你，是怕你又失望。”老周没有说话。过了很久，他站起来，一个人走进了厨房。",
+   "三个人坐在外面，谁也不敢出声。几分钟以后，老周出来了，手里拿着一小段甘蔗。他把甘蔗放在桌子上，声音有点儿低：“甘蔗。汤煮好以前，最后放一小段甘蔗。我妈说，这是她妈妈教的：日子再苦，汤里也要有一点儿甜。”",
+   "阮明用越南语把这句话打了出来，又拍了一张照片：老周站在厨房里，手里拿着那段甘蔗，身后是一口正在冒热气的大锅。他按下了发送。",
+   "十分钟过去了，二十分钟过去了，手机一直没有动静。就在大家开始担心的时候，手机响了，是一条语音消息。阮明打开以后，一个老人的声音传了出来。她先哭了一会儿，然后，用很慢很慢的速度，唱起了那首让孩子睡觉的越南歌。唱的正好是那天晚上阮明在厨房门口接下去的那一句。",
+   "最后，老人用越南语说了一句话。阮明翻译的时候，自己的声音也有点儿发抖：“是姐姐的孩子……明天晚上八点，我想看看他。”老周听完，却突然往后退了一步，摇着头说：“不行，我……我还没准备好。我不会说越南话，我妈也已经不在了，我拿什么去见她？”说完，他拿起外套，推开门，走进了外面的黑夜里。"
+  ],
+  "translations": [
+   "Câu hỏi Lê Tuấn gửi đến chỉ có một câu: “Hồi chúng mình còn nhỏ, nồi nước dùng mẹ nấu, thứ cho vào cuối cùng là gì?”",
+   "Minh vừa nhìn đã biết đáp án, vì cậu từng đọc được trong cuốn sổ ở hộp sắt. Nhưng cậu không trả lời ngay. Cậu nhìn Tiểu Vũ, Tiểu Vũ cũng nhìn cậu. Cả hai đều hiểu: câu hỏi này không nên do họ trả lời. “Đến lúc phải nói với bố tớ rồi.” Tiểu Vũ nói.",
+   "Tối hôm ấy sau khi đóng cửa, ba người mời ông Chu ngồi xuống cạnh bàn. Trương Lỗi cũng đến, căng thẳng đến mức cứ uống nước liên tục. Minh kể lại từ đầu đến cuối mọi chuyện xảy ra mấy hôm nay: con phố cũ ở Hải Phòng, bà cụ bán nước chè, thông báo tìm người trên mạng, cả bức ảnh Lê Tuấn gửi đến. Cuối cùng, cậu đặt điện thoại trước mặt ông Chu. Trên màn hình là tấm ảnh đen trắng treo trên tường phòng khách ở Hà Nội.",
+   "Ông Chu nhìn tấm ảnh, rất lâu không nhúc nhích. Tay ông khẽ run trên mặt bàn. Tiểu Vũ nắm lấy tay bố, nói nhỏ: “Bố, con xin lỗi, chúng con không nói trước với bố là vì sợ bố lại thất vọng.” Ông Chu không nói gì. Rất lâu sau, ông đứng dậy, một mình đi vào bếp.",
+   "Ba người ngồi bên ngoài, không ai dám lên tiếng. Vài phút sau, ông Chu bước ra, tay cầm một khúc mía nhỏ. Ông đặt khúc mía lên bàn, giọng hơi trầm xuống: “Mía. Trước khi nước dùng chín, cuối cùng cho một khúc mía nhỏ. Mẹ chú bảo, đây là bà ngoại dạy: cuộc sống dù khổ đến đâu, trong canh cũng phải có chút ngọt.”",
+   "Minh gõ câu ấy ra bằng tiếng Việt, rồi chụp một tấm ảnh: ông Chu đứng trong bếp, tay cầm khúc mía, phía sau là một nồi lớn đang bốc hơi nghi ngút. Cậu bấm gửi.",
+   "Mười phút trôi qua, hai mươi phút trôi qua, điện thoại vẫn im lìm. Đúng lúc mọi người bắt đầu lo lắng thì điện thoại reo, là một tin nhắn thoại. Minh mở ra, giọng một người già vang lên. Bà khóc một lúc, rồi rất chậm, rất chậm, cất tiếng hát bài hát ru Việt Nam ấy. Câu bà hát đúng là câu Minh đã hát tiếp ở cửa bếp tối hôm nào.",
+   "Cuối cùng, bà cụ nói một câu bằng tiếng Việt. Khi dịch, giọng Minh cũng run run: “Là con của chị… Tám giờ tối mai, dì muốn được nhìn thấy nó.” Nghe xong, ông Chu lại bỗng lùi một bước, lắc đầu nói: “Không được, chú… chú chưa sẵn sàng. Chú không biết nói tiếng Việt, mẹ chú cũng không còn nữa, chú lấy gì để gặp dì đây?” Nói xong, ông cầm áo khoác, đẩy cửa, bước vào màn đêm bên ngoài."
+  ],
+  "questions": [
+   {
+    "q": "阮明知道答案，为什么没有马上回复？",
+    "q_vi": "Minh biết đáp án, vì sao không trả lời ngay?",
+    "options": [
+     "他忘了本子上写的是什么",
+     "他觉得应该让老周自己回答",
+     "他不相信黎俊",
+     "他的手机没电了"
+    ],
+    "answer": 1,
+    "explain_vi": "Minh và Tiểu Vũ đều hiểu câu hỏi này không nên do họ trả lời, mà phải để ông Chu – người nhà của bà Mai – trả lời."
+   },
+   {
+    "q": "老周说“日子再苦，汤里也要有一点儿甜”，这句话是谁教的？",
+    "q_vi": "Câu “cuộc sống dù khổ, trong canh cũng phải có chút ngọt” là ai dạy?",
+    "options": [
+     "阿兰",
+     "老周的爸爸",
+     "面馆的老客人",
+     "老周的外婆"
+    ],
+    "answer": 3,
+    "explain_vi": "Ông Chu nói: mẹ chú bảo đây là mẹ của bà (tức bà ngoại ông Chu) dạy."
+   },
+   {
+    "q": "听到阿兰奶奶想见他，老周为什么走了出去？",
+    "q_vi": "Nghe bà Lan muốn gặp mình, vì sao ông Chu bỏ ra ngoài?",
+    "options": [
+     "他心里很乱，觉得自己还没准备好",
+     "他不相信那是阿兰的声音",
+     "他生阮明的气",
+     "他要去买去越南的机票"
+    ],
+    "answer": 0,
+    "explain_vi": "Ông nói mình chưa sẵn sàng, không biết tiếng Việt, mẹ đã mất, không biết lấy gì để gặp dì: lòng ông đang rối bời."
+   }
+  ]
+ },
+ {
+  "id": "s1-12",
+  "kind": "series",
+  "level": 4,
+  "series": "s1",
+  "series_title": "一碗汤的距离",
+  "series_title_vi": "Khoảng cách một bát canh",
+  "chapter": 12,
+  "title": "一碗汤的距离",
+  "title_vi": "Khoảng cách một bát canh",
+  "topic": "truyện dài",
+  "paragraphs": [
+   "阮明追了出去，在不远的湖边找到了老周。老周一个人坐在长椅上，看着黑黑的湖水。阮明在他旁边坐下，过了一会儿才说：“叔叔，我奶奶走的时候，我在学校考试，没能见她最后一面。我常常想，要是能再跟她说一句话，说什么都行。”",
+   "老周没有回答。阮明接着说：“您不会说越南话，没关系，我来当您的翻译。您的妈妈不在了，可是您有她的汤，您会唱她的歌。阿兰奶奶等了四十多年，她想见的，不是一个会说越南话的人，是姐姐的孩子。”老周低下头，用手擦了擦眼睛，很久以后，轻轻地说了一句：“小姨……用越南话怎么说？”",
+   "那天晚上，老周在面馆里练到了半夜。“Dì ơi”这两个字，他发了一百多遍，阮明一个声调一个声调地教他，张磊和小雨在旁边帮他记。第二天，面馆早早地关了门。老周换上了一件干净的白衬衫，还煮了一锅汤，盛了满满一碗放在面前。",
+   "晚上八点整，视频接通了。屏幕上出现了一位头发花白的老奶奶，她身后的墙上，挂着那张熟悉的黑白照片。老奶奶的面前，也放着一碗冒着热气的汤。两个人隔着屏幕看着对方，谁都没有说话。终于，老周张开嘴，用不太标准的越南话说：“Dì ơi……”",
+   "老奶奶一下子哭了出来，又笑了，一边哭一边笑，说了很长很长一段话。阮明一句一句地翻译：“你的眼睛跟你妈妈一模一样……我给你们写过很多信，搬家以后，每年都回海防问邻居有没有我的信……这些年，我也每年都煮这锅汤，我想，只要汤的味道不变，姐姐就还在。”",
+   "两个人同时端起了碗。一碗在杭州，一碗在河内，隔着一千多公里，隔着四十八年，却是同一个味道。那天晚上，他们聊了整整两个小时。阮明的嗓子都哑了，可是他心里从来没有这么高兴过。",
+   "第二天，墙上那张老照片又挂了回去，就挂在阮明送的那个钟旁边。老周决定，春节的时候带着小雨去河内看小姨，再一起回海防的老街看看。他问阮明：“到时候，你能给我们当翻译吗？”阮明还没回答，张磊已经抢着说：“我也去！我还没吃过真正的越南米粉呢！”",
+   "学期结束的时候，阮明在林老师的课上介绍了他的作业。文章的题目是《一碗汤的距离》。读完最后一句，教室里安静了很久，然后响起了热烈的掌声。林老师笑着说：“从河内到杭州，一千多公里；从一九七八年到今天，四十八年。这么远的距离，一碗汤就走完了。阮明，这就是我说的，普通人生活里最好的故事。”"
+  ],
+  "translations": [
+   "Minh đuổi theo ra ngoài, tìm thấy ông Chu bên bờ hồ không xa. Ông Chu ngồi một mình trên ghế dài, nhìn mặt nước hồ đen thẫm. Minh ngồi xuống bên cạnh, một lúc sau mới nói: “Chú ơi, lúc bà cháu mất, cháu đang thi ở trường, không kịp gặp bà lần cuối. Cháu thường nghĩ, nếu được nói với bà thêm một câu thôi, nói gì cũng được.”",
+   "Ông Chu không trả lời. Minh nói tiếp: “Chú không biết tiếng Việt, không sao cả, cháu sẽ làm phiên dịch cho chú. Mẹ chú không còn nữa, nhưng chú có nồi canh của bà, chú biết hát bài hát của bà. Bà Lan đợi hơn bốn mươi năm, người bà muốn gặp không phải một người biết nói tiếng Việt, mà là con của chị gái bà.” Ông Chu cúi đầu, lấy tay lau mắt, rất lâu sau mới khẽ nói một câu: “Dì út… tiếng Việt nói thế nào?”",
+   "Tối hôm đó, ông Chu ngồi luyện trong quán mì đến nửa đêm. Hai chữ “Dì ơi”, ông phát âm hơn một trăm lần, Minh dạy ông từng thanh điệu một, Trương Lỗi và Tiểu Vũ ngồi bên cạnh giúp ông ghi lại. Hôm sau, quán mì đóng cửa từ sớm. Ông Chu thay một chiếc áo sơ mi trắng sạch sẽ, còn nấu một nồi nước dùng, múc một bát đầy đặt trước mặt.",
+   "Đúng tám giờ tối, cuộc gọi video được kết nối. Trên màn hình hiện ra một bà cụ tóc đã hoa râm, trên bức tường phía sau bà treo tấm ảnh đen trắng quen thuộc. Trước mặt bà cụ cũng đặt một bát canh đang bốc hơi. Hai người nhìn nhau qua màn hình, chẳng ai nói gì. Cuối cùng, ông Chu mở miệng, nói bằng thứ tiếng Việt chưa chuẩn lắm: “Dì ơi…”",
+   "Bà cụ lập tức bật khóc, rồi lại cười, vừa khóc vừa cười, nói một tràng rất dài. Minh dịch từng câu một: “Đôi mắt con giống hệt mẹ con… Dì đã viết cho các con rất nhiều thư, chuyển nhà rồi, năm nào dì cũng về Hải Phòng hỏi hàng xóm có thư của dì không… Bao năm nay, năm nào dì cũng nấu nồi canh này, dì nghĩ, chỉ cần vị canh không đổi thì chị vẫn còn đây.”",
+   "Hai người cùng lúc nâng bát lên. Một bát ở Hàng Châu, một bát ở Hà Nội, cách nhau hơn một nghìn cây số, cách nhau bốn mươi tám năm, mà vẫn cùng một hương vị. Tối hôm đó, họ trò chuyện tròn hai tiếng đồng hồ. Cổ họng Minh khản cả đi, nhưng trong lòng cậu chưa bao giờ vui đến thế.",
+   "Hôm sau, tấm ảnh cũ lại được treo lên tường, ngay cạnh chiếc đồng hồ Minh tặng. Ông Chu quyết định Tết này sẽ đưa Tiểu Vũ sang Hà Nội thăm dì út, rồi cùng về phố cũ ở Hải Phòng. Ông hỏi Minh: “Đến lúc ấy, cháu làm phiên dịch cho nhà chú được không?” Minh chưa kịp trả lời, Trương Lỗi đã nhanh nhảu: “Tớ cũng đi! Tớ chưa được ăn phở Việt Nam chính gốc bao giờ!”",
+   "Cuối học kỳ, Minh giới thiệu bài tập của mình trong giờ của cô Lâm. Bài văn có nhan đề “Khoảng cách một bát canh”. Đọc xong câu cuối, cả lớp lặng đi rất lâu, rồi vang lên một tràng vỗ tay nồng nhiệt. Cô Lâm mỉm cười nói: “Từ Hà Nội đến Hàng Châu hơn một nghìn cây số; từ năm 1978 đến hôm nay, bốn mươi tám năm. Khoảng cách xa như thế, một bát canh đã đi hết. Minh à, đây chính là điều cô nói: câu chuyện hay nhất nằm trong cuộc sống của những người bình thường.”"
+  ],
+  "questions": [
+   {
+    "q": "阮明用什么话让老周改变了主意？",
+    "q_vi": "Minh đã dùng lời nào khiến ông Chu đổi ý?",
+    "options": [
+     "阿兰奶奶身体不好，不能再等了",
+     "如果不去，小雨会很生气",
+     "阿兰奶奶想见的是姐姐的孩子，不是会说越南话的人",
+     "林老师的作业需要老周帮忙"
+    ],
+    "answer": 2,
+    "explain_vi": "Minh nói bà Lan muốn gặp con của chị gái chứ không phải người biết tiếng Việt, và cậu sẽ làm phiên dịch."
+   },
+   {
+    "q": "阿兰奶奶为什么每年都煮那锅汤？",
+    "q_vi": "Vì sao năm nào bà Lan cũng nấu nồi canh đó?",
+    "options": [
+     "她觉得只要汤的味道不变，姐姐就还在",
+     "她在河内开了一家面馆",
+     "她的家人都很喜欢喝",
+     "她想把做法教给黎俊"
+    ],
+    "answer": 0,
+    "explain_vi": "Bà nói: chỉ cần vị canh không đổi thì chị vẫn còn đây."
+   },
+   {
+    "q": "文章题目《一碗汤的距离》最可能想说明什么？",
+    "q_vi": "Nhan đề “Khoảng cách một bát canh” nhiều khả năng muốn nói điều gì?",
+    "options": [
+     "杭州离河内其实很近",
+     "做一碗好汤需要很长时间",
+     "越南的汤比中国的汤好喝",
+     "一碗汤连起了很远的地方和很长的时间，让亲人重新相见"
+    ],
+    "answer": 3,
+    "explain_vi": "Hơn một nghìn cây số và bốn mươi tám năm cách biệt đã được nối lại nhờ cùng một hương vị canh, giúp người thân gặp lại nhau."
+   }
+  ]
+ }
+]

@@ -1,0 +1,1530 @@
+[
+ {
+  "id": "e4-01",
+  "level": 4,
+  "title": "Đề luyện đọc HSK 4 · Số 1",
+  "sections": [
+   {
+    "type": "xuanci",
+    "title": "选词填空",
+    "words": [
+     "A 随着",
+     "B 准时",
+     "C 耐心",
+     "D 提醒",
+     "E 区别",
+     "F 尝试"
+    ],
+    "items": [
+     {
+      "sentence": "这两个词的意思差不多，但是在用法上还是有一些（  ）的。",
+      "answer": "E",
+      "vi": "Hai từ này nghĩa gần giống nhau, nhưng về cách dùng vẫn có một vài khác biệt.",
+      "explain_vi": "Sau “有一些” cần một danh từ; “区别” (khác biệt) hợp nghĩa với “意思差不多，但是……”."
+     },
+     {
+      "sentence": "明天的会议九点开始，请大家一定要（  ）到。",
+      "answer": "B",
+      "vi": "Cuộc họp ngày mai bắt đầu lúc 9 giờ, mọi người nhất định phải đến đúng giờ.",
+      "explain_vi": "Trước động từ “到” cần một trạng ngữ; “准时到” = đến đúng giờ, khớp với “九点开始”."
+     },
+     {
+      "sentence": "你明天早上记得（  ）我一下，我怕忘了带护照。",
+      "answer": "D",
+      "vi": "Sáng mai bạn nhớ nhắc tôi một tiếng nhé, tôi sợ quên mang hộ chiếu.",
+      "explain_vi": "Cấu trúc “động từ + 我 + 一下”; “提醒” (nhắc nhở) hợp với nỗi lo “怕忘了”."
+     },
+     {
+      "sentence": "第一次做这个菜，不太成功也没关系，多（  ）几次就好了。",
+      "answer": "F",
+      "vi": "Lần đầu nấu món này, không thành công lắm cũng không sao, thử thêm vài lần là được.",
+      "explain_vi": "“多 + động từ + 几次”; “尝试” (thử) là động từ hợp nghĩa nhất."
+     },
+     {
+      "sentence": "（  ）经济的发展，人们的生活水平越来越高。",
+      "answer": "A",
+      "vi": "Cùng với sự phát triển của kinh tế, mức sống của mọi người ngày càng cao.",
+      "explain_vi": "“随着……，……越来越……” là cấu trúc cố định: cùng với…, … ngày càng…"
+     }
+    ]
+   },
+   {
+    "type": "paixu",
+    "title": "排列顺序",
+    "items": [
+     {
+      "parts": {
+       "A": "所以我们决定改天再去爬山",
+       "B": "今天早上突然下起了大雨",
+       "C": "而且天气预报说下午会下得更大"
+      },
+      "answer": "BCA",
+      "vi": "Sáng nay bỗng nhiên mưa to, hơn nữa dự báo thời tiết nói buổi chiều sẽ còn mưa to hơn, nên chúng tôi quyết định hôm khác mới đi leo núi.",
+      "explain_vi": "B nêu sự việc, C dùng “而且” bổ sung, A dùng “所以” nêu kết quả nên đứng cuối."
+     },
+     {
+      "parts": {
+       "A": "但是他每天都坚持练习",
+       "B": "虽然小王刚开始学游泳的时候很害怕",
+       "C": "现在已经游得很不错了"
+      },
+      "answer": "BAC",
+      "vi": "Tuy lúc mới học bơi Tiểu Vương rất sợ, nhưng ngày nào anh ấy cũng kiên trì luyện tập, bây giờ đã bơi khá giỏi rồi.",
+      "explain_vi": "“虽然……但是……” nên B trước A; C nói kết quả “现在” đứng cuối."
+     },
+     {
+      "parts": {
+       "A": "只要我们冷静下来认真想一想",
+       "B": "就会发现问题并没有那么复杂",
+       "C": "遇到困难的时候"
+      },
+      "answer": "CAB",
+      "vi": "Khi gặp khó khăn, chỉ cần chúng ta bình tĩnh lại suy nghĩ kỹ, sẽ thấy vấn đề không phức tạp đến thế.",
+      "explain_vi": "C là trạng ngữ thời gian mở đầu; “只要……就……” nên A trước B."
+     },
+     {
+      "parts": {
+       "A": "因此每到周末都有很多人排队",
+       "B": "价格也很便宜",
+       "C": "这家饭馆的菜不但味道好"
+      },
+      "answer": "CBA",
+      "vi": "Món ăn của quán này không những ngon mà giá còn rẻ, vì vậy cứ đến cuối tuần là có rất nhiều người xếp hàng.",
+      "explain_vi": "C có chủ ngữ và “不但”, B có “也” nối tiếp; A có “因此” chỉ kết quả nên đứng cuối."
+     },
+     {
+      "parts": {
+       "A": "小明知道妈妈今天下班会很累",
+       "B": "就把房间打扫得干干净净",
+       "C": "于是还没等妈妈回来"
+      },
+      "answer": "ACB",
+      "vi": "Tiểu Minh biết hôm nay mẹ tan làm sẽ rất mệt, thế là chưa đợi mẹ về, cậu đã dọn phòng sạch sẽ tinh tươm.",
+      "explain_vi": "A có chủ ngữ “小明”, nêu nguyên nhân; C dùng “于是” chuyển sang hành động; “还没等……就……” nên C trước B."
+     }
+    ]
+   },
+   {
+    "type": "yuedu",
+    "title": "阅读理解",
+    "items": [
+     {
+      "passage": "很多人以为，休息就是什么都不做，在家里躺着看电视、玩手机。其实，这样的“休息”常常让人越来越累。真正有效的休息，是换一种方式让身体和大脑放松。比如，工作了一天的人可以去散散步、打打球，而整天运动的人可以安静地看看书。",
+      "question": "这段话主要谈的是：",
+      "options": [
+       "看电视对身体不好",
+       "运动比看书更重要",
+       "应该用正确的方法休息",
+       "工作的人需要多睡觉"
+      ],
+      "answer": 2,
+      "passage_vi": "Nhiều người cho rằng nghỉ ngơi là không làm gì cả, nằm ở nhà xem tivi, chơi điện thoại. Thực ra, kiểu “nghỉ ngơi” này thường khiến người ta ngày càng mệt hơn. Nghỉ ngơi thật sự hiệu quả là đổi một cách khác để cơ thể và đầu óc thư giãn. Ví dụ, người làm việc cả ngày có thể đi dạo, chơi bóng, còn người vận động cả ngày có thể yên tĩnh đọc sách.",
+      "explain_vi": "Cả đoạn nói “真正有效的休息” là đổi cách thư giãn, tức phải nghỉ ngơi đúng cách. Các ý khác chỉ là chi tiết hoặc không được nhắc đến."
+     },
+     {
+      "passage": "我们公司附近新开了一家咖啡馆，环境很好，咖啡也不贵。最特别的是，那里的服务员都听不见声音。点咖啡时，客人需要把想要的东西写在纸上，或者用手指一指菜单。虽然有点儿不方便，但是大家都觉得这种方式很有意思。",
+      "question": "关于那家咖啡馆，可以知道什么？",
+      "options": [
+       "服务员听不见声音",
+       "咖啡的价格很贵",
+       "离公司比较远",
+       "客人必须写信"
+      ],
+      "answer": 0,
+      "passage_vi": "Gần công ty chúng tôi mới mở một quán cà phê, không gian rất đẹp, cà phê cũng không đắt. Đặc biệt nhất là nhân viên phục vụ ở đó đều không nghe được âm thanh. Khi gọi cà phê, khách cần viết món mình muốn lên giấy, hoặc dùng tay chỉ vào thực đơn. Tuy hơi bất tiện, nhưng mọi người đều thấy cách này rất thú vị.",
+      "explain_vi": "Đoạn văn nói rõ “服务员都听不见声音”. Cà phê “不贵”, quán ở “附近”, khách viết lên giấy chứ không phải viết thư."
+     },
+     {
+      "passage": "李老师教了三十年书。她常说，一个好老师不只是把知识教给学生，更重要的是让学生对学习感兴趣。所以她上课的时候，总是想办法讲一些有趣的故事，让学生在轻松的气氛中学到知识。她的很多学生毕业好多年了，还常常回学校看她。",
+      "question": "李老师认为，好老师最重要的是：",
+      "options": [
+       "上课讲很多知识",
+       "对学生要求严格",
+       "经常给学生考试",
+       "让学生喜欢学习"
+      ],
+      "answer": 3,
+      "passage_vi": "Cô Lý đã dạy học ba mươi năm. Cô thường nói, một giáo viên giỏi không chỉ truyền kiến thức cho học sinh, điều quan trọng hơn là khiến học sinh hứng thú với việc học. Vì vậy khi lên lớp, cô luôn tìm cách kể những câu chuyện thú vị, để học sinh học được kiến thức trong bầu không khí thoải mái. Nhiều học sinh của cô tốt nghiệp đã lâu vẫn thường về trường thăm cô.",
+      "explain_vi": "Câu then chốt: “更重要的是让学生对学习感兴趣”, tức là làm học sinh thích học."
+     },
+     {
+      "passage": "现在，越来越多的年轻人选择在网上购物。网上购物不但节约时间，而且东西的种类多，价格也比商店便宜一些。不过，网上购物也有缺点：你看不到真正的商品，有时候收到的东西和照片上的差别很大。所以，买东西之前最好先看看别人的意见。",
+      "question": "根据这段话，网上购物的缺点是：",
+      "options": [
+       "比较浪费时间",
+       "东西可能和照片不一样",
+       "商品的种类太少",
+       "价格比商店贵"
+      ],
+      "answer": 1,
+      "passage_vi": "Hiện nay, ngày càng nhiều người trẻ chọn mua sắm trên mạng. Mua sắm trên mạng không những tiết kiệm thời gian, mà hàng hóa còn đa dạng, giá cũng rẻ hơn cửa hàng một chút. Tuy nhiên, mua sắm trên mạng cũng có nhược điểm: bạn không nhìn thấy hàng thật, đôi khi đồ nhận được khác rất xa so với ảnh. Vì vậy, trước khi mua tốt nhất nên xem ý kiến của người khác trước.",
+      "explain_vi": "Sau “缺点” là “收到的东西和照片上的差别很大”. Ba lựa chọn còn lại trái với ưu điểm được nêu."
+     },
+     {
+      "passage": "小张大学毕业后，没有像其他同学一样去大城市找工作，而是回到了自己的家乡。他发现家乡的水果又好又便宜，但是很难卖出去。于是，他开始在网上帮农民卖水果。两年过去了，他不仅自己赚了钱，还帮很多农民增加了收入。",
+      "question": "小张回到家乡以后做了什么？",
+      "options": [
+       "在网上卖水果",
+       "当了一名老师",
+       "种了很多果树",
+       "开了一家饭馆"
+      ],
+      "answer": 0,
+      "passage_vi": "Sau khi tốt nghiệp đại học, Tiểu Trương không lên thành phố lớn tìm việc như các bạn khác mà trở về quê nhà. Cậu phát hiện trái cây ở quê vừa ngon vừa rẻ nhưng rất khó bán. Thế là cậu bắt đầu giúp nông dân bán trái cây trên mạng. Hai năm trôi qua, cậu không chỉ tự kiếm được tiền mà còn giúp nhiều nông dân tăng thu nhập.",
+      "explain_vi": "“他开始在网上帮农民卖水果” – đáp án A. Cậu không tự trồng cây, không dạy học, không mở quán."
+     },
+     {
+      "passage": "有个人想去买鞋。他在家先量好了自己脚的大小，可是出门的时候忘了带那张写着数字的纸。到了商店，他才发现，就马上回家去拿。等他再回来的时候，商店已经关门了。别人问他：“你为什么不直接用脚试一试呢？”他回答：“我更相信我量的数字。”",
+      "question": "这个故事告诉我们：",
+      "options": [
+       "买东西要提前准备",
+       "做事不能太着急",
+       "要根据实际情况做事",
+       "商店关门太早了"
+      ],
+      "answer": 2,
+      "passage_vi": "Có một người muốn đi mua giày. Ở nhà anh ta đo sẵn cỡ chân mình, nhưng khi ra khỏi nhà lại quên mang tờ giấy ghi số đo. Đến cửa hàng anh mới phát hiện, liền lập tức về nhà lấy. Đợi đến khi anh quay lại thì cửa hàng đã đóng cửa. Người khác hỏi anh: “Sao anh không thử thẳng bằng chân?” Anh đáp: “Tôi tin con số mình đo hơn.”",
+      "explain_vi": "Người này tin con số hơn chính đôi chân thật của mình – câu chuyện phê phán việc cứng nhắc, không xuất phát từ thực tế. Nên chọn C."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "e4-02",
+  "level": 4,
+  "title": "Đề luyện đọc HSK 4 · Số 2",
+  "sections": [
+   {
+    "type": "xuanci",
+    "title": "选词填空",
+    "words": [
+     "A 及时",
+     "B 吸引",
+     "C 打扰",
+     "D 竟然",
+     "E 适应",
+     "F 原谅"
+    ],
+    "items": [
+     {
+      "sentence": "我以为这道题很难，没想到他（  ）只用了一分钟就做出来了。",
+      "answer": "D",
+      "vi": "Tôi tưởng bài này rất khó, không ngờ cậu ấy lại chỉ mất một phút đã giải xong.",
+      "explain_vi": "“没想到……竟然……” diễn tả sự bất ngờ; “竟然” là phó từ đứng trước “只用了”."
+     },
+     {
+      "sentence": "刚来北京的时候，我很不（  ）这里干燥的气候。",
+      "answer": "E",
+      "vi": "Hồi mới đến Bắc Kinh, tôi rất không quen với khí hậu khô hanh ở đây.",
+      "explain_vi": "“适应 + 气候/环境” là kết hợp quen thuộc: thích nghi với khí hậu."
+     },
+     {
+      "sentence": "幸亏医生来得（  ），老人的病才没有变得更严重。",
+      "answer": "A",
+      "vi": "May mà bác sĩ đến kịp thời, bệnh của cụ già mới không trở nặng hơn.",
+      "explain_vi": "Sau “来得” cần bổ ngữ trạng thái; “及时” (kịp thời) hợp với “幸亏……才没有……”."
+     },
+     {
+      "sentence": "对不起，这么晚还给您打电话，（  ）您休息了。",
+      "answer": "C",
+      "vi": "Xin lỗi, muộn thế này còn gọi điện cho ngài, làm phiền ngài nghỉ ngơi rồi.",
+      "explain_vi": "Lời xin lỗi vì gọi muộn → “打扰您休息了” (làm phiền ngài nghỉ ngơi)."
+     },
+     {
+      "sentence": "这部电影的广告做得很好，（  ）了很多年轻观众。",
+      "answer": "B",
+      "vi": "Quảng cáo của bộ phim này làm rất tốt, đã thu hút rất nhiều khán giả trẻ.",
+      "explain_vi": "“吸引 + 观众” = thu hút khán giả; “原谅” (tha thứ) không hợp nghĩa."
+     }
+    ]
+   },
+   {
+    "type": "paixu",
+    "title": "排列顺序",
+    "items": [
+     {
+      "parts": {
+       "A": "就是每天睡觉前读半个小时的书",
+       "B": "我从上大学的时候开始养成了一个习惯",
+       "C": "到现在已经坚持了十年"
+      },
+      "answer": "BAC",
+      "vi": "Từ hồi học đại học tôi đã tập được một thói quen, đó là mỗi tối trước khi ngủ đọc sách nửa tiếng, đến nay đã kiên trì được mười năm.",
+      "explain_vi": "B có chủ ngữ “我” và nhắc đến “一个习惯”; A giải thích thói quen đó là gì (“就是……”); C nói thời gian kiên trì, đứng cuối."
+     },
+     {
+      "parts": {
+       "A": "结果她一下飞机就感冒了",
+       "B": "小李以为南方的冬天很暖和",
+       "C": "所以只带了几件薄衣服"
+      },
+      "answer": "BCA",
+      "vi": "Tiểu Lý tưởng mùa đông ở miền Nam rất ấm, nên chỉ mang theo vài bộ quần áo mỏng, kết quả vừa xuống máy bay cô ấy đã bị cảm.",
+      "explain_vi": "B có chủ ngữ “小李” và “以为”; C dùng “所以” nêu việc làm; A dùng “结果” nêu hậu quả cuối cùng."
+     },
+     {
+      "parts": {
+       "A": "不管遇到什么问题",
+       "B": "他都会耐心地帮我们解决",
+       "C": "王经理是一个很负责的人"
+      },
+      "answer": "CAB",
+      "vi": "Giám đốc Vương là người rất có trách nhiệm, dù gặp vấn đề gì, ông ấy cũng sẽ kiên nhẫn giúp chúng tôi giải quyết.",
+      "explain_vi": "C giới thiệu chủ ngữ “王经理”; “不管……都……” nên A trước B; “他” ở B chỉ người đã nhắc ở C."
+     },
+     {
+      "parts": {
+       "A": "今天我上班迟到了",
+       "B": "而是路上堵车太厉害了",
+       "C": "不是因为起床晚了"
+      },
+      "answer": "ACB",
+      "vi": "Hôm nay tôi đi làm muộn, không phải vì dậy muộn mà là vì đường kẹt xe quá nặng.",
+      "explain_vi": "A nêu sự việc; cấu trúc “不是……而是……” nên C trước B."
+     },
+     {
+      "parts": {
+       "A": "出版以后受到了许多读者的欢迎",
+       "B": "她用了三年时间才写完",
+       "C": "这本小说的作者是一位年轻的女作家"
+      },
+      "answer": "CBA",
+      "vi": "Tác giả của cuốn tiểu thuyết này là một nữ nhà văn trẻ, cô ấy mất ba năm mới viết xong, sau khi xuất bản được rất nhiều độc giả yêu thích.",
+      "explain_vi": "C giới thiệu tác giả; B dùng “她” thay cho tác giả, nói quá trình viết; A nói sau khi xuất bản – theo trình tự thời gian."
+     }
+    ]
+   },
+   {
+    "type": "yuedu",
+    "title": "阅读理解",
+    "items": [
+     {
+      "passage": "学习一门外语，最好的方法是多听多说。很多人学了好多年英语，语法知识很丰富，考试成绩也不错，可是一见到外国人就紧张得说不出话来。这主要是因为他们平时只注意读和写，很少有机会练习口语。",
+      "question": "很多人见到外国人说不出话，主要是因为：",
+      "options": [
+       "语法学得不好",
+       "缺少口语练习",
+       "考试成绩太低",
+       "不喜欢外国人"
+      ],
+      "answer": 1,
+      "passage_vi": "Học một ngoại ngữ, cách tốt nhất là nghe nhiều nói nhiều. Nhiều người học tiếng Anh bao nhiêu năm, kiến thức ngữ pháp rất phong phú, điểm thi cũng không tệ, nhưng hễ gặp người nước ngoài là căng thẳng đến mức không nói nên lời. Điều này chủ yếu là vì bình thường họ chỉ chú ý đọc và viết, rất ít có cơ hội luyện khẩu ngữ.",
+      "explain_vi": "Câu cuối nêu nguyên nhân: “很少有机会练习口语”. Ngữ pháp và điểm thi của họ đều tốt nên A, C sai."
+     },
+     {
+      "passage": "我的邻居王奶奶今年八十岁了，可是看起来只有六十多岁。她每天早上六点起床，先去公园打一个小时太极拳，然后去市场买菜，回家做饭。她说，自己年轻的原因很简单：多运动，少生气，每天都开开心心的。",
+      "question": "王奶奶认为自己显得年轻的原因是什么？",
+      "options": [
+       "吃得很少",
+       "睡得很多",
+       "经常去医院检查",
+       "常运动，心情好"
+      ],
+      "answer": 3,
+      "passage_vi": "Hàng xóm của tôi là bà Vương năm nay tám mươi tuổi, nhưng trông chỉ như hơn sáu mươi. Mỗi sáng bà dậy lúc sáu giờ, trước tiên ra công viên tập Thái Cực Quyền một tiếng, sau đó đi chợ mua thức ăn rồi về nhà nấu cơm. Bà nói lý do mình trẻ rất đơn giản: vận động nhiều, ít tức giận, ngày nào cũng vui vẻ.",
+      "explain_vi": "Bà nói rõ: “多运动，少生气，每天都开开心心的” – tức là hay vận động, tâm trạng tốt."
+     },
+     {
+      "passage": "一位顾客在饭馆吃饭，发现汤里有一根头发，非常生气，马上叫来了服务员。服务员看了看，很有礼貌地说：“真抱歉！我们马上给您换一碗，今天的菜也给您打八折。”顾客听了，气一下子就没了，后来还成了这家饭馆的老顾客。",
+      "question": "顾客为什么成了这家饭馆的老顾客？",
+      "options": [
+       "饭馆的菜特别便宜",
+       "饭馆离他家很近",
+       "服务员处理问题的态度好",
+       "他认识饭馆的经理"
+      ],
+      "answer": 2,
+      "passage_vi": "Một vị khách ăn cơm ở nhà hàng, phát hiện trong canh có một sợi tóc, rất tức giận, lập tức gọi nhân viên đến. Nhân viên xem xét rồi lịch sự nói: “Thật xin lỗi! Chúng tôi sẽ đổi ngay cho anh bát khác, món ăn hôm nay cũng giảm giá 20% cho anh.” Vị khách nghe xong, cơn giận lập tức tan biến, sau này còn trở thành khách quen của nhà hàng.",
+      "explain_vi": "Khách hết giận nhờ cách nhân viên xin lỗi và xử lý chu đáo. Việc giảm giá chỉ là một lần, không phải món ăn “特别便宜”; các ý B, D không được nhắc đến."
+     },
+     {
+      "passage": "中国人送礼物时有很多要注意的地方。比如，一般不能送伞给朋友或者爱人，因为“伞”的发音和“散”差不多，听起来好像两个人要分开。同样，很多人也不送梨，因为“梨”和“离”的发音一样。所以送礼物之前，最好先了解一下这些习惯。",
+      "question": "根据这段话，为什么一般不送伞给朋友？",
+      "options": [
+       "发音让人想到分开",
+       "伞的价格太低",
+       "朋友不喜欢下雨",
+       "伞带起来不方便"
+      ],
+      "answer": 0,
+      "passage_vi": "Người Trung Quốc khi tặng quà có nhiều điều cần chú ý. Ví dụ, thường không được tặng ô cho bạn bè hoặc người yêu, vì phát âm của “伞” (ô) gần giống “散” (tan), nghe như thể hai người sắp chia tay. Tương tự, nhiều người cũng không tặng lê, vì “梨” (lê) phát âm giống “离” (rời xa). Vì vậy trước khi tặng quà, tốt nhất nên tìm hiểu những phong tục này.",
+      "explain_vi": "Lý do là “伞”的发音和“散”差不多，听起来好像两个人要分开 – phát âm gợi đến chia ly."
+     },
+     {
+      "passage": "很多父母觉得，孩子越早学习越好，所以孩子三四岁就让他们学英语、学钢琴、学画画。其实，对这么小的孩子来说，最重要的是玩儿。在玩儿的过程中，他们可以认识世界，学会和别人交流。如果学习压力太大，孩子反而可能会讨厌学习。",
+      "question": "作者的看法是：",
+      "options": [
+       "孩子应该早点儿学英语",
+       "学钢琴对孩子有好处",
+       "父母要严格要求孩子",
+       "小孩子应该多玩儿"
+      ],
+      "answer": 3,
+      "passage_vi": "Nhiều bố mẹ cho rằng trẻ học càng sớm càng tốt, nên mới ba bốn tuổi đã cho con học tiếng Anh, học piano, học vẽ. Thực ra, với trẻ nhỏ như vậy, quan trọng nhất là chơi. Trong quá trình chơi, trẻ có thể nhận biết thế giới, học cách giao tiếp với người khác. Nếu áp lực học quá lớn, trẻ ngược lại có thể sẽ ghét việc học.",
+      "explain_vi": "“其实” đưa ra quan điểm của tác giả: “最重要的是玩儿”. A, B là suy nghĩ của nhiều bố mẹ mà tác giả phản bác."
+     },
+     {
+      "passage": "上个月，我去一家公司应聘。经理问了我一个奇怪的问题：“如果你发现自己做错了一件事，可是没有人知道，你会怎么做？”我说我会马上告诉经理，并且想办法改正。后来经理告诉我，正是这个回答让他决定要我，因为他最重视的就是诚实。",
+      "question": "经理为什么决定要“我”？",
+      "options": [
+       "我工作经验丰富",
+       "我是一个诚实的人",
+       "我的专业很合适",
+       "我回答得很幽默"
+      ],
+      "answer": 1,
+      "passage_vi": "Tháng trước tôi đến một công ty ứng tuyển. Giám đốc hỏi tôi một câu hỏi kỳ lạ: “Nếu bạn phát hiện mình đã làm sai một việc nhưng không ai biết, bạn sẽ làm gì?” Tôi nói tôi sẽ lập tức báo cho giám đốc và tìm cách sửa sai. Sau này giám đốc nói với tôi, chính câu trả lời đó khiến ông quyết định nhận tôi, vì điều ông coi trọng nhất là sự trung thực.",
+      "explain_vi": "Câu cuối: “他最重视的就是诚实” – câu trả lời cho thấy “tôi” trung thực."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "e4-03",
+  "level": 4,
+  "title": "Đề luyện đọc HSK 4 · Số 3",
+  "sections": [
+   {
+    "type": "xuanci",
+    "title": "选词填空",
+    "words": [
+     "A 允许",
+     "B 仔细",
+     "C 尤其",
+     "D 估计",
+     "E 交流",
+     "F 降低"
+    ],
+    "items": [
+     {
+      "sentence": "你再（  ）检查一遍，看看还有没有写错的字。",
+      "answer": "B",
+      "vi": "Bạn kiểm tra kỹ lại một lần nữa, xem còn chữ nào viết sai không.",
+      "explain_vi": "Trước động từ “检查” cần trạng ngữ chỉ cách thức; “仔细检查” = kiểm tra cẩn thận."
+     },
+     {
+      "sentence": "天气预报说，明天的温度会（  ）五六度，大家要多穿点儿衣服。",
+      "answer": "F",
+      "vi": "Dự báo thời tiết nói nhiệt độ ngày mai sẽ giảm năm sáu độ, mọi người nhớ mặc thêm áo.",
+      "explain_vi": "“温度降低……度” = nhiệt độ giảm; “多穿点儿衣服” cho biết trời lạnh đi."
+     },
+     {
+      "sentence": "这个博物馆里不（  ）拍照，请大家把手机收起来。",
+      "answer": "A",
+      "vi": "Trong bảo tàng này không được phép chụp ảnh, mọi người hãy cất điện thoại đi.",
+      "explain_vi": "“不允许 + động từ” = không cho phép làm gì; hợp với lời nhắc “把手机收起来”."
+     },
+     {
+      "sentence": "我很喜欢吃中国菜，（  ）是四川菜。",
+      "answer": "C",
+      "vi": "Tôi rất thích ăn món Trung Quốc, đặc biệt là món Tứ Xuyên.",
+      "explain_vi": "“……，尤其是……” dùng để nhấn mạnh một phần nổi bật trong cái chung."
+     },
+     {
+      "sentence": "我（  ）他今天不会来了，都已经十点了还没到。",
+      "answer": "D",
+      "vi": "Tôi đoán hôm nay anh ấy sẽ không đến nữa, đã mười giờ rồi mà vẫn chưa tới.",
+      "explain_vi": "“估计” (ước đoán) đi với một mệnh đề phán đoán; vế sau là căn cứ để đoán."
+     }
+    ]
+   },
+   {
+    "type": "paixu",
+    "title": "排列顺序",
+    "items": [
+     {
+      "parts": {
+       "A": "所以很多人都喜欢去那儿过周末",
+       "B": "那里空气新鲜，景色也很美丽",
+       "C": "城市郊区有一个小村子"
+      },
+      "answer": "CBA",
+      "vi": "Ở ngoại ô thành phố có một ngôi làng nhỏ, ở đó không khí trong lành, cảnh sắc cũng rất đẹp, vì vậy nhiều người thích đến đó nghỉ cuối tuần.",
+      "explain_vi": "C giới thiệu địa điểm; B dùng “那里” chỉ lại ngôi làng; A có “所以” nêu kết quả, đứng cuối."
+     },
+     {
+      "parts": {
+       "A": "你千万不要放弃",
+       "B": "就算这次比赛输了",
+       "C": "只要继续努力，下次一定会成功的"
+      },
+      "answer": "BAC",
+      "vi": "Cho dù lần này thua trận, bạn tuyệt đối đừng bỏ cuộc, chỉ cần tiếp tục cố gắng, lần sau nhất định sẽ thành công.",
+      "explain_vi": "“就算……” là vế giả thiết nhượng bộ, đứng đầu; A là lời khuyên chính; C giải thích thêm lý do."
+     },
+     {
+      "parts": {
+       "A": "我好不容易回到家门口",
+       "B": "只好又回公司去拿",
+       "C": "却发现钥匙忘在办公室了"
+      },
+      "answer": "ACB",
+      "vi": "Tôi vất vả lắm mới về đến cửa nhà, lại phát hiện chìa khóa để quên ở văn phòng, đành phải quay lại công ty lấy.",
+      "explain_vi": "A có chủ ngữ “我”; C dùng “却” chuyển ý bất ngờ; B dùng “只好” nêu cách xử lý cuối cùng."
+     },
+     {
+      "parts": {
+       "A": "对身体健康也很有好处",
+       "B": "骑自行车上班不但能节约钱",
+       "C": "而且还能减少空气污染"
+      },
+      "answer": "BCA",
+      "vi": "Đạp xe đi làm không những tiết kiệm được tiền, mà còn giảm ô nhiễm không khí, đối với sức khỏe cũng rất có lợi.",
+      "explain_vi": "B có chủ ngữ và “不但”, C nối bằng “而且”; A có “也” bổ sung thêm một lợi ích nữa, đứng cuối."
+     },
+     {
+      "parts": {
+       "A": "当时我还以为他在开玩笑",
+       "B": "后来才知道他是认真的",
+       "C": "第一次听他说要去南极旅行"
+      },
+      "answer": "CAB",
+      "vi": "Lần đầu nghe anh ấy nói muốn đi du lịch Nam Cực, lúc đó tôi còn tưởng anh ấy đùa, về sau mới biết anh ấy nói thật.",
+      "explain_vi": "C nêu thời điểm ban đầu; A “当时……以为” là suy nghĩ lúc đó; B “后来才知道” là sự thật biết sau."
+     }
+    ]
+   },
+   {
+    "type": "yuedu",
+    "title": "阅读理解",
+    "items": [
+     {
+      "passage": "京剧是中国的传统艺术，已经有两百多年的历史了。以前，很多年轻人觉得京剧唱得太慢，也听不懂。最近几年，一些演员把京剧和流行音乐放在一起表演，吸引了不少年轻观众。现在，在网上看京剧表演的年轻人越来越多了。",
+      "question": "关于京剧，下面哪个说法正确？",
+      "options": [
+       "只有老人喜欢",
+       "有一百年的历史",
+       "演员都很年轻",
+       "现在吸引了更多年轻人"
+      ],
+      "answer": 3,
+      "passage_vi": "Kinh kịch là nghệ thuật truyền thống của Trung Quốc, đã có lịch sử hơn hai trăm năm. Trước đây, nhiều người trẻ thấy Kinh kịch hát quá chậm, lại nghe không hiểu. Vài năm gần đây, một số diễn viên kết hợp Kinh kịch với nhạc thịnh hành để biểu diễn, đã thu hút không ít khán giả trẻ. Hiện nay, người trẻ xem biểu diễn Kinh kịch trên mạng ngày càng nhiều.",
+      "explain_vi": "Đoạn văn nói “吸引了不少年轻观众”, “年轻人越来越多了”. Lịch sử là hơn 200 năm, không phải 100; không nói diễn viên đều trẻ."
+     },
+     {
+      "passage": "小王很粗心，经常丢东西。上个星期他丢了手机，前天又把钱包忘在了出租车上。幸好司机在钱包里发现了他的名片，按照上面的号码给他打了电话，把钱包送了回来。小王非常感动，一定要给司机钱，可是司机怎么也不要。",
+      "question": "小王的钱包是怎么找回来的？",
+      "options": [
+       "司机送回来的",
+       "警察帮他找到的",
+       "他自己回去拿的",
+       "朋友帮他找的"
+      ],
+      "answer": 0,
+      "passage_vi": "Tiểu Vương rất cẩu thả, thường xuyên làm mất đồ. Tuần trước cậu ấy mất điện thoại, hôm kia lại để quên ví trên taxi. May mà tài xế tìm thấy danh thiếp của cậu trong ví, gọi điện theo số trên đó và mang ví trả lại. Tiểu Vương vô cùng cảm động, nhất định muốn đưa tiền cho tài xế, nhưng tài xế thế nào cũng không nhận.",
+      "explain_vi": "“司机……把钱包送了回来” – chính tài xế mang trả. Không có cảnh sát hay bạn bè trong đoạn văn."
+     },
+     {
+      "passage": "研究发现，人在心情不好的时候，往往特别想吃甜的东西，比如巧克力、蛋糕。这是因为吃甜的东西能让人很快觉得愉快。不过，这种愉快的感觉保持不了多久，而且吃太多糖对身体也不好。所以，心情不好的时候，最好还是找朋友聊聊天，或者出去走一走。",
+      "question": "根据这段话，心情不好时最好：",
+      "options": [
+       "多吃一些巧克力",
+       "一个人在家休息",
+       "找朋友聊聊天",
+       "马上去睡觉"
+      ],
+      "answer": 2,
+      "passage_vi": "Nghiên cứu phát hiện, khi tâm trạng không tốt, con người thường đặc biệt muốn ăn đồ ngọt, như sô-cô-la, bánh ngọt. Đó là vì ăn đồ ngọt khiến người ta nhanh chóng thấy vui. Tuy nhiên, cảm giác vui này không giữ được lâu, hơn nữa ăn quá nhiều đường cũng không tốt cho sức khỏe. Vì vậy, khi tâm trạng không tốt, tốt nhất vẫn nên tìm bạn bè trò chuyện hoặc ra ngoài đi dạo.",
+      "explain_vi": "Câu kết “最好还是找朋友聊聊天” là lời khuyên. Ăn sô-cô-la chỉ vui trong thời gian ngắn và hại sức khỏe nên A sai."
+     },
+     {
+      "passage": "我小时候住在农村，家门口有一棵很大的树。夏天的时候，邻居们都喜欢坐在树下聊天、下棋，孩子们就在旁边跑来跑去。后来，我到城里上学、工作，很少回去。去年回家的时候，我发现那棵树已经不在了，心里难受了很久。",
+      "question": "“我”为什么心里难受？",
+      "options": [
+       "邻居都搬走了",
+       "那棵大树没有了",
+       "不能回城里工作",
+       "老朋友不认识我了"
+      ],
+      "answer": 1,
+      "passage_vi": "Hồi nhỏ tôi sống ở nông thôn, trước cửa nhà có một cái cây rất to. Mùa hè, hàng xóm đều thích ngồi dưới gốc cây trò chuyện, đánh cờ, bọn trẻ thì chạy nhảy xung quanh. Sau này tôi lên thành phố đi học, đi làm, rất ít khi về. Năm ngoái về nhà, tôi phát hiện cái cây đó không còn nữa, trong lòng buồn rất lâu.",
+      "explain_vi": "“发现那棵树已经不在了，心里难受了很久” – cái cây gắn với ký ức tuổi thơ đã không còn."
+     },
+     {
+      "passage": "有些人做事喜欢等“最好的时候”：等有了钱再去旅行，等不忙了再去运动，等有时间了再去学一门外语。可是，这样的“最好的时候”往往永远也不会来。其实，想做一件事，最好的时候就是现在。",
+      "question": "这段话主要想告诉我们：",
+      "options": [
+       "旅行需要很多钱",
+       "工作忙就不能运动",
+       "学外语要有时间",
+       "想做什么就马上去做"
+      ],
+      "answer": 3,
+      "passage_vi": "Có những người làm việc thích đợi “thời điểm tốt nhất”: đợi có tiền rồi mới đi du lịch, đợi hết bận mới đi tập thể dục, đợi có thời gian mới đi học một ngoại ngữ. Nhưng “thời điểm tốt nhất” như vậy thường mãi mãi không bao giờ đến. Thực ra, muốn làm một việc gì, thời điểm tốt nhất chính là bây giờ.",
+      "explain_vi": "Câu cuối là ý chính: “最好的时候就是现在” – muốn làm gì thì làm ngay. A, B, C chỉ là ví dụ trong câu."
+     },
+     {
+      "passage": "为了让更多的人参加运动，我们城市从今年开始，每个月最后一个星期天的上午，几条主要的街道都禁止汽车开进去，只允许人们走路或者骑自行车。第一次活动那天，街上到处都是跑步、骑车的人，非常热闹。",
+      "question": "这个城市举办这个活动的目的是：",
+      "options": [
+       "让更多人运动",
+       "减少交通事故",
+       "让商店多卖东西",
+       "欢迎新年到来"
+      ],
+      "answer": 0,
+      "passage_vi": "Để nhiều người tham gia vận động hơn, thành phố chúng tôi từ năm nay, vào buổi sáng chủ nhật cuối cùng mỗi tháng, mấy con phố chính đều cấm ô tô đi vào, chỉ cho phép mọi người đi bộ hoặc đạp xe. Hôm tổ chức hoạt động lần đầu, khắp phố đều là người chạy bộ, đạp xe, vô cùng náo nhiệt.",
+      "explain_vi": "Câu mở đầu nêu mục đích: “为了让更多的人参加运动”."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "e4-04",
+  "level": 4,
+  "title": "Đề luyện đọc HSK 4 · Số 4",
+  "sections": [
+   {
+    "type": "xuanci",
+    "title": "选词填空",
+    "words": [
+     "A 负责",
+     "B 来不及",
+     "C 商量",
+     "D 熟悉",
+     "E 值得",
+     "F 表扬"
+    ],
+    "items": [
+     {
+      "sentence": "我刚搬到这个城市，对这里的环境还不太（  ）。",
+      "answer": "D",
+      "vi": "Tôi mới chuyển đến thành phố này, còn chưa quen lắm với môi trường ở đây.",
+      "explain_vi": "“对……（不）熟悉” = (không) quen thuộc với…; hợp với “刚搬到”."
+     },
+     {
+      "sentence": "快点儿吧，电影七点开始，再不走就（  ）了。",
+      "answer": "B",
+      "vi": "Nhanh lên, phim bắt đầu lúc bảy giờ, không đi ngay thì không kịp nữa.",
+      "explain_vi": "“再不……就来不及了” là cách nói thúc giục: không… thì sẽ không kịp."
+     },
+     {
+      "sentence": "小明这次考试进步很大，老师在班里（  ）了他。",
+      "answer": "F",
+      "vi": "Lần thi này Tiểu Minh tiến bộ rất nhiều, cô giáo đã khen cậu ấy trước lớp.",
+      "explain_vi": "Tiến bộ → được khen; “表扬 + người” = khen ngợi ai."
+     },
+     {
+      "sentence": "这本书写得非常好，很（  ）一读。",
+      "answer": "E",
+      "vi": "Cuốn sách này viết rất hay, rất đáng đọc.",
+      "explain_vi": "“值得 + động từ” = đáng để làm gì; “很值得一读” là cách nói cố định."
+     },
+     {
+      "sentence": "这件事太重要了，我得回家跟父母（  ）一下再决定。",
+      "answer": "C",
+      "vi": "Việc này quan trọng quá, tôi phải về nhà bàn với bố mẹ một chút rồi mới quyết định.",
+      "explain_vi": "“跟……商量一下” = bàn bạc với ai; “负责” (phụ trách) không đi với “跟父母……一下”."
+     }
+    ]
+   },
+   {
+    "type": "paixu",
+    "title": "排列顺序",
+    "items": [
+     {
+      "parts": {
+       "A": "为了按时完成这个任务",
+       "B": "一直到晚上十点才回家",
+       "C": "他这个星期每天都加班"
+      },
+      "answer": "ACB",
+      "vi": "Để hoàn thành nhiệm vụ này đúng hạn, tuần này ngày nào anh ấy cũng tăng ca, mãi đến mười giờ tối mới về nhà.",
+      "explain_vi": "“为了……” chỉ mục đích thường đứng đầu câu; C có chủ ngữ “他”; B bổ sung mức độ “一直到……才……”."
+     },
+     {
+      "parts": {
+       "A": "一下子脸就红了",
+       "B": "也不知道该怎么回答",
+       "C": "他上课时被老师突然叫起来回答问题"
+      },
+      "answer": "CAB",
+      "vi": "Trong giờ học, cậu ấy bị thầy giáo bất ngờ gọi đứng dậy trả lời câu hỏi, mặt lập tức đỏ bừng, cũng không biết phải trả lời thế nào.",
+      "explain_vi": "C có chủ ngữ và nêu tình huống; A là phản ứng tức thì “一下子”; B dùng “也” bổ sung, đứng cuối."
+     },
+     {
+      "parts": {
+       "A": "咱们下午三点在学校门口见面",
+       "B": "要是你明天有空的话",
+       "C": "一起去看看那家新开的书店吧"
+      },
+      "answer": "BAC",
+      "vi": "Nếu ngày mai bạn rảnh, chúng ta gặp nhau lúc ba giờ chiều ở cổng trường, cùng đi xem hiệu sách mới mở nhé.",
+      "explain_vi": "“要是……的话” là điều kiện, đứng đầu; A hẹn giờ và địa điểm; C nói việc sẽ làm, kết thúc bằng “吧”."
+     },
+     {
+      "parts": {
+       "A": "几乎每个来北京旅游的人都要尝一尝",
+       "B": "其中最受欢迎的就是烤鸭",
+       "C": "北京有许多有名的美食"
+      },
+      "answer": "CBA",
+      "vi": "Bắc Kinh có rất nhiều món ngon nổi tiếng, trong đó được yêu thích nhất chính là vịt quay, hầu như ai đến Bắc Kinh du lịch cũng phải nếm thử.",
+      "explain_vi": "C nêu cái chung; B dùng “其中” chọn ra một món; A nói về món đó (“尝一尝” = nếm vịt quay)."
+     },
+     {
+      "parts": {
+       "A": "反而笑着说没关系",
+       "B": "我不小心把咖啡倒在了同事的衣服上",
+       "C": "可是他不仅没有生气"
+      },
+      "answer": "BCA",
+      "vi": "Tôi không cẩn thận làm đổ cà phê lên áo đồng nghiệp, nhưng anh ấy không những không giận mà ngược lại còn cười nói không sao.",
+      "explain_vi": "B nêu sự việc; “不仅没有……反而……” nên C trước A."
+     }
+    ]
+   },
+   {
+    "type": "yuedu",
+    "title": "阅读理解",
+    "items": [
+     {
+      "passage": "很多人都有这样的经历：明明已经很累了，躺在床上却怎么也睡不着，拿起手机一看就是一两个小时。专家说，睡觉前看手机会影响睡觉的质量，因为手机发出的光会让大脑一直很兴奋。所以，最好在睡前一个小时就把手机放到一边。",
+      "question": "专家建议我们：",
+      "options": [
+       "睡前多看手机",
+       "累了就早点儿睡",
+       "睡前一小时不看手机",
+       "每天睡八个小时"
+      ],
+      "answer": 2,
+      "passage_vi": "Nhiều người có trải nghiệm thế này: rõ ràng đã rất mệt, nằm trên giường lại thế nào cũng không ngủ được, cầm điện thoại lên xem là mất một hai tiếng. Chuyên gia nói xem điện thoại trước khi ngủ sẽ ảnh hưởng chất lượng giấc ngủ, vì ánh sáng điện thoại phát ra khiến não luôn hưng phấn. Vì vậy, tốt nhất nên để điện thoại sang một bên từ một tiếng trước khi ngủ.",
+      "explain_vi": "Lời khuyên ở câu cuối: “最好在睡前一个小时就把手机放到一边”. B, D không được nhắc đến."
+     },
+     {
+      "passage": "我叔叔是一名出租车司机，已经开了二十年车了。他对这个城市的每一条街道都非常熟悉，不用看地图就能找到最近的路。就算遇到堵车，他也总能想到别的办法，按时把乘客送到地方。所以，坐过他的车的人都叫他“活地图”。",
+      "question": "人们为什么叫叔叔“活地图”？",
+      "options": [
+       "他喜欢看地图",
+       "他对路非常熟悉",
+       "他开车开得很快",
+       "他会画地图"
+      ],
+      "answer": 1,
+      "passage_vi": "Chú tôi là tài xế taxi, đã lái xe được hai mươi năm. Chú vô cùng quen thuộc với từng con phố của thành phố này, không cần xem bản đồ cũng tìm được đường gần nhất. Cho dù gặp kẹt xe, chú cũng luôn nghĩ ra cách khác để đưa khách đến nơi đúng giờ. Vì thế, những ai từng đi xe chú đều gọi chú là “bản đồ sống”.",
+      "explain_vi": "“对每一条街道都非常熟悉，不用看地图” giải thích cho biệt danh “活地图”. Chú không cần xem bản đồ nên A sai; không nói chú lái nhanh."
+     },
+     {
+      "passage": "每年春节前，很多在外地工作的人都要回老家和家人一起过年。因为回家的人实在太多，火车票往往很难买到。所以，不少人提前一个月就开始在网上订票，有的人甚至要连续试好几天才能买到一张。",
+      "question": "春节前火车票为什么很难买？",
+      "options": [
+       "回家的人太多",
+       "火车票太贵了",
+       "火车的数量减少了",
+       "网上不能买票"
+      ],
+      "answer": 0,
+      "passage_vi": "Mỗi năm trước Tết Nguyên đán, rất nhiều người làm việc ở nơi khác đều muốn về quê đón Tết cùng gia đình. Vì người về quê thực sự quá đông, vé tàu thường rất khó mua. Vì vậy, không ít người bắt đầu đặt vé trên mạng trước một tháng, có người thậm chí phải thử liên tục mấy ngày mới mua được một vé.",
+      "explain_vi": "“因为回家的人实在太多，火车票往往很难买到” – nguyên nhân là quá đông người. Đoạn văn nói có thể đặt vé trên mạng nên D sai."
+     },
+     {
+      "passage": "一个年轻人去问一位老画家：“为什么我画一张画只要一天，可是卖出去却要等一年？”老画家笑着说：“那你试试用一年的时间去画一张画，也许一天就能把它卖出去了。”",
+      "question": "老画家的意思是：",
+      "options": [
+       "画画的速度要快",
+       "画应该卖得便宜",
+       "要多去参观画展",
+       "花更多时间才能做好"
+      ],
+      "answer": 3,
+      "passage_vi": "Một chàng trai trẻ đến hỏi một họa sĩ già: “Tại sao cháu vẽ một bức tranh chỉ mất một ngày, nhưng bán được lại phải đợi một năm?” Họa sĩ già cười nói: “Vậy cháu thử dùng một năm để vẽ một bức tranh xem, có lẽ chỉ một ngày là bán được.”",
+      "explain_vi": "Họa sĩ muốn nói: bỏ nhiều công sức, thời gian hơn thì tác phẩm mới tốt, mới bán được. Đây là ý ngược với “画画的速度要快”."
+     },
+     {
+      "passage": "小林是个很害羞的女孩，在人多的地方总是不敢说话。为了改变自己，她报名参加了学校的讲故事比赛。比赛前的一个月，她每天都对着镜子练习。比赛那天，她虽然还是有点儿紧张，但是表现得非常好，最后得了第二名。",
+      "question": "小林为什么参加比赛？",
+      "options": [
+       "想得第一名",
+       "想改变自己的性格",
+       "老师让她参加",
+       "想认识新朋友"
+      ],
+      "answer": 1,
+      "passage_vi": "Tiểu Lâm là một cô gái rất nhút nhát, ở chỗ đông người luôn không dám nói. Để thay đổi bản thân, cô đăng ký tham gia cuộc thi kể chuyện của trường. Một tháng trước cuộc thi, ngày nào cô cũng luyện tập trước gương. Hôm thi, tuy cô vẫn hơi căng thẳng, nhưng thể hiện rất tốt, cuối cùng đạt giải nhì.",
+      "explain_vi": "“为了改变自己” – cô muốn thay đổi tính nhút nhát của mình. Cô đạt giải nhì, đoạn văn không nói mục đích là giải nhất."
+     },
+     {
+      "passage": "现在很多超市已经不免费提供塑料袋了，顾客需要的话得花钱买。刚开始，不少人觉得不方便，有点儿不满意。但是慢慢地，大家都习惯了去超市的时候自己带购物袋。这样做减少了塑料袋的使用，对保护环境很有帮助。",
+      "question": "超市不免费提供塑料袋，主要是为了：",
+      "options": [
+       "多赚一些钱",
+       "让顾客少买东西",
+       "保护环境",
+       "节约顾客的时间"
+      ],
+      "answer": 2,
+      "passage_vi": "Hiện nay nhiều siêu thị đã không còn cung cấp túi ni-lông miễn phí, khách cần thì phải bỏ tiền mua. Lúc đầu, không ít người thấy bất tiện, hơi không hài lòng. Nhưng dần dần, mọi người đã quen tự mang túi mua sắm khi đi siêu thị. Làm như vậy giảm việc sử dụng túi ni-lông, rất có ích cho việc bảo vệ môi trường.",
+      "explain_vi": "Câu cuối nêu tác dụng chính: “减少了塑料袋的使用，对保护环境很有帮助”."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "e4-05",
+  "level": 4,
+  "title": "Đề luyện đọc HSK 4 · Số 5",
+  "sections": [
+   {
+    "type": "xuanci",
+    "title": "选词填空",
+    "words": [
+     "A 推迟",
+     "B 顺便",
+     "C 印象",
+     "D 至少",
+     "E 拒绝",
+     "F 千万"
+    ],
+    "items": [
+     {
+      "sentence": "A：从这儿到机场要多长时间？\nB：（  ）要一个小时，你最好早点儿出发。",
+      "answer": "D",
+      "vi": "A: Từ đây đến sân bay mất bao lâu?\nB: Ít nhất cũng mất một tiếng, tốt nhất bạn nên xuất phát sớm.",
+      "explain_vi": "“至少要 + thời gian” = ít nhất mất…; vế sau “早点儿出发” cho thấy thời gian khá dài."
+     },
+     {
+      "sentence": "A：你去超市吗？能不能（  ）帮我买一瓶牛奶？\nB：没问题，还要别的吗？",
+      "answer": "B",
+      "vi": "A: Bạn đi siêu thị à? Có thể tiện thể mua giúp tôi một chai sữa không?\nB: Không vấn đề, còn cần gì nữa không?",
+      "explain_vi": "“顺便” = tiện thể, dùng khi nhân lúc làm việc này thì làm thêm việc khác (đi siêu thị → mua giúp sữa)."
+     },
+     {
+      "sentence": "A：明天就要比赛了，我好紧张啊。\nB：别担心，（  ）别想太多，今晚好好睡一觉。",
+      "answer": "F",
+      "vi": "A: Mai thi đấu rồi, tôi căng thẳng quá.\nB: Đừng lo, nhất định đừng nghĩ nhiều quá, tối nay ngủ một giấc thật ngon.",
+      "explain_vi": "“千万别……” = tuyệt đối đừng…, dùng để dặn dò, khuyên nhủ."
+     },
+     {
+      "sentence": "A：听说下周的考试改时间了？\nB：对，因为老师出差，考试（  ）到下个月了。",
+      "answer": "A",
+      "vi": "A: Nghe nói kỳ thi tuần sau đổi thời gian à?\nB: Đúng, vì thầy đi công tác nên kỳ thi bị hoãn sang tháng sau.",
+      "explain_vi": "“推迟到 + thời gian” = hoãn đến…; “拒绝” (từ chối) không đi với “到下个月”."
+     },
+     {
+      "sentence": "A：你对新来的同事（  ）怎么样？\nB：挺好的，他很热情，也很幽默。",
+      "answer": "C",
+      "vi": "A: Bạn có ấn tượng thế nào về đồng nghiệp mới đến?\nB: Khá tốt, anh ấy rất nhiệt tình, cũng rất hài hước.",
+      "explain_vi": "“对……印象怎么样” = có ấn tượng thế nào về…"
+     }
+    ]
+   },
+   {
+    "type": "paixu",
+    "title": "排列顺序",
+    "items": [
+     {
+      "parts": {
+       "A": "我们只好在家里看电视",
+       "B": "本来打算今天去公园放风筝的",
+       "C": "可是一大早就下起了雨"
+      },
+      "answer": "BCA",
+      "vi": "Vốn định hôm nay đi công viên thả diều, nhưng từ sáng sớm trời đã mưa, chúng tôi đành ở nhà xem tivi.",
+      "explain_vi": "“本来……可是……” nên B trước C; A có “只好” là kết quả bất đắc dĩ, đứng cuối."
+     },
+     {
+      "parts": {
+       "A": "如果你还有什么不清楚的地方",
+       "B": "我看到以后会马上回复你",
+       "C": "可以随时给我发电子邮件"
+      },
+      "answer": "ACB",
+      "vi": "Nếu bạn còn chỗ nào chưa rõ, có thể gửi email cho tôi bất cứ lúc nào, tôi đọc được sẽ trả lời bạn ngay.",
+      "explain_vi": "“如果……” là điều kiện, đứng đầu; C nói cách liên hệ; B “看到以后” là việc xảy ra sau khi nhận email."
+     },
+     {
+      "parts": {
+       "A": "但他一点儿也不骄傲",
+       "B": "小刘获得了全国比赛的第一名",
+       "C": "仍然每天认真练习"
+      },
+      "answer": "BAC",
+      "vi": "Tiểu Lưu giành giải nhất cuộc thi toàn quốc, nhưng cậu ấy không hề kiêu ngạo, vẫn ngày ngày chăm chỉ luyện tập.",
+      "explain_vi": "B có chủ ngữ và nêu sự việc; A “但” chuyển ý; C “仍然” tiếp nối A, nói thái độ không đổi."
+     },
+     {
+      "parts": {
+       "A": "无论工作多忙",
+       "B": "都应该找时间多陪陪家人",
+       "C": "我觉得一个人"
+      },
+      "answer": "CAB",
+      "vi": "Tôi cho rằng một người dù công việc bận đến đâu cũng nên dành thời gian ở bên gia đình nhiều hơn.",
+      "explain_vi": "C chứa chủ ngữ “我觉得一个人” mở đầu; “无论……都……” nên A trước B."
+     },
+     {
+      "parts": {
+       "A": "因此我们必须保护好它",
+       "B": "是我们人类共同的家",
+       "C": "地球"
+      },
+      "answer": "CBA",
+      "vi": "Trái Đất là ngôi nhà chung của loài người chúng ta, vì vậy chúng ta phải bảo vệ nó thật tốt.",
+      "explain_vi": "C là chủ ngữ “地球”, B là vị ngữ “是……”; A có “因此” và “它” thay cho Trái Đất, đứng cuối."
+     }
+    ]
+   },
+   {
+    "type": "yuedu",
+    "title": "阅读理解",
+    "items": [
+     {
+      "passage": "中国有句老话：“好记性不如烂笔头。”意思是，一个人的记忆力再好，也比不上把事情写下来。在生活中，很多重要的事情如果只放在脑子里，过一段时间就很容易忘记。所以，养成随时记下来的习惯是很有用的。",
+      "question": "这句老话的意思是：",
+      "options": [
+       "应该把重要的事写下来",
+       "要买质量好的笔",
+       "记忆力好的人很少",
+       "字要写得漂亮"
+      ],
+      "answer": 0,
+      "passage_vi": "Trung Quốc có câu nói xưa: “Trí nhớ tốt không bằng cây bút cùn.” Nghĩa là trí nhớ của một người dù tốt đến đâu cũng không bằng viết sự việc ra. Trong cuộc sống, nhiều việc quan trọng nếu chỉ để trong đầu, qua một thời gian rất dễ quên. Vì vậy, tập thói quen ghi lại bất cứ lúc nào là rất hữu ích.",
+      "explain_vi": "Đoạn văn giải thích: “记忆力再好，也比不上把事情写下来” – nên ghi chép lại. “烂笔头” chỉ việc viết, không liên quan đến chất lượng bút."
+     },
+     {
+      "passage": "小周以前在一家大公司工作，收入很高，可是每天都要加班到很晚，几乎没有自己的时间。去年，他离开了那家公司，和朋友一起开了一家小书店。虽然现在赚的钱比以前少多了，但是他觉得每天都过得很愉快。",
+      "question": "小周现在的生活怎么样？",
+      "options": [
+       "收入比以前高",
+       "每天都要加班",
+       "一个人开了书店",
+       "钱少了，但是很开心"
+      ],
+      "answer": 3,
+      "passage_vi": "Tiểu Chu trước đây làm việc ở một công ty lớn, thu nhập rất cao, nhưng ngày nào cũng phải tăng ca đến khuya, hầu như không có thời gian cho bản thân. Năm ngoái, anh rời công ty đó, cùng bạn mở một hiệu sách nhỏ. Tuy bây giờ kiếm được ít tiền hơn trước nhiều, nhưng anh thấy ngày nào cũng sống rất vui vẻ.",
+      "explain_vi": "“赚的钱比以前少多了，但是……很愉快” khớp với D. Anh mở hiệu sách “和朋友一起” nên C sai."
+     },
+     {
+      "passage": "大熊猫看起来胖胖的，非常可爱。可是你知道吗？刚出生的熊猫只有一百克左右，大约是它妈妈的千分之一。长大以后，熊猫每天大部分时间都在吃东西和睡觉，一天要吃十几公斤竹子，所以它们很少运动。",
+      "question": "关于熊猫，可以知道什么？",
+      "options": [
+       "刚出生的时候很大",
+       "每天吃很多东西",
+       "非常喜欢运动",
+       "主要吃肉"
+      ],
+      "answer": 1,
+      "passage_vi": "Gấu trúc trông mũm mĩm, vô cùng đáng yêu. Nhưng bạn có biết không? Gấu trúc mới sinh chỉ nặng khoảng một trăm gam, bằng khoảng một phần nghìn mẹ nó. Khi lớn lên, gấu trúc dành phần lớn thời gian mỗi ngày để ăn và ngủ, một ngày ăn hơn mười cân tre, vì vậy chúng rất ít vận động.",
+      "explain_vi": "“一天要吃十几公斤竹子” – ăn rất nhiều. Mới sinh chỉ 100g, ít vận động, ăn tre chứ không phải thịt."
+     },
+     {
+      "passage": "王先生第一次去朋友家吃饭，为了表示礼貌，他把桌上的菜都吃完了。没想到朋友的妈妈看到盘子空了，马上又做了一盘，王先生只好又吃完了。后来他才知道，在一些地方，如果客人把菜都吃光，主人会以为客人还没吃饱。",
+      "question": "朋友的妈妈为什么又做了一盘菜？",
+      "options": [
+       "她自己还没吃饱",
+       "王先生请她再做",
+       "她以为客人没吃饱",
+       "她想让王先生带走"
+      ],
+      "answer": 2,
+      "passage_vi": "Anh Vương lần đầu đến nhà bạn ăn cơm, để tỏ ra lịch sự, anh ăn hết sạch thức ăn trên bàn. Không ngờ mẹ của bạn thấy đĩa trống liền làm thêm một đĩa nữa, anh Vương đành ăn hết lần nữa. Sau này anh mới biết, ở một số nơi, nếu khách ăn sạch thức ăn, chủ nhà sẽ nghĩ khách vẫn chưa no.",
+      "explain_vi": "Câu cuối giải thích: “主人会以为客人还没吃饱” – bà nghĩ khách chưa no."
+     },
+     {
+      "passage": "最近，我们小区楼下放了一个书架，上面有很多书，大家可以免费拿回家看，看完再放回来；也可以把自己家里不看的书放上去。刚开始，我担心书会越来越少。没想到一个月过去了，书架上的书反而比以前更多了。",
+      "question": "一个月以后，书架怎么样了？",
+      "options": [
+       "书比以前多了",
+       "书都被拿走了",
+       "书架被搬走了",
+       "借书需要花钱"
+      ],
+      "answer": 0,
+      "passage_vi": "Gần đây, dưới tòa nhà khu chung cư chúng tôi có đặt một giá sách, trên đó có rất nhiều sách, mọi người có thể mang về nhà đọc miễn phí, đọc xong thì để lại; cũng có thể đặt lên những cuốn sách ở nhà mình không đọc nữa. Lúc đầu, tôi lo sách sẽ ngày càng ít. Không ngờ một tháng trôi qua, sách trên giá ngược lại còn nhiều hơn trước.",
+      "explain_vi": "“书架上的书反而比以前更多了” – đáp án A. B là nỗi lo ban đầu, nhưng không xảy ra; sách được mượn miễn phí nên D sai."
+     },
+     {
+      "passage": "有人觉得，生气的时候大声说出来，心里就会舒服一些。但是研究发现，大发脾气以后，人往往会更生气。比较好的办法是先离开让你生气的地方，慢慢地喝一杯水，等自己冷静下来以后，再想办法解决问题。",
+      "question": "根据这段话，生气时比较好的做法是：",
+      "options": [
+       "大声说出来",
+       "马上解决问题",
+       "不理任何人",
+       "先让自己冷静下来"
+      ],
+      "answer": 3,
+      "passage_vi": "Có người cho rằng khi tức giận cứ nói to ra thì trong lòng sẽ dễ chịu hơn. Nhưng nghiên cứu phát hiện, sau khi nổi giận lớn, người ta thường càng giận hơn. Cách tốt hơn là trước tiên rời khỏi nơi làm bạn tức giận, từ từ uống một cốc nước, đợi bản thân bình tĩnh lại rồi mới tìm cách giải quyết vấn đề.",
+      "explain_vi": "Lời khuyên: “等自己冷静下来以后，再想办法解决问题” – trước hết phải bình tĩnh. A bị nghiên cứu phủ định; B sai vì phải đợi bình tĩnh rồi mới giải quyết."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "e4-06",
+  "level": 4,
+  "title": "Đề luyện đọc HSK 4 · Số 6",
+  "sections": [
+   {
+    "type": "xuanci",
+    "title": "选词填空",
+    "words": [
+     "A 保证",
+     "B 偶尔",
+     "C 既然",
+     "D 详细",
+     "E 激动",
+     "F 误会"
+    ],
+    "items": [
+     {
+      "sentence": "听到自己通过考试的消息，她（  ）得哭了起来。",
+      "answer": "E",
+      "vi": "Nghe tin mình thi đỗ, cô ấy xúc động đến bật khóc.",
+      "explain_vi": "“激动得 + kết quả” = xúc động đến mức…; tin vui khiến người ta xúc động."
+     },
+     {
+      "sentence": "（  ）你已经决定了，那就按照你的想法去做吧。",
+      "answer": "C",
+      "vi": "Nếu bạn đã quyết định rồi thì cứ làm theo ý của bạn đi.",
+      "explain_vi": "“既然……就……” = đã… thì…, dựa vào sự thật đã có để đưa ra kết luận."
+     },
+     {
+      "sentence": "A：你别生气，我刚才不是那个意思。\nB：没事，是我（  ）你了。",
+      "answer": "F",
+      "vi": "A: Bạn đừng giận, lúc nãy tôi không có ý đó.\nB: Không sao, là tôi đã hiểu lầm bạn.",
+      "explain_vi": "“不是那个意思” → người kia hiểu sai; “误会 + người” = hiểu lầm ai."
+     },
+     {
+      "sentence": "关于这次活动的安排，请您再（  ）地说明一下。",
+      "answer": "D",
+      "vi": "Về sắp xếp của hoạt động lần này, xin ngài giải thích chi tiết thêm một chút.",
+      "explain_vi": "“详细地说明” = giải thích chi tiết; cấu trúc “tính từ + 地 + động từ”."
+     },
+     {
+      "sentence": "我平时很少喝酒，只是（  ）跟朋友喝一点儿。",
+      "answer": "B",
+      "vi": "Bình thường tôi rất ít uống rượu, chỉ thỉnh thoảng uống một chút với bạn bè.",
+      "explain_vi": "“很少……，只是偶尔……” – “偶尔” (thỉnh thoảng) hợp với ý “ít khi”. “保证” (đảm bảo) là từ thừa."
+     }
+    ]
+   },
+   {
+    "type": "paixu",
+    "title": "排列顺序",
+    "items": [
+     {
+      "parts": {
+       "A": "是因为他找到了一个更适合自己的职业",
+       "B": "他之所以离开这家公司",
+       "C": "而不是因为工资低"
+      },
+      "answer": "BAC",
+      "vi": "Sở dĩ anh ấy rời công ty này là vì đã tìm được một nghề phù hợp với mình hơn, chứ không phải vì lương thấp.",
+      "explain_vi": "“之所以……是因为……” nên B trước A; C “而不是……” bổ sung, phủ định một nguyên nhân khác, đứng cuối."
+     },
+     {
+      "parts": {
+       "A": "他们认为这样跑步不会觉得无聊",
+       "B": "一边听音乐",
+       "C": "很多年轻人喜欢一边跑步"
+      },
+      "answer": "CBA",
+      "vi": "Nhiều bạn trẻ thích vừa chạy bộ vừa nghe nhạc, họ cho rằng chạy như vậy sẽ không thấy nhàm chán.",
+      "explain_vi": "“一边……一边……” nên C trước B; A dùng “他们” chỉ “很多年轻人”, nêu lý do, đứng cuối."
+     },
+     {
+      "parts": {
+       "A": "有时候连饭都忘了吃",
+       "B": "最近她忙着准备硕士考试",
+       "C": "每天在图书馆一坐就是十几个小时"
+      },
+      "answer": "BCA",
+      "vi": "Gần đây cô ấy bận chuẩn bị thi thạc sĩ, ngày nào cũng ngồi ở thư viện đến hơn mười tiếng, có lúc quên cả ăn cơm.",
+      "explain_vi": "B có chủ ngữ “她” và nêu bối cảnh; C miêu tả mỗi ngày; A “有时候连……都……” là mức độ cao nhất, đứng cuối."
+     },
+     {
+      "parts": {
+       "A": "这个周末的音乐会",
+       "B": "你要是有空就跟我一起去吧",
+       "C": "我好不容易才买到两张票"
+      },
+      "answer": "ACB",
+      "vi": "Buổi hòa nhạc cuối tuần này, tôi vất vả lắm mới mua được hai vé, nếu bạn rảnh thì đi cùng tôi nhé.",
+      "explain_vi": "A là chủ đề được nêu trước; C nói đã mua được hai vé; B lời mời dựa trên việc có hai vé, kết thúc bằng “吧”."
+     },
+     {
+      "parts": {
+       "A": "直到第二天新闻里报道了这件事",
+       "B": "人们才发现原来他说的都是真的",
+       "C": "开始时大家都不相信他的话"
+      },
+      "answer": "CAB",
+      "vi": "Ban đầu mọi người đều không tin lời anh ấy, mãi đến hôm sau bản tin đưa tin về việc này, mọi người mới biết hóa ra những gì anh nói đều là thật.",
+      "explain_vi": "C “开始时” mở đầu; “直到……才……” nên A trước B."
+     }
+    ]
+   },
+   {
+    "type": "yuedu",
+    "title": "阅读理解",
+    "items": [
+     {
+      "passage": "通知：因为大楼的电梯需要修理，本周六上午九点到下午五点，电梯将暂时停止使用。给大家带来的不方便，请原谅。如果有什么问题，请打电话65213456，与管理办公室联系。谢谢大家的理解和支持！",
+      "question": "根据通知，电梯为什么停止使用？",
+      "options": [
+       "大楼停电了",
+       "电梯需要修理",
+       "周末放假",
+       "坐电梯的人太多"
+      ],
+      "answer": 1,
+      "passage_vi": "Thông báo: Vì thang máy của tòa nhà cần sửa chữa, thứ Bảy tuần này từ 9 giờ sáng đến 5 giờ chiều, thang máy sẽ tạm ngừng sử dụng. Mong mọi người thông cảm cho sự bất tiện này. Nếu có vấn đề gì, xin gọi số 65213456 để liên hệ với văn phòng quản lý. Cảm ơn sự thông cảm và ủng hộ của mọi người!",
+      "explain_vi": "Câu đầu nêu lý do: “因为大楼的电梯需要修理”."
+     },
+     {
+      "passage": "很多人觉得，聪明的孩子学习一定好。其实并不一定。一位教育专家研究发现，学习成绩好的孩子，并不都是最聪明的，但是他们有一个共同的特点：做事认真，能坚持。所以，父母与其担心孩子不够聪明，还不如帮助他们养成好习惯。",
+      "question": "成绩好的孩子有什么共同点？",
+      "options": [
+       "做事认真，能坚持",
+       "都特别聪明",
+       "父母都是老师",
+       "每天学习很长时间"
+      ],
+      "answer": 0,
+      "passage_vi": "Nhiều người cho rằng trẻ thông minh thì học chắc chắn giỏi. Thực ra không hẳn vậy. Một chuyên gia giáo dục nghiên cứu phát hiện, những đứa trẻ học giỏi không phải đều là thông minh nhất, nhưng chúng có một điểm chung: làm việc nghiêm túc, biết kiên trì. Vì vậy, bố mẹ thay vì lo con không đủ thông minh, chi bằng giúp con hình thành thói quen tốt.",
+      "explain_vi": "“他们有一个共同的特点：做事认真，能坚持” – đáp án A. Đoạn văn nói rõ chúng “并不都是最聪明的” nên B sai."
+     },
+     {
+      "passage": "去年夏天，我和朋友去云南旅行，在丽江住了三天。那里的老房子很有特点，街道两边到处是小商店和咖啡馆，非常热闹。不过，最让我难忘的还是那里的天空，蓝得像大海一样，到了晚上，抬头就能看到满天的星星。",
+      "question": "丽江最让“我”难忘的是什么？",
+      "options": [
+       "那里的老房子",
+       "街上的小商店",
+       "当地的小吃",
+       "蓝蓝的天空"
+      ],
+      "answer": 3,
+      "passage_vi": "Mùa hè năm ngoái, tôi và bạn đi du lịch Vân Nam, ở Lệ Giang ba ngày. Những ngôi nhà cổ ở đó rất đặc sắc, hai bên đường khắp nơi là cửa hàng nhỏ và quán cà phê, vô cùng náo nhiệt. Tuy nhiên, điều khiến tôi khó quên nhất vẫn là bầu trời ở đó, xanh như biển cả, đến tối, ngẩng đầu lên là thấy sao đầy trời.",
+      "explain_vi": "“最让我难忘的还是那里的天空” – từ “不过” chuyển sang điểm chính. Nhà cổ và cửa hàng chỉ là chi tiết khác."
+     },
+     {
+      "passage": "我的同屋玛丽是美国人，她刚来中国的时候一句汉语也不会说。为了学好汉语，她给自己定了一个规定：在宿舍里只能说汉语，说一句英语就要请我喝一杯奶茶。结果第一个月她请我喝了二十多杯，第二个月只请了三杯。现在，她的汉语已经说得很流利了。",
+      "question": "第二个月玛丽只请“我”喝了三杯奶茶，说明：",
+      "options": [
+       "她不喜欢奶茶了",
+       "她没有钱了",
+       "她说英语少了",
+       "“我”不常在宿舍"
+      ],
+      "answer": 2,
+      "passage_vi": "Bạn cùng phòng của tôi là Mary, người Mỹ, lúc mới đến Trung Quốc một câu tiếng Trung cũng không biết nói. Để học tốt tiếng Trung, cô ấy đặt cho mình một quy định: trong ký túc xá chỉ được nói tiếng Trung, nói một câu tiếng Anh thì phải mời tôi một cốc trà sữa. Kết quả tháng đầu cô mời tôi hơn hai mươi cốc, tháng thứ hai chỉ mời ba cốc. Bây giờ, tiếng Trung của cô ấy đã nói rất lưu loát.",
+      "explain_vi": "Mỗi câu tiếng Anh = một cốc trà sữa; số cốc giảm cho thấy cô nói tiếng Anh ít đi. Đây là câu suy luận."
+     },
+     {
+      "passage": "现在很多城市都出现了“无人超市”：超市里没有售货员，顾客自己选好东西，用手机付款就可以离开。这种超市很方便，二十四小时都开门，也不用排队。但是也有人担心，如果超市都不需要人工作了，很多售货员可能会找不到工作。",
+      "question": "有人担心无人超市会：",
+      "options": [
+       "东西价格太高",
+       "晚上不开门",
+       "让售货员找不到工作",
+       "需要排很长的队"
+      ],
+      "answer": 2,
+      "passage_vi": "Hiện nay nhiều thành phố đã xuất hiện “siêu thị không người”: trong siêu thị không có nhân viên bán hàng, khách tự chọn đồ, thanh toán bằng điện thoại là có thể rời đi. Loại siêu thị này rất tiện, mở cửa 24 giờ, cũng không cần xếp hàng. Nhưng cũng có người lo rằng, nếu siêu thị đều không cần người làm việc nữa, nhiều nhân viên bán hàng có thể sẽ không tìm được việc.",
+      "explain_vi": "Câu cuối nêu nỗi lo: “很多售货员可能会找不到工作”. B, D trái với đoạn văn (mở 24 giờ, không cần xếp hàng)."
+     },
+     {
+      "passage": "一只小鸟问老鸟：“为什么我每天都很努力地飞，却总是飞不高？”老鸟说：“因为你身上带的东西太多了。”小鸟这才发现，自己的脚一直抓着一块漂亮的小石头，不愿意放下。它把石头扔掉以后，马上就飞得又高又远了。",
+      "question": "这个故事告诉我们：",
+      "options": [
+       "要学会放下不必要的东西",
+       "小鸟应该多练习飞",
+       "漂亮的东西很重要",
+       "老鸟的经验很丰富"
+      ],
+      "answer": 0,
+      "passage_vi": "Một chú chim nhỏ hỏi chim già: “Tại sao ngày nào cháu cũng cố gắng bay mà vẫn không bay cao được?” Chim già nói: “Vì trên người cháu mang quá nhiều thứ.” Chim nhỏ lúc này mới phát hiện chân mình vẫn luôn quặp một viên đá nhỏ xinh đẹp, không muốn buông ra. Sau khi vứt viên đá đi, nó lập tức bay vừa cao vừa xa.",
+      "explain_vi": "Vứt bỏ viên đá thì bay cao được – câu chuyện khuyên ta biết buông bỏ những thứ không cần thiết. B sai vì chim nhỏ đã rất cố gắng rồi."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "e4-07",
+  "level": 4,
+  "title": "Đề luyện đọc HSK 4 · Số 7",
+  "sections": [
+   {
+    "type": "xuanci",
+    "title": "选词填空",
+    "words": [
+     "A 缺少",
+     "B 往往",
+     "C 弄",
+     "D 免费",
+     "E 正式",
+     "F 竞争"
+    ],
+    "items": [
+     {
+      "sentence": "A：你的电脑怎么了？\nB：不知道，刚才还好好的，结果被我儿子（  ）坏了。",
+      "answer": "C",
+      "vi": "A: Máy tính của bạn bị sao vậy?\nB: Không biết nữa, vừa nãy còn tốt mà, rồi bị con trai tôi làm hỏng.",
+      "explain_vi": "“弄坏” = làm hỏng; “弄” là động từ chung, kết hợp với bổ ngữ kết quả “坏”."
+     },
+     {
+      "sentence": "这个博物馆每周一对学生（  ）开放，其他时间要买票。",
+      "answer": "D",
+      "vi": "Bảo tàng này mở cửa miễn phí cho học sinh vào mỗi thứ Hai, những thời gian khác phải mua vé.",
+      "explain_vi": "Đối lập với “其他时间要买票” → “免费开放” (mở cửa miễn phí)."
+     },
+     {
+      "sentence": "人们（  ）只看到别人成功的样子，却看不到他们背后的努力。",
+      "answer": "B",
+      "vi": "Người ta thường chỉ nhìn thấy dáng vẻ thành công của người khác, mà không thấy sự nỗ lực phía sau họ.",
+      "explain_vi": "“往往” (thường thường) chỉ một hiện tượng phổ biến, đứng trước động từ."
+     },
+     {
+      "sentence": "A：新手机什么时候开始卖？\nB：听说下个月一号（  ）开始卖。",
+      "answer": "E",
+      "vi": "A: Điện thoại mới khi nào bắt đầu bán?\nB: Nghe nói ngày mùng một tháng sau chính thức mở bán.",
+      "explain_vi": "“正式开始” = chính thức bắt đầu; “正式” làm trạng ngữ đứng trước động từ."
+     },
+     {
+      "sentence": "刚开始工作的年轻人（  ）经验，所以要多向老同事学习。",
+      "answer": "A",
+      "vi": "Người trẻ mới đi làm còn thiếu kinh nghiệm, nên phải học hỏi đồng nghiệp lâu năm nhiều hơn.",
+      "explain_vi": "“缺少经验” = thiếu kinh nghiệm. “竞争” (cạnh tranh) là từ thừa."
+     }
+    ]
+   },
+   {
+    "type": "paixu",
+    "title": "排列顺序",
+    "items": [
+     {
+      "parts": {
+       "A": "对我的帮助特别大",
+       "B": "这本词典是我的汉语老师送给我的",
+       "C": "在学习汉语的过程中"
+      },
+      "answer": "BCA",
+      "vi": "Cuốn từ điển này là thầy dạy tiếng Trung tặng tôi, trong quá trình học tiếng Trung, nó giúp ích cho tôi rất nhiều.",
+      "explain_vi": "B có chủ ngữ “这本词典”; C là trạng ngữ phạm vi đứng trước vị ngữ A; A không có chủ ngữ nên không thể đứng đầu."
+     },
+     {
+      "parts": {
+       "A": "而且路两边的景色也很不错",
+       "B": "所以我们完全可以走路过去",
+       "C": "从这儿到那个公园大概只有两公里"
+      },
+      "answer": "CAB",
+      "vi": "Từ đây đến công viên đó chỉ khoảng hai cây số, hơn nữa cảnh hai bên đường cũng rất đẹp, nên chúng ta hoàn toàn có thể đi bộ qua đó.",
+      "explain_vi": "C nêu lý do thứ nhất; A “而且” thêm lý do thứ hai; B “所以” rút ra kết luận."
+     },
+     {
+      "parts": {
+       "A": "千万别忘了关窗户",
+       "B": "你离开房间的时候",
+       "C": "天气预报说今天夜里会刮大风"
+      },
+      "answer": "CBA",
+      "vi": "Dự báo thời tiết nói đêm nay sẽ có gió lớn, lúc rời khỏi phòng bạn nhớ tuyệt đối đừng quên đóng cửa sổ.",
+      "explain_vi": "C nêu nguyên nhân; B là trạng ngữ thời gian có chủ ngữ “你”, đứng trước lời dặn A."
+     },
+     {
+      "parts": {
+       "A": "到了车站",
+       "B": "才发现手机没电了",
+       "C": "我想给朋友打个电话"
+      },
+      "answer": "ACB",
+      "vi": "Đến bến xe, tôi muốn gọi điện cho bạn, lúc đó mới phát hiện điện thoại hết pin.",
+      "explain_vi": "A là thời gian mở đầu; C có chủ ngữ “我” nêu ý định; B “才发现” là phát hiện xảy ra sau khi định gọi."
+     },
+     {
+      "parts": {
+       "A": "但是它对环境的污染也很严重",
+       "B": "虽然塑料给我们的生活带来了很多方便",
+       "C": "因此我们应该减少使用塑料袋"
+      },
+      "answer": "BAC",
+      "vi": "Tuy nhựa mang lại nhiều tiện lợi cho cuộc sống của chúng ta, nhưng nó cũng gây ô nhiễm môi trường nghiêm trọng, vì vậy chúng ta nên giảm sử dụng túi ni-lông.",
+      "explain_vi": "“虽然……但是……” nên B trước A; C “因此” là kết luận, đứng cuối."
+     }
+    ]
+   },
+   {
+    "type": "yuedu",
+    "title": "阅读理解",
+    "items": [
+     {
+      "passage": "招聘：本公司现招聘翻译两名。要求：大学毕业，汉语、英语都说得很流利，有两年以上的翻译经验，性格活泼，能经常出差。有兴趣的人请把个人材料发到我们公司的电子邮箱，我们会及时与您联系。",
+      "question": "根据这个广告，应聘的人需要：",
+      "options": [
+       "是硕士毕业",
+       "会说三种语言",
+       "性格比较安静",
+       "有翻译经验"
+      ],
+      "answer": 3,
+      "passage_vi": "Tuyển dụng: Công ty chúng tôi hiện tuyển hai phiên dịch viên. Yêu cầu: tốt nghiệp đại học, nói lưu loát cả tiếng Trung và tiếng Anh, có hơn hai năm kinh nghiệm phiên dịch, tính cách hoạt bát, có thể thường xuyên đi công tác. Ai có hứng thú xin gửi hồ sơ cá nhân đến email của công ty, chúng tôi sẽ liên hệ với bạn kịp thời.",
+      "explain_vi": "Quảng cáo yêu cầu “有两年以上的翻译经验”. Chỉ cần tốt nghiệp đại học, hai ngôn ngữ, tính cách hoạt bát nên A, B, C sai."
+     },
+     {
+      "passage": "我爷爷今年七十多岁了，最近开始学用手机上网。刚开始，他连怎么打字都不会，每天都让我教他。现在，他不但会在网上看新闻、买东西，还常常在家人的聊天群里发一些有意思的照片，大家都说他比年轻人还“时髦”。",
+      "question": "关于爷爷，可以知道什么？",
+      "options": [
+       "不喜欢学新东西",
+       "现在会用手机上网了",
+       "每天都在看电视",
+       "常常给我打电话"
+      ],
+      "answer": 1,
+      "passage_vi": "Ông tôi năm nay hơn bảy mươi tuổi, gần đây bắt đầu học dùng điện thoại lên mạng. Lúc đầu, ông ngay cả gõ chữ cũng không biết, ngày nào cũng nhờ tôi dạy. Bây giờ, ông không những biết đọc tin tức, mua đồ trên mạng, mà còn thường gửi những bức ảnh thú vị vào nhóm chat gia đình, mọi người đều nói ông còn “sành điệu” hơn cả người trẻ.",
+      "explain_vi": "“现在，他不但会在网上看新闻、买东西……” – ông đã biết dùng điện thoại lên mạng. Ông chủ động học nên A sai."
+     },
+     {
+      "passage": "很多人喜欢在家里养花养草。植物不但可以让房间变得更漂亮，还能让空气更新鲜。不过，不是所有的植物都适合放在卧室里。有些花的味道太香了，放在卧室里可能会影响睡觉。所以，在买植物之前，最好先了解一下它的特点。",
+      "question": "这段话主要说的是：",
+      "options": [
+       "养植物的好处和要注意的地方",
+       "怎样让花长得更好",
+       "卧室里应该多放花",
+       "香味浓的花更漂亮"
+      ],
+      "answer": 0,
+      "passage_vi": "Nhiều người thích trồng hoa cỏ trong nhà. Cây cối không những làm căn phòng đẹp hơn mà còn làm không khí trong lành hơn. Tuy nhiên, không phải loại cây nào cũng hợp để trong phòng ngủ. Có những loài hoa mùi quá thơm, để trong phòng ngủ có thể ảnh hưởng giấc ngủ. Vì vậy, trước khi mua cây, tốt nhất nên tìm hiểu đặc điểm của nó.",
+      "explain_vi": "Nửa đầu nói lợi ích, nửa sau (“不过……”) nói điều cần chú ý – ý chính là A. C trái với đoạn văn."
+     },
+     {
+      "passage": "张先生坐火车的时候，一只新鞋不小心从窗户掉了出去。大家都觉得很可惜，没想到他马上把另一只鞋也扔了出去。别人很奇怪，问他为什么。他笑着说：“只有一只鞋，对我已经没用了。如果有人捡到它们，至少能得到一双可以穿的鞋。”",
+      "question": "张先生为什么把另一只鞋也扔出去？",
+      "options": [
+       "那只鞋太旧了",
+       "他非常生气",
+       "想让捡到的人能穿",
+       "鞋的大小不合适"
+      ],
+      "answer": 2,
+      "passage_vi": "Khi anh Trương đi tàu hỏa, một chiếc giày mới không may rơi ra ngoài cửa sổ. Mọi người đều thấy rất tiếc, không ngờ anh liền ném nốt chiếc giày còn lại ra ngoài. Người khác rất lạ, hỏi anh tại sao. Anh cười nói: “Chỉ có một chiếc giày thì với tôi đã vô dụng rồi. Nếu có người nhặt được, ít nhất họ cũng có được một đôi giày để đi.”",
+      "explain_vi": "Anh nói “如果有人捡到它们，至少能得到一双可以穿的鞋” – muốn người nhặt được có đủ đôi để đi. Giày còn mới và anh cười nói nên A, B sai."
+     },
+     {
+      "passage": "现在很多年轻人喜欢“说走就走”的旅行，觉得这样很自由。我却觉得，旅行前做好计划很重要。去年国庆节，我没做任何计划就去了海南，结果到处都是游客，酒店几乎都住满了，价格也比平时贵了好几倍。",
+      "question": "“我”认为旅行前应该：",
+      "options": [
+       "多带一些钱",
+       "做好计划",
+       "选择去海南",
+       "和朋友一起去"
+      ],
+      "answer": 1,
+      "passage_vi": "Hiện nay nhiều người trẻ thích những chuyến đi “nói đi là đi”, cảm thấy như vậy rất tự do. Tôi lại thấy rằng lên kế hoạch trước khi du lịch rất quan trọng. Dịp Quốc khánh năm ngoái, tôi không lên kế hoạch gì đã đi Hải Nam, kết quả khắp nơi đều là du khách, khách sạn gần như kín phòng, giá cũng đắt gấp mấy lần ngày thường.",
+      "explain_vi": "Quan điểm của tác giả: “旅行前做好计划很重要”; trải nghiệm ở Hải Nam là ví dụ chứng minh."
+     },
+     {
+      "passage": "人们常说：“失败是成功之母。”一位科学家为了做出一种新材料，试了一千多次都没有成功。有人笑他失败了一千多次，他却说：“我没有失败，我只是发现了一千多种不能用的方法。”后来，他终于成功了。",
+      "question": "这段话告诉我们：",
+      "options": [
+       "失败的次数越多越好",
+       "做出新材料很容易",
+       "遇到困难就应该放弃",
+       "要正确看待失败"
+      ],
+      "answer": 3,
+      "passage_vi": "Người ta thường nói: “Thất bại là mẹ thành công.” Một nhà khoa học để tạo ra một loại vật liệu mới đã thử hơn một nghìn lần đều không thành công. Có người cười ông thất bại hơn nghìn lần, ông lại nói: “Tôi không thất bại, tôi chỉ phát hiện ra hơn một nghìn cách không dùng được.” Sau này, cuối cùng ông đã thành công.",
+      "explain_vi": "Nhà khoa học coi mỗi lần thất bại là một bài học, không nản lòng – ý là phải nhìn nhận thất bại đúng đắn. A nói quá, B và C trái với đoạn văn."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "e4-08",
+  "level": 4,
+  "title": "Đề luyện đọc HSK 4 · Số 8",
+  "sections": [
+   {
+    "type": "xuanci",
+    "title": "选词填空",
+    "words": [
+     "A 后悔",
+     "B 稍微",
+     "C 举办",
+     "D 按照",
+     "E 骄傲",
+     "F 污染"
+    ],
+    "items": [
+     {
+      "sentence": "请大家（  ）老师的要求，把作业写在本子上。",
+      "answer": "D",
+      "vi": "Mời mọi người làm theo yêu cầu của thầy cô, viết bài tập vào vở.",
+      "explain_vi": "“按照 + 要求/规定” = dựa theo yêu cầu/quy định; là giới từ đứng trước danh từ."
+     },
+     {
+      "sentence": "当时没有接受那份工作，他到现在还很（  ）。",
+      "answer": "A",
+      "vi": "Hồi đó không nhận công việc ấy, đến bây giờ anh ấy vẫn rất hối hận.",
+      "explain_vi": "Việc đã qua mà không làm, đến giờ vẫn nghĩ lại → “后悔” (hối hận)."
+     },
+     {
+      "sentence": "A：最近空气质量怎么这么差？\nB：附近的工厂太多了，（  ）越来越严重。",
+      "answer": "F",
+      "vi": "A: Dạo này chất lượng không khí sao kém thế?\nB: Nhà máy xung quanh nhiều quá, ô nhiễm ngày càng nghiêm trọng.",
+      "explain_vi": "“污染……严重” = ô nhiễm nghiêm trọng; hợp với “空气质量差” và “工厂太多”."
+     },
+     {
+      "sentence": "下个月学校要（  ）一场国际文化节，欢迎大家参加。",
+      "answer": "C",
+      "vi": "Tháng sau trường sẽ tổ chức một lễ hội văn hóa quốc tế, chào mừng mọi người tham gia.",
+      "explain_vi": "“举办 + 活动/节/比赛” = tổ chức (sự kiện)."
+     },
+     {
+      "sentence": "A：我儿子这次考了全班第一！\nB：真棒！你一定为他感到很（  ）吧？",
+      "answer": "E",
+      "vi": "A: Con trai tôi lần này thi đứng nhất lớp!\nB: Giỏi quá! Chắc chắn bạn cảm thấy rất tự hào về cháu nhỉ?",
+      "explain_vi": "“为……感到骄傲” = tự hào về ai. “稍微” (hơi, một chút) là từ thừa."
+     }
+    ]
+   },
+   {
+    "type": "paixu",
+    "title": "排列顺序",
+    "items": [
+     {
+      "parts": {
+       "A": "却一直没有机会去",
+       "B": "我很早以前就想去西安看看了",
+       "C": "今年暑假终于去成了"
+      },
+      "answer": "BAC",
+      "vi": "Từ lâu tôi đã muốn đi Tây An xem thử, nhưng mãi không có cơ hội, kỳ nghỉ hè năm nay cuối cùng cũng đi được.",
+      "explain_vi": "B có chủ ngữ “我” nêu mong muốn; A “却” chuyển ý; C “终于” là kết quả cuối cùng."
+     },
+     {
+      "parts": {
+       "A": "一定要先跟大家商量",
+       "B": "这件事关系到每一个人",
+       "C": "不能由你一个人决定"
+      },
+      "answer": "BCA",
+      "vi": "Việc này liên quan đến tất cả mọi người, không thể để một mình bạn quyết định, nhất định phải bàn bạc với mọi người trước.",
+      "explain_vi": "B có chủ ngữ “这件事” nêu lý do; C phủ định “不能……”; A đưa ra cách làm đúng “一定要……”."
+     },
+     {
+      "parts": {
+       "A": "打开盒子一看",
+       "B": "上面写着：“祝你生日快乐！”",
+       "C": "里面是一个巧克力蛋糕"
+      },
+      "answer": "ACB",
+      "vi": "Mở hộp ra xem, bên trong là một chiếc bánh sô-cô-la, trên bánh viết: “Chúc bạn sinh nhật vui vẻ!”",
+      "explain_vi": "A là hành động mở đầu; C “里面” chỉ trong hộp; B “上面” chỉ trên bánh, nên đứng sau C."
+     },
+     {
+      "parts": {
+       "A": "所以越来越多的大学生愿意参加",
+       "B": "而且还能积累不少社会经验",
+       "C": "参加这样的活动不仅能帮助别人"
+      },
+      "answer": "CBA",
+      "vi": "Tham gia những hoạt động như vậy không chỉ giúp được người khác mà còn tích lũy được không ít kinh nghiệm xã hội, vì vậy ngày càng nhiều sinh viên sẵn lòng tham gia.",
+      "explain_vi": "“不仅……而且……” nên C trước B; A “所以” là kết quả, đứng cuối."
+     },
+     {
+      "parts": {
+       "A": "叫起来很不方便",
+       "B": "于是大家都叫他“小马”",
+       "C": "他的中文名字有五个字"
+      },
+      "answer": "CAB",
+      "vi": "Tên tiếng Trung của anh ấy có năm chữ, gọi lên rất bất tiện, thế là mọi người đều gọi anh ấy là “Tiểu Mã”.",
+      "explain_vi": "C có chủ ngữ và nêu sự việc; A nói hệ quả “叫起来不方便”; B “于是” nêu cách giải quyết."
+     }
+    ]
+   },
+   {
+    "type": "yuedu",
+    "title": "阅读理解",
+    "items": [
+     {
+      "passage": "很多人以为，减肥就是少吃饭，甚至不吃饭。其实，不吃饭不但减不了肥，反而对身体有害，而且一旦恢复正常吃饭，体重很快又会增加。正确的方法是按时吃饭，每顿不要吃得太饱，多吃蔬菜水果，再加上适当的运动。",
+      "question": "根据这段话，正确的减肥方法是：",
+      "options": [
+       "不吃晚饭",
+       "按时吃饭，多运动",
+       "只吃水果",
+       "每天跑步两小时"
+      ],
+      "answer": 1,
+      "passage_vi": "Nhiều người cho rằng giảm cân là ăn ít, thậm chí không ăn. Thực ra, nhịn ăn không những không giảm được cân mà còn hại cho cơ thể, hơn nữa một khi ăn uống bình thường trở lại, cân nặng sẽ nhanh chóng tăng lên. Cách đúng là ăn đúng giờ, mỗi bữa không ăn quá no, ăn nhiều rau quả, cộng thêm vận động hợp lý.",
+      "explain_vi": "Câu cuối: “按时吃饭……再加上适当的运动” – đáp án B. A, C là những cách nhịn ăn bị phê phán; D không được nhắc đến."
+     },
+     {
+      "passage": "我第一次去中国朋友家做客，带了一瓶红酒。朋友的父亲很高兴。吃饭的时候，他一直给我夹菜，我碗里的菜越来越多，怎么也吃不完。后来朋友告诉我，在中国，主人给客人夹菜是表示热情和欢迎。",
+      "question": "朋友的父亲为什么给“我”夹菜？",
+      "options": [
+       "我吃得太少",
+       "我不会用筷子",
+       "表示对我的欢迎",
+       "菜做得太多了"
+      ],
+      "answer": 2,
+      "passage_vi": "Lần đầu tôi đến nhà một người bạn Trung Quốc chơi, tôi mang theo một chai rượu vang. Bố của bạn rất vui. Lúc ăn cơm, bác cứ gắp thức ăn cho tôi, thức ăn trong bát tôi ngày càng nhiều, ăn mãi không hết. Sau này bạn tôi nói, ở Trung Quốc, chủ nhà gắp thức ăn cho khách là để thể hiện sự nhiệt tình và chào đón.",
+      "explain_vi": "Câu cuối giải thích: “给客人夹菜是表示热情和欢迎”."
+     },
+     {
+      "passage": "中国人常说“笑一笑，十年少”。研究证明，笑对身体确实有很多好处：它可以让人放松，减少压力，还能让心情变好。经常笑的人，往往比不爱笑的人更健康。所以，不管遇到什么事情，我们都要积极一点儿，多笑一笑。",
+      "question": "这段话主要讲的是：",
+      "options": [
+       "笑对身体的好处",
+       "怎样让自己变年轻",
+       "压力是从哪里来的",
+       "怎样解决生活中的问题"
+      ],
+      "answer": 0,
+      "passage_vi": "Người Trung Quốc hay nói “Cười một cái, trẻ ra mười tuổi”. Nghiên cứu chứng minh, cười thực sự có nhiều lợi ích cho cơ thể: nó giúp người ta thư giãn, giảm áp lực, còn làm tâm trạng tốt lên. Người hay cười thường khỏe mạnh hơn người ít cười. Vì vậy, dù gặp chuyện gì, chúng ta cũng nên tích cực một chút, cười nhiều hơn.",
+      "explain_vi": "Cả đoạn xoay quanh “笑对身体确实有很多好处”. B dễ nhầm vì câu tục ngữ, nhưng chỉ là câu dẫn."
+     },
+     {
+      "passage": "李经理：您好！我是王明，上周您通知我明天上午十点来公司面试。非常抱歉，因为我家里突然有点儿急事，明天上午没办法按时到了。不知道面试能不能推迟到下周一？给您带来麻烦，真是对不起。王明",
+      "question": "王明写这封信的目的是：",
+      "options": [
+       "感谢经理的帮助",
+       "申请一份新工作",
+       "拒绝这份工作",
+       "希望改变面试时间"
+      ],
+      "answer": 3,
+      "passage_vi": "Giám đốc Lý: Chào ông! Tôi là Vương Minh, tuần trước ông thông báo tôi sáng mai 10 giờ đến công ty phỏng vấn. Thật xin lỗi, vì nhà tôi đột nhiên có việc gấp, sáng mai tôi không thể đến đúng giờ được. Không biết buổi phỏng vấn có thể hoãn đến thứ Hai tuần sau không? Làm phiền ông, thật sự xin lỗi. Vương Minh",
+      "explain_vi": "“不知道面试能不能推迟到下周一？” – mục đích là xin đổi thời gian phỏng vấn, không phải từ chối công việc."
+     },
+     {
+      "passage": "一位老人每天早上都在公园里捡垃圾。有人问他：“您又不是这里的工作人员，为什么要做这些事？”老人笑着说：“我每天都来这儿散步，公园干净了，我自己也舒服。”后来，很多来散步的人也开始跟他一起捡垃圾了。",
+      "question": "老人为什么捡垃圾？",
+      "options": [
+       "他是公园的工作人员",
+       "想赚一点儿钱",
+       "想让公园变干净",
+       "别人让他捡的"
+      ],
+      "answer": 2,
+      "passage_vi": "Một cụ già sáng nào cũng nhặt rác trong công viên. Có người hỏi cụ: “Cụ đâu phải nhân viên ở đây, sao lại làm những việc này?” Cụ cười nói: “Ngày nào tôi cũng đến đây đi dạo, công viên sạch sẽ thì bản thân tôi cũng dễ chịu.” Về sau, nhiều người đến đi dạo cũng bắt đầu cùng cụ nhặt rác.",
+      "explain_vi": "Cụ nói “公园干净了，我自己也舒服” – muốn công viên sạch. Câu hỏi của người khác cho biết cụ không phải nhân viên nên A sai."
+     },
+     {
+      "passage": "茶在中国已经有几千年的历史了。不同的地方有不同的喝茶习惯，比如南方人喜欢喝绿茶，北方人比较喜欢喝花茶。另外，中国人给客人倒茶的时候，一般只倒七八分满，表示对客人的尊重；如果倒得太满，反而不礼貌。",
+      "question": "根据这段话，给客人倒茶时应该：",
+      "options": [
+       "把杯子倒满",
+       "不要倒得太满",
+       "只倒绿茶",
+       "先给自己倒"
+      ],
+      "answer": 1,
+      "passage_vi": "Trà ở Trung Quốc đã có lịch sử mấy nghìn năm. Mỗi vùng có thói quen uống trà khác nhau, ví dụ người miền Nam thích uống trà xanh, người miền Bắc thích uống trà hoa hơn. Ngoài ra, khi rót trà cho khách, người Trung Quốc thường chỉ rót bảy tám phần, thể hiện sự tôn trọng với khách; nếu rót quá đầy, ngược lại là bất lịch sự.",
+      "explain_vi": "“一般只倒七八分满……如果倒得太满，反而不礼貌” – không nên rót quá đầy."
+     }
+    ]
+   }
+  ]
+ }
+]

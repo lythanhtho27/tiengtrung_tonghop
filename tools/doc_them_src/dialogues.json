@@ -1,0 +1,2801 @@
+[
+ {
+  "id": "d-01",
+  "kind": "dialogue",
+  "level": 3,
+  "title": "微辣的水煮鱼",
+  "title_vi": "Món cá luộc cay \"cay nhẹ\"",
+  "topic": "gọi món",
+  "scene_vi": "An Na lần đầu cùng bạn là Tiểu Lâm đến một quán ăn Tứ Xuyên. Cô không ăn cay giỏi nên phải hỏi nhân viên phục vụ chọn món.",
+  "speakers": [
+   "安娜",
+   "小林",
+   "服务员"
+  ],
+  "paragraphs": [
+   "服务员：你们好！两位吗？这边请。这是菜单，想吃什么可以叫我。",
+   "小林：谢谢。安娜，你第一次来四川饭馆吧？你能吃辣吗？",
+   "安娜：一点点可以。可是我看菜单上的照片，每个菜都是红色的，有点儿害怕。",
+   "小林：别担心，我帮你问问。服务员，你们这儿有不辣的菜吗？",
+   "服务员：有啊。这个西红柿炒鸡蛋一点儿也不辣，还有这个鸡蛋汤，也很清淡。",
+   "安娜：太好了！那我要一个西红柿炒鸡蛋，再要一碗米饭。",
+   "小林：只吃这个？太简单了吧。来四川饭馆不吃鱼，就像去北京不看长城一样。",
+   "安娜：鱼？我刚才看见旁边那张桌子上的鱼，上面全是红红的东西，他们吃得满头大汗。",
+   "服务员：那是我们店最有名的水煮鱼。如果您怕辣，我可以让厨房少放一点儿。",
+   "小林：那就要一个水煮鱼，微辣。再来一个宫保鸡丁，这个菜甜甜的，你一定喜欢。",
+   "安娜：好，听你的。对了，喝的有什么？",
+   "服务员：有果汁、啤酒，还有我们自己做的绿茶，吃辣的时候喝最舒服。",
+   "小林：那就两杯绿茶。就这些吧，一共多少钱？",
+   "服务员：一共一百二十八块。菜大概十五分钟就好，请你们稍等。",
+   "安娜：哇，这个水煮鱼真香！嗯……这是微辣？我的嘴像着火了一样！",
+   "小林：快喝茶！服务员，你不是说少放辣了吗？",
+   "服务员：真的放少了！在我们四川，这已经是最不辣的了。",
+   "安娜：没关系，虽然很辣，但是太好吃了。下次我还要来，不过我要先回家练习一个月！"
+  ],
+  "translations": [
+   "Nhân viên phục vụ: Chào hai bạn! Hai người phải không ạ? Mời đi lối này. Đây là thực đơn, muốn ăn gì thì cứ gọi tôi.",
+   "Tiểu Lâm: Cảm ơn. An Na, lần đầu cậu đến quán Tứ Xuyên nhỉ? Cậu ăn cay được không?",
+   "An Na: Một chút thì được. Nhưng nhìn ảnh trong thực đơn, món nào cũng màu đỏ, mình hơi sợ.",
+   "Tiểu Lâm: Đừng lo, mình hỏi giúp cậu. Anh ơi, ở đây có món nào không cay không?",
+   "Nhân viên phục vụ: Có chứ. Món trứng xào cà chua này không cay chút nào, còn món canh trứng này cũng rất thanh đạm.",
+   "An Na: Tốt quá! Vậy mình gọi một đĩa trứng xào cà chua, thêm một bát cơm.",
+   "Tiểu Lâm: Chỉ ăn món đó thôi á? Đơn giản quá. Đến quán Tứ Xuyên mà không ăn cá thì cũng giống như đến Bắc Kinh mà không đi xem Vạn Lý Trường Thành vậy.",
+   "An Na: Cá á? Lúc nãy mình thấy món cá ở bàn bên cạnh, bên trên toàn là thứ đỏ đỏ, họ ăn mà mồ hôi đầm đìa.",
+   "Nhân viên phục vụ: Đó là món cá luộc cay nổi tiếng nhất của quán chúng tôi. Nếu chị sợ cay, tôi có thể bảo nhà bếp cho ít đi một chút.",
+   "Tiểu Lâm: Vậy gọi một món cá luộc cay, cay nhẹ thôi. Thêm một đĩa gà xào Cung Bảo, món này ngọt ngọt, chắc chắn cậu sẽ thích.",
+   "An Na: Được, nghe cậu. À, đồ uống có gì?",
+   "Nhân viên phục vụ: Có nước hoa quả, bia, còn có trà xanh quán tự pha, uống lúc ăn cay là dễ chịu nhất.",
+   "Tiểu Lâm: Vậy cho hai cốc trà xanh. Thế thôi ạ, tổng cộng bao nhiêu tiền?",
+   "Nhân viên phục vụ: Tổng cộng một trăm hai mươi tám tệ. Khoảng mười lăm phút là có món, mời hai bạn chờ một chút.",
+   "An Na: Oa, món cá này thơm thật! Ừm... thế này mà là cay nhẹ á? Miệng mình như đang bốc cháy vậy!",
+   "Tiểu Lâm: Uống trà nhanh lên! Anh ơi, chẳng phải anh nói đã cho ít cay rồi sao?",
+   "Nhân viên phục vụ: Thật sự đã cho ít rồi mà! Ở Tứ Xuyên chúng tôi, thế này đã là ít cay nhất rồi đấy.",
+   "An Na: Không sao, tuy rất cay nhưng ngon quá. Lần sau mình vẫn muốn đến, có điều mình phải về nhà luyện tập một tháng đã!"
+  ],
+  "questions": [
+   {
+    "q": "安娜为什么一开始只想点西红柿炒鸡蛋？",
+    "q_vi": "Vì sao lúc đầu An Na chỉ muốn gọi trứng xào cà chua?",
+    "options": [
+     "她不喜欢吃鱼",
+     "她怕菜太辣",
+     "她没带够钱",
+     "她不饿"
+    ],
+    "answer": 1,
+    "explain_vi": "An Na nói ảnh món nào cũng màu đỏ, cô hơi sợ, và hỏi món không cay, nên lý do là sợ cay."
+   },
+   {
+    "q": "小林说“来四川饭馆不吃鱼，就像去北京不看长城一样”，意思是什么？",
+    "q_vi": "Tiểu Lâm nói \"đến quán Tứ Xuyên không ăn cá thì như đến Bắc Kinh không xem Trường Thành\", ý là gì?",
+    "options": [
+     "北京的鱼不好吃",
+     "安娜应该去北京旅游",
+     "水煮鱼是一定要吃的菜",
+     "长城旁边有很多饭馆"
+    ],
+    "answer": 2,
+    "explain_vi": "Câu so sánh nhấn mạnh món cá là món nhất định phải thử ở quán Tứ Xuyên."
+   },
+   {
+    "q": "最后安娜觉得水煮鱼怎么样？",
+    "q_vi": "Cuối cùng An Na thấy món cá luộc cay thế nào?",
+    "options": [
+     "又辣又好吃",
+     "一点儿也不辣",
+     "太辣了，不想再吃",
+     "太甜了"
+    ],
+    "answer": 0,
+    "explain_vi": "Cô nói \"tuy rất cay nhưng ngon quá\" và còn muốn quay lại lần sau."
+   }
+  ]
+ },
+ {
+  "id": "d-02",
+  "kind": "dialogue",
+  "level": 3,
+  "title": "会说汉语的顾客",
+  "title_vi": "Vị khách biết nói tiếng Trung",
+  "topic": "mua sắm & mặc cả",
+  "scene_vi": "A Minh, sinh viên Việt Nam, đi chợ cùng bạn Vương Lệ để mua khăn lụa tặng mẹ. Cậu muốn tự mình mặc cả với bà chủ sạp hàng.",
+  "speakers": [
+   "阿明",
+   "老板",
+   "王丽"
+  ],
+  "paragraphs": [
+   "阿明：王丽，你看这条丝巾，颜色多漂亮！我妈妈最喜欢蓝色了。",
+   "王丽：是挺好看的。不过在这儿买东西要先问价钱，别马上就拿。",
+   "阿明：我知道，我知道。今天你别说话，让我自己来，我想练习一下汉语。",
+   "老板：小伙子，喜欢这条吗？这是真丝的，摸一摸，多舒服。",
+   "阿明：阿姨，这条丝巾多少钱？",
+   "老板：一百五十块。",
+   "阿明：一百五？太贵了吧！我是学生，没有那么多钱。八十块，可以吗？",
+   "老板：八十？那不行，我自己买的时候都不止八十块。最少一百二。",
+   "阿明：一百二还是太贵了。我刚才在前面那家看见一样的，才九十块。",
+   "老板：一样的？不可能，我们家的质量最好。好吧好吧，看你汉语说得这么好，一百块，不能再少了。",
+   "阿明：九十五，我买两条，一条给妈妈，一条给奶奶。",
+   "老板：哎呀，你这个孩子真会买东西。行，两条一百九，我再送你一个小袋子。",
+   "阿明：谢谢阿姨！王丽，你看，我成功了！从一百五到九十五！",
+   "王丽：嗯，你真厉害。不过我要告诉你一件事。",
+   "阿明：什么事？",
+   "王丽：这位阿姨是我妈妈的妹妹，就是我小姨。如果你一开始让我说话，她可能只要你五十块。",
+   "老板：哈哈，丽丽，你怎么不早说！小伙子，别生气，下次来，阿姨请你吃饭！"
+  ],
+  "translations": [
+   "A Minh: Vương Lệ, cậu xem chiếc khăn lụa này, màu đẹp quá! Mẹ mình thích màu xanh nhất.",
+   "Vương Lệ: Đúng là đẹp thật. Nhưng mua đồ ở đây phải hỏi giá trước, đừng cầm lấy ngay.",
+   "A Minh: Mình biết, mình biết. Hôm nay cậu đừng nói gì, để mình tự làm, mình muốn luyện tiếng Trung một chút.",
+   "Bà chủ: Chàng trai, thích chiếc này à? Lụa thật đấy, sờ thử xem, mềm mát lắm.",
+   "A Minh: Cô ơi, chiếc khăn này bao nhiêu tiền ạ?",
+   "Bà chủ: Một trăm năm mươi tệ.",
+   "A Minh: Một trăm rưỡi á? Đắt quá ạ! Cháu là sinh viên, không có nhiều tiền thế. Tám mươi tệ được không ạ?",
+   "Bà chủ: Tám mươi á? Không được, lúc tôi nhập về còn hơn tám mươi tệ. Ít nhất một trăm hai.",
+   "A Minh: Một trăm hai vẫn đắt quá ạ. Lúc nãy cháu thấy ở sạp phía trước có cái giống hệt, chỉ chín mươi tệ thôi.",
+   "Bà chủ: Giống hệt á? Không thể nào, hàng nhà tôi chất lượng tốt nhất. Thôi được rồi, thấy cậu nói tiếng Trung giỏi thế, một trăm tệ, không bớt được nữa đâu.",
+   "A Minh: Chín mươi lăm ạ, cháu mua hai chiếc, một chiếc cho mẹ, một chiếc cho bà.",
+   "Bà chủ: Ôi chao, thằng bé này mua hàng khéo thật. Được, hai chiếc một trăm chín mươi, tôi tặng thêm cậu một cái túi nhỏ.",
+   "A Minh: Cháu cảm ơn cô! Vương Lệ, cậu xem, mình thành công rồi! Từ một trăm rưỡi xuống chín mươi lăm!",
+   "Vương Lệ: Ừ, cậu giỏi thật. Nhưng mình phải nói với cậu một chuyện.",
+   "A Minh: Chuyện gì?",
+   "Vương Lệ: Cô này là em gái mẹ mình, tức là dì út của mình. Nếu ngay từ đầu cậu để mình nói, có khi dì chỉ lấy cậu năm mươi tệ thôi.",
+   "Bà chủ: Ha ha, Lệ Lệ, sao cháu không nói sớm! Chàng trai, đừng giận nhé, lần sau đến, cô mời cháu ăn cơm!"
+  ],
+  "questions": [
+   {
+    "q": "阿明为什么不让王丽说话？",
+    "q_vi": "Vì sao A Minh không cho Vương Lệ nói?",
+    "options": [
+     "他觉得王丽不会买东西",
+     "他想自己练习汉语",
+     "他和王丽生气了",
+     "老板只听得懂外国人说话"
+    ],
+    "answer": 1,
+    "explain_vi": "A Minh nói: \"để mình tự làm, mình muốn luyện tiếng Trung\"."
+   },
+   {
+    "q": "阿明最后买两条丝巾一共花了多少钱？",
+    "q_vi": "Cuối cùng A Minh mua hai chiếc khăn hết tổng cộng bao nhiêu tiền?",
+    "options": [
+     "一百五十块",
+     "一百块",
+     "两百四十块",
+     "一百九十块"
+    ],
+    "answer": 3,
+    "explain_vi": "Bà chủ đồng ý \"hai chiếc một trăm chín mươi\"."
+   },
+   {
+    "q": "从对话可以知道什么？",
+    "q_vi": "Từ đoạn hội thoại có thể biết điều gì?",
+    "options": [
+     "老板是王丽的亲戚",
+     "前面那家店的丝巾更好",
+     "阿明的奶奶不喜欢蓝色",
+     "王丽不想帮阿明"
+    ],
+    "answer": 0,
+    "explain_vi": "Vương Lệ cho biết bà chủ là em gái mẹ mình, tức là họ hàng (亲戚)."
+   }
+  ]
+ },
+ {
+  "id": "d-03",
+  "kind": "dialogue",
+  "level": 3,
+  "title": "博物馆怎么走",
+  "title_vi": "Đến bảo tàng đi thế nào",
+  "topic": "hỏi đường",
+  "scene_vi": "Tiểu Vũ mới đến một thành phố lạ, đứng ở ngã tư hỏi đường một ông cụ để đến bảo tàng thành phố.",
+  "speakers": [
+   "小雨",
+   "大爷"
+  ],
+  "paragraphs": [
+   "小雨：大爷，您好！请问，去城市博物馆怎么走？",
+   "大爷：博物馆？不远，不远。你先往前走，到第二个路口往左拐。",
+   "小雨：第二个路口往左拐，然后呢？",
+   "大爷：然后你会看见一家银行，银行旁边有一个小公园。你穿过公园，再往右走一会儿……",
+   "小雨：等一下，大爷，我记一下。银行，公园，往右……",
+   "大爷：不对，不对，是往左。哎，我说错了吗？让我想想。",
+   "小雨：没关系，您慢慢想。走路大概要多长时间？",
+   "大爷：走路二十分钟吧。你也可以坐公共汽车，站就在马路对面，坐三站就到了。",
+   "小雨：今天天气这么好，我还是走路吧，可以一边走一边看看这个城市。",
+   "大爷：你不是这儿的人吧？听你说话，像是南方来的。",
+   "小雨：对，我昨天刚到，来这儿找朋友玩儿。我朋友今天要上班，所以我一个人出来了。",
+   "大爷：这样吧，我正好要去公园锻炼身体，我带你走一段，比我说的清楚。",
+   "小雨：真的吗？那太感谢您了！",
+   "大爷：不客气。你看，前面就是银行，穿过这个公园，往左一拐，那个白色的大楼就是博物馆。",
+   "小雨：啊，我看见了！咦，门口怎么没有人？门好像关着。",
+   "大爷：哎呀，我忘了，今天是星期一，博物馆每个星期一都不开门！",
+   "小雨：哈哈，没关系。大爷，那您能告诉我，这附近还有什么好玩儿的地方吗？"
+  ],
+  "translations": [
+   "Tiểu Vũ: Cháu chào ông! Xin hỏi đến Bảo tàng Thành phố đi thế nào ạ?",
+   "Ông cụ: Bảo tàng à? Không xa, không xa. Cháu cứ đi thẳng về phía trước, đến ngã tư thứ hai thì rẽ trái.",
+   "Tiểu Vũ: Đến ngã tư thứ hai rẽ trái, sau đó thì sao ạ?",
+   "Ông cụ: Sau đó cháu sẽ thấy một ngân hàng, bên cạnh ngân hàng có một công viên nhỏ. Cháu đi xuyên qua công viên, rồi rẽ phải đi một lúc...",
+   "Tiểu Vũ: Ông đợi chút ạ, cháu ghi lại đã. Ngân hàng, công viên, rẽ phải...",
+   "Ông cụ: Không phải, không phải, là rẽ trái. Ơ, ông nói sai à? Để ông nghĩ xem.",
+   "Tiểu Vũ: Không sao ạ, ông cứ từ từ nghĩ. Đi bộ khoảng bao lâu ạ?",
+   "Ông cụ: Đi bộ chắc hai mươi phút. Cháu cũng có thể đi xe buýt, bến ở ngay bên kia đường, đi ba bến là đến.",
+   "Tiểu Vũ: Hôm nay trời đẹp thế này, cháu đi bộ thì hơn, có thể vừa đi vừa ngắm thành phố.",
+   "Ông cụ: Cháu không phải người ở đây phải không? Nghe cháu nói, giống người miền Nam đến.",
+   "Tiểu Vũ: Vâng, hôm qua cháu mới đến, đến đây chơi với bạn. Hôm nay bạn cháu phải đi làm nên cháu ra ngoài một mình.",
+   "Ông cụ: Thế này đi, ông đang định ra công viên tập thể dục, ông dẫn cháu đi một đoạn, rõ hơn là ông nói.",
+   "Tiểu Vũ: Thật ạ? Vậy cảm ơn ông nhiều lắm!",
+   "Ông cụ: Không có gì. Cháu nhìn xem, phía trước là ngân hàng, đi xuyên qua công viên này, rẽ trái một cái, tòa nhà lớn màu trắng kia chính là bảo tàng.",
+   "Tiểu Vũ: A, cháu thấy rồi! Ơ, sao cửa không có ai nhỉ? Hình như cửa đóng.",
+   "Ông cụ: Ôi trời, ông quên mất, hôm nay là thứ Hai, bảo tàng thứ Hai nào cũng đóng cửa!",
+   "Tiểu Vũ: Ha ha, không sao ạ. Ông ơi, vậy ông có thể cho cháu biết quanh đây còn chỗ nào hay để chơi không ạ?"
+  ],
+  "questions": [
+   {
+    "q": "小雨为什么不坐公共汽车？",
+    "q_vi": "Vì sao Tiểu Vũ không đi xe buýt?",
+    "options": [
+     "公共汽车站太远",
+     "她没有钱",
+     "她想一边走一边看城市",
+     "大爷不让她坐"
+    ],
+    "answer": 2,
+    "explain_vi": "Cô nói trời đẹp, muốn vừa đi vừa ngắm thành phố."
+   },
+   {
+    "q": "大爷为什么带小雨去博物馆？",
+    "q_vi": "Vì sao ông cụ dẫn Tiểu Vũ đến bảo tàng?",
+    "options": [
+     "他在博物馆工作",
+     "他正好要去公园，而且带路更清楚",
+     "小雨请他帮忙",
+     "他也想去看博物馆"
+    ],
+    "answer": 1,
+    "explain_vi": "Ông nói đang định ra công viên tập thể dục, dẫn đi thì rõ hơn là nói."
+   },
+   {
+    "q": "对话最后发生了什么事？",
+    "q_vi": "Cuối đoạn hội thoại đã xảy ra chuyện gì?",
+    "options": [
+     "他们走错了路",
+     "博物馆那天不开门",
+     "小雨的朋友来了",
+     "大爷找不到公园"
+    ],
+    "answer": 1,
+    "explain_vi": "Hôm đó là thứ Hai, bảo tàng đóng cửa mỗi thứ Hai."
+   }
+  ]
+ },
+ {
+  "id": "d-04",
+  "kind": "dialogue",
+  "level": 3,
+  "title": "一种奇怪的病",
+  "title_vi": "Một căn bệnh lạ",
+  "topic": "nhà thuốc",
+  "scene_vi": "Lý Minh đến hiệu thuốc gần trường vào sáng thứ Hai, kể với nhân viên về các triệu chứng của mình và muốn mua thuốc.",
+  "speakers": [
+   "李明",
+   "店员"
+  ],
+  "paragraphs": [
+   "店员：您好，需要什么药？",
+   "李明：你好。我觉得我生病了，可是不知道是什么病，想买点儿药。",
+   "店员：哪儿不舒服？发烧吗？",
+   "李明：不发烧。就是头很疼，眼睛也很累，看东西有点儿不清楚。",
+   "店员：这样多长时间了？",
+   "李明：从今天早上开始的。还有，我的手也有点儿疼，特别是右手。",
+   "店员：手疼？那你昨天晚上睡得好吗？",
+   "李明：嗯……睡得不太多。大概早上五点才睡，七点就起床了。",
+   "店员：五点才睡？你昨天晚上在做什么？复习考试吗？",
+   "李明：不是……我在玩儿一个新游戏。我和朋友一起玩儿，一直赢，所以不想停下来。",
+   "店员：我明白了。头疼、眼睛累、右手疼，这都是因为玩儿游戏玩儿得太久了。",
+   "李明：那有没有药能让我马上好起来？我晚上还要跟他们比赛呢。",
+   "店员：有一种很好的药，不用花钱。",
+   "李明：真的？是什么？",
+   "店员：今天晚上关上电脑，十点以前睡觉，多喝水，少看手机。明天你就会觉得好多了。",
+   "李明：可是比赛怎么办？我已经答应朋友了。",
+   "店员：那我只能卖给你一瓶眼药水了。不过记住，药只能帮你一点儿，最重要的还是休息。",
+   "李明：好吧，那我今天晚上只玩儿一个小时，然后马上睡觉！"
+  ],
+  "translations": [
+   "Nhân viên: Chào anh, anh cần thuốc gì ạ?",
+   "Lý Minh: Chào chị. Tôi thấy mình bị ốm, nhưng không biết là bệnh gì, muốn mua ít thuốc.",
+   "Nhân viên: Anh khó chịu ở đâu? Có sốt không?",
+   "Lý Minh: Không sốt. Chỉ là đầu rất đau, mắt cũng mỏi, nhìn đồ hơi không rõ.",
+   "Nhân viên: Bị thế này bao lâu rồi?",
+   "Lý Minh: Từ sáng nay. Còn nữa, tay tôi cũng hơi đau, nhất là tay phải.",
+   "Nhân viên: Đau tay à? Vậy tối qua anh ngủ có ngon không?",
+   "Lý Minh: Ừm... không ngủ được nhiều lắm. Khoảng năm giờ sáng mới ngủ, bảy giờ đã dậy rồi.",
+   "Nhân viên: Năm giờ mới ngủ? Tối qua anh làm gì vậy? Ôn thi à?",
+   "Lý Minh: Không phải... tôi chơi một trò chơi mới. Tôi chơi cùng bạn, thắng liên tục nên không muốn dừng.",
+   "Nhân viên: Tôi hiểu rồi. Đau đầu, mỏi mắt, đau tay phải, tất cả đều do chơi game quá lâu.",
+   "Lý Minh: Vậy có thuốc nào giúp tôi khỏe lại ngay không? Tối nay tôi còn phải thi đấu với họ nữa.",
+   "Nhân viên: Có một loại thuốc rất tốt, không tốn tiền.",
+   "Lý Minh: Thật à? Là gì vậy?",
+   "Nhân viên: Tối nay tắt máy tính, ngủ trước mười giờ, uống nhiều nước, ít xem điện thoại. Ngày mai anh sẽ thấy khỏe hơn nhiều.",
+   "Lý Minh: Nhưng trận đấu thì sao? Tôi đã hứa với bạn rồi.",
+   "Nhân viên: Vậy tôi chỉ có thể bán cho anh một lọ thuốc nhỏ mắt thôi. Nhưng nhớ nhé, thuốc chỉ giúp được một chút, quan trọng nhất vẫn là nghỉ ngơi.",
+   "Lý Minh: Thôi được, vậy tối nay tôi chỉ chơi một tiếng, sau đó đi ngủ ngay!"
+  ],
+  "questions": [
+   {
+    "q": "李明为什么头疼、眼睛累？",
+    "q_vi": "Vì sao Lý Minh đau đầu, mỏi mắt?",
+    "options": [
+     "他感冒发烧了",
+     "他复习考试复习得太晚",
+     "他玩儿游戏玩儿得太久",
+     "他的眼镜坏了"
+    ],
+    "answer": 2,
+    "explain_vi": "Anh thức đến năm giờ sáng để chơi game, nhân viên kết luận các triệu chứng do chơi game quá lâu."
+   },
+   {
+    "q": "店员说的“不用花钱的药”是什么？",
+    "q_vi": "\"Loại thuốc không tốn tiền\" mà nhân viên nói là gì?",
+    "options": [
+     "多休息、早睡觉",
+     "一瓶眼药水",
+     "去医院看医生",
+     "多运动"
+    ],
+    "answer": 0,
+    "explain_vi": "Đó là tắt máy tính, ngủ sớm, uống nhiều nước, ít xem điện thoại, tức là nghỉ ngơi."
+   },
+   {
+    "q": "最后李明买了什么？",
+    "q_vi": "Cuối cùng Lý Minh mua gì?",
+    "options": [
+     "感冒药",
+     "什么也没买",
+     "一瓶水",
+     "眼药水"
+    ],
+    "answer": 3,
+    "explain_vi": "Vì vẫn muốn thi đấu, nhân viên nói chỉ bán cho anh một lọ thuốc nhỏ mắt."
+   }
+  ]
+ },
+ {
+  "id": "d-05",
+  "kind": "dialogue",
+  "level": 3,
+  "title": "书里的小纸条",
+  "title_vi": "Mẩu giấy nhỏ trong cuốn sách",
+  "topic": "kết bạn",
+  "scene_vi": "Ở thư viện trường, Tiểu Nguyệt thấy một nam sinh nước ngoài tên David đang đọc đúng cuốn sách cô hay mượn. Cô chủ động bắt chuyện.",
+  "speakers": [
+   "小月",
+   "大卫"
+  ],
+  "paragraphs": [
+   "小月：你好，不好意思，你看的这本书，是不是《小王子》？",
+   "大卫：对啊，是中文的。你也看过吗？",
+   "小月：看过好几次了。我每个月都来借一次，每次都是这一本。",
+   "大卫：真巧！我也是。我的汉语不太好，所以一本书要看很久，看完了还回去，过几天又想再借。",
+   "小月：你的汉语已经很好了！对了，我叫小月，是中文系的学生。你呢？",
+   "大卫：我叫大卫，从英国来的，学习经济。很高兴认识你。",
+   "小月：我也很高兴认识你。我想问你一个问题，你每次看完，是不是会在书里放一张小纸条？",
+   "大卫：啊？你怎么知道？上面写着“这个词是什么意思？”那样的问题。",
+   "小月：因为每次都是我在下面写答案的！我还以为是哪个小学生写的呢。",
+   "大卫：哈哈，原来是你！我一直想知道，那个回答我问题的人是谁。你的字写得真好看。",
+   "小月：谢谢。不过你上次写的那个问题，我还没想好怎么回答。",
+   "大卫：哪个问题？我都忘了。",
+   "小月：你写的是：“你愿意和我做朋友吗？”",
+   "大卫：哦……那个，是我开玩笑写的。你不用回答。",
+   "小月：可是我已经想好了。我的回答是：愿意。我们可以互相帮助，我教你中文，你教我英语，怎么样？",
+   "大卫：太好了！那以后我们就不用写纸条了，有问题可以直接问。",
+   "小月：好啊。那我们先加个微信吧，这本书这次让你先看完！"
+  ],
+  "translations": [
+   "Tiểu Nguyệt: Chào bạn, xin lỗi, cuốn sách bạn đang đọc có phải là \"Hoàng tử bé\" không?",
+   "David: Đúng rồi, bản tiếng Trung. Bạn cũng đọc rồi à?",
+   "Tiểu Nguyệt: Đọc mấy lần rồi. Tháng nào mình cũng đến mượn một lần, lần nào cũng là cuốn này.",
+   "David: Trùng hợp thật! Mình cũng vậy. Tiếng Trung của mình không tốt lắm nên một cuốn sách phải đọc rất lâu, đọc xong trả lại, mấy hôm sau lại muốn mượn tiếp.",
+   "Tiểu Nguyệt: Tiếng Trung của bạn đã giỏi lắm rồi! À, mình tên là Tiểu Nguyệt, sinh viên khoa Trung văn. Còn bạn?",
+   "David: Mình tên là David, đến từ Anh, học kinh tế. Rất vui được làm quen với bạn.",
+   "Tiểu Nguyệt: Mình cũng rất vui được làm quen với bạn. Mình muốn hỏi bạn một câu, có phải mỗi lần đọc xong bạn đều để một mẩu giấy nhỏ trong sách không?",
+   "David: Hả? Sao bạn biết? Trên đó viết những câu hỏi kiểu \"Từ này nghĩa là gì?\".",
+   "Tiểu Nguyệt: Vì lần nào cũng là mình viết câu trả lời ở dưới đó! Mình còn tưởng là cậu học sinh tiểu học nào viết cơ.",
+   "David: Ha ha, hóa ra là bạn! Mình vẫn luôn muốn biết người trả lời câu hỏi của mình là ai. Chữ bạn viết đẹp thật.",
+   "Tiểu Nguyệt: Cảm ơn. Nhưng câu hỏi lần trước bạn viết, mình vẫn chưa nghĩ ra cách trả lời.",
+   "David: Câu hỏi nào? Mình quên mất rồi.",
+   "Tiểu Nguyệt: Bạn viết là: \"Bạn có muốn làm bạn với mình không?\"",
+   "David: Ồ... cái đó là mình viết đùa thôi. Bạn không cần trả lời đâu.",
+   "Tiểu Nguyệt: Nhưng mình đã nghĩ xong rồi. Câu trả lời của mình là: có. Chúng ta có thể giúp đỡ lẫn nhau, mình dạy bạn tiếng Trung, bạn dạy mình tiếng Anh, thế nào?",
+   "David: Tuyệt quá! Vậy sau này chúng ta không cần viết giấy nữa, có câu hỏi thì có thể hỏi trực tiếp.",
+   "Tiểu Nguyệt: Được thôi. Vậy mình kết bạn WeChat trước nhé, lần này để bạn đọc xong cuốn sách trước!"
+  ],
+  "questions": [
+   {
+    "q": "小月和大卫有什么一样的地方？",
+    "q_vi": "Tiểu Nguyệt và David có điểm gì giống nhau?",
+    "options": [
+     "都学习经济",
+     "都是从英国来的",
+     "都常常借同一本书",
+     "都不喜欢写字"
+    ],
+    "answer": 2,
+    "explain_vi": "Cả hai đều nói tháng nào cũng mượn cuốn \"Hoàng tử bé\"."
+   },
+   {
+    "q": "书里的纸条上，谁写问题，谁写答案？",
+    "q_vi": "Trên mẩu giấy trong sách, ai viết câu hỏi, ai viết câu trả lời?",
+    "options": [
+     "大卫写问题，小月写答案",
+     "小月写问题，大卫写答案",
+     "一个小学生写问题",
+     "都是大卫写的"
+    ],
+    "answer": 0,
+    "explain_vi": "David viết câu hỏi kiểu \"từ này nghĩa là gì\", còn Tiểu Nguyệt nói lần nào cũng là cô viết câu trả lời."
+   },
+   {
+    "q": "关于他们以后的打算，下面哪个是对的？",
+    "q_vi": "Về dự định sau này của họ, câu nào dưới đây đúng?",
+    "options": [
+     "他们不再借这本书",
+     "他们要互相教语言",
+     "大卫要回英国",
+     "小月要去学经济"
+    ],
+    "answer": 1,
+    "explain_vi": "Tiểu Nguyệt đề nghị: mình dạy bạn tiếng Trung, bạn dạy mình tiếng Anh."
+   }
+  ]
+ },
+ {
+  "id": "d-06",
+  "kind": "dialogue",
+  "level": 3,
+  "title": "吃不完的饭",
+  "title_vi": "Bữa cơm ăn mãi không hết",
+  "topic": "thăm nhà bạn",
+  "scene_vi": "A Minh lần đầu đến nhà Vương Lệ ăn cơm, gặp mẹ của Vương Lệ. Cậu muốn tỏ ra lễ phép nên ăn hết mọi thứ trong bát.",
+  "speakers": [
+   "阿明",
+   "王妈妈",
+   "王丽"
+  ],
+  "paragraphs": [
+   "阿明：阿姨好！我是王丽的同学阿明。这是我带来的一点儿水果，不知道您喜欢不喜欢。",
+   "王妈妈：哎呀，来就来吧，还带什么东西！快进来坐。丽丽常常说起你。",
+   "王丽：妈，饭做好了吗？阿明肯定饿了。",
+   "王妈妈：好了，好了。阿明，来，坐这儿。这是红烧肉，这是鱼，还有饺子，都是我自己做的。",
+   "阿明：哇，这么多菜！阿姨，您太客气了。",
+   "王妈妈：多吃点儿，别客气。你一个人在中国，一定很久没吃过家里的饭了吧？",
+   "阿明：是啊。嗯，这个肉太好吃了！比饭馆的还好吃。",
+   "王妈妈：喜欢就好！来，再给你一块。碗里怎么空了？再吃几个饺子。",
+   "阿明：谢谢阿姨……",
+   "王丽：阿明，你慢点儿吃，没人跟你抢。",
+   "王妈妈：碗又空了！看来你真的饿了。再来一碗米饭，鱼也多吃点儿。",
+   "阿明：（小声）王丽，我已经吃了三碗了，真的吃不下了。可是不吃完，是不是对阿姨不礼貌？",
+   "王丽：哈哈，原来是这样！在我们家，你的碗空了，我妈就觉得你没吃饱，会一直给你加菜。",
+   "阿明：啊？在我们越南，吃完碗里的饭，是说明饭菜好吃。",
+   "王丽：所以你要留一点儿，然后说“我吃饱了，阿姨做的菜太好吃了”。",
+   "阿明：阿姨，我吃饱了，您做的菜太好吃了，我从来没吃得这么饱！",
+   "王妈妈：吃饱了就好。那我们吃点儿水果吧，就是你带来的这些！"
+  ],
+  "translations": [
+   "A Minh: Cháu chào cô ạ! Cháu là A Minh, bạn học của Vương Lệ. Đây là chút hoa quả cháu mang đến, không biết cô có thích không ạ.",
+   "Mẹ Vương Lệ: Ôi chao, đến chơi là được rồi, còn mang quà làm gì! Mau vào ngồi đi. Lệ Lệ hay nhắc đến cháu lắm.",
+   "Vương Lệ: Mẹ, cơm nấu xong chưa? A Minh chắc đói rồi.",
+   "Mẹ Vương Lệ: Xong rồi, xong rồi. A Minh, lại đây, ngồi chỗ này. Đây là thịt kho tàu, đây là cá, còn có sủi cảo, đều là cô tự làm đấy.",
+   "A Minh: Oa, nhiều món thế! Cô khách sáo quá ạ.",
+   "Mẹ Vương Lệ: Ăn nhiều vào, đừng khách sáo. Cháu ở Trung Quốc một mình, chắc lâu lắm rồi chưa được ăn cơm nhà nhỉ?",
+   "A Minh: Vâng ạ. Ừm, thịt này ngon quá! Còn ngon hơn ngoài quán.",
+   "Mẹ Vương Lệ: Thích là tốt rồi! Nào, cô gắp cho cháu thêm miếng nữa. Bát sao lại hết rồi? Ăn thêm mấy cái sủi cảo nữa.",
+   "A Minh: Cháu cảm ơn cô...",
+   "Vương Lệ: A Minh, cậu ăn chậm thôi, có ai tranh với cậu đâu.",
+   "Mẹ Vương Lệ: Bát lại hết rồi! Xem ra cháu đói thật. Thêm một bát cơm nữa, ăn nhiều cá vào.",
+   "A Minh: (nói nhỏ) Vương Lệ, mình đã ăn ba bát rồi, thật sự ăn không nổi nữa. Nhưng không ăn hết thì có phải là bất lịch sự với cô không?",
+   "Vương Lệ: Ha ha, hóa ra là thế! Ở nhà mình, bát cậu mà hết, mẹ mình sẽ nghĩ cậu chưa no, sẽ cứ gắp thêm cho cậu mãi.",
+   "A Minh: Hả? Ở Việt Nam bọn mình, ăn hết cơm trong bát là để thể hiện cơm canh ngon.",
+   "Vương Lệ: Thế nên cậu phải để lại một chút, rồi nói \"Cháu no rồi, cô nấu ngon quá\".",
+   "A Minh: Cô ơi, cháu no rồi ạ, cô nấu ngon quá, cháu chưa bao giờ ăn no như thế này!",
+   "Mẹ Vương Lệ: No rồi thì tốt. Vậy chúng ta ăn chút hoa quả nhé, chính là chỗ cháu mang đến đây này!"
+  ],
+  "questions": [
+   {
+    "q": "王妈妈为什么一直给阿明加菜？",
+    "q_vi": "Vì sao mẹ Vương Lệ cứ gắp thêm thức ăn cho A Minh?",
+    "options": [
+     "她看见阿明的碗空了，觉得他没吃饱",
+     "阿明说他还想吃",
+     "菜做得太多了，吃不完",
+     "王丽让妈妈这样做"
+    ],
+    "answer": 0,
+    "explain_vi": "Vương Lệ giải thích: bát trống thì mẹ nghĩ cậu chưa no nên gắp thêm."
+   },
+   {
+    "q": "阿明为什么一直把碗里的饭吃完？",
+    "q_vi": "Vì sao A Minh cứ ăn hết cơm trong bát?",
+    "options": [
+     "他特别饿",
+     "他不喜欢剩下的菜",
+     "王丽让他多吃",
+     "在越南吃完说明饭菜好吃"
+    ],
+    "answer": 3,
+    "explain_vi": "Ở Việt Nam, ăn hết cơm trong bát là cách thể hiện cơm ngon, cậu sợ bất lịch sự."
+   },
+   {
+    "q": "这个对话主要说的是什么？",
+    "q_vi": "Đoạn hội thoại này chủ yếu nói về điều gì?",
+    "options": [
+     "怎么做红烧肉",
+     "两个国家吃饭习惯的不同",
+     "阿明不喜欢中国菜",
+     "王丽的妈妈很生气"
+    ],
+    "answer": 1,
+    "explain_vi": "Câu chuyện xoay quanh khác biệt thói quen ăn uống giữa Việt Nam và Trung Quốc."
+   }
+  ]
+ },
+ {
+  "id": "d-07",
+  "kind": "dialogue",
+  "level": 3,
+  "title": "着急的乘客",
+  "title_vi": "Vị khách vội vàng",
+  "topic": "taxi",
+  "scene_vi": "Anh Trương bắt taxi ra ga tàu vì sợ muộn chuyến. Bác tài xế vừa lái xe vừa trò chuyện với anh.",
+  "speakers": [
+   "司机",
+   "张先生"
+  ],
+  "paragraphs": [
+   "司机：您好，去哪儿？",
+   "张先生：师傅，去火车站，北站。麻烦您快一点儿，我的火车两点半开。",
+   "司机：两点半？现在一点四十，时间有点儿紧张。您坐好，我们走。",
+   "张先生：从这儿到北站要多长时间？",
+   "司机：如果不堵车，三十分钟就到了。可是今天是周五，前面那条路经常堵车。",
+   "张先生：那怎么办？能不能换一条路？",
+   "司机：别着急，我在这儿开了十几年车，有一条小路，车很少，就是要多走一点儿。",
+   "张先生：没关系，钱多一点儿没问题，只要能早点儿到。",
+   "司机：好嘞。您是去出差还是回家？",
+   "张先生：回老家。我妈妈明天过生日，我已经两年没回去了，这次一定要回去。",
+   "司机：那是应该回去。父母年纪大了，最想见的就是孩子。",
+   "张先生：是啊。师傅，我们到哪儿了？",
+   "司机：您看，前面就是北站了。现在两点零五分，还有二十五分钟，来得及。",
+   "张先生：太感谢您了！多少钱？我用手机付。",
+   "司机：五十八块。您再看看车票，别走错了门。",
+   "张先生：好，我看看……北站，两点半……咦？日期怎么是明天？",
+   "司机：哈哈，那您今天不用跑了！明天还是两点半，别忘了早点儿出门。",
+   "张先生：哎，我真是太着急了。师傅，那麻烦您再把我送回去吧！"
+  ],
+  "translations": [
+   "Tài xế: Chào anh, đi đâu ạ?",
+   "Anh Trương: Bác tài, đến ga tàu, ga Bắc. Phiền bác đi nhanh một chút, tàu của tôi hai giờ rưỡi chạy.",
+   "Tài xế: Hai giờ rưỡi á? Bây giờ một giờ bốn mươi, thời gian hơi gấp. Anh ngồi vững nhé, chúng ta đi.",
+   "Anh Trương: Từ đây đến ga Bắc mất bao lâu ạ?",
+   "Tài xế: Nếu không tắc đường thì ba mươi phút là đến. Nhưng hôm nay là thứ Sáu, con đường phía trước hay tắc lắm.",
+   "Anh Trương: Vậy làm sao bây giờ? Có thể đổi đường khác không ạ?",
+   "Tài xế: Đừng sốt ruột, tôi lái xe ở đây hơn mười năm rồi, có một con đường nhỏ, ít xe, chỉ là phải đi xa thêm một chút.",
+   "Anh Trương: Không sao, tốn thêm chút tiền cũng không vấn đề gì, miễn là đến sớm được.",
+   "Tài xế: Được thôi. Anh đi công tác hay về quê?",
+   "Anh Trương: Về quê. Ngày mai là sinh nhật mẹ tôi, tôi đã hai năm không về rồi, lần này nhất định phải về.",
+   "Tài xế: Thế thì nên về. Bố mẹ có tuổi rồi, điều mong nhất là được gặp con cái.",
+   "Anh Trương: Đúng vậy. Bác tài, chúng ta đến đâu rồi?",
+   "Tài xế: Anh xem, phía trước là ga Bắc rồi. Bây giờ là hai giờ năm phút, còn hai mươi lăm phút nữa, kịp.",
+   "Anh Trương: Cảm ơn bác nhiều lắm! Bao nhiêu tiền ạ? Tôi trả bằng điện thoại.",
+   "Tài xế: Năm mươi tám tệ. Anh xem lại vé tàu đi, đừng vào nhầm cửa.",
+   "Anh Trương: Vâng, để tôi xem... ga Bắc, hai giờ rưỡi... Ơ? Sao ngày lại là ngày mai?",
+   "Tài xế: Ha ha, vậy hôm nay anh không phải chạy nữa rồi! Ngày mai vẫn là hai giờ rưỡi, đừng quên ra khỏi nhà sớm nhé.",
+   "Anh Trương: Ôi, tôi đúng là vội quá. Bác tài, vậy phiền bác lại chở tôi về nhé!"
+  ],
+  "questions": [
+   {
+    "q": "司机为什么走小路？",
+    "q_vi": "Vì sao tài xế đi đường nhỏ?",
+    "options": [
+     "小路比较近",
+     "大路那天经常堵车",
+     "张先生让他走小路",
+     "司机想多要钱"
+    ],
+    "answer": 1,
+    "explain_vi": "Tài xế nói hôm nay thứ Sáu, đường phía trước hay tắc, đường nhỏ ít xe."
+   },
+   {
+    "q": "张先生为什么要回老家？",
+    "q_vi": "Vì sao anh Trương muốn về quê?",
+    "options": [
+     "去出差",
+     "妈妈生病了",
+     "参加朋友的婚礼",
+     "给妈妈过生日"
+    ],
+    "answer": 3,
+    "explain_vi": "Anh nói ngày mai là sinh nhật mẹ."
+   },
+   {
+    "q": "最后张先生发现了什么？",
+    "q_vi": "Cuối cùng anh Trương phát hiện ra điều gì?",
+    "options": [
+     "火车已经开了",
+     "他走错了车站",
+     "他的火车是明天的",
+     "他忘了带手机"
+    ],
+    "answer": 2,
+    "explain_vi": "Ngày trên vé tàu là ngày mai."
+   }
+  ]
+ },
+ {
+  "id": "d-08",
+  "kind": "dialogue",
+  "level": 3,
+  "title": "今天晚上没时间",
+  "title_vi": "Tối nay không rảnh",
+  "topic": "mời đi ăn / từ chối lịch sự",
+  "scene_vi": "Ở văn phòng, Tiểu Vương rủ đồng nghiệp Tiểu Chu tối nay đi ăn, nhưng Tiểu Chu cứ khéo léo từ chối.",
+  "speakers": [
+   "小王",
+   "小周"
+  ],
+  "paragraphs": [
+   "小王：小周，今天晚上有空吗？学校旁边新开了一家饭馆，听说菜很不错，我们一起去吃吧？",
+   "小周：谢谢你，不过今天晚上我可能不行，我有点儿事。",
+   "小王：什么事啊？很重要吗？",
+   "小周：嗯……我要在家打扫房间，已经一个星期没打扫了。",
+   "小王：打扫房间明天也可以啊。我们吃完饭早点儿回来，不会太晚的。",
+   "小周：可是……我最近在减肥，晚上不想吃太多。",
+   "小王：减肥？你已经这么瘦了！那家饭馆也有很多蔬菜，你可以只吃菜。",
+   "小周：真的很不好意思。我妈妈刚才打电话，说今天晚上要跟我视频。",
+   "小王：你刚才说打扫房间，现在又说你妈妈。小周，你是不是不想跟我一起吃饭？",
+   "小周：不是，不是！你别多想。我们明天中午一起吃饭，好不好？我请你。",
+   "小王：好吧……那我今天晚上一个人回家吃面条吧。",
+   "小周：别！你今天晚上七点一定要回家，最好别去别的地方。",
+   "小王：为什么？你怎么知道我要去哪儿？",
+   "小周：哎呀，我不能说。你只要记住，七点在家等着就行。",
+   "小王：你今天真奇怪……",
+   "小周：（打电话）喂，蛋糕准备好了吗？对，七点，送到小王家。他还不知道今天是他的生日呢，他自己都忘了！"
+  ],
+  "translations": [
+   "Tiểu Vương: Tiểu Chu, tối nay rảnh không? Cạnh trường mới mở một quán ăn, nghe nói món ăn rất ngon, chúng mình cùng đi ăn nhé?",
+   "Tiểu Chu: Cảm ơn cậu, nhưng tối nay chắc mình không được, mình có chút việc.",
+   "Tiểu Vương: Việc gì thế? Quan trọng lắm à?",
+   "Tiểu Chu: Ừm... mình phải ở nhà dọn phòng, đã một tuần rồi chưa dọn.",
+   "Tiểu Vương: Dọn phòng ngày mai cũng được mà. Chúng mình ăn xong về sớm, không muộn đâu.",
+   "Tiểu Chu: Nhưng mà... dạo này mình đang giảm cân, buổi tối không muốn ăn nhiều.",
+   "Tiểu Vương: Giảm cân á? Cậu đã gầy thế này rồi! Quán đó cũng có nhiều rau, cậu có thể chỉ ăn rau thôi.",
+   "Tiểu Chu: Thật sự ngại quá. Lúc nãy mẹ mình gọi điện, nói tối nay muốn gọi video với mình.",
+   "Tiểu Vương: Lúc nãy cậu nói dọn phòng, giờ lại nói mẹ cậu. Tiểu Chu, có phải cậu không muốn đi ăn với mình không?",
+   "Tiểu Chu: Không phải, không phải! Cậu đừng nghĩ nhiều. Trưa mai chúng mình cùng ăn cơm nhé, được không? Mình mời cậu.",
+   "Tiểu Vương: Thôi được... vậy tối nay mình về nhà một mình ăn mì vậy.",
+   "Tiểu Chu: Đừng! Tối nay bảy giờ cậu nhất định phải về nhà, tốt nhất đừng đi đâu khác.",
+   "Tiểu Vương: Tại sao? Sao cậu biết mình định đi đâu?",
+   "Tiểu Chu: Ôi chao, mình không nói được. Cậu chỉ cần nhớ, bảy giờ ở nhà đợi là được.",
+   "Tiểu Vương: Hôm nay cậu lạ thật...",
+   "Tiểu Chu: (gọi điện) A lô, bánh kem chuẩn bị xong chưa? Đúng, bảy giờ, giao đến nhà Tiểu Vương. Cậu ấy còn chưa biết hôm nay là sinh nhật mình đâu, chính cậu ấy cũng quên mất rồi!"
+  ],
+  "questions": [
+   {
+    "q": "小周第一次说不能去的原因是什么？",
+    "q_vi": "Lý do đầu tiên Tiểu Chu nói không thể đi là gì?",
+    "options": [
+     "要打扫房间",
+     "在减肥",
+     "要和妈妈视频",
+     "要加班"
+    ],
+    "answer": 0,
+    "explain_vi": "Lần đầu Tiểu Chu nói phải ở nhà dọn phòng."
+   },
+   {
+    "q": "小王为什么觉得小周不想跟他吃饭？",
+    "q_vi": "Vì sao Tiểu Vương nghĩ Tiểu Chu không muốn ăn với mình?",
+    "options": [
+     "小周说他做的菜不好吃",
+     "小周每次都说一个不一样的原因",
+     "小周跟别人去吃饭了",
+     "小周没有接他的电话"
+    ],
+    "answer": 1,
+    "explain_vi": "Tiểu Chu lần lượt viện nhiều lý do khác nhau: dọn phòng, giảm cân, mẹ gọi video."
+   },
+   {
+    "q": "小周为什么不跟小王去吃饭？",
+    "q_vi": "Thực ra vì sao Tiểu Chu không đi ăn với Tiểu Vương?",
+    "options": [
+     "她真的要打扫房间",
+     "她不喜欢那家饭馆",
+     "她要和男朋友见面",
+     "她在准备小王的生日惊喜"
+    ],
+    "answer": 3,
+    "explain_vi": "Cuộc điện thoại cuối cho thấy cô đang chuẩn bị bánh sinh nhật bất ngờ cho Tiểu Vương."
+   }
+  ]
+ },
+ {
+  "id": "d-09",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "找不到的预订",
+  "title_vi": "Đặt phòng không tìm thấy",
+  "topic": "đặt phòng khách sạn",
+  "scene_vi": "Anh Trần đi công tác, tối muộn mới đến khách sạn. Ở quầy lễ tân, nhân viên không tìm thấy thông tin đặt phòng của anh.",
+  "speakers": [
+   "陈先生",
+   "前台"
+  ],
+  "paragraphs": [
+   "前台：晚上好，欢迎光临！请问您有预订吗？",
+   "陈先生：有，我上个星期在网上订的，一个单人间，住三个晚上。我姓陈，耳东陈。",
+   "前台：好的，陈先生，麻烦您把身份证给我，我帮您查一下。",
+   "陈先生：给你。我坐了五个小时的火车，累死了。房间最好安静一点儿，我明天早上要开会，今天晚上想好好休息。",
+   "前台：嗯……不好意思，陈先生，系统里好像没有您的预订。您还记得是哪个网站吗？或者有没有订单号码？",
+   "陈先生：不可能吧？我还收到了确认的短信呢。你看，就是这条：“阳光酒店，十月八号到十一号。”",
+   "前台：我看看。时间没错，酒店名字也对，可是……您再往下看，这里写的是“阳光酒店东门店”。",
+   "陈先生：对啊，这儿不就是阳光酒店吗？",
+   "前台：这儿是阳光酒店西门店。我们在这个城市有两家店，东门店离这儿大概二十公里。",
+   "陈先生：二十公里？哎呀，司机看到“阳光酒店”就直接把我送过来了，我也没仔细看。现在都快十一点了……",
+   "前台：您别着急。我先帮您问问东门店，看能不能把预订改到我们这边。",
+   "陈先生：那太好了。不过我开会的地方在哪边？我得先看看地图。",
+   "前台：您开会的地址方便告诉我吗？",
+   "陈先生：西湖路一百号，国际会议中心。",
+   "前台：那您来对了！会议中心就在我们酒店对面，走路五分钟。如果住东门店，您明天早上还得坐四十分钟的车。",
+   "陈先生：看来我是因祸得福了，要不是司机送错了地方，我明天还得早起一个小时。那现在还有空房间吗？",
+   "前台：东门店已经同意取消了，不收您的钱。单人间都住满了，不过我们可以给您安排一个大床房，价格按单人间算。",
+   "陈先生：真是太感谢了！房间安静吗？",
+   "前台：在十八楼，窗户对着公园，非常安静。这是您的房卡，早餐时间是六点半到九点半，在二楼。祝您休息好，明天开会顺利！"
+  ],
+  "translations": [
+   "Lễ tân: Chào buổi tối, chào mừng quý khách! Xin hỏi anh đã đặt phòng trước chưa ạ?",
+   "Anh Trần: Có, tuần trước tôi đặt trên mạng, một phòng đơn, ở ba đêm. Tôi họ Trần, chữ Trần gồm bộ Nhĩ và chữ Đông.",
+   "Lễ tân: Vâng, anh Trần, phiền anh đưa giúp tôi chứng minh thư, tôi kiểm tra cho anh.",
+   "Anh Trần: Đây. Tôi ngồi tàu năm tiếng đồng hồ, mệt chết đi được. Phòng tốt nhất là yên tĩnh một chút, sáng mai tôi phải họp, tối nay muốn nghỉ ngơi cho tốt.",
+   "Lễ tân: Ừm... xin lỗi anh Trần, trong hệ thống hình như không có đặt phòng của anh. Anh còn nhớ đặt qua trang web nào không ạ? Hoặc có mã đơn đặt phòng không?",
+   "Anh Trần: Không thể nào? Tôi còn nhận được tin nhắn xác nhận đây này. Chị xem, chính là tin này: \"Khách sạn Dương Quang, từ ngày 8 đến ngày 11 tháng Mười.\"",
+   "Lễ tân: Để tôi xem. Thời gian không sai, tên khách sạn cũng đúng, nhưng... anh xem tiếp xuống dưới, ở đây viết là \"Khách sạn Dương Quang chi nhánh Cửa Đông\".",
+   "Anh Trần: Đúng mà, chỗ này chẳng phải là khách sạn Dương Quang sao?",
+   "Lễ tân: Đây là khách sạn Dương Quang chi nhánh Cửa Tây. Chúng tôi có hai chi nhánh ở thành phố này, chi nhánh Cửa Đông cách đây khoảng hai mươi cây số.",
+   "Anh Trần: Hai mươi cây số? Ôi trời, tài xế thấy \"Khách sạn Dương Quang\" là chở thẳng tôi đến đây, tôi cũng không xem kỹ. Giờ đã gần mười một giờ rồi...",
+   "Lễ tân: Anh đừng lo. Tôi hỏi giúp anh chi nhánh Cửa Đông trước, xem có thể chuyển đặt phòng sang bên chúng tôi được không.",
+   "Anh Trần: Vậy thì tốt quá. Nhưng chỗ tôi họp ở phía nào nhỉ? Tôi phải xem bản đồ đã.",
+   "Lễ tân: Anh có tiện cho tôi biết địa chỉ chỗ họp không ạ?",
+   "Anh Trần: Số 100 đường Tây Hồ, Trung tâm Hội nghị Quốc tế.",
+   "Lễ tân: Vậy là anh đến đúng chỗ rồi! Trung tâm hội nghị ở ngay đối diện khách sạn chúng tôi, đi bộ năm phút. Nếu ở chi nhánh Cửa Đông, sáng mai anh còn phải ngồi xe bốn mươi phút.",
+   "Anh Trần: Xem ra tôi lại trong cái rủi có cái may, nếu không phải tài xế chở nhầm chỗ thì sáng mai tôi còn phải dậy sớm thêm một tiếng. Vậy bây giờ còn phòng trống không?",
+   "Lễ tân: Chi nhánh Cửa Đông đã đồng ý hủy rồi, không thu tiền của anh. Phòng đơn đã kín hết, nhưng chúng tôi có thể sắp xếp cho anh một phòng giường lớn, giá tính theo phòng đơn.",
+   "Anh Trần: Thật sự cảm ơn chị quá! Phòng có yên tĩnh không?",
+   "Lễ tân: Ở tầng mười tám, cửa sổ hướng ra công viên, rất yên tĩnh. Đây là thẻ phòng của anh, giờ ăn sáng từ sáu giờ rưỡi đến chín giờ rưỡi, ở tầng hai. Chúc anh nghỉ ngơi tốt, mai họp thuận lợi!"
+  ],
+  "questions": [
+   {
+    "q": "为什么前台找不到陈先生的预订？",
+    "q_vi": "Vì sao lễ tân không tìm thấy đặt phòng của anh Trần?",
+    "options": [
+     "陈先生订错了日期",
+     "陈先生订的是另一家店",
+     "网站出了问题",
+     "陈先生忘了订房间"
+    ],
+    "answer": 1,
+    "explain_vi": "Anh đặt ở chi nhánh Cửa Đông nhưng lại đến chi nhánh Cửa Tây."
+   },
+   {
+    "q": "陈先生说“因祸得福”，是因为什么？",
+    "q_vi": "Anh Trần nói \"trong rủi có may\" là vì sao?",
+    "options": [
+     "酒店送了他免费早餐",
+     "他不用付房费了",
+     "这家店离开会的地方很近",
+     "他认识了新朋友"
+    ],
+    "answer": 2,
+    "explain_vi": "Trung tâm hội nghị ở ngay đối diện khách sạn này, đi bộ năm phút, tiện hơn chi nhánh kia."
+   },
+   {
+    "q": "最后陈先生住的是什么房间？",
+    "q_vi": "Cuối cùng anh Trần ở phòng nào?",
+    "options": [
+     "按单人间价格的大床房",
+     "东门店的单人间",
+     "二楼的双人间",
+     "十八楼的单人间"
+    ],
+    "answer": 0,
+    "explain_vi": "Phòng đơn đã kín, khách sạn xếp phòng giường lớn nhưng tính giá phòng đơn."
+   }
+  ]
+ },
+ {
+  "id": "d-10",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "第五杯咖啡",
+  "title_vi": "Cốc cà phê thứ năm",
+  "topic": "đi khám bệnh",
+  "scene_vi": "Lâm Tuyết bị đau dạ dày mấy ngày liền nên đến bệnh viện khám. Bác sĩ hỏi kỹ về thói quen sinh hoạt gần đây của cô.",
+  "speakers": [
+   "医生",
+   "林雪"
+  ],
+  "paragraphs": [
+   "医生：请坐。哪儿不舒服？",
+   "林雪：大夫，我这几天胃一直疼，特别是早上起来的时候，疼得我都不想吃东西。",
+   "医生：疼了几天了？以前有过这样的情况吗？",
+   "林雪：差不多一个星期了。以前偶尔也疼，但是休息一下就好了，这次时间比较长。",
+   "医生：除了疼以外，还有没有别的问题？比如晚上睡得好不好？",
+   "林雪：睡得不太好，经常半夜醒，醒了就睡不着，脑子里全是工作的事情。",
+   "医生：最近工作忙吗？吃饭按时吗？",
+   "林雪：特别忙。我们公司下个月有一个大活动，我负责准备材料，经常加班到半夜。早饭基本上不吃，午饭也是随便吃一点儿。",
+   "医生：那你加班的时候吃什么？",
+   "林雪：主要是喝咖啡，不喝的话我就困得受不了。",
+   "医生：一天喝几杯？",
+   "林雪：嗯……早上一杯，中午一杯，下午一杯，晚上加班两杯……一共五杯吧。",
+   "医生：五杯！而且是空着肚子喝，对吧？你的胃不疼才奇怪呢。",
+   "林雪：我知道咖啡喝多了不好，可是工作做不完，我也没办法。",
+   "医生：我先给你开个检查，看看胃有没有别的问题。如果只是胃炎，吃一个星期的药就会好起来。不过药只能解决一半的问题。",
+   "林雪：那另一半呢？",
+   "医生：另一半要靠你自己。第一，每天按时吃早饭，哪怕只是一个鸡蛋、一杯牛奶。第二，咖啡一天最多一杯，而且要吃了东西以后再喝。第三，尽量十二点以前睡觉。",
+   "林雪：一天一杯？大夫，这个比吃药难多了。",
+   "医生：我理解。说实话，我以前也是一天四五杯，后来胃也出了问题，才慢慢改过来的。现在我每天早上只喝一杯，反而觉得精神更好了。",
+   "林雪：原来您也是这样。好，我试试，至少从明天开始先好好吃早饭。那我去哪儿做检查？",
+   "医生：拿着这张单子，先去一楼交费，然后去三楼检查。结果出来以后再回来找我。记住，今天先别喝咖啡了。"
+  ],
+  "translations": [
+   "Bác sĩ: Mời ngồi. Cô thấy khó chịu ở đâu?",
+   "Lâm Tuyết: Thưa bác sĩ, mấy hôm nay dạ dày tôi cứ đau suốt, nhất là lúc sáng ngủ dậy, đau đến mức tôi chẳng muốn ăn gì.",
+   "Bác sĩ: Đau mấy ngày rồi? Trước đây đã từng bị như thế chưa?",
+   "Lâm Tuyết: Gần một tuần rồi. Trước đây thỉnh thoảng cũng đau, nhưng nghỉ một chút là khỏi, lần này kéo dài hơn.",
+   "Bác sĩ: Ngoài đau ra còn có vấn đề gì khác không? Ví dụ buổi tối ngủ có ngon không?",
+   "Lâm Tuyết: Ngủ không ngon lắm, hay tỉnh giấc lúc nửa đêm, tỉnh rồi là không ngủ lại được, trong đầu toàn là chuyện công việc.",
+   "Bác sĩ: Dạo này công việc có bận không? Ăn uống có đúng giờ không?",
+   "Lâm Tuyết: Rất bận ạ. Tháng sau công ty tôi có một sự kiện lớn, tôi phụ trách chuẩn bị tài liệu, thường xuyên tăng ca đến nửa đêm. Bữa sáng gần như không ăn, bữa trưa cũng ăn qua loa một chút.",
+   "Bác sĩ: Vậy lúc tăng ca cô ăn gì?",
+   "Lâm Tuyết: Chủ yếu là uống cà phê, không uống thì tôi buồn ngủ không chịu nổi.",
+   "Bác sĩ: Một ngày uống mấy cốc?",
+   "Lâm Tuyết: Ừm... sáng một cốc, trưa một cốc, chiều một cốc, tối tăng ca hai cốc... tổng cộng năm cốc ạ.",
+   "Bác sĩ: Năm cốc! Mà lại uống lúc bụng đói, đúng không? Dạ dày cô không đau mới là lạ đấy.",
+   "Lâm Tuyết: Tôi biết uống nhiều cà phê không tốt, nhưng công việc làm không xuể, tôi cũng chẳng còn cách nào.",
+   "Bác sĩ: Tôi kê cho cô làm xét nghiệm trước, xem dạ dày có vấn đề gì khác không. Nếu chỉ là viêm dạ dày, uống thuốc một tuần sẽ đỡ. Nhưng thuốc chỉ giải quyết được một nửa vấn đề thôi.",
+   "Lâm Tuyết: Vậy còn nửa kia ạ?",
+   "Bác sĩ: Nửa kia phải dựa vào chính cô. Thứ nhất, mỗi ngày ăn sáng đúng giờ, dù chỉ là một quả trứng, một cốc sữa. Thứ hai, cà phê mỗi ngày nhiều nhất một cốc, và phải ăn gì đó rồi mới uống. Thứ ba, cố gắng ngủ trước mười hai giờ.",
+   "Lâm Tuyết: Một ngày một cốc? Bác sĩ ơi, cái này khó hơn uống thuốc nhiều.",
+   "Bác sĩ: Tôi hiểu. Nói thật, trước đây tôi cũng uống bốn năm cốc một ngày, sau đó dạ dày cũng có vấn đề, mới từ từ sửa được. Bây giờ mỗi sáng tôi chỉ uống một cốc, ngược lại còn thấy tỉnh táo hơn.",
+   "Lâm Tuyết: Hóa ra bác sĩ cũng thế. Được, tôi thử xem, ít nhất từ mai bắt đầu ăn sáng tử tế đã. Vậy tôi đi xét nghiệm ở đâu ạ?",
+   "Bác sĩ: Cầm tờ giấy này, xuống tầng một nộp tiền trước, sau đó lên tầng ba xét nghiệm. Có kết quả thì quay lại gặp tôi. Nhớ nhé, hôm nay đừng uống cà phê nữa."
+  ],
+  "questions": [
+   {
+    "q": "林雪的胃为什么疼？",
+    "q_vi": "Vì sao dạ dày của Lâm Tuyết bị đau?",
+    "options": [
+     "她吃了不新鲜的东西",
+     "她感冒了",
+     "她工作压力大，不吃早饭，还喝很多咖啡",
+     "她运动太多了"
+    ],
+    "answer": 2,
+    "explain_vi": "Cô tăng ca, bỏ bữa sáng, ăn qua loa và uống năm cốc cà phê lúc bụng đói."
+   },
+   {
+    "q": "医生说“药只能解决一半的问题”，意思是什么？",
+    "q_vi": "Bác sĩ nói \"thuốc chỉ giải quyết được một nửa vấn đề\" nghĩa là gì?",
+    "options": [
+     "药的质量不太好",
+     "林雪还需要改变生活习惯",
+     "林雪应该吃两种药",
+     "林雪的病很严重"
+    ],
+    "answer": 1,
+    "explain_vi": "Nửa còn lại phải dựa vào chính cô: ăn sáng, bớt cà phê, ngủ sớm."
+   },
+   {
+    "q": "关于医生，可以知道什么？",
+    "q_vi": "Về bác sĩ, có thể biết điều gì?",
+    "options": [
+     "他以前也喝很多咖啡",
+     "他从来不喝咖啡",
+     "他也在加班",
+     "他的胃现在还不好"
+    ],
+    "answer": 0,
+    "explain_vi": "Bác sĩ kể trước đây cũng uống bốn năm cốc mỗi ngày."
+   }
+  ]
+ },
+ {
+  "id": "d-11",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "“警察”的电话",
+  "title_vi": "Cuộc gọi của \"cảnh sát\"",
+  "topic": "ngân hàng",
+  "scene_vi": "A Minh vội vàng đến ngân hàng muốn chuyển một khoản tiền lớn. Nhân viên ngân hàng thấy có điều bất thường nên hỏi thêm.",
+  "speakers": [
+   "职员",
+   "阿明"
+  ],
+  "paragraphs": [
+   "职员：您好，请问办理什么业务？",
+   "阿明：我要转账，转三万块钱，越快越好。",
+   "职员：好的。请问您转给谁？是家里人还是朋友？",
+   "阿明：都不是……是警察。刚才有一个警察给我打电话，说我的银行卡跟一个案子有关系，让我把钱转到一个安全账户，等他们调查完了再还给我。",
+   "职员：先生，请您先别着急。他是怎么知道您的名字和电话的？",
+   "阿明：他什么都知道，连我的护照号码都知道！所以我才相信的。他还说这件事要保密，不能告诉任何人，包括银行的人。",
+   "职员：您仔细想一想，如果真的是警察，为什么不让您告诉银行呢？",
+   "阿明：这……我也觉得有点儿奇怪，可是他说话的样子很严肃，还说如果我不马上转钱，就要把我抓起来。",
+   "职员：我可以负责任地告诉您：真正的警察从来不会在电话里让人转账，也没有什么“安全账户”。您遇到的很可能是电话骗子。",
+   "阿明：骗子？可是他怎么会有我的护照号码？",
+   "职员：现在个人信息很容易被别人拿到，比如您在网上买东西、住酒店的时候。这种事情我们每个月都会遇到好几次，特别是刚来中国的留学生。",
+   "阿明：天哪，这三万块是我一年的学费，是我爸妈辛辛苦苦挣的。还好我没在手机上直接转。",
+   "职员：是啊，您来银行是对的。他现在还在给您打电话吗？",
+   "阿明：你看，又打来了，已经打了七八次了。",
+   "职员：别接。我建议您马上打一一零报警，把这个电话号码告诉真正的警察。我们的保安也可以陪您去旁边的派出所。",
+   "阿明：好，好。真是太谢谢你了！要不是你多问了几句，我的钱就没了。",
+   "职员：不客气，这是我们应该做的。以后遇到要您转账的电话，不管对方说自己是谁，都先挂了，再给家人或者银行打电话问一问。",
+   "阿明：我记住了。我还要把这件事告诉我的同学们，让大家都小心一点儿。"
+  ],
+  "translations": [
+   "Nhân viên: Chào anh, xin hỏi anh muốn làm giao dịch gì ạ?",
+   "A Minh: Tôi muốn chuyển khoản, chuyển ba vạn tệ, càng nhanh càng tốt.",
+   "Nhân viên: Vâng. Xin hỏi anh chuyển cho ai? Là người nhà hay bạn bè ạ?",
+   "A Minh: Đều không phải... là cảnh sát. Lúc nãy có một cảnh sát gọi điện cho tôi, nói thẻ ngân hàng của tôi có liên quan đến một vụ án, bảo tôi chuyển tiền vào một tài khoản an toàn, đợi họ điều tra xong sẽ trả lại.",
+   "Nhân viên: Thưa anh, anh khoan hãy vội. Người đó làm sao biết tên và số điện thoại của anh?",
+   "A Minh: Anh ta biết hết, ngay cả số hộ chiếu của tôi cũng biết! Vì thế tôi mới tin. Anh ta còn nói việc này phải giữ bí mật, không được nói với bất kỳ ai, kể cả người của ngân hàng.",
+   "Nhân viên: Anh nghĩ kỹ xem, nếu thật sự là cảnh sát, tại sao lại không cho anh nói với ngân hàng?",
+   "A Minh: Cái này... tôi cũng thấy hơi lạ, nhưng giọng anh ta rất nghiêm, còn nói nếu tôi không chuyển tiền ngay thì sẽ bắt tôi.",
+   "Nhân viên: Tôi có thể khẳng định với anh: cảnh sát thật không bao giờ bảo người ta chuyển khoản qua điện thoại, cũng chẳng có cái gọi là \"tài khoản an toàn\" nào cả. Rất có thể anh đã gặp kẻ lừa đảo qua điện thoại.",
+   "A Minh: Lừa đảo? Nhưng sao anh ta lại có số hộ chiếu của tôi?",
+   "Nhân viên: Bây giờ thông tin cá nhân rất dễ bị người khác lấy được, ví dụ lúc anh mua đồ trên mạng hay ở khách sạn. Chuyện kiểu này mỗi tháng chúng tôi đều gặp vài lần, đặc biệt là du học sinh mới sang Trung Quốc.",
+   "A Minh: Trời ơi, ba vạn tệ này là học phí một năm của tôi, là tiền bố mẹ tôi vất vả kiếm được. May mà tôi không chuyển thẳng trên điện thoại.",
+   "Nhân viên: Đúng vậy, anh đến ngân hàng là đúng rồi. Bây giờ anh ta còn đang gọi cho anh không?",
+   "A Minh: Chị xem, lại gọi đến rồi, đã gọi bảy tám lần rồi.",
+   "Nhân viên: Đừng nghe máy. Tôi khuyên anh lập tức gọi 110 báo cảnh sát, đưa số điện thoại này cho cảnh sát thật. Bảo vệ của chúng tôi cũng có thể đi cùng anh đến đồn công an bên cạnh.",
+   "A Minh: Vâng, vâng. Thật sự cảm ơn chị quá! Nếu không phải chị hỏi thêm mấy câu thì tiền của tôi mất rồi.",
+   "Nhân viên: Không có gì, đây là việc chúng tôi nên làm. Sau này gặp cuộc gọi bảo anh chuyển khoản, bất kể đối phương xưng là ai, cứ cúp máy trước, rồi gọi cho người nhà hoặc ngân hàng hỏi lại.",
+   "A Minh: Tôi nhớ rồi. Tôi còn phải kể chuyện này cho các bạn cùng lớp, để mọi người đều cẩn thận hơn."
+  ],
+  "questions": [
+   {
+    "q": "阿明一开始为什么想转账？",
+    "q_vi": "Lúc đầu vì sao A Minh muốn chuyển khoản?",
+    "options": [
+     "要交学费",
+     "给家里人寄钱",
+     "买一台新电脑",
+     "电话里的“警察”让他转"
+    ],
+    "answer": 3,
+    "explain_vi": "Có người tự xưng cảnh sát gọi điện bảo anh chuyển tiền vào \"tài khoản an toàn\"."
+   },
+   {
+    "q": "职员是怎么发现问题的？",
+    "q_vi": "Nhân viên phát hiện vấn đề như thế nào?",
+    "options": [
+     "阿明的银行卡坏了",
+     "阿明说的“警察”不让他告诉银行",
+     "阿明的钱不够",
+     "阿明忘了带护照"
+    ],
+    "answer": 1,
+    "explain_vi": "Nhân viên chỉ ra điểm vô lý: cảnh sát thật không cấm báo cho ngân hàng, cũng không bảo chuyển khoản."
+   },
+   {
+    "q": "职员给了阿明什么建议？",
+    "q_vi": "Nhân viên đã khuyên A Minh điều gì?",
+    "options": [
+     "报警，以后遇到这种电话先挂掉",
+     "马上把钱转给警察",
+     "换一个新的电话号码",
+     "回国以后再说"
+    ],
+    "answer": 0,
+    "explain_vi": "Chị khuyên gọi 110 báo cảnh sát và sau này gặp cuộc gọi bảo chuyển khoản thì cúp máy trước."
+   }
+  ]
+ },
+ {
+  "id": "d-12",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "寄往越南的包裹",
+  "title_vi": "Gói hàng gửi sang Việt Nam",
+  "topic": "bưu điện / chuyển phát",
+  "scene_vi": "Vương Lệ ra điểm chuyển phát nhanh gửi quà sang Việt Nam cho A Minh, người bạn đã về nước. Nhân viên chuyển phát kiểm tra đồ trong hộp.",
+  "speakers": [
+   "快递员",
+   "王丽"
+  ],
+  "paragraphs": [
+   "快递员：您好，寄东西吗？寄到哪儿？",
+   "王丽：寄到越南河内。我有个朋友去年回国了，下个月是他的生日，我想送他一些中国的东西。",
+   "快递员：国际快递要先检查一下里面的东西，麻烦您打开箱子。",
+   "王丽：好的。这里面有两盒茶叶、一本书、一条围巾，还有一些他最喜欢吃的点心。",
+   "快递员：茶叶和书都没问题。点心是什么时候买的？保质期有多长？",
+   "王丽：昨天刚买的，盒子上写着能放三十天。",
+   "快递员：那应该来得及。寄到越南一般要五到七天。这是什么？一瓶酒？",
+   "王丽：对，是我们老家的米酒。他以前来我家的时候说特别好喝。",
+   "快递员：真抱歉，酒不能寄国际快递，液体都不行，容易出问题。",
+   "王丽：啊，这样啊……那好吧，我拿回去自己喝。还有，这个充电宝可以寄吗？",
+   "快递员：充电宝也不行，因为里面有电池。您可以在网上帮他买一个，让越南那边直接送到他家。",
+   "王丽：好主意。那剩下的东西一共多少钱？",
+   "快递员：我称一下……三点二公斤，一共两百四十块。东西比较多，要不要买个保险？一共十块钱，如果丢了或者坏了，可以按价格赔给您。",
+   "王丽：要吧，安全一点儿。地址我写在这张纸上了，电话号码也写了。",
+   "快递员：您朋友的地址最好用英文或者越南文写，不然那边的快递员可能看不懂。",
+   "王丽：哦，我没想到。我把他发给我的地址打印一张，贴在箱子上，可以吗？",
+   "快递员：可以，那样最清楚。我帮您把箱子重新包好……等一下，箱子里怎么有一串钥匙？",
+   "王丽：钥匙？哎呀！那是我家的钥匙！我刚才找了半天都没找到，原来放进箱子里了。",
+   "快递员：哈哈，还好我看了一眼，要不然您得去越南拿钥匙了。",
+   "王丽：那我就有理由去河内看他了！不过今天晚上我还是想回家睡觉。谢谢你啊！"
+  ],
+  "translations": [
+   "Nhân viên chuyển phát: Chào chị, gửi đồ à? Gửi đi đâu ạ?",
+   "Vương Lệ: Gửi đến Hà Nội, Việt Nam. Tôi có một người bạn năm ngoái đã về nước, tháng sau là sinh nhật bạn ấy, tôi muốn tặng bạn ấy ít đồ Trung Quốc.",
+   "Nhân viên chuyển phát: Chuyển phát quốc tế phải kiểm tra đồ bên trong trước, phiền chị mở hộp ra.",
+   "Vương Lệ: Vâng. Trong này có hai hộp chè, một cuốn sách, một chiếc khăn quàng, còn có một ít bánh ngọt bạn ấy thích ăn nhất.",
+   "Nhân viên chuyển phát: Chè và sách đều không vấn đề gì. Bánh mua lúc nào ạ? Hạn sử dụng bao lâu?",
+   "Vương Lệ: Hôm qua mới mua, trên hộp ghi để được ba mươi ngày.",
+   "Nhân viên chuyển phát: Vậy chắc là kịp. Gửi đi Việt Nam thường mất năm đến bảy ngày. Cái này là gì? Một chai rượu à?",
+   "Vương Lệ: Vâng, là rượu gạo quê tôi. Trước đây bạn ấy đến nhà tôi có nói là rất ngon.",
+   "Nhân viên chuyển phát: Thật xin lỗi, rượu không gửi chuyển phát quốc tế được, chất lỏng đều không được, dễ xảy ra sự cố.",
+   "Vương Lệ: À, thế à... Vậy thôi, tôi mang về tự uống. Còn nữa, cục sạc dự phòng này gửi được không?",
+   "Nhân viên chuyển phát: Sạc dự phòng cũng không được, vì bên trong có pin. Chị có thể mua giúp bạn ấy một cái trên mạng, để bên Việt Nam giao thẳng đến nhà bạn ấy.",
+   "Vương Lệ: Ý hay đấy. Vậy chỗ đồ còn lại tổng cộng bao nhiêu tiền?",
+   "Nhân viên chuyển phát: Để tôi cân... ba phẩy hai cân, tổng cộng hai trăm bốn mươi tệ. Đồ khá nhiều, chị có muốn mua bảo hiểm không? Tổng cộng mười tệ, nếu mất hoặc hỏng có thể bồi thường theo giá trị cho chị.",
+   "Vương Lệ: Mua đi, cho an toàn. Địa chỉ tôi đã viết trên tờ giấy này, số điện thoại cũng viết rồi.",
+   "Nhân viên chuyển phát: Địa chỉ của bạn chị tốt nhất nên viết bằng tiếng Anh hoặc tiếng Việt, không thì nhân viên giao hàng bên đó có thể không đọc được.",
+   "Vương Lệ: Ồ, tôi không nghĩ ra. Tôi in địa chỉ bạn ấy gửi cho tôi ra một tờ, dán lên hộp, được không?",
+   "Nhân viên chuyển phát: Được, như thế là rõ nhất. Tôi đóng lại hộp giúp chị... Khoan đã, sao trong hộp lại có một chùm chìa khóa?",
+   "Vương Lệ: Chìa khóa? Ôi trời! Đó là chìa khóa nhà tôi! Lúc nãy tôi tìm mãi không thấy, hóa ra bỏ vào hộp rồi.",
+   "Nhân viên chuyển phát: Ha ha, may mà tôi liếc qua một cái, không thì chị phải sang Việt Nam lấy chìa khóa rồi.",
+   "Vương Lệ: Thế thì tôi lại có lý do sang Hà Nội thăm bạn ấy! Nhưng tối nay tôi vẫn muốn về nhà ngủ. Cảm ơn anh nhé!"
+  ],
+  "questions": [
+   {
+    "q": "下面哪个东西最后寄出去了？",
+    "q_vi": "Thứ nào dưới đây cuối cùng đã được gửi đi?",
+    "options": [
+     "米酒",
+     "茶叶",
+     "充电宝",
+     "钥匙"
+    ],
+    "answer": 1,
+    "explain_vi": "Rượu và sạc dự phòng không gửi được, chìa khóa được lấy ra; chè thì không vấn đề gì."
+   },
+   {
+    "q": "快递员为什么说充电宝不能寄？",
+    "q_vi": "Vì sao nhân viên nói sạc dự phòng không gửi được?",
+    "options": [
+     "太重了",
+     "越南买不到",
+     "里面有电池",
+     "太贵了"
+    ],
+    "answer": 2,
+    "explain_vi": "Vì bên trong có pin."
+   },
+   {
+    "q": "王丽说“那我就有理由去河内看他了”，表达了什么？",
+    "q_vi": "Vương Lệ nói \"thế thì tôi lại có lý do sang Hà Nội thăm bạn ấy\" thể hiện điều gì?",
+    "options": [
+     "她在开玩笑，其实也很想见朋友",
+     "她明天就要去越南",
+     "她很生气",
+     "她不想寄包裹了"
+    ],
+    "answer": 0,
+    "explain_vi": "Cô nói đùa sau chuyện chìa khóa, đồng thời lộ ra mong muốn gặp bạn."
+   }
+  ]
+ },
+ {
+  "id": "d-13",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "不许养宠物",
+  "title_vi": "Không được nuôi thú cưng",
+  "topic": "thuê nhà",
+  "scene_vi": "Tiểu Lưu mới tìm được việc ở thành phố, đi xem một căn hộ cho thuê. Chủ nhà dẫn cô đi xem phòng và nói về các điều kiện thuê.",
+  "speakers": [
+   "房东",
+   "小刘"
+  ],
+  "paragraphs": [
+   "房东：你就是在网上联系我的小刘吧？请进，这就是我在网上说的那套房子，一室一厅，六十平方米。",
+   "小刘：阿姨好。哇，客厅比照片上看起来还大，阳光也特别好。",
+   "房东：是啊，窗户朝南，冬天也很暖和。家具都是去年新买的，冰箱、洗衣机、空调都有，你带着衣服就能住进来。",
+   "小刘：厨房可以做饭吗？我不太喜欢在外面吃。",
+   "房东：当然可以，用的是天然气，比用电便宜。不过做完饭记得开窗户。",
+   "小刘：好的。那房租是多少？网上写的是三千五，还能商量吗？",
+   "房东：这个价格已经很便宜了，旁边的小区都要四千。如果你签一年的合同，我可以给你便宜两百。",
+   "小刘：一个月三千三，可以接受。要交押金吗？",
+   "房东：押一付三，就是先交一个月的押金和三个月的房租。水电费、网费你自己付，物业费我来付。",
+   "小刘：明白了。还有一个问题……这儿可以养宠物吗？",
+   "房东：宠物？这个不行。以前有个租房的人养狗，把沙发和门都弄坏了，我花了好几千块才修好。从那以后我就决定，再也不租给养宠物的人了。",
+   "小刘：我理解。不过我养的不是狗，是一只猫，已经七岁了，很安静，每天大部分时间都在睡觉。",
+   "房东：猫也会抓沙发啊。",
+   "小刘：它不抓的，我从小就训练它。您看，这是它的照片，叫“汤圆”。",
+   "房东：哎呀，这么胖！跟我家的“饺子”长得真像。",
+   "小刘：“饺子”？阿姨，您也养猫？",
+   "房东：养了三只呢，“饺子”、“包子”和“面条”。我刚才说不行，是怕狗。猫嘛……你得保证，如果弄坏了东西，要照价赔偿。",
+   "小刘：没问题，我们可以写进合同里。那我今天就交押金吧，下个周末搬进来。",
+   "房东：好！搬进来以后带“汤圆”到我家玩儿，我就住在楼上。说不定它们能成为好朋友呢。"
+  ],
+  "translations": [
+   "Chủ nhà: Cô là Tiểu Lưu liên hệ với tôi trên mạng phải không? Mời vào, đây chính là căn hộ tôi đăng trên mạng, một phòng ngủ một phòng khách, sáu mươi mét vuông.",
+   "Tiểu Lưu: Cháu chào cô. Oa, phòng khách trông còn rộng hơn trong ảnh, ánh nắng cũng rất đẹp.",
+   "Chủ nhà: Đúng thế, cửa sổ hướng nam, mùa đông cũng ấm. Đồ đạc đều mới mua năm ngoái, tủ lạnh, máy giặt, điều hòa đều có, cô chỉ cần mang quần áo là dọn vào ở được.",
+   "Tiểu Lưu: Bếp có nấu ăn được không ạ? Cháu không thích ăn ngoài lắm.",
+   "Chủ nhà: Tất nhiên là được, dùng khí gas, rẻ hơn dùng điện. Nhưng nấu ăn xong nhớ mở cửa sổ.",
+   "Tiểu Lưu: Vâng. Vậy tiền thuê bao nhiêu ạ? Trên mạng ghi là ba nghìn rưỡi, còn thương lượng được không ạ?",
+   "Chủ nhà: Giá này đã rẻ lắm rồi, các khu bên cạnh đều phải bốn nghìn. Nếu cô ký hợp đồng một năm, tôi có thể bớt cho cô hai trăm.",
+   "Tiểu Lưu: Một tháng ba nghìn ba, cháu chấp nhận được. Có phải đặt cọc không ạ?",
+   "Chủ nhà: Cọc một trả ba, tức là nộp trước một tháng tiền cọc và ba tháng tiền nhà. Tiền điện nước, tiền mạng cô tự trả, phí quản lý tôi trả.",
+   "Tiểu Lưu: Cháu hiểu rồi. Còn một câu hỏi nữa... ở đây có được nuôi thú cưng không ạ?",
+   "Chủ nhà: Thú cưng á? Cái này thì không được. Trước đây có người thuê nuôi chó, làm hỏng hết ghế sofa và cửa, tôi tốn mấy nghìn tệ mới sửa xong. Từ đó tôi quyết định không bao giờ cho người nuôi thú cưng thuê nữa.",
+   "Tiểu Lưu: Cháu hiểu ạ. Nhưng cháu nuôi không phải chó, mà là một con mèo, đã bảy tuổi rồi, rất ngoan, hằng ngày phần lớn thời gian đều ngủ.",
+   "Chủ nhà: Mèo cũng cào ghế sofa mà.",
+   "Tiểu Lưu: Nó không cào đâu ạ, cháu dạy nó từ bé rồi. Cô xem, đây là ảnh của nó, tên là \"Thang Viên\".",
+   "Chủ nhà: Ôi chao, béo thế! Trông giống hệt con \"Sủi Cảo\" nhà tôi.",
+   "Tiểu Lưu: \"Sủi Cảo\"? Cô ơi, cô cũng nuôi mèo ạ?",
+   "Chủ nhà: Nuôi ba con đấy, \"Sủi Cảo\", \"Bánh Bao\" và \"Mì Sợi\". Lúc nãy tôi nói không được là sợ chó. Còn mèo thì... cô phải cam kết, nếu làm hỏng đồ thì phải bồi thường theo giá.",
+   "Tiểu Lưu: Không vấn đề gì ạ, chúng ta có thể ghi vào hợp đồng. Vậy hôm nay cháu đặt cọc luôn, cuối tuần sau dọn vào.",
+   "Chủ nhà: Được! Dọn vào rồi thì mang \"Thang Viên\" lên nhà tôi chơi, tôi ở ngay tầng trên. Biết đâu chúng nó thành bạn tốt của nhau đấy."
+  ],
+  "questions": [
+   {
+    "q": "小刘每个月要付多少房租？",
+    "q_vi": "Mỗi tháng Tiểu Lưu phải trả bao nhiêu tiền thuê nhà?",
+    "options": [
+     "三千五",
+     "四千",
+     "三千三",
+     "三千"
+    ],
+    "answer": 2,
+    "explain_vi": "Ký hợp đồng một năm thì được bớt hai trăm: 3500 − 200 = 3300."
+   },
+   {
+    "q": "房东一开始为什么不同意养宠物？",
+    "q_vi": "Lúc đầu vì sao chủ nhà không đồng ý nuôi thú cưng?",
+    "options": [
+     "她不喜欢动物",
+     "以前租房的人的狗弄坏了家具",
+     "楼里的邻居不同意",
+     "房子太小了"
+    ],
+    "answer": 1,
+    "explain_vi": "Trước đây người thuê nuôi chó làm hỏng ghế sofa và cửa."
+   },
+   {
+    "q": "房东最后为什么同意了？",
+    "q_vi": "Vì sao cuối cùng chủ nhà đồng ý?",
+    "options": [
+     "小刘多付了房租",
+     "小刘答应把猫送人",
+     "合同上没有写",
+     "她自己也养猫，而且小刘保证会赔偿"
+    ],
+    "answer": 3,
+    "explain_vi": "Chủ nhà cũng nuôi ba con mèo, chỉ sợ chó; Tiểu Lưu cam kết bồi thường nếu làm hỏng đồ."
+   }
+  ]
+ },
+ {
+  "id": "d-14",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "屏幕碎了",
+  "title_vi": "Màn hình vỡ rồi",
+  "topic": "sửa đồ",
+  "scene_vi": "Lý Na làm rơi điện thoại, màn hình có vết nứt. Cô mang đến cửa hàng sửa điện thoại, lo lắng về giá tiền và dữ liệu trong máy.",
+  "speakers": [
+   "师傅",
+   "李娜"
+  ],
+  "paragraphs": [
+   "李娜：师傅，您好。我的手机昨天从桌子上掉下来了，您看，屏幕碎成这样了，还能修吗？",
+   "师傅：我看看。哎哟，碎得挺厉害的。现在还能开机吗？",
+   "李娜：能开机，电话也能打，就是看屏幕的时候眼睛很难受，而且手指容易被划破。",
+   "师傅：那问题不大。换一个屏幕就行了，一般一个小时就能修好。",
+   "李娜：换屏幕要多少钱？",
+   "师傅：你这个型号，原装的屏幕八百五，普通的四百。原装的质量好一点儿，颜色也更准。",
+   "李娜：八百五？太贵了。这个手机我买的时候才两千多，已经用了三年了。是不是干脆买个新的更划算？",
+   "师傅：这个要看你自己。如果手机别的地方都没问题，换个屏幕还能再用一两年。买新的当然好，但是要花更多的钱。",
+   "李娜：我最担心的是里面的照片。我女儿从出生到现在的照片都在里面，修的时候会不会丢？",
+   "师傅：换屏幕一般不会影响里面的东西。不过为了安全，最好先备份一下。你有没有把照片存到网上？",
+   "李娜：没有，我一直想弄，可是总是忘。",
+   "师傅：那我先帮你把照片传到电脑上，再给你存一份到网盘里，不另外收钱。以后手机再出问题，照片也不会丢了。",
+   "李娜：太好了，谢谢师傅！那就换个普通的屏幕吧。",
+   "师傅：好。我先把手机外面这层膜撕下来……咦？",
+   "李娜：怎么了？是不是还有别的地方坏了？",
+   "师傅：你自己看。碎的是这层保护膜，下面的屏幕一点儿问题都没有，连个小点儿都没有。",
+   "李娜：真的吗？天哪，我昨天晚上难过了一夜，还以为要花好几百呢！",
+   "师傅：给你重新贴一张新膜，二十块。照片我还是帮你备份，这个比什么都重要。",
+   "李娜：师傅，您真是个好人。以后我的朋友手机坏了，我都让他们来找您！"
+  ],
+  "translations": [
+   "Lý Na: Chú ơi, chào chú. Điện thoại cháu hôm qua rơi từ trên bàn xuống, chú xem, màn hình vỡ thế này rồi, còn sửa được không ạ?",
+   "Thợ sửa: Để chú xem. Ôi chà, vỡ khá nặng đấy. Bây giờ còn mở máy được không?",
+   "Lý Na: Mở máy được, gọi điện cũng được, chỉ là nhìn màn hình rất khó chịu, mà ngón tay còn dễ bị cứa.",
+   "Thợ sửa: Thế thì không có vấn đề lớn. Thay một cái màn hình là được, thường một tiếng là sửa xong.",
+   "Lý Na: Thay màn hình bao nhiêu tiền ạ?",
+   "Thợ sửa: Đời máy này của cháu, màn hình chính hãng tám trăm rưỡi, loại thường bốn trăm. Loại chính hãng chất lượng tốt hơn một chút, màu sắc cũng chuẩn hơn.",
+   "Lý Na: Tám trăm rưỡi? Đắt quá. Cái điện thoại này lúc cháu mua mới hơn hai nghìn, đã dùng ba năm rồi. Có phải mua luôn cái mới thì hời hơn không ạ?",
+   "Thợ sửa: Cái này phải tùy cháu. Nếu những chỗ khác của máy đều không có vấn đề, thay màn hình còn dùng được một hai năm nữa. Mua mới đương nhiên tốt, nhưng phải tốn nhiều tiền hơn.",
+   "Lý Na: Cháu lo nhất là ảnh ở trong máy. Ảnh con gái cháu từ lúc sinh ra đến giờ đều ở trong này, lúc sửa có bị mất không ạ?",
+   "Thợ sửa: Thay màn hình thường không ảnh hưởng đến dữ liệu bên trong. Nhưng để an toàn, tốt nhất nên sao lưu trước. Cháu có lưu ảnh lên mạng không?",
+   "Lý Na: Không ạ, cháu cứ định làm mà toàn quên.",
+   "Thợ sửa: Vậy chú giúp cháu chuyển ảnh sang máy tính trước, rồi lưu thêm một bản lên ổ đĩa mạng, không tính thêm tiền. Sau này điện thoại có trục trặc gì, ảnh cũng không mất nữa.",
+   "Lý Na: Tốt quá, cảm ơn chú! Vậy thay màn hình loại thường đi ạ.",
+   "Thợ sửa: Được. Chú bóc lớp dán bên ngoài điện thoại ra trước đã... Ơ?",
+   "Lý Na: Sao thế ạ? Có phải còn chỗ nào khác hỏng không ạ?",
+   "Thợ sửa: Cháu tự xem đi. Cái vỡ là lớp dán bảo vệ này, màn hình bên dưới chẳng có vấn đề gì, đến một vết nhỏ cũng không có.",
+   "Lý Na: Thật ạ? Trời ơi, tối qua cháu buồn cả đêm, còn tưởng phải tốn mấy trăm cơ!",
+   "Thợ sửa: Chú dán cho cháu miếng dán mới, hai mươi tệ. Ảnh thì chú vẫn sao lưu giúp cháu, cái này quan trọng hơn bất cứ thứ gì.",
+   "Lý Na: Chú ơi, chú đúng là người tốt. Sau này bạn bè cháu hỏng điện thoại, cháu đều bảo họ đến tìm chú!"
+  ],
+  "questions": [
+   {
+    "q": "李娜一开始为什么犹豫要不要修手机？",
+    "q_vi": "Lúc đầu vì sao Lý Na do dự có nên sửa điện thoại không?",
+    "options": [
+     "她觉得修屏幕太贵，不如买新的",
+     "她不相信师傅",
+     "她的手机打不了电话",
+     "她没时间等"
+    ],
+    "answer": 0,
+    "explain_vi": "Cô thấy 850 tệ quá đắt so với chiếc máy đã dùng ba năm, nghĩ mua mới có khi hời hơn."
+   },
+   {
+    "q": "对李娜来说，手机里最重要的是什么？",
+    "q_vi": "Với Lý Na, thứ quan trọng nhất trong điện thoại là gì?",
+    "options": [
+     "工作资料",
+     "朋友的电话号码",
+     "游戏",
+     "女儿的照片"
+    ],
+    "answer": 3,
+    "explain_vi": "Cô lo nhất là ảnh con gái từ lúc sinh ra đến giờ."
+   },
+   {
+    "q": "最后发现了什么？",
+    "q_vi": "Cuối cùng phát hiện ra điều gì?",
+    "options": [
+     "手机的电池坏了",
+     "碎的只是保护膜，屏幕没坏",
+     "照片都丢了",
+     "需要换原装屏幕"
+    ],
+    "answer": 1,
+    "explain_vi": "Lớp dán bảo vệ bị vỡ, màn hình bên dưới vẫn nguyên vẹn."
+   }
+  ]
+ },
+ {
+  "id": "d-15",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "错过的火车",
+  "title_vi": "Chuyến tàu bị lỡ",
+  "topic": "ga tàu",
+  "scene_vi": "Triệu Dương bị kẹt xe nên đến ga muộn năm phút, lỡ chuyến tàu cao tốc. Ngày mai anh có buổi phỏng vấn quan trọng, phải đến quầy bán vé để đổi vé.",
+  "speakers": [
+   "赵阳",
+   "售票员"
+  ],
+  "paragraphs": [
+   "赵阳：您好，我坐的那趟高铁五分钟以前开走了。路上堵车，我跑着过来还是没赶上。现在还能改签吗？",
+   "售票员：可以的，开车以后当天还能改签。请把身份证给我。您要去哪儿？",
+   "赵阳：去上海。我明天早上九点在上海有一个面试，今天晚上一定要到。",
+   "售票员：我帮您查一下。今天下午去上海的车票不多了。四点二十有一趟，但是只有站票。",
+   "赵阳：站票？要站多长时间？",
+   "售票员：四个半小时。还有一趟六点五十的，有二等座，不过要晚上十一点多才到上海。",
+   "赵阳：十一点多……到了酒店也得十二点了，第二天还要早起。一等座呢？四点二十那趟有没有一等座？",
+   "售票员：一等座也卖完了。商务座还有两个，但是价格比较贵，要多付一千二百块。",
+   "赵阳：一千二？我现在还没找到工作，这个价格有点儿受不了。",
+   "售票员：我给您个建议吧。您可以先买四点二十的站票上车，上车以后去找列车员，问问有没有人中途下车。从南京开始常常会有空座位。",
+   "赵阳：这个办法不错，就算一直没有座位，我也可以站着看看书。如果有座位，需要再交钱吗？",
+   "售票员：站票和二等座的价格是一样的，所以不用再交钱。而且这趟车七点多就到上海了，您可以早点儿休息。",
+   "赵阳：那就这样吧，四点二十的。我的行李箱比较大，放在哪儿比较好？",
+   "售票员：每节车厢的门口都有放大件行李的地方。改好了，这是您的票，九号车厢，在十二号检票口检票。现在三点五十，还有半个小时，您可以先去吃点儿东西。",
+   "赵阳：谢谢您！刚才我急得都出汗了，现在终于放心了。",
+   "售票员：不客气。这次别再迟到了，上车以前记得看一下车厢号码。祝您面试成功！",
+   "赵阳：借您吉言！我这次一定提前到检票口，提前一个小时！"
+  ],
+  "translations": [
+   "Triệu Dương: Chào chị, chuyến tàu cao tốc của tôi đã chạy năm phút trước rồi. Trên đường bị tắc, tôi chạy đến mà vẫn không kịp. Bây giờ còn đổi vé được không ạ?",
+   "Nhân viên bán vé: Được ạ, sau khi tàu chạy vẫn đổi được trong ngày. Anh đưa tôi chứng minh thư. Anh muốn đi đâu?",
+   "Triệu Dương: Đi Thượng Hải. Chín giờ sáng mai tôi có một buổi phỏng vấn ở Thượng Hải, tối nay nhất định phải đến.",
+   "Nhân viên bán vé: Tôi kiểm tra giúp anh. Chiều nay vé đi Thượng Hải còn không nhiều. Bốn giờ hai mươi có một chuyến, nhưng chỉ còn vé đứng.",
+   "Triệu Dương: Vé đứng á? Phải đứng bao lâu ạ?",
+   "Nhân viên bán vé: Bốn tiếng rưỡi. Còn một chuyến sáu giờ năm mươi, có ghế hạng hai, nhưng phải hơn mười một giờ đêm mới đến Thượng Hải.",
+   "Triệu Dương: Hơn mười một giờ... về đến khách sạn cũng phải mười hai giờ, hôm sau còn phải dậy sớm. Ghế hạng nhất thì sao? Chuyến bốn giờ hai mươi có ghế hạng nhất không?",
+   "Nhân viên bán vé: Ghế hạng nhất cũng bán hết rồi. Ghế thương gia còn hai chỗ, nhưng giá khá đắt, phải trả thêm một nghìn hai trăm tệ.",
+   "Triệu Dương: Một nghìn hai? Bây giờ tôi còn chưa tìm được việc, giá này hơi quá sức.",
+   "Nhân viên bán vé: Tôi gợi ý anh thế này. Anh có thể mua vé đứng chuyến bốn giờ hai mươi lên tàu trước, lên tàu rồi tìm nhân viên tàu, hỏi xem có ai xuống giữa đường không. Từ Nam Kinh trở đi thường có ghế trống.",
+   "Triệu Dương: Cách này hay đấy, kể cả không có ghế suốt thì tôi cũng có thể đứng đọc sách. Nếu có ghế thì có phải nộp thêm tiền không?",
+   "Nhân viên bán vé: Vé đứng và ghế hạng hai cùng giá, nên không cần nộp thêm. Hơn nữa chuyến này hơn bảy giờ đã đến Thượng Hải, anh có thể nghỉ ngơi sớm.",
+   "Triệu Dương: Vậy cứ thế đi, chuyến bốn giờ hai mươi. Va li của tôi khá to, để ở đâu thì tốt ạ?",
+   "Nhân viên bán vé: Ở cửa mỗi toa đều có chỗ để hành lý cỡ lớn. Đổi xong rồi, đây là vé của anh, toa số chín, soát vé ở cửa số mười hai. Bây giờ là ba giờ năm mươi, còn nửa tiếng, anh có thể đi ăn chút gì trước.",
+   "Triệu Dương: Cảm ơn chị! Lúc nãy tôi sốt ruột đến toát mồ hôi, giờ cuối cùng cũng yên tâm rồi.",
+   "Nhân viên bán vé: Không có gì. Lần này đừng đến muộn nữa nhé, trước khi lên tàu nhớ xem lại số toa. Chúc anh phỏng vấn thành công!",
+   "Triệu Dương: Nhờ lời chúc của chị! Lần này tôi nhất định đến cửa soát vé sớm, sớm hẳn một tiếng!"
+  ],
+  "questions": [
+   {
+    "q": "赵阳为什么没赶上火车？",
+    "q_vi": "Vì sao Triệu Dương không kịp tàu?",
+    "options": [
+     "他记错了时间",
+     "他忘了带身份证",
+     "路上堵车",
+     "他在吃饭"
+    ],
+    "answer": 2,
+    "explain_vi": "Anh nói trên đường bị tắc xe."
+   },
+   {
+    "q": "赵阳为什么没有买商务座？",
+    "q_vi": "Vì sao Triệu Dương không mua ghế thương gia?",
+    "options": [
+     "太贵了，他还没有工作",
+     "商务座已经卖完了",
+     "商务座到得太晚",
+     "他不喜欢商务座"
+    ],
+    "answer": 0,
+    "explain_vi": "Phải trả thêm 1200 tệ, anh chưa có việc làm nên thấy quá sức."
+   },
+   {
+    "q": "售票员给了赵阳什么建议？",
+    "q_vi": "Nhân viên bán vé đã gợi ý cho Triệu Dương điều gì?",
+    "options": [
+     "明天早上再走",
+     "先买站票，上车后找空座位",
+     "坐六点五十的车",
+     "坐飞机去上海"
+    ],
+    "answer": 1,
+    "explain_vi": "Mua vé đứng chuyến 4:20, lên tàu hỏi nhân viên tàu xem có ghế trống từ Nam Kinh."
+   }
+  ]
+ },
+ {
+  "id": "d-16",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "请假",
+  "title_vi": "Xin nghỉ phép",
+  "topic": "xin nghỉ phép",
+  "scene_vi": "Tiểu Trần muốn xin nghỉ năm ngày về quê dự đám cưới em gái, nhưng đúng lúc dự án ở công ty đang gấp. Anh vào văn phòng gặp giám đốc Lưu.",
+  "speakers": [
+   "小陈",
+   "刘经理"
+  ],
+  "paragraphs": [
+   "小陈：刘经理，您现在有时间吗？我想跟您商量一件事。",
+   "刘经理：进来吧，坐。什么事？",
+   "小陈：是这样的，我妹妹下个星期六结婚，我想请五天假回老家。从下周三到下下周一。",
+   "刘经理：恭喜啊！不过五天……你也知道，下周五我们要把新产品的方案交给客户，这个时候你走了，工作怎么办？",
+   "小陈：这个我已经考虑过了。方案里我负责的那部分，我打算这个周末加班，下周二以前全部写完，发给您检查。",
+   "刘经理：那跟客户见面的时候呢？客户对数据有问题的话，一般都是你来回答的。",
+   "小陈：我已经跟小王说好了，这两天我会把所有的数据和可能的问题都跟她讲清楚。她以前也参加过类似的项目，应该没问题。",
+   "刘经理：嗯，准备得挺仔细的。不过万一有急事找不到你呢？",
+   "小陈：我的手机会一直开着，除了婚礼那天，别的时间都能马上回复。如果需要，我晚上也可以在网上开会。",
+   "刘经理：好吧，你考虑得这么周到，我没有理由不同意。我们公司规定，家里人结婚可以请三天婚假，另外两天就用你的年假吧。",
+   "小陈：太感谢您了！我回去就在系统里填请假申请。",
+   "刘经理：对了，你老家是哪儿的？",
+   "小陈：湖南长沙。",
+   "刘经理：长沙？那太巧了，我也是长沙人！我已经快三年没回去了，特别想吃那边的臭豆腐。",
+   "小陈：原来您也是长沙人！我一直以为您是北方人呢，您说话一点儿口音都没有。",
+   "刘经理：在北京工作了十几年，口音早就改了。不过吃的习惯是改不了的，一个星期不吃辣我就难受。",
+   "小陈：那我回来的时候给您带点儿老家的辣椒酱和腊肉吧，都是我妈妈自己做的。",
+   "刘经理：那就先谢谢了！不过说好了，方案一定要按时完成，不然腊肉我也不要了。",
+   "小陈：您放心，保证完成任务！"
+  ],
+  "translations": [
+   "Tiểu Trần: Giám đốc Lưu, bây giờ chị có thời gian không ạ? Em muốn bàn với chị một việc.",
+   "Giám đốc Lưu: Vào đi, ngồi đi. Việc gì thế?",
+   "Tiểu Trần: Là thế này ạ, thứ Bảy tuần sau em gái em kết hôn, em muốn xin nghỉ năm ngày về quê. Từ thứ Tư tuần sau đến thứ Hai tuần sau nữa.",
+   "Giám đốc Lưu: Chúc mừng nhé! Nhưng năm ngày... cậu cũng biết đấy, thứ Sáu tuần sau chúng ta phải nộp phương án sản phẩm mới cho khách hàng, lúc này cậu đi thì công việc tính sao?",
+   "Tiểu Trần: Việc này em đã tính rồi ạ. Phần em phụ trách trong phương án, em định cuối tuần này tăng ca, trước thứ Ba tuần sau viết xong toàn bộ, gửi chị kiểm tra.",
+   "Giám đốc Lưu: Vậy lúc gặp khách hàng thì sao? Khách hàng có thắc mắc về số liệu, thường đều là cậu trả lời mà.",
+   "Tiểu Trần: Em đã nói trước với Tiểu Vương rồi, hai hôm nay em sẽ giải thích rõ cho cô ấy toàn bộ số liệu và những câu hỏi có thể gặp. Trước đây cô ấy cũng từng tham gia dự án tương tự, chắc không vấn đề gì.",
+   "Giám đốc Lưu: Ừm, chuẩn bị khá chu đáo đấy. Nhưng lỡ có việc gấp mà không tìm được cậu thì sao?",
+   "Tiểu Trần: Điện thoại em sẽ luôn bật, ngoài hôm đám cưới ra, các lúc khác đều có thể trả lời ngay. Nếu cần, buổi tối em cũng có thể họp trực tuyến.",
+   "Giám đốc Lưu: Thôi được, cậu tính toán chu đáo thế này, tôi không có lý do gì để không đồng ý. Công ty mình quy định người nhà kết hôn được nghỉ ba ngày phép cưới, hai ngày còn lại thì dùng phép năm của cậu nhé.",
+   "Tiểu Trần: Cảm ơn chị nhiều lắm! Em về sẽ điền đơn xin nghỉ trên hệ thống ngay.",
+   "Giám đốc Lưu: À này, quê cậu ở đâu?",
+   "Tiểu Trần: Trường Sa, Hồ Nam ạ.",
+   "Giám đốc Lưu: Trường Sa á? Trùng hợp quá, tôi cũng là người Trường Sa! Tôi đã gần ba năm chưa về rồi, thèm đậu phụ thối bên đó lắm.",
+   "Tiểu Trần: Hóa ra chị cũng là người Trường Sa! Em cứ tưởng chị là người miền Bắc, chị nói chuyện chẳng có chút giọng địa phương nào.",
+   "Giám đốc Lưu: Làm việc ở Bắc Kinh hơn mười năm, giọng đã đổi từ lâu rồi. Nhưng thói quen ăn uống thì không đổi được, một tuần không ăn cay là tôi khó chịu.",
+   "Tiểu Trần: Vậy lúc về em mang cho chị ít tương ớt và thịt hun khói quê em nhé, đều là mẹ em tự làm.",
+   "Giám đốc Lưu: Thế thì cảm ơn trước nhé! Nhưng nói trước rồi đấy, phương án nhất định phải hoàn thành đúng hạn, không thì thịt hun khói tôi cũng không nhận đâu.",
+   "Tiểu Trần: Chị yên tâm, đảm bảo hoàn thành nhiệm vụ!"
+  ],
+  "questions": [
+   {
+    "q": "刘经理一开始为什么有点儿犹豫？",
+    "q_vi": "Lúc đầu vì sao giám đốc Lưu hơi do dự?",
+    "options": [
+     "小陈经常请假",
+     "公司规定不能请假",
+     "下周五要把方案交给客户",
+     "她不认识小陈的妹妹"
+    ],
+    "answer": 2,
+    "explain_vi": "Thứ Sáu tuần sau phải nộp phương án cho khách hàng, đúng lúc gấp."
+   },
+   {
+    "q": "小陈为请假做了哪些准备？",
+    "q_vi": "Tiểu Trần đã chuẩn bị gì cho việc xin nghỉ?",
+    "options": [
+     "提前写完方案，让同事帮忙回答客户的问题",
+     "请妹妹换结婚的日子",
+     "让刘经理帮他写方案",
+     "只请两天假"
+    ],
+    "answer": 0,
+    "explain_vi": "Anh định tăng ca viết xong phần của mình và nhờ Tiểu Vương trả lời khách hàng."
+   },
+   {
+    "q": "关于刘经理，下面哪个是对的？",
+    "q_vi": "Về giám đốc Lưu, câu nào dưới đây đúng?",
+    "options": [
+     "她是北方人",
+     "她是长沙人，喜欢吃辣",
+     "她不同意小陈请假",
+     "她每年都回老家"
+    ],
+    "answer": 1,
+    "explain_vi": "Chị nói mình cũng là người Trường Sa và một tuần không ăn cay là khó chịu."
+   }
+  ]
+ },
+ {
+  "id": "d-17",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "差两分",
+  "title_vi": "Thiếu hai điểm",
+  "topic": "an ủi bạn",
+  "scene_vi": "Tiểu Mỹ vừa biết mình thi trượt cao học, chỉ thiếu hai điểm. Bạn thân là Hiểu Đông đến ký túc xá tìm cô.",
+  "speakers": [
+   "晓东",
+   "小美"
+  ],
+  "paragraphs": [
+   "晓东：小美，我给你打了好几个电话你都没接，发微信也不回，我有点儿担心，就过来看看。",
+   "小美：对不起，我不想说话。成绩出来了，我没考上。",
+   "晓东：啊……差多少分？",
+   "小美：两分。就差两分！我准备了整整一年，每天早上六点起床，晚上十二点才睡，结果就因为两分……",
+   "晓东：我知道你有多努力。你每天在图书馆坐到关门，我们都看在眼里。",
+   "小美：努力有什么用？别人只看结果。我爸妈打电话问我，我都不知道怎么跟他们说。",
+   "晓东：你现在心里一定特别难受。想哭就哭吧，不用在我面前假装没事。",
+   "小美：我已经哭了一个上午了，眼睛都肿了。你说，我是不是很笨？",
+   "晓东：当然不是。笨的人能只差两分吗？说明你离成功已经非常近了。",
+   "小美：可是再近也是没考上啊。",
+   "晓东：我给你讲一件事吧，我以前从来没跟别人说过。高考那年，我也没考好，比我想去的大学差了十几分。",
+   "小美：真的？我一直以为你是第一志愿进来的。",
+   "晓东：不是。那个暑假我天天在家里不出门，觉得自己的人生完了。可是现在回头看，如果没来这儿，我就不会认识你们，也不会发现自己真正喜欢的专业。",
+   "小美：你的意思是，这件事也不一定全是坏事？",
+   "晓东：我不是说你应该马上高兴起来，那不现实。我只是想说，一次考试决定不了你的一辈子。你可以明年再考，也可以先去工作，选择还有很多。",
+   "小美：嗯……其实上个月有一家公司给我打过电话，问我愿不愿意去实习，我当时觉得要考研，就拒绝了。",
+   "晓东：那你可以再联系他们试试啊。不过这些都不着急，过几天再想。今天最重要的事情只有一件。",
+   "小美：什么事？",
+   "晓东：你从早上到现在什么都没吃吧？走，我请你去吃你最喜欢的火锅。吃饱了，再给你爸妈打电话，我相信他们只会心疼你，不会怪你的。",
+   "小美：好……晓东，谢谢你。有你这样的朋友，真好。"
+  ],
+  "translations": [
+   "Hiểu Đông: Tiểu Mỹ, mình gọi cho cậu mấy cuộc mà cậu không nghe, nhắn WeChat cũng không trả lời, mình hơi lo nên qua xem thế nào.",
+   "Tiểu Mỹ: Xin lỗi, mình không muốn nói chuyện. Có điểm rồi, mình không đỗ.",
+   "Hiểu Đông: À... thiếu bao nhiêu điểm?",
+   "Tiểu Mỹ: Hai điểm. Chỉ thiếu hai điểm! Mình chuẩn bị tròn một năm, ngày nào cũng sáu giờ sáng dậy, mười hai giờ đêm mới ngủ, kết quả chỉ vì hai điểm...",
+   "Hiểu Đông: Mình biết cậu cố gắng thế nào. Ngày nào cậu cũng ngồi thư viện đến lúc đóng cửa, bọn mình đều thấy cả.",
+   "Tiểu Mỹ: Cố gắng thì được gì? Người ta chỉ nhìn kết quả. Bố mẹ gọi điện hỏi, mình chẳng biết nói với họ thế nào.",
+   "Hiểu Đông: Bây giờ trong lòng cậu chắc khó chịu lắm. Muốn khóc thì cứ khóc đi, không cần giả vờ không sao trước mặt mình.",
+   "Tiểu Mỹ: Mình khóc cả buổi sáng rồi, mắt sưng cả lên. Cậu nói xem, có phải mình ngốc lắm không?",
+   "Hiểu Đông: Tất nhiên là không. Người ngốc mà chỉ thiếu có hai điểm à? Điều đó cho thấy cậu đã rất gần với thành công rồi.",
+   "Tiểu Mỹ: Nhưng gần đến mấy thì vẫn là không đỗ mà.",
+   "Hiểu Đông: Mình kể cho cậu một chuyện nhé, trước giờ mình chưa từng kể với ai. Năm thi đại học, mình cũng thi không tốt, thiếu hơn mười điểm so với trường mình muốn vào.",
+   "Tiểu Mỹ: Thật á? Mình cứ tưởng cậu vào đây bằng nguyện vọng một.",
+   "Hiểu Đông: Không phải. Kỳ nghỉ hè đó ngày nào mình cũng ru rú trong nhà, cảm thấy đời mình hết rồi. Nhưng giờ nhìn lại, nếu không đến đây, mình đã không quen các cậu, cũng không phát hiện ra ngành mình thật sự yêu thích.",
+   "Tiểu Mỹ: Ý cậu là chuyện này cũng chưa chắc đã hoàn toàn là chuyện xấu?",
+   "Hiểu Đông: Mình không bảo cậu phải vui lên ngay, thế thì không thực tế. Mình chỉ muốn nói, một kỳ thi không quyết định được cả đời cậu. Cậu có thể thi lại năm sau, cũng có thể đi làm trước, còn nhiều lựa chọn lắm.",
+   "Tiểu Mỹ: Ừm... thật ra tháng trước có một công ty gọi điện cho mình, hỏi mình có muốn đi thực tập không, lúc đó mình nghĩ phải thi cao học nên từ chối.",
+   "Hiểu Đông: Vậy cậu có thể liên lạc lại thử xem. Nhưng mấy chuyện này đều không vội, mấy hôm nữa hẵng nghĩ. Hôm nay việc quan trọng nhất chỉ có một.",
+   "Tiểu Mỹ: Việc gì?",
+   "Hiểu Đông: Từ sáng đến giờ cậu chưa ăn gì đúng không? Đi thôi, mình mời cậu đi ăn lẩu, món cậu thích nhất. Ăn no rồi hẵng gọi cho bố mẹ, mình tin họ chỉ thương cậu thôi, không trách cậu đâu.",
+   "Tiểu Mỹ: Ừ... Hiểu Đông, cảm ơn cậu. Có người bạn như cậu, thật tốt."
+  ],
+  "questions": [
+   {
+    "q": "小美为什么很难过？",
+    "q_vi": "Vì sao Tiểu Mỹ rất buồn?",
+    "options": [
+     "她和男朋友分手了",
+     "她考研只差两分没考上",
+     "她的父母批评了她",
+     "她找不到工作"
+    ],
+    "answer": 1,
+    "explain_vi": "Cô thi cao học trượt, chỉ thiếu hai điểm."
+   },
+   {
+    "q": "晓东为什么讲自己高考的事？",
+    "q_vi": "Vì sao Hiểu Đông kể chuyện thi đại học của mình?",
+    "options": [
+     "想告诉小美一次失败不能决定一辈子",
+     "想说自己比小美更聪明",
+     "想让小美明年和他一起考试",
+     "想说他不喜欢现在的大学"
+    ],
+    "answer": 0,
+    "explain_vi": "Anh muốn cho thấy thất bại ngày ấy lại dẫn đến những điều tốt, một kỳ thi không quyết định cả đời."
+   },
+   {
+    "q": "从对话可以知道，晓东是一个什么样的人？",
+    "q_vi": "Qua đoạn hội thoại có thể biết Hiểu Đông là người thế nào?",
+    "options": [
+     "说话很直接，不太关心别人",
+     "喜欢开玩笑",
+     "很会理解和关心朋友",
+     "学习成绩特别好"
+    ],
+    "answer": 2,
+    "explain_vi": "Anh lo lắng tìm đến, để bạn được khóc, chia sẻ chuyện riêng và lo cả việc bạn chưa ăn."
+   }
+  ]
+ },
+ {
+  "id": "d-18",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "六个声调",
+  "title_vi": "Sáu thanh điệu",
+  "topic": "trao đổi với giáo viên",
+  "scene_vi": "Sau giờ học, A Văn, sinh viên Việt Nam, đến văn phòng gặp cô Trương để hỏi cách cải thiện phát âm và bài viết tiếng Trung.",
+  "speakers": [
+   "阿文",
+   "张老师"
+  ],
+  "paragraphs": [
+   "阿文：张老师，您现在方便吗？我有几个问题想请教您。",
+   "张老师：方便，进来坐吧。是不是关于上次的口语考试？",
+   "阿文：对。我觉得自己准备得挺好的，可是成绩只有七十分。您说我的声调问题比较多，我自己听不出来哪儿错了。",
+   "张老师：你的问题主要在第三声和第四声。比如你说“买”和“卖”，听起来差不多。这样很容易让人误会：你是要买东西，还是卖东西？",
+   "阿文：啊，难怪上次我在商店说“我想买这个”，老板一直问我多少钱卖。",
+   "张老师：哈哈，很有可能。越南语也有声调，所以你们学汉语有优势，但是有时候也会把越南语的习惯带进来。",
+   "阿文：那我应该怎么练习呢？",
+   "张老师：我建议你每天用手机录十分钟自己的声音，然后跟课文的录音比较。刚开始会觉得很不好意思，但是这个方法特别有效。另外，练习的时候可以用手画出声调的样子。",
+   "阿文：好，我今天就开始。还有一个问题，是关于写作的。我写的文章，句子都没有错，可是您总是写“不太自然”。",
+   "张老师：你是不是先用越南语想好，再一句一句翻译成中文？",
+   "阿文：您怎么知道？我一直都是这样写的。",
+   "张老师：从你的句子就能看出来。语法是对的，但是中国人不这么说。最好的办法是多读，读到好的句子就抄下来，下次写作的时候试着用。读得多了，你就会慢慢开始用中文想问题。",
+   "阿文：多读多抄，我记住了。老师，您学过外语吗？您好像很了解我们的困难。",
+   "张老师：说出来你可能不相信，我现在正在学越南语。",
+   "阿文：真的吗？越南语难不难？",
+   "张老师：太难了！汉语只有四个声调，越南语有六个。我每次说“妈妈”，我的越南老师都说我在叫别的东西。",
+   "阿文：哈哈，老师，那以后我教您越南语的声调，您教我汉语的声调，怎么样？",
+   "张老师：好主意！我们每个星期三下午见一次面，前半个小时说汉语，后半个小时说越南语。谁说错了，谁请喝奶茶！",
+   "阿文：一言为定！不过老师，我觉得您可能要请很多次了。"
+  ],
+  "translations": [
+   "A Văn: Cô Trương, bây giờ cô có tiện không ạ? Em có mấy câu hỏi muốn xin ý kiến cô.",
+   "Cô Trương: Tiện chứ, vào ngồi đi. Có phải về bài thi nói lần trước không?",
+   "A Văn: Vâng ạ. Em thấy mình chuẩn bị khá tốt, nhưng điểm chỉ được bảy mươi. Cô nói em hay sai thanh điệu, em tự nghe không ra sai ở đâu.",
+   "Cô Trương: Vấn đề của em chủ yếu ở thanh ba và thanh bốn. Ví dụ em nói \"mua\" và \"bán\", nghe gần như nhau. Như thế rất dễ khiến người ta hiểu nhầm: em muốn mua đồ hay bán đồ?",
+   "A Văn: À, hèn gì lần trước em vào cửa hàng nói \"em muốn mua cái này\", ông chủ cứ hỏi em bán bao nhiêu tiền.",
+   "Cô Trương: Ha ha, rất có thể đấy. Tiếng Việt cũng có thanh điệu, nên các em học tiếng Trung có lợi thế, nhưng đôi khi cũng mang thói quen tiếng Việt vào.",
+   "A Văn: Vậy em nên luyện tập thế nào ạ?",
+   "Cô Trương: Cô khuyên em mỗi ngày dùng điện thoại thu âm giọng mình mười phút, rồi so sánh với bản ghi âm của bài khóa. Lúc đầu sẽ thấy ngại lắm, nhưng cách này rất hiệu quả. Ngoài ra, lúc luyện có thể dùng tay vẽ hình dạng thanh điệu.",
+   "A Văn: Vâng, em bắt đầu ngay hôm nay. Còn một câu hỏi nữa, về bài viết ạ. Bài em viết, câu nào cũng không sai, nhưng cô toàn ghi \"chưa tự nhiên lắm\".",
+   "Cô Trương: Có phải em nghĩ bằng tiếng Việt trước rồi dịch từng câu sang tiếng Trung không?",
+   "A Văn: Sao cô biết ạ? Em vẫn luôn viết như vậy.",
+   "Cô Trương: Nhìn câu của em là thấy ngay. Ngữ pháp thì đúng, nhưng người Trung Quốc không nói như thế. Cách tốt nhất là đọc nhiều, đọc thấy câu hay thì chép lại, lần sau viết thử dùng. Đọc nhiều rồi, em sẽ dần dần bắt đầu suy nghĩ bằng tiếng Trung.",
+   "A Văn: Đọc nhiều chép nhiều, em nhớ rồi ạ. Cô ơi, cô từng học ngoại ngữ chưa ạ? Hình như cô rất hiểu những khó khăn của bọn em.",
+   "Cô Trương: Nói ra có khi em không tin, bây giờ cô đang học tiếng Việt đấy.",
+   "A Văn: Thật ạ? Tiếng Việt có khó không ạ?",
+   "Cô Trương: Khó quá! Tiếng Trung chỉ có bốn thanh, tiếng Việt có sáu thanh. Lần nào cô nói \"mẹ\", cô giáo người Việt cũng bảo cô đang gọi thứ khác.",
+   "A Văn: Ha ha, cô ơi, vậy sau này em dạy cô thanh điệu tiếng Việt, cô dạy em thanh điệu tiếng Trung, được không ạ?",
+   "Cô Trương: Ý hay đấy! Mỗi chiều thứ Tư chúng ta gặp nhau một lần, nửa tiếng đầu nói tiếng Trung, nửa tiếng sau nói tiếng Việt. Ai nói sai thì người đó mời trà sữa!",
+   "A Văn: Nhất trí ạ! Nhưng cô ơi, em nghĩ có khi cô phải mời nhiều lần đấy."
+  ],
+  "questions": [
+   {
+    "q": "阿文的口语主要有什么问题？",
+    "q_vi": "Phần nói của A Văn chủ yếu có vấn đề gì?",
+    "options": [
+     "说得太慢",
+     "词汇太少",
+     "语法错误多",
+     "第三声和第四声分不清"
+    ],
+    "answer": 3,
+    "explain_vi": "Cô Trương nói vấn đề chủ yếu ở thanh ba và thanh bốn, \"mua\" và \"bán\" nghe gần như nhau."
+   },
+   {
+    "q": "为什么阿文的文章“不太自然”？",
+    "q_vi": "Vì sao bài viết của A Văn \"chưa tự nhiên lắm\"?",
+    "options": [
+     "他先用越南语想，再翻译成中文",
+     "他写得太短了",
+     "他用了很多难的词",
+     "他的字写得不好看"
+    ],
+    "answer": 0,
+    "explain_vi": "Anh nghĩ bằng tiếng Việt rồi dịch từng câu, nên ngữ pháp đúng mà người Trung không nói thế."
+   },
+   {
+    "q": "对话最后，他们决定做什么？",
+    "q_vi": "Cuối đoạn hội thoại, họ quyết định làm gì?",
+    "options": [
+     "一起去越南旅游",
+     "每周见面，互相教语言",
+     "一起去喝奶茶",
+     "阿文重新参加口语考试"
+    ],
+    "answer": 1,
+    "explain_vi": "Mỗi chiều thứ Tư gặp nhau, nửa tiếng nói tiếng Trung, nửa tiếng nói tiếng Việt."
+   }
+  ]
+ },
+ {
+  "id": "d-19",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "去云南还是去海南",
+  "title_vi": "Đi Vân Nam hay đi Hải Nam",
+  "topic": "bàn kế hoạch du lịch",
+  "scene_vi": "Ba người bạn Tiểu Vũ, Trương Vĩ và A Linh có năm ngày nghỉ dịp Quốc khánh, ngồi ở quán cà phê bàn xem nên đi du lịch ở đâu.",
+  "speakers": [
+   "晓雨",
+   "张伟",
+   "阿玲"
+  ],
+  "paragraphs": [
+   "晓雨：国庆节放假七天，我们终于可以一起出去玩儿了！你们想去哪儿？",
+   "张伟：我想去海南。阳光、沙滩、大海，每天游泳、吃海鲜，多舒服啊。",
+   "阿玲：海南十月还是很热吧？而且我皮肤一晒就红，我更想去云南。丽江、大理，风景又美，天气又凉快。",
+   "张伟：云南是不错，可是听说国庆的时候人特别多，古城里到处都是游客，连走路都难。",
+   "阿玲：海南就不多了吗？国庆节去哪儿人都多。",
+   "晓雨：好了好了，别争了。我们先说说钱吧。每个人能花多少？",
+   "张伟：我最多四千块，包括机票。",
+   "阿玲：我也差不多。",
+   "晓雨：我刚才在网上查了一下。国庆节去海南的机票特别贵，来回要三千多，加上酒店，四千块肯定不够。云南的机票便宜一点儿，来回两千左右。",
+   "张伟：三千多？那算了。不过云南不能游泳，我准备了一个夏天的游泳技术就没用了。",
+   "阿玲：谁说的？大理有洱海，虽然不能游泳，但是可以骑自行车环湖，听说一路上的风景特别美。",
+   "晓雨：我有一个建议。为了躲开人多的时候，我们可以先去人少的地方，最后两天再去丽江。",
+   "张伟：为什么最后去丽江？",
+   "晓雨：因为大家一般都是假期一开始就出去，最后两天急着回家，那时候景点反而人少。",
+   "阿玲：有道理！那我们一号先飞昆明，在昆明玩儿一天，然后坐火车去大理，在大理住三天，最后去丽江住两天。",
+   "张伟：好吧，我同意。不过我有一个条件：在大理一定要吃一次当地的鱼，还要找一个能看到湖的客栈。",
+   "晓雨：没问题！还有，云南早晚温差大，大家记得带一件厚外套。丽江比较高，太阳也很厉害，阿玲，你的防晒霜还是要带的。",
+   "阿玲：啊？我还以为去云南就不会晒黑了呢！",
+   "张伟：哈哈，看来哪儿都躲不开太阳。好，那我今天晚上就订机票，谁也不许改主意了！"
+  ],
+  "translations": [
+   "Hiểu Vũ: Quốc khánh được nghỉ bảy ngày, cuối cùng chúng mình cũng có thể cùng đi chơi rồi! Các cậu muốn đi đâu?",
+   "Trương Vĩ: Mình muốn đi Hải Nam. Nắng, bãi cát, biển, ngày nào cũng bơi, ăn hải sản, sướng biết bao.",
+   "A Linh: Hải Nam tháng Mười vẫn nóng lắm nhỉ? Hơn nữa da mình cứ phơi nắng là đỏ, mình muốn đi Vân Nam hơn. Lệ Giang, Đại Lý, phong cảnh vừa đẹp, thời tiết lại mát mẻ.",
+   "Trương Vĩ: Vân Nam thì đẹp thật, nhưng nghe nói dịp Quốc khánh đông người lắm, trong cổ trấn đâu đâu cũng là du khách, đến đi bộ cũng khó.",
+   "A Linh: Thế Hải Nam không đông chắc? Quốc khánh đi đâu cũng đông.",
+   "Hiểu Vũ: Thôi thôi, đừng cãi nữa. Mình bàn chuyện tiền trước đã. Mỗi người tiêu được bao nhiêu?",
+   "Trương Vĩ: Mình nhiều nhất bốn nghìn tệ, bao gồm cả vé máy bay.",
+   "A Linh: Mình cũng tầm đấy.",
+   "Hiểu Vũ: Lúc nãy mình tra trên mạng rồi. Quốc khánh vé máy bay đi Hải Nam đắt lắm, khứ hồi hơn ba nghìn, cộng thêm khách sạn thì bốn nghìn chắc chắn không đủ. Vé đi Vân Nam rẻ hơn một chút, khứ hồi khoảng hai nghìn.",
+   "Trương Vĩ: Hơn ba nghìn? Thế thôi bỏ đi. Nhưng Vân Nam không bơi được, kỹ năng bơi mình luyện cả mùa hè thành vô dụng rồi.",
+   "A Linh: Ai bảo thế? Đại Lý có hồ Nhĩ Hải, tuy không bơi được nhưng có thể đạp xe vòng quanh hồ, nghe nói phong cảnh dọc đường đẹp lắm.",
+   "Hiểu Vũ: Mình có một đề xuất. Để tránh lúc đông người, chúng ta có thể đến những chỗ ít người trước, hai ngày cuối mới đi Lệ Giang.",
+   "Trương Vĩ: Sao lại đi Lệ Giang sau cùng?",
+   "Hiểu Vũ: Vì mọi người thường vừa đầu kỳ nghỉ là đi ngay, hai ngày cuối thì vội về nhà, lúc đó các điểm du lịch lại vắng hơn.",
+   "A Linh: Có lý! Vậy mùng một chúng ta bay đến Côn Minh trước, chơi ở Côn Minh một ngày, sau đó đi tàu đến Đại Lý, ở Đại Lý ba ngày, cuối cùng đến Lệ Giang ở hai ngày.",
+   "Trương Vĩ: Thôi được, mình đồng ý. Nhưng mình có một điều kiện: ở Đại Lý nhất định phải ăn cá địa phương một lần, còn phải tìm một nhà nghỉ nhìn ra hồ.",
+   "Hiểu Vũ: Không vấn đề! Còn nữa, Vân Nam sáng tối chênh lệch nhiệt độ lớn, mọi người nhớ mang một chiếc áo khoác dày. Lệ Giang khá cao, nắng cũng gắt lắm, A Linh, kem chống nắng của cậu vẫn phải mang đấy.",
+   "A Linh: Hả? Mình còn tưởng đi Vân Nam thì không bị đen cơ!",
+   "Trương Vĩ: Ha ha, xem ra đi đâu cũng không trốn được mặt trời. Được rồi, tối nay mình đặt vé máy bay luôn, không ai được đổi ý nữa đâu đấy!"
+  ],
+  "questions": [
+   {
+    "q": "他们为什么最后没有选择海南？",
+    "q_vi": "Vì sao cuối cùng họ không chọn Hải Nam?",
+    "options": [
+     "海南的机票太贵，钱不够",
+     "海南没有好吃的",
+     "张伟不会游泳",
+     "海南下雨"
+    ],
+    "answer": 0,
+    "explain_vi": "Vé máy bay khứ hồi hơn ba nghìn, cộng khách sạn thì bốn nghìn không đủ."
+   },
+   {
+    "q": "晓雨为什么建议最后两天去丽江？",
+    "q_vi": "Vì sao Hiểu Vũ đề nghị hai ngày cuối mới đi Lệ Giang?",
+    "options": [
+     "丽江的酒店最后两天便宜",
+     "那时候大家急着回家，人比较少",
+     "丽江离机场近",
+     "最后两天天气最好"
+    ],
+    "answer": 1,
+    "explain_vi": "Mọi người thường đi đầu kỳ nghỉ và vội về nhà vào cuối, nên khi đó vắng hơn."
+   },
+   {
+    "q": "阿玲最后为什么吃惊？",
+    "q_vi": "Vì sao cuối cùng A Linh ngạc nhiên?",
+    "options": [
+     "张伟要订机票",
+     "云南不能骑自行车",
+     "在云南也需要防晒",
+     "大理没有湖"
+    ],
+    "answer": 2,
+    "explain_vi": "Cô tưởng đi Vân Nam sẽ không bị đen, nhưng Lệ Giang cao, nắng gắt, vẫn phải dùng kem chống nắng."
+   }
+  ]
+ },
+ {
+  "id": "d-20",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "楼上的声音",
+  "title_vi": "Tiếng động trên lầu",
+  "topic": "phàn nàn với hàng xóm",
+  "scene_vi": "Mấy tối liền, anh Vương nghe tiếng \"thình thịch\" từ tầng trên nên không ngủ được. Tối nay anh lên gõ cửa nhà cô Lý ở tầng trên.",
+  "speakers": [
+   "王先生",
+   "李阿姨",
+   "小军"
+  ],
+  "paragraphs": [
+   "李阿姨：谁呀？",
+   "王先生：您好，我是住在楼下的，姓王。这么晚打扰您，真不好意思。",
+   "李阿姨：哦，小王啊，没关系。有什么事吗？是不是我家厨房又漏水了？",
+   "王先生：不是漏水。是这样的，最近几天晚上，大概十点到十一点，我总能听到楼上有“咚咚咚”的声音，一下一下的，挺响的。",
+   "李阿姨：“咚咚咚”？我们家晚上很安静啊，我和老伴儿九点多就睡了。",
+   "王先生：可是声音好像就是从您家传下来的。我明天早上六点要起床上班，最近一直睡不好，所以才上来问问。",
+   "小军：奶奶，是谁啊？",
+   "李阿姨：小军，你怎么还没睡？手里拿的是什么？",
+   "小军：篮球……我下个星期要参加学校的篮球比赛，老师说我运球不好，我就在房间里练习一会儿。",
+   "李阿姨：原来是你！小王，真对不起。这孩子是我孙子，他爸妈出差了，这几天住在我这儿。我耳朵不太好，一点儿都没听见。",
+   "王先生：没事没事，知道原因就好。小朋友，你几年级了？",
+   "小军：六年级。叔叔，对不起，我不知道楼下能听得这么清楚。",
+   "王先生：楼房就是这样，声音很容易传下去。你想练球是好事，不过晚上在房间里练，楼下的人就没法睡觉了。",
+   "李阿姨：小军，以后晚上不许在家里拍球了，听见没有？",
+   "小军：可是白天要上课，晚上才有时间练。比赛只剩下一个星期了……",
+   "王先生：这样吧，小区后面有个篮球场，晚上有灯。我每天下班以后都在那儿跑步，七点到八点。你要是愿意，可以跟我一起去，我上大学的时候是校队的，可以教你几招。",
+   "小军：真的吗？太好了！奶奶，我可以去吗？",
+   "李阿姨：有小王带着你，我当然放心。小王，太麻烦你了，明天我包饺子，你下班来家里吃吧。",
+   "王先生：那我就不客气了。小军，明天晚上七点，楼下见！今天早点儿睡，养好精神才能打好球。"
+  ],
+  "translations": [
+   "Cô Lý: Ai đấy?",
+   "Anh Vương: Chào cô, cháu ở tầng dưới, họ Vương. Muộn thế này còn làm phiền cô, thật ngại quá.",
+   "Cô Lý: Ồ, cậu Vương à, không sao. Có chuyện gì thế? Có phải bếp nhà cô lại rò nước không?",
+   "Anh Vương: Không phải rò nước ạ. Là thế này, mấy tối gần đây, khoảng mười giờ đến mười một giờ, cháu cứ nghe thấy trên lầu có tiếng \"thình thình thình\", từng tiếng một, khá to.",
+   "Cô Lý: \"Thình thình thình\"? Nhà cô buổi tối yên tĩnh lắm mà, cô với ông nhà hơn chín giờ đã ngủ rồi.",
+   "Anh Vương: Nhưng hình như tiếng động truyền xuống từ nhà cô. Sáng mai sáu giờ cháu phải dậy đi làm, dạo này cứ ngủ không ngon, nên mới lên hỏi thử.",
+   "Tiểu Quân: Bà ơi, ai thế ạ?",
+   "Cô Lý: Tiểu Quân, sao cháu còn chưa ngủ? Tay cầm cái gì thế?",
+   "Tiểu Quân: Quả bóng rổ ạ... tuần sau cháu phải tham gia thi đấu bóng rổ ở trường, thầy nói cháu dẫn bóng chưa tốt, nên cháu tập trong phòng một lúc.",
+   "Cô Lý: Hóa ra là cháu! Cậu Vương, thật xin lỗi. Thằng bé là cháu nội cô, bố mẹ nó đi công tác, mấy hôm nay ở với cô. Tai cô không được tốt, chẳng nghe thấy gì cả.",
+   "Anh Vương: Không sao không sao, biết nguyên nhân là được rồi. Bạn nhỏ, cháu học lớp mấy rồi?",
+   "Tiểu Quân: Lớp sáu ạ. Chú ơi, cháu xin lỗi, cháu không biết tầng dưới lại nghe rõ như thế.",
+   "Anh Vương: Nhà tầng là vậy đấy, tiếng động rất dễ truyền xuống. Cháu muốn tập bóng là chuyện tốt, nhưng buổi tối tập trong phòng thì người tầng dưới không ngủ được.",
+   "Cô Lý: Tiểu Quân, từ giờ buổi tối không được đập bóng trong nhà nữa, nghe chưa?",
+   "Tiểu Quân: Nhưng ban ngày phải đi học, buổi tối mới có thời gian tập. Chỉ còn một tuần nữa là thi đấu rồi...",
+   "Anh Vương: Thế này đi, phía sau khu nhà có một sân bóng rổ, buổi tối có đèn. Ngày nào tan làm chú cũng chạy bộ ở đó, từ bảy đến tám giờ. Nếu cháu muốn, có thể đi cùng chú, hồi đại học chú ở đội tuyển của trường, có thể dạy cháu vài chiêu.",
+   "Tiểu Quân: Thật ạ? Tuyệt quá! Bà ơi, cháu đi được không ạ?",
+   "Cô Lý: Có cậu Vương dẫn đi thì cô yên tâm rồi. Cậu Vương, phiền cậu quá, mai cô gói sủi cảo, tan làm cậu qua nhà ăn nhé.",
+   "Anh Vương: Vậy cháu không khách sáo đâu ạ. Tiểu Quân, bảy giờ tối mai, gặp nhau dưới nhà nhé! Hôm nay ngủ sớm đi, giữ sức mới chơi bóng tốt được."
+  ],
+  "questions": [
+   {
+    "q": "王先生为什么上楼找李阿姨？",
+    "q_vi": "Vì sao anh Vương lên lầu tìm cô Lý?",
+    "options": [
+     "李阿姨家厨房漏水",
+     "晚上楼上很吵，他睡不好",
+     "他想借东西",
+     "他想请李阿姨吃饭"
+    ],
+    "answer": 1,
+    "explain_vi": "Mấy tối liền có tiếng thình thịch từ trên lầu khiến anh ngủ không ngon."
+   },
+   {
+    "q": "李阿姨为什么不知道有声音？",
+    "q_vi": "Vì sao cô Lý không biết có tiếng động?",
+    "options": [
+     "她晚上不在家",
+     "她以为是楼下的声音",
+     "她耳朵不太好，而且睡得早",
+     "她在看电视"
+    ],
+    "answer": 2,
+    "explain_vi": "Cô nói ngủ từ hơn chín giờ và tai không được tốt."
+   },
+   {
+    "q": "问题最后是怎么解决的？",
+    "q_vi": "Cuối cùng vấn đề được giải quyết thế nào?",
+    "options": [
+     "王先生带小军去小区的篮球场练球",
+     "小军不参加比赛了",
+     "王先生搬家了",
+     "李阿姨买了地毯"
+    ],
+    "answer": 0,
+    "explain_vi": "Anh Vương rủ Tiểu Quân ra sân bóng rổ của khu nhà tập cùng mình buổi tối."
+   }
+  ]
+ },
+ {
+  "id": "d-21",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "那条白裙子",
+  "title_vi": "Chiếc váy trắng ấy",
+  "topic": "cãi nhau rồi làm lành",
+  "scene_vi": "Giai Giai phát hiện bạn cùng phòng Tiểu Tuyết mặc chiếc váy trắng của mình mà không hỏi, lại còn làm bẩn. Hai người cãi nhau trong ký túc xá.",
+  "speakers": [
+   "佳佳",
+   "小雪"
+  ],
+  "paragraphs": [
+   "佳佳：小雪，我那条白裙子怎么在你床上？上面这一大块是什么？",
+   "小雪：啊，你回来了……对不起，昨天晚上我去参加同学的生日聚会，没有合适的衣服，就借你的穿了一下。吃饭的时候不小心洒了点儿果汁。",
+   "佳佳：借？你问过我吗？这是我妈妈送给我的生日礼物，我自己都只穿过一次！",
+   "小雪：我给你打电话了，你没接。聚会马上就要开始了，我想你应该不会介意……",
+   "佳佳：你“想”？你怎么知道我不介意？上次你用我的电脑也没说，充电器到现在还没还给我。",
+   "小雪：充电器我昨天就放在你桌子上了，你自己没看见。再说了，我们是室友，用一下东西至于这么生气吗？",
+   "佳佳：至于！室友也应该尊重别人的东西。你要是好好跟我说，我会不借给你吗？",
+   "小雪：好，是我错了，行了吧？我赔你一条新的！",
+   "佳佳：这不是钱的问题！算了，我不想跟你说了。",
+   "小雪：（一个小时以后）佳佳……你还在生气吗？我买了你最喜欢的芒果奶茶，少糖的。",
+   "佳佳：……放那儿吧。",
+   "小雪：刚才我出去走了走，想了很久。你说得对，不管是不是室友，用别人的东西都应该先问。特别是你妈妈送的礼物，对你来说有特别的意义，我却说什么“至于吗”，真的很过分。",
+   "佳佳：其实我刚才也说得太重了。充电器确实在我桌子上，是我自己没看见，还冤枉你了。",
+   "小雪：那我们和好了？",
+   "佳佳：和好了。不过裙子怎么办？果汁的颜色不知道能不能洗掉。",
+   "小雪：我刚才在网上查了，说用一点儿白醋和温水泡半个小时，再用手轻轻洗，一般都能洗干净。我现在就去洗，洗不干净的话，我们周末一起去干洗店。",
+   "佳佳：我跟你一起洗吧。对了，以后我们定个规矩：用对方的东西以前，一定要先发微信问一下，对方同意了才能用。",
+   "小雪：没问题！那……我现在可以问你一个问题吗？下个月我表姐结婚，你这条裙子洗干净以后，能借我穿一次吗？",
+   "佳佳：哈哈，你看，这样问不就好了吗？可以，不过这次吃饭的时候离果汁远一点儿！"
+  ],
+  "translations": [
+   "Giai Giai: Tiểu Tuyết, sao chiếc váy trắng của mình lại ở trên giường cậu? Vết to tướng trên này là gì?",
+   "Tiểu Tuyết: À, cậu về rồi... Xin lỗi, tối qua mình đi dự tiệc sinh nhật bạn học, không có quần áo phù hợp nên mượn váy cậu mặc một chút. Lúc ăn không cẩn thận làm đổ ít nước hoa quả.",
+   "Giai Giai: Mượn? Cậu đã hỏi mình chưa? Đây là quà sinh nhật mẹ mình tặng, chính mình cũng mới mặc có một lần!",
+   "Tiểu Tuyết: Mình có gọi cho cậu, cậu không nghe. Bữa tiệc sắp bắt đầu rồi, mình nghĩ chắc cậu không để ý đâu...",
+   "Giai Giai: Cậu \"nghĩ\"? Sao cậu biết mình không để ý? Lần trước cậu dùng máy tính của mình cũng không nói, sạc đến giờ vẫn chưa trả mình.",
+   "Tiểu Tuyết: Sạc mình để trên bàn cậu từ hôm qua rồi, tự cậu không thấy. Mà nói đi cũng phải nói lại, chúng mình là bạn cùng phòng, dùng chút đồ mà phải giận đến thế à?",
+   "Giai Giai: Phải đấy! Bạn cùng phòng cũng nên tôn trọng đồ của người khác. Nếu cậu nói tử tế với mình, mình lại không cho cậu mượn chắc?",
+   "Tiểu Tuyết: Được, là mình sai, được chưa? Mình đền cậu một chiếc mới!",
+   "Giai Giai: Đây không phải là chuyện tiền! Thôi bỏ đi, mình không muốn nói chuyện với cậu nữa.",
+   "Tiểu Tuyết: (một tiếng sau) Giai Giai... cậu còn giận không? Mình mua trà sữa xoài cậu thích nhất đây, ít đường.",
+   "Giai Giai: ...Để đấy đi.",
+   "Tiểu Tuyết: Lúc nãy mình ra ngoài đi dạo, nghĩ rất lâu. Cậu nói đúng, dù có là bạn cùng phòng hay không, dùng đồ của người khác đều nên hỏi trước. Nhất là quà mẹ cậu tặng, với cậu có ý nghĩa đặc biệt, thế mà mình lại nói \"có đáng không\", thật sự quá đáng.",
+   "Giai Giai: Thật ra lúc nãy mình cũng nói nặng lời quá. Sạc đúng là ở trên bàn mình, là tự mình không thấy, còn trách oan cậu.",
+   "Tiểu Tuyết: Vậy chúng mình làm lành nhé?",
+   "Giai Giai: Làm lành rồi. Nhưng chiếc váy tính sao đây? Không biết màu nước hoa quả có giặt sạch được không.",
+   "Tiểu Tuyết: Lúc nãy mình tra trên mạng rồi, bảo ngâm với chút giấm trắng và nước ấm nửa tiếng, rồi giặt nhẹ bằng tay, thường là sạch được. Mình đi giặt ngay bây giờ, nếu không sạch thì cuối tuần chúng mình cùng ra tiệm giặt khô.",
+   "Giai Giai: Mình giặt cùng cậu. À, sau này chúng mình đặt ra quy định nhé: trước khi dùng đồ của nhau, nhất định phải nhắn WeChat hỏi trước, người kia đồng ý mới được dùng.",
+   "Tiểu Tuyết: Không vấn đề! Vậy... bây giờ mình hỏi cậu một câu được không? Tháng sau chị họ mình cưới, chiếc váy này của cậu giặt sạch rồi, cho mình mượn mặc một lần được không?",
+   "Giai Giai: Ha ha, cậu xem, hỏi thế này chẳng phải tốt hơn sao? Được, nhưng lần này lúc ăn thì tránh xa nước hoa quả ra một chút nhé!"
+  ],
+  "questions": [
+   {
+    "q": "佳佳为什么特别生气？",
+    "q_vi": "Vì sao Giai Giai đặc biệt tức giận?",
+    "options": [
+     "小雪弄丢了她的电脑",
+     "小雪没问她就穿了妈妈送的裙子",
+     "小雪不还她钱",
+     "小雪没请她参加聚会"
+    ],
+    "answer": 1,
+    "explain_vi": "Tiểu Tuyết mặc chiếc váy quà mẹ tặng mà không hỏi, còn làm bẩn."
+   },
+   {
+    "q": "关于充电器，下面哪个是对的？",
+    "q_vi": "Về cục sạc, câu nào dưới đây đúng?",
+    "options": [
+     "小雪弄坏了充电器",
+     "充电器被别人拿走了",
+     "小雪早就还了，佳佳没看见",
+     "佳佳不需要充电器"
+    ],
+    "answer": 2,
+    "explain_vi": "Giai Giai thừa nhận sạc đúng là ở trên bàn mình, tự cô không thấy."
+   },
+   {
+    "q": "她们最后定了什么规矩？",
+    "q_vi": "Cuối cùng họ đặt ra quy định gì?",
+    "options": [
+     "用对方的东西以前要先问",
+     "不能在宿舍喝奶茶",
+     "每个周末一起洗衣服",
+     "不能借衣服给别人"
+    ],
+    "answer": 0,
+    "explain_vi": "Trước khi dùng đồ của nhau phải nhắn hỏi, người kia đồng ý mới dùng."
+   }
+  ]
+ },
+ {
+  "id": "d-22",
+  "kind": "dialogue",
+  "level": 4,
+  "title": "一模一样的箱子",
+  "title_vi": "Chiếc va li giống hệt nhau",
+  "topic": "sân bay",
+  "scene_vi": "Anh Lâm vừa bay từ Hà Nội đến Quảng Châu, đợi mãi ở băng chuyền mà không thấy va li của mình, đành đến quầy hành lý thất lạc của sân bay.",
+  "speakers": [
+   "林先生",
+   "职员"
+  ],
+  "paragraphs": [
+   "林先生：您好，我坐的是从河内来的航班，在行李转盘那儿等了四十分钟，别人的行李都拿走了，就是没有我的箱子。",
+   "职员：先生，您别着急。请把您的登机牌和行李票给我看一下。",
+   "林先生：给您。行李票贴在登机牌后面了。",
+   "职员：好的，我在系统里查一下……系统显示您的箱子已经到广州了，也已经上了转盘。您确定没有看错吗？",
+   "林先生：肯定没看错。我从第一个箱子出来就站在那儿，一直看到转盘停下来。",
+   "职员：那有一种可能，是别的旅客拿错了。最近这种情况不少，很多箱子长得差不多。您的箱子是什么样子的？",
+   "林先生：黑色的，二十八寸，有四个轮子，是很常见的那种。哦，对了，把手上系着一条红色的带子，是我妈妈给我系的，说这样容易认出来。",
+   "职员：好的，我记下来了。麻烦您填一下这张表，写上您的电话和在广州住的地址。找到以后，我们会免费给您送过去。",
+   "林先生：要等多长时间？我明天下午要参加一个很重要的会议，西装和资料都在箱子里。",
+   "职员：如果是被别的旅客拿错了，他们发现以后一般会主动联系我们，通常二十四小时之内就能找到。如果明天还没找到，您可以先买需要的衣服，保留好发票，我们会按规定给您一部分补偿。",
+   "林先生：衣服可以买，可是资料没有办法买啊。",
+   "职员：我理解您的心情。资料有电子版吗？如果有，可以先打印一份，以防万一。",
+   "林先生：电子版在我电脑里，电脑我是随身带的。看来今天晚上得找个地方打印了。",
+   "职员：请稍等，我接个电话……喂，您好，行李服务台。您说您拿错了箱子？是黑色的？把手上有红带子？",
+   "林先生：红带子？是我的！",
+   "职员：好的，请您马上送回来，失主就在这儿。……先生，您运气真好。那位旅客刚到出租车上，打开箱子想拿外套，才发现里面全是男士的西装，而她是一位女士。",
+   "林先生：她的箱子也是黑色的？",
+   "职员：跟您的一模一样，连把手上都系着一条红带子。她说，那也是她妈妈系的。",
+   "林先生：哈哈，看来天下的妈妈想法都一样。下次我得换个颜色了！"
+  ],
+  "translations": [
+   "Anh Lâm: Chào chị, tôi đi chuyến bay từ Hà Nội đến, đợi ở băng chuyền hành lý bốn mươi phút rồi, hành lý của người khác đều lấy hết, chỉ không có va li của tôi.",
+   "Nhân viên: Thưa anh, anh đừng lo. Phiền anh cho tôi xem thẻ lên máy bay và phiếu hành lý.",
+   "Anh Lâm: Đây ạ. Phiếu hành lý dán ở mặt sau thẻ lên máy bay.",
+   "Nhân viên: Vâng, tôi kiểm tra trên hệ thống... Hệ thống cho thấy va li của anh đã đến Quảng Châu, cũng đã lên băng chuyền rồi. Anh chắc là không nhìn nhầm chứ?",
+   "Anh Lâm: Chắc chắn không nhầm. Tôi đứng đó từ lúc chiếc va li đầu tiên ra, nhìn đến khi băng chuyền dừng hẳn.",
+   "Nhân viên: Vậy có một khả năng là hành khách khác lấy nhầm. Dạo này tình trạng này không ít, nhiều va li trông na ná nhau. Va li của anh trông thế nào?",
+   "Anh Lâm: Màu đen, hai mươi tám inch, có bốn bánh xe, loại rất phổ biến. À đúng rồi, trên tay cầm có buộc một sợi dây màu đỏ, là mẹ tôi buộc cho, bảo như vậy dễ nhận ra.",
+   "Nhân viên: Vâng, tôi ghi lại rồi. Phiền anh điền tờ đơn này, ghi số điện thoại và địa chỉ anh ở Quảng Châu. Tìm thấy rồi chúng tôi sẽ giao miễn phí đến cho anh.",
+   "Anh Lâm: Phải đợi bao lâu ạ? Chiều mai tôi phải dự một cuộc họp rất quan trọng, bộ vest và tài liệu đều ở trong va li.",
+   "Nhân viên: Nếu là hành khách khác lấy nhầm, sau khi phát hiện họ thường chủ động liên hệ với chúng tôi, thông thường trong vòng hai mươi bốn giờ là tìm được. Nếu đến mai vẫn chưa tìm thấy, anh có thể mua trước quần áo cần thiết, giữ lại hóa đơn, chúng tôi sẽ bồi thường cho anh một phần theo quy định.",
+   "Anh Lâm: Quần áo thì mua được, nhưng tài liệu thì không mua được.",
+   "Nhân viên: Tôi hiểu tâm trạng của anh. Tài liệu có bản điện tử không ạ? Nếu có thì có thể in trước một bản, đề phòng bất trắc.",
+   "Anh Lâm: Bản điện tử ở trong máy tính, máy tính thì tôi mang theo người. Xem ra tối nay phải tìm chỗ in rồi.",
+   "Nhân viên: Anh đợi chút, tôi nghe điện thoại... A lô, xin chào, quầy dịch vụ hành lý. Anh nói anh lấy nhầm va li? Màu đen ạ? Tay cầm có dây đỏ?",
+   "Anh Lâm: Dây đỏ? Là của tôi!",
+   "Nhân viên: Vâng, phiền chị mang lại ngay, chủ va li đang ở đây. ...Thưa anh, anh may thật đấy. Vị hành khách đó vừa lên taxi, mở va li định lấy áo khoác mới phát hiện bên trong toàn là vest nam, mà cô ấy lại là phụ nữ.",
+   "Anh Lâm: Va li của cô ấy cũng màu đen à?",
+   "Nhân viên: Giống hệt của anh, đến tay cầm cũng buộc một sợi dây đỏ. Cô ấy nói, đó cũng là mẹ cô ấy buộc.",
+   "Anh Lâm: Ha ha, xem ra các bà mẹ trên đời đều nghĩ giống nhau. Lần sau tôi phải đổi màu khác thôi!"
+  ],
+  "questions": [
+   {
+    "q": "林先生的箱子为什么不见了？",
+    "q_vi": "Vì sao va li của anh Lâm không thấy đâu?",
+    "options": [
+     "箱子没有上飞机",
+     "箱子被别的旅客拿错了",
+     "箱子被送到了别的城市",
+     "林先生忘了托运"
+    ],
+    "answer": 1,
+    "explain_vi": "Một hành khách nữ có va li giống hệt đã lấy nhầm."
+   },
+   {
+    "q": "林先生最担心的是什么？",
+    "q_vi": "Anh Lâm lo nhất điều gì?",
+    "options": [
+     "没有钱买衣服",
+     "电脑坏了",
+     "开会需要的资料在箱子里",
+     "找不到酒店"
+    ],
+    "answer": 2,
+    "explain_vi": "Anh nói quần áo có thể mua, nhưng tài liệu cho cuộc họp quan trọng thì không mua được."
+   },
+   {
+    "q": "“看来天下的妈妈想法都一样”，这句话是什么意思？",
+    "q_vi": "Câu \"xem ra các bà mẹ trên đời đều nghĩ giống nhau\" có ý gì?",
+    "options": [
+     "两个人的妈妈都在箱子上系了红带子",
+     "两个人的妈妈是朋友",
+     "妈妈们都喜欢黑色",
+     "妈妈们都不让孩子出国"
+    ],
+    "answer": 0,
+    "explain_vi": "Mẹ của cả hai đều buộc dây đỏ lên va li để dễ nhận ra, nên lại thành giống nhau."
+   }
+  ]
+ },
+ {
+  "id": "d-23",
+  "kind": "dialogue",
+  "level": 5,
+  "title": "最大的缺点",
+  "title_vi": "Khuyết điểm lớn nhất",
+  "topic": "phỏng vấn xin việc",
+  "scene_vi": "Chu Ninh, tốt nghiệp được hai năm, đến phỏng vấn vị trí chuyên viên vận hành sản phẩm ở một công ty du lịch trực tuyến. Người phỏng vấn là quản lý bộ phận, chị Hà.",
+  "speakers": [
+   "何经理",
+   "周宁"
+  ],
+  "paragraphs": [
+   "何经理：周宁你好，请坐。路上还顺利吗？",
+   "周宁：您好，何经理。挺顺利的，我提前二十分钟就到了，还在楼下看了看你们公司的宣传栏。",
+   "何经理：那我们开始吧。先请你用两三分钟简单介绍一下自己，重点说说你为什么想来我们公司。",
+   "周宁：好的。我大学学的是市场营销，毕业以后在一家电商公司做了两年运营，主要负责商品的推广和用户数据分析。我从小就喜欢旅行，大学的时候利用假期一个人去了二十多个城市。我一直是贵公司的用户，所以看到这个职位的时候，觉得能把工作和爱好结合在一起，是一个难得的机会。",
+   "何经理：喜欢旅行的人很多，可是喜欢旅行和做好旅行产品是两回事。你觉得我们的产品有什么问题吗？可以直接说。",
+   "周宁：那我就说说我自己的感受。上个月我用你们的软件订了一家民宿，照片看起来很漂亮，到了以后发现跟照片差别很大。我写了评价，可是一直显示“审核中”，后来也没有出现。我担心这样会影响用户对平台的信任。",
+   "何经理：嗯，这个问题我们内部也在讨论。那如果你来负责，你会怎么改进？",
+   "周宁：我有两个想法。第一，让入住过的用户上传真实照片，放在商家照片的旁边，让大家自己比较。第二，对评价差别特别大的民宿，安排工作人员随机检查。当然，这些想法可能不太成熟，具体还要看数据和成本。",
+   "何经理：想法挺实际的。接下来问一个大家都不喜欢的问题：你觉得自己最大的缺点是什么？",
+   "周宁：说实话，我来之前在网上查过，很多人建议说“我的缺点是太追求完美”。但是我觉得这样回答不太真诚。",
+   "何经理：哦？那你真正的缺点是什么？",
+   "周宁：我不太会拒绝别人。在上一家公司，同事请我帮忙，我几乎都答应，结果自己的工作经常要加班才能完成。有一次因为这样，一个项目差点儿没按时交。",
+   "何经理：后来呢？你是怎么处理的？",
+   "周宁：从那以后，我每天早上会先把自己的任务排好顺序。别人请我帮忙的时候，我会先看看时间，如果实在没空，就礼貌地说明情况，或者约一个别的时间。现在好多了，不过还在练习。",
+   "何经理：好。你为什么离开上一家公司？",
+   "周宁：上一家公司对我帮助很大，我学到了很多东西。不过公司的业务主要是卖日用品，我希望能在自己更有热情的领域发展。",
+   "何经理：最后一个问题，你对工资有什么要求？",
+   "周宁：我现在的月薪是九千。我希望在这个基础上有一定的提高，具体可以按照公司的标准来。对我来说，更重要的是发展的空间。",
+   "何经理：好的，今天就到这儿。你有什么想问我的吗？",
+   "周宁：有一个。如果我有机会加入，您希望我在前三个月做到什么？",
+   "何经理：这个问题问得好。说实话，你刚才提的那个“用户真实照片”的想法，我们下个季度正打算做，正好缺一个人来负责。我们会在一周之内通知你结果，不过……你最好先想想，怎么拒绝你现在的老板。",
+   "周宁：谢谢何经理！这次我一定会好好练习“拒绝”的。"
+  ],
+  "translations": [
+   "Quản lý Hà: Chào Chu Ninh, mời ngồi. Đường đến đây có thuận lợi không?",
+   "Chu Ninh: Chào chị Hà. Khá thuận lợi ạ, em đến sớm hai mươi phút, còn xem qua bảng giới thiệu của công ty mình ở dưới tầng.",
+   "Quản lý Hà: Vậy chúng ta bắt đầu nhé. Trước tiên em hãy dùng hai ba phút giới thiệu ngắn gọn về bản thân, tập trung nói vì sao em muốn đến công ty chúng tôi.",
+   "Chu Ninh: Vâng ạ. Đại học em học ngành marketing, tốt nghiệp xong làm vận hành hai năm ở một công ty thương mại điện tử, chủ yếu phụ trách quảng bá sản phẩm và phân tích dữ liệu người dùng. Từ nhỏ em đã thích du lịch, hồi đại học tranh thủ các kỳ nghỉ đi một mình hơn hai mươi thành phố. Em vẫn luôn là người dùng của quý công ty, nên khi thấy vị trí này, em cảm thấy có thể kết hợp công việc với sở thích, là một cơ hội hiếm có.",
+   "Quản lý Hà: Người thích du lịch thì nhiều, nhưng thích du lịch và làm tốt sản phẩm du lịch là hai chuyện khác nhau. Em thấy sản phẩm của chúng tôi có vấn đề gì không? Có thể nói thẳng.",
+   "Chu Ninh: Vậy em xin nói về cảm nhận của chính mình. Tháng trước em dùng ứng dụng của công ty đặt một homestay, ảnh trông rất đẹp, đến nơi mới thấy khác xa so với ảnh. Em viết đánh giá, nhưng nó cứ hiện \"đang kiểm duyệt\", về sau cũng không xuất hiện. Em lo như thế sẽ ảnh hưởng đến lòng tin của người dùng với nền tảng.",
+   "Quản lý Hà: Ừm, vấn đề này nội bộ chúng tôi cũng đang thảo luận. Vậy nếu em phụ trách, em sẽ cải thiện thế nào?",
+   "Chu Ninh: Em có hai ý tưởng. Thứ nhất, cho người dùng đã ở tải lên ảnh thật, đặt cạnh ảnh của chủ nhà, để mọi người tự so sánh. Thứ hai, với những homestay có đánh giá chênh lệch quá lớn, bố trí nhân viên kiểm tra ngẫu nhiên. Tất nhiên những ý tưởng này có thể chưa chín chắn lắm, cụ thể còn phải xem dữ liệu và chi phí.",
+   "Quản lý Hà: Ý tưởng khá thực tế. Tiếp theo hỏi một câu mà ai cũng không thích: em thấy khuyết điểm lớn nhất của mình là gì?",
+   "Chu Ninh: Nói thật, trước khi đến em có tra trên mạng, nhiều người khuyên nên nói \"khuyết điểm của tôi là quá cầu toàn\". Nhưng em thấy trả lời như vậy không được chân thành lắm.",
+   "Quản lý Hà: Ồ? Vậy khuyết điểm thật sự của em là gì?",
+   "Chu Ninh: Em không giỏi từ chối người khác. Ở công ty trước, đồng nghiệp nhờ giúp, em gần như đều nhận lời, kết quả là công việc của mình thường phải tăng ca mới xong. Có một lần vì vậy mà một dự án suýt nữa không nộp đúng hạn.",
+   "Quản lý Hà: Rồi sao nữa? Em xử lý thế nào?",
+   "Chu Ninh: Từ đó trở đi, mỗi sáng em sắp xếp thứ tự các nhiệm vụ của mình trước. Khi người khác nhờ giúp, em xem thời gian trước đã, nếu thật sự không rảnh thì lịch sự giải thích tình hình, hoặc hẹn một lúc khác. Bây giờ đã đỡ nhiều rồi, nhưng em vẫn đang luyện tập.",
+   "Quản lý Hà: Được. Vì sao em rời công ty trước?",
+   "Chu Ninh: Công ty trước giúp em rất nhiều, em học được rất nhiều thứ. Nhưng mảng kinh doanh của công ty chủ yếu là bán đồ dùng hằng ngày, em mong được phát triển trong lĩnh vực mà mình có nhiệt huyết hơn.",
+   "Quản lý Hà: Câu hỏi cuối cùng, em có yêu cầu gì về lương không?",
+   "Chu Ninh: Lương tháng hiện tại của em là chín nghìn. Em mong có sự tăng lên nhất định trên cơ sở này, cụ thể có thể theo tiêu chuẩn của công ty. Với em, điều quan trọng hơn là không gian phát triển.",
+   "Quản lý Hà: Được rồi, hôm nay đến đây thôi. Em có muốn hỏi tôi điều gì không?",
+   "Chu Ninh: Có một câu ạ. Nếu em có cơ hội gia nhập, chị mong em đạt được điều gì trong ba tháng đầu?",
+   "Quản lý Hà: Câu hỏi hay đấy. Nói thật, ý tưởng \"ảnh thật của người dùng\" em vừa nêu, quý sau chúng tôi đang định làm, vừa đúng lúc thiếu người phụ trách. Chúng tôi sẽ báo kết quả cho em trong vòng một tuần, nhưng mà... tốt nhất em nên nghĩ trước xem làm thế nào để từ chối sếp hiện tại của mình.",
+   "Chu Ninh: Cảm ơn chị Hà! Lần này em nhất định sẽ luyện tập \"từ chối\" thật tốt."
+  ],
+  "questions": [
+   {
+    "q": "周宁为什么想来这家公司？",
+    "q_vi": "Vì sao Chu Ninh muốn đến công ty này?",
+    "options": [
+     "这家公司工资最高",
+     "可以把工作和旅行的爱好结合起来",
+     "离家比较近",
+     "朋友在这家公司工作"
+    ],
+    "answer": 1,
+    "explain_vi": "Anh nói có thể kết hợp công việc với sở thích du lịch, là cơ hội hiếm có."
+   },
+   {
+    "q": "周宁觉得自己最大的缺点是什么？",
+    "q_vi": "Chu Ninh cho rằng khuyết điểm lớn nhất của mình là gì?",
+    "options": [
+     "太追求完美",
+     "经常迟到",
+     "不太会拒绝别人",
+     "不喜欢跟人合作"
+    ],
+    "answer": 2,
+    "explain_vi": "Anh thẳng thắn nói mình không giỏi từ chối người khác, thay vì câu trả lời mẫu \"quá cầu toàn\"."
+   },
+   {
+    "q": "何经理最后那句话暗示了什么？",
+    "q_vi": "Câu nói cuối cùng của quản lý Hà ngầm cho thấy điều gì?",
+    "options": [
+     "周宁很可能被录用了",
+     "周宁的老板不同意他离开",
+     "公司不会录用周宁",
+     "周宁需要再参加一次面试"
+    ],
+    "answer": 0,
+    "explain_vi": "Chị nói công ty đang cần người phụ trách đúng ý tưởng của anh và khuyên anh nghĩ cách từ chối sếp hiện tại, tức là khả năng cao anh được nhận."
+   }
+  ]
+ },
+ {
+  "id": "d-24",
+  "kind": "dialogue",
+  "level": 5,
+  "title": "推迟还是按时上线",
+  "title_vi": "Hoãn lại hay ra mắt đúng hạn",
+  "topic": "họp nhóm",
+  "scene_vi": "Còn hai tuần nữa là đến ngày ra mắt phiên bản mới của một ứng dụng học ngoại ngữ, nhưng việc kiểm thử phát hiện nhiều lỗi. Trưởng nhóm Trần triệu tập cuộc họp với lập trình viên Lão Lý và nhân viên thị trường Tiểu Ngô.",
+  "speakers": [
+   "陈经理",
+   "老李",
+   "小吴"
+  ],
+  "paragraphs": [
+   "陈经理：人都到齐了，我们开始吧。今天只讨论一个问题：新版本下个月一号还能不能按时上线。老李，你先说说技术这边的情况。",
+   "老李：说实话，情况不太乐观。上周测试一共发现了四十七个问题，已经解决了三十个。剩下的十七个里，有五个比较严重，比如有些用户的学习记录会突然消失。",
+   "小吴：学习记录消失？那可不得了。我们的用户最在乎的就是每天打卡的记录，有人已经连续打卡三百多天了，要是突然变成零，肯定会在网上骂我们。",
+   "老李：所以我的意见是推迟两个星期。剩下的问题我们有把握解决，但是需要时间，而且解决以后还得再完整地测试一遍。",
+   "小吴：推迟两个星期？可是我们市场部已经花了不少钱做宣传，广告上写得清清楚楚：“一号正式上线”。另外，我们和三所大学签了合作，开学第一周就要给学生用。",
+   "陈经理：这个确实是个问题。老李，有没有可能让大家加加班，把时间缩短一点儿？",
+   "老李：经理，我们组这一个月几乎每个周末都在加班，大家已经很累了。人一累就容易出错，越赶越乱。我不是不愿意努力，而是担心为了赶时间，又制造出新的问题。",
+   "小吴：我理解技术部的辛苦。但是我们能不能换个思路？那五个严重的问题必须解决，其他的小问题能不能上线以后再慢慢改？",
+   "老李：嗯……这倒是个办法。剩下的十二个小问题，大部分是页面显示和速度方面的，不影响基本使用。如果只解决五个严重的，大概需要八天，再加三天测试。",
+   "陈经理：十一天，今天是十八号……那就是二十九号，比一号还早两天。时间是来得及，但是一点儿余地都没有了。",
+   "小吴：还有一个办法。我们可以先给三所大学的学生上线，因为人数比较少，有问题也容易发现、容易处理。等过两个星期稳定了，再面向所有用户。对外我们可以说是“大学优先体验”，听起来还像是一种特别的服务。",
+   "老李：这个方法好！这样技术部的压力会小很多，我们也能一边看真实的使用情况一边改。",
+   "陈经理：那广告怎么办？已经写了“一号正式上线”。",
+   "小吴：网上的广告改起来很快，我今天下午就能联系平台。线下的海报还没印，正好来得及改。",
+   "陈经理：好，那我们就这么决定。我总结一下：第一，老李的团队集中解决五个严重的问题，二十九号以前完成测试；第二，一号先对三所大学开放，十五号再全面上线；第三，小吴今天修改宣传内容。大家有没有别的意见？",
+   "老李：我还有一个请求。这两周能不能保证周末不加班？我想让大家休息好，反而效率更高。",
+   "陈经理：可以，我同意。等新版本顺利上线，我请大家吃饭，好好庆祝一下。",
+   "小吴：经理，这句话我记下来了，会议记录里也要写上！",
+   "陈经理：哈哈，好，写上吧。散会！"
+  ],
+  "translations": [
+   "Trưởng nhóm Trần: Mọi người đến đủ rồi, chúng ta bắt đầu nhé. Hôm nay chỉ thảo luận một vấn đề: phiên bản mới mùng một tháng sau có ra mắt đúng hạn được không. Lão Lý, anh nói trước tình hình bên kỹ thuật đi.",
+   "Lão Lý: Nói thật, tình hình không lạc quan lắm. Tuần trước kiểm thử phát hiện tổng cộng bốn mươi bảy lỗi, đã giải quyết ba mươi. Trong mười bảy lỗi còn lại, có năm lỗi khá nghiêm trọng, ví dụ lịch sử học tập của một số người dùng sẽ đột nhiên biến mất.",
+   "Tiểu Ngô: Lịch sử học tập biến mất? Thế thì nguy to. Người dùng của chúng ta quan tâm nhất chính là chuỗi điểm danh hằng ngày, có người đã điểm danh liên tục hơn ba trăm ngày rồi, nếu đột nhiên về không thì chắc chắn sẽ lên mạng chửi chúng ta.",
+   "Lão Lý: Vì vậy ý kiến của tôi là hoãn hai tuần. Những lỗi còn lại chúng tôi chắc chắn giải quyết được, nhưng cần thời gian, hơn nữa giải quyết xong còn phải kiểm thử lại toàn bộ một lượt.",
+   "Tiểu Ngô: Hoãn hai tuần? Nhưng bộ phận thị trường chúng tôi đã chi không ít tiền làm quảng bá, trên quảng cáo ghi rõ ràng: \"Chính thức ra mắt ngày mùng một\". Ngoài ra, chúng ta đã ký hợp tác với ba trường đại học, tuần đầu khai giảng là phải cho sinh viên dùng rồi.",
+   "Trưởng nhóm Trần: Đây đúng là một vấn đề. Lão Lý, có khả năng để mọi người tăng ca một chút, rút ngắn thời gian lại không?",
+   "Lão Lý: Trưởng nhóm à, nhóm tôi tháng này gần như cuối tuần nào cũng tăng ca, mọi người đã rất mệt rồi. Người mệt thì dễ sai sót, càng vội càng rối. Tôi không phải không muốn cố gắng, mà lo vì chạy theo thời gian lại tạo ra lỗi mới.",
+   "Tiểu Ngô: Tôi hiểu sự vất vả của bộ phận kỹ thuật. Nhưng chúng ta có thể đổi hướng suy nghĩ được không? Năm lỗi nghiêm trọng kia nhất định phải sửa, còn những lỗi nhỏ khác có thể ra mắt rồi từ từ sửa sau không?",
+   "Lão Lý: Ừm... đây cũng là một cách. Mười hai lỗi nhỏ còn lại phần lớn là về hiển thị giao diện và tốc độ, không ảnh hưởng đến việc sử dụng cơ bản. Nếu chỉ sửa năm lỗi nghiêm trọng, khoảng cần tám ngày, cộng thêm ba ngày kiểm thử.",
+   "Trưởng nhóm Trần: Mười một ngày, hôm nay là ngày mười tám... vậy là ngày hai mươi chín, sớm hơn mùng một hai ngày. Thời gian thì kịp, nhưng chẳng còn chút dư địa nào nữa.",
+   "Tiểu Ngô: Còn một cách nữa. Chúng ta có thể ra mắt trước cho sinh viên của ba trường đại học, vì số người khá ít, có lỗi cũng dễ phát hiện, dễ xử lý. Đợi hai tuần sau ổn định rồi mới mở cho toàn bộ người dùng. Với bên ngoài, chúng ta có thể nói là \"ưu tiên trải nghiệm cho đại học\", nghe còn giống như một dịch vụ đặc biệt.",
+   "Lão Lý: Cách này hay đấy! Như vậy áp lực của bộ phận kỹ thuật sẽ giảm đi nhiều, chúng tôi cũng có thể vừa xem tình hình sử dụng thực tế vừa sửa.",
+   "Trưởng nhóm Trần: Vậy quảng cáo tính sao? Đã ghi \"chính thức ra mắt ngày mùng một\" rồi.",
+   "Tiểu Ngô: Quảng cáo trên mạng sửa nhanh lắm, chiều nay tôi có thể liên hệ với nền tảng. Áp phích ngoại tuyến còn chưa in, vừa kịp sửa.",
+   "Trưởng nhóm Trần: Được, vậy chúng ta quyết định như thế. Tôi tổng kết lại: thứ nhất, nhóm của Lão Lý tập trung giải quyết năm lỗi nghiêm trọng, hoàn thành kiểm thử trước ngày hai mươi chín; thứ hai, mùng một mở trước cho ba trường đại học, ngày mười lăm mới ra mắt toàn diện; thứ ba, Tiểu Ngô hôm nay sửa nội dung quảng bá. Mọi người có ý kiến gì khác không?",
+   "Lão Lý: Tôi còn một đề nghị. Hai tuần này có thể đảm bảo cuối tuần không tăng ca được không? Tôi muốn để mọi người nghỉ ngơi cho tốt, như thế hiệu suất ngược lại còn cao hơn.",
+   "Trưởng nhóm Trần: Được, tôi đồng ý. Đợi phiên bản mới ra mắt suôn sẻ, tôi mời mọi người đi ăn, ăn mừng một bữa thật vui.",
+   "Tiểu Ngô: Trưởng nhóm ơi, câu này tôi ghi lại rồi đấy, trong biên bản cuộc họp cũng phải ghi vào!",
+   "Trưởng nhóm Trần: Ha ha, được, cứ ghi vào. Tan họp!"
+  ],
+  "questions": [
+   {
+    "q": "老李一开始为什么建议推迟上线？",
+    "q_vi": "Lúc đầu vì sao Lão Lý đề nghị hoãn ra mắt?",
+    "options": [
+     "广告还没做好",
+     "还有几个严重的问题没解决，而且需要时间测试",
+     "大学还没开学",
+     "他想放假休息"
+    ],
+    "answer": 1,
+    "explain_vi": "Còn năm lỗi nghiêm trọng như mất lịch sử học tập, cần thời gian sửa và kiểm thử lại."
+   },
+   {
+    "q": "小吴提出的“大学优先体验”有什么好处？",
+    "q_vi": "\"Ưu tiên trải nghiệm cho đại học\" mà Tiểu Ngô đề xuất có lợi ích gì?",
+    "options": [
+     "可以多收大学的钱",
+     "不用再解决任何问题",
+     "用户少，问题容易发现和处理，也不影响宣传",
+     "技术部可以不加班就完成所有问题"
+    ],
+    "answer": 2,
+    "explain_vi": "Ít người dùng nên dễ phát hiện, xử lý lỗi; vẫn giữ được mốc mùng một và nghe như dịch vụ đặc biệt."
+   },
+   {
+    "q": "会议最后决定，新版本什么时候对所有用户上线？",
+    "q_vi": "Cuộc họp cuối cùng quyết định khi nào phiên bản mới mở cho toàn bộ người dùng?",
+    "options": [
+     "十五号",
+     "一号",
+     "二十九号",
+     "十八号"
+    ],
+    "answer": 0,
+    "explain_vi": "Trưởng nhóm tổng kết: mùng một mở cho ba trường, ngày mười lăm ra mắt toàn diện."
+   }
+  ]
+ },
+ {
+  "id": "d-25",
+  "kind": "dialogue",
+  "level": 5,
+  "title": "第四次打客服电话",
+  "title_vi": "Lần thứ tư gọi tổng đài chăm sóc khách hàng",
+  "topic": "gọi điện cho dịch vụ khách hàng",
+  "scene_vi": "Mạng internet ở nhà chị Tôn chập chờn suốt hai tuần, đã gọi tổng đài ba lần mà vẫn chưa được sửa. Lần này chị gọi lại với tâm trạng rất bực bội.",
+  "speakers": [
+   "客服",
+   "孙女士"
+  ],
+  "paragraphs": [
+   "客服：您好，很高兴为您服务，我是三号客服小林。请问有什么可以帮您？",
+   "孙女士：你好。我家的网已经坏了两个星期了，这是我第四次打电话。每次你们都说“已经记录了，会尽快处理”，可是到现在也没有人来修。",
+   "客服：非常抱歉给您带来这么多麻烦。麻烦您告诉我一下您的宽带账号或者安装地址，我帮您查一下之前的记录。",
+   "孙女士：阳光小区八号楼二单元六零二，户主叫孙丽华。",
+   "客服：好的，孙女士。我看到了，您在三号、七号和十一号分别来过电话，每次都生成了维修单，但是……系统显示这几张单子都被标成了“已解决”。",
+   "孙女士：已解决？谁解决的？根本就没有人来过！我每天晚上上网都要断好几次，一断就是十几分钟。我在家办公，昨天跟客户开视频会议，说到一半突然断了，客户还以为我故意挂他电话。",
+   "客服：我完全理解您的心情，换成是我，我也会很着急。这几张单子为什么会被关掉，我会向上级反映，一定给您一个说法。",
+   "孙女士：我不需要“说法”，我需要的是网能正常用。你就告诉我，到底什么时候有人来？",
+   "客服：明白。在派人之前，我想先请您配合做一个简单的检查，这样维修师傅来的时候可以带对零件，不用跑第二次。您方便看一下家里的路由器吗？上面有几个灯？",
+   "孙女士：等一下……有四个灯，三个是绿的，有一个红灯在闪。",
+   "客服：红灯旁边写的是什么字？",
+   "孙女士：写的是“光信号”。",
+   "客服：谢谢您。光信号的灯闪红色，一般说明线路有问题，不是您家里设备的原因，在家里重启是解决不了的。我现在给您生成一张加急维修单，并且直接转给您所在区域的负责人。",
+   "孙女士：加急是多快？前三次你们也说“尽快”。",
+   "客服：加急单要求二十四小时之内上门。我刚才已经联系了负责人，他说明天上午九点到十一点之间可以过去，您那个时间在家吗？",
+   "孙女士：在。不过如果明天还是没人来呢？",
+   "客服：我会把我的工号和这次的单号发短信给您。明天中午十二点，我会亲自打电话给您确认。另外，因为这两个星期给您造成了不便，我帮您申请了一个月的免费服务，费用会从下个月的账单里直接减掉。",
+   "孙女士：嗯……你这么说，我心里舒服多了。说实话，我今天打电话的时候，已经准备好要跟你们吵一架，然后换别的公司了。",
+   "客服：您有这样的想法很正常，是我们做得不够好。希望明天师傅修好以后，您能再给我们一次机会。",
+   "孙女士：好吧，我就再等一天，明天上午我哪儿也不去，就在家等师傅。小林，谢谢你，你是这几次里唯一一个真正帮我解决问题的人。",
+   "客服：不客气，这是我应该做的。也祝您跟客户的合作一切顺利，明天中午我们电话里见！"
+  ],
+  "translations": [
+   "Tổng đài viên: Xin chào, rất vui được phục vụ quý khách, tôi là tổng đài viên số ba Tiểu Lâm. Xin hỏi tôi có thể giúp gì cho chị?",
+   "Chị Tôn: Chào em. Mạng nhà chị đã hỏng hai tuần rồi, đây là lần thứ tư chị gọi. Lần nào các em cũng nói \"đã ghi nhận, sẽ xử lý sớm nhất\", nhưng đến giờ vẫn chẳng có ai đến sửa.",
+   "Tổng đài viên: Thành thật xin lỗi vì đã gây cho chị nhiều phiền phức như vậy. Phiền chị cho tôi biết tài khoản internet hoặc địa chỉ lắp đặt, tôi kiểm tra giúp chị các ghi nhận trước đây.",
+   "Chị Tôn: Tòa số 8, đơn nguyên 2, phòng 602 khu Dương Quang, chủ hộ tên là Tôn Lệ Hoa.",
+   "Tổng đài viên: Vâng, chị Tôn. Tôi thấy rồi, chị đã gọi điện vào các ngày mùng ba, mùng bảy và mười một, lần nào cũng đã tạo phiếu sửa chữa, nhưng... hệ thống cho thấy mấy phiếu này đều bị đánh dấu là \"đã giải quyết\".",
+   "Chị Tôn: Đã giải quyết? Ai giải quyết? Chẳng có ai đến cả! Tối nào lên mạng cũng mất kết nối mấy lần, mỗi lần mất là mười mấy phút. Chị làm việc tại nhà, hôm qua đang họp video với khách hàng, nói được nửa chừng thì đột nhiên mất mạng, khách hàng còn tưởng chị cố tình cúp máy.",
+   "Tổng đài viên: Tôi hoàn toàn hiểu tâm trạng của chị, nếu là tôi, tôi cũng sẽ rất sốt ruột. Vì sao mấy phiếu này lại bị đóng, tôi sẽ phản ánh lên cấp trên, nhất định cho chị một lời giải thích.",
+   "Chị Tôn: Chị không cần \"lời giải thích\", chị cần mạng dùng được bình thường. Em cứ nói cho chị biết rốt cuộc khi nào có người đến?",
+   "Tổng đài viên: Tôi hiểu. Trước khi cử người, tôi muốn nhờ chị phối hợp làm một bước kiểm tra đơn giản, như vậy khi thợ đến có thể mang đúng linh kiện, không phải chạy lần thứ hai. Chị tiện xem bộ định tuyến ở nhà giúp tôi không? Trên đó có mấy đèn?",
+   "Chị Tôn: Đợi chút... có bốn đèn, ba đèn màu xanh, có một đèn đỏ đang nhấp nháy.",
+   "Tổng đài viên: Bên cạnh đèn đỏ ghi chữ gì ạ?",
+   "Chị Tôn: Ghi là \"tín hiệu quang\".",
+   "Tổng đài viên: Cảm ơn chị. Đèn tín hiệu quang nhấp nháy đỏ thường cho thấy đường dây có vấn đề, không phải do thiết bị trong nhà chị, khởi động lại ở nhà không giải quyết được. Bây giờ tôi tạo cho chị một phiếu sửa chữa khẩn, đồng thời chuyển thẳng cho người phụ trách khu vực của chị.",
+   "Chị Tôn: Khẩn là nhanh đến mức nào? Ba lần trước các em cũng nói \"sớm nhất\".",
+   "Tổng đài viên: Phiếu khẩn yêu cầu đến tận nhà trong vòng hai mươi bốn giờ. Lúc nãy tôi đã liên hệ với người phụ trách, anh ấy nói sáng mai từ chín đến mười một giờ có thể qua, khung giờ đó chị có ở nhà không?",
+   "Chị Tôn: Có. Nhưng nếu mai vẫn không ai đến thì sao?",
+   "Tổng đài viên: Tôi sẽ nhắn tin cho chị mã nhân viên của tôi và mã phiếu lần này. Mười hai giờ trưa mai, tôi sẽ tự gọi điện cho chị để xác nhận. Ngoài ra, vì hai tuần qua đã gây bất tiện cho chị, tôi đã đề nghị cho chị một tháng dịch vụ miễn phí, khoản phí sẽ được trừ thẳng vào hóa đơn tháng sau.",
+   "Chị Tôn: Ừm... em nói thế, trong lòng chị dễ chịu hơn nhiều rồi. Nói thật, lúc gọi điện hôm nay, chị đã chuẩn bị sẵn tinh thần cãi nhau một trận với các em rồi đổi sang công ty khác.",
+   "Tổng đài viên: Chị có suy nghĩ như vậy là rất bình thường, là chúng tôi làm chưa đủ tốt. Mong rằng sau khi thợ sửa xong ngày mai, chị có thể cho chúng tôi thêm một cơ hội.",
+   "Chị Tôn: Thôi được, chị đợi thêm một ngày, sáng mai chị không đi đâu cả, cứ ở nhà đợi thợ. Tiểu Lâm, cảm ơn em, em là người duy nhất trong mấy lần này thật sự giúp chị giải quyết vấn đề.",
+   "Tổng đài viên: Không có gì ạ, đây là việc tôi nên làm. Cũng chúc chị hợp tác với khách hàng mọi việc suôn sẻ, trưa mai chúng ta gặp lại qua điện thoại nhé!"
+  ],
+  "questions": [
+   {
+    "q": "孙女士为什么这么生气？",
+    "q_vi": "Vì sao chị Tôn tức giận như vậy?",
+    "options": [
+     "网费太贵了",
+     "维修师傅态度不好",
+     "她打不通客服电话",
+     "网坏了两周，打了几次电话都没人来修"
+    ],
+    "answer": 3,
+    "explain_vi": "Mạng hỏng hai tuần, gọi ba lần, phiếu sửa bị đánh dấu \"đã giải quyết\" mà chẳng ai đến."
+   },
+   {
+    "q": "客服为什么让孙女士看路由器的灯？",
+    "q_vi": "Vì sao tổng đài viên bảo chị Tôn xem đèn của bộ định tuyến?",
+    "options": [
+     "想让她自己修好",
+     "为了判断问题在哪儿，让师傅带对零件",
+     "想拖延时间",
+     "因为系统坏了"
+    ],
+    "answer": 1,
+    "explain_vi": "Kiểm tra trước để thợ mang đúng linh kiện, không phải chạy lần thứ hai."
+   },
+   {
+    "q": "下面哪一项不是客服答应孙女士的？",
+    "q_vi": "Điều nào dưới đây KHÔNG phải là điều tổng đài viên hứa với chị Tôn?",
+    "options": [
+     "明天上午安排师傅上门",
+     "明天中午亲自打电话确认",
+     "免费给她换一个新路由器",
+     "减免一个月的费用"
+    ],
+    "answer": 2,
+    "explain_vi": "Tổng đài viên hứa cử thợ, gọi lại xác nhận và miễn phí một tháng; không hề nói đổi bộ định tuyến mới."
+   }
+  ]
+ },
+ {
+  "id": "d-26",
+  "kind": "dialogue",
+  "level": 5,
+  "title": "上课画画的孩子",
+  "title_vi": "Đứa trẻ vẽ tranh trong giờ học",
+  "topic": "trao đổi với giáo viên",
+  "scene_vi": "Thành tích của Đậu Đậu, học sinh lớp tám, giảm sút rõ rệt. Cô Vương, giáo viên chủ nhiệm, mời mẹ em đến trường nói chuyện.",
+  "speakers": [
+   "王老师",
+   "豆豆妈"
+  ],
+  "paragraphs": [
+   "王老师：豆豆妈妈，您好，快请坐。谢谢您专门请假过来。",
+   "豆豆妈：王老师，您别客气。接到您的电话，我一晚上都没睡好。豆豆是不是在学校惹什么麻烦了？",
+   "王老师：您别紧张，豆豆没有犯什么大错。我请您来，主要是想跟您一起聊聊孩子最近的状态。这次期中考试，他的数学和英语都退步了二十多分，从班里的前十名掉到了三十名左右。",
+   "豆豆妈：三十名？他回家跟我说考得还行啊！这孩子，居然骗我。",
+   "王老师：我觉得他可能是怕您失望。另外，好几位老师都跟我反映，豆豆上课的时候经常低着头，一开始大家以为他在玩手机，后来发现，他是在本子上画画。",
+   "豆豆妈：画画？我早就跟他说过，初二是关键的一年，画画以后有的是时间。我回去一定好好批评他，把他的画笔都收起来！",
+   "王老师：您先别急着批评他。我想先给您看一样东西。这是我上周从他那儿“没收”的本子，您看看。",
+   "豆豆妈：这……这是他画的？一个小男孩在医院里，旁边的床上躺着一个老人……这个老人怎么那么像他爷爷？",
+   "王老师：我也注意到了。整本都是连环画，讲的是一个男孩每天放学去医院陪爷爷，给爷爷讲学校里发生的事。最后一页，爷爷说：“等我好了，你带我去看你画的画展。”请问，豆豆的爷爷最近身体怎么样？",
+   "豆豆妈：他爷爷……两个月前做了手术，现在还在住院。我和他爸爸工作都忙，基本上都是豆豆放学以后去医院陪他。我一直觉得孩子还小，不懂这些事，就没跟他多说过爷爷的病。",
+   "王老师：孩子其实什么都感觉得到。他每天去医院，晚上回家还要写作业，睡得肯定不够。再加上心里担心爷爷，又不知道跟谁说，就只能画出来。成绩下降，我觉得不是因为他不努力，而是他心里装的东西太多了。",
+   "豆豆妈：（沉默了一会儿）王老师，听您这么一说，我真觉得自己这个妈妈当得太不合格了。我只关心他考了多少分，却从来没问过他累不累，怕不怕。",
+   "王老师：您也别太自责，大人工作压力大，很多家长都会这样。我觉得现在最重要的是，回去跟豆豆好好聊一次，告诉他爷爷的真实情况，让他知道他不是一个人在担心。",
+   "豆豆妈：好。那学习方面，我们应该怎么办？",
+   "王老师：我的建议是，你们家长能不能轮流去医院，让豆豆每周去两三次就好，其他时间好好休息。数学和英语落下的内容，我会跟任课老师商量，课后给他补一补。另外，我也有一个小想法。",
+   "豆豆妈：什么想法？",
+   "王老师：下个月学校有一个学生美术作品展。豆豆画得这么好，又这么有感情，我想推荐他参加。他画上写着，爷爷想去看他的画展，也许这是一个机会。",
+   "豆豆妈：王老师……谢谢您。我本来是来挨批评的，没想到您比我这个当妈的还了解我的孩子。回去以后，我不收他的画笔了，我要先问问他，愿不愿意给爷爷画一张大的。"
+  ],
+  "translations": [
+   "Cô Vương: Chào mẹ Đậu Đậu, mời chị ngồi. Cảm ơn chị đã xin nghỉ làm để đến đây.",
+   "Mẹ Đậu Đậu: Cô Vương, cô đừng khách sáo. Nhận được điện thoại của cô, cả đêm tôi không ngủ ngon. Có phải Đậu Đậu gây ra rắc rối gì ở trường không ạ?",
+   "Cô Vương: Chị đừng căng thẳng, Đậu Đậu không mắc lỗi gì lớn. Tôi mời chị đến chủ yếu là muốn cùng chị trao đổi về tình trạng gần đây của cháu. Kỳ thi giữa kỳ lần này, môn toán và tiếng Anh của cháu đều tụt hơn hai mươi điểm, từ top mười của lớp tụt xuống khoảng hạng ba mươi.",
+   "Mẹ Đậu Đậu: Hạng ba mươi? Nó về nhà nói với tôi là thi cũng được mà! Thằng bé này, thế mà lại lừa tôi.",
+   "Cô Vương: Tôi nghĩ có thể cháu sợ chị thất vọng. Ngoài ra, mấy thầy cô đều phản ánh với tôi, Đậu Đậu trong giờ học thường cúi đầu, ban đầu mọi người tưởng cháu chơi điện thoại, sau mới phát hiện cháu đang vẽ tranh trong vở.",
+   "Mẹ Đậu Đậu: Vẽ tranh? Tôi đã nói với nó từ lâu rồi, lớp tám là năm then chốt, vẽ tranh thì sau này thiếu gì thời gian. Về nhà tôi nhất định phải phê bình nó một trận, thu hết bút vẽ của nó!",
+   "Cô Vương: Chị khoan hãy vội phê bình cháu. Tôi muốn cho chị xem một thứ trước. Đây là cuốn vở tôi \"tịch thu\" của cháu tuần trước, chị xem thử.",
+   "Mẹ Đậu Đậu: Cái này... cái này là nó vẽ ư? Một cậu bé ở trong bệnh viện, trên giường bên cạnh có một ông cụ đang nằm... sao ông cụ này lại giống ông nội nó thế?",
+   "Cô Vương: Tôi cũng để ý thấy. Cả cuốn đều là truyện tranh, kể về một cậu bé ngày nào tan học cũng đến bệnh viện với ông, kể cho ông nghe chuyện xảy ra ở trường. Trang cuối cùng, ông nói: \"Đợi ông khỏe rồi, cháu dẫn ông đi xem triển lãm tranh cháu vẽ nhé.\" Xin hỏi, dạo này sức khỏe ông nội Đậu Đậu thế nào ạ?",
+   "Mẹ Đậu Đậu: Ông nội nó... hai tháng trước phẫu thuật, bây giờ vẫn đang nằm viện. Tôi và bố nó đều bận công việc, chủ yếu là Đậu Đậu tan học đến bệnh viện với ông. Tôi cứ nghĩ con còn nhỏ, không hiểu những chuyện này, nên chưa từng nói nhiều với nó về bệnh của ông.",
+   "Cô Vương: Thật ra trẻ con cảm nhận được hết. Ngày nào cháu cũng đến bệnh viện, tối về nhà còn phải làm bài tập, chắc chắn ngủ không đủ. Thêm vào đó trong lòng lo cho ông mà không biết nói với ai, nên chỉ có thể vẽ ra. Thành tích giảm sút, tôi nghĩ không phải do cháu không cố gắng, mà là trong lòng cháu chất chứa quá nhiều thứ.",
+   "Mẹ Đậu Đậu: (im lặng một lúc) Cô Vương, nghe cô nói vậy, tôi thật sự thấy mình làm mẹ quá không đạt. Tôi chỉ quan tâm nó thi được bao nhiêu điểm, mà chưa từng hỏi nó có mệt không, có sợ không.",
+   "Cô Vương: Chị cũng đừng quá tự trách, người lớn áp lực công việc lớn, nhiều phụ huynh cũng như vậy. Tôi nghĩ bây giờ quan trọng nhất là về nhà nói chuyện tử tế với Đậu Đậu một lần, cho cháu biết tình hình thật của ông, để cháu hiểu rằng cháu không phải lo lắng một mình.",
+   "Mẹ Đậu Đậu: Vâng. Vậy về mặt học tập, chúng tôi nên làm thế nào ạ?",
+   "Cô Vương: Đề nghị của tôi là, bố mẹ có thể thay phiên nhau vào viện không, để Đậu Đậu mỗi tuần đi hai ba lần là được, thời gian còn lại nghỉ ngơi cho tốt. Phần toán và tiếng Anh bị hổng, tôi sẽ bàn với giáo viên bộ môn, sau giờ học bồi dưỡng thêm cho cháu. Ngoài ra, tôi cũng có một ý tưởng nhỏ.",
+   "Mẹ Đậu Đậu: Ý tưởng gì ạ?",
+   "Cô Vương: Tháng sau trường có một triển lãm tác phẩm mỹ thuật của học sinh. Đậu Đậu vẽ đẹp như vậy, lại giàu cảm xúc như vậy, tôi muốn giới thiệu cháu tham gia. Trong tranh cháu viết ông muốn đi xem triển lãm tranh của cháu, có lẽ đây là một cơ hội.",
+   "Mẹ Đậu Đậu: Cô Vương... cảm ơn cô. Tôi vốn đến đây để nghe phê bình, không ngờ cô còn hiểu con tôi hơn cả tôi là mẹ nó. Về nhà, tôi không thu bút vẽ của nó nữa, tôi sẽ hỏi nó trước xem có muốn vẽ cho ông một bức thật lớn không."
+  ],
+  "questions": [
+   {
+    "q": "王老师请豆豆妈妈来学校的主要目的是什么？",
+    "q_vi": "Mục đích chính cô Vương mời mẹ Đậu Đậu đến trường là gì?",
+    "options": [
+     "批评豆豆上课玩手机",
+     "让妈妈给豆豆请家教",
+     "了解孩子成绩下降的原因，一起帮助他",
+     "推荐豆豆去学美术"
+    ],
+    "answer": 2,
+    "explain_vi": "Cô nói muốn cùng mẹ trao đổi về tình trạng gần đây của cháu, khi thành tích giảm sút."
+   },
+   {
+    "q": "豆豆成绩下降的真正原因是什么？",
+    "q_vi": "Nguyên nhân thực sự khiến thành tích của Đậu Đậu giảm sút là gì?",
+    "options": [
+     "他每天陪生病的爷爷，又累又担心",
+     "他不喜欢数学和英语",
+     "他每天玩手机到很晚",
+     "他和同学关系不好"
+    ],
+    "answer": 0,
+    "explain_vi": "Cháu ngày nào cũng vào viện với ông, ngủ không đủ, lại lo lắng mà không biết nói với ai."
+   },
+   {
+    "q": "对话结束时，豆豆妈妈的态度发生了什么变化？",
+    "q_vi": "Cuối cuộc trò chuyện, thái độ của mẹ Đậu Đậu thay đổi thế nào?",
+    "options": [
+     "从担心变成了生气",
+     "从想批评孩子变成了想理解和支持孩子",
+     "从支持画画变成了反对画画",
+     "一直没有变化"
+    ],
+    "answer": 1,
+    "explain_vi": "Lúc đầu mẹ định thu bút vẽ, cuối cùng lại muốn hỏi con có muốn vẽ tặng ông một bức lớn không."
+   }
+  ]
+ },
+ {
+  "id": "d-27",
+  "kind": "dialogue",
+  "level": 5,
+  "title": "爸爸的体检报告",
+  "title_vi": "Giấy khám sức khỏe của bố",
+  "topic": "thuyết phục người nhà đi khám",
+  "scene_vi": "Công ty tổ chức khám sức khỏe định kỳ cho bố của Tiểu Tuệ, kết quả có vài chỉ số bất thường, nhưng ông nhất quyết không chịu đi khám lại. Cuối tuần Tiểu Tuệ về nhà, cùng mẹ thuyết phục bố.",
+  "speakers": [
+   "小慧",
+   "爸爸",
+   "妈妈"
+  ],
+  "paragraphs": [
+   "妈妈：小慧，你可回来了。你快劝劝你爸吧，我说了一个星期，他一句都听不进去。",
+   "爸爸：劝什么劝？我身体好得很，每天早上爬山，一口气能爬到山顶，比年轻人还快。饭也吃得香，觉也睡得好，能有什么病？",
+   "小慧：爸，我知道您身体一直不错。我就是想看看您的体检报告，妈妈在电话里说得不太清楚。",
+   "妈妈：在这儿，我藏起来了，怕他扔掉。你看这几行，后面都有向上的箭头。",
+   "小慧：血糖偏高，血压也偏高……医生的建议写的是“建议尽快到心内科进一步检查”。爸，这上面写的是“尽快”。",
+   "爸爸：那都是医院吓唬人的。体检的医生对谁都这么写，让你多花钱多做检查。你王叔叔前年也查出来血压高，到现在不是好好的吗？",
+   "妈妈：人家王叔叔每天按时吃药，酒也戒了。你呢？昨天晚上还偷偷喝了两杯。",
+   "爸爸：喝两杯怎么了？我喝了几十年了，也没出过什么事。",
+   "小慧：爸，我不跟您争这个。我想问您一个问题，您为什么这么不愿意去医院？是怕花钱，还是怕麻烦，还是……怕查出什么来？",
+   "爸爸：（停了一会儿）……你爷爷当年就是这样。本来好好的，去医院一查，说是有问题，住进去以后就再也没出来。从那以后，我一进医院心里就发慌。",
+   "妈妈：老张，原来你是因为这个……你怎么从来没跟我说过？",
+   "小慧：爸，谢谢您告诉我们。可是您想过没有，爷爷那时候是因为身体不舒服了很久，一直忍着，等到去医院的时候已经太晚了。正是因为这样，我们才更不能等。",
+   "爸爸：道理我都懂，可就是……",
+   "妈妈：老张，你不是一个人。这次不管查出什么，我和小慧都陪着你。你要是一直不去，我天天晚上睡不着觉，这不是更折磨人吗？",
+   "小慧：现在的医学跟三十年前完全不一样了。血压、血糖高一点儿，发现得早的话，很多时候改改饮食、多运动、按时吃药就能控制住。您不是最喜欢爬山吗？要是因为不检查，以后爬不了山了，那才是最大的损失。",
+   "妈妈：就是。你还说明年要跟老朋友们去爬黄山呢。",
+   "爸爸：……那去医院要排很长时间的队吧？我最受不了排队。",
+   "小慧：这个您放心，我已经在手机上帮您挂好号了，下周二上午九点，是一位很有经验的主任医生。那天我请假陪您去，排队、交费都我来，您只要跟着我就行。",
+   "爸爸：你都已经挂好号了？你这孩子，原来早就准备好了，是来“通知”我的。",
+   "小慧：嘿嘿，我是您女儿嘛，最了解您了。要是我不先挂好号，您肯定又说“下次再说”。",
+   "爸爸：好吧好吧，去就去。不过说好了，检查完了要是没什么大问题，你们俩以后不许再管我喝酒。",
+   "妈妈：那可不行！这个得听医生的。",
+   "小慧：对，医生说能喝，我亲自陪您喝；医生说不能喝，我陪您爬山。怎么样，这个条件公平吧？"
+  ],
+  "translations": [
+   "Mẹ: Tiểu Tuệ, cuối cùng con cũng về rồi. Con mau khuyên bố con đi, mẹ nói cả tuần rồi mà ông ấy chẳng nghe lọt câu nào.",
+   "Bố: Khuyên cái gì mà khuyên? Bố khỏe lắm, sáng nào cũng leo núi, một mạch lên tới đỉnh, còn nhanh hơn cả người trẻ. Ăn thì ngon, ngủ thì say, có bệnh gì được chứ?",
+   "Tiểu Tuệ: Bố, con biết sức khỏe bố vẫn luôn tốt. Con chỉ muốn xem giấy khám sức khỏe của bố, mẹ nói qua điện thoại không rõ lắm.",
+   "Mẹ: Đây này, mẹ cất đi rồi, sợ ông ấy vứt mất. Con xem mấy dòng này, đằng sau đều có mũi tên chỉ lên.",
+   "Tiểu Tuệ: Đường huyết hơi cao, huyết áp cũng hơi cao... lời khuyên của bác sĩ ghi là \"khuyến nghị sớm đến khoa tim mạch kiểm tra thêm\". Bố, trên này ghi là \"sớm\" đấy.",
+   "Bố: Đấy đều là bệnh viện dọa người thôi. Bác sĩ khám sức khỏe viết thế với tất cả mọi người, để mình tốn thêm tiền làm thêm xét nghiệm. Chú Vương nhà bên năm kia cũng phát hiện huyết áp cao, đến giờ chẳng phải vẫn khỏe đó sao?",
+   "Mẹ: Chú Vương người ta ngày nào cũng uống thuốc đúng giờ, rượu cũng bỏ rồi. Còn ông thì sao? Tối qua còn lén uống hai chén.",
+   "Bố: Uống hai chén thì làm sao? Tôi uống mấy chục năm rồi, có xảy ra chuyện gì đâu.",
+   "Tiểu Tuệ: Bố, con không tranh luận với bố chuyện đó. Con muốn hỏi bố một câu, sao bố lại không muốn đến bệnh viện đến thế? Là sợ tốn tiền, sợ phiền phức, hay là... sợ khám ra chuyện gì?",
+   "Bố: (dừng một lúc) ...Ông nội con năm đó cũng như vậy. Vốn đang khỏe mạnh, vào viện khám một cái, bảo là có vấn đề, nằm viện rồi là không bao giờ ra nữa. Từ đó về sau, cứ vào bệnh viện là bố thấy hoảng.",
+   "Mẹ: Ông Trương, hóa ra ông vì chuyện này... sao ông chưa bao giờ nói với tôi?",
+   "Tiểu Tuệ: Bố, cảm ơn bố đã nói với chúng con. Nhưng bố có nghĩ đến không, ông nội hồi đó là vì khó chịu trong người rất lâu mà cứ cố chịu đựng, đến lúc vào viện thì đã quá muộn. Chính vì như vậy nên chúng ta càng không thể đợi.",
+   "Bố: Đạo lý thì bố hiểu hết, nhưng mà...",
+   "Mẹ: Ông Trương, ông không phải một mình đâu. Lần này dù khám ra gì, tôi và Tiểu Tuệ đều ở bên ông. Nếu ông cứ không đi, tối nào tôi cũng mất ngủ, như thế chẳng phải còn hành hạ người ta hơn sao?",
+   "Tiểu Tuệ: Y học bây giờ khác hoàn toàn so với ba mươi năm trước rồi. Huyết áp, đường huyết hơi cao, nếu phát hiện sớm thì nhiều khi chỉ cần thay đổi ăn uống, vận động nhiều, uống thuốc đúng giờ là kiểm soát được. Chẳng phải bố thích leo núi nhất sao? Nếu vì không khám mà sau này không leo núi được nữa, đó mới là tổn thất lớn nhất.",
+   "Mẹ: Đúng đấy. Ông còn nói sang năm muốn cùng mấy ông bạn già đi leo Hoàng Sơn nữa kia.",
+   "Bố: ...Thế đến bệnh viện phải xếp hàng lâu lắm nhỉ? Bố ghét nhất là xếp hàng.",
+   "Tiểu Tuệ: Chuyện này bố yên tâm, con đã đăng ký khám trên điện thoại cho bố rồi, chín giờ sáng thứ Ba tuần sau, là một bác sĩ trưởng khoa rất có kinh nghiệm. Hôm đó con xin nghỉ đưa bố đi, xếp hàng, nộp tiền đều để con, bố chỉ cần đi theo con là được.",
+   "Bố: Con đăng ký xong rồi á? Cái con bé này, hóa ra đã chuẩn bị từ sớm, là về để \"thông báo\" với bố đấy à.",
+   "Tiểu Tuệ: Hì hì, con là con gái bố mà, hiểu bố nhất. Nếu con không đăng ký trước, chắc chắn bố lại nói \"để lần sau hẵng hay\".",
+   "Bố: Thôi được, thôi được, đi thì đi. Nhưng nói trước rồi đấy, khám xong mà không có vấn đề gì lớn thì hai mẹ con sau này không được quản chuyện bố uống rượu nữa.",
+   "Mẹ: Thế thì không được! Chuyện này phải nghe bác sĩ.",
+   "Tiểu Tuệ: Đúng thế, bác sĩ bảo uống được thì con tự mình uống cùng bố; bác sĩ bảo không được uống thì con đi leo núi cùng bố. Thế nào, điều kiện này công bằng chứ?"
+  ],
+  "questions": [
+   {
+    "q": "爸爸不愿意去医院的真正原因是什么？",
+    "q_vi": "Nguyên nhân thực sự khiến bố không muốn đến bệnh viện là gì?",
+    "options": [
+     "怕花太多钱",
+     "爷爷当年去医院后再也没出来，他心里害怕",
+     "工作太忙，没时间",
+     "他不相信那家医院的医生"
+    ],
+    "answer": 1,
+    "explain_vi": "Ông kể ông nội vào viện rồi không ra nữa, từ đó cứ vào viện là hoảng."
+   },
+   {
+    "q": "小慧用什么理由说服了爸爸？",
+    "q_vi": "Tiểu Tuệ dùng lý lẽ gì để thuyết phục bố?",
+    "options": [
+     "早发现能控制住，不检查以后可能爬不了山",
+     "医院的检查是免费的",
+     "王叔叔也去检查了",
+     "妈妈会生气"
+    ],
+    "answer": 0,
+    "explain_vi": "Cô nói phát hiện sớm thì dễ kiểm soát, và nếu không khám thì sau này có thể không leo núi được nữa."
+   },
+   {
+    "q": "关于小慧，下面哪一项是对的？",
+    "q_vi": "Về Tiểu Tuệ, điều nào dưới đây đúng?",
+    "options": [
+     "她觉得爸爸不应该爬山",
+     "她让妈妈陪爸爸去医院",
+     "她来之前已经帮爸爸挂好了号",
+     "她同意爸爸以后随便喝酒"
+    ],
+    "answer": 2,
+    "explain_vi": "Cô đã đăng ký khám trên điện thoại trước khi về, và sẽ tự xin nghỉ đưa bố đi."
+   }
+  ]
+ },
+ {
+  "id": "d-28",
+  "kind": "dialogue",
+  "level": 5,
+  "title": "房租要涨了",
+  "title_vi": "Tiền nhà sắp tăng",
+  "topic": "thuê nhà – thương lượng với chủ nhà",
+  "scene_vi": "Hợp đồng thuê nhà của Mai Lâm, một cô gái Việt Nam làm việc ở Thượng Hải, sắp hết hạn. Chủ nhà là ông Tiền gọi điện báo muốn tăng tiền thuê. Cô hẹn gặp để thương lượng.",
+  "speakers": [
+   "钱先生",
+   "梅林"
+  ],
+  "paragraphs": [
+   "钱先生：小梅，你好。电话里我已经简单说了，合同下个月到期，明年的房租我想从四千二涨到四千八。",
+   "梅林：钱先生，您好。我理解现在物价都在涨，可是一下子涨六百，幅度有点儿大，我一时有点儿接受不了。我今天来，就是想跟您好好商量一下。",
+   "钱先生：你也知道，旁边新开了地铁站，这一片的房子都涨价了。我在网上看了，跟我们差不多的房子，现在都租到五千了。我收你四千八，已经比别人便宜了。",
+   "梅林：网上的价格我也查了。不过那些房子大部分是新装修的，家具家电也都是新的。我们这套房子的热水器用了快十年了，冬天洗澡经常洗到一半就没热水了，这件事我跟您说过三次。",
+   "钱先生：热水器的事我记得，一直想找时间来看看，最近实在太忙了。",
+   "梅林：还有，卧室的窗户关不严，一刮风就有声音。这两年小问题都是我自己花钱修的，比如厨房的水龙头、卫生间的灯，我都留着发票呢。",
+   "钱先生：这个……你这么一说，确实是我照顾得不够。不过小梅，我也有我的难处。我自己还在还房贷，每个月压力也不小。",
+   "梅林：我明白，所以我没打算要求您完全不涨。我想说说我的情况：我在这儿住了两年，房租从来没晚交过一天，房子也一直保持得很干净。您上次来看的时候也说过，比您自己住的时候还整洁。",
+   "钱先生：这倒是真的。你是我租过的房客里最省心的一个。以前有个房客，走的时候墙上全是钉子眼儿，我花了一个月才收拾好。",
+   "梅林：而且，如果我搬走了，您还得重新找人、带人看房，中间空一两个月是很正常的。一个月不出租就是四千多的损失，再加上中介费，算下来不一定比涨六百划算。",
+   "钱先生：哈哈，你这个小姑娘，账算得比我还清楚。那你说，你能接受多少？",
+   "梅林：我的想法是这样：涨到四千五，我再签两年的合同。这样您两年都不用担心房子空着。另外，热水器和窗户能不能在签合同以前修好？",
+   "钱先生：四千五……签两年……嗯，我想想。热水器干脆换个新的吧，旧的修了也用不了多久。窗户我这周末就找师傅来。",
+   "梅林：那太好了。那之前我自己修东西花的钱……",
+   "钱先生：一共多少？",
+   "梅林：三百二十块，发票都在这儿。",
+   "钱先生：这样吧，这三百二从第一个月的房租里扣。本来就应该是我出的钱，让你垫了这么久，不好意思。",
+   "梅林：谢谢您，钱先生。那我们就说定了：四千五，两年，先换热水器、修窗户，然后签合同。",
+   "钱先生：说定了。小梅，你的汉语说得这么好，谈判也这么厉害，在公司里是做什么工作的？",
+   "梅林：我是做采购的，每天的工作就是跟供应商谈价格。不过今天是我第一次为自己谈，心里还挺紧张的。",
+   "钱先生：难怪！看来今天是我遇到专业的了。下次涨房租以前，我得先去学学怎么谈判。"
+  ],
+  "translations": [
+   "Ông Tiền: Chào Tiểu Mai. Qua điện thoại tôi đã nói qua rồi, tháng sau hợp đồng hết hạn, tiền thuê năm sau tôi muốn tăng từ bốn nghìn hai lên bốn nghìn tám.",
+   "Mai Lâm: Chào ông Tiền. Tôi hiểu bây giờ vật giá đều đang tăng, nhưng tăng một lần sáu trăm thì mức tăng hơi lớn, nhất thời tôi khó chấp nhận. Hôm nay tôi đến chính là muốn thương lượng tử tế với ông.",
+   "Ông Tiền: Cô cũng biết đấy, gần đây mới mở ga tàu điện ngầm, nhà cửa khu này đều tăng giá cả. Tôi xem trên mạng rồi, nhà tương tự như của mình bây giờ đều cho thuê được năm nghìn. Tôi lấy cô bốn nghìn tám là đã rẻ hơn người khác rồi.",
+   "Mai Lâm: Giá trên mạng tôi cũng tra rồi. Nhưng những căn đó phần lớn là mới sửa sang, đồ đạc và đồ điện cũng đều mới. Bình nóng lạnh của căn hộ mình đã dùng gần mười năm, mùa đông tắm thường tắm được nửa chừng là hết nước nóng, chuyện này tôi đã nói với ông ba lần rồi.",
+   "Ông Tiền: Chuyện bình nóng lạnh tôi nhớ, cứ định tìm thời gian đến xem, dạo này bận quá.",
+   "Mai Lâm: Còn nữa, cửa sổ phòng ngủ đóng không kín, hễ có gió là kêu. Hai năm nay những hỏng hóc nhỏ đều là tôi tự bỏ tiền sửa, ví dụ vòi nước nhà bếp, đèn nhà vệ sinh, hóa đơn tôi vẫn giữ cả đây.",
+   "Ông Tiền: Cái này... cô nói vậy thì đúng là tôi quan tâm chưa đủ. Nhưng Tiểu Mai à, tôi cũng có cái khó của tôi. Bản thân tôi còn đang trả nợ vay mua nhà, mỗi tháng áp lực cũng không nhỏ.",
+   "Mai Lâm: Tôi hiểu, cho nên tôi không định đề nghị ông hoàn toàn không tăng. Tôi muốn nói về tình hình của mình: tôi ở đây hai năm, tiền thuê chưa bao giờ nộp muộn một ngày, nhà cũng luôn giữ rất sạch sẽ. Lần trước ông đến xem cũng nói còn gọn gàng hơn cả lúc ông tự ở.",
+   "Ông Tiền: Cái đó thì đúng thật. Cô là người thuê khiến tôi yên tâm nhất trong số những người tôi từng cho thuê. Trước đây có một người thuê, lúc đi trên tường toàn lỗ đinh, tôi mất một tháng mới dọn dẹp xong.",
+   "Mai Lâm: Hơn nữa, nếu tôi chuyển đi, ông còn phải tìm người mới, dẫn người đi xem nhà, ở giữa trống một hai tháng là chuyện rất bình thường. Một tháng không cho thuê là mất hơn bốn nghìn, cộng thêm phí môi giới, tính ra chưa chắc đã hời hơn tăng sáu trăm.",
+   "Ông Tiền: Ha ha, cô gái này, tính toán còn rõ hơn cả tôi. Vậy cô nói xem, cô chấp nhận được bao nhiêu?",
+   "Mai Lâm: Ý của tôi thế này: tăng lên bốn nghìn rưỡi, tôi ký tiếp hợp đồng hai năm. Như vậy hai năm ông không phải lo nhà bị trống. Ngoài ra, bình nóng lạnh và cửa sổ có thể sửa xong trước khi ký hợp đồng được không?",
+   "Ông Tiền: Bốn nghìn rưỡi... ký hai năm... ừm, để tôi nghĩ đã. Bình nóng lạnh thì thay hẳn cái mới đi, cái cũ có sửa cũng chẳng dùng được bao lâu. Cửa sổ thì cuối tuần này tôi gọi thợ đến.",
+   "Mai Lâm: Vậy thì tốt quá. Thế còn tiền trước đây tôi tự bỏ ra sửa đồ...",
+   "Ông Tiền: Tổng cộng bao nhiêu?",
+   "Mai Lâm: Ba trăm hai mươi tệ, hóa đơn đều ở đây.",
+   "Ông Tiền: Thế này đi, ba trăm hai này trừ vào tiền thuê tháng đầu tiên. Vốn là tiền tôi phải chi, để cô ứng trước lâu như vậy, ngại quá.",
+   "Mai Lâm: Cảm ơn ông, ông Tiền. Vậy chúng ta thống nhất nhé: bốn nghìn rưỡi, hai năm, thay bình nóng lạnh và sửa cửa sổ trước, sau đó ký hợp đồng.",
+   "Ông Tiền: Thống nhất. Tiểu Mai, tiếng Trung của cô giỏi như vậy, đàm phán cũng giỏi như vậy, ở công ty cô làm công việc gì thế?",
+   "Mai Lâm: Tôi làm mua hàng, công việc hằng ngày chính là đàm phán giá cả với nhà cung cấp. Nhưng hôm nay là lần đầu tôi đàm phán cho chính mình, trong lòng cũng khá hồi hộp.",
+   "Ông Tiền: Hèn gì! Xem ra hôm nay tôi gặp phải dân chuyên nghiệp rồi. Lần sau trước khi tăng tiền nhà, tôi phải đi học cách đàm phán trước đã."
+  ],
+  "questions": [
+   {
+    "q": "钱先生为什么想涨房租？",
+    "q_vi": "Vì sao ông Tiền muốn tăng tiền thuê nhà?",
+    "options": [
+     "房子刚装修过",
+     "梅林经常晚交房租",
+     "旁边开了地铁站，附近房价都涨了",
+     "他想把房子卖掉"
+    ],
+    "answer": 2,
+    "explain_vi": "Ông nói gần đây mới mở ga tàu điện ngầm, nhà khu này đều tăng giá."
+   },
+   {
+    "q": "梅林用了哪些理由来谈判？",
+    "q_vi": "Mai Lâm đã dùng những lý lẽ nào để đàm phán?",
+    "options": [
+     "她要回越南了",
+     "房子有问题没修，她是好房客，换人还会让房东有损失",
+     "她的工资降低了",
+     "她找到了更便宜的房子"
+    ],
+    "answer": 1,
+    "explain_vi": "Cô nêu thiết bị hỏng chưa sửa, mình là người thuê tốt, và nếu đổi người thì chủ nhà sẽ mất tiền vì nhà trống, phí môi giới."
+   },
+   {
+    "q": "最后他们达成了什么协议？",
+    "q_vi": "Cuối cùng họ đạt được thỏa thuận gì?",
+    "options": [
+     "房租四千五，签两年，房东先修好房子",
+     "房租四千八，签一年",
+     "房租不涨，梅林自己修热水器",
+     "梅林下个月搬走"
+    ],
+    "answer": 0,
+    "explain_vi": "Họ thống nhất: 4500 tệ, hai năm, thay bình nóng lạnh và sửa cửa sổ trước rồi ký."
+   }
+  ]
+ },
+ {
+  "id": "d-29",
+  "kind": "dialogue",
+  "level": 5,
+  "title": "去深圳还是留在成都",
+  "title_vi": "Đi Thâm Quyến hay ở lại Thành Đô",
+  "topic": "xin lời khuyên về công việc",
+  "scene_vi": "Lưu Dương nhận được lời mời làm việc ở Thâm Quyến với mức lương gấp đôi, nhưng anh có công việc ổn định ở Thành Đô, bố mẹ và bạn gái cũng ở đây. Anh hẹn người bạn lâu năm là Lão Chu ra quán trà để xin lời khuyên.",
+  "speakers": [
+   "刘洋",
+   "老周"
+  ],
+  "paragraphs": [
+   "老周：看你一直皱着眉头，茶都凉了也没喝一口。说吧，什么事这么烦？",
+   "刘洋：深圳有一家科技公司给了我录用通知，做产品经理，工资是我现在的两倍。他们让我下周五以前答复。",
+   "老周：两倍？这是好事啊！那你还犹豫什么？",
+   "刘洋：问题就在这儿。我在现在的公司干了五年，领导信任我，同事关系也好，明年很可能升职。更重要的是，我爸妈都在成都，年纪越来越大了。还有小雅，我们在一起三年了，本来打算明年结婚。",
+   "老周：小雅知道这件事吗？",
+   "刘洋：还没跟她说。我怕说了以后，她以为我已经决定要走了，到时候两个人都难受。",
+   "老周：我不替你做决定，这是你自己的人生。不过我可以帮你把事情理清楚。你先别想工资，你告诉我，这个新工作吸引你的，到底是钱，还是别的东西？",
+   "刘洋：说实话，钱是一方面，但不是最主要的。我现在的工作太稳定了，每天做的事情差不多，有时候一年下来觉得自己什么都没学到。深圳那家公司做的是智能家居，正是我大学时候最感兴趣的方向。",
+   "老周：那你害怕的又是什么？",
+   "刘洋：害怕的东西就多了。怕去了以后适应不了那么快的节奏；怕离家远，爸妈万一生病，我不能马上赶回来；最怕的是跟小雅变成异地恋，感情慢慢变淡。",
+   "老周：我给你讲讲我自己的事吧。十年前，我也有一个去上海的机会，也是因为舍不得家里，最后没去。",
+   "刘洋：你后悔吗？",
+   "老周：有时候会想，如果当初去了，现在会怎么样。但是我想告诉你的不是“你一定要去，不然会后悔”。因为不管选哪条路，人都会有后悔的时候。重要的是，你做决定的时候，是不是把所有该考虑的都考虑到了，是不是跟最重要的人商量过了。",
+   "刘洋：你的意思是，我应该先跟小雅说？",
+   "老周：当然。这不只是你一个人的事，也是你们两个人的未来。你一个人在这儿想来想去，等于替她做了决定。万一她其实愿意跟你一起去呢？或者她有更好的主意呢？",
+   "刘洋：她是小学老师，在成都工作很稳定，我不好意思让她为了我放弃。",
+   "老周：“不好意思”也是你自己想的。还有你爸妈，你问过他们的意见吗？很多父母嘴上说“你走吧，别管我们”，心里其实舍不得；但也有很多父母，最怕的就是孩子因为他们放弃机会。",
+   "刘洋：你说得对，我一直在自己脑子里打转，其实最需要做的是去问清楚。另外，我也可以跟深圳那边谈谈，比如能不能晚一个月入职，或者先去试一试，每个月能不能回来一次。",
+   "老周：这就对了。机会不一定只有“去”和“不去”两种选择，很多条件都是可以谈的。这个周末你先带小雅出去吃顿好的，把你刚才跟我说的话，原原本本地告诉她。",
+   "刘洋：好。今天跟你聊完，心里清楚多了。这顿茶我请！",
+   "老周：当然是你请，你马上就要拿两倍工资的人了！不过说真的，不管你最后去不去，我都支持你。"
+  ],
+  "translations": [
+   "Lão Chu: Thấy cậu cứ nhíu mày mãi, trà nguội rồi cũng chưa uống ngụm nào. Nói đi, chuyện gì mà phiền thế?",
+   "Lưu Dương: Một công ty công nghệ ở Thâm Quyến gửi thư mời nhận việc cho mình, làm quản lý sản phẩm, lương gấp đôi bây giờ. Họ bảo mình trả lời trước thứ Sáu tuần sau.",
+   "Lão Chu: Gấp đôi? Chuyện tốt mà! Thế cậu còn do dự gì nữa?",
+   "Lưu Dương: Vấn đề là ở đó. Mình làm ở công ty hiện tại năm năm rồi, lãnh đạo tin tưởng, quan hệ đồng nghiệp cũng tốt, sang năm rất có thể được thăng chức. Quan trọng hơn là bố mẹ mình đều ở Thành Đô, tuổi càng ngày càng cao. Còn có Tiểu Nhã, bọn mình yêu nhau ba năm rồi, vốn định sang năm cưới.",
+   "Lão Chu: Tiểu Nhã có biết chuyện này không?",
+   "Lưu Dương: Mình chưa nói với cô ấy. Mình sợ nói rồi cô ấy lại tưởng mình đã quyết định đi, đến lúc đó cả hai đều khó chịu.",
+   "Lão Chu: Mình không quyết định thay cậu được, đây là cuộc đời của cậu. Nhưng mình có thể giúp cậu gỡ rối mọi chuyện. Cậu tạm đừng nghĩ đến lương, cậu nói cho mình biết, điều hấp dẫn cậu ở công việc mới này rốt cuộc là tiền hay là thứ khác?",
+   "Lưu Dương: Nói thật, tiền là một mặt, nhưng không phải chủ yếu nhất. Công việc hiện tại của mình ổn định quá, ngày nào làm cũng gần giống nhau, có lúc cả năm trôi qua cảm thấy mình chẳng học được gì. Công ty ở Thâm Quyến làm về nhà thông minh, đúng là hướng mình hứng thú nhất hồi đại học.",
+   "Lão Chu: Vậy điều cậu sợ là gì?",
+   "Lưu Dương: Sợ thì nhiều lắm. Sợ đi rồi không thích nghi được với nhịp độ nhanh như thế; sợ xa nhà, lỡ bố mẹ ốm đau mình không về ngay được; sợ nhất là cùng Tiểu Nhã thành yêu xa, tình cảm dần dần phai nhạt.",
+   "Lão Chu: Mình kể cậu nghe chuyện của mình nhé. Mười năm trước, mình cũng có một cơ hội đi Thượng Hải, cũng vì không nỡ xa nhà nên cuối cùng không đi.",
+   "Lưu Dương: Cậu có hối hận không?",
+   "Lão Chu: Thỉnh thoảng cũng nghĩ, nếu hồi đó đi thì bây giờ sẽ thế nào. Nhưng điều mình muốn nói với cậu không phải là \"cậu nhất định phải đi, không thì sẽ hối hận\". Bởi vì dù chọn con đường nào, con người cũng có lúc hối hận. Quan trọng là lúc cậu quyết định, cậu đã cân nhắc hết những điều cần cân nhắc chưa, đã bàn với người quan trọng nhất chưa.",
+   "Lưu Dương: Ý cậu là mình nên nói với Tiểu Nhã trước?",
+   "Lão Chu: Tất nhiên rồi. Đây không chỉ là chuyện của riêng cậu, mà còn là tương lai của hai người. Cậu một mình ở đây nghĩ tới nghĩ lui là chẳng khác gì quyết định thay cô ấy. Lỡ đâu thật ra cô ấy sẵn sàng đi cùng cậu thì sao? Hoặc cô ấy có ý hay hơn thì sao?",
+   "Lưu Dương: Cô ấy là giáo viên tiểu học, làm ở Thành Đô rất ổn định, mình ngại bắt cô ấy từ bỏ vì mình.",
+   "Lão Chu: \"Ngại\" cũng là cậu tự nghĩ ra thôi. Còn bố mẹ cậu nữa, cậu đã hỏi ý kiến họ chưa? Nhiều bố mẹ ngoài miệng nói \"con cứ đi đi, đừng lo cho bố mẹ\", trong lòng thật ra không nỡ; nhưng cũng có nhiều bố mẹ sợ nhất là con cái vì mình mà từ bỏ cơ hội.",
+   "Lưu Dương: Cậu nói đúng, mình cứ luẩn quẩn trong đầu mình, thật ra việc cần làm nhất là đi hỏi cho rõ. Ngoài ra, mình cũng có thể bàn với bên Thâm Quyến, ví dụ có thể vào làm muộn một tháng không, hoặc đi thử trước, mỗi tháng có thể về một lần không.",
+   "Lão Chu: Thế mới đúng chứ. Cơ hội không nhất thiết chỉ có hai lựa chọn \"đi\" và \"không đi\", nhiều điều kiện đều có thể thương lượng. Cuối tuần này cậu đưa Tiểu Nhã đi ăn một bữa ngon trước, kể lại nguyên vẹn những gì cậu vừa nói với mình cho cô ấy nghe.",
+   "Lưu Dương: Được. Hôm nay nói chuyện với cậu xong, trong lòng sáng rõ hơn nhiều. Bữa trà này mình mời!",
+   "Lão Chu: Tất nhiên là cậu mời rồi, cậu sắp là người lĩnh lương gấp đôi mà! Nhưng nói thật, dù cuối cùng cậu có đi hay không, mình đều ủng hộ cậu."
+  ],
+  "questions": [
+   {
+    "q": "新工作最吸引刘洋的是什么？",
+    "q_vi": "Điều hấp dẫn Lưu Dương nhất ở công việc mới là gì?",
+    "options": [
+     "工资是现在的两倍",
+     "离女朋友家更近",
+     "能做自己感兴趣的方向，学到新东西",
+     "深圳的天气更好"
+    ],
+    "answer": 2,
+    "explain_vi": "Anh nói tiền không phải chủ yếu, điều hấp dẫn là được làm về nhà thông minh, hướng anh hứng thú nhất."
+   },
+   {
+    "q": "老周讲自己十年前的事，想说明什么？",
+    "q_vi": "Lão Chu kể chuyện mười năm trước của mình để nói lên điều gì?",
+    "options": [
+     "不管选什么都可能后悔，关键是考虑全面并跟重要的人商量",
+     "去大城市一定是对的",
+     "他很后悔，所以刘洋一定要去",
+     "留在家乡才是最好的选择"
+    ],
+    "answer": 0,
+    "explain_vi": "Ông nói chọn đường nào cũng có lúc hối hận, quan trọng là đã cân nhắc đủ và bàn với người quan trọng chưa."
+   },
+   {
+    "q": "刘洋最后决定先做什么？",
+    "q_vi": "Cuối cùng Lưu Dương quyết định làm gì trước?",
+    "options": [
+     "马上辞职去深圳",
+     "拒绝深圳的公司",
+     "让老周帮他做决定",
+     "跟女朋友和父母商量，并和公司谈条件"
+    ],
+    "answer": 3,
+    "explain_vi": "Anh nhận ra cần hỏi rõ bạn gái, bố mẹ và thương lượng điều kiện với công ty Thâm Quyến."
+   }
+  ]
+ },
+ {
+  "id": "d-30",
+  "kind": "dialogue",
+  "level": 5,
+  "title": "相亲对象",
+  "title_vi": "Đối tượng xem mắt",
+  "topic": "gia đình – chuyện kết hôn",
+  "scene_vi": "Lâm Duyệt 29 tuổi, làm việc ở Bắc Kinh. Tối thứ Sáu, mẹ ở quê gọi video, lại nhắc chuyện chồng con và muốn sắp xếp cho cô đi xem mắt.",
+  "speakers": [
+   "妈妈",
+   "林悦"
+  ],
+  "paragraphs": [
+   "妈妈：悦悦，吃饭了没有？怎么又瘦了？是不是天天加班？",
+   "林悦：吃了，妈。我没瘦，是您手机的镜头问题。您今天怎么这么早打电话？平时不是要看完电视剧才打吗？",
+   "妈妈：我有正事跟你说。你还记得楼下张阿姨吗？她有个儿子，比你大两岁，也在北京工作，听说是在一家互联网公司当工程师，人老实，长得也精神。张阿姨把他的照片给我看了，我觉得跟你挺合适的。",
+   "林悦：妈，又来了。上个月是王阿姨的外甥，上上个月是您同事的侄子，您这是要把整个小区的男孩子都介绍给我吗？",
+   "妈妈：你这孩子，我还不是为了你好？你都二十九了，再过一年就三十了。你看你表姐，跟你一样大，孩子都上幼儿园了。我和你爸出去散步，邻居们见面第一句话就问：“你们家悦悦有对象了吗？”我都不知道怎么回答。",
+   "林悦：妈，我知道您是关心我。可是结婚是一辈子的事，不能因为年龄到了，或者邻居问了，就随便找个人。我希望找一个真正谈得来的人，而不是条件合适的人。",
+   "妈妈：谈不谈得来，你不见面怎么知道？我又没让你马上嫁给他，就是认识一下，交个朋友，喝杯咖啡，这总可以吧？",
+   "林悦：妈，说实话，每次您这样安排，我压力都特别大。工作已经很累了，周末还要去见一个陌生人，两个人坐在那儿像面试一样，问工资、问房子，我真的很不喜欢。",
+   "妈妈：（叹了口气）悦悦，妈妈也不想给你压力。可是你一个人在北京，生病了没人照顾，下班回家一个人吃饭，我每次想到这些，晚上都睡不着。我就是希望有个人能陪着你。",
+   "林悦：妈……您别这么说，您一这么说我就难受。其实我过得挺好的，有朋友，周末也会出去玩儿。而且……",
+   "妈妈：而且什么？",
+   "林悦：没什么。对了，您刚才说的张阿姨的儿子，叫什么名字？",
+   "妈妈：哎，你感兴趣了？叫张磊，石头的“磊”。在什么……“星辰科技”上班。张阿姨说他最近好像也在谈恋爱，不过一直不肯告诉家里是谁，所以她也着急。",
+   "林悦：张磊……星辰科技……妈，他是不是一米八左右，戴眼镜，左边眉毛上有一个小小的疤？",
+   "妈妈：你怎么知道？照片上是戴眼镜，眉毛我没注意……悦悦，你们认识？",
+   "林悦：何止认识……妈，我本来想等稳定一点儿再告诉您的。我们在一起已经半年了。",
+   "妈妈：什么？！你……你们……天哪！张阿姨的儿子不肯说的那个人就是你？那你刚才还跟我说一大堆道理！",
+   "林悦：那些道理也是真的嘛。我们是在一个朋友的读书会上认识的，聊了很多次才发现真的谈得来，跟条件一点儿关系都没有。我们俩都不敢告诉家里，就是怕你们知道以后天天催我们结婚。",
+   "妈妈：哈哈哈，好，好！我不催，我一句都不催！我现在就下楼找张阿姨去，我们俩得好好商量商量。",
+   "林悦：商量什么？妈，您刚才还说不催的！",
+   "妈妈：我们不催，我们就是商量一下，过年的时候两家人在哪儿吃饭比较好！"
+  ],
+  "translations": [
+   "Mẹ: Duyệt Duyệt, ăn cơm chưa con? Sao lại gầy đi thế? Có phải ngày nào cũng tăng ca không?",
+   "Lâm Duyệt: Ăn rồi mẹ ạ. Con không gầy, là do camera điện thoại của mẹ đấy. Hôm nay sao mẹ gọi sớm thế? Bình thường chẳng phải xem xong phim truyền hình mới gọi sao?",
+   "Mẹ: Mẹ có chuyện nghiêm túc muốn nói với con. Con còn nhớ cô Trương ở tầng dưới không? Cô ấy có một cậu con trai, hơn con hai tuổi, cũng làm việc ở Bắc Kinh, nghe nói làm kỹ sư ở một công ty internet, người thật thà, trông cũng sáng sủa. Cô Trương cho mẹ xem ảnh cậu ấy rồi, mẹ thấy rất hợp với con.",
+   "Lâm Duyệt: Mẹ, lại nữa rồi. Tháng trước là cháu trai của cô Vương, tháng trước nữa là cháu của đồng nghiệp mẹ, mẹ định giới thiệu hết con trai cả khu cho con hay sao?",
+   "Mẹ: Cái con bé này, chẳng phải mẹ vì muốn tốt cho con sao? Con đã hai mươi chín rồi, một năm nữa là ba mươi. Con xem chị họ con, bằng tuổi con mà con đã đi mẫu giáo rồi. Mẹ với bố con ra ngoài đi dạo, hàng xóm gặp nhau câu đầu tiên là hỏi: \"Duyệt Duyệt nhà chị có người yêu chưa?\" Mẹ chẳng biết trả lời thế nào.",
+   "Lâm Duyệt: Mẹ, con biết mẹ quan tâm con. Nhưng kết hôn là chuyện cả đời, không thể vì đến tuổi rồi, hay vì hàng xóm hỏi mà tùy tiện tìm một người. Con mong tìm được một người thật sự hợp chuyện, chứ không phải một người có điều kiện phù hợp.",
+   "Mẹ: Hợp chuyện hay không, con không gặp sao biết được? Mẹ có bắt con lấy cậu ấy ngay đâu, chỉ là làm quen, kết bạn, uống cốc cà phê, thế thì được chứ?",
+   "Lâm Duyệt: Mẹ, nói thật, mỗi lần mẹ sắp xếp như vậy, con áp lực lắm. Công việc đã mệt lắm rồi, cuối tuần còn phải đi gặp một người lạ, hai người ngồi đó như phỏng vấn vậy, hỏi lương, hỏi nhà, con thật sự rất không thích.",
+   "Mẹ: (thở dài) Duyệt Duyệt, mẹ cũng không muốn tạo áp lực cho con. Nhưng con một mình ở Bắc Kinh, ốm đau không ai chăm, tan làm về nhà ăn cơm một mình, mỗi lần nghĩ đến những chuyện ấy, đêm mẹ đều không ngủ được. Mẹ chỉ mong có một người ở bên con.",
+   "Lâm Duyệt: Mẹ... mẹ đừng nói thế, mẹ cứ nói thế là con lại khó chịu. Thật ra con sống khá tốt, có bạn bè, cuối tuần cũng đi chơi. Hơn nữa...",
+   "Mẹ: Hơn nữa gì?",
+   "Lâm Duyệt: Không có gì. À, con trai cô Trương mẹ vừa nói tên là gì ạ?",
+   "Mẹ: Ơ, con hứng thú rồi à? Tên là Trương Lỗi, chữ \"Lỗi\" có ba chữ thạch. Làm ở cái gì... \"Công nghệ Tinh Thần\". Cô Trương nói dạo này hình như cậu ấy cũng đang yêu, nhưng nhất định không chịu nói với nhà là ai, nên cô ấy cũng sốt ruột.",
+   "Lâm Duyệt: Trương Lỗi... Công nghệ Tinh Thần... Mẹ ơi, có phải anh ấy cao khoảng một mét tám, đeo kính, trên lông mày bên trái có một vết sẹo nhỏ không?",
+   "Mẹ: Sao con biết? Trong ảnh có đeo kính, lông mày thì mẹ không để ý... Duyệt Duyệt, các con quen nhau à?",
+   "Lâm Duyệt: Đâu chỉ quen... Mẹ, con vốn định đợi ổn định hơn chút nữa mới nói với mẹ. Bọn con yêu nhau được nửa năm rồi.",
+   "Mẹ: Cái gì?! Con... các con... trời ơi! Người mà con trai cô Trương không chịu nói chính là con à? Thế mà vừa rồi con còn giảng cho mẹ cả một tràng đạo lý!",
+   "Lâm Duyệt: Những đạo lý đó cũng là thật mà. Bọn con quen nhau ở một buổi câu lạc bộ đọc sách của bạn, trò chuyện nhiều lần mới thấy thật sự hợp nhau, chẳng liên quan gì đến điều kiện cả. Hai đứa con đều không dám nói với nhà, chính là sợ bố mẹ biết rồi ngày nào cũng giục cưới.",
+   "Mẹ: Ha ha ha, được, được! Mẹ không giục, mẹ không giục câu nào! Bây giờ mẹ xuống tầng tìm cô Trương ngay, hai bà phải bàn bạc kỹ mới được.",
+   "Lâm Duyệt: Bàn bạc gì cơ? Mẹ, mẹ vừa nói là không giục mà!",
+   "Mẹ: Bọn mẹ không giục, bọn mẹ chỉ bàn một chút xem Tết này hai nhà ăn cơm ở đâu thì hơn thôi!"
+  ],
+  "questions": [
+   {
+    "q": "林悦一开始为什么不想去相亲？",
+    "q_vi": "Lúc đầu vì sao Lâm Duyệt không muốn đi xem mắt?",
+    "options": [
+     "她觉得相亲像面试，压力大，而且想找真正谈得来的人",
+     "她不喜欢北京的男孩子",
+     "她打算一辈子不结婚",
+     "她工作太忙，没有时间吃饭"
+    ],
+    "answer": 0,
+    "explain_vi": "Cô nói xem mắt như phỏng vấn, áp lực, và muốn tìm người thật sự hợp chuyện chứ không phải điều kiện phù hợp."
+   },
+   {
+    "q": "妈妈为什么总是着急让林悦找对象？",
+    "q_vi": "Vì sao mẹ luôn sốt ruột giục Lâm Duyệt tìm người yêu?",
+    "options": [
+     "她想早点儿抱孙子",
+     "张阿姨让她这么做",
+     "她担心女儿一个人在北京没人照顾",
+     "她想让女儿回老家"
+    ],
+    "answer": 2,
+    "explain_vi": "Mẹ nói con ở Bắc Kinh một mình, ốm không ai chăm, nghĩ đến là mất ngủ, chỉ mong có người ở bên con."
+   },
+   {
+    "q": "最后发现了什么？",
+    "q_vi": "Cuối cùng phát hiện ra điều gì?",
+    "options": [
+     "张磊已经结婚了",
+     "妈妈介绍的张磊就是林悦的男朋友",
+     "张阿姨不同意他们在一起",
+     "林悦不认识张磊"
+    ],
+    "answer": 1,
+    "explain_vi": "Trương Lỗi chính là người Lâm Duyệt đã yêu được nửa năm."
+   }
+  ]
+ }
+]

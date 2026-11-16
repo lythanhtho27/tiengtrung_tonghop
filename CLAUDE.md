@@ -28,7 +28,7 @@ word_learning/        Giáo trình HSK 3.0 (词汇速记速练手册)
   word_learning.html/.css/.js, hsk_book_data.js, json_data/quyen_*.js(.json)
 hsk_lotrinh/          Lộ trình từ vựng HSK 1–6 (SRS, đọc nhanh)
   hsk_lotrinh.html/.css/.js, hsk_vocab_data.js
-doc_them/             Đọc thêm: thư viện 30 bài đọc phân cấp HSK 1–6, bài tự dán, đọc lại bài khóa Boya
+doc_them/             Đọc thêm: 239 bài (truyện dài, bài đọc, hội thoại, thành ngữ) + 14 đề luyện đọc HSK, bài tự dán, đọc lại bài khóa Boya
   doc_them.html/.css/.js, doc_data.js (sinh tự động)
 thong_ke/             Thống kê & dự báo (chỉ đọc localStorage của mọi trang): tổng quan, dự báo ôn 7/30 ngày, theo tuần, theo cấp, heatmap, tốc độ, từ hay quên
   thong_ke.html/.css/.js
@@ -41,7 +41,8 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
   extract_hsk_vocab.py, extract_vocab.py, word_list_data/HSK1-HSK6_full.xlsx
   hanviet/            Bảng âm Hán Việt theo (chữ, pinyin): hv_1..3.tsv, overrides.tsv (sửa tay), hanviet.py
   add_hanviet_wl.py, build_dict.py, build_luyen_tap.py, build_doc_them.py
-  doc_them_src/       Bài đọc gốc hsk1..6.json (sáng tác mới) + BRIEF.md (quy cách viết) + vocab_hskN.txt
+  doc_them_src/       Nguồn tài liệu đọc (sáng tác mới): hsk*.json, more_hsk*.json, series_s1..s5.json, dialogues.json, chengyu_a/b.json, exam_hsk4/5.json
+                      + BRIEF.md, BRIEF_MORE.md (quy cách viết từng loại) + vocab_hskN.txt
   scratch/            Script xử lý một lần (OCR, kiểm tra, sửa dữ liệu), chỉ để tham khảo
 ```
 
@@ -143,7 +144,7 @@ Không sửa tay các file dữ liệu sinh tự động. Sửa nguồn rồi ch
 | `tuvung/vocab_data.js` / `.json` | `sach_boya/tc1.html` … `tc4.html` | `python tools/extract_vocab.py` ⚠️ Bản `vocab_data` hiện tại có vài chỗ đã được sửa tay (ví dụ câu ví dụ "精神～"). Chạy lại script sẽ mất các chỗ sửa đó, nên kiểm tra `git diff` trước khi giữ. |
 | Âm Hán Việt: cột 8 của `hsk_vocab_data.js`, trường `han_viet` của `word_learning/json_data/quyen_*` | `tools/hanviet/hv_*.tsv` + `overrides.tsv` (sửa âm sai ở `overrides.tsv`) | `extract_hsk_vocab.py` tự điền khi Excel không có `[..]`. Với HSK 3.0 chạy `python tools/add_hanviet_wl.py` (ghi cả `.json` lẫn `.js`, giữ định dạng; dùng `--force` để ghi đè). |
 | `shared/dict_vi.js` | dữ liệu 3 trang + `tools/hanviet/` | `python tools/build_dict.py` (chạy sau khi đổi dữ liệu hoặc âm Hán Việt) |
-| `doc_them/doc_data.js` | `tools/doc_them_src/hsk1..6.json` (bài, bản dịch, câu hỏi) | `python tools/build_doc_them.py` (cần `pypinyin`, `jieba`). Script tự tính pinyin từng chữ và danh sách "từ ngoài cấp" (so với HSK 2.0 cộng HSK 3.0 cùng cấp; cụm tách nhầm cho vào `SPLIT_ARTIFACTS`). |
+| `doc_them/doc_data.js` (~3MB) | mọi `tools/doc_them_src/*.json` (`exam*.json` là đề luyện thi) | `python tools/build_doc_them.py` (cần `pypinyin`, `jieba`). Script tự tính pinyin từng chữ và danh sách "từ ngoài cấp" (so với HSK 2.0 cộng HSK 3.0 cùng cấp; cụm tách nhầm cho vào `SPLIT_ARTIFACTS`). |
 | `luyen_tap/lt_data.js`, `lt_data_wl.js` | `hsk_lotrinh/hsk_vocab_data.js` (câu ví dụ), `boya_learning/boya_data.json` (từ + câu ví dụ ngữ pháp), `word_learning/json_data/quyen_*.json` (câu ví dụ) | `python tools/build_luyen_tap.py` (cần `pypinyin`, `jieba`). Chạy lại sau khi đổi dữ liệu ở các trang kia. |
 | `boya_learning/boya_data.js` / `.json` (phần Cao cấp gc1/gc2) | `tools/scratch/gc_rebuild/gc1_L01.json` … `gc2_L10.json`: chép từ PDF `pdf/高级飞翔篇1.pdf`, `2.pdf`, mỗi bài một file (có thể tách `_part_*.json`) gồm từ vựng, bài đọc + bản dịch và ngữ pháp | Từ thư mục gốc: `python tools/scratch/gc_rebuild/build_gc_books.py` (sinh `tools/scratch/gc1_book.json`, `gc2_book.json`, tự thêm ruby pinyin và câu ví dụ, cần `pypinyin`), rồi `python tools/scratch/merge_all_books.py`. **Không chạy `super_enrich.py`** vì script này thêm từ bịa vào Cao cấp. Quy cách chép nằm trong `gc_rebuild/BRIEF.md`. |
 
@@ -186,8 +187,23 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
 
 ## Đọc thêm (`doc_them/`)
 
-- **3 tab:**
-  - **Thư viện:** 30 bài sáng tác mới, 5 bài mỗi cấp, độ dài từ khoảng 120 chữ (HSK 1) đến khoảng 1.800 chữ (HSK 6). Mỗi bài có bản dịch theo đoạn, câu hỏi đọc hiểu và "từ ngoài cấp".
+- **Nội dung** (sáng tác mới; quy cách trong `BRIEF.md` và `BRIEF_MORE.md`): 239 bài, khoảng 157.000 chữ Hán.
+  - 95 bài đọc (`kind:"article"`): HSK 1–2 mỗi cấp 5 bài, HSK 3: 15, HSK 4: 30, HSK 5: 25, HSK 6: 15. Phần lớn là truyện ngắn, vì người dùng thích truyện.
+  - 5 bộ truyện dài, 64 chương (`kind:"series"`, có các trường `series`, `series_title(_vi)`, `chapter`):
+    - s1 一碗汤的距离 (HSK 4, 12 chương);
+    - s2 十一点的钟声, trinh thám (HSK 5, 15 chương);
+    - s3 等一盏灯, tình cảm đô thị (HSK 4→5, 15 chương);
+    - s4 隔着一千三百年, xuyên không thời Đường (HSK 4, 12 chương);
+    - s5 街角的小咖啡馆 (HSK 3, 10 chương).
+  - 30 hội thoại (`kind:"dialogue"`): mỗi đoạn có dạng "Tên：lời", kèm `speakers`, `scene_vi`.
+  - 50 thành ngữ (`kind:"chengyu"`, có `idiom{hz,py,hv,meaning,usage,examples}`).
+  - 14 đề luyện đọc (`exams`): 8 đề HSK 4, 6 đề HSK 5. Mỗi đề gồm 选词填空 5 câu, 排列顺序 5 câu, 阅读理解 6 câu.
+- **4 tab:**
+  - **Thư viện:** lọc theo loại (Bài đọc / Truyện dài / Hội thoại / Thành ngữ), theo cấp và theo ô tìm kiếm.
+    - Truyện dài hiện thành thẻ từng bộ, có tiến độ, nút "Đọc tiếp chương k" và nút chuyển chương trước/sau.
+    - Hội thoại hiện tên người nói tô màu theo vai; có chế độ "🎤 Tôi đóng vai" (che lượt của người học, chờ người học tự nói).
+    - Thành ngữ có khối đầu bài, mỗi chữ có `data-zizu`.
+  - **📝 Luyện thi HSK:** làm đề, bấm giờ tùy chọn, chấm điểm từng phần, xem lời giải; kết quả lưu ở `doc_them_v1.exams[id]`. URL `?exam=e4-01`.
   - **Bài của tôi:** dán văn bản bất kỳ; pinyin sinh bằng `HocLookup.pinyinOf`.
   - **Bài khóa đã học:** các bài trong `boya_learning_progress_v2.lessons`. `boya_data.js` chỉ nạp khi mở tab; chữ và pinyin lấy từ `chinese_html` bằng DOMParser. Bài nào số đoạn khác số bản dịch thì bản dịch được chia theo tỉ lệ độ dài.
 - **Trình đọc chung:**
