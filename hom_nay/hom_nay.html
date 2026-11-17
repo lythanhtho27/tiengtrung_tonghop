@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buổi học hôm nay</title>
-    <meta name="description" content="Buổi học hằng ngày: ôn tập mọi từ đến hạn, học bài mới của chặng hiện tại và luyện tập 10 phút.">
+    <meta name="description" content="Buổi học hằng ngày: ôn tập mọi từ và câu đến hạn, học bài mới của chặng hiện tại, luyện tập 10 phút và đọc 1 bài.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     <header class="topbar">
         <div class="topbar-inner">
             <a class="back" href="../index.html" title="Về trang chủ">←</a>
-            <div class="brand"><strong>Buổi học hôm nay</strong><small id="brand-date">Ôn tập · Bài mới · Luyện tập</small></div>
+            <div class="brand"><strong>Buổi học hôm nay</strong><small id="brand-date">Ôn tập · Bài mới · Luyện tập · Đọc</small></div>
             <button class="account-btn" data-hoc-account type="button">Đăng nhập</button>
             <button class="ui-voice-btn" data-hoc-voice title="Giọng đọc (chọn giọng, luân phiên, đọc nhập vai)" aria-label="Giọng đọc">🔊</button>
             <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
@@ -26,16 +26,16 @@
     </header>
 
     <main class="container">
-        <!-- Màn hình chính: checklist 3 bước -->
+        <!-- Màn hình chính: checklist 4 bước -->
         <section id="home">
             <div class="card hero">
                 <div class="hero-top">
                     <div>
                         <div class="eyebrow" id="hero-date">Hôm nay</div>
                         <h1 id="hero-title">Buổi học hôm nay</h1>
-                        <p class="muted" id="hero-note">Làm lần lượt 3 bước, khoảng 30–45 phút.</p>
+                        <p class="muted" id="hero-note">Làm lần lượt 4 bước, khoảng 40–55 phút.</p>
                     </div>
-                    <div class="streak" id="streak" title="Chuỗi ngày học: ngày có ôn ≥ 10 thẻ hoặc xong bước 2/3">
+                    <div class="streak" id="streak" title="Chuỗi ngày học: ngày có ôn ≥ 10 thẻ hoặc xong bước 2/3/4">
                         <b id="streak-n">0</b><span>ngày liên tiếp</span>
                     </div>
                 </div>
@@ -98,7 +98,37 @@
                         </div>
                     </div>
                 </li>
+                <li class="step" id="step-read">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                        <div class="step-head">
+                            <h2>Đọc 1 bài</h2>
+                            <span class="tag" id="read-tag"></span>
+                        </div>
+                        <p class="muted" id="read-note">Đang tìm bài vừa sức…</p>
+                        <div class="lesson-list" id="read-list"></div>
+                        <div class="step-actions">
+                            <a class="btn" id="btn-read" href="../doc_them/doc_them.html">📖 Mở thư viện Đọc thêm</a>
+                        </div>
+                    </div>
+                </li>
             </ol>
+
+            <!-- Câu của tôi: câu người học lưu khi đọc (shared/sentences.js), ôn dạng điền từ ở bước 1 -->
+            <div class="card sent-box" id="sent-box" hidden>
+                <div class="step-head">
+                    <h2 id="sent-title">✂️ Câu của tôi</h2>
+                    <span class="sent-head-r">
+                        <span class="tag" id="sent-due"></span>
+                        <button class="btn btn-ghost btn-sm" id="sent-toggle" type="button" aria-controls="sent-body">Thu gọn ▲</button>
+                    </span>
+                </div>
+                <div id="sent-body">
+                    <p class="muted sent-note">Câu bạn lưu khi đọc. Câu đến hạn được ôn ở bước 1 dạng điền từ. Chạm vào câu để hiện / che từ.</p>
+                    <div class="sent-list" id="sent-list"></div>
+                    <button class="btn btn-ghost btn-sm" id="sent-more" type="button" hidden></button>
+                </div>
+            </div>
 
             <!-- Từ cứng đầu: quên ≥ 4 lần ở bất kỳ nguồn nào -->
             <div class="card hard-box" id="hard-box" hidden>
@@ -169,6 +199,7 @@
 
     <script src="../shared/progress.js"></script>
     <script src="../shared/mywords.js"></script>
+    <script src="../shared/sentences.js"></script>
     <script src="../shared/notes.js"></script>
     <script src="../shared/zizu.js"></script>
     <script src="../luyen_tap/lt_data.js"></script>

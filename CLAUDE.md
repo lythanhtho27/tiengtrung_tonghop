@@ -78,6 +78,10 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
   - Phần tử có `data-zizu="字"` tự thành nút mở bảng (bắt sự kiện ở pha capture). Các trang đang có nút này: khung tra từ của `doc_them` và `boya_learning`, mặt sau thẻ và danh sách từ cứng đầu ở `hom_nay`.
   - Bảng chia hai phần: Đã học (có thẻ SRS ở bất kỳ trang nào hoặc trong Từ của tôi) và Chưa học (sắp theo cấp HSK, có nút ＋ thêm vào Từ của tôi).
   - Tự nạp lười `shared/dict_vi.js` và `luyen_tap/lt_data.js` (dùng để biết cấp HSK và đổi id thẻ Boya sang chữ Hán), với đường dẫn tính theo vị trí file `zizu.js`.
+- **`sentences.js`** (`HocSentences`): "Câu của tôi" (sentence mining), key `hoc_sentences_v1` (được đồng bộ).
+  - Mỗi mục: `{id, zh, target (từ bị che), py, hv, vi, ctx_vi (bản dịch đoạn), src, url (tính từ thư mục gốc), card SM-2}`.
+  - Câu được lưu bằng nút "✂️ Lưu câu" trong khung tra từ (`lookup.js`, nhận thêm `opts.getContextVi/getUrl/onSentence`) và trong khung tra của `boya_learning` (`toggleSentence`).
+  - Câu được ôn dạng điền từ (`cloze()`) ở bước 1 của `hom_nay`.
 - **`dict_vi.js`** (khoảng 0,9MB, sinh bởi `tools/build_dict.py`): `HOC_DICT = {m, w: {từ: [pinyin, HÁN VIỆT, nghĩa]}, c: {chữ: [pinyin, HÁN VIỆT]}}`, gộp khoảng 13.000 từ của HSK, Boya và HSK 3.0. Các trang nạp lười file này (`boya_learning` nạp khi mở Bài khóa).
 
 ## Tài khoản & đồng bộ (`shared/sync.js`, Supabase)
@@ -144,7 +148,7 @@ Không sửa tay các file dữ liệu sinh tự động. Sửa nguồn rồi ch
 | `tuvung/vocab_data.js` / `.json` | `sach_boya/tc1.html` … `tc4.html` | `python tools/extract_vocab.py` ⚠️ Bản `vocab_data` hiện tại có vài chỗ đã được sửa tay (ví dụ câu ví dụ "精神～"). Chạy lại script sẽ mất các chỗ sửa đó, nên kiểm tra `git diff` trước khi giữ. |
 | Âm Hán Việt: cột 8 của `hsk_vocab_data.js`, trường `han_viet` của `word_learning/json_data/quyen_*` | `tools/hanviet/hv_*.tsv` + `overrides.tsv` (sửa âm sai ở `overrides.tsv`) | `extract_hsk_vocab.py` tự điền khi Excel không có `[..]`. Với HSK 3.0 chạy `python tools/add_hanviet_wl.py` (ghi cả `.json` lẫn `.js`, giữ định dạng; dùng `--force` để ghi đè). |
 | `shared/dict_vi.js` | dữ liệu 3 trang + `tools/hanviet/` | `python tools/build_dict.py` (chạy sau khi đổi dữ liệu hoặc âm Hán Việt) |
-| `doc_them/doc_data.js` (~3MB) | mọi `tools/doc_them_src/*.json` (`exam*.json` là đề luyện thi) | `python tools/build_doc_them.py` (cần `pypinyin`, `jieba`). Script tự tính pinyin từng chữ và danh sách "từ ngoài cấp" (so với HSK 2.0 cộng HSK 3.0 cùng cấp; cụm tách nhầm cho vào `SPLIT_ARTIFACTS`). |
+| `doc_them/doc_data.js` (~3MB) và `doc_them/doc_index.js` (~340KB: mục lục, mỗi bài có danh sách từ `w`, `hom_nay` dùng để gợi ý bài vừa sức) | mọi `tools/doc_them_src/*.json` (`exam*.json` là đề luyện thi) | `python tools/build_doc_them.py` (cần `pypinyin`, `jieba`). Script tự tính pinyin từng chữ và danh sách "từ ngoài cấp" (so với HSK 2.0 cộng HSK 3.0 cùng cấp; cụm tách nhầm cho vào `SPLIT_ARTIFACTS`). |
 | `luyen_tap/lt_data.js`, `lt_data_wl.js` | `hsk_lotrinh/hsk_vocab_data.js` (câu ví dụ), `boya_learning/boya_data.json` (từ + câu ví dụ ngữ pháp), `word_learning/json_data/quyen_*.json` (câu ví dụ) | `python tools/build_luyen_tap.py` (cần `pypinyin`, `jieba`). Chạy lại sau khi đổi dữ liệu ở các trang kia. |
 | `boya_learning/boya_data.js` / `.json` (phần Cao cấp gc1/gc2) | `tools/scratch/gc_rebuild/gc1_L01.json` … `gc2_L10.json`: chép từ PDF `pdf/高级飞翔篇1.pdf`, `2.pdf`, mỗi bài một file (có thể tách `_part_*.json`) gồm từ vựng, bài đọc + bản dịch và ngữ pháp | Từ thư mục gốc: `python tools/scratch/gc_rebuild/build_gc_books.py` (sinh `tools/scratch/gc1_book.json`, `gc2_book.json`, tự thêm ruby pinyin và câu ví dụ, cần `pypinyin`), rồi `python tools/scratch/merge_all_books.py`. **Không chạy `super_enrich.py`** vì script này thêm từ bịa vào Cao cấp. Quy cách chép nằm trong `gc_rebuild/BRIEF.md`. |
 
@@ -168,6 +172,15 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
 - **Dữ liệu hiển thị:** `luyen_tap/lt_data.js` (id → chữ, nghĩa, câu ví dụ) và `shared/dict_vi.js` (Hán Việt). Thẻ Boya chỉ được lấy khi id có trong `LT_DATA.words`, nên phải chạy lại `build_luyen_tap.py` khi đổi dữ liệu Boya.
 - **Bước 2 · Học bài mới:** gợi ý bài tiếp theo của chặng hiện tại (logic chặng chép từ `index.html`). Xong khi hôm nay có học từ mới.
 - **Bước 3 · Luyện tập:** xong khi làm ≥ 10 câu ở `luyen_tap`.
+- **Bước 4 · Đọc 1 bài:** nạp lười `doc_them/doc_index.js`, gợi ý ba loại bài:
+  - Đọc tiếp: chương kế của bộ truyện đang đọc dở;
+  - Đọc lại: bài đến hạn theo quy tắc `rr` (xem mục Đọc thêm);
+  - Vừa sức: biết 90–95% số từ trong `w`.
+  - Xong khi hôm nay có bài đọc xong (`steps.read`). Banner trang chủ hiện 4 bước.
+- **Thẻ "✂️ Câu của tôi"** (`HocSentences.due()`):
+  - Rải xen trong hàng đợi bước 1, không gộp với thẻ từ, chiếm tối đa khoảng 30% khi có giới hạn số thẻ.
+  - Mặt trước là câu đã che từ, có ô gõ thử. Mặt sau là câu đầy đủ kèm `ctx_vi` và link mở lại bài.
+  - Trang có khối quản lý "✂️ Câu của tôi (N)".
 - **Key lưu:** `hom_nay_v1` = `{settings{limit, speak}, days{date:{r, ok, steps}}, streak}`. Streak tăng khi ôn ≥ 10 lượt hoặc xong bước 2/3. Tóm tắt ghi qua `HocProgress("hom_nay")`.
 - **Ba kiểu thẻ** (`settings.cardMode`):
   - Kiểu thẻ: Chữ → nghĩa, Nghĩa → chữ (mặt trước đã bỏ phần Hán Việt viết hoa của nghĩa Boya để không lộ đáp án; nút Gợi ý hiện ghi chú hoặc chữ cái đầu của pinyin), và Nghe → nghĩa.
@@ -210,6 +223,10 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
   - Pinyin bật/tắt, cỡ chữ, tô từ chưa học, dịch (tắt / từng đoạn / tất cả), chạm để tra (`HocLookup.attach`).
   - Nghe cả bài hoặc từng đoạn, "Nhại" từng câu.
   - Đọc tính giờ, đếm chữ/phút chỉ tính chữ Hán.
+- **Lịch đọc lại** (quy tắc chung, `hom_nay` dùng y hệt):
+  - `read[id].rr` là mảng mốc mỗi lần đọc xong, tối đa 1 mốc/ngày, lọc trùng ngày khi đọc. Mốc được ghi khi đánh dấu đã đọc, khi bấm "🔁 Đã đọc lại xong" hoặc khi xong một lượt đọc tính giờ. Bài cũ chưa có `rr` thì coi như `[at]`.
+  - Hạn đọc lại: đọc 1 lần → +3 ngày; 2 lần → +7 ngày; từ lần 3 không nhắc nữa. Chỉ nhắc khi bài đang `done`.
+- **Khối "✨ Dành cho bạn"** ở đầu Thư viện gồm: Đọc tiếp, Đọc lại hôm nay, Vừa sức (3 bài chưa đọc biết 90–95% từ, ưu tiên truyện).
 - **"% từ đã biết":** so với chữ Hán của mọi thẻ SRS và "Từ của tôi". Thẻ Boya được đổi id sang chữ Hán qua `luyen_tap/lt_data.js`.
 - **URL:** `?id=h3-02`, `?mine=<id>`, `?boya=tc1_bai1&r=0`.
 - **Key lưu:** `doc_them_v1` = `{settings, mine[], read{id:{done, at, quiz, cpm[]}}}`, được đồng bộ. Tóm tắt ghi qua `HocProgress("doc_them")`. Hàm cho test để lộ ở `window.__DT`.

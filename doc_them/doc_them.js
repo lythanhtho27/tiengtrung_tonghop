@@ -12,7 +12,11 @@
    Key localStorage "doc_them_v1" = {
      settings: { tab, kind, level, examLv, examPy, py, size, hl, tr: "off"|"para"|"all", lookup, rate, autoHide },
      mine: [{ id, title, text, added }],
-     read: { "<id>": { done, at, quiz: { c, n }, cpm: [{ at, v }] } }
+     read: { "<id>": { done, at, quiz: { c, n }, cpm: [{ at, v }], rr: [ms…] } }
+       rr = mốc mỗi lần ĐỌC XONG bài (bấm "Đánh dấu đã đọc"/"Đã đọc lại xong" hoặc xong một lượt tính giờ), tối đa 1 mốc/ngày.
+       Bài cũ đã done mà chưa có rr thì coi như rr = [at].
+       Lịch đọc lại (trang hom_nay dùng đúng quy tắc này): n = rr.length; n = 1 → hạn = đầu ngày(rr[0]) + 3 ngày;
+       n = 2 → hạn = đầu ngày(rr[1]) + 7 ngày; n ≥ 3 → không nhắc nữa. Đến hạn khi now ≥ hạn.
        id: bài thư viện "h3-02" · bài của tôi "m<số>" · bài khóa Boya "boya:<lesson_id>:<chỉ số bài đọc>"
      exams: { "<id đề>": { best, last, at, tries } }      best/last = % điểm
    }
@@ -81,6 +85,41 @@
     }
     function rec(id) { return S.read[id] || (S.read[id] = { done: false, at: 0 }); }
 
+    // ---------------------------------------------------------------------- Lịch đọc lại (xem chú thích đầu file)
+    var DAY = 86400000;
+    var REREAD_GAPS = [3, 7];   // ngày sau lần đọc thứ 1, thứ 2
+    // Các mốc đọc xong (đã sắp xếp, mỗi ngày một mốc). sync.js hợp mảng của hai máy nên có thể trùng ngày → gộp lại.
+    function rrOf(r) {
+        if (!r) return [];
+        var src = Array.isArray(r.rr) && r.rr.length ? r.rr : (r.done && r.at ? [r.at] : []);
+        var seen = {}, out = [];
+        src.map(Number).filter(function (t) { return t > 0; }).sort(function (a, b) { return a - b; }).forEach(function (t) {
+            var d = startOfDay(t);
+            if (!seen[d]) { seen[d] = 1; out.push(t); }
+        });
+        return out;
+    }
+    function readCount(id) { return rrOf(S.read[id]).length; }
+    // Hạn đọc lại (ms) hoặc null nếu không nhắc
+    function rereadDue(r) {
+        if (!r || !r.done) return null;
+        var rr = rrOf(r), n = rr.length;
+        if (n < 1 || n > REREAD_GAPS.length) return null;
+        return startOfDay(rr[n - 1]) + REREAD_GAPS[n - 1] * DAY;
+    }
+    function isRereadDue(id, now) { var d = rereadDue(S.read[id]); return d != null && (now || Date.now()) >= d; }
+    function readToday(r) { var t = startOfDay(); return rrOf(r).some(function (x) { return startOfDay(x) === t; }); }
+    function fmtDate(t) { var d = new Date(t); return d.getDate() + "/" + (d.getMonth() + 1); }
+    // Ghi một lần đọc xong bài đang mở (tối đa 1 mốc/ngày). Trả về { first, n, added }
+    function markFinished(id) {
+        var r = rec(id), was = !!r.done, before = rrOf(r), now = Date.now();
+        var has = readToday(r);
+        r.rr = has ? before : before.concat([now]);
+        r.done = true; r.at = now;
+        save();
+        return { first: !was, n: r.rr.length, added: !has };
+    }
+
     function writeSummary() {
         if (!window.HocProgress) return;
         var today = startOfDay(), n = 0, learned = 0;
@@ -147,17 +186,23 @@
     }
     // % chữ Hán thuộc từ đã biết (tách từ bằng từ điển)
     var knownCache = {};
+    var segCache = {};       // key -> các từ chữ Hán đã tách (không phụ thuộc tập từ đã học, nên giữ qua các lần dựng lại)
+    function segOf(key, paras) {
+        if (!segCache[key]) {
+            var arr = [];
+            paras.forEach(function (p) { HocLookup.segment(p).forEach(function (s) { if (HAN.test(s.t)) arr.push(s.t); }); });
+            segCache[key] = arr;
+        }
+        return segCache[key];
+    }
     function knownPct(key, paras) {
         if (!known || !HocLookup.ready()) return null;
         if (knownCache[key] != null) return knownCache[key];
         var tot = 0, ok = 0;
-        paras.forEach(function (p) {
-            HocLookup.segment(p).forEach(function (s) {
-                if (!HAN.test(s.t)) return;
-                var n = hanCount(s.t);
-                tot += n;
-                if (isKnownTok(s.t)) ok += n;
-            });
+        segOf(key, paras).forEach(function (t) {
+            var n = hanCount(t);
+            tot += n;
+            if (isKnownTok(t)) ok += n;
         });
         return (knownCache[key] = tot ? Math.round(ok * 100 / tot) : 0);
     }
@@ -182,12 +227,14 @@
 
     function readBadge(id) {
         var r = S.read[id];
-        return r && r.done ? '<span class="tc-done">✓ Đã đọc</span>' : "";
+        return (isRereadDue(id) ? '<span class="tc-due">🔁 Nên đọc lại</span>' : "") +
+            (r && r.done ? '<span class="tc-done">✓ Đã đọc</span>' : "");
     }
     function metaBits(id, chars) {
-        var r = S.read[id] || {}, bits = [];
+        var r = S.read[id] || {}, bits = [], k = readCount(id);
         bits.push(chars.toLocaleString("vi-VN") + " chữ");
         bits.push("~" + minutesOf(chars) + " phút");
+        if (k >= 2) bits.push("Đã đọc " + k + " lần");
         if (r.quiz && r.quiz.n) bits.push("📝 " + r.quiz.c + "/" + r.quiz.n);
         if (r.cpm && r.cpm.length) bits.push("⏱ " + r.cpm[r.cpm.length - 1].v + " chữ/phút");
         return bits.map(function (b) { return "<span>" + esc(b) + "</span>"; }).join("");
@@ -276,16 +323,8 @@
         $("lib-levels").innerHTML = chips;
         if ($("lib-search").value !== libQuery) $("lib-search").value = libQuery;
 
-        var todayN = 0, today = startOfDay(), lastCpm = null;
-        Object.keys(S.read).forEach(function (id) {
-            var r = S.read[id];
-            if (r.done && r.at >= today) todayN++;
-            (r.cpm || []).forEach(function (c) { if (!lastCpm || c.at > lastCpm.at) lastCpm = c; });
-        });
-        $("lib-summary").innerHTML =
-            '<div class="stat"><b>' + doneN + "/" + LIB.length + "</b><span>bài thư viện đã đọc</span></div>" +
-            '<div class="stat"><b>' + todayN + "</b><span>bài đọc hôm nay</span></div>" +
-            '<div class="stat"><b>' + (lastCpm ? lastCpm.v : "—") + "</b><span>chữ/phút lần gần nhất</span></div>";
+        renderLibSummary(doneN);
+        renderForYou();
 
         // đang mở một bộ truyện: danh sách chương
         var ser = libSeries && SERIES.map[libSeries];
@@ -298,6 +337,134 @@
             return;
         }
         $("lib-list").innerHTML = list.map(function (u) { return u.kind === "series" ? seriesCard(u.s) : textCard(u.t); }).join("");
+    }
+    function renderLibSummary(doneN) {
+        if (doneN == null) { doneN = 0; LIB.forEach(function (t) { if (isDone(t.id)) doneN++; }); }
+        var todayN = 0, today = startOfDay(), lastCpm = null;
+        Object.keys(S.read).forEach(function (id) {
+            var r = S.read[id];
+            if (r.done && r.at >= today) todayN++;
+            (r.cpm || []).forEach(function (c) { if (!lastCpm || c.at > lastCpm.at) lastCpm = c; });
+        });
+        var sentN = window.HocSentences ? HocSentences.all().length : 0;
+        $("lib-summary").innerHTML =
+            '<div class="stat"><b>' + doneN + "/" + LIB.length + "</b><span>bài thư viện đã đọc</span></div>" +
+            '<div class="stat"><b>' + todayN + "</b><span>bài đọc hôm nay</span></div>" +
+            '<div class="stat"><b>' + (lastCpm ? lastCpm.v : "—") + "</b><span>chữ/phút lần gần nhất</span></div>" +
+            (window.HocSentences ? '<a class="stat stat-link" href="../hom_nay/hom_nay.html" title="Câu đã lưu được ôn dạng điền từ ở trang Hôm nay"><b>✂️ ' + sentN +
+                "</b><span>câu đã lưu</span></a>" : "");
+    }
+
+    // ---------------------------------------------------------------------- Khối "Dành cho bạn"
+    var FIT_LO = 90, FIT_HI = 95, FIT_MID = 92;
+    function isStory(t) { var k = kindOf(t); return k === "series" || (k === "article" && /truyện|chuyện|ngụ ngôn/i.test(t.topic || "")); }
+    // nhãn + đích mở của một id trong S.read (thư viện / bài của tôi / bài khóa Boya); null nếu không còn bài
+    function itemOf(id) {
+        if (id.indexOf("boya:") === 0) {
+            var p = id.split(":"), lid = p[1], ri = +p[2] || 0, f = findBoyaLesson(lid);
+            var m = /^([a-z]+\d)_bai(\d+)$/.exec(lid);
+            var label = f ? f.lesson.title + (f.lesson.readings.length > 1 ? " · bài đọc " + (ri + 1) : "")
+                : (m ? (BOOK_NAMES[m[1]] || m[1]) + " · Bài " + m[2] : lid) + " · bài đọc " + (ri + 1);
+            return { id: id, label: label, sub: "Bài khóa Boya" };
+        }
+        var t = libById(id);
+        if (t) {
+            var s = seriesOf(t);
+            return { id: id, label: s ? s.title + " · Ch. " + chapterNo(t) : (kindOf(t) === "chengyu" && t.idiom ? t.idiom.hz : t.title), sub: "HSK " + t.level, lib: t };
+        }
+        var mm = mineById(id);
+        return mm ? { id: id, label: mm.title || "Bài của tôi", sub: "Bài của tôi" } : null;
+    }
+    function dueList(now) {
+        now = now || Date.now();
+        return Object.keys(S.read).filter(function (id) { return isRereadDue(id, now); })
+            .map(function (id) { var it = itemOf(id); if (it) { it.due = rereadDue(S.read[id]); it.n = readCount(id); } return it; })
+            .filter(Boolean).sort(function (a, b) { return a.due - b.due; });
+    }
+    function continueList() {
+        return SERIES.list.filter(function (s) { var d = seriesDoneN(s); return d >= 1 && d < s.chapters.length; })
+            .map(function (s) { var t = seriesNext(s); return { id: t.id, label: s.title + " · Ch. " + chapterNo(t), sub: seriesDoneN(s) + "/" + s.chapters.length + " chương" }; });
+    }
+    // 3 bài chưa đọc vừa sức (biết 90–95% từ, thiếu thì gần 92% nhất); truyện dài chỉ xét chương kế tiếp của mỗi bộ
+    function fitCands() {
+        return LIB.filter(function (t) {
+            if (isDone(t.id)) return false;
+            var s = seriesOf(t);
+            return !s || seriesNext(s) === t;
+        });
+    }
+    // Tách từ mọi bài ứng viên theo từng đợt nhỏ (khỏi đứng trang lúc mở), xong thì vẽ lại khối
+    var fitWarming = false;
+    function warmFit() {
+        if (fitWarming) return;
+        fitWarming = true;
+        var list = fitCands().filter(function (t) { return !segCache["lib:" + t.id]; }), i = 0;
+        function step() {
+            var end = Math.min(list.length, i + 12);
+            for (; i < end; i++) segOf("lib:" + list[i].id, list[i].paragraphs);
+            if (i < list.length) { setTimeout(step, 0); return; }
+            fitWarming = false;
+            if (!$("list-view").hidden && S.settings.tab === "lib") renderForYou();
+        }
+        setTimeout(step, 0);   // luôn chạy sau, để lần renderForYou đang gọi không ghi đè kết quả
+    }
+    function fitList() {
+        if (!known || !HocLookup.ready()) return null;
+        var cands = fitCands();
+        if (cands.some(function (t) { return !segCache["lib:" + t.id]; })) { warmFit(); return null; }
+        var cand = [];
+        cands.forEach(function (t) {
+            var pct = knownPct("lib:" + t.id, t.paragraphs);
+            if (pct == null) return;
+            cand.push({ t: t, pct: pct, prio: isStory(t) ? 0 : kindOf(t) === "chengyu" ? 2 : 1, dist: Math.abs(pct - FIT_MID) });
+        });
+        var inR = cand.filter(function (c) { return c.pct >= FIT_LO && c.pct <= FIT_HI; })
+            .sort(function (a, b) { return a.prio - b.prio || a.dist - b.dist; });
+        var rest = cand.filter(function (c) { return inR.indexOf(c) < 0; })
+            .sort(function (a, b) { return a.dist - b.dist || a.prio - b.prio; });
+        return inR.concat(rest).slice(0, 3).map(function (c) {
+            var it = itemOf(c.t.id); it.pct = c.pct; it.inRange = c.pct >= FIT_LO && c.pct <= FIT_HI; return it;
+        });
+    }
+    function forYouData() { return { cont: continueList(), due: dueList(), fit: fitList() }; }
+    function fyBtn(it, extra) {
+        return '<button class="fy-item" data-fy="' + esc(it.id) + '" title="' + esc(it.label) + '"><b class="cn">' + esc(it.label) + "</b><small>" + esc(extra || it.sub || "") + "</small></button>";
+    }
+    function renderForYou() {
+        var box = $("lib-foryou");
+        if (!box) return;
+        var D = forYouData(), MAXDUE = 6;
+        var rows = "";
+        if (D.cont.length) rows += '<div class="fy-row"><div class="fy-h">📚 Đọc tiếp</div><div class="fy-items">' + D.cont.map(function (it) { return fyBtn(it); }).join("") + "</div></div>";
+        rows += '<div class="fy-row"><div class="fy-h">🔁 Đọc lại hôm nay (' + D.due.length + ")</div><div class=\"fy-items\">" +
+            (D.due.length ? D.due.slice(0, MAXDUE).map(function (it) { return fyBtn(it, it.sub + " · lần " + (it.n + 1)); }).join("") +
+                (D.due.length > MAXDUE ? '<span class="fy-more muted small">+' + (D.due.length - MAXDUE) + " bài nữa</span>" : "")
+                : '<span class="muted small">Chưa có bài đến hạn. Bài đã đọc sẽ được nhắc đọc lại sau 3 ngày, rồi 7 ngày.</span>') + "</div></div>";
+        rows += '<div class="fy-row"><div class="fy-h">🎯 Vừa sức</div><div class="fy-items">' +
+            (D.fit == null ? '<span class="muted small">Đang tính % từ đã biết…</span>'
+                : D.fit.length ? D.fit.map(function (it) { return fyBtn(it, it.sub + " · biết " + it.pct + "%"); }).join("")
+                : '<span class="muted small">Bạn đã đọc hết thư viện!</span>') + "</div></div>";
+        var badge = [];
+        if (D.cont.length) badge.push(D.cont.length + " truyện đang đọc");
+        if (D.due.length) badge.push(D.due.length + " bài nên đọc lại");
+        box.innerHTML = '<summary><span>✨ Dành cho bạn' + (badge.length ? " <small>· " + esc(badge.join(" · ")) + "</small>" : "") + "</span></summary>" + rows;
+        box.open = S.settings.fyOpen !== false;
+        box.hidden = false;
+    }
+    function openItem(id) {
+        if (id.indexOf("boya:") === 0) {
+            var p = id.split(":"), lid = p[1], ri = +p[2] || 0;
+            ensureBoya().then(function (ok) {
+                var f = ok && findBoyaLesson(lid);
+                if (f && f.lesson.readings && f.lesson.readings[ri]) open(docFromBoya(f.book, f.lesson, ri));
+                else toast("Không mở được bài khóa.");
+            });
+            return;
+        }
+        var t = libById(id);
+        if (t) { open(docFromLib(t)); return; }
+        var m = mineById(id);
+        if (m) open(docFromMine(m));
     }
     function textCard(t, inSeries) {
         var k = kindOf(t), r = S.read[t.id] || {}, I = t.idiom || {}, body;
@@ -331,8 +498,11 @@
     }
     function seriesCard(s) {
         var N = s.chapters.length, d = seriesDoneN(s), chars = s.chapters.reduce(function (a, c) { return a + (c.chars || hanCount(c.paragraphs.join(""))); }, 0);
+        var dueN = s.chapters.filter(function (c) { return isRereadDue(c.id); }).length;
         return '<div class="tcard tc-series' + (d === N ? " done" : "") + '" data-series="' + esc(s.id) + '" role="button" tabindex="0">' +
-            '<div class="tc-top"><span class="lv lv-' + s.level + '">HSK ' + s.level + "</span>" + kindBadge("series") + (d === N ? '<span class="tc-done">✓ Đã đọc hết</span>' : "") + "</div>" +
+            '<div class="tc-top"><span class="lv lv-' + s.level + '">HSK ' + s.level + "</span>" + kindBadge("series") +
+            (dueN ? '<span class="tc-due">🔁 ' + dueN + " chương nên đọc lại</span>" : "") +
+            (d === N ? '<span class="tc-done">✓ Đã đọc hết</span>' : "") + "</div>" +
             '<div class="tc-title">' + esc(s.title) + "</div>" +
             '<div class="tc-vi">' + esc(s.title_vi) + "</div>" +
             '<div class="tc-meta"><span>' + N + " chương</span><span>" + chars.toLocaleString("vi-VN") + " chữ</span><span>~" + minutesOf(chars) + " phút</span></div>" +
@@ -357,6 +527,7 @@
             else { var t = libById(id); paras = t ? t.paragraphs : null; }
             if (paras) el.innerHTML = knownHTML(knownPct((isMine ? "mine:" : "lib:") + id, paras));
         });
+        if (!$("list-view").hidden && S.settings.tab === "lib") renderForYou();
     }
     function libById(id) { for (var i = 0; i < LIB.length; i++) if (LIB[i].id === id) return LIB[i]; return null; }
 
@@ -398,7 +569,7 @@
         if (editingId) {
             var m = mineById(editingId);
             if (m) { m.title = title; m.text = text; }
-            delete knownCache["mine:" + editingId];
+            delete knownCache["mine:" + editingId]; delete segCache["mine:" + editingId];
             toast("Đã lưu thay đổi.");
         } else {
             S.mine.push({ id: "m" + Date.now().toString(36), title: title, text: text, added: Date.now() });
@@ -474,7 +645,10 @@
                     '<div class="bk-readings">' + l.readings.map(function (r, i) {
                         var id = "boya:" + l.lesson_id + ":" + i, rr = S.read[id] || {};
                         var last = rr.cpm && rr.cpm.length ? " · " + rr.cpm[rr.cpm.length - 1].v + " chữ/phút" : "";
-                        return '<button class="bk-r' + (rr.done ? " done" : "") + '" data-boya="' + esc(l.lesson_id) + '" data-r="' + i + '">' + (rr.done ? "✓ " : "") +
+                        var k = readCount(id), due = isRereadDue(id);
+                        if (k >= 2) last += " · đã đọc " + k + " lần";
+                        return '<button class="bk-r' + (rr.done ? " done" : "") + (due ? " due" : "") + '" data-boya="' + esc(l.lesson_id) + '" data-r="' + i + '"' +
+                            (due ? ' title="Nên đọc lại"' : "") + ">" + (due ? "🔁 " : rr.done ? "✓ " : "") +
                             esc(r.title || "Bài đọc " + (i + 1)) + '<span class="muted">' + esc(last) + "</span></button>";
                     }).join("") + "</div></div>";
             });
@@ -672,8 +846,13 @@
         var meta = ["📄 " + total.toLocaleString("vi-VN") + " chữ", "⏱ ~" + minutesOf(total) + " phút"];
         if (r.done) meta.push("✓ Đã đọc");
         if (r.cpm && r.cpm.length) meta.push("Lần trước: " + r.cpm[r.cpm.length - 1].v + " chữ/phút");
+        var k = readCount(d.id);
+        if (k >= 2) meta.push("🔁 Đã đọc " + k + " lần");
         $("doc-meta").innerHTML = meta.map(function (m) { return "<span>" + esc(m) + "</span>"; }).join("") + '<span id="doc-known"></span>';
-        $("doc-result").innerHTML = "";
+        $("doc-result").innerHTML = isRereadDue(d.id)
+            ? '<div class="card reread-hint">🔁 <b>Đến hạn đọc lại</b> (lần ' + (k + 1) + "). " +
+              (r.cpm && r.cpm.length ? "Bấm ⏱ Tính giờ để so tốc độ với lần đầu (" + r.cpm[0].v + " chữ/phút)." : "Bấm ⏱ Tính giờ để đo tốc độ, hoặc đọc xong rồi bấm “Đã đọc lại xong” ở cuối bài.") + "</div>"
+            : "";
         $("doc-sernav").innerHTML = seriesNavHTML();
         $("doc-sernav").hidden = !d.series;
         renderDlgBar();
@@ -885,20 +1064,31 @@
 
     // ---------------------------------------------------------------------- Đánh dấu đã đọc
     function renderEnd() {
-        var r = S.read[doc.id] || {};
-        $("doc-end").innerHTML = (r.done
-            ? '<button class="btn btn-ok" id="btn-unread">✓ Đã đọc · bỏ đánh dấu</button>'
+        var r = S.read[doc.id] || {}, due = rereadDue(r), k = readCount(doc.id), info = "";
+        if (r.done) info = '<div class="rr-info muted small">' + (k >= 2 ? "Đã đọc " + k + " lần" : "Đã đọc 1 lần") +
+            (due == null ? (k >= 3 ? " · không cần nhắc đọc lại nữa" : "") : Date.now() >= due ? " · 🔁 nên đọc lại hôm nay" : " · lần đọc lại tiếp: " + fmtDate(due)) + "</div>";
+        $("doc-end").innerHTML = info + (r.done
+            ? (readToday(r) ? "" : '<button class="btn btn-primary" id="btn-reread">🔁 Đã đọc lại xong</button>') +
+              '<button class="btn btn-ok" id="btn-unread">✓ Đã đọc · bỏ đánh dấu</button>'
             : '<button class="btn btn-primary" id="btn-read">✓ Đánh dấu đã đọc</button>') +
             '<button class="btn" id="btn-end-back">← Danh sách bài</button>' +
             (doc.series ? '<div class="ser-nav ser-nav-end">' + seriesNavHTML() + "</div>"
                 : nextDoc() ? '<button class="btn" id="btn-next">Bài tiếp →</button>' : "");
     }
     function setRead(on) {
-        var r = rec(doc.id);
-        r.done = !!on;
-        if (on) r.at = Date.now();
+        if (on) {
+            var f = markFinished(doc.id);
+            renderEnd();
+            if (f.first) toast(doc.series && seriesSibling(1) ? "Đã đánh dấu đã đọc. Đọc tiếp chương sau nhé!" : "Đã đánh dấu đã đọc.");
+            else toast(f.added ? "🔁 Đã ghi lần đọc thứ " + f.n + "." + (f.n < 3 ? " Lần đọc lại tiếp sau " + REREAD_GAPS[f.n - 1] + " ngày." : "") : "Hôm nay đã ghi lần đọc này rồi.");
+            return;
+        }
+        var r = rec(doc.id), t = startOfDay();
+        // giữ các mốc cũ (kể cả mốc suy ra từ `at` của bài cũ), chỉ bỏ mốc của hôm nay (bấm nhầm)
+        r.rr = rrOf(r).filter(function (x) { return startOfDay(x) !== t; });
+        r.done = false;
         save(); renderEnd();
-        toast(on ? (doc.series && seriesSibling(1) ? "Đã đánh dấu đã đọc. Đọc tiếp chương sau nhé!" : "Đã đánh dấu đã đọc.") : "Đã bỏ đánh dấu.");
+        toast("Đã bỏ đánh dấu.");
     }
     function nextDoc() {
         if (!doc || doc.kind !== "lib") return null;
@@ -1162,11 +1352,17 @@
         if (ms < 5000) { toast("Thời gian quá ngắn, chưa lưu."); return; }
         var cpm = Math.round(doc.total / (ms / 60000));
         var r = rec(doc.id), prev = r.cpm && r.cpm.length ? r.cpm[r.cpm.length - 1].v : null;
+        var first = r.cpm && r.cpm.length ? r.cpm[0].v : null, wasDone = !!r.done;
         r.cpm = (r.cpm || []).concat([{ at: Date.now(), v: cpm }]).slice(-20);
         save();
         var cmp = prev == null ? "Lần đầu đọc tính giờ bài này." :
             cpm > prev ? "Nhanh hơn lần trước " + (cpm - prev) + " chữ/phút (" + prev + " → " + cpm + ")." :
             cpm < prev ? "Chậm hơn lần trước " + (prev - cpm) + " chữ/phút (" + prev + " → " + cpm + ")." : "Bằng lần trước.";
+        // đọc lại: so với lần đầu (khi lần đầu khác lần trước)
+        if (first != null && r.cpm.length >= 3) {
+            var dd = cpm - first;
+            cmp += " So với lần đầu (" + first + " chữ/phút): " + (dd > 0 ? "nhanh hơn " + dd : dd < 0 ? "chậm hơn " + (-dd) : "bằng") + (dd ? " chữ/phút" + (dd > 0 ? " 🎉" : "") : "") + ".";
+        }
         var max = Math.max.apply(null, r.cpm.map(function (c) { return c.v; }));
         $("doc-result").innerHTML = '<div class="card result"><h3>⏱ ' + cpm + " chữ/phút</h3><p>" + esc(doc.total + " chữ trong " + fmtClock(ms) + ". " + cmp) + "</p>" +
             (r.cpm.length > 1 ? '<div class="cpm-hist" title="Lịch sử tốc độ đọc bài này">' + r.cpm.map(function (c, i) {
@@ -1174,7 +1370,9 @@
             }).join("") + "</div>" : "") +
             '<p class="muted small" style="margin-top:8px">Tham khảo: 150–250 chữ/phút là tốc độ đọc hiểu thoải mái ở trình độ trung cấp.</p></div>';
         $("doc-result").scrollIntoView({ behavior: "smooth", block: "start" });
-        if (!r.done) setRead(true);
+        // một lượt đọc tính giờ = một lần đọc xong (ghi mốc rr)
+        if (!wasDone) setRead(true);
+        else { var f = markFinished(doc.id); renderEnd(); if (f.added) toast("🔁 Đã ghi lần đọc thứ " + f.n + "."); }
     }
 
     // ====================================================================== Luyện thi HSK
@@ -1476,6 +1674,14 @@
             if (sr) { libSeries = sr.dataset.series; renderLib(); window.scrollTo(0, Math.max(0, $("lib-list").getBoundingClientRect().top + window.scrollY - 76)); }
         }
         $("lib-list").addEventListener("click", libClick);
+        // Dành cho bạn
+        $("lib-foryou").addEventListener("click", function (e) {
+            var b = e.target.closest("[data-fy]"); if (b) openItem(b.dataset.fy);
+        });
+        $("lib-foryou").addEventListener("toggle", function () {
+            var o = $("lib-foryou").open;
+            if ((S.settings.fyOpen !== false) !== o) { S.settings.fyOpen = o; save(); }
+        });
         $("lib-list").addEventListener("keydown", function (e) { if (e.key === "Enter" && e.target.matches("[data-series]")) libClick(e); });
 
         // Luyện thi
@@ -1508,7 +1714,16 @@
             dictUrl: DICT_URL,
             getSrc: function () { return ex ? "Luyện thi · " + (ex.e.title || ex.e.id) : "Đọc thêm"; },
             enabled: function () { return !!S.settings.lookup; },
-            speak: speakWord
+            speak: speakWord,
+            getContextVi: function (el) {
+                var box = el && el.closest && el.closest(".ex-item"), m = box && /^exi-(\d+)-(\d+)$/.exec(box.id);
+                if (!ex || !m) return "";
+                var sec = ex.e.sections[+m[1]], it = sec && sec.items[+m[2]];
+                if (!it) return "";
+                return el.closest(".ex-passage") ? it.passage_vi || "" : it.vi || it.passage_vi || "";
+            },
+            getUrl: function () { return ex ? "doc_them/doc_them.html?exam=" + encodeURIComponent(ex.e.id) : "doc_them/doc_them.html"; },
+            onSentence: sentenceSaved
         });
         $("mine-form").addEventListener("submit", saveMine);
         $("mine-text").addEventListener("input", updateMineCount);
@@ -1598,7 +1813,20 @@
             getSrc: function () { return doc ? doc.src : "Đọc thêm"; },
             enabled: function () { return !!S.settings.lookup; },
             speak: speakWord,
-            onAdd: function () { buildKnown(); markNew(); }
+            onAdd: function () { buildKnown(); markNew(); },
+            // bản dịch của đoạn chứa câu (bài tự dán không có bản dịch → "")
+            getContextVi: function (el) {
+                var p = el && el.closest && el.closest(".para");
+                if (!doc || doc.kind === "mine" || !p) return "";
+                var k = +p.dataset.k, P = doc.paras[k];
+                if (!P) return "";
+                if (P.tr) return P.tr;
+                // bài khóa Boya lệch số đoạn: bản dịch gắn ở đoạn cuối nhóm → lấy bản dịch gần nhất phía sau
+                if (doc.kind === "boya" && P.kind === "p") for (var i = k + 1; i < doc.paras.length; i++) if (doc.paras[i].tr) return doc.paras[i].tr;
+                return "";
+            },
+            getUrl: docUrl,
+            onSentence: sentenceSaved
         });
 
         $("doc-beyond").addEventListener("click", function (e) { var b = e.target.closest("[data-bw]"); if (b) toggleBeyond(+b.dataset.bw); });
@@ -1628,7 +1856,13 @@
             getSrc: function () { return doc ? doc.src : "Đọc thêm"; },
             enabled: function () { return !!S.settings.lookup; },
             speak: speakWord,
-            onAdd: function () { buildKnown(); markNew(); }
+            onAdd: function () { buildKnown(); markNew(); },
+            getContextVi: function (el) {
+                var ex1 = el && el.closest && el.closest(".id-ex"), v = ex1 && ex1.querySelector(".id-ex-vi");
+                return v ? v.textContent : "";
+            },
+            getUrl: docUrl,
+            onSentence: sentenceSaved
         });
         $("doc-quiz").addEventListener("click", function (e) {
             var o = e.target.closest(".q-opt");
@@ -1638,7 +1872,7 @@
         });
         $("doc-end").addEventListener("click", function (e) {
             var b = e.target.closest("button"); if (!b) return;
-            if (b.id === "btn-read") setRead(true);
+            if (b.id === "btn-read" || b.id === "btn-reread") setRead(true);
             else if (b.id === "btn-unread") setRead(false);
             else if (b.id === "btn-end-back") backToList();
             else if (b.id === "btn-next") {
@@ -1648,8 +1882,11 @@
         });
 
         if (window.HocMyWords && HocMyWords.onChange) HocMyWords.onChange(function () { if (known) { buildKnown(); markNew(); } });
+        if (window.HocSentences && HocSentences.onChange) HocSentences.onChange(function () { if (!$("list-view").hidden && S.settings.tab === "lib") renderLibSummary(); });
         if ("speechSynthesis" in window) { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = function () {}; }
     }
+    function docUrl() { return doc ? "doc_them/doc_them.html" + doc.url : "doc_them/doc_them.html"; }
+    function sentenceSaved(e) { if (e) toast("✂️ Đã lưu câu — ôn ở trang Hôm nay"); }
     function backToList() {
         if (pushed) { pushed = false; history.back(); }
         else closeDoc(false);
@@ -1670,6 +1907,7 @@
         state: S, openLib: function (id) { open(docFromLib(libById(id))); }, doc: function () { return doc; },
         openExam: function (id) { pushed = true; openExam(examById(id), true); }, exam: function () { return ex; },
         setExamAns: setExamAns, submitExam: submitExam, series: SERIES, units: UNITS, setMyRole: function (n) { myRole = n; },
+        rrOf: rrOf, rereadDue: rereadDue, isRereadDue: isRereadDue, forYou: forYouData, renderLib: renderLib, setRead: setRead,
         knownPct: knownPct, buildKnown: buildKnown, ensureKnown: ensureKnown, parseBoyaReading: parseBoyaReading, alignTranslations: alignTranslations
     };
 })();

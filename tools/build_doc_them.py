@@ -157,6 +157,44 @@ def main():
         f.write("/* Sinh tự động bởi tools/build_doc_them.py từ tools/doc_them_src/ — không sửa tay */\nwindow.DOC_LIBRARY = ")
         json.dump({"texts": texts, "exams": exams}, f, ensure_ascii=False, separators=(",", ":"))
         f.write(";\n")
+
+    # Mục lục nhẹ cho trang khác (hom_nay) gợi ý bài vừa sức mà không phải nạp doc_data.js (~3MB):
+    # w = các từ khác nhau trong bài, tách khớp dài nhất theo từ điển giống HocLookup.segment (để tính "% từ đã biết")
+    maxlen = max(len(k) for k in dic)
+    def segment_words(text):
+        out, i = [], 0
+        while i < len(text):
+            if not HAN.match(text[i]):
+                i += 1
+                continue
+            hit = text[i]
+            for ln in range(min(maxlen, len(text) - i), 1, -1):
+                cand = text[i:i + ln]
+                if cand in dic and not re.search(r"[^㐀-鿿]", cand):
+                    hit = cand
+                    break
+            out.append(hit)
+            i += len(hit)
+        return out
+    index = []
+    for t in texts:
+        ws = []
+        for para in t["paragraphs"]:
+            if t["kind"] == "dialogue":
+                para = re.sub(r"^\s*[㐀-鿿A-Za-z]{1,6}\s*[：:]", "", para)
+            for w in segment_words(para):
+                if w not in ws:
+                    ws.append(w)
+        e = {"id": t["id"], "kind": t["kind"], "level": t["level"], "title": t["title"], "title_vi": t["title_vi"], "chars": t["chars"], "w": " ".join(ws)}
+        for k in ("series", "series_title", "series_title_vi", "chapter"):
+            if k in t:
+                e[k] = t[k]
+        index.append(e)
+    idx_out = os.path.join(ROOT, "doc_them", "doc_index.js")
+    with open(idx_out, "w", encoding="utf-8") as f:
+        f.write("/* Sinh tự động bởi tools/build_doc_them.py — mục lục nhẹ của doc_data.js (gợi ý bài ở trang Hôm nay) */\nwindow.DOC_INDEX = ")
+        json.dump(index, f, ensure_ascii=False, separators=(",", ":"))
+        f.write(";\n")
     for t in texts:
         print(f"{t['id']:8s} {t['kind']:8s} HSK{t['level']} {t['chars']:5d} chữ  {len(t['paragraphs']):2d} đoạn  {len(t['questions'])} câu hỏi  ngoài cấp {len(t['beyond'])}  {t['title']}")
     from collections import Counter

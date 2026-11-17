@@ -1813,6 +1813,7 @@
             const info = lookupInfo(LK.cands[LK.cur], LK.units);
             if (t.classList.contains('lk-speak')) { speakChinese(info.hz); return; }
             if (t.classList.contains('lk-add')) toggleMyWord(info);
+            if (t.classList.contains('lk-sent')) toggleSentence(info);
         });
         // Bấm ra ngoài khung thì đóng (trừ chữ trong bài khóa: chữ đó mở lượt tra mới)
         document.addEventListener('click', (e) => {
@@ -1860,6 +1861,8 @@
         const c = LK.cands[LK.cur];
         const info = lookupInfo(c, LK.units);
         const inBook = !!(window.HocMyWords && HocMyWords.has(info.hz));
+        const sentZh = sentenceOf(LK.units, c.s, c.e);
+        const sentIn = !!(window.HocSentences && HocSentences.has(sentZh, info.hz));
 
         // Tô sáng các chữ của từ đang tra
         document.querySelectorAll('#chineseTextContent ruby.lk-hl').forEach(r => r.classList.remove('lk-hl'));
@@ -1898,7 +1901,9 @@
             <div class="lk-actions">
                 <button type="button" class="lk-btn lk-speak">🔊 Nghe</button>
                 ${window.HocMyWords ? `<button type="button" class="lk-btn lk-add ${inBook ? 'is-in' : ''}">${inBook ? '✓ Đã trong sổ (bấm để bỏ)' : '＋ Thêm vào Từ của tôi'}</button>` : ''}
-            </div>`;
+                ${window.HocSentences ? `<button type="button" class="lk-btn lk-sent ${sentIn ? 'is-in' : ''}" title="Lưu cả câu, che từ này để ôn dạng điền từ ở trang Hôm nay">${sentIn ? '✓ Đã lưu câu' : '✂️ Lưu câu'}</button>` : ''}
+            </div>
+            ${window.HocSentences ? `<div class="lk-sent-prev" style="margin-top:8px;font-size:14px;line-height:1.6;color:var(--ui-muted)">${escapeHtml(HocSentences.cloze({ zh: sentZh, target: info.hz }))}</div>` : ''}`;
 
         const sheet = !!(window.matchMedia && window.matchMedia('(max-width: 720px)').matches);
         pop.classList.toggle('is-sheet', sheet);
@@ -1942,6 +1947,26 @@
                 src: `Boya · ${BOOK_SHORT[book.id] || book.name} · Bài ${lesson.lesson_num}`
             });
             showToast(`✓ Đã thêm "${info.hz}" vào Từ của tôi — sẽ ôn ở trang Hôm nay`);
+        }
+        renderLookup(false);
+    }
+
+    // "Câu của tôi": lưu câu chứa từ đang tra, che từ đó để ôn dạng điền từ ở trang Hôm nay (shared/sentences.js)
+    function toggleSentence(info) {
+        if (!window.HocSentences || !LK) return;
+        const c = LK.cands[LK.cur];
+        const zh = sentenceOf(LK.units, c.s, c.e);
+        if (HocSentences.has(zh, info.hz)) {
+            HocSentences.remove(HocSentences.makeId(zh, info.hz));
+            showToast('Đã bỏ câu khỏi Câu của tôi');
+        } else {
+            const book = getActiveBook(), lesson = getActiveLesson();
+            const e = HocSentences.add({
+                zh, target: info.hz, py: info.py, hv: info.hv, vi: info.vi,
+                src: `Boya · ${BOOK_SHORT[book.id] || book.name} · Bài ${lesson.lesson_num}`,
+                url: `boya_learning/boya_learning.html?book=${book.id}&lesson=${lesson.lesson_num}`
+            });
+            showToast(e ? '✂️ Đã lưu câu — sẽ ôn dạng điền từ ở trang Hôm nay' : 'Không lưu được câu này');
         }
         renderLookup(false);
     }

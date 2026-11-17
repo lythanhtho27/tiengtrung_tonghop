@@ -185,6 +185,8 @@
         ".lk-act{display:flex;gap:8px;margin-top:12px}" +
         ".lk-act button{flex:1;border:1px solid var(--ui-border-strong,#ccc);background:var(--ui-surface,#fff);color:inherit;border-radius:10px;padding:9px 10px;font:inherit;font-weight:600;cursor:pointer}" +
         ".lk-act .lk-add{background:var(--ui-primary,#4f46e5);color:var(--ui-on-primary,#fff);border-color:transparent}" +
+        ".lk-act .lk-sent.in{color:var(--ui-success,#047857);border-color:var(--ui-success,#047857)}" +
+        ".lk-sent-prev{margin-top:8px;font-family:var(--ui-font-cn,serif);font-size:14px;color:var(--ui-muted,#64748b);line-height:1.6}" +
         ".lk-act .lk-add.in{background:var(--ui-success-soft,rgba(5,150,105,.12));color:var(--ui-success,#047857);border-color:var(--ui-success,#047857)}" +
         ".lk-x{position:absolute;top:8px;right:10px;border:0;background:none;font-size:22px;line-height:1;cursor:pointer;color:var(--ui-muted,#64748b)}" +
         "@media (max-width:720px){.lk-pop{left:0!important;right:0;bottom:0;top:auto!important;width:auto;border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom));animation:lk-up .2s ease}}" +
@@ -234,7 +236,10 @@
             (window.HocZizu ? '<span class="lk-zz-hint">👆 chạm chữ để xem họ chữ</span>' : "") + "</div>" +
             (c.alts.length > 1 ? '<div class="lk-alts">Cách tách khác: ' + c.alts.map(function (a, k) { return '<button data-k="' + k + '" class="' + (a.word === c.word && a.start === c.start ? "on" : "") + '">' + esc(a.word) + "</button>"; }).join("") + "</div>" : "") +
             '<div class="lk-act"><button class="lk-say">🔊 Nghe</button>' +
-            (window.HocMyWords ? '<button class="lk-add' + (inBook ? " in" : "") + '">' + (inBook ? "✓ Đã trong sổ" : "＋ Từ của tôi") + "</button>" : "") + "</div>";
+            (window.HocMyWords ? '<button class="lk-add' + (inBook ? " in" : "") + '">' + (inBook ? "✓ Đã trong sổ" : "＋ Từ của tôi") + "</button>" : "") +
+            (window.HocSentences ? '<button class="lk-sent' + (HocSentences.has(sentenceAround(c.text, c.start, c.end), I.hz) ? " in" : "") + '" title="Lưu cả câu, che từ này để ôn dạng điền từ">' +
+                (HocSentences.has(sentenceAround(c.text, c.start, c.end), I.hz) ? "✓ Đã lưu câu" : "✂️ Lưu câu") + "</button>" : "") + "</div>" +
+            (window.HocSentences ? '<div class="lk-sent-prev">' + esc(HocSentences.cloze({ zh: sentenceAround(c.text, c.start, c.end), target: I.hz })) + "</div>" : "");
         pop.querySelector(".lk-x").onclick = close;
         pop.querySelector(".lk-say").onclick = function () { (opts.speak || speakDefault)(I.hz); };
         pop.querySelectorAll(".lk-alts button").forEach(function (b) {
@@ -245,6 +250,15 @@
             if (HocMyWords.has(I.hz)) { HocMyWords.remove(I.hz); render(); return; }
             var entry = HocMyWords.add({ hz: I.hz, py: I.py, hv: I.hv, vi: I.vi, ex: sentenceAround(c.text, c.start, c.end), src: opts.getSrc ? opts.getSrc() : "" });
             if (opts.onAdd) opts.onAdd(entry);
+            render();
+        };
+        var sb = pop.querySelector(".lk-sent");
+        if (sb) sb.onclick = function () {
+            var zh = sentenceAround(c.text, c.start, c.end);
+            if (HocSentences.has(zh, I.hz)) { HocSentences.remove(HocSentences.makeId(zh, I.hz)); render(); return; }
+            var e = HocSentences.add({ zh: zh, target: I.hz, py: I.py, hv: I.hv, vi: I.vi,
+                ctx_vi: opts.getContextVi ? opts.getContextVi(c.para) : "", src: opts.getSrc ? opts.getSrc() : "", url: opts.getUrl ? opts.getUrl() : "" });
+            if (opts.onSentence) opts.onSentence(e);
             render();
         };
     }

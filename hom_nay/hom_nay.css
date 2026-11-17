@@ -195,6 +195,50 @@ select { padding: 7px 10px; border-radius: 10px; border: 1px solid var(--ui-bord
 .say.sm { width: 34px; height: 34px; font-size: 14px; }
 #hard-more { margin-top: 6px; }
 
+/* Bước 4: Đọc 1 bài */
+.rd-tag { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 1px 8px; border-radius: 99px; margin-bottom: 3px; background: var(--ui-primary-soft); color: var(--primary); }
+.rd-reread .rd-tag { background: var(--warn-soft); color: var(--warn); }
+.rd-fit .rd-tag { background: var(--ok-soft); color: var(--ok); }
+.lesson .rd-title { font-family: var(--cn), var(--ui-font-sans); font-weight: 600; overflow-wrap: anywhere; }
+.lesson > span:first-child { min-width: 0; }
+
+/* Thẻ ôn "✂️ Câu của tôi" */
+.fc-mode.m-sent { background: var(--bad-soft); color: var(--bad); }
+.fc-src .s-sent { color: var(--ui-hsk-6); }
+.fc-front.m-sent { flex-direction: column; gap: 10px; }
+.fc-sent { font-family: var(--cn); font-size: 25px; line-height: 1.7; text-align: center; max-width: 100%; overflow-wrap: anywhere; }
+.fc-sent .gap { color: var(--primary); letter-spacing: .05em; font-weight: 700; }
+.fc-sent mark { background: var(--ui-highlight); color: inherit; border-radius: 4px; padding: 0 2px; font-weight: 700; }
+.fcard.flipped .fc-front.m-sent { flex-direction: row; align-items: center; }
+.fcard.flipped .fc-sent { font-size: 22px; }
+.sent-try { width: min(320px, 100%); padding: 9px 12px; border-radius: 10px; border: 1px solid var(--ui-border-strong); background: var(--surface-2); font-family: var(--cn), var(--ui-font-sans); font-size: 17px; text-align: center; }
+.sent-try:focus { outline: 2px solid var(--primary); outline-offset: 0; }
+.sent-res { font-weight: 600; margin-bottom: 6px; }
+.sent-res.ok { color: var(--ok); }
+.sent-res.bad { color: var(--bad); }
+.sent-res .zh-in { font-family: var(--cn); }
+.sent-src { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.sent-src a { color: var(--primary); font-weight: 600; }
+
+/* Khối "✂️ Câu của tôi" trên trang chính */
+.sent-box { margin-top: 16px; }
+.sent-box .step-head h2 { font-size: 17px; margin: 0; }
+.sent-head-r { display: inline-flex; align-items: center; gap: 6px; }
+.sent-note { margin: 6px 0 0; font-size: 13.5px; }
+.sent-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.sent-item { display: flex; gap: 10px; align-items: flex-start; border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; background: var(--surface-2); }
+.sent-main { flex: 1; min-width: 0; }
+.sent-zh { font-family: var(--cn); font-size: 18px; line-height: 1.6; cursor: pointer; overflow-wrap: anywhere; }
+.sent-zh .gap { color: var(--primary); font-weight: 700; }
+.sent-zh mark { background: var(--ui-highlight); color: inherit; border-radius: 3px; padding: 0 1px; }
+.sent-meta { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 13px; color: var(--muted); margin-top: 2px; }
+.sent-w b { font-family: var(--cn); color: var(--text); }
+.sent-dl { font-weight: 600; }
+.sent-dl.due { color: var(--bad); }
+.sent-acts { flex: none; display: flex; gap: 6px; }
+.say.del:hover { border-color: var(--bad); }
+#sent-more { margin-top: 6px; }
+
 /* Kết quả */
 .result-head { display: flex; gap: 18px; align-items: center; }
 .result-head h2 { font-size: 20px; margin: 0 0 4px; }
@@ -231,5 +275,9 @@ select { padding: 7px 10px; border-radius: 10px; border: 1px solid var(--ui-bord
     .hard-main { gap: 10px; }
     .hard-hz { font-size: 23px; }
     .hard-side { flex-direction: column; gap: 4px; }
+    .fc-sent { font-size: 21px; }
+    .fcard.flipped .fc-sent { font-size: 19px; }
+    .sent-acts { flex-direction: column; gap: 4px; }
+    .sent-zh { font-size: 17px; }
 }
 @media (hover: none) { .fc-hint kbd { display: none; } }

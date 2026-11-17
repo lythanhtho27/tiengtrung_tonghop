@@ -300,7 +300,7 @@
             return `<li><a href="${r.url}"><span>${r.name}</span><span class="due-badge ${d ? "" : "zero"}">${d ? fmt(d) : "✓"}</span></a></li>`;
         }).join("");
 
-        // ----- Buổi học hôm nay: đếm nhanh thẻ đến hạn ở mọi nguồn SRS (không gộp trùng) + trạng thái 3 bước
+        // ----- Buổi học hôm nay: đếm nhanh thẻ đến hạn ở mọi nguồn SRS (không gộp trùng) + Câu của tôi + trạng thái 4 bước
         (function todayBanner() {
             const read = k => { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (e) { return null; } };
             const now = Date.now(), d0 = new Date(), dk = d0.getFullYear() + "-" + String(d0.getMonth() + 1).padStart(2, "0") + "-" + String(d0.getDate()).padStart(2, "0");
@@ -310,6 +310,8 @@
             const my = (read("hoc_mywords_v1") || {}).words || {};
             let due = countDue(hs.srs) + countDue(bl.srs) + countDue(read("boya_tv_srs")) + countDue(read("hsk_wl_srs_v3"));
             for (const k in my) if (my[k] && my[k].card && my[k].card.due <= now) due++;
+            const sents = (read("hoc_sentences_v1") || {}).items || {};
+            for (const k in sents) if (sents[k] && sents[k].card && sents[k].card.due <= now) due++;
             const steps = ((hn.days || {})[dk] || {}).steps || {};
             const day = (o) => (o || {})[dk] || {};
             const newN = (day(hs.days).n || 0) + (day(bl.days).n || 0) + (day(bl.days).c || 0) + (day(tvd).n || 0) + (wp.daily && wp.daily.d === dk ? wp.daily.n || 0 : 0);
@@ -317,6 +319,11 @@
                 ["Ôn tập", !due || !!steps.review],
                 ["Học bài mới", newN > 0 || !!steps.learn],
                 ["Luyện tập", (day(lt.days).n || 0) >= 10 || !!steps.practice],
+                ["Đọc 1 bài", !!steps.read || (function () {      // hôm nay đọc xong ít nhất một bài ở doc_them
+                    const t0 = new Date(d0.getFullYear(), d0.getMonth(), d0.getDate()).getTime();
+                    const rd = (read("doc_them_v1") || {}).read || {};
+                    return Object.keys(rd).some(id => { const r = rd[id] || {}; return (Array.isArray(r.rr) && r.rr.some(x => +x >= t0)) || (r.done && (r.at || 0) >= t0); });
+                })()],
             ];
             document.getElementById("tb-due").textContent = fmt(due);
             document.getElementById("tb-steps").innerHTML = st.map((x, i) => `<span class="tb-step ${x[1] ? "ok" : ""}">${x[1] ? "✓" : i + 1} ${x[0]}</span>`).join("");

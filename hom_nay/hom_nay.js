@@ -7,10 +7,16 @@
              tv       boya_tv_srs[id] + boya_tv_days    id "tc1_3_5"  (tuvung/tuvung.js)
              wl       hsk_wl_srs_v3[id] + hsk_wl_json_progress_v2.daily, id "L1-0001" (word_learning/word_learning.js)
              my       hoc_mywords_v1 qua API shared/mywords.js (HocMyWords)
+             sent     hoc_sentences_v1 qua API shared/sentences.js (HocSentences) — thẻ "✂️ Câu của tôi" (điền từ),
+                      KHÔNG gộp với thẻ từ, mỗi câu là một lượt hỏi riêng
            Cùng chữ Hán (đã bỏ chú thích ngoặc) đến hạn ở nhiều nguồn -> chỉ hỏi MỘT lần,
            điểm chấm áp dụng cho mọi thẻ đó (mỗi thẻ theo schedule của nguồn mình).
    Bước 2. Học bài mới: 1–2 bài nên học tiếp của chặng hiện tại (logic chặng giống index.html).
    Bước 3. Luyện tập 10 phút: trang luyen_tap, xong khi hôm nay làm ≥ 10 câu.
+   Bước 4. Đọc 1 bài: gợi ý từ doc_them/doc_index.js (nạp lười) + tiến độ doc_them_v1.read[id] = {done, at, rr[]}:
+           chương kế của bộ truyện đang đọc dở, bài đến hạn đọc lại (quy tắc rr giống doc_them: 1 lần → +3 ngày,
+           2 lần → +7 ngày, ≥ 3 lần thôi nhắc), 1–2 bài "vừa sức" (% từ đã biết 90–95%).
+           Xong khi hôm nay đọc xong ít nhất một bài (rr hoặc at thuộc hôm nay).
    - Hiển thị: luyen_tap/lt_data.js (LT_DATA.words[id] = [hz, py, nghĩa], LT_DATA.sents),
      shared/dict_vi.js (HOC_DICT.w[hz] = [py, HV, nghĩa], HOC_DICT.c[chữ] = [py, HV]).
    - Kiểu thẻ ôn (settings.cardMode): "mix" (trộn 50/30/20, thẻ reps ≤ 1 luôn là Chữ → nghĩa) / "hz" Chữ → nghĩa /
@@ -29,7 +35,7 @@
     const DAY = 86400000;
     const RELEARN_MS = 10 * 60000;
     const SLOW_MS = 3000;
-    const STREAK_MIN = 10;          // ôn ≥ 10 thẻ trong ngày (hoặc xong bước 2/3) mới tính vào chuỗi ngày học
+    const STREAK_MIN = 10;          // ôn ≥ 10 thẻ trong ngày (hoặc xong bước 2/3/4) mới tính vào chuỗi ngày học
     const BOYA_STREAK_MIN = 10;     // boya_learning: STREAK_MIN của trang đó
     const HARD_MIN = 4;             // quên ≥ 4 lần -> "từ cứng đầu"
     const HARD_SHOW = 8;            // số từ cứng đầu hiện sẵn trên trang chính
@@ -41,6 +47,7 @@
         wl:   { name: "HSK 3.0",    order: 3 },
         my:   { name: "Từ của tôi", order: 4 },
     };
+    const SENT_LABEL = "Câu của tôi";
     const LT = window.LT_DATA || { words: {}, sents: [] };
     const DICT = window.HOC_DICT || { w: {}, c: {} };
 
@@ -384,10 +391,10 @@
         const st = S.streak || {};
         return (st.last === dayKey() || st.last === yesterdayKey()) ? (st.count || 0) : 0;
     }
-    // Ngày "đạt" khi ôn ≥ 10 thẻ hoặc xong bước 2 / bước 3
+    // Ngày "đạt" khi ôn ≥ 10 thẻ hoặc xong bước 2 / bước 3 / bước 4
     function checkDayOk() {
         const d = today();
-        const ok = (d.r || 0) >= STREAK_MIN || !!d.steps.learn || !!d.steps.practice;
+        const ok = (d.r || 0) >= STREAK_MIN || !!d.steps.learn || !!d.steps.practice || !!d.steps.read;
         const k = dayKey();
         if (ok && S.streak.last !== k) {
             S.streak.count = S.streak.last === yesterdayKey() ? (S.streak.count || 0) + 1 : 1;
@@ -535,11 +542,29 @@
     // ====================================================================== Phiên ôn tập
     let session = null;
     let hardMap = new Map();         // chữ Hán -> số lần quên (để gắn nhãn 🧠 trên thẻ ôn thường)
-    function newSession(groups, practice, remainAfter) {
+    // "✂️ Câu của tôi" đến hạn (shared/sentences.js), câu quá hạn lâu trước
+    function sentDue(now) {
+        if (!window.HocSentences) return [];
+        try {
+            return HocSentences.due(now || Date.now())
+                .filter(e => e && e.zh && e.target && e.card)
+                .sort((a, b) => (a.card.due || 0) - (b.card.due || 0));
+        } catch (e) { console.warn("Không đọc được Câu của tôi", e); return []; }
+    }
+    // Trộn thẻ câu vào giữa thẻ từ (rải đều) để phiên không dồn câu về cuối
+    function mixQueue(groups, sents) {
+        const q = groups.map(g => ({ g, again: false }));
+        if (!sents.length) return q;
+        const step = Math.max(1, Math.floor((q.length + sents.length) / sents.length));
+        sents.forEach((e, i) => q.splice(Math.min(q.length, i * step + Math.floor(step / 2)), 0, { sent: e, again: false }));
+        return q;
+    }
+    function newSession(groups, practice, remainAfter, sents) {
         hardMap = new Map(collectHard().map(g => [g.key, g.forgot]));
+        sents = sents || [];
         session = {
-            queue: groups.map(g => ({ g, again: false })),
-            total: groups.length, done: 0, rated: 0,
+            queue: mixQueue(groups, sents),
+            total: groups.length + sents.length, done: 0, rated: 0,
             stats: { 1: 0, 2: 0, 3: 0, 4: 0 },
             remainAfter: remainAfter || 0,
             practice: !!practice,
@@ -553,10 +578,18 @@
     }
     function startReview() {
         const all = collectDue();
-        if (!all.length) { toast("Không còn thẻ nào đến hạn. Tuyệt vời!"); renderHome(); return; }
+        const sAll = sentDue();
+        if (!all.length && !sAll.length) { toast("Không còn thẻ nào đến hạn. Tuyệt vời!"); renderHome(); return; }
         const limit = +S.settings.limit || 0;
-        const groups = limit ? all.slice(0, limit) : all;
-        newSession(groups, false, all.length - groups.length);
+        let groups = all, sents = sAll;
+        if (limit && all.length + sAll.length > limit) {
+            // câu chiếm tối đa ~30% phiên, phần còn thừa của bên này nhường cho bên kia
+            let ns = Math.min(sAll.length, Math.max(1, Math.round(limit * 0.3)));
+            let nw = Math.min(all.length, limit - ns);
+            ns = Math.min(sAll.length, limit - nw);
+            groups = all.slice(0, nw); sents = sAll.slice(0, ns);
+        }
+        newSession(groups, false, all.length + sAll.length - groups.length - sents.length, sents);
     }
     // Luyện riêng từ cứng đầu: bất kể hạn, không ghi vào lịch SRS
     function startPractice() {
@@ -618,9 +651,10 @@
         if (!s.queue.length) { finishReview(); return; }
         const it = s.queue[0], g = it.g;
         s.flipped = false;
-        if (!it.mode) it.mode = pickMode(g);
         $("prog-bar").style.width = (s.done / s.total * 100) + "%";
         $("prog-text").textContent = Math.min(s.done + 1, s.total) + "/" + s.total;
+        if (it.sent) { renderSentCard(it); return; }
+        if (!it.mode) it.mode = pickMode(g);
         $("fc-mode").textContent = MODES[it.mode];
         $("fc-mode").className = "fc-mode m-" + it.mode;
         $("fc-src").innerHTML = uniqSrc(g).map(src => `<span class="s-${src}">${esc(SRC[src].name)}</span>`).join("");
@@ -645,6 +679,7 @@
     function showHint() {
         const it = curItem(), box = $("fc-hintbox");
         if (!it || !box) return;
+        if (it.sent) { showSentHint(it, box); return; }
         const note = window.HocNotes ? HocNotes.get(it.g.hz) : "";
         const py = String(it.g.py || "").trim();
         box.innerHTML = note ? `📝 ${esc(note)}`
@@ -659,6 +694,7 @@
         s.flipped = true;
         s.ms = performance.now() - s.t0;
         const it = s.queue[0], g = it.g;
+        if (it.sent) { flipSent(it); return; }
         $("fc-front").className = "fc-front m-back";
         $("fc-front").innerHTML = `<div class="fc-hz">${zizuHTML(g.hz)}</div>
             <button class="say" id="fc-say" type="button" title="Nghe phát âm" aria-label="Nghe phát âm">🔊</button>`;
@@ -702,6 +738,7 @@
         const s = session;
         if (!s || !s.flipped || !s.queue.length) return;
         const it = s.queue.shift();
+        if (it.sent) { rateSent(it, r); return; }
         if (s.practice) {                       // luyện riêng: không ghi gì vào lịch ôn / bộ đếm
             s.rated++;
             if (!it.again) { s.stats[r]++; s.done++; }
@@ -728,6 +765,118 @@
         save();
         renderCard();
     }
+    // ---------------------------------------------------------------------- Thẻ "✂️ Câu của tôi" (điền từ)
+    const hanOnly = t => Array.from(String(t || "")).filter(ch => HAN.test(ch)).join("");
+    // Câu đầy đủ, từ được che tô sáng (lần xuất hiện đầu, giống HocSentences.cloze); chữ Hán của từ mở được Họ chữ
+    function sentFullHTML(e, zizu) {
+        const zh = String(e.zh || ""), t = String(e.target || "");
+        const i = t ? zh.indexOf(t) : -1;
+        if (i < 0) return esc(zh);
+        return esc(zh.slice(0, i)) + `<mark>${zizu ? zizuHTML(t) : esc(t)}</mark>` + esc(zh.slice(i + t.length));
+    }
+    function sentClozeHTML(e) {
+        const c = window.HocSentences ? HocSentences.cloze(e) : String(e.zh || "");
+        return esc(c).replace(/＿+/g, m => `<span class="gap">${m}</span>`);
+    }
+    function renderSentCard(it) {
+        const s = session, e = it.sent;
+        it.typed = "";
+        $("fc-mode").textContent = "✂️ Điền từ";
+        $("fc-mode").className = "fc-mode m-sent";
+        $("fc-src").innerHTML = `<span class="s-sent">${esc(SENT_LABEL)}</span>`;
+        $("fc-again").hidden = !it.again;
+        $("fc-hard").hidden = true;
+        $("fc-front").className = "fc-front m-sent";
+        $("fc-front").innerHTML = `<div class="fc-sent">${sentClozeHTML(e)}</div>
+            ${e.vi ? `<div class="fc-q-sub">Từ bị che nghĩa là: <b>${esc(e.vi)}</b></div>` : `<div class="fc-q-sub">Nhớ lại từ bị che</div>`}
+            <button class="btn btn-sm hint-btn" type="button" data-hint>💡 Gợi ý</button>
+            <div class="fc-hintbox" id="fc-hintbox" hidden></div>
+            <input class="sent-try" id="sent-try" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"
+                placeholder="Gõ thử chữ Hán (tùy chọn) rồi Enter" aria-label="Gõ thử từ bị che">`;
+        $("fc-back").hidden = true;
+        $("fcard").classList.remove("flipped");
+        $("fc-hint").innerHTML = "Nhớ từ bị che rồi chạm vào thẻ hoặc nhấn <kbd>Space</kbd> để lật";
+        $("fc-hint").hidden = false;
+        $("btn-flip").hidden = false;
+        $("rate-row").hidden = true;
+        s.t0 = performance.now();
+        window.scrollTo(0, 0);
+        const inp = $("sent-try");
+        inp.addEventListener("keydown", ev => {
+            // Enter đang soạn chữ (bộ gõ) không tính là nộp
+            if (ev.key === "Enter" && !ev.isComposing && ev.keyCode !== 229) {
+                ev.preventDefault(); ev.stopPropagation();
+                if (curItem() === it && !session.flipped) { it.typed = inp.value; flip(); }
+            } else if (ev.key === "Escape") { ev.stopPropagation(); inp.blur(); }
+        });
+    }
+    function showSentHint(it, box) {
+        const e = it.sent, n = hanOnly(e.target).length || String(e.target || "").length;
+        const py = String(e.py || "").trim();
+        box.innerHTML = `${n} chữ` + (py ? ` · pinyin bắt đầu bằng “<b>${esc(py.charAt(0))}</b>…”` : "");
+        box.hidden = false;
+    }
+    function flipSent(it) {
+        const s = session;
+        const e = (window.HocSentences && HocSentences.get(it.sent.id)) || it.sent;
+        it.sent = e;
+        const inp = $("sent-try");
+        if (inp && !it.typed) it.typed = inp.value;
+        $("fc-front").className = "fc-front m-sent m-back";
+        $("fc-front").innerHTML = `<div class="fc-sent">${sentFullHTML(e, true)}</div>
+            <button class="say" type="button" data-say="${esc(e.zh)}" title="Nghe cả câu" aria-label="Nghe cả câu">🔊</button>`;
+        $("fc-py").textContent = e.py || "";
+        $("fc-hv").textContent = e.hv ? String(e.hv).toUpperCase() : "";
+        $("fc-vi").textContent = e.vi || "";
+        const typed = hanOnly(it.typed);
+        let res = "";
+        if (typed) {
+            const ok = typed === hanOnly(e.target);
+            res = `<div class="sent-res ${ok ? "ok" : "bad"}">${ok ? "✓ Bạn gõ đúng" : "✗ Bạn gõ"}: <span class="zh-in">${esc(typed)}</span></div>`;
+        }
+        const url = e.url ? "../" + String(e.url).replace(/^\.?\//, "") : "";
+        $("fc-ex").innerHTML = res
+            + (e.ctx_vi ? `<div class="vi">${esc(e.ctx_vi)}</div>` : "")
+            + (e.src || url ? `<div class="sent-src">${esc(e.src || "Nguồn")}${url ? ` · <a href="${esc(url)}">Mở lại bài ↗</a>` : ""}</div>` : "");
+        const nb = $("fc-note");
+        nb.dataset.hz = hanOnly(e.target) || e.target;
+        nb.dataset.hard = "0";
+        fillNoteBox(nb);
+        $("fc-back").hidden = false;
+        $("fcard").classList.add("flipped");
+        $("btn-flip").hidden = true;
+        $("rate-row").hidden = false;
+        const card = Object.assign({ ef: 2.5, iv: 0, reps: 0, lapses: 0 }, e.card || {});
+        for (let r = 1; r <= 4; r++) $("iv-" + r).textContent = window.HocSentences ? HocSentences.ivLabel(card, r) : "";
+        if (S.settings.speak) speak(e.zh);
+    }
+    function rateSent(it, r) {
+        const s = session;
+        if (window.HocSentences) {
+            const e = HocSentences.get(it.sent.id);          // đọc lại bản mới nhất trước khi ghi
+            if (e) {
+                const n = HocSentences.schedule(Object.assign({ ef: 2.5, iv: 0, reps: 0, lapses: 0 }, e.card || {}), r);
+                const upd = HocSentences.update(e.id, { card: n });
+                if (upd) it.sent = upd;
+            }
+        }
+        s.rated++;
+        if (!it.again) { s.stats[r]++; s.done++; }
+        if (r === 1) s.queue.push({ sent: it.sent, again: true });
+        const d = today();
+        d.r = (d.r || 0) + 1;
+        if (checkDayOk()) toast(`🔥 Chuỗi ngày học: ${S.streak.count} ngày!`);
+        save();
+        renderCard();
+    }
+    // Phát âm phần đang hỏi: thẻ từ → từ; thẻ câu → cả câu (chỉ sau khi lật, vì nghe trước sẽ lộ đáp án)
+    function sayCur(slow) {
+        const it = curItem();
+        if (!it) return;
+        if (it.sent) { if (session.flipped) speak(it.sent.zh, slow ? 0.5 : undefined); return; }
+        speak(it.g.hz, slow ? 0.5 : undefined);
+    }
+
     function finishReview(quit) {
         const s = session;
         if (!s) return;
@@ -735,7 +884,7 @@
         $("practice-note").hidden = true;
         if ("speechSynthesis" in window) speechSynthesis.cancel();
         if (s.practice) { finishPractice(s, quit); return; }
-        const remain = collectDue();
+        const remain = collectDue().concat(sentDue());
         lastDueCount = remain.length;
         if (!quit || !remain.length) { today().steps.review = true; }
         checkDayOk();
@@ -752,12 +901,15 @@
         ].map(x => `<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
         const st = stepState();
         const acts = [];
-        if (remain.length) acts.push(`<button class="btn ${st.learn.done && st.practice.done ? "btn-primary" : ""}" id="res-more">🔁 Ôn tiếp (${fmt(remain.length)})</button>`);
+        if (remain.length) acts.push(`<button class="btn ${st.learn.done && st.practice.done && st.read.done ? "btn-primary" : ""}" id="res-more">🔁 Ôn tiếp (${fmt(remain.length)})</button>`);
         if (!st.learn.done && st.learn.items.length) {
             const n = st.learn.items[0];
             acts.unshift(`<a class="btn btn-primary" href="${esc(n.url)}">Bước 2 · ▶ ${esc(n.label)}</a>`);
         } else if (!st.practice.done) {
             acts.unshift(`<a class="btn btn-primary" href="../luyen_tap/luyen_tap.html">Bước 3 · ✍️ Luyện tập 10 phút</a>`);
+        } else if (!st.read.done) {
+            const r0 = (readSuggestions() || [])[0];
+            acts.unshift(`<a class="btn btn-primary" href="${esc(r0 ? r0.url : "../doc_them/doc_them.html")}">Bước 4 · 📖 ${esc(r0 ? r0.title : "Đọc 1 bài")}</a>`);
         }
         acts.push(`<button class="btn" id="res-home">Về buổi học hôm nay</button>`);
         $("res-actions").innerHTML = acts.join("");
@@ -937,6 +1089,135 @@
             }),
         };
     }
+    // ====================================================================== Bước 4: Đọc 1 bài (doc_them)
+    const FIT_LO = 90, FIT_HI = 95, FIT_MID = 92;    // "vừa sức": biết 90–95% số từ (không có thì gần 92% nhất)
+    const READ_MAX = 4;                                // số gợi ý tối đa
+    function docRead() { const v = readJSON("doc_them_v1", {}) || {}; return (v.read && typeof v.read === "object") ? v.read : {}; }
+    // Các mốc đọc xong; bài đã done mà chưa có rr coi như rr = [at] (giống doc_them)
+    function rrOf(r) {
+        if (!r) return [];
+        if (Array.isArray(r.rr) && r.rr.length) {
+            // lọc trùng ngày (sync.js hợp mảng từ hai máy có thể ra hai mốc cùng ngày) — khớp rrOf của doc_them.js
+            const seen = new Set();
+            return r.rr.filter(x => +x > 0).map(Number).sort((a, b) => a - b)
+                .filter(x => { const d = startOfDay(x); if (seen.has(d)) return false; seen.add(d); return true; });
+        }
+        return r.done && r.at ? [r.at] : [];
+    }
+    // Hạn đọc lại: 1 lần → đầu ngày(rr[0]) + 3 ngày; 2 lần → đầu ngày(rr[1]) + 7 ngày; ≥ 3 lần → không nhắc (null)
+    function rereadDue(r) {
+        if (!r || !r.done) return null;       // bài đã bỏ đánh dấu thì không nhắc (giống doc_them.js)
+        const rr = rrOf(r);
+        if (rr.length === 1) return startOfDay(rr[0]) + 3 * DAY;
+        if (rr.length === 2) return startOfDay(rr[1]) + 7 * DAY;
+        return null;
+    }
+    function readToday() {
+        const t0 = startOfDay(), rd = docRead();
+        return Object.keys(rd).some(id => {
+            const r = rd[id] || {};
+            return (Array.isArray(r.rr) && r.rr.some(x => +x >= t0)) || (r.done && (r.at || 0) >= t0);
+        });
+    }
+    let docLoading = null;
+    function ensureDocIndex() {       // mục lục bài đọc (~340KB) — chỉ nạp khi vẽ bước 4
+        if (window.DOC_INDEX) return Promise.resolve(true);
+        if (docLoading) return docLoading;
+        docLoading = new Promise(resolve => {
+            const s = document.createElement("script");
+            s.src = "../doc_them/doc_index.js";
+            s.onload = () => resolve(!!window.DOC_INDEX);
+            s.onerror = () => resolve(false);
+            document.head.appendChild(s);
+        });
+        return docLoading;
+    }
+    // Tập từ đã biết: chữ Hán của mọi thẻ SRS + Từ của tôi (giống buildKnown() của doc_them)
+    function buildKnown() {
+        const set = new Set();
+        const add = raw => String(raw || "").split(/[\/、,，;；|\s]+/).forEach(p => {
+            const w = hanOnly(cleanHz(p));
+            if (w) set.add(w);
+        });
+        const hs = readJSON("hsk_lotrinh_v1", {}) || {};
+        Object.keys(hs.srs || {}).forEach(id => add(id.slice(id.indexOf("-") + 1)));
+        const wl = readJSON("hsk_wl_srs_v3", {}) || {};
+        Object.keys(wl).forEach(id => { if (wl[id] && wl[id].hz) add(wl[id].hz); });
+        const bl = readJSON("boya_learning_progress_v2", {}) || {};
+        Object.keys(bl.srs || {}).concat(Object.keys(readJSON("boya_tv_srs", {}) || {}))
+            .forEach(id => { const w = LT.words[id]; if (w) add(w[0]); });
+        if (window.HocMyWords) HocMyWords.all().forEach(e => add(e.hz));
+        const chars = new Set();
+        set.forEach(w => { for (const ch of w) chars.add(ch); });
+        return { words: set, chars };
+    }
+    // % từ đã biết = số từ (khác nhau) trong d.w đã biết / tổng số từ của bài
+    function knownPctOf(d, K) {
+        const toks = String(d.w || "").split(/\s+/).map(t => hanOnly(cleanHz(t))).filter(Boolean);
+        if (!toks.length) return 0;
+        let ok = 0;
+        toks.forEach(t => { if (K.words.has(t) || (t.length === 1 && K.chars.has(t))) ok++; });
+        return Math.round(ok * 100 / toks.length);
+    }
+    // Trình độ ước lượng để ưu tiên cấp bài: cấp HSK cao nhất đã có thẻ ở hsk_lotrinh, hoặc theo chặng hiện tại
+    function learnerLevel() {
+        let lv = 0;
+        const hs = readJSON("hsk_lotrinh_v1", {}) || {};
+        Object.keys(hs.srs || {}).forEach(id => { const n = parseInt(id, 10); if (n > lv) lv = n; });
+        try { const st = nextLessons().stage; if (st && st.n > 1) lv = Math.max(lv, st.n + 2); } catch (e) {}
+        return Math.min(6, Math.max(1, lv || 1));
+    }
+    const KIND_VI = { article: "Bài đọc", series: "Truyện dài", dialogue: "Hội thoại", chengyu: "Thành ngữ" };
+    function docLink(id) { return "../doc_them/doc_them.html?id=" + encodeURIComponent(id); }
+    // Gợi ý bước 4 (null nếu chưa nạp được mục lục): [{type: "next"|"reread"|"fit", id, title, sub, url, level, pct}]
+    function readSuggestions() {
+        const D = window.DOC_INDEX;
+        if (!Array.isArray(D)) return null;
+        const rd = docRead(), now = Date.now();
+        const isDone = id => rrOf(rd[id]).length > 0 || !!(rd[id] && rd[id].done);
+        const lastAt = id => { const r = rd[id] || {}; return Math.max(r.at || 0, ...rrOf(r)); };
+        const K = buildKnown();
+        const pctCache = {};
+        const pct = d => (pctCache[d.id] != null ? pctCache[d.id] : (pctCache[d.id] = knownPctOf(d, K)));
+        const out = [], used = new Set();
+        const push = (type, d, extra, force) => {
+            if (used.has(d.id) || (out.length >= READ_MAX && !force)) return;
+            used.add(d.id);
+            const title = d.kind === "series" ? `${d.series_title || "Truyện"} · Chương ${d.chapter}: ${d.title}` : d.title;
+            out.push(Object.assign({ type, id: d.id, title, title_vi: d.title_vi || "", kind: d.kind, level: d.level,
+                pct: pct(d), url: docLink(d.id) }, extra || {}));
+        };
+        // (a) chương kế tiếp của bộ truyện đang đọc dở (bộ đọc gần nhất trước), tối đa 2 bộ
+        const series = new Map();
+        D.forEach(d => { if (d.kind === "series" && d.series) { if (!series.has(d.series)) series.set(d.series, []); series.get(d.series).push(d); } });
+        const prog = [];
+        series.forEach(chs => {
+            chs.sort((a, b) => (a.chapter || 0) - (b.chapter || 0));
+            const done = chs.filter(c => isDone(c.id));
+            if (!done.length || done.length === chs.length) return;
+            const maxCh = Math.max(...done.map(c => c.chapter || 0));
+            const next = chs.find(c => (c.chapter || 0) > maxCh && !isDone(c.id)) || chs.find(c => !isDone(c.id));
+            if (next) prog.push({ next, at: Math.max(...done.map(c => lastAt(c.id))), n: done.length, total: chs.length });
+        });
+        prog.sort((a, b) => b.at - a.at).slice(0, 2).forEach(p => push("next", p.next, { progress: `${p.n}/${p.total} chương` }));
+        // (b) bài đến hạn đọc lại (quá hạn lâu trước), tối đa 2
+        const byId = new Map(D.map(d => [d.id, d]));
+        Object.keys(rd).map(id => ({ id, due: rereadDue(rd[id]), n: rrOf(rd[id]).length }))
+            .filter(x => x.due != null && now >= x.due && byId.has(x.id))
+            .sort((a, b) => a.due - b.due).slice(0, 2)
+            .forEach(x => push("reread", byId.get(x.id), { times: x.n }));
+        // (c) 1–2 bài chưa đọc "vừa sức" (bỏ chương giữa truyện: truyện nên đọc từ chương 1), ưu tiên cấp gần trình độ
+        const room = Math.min(2, Math.max(1, READ_MAX - out.length));
+        const lv = learnerLevel();
+        const cands = D.filter(d => !isDone(d.id) && !used.has(d.id) && !(d.kind === "series" && (d.chapter || 1) > 1));
+        let fit = cands.filter(d => { const p = pct(d); return p >= FIT_LO && p <= FIT_HI; });
+        if (!fit.length) fit = cands.slice().sort((a, b) => Math.abs(pct(a) - FIT_MID) - Math.abs(pct(b) - FIT_MID)).slice(0, 6);
+        fit.sort((a, b) => (Math.abs(a.level - lv) - Math.abs(b.level - lv)) || (b.level - a.level) || (Math.abs(pct(a) - FIT_MID) - Math.abs(pct(b) - FIT_MID)));
+        // luôn có ít nhất 1 bài vừa sức (nên có thể thành 5 mục khi đã có 2 chương + 2 bài đọc lại)
+        fit.slice(0, room).forEach(d => push("fit", d, null, true));
+        return out;
+    }
+
     function stepState() {
         const d = S.days[dayKey()] || { steps: {} };
         const steps = d.steps || {};
@@ -947,6 +1228,7 @@
             review: { done: !!steps.review },
             learn: { done: newN > 0 || !!steps.learn, n: newN, items: nl.items, stage: nl.stage },
             practice: { done: prN >= 10 || !!steps.practice, n: prN },
+            read: { done: readToday() || !!steps.read },
         };
     }
 
@@ -958,18 +1240,21 @@
     }
     function renderHome() {
         const due = collectDue();
-        lastDueCount = due.length;
+        const sdue = sentDue();
+        lastDueCount = due.length + sdue.length;
         const st = stepState();
         // ghi nhận bước 2/3 vừa xong ở trang khác
         const d = today();
         let changed = false;
-        if (!due.length && !d.steps.review && (d.r || 0) > 0) { d.steps.review = true; changed = true; }
+        if (!due.length && !sdue.length && !d.steps.review && (d.r || 0) > 0) { d.steps.review = true; changed = true; }
         if (st.learn.done && !d.steps.learn) { d.steps.learn = true; changed = true; }
         if (st.practice.done && !d.steps.practice) { d.steps.practice = true; changed = true; }
+        if (st.read.done && !d.steps.read) { d.steps.read = true; changed = true; }
         if (checkDayOk()) changed = true;
         save();
-        const reviewDone = !due.length || !!d.steps.review;
-        const flags = [reviewDone, st.learn.done, st.practice.done];
+        const nDue = due.length + sdue.length;
+        const reviewDone = !nDue || !!d.steps.review;
+        const flags = [reviewDone, st.learn.done, st.practice.done, st.read.done];
         const curStep = flags.indexOf(false);
 
         // Đầu trang
@@ -977,17 +1262,18 @@
         const wd = ["Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy"][now.getDay()];
         $("hero-date").textContent = `${wd}, ${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`;
         const nDone = flags.filter(Boolean).length;
-        $("hero-title").textContent = nDone === 3 ? "🎉 Xong buổi học hôm nay!" : "Buổi học hôm nay";
-        $("hero-note").textContent = nDone === 3
-            ? "Bạn đã làm đủ 3 bước. Có thể ôn thêm hoặc học thêm nếu còn thời gian."
-            : `Đã xong ${nDone}/3 bước · khoảng 30–45 phút: ôn tập → học bài mới → luyện tập.`;
-        $("day-bar").style.width = Math.round(nDone / 3 * 100) + "%";
+        const NSTEP = flags.length;
+        $("hero-title").textContent = nDone === NSTEP ? "🎉 Xong buổi học hôm nay!" : "Buổi học hôm nay";
+        $("hero-note").textContent = nDone === NSTEP
+            ? `Bạn đã làm đủ ${NSTEP} bước. Có thể ôn thêm hoặc học thêm nếu còn thời gian.`
+            : `Đã xong ${nDone}/${NSTEP} bước · khoảng 40–55 phút: ôn tập → học bài mới → luyện tập → đọc 1 bài.`;
+        $("day-bar").style.width = Math.round(nDone / NSTEP * 100) + "%";
         const sk = currentStreak();
         $("streak-n").textContent = sk;
         $("streak").classList.toggle("cold", !(S.streak.last === dayKey()));
 
         // Bước 1
-        ["step-review", "step-learn", "step-practice"].forEach((id, i) => {
+        ["step-review", "step-learn", "step-practice", "step-read"].forEach((id, i) => {
             $(id).classList.toggle("done", flags[i]);
             $(id).classList.toggle("current", i === curStep);
             $(id).querySelector(".step-num").textContent = flags[i] ? "✓" : i + 1;
@@ -996,20 +1282,25 @@
         let cards = 0;
         due.forEach(g => uniqSrc(g).forEach(src => { bySrc[src] = (bySrc[src] || 0) + 1; }));
         due.forEach(g => { cards += g.cards.length; });
-        setTag("review-tag", reviewDone, due.length ? `${fmt(due.length)} từ` : "Không còn thẻ");
+        const dueTxt = [due.length ? `${fmt(due.length)} từ` : "", sdue.length ? `${fmt(sdue.length)} câu` : ""].filter(Boolean).join(" + ");
+        setTag("review-tag", reviewDone, dueTxt || "Không còn thẻ");
         const todayR = d.r || 0;
+        const sentTxt = sdue.length ? ` và <b>${fmt(sdue.length)}</b> câu ✂️ đến hạn` : "";
         $("review-note").innerHTML = due.length
-            ? `Có <b>${fmt(due.length)}</b> từ đến hạn${cards > due.length ? ` (${fmt(cards)} thẻ, từ trùng giữa các trang chỉ hỏi một lần)` : ""}.`
+            ? `Có <b>${fmt(due.length)}</b> từ${sentTxt ? "" : " đến hạn"}${cards > due.length ? ` (${fmt(cards)} thẻ, từ trùng giữa các trang chỉ hỏi một lần)` : ""}${sentTxt}.`
               + (todayR ? ` Hôm nay đã ôn ${fmt(todayR)} lượt.` : "") + " Từ quá hạn lâu và hay quên được hỏi trước."
+            : sdue.length ? `Có <b>${fmt(sdue.length)}</b> câu ✂️ Câu của tôi đến hạn.` + (todayR ? ` Hôm nay đã ôn ${fmt(todayR)} lượt.` : "")
             : todayR ? `Đã ôn ${fmt(todayR)} lượt hôm nay. Không còn thẻ nào đến hạn.` : "Không có thẻ nào đến hạn hôm nay. Hãy sang bước 2.";
-        $("review-src").innerHTML = SRC_KEYS.filter(k => bySrc[k]).map(k => `<span class="src-chip">${esc(SRC[k].name)}<b>${fmt(bySrc[k])}</b></span>`).join("");
-        $("btn-review").hidden = !due.length;
+        $("review-src").innerHTML = SRC_KEYS.filter(k => bySrc[k]).map(k => `<span class="src-chip">${esc(SRC[k].name)}<b>${fmt(bySrc[k])}</b></span>`).join("")
+            + (sdue.length ? `<span class="src-chip">✂️ ${esc(SENT_LABEL)}<b>${fmt(sdue.length)}</b></span>` : "");
+        $("btn-review").hidden = !nDue;
         const lim = +S.settings.limit || 0;
-        $("btn-review").textContent = reviewDone && due.length ? `🔁 Ôn tiếp (${fmt(due.length)})` : `▶ Bắt đầu ôn${lim && due.length > lim ? ` ${lim} thẻ` : ""}`;
+        $("btn-review").textContent = reviewDone && nDue ? `🔁 Ôn tiếp (${fmt(nDue)})` : `▶ Bắt đầu ôn${lim && nDue > lim ? ` ${lim} thẻ` : ""}`;
         $("opt-limit").value = String(lim);
         $("opt-speak").checked = !!S.settings.speak;
         $("opt-mode").value = MODES[S.settings.cardMode] ? S.settings.cardMode : "mix";
         renderHard();
+        renderSentBox();
 
         // Bước 2
         setTag("learn-tag", st.learn.done, st.learn.done ? `${fmt(st.learn.n)} từ mới` : "Chưa học");
@@ -1025,7 +1316,85 @@
         // Bước 3
         setTag("practice-tag", st.practice.done, st.practice.n ? `${fmt(st.practice.n)}/10 câu` : "0/10 câu");
         $("btn-practice").className = "btn" + (curStep === 2 ? " btn-primary" : "");
+
+        // Bước 4
+        renderRead(st.read.done, curStep === 3);
+        if (!window.DOC_INDEX) ensureDocIndex().then(ok => { if (ok && !$("home").hidden) renderRead(stepState().read.done, curStep === 3); });
         if (changed) writeSummary();
+    }
+    function renderRead(done, isCur) {
+        const sug = readSuggestions();
+        const nRe = sug ? sug.filter(x => x.type === "reread").length : 0;
+        setTag("read-tag", done, done ? "Đã đọc hôm nay" : nRe ? `${nRe} bài cần đọc lại` : "Chưa đọc");
+        $("btn-read").className = "btn" + (isCur ? " btn-primary" : "");
+        if (!sug) {
+            $("read-note").textContent = docLoading ? "Đang tìm bài vừa sức…" : "Đọc một bài ngắn ở trang Đọc thêm.";
+            $("read-list").innerHTML = "";
+            return;
+        }
+        $("read-note").textContent = done
+            ? "Hôm nay bạn đã đọc xong một bài. Có thể đọc thêm:"
+            : "Đọc xong một bài (đánh dấu “đã đọc” cuối bài). Đọc lại giúp nhớ từ lâu hơn; bài vừa sức là bài bạn đã biết khoảng 90–95% số từ.";
+        const TAG = { next: "📖 Đọc tiếp", reread: "🔁 Đọc lại", fit: "🎯 Vừa sức" };
+        $("read-list").innerHTML = sug.map(x => {
+            const meta = [`HSK ${x.level}`, KIND_VI[x.kind] || "", x.title_vi,
+                x.type === "next" && x.progress ? `đã đọc ${x.progress}` : "",
+                x.type === "reread" ? `đã đọc ${x.times} lần` : "", `biết ${x.pct}% từ`].filter(Boolean).join(" · ");
+            return `<a class="lesson rd-${x.type}" href="${esc(x.url)}" style="--c:var(--ui-hsk-${Math.min(6, Math.max(1, x.level || 1))})" data-read-id="${esc(x.id)}">
+                <span><span class="rd-tag">${TAG[x.type]}</span><b class="rd-title">${esc(x.title)}</b><small>${esc(meta)}</small></span>
+                <span class="go">Đọc ▶</span></a>`;
+        }).join("");
+    }
+
+    // ====================================================================== Khối "✂️ Câu của tôi" (trang chính)
+    const SENT_SHOW = 10;
+    let sentAll = false;
+    const sentFull = new Set();          // id câu đang hiện đầy đủ (mặc định hiện dạng che từ)
+    function dueLabel(c) {
+        if (!c || !c.due || c.due <= Date.now()) return "đến hạn";
+        const days = Math.round((startOfDay(c.due) - startOfDay()) / DAY);
+        if (days <= 0) return "ôn lại hôm nay";
+        if (days === 1) return "ôn ngày mai";
+        return `ôn sau ${days} ngày`;
+    }
+    function renderSentBox() {
+        const box = $("sent-box");
+        const list = window.HocSentences ? HocSentences.all() : [];
+        box.hidden = !list.length;
+        if (!list.length) return;
+        const now = Date.now();
+        const nDue = list.filter(e => e.card && e.card.due <= now).length;
+        const open = S.settings.sentOpen !== false;
+        $("sent-title").textContent = `✂️ Câu của tôi (${list.length})`;
+        $("sent-due").textContent = nDue ? `${fmt(nDue)} đến hạn` : "Chưa đến hạn";
+        $("sent-due").className = "tag " + (nDue ? "todo" : "ok");
+        $("sent-toggle").textContent = open ? "Thu gọn ▲" : "Mở ▼";
+        $("sent-toggle").setAttribute("aria-expanded", open ? "true" : "false");
+        $("sent-body").hidden = !open;
+        if (!open) return;
+        // câu đến hạn lên đầu, rồi theo hạn ôn
+        list.sort((a, b) => ((a.card && a.card.due) || 0) - ((b.card && b.card.due) || 0));
+        const shown = sentAll ? list : list.slice(0, SENT_SHOW);
+        $("sent-list").innerHTML = shown.map(e => {
+            const full = sentFull.has(e.id);
+            const isDue = e.card && e.card.due <= now;
+            return `<div class="sent-item" data-sid="${esc(e.id)}">
+                <div class="sent-main">
+                    <div class="sent-zh" data-sent-toggle title="${full ? "Che từ" : "Chạm để hiện câu đầy đủ"}">${full ? sentFullHTML(e, false) : sentClozeHTML(e)}</div>
+                    <div class="sent-meta">
+                        <span class="sent-w">${full ? `<b>${esc(e.target)}</b> ${esc(e.py || "")} · ` : ""}${esc(e.vi || "")}</span>
+                        ${e.src ? `<span class="sent-src-s">${esc(e.src)}</span>` : ""}
+                        <span class="sent-dl ${isDue ? "due" : ""}">${dueLabel(e.card)}</span>
+                    </div>
+                </div>
+                <span class="sent-acts">
+                    <button class="say sm" type="button" data-say="${esc(e.zh)}" title="Nghe câu" aria-label="Nghe câu">🔊</button>
+                    <button class="say sm del" type="button" data-sent-del title="Xóa câu" aria-label="Xóa câu">🗑</button>
+                </span>
+            </div>`;
+        }).join("");
+        $("sent-more").hidden = list.length <= SENT_SHOW;
+        $("sent-more").textContent = sentAll ? "Thu gọn ▲" : `Xem tất cả ${fmt(list.length)} câu ▼`;
     }
     function setTag(id, ok, text) {
         const el = $(id);
@@ -1044,16 +1413,38 @@
         const say = e.target.closest("[data-say]");
         if (say) speak(say.dataset.say);
     });
+    $("sent-toggle").onclick = () => { S.settings.sentOpen = S.settings.sentOpen === false; save(); renderSentBox(); };
+    $("sent-more").onclick = () => { sentAll = !sentAll; renderSentBox(); };
+    $("sent-list").addEventListener("click", e => {
+        const item = e.target.closest(".sent-item");
+        if (!item) return;
+        const id = item.dataset.sid;
+        const say = e.target.closest("[data-say]");
+        if (say) { speak(say.dataset.say); return; }
+        if (e.target.closest("[data-sent-del]")) {
+            const en = window.HocSentences && HocSentences.get(id);
+            if (!en) return;
+            if (!confirm(`Xóa câu này khỏi “Câu của tôi”?\n\n${en.zh}`)) return;
+            HocSentences.remove(id);
+            sentFull.delete(id);
+            toast("Đã xóa câu");
+            renderHome();
+            return;
+        }
+        if (e.target.closest("[data-sent-toggle]")) { if (sentFull.has(id)) sentFull.delete(id); else sentFull.add(id); renderSentBox(); }
+    });
+    if (window.HocSentences) HocSentences.onChange(() => { if (!$("home").hidden) renderSentBox(); });
     if (window.HocNotes) HocNotes.onChange(() => { if (!$("home").hidden && !document.querySelector("#hard-list textarea")) renderHard(); });
     $("btn-flip").onclick = flip;
     $("fcard").addEventListener("click", e => {
         if (e.target.closest(".note-box") || e.target.closest("[data-zizu]")) return;   // ghi chú / Họ chữ tự xử lý
-        if (e.target.closest("[data-say-word]")) { e.stopPropagation(); const it = curItem(); if (it) speak(it.g.hz); return; }
-        if (e.target.closest("[data-say-slow]")) { e.stopPropagation(); const it = curItem(); if (it) speak(it.g.hz, 0.5); return; }
+        if (e.target.closest("input, a")) return;                                       // ô gõ thử / link mở lại bài (thẻ câu)
+        if (e.target.closest("[data-say-word]")) { e.stopPropagation(); sayCur(); return; }
+        if (e.target.closest("[data-say-slow]")) { e.stopPropagation(); sayCur(true); return; }
         if (e.target.closest("[data-hint]")) { e.stopPropagation(); showHint(); return; }
         const say = e.target.closest("[data-say]");
         if (say) { e.stopPropagation(); speak(say.dataset.say); return; }
-        if (e.target.closest("#fc-say")) { e.stopPropagation(); const it = curItem(); if (it) speak(it.g.hz); return; }
+        if (e.target.closest("#fc-say")) { e.stopPropagation(); sayCur(); return; }
         flip();
     });
     $("rate-row").addEventListener("click", e => { const b = e.target.closest("[data-rate]"); if (b) rate(+b.dataset.rate); });
@@ -1068,13 +1459,13 @@
         if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
         if (e.key === " " || e.key === "Enter") {
             e.preventDefault();
-            if (!session.flipped) flip(); else if (e.key === " ") { const it = curItem(); if (it) speak(it.g.hz); }
+            if (!session.flipped) flip(); else if (e.key === " ") sayCur();
         } else if ((e.key === "h" || e.key === "H") && !session.flipped) showHint();
         else if (/^[1-4]$/.test(e.key) && session.flipped) { e.preventDefault(); rate(+e.key); }
         else if (e.key === "Escape") finishReview(true);
         else if (e.key === "r" || e.key === "R") {
             const it = curItem();
-            if (it && (session.flipped || it.mode !== "vi")) speak(it.g.hz);   // Nghĩa → chữ: không đọc trước khi lật (lộ đáp án)
+            if (it && (session.flipped || (!it.sent && it.mode !== "vi"))) sayCur();   // Nghĩa → chữ / thẻ câu: không đọc trước khi lật (lộ đáp án)
         }
     });
 
@@ -1091,5 +1482,6 @@
 
     show("home");
     // test tự động có thể dùng
-    window.__HN = { collectDue, collectHard, startReview, startPractice, flip, rate, finishReview, stepState, renderHard, pickMode, meaningOnly, state: () => S, session: () => session, SOURCES };
+    window.__HN = { collectDue, collectHard, startReview, startPractice, flip, rate, finishReview, stepState, renderHard, pickMode, meaningOnly, state: () => S, session: () => session, SOURCES,
+        sentDue, readSuggestions, rereadDue, readToday, buildKnown, knownPctOf, ensureDocIndex, renderHome };
 })();
