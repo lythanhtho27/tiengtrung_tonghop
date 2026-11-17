@@ -1,0 +1,282 @@
+[
+ {
+  "kind": "series",
+  "level": 4,
+  "series": "s7",
+  "series_title": "寻找月亮湖",
+  "series_title_vi": "Đi tìm hồ Trăng",
+  "topic": "truyện dài",
+  "id": "s7-01",
+  "chapter": 1,
+  "title": "半张地图",
+  "title_vi": "Nửa tấm bản đồ",
+  "paragraphs": [
+   "绿林城的老街上有一家小小的地图店，门口挂着一块木牌，上面写着“鹤记地图”。墙上挂满了各种各样的地图：城市的、河流的、森林的。十八岁的水獭小满在这里当学徒已经两年了。她画图的时候，常常把尾巴绕在椅子腿上，鼻子几乎贴到纸上，一画就是一下午。",
+   "店主鹤师傅是一只很老的白鹤，戴着一副圆圆的眼镜，个子高得要弯着脖子才能进门。他说话很慢，可是什么都懂：哪条河冬天会结冰，他都记得清清楚楚。小满画错一条线，他就用长长的嘴敲敲桌子：“地图不能骗人。你画错一步，别人就会走错一天。”",
+   "这天早上，小满收到了奶奶的信。奶奶住在西边青川河边的小村子柳湾。信上说，今年夏天青川又浅了很多，以前孩子们在河里游泳，现在河水只到膝盖；鱼越来越少，隔壁的几家邻居也搬走了。信的最后，奶奶写道：“要是你舅爷青禾还在就好了，他总说，河水是从很远的地方来的。”小满读完，心里像压了一块石头。",
+   "中午，门上的铃“叮当”响了一声，一只红狐狸跑了进来。他叫阿橙，在绿林中央站的失物招领处工作。他从包里拿出一个纸袋，小心地放在柜台上：“这张图在我们那儿放了三个月了，一直没有人来认领。龟伯让我来问问，它到底有没有价值。”",
+   "小满打开纸袋，里面是半张发黄的地图，边上整整齐齐的，像是被剪刀剪开的。图上画着一条铁路、一个叫“沙口镇”的小地方，再往右就是一大片空白的沙漠。一条细细的虚线弯弯曲曲地伸进沙漠，到纸边就断了。小满的眼睛停在了地图的右下角：那里画着一片小小的柳叶，旁边写着三个字——“月亮湖”。",
+   "她的心“怦怦”地跳了起来。小时候，奶奶常常讲舅爷青禾的故事：四十年前，他离开柳湾，去沙漠里找传说中的月亮湖，回来的时候却什么也没带回来，对那次旅行也很少提起。奶奶说，舅爷写信、画画，总喜欢在角上画一片柳叶。小满的爪子都在发抖：“鹤师傅，您看，这是我舅爷的记号！”",
+   "鹤师傅把眼镜往上推了推，看了很久很久，才慢慢地说：“这种画线的方法，我认得。四十年前，有个年轻的水獭常来店里买纸和笔，话不多，图却画得非常好。他说要和一头叫石头的骆驼一起去沙漠。听说那头骆驼现在还活着，在沙口镇开了一家茶馆。”阿橙在旁边听得张大了嘴，连尾巴都忘了摇。",
+   "那天晚上，小满一夜没睡。第二天一早，她站在柜台前，鼓起勇气说：“鹤师傅，我想请几个星期的假，去沙口镇。”鹤师傅没有回答，转身从抽屉里拿出一支旧旧的画图笔，放在她的手心里。那是他用了五十年的笔。老鹤只说了一句话：“去吧，把路画回来。”"
+  ],
+  "translations": [
+   "Trên con phố cổ của thành Lục Lâm có một tiệm bản đồ nho nhỏ, trước cửa treo tấm biển gỗ ghi “Bản đồ Hạc Ký”. Trên tường treo kín đủ loại bản đồ: bản đồ thành phố, sông ngòi, rừng rậm. Tiểu Mãn, cô rái cá mười tám tuổi, đã học việc ở đây được hai năm. Mỗi khi vẽ bản đồ, cô hay quấn đuôi quanh chân ghế, mũi gần như dí sát vào giấy, cứ thế vẽ suốt cả buổi chiều.",
+   "Chủ tiệm là bác thợ Hạc, một con sếu trắng rất già, đeo cặp kính tròn xoe, cao đến mức phải cúi cổ mới vào được cửa. Bác nói chậm rãi nhưng cái gì cũng biết: sông nào mùa đông đóng băng, bác đều nhớ rõ mồn một. Tiểu Mãn vẽ sai một nét là bác lấy chiếc mỏ dài gõ gõ xuống bàn: “Bản đồ không được lừa người. Cháu vẽ sai một bước, người khác sẽ đi sai cả một ngày.”",
+   "Sáng hôm ấy, Tiểu Mãn nhận được thư của bà nội. Bà sống ở Liễu Loan phía tây, một ngôi làng nhỏ bên bờ sông Thanh Xuyên. Thư viết rằng mùa hè năm nay sông Thanh Xuyên lại cạn đi nhiều, trước kia trẻ con bơi lội dưới sông, giờ nước chỉ đến đầu gối; cá ngày càng ít, mấy nhà hàng xóm cũng đã dọn đi. Cuối thư bà viết: “Giá mà ông cậu Thanh Hòa của cháu còn sống thì tốt biết bao, ông ấy luôn nói nước sông chảy về từ một nơi rất xa.” Đọc xong, lòng Tiểu Mãn nặng trĩu như bị đè một hòn đá.",
+   "Buổi trưa, chuông cửa kêu “leng keng”, một chú cáo đỏ chạy vào. Đó là A Chanh, người làm ở phòng đồ thất lạc của ga Trung tâm Lục Lâm. Cậu lấy từ trong túi ra một phong bì giấy, cẩn thận đặt lên quầy: “Tấm bản đồ này nằm ở chỗ bọn em ba tháng rồi mà vẫn chưa có ai đến nhận. Bác Rùa sai em đến hỏi xem rốt cuộc nó có giá trị gì không.”",
+   "Tiểu Mãn mở phong bì, bên trong là nửa tấm bản đồ đã ngả vàng, mép cắt thẳng thớm như bị kéo cắt đôi. Trên bản đồ vẽ một tuyến đường sắt, một nơi nhỏ tên là “trấn Sa Khẩu”, xa hơn về bên phải là cả một vùng sa mạc để trống. Một đường nét đứt mảnh mai uốn lượn tiến vào sa mạc, đến mép giấy thì đứt. Ánh mắt Tiểu Mãn dừng lại ở góc dưới bên phải: ở đó vẽ một chiếc lá liễu nhỏ xíu, bên cạnh có ba chữ — “hồ Trăng”.",
+   "Tim cô bắt đầu đập thình thịch. Hồi nhỏ, bà nội hay kể chuyện về ông cậu Thanh Hòa: bốn mươi năm trước, ông rời Liễu Loan vào sa mạc tìm hồ Trăng trong truyền thuyết, nhưng lúc trở về lại chẳng mang theo được gì, và cũng hiếm khi nhắc đến chuyến đi ấy. Bà kể ông viết thư hay vẽ tranh đều thích vẽ một chiếc lá liễu ở góc. Bàn tay Tiểu Mãn run lên: “Bác Hạc, bác xem này, đây là dấu riêng của ông cậu cháu!”",
+   "Bác Hạc đẩy gọng kính lên, nhìn rất lâu, rất lâu rồi mới chậm rãi nói: “Lối vẽ nét này, bác nhận ra. Bốn mươi năm trước, có một chàng rái cá trẻ hay đến tiệm mua giấy bút, ít nói nhưng vẽ bản đồ cực kỳ đẹp. Cậu ấy bảo sẽ cùng một con lạc đà tên là Thạch Đầu vào sa mạc. Nghe nói con lạc đà ấy giờ vẫn còn sống, mở một quán trà ở trấn Sa Khẩu.” A Chanh đứng bên cạnh nghe mà há hốc miệng, quên cả vẫy đuôi.",
+   "Đêm đó, Tiểu Mãn thức trắng. Sáng sớm hôm sau, cô đứng trước quầy, lấy hết can đảm nói: “Bác Hạc, cháu muốn xin nghỉ vài tuần để đi trấn Sa Khẩu.” Bác Hạc không trả lời, quay người lấy trong ngăn kéo ra một cây bút vẽ bản đồ cũ kỹ, đặt vào lòng bàn tay cô. Đó là cây bút bác đã dùng suốt năm mươi năm. Con sếu già chỉ nói một câu: “Đi đi, vẽ con đường ấy trở về.”"
+  ],
+  "questions": [
+   {
+    "q": "阿橙为什么把地图送到鹤记地图店？",
+    "q_vi": "Vì sao A Chanh mang tấm bản đồ đến tiệm Bản đồ Hạc Ký?",
+    "options": [
+     "这是小满在车站丢的东西",
+     "龟伯让他问问这张图有没有价值",
+     "他想把地图卖给鹤师傅",
+     "奶奶请他把地图带给小满"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 4: tấm bản đồ ba tháng không ai nhận, bác Rùa sai A Chanh đến hỏi xem nó có giá trị không."
+   },
+   {
+    "q": "小满怎么知道这张地图和舅爷有关系？",
+    "q_vi": "Làm sao Tiểu Mãn biết tấm bản đồ có liên quan đến ông cậu?",
+    "options": [
+     "地图上写着舅爷的名字",
+     "鹤师傅一看就告诉了她",
+     "地图的角上画着一片柳叶",
+     "奶奶的信里夹着另外半张"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 5–6: góc bản đồ có chiếc lá liễu — dấu riêng ông Thanh Hòa hay vẽ, theo lời bà kể."
+   },
+   {
+    "q": "鹤师傅说“把路画回来”，最可能是什么意思？",
+    "q_vi": "Bác Hạc nói “vẽ con đường ấy trở về”, nhiều khả năng có ý gì?",
+    "options": [
+     "他不同意小满请假",
+     "他要小满先画完店里的地图",
+     "他想自己去沙口镇",
+     "他支持小满去找路，并把路画成地图"
+    ],
+    "answer": 3,
+    "explain_vi": "Bác tặng cây bút đã dùng 50 năm và động viên cô đi, tìm và vẽ lại con đường còn thiếu trên bản đồ."
+   }
+  ]
+ },
+ {
+  "kind": "series",
+  "level": 4,
+  "series": "s7",
+  "series_title": "寻找月亮湖",
+  "series_title_vi": "Đi tìm hồ Trăng",
+  "topic": "truyện dài",
+  "id": "s7-02",
+  "chapter": 2,
+  "title": "沙口镇",
+  "title_vi": "Trấn Sa Khẩu",
+  "paragraphs": [
+   "火车开了整整两天。窗外的树越来越少，草越来越黄，最后只剩下一眼看不到头的沙子。小满把脸贴在窗户上，看着太阳把沙丘照成了金色。她是水獭，最喜欢水，可是这里连一条小沟都没有。下车的时候，一阵热风扑过来，她的胡子一下子就干了，鼻子里全是沙子的味道。",
+   "沙口镇比她想的还要小：一条主街，两边是土黄色的房子，一个热闹的市场，还有一个每天只停一趟火车的车站。她正站在站台上看地图，一只小麻雀“扑扑”地飞下来，落在她的箱子上：“你是从城里来的吧？你的毛真亮！你来做什么？旅游吗？我们这儿什么都没有，只有沙子、沙子和沙子！我叫点点，我家是卖饼的，你饿不饿？”",
+   "小满还没来得及回答第一个问题，点点已经问了五个。等她终于说出“石头”这个名字，小麻雀一下子安静了，然后压低声音告诉她：石头爷爷是镇上最有名的骆驼，以前是整个金沙漠最好的向导，闭着眼睛都能找到路；不过他脾气很怪，现在只卖茶，再也不进沙漠了。说完，点点拍拍翅膀：“走，我带你去！”",
+   "石头的茶馆在街的最后面，门口挂着一串小铜铃，风一吹就叮叮地响。屋里很凉快，摆着几张旧木桌，墙上挂着一根很长的绳子和一个旧水壶。一头老骆驼正在柜台后面慢慢地煮茶。他背上有两个大大的驼峰，毛已经有点儿白了，眼睛半闭着，好像根本没看见有人进来。",
+   "小满走上前，先介绍了自己，然后把那半张地图轻轻地放在桌上。听到“青禾”两个字，老骆驼煮茶的手停了一下。他低下头，看着那片小小的柳叶，看了很久很久，久到壶里的水都开了，“咕嘟咕嘟”地响。点点在旁边急得跳来跳去，却一句话也不敢说。",
+   "最后，石头把地图推了回来，声音又低又哑：“小姑娘，我知道你想要什么。可是沙漠会吃掉一切——水、路，还有人。四十年前，它差点儿就把我们吃掉了。这张图你留着做纪念吧。回家吧。”说完，他转过身去，继续煮他的茶，好像刚才什么都没发生过。",
+   "小满咬着嘴唇站在那儿，不知道该说什么。就在这时，街上突然热闹起来。一队漂亮的越野车停在了茶馆门口，车上装满了帐篷、绳子和最新的仪器。车门打开，走下来一只雪豹，银灰色的毛上有黑色的花纹，长长的尾巴在身后轻轻地摆着。点点激动得差点儿从桌上掉下去，小声说：“是凌风！报纸上那个有名的探险家！”",
+   "凌风走进茶馆，看都没看小满一眼，直接走到柜台前，把一个厚厚的信封放在石头面前。“石头先生，我听说您手里有另外半张月亮湖的地图。”他笑了笑，“这里的钱，够您再开十家茶馆。我只要那半张图。”小满的心一下子提到了嗓子眼儿——原来，另外半张地图就在石头这里！"
+  ],
+  "translations": [
+   "Tàu chạy ròng rã hai ngày. Ngoài cửa sổ cây cối thưa dần, cỏ úa vàng dần, cuối cùng chỉ còn cát trải dài tít tắp. Tiểu Mãn áp mặt vào cửa kính, nhìn mặt trời nhuộm những đồi cát thành màu vàng óng. Cô là rái cá, thích nước nhất, vậy mà nơi này đến một con mương nhỏ cũng không có. Lúc xuống tàu, một luồng gió nóng ập tới, ria cô khô cong ngay tức khắc, mũi đầy mùi cát.",
+   "Trấn Sa Khẩu còn nhỏ hơn cô tưởng: một con phố chính, hai bên là những ngôi nhà màu vàng đất, một khu chợ nhộn nhịp, và một nhà ga mỗi ngày chỉ có một chuyến tàu dừng. Cô đang đứng trên sân ga xem bản đồ thì một chú chim sẻ nhỏ “phành phạch” bay xuống, đậu lên vali của cô: “Chị từ thành phố đến phải không? Lông chị bóng thật đấy! Chị đến làm gì? Du lịch à? Ở đây chẳng có gì đâu, chỉ có cát, cát và cát! Em tên là Điểm Điểm, nhà em bán bánh, chị có đói không?”",
+   "Tiểu Mãn còn chưa kịp trả lời câu hỏi đầu tiên thì Điểm Điểm đã hỏi đến câu thứ năm. Đến khi cô nói ra được cái tên “Thạch Đầu”, chú chim sẻ nhỏ bỗng im bặt, rồi hạ giọng kể: ông Thạch Đầu là con lạc đà nổi tiếng nhất trấn, ngày trước là người dẫn đường giỏi nhất cả sa mạc Kim Sa, nhắm mắt cũng tìm được đường; có điều tính ông rất lạ, giờ chỉ bán trà, không bao giờ vào sa mạc nữa. Nói xong, Điểm Điểm vỗ cánh: “Đi, em dẫn chị đi!”",
+   "Quán trà của Thạch Đầu nằm ở tận cuối phố, trước cửa treo một chuỗi chuông đồng nhỏ, gió thổi là kêu leng keng. Trong quán rất mát, kê mấy chiếc bàn gỗ cũ, trên tường treo một sợi dây thừng rất dài và một chiếc bình nước cũ. Một con lạc đà già đang thong thả nấu trà sau quầy. Trên lưng ông có hai cái bướu to tướng, lông đã ngả bạc, mắt lim dim, dường như chẳng hề thấy có ai bước vào.",
+   "Tiểu Mãn bước lên, tự giới thiệu trước, rồi nhẹ nhàng đặt nửa tấm bản đồ lên bàn. Nghe thấy hai chữ “Thanh Hòa”, bàn tay đang nấu trà của con lạc đà già khựng lại. Ông cúi đầu nhìn chiếc lá liễu nhỏ xíu, nhìn rất lâu, rất lâu, lâu đến mức nước trong ấm sôi “sùng sục”. Điểm Điểm đứng bên cạnh sốt ruột nhảy tới nhảy lui mà không dám hé một lời.",
+   "Cuối cùng, Thạch Đầu đẩy tấm bản đồ trả lại, giọng trầm và khàn: “Cô bé, ta biết cháu muốn gì. Nhưng sa mạc sẽ nuốt chửng tất cả — nước, đường đi, và cả con người. Bốn mươi năm trước, nó suýt nữa đã nuốt mất bọn ta. Tấm bản đồ này cháu cứ giữ làm kỷ niệm. Về nhà đi.” Nói xong, ông quay lưng lại, tiếp tục nấu trà như thể chưa có chuyện gì xảy ra.",
+   "Tiểu Mãn cắn môi đứng đó, không biết nên nói gì. Đúng lúc ấy, ngoài phố bỗng náo nhiệt hẳn lên. Một đoàn xe địa hình bóng loáng dừng trước cửa quán trà, trên xe chất đầy lều trại, dây thừng và những thiết bị đời mới nhất. Cửa xe mở, một con báo tuyết bước xuống, bộ lông xám bạc điểm hoa văn đen, chiếc đuôi dài nhẹ nhàng đung đưa sau lưng. Điểm Điểm kích động đến suýt rơi khỏi bàn, thì thầm: “Là Lăng Phong! Nhà thám hiểm nổi tiếng trên báo đấy!”",
+   "Lăng Phong bước vào quán, chẳng thèm liếc Tiểu Mãn lấy một cái, đi thẳng đến trước quầy, đặt một phong bì dày cộp trước mặt Thạch Đầu. “Ông Thạch Đầu, tôi nghe nói ông đang giữ nửa còn lại của tấm bản đồ hồ Trăng.” Anh ta mỉm cười: “Số tiền này đủ cho ông mở thêm mười quán trà nữa. Tôi chỉ cần nửa tấm bản đồ đó.” Tim Tiểu Mãn như nhảy lên tận cổ họng — thì ra nửa tấm bản đồ còn lại đang ở chỗ Thạch Đầu!"
+  ],
+  "questions": [
+   {
+    "q": "关于点点，下面哪一句是对的？",
+    "q_vi": "Về Điểm Điểm, câu nào dưới đây đúng?",
+    "options": [
+     "她是一只很爱说话的小麻雀",
+     "她是石头的孙女",
+     "她在车站卖火车票",
+     "她不喜欢城里来的人"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 2–3: Điểm Điểm là chim sẻ nhỏ nhà bán bánh, nói liến thoắng, Tiểu Mãn chưa trả lời câu đầu cô bé đã hỏi đến năm câu."
+   },
+   {
+    "q": "石头为什么不愿意帮小满？",
+    "q_vi": "Vì sao Thạch Đầu không muốn giúp Tiểu Mãn?",
+    "options": [
+     "他觉得小满给的钱太少",
+     "他不认识青禾这个人",
+     "他觉得沙漠太危险，四十年前差点儿出事",
+     "他要等凌风来买地图"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 6: ông nói sa mạc nuốt chửng tất cả, 40 năm trước suýt nuốt mất họ, nên khuyên cô về nhà."
+   },
+   {
+    "q": "这一章最后，小满为什么那么紧张？",
+    "q_vi": "Cuối chương, vì sao Tiểu Mãn hồi hộp đến vậy?",
+    "options": [
+     "凌风想把她赶出茶馆",
+     "她的半张地图被凌风拿走了",
+     "石头答应带凌风进沙漠",
+     "她发现另外半张地图在石头手里，而凌风想买"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 8: Lăng Phong trả nhiều tiền để mua nửa bản đồ của Thạch Đầu — cô vừa biết nửa còn lại ở chỗ ông."
+   }
+  ]
+ },
+ {
+  "kind": "series",
+  "level": 4,
+  "series": "s7",
+  "series_title": "寻找月亮湖",
+  "series_title_vi": "Đi tìm hồ Trăng",
+  "topic": "truyện dài",
+  "id": "s7-03",
+  "chapter": 3,
+  "title": "石头的条件",
+  "title_vi": "Điều kiện của Thạch Đầu",
+  "paragraphs": [
+   "石头看也没看，就把信封推了回去：“我的茶十块钱一杯，你要喝就坐下。地图，不卖。”凌风脸上的笑一下子不见了。他大概从来没有被人这样拒绝过，尾巴尖不停地抽动。他冷冷地说石头一定会后悔的，转身就走，越野车卷起了一大片黄沙。",
+   "茶馆里又安静了。小满深吸一口气，走到柜台前。她没有提地图，而是讲起了柳湾：讲青川河以前有多宽，夏天孩子们在河里比赛游泳；讲奶奶每天早上站在岸边看水，水一年比一年浅。“老人们说，月亮湖的水从地下流出来，变成了青川。要是湖出了问题，河就会死。我不是来找宝贝的，我只是想救我的家。”",
+   "石头沉默了很久。终于，他放下茶壶，看着她的眼睛：“镇子外面有一条干了的河床，二十年没见过一滴水了。你说你们水獭能闻到水？那好，明天太阳出来以前，你在那里找到水，我就带你进沙漠。要是找不到，你就坐下一趟火车回家。”",
+   "天黑以后，小满一个人来到河床。月光下，地上全是裂开的土块，像一块块碎了的饼干。她趴在地上，用鼻子一点儿一点儿地闻。可是这里的味道太复杂了：沙子、干草、石块……好像有一点儿湿气，又好像什么都没有。两个小时过去了，她还是什么也没找到。",
+   "“那个……对不起，打扰一下。”身后突然传来一个很小的声音。小满回过头，看见一只穿山甲站在不远处，身上的鳞片在月光下闪闪发亮。他一看见小满转身，吓得马上缩成了一个球，好久才露出一个小脑袋。“我叫墨墨，是学地质的大学生。我本来在凌风的探险队里，今天刚离开……他只关心报纸上会不会写他的名字，从来不听别人说话。我、我想我可以帮你看看土。”",
+   "墨墨在河床上走来走去，不时挖开一点儿土，看看，捏捏。他说话还是有点儿结巴，可是一说到土和石头，眼睛就亮了：“你看，这边的土颜色深一点儿，下面有一层很密的黏土，水流不过去，就会留在上面。如果这里还有水，最可能在河道转弯的地方。”",
+   "小满跟着他来到河道转弯的地方，闭上眼睛，把鼻子贴在地上。这一次，她闻到了——很淡很淡，像早上的露水，凉凉的。她叫了起来：“就是这里！”墨墨马上开始挖，他的爪子又快又有力，沙土像小喷泉一样往外飞。挖到一米多深的时候，坑底慢慢地变湿了，接着，一股清清的水冒了出来。",
+   "太阳出来的时候，石头站在坑边，很久没有说话。墨墨小心地问他，自己能不能也一起去。老骆驼点了点头，只说了一句：“明天早上出发。”第二天，骆驼、水獭和穿山甲带着三个大包，慢慢走出了沙口镇。走了半天，石头背上那个最大的行李包突然动了一下，又动了一下。三个伙伴一起停下来，盯着那个包——包里传出了一声小小的“啾”。"
+  ],
+  "translations": [
+   "Thạch Đầu chẳng thèm nhìn, đẩy luôn chiếc phong bì trả lại: “Trà của ta mười đồng một chén, muốn uống thì ngồi xuống. Còn bản đồ thì không bán.” Nụ cười trên mặt Lăng Phong tắt ngấm. Có lẽ anh ta chưa bao giờ bị ai từ chối như thế, chóp đuôi giật liên hồi. Anh ta lạnh lùng nói Thạch Đầu nhất định sẽ hối hận, rồi quay người bỏ đi, đoàn xe địa hình cuốn lên cả một đám cát vàng.",
+   "Quán trà lại yên tĩnh. Tiểu Mãn hít một hơi thật sâu, bước tới trước quầy. Cô không nhắc đến bản đồ nữa, mà kể về Liễu Loan: kể sông Thanh Xuyên ngày xưa rộng thế nào, mùa hè trẻ con thi bơi dưới sông; kể bà nội sáng nào cũng ra đứng bên bờ ngắm nước, nước năm sau cạn hơn năm trước. “Các cụ bảo nước hồ Trăng chảy ngầm dưới đất ra, thành sông Thanh Xuyên. Nếu hồ có chuyện, con sông sẽ chết. Cháu không đến tìm kho báu, cháu chỉ muốn cứu quê nhà mình.”",
+   "Thạch Đầu im lặng rất lâu. Cuối cùng, ông đặt ấm trà xuống, nhìn thẳng vào mắt cô: “Ngoài trấn có một lòng sông khô, hai mươi năm nay chưa thấy một giọt nước. Cháu nói rái cá các cháu ngửi được nước à? Được thôi, trước khi mặt trời mọc sáng mai, cháu tìm được nước ở đó thì ta sẽ dẫn cháu vào sa mạc. Nếu không tìm được, cháu lên chuyến tàu sau mà về nhà.”",
+   "Trời tối, Tiểu Mãn một mình đến lòng sông. Dưới ánh trăng, mặt đất toàn những tảng đất nứt nẻ, như những mẩu bánh quy vỡ vụn. Cô nằm rạp xuống đất, dùng mũi ngửi từng chút một. Nhưng mùi ở đây quá hỗn tạp: cát, cỏ khô, sỏi đá… dường như có chút hơi ẩm, mà dường như lại chẳng có gì. Hai tiếng trôi qua, cô vẫn chẳng tìm thấy gì.",
+   "“Ừm… xin lỗi, làm phiền một chút.” Sau lưng chợt vang lên một giọng nói rất khẽ. Tiểu Mãn quay đầu lại, thấy một chú tê tê đứng cách đó không xa, lớp vảy lấp lánh dưới ánh trăng. Vừa thấy Tiểu Mãn quay lại, cậu sợ đến mức lập tức cuộn tròn thành một quả bóng, mãi lâu sau mới ló cái đầu nhỏ ra. “Tôi tên là Mặc Mặc, sinh viên ngành địa chất. Vốn dĩ tôi ở trong đoàn thám hiểm của Lăng Phong, hôm nay vừa rời đi… Anh ta chỉ quan tâm báo chí có viết tên mình hay không, chẳng bao giờ chịu nghe người khác nói. Tôi… tôi nghĩ tôi có thể giúp cô xem đất.”",
+   "Mặc Mặc đi tới đi lui trên lòng sông, chốc chốc lại bới lên một ít đất, ngắm nghía, bóp bóp. Cậu nói vẫn còn hơi lắp bắp, nhưng hễ nói đến đất đá là mắt sáng rỡ: “Cô xem, đất bên này màu sẫm hơn một chút, bên dưới có một lớp đất sét rất chặt, nước không thấm qua được nên sẽ đọng lại ở trên. Nếu chỗ này còn nước, khả năng cao nhất là ở khúc quanh của lòng sông.”",
+   "Tiểu Mãn theo cậu đến khúc quanh của lòng sông, nhắm mắt, áp mũi xuống đất. Lần này, cô ngửi thấy rồi — rất nhạt, rất nhạt, như sương sớm, mát lạnh. Cô kêu lên: “Chính là chỗ này!” Mặc Mặc lập tức bắt đầu đào, móng vuốt cậu vừa nhanh vừa khỏe, đất cát bắn ra như một đài phun nước nhỏ. Đào sâu hơn một mét thì đáy hố dần ẩm ướt, rồi một dòng nước trong vắt trào lên.",
+   "Khi mặt trời mọc, Thạch Đầu đứng bên miệng hố, rất lâu không nói gì. Mặc Mặc rụt rè hỏi ông liệu mình có thể đi cùng không. Con lạc đà già gật đầu, chỉ nói một câu: “Sáng mai lên đường.” Hôm sau, lạc đà, rái cá và tê tê mang theo ba túi lớn, chậm rãi rời khỏi trấn Sa Khẩu. Đi được nửa ngày, chiếc túi hành lý to nhất trên lưng Thạch Đầu bỗng cựa quậy một cái, rồi lại một cái nữa. Ba người bạn cùng dừng lại, nhìn chằm chằm vào chiếc túi — trong túi vọng ra một tiếng “chíp” nhỏ xíu."
+  ],
+  "questions": [
+   {
+    "q": "石头给小满出了什么条件？",
+    "q_vi": "Thạch Đầu đặt ra điều kiện gì cho Tiểu Mãn?",
+    "options": [
+     "一个晚上在干河床里找到水",
+     "把半张地图卖给他",
+     "在茶馆帮他工作一个月",
+     "比凌风更早走进沙漠"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 3: trước khi mặt trời mọc, cô phải tìm được nước ở lòng sông khô ngoài trấn."
+   },
+   {
+    "q": "墨墨为什么离开了凌风的探险队？",
+    "q_vi": "Vì sao Mặc Mặc rời đoàn thám hiểm của Lăng Phong?",
+    "options": [
+     "凌风不给他工资",
+     "他害怕沙漠里的蝎子",
+     "他要回大学考试",
+     "凌风只关心自己的名气，不听别人说话"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 5: Mặc Mặc nói Lăng Phong chỉ quan tâm báo có viết tên mình không, chẳng bao giờ nghe người khác."
+   },
+   {
+    "q": "最后他们是怎么找到水的？",
+    "q_vi": "Cuối cùng họ tìm ra nước bằng cách nào?",
+    "options": [
+     "石头告诉了他们水在哪儿",
+     "下了一场大雨",
+     "墨墨看土找到可能的地方，小满用鼻子闻出来",
+     "点点从天上看到了水"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 6–7: Mặc Mặc đọc lớp đất đoán nước ở khúc quanh, Tiểu Mãn ngửi thấy, rồi Mặc Mặc đào ra mạch nước."
+   }
+  ]
+ },
+ {
+  "kind": "series",
+  "level": 4,
+  "series": "s7",
+  "series_title": "寻找月亮湖",
+  "series_title_vi": "Đi tìm hồ Trăng",
+  "topic": "truyện dài",
+  "id": "s7-04",
+  "chapter": 4,
+  "title": "进入沙漠",
+  "title_vi": "Tiến vào sa mạc",
+  "paragraphs": [
+   "石头打开包，一只灰扑扑的小麻雀从里面滚了出来，头上还顶着半块饼——是点点！她一点儿也不害怕，反而得意地拍拍翅膀：“我就知道你们要进沙漠！我从小就想当探险家。我能飞得很高，看得很远，一定有用的！而且，我带了很多很多饼！”",
+   "石头气得鼻子直喷气，可是回头一看，沙口镇早就看不见了。送她回去要多走一整天，带的水不够。他只好让点点给家里写了一张纸条，托一支往回走的商队带回镇上。就这样，队伍变成了四个：一头老骆驼、一只水獭、一只穿山甲，还有一只嘴巴停不下来的小麻雀。",
+   "沙漠里的白天热得可怕。太阳像一团火挂在头上，沙子烫得连墨墨都不敢把爪子放下去。石头教大家白天躲在沙丘的影子里休息，晚上再赶路。“水要一小口一小口地喝，先含在嘴里，再慢慢咽下去。”他说，“还有，要学会看风。沙子上的花纹告诉你风从哪儿来，风告诉你明天会不会变天。”",
+   "夜里的沙漠完全是另一个世界。天一黑，热气很快就散了，小满冷得把自己的尾巴抱在怀里。可是天上的星星多得数不清，又大又亮，好像一伸手就能摘下来。石头走在最前面，抬头看看星星，就知道该往哪个方向走。小满跟在后面，一边走，一边用鹤师傅的笔在本子上画路线，一个沙丘也不放过。",
+   "墨墨是最辛苦的一个。他什么都怕：怕黑，怕风声，最怕蝎子。有一次，一只小蝎子从他脚边爬过，他“啊”地叫了一声，马上缩成一个圆球，顺着沙丘一路滚了下去。点点追着那个“球”飞，一边飞一边大笑：“墨墨，你滚得比我飞得还快！回去你可以参加滚球比赛了！”连一直板着脸的石头，嘴角也动了一下。",
+   "第三天晚上，他们在一块大石头后面点起了一小堆火。点点靠着小满睡着了，墨墨抱着他的石头标本，也闭上了眼睛。火光照在石头的脸上，他望着远处，好像在看很久以前的东西。小满轻轻地问他，舅爷青禾年轻的时候是个什么样的人。",
+   "石头沉默了一会儿：“他啊……很爱笑，走到哪儿都要画地图，连吃饭的时候都在画。有一天晚上，也是这样的一堆火，他对我说……”老骆驼说到这儿，突然停住了。他低下头，用一根树枝拨了拨火，过了很久才说：“睡吧，明天还要赶路。”小满看着他的背影，心里明白，那次旅行一定发生过什么，让他到现在都放不下。",
+   "第二天下午，点点像平常一样飞上天去看路。她越飞越高，变成了天上的一个小黑点。突然，她像一块石头一样冲了下来，羽毛全乱了，声音都变了：“不好了！西边……西边有一面黄色的墙，好高好高，正往我们这边冲过来！”石头抬头往西边看了一眼，脸色一下子变了。远处的天空已经变成了暗黄色，风里传来低低的呼呼声——沙暴来了。"
+  ],
+  "translations": [
+   "Thạch Đầu mở túi ra, một chú chim sẻ nhỏ lấm lem bụi xám lăn ra ngoài, trên đầu còn đội nửa chiếc bánh — là Điểm Điểm! Cô bé chẳng sợ chút nào, ngược lại còn đắc ý vỗ cánh: “Em biết ngay là mọi người sẽ vào sa mạc mà! Từ nhỏ em đã muốn làm nhà thám hiểm. Em bay được rất cao, nhìn được rất xa, nhất định sẽ có ích! Mà em còn mang theo rất rất nhiều bánh nữa!”",
+   "Thạch Đầu tức đến phì phò cả mũi, nhưng quay đầu nhìn lại thì trấn Sa Khẩu đã khuất từ lâu. Đưa cô bé về phải đi thêm cả một ngày, nước mang theo không đủ. Ông đành bảo Điểm Điểm viết một mẩu giấy gửi về nhà, nhờ một đoàn thương nhân đang đi ngược về mang về trấn. Thế là đoàn có bốn thành viên: một con lạc đà già, một cô rái cá, một chú tê tê, và một chú chim sẻ nhỏ cái miệng không ngừng líu lo.",
+   "Ban ngày trên sa mạc nóng khủng khiếp. Mặt trời như một khối lửa treo trên đầu, cát nóng bỏng đến mức Mặc Mặc cũng không dám đặt móng xuống. Thạch Đầu dạy mọi người ban ngày trốn trong bóng râm của đồi cát nghỉ ngơi, tối mới lên đường. “Nước phải uống từng ngụm nhỏ, ngậm trong miệng trước rồi mới từ từ nuốt xuống.” Ông nói. “Còn nữa, phải học cách đọc gió. Hoa văn trên cát cho các cháu biết gió từ đâu tới, gió cho các cháu biết ngày mai trời có đổi hay không.”",
+   "Sa mạc ban đêm là một thế giới hoàn toàn khác. Trời vừa tối, hơi nóng tan rất nhanh, Tiểu Mãn lạnh đến mức phải ôm cái đuôi của mình vào lòng. Nhưng trên trời sao nhiều không đếm xuể, vừa to vừa sáng, như thể đưa tay ra là hái được. Thạch Đầu đi đầu, ngẩng lên nhìn sao là biết phải đi về hướng nào. Tiểu Mãn theo sau, vừa đi vừa dùng cây bút của bác Hạc vẽ lộ trình vào sổ, không bỏ sót một đồi cát nào.",
+   "Mặc Mặc là người vất vả nhất. Cậu cái gì cũng sợ: sợ tối, sợ tiếng gió, sợ nhất là bọ cạp. Có lần, một con bọ cạp nhỏ bò qua chân cậu, cậu “á” lên một tiếng, lập tức cuộn tròn thành quả bóng, lăn một mạch xuống chân đồi cát. Điểm Điểm bay đuổi theo “quả bóng”, vừa bay vừa cười phá lên: “Anh Mặc Mặc, anh lăn còn nhanh hơn em bay! Về nhà anh đi thi lăn bóng được đấy!” Đến cả Thạch Đầu vốn lúc nào cũng nghiêm mặt, khóe miệng cũng khẽ động.",
+   "Tối ngày thứ ba, họ nhóm một đống lửa nhỏ sau một tảng đá lớn. Điểm Điểm dựa vào Tiểu Mãn ngủ thiếp đi, Mặc Mặc ôm mấy mẫu đá của mình, cũng nhắm mắt lại. Ánh lửa hắt lên mặt Thạch Đầu, ông nhìn ra xa, như đang nhìn những điều từ rất lâu về trước. Tiểu Mãn khẽ hỏi ông, hồi trẻ ông cậu Thanh Hòa là người thế nào.",
+   "Thạch Đầu im lặng một lúc: “Cậu ấy à… rất hay cười, đi đến đâu cũng vẽ bản đồ, đến lúc ăn cơm cũng vẽ. Có một tối, cũng bên đống lửa thế này, cậu ấy nói với ta…” Nói đến đây, con lạc đà già bỗng dừng lại. Ông cúi đầu, lấy một cành cây khều khều đống lửa, rất lâu sau mới nói: “Ngủ đi, mai còn phải đi tiếp.” Tiểu Mãn nhìn theo bóng lưng ông, trong lòng hiểu rằng chuyến đi năm ấy chắc chắn đã xảy ra chuyện gì đó, khiến ông đến giờ vẫn chưa thể buông bỏ.",
+   "Chiều hôm sau, Điểm Điểm như thường lệ bay lên trời xem đường. Cô bé bay càng lúc càng cao, thành một chấm đen nhỏ trên bầu trời. Đột nhiên, cô bé lao xuống như một hòn đá, lông rối tung, giọng cũng run lên: “Không xong rồi! Phía tây… phía tây có một bức tường màu vàng, cao lắm cao lắm, đang lao về phía chúng ta!” Thạch Đầu ngẩng lên nhìn về phía tây một cái, sắc mặt lập tức biến đổi. Bầu trời phía xa đã chuyển sang màu vàng sẫm, trong gió vọng lại tiếng ù ù trầm thấp — bão cát đến rồi."
+  ],
+  "questions": [
+   {
+    "q": "石头为什么没有把点点送回沙口镇？",
+    "q_vi": "Vì sao Thạch Đầu không đưa Điểm Điểm về trấn Sa Khẩu?",
+    "options": [
+     "点点说什么也不肯回去",
+     "回去要多走一整天，水不够",
+     "点点的家人同意她去",
+     "商队不愿意带她回去"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 2: quay về phải đi thêm cả ngày, nước không đủ, nên ông chỉ nhờ thương đoàn mang thư về nhà."
+   },
+   {
+    "q": "石头教给大家什么沙漠里的经验？",
+    "q_vi": "Thạch Đầu dạy mọi người kinh nghiệm gì ở sa mạc?",
+    "options": [
+     "白天赶路，晚上睡觉",
+     "口渴的时候要一下子喝很多水",
+     "跟着蝎子走就能找到水",
+     "一小口一小口地喝水，学会看风"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 3: ban ngày nghỉ, tối mới đi; uống nước từng ngụm nhỏ; đọc hoa văn trên cát để biết gió."
+   },
+   {
+    "q": "火堆旁边，石头为什么话说到一半就停了？",
+    "q_vi": "Bên đống lửa, vì sao Thạch Đầu nói được nửa chừng thì dừng lại?",
+    "options": [
+     "他太累，睡着了",
+     "点点突然醒了",
+     "关于那次旅行，他心里有放不下的事",
+     "他忘了青禾说过什么"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 7: Tiểu Mãn hiểu chuyến đi năm xưa đã xảy ra chuyện gì đó khiến ông đến nay vẫn chưa buông bỏ được."
+   }
+  ]
+ }
+]

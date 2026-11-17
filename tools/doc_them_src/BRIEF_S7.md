@@ -1,0 +1,40 @@
+# Bộ truyện s7 — 寻找月亮湖 (Đi tìm hồ Trăng)
+
+Truyện furry (thế giới động vật nhân hóa, **cùng thế giới với s6** 失物招领处的狐狸), **sáng tác mới hoàn toàn**. Thể loại: **phiêu lưu** — vượt sa mạc, giải câu đố, tình bạn, lòng dũng cảm, bảo vệ thiên nhiên. Trong sáng, mọi lứa tuổi. **HSK 4**, 12 chương.
+
+Quy cách chung: theo `BRIEF.md` + mục 2 của `BRIEF_MORE.md` (kind "series"). Mỗi chương:
+- `id` "s7-01" … "s7-12", `kind` "series", `level` 4, `series` "s7", `series_title` "寻找月亮湖", `series_title_vi` "Đi tìm hồ Trăng", `chapter` 1..12, `title`, `title_vi`, `topic` "truyện dài".
+- 750–900 chữ Hán, 7–8 đoạn; `translations` dịch từng đoạn (cùng số phần tử), tiếng Việt tự nhiên.
+- 3 câu hỏi `{q, q_vi, options[4], answer (0–3), explain_vi}`, đáp án phân bố đều.
+- Từ vựng chủ yếu trong `vocab_hsk1..4.txt`; từ ngoài cấp ≤ 3–5% (tên loài vật, địa danh được phép). Lời thoại trong “…”; mỗi đoạn có lời thoại chỉ một người nói chính (lời người khác kể gián tiếp) để chế độ đọc nhập vai đổi giọng đúng.
+- Chi tiết "thú" sinh động: rái cá bơi giỏi, cảm nhận nước; lạc đà chịu khát, đi đường dài; tê tê đào đất, cuộn tròn khi sợ; chim sẻ bay cao nhìn xa; báo tuyết leo trèo giỏi. Cảnh sa mạc: nắng, cát, sao, gió, đêm lạnh. Không bạo lực, không chết chóc trước mắt.
+- Cuối mỗi chương (trừ chương 12) có một nút thắt nhỏ.
+
+## Bối cảnh
+- **绿林城** (thành Lục Lâm), như s6. **柳湾** (Liễu Loan): làng ven sông **青川** (sông Thanh Xuyên) ở phương tây, quê của 小满; mấy năm nay sông cạn dần, cá ít, hàng xóm bỏ đi.
+- **沙口镇** (trấn Sa Khẩu): thị trấn nhỏ ở rìa sa mạc **金沙漠**, có quán trà, chợ, tàu hỏa dừng mỗi ngày một chuyến.
+- Truyền thuyết **月亮湖** (hồ Trăng): một cái hồ ẩn sâu trong sa mạc, đêm trăng tròn nước sáng như trăng; người già nói nước của hồ chảy ngầm dưới đất thành nguồn của sông 青川.
+- Tấm bản đồ: vẽ tay 40 năm trước, bị **cắt làm đôi**. Nửa bên trái (từ 沙口镇 vào sa mạc) ở 失物招领处 rồi tới tay 小满; nửa bên phải (đường tới hồ) ở trong túi của 石头. Góc bản đồ có ký hiệu: một chiếc lá liễu (dấu riêng của 青禾).
+
+## Nhân vật (Hán Việt trong bản dịch)
+- **小满** (Tiểu Mãn): rái cá (水獭) cái, 18 tuổi, học việc ở tiệm bản đồ tại 绿林城. Thông minh, can đảm, hơi bướng, giỏi vẽ bản đồ, **có thể "ngửi thấy" nước** dưới đất ở gần. Bà nội ở 柳湾 hay kể chuyện về **青禾** (Thanh Hòa), anh trai của bà, người 40 năm trước đi tìm hồ Trăng và trở về tay trắng, ít nói về chuyến đi (ông đã mất vì tuổi già nhiều năm trước).
+- **鹤师傅** (bác thợ Hạc): sếu già, chủ tiệm bản đồ, đeo kính, hiểu biết.
+- **阿橙** (A Chanh, cáo đỏ của s6): chỉ xuất hiện ở chương 1 (và được nhắc ở chương 12) — mang nửa tấm bản đồ không ai nhận sau 3 tháng đến tiệm nhờ xem giá trị.
+- **石头** (Thạch Đầu): lạc đà già, từng là người dẫn đường giỏi nhất sa mạc, nay mở quán trà ở 沙口镇. Cộc cằn, ít nói, nhưng rất tốt; 40 năm trước là bạn đồng hành của 青禾. Nghĩ rằng vì mình ốm mà 青禾 không tới được hồ, nên 青禾 trách mình — áy náy suốt đời.
+- **点点** (Điểm Điểm): chim sẻ nhỏ, 12 tuổi, con nhà bán bánh ở 沙口镇, nói nhiều, mơ được phiêu lưu, bay cao nhìn xa.
+- **墨墨** (Mặc Mặc): tê tê (穿山甲) đực, 20 tuổi, sinh viên địa chất, rất nhút nhát (sợ là cuộn tròn), hiểu đá và đất, đào giỏi.
+- **凌风** (Lăng Phong): báo tuyết (雪豹) đực, nhà thám hiểm trẻ nổi tiếng, kiêu ngạo, muốn là "người đầu tiên tìm ra hồ Trăng" để chứng minh với người cha. Lúc đầu là đối thủ, sau thành đồng đội. Có cuốn **nhật ký cũ của 青禾** mua được ở một cửa hàng đồ cũ.
+
+## Dàn ý 12 chương (phải theo đúng, có thể thêm chi tiết nhỏ)
+1. **半张地图** — 小满 làm ở tiệm của 鹤师傅; nhận thư bà nội: sông 青川 lại cạn thêm. A Chanh (cáo đỏ, phòng đồ thất lạc ga 绿林) mang tới nửa tấm bản đồ cũ không ai nhận. 小满 thấy ký hiệu lá liễu — dấu của 青禾 trong chuyện bà kể — và chữ “月亮湖”. 鹤师傅 nhận ra nét vẽ và kể: 40 năm trước 青禾 đi cùng một lạc đà tên 石头, nghe nói nay sống ở 沙口镇. *Nút thắt*: 小满 quyết định xin nghỉ đi 沙口镇. 鹤师傅 đưa cho cô cây bút vẽ bản đồ của mình: “把路画回来。”
+2. **沙口镇** — Đi tàu tới rìa sa mạc; nóng, cát. Quen 点点 nói liến thoắng, dẫn cô tới quán trà của 石头. 石头 nhìn bản đồ rất lâu nhưng từ chối: “沙漠会吃掉一切。回家吧。” *Nút thắt*: một đoàn thám hiểm sang trọng tới thị trấn, người dẫn đầu là báo tuyết 凌风, cũng đến quán trà và trả rất nhiều tiền để mua nửa bản đồ còn lại của 石头.
+3. **石头的条件** — 石头 từ chối cả 凌风. 小满 kể chuyện sông 青川 và làng 柳湾. 石头 im lặng, rồi ra điều kiện: trong một đêm, cô phải tìm được nước ở lòng sông khô ngoài thị trấn. 墨墨 — tê tê vừa bỏ đoàn 凌风 vì không chịu được việc 凌风 chỉ quan tâm danh tiếng — giúp cô đọc lớp đất; cô ngửi thấy nước, hai người đào ra mạch nước. 石头 đồng ý dẫn đường, 墨墨 xin đi cùng. *Nút thắt*: sáng khởi hành, đi được nửa ngày thì một túi hành lý cựa quậy — 点点 trốn trong đó.
+4. **进入沙漠** — Không thể đưa 点点 về; cả đoàn bốn người. Cực nhọc: nắng, cát nóng, đi đêm theo sao; 石头 dạy cách tiết kiệm nước, đọc gió; 墨墨 sợ bọ cạp, 点点 làm mọi người cười. Đêm bên lửa, 石头 suýt kể về 青禾 rồi lại thôi. *Nút thắt*: 点点 bay cao, hốt hoảng báo: phía tây có một bức tường cát màu vàng đang lao tới — bão cát.
+5. **沙暴** — Chạy vào một trạm cũ đổ nát; bão gào thét; 点点 bị gió cuốn đi một đoạn, 小满 và 石头 tìm lại được. Khi bão tan, gió thổi lộ ra một bức tường đá khắc hình rái cá và lạc đà đi cùng nhau, cùng dòng chữ: “月圆之夜，跟着唱歌的石头走。” *Nút thắt*: đêm đó, giữa sa mạc im lặng, cả đoàn nghe một âm thanh trầm như tiếng hát vọng từ những tảng đá xa.
+6. **唱歌的石头** — 墨墨 giải thích: gió thổi qua lỗ đá tạo âm thanh. Đi theo tiếng hát vào một hẻm núi, gặp đoàn 凌风 bị lạc, các thành viên khác đã quay về, chỉ còn 凌风 bị trẹo chân, hết nước. 小满 chọn cứu đối thủ, chia nước cho anh. *Nút thắt*: 凌风 lấy ra một cuốn sổ cũ bìa có hình lá liễu: “这是青禾的日记。”
+7. **青禾的日记** — Đọc nhật ký: 40 năm trước, chỉ còn hai ngày là tới hồ thì 石头 ốm nặng; 青禾 chọn quay về, cõng/dìu bạn ra khỏi sa mạc. Trang cuối: “湖可以等，朋友不能等。风之门在骨头谷后面。” 石头 lần đầu biết 青禾 không trách mình, khóc lặng lẽ. 小满 hiểu tại sao ông chú không bao giờ kể về chuyến đi. 凌风 kể chuyện người cha luôn coi thường mình; bắt đầu mềm lại, cả đoàn thành năm người. *Nút thắt*: sáng hôm sau, 墨墨 phát hiện túi nước bị cát làm thủng — chỉ còn nước cho một ngày.
+8. **没有水的一天** — Khát, mệt; 石头 nhường nước, rồi ngã quỵ; ông thú nhận đây là chuyến đi cuối cùng của đời ông. 小满 tập trung "ngửi" nước, 墨墨 đào sâu theo lớp đá ẩm, 凌风 dùng sức đẩy tảng đá; tìm được một mạch nước nhỏ, cứu cả đoàn. *Nút thắt*: lúc trăng lên, 点点 bay cao nhất có thể, thấy phía sau một thung lũng toàn đá trắng như xương (骨头谷) có hai vách núi cao — giữa đó lóe lên một tia sáng bạc.
+9. **风之门** — Hẻm "Cổng Gió": lối đi hẹp, gió mạnh đến mức không ai bước qua được, chỉ lặng vài phút khi trăng ở đúng đỉnh. Mỗi người góp một sức: 点点 bay xem hướng gió, 凌风 leo trước buộc dây, 石头 đứng chắn gió, 墨墨 đào chỗ bám, 小满 dựa vào bản đồ hai nửa ghép lại để tìm đúng lối. *Nút thắt*: qua cổng, trước mặt là một lòng chảo rộng — nhưng **không có hồ**, chỉ có đất nứt khô.
+10. **干了的湖** — Thất vọng; 凌风 giận dữ, 点点 khóc, 石头 ngồi im. 小满 không bỏ cuộc: cô ngửi thấy nước rất gần. 墨墨 xem đá: một trận động đất nhiều năm trước làm sập vách đá, chặn mạch nước ngầm chảy vào hồ — vì thế hồ khô, và sông 青川 cũng cạn dần. Còn hai đêm nữa là trăng tròn. *Nút thắt*: 墨墨 áp tai xuống đá: “我听见了……下面有水在流！”
+11. **月圆之夜** — Hai ngày làm việc cực khổ: đào, nạy, đẩy đá; 凌风 bỏ qua cơ hội đi về trước để báo tin "mình phát hiện" mà ở lại giúp. Đêm trăng tròn, tảng đá cuối cùng lăn đi, nước phun lên, chảy tràn lòng chảo; dưới trăng, mặt hồ sáng bạc như một mặt trăng thứ hai. 石头 lấy chiếc lá liễu khô trong nhật ký thả xuống hồ: “青禾，我们到了。” Cảm động mà tiết chế. *Nút thắt nhỏ*: 小满 thấy nước bắt đầu chảy vào một khe đá về phía tây — về phía 青川?
+12. **回家的河** — (kết trọn vẹn) Trở về 沙口镇; 凌风 viết bài báo ghi tên cả năm người, gửi cha một bức thư không còn để chứng minh gì; 墨墨 được nhận làm nghiên cứu bảo vệ hồ; 点点 thành "nhà thám hiểm nhỏ nhất" của thị trấn; 石头 quyết định mỗi năm dẫn đường đưa người tới chăm sóc hồ. Vài tuần sau, 小满 về 柳湾: nước sông 青川 dâng lên, cá quay lại, bà nội đứng bên bờ khóc vì vui. 小满 vẽ một tấm bản đồ mới hoàn chỉnh, ký hiệu lá liễu ở góc; bản sao gửi tiệm 鹤师傅 và một bản gửi tặng phòng đồ thất lạc của A Chanh “给需要找路的人”. Câu cuối ấm áp về con đường và bạn bè.
