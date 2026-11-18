@@ -149,7 +149,8 @@ def main():
                     item[k] = t[k]
             texts.append(item)
     KIND_ORDER = {"article": 0, "series": 1, "dialogue": 2, "chengyu": 3}
-    texts.sort(key=lambda t: (KIND_ORDER.get(t["kind"], 9), t.get("series", ""), t["level"] if t["kind"] != "series" else 0, t.get("chapter", 0), t["id"]))
+    texts.sort(key=lambda t: (KIND_ORDER.get(t["kind"], 9), int(re.sub(r"\D", "", t.get("series", "")) or 0),  # s10 sau s9
+                t["level"] if t["kind"] != "series" else 0, t.get("chapter", 0), t["id"]))
     exams.sort(key=lambda e: (e.get("level", 0), e["id"]))
     out = os.path.join(ROOT, "doc_them", "doc_data.js")
     os.makedirs(os.path.dirname(out), exist_ok=True)
