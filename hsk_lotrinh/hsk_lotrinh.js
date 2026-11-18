@@ -272,6 +272,12 @@
         speechSynthesis.speak(u);
     }
     function autoSpeak(text) { if (S.settings.speak) speak(text); }
+    // Thẻ từ (học từ mới / mặt sau thẻ ôn): đọc từ rồi đọc câu ví dụ (shared/tts.js, tắt được trong hộp chọn giọng)
+    function autoSpeakWord(w) {
+        if (!S.settings.speak) return;
+        if (window.HocTTS && HocTTS.speakWord) HocTTS.speakWord(w.clean, w.ex, { rate: S.settings.rate });
+        else speak(w.clean);
+    }
 
     // ---------------------------------------------------------------- UI chung
     let toastTimer;
@@ -649,7 +655,7 @@
                 <button class="btn btn-primary" data-nav="next">${s.i === s.words.length - 1 ? "Bắt đầu luyện tập →" : "Tiếp →"}</button>
             </div>
             <div class="kbd-hint">Phím: ← → để chuyển · Space để nghe</div>`;
-        autoSpeak(w.clean);
+        autoSpeakWord(w);
         body().onclick = e => {
             const say = e.target.closest("[data-say]"); if (say) { speak(say.dataset.say); return; }
             const n = e.target.closest("[data-nav]"); if (!n) return;
@@ -997,7 +1003,7 @@
             <button class="rate r3" data-rate="3"><kbd>3</kbd><b>Nhớ</b><small>${ivLabel(c, 3)}</small></button>
             <button class="rate r4" data-rate="4"><kbd>4</kbd><b>Dễ</b><small>${ivLabel(c, 4)}</small></button>
         </div>`;
-        autoSpeak(w.clean);
+        autoSpeakWord(w);
     }
     function rate(r) {
         const s = session; if (!s || !s.revealed) return;

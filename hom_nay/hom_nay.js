@@ -539,6 +539,12 @@
         } catch (e) {}
     }
 
+    // Lật thẻ: đọc từ + câu ví dụ qua HocTTS.speakWord (shared/tts.js, tắt được trong hộp chọn giọng)
+    function speakCard(word, exZh) {
+        if (window.HocTTS && HocTTS.speakWord) HocTTS.speakWord(word, exZh, { rate: 0.85 });
+        else if (word) speak(word);
+    }
+
     // ====================================================================== Phiên ôn tập
     let session = null;
     let hardMap = new Map();         // chữ Hán -> số lần quên (để gắn nhãn 🧠 trên thẻ ôn thường)
@@ -721,7 +727,8 @@
         const live = freshCard(main) || main.card;
         for (let r = 1; r <= 4; r++) $("iv-" + r).textContent = s.practice ? "luyện thêm"
             : ivText(sched(Object.assign({ ef: 2.5, iv: 0, reps: 0, lapses: 0 }, live), r).iv);
-        if (S.settings.speak && it.mode !== "listen") speak(g.hz);
+        // đọc từ rồi đọc câu ví dụ (thẻ Nghe → nghĩa đã đọc từ ở mặt trước nên chỉ đọc câu)
+        if (S.settings.speak) speakCard(it.mode === "listen" ? "" : g.hz, ex && ex.zh);
     }
     // Đọc lại thẻ mới nhất từ localStorage (thẻ có thể vừa đổi sau một lần chấm "Quên")
     function freshCard(c) {

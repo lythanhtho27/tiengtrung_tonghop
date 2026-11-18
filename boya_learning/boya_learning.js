@@ -2525,7 +2525,7 @@
             const st = document.getElementById('fcStudio');
             if (st) st.classList.toggle('is-flipped', state.fcFlipped);
             if (state.fcFlipped) {
-                speakChinese(w.hz);
+                speakCardWord(w);
                 markSeen('fc', 0, w.id);
                 updateFcNote();
             }
@@ -3200,7 +3200,7 @@
             rv.flipped = !rv.flipped;
             stage.classList.toggle('flipped', rv.flipped);
             document.getElementById('fcStudio').classList.toggle('is-flipped', rv.flipped);
-            if (rv.flipped) speakChinese(w.hz);
+            if (rv.flipped) speakCardWord(w);
         };
         state.fcFlip = flip;
         stage.addEventListener('click', (e) => { if (!e.target.closest('#btnSpeakFc')) flip(); });
@@ -3386,6 +3386,25 @@
             .replace(/^[，\s]+|[，\s]+$/g, '')
             .replace(/\s+/g, ' ')
             .trim();
+    }
+
+    // Câu ví dụ để ĐỌC khi lật thẻ: bỏ qua mục chỉ là cụm kết hợp (～……就, 跟某人～), lấy mục đầu tiên là câu thật
+    function speechExample(word) {
+        const parts = [];
+        (word.examples || []).forEach(e => String(e || '').split(/\s*\/\s*|\s*◎\s*/).forEach(x => parts.push(x)));
+        for (const raw of parts) {
+            const t = ttsClean(fillTilde(raw, word.hz));
+            const han = (t.match(/[㐀-鿿]/g) || []).length;
+            if (han >= 6 && (/[。！？!?]$/.test(t) || han >= 10)) return t;
+        }
+        return '';
+    }
+    // Lật thẻ: đọc từ rồi đọc câu ví dụ (shared/tts.js, tắt được trong hộp chọn giọng)
+    function speakCardWord(w) {
+        if (window.HocTTS && HocTTS.speakWord) {
+            stopRoleplay();
+            HocTTS.speakWord(ttsClean(w.hz), speechExample(w), { rate: 0.9 });
+        } else speakChinese(w.hz);
     }
 
     function speakChinese(text, onEndCallback, rate) {

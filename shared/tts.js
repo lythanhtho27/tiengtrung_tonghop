@@ -4,13 +4,14 @@
    - Bọc speechSynthesis.speak(): mọi câu tiếng Trung mà các trang đọc đều tự dùng giọng người học đã chọn
      (hoặc luân phiên nhiều giọng), nhân thêm tốc độ/cao độ chung — các trang KHÔNG cần sửa gì.
    - Cài đặt lưu theo từng thiết bị ở localStorage "hoc_tts_v1" (không đồng bộ: mỗi máy có bộ giọng khác nhau):
-       { voice: "<tên giọng>" | "", rate: 1, pitch: 1, rotate: false, rotateSet: [tên…], others: false,
+       { voice: "<tên giọng>" | "", rate: 1, pitch: 1, rotate: false, rotateSet: [tên…], others: false, withExample: true,
          roles: { narrator: "", a: "", b: "" } }
    - Phần tử có [data-hoc-voice] tự thành nút mở hộp chọn giọng.
    - API (window.HocTTS):
        voices()                       giọng tiếng Trung có trên máy (phổ thông; thêm Quảng Đông/Đài Loan nếu bật "others")
        settings() / set(patch)        đọc / ghi cài đặt
        speak(text, { voice, rate, pitch, onend })   đọc một câu (rate là tốc độ gốc của trang, sẽ nhân với rate chung)
+       speakWord(word, example, { rate })   lật thẻ từ vựng: đọc từ rồi đọc câu ví dụ (nếu bật withExample); word rỗng → chỉ đọc câu
        stop()
        dialogueSegments(paragraphs)   tách lời dẫn / lời thoại (trong “…” 「…」, hoặc kịch bản "Tên：lời") và gán vai: [{ p, text, role, name? }]
        readDialogue(paragraphs, { rate, onPara(i), onEnd, onStop })  đọc nhập vai: người dẫn + 2 vai luân phiên; trả về { stop() }
@@ -50,17 +51,20 @@
             document.body.appendChild(o);
         };
         document.addEventListener("click", function (e) { var t = e.target.closest && e.target.closest("[data-hoc-voice]"); if (t) { e.preventDefault(); openHelp(); } });
-        window.HocTTS = { voices: function () { return []; }, settings: function () { return {}; }, set: function () {}, speak: function () {},
+        window.HocTTS = { voices: function () { return []; }, settings: function () { return {}; }, set: function () {}, speak: function () {}, speakWord: function () {},
             stop: function () {}, dialogueSegments: function () { return []; }, readDialogue: function () { return { stop: function () {} }; },
             open: openHelp, gender: function () { return ""; }, onChange: function () {} };
         return;
     }
     var KEY = "hoc_tts_v1";
-    var DEF = { voice: "", rate: 1, pitch: 1, rotate: false, rotateSet: [], others: false, roles: { narrator: "", a: "", b: "" } };
+    var DEF = { voice: "", rate: 1, pitch: 1, rotate: false, rotateSet: [], others: false, withExample: true, roles: { narrator: "", a: "", b: "" } };
     var S = load();
     var synth = window.speechSynthesis;
     var rawSpeak = synth.speak.bind(synth);
+    var rawCancel = synth.cancel.bind(synth);
+    synth.cancel = function () { wordTok++; return rawCancel(); };   // trang dừng đọc / chuyển thẻ → hủy câu ví dụ đang chờ
     var rotIdx = 0;
+    var wordTok = 0;
     var listeners = [];
 
     function load() {
@@ -106,6 +110,7 @@
     var HAN = /[㐀-鿿]/;
     synth.speak = function (u) {
         try {
+            if (u && !u.__hocManaged) wordTok++;   // trang tự đọc câu khác → hủy câu ví dụ đang chờ của speakWord
             if (u && !u.__hocManaged && (/^zh|^cmn/i.test(u.lang || "") || HAN.test(u.text || ""))) {
                 var v = pickVoice();
                 if (v) { u.voice = v; u.lang = v.lang; }
@@ -161,6 +166,23 @@
         return u;
     }
     function stop() { synth.cancel(); }
+
+    // ---------- Lật thẻ từ vựng: đọc từ, nghỉ một chút rồi đọc câu ví dụ ----------
+    // speakWord(word, example, {rate}): word rỗng → chỉ đọc câu ví dụ (thẻ "nghe" đã đọc từ ở mặt trước).
+    // Tắt được trong hộp chọn giọng (S.withExample). Trang đọc câu khác / gọi stop() thì câu ví dụ đang chờ bị hủy.
+    function speakWord(word, example, o) {
+        o = o || {};
+        synth.cancel();
+        var tok = ++wordTok;
+        var ex = String(example || "").trim();
+        if (S.withExample === false || !HAN.test(ex) || ex === word) ex = "";
+        function sayEx() { if (ex && tok === wordTok) speak(ex, { rate: o.rate }); }
+        if (!word) { sayEx(); return null; }
+        return speak(word, { rate: o.rate, onend: function (e) {
+            if (!ex || tok !== wordTok || (e && e.type === "error")) return;
+            setTimeout(function () { if (tok === wordTok && !synth.speaking) sayEx(); }, 450);
+        } });
+    }
 
     // ---------- Đọc nhập vai ----------
     // Tách mỗi đoạn thành lời dẫn và lời thoại (trong “…”, 「…」, 『…』, "…").
@@ -296,6 +318,8 @@
             "<h4>Tốc độ & cao độ</h4>" +
             '<div class="tts-row"><label>Tốc độ</label><input type="range" id="tts-rate" min="0.6" max="1.4" step="0.05" value="' + S.rate + '"><span id="tts-rate-v">×' + (+S.rate).toFixed(2) + "</span></div>" +
             '<div class="tts-row"><label>Cao độ</label><input type="range" id="tts-pitch" min="0.7" max="1.3" step="0.05" value="' + S.pitch + '"><span id="tts-pitch-v">×' + (+S.pitch).toFixed(2) + "</span></div>" +
+            "<h4>Lật thẻ từ vựng</h4>" +
+            '<label class="tts-chk"><input type="checkbox" id="tts-wex"' + (S.withExample !== false ? " checked" : "") + "> Đọc từ xong thì đọc luôn câu ví dụ</label>" +
             "<h4>Luân phiên giọng</h4>" +
             '<label class="tts-chk"><input type="checkbox" id="tts-rot"' + (S.rotate ? " checked" : "") + "> Mỗi lần đọc dùng một giọng khác (nam/nữ xen kẽ) — giúp tai quen nhiều giọng thật</label>" +
             (vs.length > 2 ? '<p>Chọn các giọng tham gia (bỏ trống = tất cả):</p><div class="tts-rot">' + vs.map(function (v) { return '<label><input type="checkbox" data-rot="' + esc(v.name) + '"' + ((S.rotateSet || []).indexOf(v.name) >= 0 ? " checked" : "") + "> " + esc(label(v).name) + "</label>"; }).join("") + "</div>" : "") +
@@ -322,6 +346,7 @@
         rate.onchange = function () { persist(); stop(); speak(SAMPLE); };
         pitch.oninput = function () { S.pitch = +pitch.value; ov.querySelector("#tts-pitch-v").textContent = "×" + S.pitch.toFixed(2); };
         pitch.onchange = function () { persist(); stop(); speak(SAMPLE); };
+        ov.querySelector("#tts-wex").onchange = function (e) { S.withExample = e.target.checked; persist(); };
         ov.querySelector("#tts-rot").onchange = function (e) { S.rotate = e.target.checked; persist(); };
         ov.querySelectorAll("[data-rot]").forEach(function (c) { c.onchange = function () { S.rotateSet = Array.prototype.map.call(ov.querySelectorAll("[data-rot]:checked"), function (x) { return x.getAttribute("data-rot"); }); persist(); }; });
         ov.querySelectorAll("[data-role]").forEach(function (s) { s.onchange = function () { S.roles[s.getAttribute("data-role")] = s.value; persist(); }; });
@@ -341,7 +366,7 @@
     window.HocTTS = {
         voices: voices, settings: function () { return S; },
         set: function (p) { Object.assign(S, p || {}); persist(); },
-        speak: speak, stop: stop, dialogueSegments: dialogueSegments, readDialogue: readDialogue, open: open, gender: gender, roleVoice: roleVoice,
+        speak: speak, speakWord: speakWord, stop: stop, dialogueSegments: dialogueSegments, readDialogue: readDialogue, open: open, gender: gender, roleVoice: roleVoice,
         onChange: function (f) { if (typeof f === "function") listeners.push(f); }
     };
 })();

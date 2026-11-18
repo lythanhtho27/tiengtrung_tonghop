@@ -3717,9 +3717,13 @@
                 : (card && card.rt ? `<div class="fc-ex-vn">⏱ Tốc độ nhận diện trung bình: ${fmtSec(card.rt)}</div>` : '');
         }
 
-        // Auto speak on flip
-        if (state.fcFlipped && state.fcAutoSpeak && state.fcFaceMode !== 'audio') {
-            speakChinese(cleanHanziForTts(w.word));
+        // Lật thẻ: đọc từ rồi đọc câu ví dụ (shared/tts.js, tắt được trong hộp chọn giọng);
+        // thẻ mặt trước là audio đã đọc từ rồi nên chỉ đọc câu ví dụ
+        if (state.fcFlipped && state.fcAutoSpeak) {
+            const exZh = (w.examples && w.examples[0] && w.examples[0].hz) || '';
+            const word = state.fcFaceMode === 'audio' ? '' : cleanHanziForTts(w.word);
+            if (window.HocTTS && HocTTS.speakWord) HocTTS.speakWord(word, exZh, { rate: 0.9 });
+            else if (word) speakChinese(word);
         }
     }
 
