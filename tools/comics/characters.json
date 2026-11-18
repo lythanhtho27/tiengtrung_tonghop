@@ -1,0 +1,28 @@
+{
+  "_note": "Mô tả CỐ ĐỊNH của nhân vật + phong cách chung. Prompt khung tranh viết {yebai}, {baishuang}… sẽ được thay bằng mô tả ở đây để nhân vật giống nhau giữa các khung. Sửa ở đây là áp dụng cho mọi khung.",
+  "style": "Warm storybook webtoon illustration, anthropomorphic animal characters (furry, walking upright, expressive faces), clean line art, soft cel shading, gentle warm lighting, detailed cozy background, cinematic 16:9 composition. Absolutely no text, no letters, no speech bubbles.",
+  "suffix": "Ultra HD, 4K, cinematic composition.",
+  "negative": "text, letters, words, chinese characters, watermark, signature, speech bubble, caption, human, realistic photo, extra limbs, extra fingers, deformed, blurry, low quality",
+  "places": {
+    "postoffice": "an 80-year-old red-brick post office on the corner of an old Chinese-style street, green wooden door with a small bell, a round green mailbox standing in front",
+    "hall": "the cozy interior of an old post office: wooden counter, brass scales, pigeonhole shelves full of letters, warm lamp light",
+    "storeroom": "a small dim storeroom with wooden shelves, one tiny barred vent window very high on the wall, a large wooden box covered with a red velvet cloth on a table",
+    "flowershop": "a tiny flower shop across the street from the post office, full of buckets of flowers, white lilies everywhere",
+    "office": "a small detective office on the second floor above a noodle shop, a sunny windowsill, old desk, piles of case files",
+    "noodleshop": "a busy, steamy little noodle shop with wooden tables and red paper lanterns",
+    "bridge": "a stone arched bridge over a river at night during the Qixi lantern festival, thousands of red and gold lanterns hanging over the bridge and reflecting in the water"
+  },
+  "characters": {
+    "yebai": "Ye Bai (a slim black cat detective with glossy black fur, bright amber eyes, long black tail, lazy half-closed eyes, wearing a loose dark-grey trench coat)",
+    "baishuang": "Bai Shuang (a tall grey wolf policewoman with silver-grey fur, white chest fur, pointed ears, blue eyes, wearing a navy-blue police uniform and police cap, a small silver crescent-moon hair clip near her left ear)",
+    "luming": "Lu Ming (a young female deer reporter with light-brown fur and white spots, big dark eyes, large ears, no antlers, wearing a mustard-yellow cardigan, a camera hanging from her neck, holding a small notebook)",
+    "gezi": "Grandpa Pigeon (an old grey pigeon postmaster, round wire-rimmed glasses, dark-green postal vest and cap, uses his wings like hands)",
+    "ali": "A Li (a young red squirrel postman with orange-red fur, a big fluffy tail, green postal uniform and cap, a large canvas mailbag, blushing easily)",
+    "cici": "Ci Ci (a small shy hedgehog girl florist with soft brown spines, a cream-colored face, round black eyes, wearing a light pink apron with yellow lily pollen dusted on it)",
+    "shi": "Manager Shi (a huge grey rhinoceros in a tight dark business suit, stern face, holding a rolled blueprint)",
+    "xiongshen": "Aunt Bear (a plump brown bear woman noodle-shop owner in a white apron and headscarf)",
+    "doudou": "Dou Dou (a little white rabbit girl with long ears and a red ribbon)",
+    "achen": "A Cheng (a young orange-red fox with a fluffy tail and a friendly smile)",
+    "yang": "Uncle Goat (an old goat baker with a white chef hat and a flour-dusted apron)"
+  }
+}

@@ -1,0 +1,1472 @@
+{
+  "series": "s10",
+  "title": "十年后的情书 · Bức thư tình mười năm sau",
+  "tag": "Furry · Trinh thám + Tình cảm",
+  "_note": "Mỗi khung: n (số thứ tự → file s10-01_p<n>), paras (chỉ số đoạn văn khung này minh họa, đoạn thứ 2+ dùng lại ảnh với góc cắt khác), tag (nhãn tiếng Việt), prompt ({ten} = nhân vật, {@noi} = bối cảnh trong characters.json).",
+  "chapters": {
+    "s10-01": [
+      {
+        "n": 1,
+        "paras": [
+          0,
+          1
+        ],
+        "tag": "Bưu điện cũ 80 tuổi",
+        "prompt": "{luming} stands in front of {@postoffice} on a bright festive morning, red lanterns hanging all along the old street, she holds up her camera excitedly",
+        "lines": [
+          {
+            "p": 0,
+            "zh": "老街那家老邮局，月底就要关门了，听说房子也要拆掉。今年是它最后一次送‘时光邮筒’里的信，你去写一篇文章。",
+            "who": "牛主编"
+          },
+          {
+            "p": 1,
+            "zh": "时光邮筒是我们的老传统。大家把信交给我们，我们替他们保存，十年以后的七夕，再一封一封地送到收信人手里。",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "paras": [
+          2
+        ],
+        "tag": "Hộp 312 lá thư",
+        "prompt": "In {@storeroom}, {gezi} proudly lifts a corner of the red velvet cloth to show {luming} hundreds of old envelopes inside the wooden box, dust floating in a beam of light",
+        "lines": [
+          {
+            "p": 2,
+            "zh": "一共三百一十二封，都是十年前写的。",
+            "who": "灰鸽爷爷"
+          },
+          {
+            "p": 2,
+            "zh": "仓库的钥匙只有两把，一把在我这儿，一把在阿栗那儿。对我来说，每一封信都是一个约定，不能早一天，也不能晚一天。",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "paras": [
+          3
+        ],
+        "tag": "A Lật chạy vào",
+        "prompt": "{ali} bursts through the door into {@hall} with an overstuffed mailbag, chestnut shells dropping behind him on the floor, {gezi} behind the counter laughing",
+        "lines": [
+          {
+            "p": 3,
+            "zh": "爷爷，今天的信送完了！",
+            "who": "阿栗"
+          },
+          {
+            "p": 3,
+            "zh": "说了多少次了，工作的时候别吃栗子。",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "paras": [
+          4,
+          5
+        ],
+        "tag": "Thích Thích mang hoa",
+        "prompt": "In {@hall}, {cici} shyly holds a bouquet of white lilies at the counter, while {ali} stands behind her blushing bright red and staring at her, frozen",
+        "lines": [
+          {
+            "p": 4,
+            "zh": "爷爷，七夕的信……什么时候送？",
+            "who": "刺刺"
+          },
+          {
+            "p": 5,
+            "zh": "七夕那天上午，一封都不会少。",
+            "who": "灰鸽爷爷"
+          },
+          {
+            "p": 5,
+            "zh": "谢谢",
+            "who": "刺刺"
+          },
+          {
+            "p": 5,
+            "zh": "那孩子天天来问同一个问题。他们俩是中学同学，一个在街这边，一个在街那边，见了面却连话都说不好。",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "paras": [
+          6
+        ],
+        "tag": "Dạ Bạch giả vờ ngủ",
+        "prompt": "In {@office} at sunset, {yebai} lies on the windowsill with a pack of dried fish on his belly, pretending to sleep, while {luming} leans over him teasing with a sly grin",
+        "lines": [
+          {
+            "p": 6,
+            "zh": "快到七夕了，鹊桥灯会那天，你打算请谁去看灯呀？比如说……某位很厉害的女警察？",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 6,
+            "zh": "真睡着的猫，尾巴是不会动的。",
+            "who": "鹿鸣"
+          }
+        ]
+      },
+      {
+        "n": 6,
+        "paras": [
+          7
+        ],
+        "tag": "Hộp thư biến mất!",
+        "prompt": "Early morning, {luming} sits up in bed in pajamas answering a ringing phone, eyes wide with shock, morning light through curtains, dramatic tension",
+        "lines": [
+          {
+            "p": 7,
+            "zh": "鹿鸣，你快来！仓库的门还锁得好好的，可是……可是那个装信的木盒子，不见了！三百一十二封信，全都不见了！",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      }
+    ],
+    "s10-02": [
+      {
+        "n": 1,
+        "paras": [
+          0
+        ],
+        "tag": "Bạch Sương phụ trách",
+        "prompt": "A police car parked in front of {@postoffice}; {baishuang} stands at the storeroom door writing in a notebook and glances sideways, slightly flustered, as {yebai} and {luming} hurry in",
+        "lines": [
+          {
+            "p": 0,
+            "zh": "你来得太晚了。",
+            "who": "白霜"
+          },
+          {
+            "p": 0,
+            "zh": "小偷又不会回来第二次。",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "paras": [
+          1,
+          2
+        ],
+        "tag": "Cửa sổ quá nhỏ, quá cao",
+        "prompt": "Inside {@storeroom}, the table is empty, the heavy door lock is intact; {luming} looks up at the tiny barred vent window high on the wall, puzzled",
+        "lines": [
+          {
+            "p": 1,
+            "zh": "钥匙只有两把，",
+            "who": "白霜"
+          },
+          {
+            "p": 1,
+            "zh": "一把在局长身上，一把在阿栗那儿。两个人都说，钥匙昨晚一直没离开过自己。",
+            "who": "白霜"
+          },
+          {
+            "p": 2,
+            "zh": "这么小的窗户，连老鼠都很难钻进来，更别说搬走一个大盒子了。",
+            "who": "鹿鸣"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "paras": [
+          3
+        ],
+        "tag": "Lỗ nhỏ & phấn vàng",
+        "prompt": "Close-up: {yebai} lifts the red velvet cloth toward the light, revealing many tiny pinholes in the fabric; scattered yellow pollen powder on the wooden floor below",
+        "lines": []
+      },
+      {
+        "n": 4,
+        "paras": [
+          4
+        ],
+        "tag": "Bưu kiện ghi sai địa chỉ",
+        "prompt": "In {@hall}, {gezi} wipes his glasses and sighs while talking to {baishuang} who takes notes; behind the counter sits a pile of parcels",
+        "lines": [
+          {
+            "p": 4,
+            "zh": "昨天邮局有没有什么特别的事？",
+            "who": "白霜"
+          },
+          {
+            "p": 4,
+            "zh": "昨天忙得不得了！七夕快到了，寄东西的人特别多。下午还来了一个很大的包裹，地址写错了，根本没有那个地方，只好先放进仓库里过夜。今天一大早，我就按老规定，把它退回给寄件人了。唉，八十年了，这种事从来没发生过……",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "paras": [
+          5,
+          6
+        ],
+        "tag": "Hai người khắc khẩu",
+        "prompt": "{baishuang} whispers to {yebai} with her ears twitching, annoyed but slightly blushing, {yebai} with paws behind his back smirking; in the doorway {ali} stands pale, clutching a key",
+        "lines": [
+          {
+            "p": 5,
+            "zh": "你看出什么了？",
+            "who": "白霜"
+          },
+          {
+            "p": 5,
+            "zh": "看出你昨天晚上又没睡好。",
+            "who": "夜白"
+          },
+          {
+            "p": 5,
+            "zh": "我问的是案子！",
+            "who": "白霜"
+          },
+          {
+            "p": 5,
+            "zh": "哦，案子啊，",
+            "who": "夜白"
+          },
+          {
+            "p": 5,
+            "zh": "案子还没把答案告诉我。",
+            "who": "夜白"
+          },
+          {
+            "p": 6,
+            "zh": "别怕，孩子，我相信你。",
+            "who": "灰鸽爷爷"
+          },
+          {
+            "p": 6,
+            "zh": "谢谢爷爷",
+            "who": "阿栗"
+          }
+        ]
+      },
+      {
+        "n": 6,
+        "paras": [
+          7
+        ],
+        "tag": "Vỏ hạt dẻ!",
+        "prompt": "{baishuang} crouches and shines a flashlight under an old bookshelf in {@storeroom}, revealing a small pile of dusty chestnut shells; {gezi} and {luming} turn to look at {ali} in shock",
+        "lines": [
+          {
+            "p": 7,
+            "zh": "这是什么？",
+            "who": "白霜"
+          }
+        ]
+      }
+    ],
+    "s10-03": [
+      {
+        "n": 1,
+        "paras": [
+          0,
+          1
+        ],
+        "tag": "A Lật bị nghi",
+        "prompt": "{ali} waves his paws nervously, face red, in front of a stern {baishuang} who questions him with arms crossed; {gezi} looks worried in {@hall}",
+        "lines": [
+          {
+            "p": 0,
+            "zh": "不、不是我！",
+            "who": "阿栗"
+          },
+          {
+            "p": 0,
+            "zh": "我没有拿那些信！",
+            "who": "阿栗"
+          },
+          {
+            "p": 0,
+            "zh": "你有钥匙，这里又有你的栗子壳。你最好说清楚，这些壳是什么时候留下的？",
+            "who": "白霜"
+          },
+          {
+            "p": 1,
+            "zh": "上个星期……有一天晚上，我一个人进来过。",
+            "who": "阿栗"
+          },
+          {
+            "p": 1,
+            "zh": "那么晚，你进仓库干什么？",
+            "who": "灰鸽爷爷"
+          },
+          {
+            "p": 1,
+            "zh": "我……我不能说。可是我什么都没拿，真的！我在这里坐了很久，后来就回家了。",
+            "who": "阿栗"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "paras": [
+          2,
+          3
+        ],
+        "tag": "Vỏ hạt đã phủ bụi",
+        "prompt": "{yebai} crouches by the bookshelf and examines the dusty chestnut shells with one claw, thoughtful, while {baishuang} frowns behind him",
+        "lines": [
+          {
+            "p": 2,
+            "zh": "这些壳上落满了灰，颜色也变暗了，",
+            "who": "夜白"
+          },
+          {
+            "p": 2,
+            "zh": "至少放了好几天，不是昨天晚上留下的。",
+            "who": "夜白"
+          },
+          {
+            "p": 3,
+            "zh": "你是说，他说的是真话？",
+            "who": "白霜"
+          },
+          {
+            "p": 3,
+            "zh": "我只是说，壳不会说谎。至于人会不会，那是另一回事。",
+            "who": "夜白"
+          },
+          {
+            "p": 3,
+            "zh": "你就不能说得简单一点儿吗？",
+            "who": "白霜"
+          },
+          {
+            "p": 3,
+            "zh": "说得简单，你就不会来找我了。",
+            "who": "夜白"
+          },
+          {
+            "p": 3,
+            "zh": "我得去查一查那家建筑公司。他们一直希望邮局早点儿关门，派来的经理姓石，是一头犀牛。",
+            "who": "白霜"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "paras": [
+          4
+        ],
+        "tag": "Ánh mắt hướng về tiệm hoa",
+        "prompt": "{ali} stands alone outside {@postoffice}, gazing longingly across the street at {@flowershop}; {luming} notices from the doorway",
+        "lines": []
+      },
+      {
+        "n": 4,
+        "paras": [
+          5
+        ],
+        "tag": "Trên đường về",
+        "prompt": "{luming} and {yebai} walk home along the old street in the evening glow, {luming} talking eagerly, {yebai} yawning with paws in his coat pockets",
+        "lines": [
+          {
+            "p": 5,
+            "zh": "你觉得阿栗那天晚上到底在仓库里做什么？一个人半夜坐在三百多封信旁边，不拿东西，也不说原因。",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 5,
+            "zh": "每个人都有秘密。有的秘密跟案子有关，有的只跟心有关。",
+            "who": "夜白"
+          },
+          {
+            "p": 5,
+            "zh": "那他的秘密是哪一种？",
+            "who": "鹿鸣"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "paras": [
+          6,
+          7
+        ],
+        "tag": "Bóng khổng lồ lúc nửa đêm",
+        "prompt": "Night, moonlight over {@postoffice}; {luming} hides behind a tree, heart pounding, watching a giant shadowy silhouette measure the post office wall with a long tape measure, mysterious atmosphere",
+        "lines": []
+      }
+    ],
+    "s10-04": [
+      {
+        "n": 1,
+        "paras": [
+          0,
+          1
+        ],
+        "tag": "Bản vẽ cao ốc",
+        "prompt": "{shi} squeezes into the small {@hall}, making it look tiny, and unrolls a blueprint of a tall skyscraper across the counter; {baishuang} questions him",
+        "lines": [
+          {
+            "p": 0,
+            "zh": "我很忙，有话快说。",
+            "who": "石经理"
+          },
+          {
+            "p": 1,
+            "zh": "这是我的工作。这座房子太旧了，早一天拆，就能早一天开工。说实话，我确实希望邮局早点儿关门，可那又怎么样？",
+            "who": "石经理"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "paras": [
+          2
+        ],
+        "tag": "Ông quá to!",
+        "prompt": "{yebai} calmly points at the tiny storeroom door, while {shi}, far too big to fit through it, looks at the door in surprise; {luming} holds back a laugh",
+        "lines": [
+          {
+            "p": 2,
+            "zh": "石经理，你能进这个门吗？",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "paras": [
+          3
+        ],
+        "tag": "Lá thư của mẹ",
+        "prompt": "{shi} stops in the doorway of the post office with his back turned, head lowered, the rolled blueprint hanging from his hand, a lonely melancholy mood",
+        "lines": [
+          {
+            "p": 3,
+            "zh": "我又不是坏人。我妈……我妈也有一封信在那个盒子里。",
+            "who": "石经理"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "paras": [
+          4,
+          5
+        ],
+        "tag": "Tiệm hoa của Thích Thích",
+        "prompt": "Inside {@flowershop}, {cici} wraps a bouquet of lilies, yellow pollen on her apron, her hands trembling nervously, while {luming} chats cheerfully",
+        "lines": [
+          {
+            "p": 4,
+            "zh": "你、你要什么花？",
+            "who": "刺刺"
+          },
+          {
+            "p": 5,
+            "zh": "盒子不见了，三百多封信，一封都找不到，灰鸽爷爷急得两天没好好吃饭。",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 5,
+            "zh": "那……七夕的信，还能送吗？",
+            "who": "刺刺"
+          },
+          {
+            "p": 5,
+            "zh": "放心吧，夜白一定能找回来的。",
+            "who": "鹿鸣"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "paras": [
+          6
+        ],
+        "tag": "Bát mì và con cá",
+        "prompt": "In {@noodleshop} at night, {baishuang} sits awkwardly across from {yebai} with two bowls of noodles and one fried fish between them, both reaching for the fish and bickering; {xiongshen} peeks from the kitchen smiling",
+        "lines": [
+          {
+            "p": 6,
+            "zh": "我……正好饿了，一起吃碗面吧。",
+            "who": "白霜"
+          },
+          {
+            "p": 6,
+            "zh": "哎呀，真难得！",
+            "who": "熊婶"
+          }
+        ]
+      },
+      {
+        "n": 6,
+        "paras": [
+          7
+        ],
+        "tag": "Thư trở về!",
+        "prompt": "Dawn, blue light, {gezi} opens the round green mailbox in front of {@postoffice} and finds a stack of old envelopes inside, astonished",
+        "lines": [
+          {
+            "p": 7,
+            "zh": "鹿鸣，信……信回来了！邮局门口的邮筒里，多了二十封时光邮筒的信！",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      }
+    ],
+    "s10-05": [
+      {
+        "n": 1,
+        "paras": [
+          0
+        ],
+        "tag": "Hai mươi lá thư",
+        "prompt": "In {@hall}, {gezi} carefully wipes twenty old envelopes one by one on the counter, as {luming} and {yebai} rush in",
+        "lines": [
+          {
+            "p": 0,
+            "zh": "一封都没有破，邮票也都在。",
+            "who": "灰鸽爷爷"
+          },
+          {
+            "p": 0,
+            "zh": "偷信的人，为什么又把信还回来了？",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "paras": [
+          1
+        ],
+        "tag": "Phong bì có lỗ nhỏ",
+        "prompt": "{luming} holds an old envelope up against the window light, showing many tiny pinholes; {yebai} sniffs it curiously",
+        "lines": [
+          {
+            "p": 1,
+            "zh": "夜白，你闻闻，这些信是不是有一股香味？",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 1,
+            "zh": "是花香。味道太重了，我的鼻子受不了。",
+            "who": "夜白"
+          },
+          {
+            "p": 1,
+            "zh": "带一封回去，再把那天在库房地上收起来的黄色粉末也带上。",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "paras": [
+          2
+        ],
+        "tag": "Mùi hoa bách hợp",
+        "prompt": "In {@noodleshop} at noon, {xiongshen} sniffs an envelope and smiles knowingly, {doudou} beside her points at yellow pollen, {luming} takes notes",
+        "lines": [
+          {
+            "p": 2,
+            "zh": "这不是百合花的味道吗？我年轻时最喜欢百合了。",
+            "who": "熊婶"
+          },
+          {
+            "p": 2,
+            "zh": "这个我也认识！我妈妈养过百合，花中间那几根长长的东西，一碰就是满手这种黄粉，怎么洗都洗不掉。",
+            "who": "豆豆"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "paras": [
+          3
+        ],
+        "tag": "Đi tìm một lá thư",
+        "prompt": "{yebai} sunbathes on the windowsill of {@office}, eyes half closed as if sleeping, but his tail flicks rhythmically while he thinks",
+        "lines": [
+          {
+            "p": 3,
+            "zh": "你们不觉得奇怪吗？如果是为了钱，时光信根本不值钱；如果是为了破坏，他应该把信扔掉或者烧掉。可是他偷走了，又每天还回来一些，一封都没有弄坏。",
+            "who": "夜白"
+          },
+          {
+            "p": 3,
+            "zh": "难道他是在……找东西？",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 3,
+            "zh": "对。",
+            "who": "夜白"
+          },
+          {
+            "p": 3,
+            "zh": "他要的不是三百多封信，而是其中的一封。每天晚上看一些，没找到的，就还回来。",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "paras": [
+          4,
+          5
+        ],
+        "tag": "Thất tịch… anh có rảnh?",
+        "prompt": "At a noodle shop table, {baishuang} looks down shyly poking her noodles with chopsticks as she asks a question; {yebai} stares out the window, tail frozen; {luming} peeks through a crack in the kitchen door",
+        "lines": [
+          {
+            "p": 4,
+            "zh": "七夕那天……你有空吗？",
+            "who": "白霜"
+          },
+          {
+            "p": 5,
+            "zh": "要看案子。",
+            "who": "夜白"
+          },
+          {
+            "p": 5,
+            "zh": "也对，案子要紧。我回局里了。",
+            "who": "白霜"
+          },
+          {
+            "p": 5,
+            "zh": "你这只笨猫！她是在约你啊！",
+            "who": "鹿鸣"
+          }
+        ]
+      },
+      {
+        "n": 6,
+        "paras": [
+          6
+        ],
+        "tag": "Còn thiếu một lá",
+        "prompt": "Evening in {@hall}, returned envelopes stacked neatly on the table, {ali} counting them one by one, {gezi}, {yebai} and {luming} watching, tense",
+        "lines": [
+          {
+            "p": 6,
+            "zh": "三百一十一封。",
+            "who": "阿栗"
+          },
+          {
+            "p": 6,
+            "zh": "一共是三百一十二封。还有一封，没有回来。",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      }
+    ],
+    "s10-06": [
+      {
+        "n": 1,
+        "paras": [
+          0,
+          1
+        ],
+        "tag": "Cuốn sổ ghi chép",
+        "prompt": "Early morning, {yebai} reads a thick, worn logbook on the post office counter, flipping pages with a claw; {gezi} watches; {luming} waits impatiently",
+        "lines": [
+          {
+            "p": 1,
+            "zh": "你到底在找什么？丢的是信，又不是包裹。",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 1,
+            "zh": "眼睛会骗人，细节不会。小偷能进锁着的房间，一定用了一个大家都没注意的办法。",
+            "who": "夜白"
+          },
+          {
+            "p": 1,
+            "zh": "灰鸽爷爷，那天您说过，有一个大包裹写错了地址，对吗？",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "paras": [
+          2
+        ],
+        "tag": "Bưu kiện to mà nhẹ",
+        "prompt": "{gezi} spreads his wings wide to show the size of a big cardboard parcel, explaining to {yebai} and {luming} in {@hall}",
+        "lines": [
+          {
+            "p": 2,
+            "zh": "对，是那天下午四点多送来的，大概有这么大。",
+            "who": "灰鸽爷爷"
+          },
+          {
+            "p": 2,
+            "zh": "地址写的是鹊桥路九十九号，可是鹊桥路一共只有八十号。按照规定，送不出去的包裹先放在库房里过夜，第二天早上退回寄件人。",
+            "who": "灰鸽爷爷"
+          },
+          {
+            "p": 2,
+            "zh": "奇怪的是，那个箱子看起来很大，拿起来却挺轻的。",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "paras": [
+          3
+        ],
+        "tag": "Sáng hôm sau lại nặng",
+        "prompt": "{ali} with his mailbag joins the conversation, miming carrying a very heavy box with strained arms",
+        "lines": [
+          {
+            "p": 3,
+            "zh": "那个箱子是我第二天一早送回去的。我记得特别清楚，因为它比前一天重多了，我差点儿闪了腰。花店还没开门，我就把它放在后院门口了。",
+            "who": "阿栗"
+          },
+          {
+            "p": 3,
+            "zh": "前一天很轻，第二天很重。一个关在库房里的箱子，怎么会自己变重？",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "paras": [
+          4,
+          5
+        ],
+        "tag": "Người gửi là…",
+        "prompt": "Close-up of {luming} reading the logbook, her face frozen in shock; in the background {ali} turns red and then pale",
+        "lines": [
+          {
+            "p": 4,
+            "zh": "下午四点二十分，大包裹一件，寄件人——",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 4,
+            "zh": "七夕的信什么时候送？",
+            "who": "刺刺"
+          },
+          {
+            "p": 5,
+            "zh": "不可能吧？",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 5,
+            "zh": "刺刺那么胆小，连说话都不敢大声。",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 5,
+            "zh": "刺刺……刺刺不会做这种事的！她只是把地址写错了而已！",
+            "who": "阿栗"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "paras": [
+          6
+        ],
+        "tag": "Một lá thư đặc biệt",
+        "prompt": "{yebai} carefully pulls one yellowed envelope out of a tall stack of letters and hands it to {gezi}, serious expression",
+        "lines": [
+          {
+            "p": 6,
+            "zh": "这一封，先请你替我保管吧。",
+            "who": "灰鸽爷爷"
+          },
+          {
+            "p": 6,
+            "zh": "以后你就会知道了。",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 6,
+        "paras": [
+          7
+        ],
+        "tag": "Hôm nay nghỉ",
+        "prompt": "{@flowershop} is closed: glass door shut, no flowers displayed outside, a small blank wooden sign hanging on the door; {yebai}, {luming} and {ali} stand outside looking worried",
+        "lines": []
+      }
+    ],
+    "s10-07": [
+      {
+        "n": 1,
+        "paras": [
+          0
+        ],
+        "tag": "Chú Dê kể chuyện",
+        "prompt": "{yang} leans out of his steaming bun shop next to {@flowershop}, telling {luming} and {yebai} something in a hushed voice",
+        "lines": [
+          {
+            "p": 0,
+            "zh": "找刺刺啊？她这几天怪得很。我每天半夜起来做包子，总看见她一个人抱着东西出门，一两点才回来。",
+            "who": "山羊大叔"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "paras": [
+          1,
+          2
+        ],
+        "tag": "Thùng các-tông bí ẩn",
+        "prompt": "In the backyard of the flower shop, {baishuang} in gloves opens a large cardboard box covered with tiny holes, yellow pollen inside and a red velvet thread; {luming} sniffs it; {yebai} watches",
+        "lines": []
+      },
+      {
+        "n": 3,
+        "paras": [
+          3
+        ],
+        "tag": "Dạ Bạch giải thích",
+        "prompt": "{yebai} stands on top of a flower pot like a stage, explaining the case with a raised claw, while {luming} and {baishuang} listen intently among the flowers",
+        "lines": [
+          {
+            "p": 3,
+            "zh": "好了，现在可以把整个故事讲一遍了。",
+            "who": "夜白"
+          },
+          {
+            "p": 3,
+            "zh": "先说库房。门锁没有坏，钥匙只有灰鸽爷爷和阿栗有；唯一的窗户又小又高，连我都钻不进去。所以，小偷不是自己闯进去的，而是被邮局的人亲手‘请’进去的。",
+            "who": "夜白"
+          },
+          {
+            "p": 3,
+            "zh": "请进去？",
+            "who": "白霜"
+          },
+          {
+            "p": 3,
+            "zh": "对，被当成一个包裹，搬进去的。",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "paras": [
+          4,
+          5
+        ],
+        "tag": "Trốn trong bưu kiện",
+        "prompt": "Flashback scene in soft sepia tones: {cici} curled into a spiky ball inside a cardboard box in a dark storeroom, hugging a wooden box of letters, a sliver of moonlight",
+        "lines": [
+          {
+            "p": 4,
+            "zh": "那天下午，刺刺在自己的花店寄了一个大包裹，故意写了一个不存在的地址。然后，她躲进了箱子里。刺猬害怕的时候会缩成一个球，变得很小，所以一个纸箱就够了。按照规定，送不出去的包裹要在库房里放一夜。等到半夜，邮局里没有人了，她就从箱子里爬出来。",
+            "who": "夜白"
+          },
+          {
+            "p": 5,
+            "zh": "可是库房里没有灯，她看不清信封上的名字，找不到自己想要的那一封。",
+            "who": "夜白"
+          },
+          {
+            "p": 5,
+            "zh": "没办法，她只好把整个信箱抱进纸箱，和自己一起藏好。她身上的刺扎在红丝绒布上，留下了那些小洞；她每天跟百合花在一起，身上的花粉掉在了地上。第二天早上，阿栗按照规定把包裹退回寄件人，也就是说，亲手把她和三百多封信一起送回了花店。所以，箱子才突然变重了。",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "paras": [
+          6,
+          7
+        ],
+        "tag": "Tối nay cô ấy sẽ đến",
+        "prompt": "Sunset, {yebai}, {baishuang} and {luming} stand side by side looking across the street at the round green mailbox in front of {@postoffice}, long shadows",
+        "lines": [
+          {
+            "p": 6,
+            "zh": "锁没坏，窗户进不去，地上有花粉，布上有小洞，包裹先轻后重……全都对上了。",
+            "who": "白霜"
+          },
+          {
+            "p": 6,
+            "zh": "可是，她为什么要这么做？她每天晚上偷偷把信还回来，说明她不是坏人。那最后一封信到底写了什么，让她这么害怕？",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 7,
+            "zh": "她还剩最后一封没有还。今天晚上，她会再来的。",
+            "who": "夜白"
+          },
+          {
+            "p": 7,
+            "zh": "那我们就在这儿等她。",
+            "who": "白霜"
+          }
+        ]
+      }
+    ],
+    "s10-08": [
+      {
+        "n": 1,
+        "paras": [
+          0
+        ],
+        "tag": "Mai phục",
+        "prompt": "Late night, an empty old street under yellow streetlights; {luming} crouches behind a wall with tired legs while {baishuang} waits perfectly still beside her, watching the green mailbox",
+        "lines": []
+      },
+      {
+        "n": 2,
+        "paras": [
+          1
+        ],
+        "tag": "Do dự trước hòm thư",
+        "prompt": "A small round shadowy figure stands at the green mailbox under a streetlight, holding an envelope near the slot, hesitating, pulling it back again",
+        "lines": [
+          {
+            "p": 1,
+            "zh": "别动，警察！",
+            "who": "白霜"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "paras": [
+          2
+        ],
+        "tag": "Cuộn tròn vì sợ",
+        "prompt": "A flashlight beam; {cici} has curled into a frightened spiky ball on the ground; {luming} kneels down gently beside her",
+        "lines": [
+          {
+            "p": 2,
+            "zh": "啊！",
+            "who": "刺刺"
+          },
+          {
+            "p": 2,
+            "zh": "刺刺，别怕，是我，鹿鸣。",
+            "who": "鹿鸣"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "paras": [
+          3,
+          4
+        ],
+        "tag": "Lời thú nhận",
+        "prompt": "{cici} sits on the stone step beside the green mailbox, crying and holding an old envelope to her chest, under a warm streetlight at night",
+        "lines": [
+          {
+            "p": 3,
+            "zh": "对不起……信是我拿的。十年前，我十二岁，给一个人写了一封信，告诉他……我喜欢他。那时候，我觉得十年好长好长，长到什么都会变。可是十年过去了，我们成了最好的朋友，每天都见面。他来我店里喝茶，我去邮局给他送花。我怕……我怕他收到这封信以后，我们连朋友都做不成了。",
+            "who": "刺刺"
+          },
+          {
+            "p": 4,
+            "zh": "那天晚上，库房里太黑，我什么都看不清，只好把整个箱子都抱走了。",
+            "who": "刺刺"
+          },
+          {
+            "p": 4,
+            "zh": "回家以后，我每天晚上找一些，没找到的就送回来。别人的信，我连名字都不敢看，那是别人的秘密，我只认自己的字。前几天，我终于找到了我的信。我本来想把它撕掉的，可是拿在手里，怎么也撕不下去。那是十二岁的我，鼓了好大的勇气才写下的啊。",
+            "who": "刺刺"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "paras": [
+          5
+        ],
+        "tag": "Đồng cảm",
+        "prompt": "{luming} wipes tears from her eyes while {baishuang} sits down beside {cici} and puts a gentle paw on her shoulder, night street",
+        "lines": [
+          {
+            "p": 5,
+            "zh": "所以，你今天晚上来，是想把它也还回去？",
+            "who": "白霜"
+          },
+          {
+            "p": 5,
+            "zh": "我想还……可是我不敢。我宁可他永远不知道。",
+            "who": "刺刺"
+          }
+        ]
+      },
+      {
+        "n": 6,
+        "paras": [
+          6,
+          7
+        ],
+        "tag": "Người nhận: Thích Thích",
+        "prompt": "{yebai} hands a yellowed old envelope with a child's handwriting to {cici} under the streetlight; she looks at it in disbelief",
+        "lines": [
+          {
+            "p": 6,
+            "zh": "刺刺，这封信，你看过收信人的名字吗？",
+            "who": "夜白"
+          }
+        ]
+      }
+    ],
+    "s10-09": [
+      {
+        "n": 1,
+        "paras": [
+          0,
+          1
+        ],
+        "tag": "Lá thư của Lật Dương",
+        "prompt": "{cici} reads an old envelope in the beam of a flashlight held by {baishuang}; {yebai} sits beside the mailbox with his tail curled around his feet",
+        "lines": [
+          {
+            "p": 0,
+            "zh": "栗阳……是阿栗的名字。",
+            "who": "刺刺"
+          },
+          {
+            "p": 0,
+            "zh": "这……这怎么可能？",
+            "who": "刺刺"
+          },
+          {
+            "p": 1,
+            "zh": "这封信是前天晚上跟别的信一起回来的。灰鸽爷爷认出了名字，把它交给我保管。你那天在黑暗里只顾着找自己的信，所以没有注意到它。",
+            "who": "夜白"
+          },
+          {
+            "p": 1,
+            "zh": "还记得仓库架子下面那些栗子壳吗？大家都以为是偷信的人留下的。可是我第一天就发现，壳上有一层薄薄的灰，比盒子丢的时间早好几天。",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "paras": [
+          2,
+          3
+        ],
+        "tag": "Đêm của A Lật",
+        "prompt": "Flashback scene in soft sepia tones: {ali} sits alone at night in {@storeroom} beside the velvet-covered box, nervously eating chestnuts, shells piling at his feet, lost in thought",
+        "lines": [
+          {
+            "p": 2,
+            "zh": "对了！阿栗说过，上个星期他一个人晚上进过仓库，可是他怎么也不肯说去干什么！",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 2,
+            "zh": "他是去拿自己的信的，对不对？他也害怕这封信在七夕那天送出去！",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 3,
+            "zh": "一个人半夜坐在放信的屋子里，一边紧张地吃栗子，一边看着那个盒子，一坐就是很久。他本来想拿回自己的信，可是最后，他什么也没拿。因为这封信一直好好地躺在盒子里，直到你把整个盒子抱走。",
+            "who": "夜白"
+          },
+          {
+            "p": 3,
+            "zh": "我猜，他是决定把这件事交给十年前的自己。",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "paras": [
+          4
+        ],
+        "tag": "Xin lỗi ông",
+        "prompt": "Morning in {@hall}, {cici} bows deeply before {gezi}, a big cardboard box and one letter on the counter; {gezi} smiles gently and kindly",
+        "lines": [
+          {
+            "p": 4,
+            "zh": "孩子，三百一十一封信，你一封一封地送回来，一封也没有少，也没有弄坏。我送了五十年信，知道一个人为了一封信能有多紧张。爷爷不怪你。",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "paras": [
+          5,
+          6
+        ],
+        "tag": "Mỗi lá thư là một lời hẹn",
+        "prompt": "{luming} holds {cici}'s paw warmly; {baishuang} closes her notebook with a soft expression; morning light in the post office",
+        "lines": [
+          {
+            "p": 5,
+            "zh": "爷爷常说，每一封信都是一个约定。写信的人相信，十年以后它一定会准时到达。刺刺，你的信也一样。十二岁的你那么勇敢地把它写下来，也一直在等这一天呀。你真的要替她取消这个约定吗？",
+            "who": "鹿鸣"
+          },
+          {
+            "p": 6,
+            "zh": "所有的信都回来了，邮局也不打算追究，这个案子……就当作一场误会吧。阿栗那边，我们谁也不说，七夕那天让信自己去找收信人。",
+            "who": "白霜"
+          },
+          {
+            "p": 6,
+            "zh": "不过，下次不许再把自己装进箱子寄出去了，明白吗？",
+            "who": "白霜"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "paras": [
+          7
+        ],
+        "tag": "Còn anh thì sao?",
+        "prompt": "Bright morning street, {yebai} walks ahead yawning and stretching, {luming} walks behind watching his back with a sly matchmaker smile",
+        "lines": [
+          {
+            "p": 7,
+            "zh": "喂，侦探先生，十年前的信都有人勇敢地写了。那你呢？你也该写一封信了吧。",
+            "who": "鹿鸣"
+          }
+        ]
+      }
+    ],
+    "s10-10": [
+      {
+        "n": 1,
+        "paras": [
+          0
+        ],
+        "tag": "Ngày giao thư cuối cùng",
+        "prompt": "Qixi morning, a long queue of animals of all ages, elderly and families, in front of {@postoffice} decorated with red ribbons",
+        "lines": []
+      },
+      {
+        "n": 2,
+        "paras": [
+          1
+        ],
+        "tag": "Chiếc kẹp tóc mới",
+        "prompt": "Inside the crowded post office, {luming} with her camera in a corner, {yebai} leaning by the window, {baishuang} with her silver crescent-moon hair clip glancing at him",
+        "lines": [
+          {
+            "p": 1,
+            "zh": "我的爪子是用来抓小鱼干的，不是用来写信的。",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "paras": [
+          2,
+          3
+        ],
+        "tag": "Thư của mẹ",
+        "prompt": "{shi} stands by the post office window holding an old letter, his eyes red and teary, the huge rhino deeply moved, soft light",
+        "lines": [
+          {
+            "p": 3,
+            "zh": "我妈妈在信里说，我小时候最喜欢趴在这个窗台上，看邮递员把信送到很远很远的地方。她说，希望我长大以后，也能做一个让别人等得到消息的人。",
+            "who": "石经理"
+          },
+          {
+            "p": 3,
+            "zh": "这座楼，我们不拆了！",
+            "who": "石经理"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "paras": [
+          4,
+          5
+        ],
+        "tag": "Thư gửi chính mình",
+        "prompt": "{baishuang} reads an old letter written in a child's handwriting, then looks up toward {yebai} by the window, emotional",
+        "lines": [
+          {
+            "p": 4,
+            "zh": "白霜。",
+            "who": "灰鸽爷爷"
+          },
+          {
+            "p": 5,
+            "zh": "十二岁的我问，十年以后，有没有一个相信我的朋友。喂，侦探，你说我该怎么回答她？",
+            "who": "白霜"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "paras": [
+          6
+        ],
+        "tag": "Cô nói gì tôi cũng tin",
+        "prompt": "{yebai} turns his face away toward the window, tail swishing, cheeks faintly flushed, while {baishuang} smiles softly behind him",
+        "lines": [
+          {
+            "p": 6,
+            "zh": "你抓人，我找线索，你说什么我都信——这种问题，还用问吗？",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 6,
+        "paras": [
+          7
+        ],
+        "tag": "Hai lá thư cùng ngày",
+        "prompt": "{gezi} hands letters to {ali} and {cici} at the same moment; they look up at each other in the middle of the crowd, surprised and blushing",
+        "lines": [
+          {
+            "p": 7,
+            "zh": "这两封信是同一天寄的，那就一起送吧。栗阳，刺刺。",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      }
+    ],
+    "s10-11": [
+      {
+        "n": 1,
+        "paras": [
+          0
+        ],
+        "tag": "Hội đèn cầu Ô Thước",
+        "prompt": "Wide shot of {@bridge}; {ali} and {cici} walk slowly side by side among the crowd, magical romantic atmosphere",
+        "lines": []
+      },
+      {
+        "n": 2,
+        "paras": [
+          1,
+          2
+        ],
+        "tag": "Thư của cậu, tớ đọc rồi",
+        "prompt": "In the middle of the lantern bridge, {ali} blushes, gripping a letter, two chestnuts rolling from his pocket to {cici}'s feet; her spines stand up shyly but she does not turn away",
+        "lines": [
+          {
+            "p": 1,
+            "zh": "你的信……我看了。",
+            "who": "阿栗"
+          },
+          {
+            "p": 1,
+            "zh": "你说，我每天都把最大的栗子分给你。其实……那不是因为栗子太多吃不完。是因为，最大的那个，我只想给你。",
+            "who": "阿栗"
+          },
+          {
+            "p": 2,
+            "zh": "你的信我也看了。",
+            "who": "刺刺"
+          },
+          {
+            "p": 2,
+            "zh": "你说，我的刺一点儿也不可怕；你还说，长大以后你要当邮递员，每天第一个给我送信。",
+            "who": "刺刺"
+          },
+          {
+            "p": 2,
+            "zh": "所以……你真的当了邮递员。而我开花店的时候，特意选了邮局对面。",
+            "who": "刺刺"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "paras": [
+          3,
+          4
+        ],
+        "tag": "Hạt dẻ to nhất",
+        "prompt": "Close-up on the lantern bridge: {ali} places a big shiny chestnut into {cici}'s open palm, both blushing, warm lantern glow, sweet and innocent",
+        "lines": [
+          {
+            "p": 3,
+            "zh": "上个星期那天晚上，我一个人在仓库里坐到快天亮，吃了半口袋栗子。我想把信拿回来，因为我害怕，害怕你只把我当好朋友。可是我又想：要是你也一样呢？要是我拿走了，我们就永远不知道了。所以我把信留下了，让十年后的我们自己决定。",
+            "who": "阿栗"
+          },
+          {
+            "p": 4,
+            "zh": "刺刺，十年前我写的话，现在还算数。不对，比十年前还多。",
+            "who": "阿栗"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "paras": [
+          5
+        ],
+        "tag": "Dạo bên sông",
+        "prompt": "Riverside path under willow trees at night with distant lanterns, {baishuang} walks ahead, {yebai} follows behind with his paws in his coat pockets",
+        "lines": [
+          {
+            "p": 5,
+            "zh": "那个发夹……第一天在邮局，我就看见了。银色的月亮，很适合你。",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "paras": [
+          6
+        ],
+        "tag": "Thư mười năm",
+        "prompt": "Under the willows, {yebai} awkwardly holds out a new red envelope to {baishuang}, looking away shyly; she looks surprised",
+        "lines": [
+          {
+            "p": 6,
+            "zh": "灰鸽爷爷说，新的时光邮筒下个月开放，这是第一个信封。我写了，可是现在不许拆。",
+            "who": "夜白"
+          },
+          {
+            "p": 6,
+            "zh": "十年以后才能拆。这是规定。",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 6,
+        "paras": [
+          7
+        ],
+        "tag": "Tấm ảnh dưới đèn lồng",
+        "prompt": "{baishuang} smiles beautifully holding the red envelope to her chest beside {yebai} under the glowing lanterns; far in the foreground, {luming} quietly takes their photo",
+        "lines": [
+          {
+            "p": 7,
+            "zh": "那说好了。",
+            "who": "白霜"
+          },
+          {
+            "p": 7,
+            "zh": "十年以后，你陪我一起拆。",
+            "who": "白霜"
+          },
+          {
+            "p": 7,
+            "zh": "嗯",
+            "who": "夜白"
+          }
+        ]
+      }
+    ],
+    "s10-12": [
+      {
+        "n": 1,
+        "paras": [
+          0
+        ],
+        "tag": "Bưu điện Thời gian",
+        "prompt": "The renovated {@postoffice} with a fresh new signboard, {shi} wearing a yellow hard hat helps workers repair the roof, sunny day",
+        "lines": [
+          {
+            "p": 0,
+            "zh": "时光邮局",
+            "who": ""
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "paras": [
+          1
+        ],
+        "tag": "Nửa thư, nửa hoa",
+        "prompt": "Interior of the new post office, half post office counter and half flower shop full of lilies; {ali} and {cici} work happily side by side",
+        "lines": []
+      },
+      {
+        "n": 3,
+        "paras": [
+          2
+        ],
+        "tag": "Ông Bồ Câu nghỉ hưu",
+        "prompt": "{gezi} sits on an old chair by the sunny window drinking tea, telling stories to a group of little animal children",
+        "lines": [
+          {
+            "p": 2,
+            "zh": "写信的时候，别想着要写得多好看。把心里的话写下来，时间会替你保管。",
+            "who": "灰鸽爷爷"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "paras": [
+          3
+        ],
+        "tag": "Hòm thư thời gian mới",
+        "prompt": "{xiongshen}, {doudou}, {achen} and {luming} write letters together at a table beside a new red time-capsule mailbox, joyful",
+        "lines": [
+          {
+            "p": 3,
+            "zh": "十年后还在写新闻的我",
+            "who": ""
+          },
+          {
+            "p": 3,
+            "zh": "我的信已经交给收信人了。",
+            "who": "夜白"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "paras": [
+          4
+        ],
+        "tag": "Bài báo của Lộc Minh",
+        "prompt": "{luming} proudly holds up a newspaper in front of the post office, smiling, morning sun",
+        "lines": []
+      },
+      {
+        "n": 6,
+        "paras": [
+          5,
+          6
+        ],
+        "tag": "Đuôi khẽ quẫy",
+        "prompt": "In {@office}, {yebai} lies on the windowsill pretending to sleep while {baishuang} gently places a lunch box beside him; his tail wags slightly; {luming} smiles and writes in her notebook",
+        "lines": [
+          {
+            "p": 5,
+            "zh": "鱼是我自己做的。好吃不好吃都得吃完，不许剩下。",
+            "who": "白霜"
+          },
+          {
+            "p": 6,
+            "zh": "这个城市里最难破的案子，不是谁偷了什么，而是谁先说出那句‘我喜欢你’。不过没关系，我们还有十年，慢慢来。",
+            "who": "鹿鸣（笔记）"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -30,6 +30,7 @@ hsk_lotrinh/          Lộ trình từ vựng HSK 1–6 (SRS, đọc nhanh)
   hsk_lotrinh.html/.css/.js, hsk_vocab_data.js
 doc_them/             Đọc thêm: 299 bài (truyện dài, bài đọc, hội thoại, thành ngữ) + 14 đề luyện đọc HSK, bài tự dán, đọc lại bài khóa Boya
   doc_them.html/.css/.js, doc_data.js (sinh tự động)
+  comic_art.js (chế độ Truyện tranh: khung tranh + bong bóng thoại), comic_data.js (sinh tự động), comics/<series>/*.webp
 thong_ke/             Thống kê & dự báo (chỉ đọc localStorage của mọi trang): tổng quan, dự báo ôn 7/30 ngày, theo tuần, theo cấp, heatmap, tốc độ, từ hay quên
   thong_ke.html/.css/.js
 luyen_tap/            Luyện tập: sắp xếp câu (Việt→Trung), nghe – viết từ/câu, 14 trò chơi; lấy từ đã học ở mọi trang
@@ -43,6 +44,7 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
   add_hanviet_wl.py, build_dict.py, build_luyen_tap.py, build_doc_them.py
   doc_them_src/       Nguồn tài liệu đọc (sáng tác mới): hsk*.json, more_hsk*.json, series_s1..s5.json, series_s6_a/b/c.json, series_s7_a/b/c.json, series_s8_a/b/c.json, series_s9_a/b/c.json, series_s10_a/b/c.json, dialogues.json, chengyu_a/b.json, exam_hsk4/5.json
                       + BRIEF.md, BRIEF_MORE.md (quy cách viết từng loại), BRIEF_S6.md … BRIEF_S10.md (dàn ý bộ truyện s6–s10) + vocab_hskN.txt
+  comics/             Truyện tranh: characters.json, panels_<series>.json (kịch bản + người nói), gen_comics.py (Qwen-Image qua ComfyUI/diffusers), build_comics.py → doc_them/comic_data.js; xem README.md
   scratch/            Script xử lý một lần (OCR, kiểm tra, sửa dữ liệu), chỉ để tham khảo
 ```
 

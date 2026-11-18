@@ -38,6 +38,7 @@
         <section id="tab-lib" class="tab-pane">
             <div class="summary card" id="lib-summary"></div>
             <details class="card foryou" id="lib-foryou" hidden></details>
+            <details class="card cm-showcase" id="lib-comics" hidden></details>
             <div class="chips kinds" id="lib-kinds"></div>
             <div class="lib-tools">
                 <input type="search" id="lib-search" placeholder="🔎 Tìm theo tiêu đề (Trung / Việt), chủ đề, thành ngữ…" aria-label="Tìm bài" autocomplete="off">
@@ -87,6 +88,7 @@
             <button class="tb" id="tb-new" title="Tô các chữ thuộc từ chưa học">🖍 <span>Từ mới</span></button>
             <button class="tb" id="tb-tr" title="Bản dịch: tắt / từng đoạn / tất cả">🇻🇳 <span id="tb-tr-label">Dịch</span></button>
             <button class="tb" id="tb-lookup" title="Chạm chữ để tra từ">🔍 <span>Tra</span></button>
+            <button class="tb" id="tb-comic" title="Chế độ Truyện tranh (khung tranh minh họa + bong bóng thoại)">🎨 <span id="tb-comic-label">Truyện tranh</span></button>
             <button class="tb" id="tb-listen" title="Nghe cả bài">🔊 <span>Nghe</span></button>
             <button class="tb" id="tb-role" title="Đọc nhập vai: lời dẫn một giọng, lời thoại trong ngoặc kép hai giọng luân phiên"><span id="tb-role-ico">🎭</span> <span id="tb-role-label">Nhập vai</span></button>
             <button class="tb tb-voice" id="tb-voice" data-hoc-voice title="Chọn giọng Người dẫn / Vai 1 / Vai 2" aria-label="Chọn giọng đọc">⚙</button>
@@ -153,6 +155,8 @@
     <script src="../shared/zizu.js"></script>
     <script src="../shared/lookup.js"></script>
     <script src="doc_data.js"></script>
+    <script src="comic_data.js"></script>
+    <script src="comic_art.js"></script>
     <script src="doc_them.js"></script>
 </body>
 </html>

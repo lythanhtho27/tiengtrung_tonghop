@@ -374,3 +374,73 @@ a { color: inherit; }
 .fy-item b { font-size: 15px; font-weight: 600; max-width: 260px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .fy-item small { font-size: 11.5px; color: var(--muted); }
 @media (max-width: 560px) { .fy-item { flex: 1 1 calc(50% - 6px); } .fy-item b { max-width: 100%; } }
+
+/* ================= Truyện tranh HSK 4+ (Thư viện + Trình đọc Comic) ================= */
+.cm-showcase { padding: 12px 14px; border-left: 4px solid var(--primary); }
+.cm-showcase summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.cm-showcase summary::-webkit-details-marker { display: none; }
+.cm-showcase summary::after { content: "▾"; color: var(--muted); }
+.cm-showcase[open] summary::after { content: "▴"; }
+.cm-showcase summary small { font-weight: 500; color: var(--muted); }
+.cm-sc-desc { font-size: 13px; color: var(--muted); margin: 6px 0 10px; }
+.cm-shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.cm-scard { display: flex; flex-direction: column; text-align: left; background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; cursor: pointer; padding: 0; transition: border-color var(--ui-transition), transform var(--ui-transition); }
+.cm-scard:hover { border-color: var(--primary); transform: translateY(-2px); }
+.cm-scard-img { position: relative; aspect-ratio: 16 / 9; background: var(--bg); overflow: hidden; }
+.cm-scard-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cm-scard-badge { position: absolute; top: 6px; left: 6px; background: rgba(15, 23, 42, .75); color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 99px; }
+.cm-scard-body { padding: 8px 10px 10px; }
+.cm-scard-body b { display: block; font-family: var(--cn); font-size: 16px; line-height: 1.3; }
+.cm-scard-body small { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.cm-sc-filters { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.kd-comic { color: var(--primary); background: var(--ui-primary-soft); border-color: transparent; }
+.kd-ai { color: #b45309; background: var(--warn-soft); border-color: transparent; }
+.cm-open-btn { background: var(--ui-primary-soft); color: var(--primary); border-color: transparent; font-size: 12.5px; padding: 4px 10px; }
+.cm-open-btn:hover { border-color: var(--primary); }
+
+/* Thanh điều khiển trong trình đọc Truyện tranh */
+.cm-bar { display: flex; gap: 8px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 8px 12px; margin-bottom: 14px; box-shadow: var(--ui-shadow-sm); }
+.cm-bar-left { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+.cm-bar-right { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.cm-pill { border: 1px solid var(--border); background: var(--surface-2); border-radius: 99px; padding: 4px 10px; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.cm-pill.on { background: var(--primary); color: var(--ui-on-primary); border-color: transparent; }
+
+/* Lưới khung truyện tranh */
+.reader.comic-mode .doc-body { line-height: 1.95; }
+.cm-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; align-items: start; }
+.cm-grid.cm-webtoon { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; gap: 18px; }
+@media (max-width: 680px) { .cm-grid { grid-template-columns: 1fr; gap: 14px; } }
+
+.para.comic-panel { margin: 0; padding: 0; border: 2px solid var(--ui-border-strong); border-radius: 14px; background: var(--surface); overflow: hidden; box-shadow: var(--ui-shadow-sm); display: flex; flex-direction: column; transition: border-color .15s, box-shadow .15s; }
+.para.comic-panel.cm-panel-wide { grid-column: 1 / -1; }
+.para.comic-panel.playing { background: var(--surface); border-color: var(--primary); box-shadow: 0 0 0 3px var(--ui-primary-soft); }
+.para.comic-panel.rp-on { box-shadow: 0 0 0 3px var(--rp-c, var(--primary)); border-color: var(--rp-c, var(--primary)); padding-left: 0; }
+.para.comic-panel.rp-on::before { top: 8px; right: 10px; bottom: auto; left: auto; z-index: 3; }
+.para.comic-panel.dlg { border-left: 2px solid var(--ui-border-strong); padding-left: 0; }
+.para.comic-panel.mask .cm-btxt { filter: blur(7px); pointer-events: none; user-select: none; }
+
+.cm-art { position: relative; aspect-ratio: 16 / 9; background: var(--surface-2); overflow: hidden; border-bottom: 2px solid var(--ui-border-strong); }
+.cm-panel-wide .cm-art { aspect-ratio: 21 / 9; }
+@media (max-width: 680px) { .cm-panel-wide .cm-art { aspect-ratio: 16 / 9; } }
+.cm-svg, .cm-img, .cm-svg-fb { width: 100%; height: 100%; display: block; }
+.cm-img { object-fit: cover; transition: transform .35s ease; }
+.cm-pnum { position: absolute; top: 8px; left: 8px; z-index: 2; font-family: var(--ui-font-sans); font-size: 11.5px; font-weight: 800; background: var(--surface); color: var(--text); border: 1.5px solid var(--ui-border-strong); border-radius: 8px; padding: 1px 7px; line-height: 1.4; }
+.cm-scene-tag { position: absolute; bottom: 8px; left: 8px; z-index: 2; font-family: var(--ui-font-sans); font-size: 11.5px; font-weight: 600; background: rgba(15, 23, 42, .72); color: #fff; padding: 2px 9px; border-radius: 99px; backdrop-filter: blur(4px); max-width: calc(100% - 16px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.cm-body { padding: 10px 12px 10px; display: flex; flex-direction: column; gap: 8px; }
+.reader.comic-mode .ptext { text-indent: 0; display: flex; flex-direction: column; gap: 8px; }
+.cm-narration { background: var(--warn-soft); border-left: 3px solid var(--warn); border-radius: 8px; padding: 7px 10px; font-size: .92em; line-height: 2; }
+.reader.no-py .cm-narration, .reader.no-py .cm-btxt { line-height: 1.7; }
+
+.cm-bubble { position: relative; background: var(--surface); border: 2px solid var(--spk, var(--primary)); border-radius: 16px; padding: 7px 11px 9px; box-shadow: var(--ui-shadow-sm); }
+.cm-bubble.cm-side-left { margin-right: 12px; border-bottom-left-radius: 4px; }
+.cm-bubble.cm-side-right { margin-left: 12px; border-bottom-right-radius: 4px; background: var(--surface-2); }
+.cm-spk { font-family: var(--ui-font-sans); font-size: 12px; font-weight: 700; color: var(--spk, var(--primary)); display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 1px; line-height: 1.2; }
+.cm-say-bubble { border: 0; background: transparent; cursor: pointer; font-size: 13px; padding: 1px 4px; border-radius: 6px; opacity: .8; }
+.cm-say-bubble:hover { opacity: 1; background: var(--surface-2); }
+.cm-btxt { line-height: 2; }
+.cm-q { display: none; }
+
+.para.comic-panel .ptools { padding: 0 10px 8px; margin-top: 0; }
+.para.comic-panel .ptr { margin: 0 10px 10px; }
+.para.comic-panel.cm-banner { padding: 10px 14px; text-align: center; background: var(--surface-2); border-style: dashed; }

@@ -69,7 +69,7 @@
     }
 
     // ====================================================================== Trạng thái
-    var DEFAULT_SETTINGS = { tab: "lib", kind: "all", level: 0, examLv: 0, examPy: false, py: true, size: 22, hl: false, tr: "para", lookup: true, rate: 0.9, autoHide: true };
+    var DEFAULT_SETTINGS = { tab: "lib", kind: "all", level: 0, examLv: 0, examPy: false, py: true, size: 22, hl: false, tr: "para", lookup: true, rate: 0.9, autoHide: true, comic: false, comicLayout: "grid", comicUseAI: true, cmOpen: true };
     var S = (function () {
         var v = readJSON(KEY, null) || {};
         return {
@@ -325,6 +325,7 @@
 
         renderLibSummary(doneN);
         renderForYou();
+        renderComicShowcase();
 
         // đang mở một bộ truyện: danh sách chương
         var ser = libSeries && SERIES.map[libSeries];
@@ -466,8 +467,39 @@
         var m = mineById(id);
         if (m) open(docFromMine(m));
     }
+    function renderComicShowcase() {
+        var box = $("lib-comics");
+        if (!box) return;
+        var h4N = LIB.filter(function (t) { return t.level >= 4; }).length;
+        var aiList = window.HocComicArt ? HocComicArt.aiStories() : [];
+        var samples = [
+            { id: "h4-02", label: "网上的“老李”", sub: "HSK 4 · Truyện ngắn" },
+            { id: "s8-01", label: "星之泪失窃案 · Ch.1", sub: "HSK 4 · Furry trinh thám" },
+            { id: "c-01", label: "守株待兔", sub: "HSK 5 · Thành ngữ" },
+            { id: "d-09", label: "找不到的预订", sub: "HSK 4 · Hội thoại" }
+        ];
+        box.innerHTML = '<summary><span>🎨 Truyện tranh HSK 4+ <small>· ' + h4N + " bài (Tranh AI + Minh họa theo cảnh)</small></span></summary>" +
+            '<div class="cm-sc-desc">Mở trực tiếp các mẫu truyện HSK 4–6 dưới dạng khung tranh và bong bóng thoại (vẫn giữ nguyên Pinyin, chạm chữ tra từ và đọc nhập vai):</div>' +
+            '<div class="cm-shelf">' + aiList.map(function (st) {
+                return '<button type="button" class="cm-scard" data-comic-open="' + esc(st.id) + '">' +
+                    '<div class="cm-scard-img"><img src="' + esc(st.thumb) + '" alt="' + esc(st.title_vi) + '" loading="lazy">' +
+                    '<span class="cm-scard-badge">✨ Tranh AI · HSK ' + st.level + "</span></div>" +
+                    '<div class="cm-scard-body"><b>' + esc(st.title) + "</b><small>" + esc(st.title_vi) + " · " + esc(st.tag) + "</small></div></button>";
+            }).join("") + "</div>" +
+            '<div class="cm-sc-filters">' +
+            samples.map(function (sp) {
+                return '<button type="button" class="btn btn-sm cm-open-btn" data-comic-open="' + esc(sp.id) + '">🎨 ' + esc(sp.label) + " <small>(" + esc(sp.sub) + ")</small></button>";
+            }).join("") +
+            '<button type="button" class="btn btn-sm" data-cm-lv="4">Lọc HSK 4</button>' +
+            '<button type="button" class="btn btn-sm" data-cm-lv="5">Lọc HSK 5</button>' +
+            '<button type="button" class="btn btn-sm" data-cm-lv="6">Lọc HSK 6</button>' +
+            "</div>";
+        box.open = S.settings.cmOpen !== false;
+        box.hidden = false;
+    }
     function textCard(t, inSeries) {
         var k = kindOf(t), r = S.read[t.id] || {}, I = t.idiom || {}, body;
+        var isH4 = t.level >= 4, hasAI = window.HocComicArt && HocComicArt.hasAI(t.id);
         if (k === "chengyu" && I.hz) {
             body = '<div class="tc-idiom">' + esc(I.hz) + "</div>" +
                 (I.hv ? '<div class="tc-hv">' + esc(I.hv) + "</div>" : "") +
@@ -480,12 +512,14 @@
                 if (t.speakers && t.speakers.length) body += '<div class="tc-spk">' + t.speakers.map(function (n, i) { return '<span class="spk-' + (i % 4) + '">' + esc(n) + "</span>"; }).join("") + "</div>";
             }
         }
-        return '<button class="tcard tc-' + k + (r.done ? " done" : "") + '" data-id="' + esc(t.id) + '">' +
+        return '<div class="tcard tc-' + k + (r.done ? " done" : "") + '" data-id="' + esc(t.id) + '" role="button" tabindex="0">' +
             '<div class="tc-top"><span class="lv lv-' + t.level + '">HSK ' + t.level + "</span>" + (inSeries ? "" : kindBadge(k)) +
+            (hasAI ? '<span class="kd kd-ai">✨ Tranh AI</span>' : isH4 ? '<span class="kd kd-comic">🎨 Truyện tranh</span>' : "") +
             (t.topic ? '<span class="topic">' + esc(t.topic) + "</span>" : "") + readBadge(t.id) + "</div>" + body +
             '<div class="tc-meta">' + metaBits(t.id, t.chars || hanCount(t.paragraphs.join(""))) + "</div>" +
             '<div data-known="' + esc(t.id) + '">' + knownHTML(knownPct("lib:" + t.id, t.paragraphs)) + "</div>" +
-            "</button>";
+            (isH4 ? '<div class="tc-actions"><button type="button" class="btn btn-sm cm-open-btn" data-comic-id="' + esc(t.id) + '">🎨 Đọc truyện tranh</button></div>' : "") +
+            "</div>";
     }
     function seriesBar(s) {
         var N = s.chapters.length, d = seriesDoneN(s);
@@ -499,15 +533,20 @@
     function seriesCard(s) {
         var N = s.chapters.length, d = seriesDoneN(s), chars = s.chapters.reduce(function (a, c) { return a + (c.chars || hanCount(c.paragraphs.join(""))); }, 0);
         var dueN = s.chapters.filter(function (c) { return isRereadDue(c.id); }).length;
+        var isH4 = s.level >= 4, hasAI = s.chapters.some(function (c) { return window.HocComicArt && HocComicArt.hasAI(c.id); });
+        var targetCh = seriesNext(s) || s.chapters[0];
         return '<div class="tcard tc-series' + (d === N ? " done" : "") + '" data-series="' + esc(s.id) + '" role="button" tabindex="0">' +
             '<div class="tc-top"><span class="lv lv-' + s.level + '">HSK ' + s.level + "</span>" + kindBadge("series") +
+            (hasAI ? '<span class="kd kd-ai">✨ Tranh AI</span>' : isH4 ? '<span class="kd kd-comic">🎨 Truyện tranh</span>' : "") +
             (dueN ? '<span class="tc-due">🔁 ' + dueN + " chương nên đọc lại</span>" : "") +
             (d === N ? '<span class="tc-done">✓ Đã đọc hết</span>' : "") + "</div>" +
             '<div class="tc-title">' + esc(s.title) + "</div>" +
             '<div class="tc-vi">' + esc(s.title_vi) + "</div>" +
             '<div class="tc-meta"><span>' + N + " chương</span><span>" + chars.toLocaleString("vi-VN") + " chữ</span><span>~" + minutesOf(chars) + " phút</span></div>" +
             seriesBar(s) +
-            '<div class="tc-actions">' + seriesGoBtn(s) + '<button class="btn btn-sm" data-series="' + esc(s.id) + '">☰ Các chương</button></div>' +
+            '<div class="tc-actions">' + seriesGoBtn(s) +
+            (isH4 && targetCh ? '<button type="button" class="btn btn-sm cm-open-btn" data-comic-id="' + esc(targetCh.id) + '">🎨 Truyện tranh</button>' : "") +
+            '<button class="btn btn-sm" data-series="' + esc(s.id) + '">☰ Các chương</button></div>' +
             "</div>";
     }
     function renderSeriesDetail(s, q) {
@@ -946,6 +985,48 @@
             return;
         }
         if (d.idiom && HocLookup.ready()) renderIdiom();
+        var useComic = !!S.settings.comic && !!window.HocComicArt;
+        if (useComic) {
+            var hasAI = HocComicArt.hasAI(d.id), useAI = S.settings.comicUseAI !== false;
+            var lay = S.settings.comicLayout === "webtoon" ? "webtoon" : "grid";
+            var bar = '<div class="cm-bar">' +
+                '<div class="cm-bar-left"><span>🎨 <b>Chế độ Truyện tranh</b> · ' + d.paras.length + " khung" + (hasAI ? " · ✨ Có tranh AI" : "") + "</span></div>" +
+                '<div class="cm-bar-right">' +
+                '<button type="button" class="cm-pill' + (lay === "grid" ? " on" : "") + '" data-cm-layout="grid">📖 Trang 2 cột</button>' +
+                '<button type="button" class="cm-pill' + (lay === "webtoon" ? " on" : "") + '" data-cm-layout="webtoon">📱 Webtoon dọc</button>' +
+                (hasAI ? '<button type="button" class="cm-pill' + (useAI ? " on" : "") + '" data-cm-ai="' + (useAI ? "0" : "1") + '">' + (useAI ? "🎨 Đang dùng Tranh AI" : "✏️ Đang dùng SVG") + "</button>" : "") +
+                "</div></div>";
+            var bodyCount = d.paras.filter(function (p) { return p.kind !== "title" && p.kind !== "attr"; }).length;
+            var panelIdx = 0;
+            $("doc-body").innerHTML = bar + '<div class="cm-grid' + (lay === "webtoon" ? " cm-webtoon" : "") + '">' + d.paras.map(function (p, i) {
+                var pys = p.pys;
+                if (!pys) pys = HocLookup.pinyinOf(p.text);
+                else if (pys.some(function (x) { return !x; })) {
+                    var auto = HocLookup.pinyinOf(p.text);
+                    pys = pys.map(function (x, k) { return x || auto[k] || ""; });
+                }
+                var tools = p.kind === "p" || p.kind === "title"
+                    ? '<div class="ptools"><button class="pt pt-say" data-k="' + i + '" title="Nghe khung này">🔊</button>' +
+                      '<button class="pt pt-shadow" data-k="' + i + '" title="Nghe từng câu rồi đọc theo">🗣 Nhại</button>' +
+                      (p.tr ? '<button class="pt pt-tr" data-k="' + i + '">Dịch</button>' : "") + "</div>"
+                    : "";
+                if (p.kind === "title" || p.kind === "attr") {
+                    return '<div class="para ' + p.kind + ' comic-panel cm-panel-wide cm-banner" data-k="' + i + '">' +
+                        '<div class="ptext" data-lk-text="' + esc(p.text) + '">' + HocLookup.rubyHTML(p.text, pys) + "</div>" +
+                        tools + (p.tr ? '<div class="ptr">' + esc(p.tr) + "</div>" : "") + "</div>";
+                }
+                var curP = panelIdx++;
+                var isWide = curP === 0 || (curP === bodyCount - 1 && bodyCount % 2 === 0);
+                var art = HocComicArt.renderPanelArt(p, i, d, useAI);
+                var cHtml = HocComicArt.renderComicText(p, pys, d, i);
+                return '<div class="para ' + p.kind + ' comic-panel' + (isWide ? " cm-panel-wide" : "") + (p.name ? " dlg spk-" + spkIdx(p.name) : "") + '" data-k="' + i + '"' + (p.name ? ' data-name="' + esc(p.name) + '"' : "") + ">" +
+                    art +
+                    '<div class="cm-body"><div class="ptext" data-lk-text="' + esc(p.text) + '">' + cHtml + "</div></div>" +
+                    tools + (p.tr ? '<div class="ptr">' + esc(p.tr) + "</div>" : "") + "</div>";
+            }).join("") + "</div>";
+            markNew();
+            return;
+        }
         $("doc-body").innerHTML = d.paras.map(function (p, i) {
             var pys = p.pys;
             if (!pys) pys = HocLookup.pinyinOf(p.text);
@@ -1109,12 +1190,14 @@
         rd.classList.toggle("no-py", hidePy);
         rd.classList.toggle("hl-new", !!st.hl);
         rd.classList.toggle("no-lookup", !st.lookup);
+        rd.classList.toggle("comic-mode", !!st.comic);
         rd.classList.remove("tr-off", "tr-para", "tr-all");
         rd.classList.add("tr-" + st.tr);
         rd.style.setProperty("--rd-size", st.size + "px");
         $("tb-py").classList.toggle("on", !!st.py);
         $("tb-new").classList.toggle("on", !!st.hl);
         $("tb-lookup").classList.toggle("on", !!st.lookup);
+        if ($("tb-comic")) $("tb-comic").classList.toggle("on", !!st.comic);
         $("tb-tr").classList.toggle("on", st.tr !== "off");
         $("tb-tr-label").textContent = TR_LABEL[st.tr] || "Dịch";
         $("tb-rate").value = String(st.rate);
@@ -1624,6 +1707,7 @@
     function route(push) {
         var q = new URLSearchParams(location.search);
         var id = q.get("id"), mine = q.get("mine"), boya = q.get("boya"), exam = q.get("exam");
+        if (q.get("comic") === "1" && !S.settings.comic) { S.settings.comic = true; save(); }
         if (exam) {
             var e = examById(exam);
             if (e) { openExam(e, push); return; }
@@ -1668,12 +1752,39 @@
         });
         function libClick(e) {
             if (e.target.closest("[data-act='series-back']")) { libSeries = null; renderLib(); window.scrollTo(0, 0); return; }
+            var cm = e.target.closest("[data-comic-id]");
+            if (cm) {
+                e.stopPropagation();
+                var tc = libById(cm.dataset.comicId);
+                if (tc) { S.settings.comic = true; save(); open(docFromLib(tc)); }
+                return;
+            }
             var c = e.target.closest("[data-id]");
             if (c) { var t = libById(c.dataset.id); if (t) open(docFromLib(t)); return; }
             var sr = e.target.closest("[data-series]");
             if (sr) { libSeries = sr.dataset.series; renderLib(); window.scrollTo(0, Math.max(0, $("lib-list").getBoundingClientRect().top + window.scrollY - 76)); }
         }
         $("lib-list").addEventListener("click", libClick);
+        // Truyện tranh HSK 4+
+        if ($("lib-comics")) {
+            $("lib-comics").addEventListener("click", function (e) {
+                var co = e.target.closest("[data-comic-open]");
+                if (co) {
+                    var tc = libById(co.dataset.comicOpen);
+                    if (tc) { S.settings.comic = true; save(); open(docFromLib(tc)); }
+                    return;
+                }
+                var lvBtn = e.target.closest("[data-cm-lv]");
+                if (lvBtn) {
+                    S.settings.level = +lvBtn.dataset.cmLv; S.settings.kind = "all"; libSeries = null; save(); renderLib();
+                    $("lib-list").scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            });
+            $("lib-comics").addEventListener("toggle", function () {
+                var o = $("lib-comics").open;
+                if ((S.settings.cmOpen !== false) !== o) { S.settings.cmOpen = o; save(); }
+            });
+        }
         // Dành cho bạn
         $("lib-foryou").addEventListener("click", function (e) {
             var b = e.target.closest("[data-fy]"); if (b) openItem(b.dataset.fy);
@@ -1682,7 +1793,7 @@
             var o = $("lib-foryou").open;
             if ((S.settings.fyOpen !== false) !== o) { S.settings.fyOpen = o; save(); }
         });
-        $("lib-list").addEventListener("keydown", function (e) { if (e.key === "Enter" && e.target.matches("[data-series]")) libClick(e); });
+        $("lib-list").addEventListener("keydown", function (e) { if (e.key === "Enter" && e.target.matches("[data-series], [data-id]")) libClick(e); });
 
         // Luyện thi
         $("exam-levels").addEventListener("click", function (e) {
@@ -1764,6 +1875,11 @@
         };
         $("tb-tr").onclick = function () { var o = ["off", "para", "all"]; setSetting("tr", o[(o.indexOf(S.settings.tr) + 1) % 3]); };
         $("tb-lookup").onclick = function () { setSetting("lookup", !S.settings.lookup); if (!S.settings.lookup) HocLookup.close(); toast(S.settings.lookup ? "Chạm vào chữ để tra từ." : "Đã tắt chạm để tra."); };
+        if ($("tb-comic")) $("tb-comic").onclick = function () {
+            setSetting("comic", !S.settings.comic);
+            if (doc) { renderBody(); }
+            toast(S.settings.comic ? "Đã bật chế độ Truyện tranh." : "Đã về chế độ đọc văn bản.");
+        };
         $("tb-listen").onclick = function () {
             if ($("tb-listen").classList.contains("on")) { stopPlay(); return; }
             playParas(0, doc.paras.length - 1);
@@ -1776,9 +1892,15 @@
         $("opt-autohide").onchange = function () { setSetting("autoHide", $("opt-autohide").checked); };
         $("btn-play-stop").onclick = stopPlay;
 
-        // Văn bản: nút ở từng đoạn
+        // Văn bản: nút ở từng đoạn & chế độ truyện tranh
         var body = $("doc-body");
         body.addEventListener("click", function (e) {
+            var layBtn = e.target.closest("[data-cm-layout]");
+            if (layBtn) { setSetting("comicLayout", layBtn.dataset.cmLayout); if (doc) renderBody(); return; }
+            var aiBtn = e.target.closest("[data-cm-ai]");
+            if (aiBtn) { setSetting("comicUseAI", aiBtn.dataset.cmAi === "1"); if (doc) renderBody(); return; }
+            var sayBub = e.target.closest(".cm-say-bubble");
+            if (sayBub) { e.stopPropagation(); stopPlay(); speakOne(sayBub.dataset.say); return; }
             var b = e.target.closest(".pt"); if (!b) return;
             var k = +b.dataset.k;
             if (b.classList.contains("pt-say")) playParas(k, k);
