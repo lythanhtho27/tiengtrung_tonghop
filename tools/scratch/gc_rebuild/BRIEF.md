@@ -1,4 +1,4 @@
-# Dựng lại dữ liệu Boya Cao cấp (高级飞翔篇 I, II) từ PDF
+# Dựng lại dữ liệu Boya Cao cấp (高级飞翔篇 I, II, III) từ PDF
 
 Mục tiêu: chép CHÍNH XÁC nội dung sách (bản scan) cho từng bài, rồi dịch sang tiếng Việt.
 Kết quả mỗi bài là 1 file JSON trong `tools/scratch/gc_rebuild/` (tên `gc1_L01.json`, `gc2_L07.json`…).
@@ -9,11 +9,12 @@ Dữ liệu cũ trong `tools/scratch/gc1_book.json` / `gc2_book.json` phần l�
 - OCR nháp (NHIỀU LỖI: 父→交, 眨→乾, mất dấu câu, mất chữ 一…), chỉ để định vị trang / chép nhanh rồi SỬA theo ảnh:
   `python SCRATCH/ocr_text.py gc1 13 20` (in các trang 13–20; trang nào "chưa OCR" thì xem ảnh).
   SCRATCH = `C:/Users/admin/AppData/Local/Temp/claude/a2a500904f833dea/c61fd647-3f6c-4b60-bc71-3b980576d00d/scratchpad`
-- Trang PDF = trang sách + 12 (quyển 1), + 10 (quyển 2).
+- Trang PDF = trang sách + 12 (quyển 1), + 10 (quyển 2), + 11 (quyển 3).
 
 Mục lục (trang PDF bắt đầu → trang cuối):
 - gc1: 1 父亲的谜语 13–32 · 2 请按…… 33–53 · 3 一诺千金 54–74 · 4 沙漠里的奇怪现象 75–96 · 5 内部招标 97–116 · 6 天才梦 117–137 · 7 人 138–158 · 8 随感二则 159–178 · 9 人生就是与困境周旋 179–202 · 10 我反对克隆人 203–221
 - gc2: 1 每天都冒一点险 11–36 · 2 那年那月那狗 37–64 · 3 人在风中 65–92 · 4 现代化和蜗牛 93–117 · 5 上天自有安排 118–142 · 6 球迷种种 143–167 · 7 面容 168–190 · 8 辛亥革命与我 191–214 · 9 无为·逍遥·不设防 215–248 · 10 音乐之伴 249–280
+- gc3: 1 网络颠覆了什么？ 12–39 · 2 中国城市大角力 40–84 · 3 中国社会发展的世界意义 85–119 · 4 保护城市生态刻不容缓 120–154 · 5 中国文化到底是什么样子的 155–205 · 6 制度建设：中国的第二次重大转型 206–254 · 7 安乐死是人道，还是合理谋杀 255–278 · 8 基因时代的恐慌与真相 279–312 (8 bài, tổng 876 từ; bài 7–8 không có 词语辨析 và 语言点)
 
 Bố cục một bài: trang đầu 课前思考 → 课文 (chia 第一部分/第二部分…; bảng 生词 nằm trên các trang xen kẽ, dạng: số · chữ Hán · pinyin · (từ loại) · giải nghĩa tiếng Trung [+ tiếng Anh]) → 注释 → 词语辨析 → 语言点 → 综合练习 → 阅读与理解 (bài đọc thêm, cuối bài).
 Mẹo: lướt OCR nháp của cả khoảng trang trước để biết trang nào là gì, rồi chỉ mở ảnh các trang cần (课文, 生词, 语言点, 阅读与理解). Bỏ qua 课前思考, 注释, 词语辨析, 综合练习.

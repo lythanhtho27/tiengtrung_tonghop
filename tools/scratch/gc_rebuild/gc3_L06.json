@@ -1,0 +1,1334 @@
+{
+ "book": "gc3",
+ "lesson_num": 6,
+ "title": "制度建设：中国的第二次重大转型",
+ "pages": [
+  206,
+  254
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "转型",
+   "py": "zhuǎnxíng",
+   "pos": "动",
+   "zh": "社会经济结构、文化形态、价值观念等发生转变。",
+   "en": "transform, change the style",
+   "hv": "CHUYỂN HÌNH",
+   "vi": "chuyển đổi (mô hình, cơ cấu)",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "开创",
+   "py": "kāichuàng",
+   "pos": "动",
+   "zh": "开始建立；创建。",
+   "en": "",
+   "hv": "KHAI SÁNG",
+   "vi": "mở ra, khai sáng, sáng lập",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "果断",
+   "py": "guǒduàn",
+   "pos": "形",
+   "zh": "有决断；不犹豫。",
+   "en": "",
+   "hv": "QUẢ ĐOẠN",
+   "vi": "quả quyết, dứt khoát",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "着重点",
+   "py": "zhuózhòngdiǎn",
+   "pos": "",
+   "zh": "侧重的方面；重点所在的地方。",
+   "en": "",
+   "hv": "TRƯỚC TRỌNG ĐIỂM",
+   "vi": "trọng tâm, điểm chú trọng",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "抛弃",
+   "py": "pāoqì",
+   "pos": "动",
+   "zh": "扔掉不要。（抛弃——遗弃——扬弃）",
+   "en": "",
+   "hv": "PHAO KHÍ",
+   "vi": "vứt bỏ, từ bỏ",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "“左”倾",
+   "py": "“zuǒ”qīng",
+   "pos": "形",
+   "zh": "分不清事物发展的不同阶段，在革命斗争中表现急躁盲动的。",
+   "en": "left-leaning; progressive",
+   "hv": "TẢ KHUYNH",
+   "vi": "khuynh hướng “tả”",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "战略转移",
+   "py": "zhànlüè zhuǎnyí",
+   "pos": "",
+   "zh": "决定全局的策略发生了改变。",
+   "en": "",
+   "hv": "CHIẾN LƯỢC CHUYỂN DI",
+   "vi": "chuyển dịch chiến lược",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "视为",
+   "py": "shìwéi",
+   "pos": "动",
+   "zh": "看作；认为是。",
+   "en": "",
+   "hv": "THỊ VI",
+   "vi": "coi là, xem như",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "历史性",
+   "py": "lìshǐxìng",
+   "pos": "名",
+   "zh": "体现事物发展进程的具有某种时代意义的性质。",
+   "en": "historic; of historic significance",
+   "hv": "LỊCH SỬ TÍNH",
+   "vi": "có tính lịch sử",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "冲破",
+   "py": "chōngpò",
+   "pos": "动",
+   "zh": "突破某种状态、限制等。（冲破——突破）",
+   "en": "",
+   "hv": "XUNG PHÁ",
+   "vi": "phá vỡ, vượt qua",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "教条主义",
+   "py": "jiàotiáo zhǔyì",
+   "pos": "",
+   "zh": "主观主义的一种，不分析事物的变化、发展，不研究事物矛盾的特殊性，只是生搬硬套现成的原则、概念来处理问题。",
+   "en": "dogmatism; doctrinairism",
+   "hv": "GIÁO ĐIỀU CHỦ NGHĨA",
+   "vi": "chủ nghĩa giáo điều",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "个人崇拜",
+   "py": "gèrén chóngbài",
+   "pos": "",
+   "zh": "神化个别人物并加以盲目崇拜的社会现象。",
+   "en": "",
+   "hv": "CÁ NHÂN SÙNG BÁI",
+   "vi": "sùng bái cá nhân",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "确立",
+   "py": "quèlì",
+   "pos": "动",
+   "zh": "稳固地建立或树立。",
+   "en": "",
+   "hv": "XÁC LẬP",
+   "vi": "xác lập, thiết lập vững chắc",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "实事求是",
+   "py": "shí shì qiú shì",
+   "pos": "",
+   "zh": "从实际情况出发，不夸大，不缩小，正确地对待和处理问题。",
+   "en": "",
+   "hv": "THỰC SỰ CẦU THỊ",
+   "vi": "thực sự cầu thị, xuất phát từ thực tế",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "路线",
+   "py": "lùxiàn",
+   "pos": "名",
+   "zh": "思想上、政治上或工作上所遵循的根本途径或基本准则。",
+   "en": "",
+   "hv": "LỘ TUYẾN",
+   "vi": "đường lối",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "天下大治",
+   "py": "tiānxià dà zhì",
+   "pos": "",
+   "zh": "指国家政治稳定，社会安定，经济繁荣。",
+   "en": "",
+   "hv": "THIÊN HẠ ĐẠI TRỊ",
+   "vi": "thiên hạ đại trị (đất nước ổn định, phồn vinh)",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "公共政策",
+   "py": "gōnggòng zhèngcè",
+   "pos": "",
+   "zh": "指政府为实现一定的目标，在对社会公众利益进行选择、综合与分配中所遵循的准则。",
+   "en": "",
+   "hv": "CÔNG CỘNG CHÍNH SÁCH",
+   "vi": "chính sách công",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "建国",
+   "py": "jiànguó",
+   "pos": "动",
+   "zh": "建立国家。",
+   "en": "",
+   "hv": "KIẾN QUỐC",
+   "vi": "lập quốc, dựng nước",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "前所未有",
+   "py": "qián suǒ wèi yǒu",
+   "pos": "",
+   "zh": "历史上从来没有过。",
+   "en": "",
+   "hv": "TIỀN SỞ VỊ HỮU",
+   "vi": "chưa từng có",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "持续",
+   "py": "chíxù",
+   "pos": "动",
+   "zh": "延续不断。（持续——继续——延续）",
+   "en": "",
+   "hv": "TRÌ TỤC",
+   "vi": "liên tục, kéo dài không ngừng",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "首次",
+   "py": "shǒucì",
+   "pos": "数",
+   "zh": "第一次。",
+   "en": "",
+   "hv": "THỦ THỨ",
+   "vi": "lần đầu tiên",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "从中",
+   "py": "cóngzhōng",
+   "pos": "副",
+   "zh": "在其间；在其中。",
+   "en": "",
+   "hv": "TÒNG TRUNG",
+   "vi": "từ trong đó",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "收益",
+   "py": "shōuyì",
+   "pos": "名",
+   "zh": "生产上或商业上的收入。",
+   "en": "",
+   "hv": "THU ÍCH",
+   "vi": "lợi ích, thu nhập",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "国情",
+   "py": "guóqíng",
+   "pos": "名",
+   "zh": "一个国家的社会性质、政治、经济、文化等方面的基本情况和特点，也特指一个国家某一时期的基本情况和特点。",
+   "en": "",
+   "hv": "QUỐC TÌNH",
+   "vi": "tình hình đất nước",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "顺应",
+   "py": "shùnyìng",
+   "pos": "动",
+   "zh": "顺从；适应。",
+   "en": "",
+   "hv": "THUẬN ỨNG",
+   "vi": "thuận theo, thích ứng",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "潮流",
+   "py": "cháoliú",
+   "pos": "名",
+   "zh": "比喻社会变动或发展趋势。",
+   "en": "trend",
+   "hv": "TRIỀU LƯU",
+   "vi": "trào lưu, xu thế",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "强制",
+   "py": "qiángzhì",
+   "pos": "动",
+   "zh": "用政治或经济力量强迫。",
+   "en": "",
+   "hv": "CƯỜNG CHẾ",
+   "vi": "cưỡng chế, ép buộc",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "变迁",
+   "py": "biànqiān",
+   "pos": "动",
+   "zh": "情况或阶段的变化转移。",
+   "en": "",
+   "hv": "BIẾN THIÊN",
+   "vi": "biến đổi, chuyển biến",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "功绩",
+   "py": "gōngjì",
+   "pos": "名",
+   "zh": "功劳和业绩。（功绩——功劳——功勋）",
+   "en": "",
+   "hv": "CÔNG TÍCH",
+   "vi": "công tích, thành tích",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "高峰期",
+   "py": "gāofēngqī",
+   "pos": "名",
+   "zh": "（事物发展）最兴旺的时期。",
+   "en": "",
+   "hv": "CAO PHONG KỲ",
+   "vi": "thời kỳ đỉnh cao",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "前者",
+   "py": "qiánzhě",
+   "pos": "名",
+   "zh": "指次序在前面的（人或事物）。",
+   "en": "",
+   "hv": "TIỀN GIẢ",
+   "vi": "cái trước, người trước",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "跨度",
+   "py": "kuàdù",
+   "pos": "名",
+   "zh": "泛指距离。",
+   "en": "",
+   "hv": "KHÓA ĐỘ",
+   "vi": "khoảng cách, độ dài (thời gian, không gian)",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "大体",
+   "py": "dàtǐ",
+   "pos": "副",
+   "zh": "就多数情形或主要方面说。",
+   "en": "",
+   "hv": "ĐẠI THỂ",
+   "vi": "đại thể, nhìn chung",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "转向",
+   "py": "zhuǎnxiàng",
+   "pos": "动",
+   "zh": "转变方向。",
+   "en": "",
+   "hv": "CHUYỂN HƯỚNG",
+   "vi": "chuyển hướng",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "角色",
+   "py": "juésè",
+   "pos": "名",
+   "zh": "比喻生活中某种类型的人物。",
+   "en": "",
+   "hv": "GIÁC SẮC",
+   "vi": "vai trò, nhân vật",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "快速",
+   "py": "kuàisù",
+   "pos": "形",
+   "zh": "速度快的；迅速。",
+   "en": "",
+   "hv": "KHOÁI TỐC",
+   "vi": "nhanh chóng",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "至关重要",
+   "py": "zhì guān zhòngyào",
+   "pos": "",
+   "zh": "最为重要。",
+   "en": "",
+   "hv": "CHÍ QUAN TRỌNG YẾU",
+   "vi": "vô cùng quan trọng",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "深化",
+   "py": "shēnhuà",
+   "pos": "动",
+   "zh": "向更深的阶段发展。",
+   "en": "",
+   "hv": "THÂM HÓA",
+   "vi": "làm sâu sắc thêm",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "主体",
+   "py": "zhǔtǐ",
+   "pos": "名",
+   "zh": "事物的主要部分。",
+   "en": "",
+   "hv": "CHỦ THỂ",
+   "vi": "chủ thể, bộ phận chính",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "投资",
+   "py": "tóuzī",
+   "pos": "动",
+   "zh": "为达到一定目的而投入资金。",
+   "en": "",
+   "hv": "ĐẦU TƯ",
+   "vi": "đầu tư",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "农户",
+   "py": "nónghù",
+   "pos": "名",
+   "zh": "从事农业生产的人家。",
+   "en": "",
+   "hv": "NÔNG HỘ",
+   "vi": "hộ nông dân",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "撤离",
+   "py": "chèlì",
+   "pos": "动",
+   "zh": "撤退；离开。",
+   "en": "",
+   "hv": "TRIỆT LY",
+   "vi": "rút lui, rút khỏi",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "国有",
+   "py": "guóyǒu",
+   "pos": "动",
+   "zh": "国家所有。",
+   "en": "",
+   "hv": "QUỐC HỮU",
+   "vi": "thuộc sở hữu nhà nước",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "以往",
+   "py": "yǐwǎng",
+   "pos": "名",
+   "zh": "从前；以前。",
+   "en": "",
+   "hv": "DĨ VÃNG",
+   "vi": "trước đây, trước kia",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "过度",
+   "py": "guòdù",
+   "pos": "形",
+   "zh": "超过适当的限度。",
+   "en": "",
+   "hv": "QUÁ ĐỘ",
+   "vi": "quá mức",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "干预",
+   "py": "gānyù",
+   "pos": "动",
+   "zh": "过问（别人的事）。",
+   "en": "",
+   "hv": "CAN DỰ",
+   "vi": "can thiệp",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "人为",
+   "py": "rénwéi",
+   "pos": "形",
+   "zh": "人造成的（用于不如意的事）。",
+   "en": "",
+   "hv": "NHÂN VI",
+   "vi": "do con người gây ra",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "各种各样",
+   "py": "gè zhǒng gè yàng",
+   "pos": "",
+   "zh": "许多不同的种类或方式。",
+   "en": "",
+   "hv": "CÁC CHỦNG CÁC DẠNG",
+   "vi": "đủ loại, muôn hình muôn vẻ",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "租金",
+   "py": "zūjīn",
+   "pos": "名",
+   "zh": "租房屋、土地或物品的钱。",
+   "en": "",
+   "hv": "TÔ KIM",
+   "vi": "tiền thuê, địa tô",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "腐败",
+   "py": "fǔbài",
+   "pos": "形",
+   "zh": "（思想）陈旧，（行为）堕落；（制度、组织、机构、措施等）混乱、黑暗。（腐败——腐朽）",
+   "en": "",
+   "hv": "HỦ BẠI",
+   "vi": "tham nhũng, hủ bại",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "长治久安",
+   "py": "cháng zhì jiǔ ān",
+   "pos": "",
+   "zh": "指社会秩序长期安定太平。",
+   "en": "",
+   "hv": "TRƯỜNG TRỊ CỬU AN",
+   "vi": "yên bình dài lâu, trị an lâu dài",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "公平",
+   "py": "gōngpíng",
+   "pos": "形",
+   "zh": "处理事情合情合理，不偏袒哪一方面。（公平——公正——公道）",
+   "en": "",
+   "hv": "CÔNG BÌNH",
+   "vi": "công bằng",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "衰退",
+   "py": "shuāituì",
+   "pos": "动",
+   "zh": "（国家的政治经济状况）衰落。",
+   "en": "",
+   "hv": "SUY THOÁI",
+   "vi": "suy thoái",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "崩溃",
+   "py": "bēngkuì",
+   "pos": "动",
+   "zh": "完全破坏。",
+   "en": "",
+   "hv": "BĂNG HỘI",
+   "vi": "sụp đổ",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "下岗",
+   "py": "xià gǎng",
+   "pos": "动",
+   "zh": "职工因企业破产、裁减人员等原因失去工作岗位。",
+   "en": "",
+   "hv": "HẠ CƯƠNG",
+   "vi": "mất việc, thôi việc",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "城乡",
+   "py": "chéngxiāng",
+   "pos": "名",
+   "zh": "城市和乡村。",
+   "en": "",
+   "hv": "THÀNH HƯƠNG",
+   "vi": "thành thị và nông thôn",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "差距",
+   "py": "chājù",
+   "pos": "名",
+   "zh": "事物之间的差别程度。",
+   "en": "",
+   "hv": "SAI CỰ",
+   "vi": "khoảng cách, chênh lệch",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "生态环境",
+   "py": "shēngtài huánjìng",
+   "pos": "",
+   "zh": "生物和影响生物生存与发展的一切外界条件的总和。",
+   "en": "",
+   "hv": "SINH THÁI HOÀN CẢNH",
+   "vi": "môi trường sinh thái",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "化解",
+   "py": "huàjiě",
+   "pos": "动",
+   "zh": "解除；消除。",
+   "en": "",
+   "hv": "HÓA GIẢI",
+   "vi": "hóa giải, xóa bỏ",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "反倒",
+   "py": "fǎndào",
+   "pos": "副",
+   "zh": "反而。",
+   "en": "",
+   "hv": "PHẢN ĐẢO",
+   "vi": "trái lại, ngược lại",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "强化",
+   "py": "qiánghuà",
+   "pos": "动",
+   "zh": "加强；使坚强巩固。",
+   "en": "",
+   "hv": "CƯỜNG HÓA",
+   "vi": "tăng cường, củng cố",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "不公",
+   "py": "bùgōng",
+   "pos": "形",
+   "zh": "不公道；不公平。",
+   "en": "",
+   "hv": "BẤT CÔNG",
+   "vi": "bất công",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "终极",
+   "py": "zhōngjí",
+   "pos": "名",
+   "zh": "最终；最后。",
+   "en": "",
+   "hv": "CHUNG CỰC",
+   "vi": "sau cùng, tối hậu",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "遏制",
+   "py": "èzhì",
+   "pos": "动",
+   "zh": "制止；控制。",
+   "en": "",
+   "hv": "ÁT CHẾ",
+   "vi": "kiềm chế, ngăn chặn",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "伦理",
+   "py": "lúnlǐ",
+   "pos": "名",
+   "zh": "指人与人相处的各种道德准则。",
+   "en": "ethics; moral; principles",
+   "hv": "LUÂN LÝ",
+   "vi": "đạo đức, luân lý",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "涉及",
+   "py": "shèjí",
+   "pos": "动",
+   "zh": "牵涉到；关联到。",
+   "en": "",
+   "hv": "THIỆP CẬP",
+   "vi": "liên quan đến, đề cập đến",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "硬道理",
+   "py": "yìngdàolǐ",
+   "pos": "",
+   "zh": "指不容商量的、根本和必要的因素。",
+   "en": "",
+   "hv": "NGẠNH ĐẠO LÝ",
+   "vi": "chân lý cứng, nguyên tắc bất di bất dịch",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "能否",
+   "py": "néngfǒu",
+   "pos": "动",
+   "zh": "能不能。表示疑问。",
+   "en": "",
+   "hv": "NĂNG PHỦ",
+   "vi": "có thể hay không",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "贫富",
+   "py": "pínfù",
+   "pos": "",
+   "zh": "穷困和富有。",
+   "en": "",
+   "hv": "BẦN PHÚ",
+   "vi": "giàu nghèo",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "两极分化",
+   "py": "liǎngjí fēnhuà",
+   "pos": "",
+   "zh": "事物分裂为两个极端或两个对立面。",
+   "en": "",
+   "hv": "LƯỠNG CỰC PHÂN HÓA",
+   "vi": "phân hóa hai cực",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "相应",
+   "py": "xiāngyìng",
+   "pos": "动",
+   "zh": "互相呼应或照应；相适应。",
+   "en": "",
+   "hv": "TƯƠNG ỨNG",
+   "vi": "tương ứng",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "乱子",
+   "py": "luànzi",
+   "pos": "名",
+   "zh": "祸事；纠纷。",
+   "en": "",
+   "hv": "LOẠN TỬ",
+   "vi": "rắc rối, biến cố",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "支付",
+   "py": "zhīfù",
+   "pos": "动",
+   "zh": "付出（款项）。",
+   "en": "",
+   "hv": "CHI PHÓ",
+   "vi": "chi trả, thanh toán",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "确保",
+   "py": "quèbǎo",
+   "pos": "动",
+   "zh": "确实地保持或保证。",
+   "en": "",
+   "hv": "XÁC BẢO",
+   "vi": "bảo đảm chắc chắn",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "最大化",
+   "py": "zuìdàhuà",
+   "pos": "",
+   "zh": "表示转变为最大的状态。",
+   "en": "",
+   "hv": "TỐI ĐẠI HÓA",
+   "vi": "tối đa hóa",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "福利",
+   "py": "fúlì",
+   "pos": "名",
+   "zh": "生活上的利益，特指对人民生活（食、宿、医疗等）的照顾。",
+   "en": "",
+   "hv": "PHÚC LỢI",
+   "vi": "phúc lợi",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "关联性",
+   "py": "guānliánxìng",
+   "pos": "",
+   "zh": "指事物相互之间发生牵连和影响的性质。",
+   "en": "",
+   "hv": "QUAN LIÊN TÍNH",
+   "vi": "tính liên kết, tính liên quan",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "互补性",
+   "py": "hùbǔxìng",
+   "pos": "",
+   "zh": "指事物之间具有相互补充的性质。",
+   "en": "",
+   "hv": "HỖ BỔ TÍNH",
+   "vi": "tính bổ trợ lẫn nhau",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "有意识",
+   "py": "yǒuyìshí",
+   "pos": "副",
+   "zh": "主观上意识到的；有目的有计划的。",
+   "en": "",
+   "hv": "HỮU Ý THỨC",
+   "vi": "có ý thức, có chủ đích",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "付诸",
+   "py": "fù zhū",
+   "pos": "",
+   "zh": "把东西、计划等交给或落实在某处。诸：“之于”的合音。",
+   "en": "",
+   "hv": "PHÓ CHƯ",
+   "vi": "đưa vào, giao phó",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "借鉴",
+   "py": "jièjiàn",
+   "pos": "动",
+   "zh": "跟别的人或事相对照，以便取长补短或吸取教训。",
+   "en": "",
+   "hv": "TÁ GIÁM",
+   "vi": "tham khảo, rút kinh nghiệm",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "有助于",
+   "py": "yǒuzhùyú",
+   "pos": "动",
+   "zh": "对某人某事有帮助。",
+   "en": "",
+   "hv": "HỮU TRỢ VU",
+   "vi": "có ích cho, giúp ích cho",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "执政",
+   "py": "zhízhèng",
+   "pos": "动",
+   "zh": "掌握政权。",
+   "en": "",
+   "hv": "CHẤP CHÍNH",
+   "vi": "cầm quyền",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "农业社会",
+   "py": "nóngyè shèhuì",
+   "pos": "",
+   "zh": "指以农耕为主的自给自足的社会形态。",
+   "en": "",
+   "hv": "NÔNG NGHIỆP XÃ HỘI",
+   "vi": "xã hội nông nghiệp",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "工业社会",
+   "py": "gōngyè shèhuì",
+   "pos": "",
+   "zh": "指通过工业革命，以机器化大生产占主导地位的社会形态。",
+   "en": "",
+   "hv": "CÔNG NGHIỆP XÃ HỘI",
+   "vi": "xã hội công nghiệp",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "取决（于）",
+   "py": "qǔjué（yú）",
+   "pos": "动",
+   "zh": "由某方面或某种情况决定。",
+   "en": "",
+   "hv": "THỦ QUYẾT (VU)",
+   "vi": "tùy thuộc vào, quyết định bởi",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "宗旨",
+   "py": "zōngzhǐ",
+   "pos": "名",
+   "zh": "主要的目的和意图。",
+   "en": "aim; purpose",
+   "hv": "TÔNG CHỈ",
+   "vi": "tôn chỉ, mục đích chính",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "伴随",
+   "py": "bànsuí",
+   "pos": "动",
+   "zh": "随同；跟随。",
+   "en": "",
+   "hv": "BẠN TÙY",
+   "vi": "đi kèm với, đồng hành cùng",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "间接",
+   "py": "jiànjiē",
+   "pos": "形",
+   "zh": "通过第三者发生关系的。",
+   "en": "",
+   "hv": "GIÁN TIẾP",
+   "vi": "gián tiếp",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "负面",
+   "py": "fùmiàn",
+   "pos": "形",
+   "zh": "坏的、消极的一面；反面。",
+   "en": "",
+   "hv": "PHỤ DIỆN",
+   "vi": "mặt tiêu cực, mặt trái",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "无异（于）",
+   "py": "wúyì（yú）",
+   "pos": "动",
+   "zh": "没有不同；等同。",
+   "en": "",
+   "hv": "VÔ DỊ (VU)",
+   "vi": "không khác gì, chẳng khác nào",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "托付",
+   "py": "tuōfù",
+   "pos": "动",
+   "zh": "委托别人照料或办理。",
+   "en": "",
+   "hv": "THÁC PHÓ",
+   "vi": "phó thác, gửi gắm",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "高涨",
+   "py": "gāozhǎng",
+   "pos": "形",
+   "zh": "（士气、情绪等）旺盛；饱满。",
+   "en": "",
+   "hv": "CAO TRƯỚNG",
+   "vi": "dâng cao, lên cao",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "模式",
+   "py": "móshì",
+   "pos": "名",
+   "zh": "某种事物的标准形式或使人可以照着做的标准样式。",
+   "en": "",
+   "hv": "MÔ THỨC",
+   "vi": "mô hình, kiểu mẫu",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "挑战",
+   "py": "tiǎozhàn",
+   "pos": "动",
+   "zh": "鼓动对方跟自己竞赛。",
+   "en": "",
+   "hv": "KHIÊU CHIẾN",
+   "vi": "thách thức",
+   "proper": false
+  },
+  {
+   "n": 96,
+   "hz": "锐意",
+   "py": "ruìyì",
+   "pos": "副",
+   "zh": "意志坚决，勇往直前。",
+   "en": "",
+   "hv": "NHUỆ Ý",
+   "vi": "quyết tâm mạnh mẽ, dốc lòng",
+   "proper": false
+  },
+  {
+   "n": 97,
+   "hz": "从严",
+   "py": "cóngyán",
+   "pos": "动",
+   "zh": "采取严厉的措施；采用严格的标准（行事）。",
+   "en": "",
+   "hv": "TÒNG NGHIÊM",
+   "vi": "làm nghiêm, xử lý nghiêm khắc",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "制度建设：中国的第二次重大转型",
+   "paragraphs": [
+    "一、第一次转型：开创“经济建设时代”",
+    "1978年，党的十一届三中全会做出了党的中心工作由以阶级斗争为纲转移到社会主义现代化经济建设上来的战略决策。全会认为，适应国内外形势的发展，及时、果断地把党和国家工作的着重点转移到社会主义现代化建设上来，反映了历史的要求和人民的愿望，代表了人民的根本利益。全会做出工作中心转移的新战略，抛弃了“以阶级斗争为纲”这个不适用于社会主义建设的“左”倾错误方针，解决了社会主义基本制度建立后的战略转移问题，这是党的中心工作第一次转型，被视为中国历史性的伟大转变，开辟了中国改革发展开放的新时期：",
+    "(1)在思想上，冲破了长期存在的教条主义和个人崇拜的束缚，重新确立了实事求是的马克思主义思想路线，坚持和发展了毛泽东思想。这是中国思想解放、观念转变的最好时期。",
+    "(2)在政治上，结束了长达10年的“文化大革命”，形成了社会稳定、人心安定的“天下大治”，逐步建立和健全了社会主义民主和法制，改善了党和国家的民主生活，也改进了公共政策决策机制，形成了生动活泼的政治局面。这是建国以来最好的政治开明时期。",
+    "(3)在经济上，出现了前所未有的持续高增长时期，中国成为世界上经济增长率最高的国家之一，进入了发展速度最快、人民生活水平提高最显著的经济繁荣时期。",
+    "(4)在国际上，中国首次大规模实行经济开放和社会开放政策，不断参与经济全球化，并从中获得更大的收益，这是中国历史上最开放的时期。",
+    "20多年改革开放的实践表明，1978年中国共产党中心工作转移的重大战略决策是十分重要的，符合中国国情，顺应世界发展潮流。从制度变迁的角度来看，这是一次典型的强制性制度变迁，又是自上而下和自下而上相结合的制度变革，也是人类发展史上参与人数规模最大的一次制度变革实践。",
+    "这次转型的最大功绩在于，它开创了现代中国的“贞观之治”。“贞观之治”长达23年，曾是中国历史发展的高峰期，也代表着当时世界发展的最高水平。中国改革开放时间已经24年，先后经历了两代领导人，与前者的时间跨度大体相当。与前者不同的是，这一次“天下大治”是在开放条件下进行的，不仅代表了中国发展的最好历史时期，而且也对人类发展做出了重要贡献。",
+    "二、需要第二次转型：开创“制度建设时代”",
+    "进入21世纪，中国的长远发展目标不仅要实现经济现代化，如邓小平提出的“三步战略设想”，而且还要实现制度现代化，如邓小平提出的党和国家领导制度的改革设想。中国共产党需要进行第二次战略转型，即从经济建设为中心转向制度建设为中心。其原因有：",
+    "第一，经济建设已经不再是党的中心工作了，党和政府的角色发生了重大变化，由对宏观经济的“控制者”、“计划者”转向“指导者”、“引导者”。应当说，党和政府始终在推动中国经济高速发展、促进社会快速变迁、保持社会稳定和对外开放等方面起着至关重要的作用。但是随着经济快速发展、经济体制改革深化，经济活动主体如企业、国内外投资者、农户和广大消费者成为经济建设的主体，由于计划经济不断被市场经济机制所取代，政府逐步从竞争性领域撤离出来，国有经济比重下降，非国有经济比重上升，并日益超过国有经济的比重。党和政府对经济活动领域仍然坚持以往实行的全面控制、过度参与的做法，已经远远不能适应变化了的经济体制背景，如果继续实行以经济建设为中心的战略就会继续过度地干预微观经济活动，同时也会人为地制造出各种各样的经济租金和政治租金，成为日益严重的腐败的重要来源。",
+    "第二，以经济建设为中心并不能自动地保证国家长治久安。过去20多年中国经历了持续的高速增长，出现了空前的经济繁荣。但是，经济繁荣并不必然或自动导致社会公平、社会公正和社会稳定。从历史来看，严重的社会危机往往发生在经济繁荣期；从许多发展中国家的经验看，不公平、不公正的增长往往会突然因社会危机而停滞、衰退甚至崩溃。当前，中国正在经历世界上最大规模的经济结构调整，一些社会问题诸如工人下岗、城乡差距、地区差距和生态环境破坏等等，随着经济的发展而日益突出。我国经济社会生活中存在一些结构性的不稳定因素。经济持续增长并没有化解这些不稳定因素，反倒使其愈来愈强化。20年的实践表明：凡是保证了社会公正的时期，经济发展和政治稳定也就得到了保证；凡是牺牲了社会公正的时期，经济发展和政治稳定也就会受到威胁。我们认为，社会分配不公是中国社会不稳定的终极根源。因此，遏制分配不公平，纠正社会不公正现象已经不仅仅是伦理问题，也是涉及社会稳定的社会问题以及国家政权稳定性的政治问题。经济发展固然是硬道理，社会公正也是硬道理。坚持“共同富裕”不仅是社会主义的最大优越性，也是中国共产党及其政府合法性的基础。能否坚持“共同富裕”，防止贫富两极分化，是中国改革成功或失败的关键标志。邓小平早在10年前就警告：“如果搞两极分化，情况就不同了，民族矛盾、区域间矛盾、阶级矛盾都会发展，相应地中央和地方的矛盾也会发展，就可能出乱子。”实际上，在过去20年中国是世界上基尼系数变化最大的国家之一，不平等性越来越突出。解决这些矛盾不能仅仅靠把蛋糕做大，更重要的是应通过建立国家基本制度包括收入分配制度、社会保障制度、财政转移支付制度、人民民主参与制度等，从制度上防止中国出现贫富两极分化。",
+    "第三，以制度建设为中心是国家制度现代化的客观需要。一个国家的现代化至少包括两个最主要的方面：一是经济现代化，如农业现代化、工业现代化、科学技术现代化和国防现代化；另一方面是制度现代化，即实现国家基本制度现代化，并实行“良治”(Good Governance)，确保国家利益最大化，全体人民福利最大化。国家制度建设是一个现代国家的基本制度和国家“基础设施”，它与一个国家现代化的经济建设具有很强的关联性和互补性。实现国家制度现代化不仅是现代国家最重要的目标，而且也是典型的国家性公共物品，没有国家制度的现代化就无法实现国家的经济现代化。如果说过去50年，中国的经济现代化是由中国共产党及中央政府首先发动和积极推动的，现在仍需要由党和政府指导和引导，并激励各种不同经济活动主体来推动的话，那么中国国家制度现代化则必须也只能由党和政府有意识地发动和领导，并付诸实践，在建立小康社会的同时建立高度民主与法制的现代化社会。",
+    "国家制度现代化是一个过程，即在充分学习吸收和借鉴人类现代化国家经验与知识的情况下，根据中国国情进行的制度创新、制度建设、制度实施的长期历史过程。它有助于降低国家的管理成本，调节不同社会集团的利益矛盾，维护经济活动所必须的社会秩序与交易规则，在全社会范围内建立广泛的收入分配和公共服务的可能性，提供改善全国人民的文化教育状况的人力资本条件。制度建设本身并不是经济建设，但却是促进经济建设并保证其持续发展的基础条件。",
+    "第四，制度建设是中国共产党执政方式的重大转型。中国社会不仅经历经济转型，即从计划经济向市场经济转型，而且还在经历社会转型，即从农业社会向工业社会、从农村社会向城市社会转型。上述两种转型能否成功取决于作为执政党的中国共产党的主动转型和成功转型。1978年以来，党已经实现了第一次转型，即从革命方法统治到行政方法统治，从革命型政党到发展型政党，成为以推动经济发展为宗旨的执政党；党有能力推动经济发展，但是缺乏能力解决社会矛盾和冲突。这就需要党伴随着整个中国经济转型和社会转型，主动实施第二次转型，即从行政方法统治到政治方法统治，从直接政府（一级政府）统治到间接统治。党的政治合法性的主要意义并不在于作为执政党给人民带来正面的利益，受到人民的支持和拥护，而在于当其不能给人民带来积极利益的时候，甚至是产生负面的和消极的利益的时候，人民能够与之达成谅解，不起来推翻其统治。不要以为只要把蛋糕做大就能够化解一切矛盾或危机。随着经济市场化和全球化，政府控制国民经济的能力会愈来愈弱，如果继续将合法性建立在经济增长上，无异于把自己的命运托付于其他的力量。",
+    "中国共产党发展的历史过程是一个不断创新、及时调整、主动改革的历史过程。建国以来党的政治纲领和政治发展方向曾不断变化，大体经历三个重要时期：(1)1953～1957年时期，党的基本纲领是“一化（工业化）、三改”，开创了社会主义经济建设的高涨时期，这是第一次经济建设时代；(2)1957～1978年时期，党的基本纲领改变为“阶级斗争为纲”，这是阶级斗争与“文化大革命”时期；(3)1978年至“十五大”时期，党的基本纲领是重新确立以经济建设为中心，开创了第二次经济建设时代。我们认为，进入21世纪，以“十六大”为标志，党的纲领和中心工作应该转向现代国家制度建设为中心，开创制度建设时代。",
+    "中国共产党的转型是确保中国成功地实现“社会转型”、“市场转型”和“政府转型”的关键。从共产党内部发展模式看，共产党需要“自我改革、自我创新、自我转型、自我建设”；从共产党面对的外部挑战看，需要“锐意进取、不断创新、主动转型、从严建设”。",
+    "（作者：胡鞍钢　摘自《第二次转型——国家制度建设》，清华大学出版社2003年7月版）"
+   ],
+   "translations": [
+    "I. Cuộc chuyển đổi thứ nhất: Mở ra “Thời đại xây dựng kinh tế”",
+    "Năm 1978, Hội nghị Trung ương 3 khóa XI của Đảng đã đưa ra quyết sách chiến lược chuyển trọng tâm công tác của Đảng từ lấy đấu tranh giai cấp làm cương lĩnh sang xây dựng kinh tế hiện đại hóa xã hội chủ nghĩa. Hội nghị cho rằng, việc thích ứng với sự phát triển của tình hình trong và ngoài nước, kịp thời và quả quyết chuyển trọng điểm công tác của Đảng và Nhà nước sang xây dựng hiện đại hóa xã hội chủ nghĩa đã phản ánh đòi hỏi của lịch sử và nguyện vọng của nhân dân, đại diện cho lợi ích căn bản của nhân dân. Hội nghị đã đề ra chiến lược mới về chuyển dịch trọng tâm công tác, từ bỏ đường lối sai lầm khuynh “tả” là “lấy đấu tranh giai cấp làm cương lĩnh” vốn không phù hợp với công cuộc xây dựng chủ nghĩa xã hội, giải quyết vấn đề chuyển dịch chiến lược sau khi thiết lập chế độ cơ bản của chủ nghĩa xã hội; đây là cuộc chuyển đổi lần thứ nhất về công tác trọng tâm của Đảng, được coi là bước ngoặt vĩ đại mang tính lịch sử của Trung Quốc, mở ra thời kỳ mới về cải cách, phát triển và mở cửa của Trung Quốc:",
+    "(1) Về tư tưởng, đã phá vỡ sự trói buộc tồn tại lâu nay của chủ nghĩa giáo điều và tệ sùng bái cá nhân, xác lập lại đường lối tư tưởng Mác-xít thực sự cầu thị, kiên trì và phát triển tư tưởng Mao Trạch Đông. Đây là thời kỳ tốt đẹp nhất của Trung Quốc về giải phóng tư tưởng và chuyển biến quan niệm.",
+    "(2) Về chính trị, đã chấm dứt cuộc “Cách mạng Văn hóa” kéo dài 10 năm, hình thành cục diện “thiên hạ đại trị” với xã hội ổn định và lòng dân yên ấm, từng bước thiết lập và kiện toàn nền dân chủ và pháp chế xã hội chủ nghĩa, cải thiện đời sống dân chủ của Đảng và Nhà nước, đồng thời cải tiến cơ chế ra quyết sách chính sách công, tạo nên cục diện chính trị sinh động, cởi mở. Đây là thời kỳ chính trị khai minh tốt đẹp nhất kể từ khi lập quốc.",
+    "(3) Về kinh tế, xuất hiện thời kỳ tăng trưởng cao liên tục chưa từng có, Trung Quốc trở thành một trong những quốc gia có tốc độ tăng trưởng kinh tế cao nhất thế giới, bước vào thời kỳ phồn vinh kinh tế với tốc độ phát triển nhanh nhất và mức sống nhân dân được nâng cao rõ rệt nhất.",
+    "(4) Về quốc tế, lần đầu tiên Trung Quốc thực hiện chính sách mở cửa kinh tế và mở cửa xã hội trên quy mô lớn, không ngừng tham gia vào toàn cầu hóa kinh tế và thu được nhiều lợi ích to lớn hơn từ đó; đây là thời kỳ cởi mở nhất trong lịch sử Trung Quốc.",
+    "Thực tiễn hơn 20 năm cải cách mở cửa cho thấy, quyết sách chiến lược trọng đại năm 1978 về việc chuyển dịch trọng tâm công tác của Đảng Cộng sản Trung Quốc là vô cùng quan trọng, phù hợp với tình hình đất nước Trung Quốc và thuận theo trào lưu phát triển của thế giới. Xét từ góc độ biến thiên thể chế, đây vừa là một cuộc biến đổi thể chế mang tính cưỡng chế điển hình, vừa là cuộc cải cách thể chế kết hợp giữa từ trên xuống và từ dưới lên, đồng thời cũng là thực tiễn cải cách thể chế có quy mô số người tham gia lớn nhất trong lịch sử phát triển nhân loại.",
+    "Công tích lớn nhất của cuộc chuyển đổi này nằm ở chỗ nó đã mở ra thời kỳ “Trinh Quán chi trị” của Trung Quốc hiện đại. “Trinh Quán chi trị” kéo dài 23 năm, từng là thời kỳ đỉnh cao trong lịch sử phát triển Trung Quốc và cũng đại diện cho trình độ phát triển cao nhất thế giới đương thời. Công cuộc cải cách mở cửa của Trung Quốc đã diễn ra được 24 năm, lần lượt trải qua hai thế hệ lãnh đạo, có khoảng thời gian đại thể tương đương với thời kỳ trước. Điểm khác biệt là lần “thiên hạ đại trị” này được tiến hành trong điều kiện mở cửa, không chỉ đại diện cho giai đoạn lịch sử phát triển tốt đẹp nhất của Trung Quốc mà còn đóng góp quan trọng vào sự phát triển của nhân loại.",
+    "II. Cần cuộc chuyển đổi thứ hai: Mở ra “Thời đại xây dựng thể chế”",
+    "Bước sang thế kỷ XXI, mục tiêu phát triển lâu dài của Trung Quốc không chỉ là thực hiện hiện đại hóa kinh tế, như “dự kiến chiến lược ba bước” do Đặng Tiểu Bình đề xuất, mà còn phải thực hiện hiện đại hóa thể chế, như dự kiến cải cách chế độ lãnh đạo của Đảng và Nhà nước do Đặng Tiểu Bình nêu ra. Đảng Cộng sản Trung Quốc cần tiến hành cuộc chuyển đổi chiến lược lần thứ hai, tức là chuyển từ lấy xây dựng kinh tế làm trung tâm sang lấy xây dựng thể chế làm trung tâm. Những nguyên nhân của việc này là:",
+    "Thứ nhất, xây dựng kinh tế không còn là công tác trung tâm của Đảng nữa, vai trò của Đảng và chính phủ đã có sự thay đổi trọng đại, chuyển từ “người kiểm soát”, “người lập kế hoạch” kinh tế vĩ mô sang “người chỉ đạo”, “người dẫn dắt”. Phải thừa nhận rằng Đảng và chính phủ luôn đóng vai trò vô cùng quan trọng trong việc thúc đẩy kinh tế Trung Quốc phát triển tốc độ cao, thúc đẩy biến chuyển xã hội nhanh chóng, duy trì ổn định xã hội và mở cửa đối ngoại. Tuy nhiên, cùng với sự phát triển kinh tế nhanh chóng và việc cải cách thể chế kinh tế đi vào chiều sâu, các chủ thể hoạt động kinh tế như doanh nghiệp, nhà đầu tư trong và ngoài nước, hộ nông dân và đông đảo người tiêu dùng đã trở thành chủ thể của công cuộc xây dựng kinh tế; do kinh tế kế hoạch không ngừng được thay thế bởi cơ chế kinh tế thị trường, chính phủ từng bước rút khỏi các lĩnh vực mang tính cạnh tranh, tỷ trọng kinh tế quốc hữu giảm xuống, tỷ trọng kinh tế ngoài quốc hữu tăng lên và ngày càng vượt qua tỷ trọng kinh tế quốc hữu. Cách làm trước đây của Đảng và chính phủ đối với lĩnh vực hoạt động kinh tế là kiên trì kiểm soát toàn diện và can dự quá mức đã hoàn toàn không còn thích ứng được với bối cảnh thể chế kinh tế đã thay đổi; nếu tiếp tục thực hiện chiến lược lấy xây dựng kinh tế làm trung tâm thì sẽ tiếp tục can thiệp quá mức vào các hoạt động kinh tế vi mô, đồng thời cũng sẽ tạo ra một cách giả tạo đủ loại địa tô kinh tế và địa tô chính trị, trở thành nguồn gốc quan trọng của tình trạng tham nhũng ngày càng nghiêm trọng.",
+    "Thứ hai, lấy xây dựng kinh tế làm trung tâm không thể tự động bảo đảm cho đất nước yên bình dài lâu. Hơn 20 năm qua, Trung Quốc đã trải qua sự tăng trưởng tốc độ cao liên tục, xuất hiện sự phồn vinh kinh tế chưa từng có. Thế nhưng, phồn vinh kinh tế không tất yếu hay tự động dẫn đến công bằng xã hội, công chính xã hội và ổn định xã hội. Nhìn từ lịch sử, những cuộc khủng hoảng xã hội nghiêm trọng thường xảy ra trong thời kỳ kinh tế phồn vinh; nhìn từ kinh nghiệm của nhiều nước đang phát triển, sự tăng trưởng thiếu công bằng, thiếu công chính thường đột ngột bị đình trệ, suy thoái thậm chí sụp đổ vì khủng hoảng xã hội. Hiện nay, Trung Quốc đang trải qua cuộc điều chỉnh cơ cấu kinh tế quy mô lớn nhất thế giới, một số vấn đề xã hội như công nhân mất việc, chênh lệch thành thị – nông thôn, chênh lệch vùng miền và hủy hoại môi trường sinh thái… ngày càng nổi cộm theo đà phát triển kinh tế. Trong đời sống kinh tế – xã hội nước ta tồn tại một số nhân tố bất ổn mang tính cơ cấu. Tăng trưởng kinh tế liên tục chẳng những không hóa giải được những nhân tố bất ổn đó mà trái lại còn khiến chúng ngày càng tăng cường. Thực tiễn 20 năm cho thấy: hễ thời kỳ nào bảo đảm được công chính xã hội thì phát triển kinh tế và ổn định chính trị cũng được bảo đảm; hễ thời kỳ nào hy sinh công chính xã hội thì phát triển kinh tế và ổn định chính trị cũng sẽ bị đe dọa. Chúng tôi cho rằng, phân phối xã hội bất công là nguồn gốc tối hậu của sự bất ổn trong xã hội Trung Quốc. Vì vậy, kiềm chế bất công trong phân phối, uốn nắn hiện tượng thiếu công chính trong xã hội không chỉ đơn thuần là vấn đề luân lý, mà còn là vấn đề xã hội liên quan đến ổn định xã hội cũng như vấn đề chính trị liên quan đến tính ổn định của chính quyền nhà nước. Phát triển kinh tế cố nhiên là chân lý cứng, nhưng công chính xã hội cũng là chân lý cứng. Kiên trì “cùng giàu có” không chỉ là tính ưu việt lớn nhất của chủ nghĩa xã hội, mà còn là nền tảng tính hợp pháp của Đảng Cộng sản Trung Quốc và chính phủ nước này. Có thể kiên trì “cùng giàu có”, ngăn ngừa phân hóa giàu nghèo hai cực hay không là dấu hiệu then chốt quyết định thành bại của cải cách Trung Quốc. Ngay từ 10 năm trước, Đặng Tiểu Bình đã cảnh báo: “Nếu để xảy ra phân hóa hai cực thì tình hình sẽ khác, mâu thuẫn dân tộc, mâu thuẫn giữa các khu vực, mâu thuẫn giai cấp đều sẽ phát triển, tương ứng theo đó mâu thuẫn giữa trung ương và địa phương cũng sẽ phát triển, khi ấy có thể xảy ra biến cố.” Trên thực tế, trong 20 năm qua Trung Quốc là một trong những nước có hệ số Gini biến động lớn nhất thế giới, sự bất bình đẳng ngày càng nổi rõ. Giải quyết những mâu thuẫn này không thể chỉ dựa vào việc làm cho chiếc bánh to lên, mà quan trọng hơn là phải thông qua việc thiết lập các thể chế cơ bản của quốc gia bao gồm chế độ phân phối thu nhập, chế độ bảo đảm xã hội, chế độ điều chuyển thanh toán tài chính công, chế độ tham gia dân chủ của nhân dân… để ngăn chặn từ gốc rễ thể chế tình trạng phân hóa giàu nghèo hai cực ở Trung Quốc.",
+    "Thứ ba, lấy xây dựng thể chế làm trung tâm là nhu cầu khách quan của hiện đại hóa thể chế quốc gia. Hiện đại hóa của một quốc gia ít nhất bao gồm hai phương diện chủ yếu nhất: một là hiện đại hóa kinh tế, như hiện đại hóa nông nghiệp, hiện đại hóa công nghiệp, hiện đại hóa khoa học kỹ thuật và hiện đại hóa quốc phòng; mặt khác là hiện đại hóa thể chế, tức thực hiện hiện đại hóa thể chế cơ bản của quốc gia và thi hành “quản trị tốt” (Good Governance), bảo đảm tối đa hóa lợi ích quốc gia và tối đa hóa phúc lợi của toàn thể nhân dân. Xây dựng thể chế quốc gia là chế độ cơ bản và “cơ sở hạ tầng” của một nhà nước hiện đại, nó có tính liên kết và tính bổ trợ rất mạnh với công cuộc xây dựng kinh tế hiện đại hóa của một quốc gia. Thực hiện hiện đại hóa thể chế quốc gia không chỉ là mục tiêu quan trọng nhất của nhà nước hiện đại, mà còn là sản phẩm công mang tính quốc gia điển hình; không có hiện đại hóa thể chế quốc gia thì không thể thực hiện được hiện đại hóa kinh tế của đất nước. Nếu như trong 50 năm qua, hiện đại hóa kinh tế của Trung Quốc trước hết do Đảng Cộng sản Trung Quốc và chính phủ trung ương phát động và tích cực thúc đẩy, hiện nay vẫn cần Đảng và chính phủ chỉ đạo, dẫn dắt đồng thời khích lệ các chủ thể hoạt động kinh tế khác nhau cùng thúc đẩy, thì hiện đại hóa thể chế quốc gia của Trung Quốc bắt buộc và chỉ có thể do Đảng và chính phủ phát động, lãnh đạo một cách có ý thức và đưa vào thực tiễn, để đồng thời với việc xây dựng xã hội khá giả toàn diện còn xây dựng được một xã hội hiện đại hóa có dân chủ và pháp chế ở trình độ cao.",
+    "Hiện đại hóa thể chế quốc gia là một quá trình, tức là quá trình lịch sử lâu dài tiến hành đổi mới thể chế, xây dựng thể chế và thực thi thể chế căn cứ vào tình hình đất nước Trung Quốc, trên cơ sở học tập, tiếp thu và tham khảo đầy đủ kinh nghiệm và tri thức của các quốc gia hiện đại hóa trên thế giới. Quá trình này giúp giảm chi phí quản lý của nhà nước, điều tiết mâu thuẫn lợi ích giữa các nhóm xã hội khác nhau, duy trì trật tự xã hội và quy tắc giao dịch cần thiết cho hoạt động kinh tế, tạo khả năng thiết lập hệ thống phân phối thu nhập và dịch vụ công rộng khắp trong toàn xã hội, đồng thời cung cấp điều kiện vốn nhân lực để cải thiện tình hình văn hóa, giáo dục của toàn dân. Bản thân xây dựng thể chế không phải là xây dựng kinh tế, nhưng lại là điều kiện nền tảng thúc đẩy xây dựng kinh tế và bảo đảm sự phát triển bền vững của nó.",
+    "Thứ tư, xây dựng thể chế là cuộc chuyển đổi trọng đại về phương thức cầm quyền của Đảng Cộng sản Trung Quốc. Xã hội Trung Quốc không chỉ trải qua chuyển đổi kinh tế, tức chuyển từ kinh tế kế hoạch sang kinh tế thị trường, mà còn đang trải qua chuyển đổi xã hội, tức chuyển từ xã hội nông nghiệp sang xã hội công nghiệp, từ xã hội nông thôn sang xã hội đô thị. Hai cuộc chuyển đổi nói trên có thành công hay không tùy thuộc vào sự chuyển đổi chủ động và chuyển đổi thành công của Đảng Cộng sản Trung Quốc với tư cách là đảng cầm quyền. Từ năm 1978 đến nay, Đảng đã thực hiện được cuộc chuyển đổi thứ nhất, tức là từ cai trị bằng phương pháp cách mạng sang cai trị bằng phương pháp hành chính, từ chính đảng kiểu cách mạng sang chính đảng kiểu phát triển, trở thành đảng cầm quyền lấy thúc đẩy phát triển kinh tế làm tôn chỉ; Đảng có năng lực thúc đẩy phát triển kinh tế, nhưng lại thiếu năng lực giải quyết các mâu thuẫn và xung đột xã hội. Điều này đòi hỏi Đảng, song hành cùng toàn bộ quá trình chuyển đổi kinh tế và chuyển đổi xã hội của Trung Quốc, phải chủ động thực hiện cuộc chuyển đổi thứ hai, tức từ cai trị bằng phương pháp hành chính sang cai trị bằng phương pháp chính trị, từ sự cai trị trực tiếp của chính phủ (chính quyền một cấp) sang cai trị gián tiếp. Ý nghĩa chủ yếu của tính hợp pháp chính trị của Đảng không nằm ở chỗ với tư cách đảng cầm quyền mang lại lợi ích tích cực cho nhân dân để được nhân dân ủng hộ và bảo vệ, mà nằm ở chỗ khi không thể mang lại lợi ích tích cực cho nhân dân, thậm chí khi phát sinh những lợi ích trái chiều và tiêu cực, nhân dân vẫn có thể thông cảm và đồng thuận với Đảng chứ không nổi dậy lật đổ sự cầm quyền của Đảng. Đừng cho rằng chỉ cần làm cho chiếc bánh to lên là có thể hóa giải mọi mâu thuẫn hay khủng hoảng. Cùng với quá trình thị trường hóa và toàn cầu hóa kinh tế, năng lực kiểm soát nền kinh tế quốc dân của chính phủ sẽ ngày càng yếu đi; nếu tiếp tục đặt tính hợp pháp lên tăng trưởng kinh tế thì chẳng khác nào phó thác vận mệnh của mình cho những lực lượng khác.",
+    "Quá trình lịch sử phát triển của Đảng Cộng sản Trung Quốc là một quá trình lịch sử không ngừng đổi mới, kịp thời điều chỉnh và chủ động cải cách. Kể từ khi lập quốc, cương lĩnh chính trị và phương hướng phát triển chính trị của Đảng từng không ngừng thay đổi, đại thể trải qua ba thời kỳ quan trọng: (1) Thời kỳ 1953–1957, cương lĩnh cơ bản của Đảng là “nhất hóa (công nghiệp hóa), tam cải”, mở ra thời kỳ dâng cao của xây dựng kinh tế xã hội chủ nghĩa, đây là thời đại xây dựng kinh tế lần thứ nhất; (2) Thời kỳ 1957–1978, cương lĩnh cơ bản của Đảng đổi thành “lấy đấu tranh giai cấp làm cương lĩnh”, đây là thời kỳ đấu tranh giai cấp và “Cách mạng Văn hóa”; (3) Thời kỳ từ năm 1978 đến Đại hội XV, cương lĩnh cơ bản của Đảng là xác lập lại việc lấy xây dựng kinh tế làm trung tâm, mở ra thời đại xây dựng kinh tế lần thứ hai. Chúng tôi cho rằng, bước sang thế kỷ XXI, lấy Đại hội XVI làm dấu mốc, cương lĩnh và công tác trung tâm của Đảng cần chuyển sang lấy xây dựng thể chế nhà nước hiện đại làm trung tâm, mở ra thời đại xây dựng thể chế.",
+    "Sự chuyển đổi của Đảng Cộng sản Trung Quốc là chìa khóa bảo đảm Trung Quốc thực hiện thành công “chuyển đổi xã hội”, “chuyển đổi thị trường” và “chuyển đổi chính phủ”. Nhìn từ mô hình phát triển nội bộ của Đảng Cộng sản, Đảng cần “tự cải cách, tự đổi mới, tự chuyển đổi, tự xây dựng”; nhìn từ những thách thức bên ngoài mà Đảng Cộng sản phải đối mặt, cần “quyết tâm tiến thủ, không ngừng đổi mới, chủ động chuyển đổi, xây dựng nghiêm minh”.",
+    "(Tác giả: Hồ Yên Cương, trích từ “Cuộc chuyển đổi lần thứ hai — Xây dựng thể chế quốc gia”, Nhà xuất bản Đại học Thanh Hoa, bản in tháng 7 năm 2003)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "绝配制胜：城市不同群体的消费方式",
+   "paragraphs": [
+    "如果说生产者是单一的“产”，那么消费者就是综合的“配”。一个厂家关注灯具的实质功能和外在形状，而一个消费者关心的是这个灯具与整个家庭装潢格调的统一性。消费者在无数生产者提供的产品中进行反复无尽的排列组合，他们不仅按照美学的观念将这些产品组合，按照社会流行趋势进行匹配，更考虑这些产品配合的总体效果是否与身份、地位相协调，考虑这些组合是否能够成为同质群体相互认同的象征符号。通过不同消费品的“绝配”，达到不同社会阶层体现社会身份的“制胜”之道，是今天各种人群消费实践的主要方式。",
+    "“新男性”消费：实力、品质与个性魅力",
+    "近年来，社会中关于“小资”、白领、中产阶级的议论和观点层出不穷，而讨论的焦点之一是这些社会阶层的生活方式和消费形态。在这些讨论中有一个有趣的议题就是在近年的中国社会中，出现了一群所谓的“新男性”。2002年有关调查机构进行了一个名为《中国：新男性与新时代》研究，在10个中国大都市居民的调查结果揭示，中国城市里每5个成年男性中会有一个人自认是“新男性”。这一数字也得到另一个数字的坚实佐证，因为同时随机受访的那些女性中也恰有1/5的人认为自己的先生或者男友是新男性。这个调查得出的结论是：今天中国社会中的新男性扮演着社会文化转型中的重要角色，他们是这个社会中真正被广泛认同与推崇的对象，而这种地位又来自于他们在变化的时代中对新男性角色的准确把握。这个研究把为建立与维护这种新的角色形象而进行的社会工作、政治动员、消费行为与理念传播都称之为“角色的重新装备”，而这一切都是为了所扮演的角色在社会中更快地获得群体认同，更有效地接近经济和社会资源。",
+    "调查对于新男性“角色装备”(把新男性的新异之处表现得容易让人们感觉到)进行了研究，其结果是，并不是所有自认为属于“新男性”的人士都具备起码的新男性的装备水平与消费水平。实际社会生活中存在着两种新男性——一种是外在装备水平可以使公众明显感知他们是男性中的精英分子的“新男性群体”；另一种是自认属于新男性或者至少自认具备新男性的现实潜力的群体，但他们却并不为一般社会公众所感知，因为他们往往不具备前者拥有的“装备”。",
+    "新男性的“角色装备”很大程度上能够解释为“新男性的应有形象标准”，并成为影响男性群体整体消费结构的一种社会压力，成为新男性在社会领域寻求角色装备的动力。“新男性”更需要经济实力，实力的差异导致了“新男性”角色装备的等级区别。",
+    "新男性的标志性装备与等级区别：",
+    "层级1（实力族，8.6%）：生活奢侈品（男性香水、名牌手表、名牌袜子、洋酒、金笔、高档太阳镜、价值3000元以上的西服、高级运动装备）；数码时尚品（掌上电脑、数码摄像机、手提电脑、数码相机、MP4播放器/Walkman）；高值保障品（私家车、房产）。",
+    "层级2（平衡族，33.3%）：商务休闲品（每年有15天的带薪休假时间、每月听一次音乐会、飞机全程累计卡、健身俱乐部会员卡）。",
+    "层级3（商务族，53.4%）：普及公务品（家用电脑、手机、信用卡）。",
+    "层级4（新异族，4.3%）：新异装备（染发、耳环、紧身衣）。",
+    "所以，“新男性”又不只是一种风格，一种派头，它更接近于由实力、品质与个性魅力三合一的混合人格。这样的人格需要综合的消费组合方能实现，而且这种人格的形成和消费组合还与一定的社会圈高度相关。调查发现，15.5%的人认为政治界能贡献这样的典范角色，27.4%的人认为会来自企业界，46.4%的人认为来自演艺界，另有7.1%的人认为是体育界，3.6%的人认为来自新闻节目主持人。由此，新男性不仅被符号化了，与一些特定的代表性产品与品牌连结，而且他们实际上成为一种社会文化现象，成为一种社会价值和道德观念，一种群体认同的外在标准。这种形象认同产生了强大的效应，人们把这些符号作为识别新男性的简便方法——这对于快捷地进入新男性队伍的人来说，似乎大有吸引力。",
+    "女性消费：“无理”可讲",
+    "人们往往认为女性消费“无理”可讲。一个月收入不过1000元的女孩可能用的是价值上百元的LANCOME化妆品；一个本打算上街买鞋的女性可能搬回来一套精美的装饰品……女性的消费会不时超越“常规”的轨迹。但实际上，指导女性消费行为的核心就是“新潮”。",
+    "调查机构在北京、上海、广州三地针对18—35岁青年女性进行的“都市青年女性消费面面观系列研究”结果显示，接受、倡导新潮消费的女性占受访者总体的80.2%。这些女性更多地将新潮消费看作是有经济能力、有品味、文化水平高、素质高、社会地位高、懂得享受生活的人的消费行为，同时她们也认同新潮消费者具有卓尔不群的个性和创新精神。倡导新潮消费型群体在各类群体中均有广泛分布，相对而言，30岁以下、本科学历、三资企业和卫生、文艺事业单位的管理人员、办公室工作职员、律师、记者等自由职业者、个人月收入在2000元以上的受访者中新潮消费的倡导者比例更高。",
+    "所以，女性不像营销专家所预测的那样遵从常见的购物模式；有时她们会把马斯洛的需求层次理论彻底推翻；有时她们周密地计划着开销，却往往买回不少自己喜欢却并不适用，甚至并不真正喜欢，也并不真正需要的商品；有时，她们购物前中规中矩地描述着购买商品时应考虑的因素，却在实际购物时把这些全然抛在脑后。究其原因，因为大部分女性（89.3%）将“富裕的、有品位的、懂得生活享受的、素质高的、文化水平高的、社会地位高的”消费归为高品位的消费特征，而且这种消费具有“敢于冒险的、有创新精神的、有冲劲的、反叛的、有个性的、时髦的、前卫的”特征。总的来说，可以看出，女性新潮消费群体更多以一味追求品位与个性的形象出现。所以那种在女性天性中蕴含的易感特质会不时地让她们受到自身心境和外在环境的影响，而做出连自己都预想不到的消费行为。这种现象在年轻女性中尤其常见。",
+    "蓝领阶层：务实消费",
+    "中国的消费研究似乎有一种只关心“富人”的怪毛病。在今天，人们把更多的眼光注视在所谓“中产阶级”的“白领”身上，更有人关注中国“奢侈消费”时代的到来。但实际上，中国的“蓝领阶层”已经开始形成自己的消费特色和结构特征。零点研究集团最新发布的蓝领研究报告显示，制造业是蓝领群体最大的“摇篮”(18.6%)，其次是社会服务业(11.8%)；另外，蓝领群体主要存在于国营企事业单位和机关(59.7%)，17.8%存在于私营企业，余下大致均衡地分布在集体企业和三资企业之中。有趣的是，12.2%的城镇居民认为“蓝领是偏男性的，白领是偏女性的”。蓝领的行为特征与价值观念同样也呈现在部分城市白领身上，也可以说，城市白领中存在大量的“收入与地位属白领，行为与观念属蓝领”的人群。",
+    "从人口规模和消费能力来说，蓝领群体都是目前及未来中国市场中居于相对主导地位的重要消费群体之一。调查显示，蓝领群体中八成左右的个人人均月收入是在1000元以上，同时七成以上的蓝领家庭月均收入是在3000元左右。事实上，国内多数城市都还是典型的蓝领型城市，城市白领消费能力总量不到蓝领消费能力总量的10%。",
+    "中国的文化对蓝领群体的价值趋向影响很大。中国蓝领群体最欣赏、最希望自己被他人认同的个性特征是：有教养、懂技术、诚恳、果断、关心他人、有责任心。这正好和中国社会认为男性应该具备的个性特征、男性应该扮演的传统社会角色不谋而合。",
+    "研究表明，中国的蓝领最具有代表性的一个品牌搭配是使用摩托罗拉手机，身着李宁服饰，电器用海尔，化妆品用大宝，佩带飞亚达手表。这些品牌都是国内著名品牌或者已经本土化的国际品牌，它们在价格与品牌上的完美结合与蓝领的实际情况恰好形成一种紧密契合，因而出现蓝领人士选择消费品时在这些品牌间形成较高搭配集中度。如果与中国高收入群体以及城市新SOHO族的品牌选择作比较，蓝领的品牌搭配特征与二者的差异界线则显得十分清晰。高收入群体主要的构成是企业中高层白领、金领以及一些私营企业主，SOHO族则主要由能够自由决定工作时间和地点的自由职业者、白领以及金领构成，他们在品牌的选择上明显要比蓝领高一个甚至几个档次。虽然在手机上3个群体的品牌选择比较一致，但蓝领可能更多会使用其中低端产品。而手表品牌的选择上体现出来的消费差异恰是这3个群体在整个品牌搭配链条上的缩影，高收入群体与SOHO族的选择趋于一致，主要是劳力士、欧米茄这些高档手表品牌，而蓝领则对飞亚达等性价比较高的手表品牌情有独钟。如果高收入群体与SOHO族选择劳力士是其身份地位的象征，蓝领对手表品牌的选择则更多体现出务实消费文化的倾向。",
+    "蓝领按照年龄、从事的工作、消费观念等标准可以进一步细分为深蓝、普蓝和锐蓝三个群体。普蓝是蓝领阶层中年龄最大、收入最低的群体，他们因为未来收入预期和未来竞争力较低，对前途比较担忧，所以消费比较谨慎，他们的消费观念和无领阶层有重合。深蓝堪称蓝领阶层中的中坚力量，他们既有丰富的工作经验又有较好的发展机会，因为从事的是目前社会较稀缺的技术工作，所以收入也相当可观，同时他们的消费观念相当成熟理智。锐蓝是蓝领阶层中年龄最轻，受教育程度较高，消费观念超前的群体，他们在消费观念上趋近于白领，本身也有转化成为白领的潜能。蓝领限于自身在社会分配体系中的地位，经济实力有限，无法从一些国际知名品牌中选择，但其接受的统一职业训练与确定的社会联系使得他们并不会像无领阶层那样将价格作为唯一的选择标准，明确的社会地位认知促使他们必须在价格与品牌之间进行权衡，体现出一种更加务实的群体消费特征。",
+    "城市不同的社会群体的消费状态千奇百怪，互不相同，但在这种似乎无序的结构中却有一种固定的“化学方程式”，而这个方程式却要从社会历史文化脉络、不同社会阶层的价值取向和消费内容的具体构筑中推导出来。从这个意义上讲，消费确实是我们这个时代不同人群的外在符号。",
+    "（作者：陆晓文　摘自《社会观察》2006.10）"
+   ],
+   "translations": [
+    "Nếu nói người sản xuất chỉ đơn thuần là “sản” (sản xuất), thì người tiêu dùng chính là “phối” (phối hợp) một cách tổng hợp. Một nhà sản xuất chỉ quan tâm đến công năng thực chất và hình dáng bên ngoài của chiếc đèn, còn người tiêu dùng lại quan tâm đến sự thống nhất giữa chiếc đèn ấy với phong cách bài trí của cả ngôi nhà. Người tiêu dùng thực hiện vô vàn cách sắp xếp, kết hợp lặp đi lặp lại giữa các sản phẩm do vô số nhà sản xuất cung cấp; họ không chỉ kết hợp các sản phẩm này theo quan niệm thẩm mỹ và phối ghép theo xu hướng thịnh hành trong xã hội, mà còn cân nhắc xem hiệu quả tổng thể của sự phối hợp đó có hài hòa với thân phận, địa vị của mình hay không, cân nhắc xem những tổ hợp ấy có thể trở thành ký hiệu tượng trưng để nhóm người đồng chất nhận diện lẫn nhau hay không. Thông qua sự “phối hợp tuyệt vời” giữa các sản phẩm tiêu dùng khác nhau để đạt tới bí quyết “giành phần thắng” trong việc thể hiện thân phận xã hội của các tầng lớp khác nhau, đó chính là phương thức chủ yếu trong thực tiễn tiêu dùng của các nhóm người ngày nay.",
+    "Tiêu dùng của “nam giới mới”: Thực lực, phẩm chất và sức hút cá tính",
+    "Những năm gần đây, các bàn luận và quan điểm trong xã hội về “tiểu tư sản”, giới cổ cồn trắng, tầng lớp trung lưu nổi lên không ngớt, và một trong những tiêu điểm thảo luận là lối sống cùng hình thái tiêu dùng của các tầng lớp xã hội này. Trong những cuộc thảo luận ấy có một chủ đề thú vị: trong xã hội Trung Quốc những năm gần đây đã xuất hiện một nhóm người gọi là “nam giới mới”. Năm 2002, cơ quan nghiên cứu hữu quan đã thực hiện một khảo sát mang tên “Trung Quốc: Nam giới mới và thời đại mới”; kết quả điều tra cư dân tại 10 đô thị lớn của Trung Quốc cho thấy ở thành thị Trung Quốc, cứ 5 nam giới trưởng thành thì có 1 người tự nhận là “nam giới mới”. Con số này cũng được chứng thực vững chắc bằng một con số khác, bởi trong số những phụ nữ được phỏng vấn ngẫu nhiên cùng thời điểm, cũng có đúng 1/5 cho rằng chồng hoặc bạn trai mình là nam giới mới. Kết luận rút ra từ cuộc khảo sát này là: nam giới mới trong xã hội Trung Quốc ngày nay đóng vai trò quan trọng trong quá trình chuyển đổi văn hóa – xã hội, họ là đối tượng thực sự được thừa nhận và tôn vinh rộng rãi trong xã hội này, và vị thế đó bắt nguồn từ việc họ nắm bắt chính xác vai trò nam giới mới trong một thời đại đang đổi thay. Nghiên cứu này gọi toàn bộ công tác xã hội, vận động chính trị, hành vi tiêu dùng và truyền bá quan niệm nhằm kiến tạo và duy trì hình ảnh vai trò mới ấy là “tái trang bị vai trò”, và tất cả những điều đó đều nhằm giúp vai trò được đảm nhận nhanh chóng giành được sự thừa nhận của cộng đồng trong xã hội, tiếp cận hiệu quả hơn các nguồn lực kinh tế và xã hội.",
+    "Cuộc điều tra đã nghiên cứu về “trang bị vai trò” của nam giới mới (làm cho nét mới lạ, khác biệt của nam giới mới được thể hiện ra sao cho mọi người dễ cảm nhận), và kết quả cho thấy không phải tất cả những người tự cho mình thuộc nhóm “nam giới mới” đều có đủ trình độ trang bị và mức tiêu dùng tối thiểu của nam giới mới. Trong đời sống xã hội thực tế tồn tại hai loại nam giới mới — một loại là “nhóm nam giới mới” có mức độ trang bị bề ngoài khiến công chúng dễ dàng nhận ra họ là những phần tử tinh hoa trong giới nam; loại còn lại là nhóm tự nhận thuộc về nam giới mới hoặc ít nhất tự cho mình có tiềm năng thực tế của nam giới mới, nhưng họ lại không được công chúng nói chung nhận biết, bởi họ thường không sở hữu những “trang bị” mà nhóm đầu có.",
+    "“Trang bị vai trò” của nam giới mới ở mức độ lớn có thể được lý giải là “tiêu chuẩn hình ảnh cần có của nam giới mới”, trở thành một loại áp lực xã hội ảnh hưởng đến cơ cấu tiêu dùng chung của nhóm nam giới, đồng thời trở thành động lực để nam giới mới tìm kiếm trang bị vai trò trong lĩnh vực xã hội. “Nam giới mới” càng cần đến thực lực kinh tế, và sự chênh lệch về thực lực đã dẫn tới sự phân biệt đẳng cấp trong trang bị vai trò của “nam giới mới”.",
+    "Trang bị mang tính biểu tượng và sự phân biệt cấp bậc của nam giới mới:",
+    "Cấp bậc 1 (Nhóm thực lực, 8,6%): Hàng xa xỉ đời sống (nước hoa nam, đồng hồ hàng hiệu, tất hàng hiệu, rượu ngoại, bút vàng, kính râm cao cấp, bộ vest trị giá trên 3.000 tệ, trang bị thể thao cao cấp); Sản phẩm số thời thượng (máy tính cầm tay, máy quay kỹ thuật số, máy tính xách tay, máy ảnh kỹ thuật số, máy nghe nhạc MP4 / Walkman); Tài sản bảo đảm giá trị cao (ô tô riêng, bất động sản).",
+    "Cấp bậc 2 (Nhóm cân bằng, 33,3%): Sản phẩm giải trí – công việc (mỗi năm có 15 ngày nghỉ phép hưởng lương, mỗi tháng nghe hòa nhạc một lần, thẻ tích lũy dặm bay toàn chặng, thẻ hội viên câu lạc bộ thể hình).",
+    "Cấp bậc 3 (Nhóm thương vụ, 53,4%): Vật dụng công vụ phổ thông (máy tính gia đình, điện thoại di động, thẻ tín dụng).",
+    "Cấp bậc 4 (Nhóm mới lạ, 4,3%): Trang bị mới lạ (nhuộm tóc, khuyên tai, áo bó sát).",
+    "Do đó, “nam giới mới” không chỉ là một phong cách hay một dáng vẻ phong độ, mà còn gần hơn với một nhân cách hỗn hợp “ba trong một” kết hợp giữa thực lực, phẩm chất và sức hút cá tính. Một nhân cách như vậy cần đến tổ hợp tiêu dùng tổng hợp mới có thể thực hiện được, hơn nữa sự hình thành nhân cách ấy và tổ hợp tiêu dùng còn có mối liên hệ mật thiết với một vòng tròn xã hội nhất định. Điều tra phát hiện có 15,5% người cho rằng giới chính trị có thể đóng góp những nhân vật mẫu mực như vậy, 27,4% cho rằng sẽ đến từ giới doanh nhân, 46,4% cho rằng đến từ giới nghệ thuật biểu diễn, ngoài ra 7,1% cho rằng là giới thể thao và 3,6% cho rằng đến từ người dẫn chương trình tin tức. Từ đó, nam giới mới không chỉ bị ký hiệu hóa, gắn kết với một số sản phẩm và thương hiệu tiêu biểu nhất định, mà trên thực tế họ còn trở thành một hiện tượng văn hóa – xã hội, trở thành một hệ giá trị xã hội và quan niệm đạo đức, một tiêu chuẩn bên ngoài để nhận diện cộng đồng. Sự đồng thuận về hình ảnh này đã tạo ra hiệu ứng mạnh mẽ, mọi người coi những ký hiệu ấy như một phương pháp đơn giản để nhận biết nam giới mới — điều này dường như có sức hấp dẫn lớn đối với những ai muốn nhanh chóng gia nhập hàng ngũ nam giới mới.",
+    "Tiêu dùng của phụ nữ: Chẳng có “lý lẽ” nào để bàn",
+    "Người ta thường cho rằng tiêu dùng của phụ nữ là “vô lý”, chẳng thể nói lý lẽ được. Một cô gái thu nhập mỗi tháng chưa tới 1.000 tệ có thể đang dùng mỹ phẩm LANCOME giá hàng trăm tệ; một phụ nữ vốn định ra phố mua giày có thể lại xách về một bộ đồ trang trí tinh xảo… Tiêu dùng của phụ nữ thỉnh thoảng lại vượt ra ngoài quỹ đạo “thông thường”. Thế nhưng thực chất, cốt lõi dẫn dắt hành vi tiêu dùng của phụ nữ chính là chữ “sành điệu, hợp mốt”.",
+    "Kết quả “Nghiên cứu chuyên đề nhiều góc nhìn về tiêu dùng của phụ nữ trẻ đô thị” do cơ quan khảo sát tiến hành tại ba thành phố Bắc Kinh, Thượng Hải, Quảng Châu đối với phụ nữ trẻ từ 18–35 tuổi cho thấy, số phụ nữ tiếp nhận và cổ vũ tiêu dùng hợp mốt chiếm 80,2% tổng số người được phỏng vấn. Những phụ nữ này thường coi tiêu dùng hợp mốt là hành vi tiêu dùng của những người có năng lực kinh tế, có gu thẩm mỹ, trình độ văn hóa cao, tố chất cao, địa vị xã hội cao và biết tận hưởng cuộc sống; đồng thời họ cũng tán đồng rằng người tiêu dùng hợp mốt sở hữu cá tính nổi trội và tinh thần sáng tạo. Nhóm cổ vũ kiểu tiêu dùng hợp mốt phân bố rộng rãi trong các nhóm đối tượng; xét một cách tương đối, tỷ lệ người ủng hộ tiêu dùng hợp mốt cao hơn ở nhóm dưới 30 tuổi, trình độ đại học, cán bộ quản lý tại doanh nghiệp liên doanh – vốn nước ngoài và đơn vị sự nghiệp y tế, văn nghệ, nhân viên văn phòng, các nghề tự do như luật sư, nhà báo, và những người có thu nhập cá nhân trên 2.000 tệ mỗi tháng.",
+    "Vì vậy, phụ nữ không tuân theo những mô hình mua sắm thông thường như các chuyên gia tiếp thị dự đoán; có khi họ lật nhào hoàn toàn tháp nhu cầu của Maslow; có khi họ lên kế hoạch chi tiêu rất chu đáo, nhưng rốt cuộc lại mua về không ít món hàng mình thích mà chẳng thiết thực, thậm chí chẳng thực sự thích cũng chẳng thực sự cần; có khi trước lúc mua sắm họ mô tả rất bài bản những yếu tố cần cân nhắc khi mua hàng, nhưng đến lúc mua thật lại ném sạch mọi thứ ra sau đầu. Truy tìm nguyên nhân, đó là vì phần lớn phụ nữ (89,3%) xếp kiểu tiêu dùng “sung túc, có gu, biết tận hưởng cuộc sống, tố chất cao, trình độ văn hóa cao, địa vị xã hội cao” vào nhóm đặc trưng tiêu dùng đẳng cấp, hơn nữa kiểu tiêu dùng này lại mang những đặc tính “dám mạo hiểm, có tinh thần sáng tạo, xông xáo, nổi loạn, cá tính, thời thượng, tiên phong”. Nhìn chung, có thể thấy nhóm phụ nữ tiêu dùng hợp mốt thường xuất hiện với hình ảnh một mực theo đuổi đẳng cấp và cá tính. Chính vì thế, đặc chất dễ rung cảm vốn ẩn chứa trong thiên tính của phụ nữ thường xuyên khiến họ chịu tác động từ tâm trạng bản thân và môi trường bên ngoài, dẫn tới những hành vi tiêu dùng mà ngay cả chính họ cũng không ngờ tới. Hiện tượng này đặc biệt phổ biến ở phụ nữ trẻ.",
+    "Tầng lớp lao động cổ xanh: Tiêu dùng thực tế",
+    "Nghiên cứu tiêu dùng ở Trung Quốc dường như mắc một chứng bệnh kỳ quặc là chỉ quan tâm đến “người giàu”. Ngày nay, người ta dồn nhiều ánh nhìn hơn vào cái gọi là “cổ cồn trắng” thuộc “tầng lớp trung lưu”, thậm chí còn quan tâm đến sự xuất hiện của thời đại “tiêu dùng xa xỉ” ở Trung Quốc. Nhưng trên thực tế, “tầng lớp cổ xanh” (lao động kỹ thuật, công nhân) của Trung Quốc đã bắt đầu hình thành nét đặc sắc tiêu dùng và đặc trưng cơ cấu riêng của mình. Báo cáo nghiên cứu về giới cổ xanh mới nhất do Tập đoàn Nghiên cứu Horizon (Zero Point) công bố cho thấy, ngành chế tạo là “cái nôi” lớn nhất của nhóm cổ xanh (18,6%), tiếp theo là ngành dịch vụ xã hội (11,8%); ngoài ra, nhóm cổ xanh chủ yếu làm việc tại các doanh nghiệp, đơn vị sự nghiệp và cơ quan nhà nước (59,7%), 17,8% ở doanh nghiệp tư nhân, số còn lại phân bố tương đối đồng đều ở doanh nghiệp tập thể và doanh nghiệp có vốn đầu tư nước ngoài. Điều thú vị là có 12,2% cư dân thành thị cho rằng “cổ xanh thiên về nam giới, còn cổ cồn trắng thiên về nữ giới”. Đặc trưng hành vi và hệ giá trị của giới cổ xanh cũng thể hiện ở một bộ phận giới cổ cồn trắng đô thị; nói cách khác, trong giới cổ cồn trắng thành thị tồn tại một lượng lớn người thuộc diện “thu nhập và địa vị thuộc cổ cồn trắng, nhưng hành vi và quan niệm lại thuộc cổ xanh”.",
+    "Xét về quy mô dân số và sức tiêu dùng, nhóm cổ xanh đều là một trong những nhóm người tiêu dùng quan trọng giữ vị thế tương đối chủ đạo trên thị trường Trung Quốc hiện tại và tương lai. Khảo sát cho thấy, khoảng 80% người trong nhóm cổ xanh có thu nhập bình quân cá nhân hàng tháng trên 1.000 tệ, đồng thời hơn 70% hộ gia đình cổ xanh có thu nhập bình quân hàng tháng vào khoảng 3.000 tệ. Trên thực tế, đa số thành phố trong nước vẫn là đô thị kiểu cổ xanh điển hình, tổng sức tiêu dùng của giới cổ cồn trắng thành thị chưa bằng 10% tổng sức tiêu dùng của giới cổ xanh.",
+    "Văn hóa Trung Quốc tác động rất lớn đến xu hướng giá trị của nhóm cổ xanh. Những nét cá tính mà nhóm cổ xanh Trung Quốc trân trọng nhất và mong muốn được người khác công nhận nhất là: có giáo dưỡng, am hiểu kỹ thuật, chân thành, quyết đoán, quan tâm người khác và có tinh thần trách nhiệm. Điều này trùng khớp một cách kỳ lạ với những nét cá tính mà xã hội Trung Quốc cho rằng nam giới cần có cũng như vai trò xã hội truyền thống mà nam giới cần đảm nhận.",
+    "Nghiên cứu cho thấy, một tổ hợp thương hiệu tiêu biểu nhất của giới cổ xanh Trung Quốc là dùng điện thoại Motorola, mặc trang phục Li-Ning, đồ điện dùng Haier, mỹ phẩm dùng Dabao, đeo đồng hồ Fiyta. Đây đều là những thương hiệu nổi tiếng trong nước hoặc các thương hiệu quốc tế đã bản địa hóa; sự kết hợp hoàn hảo giữa giá cả và thương hiệu của chúng vừa vặn ăn khớp chặt chẽ với tình hình thực tế của giới cổ xanh, từ đó dẫn đến hiện tượng người thuộc giới cổ xanh có mức độ tập trung phối hợp khá cao quanh những thương hiệu này khi lựa chọn hàng tiêu dùng. Nếu đem so sánh với lựa chọn thương hiệu của nhóm thu nhập cao và giới SOHO mới ở đô thị tại Trung Quốc, thì ranh giới khác biệt trong đặc trưng phối hợp thương hiệu của giới cổ xanh với hai nhóm kia hiện lên vô cùng rõ nét. Nhóm thu nhập cao chủ yếu gồm giới cổ cồn trắng cấp trung và cao trong doanh nghiệp, giới cổ vàng cùng một số chủ doanh nghiệp tư nhân, còn nhóm SOHO chủ yếu gồm những người làm nghề tự do, giới cổ cồn trắng và cổ vàng có thể tự quyết định thời gian và địa điểm làm việc; trong lựa chọn thương hiệu, họ rõ ràng cao hơn giới cổ xanh một thậm chí vài bậc. Tuy về điện thoại di động thì lựa chọn thương hiệu của 3 nhóm tương đối thống nhất, nhưng giới cổ xanh có thể sẽ dùng nhiều sản phẩm phân khúc trung – thấp hơn. Còn sự khác biệt tiêu dùng thể hiện ở lựa chọn thương hiệu đồng hồ lại chính là hình ảnh thu nhỏ của 3 nhóm này trên toàn bộ chuỗi phối hợp thương hiệu: lựa chọn của nhóm thu nhập cao và nhóm SOHO có xu hướng giống nhau, chủ yếu là các thương hiệu đồng hồ cao cấp như Rolex, Omega, trong khi giới cổ xanh lại đặc biệt ưu ái các thương hiệu đồng hồ có tỷ lệ giá trên hiệu năng cao hơn như Fiyta. Nếu như việc nhóm thu nhập cao và nhóm SOHO chọn Rolex là biểu tượng cho thân phận, địa vị của họ, thì việc giới cổ xanh chọn thương hiệu đồng hồ lại thể hiện nhiều hơn khuynh hướng văn hóa tiêu dùng thực tế.",
+    "Giới cổ xanh căn cứ theo các tiêu chuẩn như độ tuổi, công việc đang làm, quan niệm tiêu dùng… có thể chia nhỏ hơn nữa thành ba nhóm: xanh thẫm (thâm lam), xanh phổ thông (phổ lam) và xanh sắc bén (duệ lam). “Xanh phổ thông” là nhóm có độ tuổi lớn nhất và thu nhập thấp nhất trong tầng lớp cổ xanh; vì kỳ vọng thu nhập tương lai và sức cạnh tranh tương lai khá thấp nên họ khá lo lắng về tiền đồ, bởi vậy chi tiêu khá thận trọng, quan niệm tiêu dùng của họ có phần giao thoa với tầng lớp “không cổ” (lao động phổ thông chưa qua đào tạo). “Xanh thẫm” xứng đáng là lực lượng nòng cốt của tầng lớp cổ xanh; họ vừa có kinh nghiệm làm việc phong phú vừa có cơ hội phát triển khá tốt, nhờ làm những công việc kỹ thuật đang tương đối khan hiếm trong xã hội hiện nay nên thu nhập cũng khá khả quan, đồng thời quan niệm tiêu dùng của họ hết sức chín chắn, lý trí. “Xanh sắc bén” là nhóm trẻ tuổi nhất, có trình độ học vấn khá cao và quan niệm tiêu dùng đi trước thời đại trong tầng lớp cổ xanh; họ tiệm cận với giới cổ cồn trắng về quan niệm tiêu dùng, và bản thân cũng có tiềm năng chuyển hóa thành giới cổ cồn trắng. Giới cổ xanh bị hạn chế bởi vị thế của mình trong hệ thống phân phối xã hội, thực lực kinh tế có hạn nên không thể lựa chọn từ một số thương hiệu nổi tiếng quốc tế; tuy nhiên sự đào tạo nghề thống nhất mà họ tiếp nhận cùng các mối liên hệ xã hội xác định khiến họ không coi giá cả là tiêu chuẩn lựa chọn duy nhất như tầng lớp “không cổ”, mà nhận thức rõ ràng về địa vị xã hội thúc đẩy họ phải cân nhắc giữa giá cả và thương hiệu, thể hiện một đặc trưng tiêu dùng cộng đồng thiết thực hơn.",
+    "Trạng thái tiêu dùng của các nhóm xã hội khác nhau nơi đô thị muôn hình vạn trạng, chẳng nhóm nào giống nhóm nào, thế nhưng trong cái cấu trúc tưởng chừng hỗn độn ấy lại tồn tại một “phương trình hóa học” cố định, và phương trình này lại phải được suy dẫn ra từ mạch nguồn văn hóa – lịch sử xã hội, định hướng giá trị của các tầng lớp xã hội khác nhau và sự kiến tạo cụ thể của nội dung tiêu dùng. Xét từ ý nghĩa ấy, tiêu dùng quả thực là ký hiệu bên ngoài của các nhóm người khác nhau trong thời đại chúng ta.",
+    "(Tác giả: Lục Hiểu Văn, trích từ “Quan sát xã hội” số 10/2006)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "前所未有 (chưa từng có trong lịch sử)",
+   "structure": "主语 + 前所未有；前所未有的 + 名词；是……前所未有的",
+   "explanation": "Nghĩa là “trong lịch sử từ trước tới nay chưa từng có”. Trong câu thường làm vị ngữ hoặc định ngữ, hoặc dùng trong kết cấu “是……的”, cũng có thể đứng độc lập thành câu. Liên hệ: chữ “有” trong “前所未有” có thể thay bằng các động từ đơn âm tiết khác, như “前所未见” (chưa từng thấy), “前所未闻” (chưa từng nghe), “前所未遇” (chưa từng gặp), “前所未知” (trước đây chưa từng biết), “前所未解” (chưa từng lý giải).",
+   "examples": [
+    {
+     "zh": "在经济上，出现了前所未有的持续高增长时期，中国成为世界上经济增长率最高的国家之一。",
+     "vi": "Về kinh tế, đã xuất hiện thời kỳ tăng trưởng cao liên tục chưa từng có, Trung Quốc trở thành một trong những quốc gia có tốc độ tăng trưởng kinh tế cao nhất thế giới."
+    },
+    {
+     "zh": "现在中国正处在前所未有的繁荣、开明的时代，这使它产生了巨大的吸引力。",
+     "vi": "Hiện nay Trung Quốc đang ở vào thời đại phồn vinh, khai minh chưa từng có, điều này khiến nước này tạo ra sức hút to lớn."
+    },
+    {
+     "zh": "这种现象前所未有，真让人匪夷所思。",
+     "vi": "Hiện tượng này từ trước tới nay chưa từng có, thật khiến người ta không thể lý giải nổi."
+    },
+    {
+     "zh": "一个公司能够把这么多资金用于公益事业，这是前所未有的。",
+     "vi": "Một công ty có thể dành nhiều nguồn vốn đến thế cho sự nghiệp công ích, đây là điều chưa từng có trước đây."
+    }
+   ]
+  },
+  {
+   "point": "因……而…… (vì… mà…)",
+   "structure": "因 + 原因 + 而 + 结果",
+   "explanation": "Biểu thị quan hệ nhân quả, phía trước là “nhân” (nguyên nhân), phía sau là “quả” (kết quả). Đây là cách diễn đạt mang sắc thái văn viết.",
+   "examples": [
+    {
+     "zh": "从许多发展中国家的经验看，不公平、不公正的增长往往会突然因社会危机而停滞、衰退甚至崩溃。",
+     "vi": "Nhìn từ kinh nghiệm của nhiều nước đang phát triển, sự tăng trưởng thiếu công bằng, thiếu công chính thường đột ngột bị đình trệ, suy thoái thậm chí sụp đổ vì khủng hoảng xã hội."
+    },
+    {
+     "zh": "今晚的露天演出因天气原因而取消，请各位观众谅解。",
+     "vi": "Buổi biểu diễn ngoài trời tối nay bị hủy vì lý do thời tiết, mong quý vị khán giả thông cảm."
+    },
+    {
+     "zh": "这批汽车因刹车系统有质量问题而被召回，消费者对此表示理解。",
+     "vi": "Lô ô tô này bị triệu hồi vì hệ thống phanh gặp vấn đề chất lượng, người tiêu dùng tỏ ra thông cảm với việc này."
+    },
+    {
+     "zh": "因外语成绩不合格而失去读研究生的机会，这种情况司空见惯。",
+     "vi": "Vì điểm ngoại ngữ không đạt yêu cầu mà mất cơ hội học cao học, tình huống như vậy thấy rất thường xuyên."
+    },
+    {
+     "zh": "股民的热情因股票价格上扬而不断提升，有专家警告说，股市有泡沫，风险很大，入市一定要谨慎小心。",
+     "vi": "Sự hào hứng của nhà đầu tư chứng khoán không ngừng tăng lên nhờ giá cổ phiếu đi lên, có chuyên gia cảnh báo rằng thị trường chứng khoán có bong bóng, rủi ro rất lớn, tham gia thị trường nhất định phải thận trọng."
+    }
+   ]
+  },
+  {
+   "point": "付诸 (đưa vào, giao phó, biến thành)",
+   "structure": "把 + 名词性成分 + 付诸 + 实践/行动/实施/东流……",
+   "explanation": "Động từ, văn viết. “诸” là hợp âm của “之于”. “付诸” nghĩa là giao phó hoặc đưa đồ vật, kế hoạch… vào thực hiện ở nơi nào đó; cũng có thể nói “付诸行动” (đưa vào hành động), “付诸实施” (đưa vào thực thi), “付诸东流” (đổ sông đổ bể), “付诸流水” (trôi theo dòng nước), “付诸一笑” (cười xòa cho qua). Liên hệ: “诉诸” chỉ việc dùng một phương pháp nào đó, ví dụ “诉诸法律” (nhờ đến pháp luật), “诉诸武力” (dùng đến vũ lực), “诉诸暴力” (dùng đến bạo lực).",
+   "examples": [
+    {
+     "zh": "中国国家制度现代化则必须也只能由党和政府有意识地发动和领导，并付诸实践。",
+     "vi": "Hiện đại hóa thể chế quốc gia của Trung Quốc bắt buộc và chỉ có thể do Đảng và chính phủ phát động, lãnh đạo một cách có ý thức và đưa vào thực tiễn."
+    },
+    {
+     "zh": "不能光说不练，要把你所承诺的付诸行动才好。",
+     "vi": "Không thể chỉ nói suông mà không làm, phải đưa những gì bạn đã cam kết vào hành động mới được."
+    },
+    {
+     "zh": "小张这次又没考上研究生，多年的努力付诸东流，他的心情可想而知。",
+     "vi": "Tiểu Trương lần này lại thi trượt cao học, bao năm nỗ lực đổ sông đổ bể, tâm trạng anh ấy thế nào cũng đủ hiểu."
+    },
+    {
+     "zh": "如果物业再不解决在小区管理上不作为的问题，业主们就打算诉诸法律了。",
+     "vi": "Nếu ban quản lý vẫn không giải quyết vấn đề tắc trách trong quản lý khu dân cư, các chủ hộ dự định sẽ nhờ đến pháp luật."
+    },
+    {
+     "zh": "解决问题不要动不动就诉诸武力，能通过和平的方式解决是最佳选择。",
+     "vi": "Giải quyết vấn đề đừng động chút là dùng đến vũ lực, có thể giải quyết bằng phương thức hòa bình là lựa chọn tốt nhất."
+    }
+   ]
+  },
+  {
+   "point": "取决（于） (tùy thuộc vào, quyết định bởi)",
+   "structure": "A + 取决于 + B",
+   "explanation": "Động từ, nghĩa là do một phương diện hoặc tình huống nào đó quyết định. Phía sau nhất định phải có “于”.",
+   "examples": [
+    {
+     "zh": "上述两种转型能否成功取决于作为执政党的中国共产党的主动转型和成功转型。",
+     "vi": "Hai cuộc chuyển đổi nói trên có thành công hay không tùy thuộc vào sự chuyển đổi chủ động và thành công của Đảng Cộng sản Trung Quốc với tư cách là đảng cầm quyền."
+    },
+    {
+     "zh": "其实一个人的命运在很大程度上取决于他的性格，所以有人说：性格决定命运。",
+     "vi": "Thực ra vận mệnh của một con người ở mức độ rất lớn phụ thuộc vào tính cách của người đó, vì vậy có người nói: tính cách quyết định số phận."
+    },
+    {
+     "zh": "在中国，老师对学生的评价常常取决于学生的成绩，很多人对这一点颇有微词。",
+     "vi": "Ở Trung Quốc, đánh giá của thầy cô đối với học sinh thường phụ thuộc vào thành tích của học sinh, nhiều người khá phàn nàn về điểm này."
+    },
+    {
+     "zh": "花草树木的生长情况取决于自然条件和人对它们的照顾，这两个方面缺一不可。",
+     "vi": "Tình hình sinh trưởng của cây cỏ hoa lá phụ thuộc vào điều kiện tự nhiên và sự chăm sóc của con người, hai mặt này thiếu một không được."
+    }
+   ]
+  },
+  {
+   "point": "无异（于） (không khác gì, chẳng khác nào)",
+   "structure": "A + 无异于 + B",
+   "explanation": "Động từ, văn viết, nghĩa là không có gì khác biệt; tương đương với.",
+   "examples": [
+    {
+     "zh": "如果继续将合法性建立在经济增长上，无异于把自己的命运托付于其他的力量。",
+     "vi": "Nếu tiếp tục đặt tính hợp pháp lên tăng trưởng kinh tế thì chẳng khác nào phó thác vận mệnh của mình cho những lực lượng khác."
+    },
+    {
+     "zh": "正在他紧张备考的时候，收到了朋友鼓励的信息，这无异于给他打了一针强心针。",
+     "vi": "Đúng lúc anh ấy đang căng thẳng ôn thi thì nhận được tin nhắn động viên của bạn bè, điều này chẳng khác nào tiêm cho anh ấy một mũi trợ lực."
+    },
+    {
+     "zh": "妻子有了第三者，这无异于给了他当头一棒。",
+     "vi": "Vợ có người thứ ba, điều này chẳng khác nào giáng cho anh ấy một đòn chí mạng."
+    },
+    {
+     "zh": "他把自己养的宠物抛弃了，这无异于把它推进了火坑。",
+     "vi": "Anh ta bỏ rơi thú cưng mình nuôi, điều này chẳng khác nào đẩy nó vào hố lửa."
+    },
+    {
+     "zh": "吸毒无异于把自己送上了一条不归之路，希望大家千万别走上这条可怕的路。",
+     "vi": "Hút ma túy chẳng khác nào tự đưa mình lên con đường không lối về, mong mọi người tuyệt đối đừng bước lên con đường đáng sợ này."
+    }
+   ]
+  },
+  {
+   "point": "从+形容词 (áp dụng phương châm/thái độ…)",
+   "structure": "从 + 单音节形容词（从严、从宽、从简……）",
+   "explanation": "Cấu tạo thành động từ, nghĩa là áp dụng một phương châm hoặc thái độ nào đó (như: 从严 nghiêm khắc, 从宽 khoan hồng, 从简 giản tiện, 从缓 hoãn lại, 从略 lược bớt, 从速 khẩn trương, 从优 ưu tiên, 从俭 tiết kiệm, 从难 chọn việc khó, 从轻 xử nhẹ, 从重 xử nặng, 从快 làm nhanh).",
+   "examples": [
+    {
+     "zh": "从共产党面对的外部挑战看，需要“锐意进取、不断创新、主动转型、从严建设”。",
+     "vi": "Nhìn từ những thách thức bên ngoài mà Đảng Cộng sản phải đối mặt, cần “quyết tâm tiến thủ, không ngừng đổi mới, chủ động chuyển đổi, xây dựng nghiêm minh”."
+    },
+    {
+     "zh": "我认为老师对学生应该从严要求，这样对学生的将来有利。",
+     "vi": "Tôi cho rằng thầy cô nên yêu cầu nghiêm khắc đối với học sinh, như vậy mới có lợi cho tương lai của học sinh."
+    },
+    {
+     "zh": "他是初犯，还是从宽处理吧，给他一个改过自新的机会。",
+     "vi": "Anh ta phạm tội lần đầu, hay là xử lý khoan hồng đi, cho anh ta một cơ hội sửa sai làm lại cuộc đời."
+    },
+    {
+     "zh": "他们俩现在的经济条件还不宽裕，所以打算婚礼一切从简。",
+     "vi": "Điều kiện kinh tế hiện giờ của hai người họ chưa dư dả, nên dự định mọi thứ trong đám cưới đều làm đơn giản."
+    },
+    {
+     "zh": "从缓/从略/从速/从优/从俭/从难/从轻/从重/从快",
+     "vi": "hoãn lại / lược bớt / khẩn trương / ưu tiên / tiết kiệm / từ cái khó / xử nhẹ / xử nặng / làm nhanh"
+    }
+   ]
+  }
+ ]
+}

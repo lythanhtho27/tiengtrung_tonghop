@@ -1,6 +1,6 @@
 /**
  * BOYA LEARNING PLATFORM - BOYA_LEARNING.JS
- * Quản trị toàn bộ logic học Boya (6 Quyển · 74 Bài · 4.472 Từ):
+ * Quản trị toàn bộ logic học Boya (7 Quyển · 82 Bài · 5.348 Từ):
  * lộ trình 4 bước mỗi bài, bài kiểm tra cuối bài, ôn tập ngắt quãng (SM-2),
  * đọc tính giờ, audio, flashcard, luyện tập, podcast.
  */
@@ -25,7 +25,7 @@
     const STREAK_MIN = 10;         // số câu/thẻ tối thiểu trong ngày để tính streak
     const DAY = 86400000;
     const MODES = ['vocab', 'flashcard', 'reading', 'grammar', 'quiz', 'test', 'podcast', 'review'];
-    const BOOK_ALIAS = { cc1: 'gc1', cc2: 'gc2' };
+    const BOOK_ALIAS = { cc1: 'gc1', cc2: 'gc2', cc3: 'gc3' };
 
     let state = {
         activeBookId: 'tc1',
@@ -103,7 +103,7 @@
     }
     let P = DEFAULT_PROGRESS();
 
-    // Chỉ mục từ vựng toàn bộ 6 quyển: id → { w, book, lesson }
+    // Chỉ mục từ vựng toàn bộ 7 quyển: id → { w, book, lesson }
     const WORDS = new Map();
 
     // DOM Elements Cache
@@ -536,7 +536,7 @@
     }
 
     // Tên ngắn cho tab quyển trên header khi màn hình không đủ rộng (tên đầy đủ vẫn ở title)
-    const BOOK_SHORT_NAMES = { tc1: 'Chuẩn TC1', tc2: 'Chuẩn TC2', tc3: 'TC1', tc4: 'TC2', gc1: 'CC1', gc2: 'CC2' };
+    const BOOK_SHORT_NAMES = { tc1: 'Chuẩn TC1', tc2: 'Chuẩn TC2', tc3: 'TC1', tc4: 'TC2', gc1: 'CC1', gc2: 'CC2', gc3: 'CC3' };
 
     function renderBookSelector() {
         if (dom.bookPillsNav) {
@@ -1646,7 +1646,7 @@
     // Tra từ trong bài khóa: chạm vào chữ Hán → tìm từ dài nhất (HOC_DICT) chứa chữ đó,
     // hiện khung tra (desktop: nổi cạnh chữ; điện thoại ≤720px: bottom sheet), thêm vào "Từ của tôi".
     // --------------------------------------------------------------------------
-    const BOOK_SHORT = { tc1: 'Chuẩn TC1', tc2: 'Chuẩn TC2', tc3: 'TC1', tc4: 'TC2', gc1: 'Cao cấp 1', gc2: 'Cao cấp 2' };
+    const BOOK_SHORT = { tc1: 'Chuẩn TC1', tc2: 'Chuẩn TC2', tc3: 'TC1', tc4: 'TC2', gc1: 'Cao cấp 1', gc2: 'Cao cấp 2', gc3: 'Cao cấp 3' };
     let dictLoad = 0;              // 0 chưa nạp, 1 đang nạp, 2 xong, 3 lỗi
     const dictWaiters = [];
     let LK = null;                 // { units, idx, words, anchor, cands, cur }
@@ -3244,7 +3244,7 @@
             <div class="stats-grid">
                 <div class="stats-tile"><div class="st-num">🔥 ${currentStreak()}</div><div class="st-lbl">ngày liên tiếp (kỷ lục ${P.streak.best || 0})</div></div>
                 <div class="stats-tile"><div class="st-num">${todayUnits}</div><div class="st-lbl">câu + thẻ hôm nay${todayUnits < STREAK_MIN ? ` (cần ${STREAK_MIN} để giữ streak)` : ' ✓'}</div></div>
-                <div class="stats-tile"><div class="st-num">${totalDone}/74</div><div class="st-lbl">bài đã hoàn thành</div></div>
+                <div class="stats-tile"><div class="st-num">${totalDone}/${window.BOYA_DATA?.total_lessons || 82}</div><div class="st-lbl">bài đã hoàn thành</div></div>
                 <div class="stats-tile"><div class="st-num">${inSrs.length}</div><div class="st-lbl">từ trong hàng ôn · ${mature} từ đã thuộc lâu</div></div>
             </div>
             <div class="stats-chart-title">14 ngày gần nhất (câu trả lời + thẻ ôn)</div>
@@ -3864,8 +3864,8 @@
         const q = query.trim().toLowerCase();
 
         if (!q) {
-            const totV = window.BOYA_DATA?.total_vocab || 4472;
-            const totL = window.BOYA_DATA?.total_lessons || 74;
+            const totV = window.BOYA_DATA?.total_vocab || 5348;
+            const totL = window.BOYA_DATA?.total_lessons || 82;
             dom.modalResultsList.innerHTML = `
                 <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 13px;">
                     Nhập chữ Hán, Pinyin, nghĩa tiếng Việt hoặc số bài để tìm kiếm trong ${totL} bài học & ${totV} từ vựng.

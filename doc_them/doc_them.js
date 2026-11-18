@@ -35,8 +35,8 @@
     var HAN_G = /[㐀-鿿]/g;
     var LIB = (window.DOC_LIBRARY && window.DOC_LIBRARY.texts) || [];
     var EXAMS = (window.DOC_LIBRARY && window.DOC_LIBRARY.exams) || [];
-    var BOOK_NAMES = { tc1: "Chuẩn Trung cấp 1", tc2: "Chuẩn Trung cấp 2", tc3: "Trung cấp 1", tc4: "Trung cấp 2", gc1: "Cao cấp 1", gc2: "Cao cấp 2" };
-    var BOOK_ORDER = ["tc1", "tc2", "tc3", "tc4", "gc1", "gc2"];
+    var BOOK_NAMES = { tc1: "Chuẩn Trung cấp 1", tc2: "Chuẩn Trung cấp 2", tc3: "Trung cấp 1", tc4: "Trung cấp 2", gc1: "Cao cấp 1", gc2: "Cao cấp 2", gc3: "Cao cấp 3" };
+    var BOOK_ORDER = ["tc1", "tc2", "tc3", "tc4", "gc1", "gc2", "gc3"];
 
     var $ = function (id) { return document.getElementById(id); };
     function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }

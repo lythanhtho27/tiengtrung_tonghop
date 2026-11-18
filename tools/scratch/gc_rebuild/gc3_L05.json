@@ -1,0 +1,1980 @@
+{
+ "book": "gc3",
+ "lesson_num": 5,
+ "title": "中国文化到底是什么样子的",
+ "pages": [
+  155,
+  205
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "要义",
+   "py": "yàoyì",
+   "pos": "名",
+   "zh": "重要的内容或道理。",
+   "en": "",
+   "hv": "YẾU NGHĨA",
+   "vi": "nghĩa chính, yếu nghĩa",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "归结",
+   "py": "guījié",
+   "pos": "动",
+   "zh": "总结而求得结论。",
+   "en": "",
+   "hv": "QUY KẾT",
+   "vi": "quy kết, tổng kết",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "诋毁",
+   "py": "dǐhuǐ",
+   "pos": "动",
+   "zh": "捏造事实，说人坏话，败坏别人的名誉。",
+   "en": "",
+   "hv": "ĐỂ HỦY",
+   "vi": "nói xấu, phỉ báng",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "强国",
+   "py": "qiángguó",
+   "pos": "名",
+   "zh": "国力强大的国家。",
+   "en": "",
+   "hv": "CƯỜNG QUỐC",
+   "vi": "cường quốc",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "总体(上)",
+   "py": "zǒngtǐ(shang)",
+   "pos": "名",
+   "zh": "若干个体所合成的事物。",
+   "en": "",
+   "hv": "TỔNG THỂ (THƯỢNG)",
+   "vi": "tổng thể, nhìn chung",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "趋(向)(于)",
+   "py": "qū(xiàng)(yú)",
+   "pos": "动",
+   "zh": "朝着某个方向发展。",
+   "en": "",
+   "hv": "XU (HƯỚNG) (VU)",
+   "vi": "có xu hướng, nghiêng về",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "发扬光大",
+   "py": "fāyáng guāngdà",
+   "pos": "",
+   "zh": "发展提倡，使日益盛大。",
+   "en": "",
+   "hv": "PHÁT DƯƠNG QUANG ĐẠI",
+   "vi": "phát huy rạng rỡ",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "古董",
+   "py": "gǔdǒng",
+   "pos": "名",
+   "zh": "古代留传下来的的器物。",
+   "en": "",
+   "hv": "CỔ ĐỔNG",
+   "vi": "đồ cổ",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "意气",
+   "py": "yìqì",
+   "pos": "名",
+   "zh": "由于主观合偏激而产生的情绪。",
+   "en": "",
+   "hv": "Ý KHÍ",
+   "vi": "tự ái, khí khái nhất thời",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "威风",
+   "py": "wēifēng",
+   "pos": "名",
+   "zh": "使人敬畏的声势或气派。",
+   "en": "",
+   "hv": "UY PHONG",
+   "vi": "oai phong, uy thế",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "立身",
+   "py": "lìshēn",
+   "pos": "动",
+   "zh": "自立、做人。",
+   "en": "",
+   "hv": "LẬP THÂN",
+   "vi": "lập thân, làm người",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "喂养",
+   "py": "wèiyǎng",
+   "pos": "动",
+   "zh": "给幼儿或动物东西吃，并照顾其生活，使能成长。",
+   "en": "",
+   "hv": "ÚY DƯỠNG",
+   "vi": "nuôi dưỡng, cho ăn",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "保养",
+   "py": "bǎoyǎng",
+   "pos": "动",
+   "zh": "保护调养。",
+   "en": "",
+   "hv": "BẢO DƯỠNG",
+   "vi": "bảo dưỡng, chăm sóc",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "时不时",
+   "py": "shíbushí",
+   "pos": "",
+   "zh": "时常。",
+   "en": "",
+   "hv": "THỜI BẤT THỜI",
+   "vi": "thỉnh thoảng, đôi lúc",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "强健",
+   "py": "qiángjiàn",
+   "pos": "形",
+   "zh": "（身体）强壮。",
+   "en": "",
+   "hv": "CƯỜNG KIỆN",
+   "vi": "cường tráng, khỏe mạnh",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "不可告人",
+   "py": "bù kě gào rén",
+   "pos": "",
+   "zh": "不能告诉别人，多指不正当的打算或计谋不敢公开说出来。",
+   "en": "",
+   "hv": "BẤT KHẢ CÁO NHÂN",
+   "vi": "ám muội, không thể nói ra",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "恶意",
+   "py": "èyì",
+   "pos": "名",
+   "zh": "不良的居心；坏的用意。",
+   "en": "malice, evil intentions",
+   "hv": "ÁC Ý",
+   "vi": "ác ý, ý đồ xấu",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "偏见",
+   "py": "piānjiàn",
+   "pos": "名",
+   "zh": "偏于一方的见解；成见。",
+   "en": "",
+   "hv": "THIÊN KIẾN",
+   "vi": "thành kiến, thiên kiến",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "对抗",
+   "py": "duìkàng",
+   "pos": "动",
+   "zh": "对立起来相持不下。",
+   "en": "",
+   "hv": "ĐỐI KHÁNG",
+   "vi": "đối kháng, chống đối",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "利于",
+   "py": "lìyú",
+   "pos": "动",
+   "zh": "对某人或某事物有利。",
+   "en": "",
+   "hv": "LỢI VU",
+   "vi": "có lợi cho",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "最终",
+   "py": "zuìzhōng",
+   "pos": "副、形",
+   "zh": "最后；末了。最后的。",
+   "en": "",
+   "hv": "TỐI CHUNG",
+   "vi": "cuối cùng",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "无谓",
+   "py": "wúwèi",
+   "pos": "形",
+   "zh": "没有意义；毫无价值。",
+   "en": "",
+   "hv": "VÔ VỊ",
+   "vi": "vô bổ, vô nghĩa",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "辅",
+   "py": "fǔ",
+   "pos": "名",
+   "zh": "辅助性的；非主要的。",
+   "en": "",
+   "hv": "PHỤ",
+   "vi": "phụ, hỗ trợ",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "主次分明",
+   "py": "zhǔcì fēnmíng",
+   "pos": "",
+   "zh": "主要的和次要的区分得很清楚。",
+   "en": "",
+   "hv": "CHỦ THỨ PHÂN MINH",
+   "vi": "chính phụ phân minh",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "诸如",
+   "py": "zhūrú",
+   "pos": "动",
+   "zh": "举例用语，放在所举例子的前面，表示不止一个例子。",
+   "en": "",
+   "hv": "CHƯ NHƯ",
+   "vi": "chẳng hạn như, như là",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "炎黄子孙",
+   "py": "Yán-Huáng zǐsūn",
+   "pos": "",
+   "zh": "炎、黄是指炎帝神农氏和黄帝轩辕氏，是中国古代传说中的两个帝王，借指中华民族的祖先。“炎黄子孙”泛指中华民族的后代。",
+   "en": "",
+   "hv": "VIÊM HOÀNG TỬ TÔN",
+   "vi": "con cháu Viêm Hoàng",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "华夏儿女",
+   "py": "Huáxià érnǚ",
+   "pos": "",
+   "zh": "“华夏”：中国的古称。“华夏儿女”：泛指中国人。",
+   "en": "",
+   "hv": "HOA HẠ NHI NỮ",
+   "vi": "con dân Hoa Hạ (người Trung Quốc)",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "龙的传人",
+   "py": "lóng de chuánrén",
+   "pos": "",
+   "zh": "“龙”是中国古代传说中的神异动物，封建时代用龙作为帝王的象征。“龙的传人”泛指中国人。",
+   "en": "",
+   "hv": "LONG ĐÍCH TRUYỀN NHÂN",
+   "vi": "truyền nhân của rồng (người Trung Quốc)",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "正统",
+   "py": "zhèngtǒng",
+   "pos": "形",
+   "zh": "谨守传统不变的；严守规矩的。",
+   "en": "",
+   "hv": "CHÍNH THỐNG",
+   "vi": "chính thống",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "自居",
+   "py": "zìjū",
+   "pos": "动",
+   "zh": "自以为具有某种身份。",
+   "en": "",
+   "hv": "TỰ CƯ",
+   "vi": "tự nhận, tự cho mình là",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "博大精深",
+   "py": "bódà jīngshēn",
+   "pos": "",
+   "zh": "（思想、学说等）广博高深。",
+   "en": "",
+   "hv": "BÁC ĐẠI TINH THÂM",
+   "vi": "uyên bác tinh thâm, sâu rộng",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "多元化",
+   "py": "duōyuánhuà",
+   "pos": "形",
+   "zh": "指多样的；不是集中统一的。",
+   "en": "",
+   "hv": "ĐA NGUYÊN HÓA",
+   "vi": "đa nguyên hóa, đa dạng",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "一旦",
+   "py": "yídàn",
+   "pos": "副",
+   "zh": "指不确定的时间，表示有一天。",
+   "en": "",
+   "hv": "NHẤT ĐÁN",
+   "vi": "một khi, hễ",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "有意无意",
+   "py": "yǒu yì wú yì",
+   "pos": "",
+   "zh": "指看似无意实际上是有意的。",
+   "en": "",
+   "hv": "HỮU Ý VÔ Ý",
+   "vi": "vô tình hay hữu ý",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "单单",
+   "py": "dāndān",
+   "pos": "副",
+   "zh": "只；仅仅（表示从一般的人或事物中指出个别的）。",
+   "en": "",
+   "hv": "ĐƠN ĐƠN",
+   "vi": "chỉ riêng, đơn thuần",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "演变",
+   "py": "yǎnbiàn",
+   "pos": "动",
+   "zh": "发展变化（指历时较久的）。",
+   "en": "",
+   "hv": "DIỄN BIẾN",
+   "vi": "diễn biến, biến đổi",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "山水风情",
+   "py": "shānshuǐ fēngqíng",
+   "pos": "",
+   "zh": "有山有水的风景和风土人情。",
+   "en": "",
+   "hv": "SƠN THỦY PHONG TÌNH",
+   "vi": "phong cảnh non nước và phong tục tập quán",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "乡土文化",
+   "py": "xiāngtǔ wénhuà",
+   "pos": "",
+   "zh": "指本乡本土的文化。",
+   "en": "",
+   "hv": "HƯƠNG THỔ VĂN HÓA",
+   "vi": "văn hóa bản địa, văn hóa quê hương",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "乡民",
+   "py": "xiāngmín",
+   "pos": "名",
+   "zh": "居住在乡村的老百姓。",
+   "en": "",
+   "hv": "HƯƠNG DÂN",
+   "vi": "người dân quê, dân làng",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "民俗",
+   "py": "mínsú",
+   "pos": "名",
+   "zh": "民间的风俗习惯。",
+   "en": "",
+   "hv": "DÂN TỤC",
+   "vi": "dân tục, phong tục dân gian",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "范畴",
+   "py": "fànchóu",
+   "pos": "名",
+   "zh": "人的思维对客观事物的普遍本质的概括和反映。",
+   "en": "category",
+   "hv": "PHẠM TRÙ",
+   "vi": "phạm trù",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "即便",
+   "py": "jíbiàn",
+   "pos": "连",
+   "zh": "即使。表示假设的让步。",
+   "en": "",
+   "hv": "TỨC TIỆN",
+   "vi": "dù cho, ngay cả khi",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "经史",
+   "py": "jīngshǐ",
+   "pos": "名",
+   "zh": "经：指古代儒家的经典和语言文字方面的著作；史：指古代各种历史著作和部分地理著作。",
+   "en": "",
+   "hv": "KINH SỬ",
+   "vi": "kinh sử (sách kinh điển và sử sách)",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "典籍",
+   "py": "diǎnjí",
+   "pos": "名",
+   "zh": "这里泛指古代图书。",
+   "en": "",
+   "hv": "ĐIỂN TỊCH",
+   "vi": "điển tịch, sách cổ",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "口耳相传",
+   "py": "kǒu'ěr xiāng chuán",
+   "pos": "",
+   "zh": "人与人之间用说和听的方式传播信息。",
+   "en": "",
+   "hv": "KHẨU NHĨ TƯƠNG TRUYỀN",
+   "vi": "truyền miệng",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "风采",
+   "py": "fēngcǎi",
+   "pos": "名",
+   "zh": "文章中指作品华丽的色彩。",
+   "en": "",
+   "hv": "PHONG THÁI",
+   "vi": "phong thái, nét rực rỡ",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "纷呈",
+   "py": "fēnchéng",
+   "pos": "动",
+   "zh": "纷纷呈现。",
+   "en": "",
+   "hv": "PHÂN TRÌNH",
+   "vi": "lần lượt hiện ra, rực rỡ sắc màu",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "辽阔",
+   "py": "liáokuò",
+   "pos": "形",
+   "zh": "广阔；宽广。",
+   "en": "",
+   "hv": "LIÊU KHOÁT",
+   "vi": "rộng lớn, bao la",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "广远",
+   "py": "guǎngyuǎn",
+   "pos": "形",
+   "zh": "广阔辽远。",
+   "en": "",
+   "hv": "QUẢNG VIỄN",
+   "vi": "rộng xa, mênh mông",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "众多",
+   "py": "zhòngduō",
+   "pos": "形",
+   "zh": "很多。",
+   "en": "",
+   "hv": "CHÚNG ĐA",
+   "vi": "đông đảo, rất nhiều",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "丰富多彩",
+   "py": "fēngfù duō cǎi",
+   "pos": "",
+   "zh": "内容丰富，形式多样。",
+   "en": "",
+   "hv": "PHONG PHÚ ĐA THÁI",
+   "vi": "phong phú đa dạng",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "地域",
+   "py": "dìyù",
+   "pos": "名",
+   "zh": "地方（指本乡本土）。",
+   "en": "",
+   "hv": "ĐỊA VỰC",
+   "vi": "địa vực, vùng miền",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "秀才",
+   "py": "xiùcai",
+   "pos": "名",
+   "zh": "泛指读书人。",
+   "en": "",
+   "hv": "TÚ TÀI",
+   "vi": "tú tài, kẻ sĩ",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "戏曲",
+   "py": "xìqǔ",
+   "pos": "名",
+   "zh": "指中国传统的戏剧形式，以唱歌、舞蹈为主要表现手段。",
+   "en": "",
+   "hv": "HÍ KHÚC",
+   "vi": "hí khúc (kịch truyền thống Trung Quốc)",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "道观",
+   "py": "dàoguàn",
+   "pos": "名",
+   "zh": "道士聚居和进行宗教活动的场所。",
+   "en": "",
+   "hv": "ĐẠO QUÁN",
+   "vi": "đạo quán",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "寺庙",
+   "py": "sìmiào",
+   "pos": "名",
+   "zh": "供神佛或历史上有名人物的处所。",
+   "en": "",
+   "hv": "TỰ MIẾU",
+   "vi": "chùa chiền, miếu mạo",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "遗迹",
+   "py": "yíjì",
+   "pos": "名",
+   "zh": "古代或旧时代的事物遗留下来的痕迹。",
+   "en": "",
+   "hv": "DI TÍCH",
+   "vi": "di tích",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "祖祖辈辈",
+   "py": "zǔzǔ bèibèi",
+   "pos": "",
+   "zh": "世世代代。",
+   "en": "",
+   "hv": "TỔ TỔ BỐI BỐI",
+   "vi": "đời đời kiếp kiếp, nhiều thế hệ",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "言传身教",
+   "py": "yán chuán shēn jiào",
+   "pos": "",
+   "zh": "一面口头上传授，一面行动上以身作则，指言语行为起模范作用。",
+   "en": "",
+   "hv": "NGÔN TRUYỀN THÂN GIÁO",
+   "vi": "lấy lời dạy và lấy thân làm gương",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "精髓",
+   "py": "jīngsuǐ",
+   "pos": "名",
+   "zh": "比喻事物最重要、最好的部分。（精髓——精华）",
+   "en": "",
+   "hv": "TINH TỦY",
+   "vi": "tinh túy",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "神韵",
+   "py": "shényùn",
+   "pos": "名",
+   "zh": "精神和韵味、情调（多用于艺术作品）。",
+   "en": "",
+   "hv": "THẦN VẬN",
+   "vi": "thần vận, nét tinh thần",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "说到底",
+   "py": "shuōdàodǐ",
+   "pos": "",
+   "zh": "说到根本上。",
+   "en": "",
+   "hv": "THUYẾT ĐÁO ĐỂ",
+   "vi": "nói cho cùng",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "深层",
+   "py": "shēncéng",
+   "pos": "形",
+   "zh": "深入的；更进一步的。",
+   "en": "",
+   "hv": "THÂM TẦNG",
+   "vi": "tầng sâu, sâu xa",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "惬意",
+   "py": "qièyì",
+   "pos": "形",
+   "zh": "满意；称心；舒服。",
+   "en": "",
+   "hv": "KHIẾP Ý",
+   "vi": "thoải mái, hài lòng",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "怡情适性",
+   "py": "yí qíng shì xìng",
+   "pos": "",
+   "zh": "文章中指心情喜悦、满足、舒服。",
+   "en": "",
+   "hv": "DI TÌNH THÍCH TÍNH",
+   "vi": "khoan khoái tinh thần, thư thái lòng dạ",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "陶然忘机",
+   "py": "táorán wàng jī",
+   "pos": "",
+   "zh": "形容心情喜悦舒畅，使人忘记了世俗的念头。",
+   "en": "",
+   "hv": "ĐÀO NHIÊN VONG CƠ",
+   "vi": "say sưa quên hết tục lụy",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "神仙",
+   "py": "shénxiān",
+   "pos": "名",
+   "zh": "神话中的人物，有超人的能力，可以超脱尘世，长生不老。",
+   "en": "",
+   "hv": "THẦN TIÊN",
+   "vi": "thần tiên",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "境界",
+   "py": "jìngjiè",
+   "pos": "名",
+   "zh": "事物所达到的程度或表现的情况。",
+   "en": "extent reached; plane attained; state; realm",
+   "hv": "CẢNH GIỚI",
+   "vi": "cảnh giới",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "荣辱不惊",
+   "py": "róng rǔ bù jīng",
+   "pos": "",
+   "zh": "光荣和耻辱都不能使之不安。",
+   "en": "",
+   "hv": "VINH NHỤC BẤT KINH",
+   "vi": "vinh nhục không màng",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "神定气闲",
+   "py": "shén dìng qì xián",
+   "pos": "",
+   "zh": "神情安定的样子。也说“气定神闲”。",
+   "en": "",
+   "hv": "THẦN ĐỊNH KHÍ NHÀN",
+   "vi": "thần sắc điềm tĩnh, ung dung",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "安详",
+   "py": "ānxiáng",
+   "pos": "形",
+   "zh": "从容不迫；稳重。",
+   "en": "",
+   "hv": "AN TƯỜNG",
+   "vi": "an tường, điềm tĩnh",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "宁静",
+   "py": "níngjìng",
+   "pos": "形",
+   "zh": "（环境、心情）安静。",
+   "en": "",
+   "hv": "NINH TĨNH",
+   "vi": "yên tĩnh, tĩnh lặng",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "乐趣",
+   "py": "lèqù",
+   "pos": "名",
+   "zh": "使人感到快乐的意味。（乐趣——趣味）",
+   "en": "",
+   "hv": "LẠC THÚ",
+   "vi": "niềm vui, thú vui",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "来历",
+   "py": "láilì",
+   "pos": "名",
+   "zh": "人或事物的历史或背景。",
+   "en": "",
+   "hv": "LAI LỊCH",
+   "vi": "lai lịch, nguồn gốc",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "真相",
+   "py": "zhēnxiàng",
+   "pos": "名",
+   "zh": "事情的真实情况。",
+   "en": "",
+   "hv": "CHÂN TƯỚNG",
+   "vi": "sự thật, chân tướng",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "探源究本",
+   "py": "tàn yuán jiū běn",
+   "pos": "",
+   "zh": "追究事物产生的根源。也说“追本溯源”、“探本穷源”。",
+   "en": "",
+   "hv": "THÁM NGUYÊN CỨU BẢN",
+   "vi": "truy tìm nguồn gốc căn bản",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "正史",
+   "py": "zhèngshǐ",
+   "pos": "名",
+   "zh": "指《史记》、《汉书》等纪传体史书，为官方组织编撰的。",
+   "en": "",
+   "hv": "CHÍNH SỬ",
+   "vi": "chính sử",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "掺杂",
+   "py": "chānzá",
+   "pos": "动",
+   "zh": "混杂。",
+   "en": "",
+   "hv": "SAM TẠP",
+   "vi": "pha trộn, xen lẫn",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "编纂",
+   "py": "biānzuǎn",
+   "pos": "动",
+   "zh": "编辑（多指资料较多、篇幅较大的著作）。",
+   "en": "",
+   "hv": "BIÊN TOẢN",
+   "vi": "biên soạn",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "放眼",
+   "py": "fàngyǎn",
+   "pos": "动",
+   "zh": "放开眼界（观看）。",
+   "en": "",
+   "hv": "PHÓNG NHÃN",
+   "vi": "phóng tầm mắt, hướng mắt ra",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "长河",
+   "py": "chánghé",
+   "pos": "名",
+   "zh": "比喻长的过程。",
+   "en": "",
+   "hv": "TRƯỜNG HÀ",
+   "vi": "dòng sông dài (quá trình lâu dài)",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "脚踏实地",
+   "py": "jiǎo tà shídì",
+   "pos": "",
+   "zh": "形容做事踏实认真。",
+   "en": "",
+   "hv": "CƯỚC ĐẠP THỰC ĐỊA",
+   "vi": "chân thực, thiết thực, vững chắc",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "躲藏",
+   "py": "duǒcáng",
+   "pos": "动",
+   "zh": "把身体隐蔽起来，不让人看见。",
+   "en": "",
+   "hv": "ĐÓA TÀNG",
+   "vi": "ẩn nấp, trốn tránh",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "伺机",
+   "py": "sìjī",
+   "pos": "动",
+   "zh": "观察、等待时机。",
+   "en": "",
+   "hv": "TỨ CƠ",
+   "vi": "chờ thời cơ, rình cơ hội",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "故伎重演",
+   "py": "gù jì chóng yǎn",
+   "pos": "",
+   "zh": "再一次使用过去用过的手段、方法。“故伎”也作“故技”。",
+   "en": "",
+   "hv": "CỐ KỸ TRÙNG DIỄN",
+   "vi": "giở lại trò cũ",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "不合时宜",
+   "py": "bù hé shíyí",
+   "pos": "",
+   "zh": "不符合当时的情势。",
+   "en": "",
+   "hv": "BẤT HỢP THỜI NGHI",
+   "vi": "không hợp thời",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "生怕",
+   "py": "shēngpà",
+   "pos": "动",
+   "zh": "很怕。",
+   "en": "",
+   "hv": "SINH PHẠ",
+   "vi": "chỉ sợ, e rằng",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "远古",
+   "py": "yuǎngǔ",
+   "pos": "名",
+   "zh": "遥远的古代。",
+   "en": "",
+   "hv": "VIỄN CỔ",
+   "vi": "viễn cổ, thời xa xưa",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "部落",
+   "py": "bùluò",
+   "pos": "名",
+   "zh": "由若干血缘相近的氏族结合而成的集体。",
+   "en": "",
+   "hv": "BỘ LẠC",
+   "vi": "bộ lạc",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "天灾人祸",
+   "py": "tiān zāi rén huò",
+   "pos": "",
+   "zh": "自然灾害和人为的灾害。",
+   "en": "",
+   "hv": "THIÊN TAI NHÂN HỌA",
+   "vi": "thiên tai nhân họa",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "迁移",
+   "py": "qiānyí",
+   "pos": "动",
+   "zh": "离开原来的所在地而另换地点。",
+   "en": "",
+   "hv": "THIÊN DI",
+   "vi": "di cư, di dời",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "升级",
+   "py": "shēngjí",
+   "pos": "动",
+   "zh": "指战争的规模扩大，事态的紧张程度加深等。",
+   "en": "",
+   "hv": "THĂNG CẤP",
+   "vi": "leo thang, nâng cấp",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "决战",
+   "py": "juézhàn",
+   "pos": "名",
+   "zh": "敌对双方使用主力进行决定胜负的战役或战斗。",
+   "en": "",
+   "hv": "QUYẾT CHIẾN",
+   "vi": "trận quyết chiến",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "归服",
+   "py": "guīfú",
+   "pos": "动",
+   "zh": "归顺并服从。",
+   "en": "",
+   "hv": "QUY PHỤC",
+   "vi": "quy phục, khuất phục",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "发源",
+   "py": "fāyuán",
+   "pos": "动",
+   "zh": "开始发生。（发源——起源）",
+   "en": "",
+   "hv": "PHÁT NGUYÊN",
+   "vi": "bắt nguồn, phát sinh",
+   "proper": false
+  },
+  {
+   "n": 96,
+   "hz": "自称",
+   "py": "zìchēng",
+   "pos": "动",
+   "zh": "自己称呼自己。",
+   "en": "",
+   "hv": "TỰ XƯNG",
+   "vi": "tự xưng",
+   "proper": false
+  },
+  {
+   "n": 97,
+   "hz": "史书",
+   "py": "shǐshū",
+   "pos": "名",
+   "zh": "记载历史的书籍。",
+   "en": "",
+   "hv": "SỬ THƯ",
+   "vi": "sử sách",
+   "proper": false
+  },
+  {
+   "n": 98,
+   "hz": "由来",
+   "py": "yóulái",
+   "pos": "名",
+   "zh": "事物发生的原因。",
+   "en": "",
+   "hv": "DO LAI",
+   "vi": "nguồn gốc, nguyên do",
+   "proper": false
+  },
+  {
+   "n": 99,
+   "hz": "乃至",
+   "py": "nǎizhì",
+   "pos": "连",
+   "zh": "甚至。也说“乃至于”。",
+   "en": "",
+   "hv": "NÃI CHÍ",
+   "vi": "thậm chí, cho đến",
+   "proper": false
+  },
+  {
+   "n": 100,
+   "hz": "远远",
+   "py": "yuǎnyuǎn",
+   "pos": "副",
+   "zh": "强调程度很高。",
+   "en": "",
+   "hv": "VIỄN VIỄN",
+   "vi": "còn xa mới..., rất nhiều",
+   "proper": false
+  },
+  {
+   "n": 101,
+   "hz": "从何而来",
+   "py": "cóng hé ér lái",
+   "pos": "",
+   "zh": "从哪里来。",
+   "en": "",
+   "hv": "TÒNG HÀ NHI LAI",
+   "vi": "từ đâu mà ra",
+   "proper": false
+  },
+  {
+   "n": 102,
+   "hz": "融合",
+   "py": "rónghé",
+   "pos": "动",
+   "zh": "几种不同的事物合成一体。",
+   "en": "",
+   "hv": "DUNG HỢP",
+   "vi": "hòa hợp, dung hợp",
+   "proper": false
+  },
+  {
+   "n": 103,
+   "hz": "部族",
+   "py": "bùzú",
+   "pos": "名",
+   "zh": "部落和氏族的合称。",
+   "en": "",
+   "hv": "BỘ TỘC",
+   "vi": "bộ tộc",
+   "proper": false
+  },
+  {
+   "n": 104,
+   "hz": "前身",
+   "py": "qiánshēn",
+   "pos": "名",
+   "zh": "指事物演变中原来的组织形态或名称等。",
+   "en": "",
+   "hv": "TIỀN THÂN",
+   "vi": "tiền thân",
+   "proper": false
+  },
+  {
+   "n": 105,
+   "hz": "即位",
+   "py": "jíwèi",
+   "pos": "动",
+   "zh": "指开始做帝王或诸侯。",
+   "en": "",
+   "hv": "TỨC VỊ",
+   "vi": "lên ngôi, kế vị",
+   "proper": false
+  },
+  {
+   "n": 106,
+   "hz": "辅助",
+   "py": "fǔzhù",
+   "pos": "动",
+   "zh": "从旁边帮助。",
+   "en": "",
+   "hv": "PHỤ TRỢ",
+   "vi": "phò tá, giúp đỡ",
+   "proper": false
+  },
+  {
+   "n": 107,
+   "hz": "治政",
+   "py": "zhìzhèng",
+   "pos": "动",
+   "zh": "管理政治。",
+   "en": "",
+   "hv": "TRỊ CHÍNH",
+   "vi": "trị chính, cai quản việc nước",
+   "proper": false
+  },
+  {
+   "n": 108,
+   "hz": "营建",
+   "py": "yíngjiàn",
+   "pos": "动",
+   "zh": "营造；建造。",
+   "en": "",
+   "hv": "DOANH KIẾN",
+   "vi": "xây dựng, kiến thiết",
+   "proper": false
+  },
+  {
+   "n": 109,
+   "hz": "宏大",
+   "py": "hóngdà",
+   "pos": "形",
+   "zh": "巨大；宏伟。（宏大——巨大——庞大）",
+   "en": "",
+   "hv": "HOÀNG ĐẠI",
+   "vi": "to lớn, hoành tráng",
+   "proper": false
+  },
+  {
+   "n": 110,
+   "hz": "都城",
+   "py": "dūchéng",
+   "pos": "名",
+   "zh": "首都。",
+   "en": "",
+   "hv": "ĐÔ THÀNH",
+   "vi": "kinh đô, đô thành",
+   "proper": false
+  },
+  {
+   "n": 111,
+   "hz": "史称",
+   "py": "shǐchēng",
+   "pos": "",
+   "zh": "历史上称为。",
+   "en": "",
+   "hv": "SỬ XƯNG",
+   "vi": "sử gọi là",
+   "proper": false
+  },
+  {
+   "n": 112,
+   "hz": "由此",
+   "py": "yóucǐ",
+   "pos": "",
+   "zh": "从这里。",
+   "en": "",
+   "hv": "DO THỬ",
+   "vi": "từ đó, do vậy",
+   "proper": false
+  },
+  {
+   "n": 113,
+   "hz": "代称",
+   "py": "dàichēng",
+   "pos": "名",
+   "zh": "代替正式名称的另一名称。",
+   "en": "",
+   "hv": "ĐẠI XƯNG",
+   "vi": "tên gọi thay thế",
+   "proper": false
+  },
+  {
+   "n": 114,
+   "hz": "统称",
+   "py": "tǒngchēng",
+   "pos": "动",
+   "zh": "总起来叫做。",
+   "en": "",
+   "hv": "THỐNG XƯNG",
+   "vi": "gọi chung là",
+   "proper": false
+  },
+  {
+   "n": 115,
+   "hz": "总称",
+   "py": "zǒngchēng",
+   "pos": "名",
+   "zh": "总括起来的名称。",
+   "en": "",
+   "hv": "TỔNG XƯNG",
+   "vi": "tên gọi chung",
+   "proper": false
+  },
+  {
+   "n": 116,
+   "hz": "来源(于)",
+   "py": "láiyuán(yú)",
+   "pos": "动",
+   "zh": "（事物）起源；发生。",
+   "en": "",
+   "hv": "LAI NGUYÊN (VU)",
+   "vi": "bắt nguồn từ",
+   "proper": false
+  },
+  {
+   "n": 117,
+   "hz": "学术专著",
+   "py": "xuéshù zhuānzhù",
+   "pos": "",
+   "zh": "研究有系统的、较专门的学问的著作。",
+   "en": "",
+   "hv": "HỌC THUẬT CHUYÊN TRỨ",
+   "vi": "chuyên khảo học thuật",
+   "proper": false
+  },
+  {
+   "n": 118,
+   "hz": "频率",
+   "py": "pínlǜ",
+   "pos": "名",
+   "zh": "在单位时间内某种事情发生的次数。",
+   "en": "",
+   "hv": "TẦN SUẤT",
+   "vi": "tần suất",
+   "proper": false
+  },
+  {
+   "n": 119,
+   "hz": "文人学者",
+   "py": "wénrén xuézhě",
+   "pos": "",
+   "zh": "读书人和在学术上有一定成就的人。",
+   "en": "",
+   "hv": "VĂN NHÂN HỌC GIẢ",
+   "vi": "văn nhân học giả",
+   "proper": false
+  },
+  {
+   "n": 120,
+   "hz": "各界",
+   "py": "gèjiè",
+   "pos": "名",
+   "zh": "各个领域；各个行业。",
+   "en": "",
+   "hv": "CÁC GIỚI",
+   "vi": "các giới, các ngành",
+   "proper": false
+  },
+  {
+   "n": 121,
+   "hz": "要人",
+   "py": "yàorén",
+   "pos": "名",
+   "zh": "指有权势有地位的人物。",
+   "en": "",
+   "hv": "YẾU NHÂN",
+   "vi": "nhân vật trọng yếu, yếu nhân",
+   "proper": false
+  },
+  {
+   "n": 122,
+   "hz": "官方",
+   "py": "guānfāng",
+   "pos": "名",
+   "zh": "政府方面。",
+   "en": "",
+   "hv": "QUAN PHƯƠNG",
+   "vi": "chính thức, phía chính quyền",
+   "proper": false
+  },
+  {
+   "n": 123,
+   "hz": "取代",
+   "py": "qǔdài",
+   "pos": "动",
+   "zh": "排除别人或别的事物而占有其位置。",
+   "en": "",
+   "hv": "THỦ ĐẠI",
+   "vi": "thay thế",
+   "proper": false
+  },
+  {
+   "n": 124,
+   "hz": "势头",
+   "py": "shìtóu",
+   "pos": "名",
+   "zh": "事物发展的状况。",
+   "en": "",
+   "hv": "THẾ ĐẦU",
+   "vi": "xu thế, đà phát triển",
+   "proper": false
+  },
+  {
+   "n": 125,
+   "hz": "论证",
+   "py": "lùnzhèng",
+   "pos": "动",
+   "zh": "论述并证明。",
+   "en": "",
+   "hv": "LUẬN CHỨNG",
+   "vi": "luận chứng, chứng minh",
+   "proper": false
+  },
+  {
+   "n": 126,
+   "hz": "繁杂",
+   "py": "fánzá",
+   "pos": "形",
+   "zh": "（事情）多而杂乱。",
+   "en": "",
+   "hv": "PHỒN TẠP",
+   "vi": "phức tạp, rối rắm",
+   "proper": false
+  },
+  {
+   "n": 127,
+   "hz": "后裔",
+   "py": "hòuyì",
+   "pos": "名",
+   "zh": "已经死去的人的子孙后代。",
+   "en": "",
+   "hv": "HẬU DUỆ",
+   "vi": "hậu duệ",
+   "proper": false
+  },
+  {
+   "n": 128,
+   "hz": "聚居",
+   "py": "jùjū",
+   "pos": "动",
+   "zh": "集中地居住在某一区域。",
+   "en": "",
+   "hv": "TỤ CƯ",
+   "vi": "tụ cư, sống tập trung",
+   "proper": false
+  },
+  {
+   "n": 129,
+   "hz": "大多",
+   "py": "dàduō",
+   "pos": "副",
+   "zh": "大部分；大多数。",
+   "en": "",
+   "hv": "ĐẠI ĐA",
+   "vi": "phần lớn, đa số",
+   "proper": false
+  },
+  {
+   "n": 130,
+   "hz": "祖宗",
+   "py": "zǔzong",
+   "pos": "名",
+   "zh": "一个家族的上辈，多指较早的。也指民族的祖先。",
+   "en": "",
+   "hv": "TỔ TÔNG",
+   "vi": "tổ tiên, ông cha",
+   "proper": false
+  },
+  {
+   "n": 131,
+   "hz": "主导",
+   "py": "zhǔdǎo",
+   "pos": "形",
+   "zh": "主要的并且引导事物向某方面发展的。",
+   "en": "",
+   "hv": "CHỦ ĐẠO",
+   "vi": "chủ đạo",
+   "proper": false
+  },
+  {
+   "n": 132,
+   "hz": "海纳百川",
+   "py": "hǎi nà bǎi chuān",
+   "pos": "",
+   "zh": "大海可以容纳无数的河流。文章中比喻某种事物宽容地接纳其他事物。",
+   "en": "",
+   "hv": "HẢI NẠP BÁCH XUYÊN",
+   "vi": "biển rộng dung trăm sông (bao dung rộng lớn)",
+   "proper": false
+  },
+  {
+   "n": 133,
+   "hz": "胸怀",
+   "py": "xiōnghuái",
+   "pos": "名",
+   "zh": "心胸；心怀。（胸怀——心胸）",
+   "en": "mind; heart",
+   "hv": "HUNG HOÀI",
+   "vi": "tấm lòng, hoài bão",
+   "proper": false
+  },
+  {
+   "n": 134,
+   "hz": "吐故纳新",
+   "py": "tǔ gù nà xīn",
+   "pos": "",
+   "zh": "本来指人体呼吸。现比喻扬弃旧的、不好的，吸收新的、好的。",
+   "en": "",
+   "hv": "THỔ CỐ NẠP TÂN",
+   "vi": "thải cũ nạp mới",
+   "proper": false
+  },
+  {
+   "n": 135,
+   "hz": "特性",
+   "py": "tèxìng",
+   "pos": "名",
+   "zh": "某人或某事物特有的所特有的性质。",
+   "en": "",
+   "hv": "ĐẶC TÍNH",
+   "vi": "đặc tính",
+   "proper": false
+  },
+  {
+   "n": 136,
+   "hz": "延续",
+   "py": "yánxù",
+   "pos": "动",
+   "zh": "照原来的样子继续下去；延长下去。",
+   "en": "",
+   "hv": "DIÊN TỤC",
+   "vi": "kéo dài, tiếp nối",
+   "proper": false
+  },
+  {
+   "n": 137,
+   "hz": "强盛",
+   "py": "qiángshèng",
+   "pos": "形",
+   "zh": "强大而昌盛（多指国家）。",
+   "en": "",
+   "hv": "CƯỜNG THỊNH",
+   "vi": "cường thịnh, hùng mạnh",
+   "proper": false
+  },
+  {
+   "n": 138,
+   "hz": "生命力",
+   "py": "shēngmìnglì",
+   "pos": "名",
+   "zh": "指事物具有的生存、发展的能力。",
+   "en": "",
+   "hv": "SINH MỆNH LỰC",
+   "vi": "sức sống",
+   "proper": false
+  },
+  {
+   "n": 139,
+   "hz": "进而",
+   "py": "jìn'ér",
+   "pos": "连",
+   "zh": "表示在已有的基础上进一步。（进而——从而）",
+   "en": "",
+   "hv": "TIẾN NHI",
+   "vi": "tiến thêm bước nữa, rồi từ đó",
+   "proper": false
+  },
+  {
+   "n": 140,
+   "hz": "血统",
+   "py": "xuètǒng",
+   "pos": "名",
+   "zh": "人类因生育而自然形成的关系，如父母与子女之间、兄弟姐妹之间的关系。",
+   "en": "blood relationship; blood lineage",
+   "hv": "HUYẾT THỐNG",
+   "vi": "huyết thống",
+   "proper": false
+  },
+  {
+   "n": 141,
+   "hz": "退化",
+   "py": "tuìhuà",
+   "pos": "动",
+   "zh": "泛指事物由优变劣，由好变坏。",
+   "en": "",
+   "hv": "THOÁI HÓA",
+   "vi": "thoái hóa",
+   "proper": false
+  },
+  {
+   "n": 142,
+   "hz": "消亡",
+   "py": "xiāowáng",
+   "pos": "动",
+   "zh": "消失；灭亡。（消亡——消失——消灭）",
+   "en": "",
+   "hv": "TIÊU VONG",
+   "vi": "tiêu vong, diệt vong",
+   "proper": false
+  },
+  {
+   "n": 143,
+   "hz": "并非",
+   "py": "bìngfēi",
+   "pos": "动",
+   "zh": "并不是。",
+   "en": "",
+   "hv": "TỊNH PHI",
+   "vi": "không phải là",
+   "proper": false
+  },
+  {
+   "n": 144,
+   "hz": "精华",
+   "py": "jīnghuá",
+   "pos": "名",
+   "zh": "（事物）最重要、最好的部分。",
+   "en": "",
+   "hv": "TINH HOA",
+   "vi": "tinh hoa",
+   "proper": false
+  },
+  {
+   "n": 145,
+   "hz": "发源地",
+   "py": "fāyuándì",
+   "pos": "名",
+   "zh": "比喻事物发端、起源的地方。",
+   "en": "",
+   "hv": "PHÁT NGUYÊN ĐỊA",
+   "vi": "nơi bắt nguồn, cái nôi",
+   "proper": false
+  },
+  {
+   "n": 146,
+   "hz": "语系",
+   "py": "yǔxì",
+   "pos": "名",
+   "zh": "有共同来源的一些语言的总称。",
+   "en": "",
+   "hv": "NGỮ HỆ",
+   "vi": "ngữ hệ",
+   "proper": false
+  },
+  {
+   "n": 147,
+   "hz": "信仰",
+   "py": "xìnyǎng",
+   "pos": "动",
+   "zh": "对某人或某种主张、主义、宗教极度相信和尊敬，拿来作为自己行动的榜样或指南。",
+   "en": "",
+   "hv": "TÍN NGƯỠNG",
+   "vi": "tín ngưỡng, tin theo",
+   "proper": false
+  },
+  {
+   "n": 148,
+   "hz": "遍布",
+   "py": "biànbù",
+   "pos": "动",
+   "zh": "分布到所有的地方；散布到每个地方。",
+   "en": "",
+   "hv": "BIẾN BỐ",
+   "vi": "phủ khắp, phân bố khắp",
+   "proper": false
+  },
+  {
+   "n": 149,
+   "hz": "自成一统",
+   "py": "zì chéng yì tǒng",
+   "pos": "",
+   "zh": "在某个领域或技术上有独创的见解或独特的做法，能够独立成为一个体系。",
+   "en": "",
+   "hv": "TỰ THÀNH NHẤT THỐNG",
+   "vi": "tự thành một hệ thống riêng",
+   "proper": false
+  },
+  {
+   "n": 150,
+   "hz": "流派",
+   "py": "liúpài",
+   "pos": "名",
+   "zh": "指学术思想或文艺创作方面的派别。",
+   "en": "",
+   "hv": "LƯU PHÁI",
+   "vi": "trường phái, lưu phái",
+   "proper": false
+  },
+  {
+   "n": 151,
+   "hz": "扎根",
+   "py": "zhāgēn",
+   "pos": "动",
+   "zh": "比喻深入到人群或事物中去，打下基础。",
+   "en": "",
+   "hv": "TRÁT CĂN",
+   "vi": "bén rễ",
+   "proper": false
+  },
+  {
+   "n": 152,
+   "hz": "一脉因循",
+   "py": "yí mài yīnxún",
+   "pos": "",
+   "zh": "由一个血统或一个派别延续下来。",
+   "en": "",
+   "hv": "NHẤT MẠCH NHÂN TUẦN",
+   "vi": "nối tiếp theo một dòng nhất quán",
+   "proper": false
+  },
+  {
+   "n": 153,
+   "hz": "累积",
+   "py": "lěijī",
+   "pos": "动",
+   "zh": "层层增加；积聚。",
+   "en": "",
+   "hv": "LŨY TÍCH",
+   "vi": "tích lũy",
+   "proper": false
+  },
+  {
+   "n": 154,
+   "hz": "沉淀",
+   "py": "chéndiàn",
+   "pos": "动",
+   "zh": "比喻凝聚，积累。",
+   "en": "",
+   "hv": "TRẦM ĐIẾN",
+   "vi": "lắng đọng",
+   "proper": false
+  },
+  {
+   "n": 155,
+   "hz": "基于",
+   "py": "jīyú",
+   "pos": "",
+   "zh": "据资料来考核、证实和说明。",
+   "en": "",
+   "hv": "CƠ VU",
+   "vi": "dựa trên, căn cứ vào",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "中国文化到底是什么样子的",
+   "paragraphs": [
+    "梁漱溟老先生曾在《中国文化要义》中说，文化就是我们生活的依靠，文化其实是极其实在的东西。而在我看来，文化则意味着生活的方式、观念和主张。同样的，文化的目的就是要能改善我们的生活，包括生活方式、观念和主张。这样说来，中国文化就是中国人的生活方式、观念和主张。中国文化的目的是要改善中国人的生活方式、观念和主张。这是不用再废话了的。然而，怎么样才是中国的文化呢？或者说，怎么样的生活方式、观念和主张，才是中国人的生活方式、观念和主张呢？这个问题，似乎就不那么容易回答得上来了。",
+    "中国文化的实质",
+    "谈到中国文化，可以说，每一个人都会有每个人的看法和认识。这些看法和认识，大概可以归结为四大类别：一是赞美的态度，为五千年的中华文明而自豪，认为非常地了不起；二是诋毁的态度，把中国的落后归结为几千年的中国文化，认为如果不是传统文化的束缚，我们早就是世界第一强国了；三是既有肯定也有否定，总体上趋于肯定，认为可以继承和发扬光大；四是既有否定也有肯定，总体上趋向否定，认为传统文化最好还是作为古董文物才更有价值。这四种态度，应该说都有各自的道理和看问题的角度。",
+    "我们谈论中国文化的目的，不是为了逞口舌之利，争一时的意气或逞什么个人的威风。我们的目的是要继承和发扬中国文化，因为这是我们中国人立身的根本。这就好像我们的身体，尽管这个身体时常会生个病，或碰个伤口什么的，不时地会让我们不舒服，让我们不好过。可我们还是得每天吃饭来喂养它，穿上衣服来保养它，时不时地还要去做体育锻炼来强健它。同样的道理，我们对待中国文化的态度，也应该是这样出于爱护和发扬光大的务实，积极而有效的态度才对。",
+    "那么，怎样才是务实、积极而有效的态度呢？",
+    "“务实”，就是我们最起码要去尊重历史，尊重事实，尊重大家的共同选择。",
+    "“积极”，就是尽量去避免戴着有色眼镜来看问题，尽量去避免带着个人的情绪来看待问题，尽量去避免带着不可告人的恶意来混淆问题。带着有色眼镜，带着个人情绪，带着不可告人的恶意，这些都属于消极地对待问题，这样往往就会容易产生偏见和对抗，不利于问题的最终解决，反而会干扰和妨碍了问题的解决。",
+    "“有效”，就是要以发现问题，提出问题，解决问题为目的。也就是说，提出问题是为了要解决问题，而不是去作无谓的争论，那是没有任何意义和价值的。",
+    "事实上，我们所要讨论的中国文化，在现实中一直就存在着两种区别很大的认识和看法。一个就是说中国文化应该包括中华民族内各民族的所有文化，各民族文化之间应该是相互尊重和平等存在的关系。还有一个，就是以汉文化为主，以其他各民族文化为辅的中国文化。正是这样一个主次分明的中国文化，所以才会形成诸如“炎黄子孙”、“华夏儿女”和“龙的传人”等等的说法。应该说，这两种认识和看法代表了两种不同的心态和立场。",
+    "一个是从务实出发，一个是以正统自居，各有各的道理。然而，究竟哪一种看法，是真正体现了中国文化的实质呢？",
+    "我们经常说中国文化博大精深。到底是怎么个博大精深呢？当然就是体现在它的多元化和包容性上。但是一旦回到现实当中来，往往会有很多人好像就有意无意地忽视了这样一个事实：我们所说的中国文化，不单单是指从炎黄时代开始的华夏文化，以及由华夏文化一直逐步演变成为后来的汉文化，还要包括中华民族内各个民族的所有文化，像蒙古文化、西藏文化、维吾尔文化、满文化、哈萨克文化、傣家文化和朝鲜文化等等，有多少不同的民族就有多少不同的民族文化，有多少不同的山水风情就有多少不同的乡土文化，有多少不同的乡民就有多少不同的民俗文化。所有这些民族的、地方的和民俗的文化，都应该是包含在中华民族的范畴里的中国文化。也就是说，即便是汉文化，除了常见的经史典籍，也还有在民间口耳相传的民俗文化，也还有各地风采纷呈的乡土文化。例如：由于中华大地的辽阔广远，加上历史的悠久而逐步形成的河洛文化、齐鲁文化、燕赵文化、三晋文化、岭南文化、徽文化、湖湘文化、荆楚文化、闽南文化、巴蜀文化等众多丰富多彩的乡土地域文化。事实上，这些民间的地域乡土文化和民俗文化比经史典籍里的所谓秀才文化对人们生活的影响更大。而中国的老百姓们，常常更多地是通过民间传说、戏曲或小说，通过当地的道观寺庙和历史遗迹，通过祖祖辈辈的言传身教来感受中国传统文化的精髓和神韵的。",
+    "说到底，中国文化的深层内涵，就是如何让生活过得更舒适惬意，也就是所谓的怡情适性和陶然忘机的神仙境界。能够做到荣辱不惊、神定气闲，这才是真正的学问。能够把这种安详宁静让别人也感受到，并和大家一同分享生活的乐趣和喜悦，这才是真正的中国文化。",
+    "炎黄子孙、中华文明和中华民族的来历",
+    "要想弄清中国文化，就要先弄清中国的概念。想要弄清中国的概念，就要先去了解中国历史，从历史的事实真相中探源究本。然而历史的事实真相也不是那么容易就能了解清楚的。即便是正史的记载，它也多多少少地掺杂了编纂者的思想、观念和主张。如此一来，我们就要把放眼历史长河中的目光收回来，来看看当前脚踏实地的现实。毕竟很多历史中找不到的答案，往往就会深深地躲藏在现实生活中，不时地伺机来故伎重演。",
+    "就拿“炎黄子孙”这个说法来讲，早就不止一位历史学家指出，要慎重使用这样一个不合时宜的旧说法，可一直还是会有人不时地挂在嘴边，生怕不这样说会显得他没学问似的。那么为什么说这是不合时宜的旧说法呢？还是让我们先来看看“炎黄子孙”这个说法是怎么来的吧。",
+    "“炎黄子孙”的说法，来自远古时期炎帝与黄帝的传说。那时大约是在公元前3000年左右，当时有三个较大的部落，他们分别是蚩尤部落、黄帝部落和炎帝部落。这三个部落所居住的地方，大约就是中国的黄河一带，也就是人们常说的中原地区。大约是由于天灾人祸，先是部落的迁移引发了冲突，然后冲突不断地升级就导致了大规模的决战，最后就产生了炎黄部落。",
+    "炎帝和黄帝的部落又经过一系列的战争，最后还是炎帝打败了，归服了黄帝部落。由于黄帝部落的影响越来越大，于是中原地区的居住民们，就都自认为是黄帝的子孙。炎帝也作了很多的贡献，在传说中被称为神农氏，就是日尝百草，发明了许多农作物和中药的那位古人。为了纪念炎帝和黄帝的伟大贡献，发源于中原地区的华夏族人，也就是汉朝以后的汉族人，渐渐地就开始自称是“炎黄子孙”。",
+    "根据当代历史学与考古学的专家们已公布的《夏商周年表》，确定夏代始年约为公元前2070年。这样，根据史书上的记载，黄帝大约是在夏朝之前一千年左右。如此一来，中华文明从黄帝时算起，就有大约5000年左右的历史了。这也就是“5000年中华文明”一说的由来。",
+    "但是，为什么现在再用这样一个说法已经不合时宜了呢？这就是我们在一开始就提到的，如今的中华民族和中华文明乃至中国文化，已经远远不是一个汉文化所能全部概括和代表的了。",
+    "那么，“中华”这个称呼又是怎么来的呢？“中华民族”的称呼又是从何而来的呢？",
+    "还是在春秋时代，中原地区的居民们经过长期的融合变化，已经形成了一个大的主要部族，也就是汉族的前身：华夏族。后来到了周朝，也就是西周初年，周成王即位后，辅助成王治政的周公便在原先的洛邑城（约为现在的河南洛阳地区）的基础上，重新营建了一座规模宏大的新都城，这就是史称“周公建洛邑”后的“新洛”，又被称为“中土”或“中国”。这样，“中土”、“中国”和“华夏族”合在一起，就被称为“中华”。由此以后，“中华”也便逐渐成为整个中国的代称。",
+    "由于汉朝时期的辉煌强大，生活在中原地区的人们渐渐地开始被统称为“汉人”，以致包括华夏族在内的汉朝各民族，也就渐渐地演变成了至今的汉族。到了现代，以汉民族人数为最多的中华民族，就成了中国各个民族的总称。",
+    "然而我们知道，现在中华民族是由一共五十六个民族所组成的。除了汉族，还有五十五个民族。因此，来源于炎黄二帝、华夏族和汉族的“炎黄子孙”和“华夏儿女”，实际上确实已经不太适合作为整个中华民族的代称了。",
+    "例如，在《统一与分裂》这本非常有影响的学术专著里，作者葛剑雄教授就特别强调地说道：“近年来，‘炎黄子孙’的使用频率越来越高，范围越来越广，由文人学者扩大到社会各界，并进入了政府要人的谈话和官方文件，大有取代‘中华民族’或‘中国人民’二词的势头。这不能不引起稍有历史常识的人的不安。”为什么会感到不安呢？就是因为如今的中华民族早已经不能简单地用“炎黄子孙”来概括了。作者紧接着继续论证说：",
+    "从秦汉以来，由北方进入黄河流域的非华夏民族至少有匈奴、乌桓、鲜卑、女真、蒙古、维吾尔、回、满等，其中有的来自遥远的中亚和西亚。这些民族中，一部分又迁回了原地或迁到中国以外去了，但相当大一部分加入了汉族，有的整个民族都已经消失在汉人之中了。在南方，随着汉人的南迁，原来人数众多、种族繁杂的夷、蛮、越、巴、僰、僚、俚等等，有的已经完全消失，有的后裔的居住区已大大缩小，原来他们的聚居区大多已成为汉人聚居区。南方的汉人事实上有相当大一部分是他们的子孙。所以，在今天的十亿汉人中，地道的炎黄子孙反而是“少数民族”。即使是汉人，如果只认炎帝、黄帝这两位老祖宗的话，也有点对不起自己的亲祖宗了。",
+    "由此，我们说，既然中华民族是中国国内各民族的大融合，那么，中国文化也应该是中国国内各种文化的大融合。当然，我们并不否定具有5000年历史的中华文明在其中的积极和主导作用。实际上，正是中华文明有着这种“海纳百川”的胸怀，这种“吐故纳新”的特性，才会一直延续到今天，而且依然具有强盛的生命力，继续不断地吐故纳新，进而发扬光大。",
+    "在这个问题上，葛剑雄教授总结得非常好，他说：“世界上大概不存在绝对纯血统的民族；如果有，也必定会退化以至消亡。华夏族由世界上最古老的民族之一发展到今天这样一个世界上人口最多的民族，并非只是依靠了祖先的伟大或血统的优良，而是由于不断大量吸收了其他民族，凝聚了各民族的精华。同样，中华民族的伟大力量来自组成她的各个民族，来自各民族自身的创造力和共同的凝聚力。”",
+    "最为突出的一个例子，就是中华民族对佛教文化的继承和发扬。佛教的发源地是印度，流传到今天大致分为三大语系：汉传佛教、藏传佛教和南传佛教。这其中，中国就占了两个半之多，中国云南省的傣族、德昂族和布朗族等民族信仰的佛教就属南传佛教。中国西藏和青海省等地的佛教就属藏传佛教。而遍布中国内地、台湾、香港和澳门的汉传佛教，不但形成了自成一统的大乘佛教体系，而且还产生了法性宗、瑜伽宗、天台宗、华严宗、禅宗、净土宗、律宗和密宗等八大流派。尤其是有着中国特色的禅宗，一直影响和扎根到了日本、朝鲜和越南，甚至现在欧美也逐渐有越来越多的人对禅发生兴趣。",
+    "如此看来，即便是被称为正统的中华文明，例如其中的汉文化，也不单单只是华夏文化一脉因循的结果。我们现在所看到的中华文明，早就已经是包括了汉文化、藏文化、蒙古文化和维吾尔文化等多种文化在内的多元化文明，是各个地区、各个民族和各地居民等各种文化的共同累积和沉淀。",
+    "也就是说，我们一定要弄清楚，传统的中华文明与新中华文明（即新时代的中国文化），还是有着很大区别的。区别就在于：传统的中华文明是以继承了华夏文化的汉文化为正统，有“夷汉”之别。而新中华文明则不存在什么“夷汉”之别，是基于相互尊重和平等对待的各民族文化的共同融合。这个新中华文明，不但继承了传统的中华文明和中华民族内各民族的传统文化，而且还吸收了全世界各个国家民族的先进文明。就像传统的中华文明是吸收了中华民族内各民族的精华一样，新中华文明也将是同样地吸收了全世界各个国家民族文化精华的结果。",
+    "（作者：蒋清越　选自《你是中国人吗？——解构中华魂》，中国致公出版社2006年1月出版。有删改）"
+   ],
+   "translations": [
+    "Cụ Lương Thấu Minh từng viết trong cuốn “Trung Quốc văn hóa yếu nghĩa” rằng, văn hóa chính là chỗ dựa cho cuộc sống của chúng ta, văn hóa kỳ thực là thứ hết sức thực tại. Còn theo tôi, văn hóa lại mang hàm ý là phương thức sống, quan niệm và chủ trương. Tương tự, mục đích của văn hóa chính là phải cải thiện được đời sống của chúng ta, bao gồm phương thức sống, quan niệm và chủ trương. Nói như vậy thì văn hóa Trung Quốc chính là phương thức sống, quan niệm và chủ trương của người Trung Quốc. Mục đích của văn hóa Trung Quốc là cải thiện phương thức sống, quan niệm và chủ trương của người Trung Quốc. Đó là điều không cần phải nói dài dòng nữa. Thế nhưng, thế nào mới là văn hóa của Trung Quốc? Hay nói cách khác, phương thức sống, quan niệm và chủ trương như thế nào mới là phương thức sống, quan niệm và chủ trương của người Trung Quốc? Câu hỏi này dường như lại không dễ trả lời ngay được.",
+    "Thực chất của văn hóa Trung Quốc",
+    "Nói đến văn hóa Trung Quốc, có thể nói mỗi người đều có cách nhìn và nhận thức riêng. Những cách nhìn và nhận thức ấy đại khái có thể quy về bốn nhóm lớn: thứ nhất là thái độ ca ngợi, tự hào về năm nghìn năm văn minh Trung Hoa, cho rằng vô cùng vĩ đại; thứ hai là thái độ phỉ báng, quy kết sự lạc hậu của Trung Quốc cho mấy nghìn năm văn hóa Trung Quốc, cho rằng nếu không vì sự trói buộc của văn hóa truyền thống thì chúng ta đã sớm trở thành cường quốc số một thế giới rồi; thứ ba là vừa khẳng định vừa phủ định, nhìn chung thiên về khẳng định, cho rằng có thể kế thừa và phát huy rạng rỡ; thứ tư là vừa phủ định vừa khẳng định, nhìn chung nghiêng về phủ định, cho rằng văn hóa truyền thống tốt nhất vẫn nên coi như cổ vật văn vật thì mới có giá trị hơn. Bốn thái độ ấy, phải nói đều có lý lẽ và góc nhìn vấn đề riêng.",
+    "Mục đích chúng ta bàn luận về văn hóa Trung Quốc không phải để hơn thua lời ăn tiếng nói, tranh giành khí khái nhất thời hay phô trương oai phong cá nhân. Mục đích của chúng ta là kế thừa và phát huy văn hóa Trung Quốc, bởi đây là cội rễ lập thân của người Trung Quốc chúng ta. Điều này cũng giống như cơ thể của chúng ta vậy: dẫu cơ thể ấy thường xuyên sinh bệnh hay va quệt xây xát, thỉnh thoảng lại khiến ta khó chịu, khiến ta bất an, nhưng ta vẫn phải ăn cơm hằng ngày để nuôi dưỡng nó, mặc áo vào để giữ gìn nó, và thỉnh thoảng còn phải tập luyện thể dục thể thao để làm nó khỏe mạnh hơn. Cũng cùng lẽ ấy, thái độ của chúng ta đối với văn hóa Trung Quốc cũng phải xuất phát từ lòng yêu quý và mong muốn phát huy rạng rỡ như thế — một thái độ thiết thực, tích cực và hiệu quả mới đúng.",
+    "Vậy thì thế nào mới là thái độ thiết thực, tích cực và hiệu quả?",
+    "“Thiết thực” chính là tối thiểu chúng ta phải tôn trọng lịch sử, tôn trọng sự thật, tôn trọng sự lựa chọn chung của mọi người.",
+    "“Tích cực” chính là cố gắng tránh đeo kính màu để nhìn nhận vấn đề, cố gắng tránh mang cảm xúc cá nhân khi xem xét vấn đề, cố gắng tránh ôm ác ý không thể nói ra để đánh tráo, làm rối vấn đề. Đeo kính màu, mang cảm xúc cá nhân, ôm ác ý không thể nói ra — tất cả đều thuộc về cách đối xử tiêu cực với vấn đề; như vậy thường dễ sinh ra thành kiến và đối kháng, không có lợi cho việc giải quyết rốt ráo vấn đề, trái lại còn gây nhiễu và cản trở việc giải quyết.",
+    "“Hiệu quả” chính là phải lấy việc phát hiện vấn đề, đặt ra vấn đề, giải quyết vấn đề làm mục đích. Nói cách khác, đặt ra vấn đề là để giải quyết vấn đề, chứ không phải để tranh cãi vô bổ — điều đó chẳng có ý nghĩa hay giá trị gì cả.",
+    "Thực tế là, đối với nền văn hóa Trung Quốc mà chúng ta đang bàn luận, trong đời sống hiện thực xưa nay vẫn tồn tại hai cách hiểu và cách nhìn khác nhau rất lớn. Một là cho rằng văn hóa Trung Quốc phải bao gồm toàn bộ văn hóa của các dân tộc trong đại gia đình dân tộc Trung Hoa, giữa văn hóa các dân tộc phải là mối quan hệ tôn trọng lẫn nhau và tồn tại bình đẳng. Cách nữa là xem văn hóa Trung Quốc lấy văn hóa Hán làm chính, lấy văn hóa các dân tộc khác làm phụ. Chính vì một nền văn hóa Trung Quốc phân chia chính phụ rạch ròi như thế nên mới hình thành những cách nói như “con cháu Viêm Hoàng”, “con dân Hoa Hạ” hay “truyền nhân của rồng”. Phải nói rằng, hai cách hiểu và cách nhìn này đại diện cho hai tâm thế và lập trường khác nhau.",
+    "Một bên xuất phát từ thực tế, một bên tự đặt mình ở ngôi chính thống, bên nào cũng có lý lẽ riêng. Thế nhưng, rốt cuộc cách nhìn nào mới thực sự thể hiện đúng thực chất của văn hóa Trung Quốc?",
+    "Chúng ta thường nói văn hóa Trung Quốc uyên bác tinh thâm. Rốt cuộc nó uyên bác tinh thâm ở chỗ nào? Đương nhiên là thể hiện ở tính đa nguyên và tính bao dung của nó. Thế nhưng hễ quay về với thực tế, thường có rất nhiều người dường như vô tình hay hữu ý quên mất một sự thật thế này: nền văn hóa Trung Quốc mà chúng ta nói không chỉ đơn thuần chỉ văn hóa Hoa Hạ bắt đầu từ thời Viêm Hoàng, cũng như nền văn hóa Hán sau này từng bước diễn biến từ văn hóa Hoa Hạ mà thành, mà còn phải bao gồm toàn bộ văn hóa của từng dân tộc trong đại gia đình dân tộc Trung Hoa, như văn hóa Mông Cổ, văn hóa Tây Tạng, văn hóa Duy Ngô Nhĩ, văn hóa Mãn, văn hóa Kazakh, văn hóa người Thái và văn hóa Triều Tiên v.v. Có bao nhiêu dân tộc khác nhau thì có bấy nhiêu nền văn hóa dân tộc khác nhau, có bao nhiêu phong cảnh non nước khác nhau thì có bấy nhiêu nền văn hóa bản địa khác nhau, có bao nhiêu người dân quê khác nhau thì có bấy nhiêu nền văn hóa dân gian khác nhau. Tất cả những nền văn hóa dân tộc, địa phương và dân gian ấy đều phải là văn hóa Trung Quốc nằm trong phạm trù của dân tộc Trung Hoa. Nói cách khác, ngay cả trong văn hóa Hán, ngoài kinh sử điển tịch thường thấy, còn có văn hóa dân gian truyền miệng trong dân chúng, và còn có văn hóa bản địa muôn màu muôn vẻ ở khắp các vùng miền. Chẳng hạn: do đất đai Trung Hoa rộng lớn bao la, cộng thêm lịch sử lâu đời mà dần hình thành hàng loạt nền văn hóa địa phương phong phú đa dạng như văn hóa Hà Lạc, văn hóa Tề Lỗ, văn hóa Yên Triệu, văn hóa Tam Tấn, văn hóa Lĩnh Nam, văn hóa Huy, văn hóa Hồ Tương, văn hóa Kinh Sở, văn hóa Mân Nam, văn hóa Ba Thục v.v. Thực tế là những nền văn hóa bản địa vùng miền và văn hóa dân gian ấy còn có sức ảnh hưởng tới đời sống con người lớn hơn nhiều so với cái gọi là văn hóa tú tài trong sách kinh sử điển tịch. Và người dân thường Trung Quốc phần nhiều thường cảm nhận tinh túy và thần vận của văn hóa truyền thống Trung Quốc thông qua truyền thuyết dân gian, hí khúc hay tiểu thuyết, thông qua đạo quán, chùa miếu và di tích lịch sử tại địa phương, thông qua sự truyền dạy bằng lời nói và việc làm qua bao thế hệ.",
+    "Nói cho cùng, nội hàm sâu xa của văn hóa Trung Quốc chính là làm sao để cuộc sống trôi qua thoải mái dễ chịu hơn, tức là cái gọi là cảnh giới thần tiên: khoan khoái tinh thần, say sưa quên hết tục lụy. Có thể làm được đến mức vinh nhục không màng, thần sắc điềm tĩnh ung dung, đó mới là học vấn chân chính. Có thể khiến người khác cũng cảm nhận được sự an tường tĩnh lặng ấy, cùng mọi người sẻ chia niềm vui và hạnh phúc của cuộc sống, đó mới là văn hóa Trung Quốc đích thực.",
+    "Nguồn gốc của Viêm Hoàng tử tôn, văn minh Trung Hoa và dân tộc Trung Hoa",
+    "Muốn làm rõ văn hóa Trung Quốc thì trước tiên phải làm rõ khái niệm Trung Quốc. Muốn làm rõ khái niệm Trung Quốc thì trước tiên phải tìm hiểu lịch sử Trung Quốc, truy tìm nguồn gốc căn bản từ sự thật lịch sử. Thế nhưng sự thật lịch sử cũng chẳng dễ gì hiểu cho tường tận. Ngay cả ghi chép của chính sử ít nhiều cũng pha trộn tư tưởng, quan niệm và chủ trương của người biên soạn. Vậy nên, chúng ta cần thu lại ánh nhìn đang phóng ra dòng sông lịch sử dài dằng dặc, để quay về quan sát hiện thực vững chắc ngay dưới chân mình. Suy cho cùng, nhiều câu trả lời không tìm thấy trong sử sách thường ẩn mình sâu trong đời sống hiện thực, thỉnh thoảng lại rình cơ hội giở lại trò cũ.",
+    "Đơn cử như cách nói “con cháu Viêm Hoàng”, từ lâu đã có không chỉ một nhà sử học chỉ ra rằng cần thận trọng khi dùng một cách nói cũ kỹ không hợp thời như vậy, thế mà vẫn luôn có người thỉnh thoảng cứ nói cửa miệng, cứ như sợ không nói thế sẽ tỏ ra mình kém học vấn vậy. Vậy tại sao lại nói đây là cách nói cũ không hợp thời? Hãy cùng xem trước xem cách nói “con cháu Viêm Hoàng” này từ đâu mà ra đã.",
+    "Cách nói “con cháu Viêm Hoàng” bắt nguồn từ truyền thuyết về Viêm Đế và Hoàng Đế thời viễn cổ. Khi ấy vào khoảng năm 3000 trước Công nguyên, lúc đó có ba bộ lạc tương đối lớn, lần lượt là bộ lạc Xi Vưu, bộ lạc Hoàng Đế và bộ lạc Viêm Đế. Nơi ba bộ lạc này sinh sống đại khái là dải lưu vực sông Hoàng Hà của Trung Quốc, tức vùng mà người ta thường gọi là khu vực Trung Nguyên. Có lẽ do thiên tai nhân họa, ban đầu cuộc di cư của các bộ lạc gây ra xung đột, rồi xung đột không ngừng leo thang dẫn tới những trận quyết chiến quy mô lớn, cuối cùng hình thành nên bộ lạc Viêm Hoàng.",
+    "Bộ lạc của Viêm Đế và Hoàng Đế lại trải qua hàng loạt cuộc chiến tranh, cuối cùng Viêm Đế vẫn bị đánh bại, quy phục bộ lạc Hoàng Đế. Do ảnh hưởng của bộ lạc Hoàng Đế ngày càng lớn, cư dân sống ở vùng Trung Nguyên bèn đều tự nhận mình là con cháu Hoàng Đế. Viêm Đế cũng có rất nhiều cống hiến, trong truyền thuyết được gọi là Thần Nông thị — chính là vị cổ nhân mỗi ngày nếm trăm thứ cỏ, phát minh ra nhiều loại cây trồng nông nghiệp và thuốc Đông y. Để tưởng nhớ công lao to lớn của Viêm Đế và Hoàng Đế, người tộc Hoa Hạ bắt nguồn từ vùng Trung Nguyên, tức người tộc Hán từ thời nhà Hán trở đi, dần dần bắt đầu tự xưng là “con cháu Viêm Hoàng”.",
+    "Theo bảng niên biểu “Hạ Thương Chu niên biểu” do các chuyên gia sử học và khảo cổ học đương đại công bố, năm bắt đầu của nhà Hạ được xác định vào khoảng năm 2070 trước Công nguyên. Như vậy, căn cứ theo ghi chép trong sử sách, Hoàng Đế sống vào khoảng một nghìn năm trước nhà Hạ. Tính như thế, văn minh Trung Hoa kể từ thời Hoàng Đế đến nay đã có khoảng 5000 năm lịch sử. Đó cũng chính là nguồn gốc của cách nói “5000 năm văn minh Trung Hoa”.",
+    "Nhưng tại sao ngày nay tiếp tục dùng cách nói như vậy lại không còn hợp thời nữa? Đó chính là điều chúng ta đã nhắc ngay từ đầu: dân tộc Trung Hoa và văn minh Trung Hoa cũng như văn hóa Trung Quốc ngày nay đã không còn là thứ mà một mình văn hóa Hán có thể khái quát và đại diện hết được nữa.",
+    "Vậy thì tên gọi “Trung Hoa” lại từ đâu mà có? Tên gọi “dân tộc Trung Hoa” lại bắt nguồn từ đâu?",
+    "Vẫn từ thời Xuân Thu, cư dân vùng Trung Nguyên qua quá trình dung hợp biến đổi lâu dài đã hình thành nên một bộ tộc chủ yếu lớn mạnh, chính là tiền thân của dân tộc Hán: tộc Hoa Hạ. Về sau đến thời nhà Chu, tức đầu thời Tây Chu, sau khi Chu Thành Vương lên ngôi, Chu Công — người phò tá Thành Vương trị vì đất nước — bèn xây dựng lại một kinh đô mới quy mô hoành tráng trên nền thành Lạc Ấp xưa (vào khoảng khu vực Lạc Dương, Hà Nam ngày nay), đó chính là “Tân Lạc” sau sự kiện sử gọi là “Chu Công dựng Lạc Ấp”, còn được gọi là “Trung Thổ” hoặc “Trung Quốc”. Thế là “Trung Thổ”, “Trung Quốc” và “tộc Hoa Hạ” ghép lại với nhau, được gọi là “Trung Hoa”. Từ đó về sau, “Trung Hoa” cũng dần trở thành tên gọi thay thế cho toàn bộ Trung Quốc.",
+    "Nhờ sự huy hoàng hùng mạnh thời nhà Hán, người dân sống tại vùng Trung Nguyên dần dần bắt đầu được gọi chung là “người Hán”, khiến các dân tộc thời Hán bao gồm cả tộc Hoa Hạ cũng dần biến đổi thành dân tộc Hán ngày nay. Đến thời hiện đại, dân tộc Trung Hoa — với dân tộc Hán chiếm số đông nhất — đã trở thành tên gọi chung cho tất cả các dân tộc ở Trung Quốc.",
+    "Thế nhưng chúng ta đều biết, dân tộc Trung Hoa hiện nay được cấu thành bởi tổng cộng năm mươi sáu dân tộc. Ngoài dân tộc Hán ra còn có năm mươi lăm dân tộc khác. Vì vậy, những danh xưng bắt nguồn từ hai vị Viêm Hoàng, tộc Hoa Hạ và dân tộc Hán như “con cháu Viêm Hoàng” hay “con dân Hoa Hạ” trên thực tế quả thực không còn thích hợp để làm tên gọi đại diện cho toàn bộ dân tộc Trung Hoa nữa.",
+    "Chẳng hạn, trong cuốn chuyên khảo học thuật rất có sức ảnh hưởng mang tên “Thống nhất và phân liệt”, tác giả — giáo sư Cát Kiếm Hùng — đã nhấn mạnh đặc biệt rằng: “Những năm gần đây, tần suất sử dụng cụm từ ‘con cháu Viêm Hoàng’ ngày càng cao, phạm vi ngày càng rộng, từ giới văn nhân học giả lan rộng ra các tầng lớp xã hội, thậm chí đi vào các bài phát biểu của yếu nhân chính phủ và văn kiện chính thức, có xu thế thay thế hai từ ‘dân tộc Trung Hoa’ hoặc ‘nhân dân Trung Quốc’. Điều này không thể không khiến bất kỳ ai có chút kiến thức lịch sử thông thường phải bất an.” Vì sao lại cảm thấy bất an? Chính vì dân tộc Trung Hoa ngày nay từ lâu đã không thể khái quát một cách giản đơn bằng “con cháu Viêm Hoàng” nữa. Tác giả liền tiếp tục luận chứng rằng:",
+    "Từ thời Tần Hán trở đi, các dân tộc phi Hoa Hạ từ phương Bắc tiến vào lưu vực sông Hoàng Hà ít nhất có Hung Nô, Ô Hoàn, Tiên Ti, Nữ Chân, Mông Cổ, Duy Ngô Nhĩ, Hồi, Mãn v.v., trong đó có tộc người đến từ tận vùng Trung Á và Tây Á xa xôi. Trong số các dân tộc này, một bộ phận đã di cư trở lại chốn cũ hoặc dời ra ngoài lãnh thổ Trung Quốc, nhưng một bộ phận rất lớn đã hòa nhập vào dân tộc Hán, thậm chí có cả dân tộc hoàn toàn biến mất giữa cộng đồng người Hán. Ở phương Nam, cùng với làn sóng người Hán thiên di xuống phía Nam, những tộc người vốn đông đảo và đa dạng chủng tộc như Di, Man, Việt, Ba, Bặc, Liêu, Lý v.v., có tộc đã biến mất hoàn toàn, có tộc vùng sinh sống của hậu duệ bị thu hẹp đi rất nhiều, khu vực tụ cư xưa kia của họ phần lớn đã trở thành nơi tụ cư của người Hán. Người Hán ở phương Nam trên thực tế có một bộ phận rất lớn là con cháu của họ. Bởi vậy, trong một tỷ người Hán ngày nay, con cháu Viêm Hoàng thuần huyết trái lại mới là “dân tộc thiểu số”. Ngay cả với người Hán, nếu chỉ nhận mỗi hai vị tổ tiên là Viêm Đế và Hoàng Đế, thì cũng có phần có lỗi với tổ tiên ruột thịt của chính mình rồi.",
+    "Từ đó, chúng ta nói rằng, một khi dân tộc Trung Hoa là sự đại dung hợp của các dân tộc trong nước Trung Quốc, thì văn hóa Trung Quốc cũng phải là sự đại dung hợp của đủ mọi nền văn hóa trong nước Trung Quốc. Đương nhiên, chúng ta không phủ nhận vai trò tích cực và chủ đạo của nền văn minh Trung Hoa có lịch sử 5000 năm trong đó. Trên thực tế, chính nhờ văn minh Trung Hoa có tấm lòng “biển rộng dung trăm sông” như thế, có đặc tính “thải cũ nạp mới” như thế, nên mới nối dài được đến tận hôm nay, hơn nữa vẫn giữ được sức sống cường thịnh, tiếp tục không ngừng thải cũ nạp mới, để rồi ngày càng phát huy rạng rỡ.",
+    "Về vấn đề này, giáo sư Cát Kiếm Hùng tổng kết rất hay, ông nói: “Trên thế giới đại khái không tồn tại dân tộc nào thuần huyết thống tuyệt đối; nếu có, ắt cũng sẽ thoái hóa đến mức tiêu vong. Tộc Hoa Hạ từ một trong những dân tộc cổ xưa nhất thế giới phát triển thành dân tộc đông dân nhất thế giới như ngày nay, không phải chỉ nhờ vào sự vĩ đại của tổ tiên hay dòng máu ưu tú, mà là nhờ không ngừng tiếp thu rộng rãi các dân tộc khác, ngưng tụ tinh hoa của các dân tộc. Tương tự, sức mạnh vĩ đại của dân tộc Trung Hoa bắt nguồn từ từng dân tộc cấu thành nên nó, bắt nguồn từ sức sáng tạo của bản thân mỗi dân tộc và sức gắn kết chung.”",
+    "Một ví dụ nổi bật nhất chính là việc dân tộc Trung Hoa kế thừa và phát huy văn hóa Phật giáo. Nơi phát nguồn của Phật giáo là Ấn Độ, lưu truyền tới ngày nay đại thể chia làm ba ngữ hệ lớn: Phật giáo Hán truyền, Phật giáo Tạng truyền và Phật giáo Nam truyền. Trong số đó, Trung Quốc đã chiếm tới hơn hai ngữ hệ rưỡi: Phật giáo mà các dân tộc như người Thái, người Đức Ngang, người Bố Lãng ở tỉnh Vân Nam Trung Quốc tin theo thuộc về Phật giáo Nam truyền; Phật giáo ở vùng Tây Tạng và tỉnh Thanh Hải Trung Quốc thuộc về Phật giáo Tạng truyền; còn Phật giáo Hán truyền phủ khắp nội địa Trung Quốc, Đài Loan, Hồng Kông và Ma Cao không những hình thành nên hệ thống Phật giáo Đại thừa tự thành một cõi riêng, mà còn sản sinh ra tám đại tông phái gồm Pháp Tính tông, Du Già tông, Thiên Thai tông, Hoa Nghiêm tông, Thiền tông, Tịnh Độ tông, Luật tông và Mật tông. Đặc biệt là Thiền tông mang đậm sắc thái Trung Quốc đã lan tỏa ảnh hưởng và bén rễ tới tận Nhật Bản, Triều Tiên và Việt Nam, thậm chí hiện nay ở Âu Mỹ cũng dần có ngày càng nhiều người nảy sinh hứng thú với Thiền.",
+    "Xem ra, ngay cả nền văn minh Trung Hoa vốn được coi là chính thống — chẳng hạn như văn hóa Hán trong đó — cũng không chỉ đơn thuần là kết quả của việc nối tiếp một dòng văn hóa Hoa Hạ. Nền văn minh Trung Hoa mà ta chứng kiến hiện nay từ lâu đã là một nền văn minh đa nguyên bao gồm nhiều nền văn hóa như văn hóa Hán, văn hóa Tạng, văn hóa Mông Cổ và văn hóa Duy Ngô Nhĩ, là sự tích lũy và lắng đọng chung của đủ mọi nền văn hóa thuộc từng khu vực, từng dân tộc và cư dân các miền.",
+    "Nói cách khác, chúng ta nhất định phải hiểu cho rõ rằng giữa văn minh Trung Hoa truyền thống với văn minh Trung Hoa mới (tức văn hóa Trung Quốc trong thời đại mới) vẫn có sự khác biệt rất lớn. Điểm khác biệt nằm ở chỗ: văn minh Trung Hoa truyền thống lấy văn hóa Hán kế thừa văn hóa Hoa Hạ làm chính thống, có sự phân biệt “Di – Hán”. Còn văn minh Trung Hoa mới thì không tồn tại sự phân biệt “Di – Hán” nào hết, mà dựa trên sự dung hợp chung của văn hóa các dân tộc tôn trọng lẫn nhau và đối xử bình đẳng. Nền văn minh Trung Hoa mới này không những kế thừa văn minh Trung Hoa truyền thống và văn hóa truyền thống của các dân tộc trong đại gia đình dân tộc Trung Hoa, mà còn tiếp thu nền văn minh tiên tiến của các quốc gia, dân tộc trên toàn thế giới. Cũng giống như văn minh Trung Hoa truyền thống từng tiếp thu tinh hoa của các dân tộc trong dân tộc Trung Hoa, văn minh Trung Hoa mới cũng sẽ là kết quả của việc tiếp thu tinh hoa văn hóa của mọi quốc gia, dân tộc trên toàn thế giới như vậy.",
+    "(Tác giả: Tưởng Thanh Việt, trích từ “Bạn có phải là người Trung Quốc không? — Giải cấu Trung Hoa hồn”, Nhà xuất bản Trung Quốc Trí Công xuất bản tháng 1 năm 2006. Có lược sửa)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "文化叫做什么",
+   "paragraphs": [
+    "曾经有一个特别奇怪的场合，作为台北市首任“文化局长”的我被要求当场“简单扼要”地说出：“文化是什么？”",
+    "是在1999年的“议会”里。从9月开始，官员每天四五个小时坐在“议会”里接受“议员”轮番质询。我是个“新生”，“议员”发言多半用一种怒吼咆哮的声音，麦克风再把音量加以扩大，耳朵嗡嗡作响，一天下来，眩晕的症状出现，我总在头昏脑涨的状态下回到办公室，再看公文到半夜。交通局长是学者出身，他的症状是胃绞痛，想呕吐。到12月底，预算要三读通过，第二年的政务才能执行。咆哮了四个月的“议会”为了要表现“戮力为公”，很戏剧化地总是通宵不寐地审预算，从下午两点开始连审24或48小时。议员可以轮番上场，回去小睡一场或者吃个酒席再回来，官员却得寸步不离地彻夜死守。我坐在大厅一隅，看着窗外冬夜的雨湿湿地打在玻璃窗上，沙沙作响，觉得全身彻骨的寒意。",
+    "就在这样一个湿雨而焦灼不安、黑夜透着荒谬的凌晨3时，我发现我被唤上质询台，为台北市的文化预算辩护。一个“议员”，刚从外面进来，可能才应酬完，满脸红彤彤地大声说：“局长，你说吧，什么叫做文化？”",
+    "文化？它是随着一个人迎面走来的——他的举手投足，他的一颦一笑，他的整体气质。他走过一棵树，树枝低垂，他是随手把枝折断丢弃，还是弯身而过？一只长了癣的流浪狗走近他，他是怜悯地避开，还是一脚踢过去？电梯门打开，他是谦虚地让人，还是霸道地推人？一个盲人和他并肩路口，绿灯亮了，他会搀那盲者一把吗？他与别人如何擦身而过？他如何低头系上自己松了的鞋带？他怎么从卖菜小贩的手上接过找来的零钱？他，独处时如何与自己相处？",
+    "文化其实体现在一个人如何对待自己，如何对待他人，如何对待自己所处的自然环境。在一个文化厚实的社会里，人懂得尊重自己——他不苟且，因为不苟且所以有品位；人懂得尊重别人——他不霸道，因为不霸道所以有道德；人懂得尊重自然——他不掠夺，因为不掠夺所以有永续的生命。",
+    "在一个空荡荡的议堂里，半夜三更，这样谈文化，好像只有鬼在听。我心里想，我知道，你以为我会谈雄伟的博物馆、华丽的音乐厅和伟大的艺术家，不，如果你给我更多的时间，我会继续说下去，即使是三更半夜寒意彻骨。",
+    "胡兰成描写他所熟悉的江南乡下人。俭朴的农家妇女也许坐在门槛上织毛线、捡豆子，穿着家居的粗布裤，但是一见邻居来访，即使是极为熟悉的街坊邻居，她也必先进屋里去，将裙子换上，再出来和客人说话。穿裙或穿裤代表什么符号会因时代而变，但是认为“礼”是重要的——也就是一种对自己和对他人的尊重，在农妇身上显现的其实是一种文化底蕴。何谓底蕴，不过就是，没有学问、不识字的也自然会知道的礼数，因为祖辈父辈代代相传，因为家家户户耳濡目染，价值观在潜移默化中于焉而形，这就是文化。农妇或许不知道仲尼曾经说过“尔爱其羊，吾爱其礼”，但是她举手投足之间，无处不是“礼”。",
+    "希腊的山从大海拔起，气候干燥，土地贫瘠，简陋的农舍错落在荆棘山路中，老农牵着大耳驴子自橄榄树下走过。他的简单的家，粉墙漆得雪白，墙角一株蔷薇老根盘旋，开出一簇簇绯红的花朵，映在白墙上。老农不见得知道亚里士多德（Aristotelēs，古希腊哲学家、科学家）如何谈论诗学和美学，但是他在刷白了的粉墙边种下一株红蔷薇，显然认为“美”是重要的，一种对待自己、对待他人、对待环境的做法。他很可能不曾踏入过任何美术馆，但他起居进退之间，无处不是“美”。",
+    "在台湾南部乡下，我曾经在一个庙前的荷花池畔坐下。为了不把裙子弄脏，便将报纸垫在下面。一个戴斗笠的老人家马上递过来自己肩上的毛巾，说：“小姐，那个纸有字，不要坐啦，我的毛巾给你坐。”字，代表知识的价值，斗笠老伯坚持自己对知识的敬重。",
+    "对于心中某种“价值”和“秩序”的坚持，在乱世中尤其黑白分明起来。今天我们看见的巴黎雍容美丽一如既往，是因为，占领巴黎的德国指挥官在接到希特勒“撤退前彻底毁掉巴黎”的命令时，决定抗命不从，以自己的生命为代价保住一个古城。梁漱溟在日本军机的炮弹在身边轰然炸开时，静坐院落中，继续读书，思索东西文化和教育的问题。两者对后世的影响或许不同，“抵抗”的姿态却是一致的。",
+    "对“价值”和“秩序”有所坚持，对破坏这种“价值”和“秩序”有所抵抗，就是文化。",
+    "（作者：龙应台　摘自《读者》2005年第15期）"
+   ],
+   "translations": [
+    "Từng có một dịp đặc biệt kỳ lạ, trên cương vị “Cục trưởng Cục Văn hóa” đầu tiên của thành phố Đài Bắc, tôi bị yêu cầu phải nói ngay tại chỗ một cách “ngắn gọn súc tích” xem: “Văn hóa là gì?”",
+    "Chuyện xảy ra tại “nghị hội” năm 1999. Bắt đầu từ tháng 9, các quan chức mỗi ngày phải ngồi bốn năm tiếng trong “nghị hội” để tiếp nhận chất vấn luân phiên từ các “nghị viên”. Tôi là một “tân binh”, phần lớn các “nghị viên” khi phát biểu đều dùng thứ giọng gào thét thịnh nộ, lại được micro khuếch đại âm lượng thêm nữa, tai ù đặc ong ong; hết một ngày là triệu chứng choáng váng xuất hiện, tôi luôn trong trạng thái đầu óc quay cuồng trở về văn phòng, rồi đọc công văn tới tận nửa đêm. Cục trưởng Cục Giao thông vốn xuất thân học giả, triệu chứng của ông ấy là đau thắt dạ dày, buồn nôn. Đến cuối tháng 12, ngân sách phải qua ba vòng biểu quyết thông qua thì công vụ năm sau mới thực hiện được. “Nghị hội” sau bốn tháng gào thét, để tỏ ra “hết lòng vì việc công”, luôn làm trò kịch tính là thức trắng đêm thẩm định ngân sách, từ hai giờ chiều thẩm định liên tục 24 hoặc 48 tiếng đồng hồ. Nghị viên có thể thay phiên nhau lên đài, về ngủ một giấc ngắn hoặc đi ăn tiệc rồi quay lại, còn quan chức thì phải túc trực suốt đêm không rời nửa bước. Tôi ngồi ở một góc đại sảnh, nhìn màn mưa đêm đông ngoài cửa sổ ướt át quất lên khung kính, rì rào vang vọng, cảm thấy cái lạnh buốt thấu xương khắp toàn thân.",
+    "Đúng vào lúc 3 giờ sáng mưa dầm ẩm ướt mà lòng nóng như lửa đốt, màn đêm thấm đẫm vẻ phi lý ấy, tôi thấy mình bị gọi lên bục chất vấn để biện hộ cho ngân sách văn hóa của thành phố Đài Bắc. Một vị “nghị viên” vừa từ bên ngoài bước vào, có lẽ mới đi xã giao tiệc tùng xong, mặt đỏ bừng quát lớn: “Cục trưởng, bà nói thử xem, cái gì gọi là văn hóa?”",
+    "Văn hóa ư? Nó bước tới cùng một con người ngay trước mắt ta — từng cử chỉ nhấc tay bước chân, từng cái nhíu mày nụ cười, toàn bộ khí chất của người đó. Anh ta đi ngang qua một cái cây, cành cây rủ thấp, anh ta tiện tay bẻ gãy ném đi, hay cúi người bước qua? Một con chó hoang ghẻ lở tiến lại gần anh ta, anh ta thương cảm tránh sang bên, hay đá cho một phát? Cửa thang máy mở ra, anh ta nhã nhặn nhường người khác, hay ngang ngược xô đẩy? Một người mù đứng cạnh anh ta nơi ngã tư, đèn xanh bật sáng, anh ta có dìu người mù ấy một tay không? Anh ta lướt qua người khác thế nào? Anh ta cúi xuống buộc lại dây giày bị tuột của mình ra sao? Anh ta đón lấy tiền lẻ thối lại từ tay người bán rau rong như thế nào? Và anh ta, khi ở một mình thì đối xử với chính mình ra sao?",
+    "Văn hóa kỳ thực thể hiện ở việc một người đối xử với chính mình ra sao, đối xử với người khác ra sao, và đối xử với môi trường tự nhiên quanh mình ra sao. Trong một xã hội có nền văn hóa dày dặn, con người biết tôn trọng bản thân — anh ta không cẩu thả xuề xòa, vì không cẩu thả nên có phẩm vị; con người biết tôn trọng người khác — anh ta không ngang ngược bá đạo, vì không bá đạo nên có đạo đức; con người biết tôn trọng tự nhiên — anh ta không cướp bóc tàn phá, vì không tàn phá nên có sự sống bền vững.",
+    "Trong một nghị trường trống trải vắng lặng, nửa đêm canh ba, nói về văn hóa như thế tưởng chừng như chỉ có ma nghe. Trong lòng tôi nghĩ: tôi biết mà, ông tưởng tôi sẽ nói về những bảo tàng hùng vĩ, những phòng hòa nhạc tráng lệ và những nghệ sĩ vĩ đại chứ gì; không đâu, nếu ông cho tôi thêm thời gian, tôi vẫn sẽ nói tiếp như vậy, dẫu là lúc nửa đêm canh ba rét buốt thấu xương.",
+    "Hồ Lan Thành từng miêu tả những người dân quê Giang Nam mà ông quen thuộc. Người phụ nữ nông thôn cần kiệm có lẽ đang ngồi trên ngưỡng cửa đan len, nhặt đậu, mặc chiếc quần vải thô ở nhà, nhưng hễ thấy hàng xóm sang chơi — dù là bà con lối xóm vô cùng thân quen — bà nhất định phải vào nhà thay váy vào trước, rồi mới bước ra trò chuyện cùng khách. Mặc váy hay mặc quần tượng trưng cho dấu hiệu gì có thể thay đổi theo thời đại, nhưng việc coi trọng chữ “Lễ” — tức một sự tôn trọng đối với bản thân và với người khác — cái hiển hiện trên người bà nông phụ ấy kỳ thực chính là nội hàm văn hóa sâu dày. Thế nào là nội hàm văn hóa? Chẳng qua chỉ là những phép tắc lễ nghi mà người không có học vấn, chẳng biết chữ cũng tự nhiên biết đến; bởi đời ông đời cha truyền nối qua bao thế hệ, bởi nhà nhà người người mưa dầm thấm lâu, hệ giá trị trong quá trình thấm nhuần âm thầm mà thành hình, đó chính là văn hóa. Người phụ nữ nông thôn ấy có lẽ chẳng biết Trọng Ni từng nói “Ngươi tiếc con dê, ta tiếc cái lễ”, nhưng trong từng cử chỉ động tác của bà, chỗ nào cũng toát lên chữ “Lễ”.",
+    "Núi non Hy Lạp nhô lên từ biển cả, khí hậu khô ráo, đất đai cằn cỗi, những nếp nhà nông đơn sơ nằm rải rác dọc con đường núi đầy gai góc, ông lão nông dân dắt chú lừa tai to đi qua dưới tán cây ô liu. Ngôi nhà giản dị của ông tường vôi quét trắng như tuyết, góc tường một gốc tường vi già uốn lượn xòe nở từng chùm hoa đỏ thắm, in bóng lên bức tường trắng. Ông lão nông dân chưa hẳn đã biết Aristotle (nhà triết học, nhà khoa học Hy Lạp cổ đại) bàn luận về thi học và mỹ học ra sao, nhưng việc ông trồng một khóm tường vi đỏ bên bức tường vôi quét trắng rõ ràng cho thấy ông coi trọng cái “Đẹp” — một cách đối đãi với bản thân, với người khác và với môi trường xung quanh. Rất có thể ông chưa từng đặt chân vào bất kỳ bảo tàng mỹ thuật nào, nhưng trong từng nếp ăn ở đi đứng của ông, chỗ nào cũng toát lên cái “Đẹp”.",
+    "Ở miền quê phía Nam Đài Loan, tôi từng ngồi xuống bên hồ sen trước một ngôi miếu. Để khỏi làm bẩn váy, tôi bèn lót tờ báo xuống dưới. Một ông lão đội nón lá lập tức đưa ngay chiếc khăn vắt trên vai mình sang, nói: “Cô ơi, tờ giấy kia có chữ, đừng ngồi lên nhé, lấy khăn của tôi mà lót ngồi.” Chữ nghĩa đại diện cho giá trị của tri thức; ông lão đội nón lá đã giữ trọn lòng kính trọng của mình đối với tri thức.",
+    "Sự kiên trì giữ vững một “giá trị” và “trật tự” nào đó trong lòng, ở thời loạn lạc lại càng trở nên rạch ròi đen trắng hơn bao giờ hết. Paris mà ngày nay chúng ta nhìn thấy vẫn ung dung mỹ lệ như thuở nào, là bởi vị chỉ huy Đức chiếm đóng Paris khi nhận được mệnh lệnh “phá hủy triệt để Paris trước khi rút quân” của Hitler, đã quyết định kháng lệnh không tuân, lấy chính sinh mạng mình làm cái giá để giữ lại một cổ thành. Lương Thấu Minh giữa lúc bom đạn máy bay quân Nhật nổ ầm ầm ngay bên cạnh vẫn tĩnh tọa giữa sân nhà, tiếp tục đọc sách, suy ngẫm về vấn đề văn hóa và giáo dục Đông Tây. Ảnh hưởng của hai việc đối với hậu thế có thể khác nhau, nhưng tư thế “kháng cự” thì hoàn toàn đồng nhất.",
+    "Kiên trì giữ gìn “giá trị” và “trật tự”, và đứng lên kháng cự lại hành vi phá hoại “giá trị” và “trật tự” ấy — đó chính là văn hóa.",
+    "(Tác giả: Long Ứng Đài, trích từ “Độc giả” số 15 năm 2005)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "趋于/趋向（于） (có xu hướng, nghiêng về)",
+   "structure": "趋于 / 趋向（于）+ 宾语（不能用于“把”字句、“被”字句）",
+   "explanation": "Động từ, đều mang nghĩa phát triển theo một hướng nào đó. Khi sử dụng bắt buộc phải mang tân ngữ, và không thể dùng trong câu chữ “把” hay câu chữ “被”. Mở rộng: (1) “趋向” còn có cách dùng danh từ, chỉ xu thế phát triển, biến đổi theo một hướng nào đó của sự vật (ví dụ: 最近人们的投资出现了一种新的趋向，就是购买各种基金). (2) “日趋” là phó từ, nghĩa là “ngày càng tiến tới, dần dần” (ví dụ: 随着人生阅历的丰富，他变得日趋成熟了).",
+   "examples": [
+    {
+     "zh": "三是既有肯定也有否定，总体上趋于肯定，认为可以继承和发扬光大；四是既有否定也有肯定，总体上趋向否定，认为传统文化最好还是作为古董文物才更有价值。",
+     "vi": "Thứ ba là vừa khẳng định vừa phủ định, nhìn chung thiên về khẳng định, cho rằng có thể kế thừa và phát huy rạng rỡ; thứ tư là vừa phủ định vừa khẳng định, nhìn chung nghiêng về phủ định, cho rằng văn hóa truyền thống tốt nhất vẫn nên coi như cổ vật văn vật thì mới có giá trị hơn."
+    },
+    {
+     "zh": "经过吃药、打针等一系列的治疗，老刘的病情已经趋于稳定。",
+     "vi": "Sau một loạt quá trình điều trị như uống thuốc, tiêm thuốc, bệnh tình của ông Lưu đã dần đi vào ổn định."
+    },
+    {
+     "zh": "随着居民的入住和物业管理的加强，这个小区的各项服务和设施趋于完善。",
+     "vi": "Cùng với việc cư dân chuyển vào ở và công tác quản lý bất động sản được tăng cường, các dịch vụ và cơ sở vật chất của khu dân cư này ngày càng hoàn thiện."
+    },
+    {
+     "zh": "经过一番争论，老师和同学们的意见渐渐趋向于一致。",
+     "vi": "Sau một hồi tranh luận, ý kiến của thầy giáo và các bạn học dần đi tới thống nhất."
+    },
+    {
+     "zh": "现在电视台的节目越来越趋向于丰富多彩了，这主要是因为各电视台之间存在着收视率竞争的缘故。",
+     "vi": "Hiện nay các chương trình của đài truyền hình ngày càng có xu hướng phong phú đa dạng hơn, chủ yếu là do giữa các đài truyền hình tồn tại sự cạnh tranh về tỷ suất người xem."
+    }
+   ]
+  },
+  {
+   "point": "以……为主，以……为辅 (lấy… làm chính, lấy… làm phụ)",
+   "structure": "以 + A + 为主，以 + B + 为辅",
+   "explanation": "Lấy người hoặc việc nào đó làm chính, lấy người hoặc việc nào đó làm phụ. Hai vế này thường dùng kết hợp với nhau để biểu thị chủ thể chính và phụ của người hoặc sự vật.",
+   "examples": [
+    {
+     "zh": "还有一个，就是以汉文化为主，以其他各民族文化为辅的中国文化。",
+     "vi": "Cách nữa là xem văn hóa Trung Quốc lấy văn hóa Hán làm chính, lấy văn hóa các dân tộc khác làm phụ."
+    },
+    {
+     "zh": "在唐三彩所使用的颜色中，以黄色为主，以绿色和蓝色为辅。",
+     "vi": "Trong các màu sắc được dùng ở đồ gốm Tam Thái đời Đường, lấy màu vàng làm chính, lấy màu xanh lục và xanh lam làm phụ."
+    },
+    {
+     "zh": "我们家是典型的中国传统家庭，不管什么事情都是以长者的意见为主，以年轻人的意见为辅。",
+     "vi": "Nhà chúng tôi là gia đình truyền thống Trung Quốc điển hình, bất kể việc gì cũng đều lấy ý kiến của bậc trưởng bối làm chính, lấy ý kiến của người trẻ làm phụ."
+    },
+    {
+     "zh": "听健康专家说，中国传统的以粮食和蔬菜为主，以肉食为辅的饮食结构其实是最为健康的。",
+     "vi": "Nghe chuyên gia sức khỏe nói rằng cơ cấu ăn uống truyền thống của Trung Quốc lấy lương thực và rau củ làm chính, lấy thịt làm phụ kỳ thực là lành mạnh nhất."
+    }
+   ]
+  },
+  {
+   "point": "挂在嘴边 (thường xuyên nhắc đến, nói cửa miệng)",
+   "structure": "把……挂在嘴边 / 被……挂在嘴边 / 嘴边（常）挂着…… / SB 挂在嘴边",
+   "explanation": "Thành ngữ khẩu ngữ, mang nghĩa thường xuyên nhắc đến khi nói chuyện. Các cấu trúc thường dùng gồm: “把……挂在嘴边”, “被……挂在嘴边”, “嘴边（常）挂着……”, “SB 挂在嘴边” v.v.",
+   "examples": [
+    {
+     "zh": "就拿“炎黄子孙”这个说法来讲，早就不止一位历史学家指出，要慎重使用这样一个不合时宜的旧说法，可一直还是会有人不时地挂在嘴边，生怕不这样说会显得他没学问似的。",
+     "vi": "Đơn cử như cách nói “con cháu Viêm Hoàng”, từ lâu đã có không chỉ một nhà sử học chỉ ra rằng cần thận trọng khi dùng một cách nói cũ kỹ không hợp thời như vậy, thế mà vẫn luôn có người thỉnh thoảng cứ nói cửa miệng, cứ như sợ không nói thế sẽ tỏ ra mình kém học vấn vậy."
+    },
+    {
+     "zh": "他一天到晚把配置啦、内存啦、点击啦、升级啦什么的挂在嘴边，一听就知道是搞电脑的。",
+     "vi": "Anh ta suốt ngày nói cửa miệng nào là cấu hình, bộ nhớ, nhấp chuột, nâng cấp gì đó, nghe qua là biết ngay làm nghề máy tính."
+    },
+    {
+     "zh": "他自己出钱资助贫困孩子上学的事情在单位里成了新闻，最近老被同事们挂在嘴边。",
+     "vi": "Chuyện anh ấy tự bỏ tiền tài trợ trẻ em nghèo đi học đã trở thành tin nóng ở cơ quan, gần đây cứ bị đồng nghiệp nhắc đi nhắc lại mãi."
+    },
+    {
+     "zh": "自从他远渡重洋，出国深造之后，他父母的嘴边就老挂着他，一天要念叨好几次。",
+     "vi": "Từ ngày cậu ấy vượt trùng dương ra nước ngoài học lên cao, cửa miệng bố mẹ cậu lúc nào cũng nhắc tới cậu, một ngày lẩm bẩm nhắc đến mấy lượt."
+    },
+    {
+     "zh": "2008的北京奥运会现在是北京市民都挂在嘴边的热门话题，也是北京乃至全国经济发展的重要契机。",
+     "vi": "Thế vận hội Bắc Kinh 2008 hiện nay là đề tài nóng hổi được người dân Bắc Kinh thường xuyên nhắc tới, đồng thời cũng là thời cơ quan trọng cho sự phát triển kinh tế của Bắc Kinh nói riêng và cả nước nói chung."
+    }
+   ]
+  },
+  {
+   "point": "数量词+之多 (lên tới… nhiều đến mức…)",
+   "structure": "（有/占……）+ 数量词 + 之多",
+   "explanation": "Biểu thị số lượng rất lớn. Mức độ lớn nhỏ của số lượng này mang tính tương đối.",
+   "examples": [
+    {
+     "zh": "这其中，中国就占了两个半之多。",
+     "vi": "Trong số đó, Trung Quốc đã chiếm tới hơn hai ngữ hệ rưỡi."
+    },
+    {
+     "zh": "去年的股市以牛市为主，张先生通过炒股获利一百万之多。",
+     "vi": "Thị trường chứng khoán năm ngoái chủ yếu là thị trường tăng giá, ông Trương nhờ chơi cổ phiếu đã thu lời lên tới một triệu đồng."
+    },
+    {
+     "zh": "他有感而发，奋笔疾书，一口气写了十万字之多。",
+     "vi": "Ông xúc động dâng trào, vung bút viết lia lịa, một hơi viết liền tới tận mười vạn chữ."
+    },
+    {
+     "zh": "这本书一下子卖出去五万册之多，从而跃居畅销书排行榜之首。",
+     "vi": "Cuốn sách này một lúc bán ra tới năm vạn bản, nhờ đó vươn lên đứng đầu bảng xếp hạng sách bán chạy."
+    },
+    {
+     "zh": "他是先秦历史的专家，掌握的各种材料有几千册之多。",
+     "vi": "Ông ấy là chuyên gia về lịch sử Tiên Tần, các loại tư liệu nắm giữ lên tới mấy nghìn cuốn."
+    }
+   ]
+  },
+  {
+   "point": "有……之别 (có sự khác biệt giữa… và…)",
+   "structure": "有 + A（和/与）B + 之别",
+   "explanation": "Biểu thị giữa hai sự vật có sự khác biệt, là cách diễn đạt trang trọng trong văn viết. Từ ngữ ở giữa có thể là hai từ đơn âm tiết chỉ hai sự vật khác nhau, cũng có thể là hai hoặc nhiều từ ngữ hai âm tiết hay đa âm tiết. Cũng có thể nói “有……之分”.",
+   "examples": [
+    {
+     "zh": "传统的中华文明是以继承了华夏文化的汉文化为正统，有“夷汉”之别。",
+     "vi": "Văn minh Trung Hoa truyền thống lấy văn hóa Hán kế thừa văn hóa Hoa Hạ làm chính thống, có sự phân biệt “Di – Hán”."
+    },
+    {
+     "zh": "汉字有繁简之别，这两种字体现在世界上都有人使用。",
+     "vi": "Chữ Hán có sự phân biệt phồn thể và giản thể, cả hai kiểu chữ này hiện nay trên thế giới đều có người sử dụng."
+    },
+    {
+     "zh": "父母常跟我说，家人和外人毕竟是不一样的，说话办事应有内外之别，这样才能做到恰当、得体。",
+     "vi": "Bố mẹ thường bảo tôi rằng người nhà và người ngoài rốt cuộc vẫn khác nhau, ăn nói làm việc phải có sự phân biệt trong ngoài, như vậy mới đạt được sự thỏa đáng, đúng mực."
+    },
+    {
+     "zh": "现在市场上的照相机主要有普通和数码之别，而数码相机所占据的市场份额应该最大的。",
+     "vi": "Máy ảnh trên thị trường hiện nay chủ yếu phân biệt loại thường và kỹ thuật số, trong đó thị phần mà máy ảnh kỹ thuật số chiếm giữ hẳn là lớn nhất."
+    },
+    {
+     "zh": "北大校园里的建筑物，就其建筑风格而言，有普通、古典和现代之别。",
+     "vi": "Các công trình kiến trúc trong khuôn viên Đại học Bắc Kinh, xét về phong cách kiến trúc, có sự khác biệt giữa kiểu phổ thông, cổ điển và hiện đại."
+    }
+   ]
+  },
+  {
+   "point": "基于 (dựa trên, căn cứ vào)",
+   "structure": "基于 + 名词性词语/词组",
+   "explanation": "Giới từ, mang nghĩa là “căn cứ vào, dựa trên”, biểu thị tiền đề hoặc căn cứ dẫn ra hành động, hành vi. Theo sau “基于” thường là từ ngữ hoặc cụm từ mang tính danh từ.",
+   "examples": [
+    {
+     "zh": "而新中华文明则不存在什么“夷汉”之别，是基于相互尊重和平等对待的各民族文化的共同融合。",
+     "vi": "Còn văn minh Trung Hoa mới thì không tồn tại sự phân biệt “Di – Hán” nào hết, mà dựa trên sự dung hợp chung của văn hóa các dân tộc tôn trọng lẫn nhau và đối xử bình đẳng."
+    },
+    {
+     "zh": "基于这个学生的考试成绩，我们学校决定给予他全额奖学金。",
+     "vi": "Dựa trên thành tích thi cử của sinh viên này, nhà trường chúng tôi quyết định trao cho em học bổng toàn phần."
+    },
+    {
+     "zh": "电脑价格的确定主要是基于它的牌子、配置和质量。",
+     "vi": "Việc xác định giá máy tính chủ yếu dựa trên thương hiệu, cấu hình và chất lượng của nó."
+    },
+    {
+     "zh": "这个孩子的家人都已经在这场灾难中丧生了，基于这种情况和人道主义的考虑，我们俩打算收养这个孩子，重新给他一个温暖的家。",
+     "vi": "Người thân của đứa trẻ này đều đã thiệt mạng trong thảm họa ấy; căn cứ vào hoàn cảnh này và cân nhắc trên tinh thần nhân đạo, hai vợ chồng chúng tôi dự định nhận nuôi cháu bé, mang lại cho cháu một mái ấm gia đình."
+    },
+    {
+     "zh": "基于现代化的生活给我们的健康带来的种种问题，我们必须听取健康专家的意见，改变我们不健康的生活方式。",
+     "vi": "Dựa trên đủ mọi vấn đề mà đời sống hiện đại mang lại cho sức khỏe của chúng ta, chúng ta buộc phải lắng nghe ý kiến của chuyên gia sức khỏe, thay đổi lối sống thiếu lành mạnh của mình."
+    }
+   ]
+  }
+ ]
+}

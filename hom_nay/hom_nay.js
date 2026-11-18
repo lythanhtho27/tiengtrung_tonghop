@@ -1025,13 +1025,13 @@
         hsk4: { label: "HSK 4", total: 40 }, hsk5: { label: "HSK 5", total: 65 }, hsk6: { label: "HSK 6", total: 126 },
         tc1: { label: "Chuẩn Trung cấp 1", total: 16 }, tc2: { label: "Chuẩn Trung cấp 2", total: 16 },
         tc3: { label: "Trung cấp 1", total: 12 }, tc4: { label: "Trung cấp 2", total: 10 },
-        gc1: { label: "Cao cấp 1", total: 10 }, gc2: { label: "Cao cấp 2", total: 10 },
+        gc1: { label: "Cao cấp 1", total: 10 }, gc2: { label: "Cao cấp 2", total: 10 }, gc3: { label: "Cao cấp 3", total: 8 },
     };
     const STAGES = [
         { title: "Nền tảng", tracks: ["hsk1", "hsk2", "hsk3"] },
         { title: "Trung cấp nền", tracks: ["tc1", "tc2", "hsk4"] },
         { title: "Trung cấp nâng cao", tracks: ["tc3", "tc4", "hsk5"] },
-        { title: "Cao cấp", tracks: ["gc1", "gc2", "hsk6"] },
+        { title: "Cao cấp", tracks: ["gc1", "gc2", "gc3", "hsk6"] },
     ];
     function summaryToday(page) {      // bản tóm tắt chỉ có giá trị "hôm nay" nếu được ghi trong hôm nay
         const s = window.HocProgress ? HocProgress.load(page) : null;

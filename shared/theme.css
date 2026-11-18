@@ -99,8 +99,10 @@ html[data-theme="dark"] {
     --ui-book-tc4: #7c3aed;   /* Trung cấp 2 (冲刺) */
     --ui-book-gc1: #0891b2;   /* Cao cấp 1 (id trong boya_data.js là gc1) */
     --ui-book-gc2: #e11d48;   /* Cao cấp 2 (gc2) */
+    --ui-book-gc3: #4f46e5;   /* Cao cấp 3 (gc3) */
     --ui-book-cc1: var(--ui-book-gc1);  /* tên cũ, giữ để tương thích */
     --ui-book-cc2: var(--ui-book-gc2);
+    --ui-book-cc3: var(--ui-book-gc3);
 
     /* Màu theo cấp HSK */
     --ui-hsk-1: #10b981;

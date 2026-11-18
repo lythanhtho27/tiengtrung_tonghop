@@ -1,0 +1,1296 @@
+{
+ "book": "gc3",
+ "lesson_num": 3,
+ "title": "中国社会发展的世界意义",
+ "pages": [
+  85,
+  119
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "历程",
+   "py": "lìchéng",
+   "pos": "名",
+   "zh": "经历的过程。（历程——过程）",
+   "en": "",
+   "hv": "LỊCH TRÌNH",
+   "vi": "chặng đường, quá trình đã qua",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "翻天覆地",
+   "py": "fān tiān fù dì",
+   "pos": "成",
+   "zh": "形容变化巨大，彻底翻了个个儿。",
+   "en": "",
+   "hv": "PHIÊN THIÊN PHÚC ĐỊA",
+   "vi": "long trời lở đất (thay đổi to lớn, triệt để)",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "停滞",
+   "py": "tíngzhì",
+   "pos": "动",
+   "zh": "因受阻而不继续前进。（停滞——停止）",
+   "en": "",
+   "hv": "ĐÌNH TRỆ",
+   "vi": "đình trệ, ngưng trệ",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "藩篱",
+   "py": "fānlí",
+   "pos": "名",
+   "zh": "篱笆。比喻束缚思想的障碍。",
+   "en": "fence",
+   "hv": "PHIÊN LY",
+   "vi": "hàng rào, rào cản",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "得以",
+   "py": "déyǐ",
+   "pos": "助动",
+   "zh": "能够；可以。",
+   "en": "",
+   "hv": "ĐẮC DĨ",
+   "vi": "được, có thể (làm gì)",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "开工",
+   "py": "kāi gōng",
+   "pos": "动",
+   "zh": "开始生产或开始施工。",
+   "en": "",
+   "hv": "KHAI CÔNG",
+   "vi": "khởi công, bắt đầu sản xuất",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "加速器",
+   "py": "jiāsùqì",
+   "pos": "名",
+   "zh": "用人工方法使带电粒子获得很大速度的装置。是研究原子、原子核和粒子物理的重要设备。",
+   "en": "",
+   "hv": "GIA TỐC KHÍ",
+   "vi": "máy gia tốc; động lực đẩy nhanh",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "路子",
+   "py": "lùzi",
+   "pos": "名",
+   "zh": "途径；门路。",
+   "en": "",
+   "hv": "LỘ TỬ",
+   "vi": "con đường, lối đi",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "实例",
+   "py": "shílì",
+   "pos": "名",
+   "zh": "实际的例子、例证。",
+   "en": "",
+   "hv": "THỰC LỆ",
+   "vi": "ví dụ thực tế",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "路径",
+   "py": "lùjìng",
+   "pos": "名",
+   "zh": "指到达目的地必经的道路。",
+   "en": "",
+   "hv": "LỘ KÍNH",
+   "vi": "con đường, lộ trình",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "群体",
+   "py": "qúntǐ",
+   "pos": "名",
+   "zh": "由许多本质上有共同点的互相联系的个体组成的整体（跟“个体”相对）。",
+   "en": "",
+   "hv": "QUẦN THỂ",
+   "vi": "quần thể, nhóm (xã hội)",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "户口",
+   "py": "hùkǒu",
+   "pos": "名",
+   "zh": "住户和每户的人口；户籍。",
+   "en": "",
+   "hv": "HỘ KHẨU",
+   "vi": "hộ khẩu",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "所有制",
+   "py": "suǒyǒuzhì",
+   "pos": "名",
+   "zh": "人们对物质资料的占有形式，通常指生产资料的占有形式，是生产关系的基础。不同社会发展阶段，有不同形式和性质的所有制。",
+   "en": "ownership, system of ownership",
+   "hv": "SỞ HỮU CHẾ",
+   "vi": "chế độ sở hữu",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "机制",
+   "py": "jīzhì",
+   "pos": "名",
+   "zh": "指由事物的内在规律及其与外部事物的有机联系所形成的系统。",
+   "en": "mechanism",
+   "hv": "CƠ CHẾ",
+   "vi": "cơ chế",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "攀升",
+   "py": "pānshēng",
+   "pos": "动",
+   "zh": "抓住东西向上升；（价格等）不断上升。",
+   "en": "",
+   "hv": "PHAN THĂNG",
+   "vi": "leo lên, vươn lên, tăng lên",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "蓬勃",
+   "py": "péngbó",
+   "pos": "形",
+   "zh": "繁荣；兴旺。",
+   "en": "",
+   "hv": "BỒNG BỘT",
+   "vi": "phát triển mạnh mẽ, sôi nổi",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "雏形",
+   "py": "chúxíng",
+   "pos": "名",
+   "zh": "事物初步形成但未达到完善的状态和面貌。",
+   "en": "embryonic form, prototype",
+   "hv": "SỒ HÌNH",
+   "vi": "hình thái ban đầu, phôi thai",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "截至",
+   "py": "jiézhì",
+   "pos": "动",
+   "zh": "截到（某时限）为止。（截至——截止）",
+   "en": "by (a specified time), up to",
+   "hv": "TIỆT CHÍ",
+   "vi": "tính đến (thời điểm nào đó)",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "基金会",
+   "py": "jījīnhuì",
+   "pos": "名",
+   "zh": "为兴办或发展某项事业而储有一定资金的组织。",
+   "en": "foundation, board of directors of a fund",
+   "hv": "CƠ KIM HỘI",
+   "vi": "quỹ (tổ chức tài chính, từ thiện)",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "民办",
+   "py": "mínbàn",
+   "pos": "动",
+   "zh": "群众集体或个人筹资兴办（跟“公办”相区别。）",
+   "en": "be run by the community or privately run",
+   "hv": "DÂN BIỆN",
+   "vi": "dân lập, tư nhân thành lập",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "草根",
+   "py": "cǎogēn",
+   "pos": "名",
+   "zh": "基层群众。",
+   "en": "grassroots",
+   "hv": "THẢO CĂN",
+   "vi": "cơ sở, tầng lớp bình dân",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "兴旺",
+   "py": "xīngwàng",
+   "pos": "形",
+   "zh": "兴盛；旺盛。",
+   "en": "",
+   "hv": "HƯNG VƯỢNG",
+   "vi": "hưng thịnh, phát đạt",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "兆头",
+   "py": "zhàotou",
+   "pos": "名",
+   "zh": "预兆。",
+   "en": "omen",
+   "hv": "TRIỆU ĐẦU",
+   "vi": "điềm báo, dấu hiệu",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "民众",
+   "py": "mínzhòng",
+   "pos": "名",
+   "zh": "人民大众。",
+   "en": "",
+   "hv": "DÂN CHÚNG",
+   "vi": "dân chúng, quần chúng",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "公民",
+   "py": "gōngmín",
+   "pos": "名",
+   "zh": "具有或取得某国国籍，并根据该国法律规定享有权利和承担义务的人。",
+   "en": "citizen",
+   "hv": "CÔNG DÂN",
+   "vi": "công dân",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "觉醒",
+   "py": "juéxǐng",
+   "pos": "动",
+   "zh": "醒悟；觉悟。",
+   "en": "awaken",
+   "hv": "GIÁC TỈNH",
+   "vi": "thức tỉnh, giác ngộ",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "萌发",
+   "py": "méngfā",
+   "pos": "动",
+   "zh": "（种子等）发芽。比喻某种思想或因素等开始发生。",
+   "en": "sprout, emerge, come forth",
+   "hv": "MANH PHÁT",
+   "vi": "nảy mầm, manh nha",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "巨变",
+   "py": "jùbiàn",
+   "pos": "名",
+   "zh": "特大变化。",
+   "en": "",
+   "hv": "CỰ BIẾN",
+   "vi": "biến đổi to lớn",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "缝纫机",
+   "py": "féngrènjī",
+   "pos": "名",
+   "zh": "做针线活的机器，一般用脚蹬，也有用手摇或用电动机做动力的。",
+   "en": "sewing machine",
+   "hv": "PHÙNG NHẬN CƠ",
+   "vi": "máy khâu, máy may",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "音响",
+   "py": "yīnxiǎng",
+   "pos": "名",
+   "zh": "能产生音响的机器设备。",
+   "en": "",
+   "hv": "ÂM HƯỞNG",
+   "vi": "dàn âm thanh",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "分体",
+   "py": "fēntǐ",
+   "pos": "形",
+   "zh": "机器可以分开来安放的。",
+   "en": "",
+   "hv": "PHÂN THỂ",
+   "vi": "tách rời, hai cục (máy điều hòa)",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "别墅",
+   "py": "biéshù",
+   "pos": "名",
+   "zh": "供休养用的园林住宅，一般建在郊区或风景区。",
+   "en": "villa, villadom",
+   "hv": "BIỆT THỰ",
+   "vi": "biệt thự",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "与众不同",
+   "py": "yǔ zhòng bù tóng",
+   "pos": "成",
+   "zh": "跟一般的不一样。指人的性格行为等不同寻常或某事物独具特色。",
+   "en": "",
+   "hv": "DỮ CHÚNG BẤT ĐỒNG",
+   "vi": "khác biệt, khác người",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "档次",
+   "py": "dàngcì",
+   "pos": "名",
+   "zh": "按一定标准排列的等级次序。",
+   "en": "",
+   "hv": "ĐÁNG THỨ",
+   "vi": "đẳng cấp, thứ bậc",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "品位",
+   "py": "pǐnwèi",
+   "pos": "名",
+   "zh": "人的品质和价值。（品位——品味）",
+   "en": "rank, quality, personal status",
+   "hv": "PHẨM VỊ",
+   "vi": "phẩm chất, đẳng cấp, gu (thẩm mỹ)",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "接轨",
+   "py": "jiēguǐ",
+   "pos": "动",
+   "zh": "连接铁路路轨。比喻两种体制联接成一种。",
+   "en": "",
+   "hv": "TIẾP QUỸ",
+   "vi": "hòa nhập, kết nối (với xu hướng/tiêu chuẩn)",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "艰苦朴素",
+   "py": "jiānkǔ pǔsù",
+   "pos": "成",
+   "zh": "吃苦耐劳、勤俭节约的作风。",
+   "en": "",
+   "hv": "GIAN KHỔ PHÁC TỐ",
+   "vi": "gian khổ giản dị, cần kiệm",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "缝补",
+   "py": "féngbǔ",
+   "pos": "动",
+   "zh": "缝和补。",
+   "en": "sew and mend",
+   "hv": "PHÙNG BỔ",
+   "vi": "khâu vá",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "发奋图强",
+   "py": "fā fèn tú qiáng",
+   "pos": "成",
+   "zh": "下定决心刻苦努力，谋求自身的强大。也说“发愤图强”。",
+   "en": "",
+   "hv": "PHÁT PHẤN ĐỒ CƯỜNG",
+   "vi": "phấn đấu vươn lên, nỗ lực tự cường",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "准则",
+   "py": "zhǔnzé",
+   "pos": "名",
+   "zh": "可以作为依据的标准或原则。",
+   "en": "",
+   "hv": "CHUẨN TẮC",
+   "vi": "chuẩn mực, quy tắc",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "关注",
+   "py": "guānzhù",
+   "pos": "动",
+   "zh": "关心重视。",
+   "en": "",
+   "hv": "QUAN CHÚ",
+   "vi": "quan tâm, chú ý",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "传媒",
+   "py": "chuánméi",
+   "pos": "名",
+   "zh": "传播媒介的简称。泛指一切得以实现向人们传递各种信息的技术手段，包括报纸、广播、电视等。",
+   "en": "",
+   "hv": "TRUYỀN MÔI",
+   "vi": "truyền thông",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "极度",
+   "py": "jídù",
+   "pos": "形",
+   "zh": "程度极深或极高的。",
+   "en": "",
+   "hv": "CỰC ĐỘ",
+   "vi": "cực độ, hết sức",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "摊点",
+   "py": "tāndiǎn",
+   "pos": "名",
+   "zh": "售货摊，售货点。",
+   "en": "",
+   "hv": "THAN ĐIỂM",
+   "vi": "sạp hàng, quầy bán",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "时尚",
+   "py": "shíshàng",
+   "pos": "名",
+   "zh": "一时的风尚。（时尚——时髦）",
+   "en": "",
+   "hv": "THỜI THƯỢNG",
+   "vi": "thời trang, mốt, thịnh hành",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "核心",
+   "py": "héxīn",
+   "pos": "名",
+   "zh": "中心；事物中起主导作用的部分。",
+   "en": "core, nucleus, kernel; inner circle (of a political party, government, etc.)",
+   "hv": "HẠCH TÂM",
+   "vi": "cốt lõi, hạt nhân",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "力图",
+   "py": "lìtú",
+   "pos": "动",
+   "zh": "竭力谋求。",
+   "en": "try hard to",
+   "hv": "LỰC ĐỒ",
+   "vi": "cố gắng, nỗ lực tìm cách",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "自主",
+   "py": "zìzhǔ",
+   "pos": "动",
+   "zh": "自己做主（不受他人支配）。",
+   "en": "",
+   "hv": "TỰ CHỦ",
+   "vi": "tự chủ",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "异端",
+   "py": "yìduān",
+   "pos": "名",
+   "zh": "泛指不合正统的学术思想或教义。",
+   "en": "",
+   "hv": "DỊ ĐOAN",
+   "vi": "dị đoan, tà thuyết",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "大同",
+   "py": "dàtóng",
+   "pos": "形",
+   "zh": "主要的方面一致。",
+   "en": "have common ground on major issues",
+   "hv": "ĐẠI ĐỒNG",
+   "vi": "đại đồng, tương đồng về mặt chính",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "自立",
+   "py": "zìlì",
+   "pos": "动",
+   "zh": "不依赖别人，靠自己的劳动而生活。",
+   "en": "",
+   "hv": "TỰ LẬP",
+   "vi": "tự lập",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "自强",
+   "py": "zìqiáng",
+   "pos": "动",
+   "zh": "自己努力向上。",
+   "en": "",
+   "hv": "TỰ CƯỜNG",
+   "vi": "tự cường",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "参照",
+   "py": "cānzhào",
+   "pos": "动",
+   "zh": "参考或仿照。",
+   "en": "",
+   "hv": "THAM CHIẾU",
+   "vi": "tham chiếu, tham khảo",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "反省",
+   "py": "fǎnxǐng",
+   "pos": "动",
+   "zh": "回想并检查自己思想行为中的缺点错误。",
+   "en": "self-examine, introspection",
+   "hv": "PHẢN TỈNH",
+   "vi": "tự kiểm điểm, suy xét lại mình",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "发奋",
+   "py": "fāfèn",
+   "pos": "动",
+   "zh": "下定决心努力；自己觉得不满足而奋力追求。也说“发愤”。",
+   "en": "",
+   "hv": "PHÁT PHẤN",
+   "vi": "phấn chấn, dốc sức nỗ lực",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "迫使",
+   "py": "pòshǐ",
+   "pos": "动",
+   "zh": "强迫使令。",
+   "en": "",
+   "hv": "BÁCH SỬ",
+   "vi": "buộc phải, ép buộc",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "审视",
+   "py": "shěnshì",
+   "pos": "动",
+   "zh": "仔细地看。",
+   "en": "",
+   "hv": "THẨM THỊ",
+   "vi": "xem xét kỹ lưỡng, soi xét",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "推行",
+   "py": "tuīxíng",
+   "pos": "动",
+   "zh": "普遍推广实行。",
+   "en": "",
+   "hv": "THÔI HÀNH",
+   "vi": "thực thi, triển khai rộng rãi",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "弊病",
+   "py": "bìbìng",
+   "pos": "名",
+   "zh": "事情的毛病、缺陷。",
+   "en": "",
+   "hv": "TỆ BỆNH",
+   "vi": "tệ nạn, khuyết điểm",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "莽撞",
+   "py": "mǎngzhuàng",
+   "pos": "形",
+   "zh": "冒失粗鲁。",
+   "en": "rude and impetuous, reckless",
+   "hv": "MÃNG TRÀNG",
+   "vi": "liều lĩnh, hấp tấp, thô lỗ",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "福音",
+   "py": "fúyīn",
+   "pos": "名",
+   "zh": "基督教指记载耶稣言行及其门徒所传布的教义。泛指好消息。",
+   "en": "",
+   "hv": "PHÚC ÂM",
+   "vi": "tin mừng, phúc âm",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "反思",
+   "py": "fǎnsī",
+   "pos": "动",
+   "zh": "回过头来对往事进行深入的再思考，以吸取其中的经验教训。（反思——反省）",
+   "en": "",
+   "hv": "PHẢN TƯ",
+   "vi": "suy ngẫm lại, chiêm nghiệm",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "当今",
+   "py": "dāngjīn",
+   "pos": "名",
+   "zh": "现在；目前。",
+   "en": "",
+   "hv": "ĐƯƠNG KIM",
+   "vi": "ngày nay, hiện nay",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "扩展",
+   "py": "kuòzhǎn",
+   "pos": "动",
+   "zh": "向外展开。",
+   "en": "",
+   "hv": "KHUẾCH TRIỂN",
+   "vi": "mở rộng",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "局限",
+   "py": "júxiàn",
+   "pos": "动",
+   "zh": "限制在一定的范围里。",
+   "en": "",
+   "hv": "CỤC HẠN",
+   "vi": "giới hạn, bó hẹp",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "本土",
+   "py": "běntǔ",
+   "pos": "名",
+   "zh": "原来的生长地。",
+   "en": "",
+   "hv": "BẢN THỔ",
+   "vi": "bản địa, trong nước",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "疆土",
+   "py": "jiāngtǔ",
+   "pos": "名",
+   "zh": "领土。",
+   "en": "",
+   "hv": "CƯƠNG THỔ",
+   "vi": "lãnh thổ, bờ cõi",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "开拓",
+   "py": "kāituò",
+   "pos": "动",
+   "zh": "开辟；扩展。",
+   "en": "open up",
+   "hv": "KHAI THÁC",
+   "vi": "khai phá, mở mang",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "土著",
+   "py": "tǔzhù",
+   "pos": "名",
+   "zh": "世代居住在本地的人。",
+   "en": "",
+   "hv": "THỔ TRỨ",
+   "vi": "thổ dân, người bản địa",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "强劲",
+   "py": "qiángjìng",
+   "pos": "形",
+   "zh": "强大而有力的。",
+   "en": "",
+   "hv": "CƯỜNG KÍNH",
+   "vi": "mạnh mẽ",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "格格不入",
+   "py": "gé gé bú rù",
+   "pos": "成",
+   "zh": "有抵触，不投合。",
+   "en": "incompatible with",
+   "hv": "CÁCH CÁCH BẤT NHẬP",
+   "vi": "lạc lõng, không ăn khớp, mâu thuẫn",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "凭空",
+   "py": "píngkōng",
+   "pos": "副",
+   "zh": "没有根据地（de）。",
+   "en": "baselessly",
+   "hv": "BẰNG KHÔNG",
+   "vi": "tự nhiên, không căn cứ",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "务工",
+   "py": "wùgōng",
+   "pos": "动",
+   "zh": "从事工业或工程方面的工作。",
+   "en": "",
+   "hv": "VỤ CÔNG",
+   "vi": "làm công, đi làm thuê",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "原住民",
+   "py": "yuánzhùmín",
+   "pos": "名",
+   "zh": "土著居民。",
+   "en": "aborigines, indigenous people",
+   "hv": "NGUYÊN TRÚ DÂN",
+   "vi": "người dân bản địa, cư dân gốc",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "终结",
+   "py": "zhōngjié",
+   "pos": "动",
+   "zh": "终了；最后结束（跟“开始”相对）。",
+   "en": "",
+   "hv": "CHUNG KẾT",
+   "vi": "chấm dứt, kết thúc",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "严峻",
+   "py": "yánjùn",
+   "pos": "形",
+   "zh": "严厉；严重。",
+   "en": "",
+   "hv": "NGHIÊM TUẤN",
+   "vi": "nghiêm trọng, gay gắt",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "分化",
+   "py": "fēnhuà",
+   "pos": "动",
+   "zh": "相同性质的事物向不同的方向发展、变化。",
+   "en": "",
+   "hv": "PHÂN HÓA",
+   "vi": "phân hóa",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "公正",
+   "py": "gōngzhèng",
+   "pos": "形",
+   "zh": "公平正直，无有偏私。",
+   "en": "",
+   "hv": "CÔNG CHÍNH",
+   "vi": "công bằng, công chính",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "施展",
+   "py": "shīzhǎn",
+   "pos": "动",
+   "zh": "发挥；运用。",
+   "en": "",
+   "hv": "THI TRIỂN",
+   "vi": "phát huy, thi triển",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "博弈",
+   "py": "bóyì",
+   "pos": "名",
+   "zh": "可以分出胜负的游戏。",
+   "en": "",
+   "hv": "BÁC DỊCH",
+   "vi": "đọ sức, mặc cả, trò chơi (chiến lược)",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "通畅",
+   "py": "tōngchàng",
+   "pos": "形",
+   "zh": "通行或运行没有阻碍。",
+   "en": "",
+   "hv": "THÔNG SƯỚNG",
+   "vi": "thông suốt, hanh thông",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "预警",
+   "py": "yùjǐng",
+   "pos": "动",
+   "zh": "预先告警。",
+   "en": "early-warning",
+   "hv": "DỰ CẢNH",
+   "vi": "cảnh báo sớm",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "主流",
+   "py": "zhǔliú",
+   "pos": "名",
+   "zh": "同一水系内全部支流所流注的河流。比喻事物发展的本质的、主要的或基本的方面。",
+   "en": "",
+   "hv": "CHỦ LƯU",
+   "vi": "chủ lưu, dòng chính",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "公理",
+   "py": "gōnglǐ",
+   "pos": "名",
+   "zh": "社会上公认的正确道理。",
+   "en": "",
+   "hv": "CÔNG LÝ",
+   "vi": "công lý, lẽ phải",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "藐视",
+   "py": "miǎoshì",
+   "pos": "动",
+   "zh": "轻视；小看；看不起。",
+   "en": "",
+   "hv": "MIỄU THỊ",
+   "vi": "coi thường, khinh miệt",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "无视",
+   "py": "wúshì",
+   "pos": "动",
+   "zh": "当作没有看见；漠视；蔑视；不认真对待",
+   "en": "",
+   "hv": "VÔ THỊ",
+   "vi": "phớt lờ, coi như không, bất chấp",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "至上",
+   "py": "zhìshàng",
+   "pos": "形",
+   "zh": "最高。",
+   "en": "",
+   "hv": "CHÍ THƯỢNG",
+   "vi": "tối thượng, trên hết",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "振兴",
+   "py": "zhènxīng",
+   "pos": "动",
+   "zh": "通过发展使兴盛起来。",
+   "en": "",
+   "hv": "CHẤN HƯNG",
+   "vi": "chấn hưng",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "康健",
+   "py": "kāngjiàn",
+   "pos": "形",
+   "zh": "身体健康。",
+   "en": "",
+   "hv": "KHANG KIỆN",
+   "vi": "khỏe mạnh",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "淳厚",
+   "py": "chúnhòu",
+   "pos": "形",
+   "zh": "朴实敦厚。",
+   "en": "",
+   "hv": "THUẦN HẬU",
+   "vi": "thuần hậu, chất phác",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "认同",
+   "py": "rèntóng",
+   "pos": "动",
+   "zh": "表示跟别人的认识一致；承认；认可。",
+   "en": "",
+   "hv": "NHẬN ĐỒNG",
+   "vi": "đồng tình, thừa nhận, đồng nhất",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "向心力",
+   "py": "xiàngxīnlì",
+   "pos": "名",
+   "zh": "使物体作圆周运动或其他曲线运动所需的力，跟速度的方向垂直，向着圆心。",
+   "en": "centripetal force",
+   "hv": "HƯỚNG TÂM LỰC",
+   "vi": "lực hướng tâm; sức gắn kết",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "运作",
+   "py": "yùnzuò",
+   "pos": "动",
+   "zh": "运行和工作",
+   "en": "",
+   "hv": "VẬN TÁC",
+   "vi": "vận hành, hoạt động",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "中国社会发展的世界意义",
+   "paragraphs": [
+    "改革开放后中国社会的变化",
+    "近30年的改革历程使中国发生了翻天覆地的变化，这个变化不仅反映在经济上，更重要的是导致了社会的变化。中国社会的变化将决定中国未来经济、政治和文化等各方面的走向和内容。",
+    "大规模人口流动是中国经济和社会保持持久活力的基础。改革开放前30年由于中国实行城乡二元制度，人口的流动几乎停滞。从1979年开始，大批农业剩余劳动力冲破了城乡隔离的藩篱，中国的人口开始了有限的流动。上世纪90年代以来，中国人口出现了大规模、跨区域、长距离迁移与流动的现象。2006年春运期间，全国流动人口规模为3.3亿人，这个数字意味着美国和加拿大的全部人口在这个时间内全部移动一次。这个流动提供和满足了中国经济发展的劳动力需求，使中国这样的“世界工厂”得以正常开工生产。",
+    "两条腿走路的中国城市化道路是中国现代化的加速器。中国的城市发展正成为中国工业化和现代化的重要标志之一，并成为今后中国经济和现代化发展的加速器。中国城市化发展采用的是大中城市和小城镇同步发展的路子，是一个“两条腿”走路的实例，也是与西方和其他国家城市化不同的实践，因此其他国家在城市化发展中出现的严重“城市病”问题并没有在中国大城市出现，或者问题并不严重。今天，中国的城市化率已经超过40%，未来城市将会成为吸收农村劳动力、提高经济效率、改善生活质量和减少城乡差别的重要手段。",
+    "社会流动的正常路径基本形成，多种不同利益群体客观存在。改革开放前，中国采用诸如个人的家庭出身、城乡户口、单位制、所有制等先赋性或类似于先赋性的制度安排，决定人们的社会阶层与社会地位。这种先赋性的社会流动机制限制了人们通过努力奋斗实现向上流动的积极性，使国家的发展缺乏活力和动力，也阻碍了经济和社会的进步。改革开放后个人社会流动中自致性因素逐渐增多，而先赋性因素逐渐减少。社会不同阶层的客观存在和它们之间的差距，是导致人们采取竞争、奋斗等手段使自身向上攀升的动力。以自致为主的社会流动机制正在建立起来，并越来越成为人们获得职业、社会地位和其他资源的手段。",
+    "社会组织蓬勃发展，已经形成公民社会的雏形。截至2004年底，全国共有民间社会组织28.3万个，其中社会团体14.9万个，基金会902个，民办非企业单位13.3万个。大量的草根组织近年来也发展迅速，成为非政府组织中不可忽视的重要力量。当前社会组织的兴旺与发展是中国实现民主政治和民主社会的好兆头，真正体现了民众公民意识的觉醒和社会责任的萌发，是中国建立现代和谐的民主政治和社会的坚实基础。",
+    "生活方式多样化，价值观念多元化。改革开放这20多年是中国历史上经济增长最快的时期，也是中国人的日常生活方式和消费观念发生巨变的时期。从“老三件”（自行车、手表、缝纫机），到“新三件”（电视、洗衣机、电冰箱），再到上世纪90年代以后的高档音响、大屏幕彩电、分体空调，并且一些“新富”家庭开始以名牌服装和私人别墅、私家汽车来显示自己与众不同的“档次”和“品位”。随着中国加入WTO，越来越多的人开始学会“与国际潮流接轨”，如今在上海淮海路上时髦商店中的广告语是：巴黎有的，我们这里也有。",
+    "这样的消费趋势显示出一个事实，那就是人们的价值观念发生了巨大的变化。仍以生活方式为例，在上世纪80年代以前，“艰苦朴素”是消费的基本价值观念，提倡“新三年，旧三年，缝缝补补又三年”。在“文革”刚刚结束的时候，刻苦学习、发奋图强是青年人的行为准则。从80年代开始，人们对于消费的关注逐渐增加。90年代以后，各种大众传媒系统中的消费宣传和内容极度膨胀，在城市的报纸摊点上，最多的报纸和杂志就是时尚类的，这显示了社会生活方式和内在核心价值的巨大改变。",
+    "中国社会变化的世界意义",
+    "中国的崛起与发展是今天人类社会和世界关注的一件大事，中国社会的变化至少具有以下的世界意义：",
+    "中国的社会变化是融入和建设现代化社会的过程。中国社会的发展，尤其是改革开放以后的发展，是一个与世界社会发展同步并力图融入这个体系的过程，由此，这个发展和变化符合当前人类发展的趋势和特点。以上种种变化都体现出这样一个事实，即中国的社会更具有宽容性、包容性、开放性、自主性和民主性。因此，今天中国社会的变化与发展，不是世界社会发展的“异端”，而是“大同”与“求和”。",
+    "中国社会的变化是一个自省（xǐng）、自觉、自立和自强的过程。当然，与中国经济和其他方面的发展与变化一样，中国社会的变化是一个对外开放的过程，西方社会变化的理论和实践一直是中国社会变化取向的一个重要参照。但更重要的是，中国的社会发展是自我反省、自觉改革、自主努力和发奋自强的过程。",
+    "一个事实是，中国的改革变革是从自我反省中开始的。中国与世界发达国家的差距，迫使中国认真地审视和考虑中国发展的路径与过去的教训。人口流动的开放、努力提高城市化水平等，都是对过去计划经济条件下社会现状反省后采取的举动与措施。尤其是改革开放的整个过程，是中国共产党、中国政府和中国人民自觉推行和努力的过程。在这种高度自觉的自我反省，充分认识过去制度弊病的同时，采取了慎重对待社会和政治变革的举动，以避免莽撞的政治和社会变革导致中国社会的混乱。这种自立的方式使中国社会变化实际上极其巨大，但过程又极其缓和。中国社会变革的和平性，是亚洲和世界的福音。",
+    "中国社会发展的主要动力获得是内生性的，空间确定有界。中国社会的变化是在中国原有的空间中发生和展开的，它的动力和主要资源来自中国民间与公认的国际正常交往等渠道，如人力资源来源于中国的人口本身，资本中的一部分来自海外华人和外国投资，城市化来自本地经济形态和方式的改变。而反思西方社会的变化，就会发现，当今几个主要发达国家都有资源掠夺和空间扩展的过程与事实。而中国社会变化的空间始终局限在中国本土范围内，既没有当初工业化国家与殖民地国家的社会矛盾，也没有疆土开拓中外来移民与当地土著民众之间的矛盾。更重要的是，虽然没有这些矛盾与冲突，中国工业化和现代化的步伐也依然迅速与强劲。这种动力内生和边界确定的社会变革，是保持世界和平与稳定的重要因素。",
+    "化原有社会状态为今日社会发展的有利条件。在成功的中国社会变革中出现了一个非常有趣的结果，即变革前社会现状中一些看来不符合工业化、现代化的存在，在一定程度上却成为中国社会改革的有利条件。如城乡二元区隔的政策和状况，从理论上讲与现代化社会的特点是格格不入的，但是在人口流动的初期，却在一定程度上避免了城市人口增长过快、城市膨胀和城市病的出现；同样，城乡二元制度导致的中国城市化的特殊道路，乡镇工业的崛起和中小城市的出现与发展，也是在这种背景下的产物；当年中国社会中最大的社会问题——人口，今天居然成为中国经济崛起和成为世界工厂的保证；等等。以上的一些结果，有些是有意识推行的，有些是在具体的实践中出现的。但这一切都告诉人们，社会发展的目标和现有社会间的距离，不是凭空可以超越的，而是必须在现有社会的基础上，化不利为有利，化局限为有限，在目标既定的前提下，有序、有节、有利地推进和实现社会改革，这样才能避免社会矛盾集中爆发，获得社会变革的合适条件和环境。",
+    "把社会发展中产生的问题与矛盾视为社会继续发展和前进的动力。中国社会确实发生了巨大的变化，但并不是说在这个过程中没有任何问题和矛盾。近30年的社会变化至今已经显示出，一些重要的问题在影响今天和未来中国社会的进一步健康发展，主要有：",
+    "1.城市中外来劳动者的身份和待遇问题。目前外来务工人员社会地位和待遇与城市原住民相比有很大的差别，只有改变这个差别，中国城乡二元制度才能终结，中国现代化社会才能建立。",
+    "2.城乡差别与农村劳动力转移问题。目前城乡差别较严重，另外，中国目前农业人口中还多余近3亿人口，中国如果要实现农业现代化，农村中的劳动力转移依然是一个严峻的问题。",
+    "3.西部社会发展的不平衡和地区差异问题。地区差距过大会带来严重的经济问题、政治问题和社会正义问题，严重的甚至可能导致国家分裂。",
+    "4.社会分化后的收入差距和社会公正问题。小部分富裕阶层的获得大大高于其他社会阶层，显示出收入差距过大和社会分配不公的重大问题。",
+    "5.官员腐败和社会利益集团的形成问题。在中国，部分政府官员的腐败已经成为一个重要的政治问题，同时，在改革开放中处于不同利益的社会全体开始形成一定的社会利益集团，并在经济领域甚至政治范围中施展力量或扩展势力，增大了与政府在利益博弈上的力量和说话的权力，由此，如何能代表最大多数人利益，又能让各种不同利益都有通畅表达的渠道，成为中国政治建设的重要课题。",
+    "6.建立、提供、完善公共产品和公共服务体系的问题。如合理的社会再分配制度、社会保障制度、公共教育制度、重大事件预警和处理机制等等。",
+    "7.在多元价值体系中建立中国的主流价值体系问题。如今价值的多元化既是一个事实，也导致了众多社会问题。使得中国社会出现了无公理、无原则、藐视基本社会道德、无视法律、个人至上等一系列问题，而国家和民族的共同兴旺与振兴、全体民众的富裕与康健、社会风气的淳厚和清明、文化价值系统的内心认同和统一，是中国未来社会具有高度凝聚力的核心，因此，如何树立符合中国社会的主流价值系统，成为中国社会具有高度向心力的基本前提。",
+    "8.完善和改革政府职能、政治民主化推进问题。以上诸多问题的解决都指向一个对象，就是政府。在中国社会结构和运作方式发生根本变化之后，政府的主要职能是什么，如何实现政府运作和作用，成为是否能够保障中国社会进一步发展的根本保障。",
+    "（作者：陆晓文　选自《社会观察》2006.9）"
+   ],
+   "translations": [
+    "Những biến đổi của xã hội Trung Quốc sau cải cách mở cửa",
+    "Chặng đường cải cách gần 30 năm đã khiến Trung Quốc có những biến đổi long trời lở đất; sự thay đổi này không chỉ thể hiện ở phương diện kinh tế, mà quan trọng hơn là đã dẫn đến sự biến đổi của xã hội. Biến đổi của xã hội Trung Quốc sẽ quyết định xu hướng và nội dung phát triển trên mọi lĩnh vực kinh tế, chính trị và văn hóa của Trung Quốc trong tương lai.",
+    "Dòng dịch chuyển dân số quy mô lớn là nền tảng giúp kinh tế và xã hội Trung Quốc duy trì sức sống bền bỉ. Trong 30 năm trước cải cách mở cửa, do Trung Quốc thực hiện chế độ nhị nguyên thành thị - nông thôn, sự dịch chuyển dân số gần như đình trệ. Bắt đầu từ năm 1979, một lượng lớn lao động dư thừa ở nông thôn đã phá vỡ rào cản ngăn cách giữa thành thị và nông thôn, dân số Trung Quốc bắt đầu có sự dịch chuyển ở mức độ hạn chế. Từ thập niên 90 của thế kỷ trước đến nay, ở Trung Quốc xuất hiện hiện tượng di cư và dịch chuyển dân số quy mô lớn, xuyên vùng và đường dài. Trong kỳ cao điểm vận tải Tết Xuân (Xuân vận) năm 2006, quy mô dân số dịch chuyển trên toàn quốc lên tới 330 triệu người; con số này đồng nghĩa với việc toàn bộ dân số của Mỹ và Canada cùng di chuyển một lần trong khoảng thời gian đó. Dòng dịch chuyển này đã cung cấp và đáp ứng nhu cầu lao động cho sự phát triển kinh tế Trung Quốc, giúp “công xưởng thế giới” như Trung Quốc có thể vận hành sản xuất bình thường.",
+    "Con đường đô thị hóa Trung Quốc “đi bằng hai chân” là máy gia tốc cho quá trình hiện đại hóa của Trung Quốc. Sự phát triển đô thị của Trung Quốc đang trở thành một trong những dấu hiệu quan trọng của công nghiệp hóa và hiện đại hóa, đồng thời trở thành động lực đẩy nhanh cho sự phát triển kinh tế và hiện đại hóa Trung Quốc trong tương lai. Phát triển đô thị hóa ở Trung Quốc đi theo con đường phát triển đồng bộ giữa các thành phố lớn, vừa và các thị trấn nhỏ — là một ví dụ thực tế của cách làm “đi bằng hai chân”, cũng là một thực tiễn khác với quá trình đô thị hóa ở phương Tây và các quốc gia khác; vì vậy, vấn đề “căn bệnh đô thị” nghiêm trọng xuất hiện trong quá trình đô thị hóa ở các nước khác đã không xảy ra ở các đô thị lớn của Trung Quốc, hoặc có nhưng không nghiêm trọng. Ngày nay, tỷ lệ đô thị hóa của Trung Quốc đã vượt quá 40%; trong tương lai, đô thị sẽ trở thành phương tiện quan trọng để thu hút lao động nông thôn, nâng cao hiệu quả kinh tế, cải thiện chất lượng cuộc sống và thu hẹp khoảng cách thành thị - nông thôn.",
+    "Con đường dịch chuyển xã hội bình thường về cơ bản đã hình thành, nhiều nhóm lợi ích khác nhau tồn tại khách quan. Trước cải cách mở cửa, Trung Quốc áp dụng những sắp xếp thể chế mang tính tiên thiên (do xuất thân quy định) hoặc tương tự tiên thiên như xuất thân gia đình của cá nhân, hộ khẩu thành thị - nông thôn, chế độ đơn vị, chế độ sở hữu để quyết định tầng lớp và địa vị xã hội của mỗi người. Cơ chế dịch chuyển xã hội mang tính tiên thiên này đã hạn chế tính tích cực của người dân trong việc vươn lên thông qua nỗ lực phấn đấu, khiến sự phát triển đất nước thiếu sức sống và động lực, đồng thời cản trở tiến bộ kinh tế và xã hội. Sau cải cách mở cửa, các yếu tố tự đạt được trong sự dịch chuyển xã hội của cá nhân ngày càng tăng lên, còn các yếu tố tiên thiên giảm dần. Sự tồn tại khách quan của các tầng lớp xã hội khác nhau và khoảng cách giữa chúng là động lực khiến người dân dùng các phương thức như cạnh tranh, phấn đấu để tự đưa mình đi lên. Cơ chế dịch chuyển xã hội lấy sự tự phấn đấu làm chủ đạo đang được thiết lập và ngày càng trở thành phương thức để con người đạt được nghề nghiệp, địa vị xã hội và các nguồn lực khác.",
+    "Các tổ chức xã hội phát triển mạnh mẽ, đã hình thành phôi thai của xã hội công dân. Tính đến cuối năm 2004, cả nước có tổng cộng 283 nghìn tổ chức xã hội dân gian, trong đó có 149 nghìn hội đoàn xã hội, 902 quỹ, và 133 nghìn đơn vị phi doanh nghiệp dân lập. Hàng loạt tổ chức cơ sở (tổ chức từ cộng đồng) những năm gần đây cũng phát triển nhanh chóng, trở thành lực lượng quan trọng không thể xem nhẹ trong các tổ chức phi chính phủ. Sự hưng thịnh và phát triển của các tổ chức xã hội hiện nay là điềm báo tốt cho việc Trung Quốc thực hiện nền chính trị dân chủ và xã hội dân chủ, thực sự thể hiện sự thức tỉnh ý thức công dân và sự manh nha của trách nhiệm xã hội trong dân chúng, là nền tảng vững chắc để Trung Quốc xây dựng nền chính trị và xã hội dân chủ hiện đại, hài hòa.",
+    "Lối sống đa dạng hóa, hệ giá trị đa nguyên hóa. Hơn 20 năm cải cách mở cửa là giai đoạn tăng trưởng kinh tế nhanh nhất trong lịch sử Trung Quốc, cũng là giai đoạn lối sống thường ngày và quan niệm tiêu dùng của người Trung Quốc có biến đổi to lớn. Từ “ba món cũ” (xe đạp, đồng hồ đeo tay, máy khâu), đến “ba món mới” (tivi, máy giặt, tủ lạnh), rồi đến dàn âm thanh cao cấp, tivi màu màn hình lớn, điều hòa hai cục sau thập niên 90 thế kỷ trước; hơn nữa, một số gia đình “mới giàu” bắt đầu dùng trang phục hàng hiệu, biệt thự riêng, ô tô riêng để thể hiện “đẳng cấp” và “gu” khác người của mình. Cùng với việc Trung Quốc gia nhập WTO, ngày càng nhiều người bắt đầu học cách “hòa nhịp với trào lưu quốc tế”; ngày nay, khẩu hiệu quảng cáo tại các cửa hàng thời thượng trên phố Hoài Hải ở Thượng Hải là: thứ gì Paris có, ở đây chúng tôi cũng có.",
+    "Xu hướng tiêu dùng như vậy cho thấy một thực tế rằng quan niệm giá trị của con người đã có sự thay đổi to lớn. Vẫn lấy lối sống làm ví dụ, trước thập niên 80 thế kỷ trước, “gian khổ giản dị” là quan niệm giá trị cơ bản trong tiêu dùng, đề cao tinh thần “mới ba năm, cũ ba năm, vá đi vá lại thêm ba năm”. Khi “Cách mạng Văn hóa” vừa kết thúc, học tập chăm chỉ, phấn đấu vươn lên là chuẩn mực hành vi của thanh niên. Bắt đầu từ thập niên 80, sự quan tâm của mọi người đối với tiêu dùng tăng dần. Sau thập niên 90, nội dung và quảng cáo tiêu dùng trên các hệ thống truyền thông đại chúng bùng nổ cực độ; tại các sạp báo ở thành phố, nhiều nhất là các loại báo và tạp chí thời trang, điều này cho thấy sự thay đổi sâu sắc của lối sống xã hội và giá trị cốt lõi bên trong.",
+    "Ý nghĩa thế giới của những biến đổi xã hội Trung Quốc",
+    "Sự trỗi dậy và phát triển của Trung Quốc là một sự kiện lớn được xã hội loài người và thế giới ngày nay quan tâm; những biến đổi của xã hội Trung Quốc ít nhất mang lại các ý nghĩa thế giới sau đây:",
+    "Biến đổi xã hội của Trung Quốc là quá trình hòa nhập và xây dựng xã hội hiện đại hóa. Sự phát triển của xã hội Trung Quốc, đặc biệt là sự phát triển sau cải cách mở cửa, là quá trình đồng bộ với sự phát triển của xã hội thế giới và nỗ lực hòa nhập vào hệ thống đó; do vậy, sự phát triển và biến đổi này phù hợp với xu hướng và đặc điểm phát triển hiện nay của nhân loại. Tất cả những biến đổi trên đều thể hiện một thực tế là xã hội Trung Quốc ngày càng có tính khoan dung, tính bao dung, tính cởi mở, tính tự chủ và tính dân chủ cao hơn. Vì thế, sự biến đổi và phát triển của xã hội Trung Quốc hôm nay không phải là “dị đoan” đối với sự phát triển của xã hội thế giới, mà là “đại đồng” và “cầu hòa”.",
+    "Biến đổi của xã hội Trung Quốc là một quá trình tự kiểm điểm, tự giác, tự lập và tự cường. Đương nhiên, cũng giống như sự phát triển và biến đổi về kinh tế và các phương diện khác của Trung Quốc, biến đổi xã hội Trung Quốc là một quá trình mở cửa ra bên ngoài; lý luận và thực tiễn biến đổi xã hội phương Tây luôn là một nguồn tham chiếu quan trọng cho định hướng biến đổi xã hội của Trung Quốc. Nhưng quan trọng hơn là sự phát triển xã hội của Trung Quốc là quá trình tự phản tỉnh, tự giác cải cách, tự chủ nỗ lực và phấn đấu tự cường.",
+    "Một thực tế là công cuộc cải cách, cải biến của Trung Quốc bắt đầu từ sự tự kiểm điểm bản thân. Khoảng cách giữa Trung Quốc với các nước phát triển trên thế giới đã buộc Trung Quốc phải xem xét kỹ lưỡng và cân nhắc lại con đường phát triển cùng những bài học quá khứ. Việc mở cửa dòng dịch chuyển dân số, nỗ lực nâng cao trình độ đô thị hóa… đều là những hành động và biện pháp được đưa ra sau khi suy ngẫm lại thực trạng xã hội dưới điều kiện kinh tế kế hoạch trước đây. Đặc biệt, toàn bộ tiến trình cải cách mở cửa là quá trình do Đảng Cộng sản Trung Quốc, Chính phủ Trung Quốc và nhân dân Trung Quốc tự giác thúc đẩy và nỗ lực thực hiện. Trong quá trình tự phản tỉnh một cách hết sức tự giác ấy, đồng thời với việc nhận thức đầy đủ những tệ bệnh của thể chế cũ, Trung Quốc đã có những bước đi thận trọng đối với cải cách xã hội và chính trị, nhằm tránh việc cải cách chính trị và xã hội hấp tấp gây ra hỗn loạn cho xã hội Trung Quốc. Cách thức tự lập này khiến những biến đổi của xã hội Trung Quốc thực chất vô cùng to lớn, nhưng quá trình diễn ra lại hết sức ôn hòa. Tính hòa bình trong cải cách xã hội Trung Quốc là tin mừng đối với châu Á và thế giới.",
+    "Động lực chủ yếu cho sự phát triển xã hội Trung Quốc mang tính nội sinh, không gian xác định và có giới hạn. Biến đổi xã hội Trung Quốc diễn ra và triển khai trong không gian vốn có của Trung Quốc; động lực và nguồn lực chủ yếu của nó đến từ các kênh như nội bộ dân chúng Trung Quốc và sự giao lưu quốc tế bình thường được công nhận: chẳng hạn nguồn nhân lực bắt nguồn từ chính dân số Trung Quốc, một phần nguồn vốn đến từ Hoa kiều ở nước ngoài và đầu tư nước ngoài, quá trình đô thị hóa đến từ sự thay đổi hình thái và phương thức kinh tế bản địa. Ngược lại, suy ngẫm về sự biến đổi của xã hội phương Tây sẽ thấy mấy nước phát triển chủ yếu hiện nay đều có quá trình và thực tế cướp đoạt tài nguyên cũng như mở rộng không gian. Trong khi đó, không gian biến đổi của xã hội Trung Quốc luôn giới hạn trong phạm vi lãnh thổ bản địa của Trung Quốc, vừa không có mâu thuẫn xã hội giữa nước công nghiệp hóa với các nước thuộc địa trước kia, vừa không có mâu thuẫn giữa dân nhập cư bên ngoài với người dân bản địa trong quá trình mở mang bờ cõi. Quan trọng hơn, dù không có những mâu thuẫn và xung đột đó, bước tiến công nghiệp hóa và hiện đại hóa của Trung Quốc vẫn diễn ra nhanh chóng và mạnh mẽ. Cuộc cải cách xã hội có động lực nội sinh và ranh giới xác định như vậy là nhân tố quan trọng để duy trì hòa bình và ổn định của thế giới.",
+    "Chuyển hóa trạng thái xã hội vốn có thành điều kiện thuận lợi cho sự phát triển xã hội ngày nay. Trong cuộc cải cách xã hội thành công của Trung Quốc đã xuất hiện một kết quả rất thú vị, đó là một số yếu tố tồn tại trong hiện trạng xã hội trước cải cách tưởng chừng không phù hợp với công nghiệp hóa, hiện đại hóa, ở một mức độ nhất định lại trở thành điều kiện thuận lợi cho cải cách xã hội Trung Quốc. Chẳng hạn chính sách và tình trạng ngăn cách nhị nguyên thành thị - nông thôn, nói về mặt lý thuyết thì hoàn toàn mâu thuẫn với đặc điểm của xã hội hiện đại hóa, nhưng trong giai đoạn đầu của dòng dịch chuyển dân số, ở một mức độ nhất định lại giúp tránh được tình trạng dân số đô thị tăng quá nhanh, đô thị phình to và sự xuất hiện của các căn bệnh đô thị; tương tự, con đường đô thị hóa đặc thù của Trung Quốc bắt nguồn từ chế độ nhị nguyên thành thị - nông thôn, sự trỗi dậy của công nghiệp hương trấn cùng sự xuất hiện và phát triển của các đô thị vừa và nhỏ, cũng là sản phẩm trong bối cảnh này; vấn đề xã hội lớn nhất của Trung Quốc năm xưa — dân số, ngày nay bỗng trở thành sự bảo đảm cho sự trỗi dậy kinh tế của Trung Quốc và việc trở thành công xưởng thế giới; v.v. Một số kết quả trên có cái được thúc đẩy một cách có ý thức, có cái xuất hiện trong thực tiễn cụ thể. Nhưng tất cả đều cho thấy khoảng cách giữa mục tiêu phát triển xã hội và xã hội hiện hữu không phải cứ thế mà vượt qua một cách không căn cứ, mà phải dựa trên nền tảng của xã hội hiện tại, biến bất lợi thành có lợi, chuyển cái hạn chế thành cái hữu hạn, dưới tiền đề đã định sẵn mục tiêu mà thúc đẩy và thực hiện cải cách xã hội một cách có trật tự, có tiết chế và có lợi; có như vậy mới tránh được mâu thuẫn xã hội bùng phát tập trung, giành được điều kiện và môi trường thích hợp cho cải cách xã hội.",
+    "Coi các vấn đề và mâu thuẫn nảy sinh trong quá trình phát triển xã hội là động lực để xã hội tiếp tục phát triển và tiến lên. Xã hội Trung Quốc quả thực đã có những biến đổi to lớn, nhưng không phải nói rằng trong quá trình đó không có bất kỳ vấn đề hay mâu thuẫn nào. Biến đổi xã hội gần 30 năm qua đến nay đã cho thấy một số vấn đề quan trọng đang ảnh hưởng đến sự phát triển lành mạnh hơn nữa của xã hội Trung Quốc hiện nay và tương lai, chủ yếu gồm:",
+    "1. Vấn đề thân phận và đãi ngộ của người lao động ngoại tỉnh tại đô thị. Hiện nay địa vị xã hội và chế độ đãi ngộ của lao động ngoại tỉnh đi làm thuê so với cư dân gốc ở đô thị vẫn có sự chênh lệch rất lớn; chỉ khi xóa bỏ được sự chênh lệch này thì chế độ nhị nguyên thành thị - nông thôn ở Trung Quốc mới có thể chấm dứt, và xã hội hiện đại hóa của Trung Quốc mới có thể được thiết lập.",
+    "2. Vấn đề chênh lệch thành thị - nông thôn và chuyển dịch lao động nông thôn. Hiện nay sự chênh lệch giữa thành thị và nông thôn còn khá nghiêm trọng; ngoài ra, trong dân số nông nghiệp của Trung Quốc hiện vẫn còn dư thừa gần 300 triệu người; nếu Trung Quốc muốn thực hiện hiện đại hóa nông nghiệp, việc chuyển dịch lao động ở nông thôn vẫn là một vấn đề nan giải.",
+    "3. Vấn đề phát triển xã hội mất cân bằng ở miền Tây và chênh lệch giữa các vùng miền. Khoảng cách vùng miền quá lớn sẽ kéo theo các vấn đề kinh tế, chính trị và công bằng xã hội nghiêm trọng, thậm chí nghiêm trọng hơn có thể dẫn đến chia rẽ đất nước.",
+    "4. Vấn đề khoảng cách thu nhập và công bằng xã hội sau phân hóa xã hội. Thu nhập của một bộ phận nhỏ tầng lớp giàu có cao hơn hẳn các tầng lớp xã hội khác, cho thấy vấn đề lớn về chênh lệch thu nhập quá mức và bất công trong phân phối xã hội.",
+    "5. Vấn đề tham nhũng của quan chức và sự hình thành các nhóm lợi ích xã hội. Tại Trung Quốc, nạn tham nhũng của một bộ phận quan chức chính phủ đã trở thành một vấn đề chính trị quan trọng; đồng thời, trong quá trình cải cách mở cửa, các thành phần xã hội thuộc những nhóm lợi ích khác nhau bắt đầu hình thành những nhóm lợi ích xã hội nhất định, phô diễn sức mạnh hoặc mở rộng thế lực trong lĩnh vực kinh tế thậm chí cả phạm vi chính trị, làm gia tăng sức mạnh và tiếng nói trong cuộc mặc cả lợi ích với chính phủ; do đó, làm thế nào vừa đại diện cho lợi ích của đại đa số nhân dân, vừa giúp các lợi ích khác nhau có kênh bày tỏ thông suốt đã trở thành một đề tài quan trọng trong xây dựng chính trị ở Trung Quốc.",
+    "6. Vấn đề xây dựng, cung cấp và hoàn thiện hệ thống sản phẩm công và dịch vụ công. Ví dụ như chế độ tái phân phối xã hội hợp lý, chế độ bảo đảm xã hội, chế độ giáo dục công, cơ chế cảnh báo sớm và xử lý các sự kiện lớn, v.v.",
+    "7. Vấn đề xây dựng hệ giá trị chủ lưu của Trung Quốc trong một hệ thống giá trị đa nguyên. Ngày nay sự đa nguyên hóa về giá trị vừa là một thực tế, vừa dẫn đến nhiều vấn đề xã hội. Nó khiến xã hội Trung Quốc xuất hiện hàng loạt vấn đề như bất chấp công lý, không có nguyên tắc, coi thường đạo đức xã hội cơ bản, phớt lờ pháp luật, đề cao cá nhân trên hết; trong khi đó, sự hưng thịnh và chấn hưng chung của quốc gia và dân tộc, sự giàu có và khỏe mạnh của toàn thể dân chúng, phong khí xã hội thuần hậu và trong sạch, sự thừa nhận từ nội tâm và thống nhất đối với hệ giá trị văn hóa mới là cốt lõi giúp xã hội Trung Quốc tương lai có sức gắn kết cao; vì vậy, làm thế nào để xây dựng được hệ giá trị chủ lưu phù hợp với xã hội Trung Quốc trở thành tiền đề cơ bản để xã hội Trung Quốc có lực hướng tâm cao độ.",
+    "8. Vấn đề hoàn thiện, cải cách chức năng của chính phủ và thúc đẩy dân chủ hóa chính trị. Việc giải quyết tất cả các vấn đề nêu trên đều hướng về một đối tượng, đó chính là chính phủ. Sau khi cơ cấu xã hội và phương thức vận hành của Trung Quốc có sự thay đổi căn bản, chức năng chủ yếu của chính phủ là gì, làm thế nào để hiện thực hóa sự vận hành và vai trò của chính phủ, trở thành bảo đảm căn bản cho việc liệu có thể bảo đảm sự phát triển hơn nữa của xã hội Trung Quốc hay không.",
+    "(Tác giả: Lục Hiểu Văn, trích từ “Xã hội quan sát” 2006.9)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "英积极面对中国发展：它为世界发展提供新机遇",
+   "paragraphs": [
+    "中国经济的发展引起世界瞩目，有些西方国家散布中国威胁论，英国的态度如何？中国驻英国大使查培新说，对于中国的发展，英国总的态度是积极的。布莱尔首相一再强调，西方有些人把中国的发展看作威胁，但他认为，中国的发展既是挑战也是机遇，它不仅有利于中国13亿人民生活的改善，同样也有利于世界，它为世界的发展提供了新的机遇。英中经贸关系的发展，也加强了两国的政治关系，英国愿意在很多领域与中国合作，一起干很多事情，也希望中国把英国看作真正的伙伴。",
+    "中国也很重视英国，虽然两国的意识形态不同，但共同利益远远超过分歧。只要双方不断加深交往，以务实态度合作，经过双方的努力，完全可以把中英关系发展到新的水平。",
+    "英国对中国的看法主要有这样几点：",
+    "一、中国发展不可避免。中国现在的发展势头是不可遏制的。中国已是世界主要经济体，并将成为世界几大经济体之一。",
+    "二、中国的发展已对世界经济产生巨大影响，已成为世界经济增长的主要发动机之一。有一种说法，世界经济两大发动机，一个是美国，一个是中国。中国是世界经济增长的重要推动力。",
+    "三、中国发展会对英国形成挑战，但不是威胁。英国面对中国经济发展必然要做出相应的产业结构调整。",
+    "四、中国的发展为世界提供了巨大的机遇。因为中国的市场巨大，希望英国企业能够抓住机遇，乘上中国发展的快车。",
+    "五、中国现在已不仅是吸引外资的国家，也开始向外投资。英国很重视和欢迎中国来英国投资，希望把英国视为走向欧洲的优选点。",
+    "六、中国力量的增长，在国际上的作用和影响明显上升。他们希望中国在国际事务中发挥更大的作用。很多全球性问题，很多问题离开中国的参与很难解决。如气候变暖、环境。英国人关注、重视和借重中国的程度在增加。",
+    "实际上，中华民族历来是一个爱好和平的民族，中国的和平发展对世界和平有利。查培新说，中国发展至少有这些好处：",
+    "一、是世界经济的发动机之一。2004年中国经济的增长为世界经济增长贡献了10%，对带动世界贸易提供了16%贡献。",
+    "二、给世界各国提供了巨大的市场。中国1978年的外贸总额是206亿美元，2004年的进口额超过了5000亿美元，市场非常大。",
+    "三、提供了很多合作的机会。中国吸引外资在发展中国家名列第一。投资的软、硬环境已极大改善，投资吸引力增大。",
+    "四、中国在海外的投资越来越多。这有利于投资国的经济发展。",
+    "五、中国的贫困人口在20世纪70年代是2.5亿人，现在已经减到2600万。不到30年减少了2亿多贫困人口，是世界上最大的减贫行动，也对联合国的千年减贫计划做出了巨大贡献。",
+    "六、中国生产的物美价廉的商品，为世界各国的消费者带来实实在在的好处，有利于改善世界各国人民的生活。",
+    "七、中国的发展模式也对许多发展中国家有越来越大的吸引力，这就是找到适合自己国情的发展道路和政策，就能很快改变国家的面貌。发展中国家在学习和借鉴中国的发展经验，发达国家也在思考中国发展的原因。一些英国的企业家访问中国后说，在我们这里议论几年还没有决定的事，在中国已经实现了。中国的建设速度是惊人的。",
+    "查培新大使最后说，中国的发展对世界是双赢、共赢。和平、发展、合作，是我们的旗帜，走和平发展的道路是我们的选择。加快发展我们自己，同时，用我们的发展促进世界各国的共同发展。随着一个爱好和平的民族的发展壮大，必然会给世界和平带来巨大的促进作用。",
+    "（作者：施晓慧（人民网驻英记者）　选自：人民网 www.people.com.cn 2005.11）"
+   ],
+   "translations": [
+    "Sự phát triển kinh tế của Trung Quốc thu hút sự chú ý của thế giới; một số nước phương Tây tung ra thuyết mối đe dọa Trung Quốc, vậy thái độ của nước Anh thế nào? Đại sứ Trung Quốc tại Anh Tra Bồi Tân cho biết, đối với sự phát triển của Trung Quốc, thái độ chung của Anh là tích cực. Thủ tướng Blair nhiều lần nhấn mạnh rằng một số người ở phương Tây coi sự phát triển của Trung Quốc là mối đe dọa, nhưng ông cho rằng sự phát triển của Trung Quốc vừa là thách thức vừa là cơ hội; nó không chỉ có lợi cho việc cải thiện đời sống của 1,3 tỷ người dân Trung Quốc mà cũng có lợi cho thế giới, mang lại cơ hội mới cho sự phát triển của thế giới. Sự phát triển của quan hệ kinh tế - thương mại Anh - Trung cũng tăng cường quan hệ chính trị giữa hai nước; Anh sẵn sàng hợp tác với Trung Quốc trên nhiều lĩnh vực, cùng làm nhiều việc, và cũng mong Trung Quốc coi Anh là đối tác thực sự.",
+    "Trung Quốc cũng rất coi trọng Anh; tuy hai nước có ý thức hệ khác nhau nhưng lợi ích chung vượt xa những bất đồng. Chỉ cần hai bên không ngừng tăng cường giao lưu, hợp tác với thái độ thực chất, qua nỗ lực của cả hai phía, hoàn toàn có thể đưa quan hệ Trung - Anh phát triển lên tầm cao mới.",
+    "Cách nhìn của Anh đối với Trung Quốc chủ yếu gồm những điểm sau:",
+    "Một, sự phát triển của Trung Quốc là điều tất yếu. Đà phát triển hiện nay của Trung Quốc là không thể kìm hãm. Trung Quốc đã là nền kinh tế lớn trên thế giới và sẽ trở thành một trong vài nền kinh tế hàng đầu thế giới.",
+    "Hai, sự phát triển của Trung Quốc đã tạo ra ảnh hưởng to lớn đối với kinh tế thế giới, trở thành một trong những động cơ chủ yếu thúc đẩy tăng trưởng kinh tế toàn cầu. Có một cách nói rằng kinh tế thế giới có hai động cơ lớn, một là Mỹ và một là Trung Quốc. Trung Quốc là động lực quan trọng thúc đẩy tăng trưởng kinh tế thế giới.",
+    "Ba, sự phát triển của Trung Quốc sẽ tạo ra thách thức đối với Anh, nhưng không phải mối đe dọa. Trước sự phát triển kinh tế của Trung Quốc, nước Anh tất yếu phải tiến hành điều chỉnh cơ cấu ngành nghề cho phù hợp.",
+    "Bốn, sự phát triển của Trung Quốc mang lại cơ hội to lớn cho thế giới. Vì thị trường Trung Quốc rộng lớn, họ hy vọng các doanh nghiệp Anh có thể nắm bắt cơ hội, lên chuyến tàu cao tốc phát triển của Trung Quốc.",
+    "Năm, Trung Quốc hiện nay không chỉ là quốc gia thu hút vốn đầu tư nước ngoài mà còn bắt đầu đầu tư ra nước ngoài. Anh rất coi trọng và hoan nghênh Trung Quốc sang Anh đầu tư, mong muốn Trung Quốc coi Anh là điểm ưu tiên để tiến vào châu Âu.",
+    "Sáu, sự gia tăng thực lực của Trung Quốc khiến vai trò và ảnh hưởng của nước này trên trường quốc tế tăng lên rõ rệt. Họ mong muốn Trung Quốc phát huy vai trò lớn hơn trong các vấn đề quốc tế. Rất nhiều vấn đề mang tính toàn cầu, nhiều vấn đề thiếu sự tham gia của Trung Quốc thì rất khó giải quyết, chẳng hạn như biến đổi khí hậu nóng lên, môi trường. Mức độ người Anh quan tâm, coi trọng và dựa vào Trung Quốc ngày càng tăng.",
+    "Trên thực tế, dân tộc Trung Hoa xưa nay là một dân tộc yêu chuộng hòa bình; sự phát triển hòa bình của Trung Quốc có lợi cho hòa bình thế giới. Ông Tra Bồi Tân cho biết sự phát triển của Trung Quốc ít nhất mang lại những lợi ích sau:",
+    "Một, là một trong những động cơ của kinh tế thế giới. Năm 2004, tăng trưởng kinh tế của Trung Quốc đã đóng góp 10% cho tăng trưởng kinh tế thế giới, và đóng góp 16% vào việc thúc đẩy thương mại toàn cầu.",
+    "Hai, mang đến thị trường khổng lồ cho các nước trên thế giới. Tổng kim ngạch ngoại thương của Trung Quốc năm 1978 là 20,6 tỷ USD, đến năm 2004 kim ngạch nhập khẩu đã vượt quá 500 tỷ USD, thị trường vô cùng lớn.",
+    "Ba, mang lại rất nhiều cơ hội hợp tác. Trung Quốc đứng đầu các nước đang phát triển về thu hút đầu tư nước ngoài. Môi trường cứng và mềm cho đầu tư đã được cải thiện vượt bậc, sức hấp dẫn đầu tư ngày càng lớn.",
+    "Bốn, đầu tư của Trung Quốc ở nước ngoài ngày càng nhiều. Điều này có lợi cho sự phát triển kinh tế của nước tiếp nhận đầu tư.",
+    "Năm, dân số nghèo của Trung Quốc vào thập niên 70 của thế kỷ XX là 250 triệu người, nay đã giảm xuống còn 26 triệu người. Chưa đầy 30 năm đã giảm hơn 200 triệu người nghèo, là chiến dịch xóa đói giảm nghèo lớn nhất thế giới, đồng thời đóng góp to lớn cho Mục tiêu Thiên niên kỷ về giảm nghèo của Liên Hợp Quốc.",
+    "Sáu, hàng hóa chất lượng tốt giá rẻ do Trung Quốc sản xuất mang lại lợi ích thiết thực cho người tiêu dùng các nước trên thế giới, góp phần cải thiện đời sống nhân dân các nước.",
+    "Bảy, mô hình phát triển của Trung Quốc cũng có sức hấp dẫn ngày càng lớn đối với nhiều nước đang phát triển: đó là tìm ra con đường phát triển và chính sách phù hợp với tình hình đất nước mình thì có thể nhanh chóng thay đổi diện mạo quốc gia. Các nước đang phát triển đang học tập và tham khảo kinh nghiệm phát triển của Trung Quốc, còn các nước phát triển cũng đang suy ngẫm về nguyên nhân phát triển của Trung Quốc. Một số doanh nhân Anh sau khi thăm Trung Quốc nói rằng những việc ở chỗ chúng tôi bàn bạc mấy năm vẫn chưa quyết định được thì ở Trung Quốc đã thực hiện xong rồi. Tốc độ xây dựng của Trung Quốc thật đáng kinh ngạc.",
+    "Đại sứ Tra Bồi Tân kết luận rằng sự phát triển của Trung Quốc đối với thế giới là cùng thắng, đôi bên cùng có lợi. Hòa bình, phát triển, hợp tác là ngọn cờ của chúng tôi, đi theo con đường phát triển hòa bình là lựa chọn của chúng tôi. Đẩy nhanh phát triển bản thân mình, đồng thời dùng sự phát triển của mình thúc đẩy sự phát triển chung của các nước trên thế giới. Cùng với sự lớn mạnh của một dân tộc yêu chuộng hòa bình, tất yếu sẽ mang lại tác dụng thúc đẩy to lớn cho hòa bình thế giới.",
+    "(Tác giả: Thi Hiểu Tuệ (Phóng viên thường trú tại Anh của Nhân Dân Võng), trích từ Nhân Dân Võng www.people.com.cn 2005.11)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "得以 (có thể, được (làm gì))",
+   "structure": "（使/让……）得以 + 动词/动词短语",
+   "explanation": "Trợ động từ, nghĩa là “có thể; được (thực hiện điều gì)”. Lưu ý: “得以” không thể nói đứng một mình, cũng không thể dùng để trả lời câu hỏi độc lập, và không có hình thức phủ định. Liên hệ: Trong câu “高中不得以重点校、实验班、重点班名义向学生高收费”, “不得” (không được) và “以……名义” (lấy danh nghĩa…) tách rời nhau, “不得以……名义” nghĩa là “không được dùng danh nghĩa…”, cần phân biệt với trợ động từ “得以” ở trên.",
+   "examples": [
+    {
+     "zh": "这个流动提供和满足了中国经济发展的劳动力需求，使中国这样的“世界工厂”得以正常开工生产。",
+     "vi": "Dòng dịch chuyển này đã cung cấp và đáp ứng nhu cầu lao động cho sự phát triển kinh tế Trung Quốc, giúp “công xưởng thế giới” như Trung Quốc có thể vận hành sản xuất bình thường."
+    },
+    {
+     "zh": "进行了一系列改革之后，公司的利润得以迅速提升。",
+     "vi": "Sau khi tiến hành hàng loạt cải cách, lợi nhuận của công ty đã có thể tăng lên nhanh chóng."
+    },
+    {
+     "zh": "至此，美国总统大选落下帷幕，布什得以成功连任。",
+     "vi": "Đến đây, cuộc bầu cử tổng thống Mỹ đã khép lại, Bush đã có thể tái đắc cử thành công."
+    },
+    {
+     "zh": "南水北调工程将使北方用水紧张的局面得以缓解。",
+     "vi": "Công trình Nam thủy Bắc điều sẽ giúp tình trạng căng thẳng về nguồn nước ở miền Bắc được giảm bớt."
+    },
+    {
+     "zh": "他出面说明情况之后，问题才得以澄清。",
+     "vi": "Sau khi anh ấy đứng ra giải thích tình hình thì vấn đề mới được làm sáng tỏ."
+    }
+   ]
+  },
+  {
+   "point": "类似于…… (tương tự như…)",
+   "structure": "A 类似于 B（名词/名词性词组）",
+   "explanation": "Nghĩa là “gần giống với…, tương tự với…”. Theo sau “类似于” thường là danh từ hoặc cụm danh từ.",
+   "examples": [
+    {
+     "zh": "改革开放前，中国采用诸如个人的家庭出身、城乡户口、单位制、所有制等先赋性或类似于先赋性的制度安排，决定人们的社会阶层与社会地位。",
+     "vi": "Trước cải cách mở cửa, Trung Quốc áp dụng những sắp xếp thể chế mang tính tiên thiên hoặc tương tự tiên thiên như xuất thân gia đình của cá nhân, hộ khẩu thành thị - nông thôn, chế độ đơn vị, chế độ sở hữu để quyết định tầng lớp và địa vị xã hội của mỗi người."
+    },
+    {
+     "zh": "据悉，这个山村发生了一种罕见的疾病，患者的症状类似于非典型性肺炎。",
+     "vi": "Được biết, ngôi làng miền núi này xảy ra một căn bệnh hiếm gặp, triệu chứng của người bệnh tương tự như bệnh viêm phổi không điển hình (SARS)."
+    },
+    {
+     "zh": "“手机肘”早期表现为肘关节疲惫麻木、疼痛，胳膊有时抬不起来，类似于平常所说的“鼠标手”发病症状。",
+     "vi": "“Hội chứng khuỷu tay điện thoại” giai đoạn đầu biểu hiện là khớp khuỷu mỏi tê, đau nhức, có lúc không nhấc tay lên được, tương tự như triệu chứng phát bệnh của “hội chứng cổ tay chuột máy tính” thường nói."
+    },
+    {
+     "zh": "他在介绍时说：《梁山伯与祝英台》的故事类似于《罗密欧与朱丽叶》。",
+     "vi": "Khi giới thiệu ông nói rằng câu chuyện “Lương Sơn Bá và Chúc Anh Đài” tương tự như “Romeo và Juliet”."
+    }
+   ]
+  },
+  {
+   "point": "以……为例 (lấy… làm ví dụ)",
+   "structure": "以 + 名词/名词性词组 + 为例",
+   "explanation": "Nghĩa là “lấy… làm ví dụ”. Dùng trong văn viết.",
+   "examples": [
+    {
+     "zh": "仍以生活方式为例，在上世纪80年代以前，“艰苦朴素”是消费的基本价值观念，提倡“新三年，旧三年，缝缝补补又三年”。",
+     "vi": "Vẫn lấy lối sống làm ví dụ, trước thập niên 80 thế kỷ trước, “gian khổ giản dị” là quan niệm giá trị cơ bản trong tiêu dùng, đề cao tinh thần “mới ba năm, cũ ba năm, vá đi vá lại thêm ba năm”."
+    },
+    {
+     "zh": "以上海为例，探讨一下中国企业如何“走出去”。",
+     "vi": "Lấy Thượng Hải làm ví dụ để thảo luận xem doanh nghiệp Trung Quốc làm thế nào để “vươn ra nước ngoài”."
+    },
+    {
+     "zh": "现以钢铁为例谈谈如何进行成功的交易。",
+     "vi": "Nay xin lấy ngành gang thép làm ví dụ để bàn về cách thực hiện giao dịch thành công."
+    },
+    {
+     "zh": "这篇论文的题目是《转型和开放条件下政府职能的界定——以中国为例》。",
+     "vi": "Tiêu đề của bài luận văn này là “Xác định chức năng của chính phủ trong điều kiện chuyển đổi và mở cửa — lấy Trung Quốc làm ví dụ”."
+    }
+   ]
+  },
+  {
+   "point": "化A为B (biến A thành B)",
+   "structure": "化 + A + 为 + B（A、B多为相反或相对、字数相等的词语）",
+   "explanation": "Nghĩa là “biến A thành B”. A và B phần lớn là một cặp từ ngữ trái nghĩa hoặc đối lập nhau, có số âm tiết bằng nhau. Dùng trong văn viết. Các cụm thường gặp: 化繁为简, 化险为夷, 化敌为友, 化悲痛为力量, 化不利为有利, 化压力为动力, 化被动为主动, 化平淡为精彩, 化古老为时尚, 化艰深为浅易, 化腐朽为神奇, 化干戈为玉帛.",
+   "examples": [
+    {
+     "zh": "化原有社会状态为今日社会发展的有利条件。",
+     "vi": "Chuyển hóa trạng thái xã hội vốn có thành điều kiện thuận lợi cho sự phát triển xã hội ngày nay."
+    },
+    {
+     "zh": "化繁为简",
+     "vi": "biến phức tạp thành đơn giản"
+    },
+    {
+     "zh": "化险为夷",
+     "vi": "chuyển nguy thành an"
+    },
+    {
+     "zh": "化腐朽为神奇",
+     "vi": "biến mục nát thành thần kỳ (biến xấu thành tốt, cứng nhắc thành khéo léo, vô dụng thành hữu ích)"
+    },
+    {
+     "zh": "化干戈为玉帛",
+     "vi": "hóa can qua thành ngọc lụa (ví với biến chiến tranh, xung đột thành hòa bình, hữu hảo)"
+    }
+   ]
+  },
+  {
+   "point": "把A视为B (coi A là B, xem A như B)",
+   "structure": "把/将 + A + 视为 + B；被（……）视为……",
+   "explanation": "Nghĩa là “coi A là B, xem A như B”. Cũng có thể nói “将A视为B”. Đều thuộc văn viết. Liên hệ: dạng bị động “被……视为……” (được/bị… coi là…).",
+   "examples": [
+    {
+     "zh": "把社会发展中产生的问题与矛盾视为社会继续发展和前进的动力。",
+     "vi": "Coi các vấn đề và mâu thuẫn nảy sinh trong quá trình phát triển xã hội là động lực để xã hội tiếp tục phát triển và tiến lên."
+    },
+    {
+     "zh": "他口口声声把金钱视为粪土，实则心里十分看重。",
+     "vi": "Ông ta mở miệng ra là coi tiền bạc như phân đất, thực chất trong lòng lại vô cùng coi trọng."
+    },
+    {
+     "zh": "这位专家指出：为解除身心疲劳，保证心理健康，应将长假视为心理调整期。",
+     "vi": "Vị chuyên gia này chỉ ra rằng: để giải tỏa mệt mỏi thể chất lẫn tinh thần và bảo đảm sức khỏe tâm lý, nên coi kỳ nghỉ dài là giai đoạn điều chỉnh tâm lý."
+    },
+    {
+     "zh": "该国的一份调查显示，多数儿童已不把父母离异视为灾难。",
+     "vi": "Một cuộc khảo sát của nước này cho thấy đa số trẻ em đã không còn coi việc cha mẹ ly hôn là thảm họa."
+    },
+    {
+     "zh": "在德国，他曾被视为足球皇帝。",
+     "vi": "Ở Đức, ông ấy từng được coi là Hoàng đế bóng đá."
+    }
+   ]
+  },
+  {
+   "point": "无视 (phớt lờ, coi thường, bất chấp)",
+   "structure": "无视 + 宾语（不能是人，不带“着、了、过”）",
+   "explanation": "Động từ, nghĩa là “coi như không thấy; thờ ơ; khinh miệt; không đối xử nghiêm túc”. Thường chỉ làm vị ngữ; phía sau không mang “着、了、过”; phía sau nhất định phải mang tân ngữ, nhưng tân ngữ không thể là người. Các cụm thường gặp: 无视课堂纪律, 无视国家法律, 无视用户利益, 无视群众利益, 无视单位的规定, 无视父母的要求, 无视别人的存在, 无视医生的劝告, 无视员工的权益, 无视大家的请求, 无视季节的变换, 无视安全第一的原则.",
+   "examples": [
+    {
+     "zh": "使得中国社会出现了无公理、无原则、藐视基本社会道德、无视法律、个人至上等一系列问题。",
+     "vi": "Khiến xã hội Trung Quốc xuất hiện hàng loạt vấn đề như bất chấp công lý, không có nguyên tắc, coi thường đạo đức xã hội cơ bản, phớt lờ pháp luật, đề cao cá nhân trên hết."
+    },
+    {
+     "zh": "无视课堂纪律",
+     "vi": "phớt lờ kỷ luật lớp học"
+    },
+    {
+     "zh": "无视国家法律",
+     "vi": "coi thường pháp luật nhà nước"
+    },
+    {
+     "zh": "无视别人的存在",
+     "vi": "coi như không có sự tồn tại của người khác"
+    },
+    {
+     "zh": "无视安全第一的原则",
+     "vi": "phớt lờ nguyên tắc an toàn là trên hết"
+    }
+   ]
+  }
+ ]
+}

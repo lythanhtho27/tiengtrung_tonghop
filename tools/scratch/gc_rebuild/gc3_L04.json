@@ -1,0 +1,1391 @@
+{
+ "book": "gc3",
+ "lesson_num": 4,
+ "title": "保护城市生态刻不容缓",
+ "pages": [
+  120,
+  154
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "生态",
+   "py": "shēngtài",
+   "pos": "名",
+   "zh": "指生物在一定的自然环境下生存和发展的状态。",
+   "en": "ecology",
+   "hv": "SINH THÁI",
+   "vi": "sinh thái",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "刻不容缓",
+   "py": "kè bù róng huǎn",
+   "pos": "成",
+   "zh": "片刻也不能拖延。形容形势紧迫。",
+   "en": "afford no delay",
+   "hv": "KHẮC BẤT DUNG HOÃN",
+   "vi": "cấp bách, không thể chậm trễ",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "乍",
+   "py": "zhà",
+   "pos": "副",
+   "zh": "刚刚开始，起初。",
+   "en": "",
+   "hv": "SẠ",
+   "vi": "mới đầu, thoạt đầu",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "风马牛不相及",
+   "py": "fēng mǎ niú bù xiāng jí",
+   "pos": "成",
+   "zh": "风：牲畜公母相追逐；及：到。两方距离很远，马、牛发情追逐也不会碰到。比喻两者毫不相干。",
+   "en": "",
+   "hv": "PHONG MÃ NGƯU BẤT TƯƠNG CẬP",
+   "vi": "hoàn toàn không liên quan",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "关联",
+   "py": "guānlián",
+   "pos": "动",
+   "zh": "事物之间发生相互联系和影响。",
+   "en": "",
+   "hv": "QUAN LIÊN",
+   "vi": "liên quan, gắn kết",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "极为",
+   "py": "jíwéi",
+   "pos": "副",
+   "zh": "表示程度达到极点。",
+   "en": "",
+   "hv": "CỰC VI",
+   "vi": "cực kỳ, vô cùng",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "陈旧",
+   "py": "chénjiù",
+   "pos": "形",
+   "zh": "时间久的，过时的。",
+   "en": "",
+   "hv": "TRẦN CỰU",
+   "vi": "cũ kỹ, lỗi thời",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "骤",
+   "py": "zhòu",
+   "pos": "副",
+   "zh": "骤然；突然。",
+   "en": "",
+   "hv": "SẬU",
+   "vi": "đột ngột, bất ngờ",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "不容",
+   "py": "bùróng",
+   "pos": "动",
+   "zh": "不许；不让。",
+   "en": "",
+   "hv": "BẤT DUNG",
+   "vi": "không cho phép, không thể",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "降水量",
+   "py": "jiàngshuǐliàng",
+   "pos": "名",
+   "zh": "从大气中落到地面的固体或液体形式的水，主要有雨、雪、霰、雹等。",
+   "en": "",
+   "hv": "GIÁNG THỦY LƯỢNG",
+   "vi": "lượng mưa, lượng giáng thủy",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "地貌",
+   "py": "dìmào",
+   "pos": "名",
+   "zh": "地球表面的形态。",
+   "en": "",
+   "hv": "ĐỊA MẠO",
+   "vi": "địa mạo",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "迥异",
+   "py": "jiǒngyì",
+   "pos": "形",
+   "zh": "大不相同。",
+   "en": "",
+   "hv": "HUÝNH DỊ",
+   "vi": "khác hẳn, khác một trời một vực",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "造成",
+   "py": "zàochéng",
+   "pos": "动",
+   "zh": "构成；形成。",
+   "en": "give rise to, cause",
+   "hv": "TẠO THÀNH",
+   "vi": "tạo thành, gây ra",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "一般无二",
+   "py": "yì bān wú èr",
+   "pos": "",
+   "zh": "完全一样，没有区别。",
+   "en": "",
+   "hv": "NHẤT BAN VÔ NHỊ",
+   "vi": "y hệt, giống hệt nhau",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "林立",
+   "py": "línlì",
+   "pos": "动",
+   "zh": "像树林一样成片竖立着，形容数目众多。",
+   "en": "stand in great numbers",
+   "hv": "LÂM LẬP",
+   "vi": "mọc san sát, san sát như rừng",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "纵横",
+   "py": "zònghéng",
+   "pos": "形",
+   "zh": "竖一道横一道，交错的样子。",
+   "en": "vertically and horizontally",
+   "hv": "TUNG HOÀNH",
+   "vi": "dọc ngang, đan xen",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "引发",
+   "py": "yǐnfā",
+   "pos": "动",
+   "zh": "引起；触发。",
+   "en": "",
+   "hv": "DẪN PHÁT",
+   "vi": "gây ra, khơi mào",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "连锁反应",
+   "py": "liánsuǒ fǎnyìng",
+   "pos": "",
+   "zh": "相关的事物中，只要一个发生变化，其他的也都跟着发生变化。",
+   "en": "",
+   "hv": "LIÊN TỎA PHẢN ỨNG",
+   "vi": "phản ứng dây chuyền",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "揭示",
+   "py": "jiēshì",
+   "pos": "动",
+   "zh": "把不容易看清的事理指出来。",
+   "en": "",
+   "hv": "YẾT THỊ",
+   "vi": "cho thấy, hé lộ",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "趋势",
+   "py": "qūshì",
+   "pos": "名",
+   "zh": "事物发展的倾向。",
+   "en": "",
+   "hv": "XU THẾ",
+   "vi": "xu thế, xu hướng",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "逐年",
+   "py": "zhúnián",
+   "pos": "副",
+   "zh": "一年一年地。",
+   "en": "",
+   "hv": "TRỤC NIÊN",
+   "vi": "qua từng năm, từng năm một",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "罕见",
+   "py": "hǎnjiàn",
+   "pos": "形",
+   "zh": "少见；难遇；难得见到。",
+   "en": "",
+   "hv": "HÃN KIẾN",
+   "vi": "hiếm thấy, hiếm gặp",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "不乏",
+   "py": "bùfá",
+   "pos": "动",
+   "zh": "不缺少；相当多。",
+   "en": "",
+   "hv": "BẤT PHẠP",
+   "vi": "không thiếu",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "巧合",
+   "py": "qiǎohé",
+   "pos": "动",
+   "zh": "凑巧相合。",
+   "en": "",
+   "hv": "XẢO HỢP",
+   "vi": "trùng hợp",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "反作用",
+   "py": "fǎnzuòyòng",
+   "pos": "名",
+   "zh": "相反的作用。",
+   "en": "",
+   "hv": "PHẢN TÁC DỤNG",
+   "vi": "tác dụng ngược lại, phản tác dụng",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "返还",
+   "py": "fǎnhuán",
+   "pos": "动",
+   "zh": "归还；退还。",
+   "en": "",
+   "hv": "PHẢN HOÀN",
+   "vi": "trả lại, hoàn lại",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "无米之炊",
+   "py": "wú mǐ zhī chuī",
+   "pos": "成",
+   "zh": "没有米，做不出饭。比喻缺少必要条件，做不成事。出自俗语“巧妇难为无米之炊”。",
+   "en": "",
+   "hv": "VÔ MỄ CHI XUY",
+   "vi": "không gạo nấu cơm (thiếu điều kiện tất yếu)",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "涵养",
+   "py": "hányǎng",
+   "pos": "动",
+   "zh": "蓄积并保持（水分）。",
+   "en": "",
+   "hv": "HÀM DƯỠNG",
+   "vi": "giữ (nước), tích tụ",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "流失",
+   "py": "liúshī",
+   "pos": "动",
+   "zh": "水、土壤、矿石、油脂等有用物质没有被利用而流散或随风、水散失。（流失——流逝）",
+   "en": "",
+   "hv": "LƯU THẤT",
+   "vi": "thất thoát, trôi mất",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "加剧",
+   "py": "jiājù",
+   "pos": "动",
+   "zh": "变得比原来更严重。",
+   "en": "",
+   "hv": "GIA KỊCH",
+   "vi": "trở nên trầm trọng hơn, gia tăng",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "恶性循环",
+   "py": "èxìng xúnhuán",
+   "pos": "",
+   "zh": "若干事物互为因果，循环不止，越来越坏。",
+   "en": "",
+   "hv": "ÁC TÍNH TUẦN HOÀN",
+   "vi": "vòng luẩn quẩn",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "潜在",
+   "py": "qiánzài",
+   "pos": "形",
+   "zh": "存在于事物内部未显现出来的。",
+   "en": "",
+   "hv": "TIỀM TẠI",
+   "vi": "tiềm ẩn, tiềm tàng",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "地层",
+   "py": "dìcéng",
+   "pos": "名",
+   "zh": "地壳发展过程中所形成的一层层的岩石的总称。",
+   "en": "stratum, layer",
+   "hv": "ĐỊA TẦNG",
+   "vi": "tầng địa chất, địa tầng",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "殆",
+   "py": "dài",
+   "pos": "副",
+   "zh": "〈书〉将近，几乎，差不多。",
+   "en": "",
+   "hv": "ĐÃI",
+   "vi": "gần như, hầu như",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "补给",
+   "py": "bǔjǐ",
+   "pos": "动",
+   "zh": "补充供给。",
+   "en": "",
+   "hv": "BỔ CẤP",
+   "vi": "bổ sung, cung cấp bù",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "层面",
+   "py": "céngmiàn",
+   "pos": "名",
+   "zh": "层次和方面。",
+   "en": "",
+   "hv": "TẦNG DIỆN",
+   "vi": "tầng lớp, phương diện",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "塌陷",
+   "py": "tāxiàn",
+   "pos": "动",
+   "zh": "坍塌；下陷。",
+   "en": "",
+   "hv": "THÁP HÃM",
+   "vi": "sụt lún, sụp đổ",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "地表",
+   "py": "dìbiǎo",
+   "pos": "名",
+   "zh": "地球的表面，也就是地壳的最外层。",
+   "en": "",
+   "hv": "ĐỊA BIỂU",
+   "vi": "bề mặt Trái Đất, mặt đất",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "下沉",
+   "py": "xiàchén",
+   "pos": "动",
+   "zh": "向下沉没；向下降落。",
+   "en": "",
+   "hv": "HẠ TRẦM",
+   "vi": "lún xuống, chìm xuống",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "不堪设想",
+   "py": "bù kān shèxiǎng",
+   "pos": "成",
+   "zh": "堪：能够。不能够想象会出现什么情况。形容事情发展下去后果十分严重。",
+   "en": "",
+   "hv": "BẤT KHAM THIẾT TƯỞNG",
+   "vi": "khôn lường, không dám tưởng tượng",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "枯竭",
+   "py": "kūjié",
+   "pos": "形",
+   "zh": "（水源）干涸；断绝。",
+   "en": "dried up",
+   "hv": "KHÔ KIỆT",
+   "vi": "cạn kiệt",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "殃",
+   "py": "yāng",
+   "pos": "动",
+   "zh": "使遭受祸害。",
+   "en": "",
+   "hv": "ƯƠNG",
+   "vi": "làm hại, vạ lây",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "危言耸听",
+   "py": "wēi yán sǒng tīng",
+   "pos": "成",
+   "zh": "危言：使人吃惊的话；耸听：使听话的人吃惊。故意说些惊人的话，让人听了害怕。",
+   "en": "",
+   "hv": "NGUY NGÔN TỦNG THÍNH",
+   "vi": "nói lời giật gân dọa người",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "市政",
+   "py": "shìzhèng",
+   "pos": "名",
+   "zh": "指城市管理工作，包括工商业、基本建设、文化教育、公用事业、交通、公安、卫生等。",
+   "en": "municipal administration",
+   "hv": "THỊ CHÍNH",
+   "vi": "chính quyền đô thị, công tác đô thị",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "首要",
+   "py": "shǒuyào",
+   "pos": "形",
+   "zh": "摆在第一位的；最重要的。（首要——重要）",
+   "en": "",
+   "hv": "THỦ YẾU",
+   "vi": "hàng đầu, quan trọng nhất",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "谬",
+   "py": "miù",
+   "pos": "形",
+   "zh": "错误；荒诞。",
+   "en": "",
+   "hv": "MẬU",
+   "vi": "sai lầm, hoang đường",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "广义",
+   "py": "guǎngyì",
+   "pos": "名",
+   "zh": "一般指范围较广的或宽泛的定义（跟“狭义”相对）。",
+   "en": "broad sense, generalized",
+   "hv": "QUẢNG NGHĨA",
+   "vi": "nghĩa rộng",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "色调",
+   "py": "sèdiào",
+   "pos": "名",
+   "zh": "绘画的色彩明暗、浓淡、冷暖等调子。",
+   "en": "",
+   "hv": "SẮC ĐIỆU",
+   "vi": "tông màu, sắc điệu",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "柏油",
+   "py": "bǎiyóu",
+   "pos": "名",
+   "zh": "有机化合物的混合物，黑色或棕黑色，呈胶状。用来铺路面，也用做防水材料、防腐材料等。",
+   "en": "pitch, tar",
+   "hv": "BÁCH DU",
+   "vi": "nhựa đường, hắc ín",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "生命线",
+   "py": "shēngmìngxiàn",
+   "pos": "名",
+   "zh": "比喻保证生存和发展的最根本的因素。",
+   "en": "",
+   "hv": "SINH MỆNH TUYẾN",
+   "vi": "mạch sống, tuyến sinh mệnh",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "立交桥",
+   "py": "lìjiāoqiáo",
+   "pos": "名",
+   "zh": "架在道路交叉处的立体交叉桥梁。",
+   "en": "",
+   "hv": "LẬP GIAO KIỀU",
+   "vi": "cầu vượt (giao thông)",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "寸土寸金",
+   "py": "cùn tǔ cùn jīn",
+   "pos": "",
+   "zh": "比喻土地非常贵。",
+   "en": "",
+   "hv": "THỐN THỔ THỐN KIM",
+   "vi": "tấc đất tấc vàng",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "上好",
+   "py": "shànghǎo",
+   "pos": "形",
+   "zh": "最好（多指物品的质量）。",
+   "en": "",
+   "hv": "THƯỢNG HẢO",
+   "vi": "thượng hạng, tốt nhất",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "昂贵",
+   "py": "ángguì",
+   "pos": "形",
+   "zh": "价格很高。",
+   "en": "",
+   "hv": "NGANG QUÝ",
+   "vi": "đắt đỏ",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "无以为继",
+   "py": "wú yǐ wéi jì",
+   "pos": "",
+   "zh": "没有可以再继续下去的了。",
+   "en": "",
+   "hv": "VÔ DĨ VI KẾ",
+   "vi": "không thể tiếp tục duy trì",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "良性",
+   "py": "liángxìng",
+   "pos": "形",
+   "zh": "能产生好的结果的。",
+   "en": "",
+   "hv": "LƯƠNG TÍNH",
+   "vi": "lành tính, tích cực",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "周而复始",
+   "py": "zhōu ér fù shǐ",
+   "pos": "成",
+   "zh": "周：环绕一圈；复始：重新开始。一圈又一圈地轮转。形容不断循环。",
+   "en": "",
+   "hv": "CHU NHI PHỤC THỦY",
+   "vi": "tuần hoàn không ngừng, xoay vòng lặp lại",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "行之有效",
+   "py": "xíng zhī yǒu xiào",
+   "pos": "成",
+   "zh": "实行起来有效验，多指已经实行过的方法、措施。",
+   "en": "",
+   "hv": "HÀNH CHI HỮU HIỆU",
+   "vi": "có hiệu quả thiết thực",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "卫星城",
+   "py": "wèixīngchéng",
+   "pos": "名",
+   "zh": "围绕大城市建设的中小城市。",
+   "en": "",
+   "hv": "VỆ TINH THÀNH",
+   "vi": "thành phố vệ tinh",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "疏散",
+   "py": "shūsàn",
+   "pos": "动",
+   "zh": "把密集的人或东西散开。（疏散——分散）",
+   "en": "",
+   "hv": "SƠ TÁN",
+   "vi": "phân tán, sơ tán",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "耗",
+   "py": "hào",
+   "pos": "动",
+   "zh": "减损，消耗。",
+   "en": "",
+   "hv": "HAO",
+   "vi": "tiêu hao, tốn",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "铺设",
+   "py": "pūshè",
+   "pos": "动",
+   "zh": "修（铁路等）。",
+   "en": "",
+   "hv": "PHÔ THIẾT",
+   "vi": "trải, lát, lắp đặt",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "硬化",
+   "py": "yìnghuà",
+   "pos": "动",
+   "zh": "物体由软变硬。",
+   "en": "",
+   "hv": "NGẠNH HÓA",
+   "vi": "cứng hóa, bê tông hóa",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "杀伤力",
+   "py": "shāshānglì",
+   "pos": "名",
+   "zh": "（武器）的破坏和伤害能力。",
+   "en": "",
+   "hv": "SÁT THƯƠNG LỰC",
+   "vi": "sức sát thương, sức tàn phá",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "拆除",
+   "py": "chāichú",
+   "pos": "动",
+   "zh": "拆掉（建筑物等）。",
+   "en": "",
+   "hv": "SÁCH TRỪ",
+   "vi": "tháo dỡ, phá bỏ",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "渗",
+   "py": "shèn",
+   "pos": "动",
+   "zh": "液体慢慢地透过或漏出。",
+   "en": "",
+   "hv": "SẤM",
+   "vi": "thấm, rỉ",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "市容",
+   "py": "shìróng",
+   "pos": "名",
+   "zh": "城市的面貌（指街道、房屋建筑、橱窗陈列等）。",
+   "en": "",
+   "hv": "THỊ DUNG",
+   "vi": "bộ mặt đô thị, mỹ quan đô thị",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "周边",
+   "py": "zhōubiān",
+   "pos": "名",
+   "zh": "周围。",
+   "en": "",
+   "hv": "CHU BIÊN",
+   "vi": "xung quanh, vùng phụ cận",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "下水道",
+   "py": "xiàshuǐdào",
+   "pos": "名",
+   "zh": "排除雨水和污水的管道。",
+   "en": "",
+   "hv": "HẠ THỦY ĐẠO",
+   "vi": "cống thoát nước",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "加之",
+   "py": "jiāzhī",
+   "pos": "连",
+   "zh": "表示进一步的原因或条件。",
+   "en": "",
+   "hv": "GIA CHI",
+   "vi": "thêm vào đó, cộng thêm",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "尽头",
+   "py": "jìntóu",
+   "pos": "名",
+   "zh": "末端；终点。",
+   "en": "",
+   "hv": "TẬN ĐẦU",
+   "vi": "điểm cuối, tận cùng",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "盛夏",
+   "py": "shèngxià",
+   "pos": "名",
+   "zh": "夏天最热的时候。",
+   "en": "",
+   "hv": "THỊNH HẠ",
+   "vi": "giữa mùa hè, lúc hè nóng nhất",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "止境",
+   "py": "zhǐjìng",
+   "pos": "名",
+   "zh": "终点；最后的界限。",
+   "en": "",
+   "hv": "CHỈ CẢNH",
+   "vi": "điểm dừng, giới hạn cuối",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "极限",
+   "py": "jíxiàn",
+   "pos": "名",
+   "zh": "最高的限度。",
+   "en": "",
+   "hv": "CỰC HẠN",
+   "vi": "giới hạn tối đa, cực hạn",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "难熬",
+   "py": "nán'áo",
+   "pos": "形",
+   "zh": "难以忍受（疼痛或艰苦的生活等）。",
+   "en": "",
+   "hv": "NAN NGAO",
+   "vi": "khó chịu đựng, khổ sở",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "凉爽",
+   "py": "liángshuǎng",
+   "pos": "形",
+   "zh": "清凉爽快。",
+   "en": "",
+   "hv": "LƯƠNG SẢNG",
+   "vi": "mát mẻ",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "心病",
+   "py": "xīnbìng",
+   "pos": "名",
+   "zh": "隐藏在内心的心事或伤痛。",
+   "en": "",
+   "hv": "TÂM BỆNH",
+   "vi": "tâm bệnh, nỗi lo canh cánh",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "根子",
+   "py": "gēnzi",
+   "pos": "名",
+   "zh": "事物的本原。",
+   "en": "",
+   "hv": "CĂN TỬ",
+   "vi": "gốc rễ, căn nguyên",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "杰作",
+   "py": "jiézuò",
+   "pos": "名",
+   "zh": "超出同类一般水平的杰出作品。",
+   "en": "",
+   "hv": "KIỆT TÁC",
+   "vi": "kiệt tác",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "蹊跷",
+   "py": "qīqiāo",
+   "pos": "形",
+   "zh": "奇怪。（蹊跷——奇怪）",
+   "en": "",
+   "hv": "HỀ KHIÊU",
+   "vi": "kỳ lạ, đáng ngờ",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "个中",
+   "py": "gèzhōng",
+   "pos": "名",
+   "zh": "〈书〉此中；其中。",
+   "en": "",
+   "hv": "CÁ TRUNG",
+   "vi": "trong đó, bên trong",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "由不得",
+   "py": "yóubude",
+   "pos": "",
+   "zh": "不能依从；不能由……做主。",
+   "en": "",
+   "hv": "DO BẤT ĐẮC",
+   "vi": "không do… quyết định, không cho phép",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "率性",
+   "py": "shuàixìng",
+   "pos": "形",
+   "zh": "由着性子；任性。",
+   "en": "",
+   "hv": "SUẤT TÍNH",
+   "vi": "tùy hứng, theo ý thích",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "背离",
+   "py": "bèilí",
+   "pos": "动",
+   "zh": "违背，违反。",
+   "en": "",
+   "hv": "BỐI LY",
+   "vi": "đi ngược lại, xa rời",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "沉沦",
+   "py": "chénlún",
+   "pos": "动",
+   "zh": "陷入罪恶的、痛苦的境界。",
+   "en": "",
+   "hv": "TRẦM LUÂN",
+   "vi": "lún sâu, suy tàn",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "生灵",
+   "py": "shēnglíng",
+   "pos": "名",
+   "zh": "指有生命的东西。",
+   "en": "",
+   "hv": "SINH LINH",
+   "vi": "sinh linh, sinh vật sống",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "建制",
+   "py": "jiànzhì",
+   "pos": "名",
+   "zh": "机关、军队的组织编制和行政区划等制度的总称。",
+   "en": "organizational system, organizational structure",
+   "hv": "KIẾN CHẾ",
+   "vi": "chế độ tổ chức, thiết chế",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "受制",
+   "py": "shòuzhì",
+   "pos": "动",
+   "zh": "〈书〉受辖制。",
+   "en": "",
+   "hv": "THỤ CHẾ",
+   "vi": "chịu sự kiềm chế, bị chi phối",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "酿",
+   "py": "niàng",
+   "pos": "动",
+   "zh": "逐渐形成。",
+   "en": "",
+   "hv": "NHƯỠNG",
+   "vi": "gây nên, dần hình thành",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "注定",
+   "py": "zhùdìng",
+   "pos": "动",
+   "zh": "（某种客观规律或所谓命运）预先决定。",
+   "en": "",
+   "hv": "CHÚ ĐỊNH",
+   "vi": "định sẵn, tất yếu",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "抵触",
+   "py": "dǐchù",
+   "pos": "动",
+   "zh": "跟另一方有矛盾。",
+   "en": "",
+   "hv": "ĐỂ XÚC",
+   "vi": "xung đột, mâu thuẫn",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "鱼死网破",
+   "py": "yú sǐ wǎng pò",
+   "pos": "成",
+   "zh": "比喻经过拼命搏斗，结果两败俱伤。",
+   "en": "",
+   "hv": "NGƯ TỬ VÕNG PHÁ",
+   "vi": "một mất một còn, cả hai cùng thiệt",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "迄今",
+   "py": "qìjīn",
+   "pos": "动",
+   "zh": "到现在。",
+   "en": "",
+   "hv": "HẤT KIM",
+   "vi": "cho đến nay",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "挂一漏万",
+   "py": "guà yī lòu wàn",
+   "pos": "成",
+   "zh": "挂住一个，漏掉一万个。形容列举得很不完备。",
+   "en": "",
+   "hv": "QUẢI NHẤT LẬU VẠN",
+   "vi": "thiếu sót nhiều, được một bỏ mười",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "应对",
+   "py": "yìngduì",
+   "pos": "动",
+   "zh": "答对。",
+   "en": "reply, answer, response",
+   "hv": "ỨNG ĐỐI",
+   "vi": "ứng phó, đối đáp",
+   "proper": false
+  },
+  {
+   "n": 96,
+   "hz": "临界",
+   "py": "línjiè",
+   "pos": "动",
+   "zh": "由一种状态或物理量转变为另一种状态或物理量的。",
+   "en": "",
+   "hv": "LÂM GIỚI",
+   "vi": "tới hạn",
+   "proper": false
+  },
+  {
+   "n": 97,
+   "hz": "对策",
+   "py": "duìcè",
+   "pos": "名",
+   "zh": "对付的策略或办法。",
+   "en": "",
+   "hv": "ĐỐI SÁCH",
+   "vi": "đối sách, giải pháp",
+   "proper": false
+  },
+  {
+   "n": 98,
+   "hz": "归根结底",
+   "py": "guī gēn jié dǐ",
+   "pos": "成",
+   "zh": "归结到根本上。",
+   "en": "",
+   "hv": "QUY CĂN KẾT ĐỂ",
+   "vi": "xét cho cùng, quy về tận gốc",
+   "proper": false
+  },
+  {
+   "n": 99,
+   "hz": "抛砖引玉",
+   "py": "pāo zhuān yǐn yù",
+   "pos": "成",
+   "zh": "谦辞。比喻用粗浅的、不成熟的意见引出别人高明的、成熟的意见。",
+   "en": "",
+   "hv": "PHAO CHUYÊN DẪN NGỌC",
+   "vi": "ném gạch dẫn ngọc (lời khiêm nhường gợi mở ý kiến)",
+   "proper": false
+  },
+  {
+   "n": 100,
+   "hz": "方家",
+   "py": "fāngjiā",
+   "pos": "名",
+   "zh": "“大方之家”的简称，本义是深明大道的人，后多指精通某种学问、艺术的人。",
+   "en": "",
+   "hv": "PHƯƠNG GIA",
+   "vi": "bậc thông thái, chuyên gia",
+   "proper": false
+  },
+  {
+   "n": 101,
+   "hz": "杞人忧天",
+   "py": "Qǐ rén yōu tiān",
+   "pos": "成",
+   "zh": "传说杞国有个人怕天塌下来，吃饭睡觉都感到不安（见于《列子·天瑞》）。比喻不必要的忧虑。",
+   "en": "",
+   "hv": "KỶ NHÂN ƯU THIÊN",
+   "vi": "lo bò trắng răng (nỗi lo hão huyền)",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "保护城市生态刻不容缓",
+   "paragraphs": [
+    "城市建设与城市生态气候，乍一看风马牛不相及，其实关联极为密切，不可不察。",
+    "欲究其详，需先搞清楚“城市生态气候”的概念。按照传统陈旧观念，气候覆盖天下，并无城市、农村之分。在城市规模较小、发达程度较低的场合确实没有必要关心“城市气候”，因为在那种场合，“城市气候”并不存在多少特殊性。但是，随着城市规模不断扩张、城市发达程度不断提高，城市气候越来越表现出独有的特征。气候因城市发展而骤变。像北京这样的超级大都市，气候异变，已经达到不容忽视的地步。",
+    "异变的内容现在已知的主要表现在两方面，一是降水量减少，一是热效应。",
+    "气候的第一决定因素是地貌。海洋性气候、大陆性气候等都是根据不同地貌形成的。山林与平原气候迥异，也是因地貌性质不同而造成的。大海、山林、平原，这些都属于天然地貌。如果我们人为地制造出某种地貌，同样会影响气候，与自然地貌影响气候一般无二。城市就是人为制造出的一种地貌。在城市发达程度较低、规模较小的场合，城市对气候的影响并不明显，不会引起注意。然而，当高楼林立、道路纵横、城市不断扩张的时候，情形就不一样了。足够大的面积形成一个独立的地貌，就像一片山林或一块沙漠一样，必然要影响到气候，导致气候的变异。当然，气候异变会引发一系列连锁反应，最终影响到居住环境的质量，应引起高度重视。",
+    "北京人的生活体验与北京的气候资料同时揭示了这样一个可怕的趋势：近十多年来，北京的降雨逐年减少。2001年7月的降雨量之低，在历史上也是罕见的。历史上北京不乏干旱之年，但降雨逐年减少持续时间如此之长，这一切绝不能归于“偶然”。",
+    "少雨的十多年恰恰是北京城市发展速度最快的时期。这绝非巧合，而是一种必然。这说明，人为制造的地貌已经反作用于气候了，我们已经初尝了气候给予我们的惩罚。",
+    "表面上看，雨从天降，实际上水库在地下，地面蒸发多少水，天就返还给我们多少水，天也不可能做出无米之炊。城市规模过大，地面过硬（水泥化），就形成了一个相对独立的硬地貌，这个硬地貌无法有效地涵养水分，无法把雨水涵养在地下，让其慢慢蒸发，大部分雨水进入下水系统，白白流失了。地面存不住水，自然也就无水可降。湿热的七八月不降雨，人们熬不住，纷纷安装空调，空调的增多进一步加剧气候的恶化，形成恶性循环。更严重的潜在危险在于：地下水是地层的一个组成部分。地下水消耗殆尽之后，若得不到及时补给，地下水层面就会在其上土层的压迫下发生塌陷。地表的建筑物就会下沉。轻微的下沉不会造成严重后果，但严重了后果不堪设想。连续多年不降雨或降雨严重不足，很有可能导致地下水枯竭，地下水层面塌陷，从而造成地表下沉。地表下沉，必然殃及地面建筑物。这并非危言耸听。许多发达城市在没有认识到问题严重性的时候都曾发生过地面下沉问题，幸亏及时纠正了。",
+    "可以这样说，地面的水泥或钢铁设施越多越密，地表的通透性就越差，水分涵养就越困难，地表下沉的可能性也随之加大。地面建筑物越多越密，一旦发生下沉，后果也越严重。所以，发达城市普遍采用三种办法解决这些难题。",
+    "第一是绿化。许多人——包括专业园林工作者与市政管理者——至今仍有一个错误观念，认为绿地的首要功能是美化环境。此大谬也。实际上，绿地的第一功能是保护生态，营造正常的气候环境。城市美与不美并不是第一位的，生存才是第一位的。否则，气候异变，城市就不再适于人类居住了。现在已经没有人不知道保护环境的重要性了，但许多人并不知道广义的“环境”包括气候，而且气候在“环境”中占据十分重要的地位。没有良好的气候，人类是无法生存的。",
+    "英国、德国等国家的大城市，都是以绿色为基本色调的，水泥的灰色与钢铁的黑色只不过是一种搭配色。美国迪士尼乐园的路许多都是软地，保持着良好的通透性。人们在软地上行走格外舒适。发达的现代城市，绿地比例高得惊人，到处都是草地。有限的水泥建筑物与柏油马路改变不了城市的地貌品质，因为从整体上看，地面是松软的，地面保持着与“天空”的联系。这种联系乃人类的生命线。那里一般都没有过多的立交桥等占据大量硬地的设施，马路也都尽量修筑得窄些，尽一切可能给软地留出空间。在寸土寸金的大都市，把上好的土地留给绿地，并不是单纯为了美，而是为了人类长久地在城市中生存下去。如果单纯为了美，不去解决生态气候的根本问题，天不降雨，人工种植的草木都由人工灌溉，成本昂贵，而且本来就缺水，绿化事业也将无以为继。绿化的标准是什么？就是形成良性循环，绿地涵养了水分，天然降雨又涵养了绿地，周而复始。",
+    "第二是转移部分城市功能。对于特大城市来说，转移一部分功能是行之有效的。具体做法有卫星城与疏散居住人口两种模式。所谓卫星城，一定是指小城与母城之间有隔离，连在一起就不能称作卫星城了。疏散居住人口是比较流行的做法。一部分工薪阶层在大城市上班，居住在远离城市的小城镇。之间由轻轨等高速交通工具相连接，路程耗时不超过一个半小时（发达国家普遍认为上班路程超过两小时无法接受）。这样就能避免城市规模的无限扩张。如果规模被控制住了，即使软地比例不足，也不至于严重地影响气候。",
+    "第三是尽量减少硬地表的铺设。道路尽量窄些（交通效率与路宽并没有必然联系），交通设施尽量简洁些，尽量少建立交桥。由于一个立交桥使得一片地面硬化，“杀伤力”极强，许多国家已经不再考虑用这个方法提高运输效率。有的城市还把已经修建的立交桥拆除。总之要留下足够的软地面，以与“天”交流，保持正常的生态气候平衡。",
+    "北京城的软土面积比例越来越小，虽然年年种树植草，但还是赶不上铺设水泥的速度。有些草地是铺在斜坡上，起不到渗水作用，只有美化市容这样一项功能，有些草坪地势过高，雨水流入周边硬地的下水道。北京的道路越修越宽，道路占地的比例越来越大，加之立交桥越来越多，桥的构造越来越复杂，占地也越来越多，此外还有大量的水泥停车场、水泥广场。相比之下，软地显得不足。",
+    "更重要的是，北京的规模越来越大。四环通车之后，紧接着是五环，而且五环并不是尽头，后面还有更宏大的规划。这样无止境地发展下去，恐怕离城市极限规模越来越接近了。北京的气候异变已经不仅表现在降雨少这一方面，北京的城市热效应也是十分明显的。盛夏难熬，从北京向各个方向走，只要走出了北京，立即会感到凉爽许多。城市地貌在悄悄影响着气候，已经是不争的事实。持续高温成为北京人的一块心病，根子就在于已经发生了气候异变。而这种异变在很大程度上是我们人为制造出来的。我们的许多城市杰作原来是需要付出代价的，这一点千万不能忘记！",
+    "翻开历史，无论世界哪一个大洲，都发生过大城市文明突然消逝的事情。人们至今感到蹊跷，不解个中原因。其实，城市发展由不得人率性而为，必须尊重规律，服从规律。城市与自然生态气候的关系可以发生一定程度背离，但要有限度，超过了限度，城市就无法存在下去了。用这个观点完全可以解释古代大城市突然沉沦消失的原因。那些神秘消失的城市，肯定破坏了规律，消失正是吞服破坏规律的苦果。",
+    "城市像是有感知的生灵，需要若干基本生存要素，才能维持生存。西方人认为，上帝创造了农村，人创造了城市。这一说法提示我们：城市是由人造出来的！人能造城市，就一定也能毁城市。一位哲人早就说过，一切人为的建制都具有可错性。诚哉斯言。凡人造的东西都要受制于种种规律，破坏了规律就会酿成不良后果，世间唯有纯自然是永远正确的，而我们注定要不断犯错误。当城市发展与自然规律发生抵触时，我们千万不要与自然规律争个鱼死网破！",
+    "把防止环境污染作为城市发展重要课题是必要的，但仅仅防止污染还远远不够。城市是人类迄今为止最大的工程，综合性极强，设计规划非常容易挂一漏万。所以世界上至今不存在一座十全十美的城市。只要是城市，一定有缺失，一定存在“可错性”，哪一座城市都不例外。",
+    "城市生态气候的变异已经无声无息地浮出水面，露出了冰山一角。现在该是认真应对的时候了。",
+    "当前，城市规划与管理急迫需要解决的问题主要有：因特殊地貌形成而发生气候恶性改变的城市临界规模是多大？都有哪些异变特征？这种改变对城市具有哪些危害？会发生哪些连锁反应？应该采取哪些对策以防患于未然（现在说“未然”恐怕已有不妥）？归根结底，问题在于：城市的极限规模究竟该定为多大？城市的软地占多大比例才能保证城市生态气候平衡？城市温度高出周边地区多少算“正常”……",
+    "限于能力，我无力给这一系列问题以圆满回答。本文只是抛砖引玉，目的在引起重视，切望方家解除我的疑虑，更愿我的疑虑是杞人忧天。",
+    "（作者：王文元　选自《书摘》2004.5　个别语句有改动）"
+   ],
+   "translations": [
+    "Xây dựng đô thị và khí hậu sinh thái đô thị, thoạt nhìn tưởng như chẳng ăn nhập gì với nhau, thực ra lại có mối liên hệ vô cùng mật thiết, không thể không xem xét.",
+    "Muốn tìm hiểu tường tận điều này, trước hết cần làm rõ khái niệm “khí hậu sinh thái đô thị”. Theo quan niệm cũ kỹ truyền thống, khí hậu bao trùm khắp thiên hạ, không hề phân biệt thành thị hay nông thôn. Trong những trường hợp quy mô đô thị còn nhỏ, mức độ phát triển còn thấp, quả thật không cần phải bận tâm đến “khí hậu đô thị”, bởi ở những nơi ấy “khí hậu đô thị” không có mấy nét đặc thù. Thế nhưng, cùng với việc quy mô đô thị không ngừng mở rộng và mức độ phát triển ngày càng nâng cao, khí hậu đô thị ngày một bộc lộ những đặc trưng riêng biệt. Khí hậu biến đổi đột ngột theo sự phát triển của thành phố. Với những siêu đô thị như Bắc Kinh, sự dị biến khí hậu đã lên tới mức không thể xem nhẹ.",
+    "Những biểu hiện của sự dị biến hiện nay được biết đến chủ yếu trên hai phương diện: một là lượng mưa giảm, hai là hiệu ứng nhiệt.",
+    "Yếu tố quyết định hàng đầu của khí hậu là địa mạo. Khí hậu hải dương, khí hậu lục địa… đều hình thành dựa trên những dạng địa mạo khác nhau. Khí hậu vùng núi rừng và đồng bằng khác nhau một trời một vực cũng là do tính chất địa mạo khác biệt tạo nên. Biển cả, núi rừng, đồng bằng đều thuộc địa mạo tự nhiên. Nếu con người tự tạo ra một dạng địa mạo nào đó, nó cũng sẽ tác động đến khí hậu, chẳng khác gì địa mạo tự nhiên ảnh hưởng đến khí hậu vậy. Đô thị chính là một dạng địa mạo do con người tạo ra. Khi thành phố còn kém phát triển, quy mô còn nhỏ, tác động của nó đến khí hậu chưa rõ rệt nên không gây chú ý. Tuy nhiên, khi nhà cao tầng mọc lên san sát, đường sá dọc ngang, thành phố không ngừng bành trướng thì tình hình đã khác hẳn. Một diện tích đủ lớn sẽ hình thành nên một địa mạo độc lập, giống như một vùng núi rừng hay một mảng sa mạc, tất yếu sẽ ảnh hưởng đến khí hậu và dẫn tới sự biến dị khí hậu. Đương nhiên, dị biến khí hậu sẽ kéo theo hàng loạt phản ứng dây chuyền, cuối cùng ảnh hưởng đến chất lượng môi trường sống, cần phải được coi trọng ở mức cao nhất.",
+    "Trải nghiệm đời sống của người dân Bắc Kinh cùng số liệu khí hậu Bắc Kinh đều hé lộ một xu thế đáng sợ: hơn mười năm trở lại đây, lượng mưa ở Bắc Kinh giảm dần qua từng năm. Lượng mưa tháng 7 năm 2001 thấp đến mức hiếm thấy trong lịch sử. Trong lịch sử, Bắc Kinh không thiếu những năm hạn hán, nhưng tình trạng lượng mưa giảm dần qua từng năm kéo dài suốt một thời gian lâu như vậy thì tuyệt đối không thể quy cho sự “ngẫu nhiên”.",
+    "Hơn mười năm ít mưa ấy lại trùng hợp đúng vào thời kỳ Bắc Kinh phát triển đô thị nhanh nhất. Đây tuyệt nhiên không phải sự trùng hợp mà là một tất yếu. Điều đó cho thấy, dạng địa mạo nhân tạo đã tác động ngược trở lại khí hậu, và chúng ta đã bước đầu nếm trải sự trừng phạt mà khí hậu dành cho mình.",
+    "Nhìn bề ngoài, mưa từ trên trời rơi xuống, nhưng kỳ thực hồ chứa nằm dưới lòng đất; mặt đất bốc hơi bao nhiêu nước thì bầu trời trả lại cho chúng ta bấy nhiêu nước, trời cũng chẳng thể nào “không bột mà gột nên hồ”. Quy mô thành phố quá lớn, mặt đất quá cứng (bê tông hóa), sẽ tạo thành một địa mạo cứng tương đối độc lập; địa mạo cứng này không thể tích giữ nước một cách hiệu quả, không giữ được nước mưa thấm xuống lòng đất để từ từ bay hơi, mà phần lớn nước mưa chảy tuột vào hệ thống cống thoát nước, thất thoát uổng phí. Mặt đất không giữ được nước thì tự nhiên cũng chẳng có nước để mưa. Tháng bảy, tháng tám oi bức mà không mưa, người dân chịu không thấu bèn đua nhau lắp điều hòa; điều hòa tăng lên lại càng khiến khí hậu xấu đi, tạo thành một vòng luẩn quẩn. Mối nguy tiềm ẩn nghiêm trọng hơn nằm ở chỗ: nước ngầm là một bộ phận cấu thành của địa tầng. Sau khi nước ngầm bị tiêu hao gần cạn, nếu không được bổ sung kịp thời, tầng mặt nước ngầm sẽ sụt lún dưới sức nén của lớp đất phía trên. Các công trình trên mặt đất theo đó cũng lún xuống. Lún nhẹ sẽ không gây hậu quả nghiêm trọng, nhưng một khi nghiêm trọng thì hậu quả thật khôn lường. Nhiều năm liền không mưa hoặc thiếu mưa trầm trọng rất dễ dẫn đến cạn kiệt nước ngầm, làm sụp tầng nước ngầm, từ đó gây lún bề mặt đất. Mặt đất sụt lún tất yếu sẽ vạ lây tới các công trình kiến trúc bên trên. Đây hoàn toàn không phải lời nói giật gân dọa người. Rất nhiều thành phố phát triển từng gặp tình trạng sụt lún mặt đất khi chưa nhận thức hết mức độ nghiêm trọng của vấn đề, may mà đã kịp thời chấn chỉnh.",
+    "Có thể nói rằng, các công trình bê tông hay sắt thép trên mặt đất càng nhiều, càng dày đặc thì độ thông thoáng thấm nước của bề mặt càng kém, việc tích giữ nước càng khó khăn, và khả năng sụt lún mặt đất theo đó cũng gia tăng. Công trình trên mặt đất càng nhiều càng dày thì một khi xảy ra sụt lún, hậu quả càng thảm khốc. Vì thế, các đô thị phát triển đều phổ biến áp dụng ba giải pháp để giải quyết những bài toán nan giải này.",
+    "Thứ nhất là phủ xanh. Nhiều người — kể cả những người làm công tác cảnh quan cây xanh chuyên nghiệp lẫn các nhà quản lý đô thị — đến nay vẫn mang một quan niệm sai lầm, cho rằng chức năng hàng đầu của mảng xanh là làm đẹp môi trường. Điều này hết sức sai lầm. Thực tế, chức năng thứ nhất của mảng xanh là bảo vệ sinh thái, kiến tạo môi trường khí hậu bình thường. Thành phố đẹp hay không đẹp chưa phải là điều đứng hàng đầu, sinh tồn mới là điều đứng hàng đầu. Bằng không, khí hậu dị biến, thành phố sẽ không còn thích hợp cho con người cư trú nữa. Ngày nay không ai là không biết tầm quan trọng của việc bảo vệ môi trường, nhưng nhiều người lại không biết rằng “môi trường” theo nghĩa rộng bao gồm cả khí hậu, hơn nữa khí hậu còn giữ vị trí vô cùng trọng yếu trong “môi trường”. Không có khí hậu tốt đẹp, con người không thể sinh tồn.",
+    "Các thành phố lớn ở những quốc gia như Anh, Đức… đều lấy màu xanh lá làm tông màu chủ đạo, màu xám của xi măng và màu đen của sắt thép chẳng qua chỉ là màu điểm xuyết phối hợp. Rất nhiều con đường trong công viên Disneyland ở Mỹ là nền đất mềm, duy trì khả năng thấm hút tốt. Đi bộ trên nền đất mềm khiến người ta thấy thoải mái lạ thường. Các đô thị hiện đại phát triển có tỷ lệ cây xanh cao đến kinh ngạc, đâu đâu cũng là thảm cỏ. Số lượng công trình bê tông và đường nhựa có hạn không làm biến chất địa mạo của thành phố, bởi nhìn trên tổng thể, mặt đất vẫn tơi xốp mềm mại, vẫn giữ được sợi dây liên kết với “bầu trời”. Mối liên kết ấy chính là tuyến sinh mệnh của nhân loại. Ở những nơi đó thường không có quá nhiều cầu vượt hay công trình chiếm dụng diện tích cứng quá lớn, đường sá cũng cố gắng xây hẹp lại, tận dụng mọi khả năng để chừa không gian cho đất mềm. Ở những đại đô thị tấc đất tấc vàng, việc dành những khu đất đắc địa cho cây xanh không đơn thuần chỉ vì cái đẹp, mà là để con người có thể sinh tồn lâu dài trong thành phố. Nếu chỉ thuần túy vì đẹp mà không giải quyết vấn đề gốc rễ của khí hậu sinh thái, thì khi trời không mưa, cây cỏ nhân tạo đều phải tưới bằng sức người, chi phí đắt đỏ, lại thêm vốn dĩ đã thiếu nước, sự nghiệp phủ xanh cũng khó lòng duy trì nổi. Tiêu chuẩn của phủ xanh là gì? Chính là hình thành một vòng tuần hoàn lành mạnh: thảm xanh giữ ẩm cho đất, mưa tự nhiên lại nuôi dưỡng thảm xanh, cứ thế xoay vòng không dứt.",
+    "Thứ hai là chuyển dịch một phần chức năng đô thị. Đối với các siêu đô thị, việc chuyển bớt một phần chức năng là biện pháp mang lại hiệu quả thiết thực. Cách làm cụ thể có hai mô hình: thành phố vệ tinh và giãn dân cư. Gọi là thành phố vệ tinh thì nhất định giữa đô thị nhỏ và đô thị mẹ phải có khoảng cách tách biệt; nếu dính liền thành một khối thì không thể gọi là thành phố vệ tinh nữa. Giãn dân cư là cách làm khá thịnh hành. Một bộ phận người làm công ăn lương làm việc ở thành phố lớn nhưng sinh sống tại các thị trấn nhỏ cách xa đô thị. Giữa hai nơi kết nối bằng các phương tiện giao thông tốc độ cao như đường sắt nhẹ, thời gian đi lại không quá một tiếng rưỡi (các nước phát triển nhìn chung cho rằng quãng đường đi làm quá hai tiếng là không thể chấp nhận). Làm vậy sẽ tránh được việc quy mô thành phố phình to vô hạn. Nếu khống chế được quy mô, thì ngay cả khi tỷ lệ đất mềm chưa đủ, cũng không đến mức tác động nghiêm trọng tới khí hậu.",
+    "Thứ ba là hạn chế tối đa việc lát phủ bề mặt cứng. Đường sá cố gắng làm hẹp hơn một chút (hiệu suất giao thông không có mối liên hệ tất yếu với độ rộng của đường), công trình giao thông làm đơn giản gọn nhẹ hơn một chút, hạn chế xây cầu vượt. Do một cây cầu vượt khiến cả một mảng mặt đất bị bê tông hóa cứng đơ, “sức sát thương” cực mạnh, nên nhiều quốc gia đã không còn tính đến phương án dùng cách này để nâng cao hiệu suất vận tải nữa. Một số thành phố thậm chí còn tháo dỡ những cây cầu vượt đã xây. Tóm lại, phải chừa lại đủ diện tích đất mềm để giao lưu với “bầu trời”, duy trì sự cân bằng khí hậu sinh thái bình thường.",
+    "Tỷ lệ diện tích đất mềm của thành phố Bắc Kinh ngày càng thu hẹp; tuy năm nào cũng trồng cây gieo cỏ nhưng vẫn không đuổi kịp tốc độ đổ bê tông. Có những thảm cỏ được trồng trên sườn dốc, chẳng có tác dụng thấm nước, chỉ có mỗi chức năng tô điểm mỹ quan đô thị; có những bãi cỏ địa thế quá cao, nước mưa chảy hết xuống cống thoát nước ở vùng đất cứng xung quanh. Đường ở Bắc Kinh càng mở càng rộng, tỷ lệ đất giao thông chiếm dụng ngày càng lớn, cộng thêm cầu vượt ngày càng nhiều, kết cấu cầu ngày càng phức tạp, chiếm đất cũng ngày càng nhiều, ngoài ra còn vô số bãi đỗ xe bê tông, quảng trường bê tông. So sánh tương quan, đất mềm trở nên thiếu hụt rõ rệt.",
+    "Quan trọng hơn nữa là quy mô của Bắc Kinh ngày càng phình to. Sau khi đường vành đai 4 thông xe, tiếp liền đó là vành đai 5, mà vành đai 5 vẫn chưa phải điểm dừng, phía sau còn những quy hoạch hoành tráng hơn nữa. Cứ phát triển không có điểm dừng như thế, e rằng ngày càng tiến sát đến giới hạn tối đa của đô thị. Sự dị biến khí hậu của Bắc Kinh không chỉ thể hiện ở khía cạnh ít mưa mà hiệu ứng nhiệt đô thị của Bắc Kinh cũng vô cùng rõ rệt. Giữa mùa hè oi ả khó chịu, từ Bắc Kinh đi về bất kỳ hướng nào, hễ ra khỏi địa phận Bắc Kinh là lập tức cảm thấy mát mẻ hơn hẳn. Địa mạo đô thị đang âm thầm tác động tới khí hậu, đó đã là sự thật không thể chối cãi. Nắng nóng kéo dài trở thành nỗi lo canh cánh trong lòng người dân Bắc Kinh, căn nguyên chính nằm ở chỗ khí hậu đã xảy ra dị biến. Mà sự dị biến này ở mức độ rất lớn lại do chính con người chúng ta tạo ra. Hóa ra rất nhiều “kiệt tác” đô thị của chúng ta đều phải trả giá, điều này tuyệt đối không được phép quên!",
+    "Lật giở lịch sử, bất kể ở châu lục nào trên thế giới cũng từng xảy ra chuyện những nền văn minh đại đô thị bỗng nhiên biến mất. Người đời đến nay vẫn thấy kỳ lạ, không lý giải nổi nguyên nhân bên trong. Kỳ thực, sự phát triển của đô thị không cho phép con người hành xử tùy hứng, mà bắt buộc phải tôn trọng quy luật, phục tùng quy luật. Mối quan hệ giữa đô thị và khí hậu sinh thái tự nhiên có thể chệch khỏi nhau ở một mức độ nhất định, nhưng phải có giới hạn; vượt quá giới hạn ấy, đô thị sẽ không thể tiếp tục tồn tại. Dùng quan điểm này hoàn toàn có thể lý giải nguyên nhân các đại đô thị cổ đại đột ngột suy tàn và biến mất. Những thành phố biến mất một cách bí ẩn ấy chắc chắn đã phá vỡ quy luật; sự biến mất chính là trái đắng mà chúng phải nuốt khi chà đạp quy luật.",
+    "Đô thị giống như một sinh linh có tri giác, cần đến một số yếu tố sinh tồn cơ bản mới có thể duy trì sự sống. Người phương Tây cho rằng, Thượng đế tạo ra nông thôn, còn con người tạo ra thành phố. Cách nói này gợi nhắc cho chúng ta rằng: thành phố là do con người tạo nên! Con người dựng nên được thành phố thì chắc chắn cũng có thể hủy diệt thành phố. Một bậc triết nhân từ lâu đã nói, mọi thiết chế do con người tạo ra đều mang tính khả sai. Lời ấy thật chí lý thay! Phàm những gì do con người tạo ra đều phải chịu sự chi phối của đủ loại quy luật; phá vỡ quy luật ắt sẽ chuốc lấy hậu quả xấu. Thế gian này duy chỉ có tự nhiên thuần khiết là mãi mãi đúng đắn, còn chúng ta thì định sẵn sẽ không ngừng phạm sai lầm. Khi sự phát triển đô thị nảy sinh xung đột với quy luật tự nhiên, chúng ta tuyệt đối đừng đấu một phen “cá chết lưới rách” với quy luật tự nhiên!",
+    "Đặt việc phòng chống ô nhiễm môi trường làm đề tài trọng tâm trong phát triển đô thị là cần thiết, nhưng chỉ chống ô nhiễm thôi thì còn xa mới đủ. Đô thị là công trình lớn nhất của nhân loại từ trước đến nay, tính tổng hợp cực cao, việc thiết kế quy hoạch rất dễ rơi vào tình trạng được một bỏ mười. Bởi vậy trên thế giới cho đến nay chưa từng tồn tại một thành phố nào thập toàn thập mỹ. Hễ đã là thành phố thì nhất định có khiếm khuyết, nhất định tồn tại “tính khả sai”, bất kỳ thành phố nào cũng không ngoại lệ.",
+    "Sự biến dị của khí hậu sinh thái đô thị đã lặng lẽ trồi lên mặt nước, lộ ra phần nổi của tảng băng chìm. Bây giờ đã đến lúc phải nghiêm túc ứng phó rồi.",
+    "Hiện nay, những vấn đề cấp bách mà quy hoạch và quản lý đô thị cần giải quyết chủ yếu gồm: Quy mô tới hạn của một đô thị khiến khí hậu biến đổi theo chiều hướng xấu do hình thành địa mạo đặc biệt là bao nhiêu? Có những đặc trưng dị biến nào? Sự biến đổi đó gây ra những mối nguy hại gì cho thành phố? Sẽ kéo theo những phản ứng dây chuyền nào? Nên áp dụng những đối sách nào để phòng họa từ khi chưa xảy ra (giờ mà nói “chưa xảy ra” e rằng đã không còn thỏa đáng)? Suy cho cùng, vấn đề nằm ở chỗ: Quy mô cực hạn của đô thị rốt cuộc nên định ở mức nào? Đất mềm của thành phố cần chiếm tỷ lệ bao nhiêu mới bảo đảm được cân bằng khí hậu sinh thái đô thị? Nhiệt độ thành phố cao hơn vùng phụ cận bao nhiêu thì được coi là “bình thường”……",
+    "Do năng lực hạn chế, tôi không đủ sức đưa ra lời giải đáp trọn vẹn cho hàng loạt câu hỏi ấy. Bài viết này chỉ mong như hòn gạch nhỏ dẫn ngọc quý, cốt nhằm khơi gợi sự quan tâm, tha thiết mong các bậc chuyên gia giải tỏa nỗi băn khoăn của tôi, và càng mong những nỗi băn khoăn ấy chỉ là chuyện lo bò trắng răng.",
+    "(Tác giả: Vương Văn Nguyên, trích từ “Thư trích” số 5/2004, có chỉnh sửa một vài câu chữ)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "人类要把其他生命当作朋友",
+   "paragraphs": [
+    "人是万物之灵，是生命最高的形式，是地球上万物的主宰——难道这还是个问题吗？",
+    "然而，在国外这些年的所见所闻，让我对这个问题有了越来越多的思考。而引起这类思考的都是一些平平常常、不经意中的所见所闻。",
+    "在一次阿尔卑斯山的远足中，我无意中走入了一处位于两千多米高山上的少年夏令营。营地坐落于一片疏密适中的森林中。巨大的百年老树像一把把撑开的绿伞，遮掩着孩子们在林间空地上支起的帐篷。那些十四五岁的男孩子有的在树荫下嬉戏，有的安静地坐在帐篷外的枯木干上聊天，轻松悠闲，犹如置身世外桃源。令我惊奇的是，就在这生活着二三十个活泼好动的男孩子的夏令营里，竟赫然存在着五六个直径一米有余、高半米多的巨大蚁穴！它们散落在树林里，由细小的松枝、树皮碎屑和腐殖土堆成，数不清的蚂蚁忙忙碌碌，在蚁穴堆上进进出出，在自己几十年聚沙成塔般建立起的家园中，不受外界干扰地过着自己的日子。我是第一次见到如此巨大和集中的蚁穴，自然惊奇不已。更让我感叹的是这些巨大但不堪人类一击的蚁穴竟能在孩子们的营地中安然无恙，与几十个正值顽皮年龄的男孩和平共处，互不妨碍。如果孩子们没有从小受到尊重生命、保护自然、与动物为友的教育，这些蚁穴的下场是可想而知的。",
+    "诸如此类的事其实都是日常小事，可贵的是当事人并没为自己的所作所为赋予什么重大深远的意义，他们只是按照自己的习惯，理所当然地做大家在相同境况下都会做的事。他们所爱护的也不是什么国宝级或国家几级保护动物。平常的人，平常的动物，平常的事，但贵在平常。",
+    "阿尔卑斯山绚烂、品种繁多的野花漫山遍野，却不见哪个游人去随手采摘一朵，连很小的孩子也不去动它们。因为人们都知道这些美丽的小花是受法律保护的。人们自觉地保护着野花野草在一两千米的高山上自由地生息。他们说：“一朵花儿插在自己家的花瓶里，只有你一个人欣赏它，而让它开在路边，就会有更多的人看到它。”",
+    "另一年夏天，我到加拿大一个国家野生公园旅游，扎营在湖畔的树林中。没想到树林里的蚊子蜂拥而来，防不胜防。一打听，原来因为蚊子给游人造成的烦扰，公园曾在湖水中喷洒一种除虫剂以消灭水中的孑孓，从而有效地解决了人们的烦恼。但后来发现蚊虫的消灭减少了湖中蛙类的食物来源，破坏了大自然的食物链，于是人们果断地停止使用除虫剂，为了蛙类的正常生活，游人甘受蚊虫的烦扰。",
+    "更有甚者，就连野生公园中的朽木枯枝也受到保护。一次与同事在魁北克一个野生公园宿营，为了生篝火，我自告奋勇去湖边树林里拾散落在地上和被波浪遗留在沙滩上的枯枝，却被同事阻止了。顺着他的指点，我发现在宿营点周围早已由公园为游人准备好了生篝火用的木柴。我感到莫名其妙：枯枝败叶，现成的废物不用，却由公园出钱在别处购买木柴，再免费提供给游人，简直多此一举。我百思不解，向同事请教之后才知道，原来人们认为这里的野生生态环境有着自己的生命循环：春天草木发芽、生长，秋天落下败叶枯枝，这些枯枝将慢慢化为泥土，孕育出新的草木。人类作为外来者来到这个环境之中，只有权欣赏大自然的美，却无权干扰它们的自身循环。拾取枯枝生火，便人为地破坏了大自然的自身循环，破坏了野生公园的环境。因此人们宁可从专门的伐木区运来木柴供生篝火用，也不从野生环境中拿取任何东西，不给其中添加什么异物。游人使用后的垃圾，全都回收又带出公园。可见人们对野生公园保护之精心！使之成为不折不扣的“野生”。",
+    "诸如此类的行为，当地人习以为常，这些日常小事在无形中慢慢地改变着人们对生命含义的理解，逐渐学会对所有生命形式的尊重。我懂得了生命没有高低贵贱之分，也不应该以一种生命形式去“主宰”它。人类对其他生命不负责任，也就是对自己的不负责任。人类如果真是“万物之灵”的话，那只意味着人类要把其他生命当作朋友，从而担负起自己对其他生命的更大的责任。",
+    "（作者：清早　选自《做人与处世》2005.5　有删节）"
+   ],
+   "translations": [
+    "Con người là tinh hoa của vạn vật, là hình thái sự sống cao nhất, là chúa tể của muôn loài trên Trái Đất — lẽ nào điều đó vẫn còn là một vấn đề cần bàn cãi hay sao?",
+    "Thế nhưng, những điều mắt thấy tai nghe trong những năm ở nước ngoài đã khiến tôi ngày càng suy ngẫm nhiều hơn về câu hỏi này. Và những gì khơi gợi nên suy tư ấy đều là những chuyện hết sức bình thường, bắt gặp một cách tình cờ.",
+    "Trong một chuyến đi bộ đường dài ở dãy Alps, tôi tình cờ lạc bước vào một trại hè thiếu niên nằm trên ngọn núi cao hơn hai nghìn mét. Khu trại tọa lạc giữa một cánh rừng thưa rậm vừa phải. Những cây cổ thụ trăm năm sừng sững như những chiếc ô xanh bung mở, che mát cho những chiếc lều trẻ nhỏ dựng trên khoảng đất trống giữa rừng. Đám con trai mười bốn, mười lăm tuổi đứa thì nô đùa dưới bóng cây, đứa thì lặng lẽ ngồi trên thân gỗ khô bên ngoài lều trò chuyện, nhẹ nhõm thong dong, ngỡ như lạc vào chốn đào nguyên ngoài thế tục. Điều khiến tôi kinh ngạc là ngay trong trại hè có hai ba chục cậu bé hiếu động ấy, lại sừng sững tồn tại năm sáu tổ kiến khổng lồ đường kính hơn một mét, cao hơn nửa mét! Chúng nằm rải rác trong rừng, được đắp từ những cành thông nhỏ li ti, mảnh vỏ cây vụn và đất mùn; vô số con kiến tất bật ra vào trên ụ tổ, sống cuộc sống của riêng mình mà không bị thế giới bên ngoài quấy rầy ngay trong ngôi nhà chúng đã góp cát thành tháp suốt mấy chục năm trời. Lần đầu tiên thấy những tổ kiến lớn và tập trung đến thế, tôi tự nhiên kinh ngạc vô cùng. Điều khiến tôi càng cảm phục hơn là những tổ kiến to lớn nhưng không chịu nổi một cú đạp của con người ấy lại có thể bình yên vô sự ngay giữa khu trại của lũ trẻ, chung sống hòa bình với mấy chục cậu bé đang tuổi nghịch ngợm mà chẳng hề cản trở nhau. Nếu lũ trẻ không được giáo dục từ nhỏ về việc tôn trọng sự sống, bảo vệ thiên nhiên và làm bạn với muôn loài, thì kết cục của những tổ kiến kia có thể đoán trước được rồi.",
+    "Những chuyện đại loại như vậy kỳ thực đều là việc nhỏ thường ngày; điều đáng quý là người trong cuộc chẳng hề gán cho việc làm của mình ý nghĩa to tát sâu xa gì cả, họ chỉ làm theo thói quen của mình, làm một cách đương nhiên điều mà ai ở vào hoàn cảnh ấy cũng sẽ làm. Thứ họ nâng niu bảo vệ cũng chẳng phải quốc bảo hay động vật được nhà nước bảo hộ cấp mấy. Con người bình thường, loài vật bình thường, chuyện bình thường, nhưng cái quý lại nằm ở chính sự bình thường ấy.",
+    "Hoa dại rực rỡ muôn loài trên dãy Alps nở rộ khắp núi đồi, vậy mà chẳng thấy du khách nào tiện tay ngắt lấy một bông, ngay cả những em bé rất nhỏ cũng không đụng vào chúng. Bởi mọi người đều biết những bông hoa xinh đẹp ấy được pháp luật bảo vệ. Người dân tự giác gìn giữ để hoa cỏ dại được tự do sinh sôi trên những ngọn núi cao một hai nghìn mét. Họ nói: “Một bông hoa cắm trong bình ở nhà bạn thì chỉ có một mình bạn ngắm nó, còn để nó nở bên vệ đường thì sẽ có nhiều người hơn được chiêm ngưỡng nó.”",
+    "Một mùa hè khác, tôi đến du lịch tại một công viên hoang dã quốc gia ở Canada, dựng trại trong khu rừng ven hồ. Không ngờ muỗi trong rừng kéo đến như ong vỡ tổ, chống đỡ không xuể. Hỏi ra mới biết, trước đây vì phiền toái do muỗi gây ra cho du khách, công viên từng phun một loại thuốc diệt côn trùng xuống nước hồ để tiêu diệt loăng quăng, qua đó giải quyết hiệu quả nỗi bực mình của mọi người. Nhưng về sau người ta phát hiện việc diệt muỗi làm giảm nguồn thức ăn của các loài ếch nhái trong hồ, phá vỡ chuỗi thức ăn của tự nhiên, thế là họ dứt khoát ngừng dùng thuốc diệt côn trùng; vì cuộc sống bình thường của loài ếch nhái, du khách cam chịu sự quấy rầy của muỗi mòng.",
+    "Thậm chí còn hơn thế, ngay cả gỗ mục cành khô trong công viên hoang dã cũng được bảo vệ. Một lần đi cắm trại cùng đồng nghiệp tại một công viên hoang dã ở Quebec, để nhóm lửa trại, tôi xung phong vào rừng ven hồ nhặt những cành khô rụng trên mặt đất và dạt trên bãi cát, nào ngờ bị đồng nghiệp ngăn lại. Nhìn theo hướng anh ấy chỉ, tôi phát hiện xung quanh khu cắm trại, công viên đã chuẩn bị sẵn củi để du khách nhóm lửa. Tôi thấy thật khó hiểu: cành khô lá rụng, đồ bỏ đi có sẵn không dùng, lại để công viên bỏ tiền mua củi ở nơi khác rồi phát miễn phí cho du khách, quả là vẽ chuyện dư thừa. Tôi nghĩ mãi không thông, sau khi hỏi đồng nghiệp mới vỡ lẽ: hóa ra người ta cho rằng hệ sinh thái hoang dã nơi đây có vòng tuần hoàn sự sống riêng của nó — mùa xuân cây cỏ đâm chồi nảy lộc, mùa thu rụng xuống lá héo cành khô, những cành khô này sẽ từ từ hóa thành đất bùn, nuôi dưỡng nên cây cỏ mới. Con người với tư cách là khách vãng lai bước vào môi trường này chỉ có quyền thưởng ngoạn vẻ đẹp của thiên nhiên, chứ không có quyền can thiệp vào vòng tuần hoàn tự thân của chúng. Nhặt cành khô nhóm lửa chính là dùng bàn tay con người phá vỡ vòng tuần hoàn tự thân của đại tự nhiên, phá hoại môi trường công viên hoang dã. Vì vậy, người ta thà chở củi từ khu khai thác gỗ chuyên biệt đến cho du khách đốt lửa trại, chứ quyết không lấy đi bất cứ thứ gì từ môi trường hoang dã, cũng không đưa thêm tạp vật gì vào đó. Rác thải sau khi du khách sử dụng đều được thu gom mang ra khỏi công viên. Đủ thấy con người bảo vệ công viên hoang dã tỉ mỉ đến nhường nào! Khiến nơi đây trở thành chốn “hoang dã” đúng nghĩa không chút pha tạp.",
+    "Những hành vi tương tự như thế đã thành thói quen bình thường của người dân bản xứ; những việc nhỏ thường nhật ấy âm thầm làm thay đổi cách con người hiểu về ý nghĩa của sự sống, dần dần học được cách tôn trọng mọi hình thái sinh mệnh. Tôi đã hiểu ra rằng sự sống không hề có sự phân biệt cao thấp sang hèn, cũng không nên lấy một hình thái sự sống nào đó để “chủ tể” nó. Con người vô trách nhiệm với các sinh mệnh khác cũng chính là vô trách nhiệm với chính bản thân mình. Nếu con người quả thật là “tinh hoa của vạn vật”, thì điều đó chỉ có nghĩa là con người phải coi các sinh mệnh khác như bạn bè, để từ đó gánh vác trách nhiệm lớn lao hơn của mình đối với những sinh mệnh khác.",
+    "(Tác giả: Thanh Tảo, trích từ “Tố nhân dữ xử thế” số 5/2005, có lược bỏ)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "无……之分 (không phân biệt…)",
+   "structure": "无 + A、B（相对/相反词语）+ 之分；……有无……之分？",
+   "explanation": "Nghĩa là “không có sự phân biệt…”. Ở giữa thường là một hoặc hai nhóm từ ngữ có ý nghĩa trái ngược hoặc tương đối với nhau. Thường dùng trong văn viết. Khi đặt câu hỏi dùng cấu trúc: “……有无……之分？”.",
+   "examples": [
+    {
+     "zh": "按照传统陈旧观念，气候覆盖天下，并无城市、农村之分。",
+     "vi": "Theo quan niệm cũ kỹ truyền thống, khí hậu bao trùm khắp thiên hạ, không hề phân biệt thành thị hay nông thôn."
+    },
+    {
+     "zh": "无男女之分",
+     "vi": "không phân biệt nam nữ"
+    },
+    {
+     "zh": "无高低贵贱之分",
+     "vi": "không phân biệt cao thấp sang hèn"
+    },
+    {
+     "zh": "无国界之分",
+     "vi": "không phân biệt biên giới quốc gia"
+    },
+    {
+     "zh": "无东方模式与西方模式之分",
+     "vi": "không phân biệt mô hình phương Đông hay mô hình phương Tây"
+    }
+   ]
+  },
+  {
+   "point": "不容 (không cho phép, không thể…)",
+   "structure": "不容 + 双音节动词",
+   "explanation": "Nghĩa là “không cho phép, không thể để cho”. Phía sau thường đi với động từ hai âm tiết. Ngữ khí khá mạnh, thường dùng trong văn viết. Các kết hợp thường gặp: 不容忽视 (không thể xem nhẹ), 不容拖延 (không thể trì hoãn), 不容置疑 (không thể nghi ngờ), 不容回避 (không thể né tránh), 不容错过 (không thể bỏ lỡ), 不容乐观 (không mấy khả quan), 不容侵犯 (không thể xâm phạm), 不容篡改 (không cho phép xuyên tạc/sửa đổi trái phép), 不容诋毁 (không cho phép phỉ báng).",
+   "examples": [
+    {
+     "zh": "像北京这样的超级大都市，气候异变，已经达到不容忽视的地步。",
+     "vi": "Với những siêu đô thị như Bắc Kinh, sự dị biến khí hậu đã lên tới mức không thể xem nhẹ."
+    },
+    {
+     "zh": "不容置疑",
+     "vi": "không thể nghi ngờ"
+    },
+    {
+     "zh": "不容拖延",
+     "vi": "không thể trì hoãn"
+    },
+    {
+     "zh": "不容乐观",
+     "vi": "không mấy khả quan"
+    },
+    {
+     "zh": "不容侵犯",
+     "vi": "không thể xâm phạm"
+    }
+   ]
+  },
+  {
+   "point": "不乏 (không thiếu)",
+   "structure": "不乏 + 名词/形容词；不乏先例、不乏其人",
+   "explanation": "Nghĩa là “không thiếu”, biểu thị có số lượng khá nhiều. Thường dùng trong văn viết. Liên hệ 1 — Thành ngữ bốn chữ: 不乏先例 (không thiếu tiền lệ — có không ít việc trước đây có thể làm ví dụ), 不乏其人 (không thiếu những người như thế — số người như vậy chẳng ít). Liên hệ 2 — “乏” nghĩa là “thiếu”, thường dùng trong các từ: 乏力 (thiếu sức, uể oải), 乏味 (nhạt nhẽo, vô vị), 贫乏 (nghèo nàn, thiếu thốn), 进攻乏术 (tấn công thiếu phương sách).",
+   "examples": [
+    {
+     "zh": "历史上北京不乏干旱之年，但降雨逐年减少持续时间如此之长则是第一次。",
+     "vi": "Trong lịch sử, Bắc Kinh không thiếu những năm hạn hán, nhưng tình trạng lượng mưa giảm dần qua từng năm kéo dài lâu như vậy thì đây là lần đầu tiên."
+    },
+    {
+     "zh": "欧洲央行的有关人员表示：欧元区利率仍处于低水平，为经济增长提供了支持，欧元区经济增长不乏动力。",
+     "vi": "Nhân viên hữu quan của Ngân hàng Trung ương châu Âu cho biết: lãi suất khu vực đồng euro vẫn ở mức thấp, hỗ trợ tăng trưởng kinh tế, nên tăng trưởng kinh tế khu vực đồng euro không thiếu động lực."
+    },
+    {
+     "zh": "中国历史上不乏像闻一多先生这样的志士仁人，正是这些人，一次次唤醒了中国大地上沉睡的众生。",
+     "vi": "Trong lịch sử Trung Quốc không thiếu những chí sĩ nhân nhân như tiên sinh Văn Nhất Đa, chính những con người ấy đã hết lần này đến lần khác đánh thức chúng sinh đang say ngủ trên mảnh đất Trung Hoa."
+    },
+    {
+     "zh": "这部电影利用最新的电脑特技营造恐怖的视觉冲击，但恐怖中不乏幽默、浪漫，吸引了不少年轻观众。",
+     "vi": "Bộ phim này dùng kỹ xảo máy tính mới nhất để tạo hiệu ứng thị giác kinh dị, nhưng trong sự rùng rợn lại không thiếu nét hài hước, lãng mạn, thu hút không ít khán giả trẻ."
+    },
+    {
+     "zh": "跨国汽车公司在中国国内设有两家合资企业并且形成正面竞争的事不乏先例。众所周知，德国VW所设立的上海大众与一汽大众，几乎每一款车型都形成竞争。",
+     "vi": "Chuyện các hãng xe đa quốc gia thành lập hai doanh nghiệp liên doanh tại Trung Quốc rồi cạnh tranh trực diện không thiếu tiền lệ. Như mọi người đều biết, Shanghai Volkswagen và FAW-Volkswagen do tập đoàn VW của Đức lập ra cạnh tranh nhau ở hầu hết mọi mẫu xe."
+    }
+   ]
+  },
+  {
+   "point": "如此之…… (…đến như vậy, …như thế)",
+   "structure": "如此之 + 单音节形容词；如此 + 双音节形容词/动词",
+   "explanation": "Nghĩa là “…như vậy, …đến thế”, phía sau thường đi với tính từ đơn âm tiết (như 如此之多, 如此之少, 如此之快, 如此之深, 如此之难…). Liên hệ: cấu trúc “如此 + tính từ/động từ” thì phía sau “如此” thường là tính từ hoặc động từ hai âm tiết (như 如此友好, 如此重要, 如此蹊跷, 如此感动, 如此喜爱…).",
+   "examples": [
+    {
+     "zh": "历史上北京不乏干旱之年，但降雨逐年减少持续时间如此之长则是第一次。",
+     "vi": "Trong lịch sử, Bắc Kinh không thiếu những năm hạn hán, nhưng tình trạng lượng mưa giảm dần qua từng năm kéo dài lâu đến thế thì đây là lần đầu tiên."
+    },
+    {
+     "zh": "如此之多",
+     "vi": "nhiều đến vậy"
+    },
+    {
+     "zh": "如此之快",
+     "vi": "nhanh đến thế"
+    },
+    {
+     "zh": "如此之深",
+     "vi": "sâu đến vậy"
+    },
+    {
+     "zh": "如此之难",
+     "vi": "khó đến thế"
+    }
+   ]
+  },
+  {
+   "point": "……随之…… (theo đó mà…)",
+   "structure": "A，（主语）也/也会/就会/将会 + 随之 + 动词",
+   "explanation": "“随之” nghĩa là “cùng với đó, theo đó mà…”; “之” thay thế cho nội dung được nhắc đến ở câu hoặc vế trước. Trước “随之” thường có các từ như “也、也会、就会、将会”.",
+   "examples": [
+    {
+     "zh": "地面的水泥或钢铁设施越多越密，地表的通透性就越差，水分涵养就越困难，地表下沉的可能性也随之加大。",
+     "vi": "Các công trình bê tông hay sắt thép trên mặt đất càng nhiều, càng dày đặc thì độ thông thoáng của bề mặt càng kém, việc tích giữ nước càng khó khăn, và khả năng sụt lún mặt đất theo đó cũng gia tăng."
+    },
+    {
+     "zh": "在金融业日趋市场化的今天，人们的金融意识也随之增强，债券、股票、房地产、收藏、保险等投资理财工具正在快速走进城乡家庭，成为人们经济生活中必不可少的组成部分。",
+     "vi": "Trong bối cảnh ngành tài chính ngày càng thị trường hóa hiện nay, nhận thức tài chính của người dân theo đó cũng được nâng cao; các công cụ đầu tư quản lý tài sản như trái phiếu, cổ phiếu, bất động sản, sưu tầm, bảo hiểm… đang nhanh chóng bước vào các gia đình thành thị lẫn nông thôn, trở thành bộ phận cấu thành không thể thiếu trong đời sống kinh tế."
+    },
+    {
+     "zh": "立场改变了，看法也会随之改变。在和别人发生冲突时，不妨“换位思维”。",
+     "vi": "Lập trường thay đổi thì cách nhìn nhận cũng sẽ thay đổi theo. Khi nảy sinh xung đột với người khác, chi bằng hãy thử “đặt mình vào vị trí đối phương”."
+    },
+    {
+     "zh": "当学习、思考、尝试成为习惯，成功就会随之而至。",
+     "vi": "Khi học tập, suy ngẫm và thử nghiệm trở thành thói quen, thành công sẽ theo đó mà đến."
+    },
+    {
+     "zh": "“换个发型吧，也许一切将会随之改变。”诸事不顺的她告诉着自己。",
+     "vi": "“Đổi kiểu tóc đi thôi, biết đâu mọi thứ sẽ thay đổi theo.” Cô gái đang gặp đủ chuyện trắc trở tự nhủ với lòng mình."
+    }
+   ]
+  },
+  {
+   "point": "……加之…… (thêm vào đó, cộng thêm…)",
+   "structure": "（由于）A，加之 B，（因此/难怪……）",
+   "explanation": "“加之” là liên từ, biểu thị nguyên nhân hoặc điều kiện bổ sung thêm một tầng nữa. Thường dùng kết hợp với “因此” (vì thế), “难怪” (hèn gì, trách nào)…",
+   "examples": [
+    {
+     "zh": "北京的道路越修越宽，道路占地的比例越来越大，加之立交桥越来越多，桥的构造越来越复杂，占地也越来越多，此外还有大量的水泥停车场、水泥广场。相比之下，软地显得不足。",
+     "vi": "Đường ở Bắc Kinh càng mở càng rộng, tỷ lệ đất giao thông chiếm dụng ngày càng lớn, cộng thêm cầu vượt ngày càng nhiều, kết cấu cầu ngày càng phức tạp, chiếm đất cũng ngày càng nhiều, ngoài ra còn vô số bãi đỗ xe bê tông, quảng trường bê tông. So sánh tương quan, đất mềm trở nên thiếu hụt."
+    },
+    {
+     "zh": "寒流来袭，加之暖气已停，房间里冷极了。",
+     "vi": "Đợt không khí lạnh tràn về, cộng thêm hệ thống sưởi đã ngừng, trong phòng lạnh thấu xương."
+    },
+    {
+     "zh": "由于有些青年人不注意休息，加之长时间使用电脑，因此现在因“失写症”到医院咨询的青年人已不罕见。",
+     "vi": "Do một số thanh niên không chú ý nghỉ ngơi, cộng thêm sử dụng máy tính trong thời gian dài, nên hiện nay chuyện người trẻ đến bệnh viện tư vấn vì “chứng quên mặt chữ” đã không còn hiếm gặp."
+    },
+    {
+     "zh": "由于出口潜力巨大，加之土耳其拥有地区优势，因此，汽车零配件业正在吸引越来越多的世界龙头企业来土投资。",
+     "vi": "Do tiềm năng xuất khẩu to lớn, cộng thêm Thổ Nhĩ Kỳ sở hữu lợi thế khu vực, nên ngành linh kiện phụ tùng ô tô đang thu hút ngày càng nhiều doanh nghiệp đầu ngành thế giới tới đầu tư."
+    },
+    {
+     "zh": "秋夜确实能给人一种遐思与意境，加之如洗的明月当空高挂，难怪历代文人墨客都纷纷以明月为材，抒发内心所感。",
+     "vi": "Đêm thu quả thật đem lại cho con người những liên tưởng miên man và ý cảnh sâu lắng, cộng thêm vầng trăng sáng vằng vặc treo cao giữa trời, trách nào văn nhân mặc khách các đời đều mượn ánh trăng làm chất liệu để giãi bày nỗi lòng."
+    }
+   ]
+  },
+  {
+   "point": "由不得 (không do… quyết định, không cho phép)",
+   "structure": "由不得 + 名词/代词（+ 动词）；肯定反问：还由得了……吗？",
+   "explanation": "Cấu trúc động-bổ, nghĩa là không thể chiều theo; không do… làm chủ, quyết định. Cũng có thể nói là “由不了”. Liên hệ: “由得了” là dạng khẳng định của “由不得”, thường dùng trong câu phản vấn.",
+   "examples": [
+    {
+     "zh": "城市发展由不得人率性而为，必须尊重规律，服从规律。",
+     "vi": "Sự phát triển của đô thị không cho phép con người hành xử tùy hứng, mà bắt buộc phải tôn trọng quy luật, phục tùng quy luật."
+    },
+    {
+     "zh": "进了新单位，在什么人手底下工作，这由不得你。大部分时候都是别人挑你而不是你挑别人。",
+     "vi": "Vào đơn vị mới, làm việc dưới quyền ai là chuyện không do bạn quyết định. Phần lớn thời gian là người khác chọn bạn chứ không phải bạn chọn người khác."
+    },
+    {
+     "zh": "孩子大了，干什么都有自己的主意，由不得家长了！",
+     "vi": "Con cái lớn rồi, làm gì cũng có chủ kiến riêng, không còn nghe theo cha mẹ nữa rồi!"
+    },
+    {
+     "zh": "天晴天阴，由不得你我控制，但我们能控制的是自己心情的好坏。",
+     "vi": "Trời nắng hay trời râm không do bạn và tôi kiểm soát, nhưng điều chúng ta có thể kiểm soát được là tâm trạng vui buồn của chính mình."
+    },
+    {
+     "zh": "那时候的婚姻由父母做主，还由得了自己吗？",
+     "vi": "Hôn nhân thời bấy giờ do cha mẹ định đoạt, nào có tự mình quyết định được đâu?"
+    }
+   ]
+  }
+ ]
+}

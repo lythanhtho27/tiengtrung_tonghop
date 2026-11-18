@@ -1,0 +1,1753 @@
+{
+ "book": "gc3",
+ "lesson_num": 2,
+ "title": "中国城市大角力",
+ "pages": [
+  40,
+  84
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "角力",
+   "py": "juélì",
+   "pos": "动",
+   "zh": "比武。课文中指竞争。",
+   "en": "",
+   "hv": "GIÁC LỰC",
+   "vi": "đọ sức, cạnh tranh",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "实力",
+   "py": "shílì",
+   "pos": "名",
+   "zh": "实在的力量（多指军事或经济方面）。",
+   "en": "actual strength, power",
+   "hv": "THỰC LỰC",
+   "vi": "thực lực",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "排名",
+   "py": "páimíng",
+   "pos": "动",
+   "zh": "排列名次。",
+   "en": "",
+   "hv": "BÀI DANH",
+   "vi": "xếp hạng",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "轰动",
+   "py": "hōngdòng",
+   "pos": "动",
+   "zh": "同时惊动很多人。",
+   "en": "",
+   "hv": "OANH ĐỘNG",
+   "vi": "gây chấn động, gây tiếng vang lớn",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "标榜",
+   "py": "biāobǎng",
+   "pos": "动",
+   "zh": "提出某种好听的名义，加以宣扬。",
+   "en": "",
+   "hv": "TIÊU BẢNG",
+   "vi": "tâng bốc, phô trương (ưu thế)",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "借机",
+   "py": "jièjī",
+   "pos": "副",
+   "zh": "利用机会。",
+   "en": "",
+   "hv": "TÁ CƠ",
+   "vi": "nhân cơ hội, thừa cơ",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "大都市",
+   "py": "dàdūshì",
+   "pos": "名",
+   "zh": "大城市。",
+   "en": "",
+   "hv": "ĐẠI ĐÔ THỊ",
+   "vi": "đại đô thị, thành phố lớn",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "一时间",
+   "py": "yìshíjiān",
+   "pos": "名",
+   "zh": "很短的时间；突然。",
+   "en": "",
+   "hv": "NHẤT THỜI GIAN",
+   "vi": "trong nhất thời, thoắt cái",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "热门",
+   "py": "rèmén",
+   "pos": "名",
+   "zh": "吸引许多人的事物。",
+   "en": "",
+   "hv": "NHIỆT MÔN",
+   "vi": "chủ đề nóng, thu hút nhiều người",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "话题",
+   "py": "huàtí",
+   "pos": "名",
+   "zh": "谈话的中心。",
+   "en": "subject",
+   "hv": "THOẠI ĐỀ",
+   "vi": "đề tài, chủ đề (trò chuyện)",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "全球化",
+   "py": "quánqiúhuà",
+   "pos": "名",
+   "zh": "指人力流、物质流、信息流、资本流、知识流等五大流的全球流通和融合的过程。",
+   "en": "",
+   "hv": "TOÀN CẦU HÓA",
+   "vi": "toàn cầu hóa",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "赋予",
+   "py": "fùyǔ",
+   "pos": "动",
+   "zh": "交给（重大任务、使命等）。（赋予——给予）",
+   "en": "",
+   "hv": "PHÚ DỮ",
+   "vi": "trao cho, mang lại (sứ mệnh, nội hàm)",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "内涵",
+   "py": "nèihán",
+   "pos": "名",
+   "zh": "一个概念所反映的事物的本质属性的总和，也就是概念的内容。",
+   "en": "intension, connotation",
+   "hv": "NỘI HÀM",
+   "vi": "nội hàm",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "轨迹",
+   "py": "guǐjì",
+   "pos": "名",
+   "zh": "比喻人生经历的或事物发展的道路。",
+   "en": "",
+   "hv": "QUỸ TÍCH",
+   "vi": "quỹ đạo, chặng đường phát triển",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "可谓",
+   "py": "kěwèi",
+   "pos": "动",
+   "zh": "可以说。",
+   "en": "",
+   "hv": "KHẢ VỊ",
+   "vi": "có thể nói là",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "序列",
+   "py": "xùliè",
+   "pos": "名",
+   "zh": "按次序排好的行列。",
+   "en": "",
+   "hv": "TỰ LIỆT",
+   "vi": "chuỗi xếp hạng, hàng ngũ",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "阵营",
+   "py": "zhènyíng",
+   "pos": "名",
+   "zh": "为了共同的利益和目标而联合起来进行斗争的集团。",
+   "en": "",
+   "hv": "TRẬN DOANH",
+   "vi": "trận tuyến, nhóm (dẫn đầu)",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "压阵",
+   "py": "yāzhèn",
+   "pos": "动",
+   "zh": "排在或走在队列的最后。",
+   "en": "",
+   "hv": "ÁP TRẬN",
+   "vi": "xếp cuối hàng, chốt hạ",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "无一例外",
+   "py": "wú yī lìwài",
+   "pos": "",
+   "zh": "没有一个在一般的规律、规定之外。",
+   "en": "",
+   "hv": "VÔ NHẤT LỆ NGOẠI",
+   "vi": "không một ngoại lệ",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "明星",
+   "py": "míngxīng",
+   "pos": "名",
+   "zh": "称有名的演员、运动员等。课文中是指有名的城市。",
+   "en": "",
+   "hv": "MINH TINH",
+   "vi": "ngôi sao (thành phố nổi bật)",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "直辖市",
+   "py": "zhíxiáshì",
+   "pos": "名",
+   "zh": "由中央直接管辖的市。",
+   "en": "",
+   "hv": "TRỰC HẠT THỊ",
+   "vi": "thành phố trực thuộc trung ương",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "省会",
+   "py": "shěnghuì",
+   "pos": "名",
+   "zh": "省行政机关所在地。一般也是全省的经济、文化中心。",
+   "en": "",
+   "hv": "TỈNH HỘI",
+   "vi": "tỉnh lỵ, thủ phủ của tỉnh",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "半壁江山",
+   "py": "bànbì jiāngshān",
+   "pos": "",
+   "zh": "指保存下来的或丧失掉的部分国土。课文中指某一事物的一半。",
+   "en": "",
+   "hv": "BÁN BÍCH GIANG SƠN",
+   "vi": "một nửa giang sơn (nửa phần còn lại)",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "割据",
+   "py": "gējù",
+   "pos": "动",
+   "zh": "一国之内，拥有武力的人占据部分地区，形成分裂对抗的局面。课文中是占据某种地位的意思。",
+   "en": "",
+   "hv": "CÁT CỨ",
+   "vi": "cát cứ, chiếm giữ (vị trí)",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "计划经济",
+   "py": "jìhuà jīngjì",
+   "pos": "",
+   "zh": "国家按照统一计划并通过行政手段管理的国民经济。",
+   "en": "",
+   "hv": "KẾ HOẠCH KINH TẾ",
+   "vi": "kinh tế kế hoạch hóa",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "体制",
+   "py": "tǐzhì",
+   "pos": "名",
+   "zh": "国家、国家机关、企业等的组织制度。",
+   "en": "system",
+   "hv": "THỂ CHẾ",
+   "vi": "thể chế",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "产业",
+   "py": "chǎnyè",
+   "pos": "名",
+   "zh": "构成国民经济的行业和部门。",
+   "en": "",
+   "hv": "SẢN NGHIỆP",
+   "vi": "ngành nghề, công nghiệp",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "崛起",
+   "py": "juéqǐ",
+   "pos": "动",
+   "zh": "兴起。",
+   "en": "",
+   "hv": "QUẬT KHỞI",
+   "vi": "trỗi dậy, vươn lên",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "勾画",
+   "py": "gōuhuà",
+   "pos": "动",
+   "zh": "用简单的线条画出人或物的轮廓。",
+   "en": "",
+   "hv": "CÂU HỌA",
+   "vi": "phác họa, vẽ nên",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "版图",
+   "py": "bǎntú",
+   "pos": "名",
+   "zh": "地图。",
+   "en": "",
+   "hv": "BẢN ĐỒ",
+   "vi": "bản đồ",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "依次",
+   "py": "yīcì",
+   "pos": "副",
+   "zh": "按照次序。",
+   "en": "",
+   "hv": "Y THỨ",
+   "vi": "lần lượt theo thứ tự",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "流域",
+   "py": "liúyù",
+   "pos": "名",
+   "zh": "一个水系的干流和支流所流过的整个地区。",
+   "en": "",
+   "hv": "LƯU VỰC",
+   "vi": "lưu vực",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "样本",
+   "py": "yàngběn",
+   "pos": "名",
+   "zh": "课文中是指挑选出来作为调查对象的城市。",
+   "en": "",
+   "hv": "DẠNG BẢN",
+   "vi": "mẫu (khảo sát)",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "交互作用",
+   "py": "jiāohù zuòyòng",
+   "pos": "",
+   "zh": "互相起作用。",
+   "en": "",
+   "hv": "GIAO HỖ TÁC DỤNG",
+   "vi": "tác động qua lại",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "枢纽",
+   "py": "shūniǔ",
+   "pos": "名",
+   "zh": "事物的重要关键；事物互相联系的中心环节。",
+   "en": "pivot, hub, axis, key position",
+   "hv": "XU NỮU",
+   "vi": "đầu mối, mắt xích then chốt",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "平台",
+   "py": "píngtái",
+   "pos": "名",
+   "zh": "泛指进行某项工作所需要的环境或条件。",
+   "en": "a movable platform",
+   "hv": "BÌNH ĐÀI",
+   "vi": "nền tảng",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "金融",
+   "py": "jīnróng",
+   "pos": "名",
+   "zh": "指货币的发行、流通和回笼，贷款的发放和收回，存款的存入和提取等经济活动。",
+   "en": "banking, finance, financial",
+   "hv": "KIM DUNG",
+   "vi": "tài chính – ngân hàng",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "喻",
+   "py": "yù",
+   "pos": "动",
+   "zh": "比方。",
+   "en": "",
+   "hv": "DỤ",
+   "vi": "ví (như)",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "龙头",
+   "py": "lóngtóu",
+   "pos": "名",
+   "zh": "比喻带头的、起主导作用的事物。",
+   "en": "",
+   "hv": "LONG ĐẦU",
+   "vi": "đầu tàu, lực lượng dẫn dắt",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "荣衔",
+   "py": "róngxián",
+   "pos": "",
+   "zh": "光荣地接受。",
+   "en": "",
+   "hv": "VINH HÀM",
+   "vi": "vinh dự nhận (danh hiệu)",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "内地",
+   "py": "nèidì",
+   "pos": "名",
+   "zh": "指距离边疆（或沿海）较远地地区。",
+   "en": "",
+   "hv": "NỘI ĐỊA",
+   "vi": "nội địa, vùng sâu bên trong",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "诸",
+   "py": "zhū",
+   "pos": "形",
+   "zh": "众；许多。",
+   "en": "",
+   "hv": "CHƯ",
+   "vi": "các, nhiều",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "冠",
+   "py": "guàn",
+   "pos": "名",
+   "zh": "第一位。",
+   "en": "",
+   "hv": "QUÁN",
+   "vi": "ngôi đầu, vị trí thứ nhất",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "总值",
+   "py": "zǒngzhí",
+   "pos": "名",
+   "zh": "用货币形式表现出的全部价值。",
+   "en": "gross or total value",
+   "hv": "TỔNG TRỊ",
+   "vi": "tổng giá trị",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "年均",
+   "py": "niánjūn",
+   "pos": "动",
+   "zh": "按年平均计算。",
+   "en": "",
+   "hv": "NIÊN QUÂN",
+   "vi": "bình quân hằng năm",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "增长率",
+   "py": "zēngzhǎnglǜ",
+   "pos": "名",
+   "zh": "增长的数量与原数量的比率。",
+   "en": "rate of increase, growth rate",
+   "hv": "TĂNG TRƯỞNG SUẤT",
+   "vi": "tỷ lệ tăng trưởng",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "人均",
+   "py": "rénjūn",
+   "pos": "动",
+   "zh": "按每人平均计算。",
+   "en": "",
+   "hv": "NHÂN QUÂN",
+   "vi": "bình quân đầu người",
+   "proper": false
+  },
+  {
+   "n": 48,
+   "hz": "居",
+   "py": "jū",
+   "pos": "动",
+   "zh": "在（某种位置）。",
+   "en": "",
+   "hv": "CƯ",
+   "vi": "đứng ở (vị trí)",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "潜力",
+   "py": "qiánlì",
+   "pos": "名",
+   "zh": "潜在的力量。",
+   "en": "latent capacity; potential; potentiality",
+   "hv": "TIỀM LỰC",
+   "vi": "tiềm lực",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "优惠",
+   "py": "yōuhuì",
+   "pos": "形",
+   "zh": "较一般优厚。",
+   "en": "",
+   "hv": "ƯU HUỆ",
+   "vi": "ưu đãi",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "薪酬",
+   "py": "xīnchóu",
+   "pos": "名",
+   "zh": "工资。",
+   "en": "",
+   "hv": "TÂN THÙ",
+   "vi": "tiền lương, thù lao",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "位居",
+   "py": "wèijū",
+   "pos": "动",
+   "zh": "位次居于（序列中的某处）。",
+   "en": "",
+   "hv": "VỊ CƯ",
+   "vi": "đứng ở vị trí, xếp hạng",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "首位",
+   "py": "shǒuwèi",
+   "pos": "数",
+   "zh": "第一位。",
+   "en": "",
+   "hv": "THỦ VỊ",
+   "vi": "vị trí hàng đầu",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "拥有",
+   "py": "yōngyǒu",
+   "pos": "动",
+   "zh": "领有；具有（大量的土地、人口、财产等）。（拥有——具有）",
+   "en": "",
+   "hv": "ỦNG HỮU",
+   "vi": "sở hữu, nắm giữ",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "指数",
+   "py": "zhǐshù",
+   "pos": "名",
+   "zh": "某一经济现象在某时期内的数值和同一现象在另一个作为比较标准的时期内的数值的比数。",
+   "en": "index",
+   "hv": "CHỈ SỐ",
+   "vi": "chỉ số",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "名列",
+   "py": "míngliè",
+   "pos": "动",
+   "zh": "名字排在。",
+   "en": "",
+   "hv": "DANH LIỆT",
+   "vi": "xếp tên ở, đứng thứ",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "景观",
+   "py": "jǐngguān",
+   "pos": "名",
+   "zh": "泛指可供观赏的景物。",
+   "en": "",
+   "hv": "CẢNH QUAN",
+   "vi": "cảnh quan",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "各异",
+   "py": "gèyì",
+   "pos": "形",
+   "zh": "每个都不一样。",
+   "en": "",
+   "hv": "CÁC DỊ",
+   "vi": "khác nhau, mỗi thứ một vẻ",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "市民",
+   "py": "shìmín",
+   "pos": "名",
+   "zh": "城市居民。",
+   "en": "",
+   "hv": "THỊ DÂN",
+   "vi": "người dân thành phố, thị dân",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "信誉",
+   "py": "xìnyù",
+   "pos": "名",
+   "zh": "信用和名誉。（信誉——信用）",
+   "en": "prestige; credit; reputation",
+   "hv": "TÍN DỰ",
+   "vi": "uy tín, tín nhiệm",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "交往",
+   "py": "jiāowǎng",
+   "pos": "动",
+   "zh": "互相来往。",
+   "en": "",
+   "hv": "GIAO VÃNG",
+   "vi": "giao lưu, qua lại",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "操守",
+   "py": "cāoshǒu",
+   "pos": "名",
+   "zh": "指人平时的行为、品德。",
+   "en": "",
+   "hv": "THAO THỦ",
+   "vi": "phẩm hạnh, đạo đức",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "价值",
+   "py": "jiàzhí",
+   "pos": "名",
+   "zh": "课文中指价值观，即对经济、政治、道德、金钱等所持的总的看法。",
+   "en": "",
+   "hv": "GIÁ TRỊ",
+   "vi": "giá trị (quan niệm giá trị)",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "取向",
+   "py": "qǔxiàng",
+   "pos": "名",
+   "zh": "选取的方向；趋向。",
+   "en": "",
+   "hv": "THỦ HƯỚNG",
+   "vi": "khuynh hướng, định hướng",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "精明",
+   "py": "jīngmíng",
+   "pos": "形",
+   "zh": "精细明察；机警聪明。",
+   "en": "",
+   "hv": "TINH MINH",
+   "vi": "tinh tường, sắc sảo",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "务实",
+   "py": "wùshí",
+   "pos": "形",
+   "zh": "讲究实际，不求浮华。",
+   "en": "",
+   "hv": "VỤ THỰC",
+   "vi": "thực tế, thiết thực",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "创业",
+   "py": "chuàngyè",
+   "pos": "动",
+   "zh": "创办事业。",
+   "en": "",
+   "hv": "SÁNG NGHIỆP",
+   "vi": "khởi nghiệp, lập nghiệp",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "兼容",
+   "py": "jiānróng",
+   "pos": "动",
+   "zh": "同时容纳几个方面。",
+   "en": "",
+   "hv": "KIÊM DUNG",
+   "vi": "bao dung, dung hợp nhiều mặt",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "有待",
+   "py": "yǒudài",
+   "pos": "动",
+   "zh": "要等待。",
+   "en": "",
+   "hv": "HỮU ĐÃI",
+   "vi": "cần được, còn chờ (làm gì)",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "产权",
+   "py": "chǎnquán",
+   "pos": "名",
+   "zh": "指财产的所有权。",
+   "en": "",
+   "hv": "SẢN QUYỀN",
+   "vi": "quyền sở hữu tài sản",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "发育",
+   "py": "fāyù",
+   "pos": "动",
+   "zh": "生物体在生命过程中结构和功能从简单到复杂的过程。课文中是指一个事物从不成熟到成熟的过程。",
+   "en": "",
+   "hv": "PHÁT DỤC",
+   "vi": "phát triển, trưởng thành (thị trường)",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "审批",
+   "py": "shěnpī",
+   "pos": "动",
+   "zh": "审查批示（下级呈报上级的书面计划、报告等）。",
+   "en": "",
+   "hv": "THẨM PHÊ",
+   "vi": "thẩm định và phê duyệt",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "管制",
+   "py": "guǎnzhì",
+   "pos": "动",
+   "zh": "强制管理。（管制——管理）",
+   "en": "",
+   "hv": "QUẢN CHẾ",
+   "vi": "quản chế, kiểm soát",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "个体经济",
+   "py": "gètǐ jīngjì",
+   "pos": "",
+   "zh": "以生产资料私有制和个体劳动为基础的经济形式。",
+   "en": "",
+   "hv": "CÁ THỂ KINH TẾ",
+   "vi": "kinh tế cá thể",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "规范",
+   "py": "guīfàn",
+   "pos": "形",
+   "zh": "合乎约定俗成或明文规定的标准。",
+   "en": "",
+   "hv": "QUY PHẠM",
+   "vi": "chuẩn mực, quy củ",
+   "proper": false
+  },
+  {
+   "n": 76,
+   "hz": "效益",
+   "py": "xiàoyì",
+   "pos": "名",
+   "zh": "效果和利益。（效益——效果）",
+   "en": "",
+   "hv": "HIỆU ÍCH",
+   "vi": "hiệu quả và lợi ích",
+   "proper": false
+  },
+  {
+   "n": 77,
+   "hz": "高科技",
+   "py": "gāokējì",
+   "pos": "名",
+   "zh": "指高新技术。",
+   "en": "",
+   "hv": "CAO KHOA KỸ",
+   "vi": "công nghệ cao",
+   "proper": false
+  },
+  {
+   "n": 78,
+   "hz": "产业",
+   "py": "chǎnyè",
+   "pos": "名",
+   "zh": "构成国民经济的行业和部门。",
+   "en": "",
+   "hv": "SẢN NGHIỆP",
+   "vi": "ngành nghề, công nghiệp",
+   "proper": false
+  },
+  {
+   "n": 79,
+   "hz": "航运",
+   "py": "hángyùn",
+   "pos": "名",
+   "zh": "水上运输事业。",
+   "en": "",
+   "hv": "HÀNG VẬN",
+   "vi": "vận tải đường thủy, hàng hải",
+   "proper": false
+  },
+  {
+   "n": 80,
+   "hz": "替代",
+   "py": "tìdài",
+   "pos": "动",
+   "zh": "代替。",
+   "en": "",
+   "hv": "THẾ ĐẠI",
+   "vi": "thay thế",
+   "proper": false
+  },
+  {
+   "n": 81,
+   "hz": "人力资源",
+   "py": "rénlì zīyuán",
+   "pos": "",
+   "zh": "指经济和社会事业发展所需的具有必要劳动能力（即智力和体力的有机结合）的人口的来源。",
+   "en": "",
+   "hv": "NHÂN LỰC TƯ NGUYÊN",
+   "vi": "nguồn nhân lực",
+   "proper": false
+  },
+  {
+   "n": 82,
+   "hz": "流量",
+   "py": "liúliàng",
+   "pos": "名",
+   "zh": "课文中指资本在单位时间内的流动量。",
+   "en": "",
+   "hv": "LƯU LƯỢNG",
+   "vi": "lưu lượng (dòng vốn)",
+   "proper": false
+  },
+  {
+   "n": 83,
+   "hz": "存量",
+   "py": "cúnliàng",
+   "pos": "名",
+   "zh": "（资金、财产等）存有的数量。",
+   "en": "",
+   "hv": "TỒN LƯỢNG",
+   "vi": "lượng tích trữ, trữ lượng (vốn)",
+   "proper": false
+  },
+  {
+   "n": 84,
+   "hz": "及其",
+   "py": "jíqí",
+   "pos": "连",
+   "zh": "连接名词及名词性词组，表示后者对于前者有从属关系。",
+   "en": "",
+   "hv": "CẬP KỲ",
+   "vi": "và ... của nó",
+   "proper": false
+  },
+  {
+   "n": 85,
+   "hz": "余地",
+   "py": "yúdì",
+   "pos": "名",
+   "zh": "指言语或行动中留下的可回旋的地步。",
+   "en": "leeway, margin, room",
+   "hv": "DƯ ĐỊA",
+   "vi": "dư địa, khoảng trống (để phát triển)",
+   "proper": false
+  },
+  {
+   "n": 86,
+   "hz": "高新技术",
+   "py": "gāoxīn jìshù",
+   "pos": "",
+   "zh": "指处于当代科学技术前沿，具有知识密集型特点的新兴技术。",
+   "en": "",
+   "hv": "CAO TÂN KỸ THUẬT",
+   "vi": "công nghệ cao và mới",
+   "proper": false
+  },
+  {
+   "n": 87,
+   "hz": "集群",
+   "py": "jíqún",
+   "pos": "动",
+   "zh": "聚集成群。",
+   "en": "",
+   "hv": "TẬP QUẦN",
+   "vi": "tập trung thành cụm (ngành)",
+   "proper": false
+  },
+  {
+   "n": 88,
+   "hz": "端倪",
+   "py": "duānní",
+   "pos": "名",
+   "zh": "事情的眉目；头绪；边际。",
+   "en": "clue, inkling",
+   "hv": "ĐOAN NGHÊ",
+   "vi": "manh mối, hình hài ban đầu",
+   "proper": false
+  },
+  {
+   "n": 89,
+   "hz": "配套",
+   "py": "pèitào",
+   "pos": "动",
+   "zh": "把若干相关的事物组合成一整套。",
+   "en": "",
+   "hv": "PHỐI SÁO",
+   "vi": "đồng bộ, phối hợp thành bộ",
+   "proper": false
+  },
+  {
+   "n": 90,
+   "hz": "区位",
+   "py": "qūwèi",
+   "pos": "名",
+   "zh": "地区的位置。",
+   "en": "",
+   "hv": "KHU VỊ",
+   "vi": "vị trí khu vực",
+   "proper": false
+  },
+  {
+   "n": 91,
+   "hz": "毗邻",
+   "py": "pílín",
+   "pos": "动",
+   "zh": "（地方）连接。",
+   "en": "",
+   "hv": "TỲ LÂN",
+   "vi": "tiếp giáp, liền kề",
+   "proper": false
+  },
+  {
+   "n": 92,
+   "hz": "自然经济",
+   "py": "zìrán jīngjì",
+   "pos": "",
+   "zh": "只是为了满足生产者本身或经济单位（如氏族、庄园）的需要而进行生产的经济，也就是自给自足的经济。",
+   "en": "",
+   "hv": "TỰ NHIÊN KINH TẾ",
+   "vi": "kinh tế tự nhiên (tự cung tự cấp)",
+   "proper": false
+  },
+  {
+   "n": 93,
+   "hz": "亚热带",
+   "py": "yàrèdài",
+   "pos": "名",
+   "zh": "热带和温带之间的过渡地带。",
+   "en": "subtropical zone; subtropics",
+   "hv": "Á NHIỆT ĐỚI",
+   "vi": "cận nhiệt đới",
+   "proper": false
+  },
+  {
+   "n": 94,
+   "hz": "海滨",
+   "py": "hǎibīn",
+   "pos": "名",
+   "zh": "海边；沿海地带。",
+   "en": "",
+   "hv": "HẢI TÂN",
+   "vi": "ven biển, bờ biển",
+   "proper": false
+  },
+  {
+   "n": 95,
+   "hz": "名胜",
+   "py": "míngshèng",
+   "pos": "名",
+   "zh": "有古迹或优美风景的著名的地方。",
+   "en": "",
+   "hv": "DANH THẮNG",
+   "vi": "danh thắng, thắng cảnh",
+   "proper": false
+  },
+  {
+   "n": 96,
+   "hz": "绿化",
+   "py": "lǜhuà",
+   "pos": "动",
+   "zh": "种植树木花草，使环境优美卫生，防止水土流失。",
+   "en": "",
+   "hv": "LỤC HÓA",
+   "vi": "phủ xanh, trồng cây xanh",
+   "proper": false
+  },
+  {
+   "n": 97,
+   "hz": "现状",
+   "py": "xiànzhuàng",
+   "pos": "名",
+   "zh": "目前的状况。",
+   "en": "",
+   "hv": "HIỆN TRẠNG",
+   "vi": "hiện trạng, thực trạng",
+   "proper": false
+  },
+  {
+   "n": 98,
+   "hz": "进取",
+   "py": "jìnqǔ",
+   "pos": "动",
+   "zh": "努力向前；立志有所作为。",
+   "en": "",
+   "hv": "TIẾN THỦ",
+   "vi": "tiến thủ, cầu tiến",
+   "proper": false
+  },
+  {
+   "n": 99,
+   "hz": "移民",
+   "py": "yímín",
+   "pos": "名",
+   "zh": "迁移到外地或移居外国的人。",
+   "en": "",
+   "hv": "DI DÂN",
+   "vi": "người nhập cư, di dân",
+   "proper": false
+  },
+  {
+   "n": 100,
+   "hz": "交汇",
+   "py": "jiāohuì",
+   "pos": "动",
+   "zh": "课文中指来自不同地方的人聚集到一起。",
+   "en": "",
+   "hv": "GIAO HỐI",
+   "vi": "hội tụ, giao lưu",
+   "proper": false
+  },
+  {
+   "n": 101,
+   "hz": "宽容",
+   "py": "kuānróng",
+   "pos": "形",
+   "zh": "宽大有气量，不计较或追究。（宽容——宽恕）",
+   "en": "",
+   "hv": "KHOAN DUNG",
+   "vi": "khoan dung, bao dung",
+   "proper": false
+  },
+  {
+   "n": 102,
+   "hz": "氛围",
+   "py": "fēnwéi",
+   "pos": "名",
+   "zh": "周围的气氛和情调。",
+   "en": "",
+   "hv": "PHÂN VI",
+   "vi": "bầu không khí",
+   "proper": false
+  },
+  {
+   "n": 103,
+   "hz": "具",
+   "py": "jù",
+   "pos": "动",
+   "zh": "具有。",
+   "en": "",
+   "hv": "CỤ",
+   "vi": "có, mang tính",
+   "proper": false
+  },
+  {
+   "n": 104,
+   "hz": "价值观念",
+   "py": "jiàzhí guānniàn",
+   "pos": "名",
+   "zh": "对经济、政治、道德、金钱等所持有的总的看法。",
+   "en": "",
+   "hv": "GIÁ TRỊ QUAN NIỆM",
+   "vi": "quan niệm giá trị",
+   "proper": false
+  },
+  {
+   "n": 105,
+   "hz": "前列",
+   "py": "qiánliè",
+   "pos": "名",
+   "zh": "最前面的一列，比喻带头和领先的地位。",
+   "en": "",
+   "hv": "TIỀN LIỆT",
+   "vi": "hàng đầu, tốp đầu",
+   "proper": false
+  },
+  {
+   "n": 106,
+   "hz": "推销",
+   "py": "tuīxiāo",
+   "pos": "动",
+   "zh": "推荐销售。",
+   "en": "",
+   "hv": "THÔI TIÊU",
+   "vi": "tiếp thị, quảng bá",
+   "proper": false
+  },
+  {
+   "n": 107,
+   "hz": "凝聚",
+   "py": "níngjù",
+   "pos": "动",
+   "zh": "聚集；积聚。",
+   "en": "",
+   "hv": "NGƯNG TỤ",
+   "vi": "gắn kết, quy tụ",
+   "proper": false
+  },
+  {
+   "n": 108,
+   "hz": "执法",
+   "py": "zhífǎ",
+   "pos": "动",
+   "zh": "执行法令、法律。",
+   "en": "",
+   "hv": "CHẤP PHÁP",
+   "vi": "chấp pháp, thực thi pháp luật",
+   "proper": false
+  },
+  {
+   "n": 109,
+   "hz": "领先",
+   "py": "lǐngxiān",
+   "pos": "动",
+   "zh": "比喻水平、成绩等处于最前列。",
+   "en": "",
+   "hv": "LĨNH TIÊN",
+   "vi": "dẫn đầu, đi đầu",
+   "proper": false
+  },
+  {
+   "n": 110,
+   "hz": "标准化",
+   "py": "biāozhǔnhuà",
+   "pos": "动",
+   "zh": "企业在产品质量、品种规格、零件部件通用等方面规定统一的技术标准。",
+   "en": "",
+   "hv": "TIÊU CHUẨN HÓA",
+   "vi": "tiêu chuẩn hóa",
+   "proper": false
+  },
+  {
+   "n": 111,
+   "hz": "规范化",
+   "py": "guīfànhuà",
+   "pos": "动",
+   "zh": "使合于一定的标准。",
+   "en": "",
+   "hv": "QUY PHẠM HÓA",
+   "vi": "quy phạm hóa, chuẩn hóa",
+   "proper": false
+  },
+  {
+   "n": 112,
+   "hz": "激励",
+   "py": "jīlì",
+   "pos": "动",
+   "zh": "激发鼓励。",
+   "en": "",
+   "hv": "KÍCH LỆ",
+   "vi": "khích lệ, tạo động lực",
+   "proper": false
+  },
+  {
+   "n": 113,
+   "hz": "约束",
+   "py": "yuēshù",
+   "pos": "动",
+   "zh": "限制使不越出范围。",
+   "en": "",
+   "hv": "ƯỚC THÚC",
+   "vi": "ràng buộc, kiểm soát",
+   "proper": false
+  },
+  {
+   "n": 114,
+   "hz": "绩效",
+   "py": "jìxiào",
+   "pos": "名",
+   "zh": "成绩；成效。",
+   "en": "",
+   "hv": "TÍCH HIỆU",
+   "vi": "hiệu suất, thành tích",
+   "proper": false
+  },
+  {
+   "n": 115,
+   "hz": "人文",
+   "py": "rénwén",
+   "pos": "名",
+   "zh": "指人类社会的各种文化现象。",
+   "en": "",
+   "hv": "NHÂN VĂN",
+   "vi": "nhân văn",
+   "proper": false
+  },
+  {
+   "n": 116,
+   "hz": "决策",
+   "py": "juécè",
+   "pos": "动",
+   "zh": "决定策略、方针等。",
+   "en": "",
+   "hv": "QUYẾT SÁCH",
+   "vi": "quyết sách, ra quyết định",
+   "proper": false
+  },
+  {
+   "n": 117,
+   "hz": "商机",
+   "py": "shāngjī",
+   "pos": "名",
+   "zh": "商业经营的机遇。",
+   "en": "",
+   "hv": "THƯƠNG CƠ",
+   "vi": "cơ hội kinh doanh",
+   "proper": false
+  },
+  {
+   "n": 118,
+   "hz": "加快",
+   "py": "jiākuài",
+   "pos": "动",
+   "zh": "使变得更快。",
+   "en": "",
+   "hv": "GIA KHOÁI",
+   "vi": "đẩy nhanh, tăng tốc",
+   "proper": false
+  },
+  {
+   "n": 119,
+   "hz": "提升",
+   "py": "tíshēng",
+   "pos": "动",
+   "zh": "提高（职位、等级等）。",
+   "en": "",
+   "hv": "ĐỀ THĂNG",
+   "vi": "nâng cao, thăng tiến",
+   "proper": false
+  },
+  {
+   "n": 120,
+   "hz": "从业",
+   "py": "cóngyè",
+   "pos": "动",
+   "zh": "从事某种职业或行业；就业。",
+   "en": "",
+   "hv": "TÒNG NGHIỆP",
+   "vi": "làm nghề, công tác trong ngành",
+   "proper": false
+  },
+  {
+   "n": 121,
+   "hz": "密度",
+   "py": "mìdù",
+   "pos": "名",
+   "zh": "疏密的程度。",
+   "en": "",
+   "hv": "MẬT ĐỘ",
+   "vi": "mật độ",
+   "proper": false
+  },
+  {
+   "n": 122,
+   "hz": "布局",
+   "py": "bùjú",
+   "pos": "名",
+   "zh": "对事物的结构、格局进行全面安排。",
+   "en": "",
+   "hv": "BỐ CỤC",
+   "vi": "bố cục, phân bố",
+   "proper": false
+  },
+  {
+   "n": 123,
+   "hz": "步伐",
+   "py": "bùfá",
+   "pos": "名",
+   "zh": "比喻事物进行的速度。（步伐——步调）",
+   "en": "",
+   "hv": "BỘ PHẠT",
+   "vi": "nhịp bước, tốc độ tiến triển",
+   "proper": false
+  },
+  {
+   "n": 124,
+   "hz": "腹地",
+   "py": "fùdì",
+   "pos": "名",
+   "zh": "靠近中心的地区；内地。",
+   "en": "",
+   "hv": "PHÚC ĐỊA",
+   "vi": "vùng hậu phương, vùng nội địa",
+   "proper": false
+  },
+  {
+   "n": 125,
+   "hz": "比重",
+   "py": "bǐzhòng",
+   "pos": "名",
+   "zh": "一种在整体中所占的分量。",
+   "en": "proportion",
+   "hv": "TỶ TRỌNG",
+   "vi": "tỷ trọng",
+   "proper": false
+  },
+  {
+   "n": 126,
+   "hz": "依存",
+   "py": "yīcún",
+   "pos": "动",
+   "zh": "（互相）依附而存在。",
+   "en": "",
+   "hv": "Y TỒN",
+   "vi": "nương tựa, phụ thuộc lẫn nhau",
+   "proper": false
+  },
+  {
+   "n": 127,
+   "hz": "外来",
+   "py": "wàilái",
+   "pos": "形",
+   "zh": "属性词。从外地或外国来的；非固有的。",
+   "en": "",
+   "hv": "NGOẠI LAI",
+   "vi": "đến từ bên ngoài, ngoại lai",
+   "proper": false
+  },
+  {
+   "n": 128,
+   "hz": "参与",
+   "py": "cānyù",
+   "pos": "动",
+   "zh": "参加（事务的计划、讨论、处理）。",
+   "en": "",
+   "hv": "THAM DỰ",
+   "vi": "tham gia, dự phần",
+   "proper": false
+  },
+  {
+   "n": 129,
+   "hz": "外资",
+   "py": "wàizī",
+   "pos": "名",
+   "zh": "由境外投入的资本。",
+   "en": "",
+   "hv": "NGOẠI TƯ",
+   "vi": "vốn đầu tư nước ngoài",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "中国城市大角力",
+   "paragraphs": [
+    "在中国，城市之间的竞争其实早已开始。20世纪80年代，这种城市之间的竞争更多地体现在城市人口、城市面积、工农业总产值等城市规模的指标上。进入20世纪90年代，城市的竞赛更多地用城市综合实力来体现，当时每年公布一次的中国城市综合实力50强排名曾引起巨大轰动，随后成为各城市标榜其投资环境的重要因素之一。不少城市借机提出了建设“国际化大都市”的口号，北京、上海、广州、大连、深圳，甚至佛山、东莞、宁波等城市也表示了向“国际大都市”进军的愿望，一时间，国际化成了城市之间最热门的话题。进入新世纪，在经济全球化的背景下，城市综合实力及国际化被赋予了更多内涵的城市竞争力所代替。城市之间的竞争，其轨迹即为：城市规模——综合实力——城市竞争力。",
+    "其实城市是一个复杂的模糊系统，观察中国城市竞争力，真可谓是“横看成岭侧成峰，远近高低各不同”。《中国城市竞争力报告》背景下的城市现实是：在长长的序列中，第一阵营多数是东南沿海城市，而“压阵”的无一例外都是西北部的城市。排在前20名的明星城市，直辖市、省会城市只占一半，另外半壁江山则被苏州、东莞、宁波、无锡这类概念中的“小城”割据。在计划经济体制下，城市的产业发展主要靠中央政府根据具体需要来确定和调整。沈阳、长春、哈尔滨是那个时代的明星，而现在东莞、苏州、宁波的崛起则勾画了新的城市版图。",
+    "从区域的角度大致地看，中国城市竞争力从强到弱依次是珠江流域、长江流域、闽江流域、环渤海地区、中部地区、西部地区。在样本城市中，最引人注意的是东南沿海的几个中等城市，如珠海、东莞、温州等的竞争力竟在一些大城市之上。",
+    "上海",
+    "上海是中国与世界经济交互作用的枢纽和平台，是中国金融、贸易、经济中心，也是综合创新中心，被喻为“中国的经济龙头”。上海综合竞争力荣衔中国内地诸城之冠。表现综合竞争力的城市产品市场占有率全国第一，城市劳动生产率高，国内生产总值年均增长率和居民人均年收入较高。",
+    "人才竞争力居全国第二位，表明上海在人才的质量、数量和潜力方面表现都比较好，上海吸引人才的政策优惠灵活，熟练工人和高级人才获得相对容易，但高级人才薪酬偏低。",
+    "上海的资本竞争力位居首位，表明了其金融中心的城市地位。",
+    "科学技术竞争力排在第二位，科技实力和转化能力都很突出，拥有大量科研院所和企业研究机构，产学研合作性好，科技创新能力需要进一步加强。",
+    "基础设施竞争力居第一位。市内基本基础设施、信息技术基础设施、基础设施成本指数都表现很好，对外基本基础设施完善，名列全国之首。",
+    "上海的环境竞争力名列第四位，城市环境质量、环境舒适度和自然环境优美度都比较好，尤其是城市建筑景观优美，拥有许多著名的风格各异的标志性建筑、商业街、广场。",
+    "文化竞争力居第二位。市民讲究信誉，交往操守好；重商价值取向明显，精明务实，勤劳创业，善于创新，竞争意识强，但是兼容平等观念有待加强。",
+    "上海的制度竞争力比较强。其中产权保护制度和地方法制建设完善程度居全国第一，市场发育比较充分，政府审批和管制比较好，但是个体经济所占比例不高。",
+    "政府管理竞争力最佳。上海政府办事效率高，行为规范，执行政策富有创造性和灵活性，政府战略和管理形象好。同样，企业的管理竞争力、管理形象和管理效益也较好。",
+    "深圳",
+    "深圳在城市发展中创造了许多奇迹，是华南重要的区域经济及金融航运中心城市，重要的综合创新中心。在实现城市创新和发展高科技产业方面，拥有许多不可替代的、非流动性竞争优势。综合竞争力居中国内地第二位。表现综合竞争力的居民人均年收入全国第一，城市劳动生产率、国内生产总值年均增长率和城市产品市场占有率非常高。",
+    "人才竞争力排在第三位。人力资源消费需求、投资需求和基本成本最高，人力资源质量较好，教育程度高。",
+    "深圳的资本竞争力排在第四位，在资本获得的便利性上表现很好。金融控制能力、资本可得性、资本流量都只仅次于最好的上海。但其资本存量及其增长有提高的余地。",
+    "深圳的科技竞争力位于第十四位，科研实力和创新能力比较薄弱，但是科技转化能力很强。",
+    "结构竞争力较强，高新技术产业发展很快，高科技产业集群初现端倪，表明其结构提高快。",
+    "深圳的基础设施规划建设技术先进，竞争力居全国第三。城市信息技术基础设施指数第一。对外基本基础设施、市内基本基础设施规模和增长都比较好。但文化、卫生基础设施表现一般。表明基础设施先进、现代化水平高，但需要进一步完善、配套。",
+    "综合区位竞争力不高。毗邻香港，经济区位优越。自然经济区位最好，政治、科技区位很好。资源丰富，城市在区域中的优势度指数不高。环境竞争力较好。作为亚热带的海滨城市，自然环境优美，尤其是人工环境、风景名胜都建设得较好。深圳城市园林绿化综合指数较高，是最适合居住和旅游的城市之一，但城市环境质量还要进一步提高。",
+    "文化竞争力居第一位。深圳人具有赚钱的商业观念，积极的劳动态度，强烈的竞争意识，不安于现状的进取精神以及新移民交汇所形成的开放、平等、自由、宽容、创新氛围，使深圳的文化最具竞争力。表现在价值观念、劳动态度、交往操守、创新精神、竞争意识、兼容心理指数等都非常高。",
+    "制度竞争力非常高，名列第一。深圳在体制创新、经济市场化程度方面处于全国最前列。",
+    "政府管理竞争力强，政府规划能力、推销能力、凝聚能力和财政能力都很强，执法意识和服务意识强，但创新能力有待提高。",
+    "深圳的企业管理竞争力全国领先，企业管理标准化和规范化程度高，激励和约束绩效处于最好水平。",
+    "深圳的开放竞争力位居第一，经济国际化和区域化程度相当高，移民人口多，社会交流指数和人文国际化程度全国最高。",
+    "北京",
+    "北京是中国的政治、文化、科技、信息、经济决策中心和国际交往中心，表现综合竞争力的国内生产总值年均增长率和居民人均年收入都较高，尤其近年来，北京的竞争力正以全国最快的速度发展，奥运商机及其带来的大规模的城市建设，将进一步加快其竞争力的提升。",
+    "北京聚集了全国最多、最优秀的人才精英和科研机构，人才竞争力居全国第一。北京在人才的质量、数量和潜力方面表现都比较好。但是北京在实施吸引人才的优惠灵活政策方面，在降低生活成本、改善人才待遇方面可做更多努力。",
+    "资本竞争力位居第二位，金融机构资本数量指数全国最高，金融控制力和资本获得便利性也很好，但是资本质量有待加强。",
+    "在科技竞争力方面，北京的科技实力居全国之首，基础研究能力强，科技创新能力全国第一。应用开发、科技成果转化能力不特别强。高科技产业综合指数表现较好，表明高新技术产业及产业区迅速发展。",
+    "结构竞争力第一，第三产业发达，技术密集型从业人员比例在全国最高，现代服务业和高技术产业发达。企业的规模、城市人口密度、城市产业布局合理度综合指标均表现不佳。高新技术产业发展和产业结构高级化不够快。",
+    "北京的基础设施竞争力比较强，市内基本基础设施完善程度在全国最好，对外联系基础设施和信息技术设施也比较发达，但是与迅速发展的社会经济相比仍需进一步加快建设步伐。",
+    "在区位方面，政治区位是北京最大的优势，科技区位最好，北京是全国铁路、航空、通信中心和枢纽，交通区位极为优越，区位交通便利度指数、经济腹地 GDP 与全国比重、城市在区域中的优势度指数均较好。表明其自然、经济区位也很好。但北京资源区位优势不明显，水资源缺乏。",
+    "环境竞争力强。北京历史悠久，古迹名胜多，人工环境优美。城市园林绿化综合指数、城市环境及风景名胜优美度指数都很高。但是城市环境质量相对不高，居住舒适度不佳，尽管近年来城市环境有所改善，但还需进一步提高。",
+    "文化竞争力表现一般。商业意识和创业精神与南方及沿海城市相比相对不足，但是交往操守好，能兼容平等对待不同文化。",
+    "北京的制度竞争力处于中等偏上水平，其中产权保护制度和地方法制建设程度相当高，但是个体经济比例较低，市场发育和政府审批管制有待进一步改善。",
+    "政府管理竞争力强，位于第四位，政府规划能力和推销能力突出，社会凝聚力强，政府办事效率高、行为规范，执行政策富有创造性和灵活性，提高的潜力大。",
+    "企业管理竞争力表现较好，管理技术和经验水平高，企业激励和约束绩效表现佳，产品服务质量和管理经济效益有待加强。",
+    "在开放竞争力方面，城市内外交流，特别是对外文化交流交往非常广泛。国内外贸易依存度非常高，外来人口和文化影响多，国际化程度高。但是城市开放和参与全球现代化程度、外资占城市总资本的比重需要进一步提高。",
+    "（作者：老枪　选自《中国城市大角力》，中国社会科学出版社，2003年9月版）"
+   ],
+   "translations": [
+    "Ở Trung Quốc, sự cạnh tranh giữa các thành phố thực ra đã bắt đầu từ lâu. Thập niên 80 của thế kỷ XX, cuộc cạnh tranh giữa các đô thị chủ yếu thể hiện qua các chỉ tiêu quy mô như dân số, diện tích đô thị, tổng giá trị sản xuất công nông nghiệp. Bước sang thập niên 90, cuộc đua giữa các thành phố được thể hiện nhiều hơn bằng thực lực tổng hợp; khi đó bảng xếp hạng 50 thành phố có thực lực tổng hợp mạnh nhất Trung Quốc công bố mỗi năm một lần từng gây tiếng vang lớn, sau trở thành một trong những yếu tố quan trọng để các thành phố phô trương môi trường đầu tư của mình. Không ít thành phố nhân cơ hội đó đề ra khẩu hiệu xây dựng “đại đô thị mang tầm quốc tế”; ngay cả Bắc Kinh, Thượng Hải, Quảng Châu, Đại Liên, Thâm Quyến, thậm chí Phật Sơn, Đông Hoản, Ninh Ba… cũng bày tỏ khát vọng tiến quân vào hàng ngũ “đại đô thị quốc tế”, khiến quốc tế hóa nhất thời trở thành chủ đề nóng bỏng nhất giữa các đô thị. Bước vào thế kỷ mới, trong bối cảnh toàn cầu hóa kinh tế, thực lực tổng hợp và tính quốc tế hóa đã được thay thế bằng năng lực cạnh tranh đô thị mang nhiều nội hàm sâu rộng hơn. Quỹ đạo cạnh tranh giữa các thành phố chính là: quy mô đô thị — thực lực tổng hợp — năng lực cạnh tranh đô thị.",
+    "Thực ra đô thị là một hệ thống phức tạp đầy biến số; quan sát năng lực cạnh tranh của các thành phố Trung Quốc thật đúng là “Ngang nhìn thành dãy, nghiêng thành ngọn / Xa gần cao thấp khác muôn phần”. Bức tranh thực tế của các đô thị qua “Báo cáo năng lực cạnh tranh đô thị Trung Quốc” là: trong danh sách xếp hạng dài dằng dặc, nhóm dẫn đầu phần lớn là các thành phố duyên hải Đông Nam, còn những thành phố “chốt cuối bảng” không một ngoại lệ đều thuộc khu vực Tây Bắc. Trong tốp 20 thành phố ngôi sao hàng đầu, các thành phố trực thuộc trung ương và tỉnh lỵ chỉ chiếm một nửa; nửa giang sơn còn lại bị các “đô thị nhỏ” theo cách hiểu thông thường như Tô Châu, Đông Hoản, Ninh Ba, Vô Tích chiếm lĩnh. Dưới thể chế kinh tế kế hoạch hóa, sự phát triển ngành nghề của các thành phố chủ yếu do chính phủ trung ương xác định và điều chỉnh theo nhu cầu cụ thể. Thẩm Dương, Trường Xuân, Cáp Nhĩ Tân từng là những ngôi sao của thời đại ấy, còn ngày nay sự trỗi dậy của Đông Hoản, Tô Châu, Ninh Ba đã phác họa nên một bản đồ đô thị hoàn toàn mới.",
+    "Nhìn đại thể từ góc độ khu vực, năng lực cạnh tranh đô thị Trung Quốc từ mạnh đến yếu lần lượt là lưu vực Châu Giang, lưu vực Trường Giang, lưu vực Mân Giang, khu vực Vành đai Bột Hải, khu vực miền Trung và khu vực miền Tây. Trong các thành phố được khảo sát làm mẫu, điều gây chú ý nhất là một số thành phố cỡ trung ở duyên hải Đông Nam như Chu Hải, Đông Hoản, Ôn Châu… lại có năng lực cạnh tranh vượt trên cả một số thành phố lớn.",
+    "Thượng Hải",
+    "Thượng Hải là đầu mối và nền tảng tương tác giữa kinh tế Trung Quốc với kinh tế thế giới, là trung tâm tài chính, thương mại, kinh tế của Trung Quốc, đồng thời là trung tâm đổi mới sáng tạo tổng hợp, được ví như “đầu tàu kinh tế của Trung Quốc”. Năng lực cạnh tranh tổng hợp của Thượng Hải vinh dự đứng đầu các thành phố nội địa Trung Quốc. Các chỉ số phản ánh năng lực cạnh tranh tổng hợp như tỷ lệ chiếm lĩnh thị trường của sản phẩm đô thị đứng thứ nhất toàn quốc, năng suất lao động đô thị cao, tốc độ tăng trưởng GDP bình quân hằng năm và thu nhập bình quân đầu người hằng năm của cư dân đều ở mức cao.",
+    "Năng lực cạnh tranh nhân tài đứng thứ hai toàn quốc, cho thấy Thượng Hải thể hiện khá tốt ở cả chất lượng, số lượng lẫn tiềm năng nhân tài; chính sách thu hút nhân tài của thành phố ưu đãi và linh hoạt, việc tiếp cận lao động lành nghề và nhân tài cấp cao tương đối dễ dàng, tuy nhiên mức thù lao dành cho nhân tài cấp cao còn hơi thấp.",
+    "Năng lực cạnh tranh về vốn của Thượng Hải đứng ở vị trí số một, khẳng định vị thế đô thị trung tâm tài chính của thành phố.",
+    "Năng lực cạnh tranh khoa học kỹ thuật xếp thứ hai; thực lực khoa học công nghệ và năng lực chuyển hóa đều rất nổi bật, sở hữu lượng lớn viện nghiên cứu khoa học và cơ quan nghiên cứu doanh nghiệp, sự hợp tác giữa doanh nghiệp – nhà trường – viện nghiên cứu rất tốt, song năng lực đổi mới sáng tạo khoa học công nghệ vẫn cần được tăng cường thêm.",
+    "Năng lực cạnh tranh cơ sở hạ tầng đứng thứ nhất. Cơ sở hạ tầng cơ bản nội đô, hạ tầng công nghệ thông tin và chỉ số chi phí hạ tầng đều thể hiện rất tốt; cơ sở hạ tầng cơ bản đối ngoại hoàn thiện, đứng đầu toàn quốc.",
+    "Năng lực cạnh tranh môi trường của Thượng Hải xếp thứ tư; chất lượng môi trường đô thị, độ dễ chịu của môi trường và vẻ đẹp môi trường tự nhiên đều khá tốt, đặc biệt cảnh quan kiến trúc đô thị mỹ lệ, sở hữu nhiều công trình biểu tượng, phố thương mại và quảng trường nổi tiếng với phong cách đa dạng.",
+    "Năng lực cạnh tranh văn hóa đứng thứ hai. Người dân coi trọng chữ tín, phẩm hạnh giao tiếp tốt; định hướng giá trị trọng thương rõ nét, tinh tường thực tế, cần cù khởi nghiệp, giỏi sáng tạo, ý thức cạnh tranh mạnh mẽ, nhưng quan niệm bao dung và bình đẳng vẫn cần được tăng cường.",
+    "Năng lực cạnh tranh thể chế của Thượng Hải tương đối mạnh. Trong đó mức độ hoàn thiện của chế độ bảo hộ quyền sở hữu tài sản và xây dựng pháp chế địa phương đứng thứ nhất toàn quốc, thị trường phát triển khá đầy đủ, việc thẩm định và quản lý của chính quyền khá tốt, tuy nhiên tỷ trọng kinh tế cá thể chưa cao.",
+    "Năng lực cạnh tranh quản lý nhà nước đạt mức xuất sắc nhất. Chính quyền Thượng Hải làm việc hiệu quả cao, hành xử chuẩn mực, thực thi chính sách giàu tính sáng tạo và linh hoạt, hình ảnh chiến lược và quản trị của chính quyền tốt. Tương tự, năng lực cạnh tranh quản trị doanh nghiệp, hình ảnh quản trị và hiệu quả quản trị cũng đều khá tốt.",
+    "Thâm Quyến",
+    "Thâm Quyến đã tạo nên nhiều kỳ tích trong quá trình phát triển đô thị, là thành phố trung tâm kinh tế khu vực và tài chính – hàng hải quan trọng của vùng Hoa Nam, đồng thời là trung tâm đổi mới sáng tạo tổng hợp trọng yếu. Trong việc hiện thực hóa đổi mới đô thị và phát triển ngành công nghệ cao, Thâm Quyến sở hữu nhiều lợi thế cạnh tranh không thể thay thế và không dễ dịch chuyển. Năng lực cạnh tranh tổng hợp đứng thứ hai Trung Quốc đại lục. Thu nhập bình quân đầu người hằng năm của cư dân đứng đầu toàn quốc; năng suất lao động đô thị, tốc độ tăng trưởng GDP bình quân hằng năm và tỷ lệ chiếm lĩnh thị trường sản phẩm đô thị đều rất cao.",
+    "Năng lực cạnh tranh nhân tài xếp thứ ba. Nhu cầu tiêu dùng nguồn nhân lực, nhu cầu đầu tư và chi phí cơ bản cao nhất, chất lượng nguồn nhân lực khá tốt, trình độ học vấn cao.",
+    "Năng lực cạnh tranh về vốn của Thâm Quyến xếp thứ tư, thể hiện rất tốt về mức độ thuận tiện khi tiếp cận vốn. Năng lực kiểm soát tài chính, khả năng tiếp cận vốn và lưu lượng vốn đều chỉ đứng sau Thượng Hải – thành phố dẫn đầu. Tuy nhiên lượng vốn tích lũy và mức tăng trưởng vốn vẫn còn dư địa để nâng cao.",
+    "Năng lực cạnh tranh khoa học công nghệ của Thâm Quyến đứng thứ mười bốn; thực lực nghiên cứu khoa học và năng lực đổi mới còn tương đối mỏng, nhưng năng lực chuyển hóa công nghệ lại rất mạnh.",
+    "Năng lực cạnh tranh cơ cấu khá mạnh, ngành công nghệ cao và mới phát triển rất nhanh, cụm ngành công nghệ cao bước đầu đã hình thành rõ nét, cho thấy cơ cấu kinh tế nâng cấp nhanh.",
+    "Công nghệ quy hoạch và xây dựng cơ sở hạ tầng của Thâm Quyến tiên tiến, năng lực cạnh tranh đứng thứ ba toàn quốc. Chỉ số hạ tầng công nghệ thông tin đô thị đứng thứ nhất. Quy mô và tốc độ tăng trưởng của hạ tầng cơ bản đối ngoại lẫn nội đô đều khá tốt. Tuy nhiên hạ tầng văn hóa, y tế chỉ ở mức trung bình. Điều đó cho thấy cơ sở hạ tầng tiên tiến, mức độ hiện đại hóa cao, nhưng cần tiếp tục hoàn thiện và đồng bộ hơn.",
+    "Năng lực cạnh tranh vị trí khu vực tổng hợp không cao. Tiếp giáp Hồng Kông nên vị trí kinh tế rất ưu việt. Vị trí kinh tế tự nhiên tốt nhất, vị trí chính trị và khoa học công nghệ rất tốt. Tài nguyên phong phú, nhưng chỉ số mức độ ưu thế của thành phố trong khu vực không cao. Năng lực cạnh tranh môi trường khá tốt. Là thành phố ven biển cận nhiệt đới, môi trường tự nhiên tươi đẹp, đặc biệt môi trường nhân tạo và các danh lam thắng cảnh được xây dựng khá tốt. Chỉ số tổng hợp về công viên và cây xanh đô thị của Thâm Quyến khá cao, là một trong những thành phố thích hợp nhất để sinh sống và du lịch, song chất lượng môi trường đô thị vẫn cần nâng cao hơn nữa.",
+    "Năng lực cạnh tranh văn hóa đứng thứ nhất. Người Thâm Quyến mang tư duy kinh doanh kiếm tiền, thái độ lao động tích cực, ý thức cạnh tranh mạnh mẽ, tinh thần cầu tiến không bằng lòng với hiện tại cùng bầu không khí cởi mở, bình đẳng, tự do, bao dung và sáng tạo hình thành từ sự giao thoa của làn sóng di dân mới, khiến văn hóa Thâm Quyến có sức cạnh tranh cao nhất. Điều này thể hiện ở các chỉ số như quan niệm giá trị, thái độ lao động, phẩm hạnh giao tiếp, tinh thần sáng tạo, ý thức cạnh tranh và tâm lý bao dung đều rất cao.",
+    "Năng lực cạnh tranh thể chế rất cao, đứng đầu toàn quốc. Thâm Quyến nằm ở nhóm tiên phong cả nước về đổi mới thể chế và mức độ thị trường hóa nền kinh tế.",
+    "Năng lực cạnh tranh quản lý nhà nước mạnh; năng lực quy hoạch, quảng bá, gắn kết và năng lực tài chính của chính quyền đều rất mạnh, ý thức thực thi pháp luật và ý thức phục vụ cao, nhưng năng lực đổi mới vẫn cần được nâng cao.",
+    "Năng lực cạnh tranh quản trị doanh nghiệp của Thâm Quyến dẫn đầu toàn quốc, mức độ tiêu chuẩn hóa và quy phạm hóa trong quản trị doanh nghiệp cao, hiệu quả khích lệ và ràng buộc đạt mức tốt nhất.",
+    "Năng lực cạnh tranh mở cửa của Thâm Quyến đứng thứ nhất, mức độ quốc tế hóa và khu vực hóa kinh tế khá cao, dân nhập cư đông, chỉ số giao lưu xã hội và mức độ quốc tế hóa nhân văn cao nhất cả nước.",
+    "Bắc Kinh",
+    "Bắc Kinh là trung tâm quyết sách chính trị, văn hóa, khoa học công nghệ, thông tin, kinh tế và trung tâm giao lưu quốc tế của Trung Quốc; tốc độ tăng trưởng GDP bình quân hằng năm và thu nhập bình quân đầu người hằng năm của cư dân đều khá cao; đặc biệt những năm gần đây, năng lực cạnh tranh của Bắc Kinh đang phát triển với tốc độ nhanh nhất cả nước, cơ hội thương mại từ Thế vận hội Olympic cùng làn sóng xây dựng đô thị quy mô lớn mà nó mang lại sẽ càng đẩy nhanh hơn nữa việc nâng cao năng lực cạnh tranh của thành phố.",
+    "Bắc Kinh quy tụ nhiều nhân tài tinh hoa và cơ quan nghiên cứu khoa học xuất sắc nhất cả nước, năng lực cạnh tranh nhân tài đứng đầu toàn quốc. Bắc Kinh thể hiện khá tốt cả về chất lượng, số lượng lẫn tiềm năng nhân tài. Tuy nhiên, trong việc thực thi các chính sách ưu đãi, linh hoạt thu hút nhân tài, cũng như giảm chi phí sinh hoạt và cải thiện đãi ngộ nhân tài, Bắc Kinh vẫn có thể nỗ lực nhiều hơn.",
+    "Năng lực cạnh tranh về vốn đứng thứ hai, chỉ số lượng vốn của các tổ chức tài chính cao nhất toàn quốc, năng lực kiểm soát tài chính và mức độ thuận tiện tiếp cận vốn cũng rất tốt, song chất lượng vốn cần được tăng cường.",
+    "Về năng lực cạnh tranh khoa học công nghệ, thực lực khoa học công nghệ của Bắc Kinh đứng đầu toàn quốc, năng lực nghiên cứu cơ bản mạnh, năng lực đổi mới sáng tạo công nghệ đứng thứ nhất cả nước. Năng lực phát triển ứng dụng và chuyển hóa thành quả khoa học công nghệ chưa thật mạnh. Chỉ số tổng hợp ngành công nghệ cao thể hiện khá tốt, cho thấy các ngành và khu công nghệ cao và mới đang phát triển nhanh chóng.",
+    "Năng lực cạnh tranh cơ cấu đứng thứ nhất, khu vực dịch vụ (ngành công nghiệp thứ ba) phát triển, tỷ lệ nhân sự làm việc trong các ngành thâm dụng công nghệ cao nhất toàn quốc, dịch vụ hiện đại và ngành công nghệ cao phát triển mạnh. Các chỉ tiêu tổng hợp như quy mô doanh nghiệp, mật độ dân số đô thị và mức độ hợp lý trong bố cục ngành nghề đô thị đều chưa tốt. Tốc độ phát triển ngành công nghệ cao và nâng cấp cơ cấu ngành nghề lên trình độ cao vẫn chưa đủ nhanh.",
+    "Năng lực cạnh tranh cơ sở hạ tầng của Bắc Kinh tương đối mạnh, mức độ hoàn thiện cơ sở hạ tầng cơ bản nội đô tốt nhất cả nước, hạ tầng kết nối đối ngoại và hạ tầng công nghệ thông tin cũng khá phát triển, nhưng so với tốc độ phát triển nhanh chóng của kinh tế – xã hội thì vẫn cần đẩy nhanh nhịp độ xây dựng hơn nữa.",
+    "Về vị trí khu vực, vị trí chính trị là lợi thế lớn nhất của Bắc Kinh, vị trí khoa học công nghệ tốt nhất; Bắc Kinh là trung tâm và đầu mối đường sắt, hàng không, thông tin liên lạc của cả nước nên vị trí giao thông cực kỳ ưu việt; chỉ số thuận tiện giao thông theo vị trí, tỷ trọng GDP vùng hậu phương kinh tế so với cả nước và chỉ số mức độ ưu thế của thành phố trong khu vực đều khá tốt. Điều này cho thấy vị trí tự nhiên và kinh tế cũng rất tốt. Nhưng lợi thế tài nguyên của Bắc Kinh không rõ rệt, nguồn tài nguyên nước thiếu thốn.",
+    "Năng lực cạnh tranh môi trường mạnh. Bắc Kinh có lịch sử lâu đời, nhiều di tích danh thắng, môi trường nhân tạo tươi đẹp. Chỉ số tổng hợp về công viên cây xanh đô thị và chỉ số vẻ đẹp môi trường đô thị cùng danh lam thắng cảnh đều rất cao. Tuy nhiên chất lượng môi trường đô thị tương đối không cao, độ dễ chịu khi sinh sống chưa tốt; tuy những năm gần đây môi trường đô thị có cải thiện nhưng vẫn cần nâng cao hơn nữa.",
+    "Năng lực cạnh tranh văn hóa ở mức trung bình. Ý thức thương mại và tinh thần khởi nghiệp còn tương đối thiếu hụt so với các thành phố phương Nam và duyên hải, nhưng phẩm hạnh giao tiếp tốt, có khả năng bao dung và đối xử bình đẳng với các nền văn hóa khác nhau.",
+    "Năng lực cạnh tranh thể chế của Bắc Kinh ở mức trên trung bình, trong đó chế độ bảo hộ quyền sở hữu tài sản và mức độ xây dựng pháp chế địa phương khá cao, nhưng tỷ trọng kinh tế cá thể còn thấp, sự phát triển của thị trường cùng công tác thẩm định và quản lý của chính quyền cần tiếp tục cải thiện.",
+    "Năng lực cạnh tranh quản lý nhà nước mạnh, xếp thứ tư; năng lực quy hoạch và quảng bá của chính quyền nổi bật, sức gắn kết xã hội mạnh, hiệu suất làm việc của chính quyền cao, hành xử chuẩn mực, thực thi chính sách giàu sáng tạo và linh hoạt, tiềm năng nâng cao còn lớn.",
+    "Năng lực cạnh tranh quản trị doanh nghiệp thể hiện khá tốt, trình độ kỹ thuật và kinh nghiệm quản lý cao, hiệu quả khích lệ và ràng buộc của doanh nghiệp tốt, song chất lượng sản phẩm dịch vụ và hiệu quả kinh tế từ quản trị vẫn cần tăng cường.",
+    "Về năng lực cạnh tranh mở cửa, hoạt động giao lưu trong và ngoài thành phố, đặc biệt là giao lưu văn hóa đối ngoại diễn ra rất rộng rãi. Mức độ phụ thuộc vào thương mại trong và ngoài nước rất cao, dân nhập cư và ảnh hưởng văn hóa nhiều, mức độ quốc tế hóa cao. Tuy nhiên mức độ mở cửa và tham gia vào tiến trình hiện đại hóa toàn cầu của thành phố cũng như tỷ trọng vốn đầu tư nước ngoài trong tổng vốn của thành phố cần được nâng cao hơn nữa.",
+    "(Tác giả: Lão Thương, trích từ “Trung Quốc thành thị đại giác lực”, Nhà xuất bản Khoa học Xã hội Trung Quốc, ấn bản tháng 9 năm 2003)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "生活在哪个城市最幸福？",
+   "paragraphs": [
+    "2005年3月21日，瑞士著名的美世人力资源咨询公司发布了2005年度《全球生活质量调查》，调查结果显示，上海的排名从2004年的第107位上升至102位，在所有参与调查的亚洲城市中得分增长最快。北京的排名仍然保持在第132位，紧随其后的是广州（第135位）、南京（第143位）、沈阳（第157位）和吉林（第167位）。世界上得分最高的城市是日内瓦（Geneva）和苏黎世（Zurich），温哥华（Vancouver）和维也纳（Vienna）并列第3位，新西兰的奥克兰（Auckland）、丹麦的哥本哈根（Copenhagen）、德国的法兰克福（Frankfurt）和澳大利亚的悉尼（Sydney）均位于前10名之列，而饱受战争之苦的伊拉克首都巴格达（Baghdad）的生活质量最差。《全球生活质量调查》以39项关键生活质量标准的详细评估与分析为基础，主要指标包括政治和社会环境、经济环境、医疗和健康因素、学校和教育、公共服务和运输、娱乐、消费、居住条件、自然环境等因素。其中，上海得分较高的项目主要是金融服务、医疗供应服务等方面。此外，上海在餐厅类别、影院娱乐、休闲设施等方面也得分较高，但是在空气污染、交通拥堵等方面却不尽如人意，尤其在交通状况满意度方面，在满分10分中只得5分。",
+    "京沪穗三城比较",
+    "《全球生活质量调查》的科学方法显然不同于人们的日常生活与切身感受。那么，生活在城市的人们持有怎样的看法呢？对此，研究人员曾对北京、上海和广州三个城市进行过比较研究，获得如下发现：",
+    "居民心中的城市形象：",
+    "• 认为属于“现代化城市”的，上海的中选率是63%，北京的中选率是20%，广州的中选率是17%。",
+    "• 认为属于“国际化城市”的，上海的中选率是66%，北京的中选率是18%，广州的中选率是16%。",
+    "• 认为“城市开放速度最快”的，上海为41%，北京为16%，广州为43%。",
+    "• 认为“生活在京沪穗三个城市中，哪个城市最令人感到舒适”的，上海的中选率为49%，北京的中选率为29%，广州的中选率为22%。",
+    "• 认为“最有文化氛围的城市”，北京的中选率为63%，上海的中选率为28%，广州的中选率为9%。",
+    "在上述5个指标中，除了“文化氛围”外，上海在其余指标上均超过京穗。",
+    "最喜欢的城市：",
+    "• 上海人最喜欢本市的比例为85%，北京人最喜欢本市的比例为79%，广州人最喜欢本市的比例为50%。",
+    "• 除了本市，三地居民喜欢其他城市的排序是：上海人为北京和广州，北京人为上海和广州，广州人为上海和北京。",
+    "自己的城市好在哪儿？",
+    "• 在22项与居民生活有关的项目中，就排序前3位而言，上海居民首选供电、子女教育、城市建筑美观；北京居民首选基础性市政建设、和谐的邻里关系、完善的旅游设施；广州居民首选住房、文化娱乐、小区配套设施。",
+    "• 在22项与居民生活有关的项目中，就排序最后3位而言，上海人和北京人相同，满意度最低的分别是空气质量、小区配套设施、绿化。广州人满意度最低的3项是空气质量、饮用水质量和治安状况。",
+    "• 在给自己城市的满意度打分方面，围绕所在城市的生活、居住、人文环境和城市建设等项目，采用5分制，5分表示很满意，1分表示很不满意。结果发现，上海人对自己城市总体满意度的得分为4分，北京为3.7分，广州为3.63分。",
+    "最希望自己所在城市改进的方面：",
+    "根据居民认为“重要、城市表现不错、希望继续保持的方面”，或者居民认为“重要、城市做得较差、亟待改进的方面”，三地的不同排序是：",
+    "• 上海为住房、交通拥堵、小区配套设施、绿化、空气质量、环境保护、文化娱乐场所、旅游设施等。此外，为了迎接“世博会”，居民的素质需要进一步提升。",
+    "• 北京为空气质量、环境保护、交通拥堵、住房、小区配套设施、绿化、文化娱乐设施等。此外，为了更好地迎接2008年奥运会，居民需要不断提高自身和城市的素质。",
+    "• 广州为居民的文化素质、城市规划的合理性、小区绿化、空气质量等。",
+    "上海市民为什么喜欢上海？",
+    "上海市民之所以对自己生活的城市感到满意，是与上海的经济社会发展和市民的认知水平提高密切相关的。对此，上海市统计局、上海市民政局、《东方早报》和上海零点市场调查公司曾先后组织过不同规模的上海市民基本情况抽样调查，结果发现下述一些因素与上海市民喜欢上海有关：",
+    "第一，个人生活质量的总体满意度得到提升。在接受调查的市民中，认为个人生活质量较低或很低的人不到10%。",
+    "第二，生活成本的上升与生活质量的提高趋于同步态势。2004年全球城市生活成本调查报告显示，上海位列第16位，仅次于香港和北京而排位中国第三，而教育开支则位居世界第一。对生活成本的上升，上海市民有何看法？对此，有关调查发现：",
+    "• 约54.7%的被调查者认为，上海作为国际化大都市，与世界其他同等的大城市相比，目前的生活成本还是适中的。当问及“与收入相比，你觉得上海的生活成本如何”时，有50%的人认为两者同步，也就是说，虽然上海生活花钱较多，但是挣得也多。",
+    "• 对于教育费用全球排行第一的问题，调查显示，39.2%的人认为这是人们重视教育、观念领先的表现；25.8%的人对此采取较为宽容的态度，认为这是发展过程中暂时的现象；11.1%的人持完全肯定的态度，认为这是上海作为国际化大都市的一种表现。",
+    "• 在回答“你怎样看待在同一城市区域之间的生活成本不相同这一现象”时，62.6%的人认为很正常，是适应市场规律的体现；21%的人觉得不太正常，希望通过调整来缩小差距；相比之下，只有10.1%的人持相反意见，觉得很不合理。",
+    "第三，人均年可支配收入增加。2004年，上海全年城市居民家庭人均年可支配收入为16683元，比2003年增长12.2%；农村居民家庭人均年可支配收入为7337元，比2003年增长10.2%。",
+    "第四，住房条件逐渐改善。调查发现，与过去5年相比，有31.7%的市民认为，住房条件变得“较好或很好”；近50%的市民认为“差不多”。",
+    "第五，健康水平提高。约87.6%的市民认为自己身体健康。",
+    "第六，社会地位变化。大多数市民在经济收入、文化程度和职业取向逐渐提高的同时，社会地位也随之上升。在问及被调查者与其父辈相比社会地位有何变化时，60%以上的人认为自己的社会地位得到了提高。",
+    "第七，城镇登记失业率10年来首次下降。2004年年初，上海启动了“万人就业项目”，目标是新增就业岗位50万个，城镇登记失业率控制在4.6%以内。上海市统计局的统计快报表明，截至2004年底，上海就业形势在保持稳定的基础上有所好转，全市新增就业岗位60.8万个，超额完成年初目标。城镇登记失业率为4.5%，实现了近10年来的首次下降。城镇失业率的下降，直接影响市民的幸福体验。",
+    "第八，“吃救济”人数10年来首次下降。2004年，上海享受政府救济的人数达到59.83万人。这个数字比2003年同期减少了近3.6万人，这也直接影响到市民的幸福体验。",
+    "（作者：韦子木　文字有删节　选自《社会观察》2006年第6期）",
+    "相关链接",
+    "2007年中国城市竞争力蓝皮书上午发布",
+    "科技竞争力 北京第一",
+    "今天上午，中国社会科学院和社科文献出版社联合发布了《2007年中国城市竞争力蓝皮书》。这份由两岸四地近百名城市竞争力专家历时大半年完成的近70万字的报告，对包括港、澳、台和内地的200个地级以上城市的综合竞争力进行了排序，在科技竞争力排序中北京排名第一。",
+    "由于当今世界的全球化和网络化，使得城市国际竞争不断升级，而品牌竞争是城市国际竞争的重要制高点。今年的蓝皮书以“品牌，城市最美的风景”作为主题，通过对表示品牌的理性感知和情感体验的70多项指标的调查数据，对内地50个城市品牌进行定量研究发现，总体品牌前十名的城市依次是：北京、上海、深圳、广州、杭州、苏州、厦门、宁波、天津、南京。",
+    "蓝皮书还从市场规模、经济增长、生产效率、资源节约、经济结构和生活水平六个方面，利用标准的客观数据对两岸四地的200个地级以上中国城市的综合竞争力进行定量分析，最终产生的综合竞争力前10位的城市分别是：香港、深圳、上海、北京、广州、台北、无锡、苏州、佛山、澳门。",
+    "蓝皮书指出，从中国城市竞争力的区域分布特征看，目前中国城市竞争力总体格局依然是珠三角地区、长三角地区、台海地区、环渤海地区、东北地区、中部地区、西南地区及西北地区。但是区域发展不平衡问题突出，各地竞争力差异显著；竞争力板块开始细化，区域内城市间差距拉大。",
+    "蓝皮书还利用210个指标的主客观数据对两岸四地综合竞争力较强的61个城市的分项竞争力进行了比较分析，其中北京在科技竞争力排名中名列榜首，在人才、资本、结构、基础设施、区位、文化和政府管理竞争力方面也表现优异，均进入了前十名，而在环境、制度、企业管理和开放竞争方面则表现稍差，未能进入前十。",
+    "（摘自《北京晚报》2007.3.25）"
+   ],
+   "translations": [
+    "Ngày 21 tháng 3 năm 2005, Công ty Tư vấn Nguồn nhân lực Mercer nổi tiếng của Thụy Sĩ đã công bố bản “Khảo sát chất lượng cuộc sống toàn cầu” năm 2005. Kết quả khảo sát cho thấy thứ hạng của Thượng Hải đã tăng từ vị trí 107 năm 2004 lên vị trí 102, là thành phố có mức tăng điểm nhanh nhất trong số tất cả các thành phố châu Á tham gia khảo sát. Thứ hạng của Bắc Kinh vẫn giữ ở vị trí 132, theo sát phía sau là Quảng Châu (thứ 135), Nam Kinh (thứ 143), Thẩm Dương (thứ 157) và Cát Lâm (thứ 167). Các thành phố có điểm số cao nhất thế giới là Geneva và Zurich; Vancouver và Vienna đồng hạng 3; Auckland (New Zealand), Copenhagen (Đan Mạch), Frankfurt (Đức) và Sydney (Úc) đều nằm trong tốp 10, trong khi thủ đô Baghdad (Iraq) chịu nhiều tàn phá của chiến tranh có chất lượng cuộc sống thấp nhất. “Khảo sát chất lượng cuộc sống toàn cầu” dựa trên đánh giá và phân tích chi tiết 39 tiêu chuẩn chất lượng cuộc sống then chốt, với các chỉ tiêu chính gồm môi trường chính trị – xã hội, môi trường kinh tế, yếu tố y tế – sức khỏe, trường học – giáo dục, dịch vụ công – vận tải, giải trí, tiêu dùng, điều kiện nhà ở, môi trường tự nhiên… Trong đó, những hạng mục Thượng Hải đạt điểm cao chủ yếu là dịch vụ tài chính, dịch vụ cung ứng y tế… Ngoài ra, Thượng Hải cũng ghi điểm cao ở sự đa dạng nhà hàng, rạp chiếu phim giải trí, cơ sở vui chơi thư giãn, nhưng ở các mặt như ô nhiễm không khí, ùn tắc giao thông lại chưa được như ý, đặc biệt ở mức độ hài lòng về tình trạng giao thông chỉ đạt 5 trên thang điểm 10.",
+    "So sánh ba thành phố Bắc Kinh – Thượng Hải – Quảng Châu",
+    "Phương pháp khoa học của “Khảo sát chất lượng cuộc sống toàn cầu” rõ ràng khác với đời sống thường nhật và cảm nhận trực tiếp của người dân. Vậy người dân đang sống tại các đô thị có suy nghĩ ra sao? Về vấn đề này, các nhà nghiên cứu từng tiến hành nghiên cứu so sánh ba thành phố Bắc Kinh, Thượng Hải và Quảng Châu, thu được những phát hiện sau:",
+    "Hình ảnh đô thị trong lòng cư dân:",
+    "• Về tiêu chí thuộc nhóm “thành phố hiện đại hóa”, tỷ lệ được bình chọn của Thượng Hải là 63%, Bắc Kinh là 20%, Quảng Châu là 17%.",
+    "• Về tiêu chí thuộc nhóm “thành phố quốc tế hóa”, tỷ lệ được bình chọn của Thượng Hải là 66%, Bắc Kinh là 18%, Quảng Châu là 16%.",
+    "• Về tiêu chí “thành phố có tốc độ mở cửa nhanh nhất”, Thượng Hải đạt 41%, Bắc Kinh đạt 16%, Quảng Châu đạt 43%.",
+    "• Về câu hỏi “Sống ở thành phố nào trong ba thành phố Bắc Kinh, Thượng Hải, Quảng Châu khiến người ta cảm thấy thoải mái nhất”, tỷ lệ bình chọn cho Thượng Hải là 49%, Bắc Kinh là 29%, Quảng Châu là 22%.",
+    "• Về “thành phố có bầu không khí văn hóa đậm nét nhất”, tỷ lệ bình chọn cho Bắc Kinh là 63%, Thượng Hải là 28%, Quảng Châu là 9%.",
+    "Trong 5 chỉ tiêu trên, ngoại trừ “bầu không khí văn hóa”, Thượng Hải đều vượt trội Bắc Kinh và Quảng Châu ở các chỉ tiêu còn lại.",
+    "Thành phố được yêu thích nhất:",
+    "• Tỷ lệ người dân yêu thích nhất chính thành phố mình đang sống ở Thượng Hải là 85%, ở Bắc Kinh là 79%, ở Quảng Châu là 50%.",
+    "• Ngoài thành phố của mình, thứ tự yêu thích các thành phố khác của cư dân ba nơi là: người Thượng Hải chọn Bắc Kinh rồi Quảng Châu; người Bắc Kinh chọn Thượng Hải rồi Quảng Châu; người Quảng Châu chọn Thượng Hải rồi Bắc Kinh.",
+    "Thành phố của mình tốt ở điểm nào?",
+    "• Trong 22 hạng mục liên quan đến đời sống cư dân, xét 3 vị trí dẫn đầu: cư dân Thượng Hải chọn cung cấp điện, giáo dục con cái và mỹ quan kiến trúc đô thị; cư dân Bắc Kinh chọn hạ tầng đô thị cơ bản, quan hệ láng giềng hài hòa và cơ sở du lịch hoàn thiện; cư dân Quảng Châu chọn nhà ở, văn hóa giải trí và tiện ích đồng bộ trong khu dân cư.",
+    "• Trong 22 hạng mục liên quan đến đời sống cư dân, xét 3 vị trí cuối bảng: người Thượng Hải và người Bắc Kinh giống nhau, mức độ hài lòng thấp nhất lần lượt là chất lượng không khí, tiện ích khu dân cư và mảng xanh. 3 hạng mục người Quảng Châu ít hài lòng nhất là chất lượng không khí, chất lượng nước uống và tình hình trị an.",
+    "• Về chấm điểm mức độ hài lòng đối với thành phố mình đang sống, xoay quanh các hạng mục như đời sống, cư trú, môi trường nhân văn và xây dựng đô thị theo thang 5 điểm (5 điểm là rất hài lòng, 1 điểm là rất không hài lòng), kết quả cho thấy điểm hài lòng chung của người Thượng Hải dành cho thành phố mình là 4 điểm, Bắc Kinh là 3,7 điểm và Quảng Châu là 3,63 điểm.",
+    "Những mặt mong muốn thành phố của mình cải thiện nhất:",
+    "Dựa theo các khía cạnh được cư dân đánh giá là “quan trọng, thành phố làm khá tốt, mong tiếp tục duy trì” hoặc “quan trọng, thành phố làm còn kém, cấp thiết cần cải thiện”, thứ tự khác nhau ở ba nơi như sau:",
+    "• Thượng Hải gồm nhà ở, ùn tắc giao thông, tiện ích khu dân cư, mảng xanh, chất lượng không khí, bảo vệ môi trường, tụ điểm văn hóa giải trí, cơ sở du lịch… Ngoài ra, để đón chào “Triển lãm Thế giới (World Expo)”, tố chất của cư dân cũng cần được nâng cao hơn nữa.",
+    "• Bắc Kinh gồm chất lượng không khí, bảo vệ môi trường, ùn tắc giao thông, nhà ở, tiện ích khu dân cư, mảng xanh, cơ sở văn hóa giải trí… Ngoài ra, để đón chào Thế vận hội Olympic 2008 tốt đẹp hơn, cư dân cần không ngừng nâng cao tố chất của bản thân và thành phố.",
+    "• Quảng Châu gồm tố chất văn hóa của cư dân, tính hợp lý trong quy hoạch đô thị, mảng xanh khu dân cư, chất lượng không khí…",
+    "Vì sao người dân Thượng Hải yêu thích Thượng Hải?",
+    "Sở dĩ người dân Thượng Hải cảm thấy hài lòng với thành phố mình đang sống có mối liên hệ mật thiết với sự phát triển kinh tế – xã hội và việc nâng cao trình độ nhận thức của cư dân nơi đây. Về điều này, Cục Thống kê Thượng Hải, Sở Dân chính Thượng Hải, tờ “Đông Phương tảo báo” và Công ty Nghiên cứu Thị trường Horizon Thượng Hải từng lần lượt tổ chức các cuộc khảo sát chọn mẫu quy mô khác nhau về tình hình cơ bản của cư dân Thượng Hải, qua đó phát hiện những yếu tố dưới đây có liên quan đến việc người Thượng Hải yêu thích thành phố của mình:",
+    "Thứ nhất, mức độ hài lòng chung đối với chất lượng cuộc sống cá nhân được nâng lên. Trong số người dân tham gia khảo sát, tỷ lệ cho rằng chất lượng cuộc sống cá nhân thấp hoặc rất thấp chưa đến 10%.",
+    "Thứ hai, sự gia tăng chi phí sinh hoạt có xu hướng đồng bộ với sự nâng cao chất lượng cuộc sống. Báo cáo khảo sát chi phí sinh hoạt đô thị toàn cầu năm 2004 cho thấy Thượng Hải đứng thứ 16, chỉ sau Hồng Kông và Bắc Kinh để xếp thứ ba Trung Quốc, trong khi chi phí giáo dục đứng đầu thế giới. Trước việc chi phí sinh hoạt tăng lên, người dân Thượng Hải nghĩ thế nào? Các cuộc khảo sát ghi nhận:",
+    "• Khoảng 54,7% người được hỏi cho rằng với tư cách là đại đô thị quốc tế hóa, so với các thành phố lớn tương đương khác trên thế giới, chi phí sinh hoạt hiện tại của Thượng Hải vẫn ở mức vừa phải. Khi được hỏi “So với thu nhập, bạn thấy chi phí sinh hoạt ở Thượng Hải thế nào”, có 50% cho rằng hai yếu tố này đi đôi với nhau, nghĩa là tuy sống ở Thượng Hải tốn nhiều tiền nhưng thu nhập cũng cao.",
+    "• Đối với vấn đề chi phí giáo dục đứng đầu thế giới, khảo sát cho thấy 39,2% cho rằng đây là biểu hiện của việc người dân coi trọng giáo dục và có quan niệm đi trước; 25,8% có thái độ khá bao dung, xem đây là hiện tượng tạm thời trong quá trình phát triển; 11,1% bày tỏ thái độ hoàn toàn tán thành, coi đây là một biểu hiện của Thượng Hải với tư cách đại đô thị quốc tế hóa.",
+    "• Khi trả lời câu hỏi “Bạn nhìn nhận thế nào về hiện tượng chi phí sinh hoạt giữa các khu vực trong cùng một thành phố không giống nhau”, 62,6% cho là rất bình thường, là biểu hiện thích ứng với quy luật thị trường; 21% thấy hơi bất bình thường, mong muốn thu hẹp khoảng cách thông qua điều chỉnh; ngược lại, chỉ có 10,1% giữ ý kiến trái chiều, cho rằng rất vô lý.",
+    "Thứ ba, thu nhập khả dụng bình quân đầu người hằng năm tăng lên. Năm 2004, thu nhập khả dụng bình quân đầu người của hộ gia đình cư dân thành thị Thượng Hải đạt 16.683 nhân dân tệ, tăng 12,2% so với năm 2003; thu nhập khả dụng bình quân đầu người của hộ gia đình nông thôn đạt 7.337 nhân dân tệ, tăng 10,2% so với năm 2003.",
+    "Thứ tư, điều kiện nhà ở dần được cải thiện. Khảo sát cho thấy so với 5 năm trước, có 31,7% cư dân cho rằng điều kiện nhà ở trở nên “khá tốt hoặc rất tốt”; gần 50% cho rằng “vẫn tương đương”.",
+    "Thứ năm, trình độ sức khỏe được nâng cao. Khoảng 87,6% cư dân cho rằng cơ thể mình khỏe mạnh.",
+    "Thứ sáu, địa vị xã hội thay đổi. Phần đông người dân đồng thời với việc nâng cao thu nhập kinh tế, trình độ văn hóa và định hướng nghề nghiệp, địa vị xã hội cũng tăng theo. Khi được hỏi địa vị xã hội của bản thân có thay đổi gì so với thế hệ cha mẹ, hơn 60% người được khảo sát cho rằng địa vị xã hội của mình đã được nâng cao.",
+    "Thứ bảy, tỷ lệ thất nghiệp đăng ký khu vực thành thị lần đầu tiên giảm sau 10 năm. Đầu năm 2004, Thượng Hải khởi động “Dự án việc làm cho hàng vạn người”, đặt mục tiêu tạo mới 500 nghìn việc làm và khống chế tỷ lệ thất nghiệp đăng ký thành thị dưới mức 4,6%. Thông báo thống kê nhanh của Cục Thống kê Thượng Hải cho biết đến cuối năm 2004, tình hình việc làm của Thượng Hải có chuyển biến tích cực trên nền tảng duy trì ổn định, toàn thành phố tạo mới 608 nghìn việc làm, vượt mức mục tiêu đầu năm. Tỷ lệ thất nghiệp đăng ký thành thị đạt 4,5%, lần đầu tiên giảm trong gần 10 năm qua. Việc tỷ lệ thất nghiệp thành thị giảm xuống tác động trực tiếp đến trải nghiệm hạnh phúc của người dân.",
+    "Thứ tám, số người “hưởng trợ cấp xã hội” lần đầu tiên giảm sau 10 năm. Năm 2004, số người được hưởng trợ cấp của chính quyền tại Thượng Hải là 598,3 nghìn người. Con số này giảm gần 36 nghìn người so với cùng kỳ năm 2003, điều đó cũng tác động trực tiếp tới cảm nhận hạnh phúc của người dân.",
+    "(Tác giả: Vi Tử Mộc, văn bản có lược bỏ, trích từ “Xã hội quan sát” số 6 năm 2006)",
+    "Liên kết thông tin",
+    "Sách xanh Năng lực cạnh tranh đô thị Trung Quốc năm 2007 công bố sáng nay",
+    "Năng lực cạnh tranh khoa học công nghệ: Bắc Kinh đứng thứ nhất",
+    "Sáng nay, Viện Khoa học Xã hội Trung Quốc và Nhà xuất bản Văn hiến Khoa học Xã hội đã phối hợp công bố “Sách xanh Năng lực cạnh tranh đô thị Trung Quốc năm 2007”. Bản báo cáo dài gần 700 nghìn chữ do gần một trăm chuyên gia năng lực cạnh tranh đô thị từ bốn vùng hai bờ hoàn thành trong hơn nửa năm đã xếp hạng năng lực cạnh tranh tổng hợp của 200 thành phố từ cấp địa khu trở lên thuộc Hồng Kông, Ma Cao, Đài Loan và Trung Quốc đại lục, trong đó Bắc Kinh đứng thứ nhất về năng lực cạnh tranh khoa học công nghệ.",
+    "Do xu thế toàn cầu hóa và mạng lưới hóa của thế giới ngày nay khiến cạnh tranh quốc tế giữa các đô thị không ngừng leo thang, cạnh tranh thương hiệu trở thành điểm cao chiến lược quan trọng trong cuộc cạnh tranh quốc tế giữa các thành phố. Sách xanh năm nay lấy chủ đề “Thương hiệu, phong cảnh đẹp nhất của đô thị”; thông qua dữ liệu điều tra hơn 70 chỉ tiêu phản ánh nhận thức lý tính và trải nghiệm cảm xúc đối với thương hiệu, nghiên cứu định lượng thương hiệu của 50 thành phố đại lục cho thấy mười thành phố đứng đầu về thương hiệu tổng thể lần lượt là: Bắc Kinh, Thượng Hải, Thâm Quyến, Quảng Châu, Hàng Châu, Tô Châu, Hạ Môn, Ninh Ba, Thiên Tân, Nam Kinh.",
+    "Sách xanh còn sử dụng dữ liệu khách quan chuẩn mực từ sáu phương diện gồm quy mô thị trường, tăng trưởng kinh tế, hiệu suất sản xuất, tiết kiệm tài nguyên, cơ cấu kinh tế và mức sống để phân tích định lượng năng lực cạnh tranh tổng hợp của 200 thành phố Trung Quốc từ cấp địa khu trở lên tại bốn vùng hai bờ; 10 thành phố đứng đầu về năng lực cạnh tranh tổng hợp cuối cùng lần lượt là: Hồng Kông, Thâm Quyến, Thượng Hải, Bắc Kinh, Quảng Châu, Đài Bắc, Vô Tích, Tô Châu, Phật Sơn, Ma Cao.",
+    "Sách xanh chỉ ra rằng xét từ đặc điểm phân bố theo khu vực của năng lực cạnh tranh đô thị Trung Quốc, cục diện tổng thể hiện nay vẫn là khu vực Đồng bằng Châu Giang, khu vực Đồng bằng Trường Giang, khu vực eo biển Đài Loan, khu vực Vành đai Bột Hải, khu vực Đông Bắc, khu vực miền Trung, khu vực Tây Nam và khu vực Tây Bắc. Tuy nhiên vấn đề phát triển không cân bằng giữa các vùng rất nổi cộm, chênh lệch năng lực cạnh tranh giữa các địa phương khá rõ rệt; các mảng năng lực cạnh tranh bắt đầu phân hóa tinh vi hơn, khoảng cách giữa các đô thị trong cùng khu vực nới rộng.",
+    "Sách xanh còn sử dụng dữ liệu chủ quan và khách quan của 210 chỉ tiêu để phân tích so sánh năng lực cạnh tranh thành phần của 61 thành phố có sức cạnh tranh tổng hợp khá mạnh thuộc bốn vùng hai bờ; trong đó Bắc Kinh đứng đầu bảng xếp hạng năng lực cạnh tranh khoa học công nghệ, đồng thời thể hiện xuất sắc ở các mặt nhân tài, vốn, cơ cấu, cơ sở hạ tầng, vị trí khu vực, văn hóa và quản lý nhà nước khi đều lọt vào tốp 10, còn ở các mặt môi trường, thể chế, quản trị doanh nghiệp và cạnh tranh mở cửa thì thể hiện kém hơn đôi chút nên chưa lọt vào tốp 10.",
+    "(Trích từ “Bắc Kinh vãn báo” ngày 25/3/2007)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "真可谓是 (quả thật có thể nói là)",
+   "structure": "……，真可谓是……；不可谓不……，但……",
+   "explanation": "Cụm từ văn viết, nghĩa là “thật sự có thể nói là”, mang ngữ khí nhấn mạnh, dùng để đánh giá hoặc khẳng định nổi bật về một sự vật, hiện tượng. Liên hệ: “不可谓不……” (không thể nói là không…), dùng phủ định kép để biểu thị ý khẳng định mạnh, phía sau thường dùng “但”, “但是”… để chuyển ý.",
+   "examples": [
+    {
+     "zh": "观察中国城市竞争力，真可谓是“横看成岭侧成峰，远近高低各不同”。",
+     "vi": "Quan sát năng lực cạnh tranh đô thị Trung Quốc, quả thật có thể nói là “ngang nhìn thành dãy, nghiêng thành ngọn, xa gần cao thấp khác muôn phần”."
+    },
+    {
+     "zh": "春节期间不仅放长假，而且各种活动最多，文化内涵最丰富，真可谓是中国的第一大节日。",
+     "vi": "Dịp Tết Nguyên đán không chỉ được nghỉ dài ngày mà các hoạt động cũng phong phú nhất, nội hàm văn hóa dồi dào nhất, quả thật có thể nói là ngày lễ lớn nhất của Trung Quốc."
+    },
+    {
+     "zh": "江南一带人杰地灵，物产丰富，真可谓是人间天堂啊！",
+     "vi": "Vùng Giang Nam địa linh nhân kiệt, sản vật dồi dào, quả thật có thể nói là thiên đường nơi hạ giới!"
+    },
+    {
+     "zh": "他病了，我给他送药；他考砸了，我带他去郊外散心；他失恋了，我彻夜不眠地开导他。我对他不可谓不关心了吧？",
+     "vi": "Cậu ấy ốm, tôi mang thuốc sang; cậu ấy thi trượt, tôi đưa ra ngoại ô giải khuây; cậu ấy thất tình, tôi thức trắng đêm khuyên nhủ. Tôi đối với cậu ấy không thể nói là không quan tâm chứ?"
+    },
+    {
+     "zh": "她的容貌，不可谓不漂亮；她的衣着，不可谓不时尚；她的谈吐，也不可谓不得体。但她的某些行为，怎么跟她的外表不协调呢？",
+     "vi": "Nhan sắc của cô ấy không thể nói là không xinh đẹp; ăn mặc của cô ấy không thể nói là không thời thượng; cách ăn nói của cô ấy cũng không thể nói là không chừng mực. Nhưng một số hành vi của cô ấy sao lại không ăn khớp với vẻ ngoài thế nhỉ?"
+    }
+   ]
+  },
+  {
+   "point": "无一例外 (không một ngoại lệ)",
+   "structure": "主语 + 无一例外（地）+ 谓语；……，无一例外。",
+   "explanation": "Thành ngữ văn viết, nghĩa là không có trường hợp nào nằm ngoài quy luật hay tình huống chung; toàn bộ đều như vậy. Trong câu có thể đứng tách làm một vế/câu riêng, hoặc làm vị ngữ, trạng ngữ. Liên hệ: cấu trúc “无一 + 动词” biểu thị không một ai/cái nào chịu hay đạt được hành động đó, như: 无一幸免 (không ai thoát nạn), 无一遗漏 (không sót một ai/cái nào), 无一漏网 (không lọt lưới một ai), 无一逃脱 (không ai trốn thoát), 无一失败, 无一成功, 无一入选, 无一落选, 无一通过, 无一损坏, 无一过关, 无一失手, 无一晋级, 无一获利, 无一实现.",
+   "examples": [
+    {
+     "zh": "在长长的序列中，第一阵营多数是东南沿海城市，而“压阵”的无一例外都是西北部的城市。",
+     "vi": "Trong danh sách xếp hạng dài dằng dặc, nhóm dẫn đầu phần lớn là các thành phố duyên hải Đông Nam, còn những thành phố chốt cuối bảng không một ngoại lệ đều là các thành phố vùng Tây Bắc."
+    },
+    {
+     "zh": "所有伟大的音乐家都是有音乐天赋的人，无一例外。",
+     "vi": "Mọi nhạc sĩ vĩ đại đều là những người có năng khiếu âm nhạc, không một ngoại lệ."
+    },
+    {
+     "zh": "他不仅写一手好字，而且家里收藏了丰富的书法作品，周围爱好书法的孩子无一例外地都被吸引到了他的身边。",
+     "vi": "Ông ấy không chỉ viết chữ đẹp mà trong nhà còn sưu tầm rất nhiều tác phẩm thư pháp; những đứa trẻ yêu thích thư pháp xung quanh không một ngoại lệ đều bị cuốn hút về bên ông."
+    },
+    {
+     "zh": "跳健美操有很好的塑身健体功能。这期参加健美操班的学员无一例外，都变得健康、苗条了。",
+     "vi": "Tập thể dục thẩm mỹ có tác dụng giữ dáng và rèn luyện sức khỏe rất tốt. Các học viên tham gia lớp thể dục thẩm mỹ khóa này không một ngoại lệ đều trở nên khỏe khoắn và thon gọn hơn."
+    }
+   ]
+  },
+  {
+   "point": "各异 (khác nhau, mỗi thứ một vẻ)",
+   "structure": "名词 + 各异",
+   "explanation": "Tính từ, nghĩa là mỗi cái một khác, không giống nhau. Cách kết hợp thường dùng là: danh từ + 各异. Các cụm thường gặp: 性格各异, 颜色各异, 形状（形态、形式）各异, 相貌（容貌、长相）各异, 民族各异, 年龄各异, 音色各异, 国籍各异, 口味各异, 动作各异, 内容各异, 情况各异, 身份各异, 命运各异, 大小各异, 高矮（低）各异, 长短各异, 爱好各异, 兴趣各异, 条件各异, 要求各异, 方法各异, 质地各异.",
+   "examples": [
+    {
+     "zh": "尤其是城市建筑景观优美，拥有许多著名的风格各异的标志性建筑、商业街、广场。",
+     "vi": "Đặc biệt cảnh quan kiến trúc đô thị mỹ lệ, sở hữu nhiều công trình biểu tượng, phố thương mại và quảng trường nổi tiếng với phong cách đa dạng khác nhau."
+    },
+    {
+     "zh": "性格各异 / 颜色各异 / 形状（形态、形式）各异 / 相貌（容貌、长相）各异",
+     "vi": "tính cách khác nhau / màu sắc khác nhau / hình dáng (hình thái, hình thức) khác nhau / diện mạo khác nhau"
+    },
+    {
+     "zh": "民族各异 / 年龄各异 / 音色各异 / 国籍各异 / 口味各异",
+     "vi": "dân tộc khác nhau / tuổi tác khác nhau / âm sắc khác nhau / quốc tịch khác nhau / khẩu vị khác nhau"
+    },
+    {
+     "zh": "大小各异 / 高矮（低）各异 / 长短各异 / 爱好各异 / 兴趣各异",
+     "vi": "kích thước to nhỏ khác nhau / chiều cao thấp khác nhau / độ dài ngắn khác nhau / sở thích khác nhau / hứng thú khác nhau"
+    },
+    {
+     "zh": "条件各异 / 要求各异 / 方法各异 / 质地各异",
+     "vi": "điều kiện khác nhau / yêu cầu khác nhau / phương pháp khác nhau / chất liệu khác nhau"
+    }
+   ]
+  },
+  {
+   "point": "有待 (cần được, còn chờ)",
+   "structure": "主语 + 有待（于）+ 谓词性宾语",
+   "explanation": "Động từ dùng trong văn viết, nghĩa là “cần phải chờ đợi”, hàm ý nội dung nêu ở phía sau vẫn chưa được thực hiện. “有待” bắt buộc phải mang tân ngữ, và chỉ được mang tân ngữ vị từ (động từ hoặc tính từ); không dùng được trong câu chữ “把” và câu chữ “被”. Đôi khi sau “有待” có thể thêm “于” (“有待于”). Các kết hợp thường gặp: 有待提高, 有待考察, 有待改进, 有待纠正, 有待调整, 有待修改, 有待完成, 有待增加, 有待改善, 有待治疗, 有待发展, 有待好转, 有待成熟, 有待整理, 有待收集, 有待关注, 有待考证, 有待核对（实）, 有待开发.",
+   "examples": [
+    {
+     "zh": "但是兼容平等观念有待加强。",
+     "vi": "Nhưng quan niệm bao dung và bình đẳng vẫn cần được tăng cường."
+    },
+    {
+     "zh": "虽然现在科学技术很发达，但还有很多问题还有待研究，世界上未知的东西还很多。",
+     "vi": "Tuy hiện nay khoa học kỹ thuật rất phát triển, nhưng vẫn còn rất nhiều vấn đề cần phải nghiên cứu, trên thế giới vẫn còn rất nhiều điều chưa biết."
+    },
+    {
+     "zh": "目前有很多社会问题还有待于社会各个方面共同努力来加以解决。",
+     "vi": "Hiện nay có rất nhiều vấn đề xã hội vẫn đang chờ các tầng lớp, các phía trong xã hội cùng chung sức giải quyết."
+    },
+    {
+     "zh": "要把我校建设成世界一流大学，还有待于全校每一位师生员工的付出和努力。",
+     "vi": "Để xây dựng trường ta thành đại học đẳng cấp hàng đầu thế giới, vẫn cần sự cống hiến và nỗ lực của từng thầy cô, sinh viên và cán bộ nhân viên toàn trường."
+    },
+    {
+     "zh": "有待提高 / 有待改进 / 有待改善 / 有待开发",
+     "vi": "cần được nâng cao / cần được cải tiến / cần được cải thiện / chờ được khai thác phát triển"
+    }
+   ]
+  },
+  {
+   "point": "仅次于 (chỉ đứng sau, chỉ thua mỗi)",
+   "structure": "A + 仅次于 + B；（不）次于……",
+   "explanation": "“次” nghĩa là kém, không tốt bằng. “仅次于” nghĩa là đẳng cấp, chất lượng… của một sự vật chỉ kém hơn một sự vật khác một bậc, hàm ý sự vật đứng sau rất tốt còn sự vật đứng trước cũng rất khá. Liên hệ: “（不）次于” dùng để so sánh hai người hoặc hai sự vật, biểu thị một người hoặc sự vật (không) thua kém sự vật kia.",
+   "examples": [
+    {
+     "zh": "金融的控制能力、资本可得性、资本流量都只仅次于最好的上海。",
+     "vi": "Năng lực kiểm soát tài chính, khả năng tiếp cận vốn và lưu lượng vốn đều chỉ đứng sau thành phố tốt nhất là Thượng Hải."
+    },
+    {
+     "zh": "这次HSK考试金成熙比上次进步了很多，仅次于全班考得最好的朴珉顺。",
+     "vi": "Kỳ thi HSK lần này Kim Thành Hy tiến bộ hơn hẳn lần trước, chỉ đứng sau người thi điểm cao nhất lớp là Phác Mân Thuận."
+    },
+    {
+     "zh": "北京动物园的大熊猫数量是全国动物园中最多的，仅次于四川的卧龙自然保护区。",
+     "vi": "Số lượng gấu trúc lớn của Vườn thú Bắc Kinh nhiều nhất trong các vườn thú toàn quốc, chỉ đứng sau Khu bảo tồn thiên nhiên Ngọa Long ở Tứ Xuyên."
+    },
+    {
+     "zh": "我觉得他在这部电影中的表现次于他以前拍的电影，让我很失望。",
+     "vi": "Tôi cảm thấy diễn xuất của anh ấy trong bộ phim này kém hơn các phim anh ấy đóng trước đây, khiến tôi rất thất vọng."
+    },
+    {
+     "zh": "这档新的新闻评述节目无论在时效性、信息量、内容深度和主持人的水平上都不次于其他的老节目，值得一看。",
+     "vi": "Chương trình bình luận tin tức mới này dù xét về tính thời sự, lượng thông tin, chiều sâu nội dung hay trình độ người dẫn đều không hề thua kém các chương trình lâu năm khác, rất đáng xem."
+    }
+   ]
+  }
+ ]
+}

@@ -12,6 +12,7 @@ from pypinyin.seg.mmseg import seg
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SCRATCH = os.path.dirname(HERE)
+ROOT = os.path.dirname(os.path.dirname(SCRATCH))
 
 BOOKS = {
     "gc1": dict(name="Cao Cấp 1", chinese_name="高级飞翔篇 I", sub_name="Boya Advanced I", pdf="pdf/高级飞翔篇1.pdf",
@@ -22,6 +23,10 @@ BOOKS = {
                 audio_folder="Cao cap 2", color="#e11d48", color_dark="#be123c", badge_color="#ffe4e6", badge_text="#9f1239",
                 icon="📕", title="Quyển 6 - 高级飞翔篇 II (Cao Cấp 2)",
                 description="Giáo trình Boya Cao Cấp (Phi Tường) II – 10 bài, tản văn và nghị luận nguyên tác của các tác giả Trung Quốc hiện đại."),
+    "gc3": dict(name="Cao Cấp 3", chinese_name="高级飞翔篇 III", sub_name="Boya Advanced III", pdf="pdf/高级飞翔篇3 - old version.pdf",
+                audio_folder="Cao cap 3", color="#4f46e5", color_dark="#4338ca", badge_color="#e0e7ff", badge_text="#3730a3",
+                icon="📕", title="Quyển 7 - 高级飞翔篇 III (Cao Cấp 3)",
+                description="Giáo trình Boya Cao Cấp (Phi Tường) III – 8 bài, chuyên luận sâu về xã hội, văn hóa, sinh thái, thể chế và đạo đức hiện đại."),
 }
 
 HAN = re.compile(r"[㐀-鿿]")
@@ -96,7 +101,7 @@ def reading_html(paragraphs):
             continue
         if SECTION.match(p):
             blocks.append(f'<span class="block" style="text-align: center; font-weight: bold;">{ruby_html(p)}</span>')
-        elif re.match(r"^[（(](选自|根据|作者|节选)", p):
+        elif re.match(r"^[（(](选自|根据|作者|节选|摘自)", p):
             blocks.append(f'<span class="block" style="text-align: right;">{ruby_html(p)}</span>')
         else:
             blocks.append(f'<span class="block"><span class="indent"></span>{ruby_html(p)}</span>')
@@ -108,7 +113,7 @@ def translations_for(paragraphs, translations):
     out = []
     for p, t in zip(paragraphs, translations):
         p = p.strip()
-        if not p or SECTION.match(p) or re.match(r"^[（(](选自|根据|作者|节选)", p):
+        if not p or SECTION.match(p) or re.match(r"^[（(](选自|根据|作者|节选|摘自)", p):
             continue
         out.append(t)
     return out
@@ -129,6 +134,11 @@ def word_examples(hz, sents):
     if not core:
         return []
     found = [s for s in sents if core in s]
+    if not found:  # "站（不）住脚": bài viết "站不住脚" → thử cả dạng giữ phần trong ngoặc
+        full = re.sub(r"[（）()]", "", hz).strip()
+        if full != core:
+            core = full
+            found = [s for s in sents if core in s]
     found.sort(key=lambda s: abs(len(s) - 28))
     ex = []
     for s in found[:2]:
@@ -166,6 +176,8 @@ def build(book_id):
         n = int(d["lesson_num"])
         title = d["title"]
         audio = f"audio/{meta['audio_folder']}/第{n:02d}课.mp3"
+        vocab_audio_rel = f"audio/{meta['audio_folder']}/第{n:02d}课 Tu Vung.mp3"
+        audio_tuvung = vocab_audio_rel if os.path.exists(os.path.join(ROOT, vocab_audio_rel)) else None
         all_par = [p for r in d["readings"] for p in r["paragraphs"]]
         main_par = [p for r in d["readings"] if r["kind"] == "main" for p in r["paragraphs"]]
         sents_main, sents_all = sentences(main_par), sentences(all_par)
@@ -176,7 +188,8 @@ def build(book_id):
             vi = (w.get("vi") or "").strip()
             hv = (w.get("hv") or "").strip()
             mean = f"{hv} ({vi})" if hv and not w.get("proper") else vi
-            ex = word_examples(w["hz"], sents_main) or word_examples(w["hz"], sents_all)
+            ex = word_examples(w["hz"], sents_main) or word_examples(w["hz"], sents_all) \
+                or word_examples(w["hz"], [title])  # từ chỉ có trong tên bài (刻不容缓, 谋杀)
             words.append({
                 "id": f"{book_id}_{n}_{i}", "book_id": book_id, "book_name": meta["name"],
                 "lesson_num": n, "lesson_title": title,
@@ -213,7 +226,7 @@ def build(book_id):
 
         lessons.append({
             "lesson_id": f"{book_id}_bai{n}", "lesson_num": n, "main_id": f"bai{n}", "title": title,
-            "audio_baikhoa": audio, "audio_tuvung": None, "audio_docthem": None,
+            "audio_baikhoa": audio, "audio_tuvung": audio_tuvung, "audio_docthem": None,
             "total_vocab": len(words), "total_grammar": len(grammar),
             "words": words, "readings": readings, "grammar": grammar,
         })
@@ -229,5 +242,5 @@ def build(book_id):
 
 
 if __name__ == "__main__":
-    for b in ("gc1", "gc2"):
+    for b in ("gc1", "gc2", "gc3"):
         build(b)

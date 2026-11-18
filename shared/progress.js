@@ -12,7 +12,7 @@
      due: 12,                           // số từ đến hạn ôn hôm nay
      learned: 340,                      // số từ đã học
      today: { n: 10, r: 25 },           // hôm nay: từ mới / lượt ôn
-     groups: {                          // tiến độ theo nhóm: quyển Boya (tc1..tc4, gc1, gc2) hoặc cấp HSK ("hsk1".."hsk6")
+     groups: {                          // tiến độ theo nhóm: quyển Boya (tc1..tc4, gc1..gc3) hoặc cấp HSK ("hsk1".."hsk6")
        tc1: { done: 3, total: 15, label: "Chuẩn Trung cấp 1" }
      }
    }

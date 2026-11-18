@@ -1,0 +1,1059 @@
+{
+ "book": "gc3",
+ "lesson_num": 1,
+ "title": "网络颠覆了什么？",
+ "pages": [
+  12,
+  39
+ ],
+ "words": [
+  {
+   "n": 1,
+   "hz": "网络",
+   "py": "wǎngluò",
+   "pos": "名",
+   "zh": "由若干元件、器件或设施等组成的具有一定功能的系统。",
+   "en": "(computer, telecom, etc.) network",
+   "hv": "VÕNG LẠC",
+   "vi": "mạng lưới, mạng Internet",
+   "proper": false
+  },
+  {
+   "n": 2,
+   "hz": "颠覆",
+   "py": "diānfù",
+   "pos": "动",
+   "zh": "翻倒。（颠覆——推翻）",
+   "en": "overturn, subvert",
+   "hv": "ĐIÊN PHÚC",
+   "vi": "lật đổ, đảo lộn",
+   "proper": false
+  },
+  {
+   "n": 3,
+   "hz": "既",
+   "py": "jì",
+   "pos": "副",
+   "zh": "已经。",
+   "en": "",
+   "hv": "KÝ",
+   "vi": "đã",
+   "proper": false
+  },
+  {
+   "n": 4,
+   "hz": "含蓄",
+   "py": "hánxù",
+   "pos": "形",
+   "zh": "（思想、感情）不轻易流露。",
+   "en": "reserved, inherit",
+   "hv": "HÀM SÚC",
+   "vi": "hàm súc, kín đáo",
+   "proper": false
+  },
+  {
+   "n": 5,
+   "hz": "传承",
+   "py": "chuánchéng",
+   "pos": "名",
+   "zh": "传统。",
+   "en": "",
+   "hv": "TRUYỀN THỪA",
+   "vi": "sự kế thừa, truyền thống kế tiếp",
+   "proper": false
+  },
+  {
+   "n": 6,
+   "hz": "师承",
+   "py": "shīchéng",
+   "pos": "名",
+   "zh": "师徒相传的系统。",
+   "en": "",
+   "hv": "SƯ THỪA",
+   "vi": "sự truyền thụ thầy trò",
+   "proper": false
+  },
+  {
+   "n": 7,
+   "hz": "长者",
+   "py": "zhǎngzhě",
+   "pos": "名",
+   "zh": "年纪和辈分都高的人。",
+   "en": "",
+   "hv": "TRƯỞNG GIẢ",
+   "vi": "bậc trưởng bối, người lớn tuổi",
+   "proper": false
+  },
+  {
+   "n": 8,
+   "hz": "不堪一击",
+   "py": "bùkān yì jī",
+   "pos": "",
+   "zh": "堪：经得起。经不起一打。指力量十分薄弱。",
+   "en": "",
+   "hv": "BẤT KHAM NHẤT KÍCH",
+   "vi": "không chịu nổi một đòn, quá yếu ớt",
+   "proper": false
+  },
+  {
+   "n": 9,
+   "hz": "黯然",
+   "py": "ànrán",
+   "pos": "形",
+   "zh": "心里不舒服，情绪低落的样子。",
+   "en": "",
+   "hv": "ẢM NHIÊN",
+   "vi": "buồn bã, ảm đạm",
+   "proper": false
+  },
+  {
+   "n": 10,
+   "hz": "退场",
+   "py": "tuì chǎng",
+   "pos": "动",
+   "zh": "离开演出、比赛等的场所。",
+   "en": "",
+   "hv": "THOÁI TRƯỜNG",
+   "vi": "rút lui, rời khỏi sân khấu/cuộc chơi",
+   "proper": false
+  },
+  {
+   "n": 11,
+   "hz": "反衬",
+   "py": "fǎnchèn",
+   "pos": "动",
+   "zh": "从反面来衬托。",
+   "en": "",
+   "hv": "PHẢN SẤN",
+   "vi": "làm nền tương phản",
+   "proper": false
+  },
+  {
+   "n": 12,
+   "hz": "喧嚣",
+   "py": "xuānxiāo",
+   "pos": "形",
+   "zh": "声音杂乱，不清静。",
+   "en": "",
+   "hv": "HUYÊN HIÊU",
+   "vi": "ồn ào, náo nhiệt",
+   "proper": false
+  },
+  {
+   "n": 13,
+   "hz": "扶持",
+   "py": "fúchí",
+   "pos": "动",
+   "zh": "扶助；护持。",
+   "en": "",
+   "hv": "PHÙ TRÌ",
+   "vi": "nâng đỡ, dìu dắt",
+   "proper": false
+  },
+  {
+   "n": 14,
+   "hz": "光大",
+   "py": "guāngdà",
+   "pos": "动",
+   "zh": "使显赫盛大。",
+   "en": "",
+   "hv": "QUANG ĐẠI",
+   "vi": "làm rạng rỡ, phát huy lớn mạnh",
+   "proper": false
+  },
+  {
+   "n": 15,
+   "hz": "门楣",
+   "py": "ménméi",
+   "pos": "名",
+   "zh": "门第。指整个家庭的社会地位和家庭成员的文化程度等。",
+   "en": "",
+   "hv": "MÔN MI",
+   "vi": "gia thế, thanh danh dòng họ",
+   "proper": false
+  },
+  {
+   "n": 16,
+   "hz": "同气连枝",
+   "py": "tóng qì lián zhī",
+   "pos": "成",
+   "zh": "比喻同胞兄弟。",
+   "en": "",
+   "hv": "ĐỒNG KHÍ LIÊN CHI",
+   "vi": "cùng gốc liền cành (tình nghĩa anh em/đồng môn)",
+   "proper": false
+  },
+  {
+   "n": 17,
+   "hz": "博客",
+   "py": "bókè",
+   "pos": "名",
+   "zh": "网络日记。",
+   "en": "Blog",
+   "hv": "BÁC KHÁCH",
+   "vi": "blog, nhật ký mạng",
+   "proper": false
+  },
+  {
+   "n": 18,
+   "hz": "孤军奋战",
+   "py": "gūjūn fènzhàn",
+   "pos": "成",
+   "zh": "孤立无援的军队单独奋斗。",
+   "en": "",
+   "hv": "CÔ QUÂN PHẤN CHIẾN",
+   "vi": "đơn thương độc mã chiến đấu",
+   "proper": false
+  },
+  {
+   "n": 19,
+   "hz": "托儿",
+   "py": "tuōr",
+   "pos": "名",
+   "zh": "〈方〉指从旁诱人受骗上当的人。",
+   "en": "",
+   "hv": "THÁC NHI",
+   "vi": "cò mồi, chân gỗ",
+   "proper": false
+  },
+  {
+   "n": 20,
+   "hz": "芸芸众生",
+   "py": "yúnyún zhòng shēng",
+   "pos": "成",
+   "zh": "佛教指一切有生命的东西，一般也用来指众多的平常人。",
+   "en": "",
+   "hv": "VÂN VÂN CHÚNG SINH",
+   "vi": "chúng sinh đông đảo, muôn dân thường",
+   "proper": false
+  },
+  {
+   "n": 21,
+   "hz": "浪花",
+   "py": "lànghuā",
+   "pos": "名",
+   "zh": "波浪激起的四溅的水。",
+   "en": "",
+   "hv": "LÃNG HOA",
+   "vi": "bọt sóng",
+   "proper": false
+  },
+  {
+   "n": 22,
+   "hz": "赢得",
+   "py": "yíngdé",
+   "pos": "动",
+   "zh": "博得；取得。（赢得——取得）",
+   "en": "",
+   "hv": "DOANH ĐẮC",
+   "vi": "giành được, thu được",
+   "proper": false
+  },
+  {
+   "n": 23,
+   "hz": "网民",
+   "py": "wǎngmín",
+   "pos": "名",
+   "zh": "指互联网的用户。",
+   "en": "",
+   "hv": "VÕNG DÂN",
+   "vi": "cư dân mạng",
+   "proper": false
+  },
+  {
+   "n": 24,
+   "hz": "虚拟",
+   "py": "xūnǐ",
+   "pos": "动",
+   "zh": "假设的；凭想象造出来的；电脑数字化模拟。",
+   "en": "",
+   "hv": "HƯ NGHĨ",
+   "vi": "ảo, giả định, mô phỏng",
+   "proper": false
+  },
+  {
+   "n": 25,
+   "hz": "包容",
+   "py": "bāoróng",
+   "pos": "动",
+   "zh": "宽容。",
+   "en": "",
+   "hv": "BAO DUNG",
+   "vi": "bao dung, khoan dung",
+   "proper": false
+  },
+  {
+   "n": 26,
+   "hz": "张扬",
+   "py": "zhāngyáng",
+   "pos": "动",
+   "zh": "把隐秘的或不必让众人知道的事情声张出去；宣扬。",
+   "en": "",
+   "hv": "TRƯƠNG DƯƠNG",
+   "vi": "phô trương, rêu rao",
+   "proper": false
+  },
+  {
+   "n": 27,
+   "hz": "忍让",
+   "py": "rěnràng",
+   "pos": "动",
+   "zh": "容忍退让。",
+   "en": "",
+   "hv": "NHẪN NHƯỢNG",
+   "vi": "nhẫn nhịn, nhún nhường",
+   "proper": false
+  },
+  {
+   "n": 28,
+   "hz": "推崇",
+   "py": "tuīchóng",
+   "pos": "动",
+   "zh": "十分推重。",
+   "en": "",
+   "hv": "THÔI SÙNG",
+   "vi": "tôn sùng, đề cao",
+   "proper": false
+  },
+  {
+   "n": 29,
+   "hz": "惹",
+   "py": "rě",
+   "pos": "动",
+   "zh": "招引；引起（不好的事情）。",
+   "en": "",
+   "hv": "NHẠ",
+   "vi": "gây ra, chuốc lấy",
+   "proper": false
+  },
+  {
+   "n": 30,
+   "hz": "侵略者",
+   "py": "qīnlüèzhě",
+   "pos": "名",
+   "zh": "指侵犯别国的领土、主权，掠夺财富并奴役别国人民的人或组织。",
+   "en": "",
+   "hv": "XÂM LƯỢC GIẢ",
+   "vi": "kẻ xâm lược",
+   "proper": false
+  },
+  {
+   "n": 31,
+   "hz": "忍无可忍",
+   "py": "rěn wú kě rěn",
+   "pos": "成",
+   "zh": "再也不能忍受下去了。",
+   "en": "",
+   "hv": "NHẪN VÔ KHẢ NHẪN",
+   "vi": "nhịn hết nổi, tức nước vỡ bờ",
+   "proper": false
+  },
+  {
+   "n": 32,
+   "hz": "引以为傲",
+   "py": "yǐn yǐ wéi ào",
+   "pos": "",
+   "zh": "为之感到骄傲。",
+   "en": "",
+   "hv": "DẪN DĨ VI NGẠO",
+   "vi": "lấy làm tự hào",
+   "proper": false
+  },
+  {
+   "n": 33,
+   "hz": "厚积薄发",
+   "py": "hòu jī bó fā",
+   "pos": "成",
+   "zh": "厚积：充分积累。薄发：少量地慢慢地释放。形容积累丰富的学问而不轻易表现出来。",
+   "en": "",
+   "hv": "HẬU TÍCH BẠC PHÁT",
+   "vi": "tích lũy dày dặn rồi mới phát huy",
+   "proper": false
+  },
+  {
+   "n": 34,
+   "hz": "叟",
+   "py": "sǒu",
+   "pos": "名",
+   "zh": "〈书〉年老的男人。",
+   "en": "",
+   "hv": "TẨU",
+   "vi": "ông lão",
+   "proper": false
+  },
+  {
+   "n": 35,
+   "hz": "毛孩子",
+   "py": "máoháizi",
+   "pos": "名",
+   "zh": "小孩儿，也指年轻无知的人。",
+   "en": "",
+   "hv": "MAO HÀI TỬ",
+   "vi": "trẻ ranh, nhóc con",
+   "proper": false
+  },
+  {
+   "n": 36,
+   "hz": "快意",
+   "py": "kuàiyì",
+   "pos": "形",
+   "zh": "心情爽快舒适。",
+   "en": "",
+   "hv": "KHOÁI Ý",
+   "vi": "sảng khoái, thỏa lòng",
+   "proper": false
+  },
+  {
+   "n": 37,
+   "hz": "江湖",
+   "py": "jiānghú",
+   "pos": "名",
+   "zh": "旧时泛指四方各地。",
+   "en": "",
+   "hv": "GIANG HỒ",
+   "vi": "giang hồ",
+   "proper": false
+  },
+  {
+   "n": 38,
+   "hz": "退让",
+   "py": "tuìràng",
+   "pos": "动",
+   "zh": "让步。",
+   "en": "",
+   "hv": "THOÁI NHƯỢNG",
+   "vi": "nhượng bộ, lùi bước",
+   "proper": false
+  },
+  {
+   "n": 39,
+   "hz": "争勇好斗",
+   "py": "zhēng yǒng hào dòu",
+   "pos": "",
+   "zh": "喜欢争胜负。",
+   "en": "",
+   "hv": "TRANH DŨNG HIẾU ĐẤU",
+   "vi": "hiếu thắng thích tranh đấu",
+   "proper": false
+  },
+  {
+   "n": 40,
+   "hz": "大侠",
+   "py": "dàxiá",
+   "pos": "名",
+   "zh": "旧时指有武艺、讲义气、肯舍己助人的人。",
+   "en": "",
+   "hv": "ĐẠI HIỆP",
+   "vi": "đại hiệp",
+   "proper": false
+  },
+  {
+   "n": 41,
+   "hz": "心态",
+   "py": "xīntài",
+   "pos": "名",
+   "zh": "心理状态。",
+   "en": "",
+   "hv": "TÂM THÁI",
+   "vi": "tâm thái, tâm lý",
+   "proper": false
+  },
+  {
+   "n": 42,
+   "hz": "聚沙成塔",
+   "py": "jù shā chéng tǎ",
+   "pos": "成",
+   "zh": "比喻积少成多。",
+   "en": "",
+   "hv": "TỤ SA THÀNH THÁP",
+   "vi": "tích tiểu thành đại",
+   "proper": false
+  },
+  {
+   "n": 43,
+   "hz": "新生代",
+   "py": "xīnshēngdài",
+   "pos": "名",
+   "zh": "指新一代年轻人；新的一代。",
+   "en": "",
+   "hv": "TÂN SINH ĐẠI",
+   "vi": "thế hệ mới, thế hệ trẻ",
+   "proper": false
+  },
+  {
+   "n": 44,
+   "hz": "泡沫",
+   "py": "pàomò",
+   "pos": "名",
+   "zh": "聚在一起的许多小泡。比喻某一事物所存在的表面上繁荣、兴旺而实际上虚浮不实的成分。",
+   "en": "",
+   "hv": "PHAO MẠT",
+   "vi": "bong bóng (phồn vinh ảo)",
+   "proper": false
+  },
+  {
+   "n": 45,
+   "hz": "淘",
+   "py": "táo",
+   "pos": "动",
+   "zh": "用器物盛颗粒状的东西，加水搅动，或放在水里簸动，使除去杂质。",
+   "en": "",
+   "hv": "ĐÀO",
+   "vi": "đãi, gạn lọc",
+   "proper": false
+  },
+  {
+   "n": 46,
+   "hz": "大有人在",
+   "py": "dà yǒu rén zài",
+   "pos": "",
+   "zh": "有很多人。",
+   "en": "",
+   "hv": "ĐẠI HỮU NHÂN TẠI",
+   "vi": "có rất nhiều người, không thiếu",
+   "proper": false
+  },
+  {
+   "n": 47,
+   "hz": "新大陆",
+   "py": "Xīn Dàlù",
+   "pos": "名",
+   "zh": "美洲的别称。",
+   "en": "",
+   "hv": "TÂN ĐẠI LỤC",
+   "vi": "Tân Đại Lục (châu Mỹ; vùng đất mới)",
+   "proper": true
+  },
+  {
+   "n": 48,
+   "hz": "骑士",
+   "py": "qíshì",
+   "pos": "名",
+   "zh": "欧洲中世纪封建主阶级的最低阶层，是领有土地的军人，为大封建主服骑兵役。",
+   "en": "",
+   "hv": "KỴ SĨ",
+   "vi": "kỵ sĩ, hiệp sĩ",
+   "proper": false
+  },
+  {
+   "n": 49,
+   "hz": "超越",
+   "py": "chāoyuè",
+   "pos": "动",
+   "zh": "超出；越过。",
+   "en": "",
+   "hv": "SIÊU VIỆT",
+   "vi": "vượt qua, vượt lên trên",
+   "proper": false
+  },
+  {
+   "n": 50,
+   "hz": "稳健",
+   "py": "wěnjiàn",
+   "pos": "形",
+   "zh": "稳而有力。稳重；不轻举妄动。",
+   "en": "",
+   "hv": "ỔN KIỆN",
+   "vi": "vững vàng, thận trọng",
+   "proper": false
+  },
+  {
+   "n": 51,
+   "hz": "大亨",
+   "py": "dàhēng",
+   "pos": "名",
+   "zh": "称某一地方或某一行业的有势力的人。",
+   "en": "",
+   "hv": "ĐẠI HANH",
+   "vi": "ông trùm, đại gia",
+   "proper": false
+  },
+  {
+   "n": 52,
+   "hz": "原本",
+   "py": "yuánběn",
+   "pos": "副",
+   "zh": "原来；本来。",
+   "en": "",
+   "hv": "NGUYÊN BẢN",
+   "vi": "vốn dĩ, ban đầu",
+   "proper": false
+  },
+  {
+   "n": 53,
+   "hz": "精英",
+   "py": "jīngyīng",
+   "pos": "名",
+   "zh": "出类拔萃的人。",
+   "en": "",
+   "hv": "TINH ANH",
+   "vi": "tinh hoa, giới tinh anh",
+   "proper": false
+  },
+  {
+   "n": 54,
+   "hz": "流言",
+   "py": "liúyán",
+   "pos": "名",
+   "zh": "没有根据的话（多指背后议论、诬蔑或挑拨的话）。",
+   "en": "",
+   "hv": "LƯU NGÔN",
+   "vi": "tin đồn, lời đồn thổi",
+   "proper": false
+  },
+  {
+   "n": 55,
+   "hz": "扭曲",
+   "py": "niǔqū",
+   "pos": "动",
+   "zh": "扭转变形。比喻歪曲；颠倒（事实、形象等）。",
+   "en": "",
+   "hv": "NỮU KHÚC",
+   "vi": "bóp méo, xuyên tạc",
+   "proper": false
+  },
+  {
+   "n": 56,
+   "hz": "风暴",
+   "py": "fēngbào",
+   "pos": "名",
+   "zh": "刮大风而且往往同时有大雨的天气现象。比喻规模大而气势猛烈的事实或现象。",
+   "en": "",
+   "hv": "PHONG BẠO",
+   "vi": "cơn bão, làn sóng dữ dội",
+   "proper": false
+  },
+  {
+   "n": 57,
+   "hz": "源头",
+   "py": "yuántóu",
+   "pos": "名",
+   "zh": "水发源的地方。",
+   "en": "",
+   "hv": "NGUYÊN ĐẦU",
+   "vi": "nguồn cội, đầu nguồn",
+   "proper": false
+  },
+  {
+   "n": 58,
+   "hz": "魔力",
+   "py": "mólì",
+   "pos": "名",
+   "zh": "使人爱好、沉迷的吸引力。",
+   "en": "",
+   "hv": "MA LỰC",
+   "vi": "ma lực, sức hút kỳ lạ",
+   "proper": false
+  },
+  {
+   "n": 59,
+   "hz": "外星人",
+   "py": "wàixīngrén",
+   "pos": "名",
+   "zh": "称地球以外的天体上有可能存在的具有高等智慧的生物。",
+   "en": "",
+   "hv": "NGOẠI TINH NHÂN",
+   "vi": "người ngoài hành tinh",
+   "proper": false
+  },
+  {
+   "n": 60,
+   "hz": "入侵",
+   "py": "rùqīn",
+   "pos": "动",
+   "zh": "（敌军）侵入国境；（外来的或有害的事物）进入内部。",
+   "en": "",
+   "hv": "NHẬP XÂM",
+   "vi": "xâm nhập, xâm lược",
+   "proper": false
+  },
+  {
+   "n": 61,
+   "hz": "陷入",
+   "py": "xiànrù",
+   "pos": "动",
+   "zh": "落在（不利的境地）。",
+   "en": "",
+   "hv": "HÃM NHẬP",
+   "vi": "rơi vào, lâm vào",
+   "proper": false
+  },
+  {
+   "n": 62,
+   "hz": "喷嚏",
+   "py": "pēntì",
+   "pos": "名",
+   "zh": "由于鼻黏膜受刺激，急剧吸气，然后很快地由鼻孔喷出并发出声音，这种现象叫打喷嚏。",
+   "en": "sternutation, sneeze",
+   "hv": "PHÚN ĐẾ",
+   "vi": "cái hắt hơi",
+   "proper": false
+  },
+  {
+   "n": 63,
+   "hz": "考证",
+   "py": "kǎozhèng",
+   "pos": "动",
+   "zh": "研究文献或历史问题时，根据资料来考核、证实和说明。",
+   "en": "",
+   "hv": "KHẢO CHỨNG",
+   "vi": "khảo chứng, kiểm chứng",
+   "proper": false
+  },
+  {
+   "n": 64,
+   "hz": "凌驾",
+   "py": "língjià",
+   "pos": "动",
+   "zh": "高出（别人）；压倒（别的事物）。",
+   "en": "",
+   "hv": "LĂNG GIÁ",
+   "vi": "vượt lên trên, đứng trên",
+   "proper": false
+  },
+  {
+   "n": 65,
+   "hz": "世俗",
+   "py": "shìsú",
+   "pos": "名",
+   "zh": "指人世间（对“宗教”而言）。",
+   "en": "",
+   "hv": "THẾ TỤC",
+   "vi": "thế tục, cõi trần",
+   "proper": false
+  },
+  {
+   "n": 66,
+   "hz": "异性",
+   "py": "yìxìng",
+   "pos": "名",
+   "zh": "指性别不同的人或性质不同的事物。",
+   "en": "",
+   "hv": "DỊ TÍNH",
+   "vi": "khác giới; khác biệt",
+   "proper": false
+  },
+  {
+   "n": 67,
+   "hz": "大摇大摆",
+   "py": "dà yáo dà bǎi",
+   "pos": "",
+   "zh": "形容走路挺神气、满不在乎的样子。",
+   "en": "",
+   "hv": "ĐẠI DAO ĐẠI BÃI",
+   "vi": "nghênh ngang, phớt đời",
+   "proper": false
+  },
+  {
+   "n": 68,
+   "hz": "展示",
+   "py": "zhǎnshì",
+   "pos": "动",
+   "zh": "清楚地摆出来；明显地表现出来。（展示——展现）",
+   "en": "",
+   "hv": "TRIỂN THỊ",
+   "vi": "phô bày, thể hiện ra",
+   "proper": false
+  },
+  {
+   "n": 69,
+   "hz": "取笑",
+   "py": "qǔxiào",
+   "pos": "动",
+   "zh": "开玩笑；嘲笑。",
+   "en": "",
+   "hv": "THỦ TIẾU",
+   "vi": "chế giễu, cười nhạo",
+   "proper": false
+  },
+  {
+   "n": 70,
+   "hz": "伪装",
+   "py": "wěizhuāng",
+   "pos": "动",
+   "zh": "假装。（伪装——假装）",
+   "en": "",
+   "hv": "NGỤY TRANG",
+   "vi": "ngụy trang, giả vờ",
+   "proper": false
+  },
+  {
+   "n": 71,
+   "hz": "需求",
+   "py": "xūqiú",
+   "pos": "名",
+   "zh": "由需要而产生的要求。",
+   "en": "",
+   "hv": "NHU CẦU",
+   "vi": "nhu cầu",
+   "proper": false
+  },
+  {
+   "n": 72,
+   "hz": "超脱",
+   "py": "chāotuō",
+   "pos": "动",
+   "zh": "超出；脱离。",
+   "en": "",
+   "hv": "SIÊU THOÁT",
+   "vi": "thoát ly, vượt thoát",
+   "proper": false
+  },
+  {
+   "n": 73,
+   "hz": "抹杀",
+   "py": "mǒshā",
+   "pos": "动",
+   "zh": "不顾事实，把本来存在的事物彻底勾销，不予承认。",
+   "en": "write off, deny completely",
+   "hv": "MẠT SÁT",
+   "vi": "xóa bỏ, phủ nhận sạch trơn",
+   "proper": false
+  },
+  {
+   "n": 74,
+   "hz": "失控",
+   "py": "shīkòng",
+   "pos": "动",
+   "zh": "失去控制。",
+   "en": "",
+   "hv": "THẤT KHỐNG",
+   "vi": "mất kiểm soát",
+   "proper": false
+  },
+  {
+   "n": 75,
+   "hz": "自生自灭",
+   "py": "zì shēng zì miè",
+   "pos": "成",
+   "zh": "自然地生长，又自然地消灭。形容不加过问，任其自然发展。",
+   "en": "",
+   "hv": "TỰ SINH TỰ DIỆT",
+   "vi": "tự sinh tự diệt, mặc cho tự phát triển rồi tàn lụi",
+   "proper": false
+  }
+ ],
+ "readings": [
+  {
+   "kind": "main",
+   "title": "网络颠覆了什么？",
+   "paragraphs": [
+    "突然之间，我们就进入了网络时代，网络成长得太快了，在很多人还没有反应过来的时候，它已经颠覆了我们生活中的某些既定的规则。",
+    "网络颠覆了什么？",
+    "网络颠覆了含蓄",
+    "中国文化的特点之一是讲传承，重师承，敬长者，但网络却把这一切打个粉碎。远的不提，就看近的，从韩寒和白烨的斗争中，我们可以看到网络的力量，传统印刷文化在网络文化面前不堪一击，老白的黯然退场反衬出了网络文化的喧嚣。中国文化讲究的是师徒终生，互相扶持，追求的是光大门楣，同气连枝。网络文化却可以说是最自我的文化，当你把自己的作品刊登在网络上，迎接各种层次、各个阶段各位读者的评论时，你必须要有足够的自信和足够的承受力，你将一个人挑战全世界。在网络上，任何一个博客或者网名，一开始都是孤军奋战的，因为哪怕再多的托儿，在网坛芸芸众生面前也只是一朵小小的浪花。狭路相逢勇者胜，只有把最真实的自我表现出来，才可能赢得网民的尊重，因为在这个虚拟的世界里，最缺乏的永远都是真实。小韩意识到了这点，而老白却没有，仍把中国传统的道德挂到了网上，所以他败了，败在了网络手里。网络颠覆了传统文化中的含蓄、包容，他要求你张扬、自我。芙蓉姐姐等的出名也恰恰证明了这点。",
+    "网络颠覆了忍让",
+    "中国的道德，无论出于儒家、道家还是佛家，都很推崇一个字：忍。中华民族这个苦难深重的民族，因忍惹来了各种灾难，也靠忍度过了各种难关。忍者无敌，多少看似张扬的侵略者最后都被中国忍无可忍后爆发的强烈的民族力量所击退。中华民族引以为傲的就是这股厚积薄发的忍功。但网络上，却见不到一个忍字。无论是老叟还是毛孩子，都披上一件网名的外衣，把网络变成了快意恩仇的江湖，没有谦虚，没有退让，一言不合即拔刀而上。网络游戏里，争勇好斗的大侠永远是等级最高的。",
+    "网络颠覆了求稳心态",
+    "中国俗话总是说，聚沙成塔，做事要一步一个脚印，工作要踏踏实实。但看看中国新生代的经济巨鳄们，在网络泡沫中淘得第一桶金的大有人在。他们通过自己的努力，抓住了时机，但对于中国传统来说，他们却颠覆了其中最重要的一点：求稳。网络时代是个探索新大陆的时代，冒险精神和骑士精神超越了稳健的作风。中国新一代的大亨们，就是用冒险来赢得了自己的未来。",
+    "网络颠覆了话语权的垄断",
+    "话语权，这个名词原本是精英们创造出来的，在中国也一直属于精英们。但网络却颠覆了它。任何一句真话或者流言，通过网络的无限放大或无限扭曲，就有可能变成一场风暴。甚至风暴过后，要再重新找到源头都是不可能的，这就是网络最大的魔力。如同当年美国某城市广播电台的一个外星人入侵节目，导致全城陷入疯狂。现在网络的一个喷嚏，也可能导致全世界的感冒。考证，在虚拟的世界里是最不需要的，网络的规则凌驾在世俗规则之上，想说就可以说，信不信则完全是你的事了。",
+    "网络颠覆了界限",
+    "网络没有界限，不但没有道德界限，就连性别界限都模糊了。现实中，你可能带有异性倾向，不敢表现出来，但在网上你可以大摇大摆地展示，没有人会取笑你。虚拟身份让人与人之间的交流比现实中更现实，不需要伪装，不需要客气，一切都凭自己的需求和欲望。网上聊天发展到网上交友，网上交友发展到网上恋爱，网上恋爱发展到网上婚姻。这一切都是在超脱现实的束缚后，才得到实现。",
+    "网络，发展出了新的语言体系、道德体系、社会体系，这标志着网络本身已经独立于现实之外，成为一个全新的世界。对于这个世界，我们要做的不是去消灭、排斥，因为，一个已经成熟而且成长起来的社会，是无法被抹杀的。我们该做的是制定规则，让它为我所用，而不是这样失控下去，任其自生自灭。",
+    "（作者：绯云　选自《社会观察》2006.5，个别语句有改动）"
+   ],
+   "translations": [
+    "Bỗng chốc, chúng ta đã bước vào thời đại mạng Internet. Mạng Internet phát triển quá nhanh, khi nhiều người còn chưa kịp phản ứng thì nó đã lật đổ một số quy tắc vốn có trong cuộc sống của chúng ta.",
+    "Mạng Internet đã lật đổ những gì?",
+    "Mạng Internet đã lật đổ sự hàm súc",
+    "Một trong những đặc điểm của văn hóa Trung Quốc là coi trọng sự kế thừa, đề cao truyền thống thầy trò, kính trọng bậc trưởng bối, nhưng mạng Internet lại đập tan tành tất cả những điều đó. Chẳng nói đâu xa, cứ nhìn chuyện gần đây: từ cuộc tranh đấu giữa Hàn Hàn và Bạch Diệp, ta có thể thấy sức mạnh của mạng Internet; văn hóa in ấn truyền thống không chịu nổi một đòn trước văn hóa mạng, sự rút lui ảm đạm của lão Bạch càng làm nổi bật sự ồn ào náo nhiệt của văn hóa mạng. Văn hóa Trung Quốc coi trọng tình thầy trò trọn đời, nâng đỡ lẫn nhau, theo đuổi việc làm rạng rỡ gia phong, cùng gốc liền cành. Văn hóa mạng lại có thể nói là nền văn hóa vị kỷ nhất; khi bạn đăng tải tác phẩm của mình lên mạng để đón nhận bình luận từ đủ mọi tầng lớp, mọi giai đoạn của độc giả, bạn buộc phải có đủ sự tự tin và đủ sức chịu đựng, bởi bạn sẽ một mình thách thức cả thế giới. Trên mạng, bất kỳ blog hay tên mạng nào ngay từ đầu đều phải đơn thương độc mã chiến đấu, bởi dẫu có bao nhiêu “cò mồi” đi nữa thì trước chúng sinh đông đảo của giới mạng cũng chỉ như một bọt sóng nhỏ bé. Ngõ hẹp gặp nhau kẻ dũng thắng, chỉ khi bộc lộ cái tôi chân thực nhất thì mới có thể giành được sự tôn trọng của cư dân mạng, vì trong thế giới ảo này, thứ thiếu thốn nhất mãi mãi vẫn là sự chân thực. Tiểu Hàn nhận ra điều đó, còn lão Bạch thì không, vẫn đem đạo đức truyền thống Trung Quốc lên mạng, thế nên ông đã thua, thua dưới tay mạng Internet. Mạng Internet đã lật đổ sự hàm súc, bao dung trong văn hóa truyền thống, nó đòi hỏi bạn phải phô trương và thể hiện cái tôi. Sự nổi tiếng của những nhân vật như Phù Dung tỷ tỷ cũng vừa khéo chứng minh điều này.",
+    "Mạng Internet đã lật đổ sự nhẫn nhịn",
+    "Đạo đức Trung Quốc, bất kể xuất phát từ Nho gia, Đạo gia hay Phật gia, đều rất tôn sùng một chữ: Nhẫn. Dân tộc Trung Hoa — một dân tộc chịu nhiều khổ nạn nặng nề — từng vì nhẫn nhịn mà chuốc lấy đủ thứ tai ương, nhưng cũng nhờ nhẫn nhịn mà vượt qua muôn vàn cửa ải gian nan. Kẻ nhẫn nại là vô địch; biết bao kẻ xâm lược thoạt nhìn ngông cuồng phô trương cuối cùng đều bị đánh bật bởi sức mạnh dân tộc mãnh liệt bùng phát sau khi Trung Quốc nhịn hết nổi. Điều khiến dân tộc Trung Hoa tự hào chính là công phu nhẫn nhịn tích lũy dày dặn rồi mới phát huy ấy. Thế nhưng trên mạng lại chẳng thấy lấy một chữ nhẫn. Bất kể ông lão hay trẻ ranh, ai nấy đều khoác lên tấm áo ngoài là nickname, biến mạng Internet thành chốn giang hồ trả ân báo oán sảng khoái; không có khiêm nhường, không có nhượng bộ, một lời không hợp liền rút đao xông lên. Trong game online, vị đại hiệp hiếu thắng thích tranh đấu bao giờ cũng là người có đẳng cấp cao nhất.",
+    "Mạng Internet đã lật đổ tâm thái cầu ổn",
+    "Tục ngữ Trung Quốc vẫn thường nói: tích tiểu thành đại, làm việc phải từng bước vững chắc, công việc phải thật thà chăm chỉ. Nhưng hãy nhìn những “cá sấu” kinh tế thế hệ mới của Trung Quốc, người đãi được hũ vàng đầu tiên trong cơn bong bóng mạng nhiều không kể xiết. Họ dựa vào nỗ lực của bản thân để nắm bắt thời cơ, nhưng đối với truyền thống Trung Quốc, họ đã lật đổ điểm quan trọng nhất: cầu ổn. Thời đại mạng Internet là thời đại khám phá Tân Đại Lục, tinh thần mạo hiểm và tinh thần kỵ sĩ đã vượt qua tác phong vững vàng thận trọng. Những ông trùm thế hệ mới của Trung Quốc chính là đã dùng sự mạo hiểm để giành lấy tương lai cho mình.",
+    "Mạng Internet đã lật đổ sự độc quyền tiếng nói",
+    "“Quyền phát ngôn”, danh từ này vốn do giới tinh anh tạo ra, và ở Trung Quốc cũng luôn thuộc về giới tinh anh. Nhưng mạng Internet đã lật đổ nó. Bất kỳ một câu nói thật hay tin đồn nào, qua sự phóng đại vô hạn hoặc bóp méo vô hạn của mạng Internet, đều có thể biến thành một cơn bão. Thậm chí sau khi cơn bão đi qua, muốn tìm lại đầu nguồn cũng là điều bất khả thi, đó chính là ma lực lớn nhất của mạng Internet. Tựa như năm xưa một chương trình phát thanh về người ngoài hành tinh xâm lược ở một thành phố nước Mỹ đã khiến cả thành phố rơi vào điên loạn. Ngày nay, một cái hắt hơi trên mạng cũng có thể khiến cả thế giới bị cảm cúm. Khảo chứng là thứ ít cần thiết nhất trong thế giới ảo; quy tắc của mạng đứng trên quy tắc thế tục, muốn nói là có thể nói, còn tin hay không hoàn toàn là chuyện của bạn.",
+    "Mạng Internet đã lật đổ mọi ranh giới",
+    "Mạng Internet không có ranh giới, chẳng những không có ranh giới đạo đức mà ngay cả ranh giới giới tính cũng trở nên mờ nhạt. Trong thực tế, bạn có thể mang khuynh hướng khác giới nhưng không dám bộc lộ ra ngoài, còn trên mạng bạn có thể nghênh ngang phô bày mà chẳng ai cười nhạo bạn. Thân phận ảo khiến sự giao lưu giữa người với người còn thực tế hơn cả trong đời thực, không cần ngụy trang, không cần khách sáo, tất cả đều dựa theo nhu cầu và dục vọng của bản thân. Trò chuyện trên mạng phát triển thành kết bạn trên mạng, kết bạn trên mạng phát triển thành yêu qua mạng, yêu qua mạng phát triển thành hôn nhân trên mạng. Tất cả những điều này đều chỉ trở thành hiện thực sau khi vượt thoát khỏi những ràng buộc của đời thực.",
+    "Mạng Internet đã phát triển nên một hệ thống ngôn ngữ mới, hệ thống đạo đức mới, hệ thống xã hội mới; điều này đánh dấu việc bản thân mạng Internet đã tồn tại độc lập bên ngoài thực tại, trở thành một thế giới hoàn toàn mới. Đối với thế giới này, điều chúng ta cần làm không phải là tiêu diệt hay bài xích, bởi một xã hội đã trưởng thành và lớn mạnh lên thì không thể nào bị xóa sổ. Điều chúng ta nên làm là đặt ra quy tắc để nó phục vụ mình, chứ không phải để mặc nó mất kiểm soát như thế này, phó mặc cho nó tự sinh tự diệt.",
+    "(Tác giả: Phi Vân, trích từ “Xã hội quan sát” 2006.5, một số câu chữ có chỉnh sửa)"
+   ]
+  },
+  {
+   "kind": "extra",
+   "title": "网络社会五大里程碑",
+   "paragraphs": [
+    "里程碑一：搜索引擎",
+    "1996年，毕业于密歇根州(Michigan)安娜堡大学的佩奇建立了一个实验用的搜索引擎 BackRub，并将 BackRub 放在了其个人主页上。佩奇在不知不觉之中建立了第一个网络爬行工具。1998年，在斯坦福大学攻读博士的布林和佩奇合伙创建了搜索引擎 Google。",
+    "如今 Google 的市值已达1115亿美元。Google 股票在纳斯达克(Nasdaq)曾破纪录达到每股471.63美元。2005年10月，美国网民上网情况统计，Google 的使用人次排名第一，单独访客达8980万。",
+    "百度公司一直以开发符合中国人习惯的互联网搜索引擎技术而领先。在中国搜索引擎主要网站中，超过80%由百度提供。2005年，国内主要搜索网站市场占有率百度以51.5%超过 Google。",
+    "里程碑二：电子商务",
+    "2005年10月8日，英国《金融时报》评选出年度全球最具影响力的富豪，eBay 创办人及主席皮埃尔·奥米迪亚排行第三。",
+    "中国现有1160万用户利用 eBay 易趣平台来进行交易，2005年这些用户在 eBay 平台上交易的商品总额达到了3亿美元。",
+    "1998年，杭州电子工学院英语及国际贸易讲师马云创办了阿里巴巴电子商务网站。",
+    "2005年7月，中国互联网络信息中心（CNNIC）在京发布“第十六次中国互联网络发展状况统计报告”。报告分析，我国网上购物大军已达到2000万人，2005年半年内累计购物金额达到100亿人民币。",
+    "里程碑三：网络聊天",
+    "网络聊天是网民上网的主要活动之一，聊天的主要工具已经从初期的聊天室转向 MSN、QQ 为代表的即时通信软件。",
+    "目前 MSN 在全世界通过20多种语言提供具有民族和区域特色的服务，拥有2亿 Hotmail 电子邮件用户，将近2亿的即时通信(Messenger)用户，以及每天1亿的搜索量。",
+    "1999年，腾讯公司推出第一个即时通信软件——“腾讯 QQ”。腾讯公司公布的2005年财报显示，QQ 总收入达人民币14.264亿元。",
+    "2005年，全球即时通信用户达9.2亿，中国即时通信用户达到8500万，并以年均25%的速度增长，预计今后，即时通信将会成为互联网用户最广泛使用的通信手段。",
+    "里程碑四：博客",
+    "Blogger 最早起源于 Useland 公司的 CEO 戴夫·温纳1997年运作的 Scripting News。1997年，Jorn Barger 第一次使用 Weblog 这个名字，从而将 blog 的意义从无人称、拟客观、机械式写作，转换成较接近个人日志的“有人称、有个性”的自由书写方式。",
+    "2002年8月，方东兴，一个从浙江义乌农村走出来的小伙子，将 blog 翻译成博客，并组建了“博客中国”。2005年7月，方东兴把颇具标志意义的“博客中国”网站改名为“博客网”，并增加了大量生活化、娱乐化内容，开始了从思想意识网向综合门户网的转型。",
+    "2003年6月19日，木子美开始在网络上公开自己的私人日记，在中国网民之中造成了轰动效应。",
+    "目前，全球博客总数已超过1.4亿，平均每5.8秒诞生一个博客。调查机构易观国际的数字显示，2005年，中国的博客注册用户数已超过4000万，故有“中国博客元年”之称。",
+    "里程碑五：自由无线互联网",
+    "WiFi 是一种无线传输规范，对于上网地点不固定的笔记本用户来说，WiFi 受到越来越多人的欢迎。",
+    "2004年7月，美国费城首次提出“无线费城计划”。随后，全球有若干城市也相继推出了“WiFi 城市”，2006年前三大 WiFi 国家为美国、英国和韩国。",
+    "目前全球范围内的 WiFi 热点数量已经超过10万个，热点最多的地方是韩国首都首尔，共有2056个，其次是东京1802个，伦敦1602个。",
+    "（作者：张健敏　选自：《社会观察》2006.5，个别语句有改动）"
+   ],
+   "translations": [
+    "Cột mốc thứ nhất: Công cụ tìm kiếm",
+    "Năm 1996, Page — người tốt nghiệp Đại học Michigan ở Ann Arbor — đã xây dựng một công cụ tìm kiếm thử nghiệm mang tên BackRub và đặt BackRub lên trang chủ cá nhân của mình. Một cách vô tình, Page đã tạo ra trình thu thập dữ liệu mạng đầu tiên. Năm 1998, Brin và Page khi đang theo học tiến sĩ tại Đại học Stanford đã hợp tác sáng lập công cụ tìm kiếm Google.",
+    "Hiện nay, giá trị thị trường của Google đã đạt 111,5 tỷ USD. Cổ phiếu Google trên sàn Nasdaq từng phá kỷ lục, lên tới 471,63 USD mỗi cổ phiếu. Theo thống kê tình hình sử dụng Internet của cư dân mạng Mỹ vào tháng 10 năm 2005, Google đứng thứ nhất về lượt người dùng, với lượng khách truy cập riêng lẻ đạt 89,8 triệu.",
+    "Công ty Baidu luôn dẫn đầu trong việc phát triển công nghệ tìm kiếm Internet phù hợp với thói quen của người Trung Quốc. Trong các trang công cụ tìm kiếm chủ yếu tại Trung Quốc, hơn 80% do Baidu cung cấp. Năm 2005, về thị phần trang tìm kiếm chủ yếu trong nước, Baidu đã vượt Google với tỷ lệ 51,5%.",
+    "Cột mốc thứ hai: Thương mại điện tử",
+    "Ngày 8 tháng 10 năm 2005, tờ “Financial Times” của Anh công bố danh sách những tỷ phú có ảnh hưởng nhất toàn cầu trong năm, người sáng lập kiêm chủ tịch eBay là Pierre Omidyar xếp thứ ba.",
+    "Trung Quốc hiện có 11,6 triệu người dùng giao dịch trên nền tảng eBay EachNet (Dịch Thú); năm 2005, tổng giá trị hàng hóa được những người dùng này giao dịch trên nền tảng eBay đạt tới 300 triệu USD.",
+    "Năm 1998, Mã Vân (Jack Ma), giảng viên tiếng Anh và thương mại quốc tế tại Học viện Công nghiệp Điện tử Hàng Châu, đã sáng lập trang web thương mại điện tử Alibaba.",
+    "Tháng 7 năm 2005, Trung tâm Thông tin Mạng Internet Trung Quốc (CNNIC) tại Bắc Kinh công bố “Báo cáo thống kê tình hình phát triển Internet Trung Quốc lần thứ 16”. Theo phân tích của báo cáo, đội ngũ mua sắm trực tuyến ở Trung Quốc đã đạt 20 triệu người, trong nửa đầu năm 2005 tổng giá trị mua sắm lũy kế đạt 10 tỷ nhân dân tệ.",
+    "Cột mốc thứ ba: Trò chuyện trực tuyến",
+    "Trò chuyện trực tuyến là một trong những hoạt động chủ yếu của cư dân mạng khi lên mạng; công cụ trò chuyện chính đã chuyển từ các phòng chat thời kỳ đầu sang phần mềm nhắn tin tức thời tiêu biểu là MSN và QQ.",
+    "Hiện nay, MSN cung cấp dịch vụ mang bản sắc dân tộc và khu vực trên toàn thế giới qua hơn 20 ngôn ngữ, sở hữu 200 triệu người dùng thư điện tử Hotmail, gần 200 triệu người dùng nhắn tin tức thời (Messenger) cùng 100 triệu lượt tìm kiếm mỗi ngày.",
+    "Năm 1999, công ty Tencent cho ra mắt phần mềm nhắn tin tức thời đầu tiên — “Tencent QQ”. Báo cáo tài chính năm 2005 do Tencent công bố cho thấy tổng doanh thu của QQ đạt 1,4264 tỷ nhân dân tệ.",
+    "Năm 2005, người dùng nhắn tin tức thời toàn cầu đạt 920 triệu, người dùng tại Trung Quốc đạt 85 triệu với tốc độ tăng trưởng bình quân 25% mỗi năm; dự báo thời gian tới, nhắn tin tức thời sẽ trở thành phương tiện liên lạc được người dùng Internet sử dụng rộng rãi nhất.",
+    "Cột mốc thứ tư: Blog",
+    "Blogger sớm nhất bắt nguồn từ Scripting News do Dave Winer, CEO công ty Useland, vận hành năm 1997. Năm 1997, Jorn Barger lần đầu tiên sử dụng tên gọi Weblog, qua đó chuyển ý nghĩa của blog từ lối viết phi nhân xưng, giả khách quan, máy móc sang hình thức viết tự do “có ngôi thứ, có cá tính” gần gũi hơn với nhật ký cá nhân.",
+    "Tháng 8 năm 2002, Phương Đông Hưng, một chàng trai xuất thân từ vùng nông thôn Nghĩa Ô (Chiết Giang), đã dịch “blog” thành “bác khách” (bókè) và thành lập “Bác khách Trung Quốc”. Tháng 7 năm 2005, Phương Đông Hưng đổi tên trang “Bác khách Trung Quốc” vốn rất giàu tính biểu tượng thành “Bác khách võng” (Blogchina.com), đồng thời bổ sung lượng lớn nội dung đời sống và giải trí, bắt đầu quá trình chuyển mình từ trang mạng tư tưởng sang cổng thông tin tổng hợp.",
+    "Ngày 19 tháng 6 năm 2003, Mộc Tử Mỹ bắt đầu công khai nhật ký riêng tư của mình trên mạng, tạo nên hiệu ứng chấn động trong cộng đồng cư dân mạng Trung Quốc.",
+    "Hiện nay, tổng số blog trên toàn cầu đã vượt quá 140 triệu, trung bình cứ 5,8 giây lại có một blog ra đời. Số liệu của tổ chức khảo sát Analysys International (Dịch Quan Quốc tế) cho thấy năm 2005, số người dùng đăng ký blog tại Trung Quốc đã vượt 40 triệu, vì vậy năm này được mệnh danh là “Năm nguyên niên blog Trung Quốc”.",
+    "Cột mốc thứ năm: Internet không dây tự do",
+    "WiFi là một chuẩn truyền dẫn không dây; đối với những người dùng máy tính xách tay có địa điểm lên mạng không cố định, WiFi ngày càng được nhiều người ưa chuộng.",
+    "Tháng 7 năm 2004, thành phố Philadelphia (Mỹ) lần đầu tiên đề xuất “Kế hoạch Philadelphia không dây”. Tiếp đó, nhiều thành phố trên thế giới cũng lần lượt ra mắt “Thành phố WiFi”; năm 2006, ba quốc gia dẫn đầu về WiFi là Mỹ, Anh và Hàn Quốc.",
+    "Hiện nay, số lượng điểm phát sóng WiFi trên toàn cầu đã vượt hơn 100 nghìn điểm; nơi có nhiều điểm phát sóng nhất là thủ đô Seoul của Hàn Quốc với 2.056 điểm, tiếp theo là Tokyo 1.802 điểm và London 1.602 điểm.",
+    "(Tác giả: Trương Kiện Mẫn, trích từ “Xã hội quan sát” 2006.5, một số câu chữ có chỉnh sửa)"
+   ]
+  }
+ ],
+ "grammar": [
+  {
+   "point": "动词+个+补语 (động từ + 个 + bổ ngữ)",
+   "structure": "动词（多为单音节）+ 个 + 补语；动词 + 个 + 宾语",
+   "explanation": "Lượng từ “个” đặt giữa động từ (phần lớn là động từ đơn âm tiết) và bổ ngữ, khiến bổ ngữ mang hơi hướng tính chất của tân ngữ (nhấn mạnh mức độ hoặc kết quả). Liên hệ: “动词+个+宾语” — “个” cũng có thể đặt sau động từ mang tân ngữ để chỉ động lượng (dùng cả ở chỗ vốn không dùng “个”), mang sắc thái nhẹ nhàng, thoải mái, tùy ý.",
+   "examples": [
+    {
+     "zh": "中国文化的特点之一是讲传承，重师承，敬长者，但网络却把这一切打个粉碎。",
+     "vi": "Một trong những đặc điểm của văn hóa Trung Quốc là coi trọng sự kế thừa, đề cao truyền thống thầy trò, kính trọng bậc trưởng bối, nhưng mạng Internet lại đập tan tành tất cả những điều đó."
+    },
+    {
+     "zh": "你看！大雨下个不停，怎么去爬山？",
+     "vi": "Nhìn kìa! Mưa to rơi mãi không ngớt, làm sao đi leo núi được?"
+    },
+    {
+     "zh": "这对好朋友终于又见面了，俩人在咖啡馆聊了个够。",
+     "vi": "Đôi bạn thân này cuối cùng cũng gặp lại nhau, hai người trò chuyện thỏa thích ở quán cà phê."
+    },
+    {
+     "zh": "我干了一整天，把房间扫了个干干净净。",
+     "vi": "Tôi làm cả một ngày trời, quét dọn căn phòng sạch sẽ tinh tươm."
+    },
+    {
+     "zh": "爸爸退休以后，就爱画个画儿、写个字什么的，家里人都开玩笑叫他“书画家”。",
+     "vi": "Sau khi nghỉ hưu, bố rất thích vẽ vời đôi bức tranh, viết dăm chữ gì đó, người nhà đều nói đùa gọi ông là “nhà thư họa”."
+    }
+   ]
+  },
+  {
+   "point": "坛 (giới, làng — văn nghệ, thể thao...)",
+   "structure": "名 + 坛",
+   "explanation": "Danh từ (yếu tố cấu tạo từ), thường chỉ các giới, lĩnh vực trong hệ thống văn nghệ, thể thao, chính trị...",
+   "examples": [
+    {
+     "zh": "因为哪怕再多的托儿，在网坛芸芸众生面前也只是一朵小小的浪花。",
+     "vi": "Bởi vì dẫu có nhiều “cò mồi” đến đâu, trước chúng sinh đông đảo của giới mạng cũng chỉ là một bọt sóng nhỏ bé."
+    },
+    {
+     "zh": "文坛 / 诗坛 / 影坛 / 剧坛 / 歌坛",
+     "vi": "văn đàn (giới văn học) / thi đàn (giới thơ ca) / làng điện ảnh / giới sân khấu / làng ca nhạc"
+    },
+    {
+     "zh": "体坛 / 乒坛 / 棋坛 / 泳坛 / 政坛",
+     "vi": "làng thể thao / làng bóng bàn / giới cờ / làng bơi lội / chính trường"
+    }
+   ]
+  },
+  {
+   "point": "多少 (bao nhiêu; biết bao; ít nhiều)",
+   "structure": "多少 + 名词；没有多少 + 名词；……多少……多少；多少 + 动词/形容词",
+   "explanation": "Số từ (đọc là duōshao): có thể biểu thị số lượng nhiều (dùng trong câu khẳng định: biết bao, bao nhiêu), cũng có thể biểu thị số lượng ít (dùng trong câu phủ định: không bao nhiêu). Liên kết 1: Khi làm số từ, “多少” còn biểu thị số lượng không xác định, thường xuất hiện hai lần trong câu, hô ứng trước sau (bao nhiêu… bấy nhiêu). Liên kết 2: Phó từ “多少” (đọc là duōshǎo), nghĩa là “ít nhiều” hoặc “đôi chút”.",
+   "examples": [
+    {
+     "zh": "忍者无敌，多少看似张扬的侵略者最后都被中国忍无可忍后爆发的强烈的民族力量所击退。",
+     "vi": "Kẻ nhẫn nại là vô địch; biết bao kẻ xâm lược thoạt nhìn ngông cuồng phô trương cuối cùng đều bị đánh bật bởi sức mạnh dân tộc mãnh liệt bùng phát sau khi Trung Quốc nhịn hết nổi."
+    },
+    {
+     "zh": "人们为了满足口腹之欲，把多少野生动物都变成了盘中之餐。",
+     "vi": "Con người vì thỏa mãn dục vọng ăn uống mà đã biến biết bao loài động vật hoang dã thành món ăn trên bàn."
+    },
+    {
+     "zh": "这是忙忙碌碌却没有多少收获的一天。",
+     "vi": "Đây là một ngày tất bật bận rộn nhưng chẳng thu hoạch được bao nhiêu."
+    },
+    {
+     "zh": "原材料不成问题，要多少给多少，我们公司保证充分供应。",
+     "vi": "Nguyên vật liệu không thành vấn đề, cần bao nhiêu cấp bấy nhiêu, công ty chúng tôi bảo đảm cung ứng đầy đủ."
+    },
+    {
+     "zh": "去别人家做客，多少得带点礼物，空着手去多不好意思啊！",
+     "vi": "Đến nhà người khác làm khách thì ít nhiều cũng phải mang chút quà, đi tay không ngại lắm!"
+    }
+   ]
+  },
+  {
+   "point": "看似 (xem ra có vẻ, thoạt nhìn tưởng như)",
+   "structure": "看似 + 形容词/动词短语/主谓短语",
+   "explanation": "Động từ, có nghĩa là “xem ra có vẻ, thoạt nhìn dường như” (thường dùng để miêu tả vẻ bề ngoài, hay đi kèm vế sau chuyển ngoặt chỉ bản chất bên trong).",
+   "examples": [
+    {
+     "zh": "忍者无敌，多少看似张扬的侵略者最后都被中国忍无可忍后爆发的强烈的民族力量所击退。",
+     "vi": "Kẻ nhẫn nại là vô địch; biết bao kẻ xâm lược thoạt nhìn ngông cuồng phô trương cuối cùng đều bị đánh bật bởi sức mạnh dân tộc mãnh liệt bùng phát sau khi Trung Quốc nhịn hết nổi."
+    },
+    {
+     "zh": "有的卡通片看似浅显、幼稚，实际上却包含着人生的哲理和深刻的思想。",
+     "vi": "Có những bộ phim hoạt hình thoạt nhìn nông cạn, ấu trĩ, nhưng thực tế lại chứa đựng triết lý nhân sinh và tư tưởng sâu sắc."
+    },
+    {
+     "zh": "这台看似完美的二手笔记本，却让我伤透了脑筋。",
+     "vi": "Chiếc laptop cũ nhìn qua tưởng như hoàn hảo này lại khiến tôi đau đầu hết sức."
+    },
+    {
+     "zh": "一段看似没有结果的感情，该不该开始？",
+     "vi": "Một mối tình xem ra chẳng có kết quả thì có nên bắt đầu không?"
+    },
+    {
+     "zh": "这名侦探外表看似小孩般天真，却有着超乎常人的智慧。",
+     "vi": "Vị thám tử này vẻ ngoài trông ngây thơ như đứa trẻ, nhưng lại sở hữu trí tuệ siêu phàm hơn người."
+    }
+   ]
+  },
+  {
+   "point": "如同 (giống như, tựa như)",
+   "structure": "A + 如同 + B",
+   "explanation": "Động từ, nghĩa là “giống như, tựa như”, thường dùng trong văn viết.",
+   "examples": [
+    {
+     "zh": "如同当年美国某城市广播电台的一个外星人入侵节目，导致全城陷入疯狂。",
+     "vi": "Tựa như năm xưa một chương trình phát thanh về người ngoài hành tinh xâm lược ở một thành phố nước Mỹ đã khiến cả thành phố rơi vào điên loạn."
+    },
+    {
+     "zh": "做企业如同养育孩子。所有的企业都有一个成长的过程，好像孩子的成长一样。",
+     "vi": "Làm doanh nghiệp giống như nuôi dạy một đứa trẻ. Mọi doanh nghiệp đều có một quá trình trưởng thành, cũng hệt như sự lớn khôn của đứa trẻ vậy."
+    },
+    {
+     "zh": "别人如同自己的一面镜子，在镜子中，看到的应是自己的好与坏，而不是别人的美与丑。",
+     "vi": "Người khác giống như một tấm gương của chính mình; trong gương, điều nên thấy là cái tốt và cái xấu của bản thân chứ không phải cái đẹp và cái xấu của người khác."
+    },
+    {
+     "zh": "莎士比亚说过：“这世界是个舞台，男男女女都是演员，人人都有上台的时候，也有下台的时候。”既然人生如同一场戏，你就要扮演好自己的角色。",
+     "vi": "Shakespeare từng nói: “Thế giới này là một sân khấu, đàn ông và phụ nữ đều là diễn viên, ai cũng có lúc lên sân khấu và có lúc xuống sân khấu.” Đã thế, cuộc đời tựa như một vở kịch, bạn phải diễn thật tròn vai của mình."
+    },
+    {
+     "zh": "古人云：起家如同针挑土，败家好似浪淘沙。像你这么大手大脚地花钱，怎么富得起来呢？",
+     "vi": "Người xưa nói: dựng cơ nghiệp khó như lấy kim khều đất, phá gia chi tử nhanh như sóng đãi cát. Tiêu tiền vung tay quá trán như cậu thì làm sao giàu lên nổi?"
+    }
+   ]
+  }
+ ]
+}

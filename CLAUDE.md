@@ -17,8 +17,8 @@ Bộ trang web học tiếng Trung (giáo trình **Boya** và từ vựng **HSK*
 index.html            Trang chủ: banner "Buổi học hôm nay" + lộ trình 4 chặng + công cụ
 hom_nay/              Buổi học hôm nay: ôn mọi thẻ đến hạn (gộp trùng) → bài mới → luyện tập
   hom_nay.html/.css/.js
-audio/                MP3 bài khóa Boya (Trung cap 1–4, Cao cap 1–2), DÙNG CHUNG (~613MB)
-boya_learning/        Boya Learning: bài khóa 6 quyển + audio + từ vựng
+audio/                MP3 bài khóa Boya (Trung cap 1–4, Cao cap 1–3), DÙNG CHUNG
+boya_learning/        Boya Learning: bài khóa 7 quyển + audio + từ vựng
   boya_learning.html/.css/.js, boya_data.js (+ .json)
 sach_boya/            [ĐÃ ẨN] Sách Boya TC1–4 bản đọc tĩnh (trùng boya_learning), có dải thông báo chuyển trang
   tc1.html … tc4.html, script.js, style.css
@@ -57,7 +57,7 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
 
 - **`theme.css`**: bảng màu chung, mọi biến có tiền tố `--ui-*`.
   - Gồm nền, chữ, viền, màu chính, trạng thái success/danger/warning, pinyin, thanh điệu `--ui-tone-1..4/0`.
-  - Màu theo quyển Boya `--ui-book-tc1..tc4, gc1, gc2` và theo cấp `--ui-hsk-1..6`.
+  - Màu theo quyển Boya `--ui-book-tc1..tc4, gc1..gc3` và theo cấp `--ui-hsk-1..6`.
   - Sáng/tối điều khiển bằng `html[data-theme="light"|"dark"]`.
   - Trang **không** tự đặt màu cứng, mà ánh xạ biến riêng sang biến chung, ví dụ `--primary: var(--ui-primary)`.
   - Lưu ý: biến phái sinh từ một biến được đổi theo quyển (ví dụ `--primary-light` dựa trên `--primary`) phải định nghĩa trên cùng phần tử nơi `--primary` được đổi (thường là `body`), không đặt ở `:root`.
@@ -131,7 +131,7 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
 | 1. Nền tảng | Từ vựng HSK 1–3 | `hsk1..hsk3` (từ `hsk_lotrinh`) |
 | 2. Trung cấp nền | Boya Chuẩn Trung cấp 1–2 + HSK 4 | `tc1, tc2, hsk4` |
 | 3. Trung cấp nâng cao | Boya Trung cấp 1–2 + HSK 5 | `tc3, tc4, hsk5` |
-| 4. Cao cấp | Boya Cao cấp 1–2 + HSK 6 | `gc1, gc2, hsk6` |
+| 4. Cao cấp | Boya Cao cấp 1–3 + HSK 6 | `gc1, gc2, gc3, hsk6` |
 
 - Chặng hiện tại là chặng đầu tiên chưa hoàn thành.
 - Khung "Ôn tập hôm nay" cộng `due` của mọi trang.
@@ -139,7 +139,7 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
 - `tuvung` và `sach_boya` đã ẩn khỏi trang chủ: nội dung trùng với `boya_learning`, file vẫn giữ và có dải thông báo chuyển trang. Thẻ SRS cũ của `tuvung` (`boya_tv_srs`) vẫn được ôn ở `hom_nay`; dòng "tuvung" trong khung "Ôn tập hôm nay" trỏ tới `hom_nay`.
 - **Link vào trang con:** `hsk_lotrinh.html?level=N`, `boya_learning.html?book=<id>&lesson=N`.
 
-Tên quyển thống nhất theo Boya Learning: `tc1/tc2` = Chuẩn Trung cấp 1/2, `tc3/tc4` = Trung cấp 1/2 (冲刺), `gc1/gc2` = Cao cấp 1/2.
+Tên quyển thống nhất theo Boya Learning: `tc1/tc2` = Chuẩn Trung cấp 1/2, `tc3/tc4` = Trung cấp 1/2 (冲刺), `gc1/gc2/gc3` = Cao cấp 1/2/3.
 
 ## Sinh lại dữ liệu
 
@@ -153,7 +153,7 @@ Không sửa tay các file dữ liệu sinh tự động. Sửa nguồn rồi ch
 | `shared/dict_vi.js` | dữ liệu 3 trang + `tools/hanviet/` | `python tools/build_dict.py` (chạy sau khi đổi dữ liệu hoặc âm Hán Việt) |
 | `doc_them/doc_data.js` (~3MB) và `doc_them/doc_index.js` (~340KB: mục lục, mỗi bài có danh sách từ `w`, `hom_nay` dùng để gợi ý bài vừa sức) | mọi `tools/doc_them_src/*.json` (`exam*.json` là đề luyện thi) | `python tools/build_doc_them.py` (cần `pypinyin`, `jieba`). Script tự tính pinyin từng chữ và danh sách "từ ngoài cấp" (so với HSK 2.0 cộng HSK 3.0 cùng cấp; cụm tách nhầm cho vào `SPLIT_ARTIFACTS`). |
 | `luyen_tap/lt_data.js`, `lt_data_wl.js` | `hsk_lotrinh/hsk_vocab_data.js` (câu ví dụ), `boya_learning/boya_data.json` (từ + câu ví dụ ngữ pháp), `word_learning/json_data/quyen_*.json` (câu ví dụ) | `python tools/build_luyen_tap.py` (cần `pypinyin`, `jieba`). Chạy lại sau khi đổi dữ liệu ở các trang kia. |
-| `boya_learning/boya_data.js` / `.json` (phần Cao cấp gc1/gc2) | `tools/scratch/gc_rebuild/gc1_L01.json` … `gc2_L10.json`: chép từ PDF `pdf/高级飞翔篇1.pdf`, `2.pdf`, mỗi bài một file (có thể tách `_part_*.json`) gồm từ vựng, bài đọc + bản dịch và ngữ pháp | Từ thư mục gốc: `python tools/scratch/gc_rebuild/build_gc_books.py` (sinh `tools/scratch/gc1_book.json`, `gc2_book.json`, tự thêm ruby pinyin và câu ví dụ, cần `pypinyin`), rồi `python tools/scratch/merge_all_books.py`. **Không chạy `super_enrich.py`** vì script này thêm từ bịa vào Cao cấp. Quy cách chép nằm trong `gc_rebuild/BRIEF.md`. |
+| `boya_learning/boya_data.js` / `.json` (phần Cao cấp gc1/gc2/gc3) | `tools/scratch/gc_rebuild/gc1_L01.json` … `gc3_L08.json`: chép từ PDF `pdf/高级飞翔篇1.pdf`, `2.pdf`, `3 - old version.pdf`, mỗi bài một file (có thể tách `_part_*.json`) gồm từ vựng, bài đọc + bản dịch và ngữ pháp | Từ thư mục gốc: `python tools/scratch/gc_rebuild/build_gc_books.py` (sinh `tools/scratch/gc1_book.json`, `gc2_book.json`, `gc3_book.json`, tự thêm ruby pinyin và câu ví dụ, cần `pypinyin`), rồi `python tools/scratch/merge_all_books.py`. **Không chạy `super_enrich.py`** vì script này thêm từ bịa vào Cao cấp. Quy cách chép nằm trong `gc_rebuild/BRIEF.md`. |
 
 Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHONIOENCODING=utf-8` để tránh lỗi `UnicodeEncodeError` (cp1252). Các script khác trong `tools/scratch/` vẫn dùng đường dẫn cũ (trước khi chuyển thư mục), phải sửa trước khi chạy lại.
 
@@ -310,13 +310,13 @@ Ba trang dưới đây theo cùng một mô hình với `hsk_lotrinh`:
 
 Khi sửa logic SRS ở một trang, cân nhắc sửa đồng bộ ở các trang còn lại.
 
-### `boya_learning/` (6 quyển, 74 bài, 4.472 từ)
+### `boya_learning/` (7 quyển, 82 bài, 5.348 từ)
 - **Mỗi bài có 4 bước:** Từ vựng (lật hết flashcard) → Bài khóa (cuộn hết từng phần hoặc đọc xong một lượt tính giờ) → Ngữ pháp (xem hết các thẻ) → Kiểm tra.
 - **Hoàn thành bài:** chỉ khi bài kiểm tra đạt ≥ 80%. Bài kiểm tra có tối đa 12 câu từ vựng và 3 câu ngữ pháp; câu sai được hỏi lại; điểm tính theo lần trả lời đầu.
 - **Ôn tập:** "Ôn hôm nay" gom từ đến hạn của mọi quyển.
 - **Đọc bài khóa:** đọc tính giờ (chữ/phút, chỉ đếm chữ Hán), có nút nhại theo TTS, có chế độ "Che từ vựng".
 - **Streak:** chỉ tăng khi trong ngày làm ≥ 10 câu hoặc ôn ≥ 10 thẻ.
-- **URL:** `?book=<id>&lesson=<n>`, chấp nhận cả bí danh cc1/cc2.
+- **URL:** `?book=<id>&lesson=<n>`, chấp nhận cả bí danh cc1/cc2/cc3.
 - **Key lưu:** `boya_learning_progress_v2` = `{v, lessons{fc,rd,gr,best,tries,done,doneAt,legacy}, srs, days, streak, reading}` và `boya_learning_settings_v1`. Key `v1` cũ chỉ đọc một lần để chuyển dữ liệu.
 - **Màu theo quyển:** JS đặt `--book: var(--ui-book-<id>)`, các màu `--primary-*` suy ra từ biến này.
 - **Ghi chú:** Chrome headless không phát sự kiện cuộn, nên test phải tự phát `scroll`.
