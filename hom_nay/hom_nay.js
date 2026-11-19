@@ -722,6 +722,7 @@
         $("fc-py").textContent = g.py || "";
         $("fc-hv").textContent = g.hv ? g.hv.toUpperCase() : "";
         $("fc-vi").textContent = g.vi || "";
+        $("fc-vis").innerHTML = window.HocVisual ? HocVisual.barHTML(g.hz) : "";   // emoji · ảnh · nét viết
         const ex = exampleFor(g);
         if (ex) {
             const zh = esc(ex.zh).split(esc(g.hz)).join(`<mark>${esc(g.hz)}</mark>`);
@@ -850,6 +851,7 @@
         $("fc-py").textContent = e.py || "";
         $("fc-hv").textContent = e.hv ? String(e.hv).toUpperCase() : "";
         $("fc-vi").textContent = e.vi || "";
+        $("fc-vis").innerHTML = window.HocVisual ? HocVisual.barHTML(hanOnly(e.target) || e.target) : "";
         const typed = hanOnly(it.typed);
         let res = "";
         if (typed) {

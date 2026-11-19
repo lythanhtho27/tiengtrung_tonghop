@@ -37,11 +37,13 @@ luyen_tap/            Luyện tập: sắp xếp câu (Việt→Trung), nghe –
   luyen_tap.html/.css/.js, lt_data.js, lt_data_wl.js (sinh tự động), lt_games_data.js (dữ liệu trò chơi viết sẵn)
   games/<id>.js       Mỗi trò chơi một file, tự đăng ký vào window.LT_GAMES (API: games/README.md)
 anh_ngu_3/            Bài luyện tiếng Anh HUTECH (an3*.html), trang độc lập, không liên quan tiếng Trung
-shared/               Tài nguyên dùng chung: theme, progress, sync, mywords (sổ Từ của tôi), lookup (tách từ/pinyin/tra từ), dict_vi.js (từ điển, sinh tự động)
+shared/               Tài nguyên dùng chung: theme, progress, sync, mywords (sổ Từ của tôi), lookup (tách từ/pinyin/tra từ), dict_vi.js (từ điển, sinh tự động),
+                      visual.js (emoji · ảnh · nét viết), emoji_map.js (viết tay), hanzi_parts.js (tách bộ, sinh tự động)
 tools/                Script sinh dữ liệu + dữ liệu nguồn
   extract_hsk_vocab.py, extract_vocab.py, word_list_data/HSK1-HSK6_full.xlsx
   hanviet/            Bảng âm Hán Việt theo (chữ, pinyin): hv_1..3.tsv, overrides.tsv (sửa tay), hanviet.py
-  add_hanviet_wl.py, build_dict.py, build_luyen_tap.py, build_doc_them.py
+  add_hanviet_wl.py, build_dict.py, build_luyen_tap.py, build_doc_them.py, build_visual.py
+  hanzi_parts/        Nguồn tách bộ: dictionary.txt (Make Me a Hanzi, LGPL, tự tải, không commit), unihan_vi.tsv (âm Việt dự phòng từ Unihan)
   doc_them_src/       Nguồn tài liệu đọc (sáng tác mới): hsk*.json, more_hsk*.json, series_s1..s5.json, series_s6_a/b/c.json, series_s7_a/b/c.json, series_s8_a/b/c.json, series_s9_a/b/c.json, series_s10_a/b/c.json, dialogues.json, chengyu_a/b.json, exam_hsk4/5.json
                       + BRIEF.md, BRIEF_MORE.md (quy cách viết từng loại), BRIEF_S6.md … BRIEF_S10.md (dàn ý bộ truyện s6–s10) + vocab_hskN.txt
   comics/             Truyện tranh: characters.json, panels_<series>.json (kịch bản + người nói), gen_comics.py (Qwen-Image qua ComfyUI/diffusers), build_comics.py → doc_them/comic_data.js; xem README.md
@@ -85,6 +87,13 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
   - Mỗi mục: `{id, zh, target (từ bị che), py, hv, vi, ctx_vi (bản dịch đoạn), src, url (tính từ thư mục gốc), card SM-2}`.
   - Câu được lưu bằng nút "✂️ Lưu câu" trong khung tra từ (`lookup.js`, nhận thêm `opts.getContextVi/getUrl/onSentence`) và trong khung tra của `boya_learning` (`toggleSentence`).
   - Câu được ôn dạng điền từ (`cloze()`) ở bước 1 của `hom_nay`.
+- **`visual.js`** (`HocVisual`): hình ảnh hỗ trợ nhớ từ, gồm ba phần:
+  - **Emoji** từ `emoji_map.js` (viết tay, khoảng 1.300 từ cụ thể / hành động / cảm xúc; từ trừu tượng cố ý bỏ trống). Muốn thêm thì sửa thẳng file này.
+  - **🖼️ Ảnh:** link mở Baidu (hoặc Google) Hình ảnh tìm đúng từ, ở tab mới.
+  - **✍️ Nét viết:** khung xem thứ tự nét và tự viết thử (thư viện Hanzi Writer 3.7.3, nạp lười từ jsDelivr, cần mạng; mất mạng thì chỉ hiện chữ tĩnh), kèm tách bộ từ `hanzi_parts.js` (hình thanh: bộ nghĩa + bộ âm, so âm Hán Việt bộ âm với chữ; hội ý / tượng hình kèm gợi ý tiếng Anh). Bộ phận chữ có `data-zizu`.
+  - API: `barHTML(hz, {emoji, compact})` trả chuỗi HTML thanh nhỏ; `emoji(hz)`; `write(hz, i)`. Nút `[data-hv-write]` và link `[data-hv-img]` được bắt ở pha capture để không lật thẻ. Khung đang mở thì chặn phím tắt của trang.
+  - Cài đặt (hiện emoji, nút ảnh, Baidu/Google) ở chân khung Nét viết, lưu theo thiết bị ở `hoc_visual_v1`, không đồng bộ.
+  - Đang gắn ở: mặt sau thẻ ôn `hom_nay` (cả thẻ câu), khung tra từ `lookup.js` (doc_them) và `boya_learning`, flashcard + Ôn hôm nay `boya_learning` (dạng `compact`), `wordCardHTML` của `hsk_lotrinh`, flashcard `word_learning` (emoji thay cho biểu tượng đoán theo bộ thủ khi có).
 - **`dict_vi.js`** (khoảng 0,9MB, sinh bởi `tools/build_dict.py`): `HOC_DICT = {m, w: {từ: [pinyin, HÁN VIỆT, nghĩa]}, c: {chữ: [pinyin, HÁN VIỆT]}}`, gộp khoảng 13.000 từ của HSK, Boya và HSK 3.0. Các trang nạp lười file này (`boya_learning` nạp khi mở Bài khóa).
 
 ## Tài khoản & đồng bộ (`shared/sync.js`, Supabase)
@@ -152,6 +161,7 @@ Không sửa tay các file dữ liệu sinh tự động. Sửa nguồn rồi ch
 | Âm Hán Việt: cột 8 của `hsk_vocab_data.js`, trường `han_viet` của `word_learning/json_data/quyen_*` | `tools/hanviet/hv_*.tsv` + `overrides.tsv` (sửa âm sai ở `overrides.tsv`) | `extract_hsk_vocab.py` tự điền khi Excel không có `[..]`. Với HSK 3.0 chạy `python tools/add_hanviet_wl.py` (ghi cả `.json` lẫn `.js`, giữ định dạng; dùng `--force` để ghi đè). |
 | `shared/dict_vi.js` | dữ liệu 3 trang + `tools/hanviet/` | `python tools/build_dict.py` (chạy sau khi đổi dữ liệu hoặc âm Hán Việt) |
 | `doc_them/doc_data.js` (~3MB) và `doc_them/doc_index.js` (~340KB: mục lục, mỗi bài có danh sách từ `w`, `hom_nay` dùng để gợi ý bài vừa sức) | mọi `tools/doc_them_src/*.json` (`exam*.json` là đề luyện thi) | `python tools/build_doc_them.py` (cần `pypinyin`, `jieba`). Script tự tính pinyin từng chữ và danh sách "từ ngoài cấp" (so với HSK 2.0 cộng HSK 3.0 cùng cấp; cụm tách nhầm cho vào `SPLIT_ARTIFACTS`). |
+| `shared/hanzi_parts.js` (~170KB: tách bộ của khoảng 3.300 chữ trong `HOC_DICT`) | `tools/hanzi_parts/dictionary.txt` (Make Me a Hanzi, tự tải nếu thiếu) + `tools/hanviet/` + `tools/hanzi_parts/unihan_vi.tsv` + bảng `RADICALS` (tên bộ thủ biến thể) trong script | `python tools/build_visual.py` (chạy sau `build_dict.py` khi thêm chữ mới) |
 | `luyen_tap/lt_data.js`, `lt_data_wl.js` | `hsk_lotrinh/hsk_vocab_data.js` (câu ví dụ), `boya_learning/boya_data.json` (từ + câu ví dụ ngữ pháp), `word_learning/json_data/quyen_*.json` (câu ví dụ) | `python tools/build_luyen_tap.py` (cần `pypinyin`, `jieba`). Chạy lại sau khi đổi dữ liệu ở các trang kia. |
 | `boya_learning/boya_data.js` / `.json` (phần Cao cấp gc1/gc2/gc3) | `tools/scratch/gc_rebuild/gc1_L01.json` … `gc3_L08.json`: chép từ PDF `pdf/高级飞翔篇1.pdf`, `2.pdf`, `3 - old version.pdf`, mỗi bài một file (có thể tách `_part_*.json`) gồm từ vựng, bài đọc + bản dịch và ngữ pháp | Từ thư mục gốc: `python tools/scratch/gc_rebuild/build_gc_books.py` (sinh `tools/scratch/gc1_book.json`, `gc2_book.json`, `gc3_book.json`, tự thêm ruby pinyin và câu ví dụ, cần `pypinyin`), rồi `python tools/scratch/merge_all_books.py`. **Không chạy `super_enrich.py`** vì script này thêm từ bịa vào Cao cấp. Quy cách chép nằm trong `gc_rebuild/BRIEF.md`. |
 

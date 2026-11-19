@@ -1005,6 +1005,9 @@
         });
 
         const viLower = (vi || '').toLowerCase();
+        // emoji viết tay theo đúng từ (shared/emoji_map.js) đáng tin hơn đoán theo bộ thủ / nghĩa
+        const handEmoji = window.HocVisual ? HocVisual.emoji(cleanWord) : '';
+        if (handEmoji) matchedIcon = handEmoji;
         if (!matchedIcon) {
             if (/yêu|thích|nhớ|tình|tim|cảm/.test(viLower)) matchedIcon = '❤️';
             else if (/ăn|cơm|bánh|đói|món|thực/.test(viLower)) matchedIcon = '🍲';
@@ -3707,6 +3710,8 @@
         if (backStory) {
             backStory.textContent = vData.story || '';
         }
+        const backBar = document.getElementById('fcBackVisBar');      // 🖼️ Ảnh · ✍️ Nét viết (shared/visual.js)
+        if (backBar) backBar.innerHTML = window.HocVisual ? HocVisual.barHTML(w.word, { emoji: false, compact: true }) : '';
 
         if (backEx) {
             const ex = (w.examples && w.examples[0]) ? w.examples[0] : null;

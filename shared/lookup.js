@@ -232,6 +232,7 @@
             (I.hv ? '<div class="lk-hv">' + esc(I.hv) + "</div>" : "") +
             '<div class="lk-vi">' + (I.vi ? esc(I.vi) : '<span class="lk-none">' + (D() ? "Chưa có nghĩa trong từ điển." : "Đang tải từ điển…") + "</span>") + "</div>" +
             (window.HocNotes && HocNotes.get(I.hz) ? '<div class="lk-note">📝 ' + esc(HocNotes.get(I.hz)) + "</div>" : "") +
+            (window.HocVisual ? HocVisual.barHTML(I.hz) : "") +       // emoji · ảnh · nét viết (shared/visual.js)
             '<div class="lk-chars">' + I.chars.map(function (x) { return '<div class="lk-ch"' + (window.HocZizu ? ' data-zizu="' + esc(x.c) + '" title="Họ chữ: mọi từ có chữ ' + esc(x.c) + '"' : "") + "><b>" + esc(x.c) + "</b><span>" + esc(x.py) + "</span><i>" + esc(x.hv) + "</i></div>"; }).join("") +
             (window.HocZizu ? '<span class="lk-zz-hint">👆 chạm chữ để xem họ chữ</span>' : "") + "</div>" +
             (c.alts.length > 1 ? '<div class="lk-alts">Cách tách khác: ' + c.alts.map(function (a, k) { return '<button data-k="' + k + '" class="' + (a.word === c.word && a.start === c.start ? "on" : "") + '">' + esc(a.word) + "</button>"; }).join("") + "</div>" : "") +

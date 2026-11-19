@@ -1896,6 +1896,7 @@
             ${info.isLesson ? `<div class="lk-tag">📘 Từ mới của bài</div>` : ''}
             ${info.hv ? `<div class="lk-hv">${escapeHtml(info.hv)}</div>` : ''}
             <div class="lk-vi">${info.vi ? escapeHtml(info.vi) : `<span class="lk-muted">${noMean}</span>`}</div>
+            ${window.HocVisual ? HocVisual.barHTML(info.hz) : ''}
             ${charsHtml}
             ${alts}
             <div class="lk-actions">
@@ -2503,7 +2504,7 @@
                             </div>
                             <div class="fc-back-meaning">${escapeHtml(cleanMean(w.mean))}</div>
                             ${ex ? `<div class="fc-back-examples">${escapeHtml(ex)}</div>` : ''}
-                            <button class="rt-btn" id="btnSpeakFc" style="margin-top: 10px;">🔊 Phát âm</button>
+                            <div class="fc-vis-row"><button class="rt-btn" id="btnSpeakFc">🔊 Phát âm</button>${window.HocVisual ? HocVisual.barHTML(w.hz, { compact: true }) : ''}</div>
                         </div>
                     </div>
                 </div>
@@ -3185,7 +3186,7 @@
                             </div>
                             <div class="fc-back-meaning">${escapeHtml(cleanMean(w.mean))}</div>
                             ${ex ? `<div class="fc-back-examples">${escapeHtml(ex)}</div>` : ''}
-                            <button class="rt-btn" id="btnSpeakFc" style="margin-top: 10px;">🔊 Phát âm</button>
+                            <div class="fc-vis-row"><button class="rt-btn" id="btnSpeakFc">🔊 Phát âm</button>${window.HocVisual ? HocVisual.barHTML(w.hz, { compact: true }) : ''}</div>
                         </div>
                     </div>
                 </div>

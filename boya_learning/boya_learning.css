@@ -4257,3 +4257,7 @@ html[data-theme="dark"] .sp-btn-stop { color: var(--ui-bg); }
 .lookup-pop.is-sheet .lk-hz { font-size: 30px; }
 .lookup-pop.is-sheet .lk-actions { position: sticky; bottom: 0; background: var(--ui-surface); padding-top: 4px; }
 @keyframes lkSheet { from { transform: translateY(24px); } to { transform: none; } }
+
+/* Hàng phát âm + hình ảnh (shared/visual.js) ở mặt sau flashcard */
+.fc-vis-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; margin-top: 8px; }
+.fc-vis-row .hv-bar { margin: 0; }
