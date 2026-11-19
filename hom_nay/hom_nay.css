@@ -289,3 +289,6 @@ select { padding: 7px 10px; border-radius: 10px; border: 1px solid var(--ui-bord
 .skip-box summary span { font-weight: 500; color: var(--ui-warning, #d97706); }
 .skip-box p { font-size: 13px; margin: 6px 0; }
 .skip-lv { display: flex; flex-wrap: wrap; gap: 6px 16px; padding-bottom: 4px; }
+
+/* Gợi ý đọc "Thử sức" (khó hơn một chút) */
+.rd-stretch .rd-tag { background: color-mix(in srgb, var(--ui-hsk-5) 16%, transparent); color: var(--ui-hsk-5); }

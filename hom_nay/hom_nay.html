@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buổi học hôm nay</title>
-    <meta name="description" content="Buổi học hằng ngày: ôn tập mọi từ và câu đến hạn, học bài mới của chặng hiện tại, luyện tập 10 phút và đọc 1 bài.">
+    <meta name="description" content="Buổi học hằng ngày: ôn tập mọi từ và câu đến hạn, học bài mới của chặng hiện tại và đọc bài (mặc định 3 bài/ngày).">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     <header class="topbar">
         <div class="topbar-inner">
             <a class="back" href="../index.html" title="Về trang chủ">←</a>
-            <div class="brand"><strong>Buổi học hôm nay</strong><small id="brand-date">Ôn tập · Bài mới · Luyện tập · Đọc</small></div>
+            <div class="brand"><strong>Buổi học hôm nay</strong><small id="brand-date">Ôn tập · Bài mới · Đọc</small></div>
             <button class="account-btn" data-hoc-account type="button">Đăng nhập</button>
             <button class="ui-voice-btn" data-hoc-voice title="Giọng đọc (chọn giọng, luân phiên, đọc nhập vai)" aria-label="Giọng đọc">🔊</button>
             <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
@@ -26,16 +26,16 @@
     </header>
 
     <main class="container">
-        <!-- Màn hình chính: checklist 4 bước -->
+        <!-- Màn hình chính: checklist 3 bước -->
         <section id="home">
             <div class="card hero">
                 <div class="hero-top">
                     <div>
                         <div class="eyebrow" id="hero-date">Hôm nay</div>
                         <h1 id="hero-title">Buổi học hôm nay</h1>
-                        <p class="muted" id="hero-note">Làm lần lượt 4 bước, khoảng 40–55 phút.</p>
+                        <p class="muted" id="hero-note">Làm lần lượt 3 bước, khoảng 30–45 phút.</p>
                     </div>
-                    <div class="streak" id="streak" title="Chuỗi ngày học: ngày có ôn ≥ 10 thẻ hoặc xong bước 2/3/4">
+                    <div class="streak" id="streak" title="Chuỗi ngày học: ngày có ôn ≥ 10 thẻ hoặc xong bước 2/3">
                         <b id="streak-n">0</b><span>ngày liên tiếp</span>
                     </div>
                 </div>
@@ -90,30 +90,25 @@
                         <div class="lesson-list" id="learn-list"></div>
                     </div>
                 </li>
-                <li class="step" id="step-practice">
+                <li class="step" id="step-read">
                     <div class="step-num">3</div>
                     <div class="step-body">
                         <div class="step-head">
-                            <h2>Luyện tập 10 phút</h2>
-                            <span class="tag" id="practice-tag"></span>
-                        </div>
-                        <p class="muted" id="practice-note">Sắp xếp câu và nghe – viết bằng các từ bạn đã học. Làm ít nhất 10 câu.</p>
-                        <div class="step-actions">
-                            <a class="btn" id="btn-practice" href="../luyen_tap/luyen_tap.html">✍️ Mở trang Luyện tập</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="step" id="step-read">
-                    <div class="step-num">4</div>
-                    <div class="step-body">
-                        <div class="step-head">
-                            <h2>Đọc 1 bài</h2>
+                            <h2 id="read-h">Đọc 3 bài</h2>
                             <span class="tag" id="read-tag"></span>
                         </div>
                         <p class="muted" id="read-note">Đang tìm bài vừa sức…</p>
                         <div class="lesson-list" id="read-list"></div>
                         <div class="step-actions">
                             <a class="btn" id="btn-read" href="../doc_them/doc_them.html">📖 Mở thư viện Đọc thêm</a>
+                            <label class="field-inline">Mục tiêu mỗi ngày
+                                <select id="opt-read-goal">
+                                    <option value="1">1 bài</option>
+                                    <option value="2">2 bài</option>
+                                    <option value="3">3 bài</option>
+                                    <option value="5">5 bài</option>
+                                </select>
+                            </label>
                         </div>
                     </div>
                 </li>

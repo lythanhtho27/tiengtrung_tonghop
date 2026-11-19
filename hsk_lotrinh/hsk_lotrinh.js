@@ -928,15 +928,17 @@
         // Dự báo 7 ngày
         const days = [];
         const sod = startOfDay();
+        const skip = skipLevels();      // cấp đang tạm ẩn: không tính vào dự báo (khớp với số từ đến hạn ở trên)
+        const shown = Object.keys(S.srs).filter(id => BY_ID.has(id) && (!skip.length || skip.indexOf(BY_ID.get(id).level) < 0));
         for (let i = 0; i < 7; i++) {
             const end = sod + (i + 1) * DAY;
             const start = i === 0 ? -Infinity : sod + i * DAY;
             let n = 0;
-            for (const id in S.srs) { const d = S.srs[id].due; if (d >= start && d < end) n++; }
+            for (const id of shown) { const d = S.srs[id].due; if (d >= start && d < end) n++; }
             days.push({ label: i === 0 ? "Hôm nay" : ["CN", "T2", "T3", "T4", "T5", "T6", "T7"][new Date(sod + i * DAY).getDay()], n });
         }
         const max = Math.max(1, ...days.map(d => d.n));
-        $("forecast").innerHTML = `<div class="fc-title">Dự báo số từ cần ôn 7 ngày tới</div><div class="fc-bars">${days.map(d =>
+        $("forecast").innerHTML = `<div class="fc-title">Dự báo số từ cần ôn 7 ngày tới${skip.length ? ` <small class="muted">(không tính HSK ${skip.join(", ")} đang tạm ẩn)</small>` : ""}</div><div class="fc-bars">${days.map(d =>
             `<div class="fc-col"><span class="fc-n">${d.n}</span><span class="fc-bar" style="height:${Math.max(4, d.n / max * 100)}%"></span><span class="fc-l">${d.label}</span></div>`).join("")}</div>`;
 
         // Đọc nhanh

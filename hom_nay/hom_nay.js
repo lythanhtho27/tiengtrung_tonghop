@@ -12,8 +12,7 @@
            Cùng chữ Hán (đã bỏ chú thích ngoặc) đến hạn ở nhiều nguồn -> chỉ hỏi MỘT lần,
            điểm chấm áp dụng cho mọi thẻ đó (mỗi thẻ theo schedule của nguồn mình).
    Bước 2. Học bài mới: 1–2 bài nên học tiếp của chặng hiện tại (logic chặng giống index.html).
-   Bước 3. Luyện tập 10 phút: trang luyen_tap, xong khi hôm nay làm ≥ 10 câu.
-   Bước 4. Đọc 1 bài: gợi ý từ doc_them/doc_index.js (nạp lười) + tiến độ doc_them_v1.read[id] = {done, at, rr[]}:
+   Bước 3. Đọc 1 bài: gợi ý từ doc_them/doc_index.js (nạp lười) + tiến độ doc_them_v1.read[id] = {done, at, rr[]}:
            chương kế của bộ truyện đang đọc dở, bài đến hạn đọc lại (quy tắc rr giống doc_them: 1 lần → +3 ngày,
            2 lần → +7 ngày, ≥ 3 lần thôi nhắc), 1–2 bài "vừa sức" (% từ đã biết 90–95%).
            Xong khi hôm nay đọc xong ít nhất một bài (rr hoặc at thuộc hôm nay).
@@ -35,7 +34,7 @@
     const DAY = 86400000;
     const RELEARN_MS = 10 * 60000;
     const SLOW_MS = 3000;
-    const STREAK_MIN = 10;          // ôn ≥ 10 thẻ trong ngày (hoặc xong bước 2/3/4) mới tính vào chuỗi ngày học
+    const STREAK_MIN = 10;          // ôn ≥ 10 thẻ trong ngày (hoặc xong bước 2/3) mới tính vào chuỗi ngày học
     const BOYA_STREAK_MIN = 10;     // boya_learning: STREAK_MIN của trang đó
     const HARD_MIN = 4;             // quên ≥ 4 lần -> "từ cứng đầu"
     const HARD_SHOW = 8;            // số từ cứng đầu hiện sẵn trên trang chính
@@ -380,7 +379,7 @@
     const SRC_KEYS = Object.keys(SOURCES);
 
     // ====================================================================== Trạng thái trang
-    const DEFAULT = { settings: { limit: 50, speak: true, cardMode: "mix", skipLv: [] }, days: {}, streak: { count: 0, last: "", best: 0 } };
+    const DEFAULT = { settings: { limit: 50, speak: true, cardMode: "mix", skipLv: [], readGoal: 3 }, days: {}, streak: { count: 0, last: "", best: 0 } };
     let S = loadState();
     function loadState() {
         const o = readJSON(STORE, {}) || {};
@@ -407,10 +406,10 @@
         const st = S.streak || {};
         return (st.last === dayKey() || st.last === yesterdayKey()) ? (st.count || 0) : 0;
     }
-    // Ngày "đạt" khi ôn ≥ 10 thẻ hoặc xong bước 2 / bước 3 / bước 4
+    // Ngày "đạt" khi ôn ≥ 10 thẻ hoặc xong bước 2 (bài mới) / bước 3 (đọc)
     function checkDayOk() {
         const d = today();
-        const ok = (d.r || 0) >= STREAK_MIN || !!d.steps.learn || !!d.steps.practice || !!d.steps.read;
+        const ok = (d.r || 0) >= STREAK_MIN || !!d.steps.learn || !!d.steps.read || readCountToday() > 0;
         const k = dayKey();
         if (ok && S.streak.last !== k) {
             S.streak.count = S.streak.last === yesterdayKey() ? (S.streak.count || 0) + 1 : 1;
@@ -924,15 +923,13 @@
         ].map(x => `<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
         const st = stepState();
         const acts = [];
-        if (remain.length) acts.push(`<button class="btn ${st.learn.done && st.practice.done && st.read.done ? "btn-primary" : ""}" id="res-more">🔁 Ôn tiếp (${fmt(remain.length)})</button>`);
+        if (remain.length) acts.push(`<button class="btn ${st.learn.done && st.read.done ? "btn-primary" : ""}" id="res-more">🔁 Ôn tiếp (${fmt(remain.length)})</button>`);
         if (!st.learn.done && st.learn.items.length) {
             const n = st.learn.items[0];
             acts.unshift(`<a class="btn btn-primary" href="${esc(n.url)}">Bước 2 · ▶ ${esc(n.label)}</a>`);
-        } else if (!st.practice.done) {
-            acts.unshift(`<a class="btn btn-primary" href="../luyen_tap/luyen_tap.html">Bước 3 · ✍️ Luyện tập 10 phút</a>`);
         } else if (!st.read.done) {
             const r0 = (readSuggestions() || [])[0];
-            acts.unshift(`<a class="btn btn-primary" href="${esc(r0 ? r0.url : "../doc_them/doc_them.html")}">Bước 4 · 📖 ${esc(r0 ? r0.title : "Đọc 1 bài")}</a>`);
+            acts.unshift(`<a class="btn btn-primary" href="${esc(r0 ? r0.url : "../doc_them/doc_them.html")}">Bước 3 · 📖 ${esc(r0 ? r0.title : "Đọc 1 bài")}</a>`);
         }
         acts.push(`<button class="btn" id="res-home">Về buổi học hôm nay</button>`);
         $("res-actions").innerHTML = acts.join("");
@@ -1069,11 +1066,6 @@
         Object.keys(raw).forEach(p => { total += Math.max(raw[p], summaryToday(p).n || 0); });
         return total;
     }
-    function practiceToday() {
-        const lt = readJSON("luyen_tap_v1", {}) || {};
-        const d = (lt.days || {})[dayKey()] || {};
-        return Math.max(d.n || 0, summaryToday("luyen_tap").n || 0);
-    }
     function nextLessons() {
         const P = window.HocProgress ? HocProgress.all() : {};
         const hsk = P.hsk_lotrinh || {}, boya = P.boya_learning || {};
@@ -1112,9 +1104,10 @@
             }),
         };
     }
-    // ====================================================================== Bước 4: Đọc 1 bài (doc_them)
+    // ====================================================================== Bước 3: Đọc 1 bài (doc_them)
     const FIT_LO = 90, FIT_HI = 95, FIT_MID = 92;    // "vừa sức": biết 90–95% số từ (không có thì gần 92% nhất)
-    const READ_MAX = 4;                                // số gợi ý tối đa
+    const READ_MAX = 8;                                // số gợi ý tối đa
+    const STRETCH_LO = 80, STRETCH_HI = 89;          // "thử sức": biết 80–89% số từ, cấp bằng hoặc cao hơn trình độ
     function docRead() { const v = readJSON("doc_them_v1", {}) || {}; return (v.read && typeof v.read === "object") ? v.read : {}; }
     // Các mốc đọc xong; bài đã done mà chưa có rr coi như rr = [at] (giống doc_them)
     function rrOf(r) {
@@ -1135,13 +1128,15 @@
         if (rr.length === 2) return startOfDay(rr[1]) + 7 * DAY;
         return null;
     }
-    function readToday() {
+    // Số bài đọc xong hôm nay (đọc mới hoặc đọc lại)
+    function readCountToday() {
         const t0 = startOfDay(), rd = docRead();
-        return Object.keys(rd).some(id => {
+        return Object.keys(rd).filter(id => {
             const r = rd[id] || {};
             return (Array.isArray(r.rr) && r.rr.some(x => +x >= t0)) || (r.done && (r.at || 0) >= t0);
-        });
+        }).length;
     }
+    function readGoal() { return Math.max(1, +S.settings.readGoal || 3); }
     let docLoading = null;
     function ensureDocIndex() {       // mục lục bài đọc (~340KB) — chỉ nạp khi vẽ bước 4
         if (window.DOC_INDEX) return Promise.resolve(true);
@@ -1222,22 +1217,36 @@
             const next = chs.find(c => (c.chapter || 0) > maxCh && !isDone(c.id)) || chs.find(c => !isDone(c.id));
             if (next) prog.push({ next, at: Math.max(...done.map(c => lastAt(c.id))), n: done.length, total: chs.length });
         });
-        prog.sort((a, b) => b.at - a.at).slice(0, 2).forEach(p => push("next", p.next, { progress: `${p.n}/${p.total} chương` }));
+        prog.sort((a, b) => b.at - a.at).slice(0, 3).forEach(p => push("next", p.next, { progress: `${p.n}/${p.total} chương` }));
         // (b) bài đến hạn đọc lại (quá hạn lâu trước), tối đa 2
         const byId = new Map(D.map(d => [d.id, d]));
         Object.keys(rd).map(id => ({ id, due: rereadDue(rd[id]), n: rrOf(rd[id]).length }))
             .filter(x => x.due != null && now >= x.due && byId.has(x.id))
-            .sort((a, b) => a.due - b.due).slice(0, 2)
+            .sort((a, b) => a.due - b.due).slice(0, 3)
             .forEach(x => push("reread", byId.get(x.id), { times: x.n }));
         // (c) 1–2 bài chưa đọc "vừa sức" (bỏ chương giữa truyện: truyện nên đọc từ chương 1), ưu tiên cấp gần trình độ
-        const room = Math.min(2, Math.max(1, READ_MAX - out.length));
+        const room = Math.max(3, READ_MAX - 1 - out.length);      // chừa 1 chỗ cho bài "thử sức"
         const lv = learnerLevel();
         const cands = D.filter(d => !isDone(d.id) && !used.has(d.id) && !(d.kind === "series" && (d.chapter || 1) > 1));
-        let fit = cands.filter(d => { const p = pct(d); return p >= FIT_LO && p <= FIT_HI; });
-        if (!fit.length) fit = cands.slice().sort((a, b) => Math.abs(pct(a) - FIT_MID) - Math.abs(pct(b) - FIT_MID)).slice(0, 6);
-        fit.sort((a, b) => (Math.abs(a.level - lv) - Math.abs(b.level - lv)) || (b.level - a.level) || (Math.abs(pct(a) - FIT_MID) - Math.abs(pct(b) - FIT_MID)));
-        // luôn có ít nhất 1 bài vừa sức (nên có thể thành 5 mục khi đã có 2 chương + 2 bài đọc lại)
-        fit.slice(0, room).forEach(d => push("fit", d, null, true));
+        const near = d => d.level >= lv - 1;                  // bài cấp quá thấp so với trình độ thì nhàm, chỉ dùng khi thiếu
+        const closeness = d => Math.abs(pct(d) - FIT_MID);
+        // (d) chọn trước 1 bài "thử sức": khó hơn một chút (biết 80–89% từ), cấp ≥ trình độ, ưu tiên cấp cao hơn rồi tới truyện
+        const stretch = cands.filter(d => d.level >= lv && pct(d) >= STRETCH_LO && pct(d) <= STRETCH_HI)
+            .sort((a, b) => ((a.level > lv ? 0 : 1) - (b.level > lv ? 0 : 1)) || ((b.kind === "series") - (a.kind === "series")) || (pct(b) - pct(a)))[0];
+        const pool = cands.filter(d => d !== stretch);
+        // Tầng 1: cấp gần trình độ, biết ≥ 90% từ · Tầng 2: cấp gần trình độ (không cao hơn), biết nhiều từ nhất (≥ 75%)
+        // · Tầng 3: cấp thấp hơn nhưng vừa 90–95%
+        const t1 = pool.filter(d => near(d) && pct(d) >= FIT_LO).sort((a, b) => closeness(a) - closeness(b));
+        const t2 = pool.filter(d => near(d) && d.level <= lv && pct(d) < FIT_LO && pct(d) >= 75).sort((a, b) => pct(b) - pct(a));
+        const t3 = pool.filter(d => !near(d) && pct(d) >= FIT_LO && pct(d) <= FIT_HI).sort((a, b) => (b.level - a.level) || (closeness(a) - closeness(b)));
+        let fit = t1.concat(t2, t3);
+        if (!fit.length) fit = pool.slice().sort((a, b) => closeness(a) - closeness(b)).slice(0, 6);
+        // luôn có ít nhất 3 bài vừa sức; xen kẽ loại bài (truyện / bài đọc / hội thoại / thành ngữ) cho đỡ nhàm
+        const picked = [], kinds = {};
+        fit.forEach(d => { if (picked.length < room && (kinds[d.kind] || 0) < 2) { picked.push(d); kinds[d.kind] = (kinds[d.kind] || 0) + 1; } });
+        fit.forEach(d => { if (picked.length < room && picked.indexOf(d) < 0) picked.push(d); });
+        picked.forEach(d => push("fit", d, null, true));
+        if (stretch) push("stretch", stretch, null, true);
         return out;
     }
 
@@ -1246,12 +1255,10 @@
         const steps = d.steps || {};
         const nl = nextLessons();
         const newN = newWordsToday();
-        const prN = practiceToday();
         return {
             review: { done: !!steps.review },
             learn: { done: newN > 0 || !!steps.learn, n: newN, items: nl.items, stage: nl.stage },
-            practice: { done: prN >= 10 || !!steps.practice, n: prN },
-            read: { done: readToday() || !!steps.read },
+            read: (function () { const n = readCountToday(), g = readGoal(); return { done: n >= g, n, goal: g }; })(),
         };
     }
 
@@ -1274,18 +1281,17 @@
         const sdue = sentDue();
         lastDueCount = due.length + sdue.length;
         const st = stepState();
-        // ghi nhận bước 2/3 vừa xong ở trang khác
+        // ghi nhận bước 2/3 vừa xong ở trang khác (bài mới, đọc)
         const d = today();
         let changed = false;
         if (!due.length && !sdue.length && !d.steps.review && (d.r || 0) > 0) { d.steps.review = true; changed = true; }
         if (st.learn.done && !d.steps.learn) { d.steps.learn = true; changed = true; }
-        if (st.practice.done && !d.steps.practice) { d.steps.practice = true; changed = true; }
         if (st.read.done && !d.steps.read) { d.steps.read = true; changed = true; }
         if (checkDayOk()) changed = true;
         save();
         const nDue = due.length + sdue.length;
         const reviewDone = !nDue || !!d.steps.review;
-        const flags = [reviewDone, st.learn.done, st.practice.done, st.read.done];
+        const flags = [reviewDone, st.learn.done, st.read.done];
         const curStep = flags.indexOf(false);
 
         // Đầu trang
@@ -1297,14 +1303,14 @@
         $("hero-title").textContent = nDone === NSTEP ? "🎉 Xong buổi học hôm nay!" : "Buổi học hôm nay";
         $("hero-note").textContent = nDone === NSTEP
             ? `Bạn đã làm đủ ${NSTEP} bước. Có thể ôn thêm hoặc học thêm nếu còn thời gian.`
-            : `Đã xong ${nDone}/${NSTEP} bước · khoảng 40–55 phút: ôn tập → học bài mới → luyện tập → đọc 1 bài.`;
+            : `Đã xong ${nDone}/${NSTEP} bước · khoảng 30–45 phút: ôn tập → học bài mới → đọc 1 bài.`;
         $("day-bar").style.width = Math.round(nDone / NSTEP * 100) + "%";
         const sk = currentStreak();
         $("streak-n").textContent = sk;
         $("streak").classList.toggle("cold", !(S.streak.last === dayKey()));
 
         // Bước 1
-        ["step-review", "step-learn", "step-practice", "step-read"].forEach((id, i) => {
+        ["step-review", "step-learn", "step-read"].forEach((id, i) => {
             $(id).classList.toggle("done", flags[i]);
             $(id).classList.toggle("current", i === curStep);
             $(id).querySelector(".step-num").textContent = flags[i] ? "✓" : i + 1;
@@ -1345,19 +1351,16 @@
                 <span class="go">Học ▶</span>
             </a>`).join("") || `<a class="lesson" href="../word_learning/word_learning.html"><span><b>Giáo trình HSK 3.0</b><small>8 quyển · 368 bài</small></span><span class="go">Mở ▶</span></a>`;
 
-        // Bước 3
-        setTag("practice-tag", st.practice.done, st.practice.n ? `${fmt(st.practice.n)}/10 câu` : "0/10 câu");
-        $("btn-practice").className = "btn" + (curStep === 2 ? " btn-primary" : "");
-
-        // Bước 4
-        renderRead(st.read.done, curStep === 3);
-        if (!window.DOC_INDEX) ensureDocIndex().then(ok => { if (ok && !$("home").hidden) renderRead(stepState().read.done, curStep === 3); });
+        // Bước 3 · Đọc 1 bài
+        renderRead(st.read, curStep === 2);
+        if (!window.DOC_INDEX) ensureDocIndex().then(ok => { if (ok && !$("home").hidden) renderRead(stepState().read, curStep === 2); });
         if (changed) writeSummary();
     }
-    function renderRead(done, isCur) {
-        const sug = readSuggestions();
-        const nRe = sug ? sug.filter(x => x.type === "reread").length : 0;
-        setTag("read-tag", done, done ? "Đã đọc hôm nay" : nRe ? `${nRe} bài cần đọc lại` : "Chưa đọc");
+    function renderRead(rs, isCur) {
+        const done = rs.done, sug = readSuggestions();
+        $("read-h").textContent = `Đọc ${rs.goal} bài`;
+        $("opt-read-goal").value = String(rs.goal);
+        setTag("read-tag", done, `${fmt(rs.n)}/${rs.goal} bài`);
         $("btn-read").className = "btn" + (isCur ? " btn-primary" : "");
         if (!sug) {
             $("read-note").textContent = docLoading ? "Đang tìm bài vừa sức…" : "Đọc một bài ngắn ở trang Đọc thêm.";
@@ -1365,9 +1368,9 @@
             return;
         }
         $("read-note").textContent = done
-            ? "Hôm nay bạn đã đọc xong một bài. Có thể đọc thêm:"
-            : "Đọc xong một bài (đánh dấu “đã đọc” cuối bài). Đọc lại giúp nhớ từ lâu hơn; bài vừa sức là bài bạn đã biết khoảng 90–95% số từ.";
-        const TAG = { next: "📖 Đọc tiếp", reread: "🔁 Đọc lại", fit: "🎯 Vừa sức" };
+            ? `Hôm nay bạn đã đọc ${fmt(rs.n)} bài, đạt mục tiêu 🎉. Còn hứng thì đọc thêm:`
+            : `Hôm nay đã đọc ${fmt(rs.n)}/${rs.goal} bài (đánh dấu “đã đọc” ở cuối bài). Vừa sức = bài ở cấp gần trình độ mà bạn biết nhiều từ nhất (lý tưởng 90–95%); Thử sức = khó hơn một chút (biết 80–89% từ) để luyện lên trình độ cao hơn.`;
+        const TAG = { next: "📖 Đọc tiếp", reread: "🔁 Đọc lại", fit: "🎯 Vừa sức", stretch: "💪 Thử sức" };
         $("read-list").innerHTML = sug.map(x => {
             const meta = [`HSK ${x.level}`, KIND_VI[x.kind] || "", x.title_vi,
                 x.type === "next" && x.progress ? `đã đọc ${x.progress}` : "",
@@ -1439,6 +1442,7 @@
     $("opt-limit").onchange = e => { S.settings.limit = +e.target.value; save(); renderHome(); };
     $("opt-speak").onchange = e => { S.settings.speak = e.target.checked; save(); };
     $("opt-mode").onchange = e => { S.settings.cardMode = e.target.value; save(); };
+    $("opt-read-goal").onchange = e => { S.settings.readGoal = +e.target.value; save(); renderHome(); };
     $("skip-lv").onchange = e => {
         const lv = +e.target.dataset.skipLv;
         if (!lv) return;
@@ -1523,5 +1527,5 @@
     show("home");
     // test tự động có thể dùng
     window.__HN = { collectDue, collectHard, startReview, startPractice, flip, rate, finishReview, stepState, renderHard, pickMode, meaningOnly, state: () => S, session: () => session, SOURCES,
-        sentDue, readSuggestions, rereadDue, readToday, buildKnown, knownPctOf, ensureDocIndex, renderHome };
+        sentDue, readSuggestions, rereadDue, readCountToday, buildKnown, knownPctOf, ensureDocIndex, renderHome };
 })();

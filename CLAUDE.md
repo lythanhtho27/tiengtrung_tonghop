@@ -15,7 +15,7 @@ Bộ trang web học tiếng Trung (giáo trình **Boya** và từ vựng **HSK*
 
 ```
 index.html            Trang chủ: banner "Buổi học hôm nay" + lộ trình 4 chặng + công cụ
-hom_nay/              Buổi học hôm nay: ôn mọi thẻ đến hạn (gộp trùng) → bài mới → luyện tập
+hom_nay/              Buổi học hôm nay: ôn mọi thẻ đến hạn (gộp trùng) → bài mới → đọc 1 bài
   hom_nay.html/.css/.js
 audio/                MP3 bài khóa Boya (Trung cap 1–4, Cao cap 1–3), DÙNG CHUNG
 boya_learning/        Boya Learning: bài khóa 7 quyển + audio + từ vựng
@@ -159,7 +159,7 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
 
 ## Buổi học hôm nay (`hom_nay/`)
 
-- Trang chủ có banner dẫn vào, kèm số thẻ đến hạn đếm thô và trạng thái 3 bước.
+- Trang chủ có banner dẫn vào, kèm số thẻ đến hạn đếm thô (trừ cấp HSK đang ẩn) và trạng thái 3 bước.
 - **Bước 1 · Ôn tập:** gom thẻ đến hạn từ 5 nguồn rồi ôn kiểu flashcard (phím 1–4; trên điện thoại nút chấm điểm cố định ở đáy). Các nguồn:
   - `hsk_lotrinh_v1.srs`
   - `boya_learning_progress_v2.srs`
@@ -174,18 +174,19 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
   - **Khi đổi logic SRS ở một trang học, phải sửa bản chép tương ứng trong `hom_nay.js`.**
 - **Dữ liệu hiển thị:** `luyen_tap/lt_data.js` (id → chữ, nghĩa, câu ví dụ) và `shared/dict_vi.js` (Hán Việt). Thẻ Boya chỉ được lấy khi id có trong `LT_DATA.words`, nên phải chạy lại `build_luyen_tap.py` khi đổi dữ liệu Boya.
 - **Bước 2 · Học bài mới:** gợi ý bài tiếp theo của chặng hiện tại (logic chặng chép từ `index.html`). Xong khi hôm nay có học từ mới.
-- **Bước 3 · Luyện tập:** xong khi làm ≥ 10 câu ở `luyen_tap`.
-- **Bước 4 · Đọc 1 bài:** nạp lười `doc_them/doc_index.js`, gợi ý ba loại bài:
-  - Đọc tiếp: chương kế của bộ truyện đang đọc dở;
-  - Đọc lại: bài đến hạn theo quy tắc `rr` (xem mục Đọc thêm);
-  - Vừa sức: biết 90–95% số từ trong `w`.
-  - Xong khi hôm nay có bài đọc xong (`steps.read`). Banner trang chủ hiện 4 bước.
+- (Bước Luyện tập 10 phút đã bỏ theo yêu cầu người dùng; trang `luyen_tap` vẫn ở mục Công cụ bổ trợ.)
+- **Bước 3 · Đọc N bài** (mục tiêu `settings.readGoal` 1/2/3/5, mặc định 3; người dùng thích đọc nhiều): nạp lười `doc_them/doc_index.js`, gợi ý tối đa 8 bài (`READ_MAX`):
+  - Đọc tiếp: chương kế của tối đa 3 bộ truyện đang đọc dở;
+  - Đọc lại: tối đa 3 bài đến hạn theo quy tắc `rr` (xem mục Đọc thêm);
+  - Vừa sức (≥ 3 bài, mỗi loại bài tối đa 2): tầng 1 cấp ≥ trình độ − 1 và biết ≥ 90% từ trong `w`; tầng 2 cùng khoảng cấp (không cao hơn trình độ), biết ≥ 75%, nhiều nhất trước; tầng 3 cấp thấp hơn nhưng biết 90–95%;
+  - 💪 Thử sức (1 bài): cấp ≥ trình độ, biết 80–89%, ưu tiên cấp cao hơn rồi tới truyện.
+  - Xong khi số bài đọc xong hôm nay (`readCountToday()`, tính cả đọc lại) ≥ mục tiêu. Banner trang chủ hiện "Đọc n/N bài". Streak được tính khi đọc xong ít nhất 1 bài.
 - **Thẻ "✂️ Câu của tôi"** (`HocSentences.due()`):
   - Rải xen trong hàng đợi bước 1, không gộp với thẻ từ, chiếm tối đa khoảng 30% khi có giới hạn số thẻ.
   - Mặt trước là câu đã che từ, có ô gõ thử. Mặt sau là câu đầy đủ kèm `ctx_vi` và link mở lại bài.
   - Trang có khối quản lý "✂️ Câu của tôi (N)".
-- **Tạm ẩn theo cấp HSK** (`settings.skipLv`, ví dụ `[1,2,3]`): thẻ `hsk_lotrinh` của các cấp này không được hỏi ở bước 1, không tính vào số đến hạn ở `hom_nay` và trang chủ (banner + khung "Ôn tập hôm nay"); lịch SRS giữ nguyên. `hsk_lotrinh` cũng đọc cài đặt này (`skipLevels()`, `dueIds()` bỏ cấp ẩn; ghi chú "tạm ẩn N từ · hiện lại" ở kế hoạch học và tab Ôn tập), nhưng tóm tắt `due` gửi trang chủ vẫn đếm đủ (`dueIds(true)`) vì trang chủ tự trừ phần ẩn.
-- **Key lưu:** `hom_nay_v1` = `{settings{limit, speak, cardMode, skipLv}, days{date:{r, ok, steps}}, streak}`. Streak tăng khi ôn ≥ 10 lượt hoặc xong bước 2/3. Tóm tắt ghi qua `HocProgress("hom_nay")`.
+- **Tạm ẩn theo cấp HSK** (`settings.skipLv`, ví dụ `[1,2,3]`): thẻ `hsk_lotrinh` của các cấp này không được hỏi ở bước 1, không tính vào số đến hạn ở `hom_nay` và trang chủ (banner + khung "Ôn tập hôm nay"); lịch SRS giữ nguyên. `hsk_lotrinh` cũng đọc cài đặt này (`skipLevels()`, `dueIds()` bỏ cấp ẩn; ghi chú "tạm ẩn N từ · hiện lại" ở kế hoạch học và tab Ôn tập), biểu đồ dự báo 7 ngày cũng bỏ cấp ẩn; nhưng tóm tắt `due` gửi trang chủ vẫn đếm đủ (`dueIds(true)`) vì trang chủ tự trừ phần ẩn.
+- **Key lưu:** `hom_nay_v1` = `{settings{limit, speak, cardMode, skipLv}, days{date:{r, ok, steps}}, streak}`. Streak tăng khi ôn ≥ 10 lượt hoặc xong bước 2 (bài mới) / bước 3 (đọc). Tóm tắt ghi qua `HocProgress("hom_nay")`.
 - **Ba kiểu thẻ** (`settings.cardMode`):
   - Kiểu thẻ: Chữ → nghĩa, Nghĩa → chữ (mặt trước đã bỏ phần Hán Việt viết hoa của nghĩa Boya để không lộ đáp án; nút Gợi ý hiện ghi chú hoặc chữ cái đầu của pinyin), và Nghe → nghĩa.
   - Chế độ Trộn chia 50/30/20; thẻ có `reps ≤ 1` luôn hỏi Chữ → nghĩa. `rt` chỉ đo ở kiểu Chữ → nghĩa.
