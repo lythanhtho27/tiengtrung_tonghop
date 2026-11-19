@@ -131,7 +131,7 @@
             HocProgress.save("hsk_lotrinh", {
                 next: nx ? (nx.type === "unit" ? `HSK ${nx.u.level} · Bài ${nx.u.n + 1}` : `HSK ${nx.st.level} · Kiểm tra chặng ${nx.st.n + 1}`) : "",
                 nextUrl: "hsk_lotrinh/hsk_lotrinh.html" + (nx ? "?level=" + (nx.type === "unit" ? nx.u.level : nx.st.level) : ""),
-                due: dueIds().length,
+                due: dueIds(true).length,
                 learned: learnedCount(),
                 today: { n: d.n || 0, r: d.r || 0 },
                 groups,
@@ -154,10 +154,34 @@
         return "learning";
     }
     function isDue(c, now) { return c && c.due <= (now || Date.now()); }
-    function dueIds() {
-        const now = Date.now();
-        return Object.keys(S.srs).filter(id => BY_ID.has(id) && isDue(S.srs[id], now)).sort((a, b) => S.srs[a].due - S.srs[b].due);
+    // Cấp đang tạm ẩn (đặt ở trang Buổi học hôm nay: hom_nay_v1.settings.skipLv): không hỏi/đếm ở đây, lịch SRS giữ nguyên
+    function skipLevels() {
+        try { return ((JSON.parse(localStorage.getItem("hom_nay_v1") || "null") || {}).settings || {}).skipLv || []; } catch (e) { return []; }
     }
+    // all = true: tính cả cấp đang ẩn (dùng cho tóm tắt gửi trang chủ, trang chủ tự trừ phần ẩn)
+    function dueIds(all) {
+        const now = Date.now(), skip = all ? [] : skipLevels();
+        return Object.keys(S.srs).filter(id => BY_ID.has(id) && isDue(S.srs[id], now) && (!skip.length || skip.indexOf(BY_ID.get(id).level) < 0))
+            .sort((a, b) => S.srs[a].due - S.srs[b].due);
+    }
+    // Ghi chú "đang tạm ẩn N từ" kèm nút hiện lại ("" nếu không ẩn gì)
+    function skipNote() {
+        const skip = skipLevels();
+        if (!skip.length) return "";
+        const hidden = dueIds(true).length - dueIds().length;
+        return ` <small class="muted skip-note">(⏸ tạm ẩn ${fmtNum(hidden)} từ HSK ${skip.join(", ")} · <a href="#" data-unskip>hiện lại</a>)</small>`;
+    }
+    document.addEventListener("click", e => {
+        const a = e.target.closest("[data-unskip]");
+        if (!a) return;
+        e.preventDefault();
+        try {
+            const hn = JSON.parse(localStorage.getItem("hom_nay_v1") || "null") || {};
+            hn.settings = Object.assign({}, hn.settings, { skipLv: [] });
+            localStorage.setItem("hom_nay_v1", JSON.stringify(hn));
+        } catch (err) {}
+        if ($("view-review").classList.contains("active")) renderReview(); else renderPath();
+    });
     // Thêm từ vừa học vào hàng đợi ôn
     function introduce(id, knewIt) {
         if (S.srs[id]) return;
@@ -315,7 +339,7 @@
 
         const next = nextStep();
         const steps = [];
-        steps.push(`<li class="${due === 0 ? "done" : ""}"><b>Ôn tập</b> ${due === 0 ? "— đã ôn hết từ đến hạn ✓" : `— ${fmtNum(due)} từ đến hạn`}</li>`);
+        steps.push(`<li class="${due === 0 ? "done" : ""}"><b>Ôn tập</b> ${due === 0 ? "— đã ôn hết từ đến hạn ✓" : `— ${fmtNum(due)} từ đến hạn`}${skipNote()}</li>`);
         steps.push(`<li class="${d.n >= goal ? "done" : ""}"><b>Học từ mới</b> — ${d.n >= goal ? "đã đạt mục tiêu ✓" : `còn ${goal - d.n} từ để đạt mục tiêu`}</li>`);
         const slowN = slowWords().length;
         const speedToday = (d.sp || 0) > 0;
@@ -898,6 +922,7 @@
         $("rv-sub").textContent = learned === 0
             ? "Bạn chưa học từ nào. Hãy bắt đầu với bài đầu tiên trong Lộ trình."
             : due.length ? "Ôn các từ đến hạn trước khi học bài mới để không bị quên." : "Tuyệt vời! Bạn đã ôn hết các từ đến hạn hôm nay.";
+        $("rv-sub").insertAdjacentHTML("beforeend", skipNote());
         $("btn-start-review").disabled = due.length === 0;
 
         // Dự báo 7 ngày

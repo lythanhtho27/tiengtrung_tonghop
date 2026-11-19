@@ -184,7 +184,7 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
   - Rải xen trong hàng đợi bước 1, không gộp với thẻ từ, chiếm tối đa khoảng 30% khi có giới hạn số thẻ.
   - Mặt trước là câu đã che từ, có ô gõ thử. Mặt sau là câu đầy đủ kèm `ctx_vi` và link mở lại bài.
   - Trang có khối quản lý "✂️ Câu của tôi (N)".
-- **Tạm ẩn theo cấp HSK** (`settings.skipLv`, ví dụ `[1,2,3]`): thẻ `hsk_lotrinh` của các cấp này không được hỏi ở bước 1, không tính vào số đến hạn ở `hom_nay` và trang chủ (banner + khung "Ôn tập hôm nay"); lịch SRS giữ nguyên. Trang `hsk_lotrinh` vẫn ôn như cũ.
+- **Tạm ẩn theo cấp HSK** (`settings.skipLv`, ví dụ `[1,2,3]`): thẻ `hsk_lotrinh` của các cấp này không được hỏi ở bước 1, không tính vào số đến hạn ở `hom_nay` và trang chủ (banner + khung "Ôn tập hôm nay"); lịch SRS giữ nguyên. `hsk_lotrinh` cũng đọc cài đặt này (`skipLevels()`, `dueIds()` bỏ cấp ẩn; ghi chú "tạm ẩn N từ · hiện lại" ở kế hoạch học và tab Ôn tập), nhưng tóm tắt `due` gửi trang chủ vẫn đếm đủ (`dueIds(true)`) vì trang chủ tự trừ phần ẩn.
 - **Key lưu:** `hom_nay_v1` = `{settings{limit, speak, cardMode, skipLv}, days{date:{r, ok, steps}}, streak}`. Streak tăng khi ôn ≥ 10 lượt hoặc xong bước 2/3. Tóm tắt ghi qua `HocProgress("hom_nay")`.
 - **Ba kiểu thẻ** (`settings.cardMode`):
   - Kiểu thẻ: Chữ → nghĩa, Nghĩa → chữ (mặt trước đã bỏ phần Hán Việt viết hoa của nghĩa Boya để không lộ đáp án; nút Gợi ý hiện ghi chú hoặc chữ cái đầu của pinyin), và Nghe → nghĩa.
