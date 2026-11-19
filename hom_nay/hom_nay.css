@@ -281,3 +281,11 @@ select { padding: 7px 10px; border-radius: 10px; border: 1px solid var(--ui-bord
     .sent-zh { font-size: 17px; }
 }
 @media (hover: none) { .fc-hint kbd { display: none; } }
+
+/* Tạm ẩn thẻ theo cấp HSK */
+.skip-box { margin-top: 10px; border: 1px dashed var(--border); border-radius: 10px; padding: 6px 12px; font-size: 14px; }
+.skip-box.on { border-style: solid; border-color: var(--ui-warning, #d97706); }
+.skip-box summary { cursor: pointer; font-weight: 600; }
+.skip-box summary span { font-weight: 500; color: var(--ui-warning, #d97706); }
+.skip-box p { font-size: 13px; margin: 6px 0; }
+.skip-lv { display: flex; flex-wrap: wrap; gap: 6px 16px; padding-bottom: 4px; }

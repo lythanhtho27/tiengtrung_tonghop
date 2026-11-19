@@ -174,13 +174,29 @@
     // ====================================================================== Nguồn thẻ
     // Mỗi nguồn: list(now) -> [{ id, card }] thẻ đến hạn; info(id, card) -> {hz, py, vi, ...};
     // rate(id, rating, ms|null) -> đọc lại key, chấm thẻ, ghi lại (đọc – sửa – ghi để không đè dữ liệu tab khác)
+    // Cấp HSK đang tạm ẩn khỏi buổi ôn (settings.skipLv): thẻ giữ nguyên lịch, chỉ không hỏi ở trang này
+    function hskLevelOf(id) { return parseInt(id, 10) || 0; }
+    function hskSkipped(id) {
+        const s = S && S.settings && S.settings.skipLv;
+        return !!(s && s.length && s.indexOf(hskLevelOf(id)) >= 0);
+    }
+    // Số thẻ HSK đến hạn theo từng cấp (tính cả cấp đang ẩn)
+    function hskDueByLevel(now) {
+        const srs = (readJSON("hsk_lotrinh_v1", {}) || {}).srs || {}, out = {};
+        for (const id in srs) {
+            const c = srs[id];
+            if (c && c.due <= now && LT.words[id]) { const lv = hskLevelOf(id); out[lv] = (out[lv] || 0) + 1; }
+        }
+        return out;
+    }
+
     const SOURCES = {
         hsk: {
             key: "hsk_lotrinh_v1",
             list(now) {
                 const S = readJSON(this.key, null);
                 const srs = (S && S.srs) || {};
-                return Object.keys(srs).filter(id => srs[id] && srs[id].due <= now).map(id => ({ id, card: srs[id] }));
+                return Object.keys(srs).filter(id => srs[id] && srs[id].due <= now && !hskSkipped(id)).map(id => ({ id, card: srs[id] }));
             },
             info(id) {
                 const w = LT.words[id];
@@ -364,7 +380,7 @@
     const SRC_KEYS = Object.keys(SOURCES);
 
     // ====================================================================== Trạng thái trang
-    const DEFAULT = { settings: { limit: 50, speak: true, cardMode: "mix" }, days: {}, streak: { count: 0, last: "", best: 0 } };
+    const DEFAULT = { settings: { limit: 50, speak: true, cardMode: "mix", skipLv: [] }, days: {}, streak: { count: 0, last: "", best: 0 } };
     let S = loadState();
     function loadState() {
         const o = readJSON(STORE, {}) || {};
@@ -1245,6 +1261,14 @@
         window.scrollTo(0, 0);
         if (view === "home") renderHome();
     }
+    function renderSkip() {
+        const by = hskDueByLevel(Date.now()), skip = S.settings.skipLv || [];
+        $("skip-lv").innerHTML = [1, 2, 3, 4, 5, 6].map(lv =>
+            `<label class="check"><input type="checkbox" data-skip-lv="${lv}" ${skip.indexOf(lv) >= 0 ? "checked" : ""}> HSK ${lv} <small class="muted">(${fmt(by[lv] || 0)} đến hạn)</small></label>`).join("");
+        const hidden = skip.reduce((a, lv) => a + (by[lv] || 0), 0);
+        $("skip-sum").textContent = skip.length ? `· đang ẩn HSK ${skip.join(", ")} (${fmt(hidden)} thẻ)` : "";
+        if (skip.length) $("skip-box").classList.add("on"); else $("skip-box").classList.remove("on");
+    }
     function renderHome() {
         const due = collectDue();
         const sdue = sentDue();
@@ -1306,6 +1330,7 @@
         $("opt-limit").value = String(lim);
         $("opt-speak").checked = !!S.settings.speak;
         $("opt-mode").value = MODES[S.settings.cardMode] ? S.settings.cardMode : "mix";
+        renderSkip();
         renderHard();
         renderSentBox();
 
@@ -1414,6 +1439,14 @@
     $("opt-limit").onchange = e => { S.settings.limit = +e.target.value; save(); renderHome(); };
     $("opt-speak").onchange = e => { S.settings.speak = e.target.checked; save(); };
     $("opt-mode").onchange = e => { S.settings.cardMode = e.target.value; save(); };
+    $("skip-lv").onchange = e => {
+        const lv = +e.target.dataset.skipLv;
+        if (!lv) return;
+        const set = new Set(S.settings.skipLv || []);
+        if (e.target.checked) set.add(lv); else set.delete(lv);
+        S.settings.skipLv = Array.from(set).sort((a, b) => a - b);
+        save(); renderHome();
+    };
     $("btn-hard").onclick = startPractice;
     $("hard-more").onclick = () => { hardAll = !hardAll; renderHard(); };
     $("hard-list").addEventListener("click", e => {

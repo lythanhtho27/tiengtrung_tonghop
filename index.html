@@ -291,14 +291,25 @@
             { key: "tuvung", name: "Thẻ cũ của trang Ôn từ vựng TC1–4 (ôn ở Hôm nay)", url: "hom_nay/hom_nay.html" },
             { key: "word_learning", name: "Giáo trình HSK 3.0", url: "word_learning/word_learning.html" },
         ].filter(r => P[r.key]);
-        const totalDue = REVIEW.reduce((a, r) => a + (P[r.key].due || 0), 0);
+        // Cấp HSK đang tạm ẩn ở trang Hôm nay (hom_nay_v1.settings.skipLv): không tính vào số từ đến hạn
+        const SKIP_LV = (function () { try { return ((JSON.parse(localStorage.getItem("hom_nay_v1") || "null") || {}).settings || {}).skipLv || []; } catch (e) { return []; } })();
+        const HSK_HIDDEN = (function () {
+            if (!SKIP_LV.length) return 0;
+            let srs = {}; try { srs = (JSON.parse(localStorage.getItem("hsk_lotrinh_v1") || "null") || {}).srs || {}; } catch (e) {}
+            const now = Date.now(); let n = 0;
+            for (const id in srs) if (srs[id] && srs[id].due <= now && SKIP_LV.indexOf(parseInt(id, 10)) >= 0) n++;
+            return n;
+        })();
+        const dueOf = r => Math.max(0, (P[r.key].due || 0) - (r.key === "hsk_lotrinh" ? HSK_HIDDEN : 0));
+        const totalDue = REVIEW.reduce((a, r) => a + dueOf(r), 0);
         document.getElementById("review-total").textContent = fmt(totalDue) + " từ";
         document.getElementById("review-note").textContent = !REVIEW.length
             ? "Chưa có từ nào trong lịch ôn. Hãy học bài đầu tiên của chặng hiện tại."
             : totalDue ? "Ôn các từ đến hạn trước khi học bài mới." : "Đã ôn hết từ đến hạn hôm nay. Tuyệt vời!";
         document.getElementById("review-list").innerHTML = REVIEW.map(r => {
-            const d = P[r.key].due || 0;
-            return `<li><a href="${r.url}"><span>${r.name}</span><span class="due-badge ${d ? "" : "zero"}">${d ? fmt(d) : "✓"}</span></a></li>`;
+            const d = dueOf(r);
+            const hid = r.key === "hsk_lotrinh" && HSK_HIDDEN ? ` <small class="muted">(tạm ẩn ${fmt(HSK_HIDDEN)} thẻ HSK ${SKIP_LV.join(", ")})</small>` : "";
+            return `<li><a href="${r.url}"><span>${r.name}${hid}</span><span class="due-badge ${d ? "" : "zero"}">${d ? fmt(d) : "✓"}</span></a></li>`;
         }).join("");
 
         // ----- Buổi học hôm nay: đếm nhanh thẻ đến hạn ở mọi nguồn SRS (không gộp trùng) + Câu của tôi + trạng thái 4 bước
@@ -309,7 +320,9 @@
             const hs = read("hsk_lotrinh_v1") || {}, bl = read("boya_learning_progress_v2") || {}, tvd = read("boya_tv_days") || {};
             const wp = read("hsk_wl_json_progress_v2") || {}, lt = read("luyen_tap_v1") || {}, hn = read("hom_nay_v1") || {};
             const my = (read("hoc_mywords_v1") || {}).words || {};
-            let due = countDue(hs.srs) + countDue(bl.srs) + countDue(read("boya_tv_srs")) + countDue(read("hsk_wl_srs_v3"));
+            const skipLv = ((hn.settings || {}).skipLv) || [];
+            const hsDue = m => { let n = 0; for (const id in (m || {})) { const c = m[id]; if (c && c.due <= now && skipLv.indexOf(parseInt(id, 10)) < 0) n++; } return n; };
+            let due = hsDue(hs.srs) + countDue(bl.srs) + countDue(read("boya_tv_srs")) + countDue(read("hsk_wl_srs_v3"));
             for (const k in my) if (my[k] && my[k].card && my[k].card.due <= now) due++;
             const sents = (read("hoc_sentences_v1") || {}).items || {};
             for (const k in sents) if (sents[k] && sents[k].card && sents[k].card.due <= now) due++;
