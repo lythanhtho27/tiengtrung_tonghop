@@ -6,6 +6,9 @@
      3. Nút "✍️ Nét viết": khung xem thứ tự nét (thư viện Hanzi Writer, nạp từ CDN khi cần — cần mạng),
         tự viết thử, và tách bộ chữ Hán (shared/hanzi_parts.js, sinh bởi tools/build_visual.py):
         hình thanh (bộ nghĩa + bộ âm) / hội ý / tượng hình, kèm âm Hán Việt + nghĩa của từng bộ phận.
+   Thêm: (A) readingHTML(hz, py, hv) — khối "🔤 Hán Việt → pinyin": so từng chữ với quy tắc chuyển âm
+        (huyền→2, hỏi→3, sắc/nặng→4; -m→-n, -ng/-nh→-ng, -p/-t/-c/-ch→không -n/-ng; đ→d/t, v→w/y, tr→zh/ch…),
+        chữ ngoại lệ được đánh ⚠; (B) trong khung Nét viết: họ chữ cùng bộ âm (青 → 清情晴请精睛静), tô màu theo thanh.
    API:
      HocVisual.emoji(hz)            → emoji hoặc "" (đã tôn trọng cài đặt)
      HocVisual.barHTML(hz, {emoji, compact}) → chuỗi HTML thanh nhỏ: [emoji] [🖼️ Ảnh] [✍️ Nét viết]
@@ -24,7 +27,7 @@
         var s = document.currentScript && document.currentScript.src;
         return s ? s.replace(/[^/]*$/, "") : "../shared/";
     })();
-    var DEF = { emoji: true, img: true, imgSrc: "baidu" };
+    var DEF = { emoji: true, img: true, imgSrc: "baidu", rules: true };
 
     function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
     function cleanHz(s) { return String(s || "").replace(/[（(]([^）)]*)[）)](?=[一-鿿])/g, "$1").replace(/\s*[（(][^）)]*[）)]\s*/g, "").replace(/[\s～~…]+/g, ""); }
@@ -115,6 +118,22 @@
         ".hv-foot{border-top:1px solid var(--ui-border,#ddd);padding:8px 16px;font-size:12.5px;color:var(--ui-muted,#64748b);display:flex;gap:14px;flex-wrap:wrap;align-items:center}" +
         ".hv-foot label{display:inline-flex;gap:5px;align-items:center;cursor:pointer}" +
         ".hv-foot select{font:inherit;color:inherit;background:var(--ui-surface,#fff);border:1px solid var(--ui-border,#ddd);border-radius:6px}" +
+        ".hv-read{margin:10px auto 2px;max-width:460px;text-align:left;font-size:13px;border:1px solid var(--ui-border,#e2e8f0);border-radius:12px;padding:4px 10px;background:var(--ui-surface-2,#f8fafc)}" +
+        ".hv-read summary{cursor:pointer;font-weight:700;font-size:12.5px;color:var(--ui-muted,#64748b);padding:3px 0;list-style-position:inside}" +
+        ".hv-read summary em{font-style:normal;color:var(--ui-warning,#b45309)}.hv-read summary small{font-weight:600}" +
+        ".hv-rd{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-top:1px solid var(--ui-border,#e2e8f0)}" +
+        ".hv-rd .c{font:700 22px/1.1 var(--ui-font-cn,serif);cursor:pointer;min-width:26px;text-align:center}" +
+        ".hv-rd .m{white-space:nowrap;min-width:92px;padding-top:2px}.hv-rd .m b{letter-spacing:.02em}" +
+        ".hv-rd .r{display:flex;flex-direction:column;gap:1px;padding-top:2px;min-width:0}" +
+        ".hv-rd .ok,.hv-rule .ok{color:var(--ui-success,#047857)}.hv-rd .wn,.hv-rule .wn{color:var(--ui-warning,#b45309);font-weight:600}.hv-rd .nt,.hv-rule .nt{color:var(--ui-muted,#64748b)}" +
+        ".hv-rule{display:flex;flex-direction:column;gap:1px;font-size:12.5px;margin:-4px 0 10px}" +
+        ".hv-famwrap{margin-top:12px;border-top:1px dashed var(--ui-border-strong,#cbd5e1);padding-top:8px}" +
+        ".hv-fam-h{font-size:13px;margin:6px 0 6px}" +
+        ".hv-fam{display:flex;flex-wrap:wrap;gap:6px}" +
+        ".hv-fc{display:flex;flex-direction:column;align-items:center;min-width:54px;border:1px solid var(--ui-border,#e2e8f0);background:var(--ui-surface,#fff);color:inherit;border-radius:10px;padding:4px 6px;cursor:pointer;line-height:1.25}" +
+        ".hv-fc:hover{border-color:var(--ui-primary,#4f46e5)}.hv-fc.on{border-color:var(--ui-primary,#4f46e5);background:var(--ui-primary-soft,#eef2ff)}" +
+        ".hv-fc .z{font:700 22px/1.15 var(--ui-font-cn,serif)}.hv-fc .p{font-size:12.5px;font-weight:700}.hv-fc .v{font-size:10px;color:var(--ui-muted,#64748b);letter-spacing:.03em}" +
+        ".hv-more{align-self:center;font-size:12px;color:var(--ui-muted,#64748b)}" +
         "@media (max-width:620px){.hv-body{grid-template-columns:1fr}.hv-ov{align-items:flex-end;padding:0}.hv-box{max-width:none;border-radius:18px 18px 0 0;max-height:92vh}}";
     function injectCSS() {
         if (document.getElementById("hv-css")) return;
@@ -159,12 +178,14 @@
             '<div class="hv-foot">' +
             '<label><input type="checkbox" data-set="emoji"> Hiện emoji</label>' +
             '<label><input type="checkbox" data-set="img"> Nút ảnh</label>' +
+            '<label><input type="checkbox" data-set="rules"> Quy tắc Hán Việt → pinyin</label>' +
             '<label>Tìm ảnh bằng <select data-set="imgSrc"><option value="baidu">Baidu</option><option value="google">Google</option></select></label>' +
             "</div></div>";
         document.body.appendChild(ov);
         var st = settings();
         ov.querySelector('[data-set="emoji"]').checked = st.emoji;
         ov.querySelector('[data-set="img"]').checked = st.img;
+        ov.querySelector('[data-set="rules"]').checked = st.rules;
         ov.querySelector('[data-set="imgSrc"]').value = st.imgSrc;
         ov.querySelector(".hv-foot").onchange = function (e) {
             var k = e.target.getAttribute("data-set"); if (!k) return;
@@ -243,6 +264,186 @@
         if (m) m.textContent = "Cần kết nối mạng để xem thứ tự nét (phần tách bộ bên cạnh vẫn dùng được).";
     }
 
+    // ================================================================ (A) Quy tắc âm Hán Việt → pinyin
+    // Tỉ lệ đo trên ~3.400 cặp (chữ, pinyin, âm Hán Việt) của tools/hanviet (11/2026). Chỉ giữ quy tắc đúng ≥ 85%.
+    // Tách âm tiết pinyin: chép từ shared/lookup.js (splitPinyin) để file này tự chạy được ở mọi trang.
+    var INITIAL = "(?:zh|ch|sh|[bpmfdtnlgkhjqxrzcsyw])?";
+    var FINAL = "(?:iang|iong|uang|ang|eng|ing|ong|ian|iao|uai|uan|van|ue|ve|ai|ao|an|ei|en|er|ia|ie|in|iu|ou|ua|uo|ui|un|vn|a|o|e|i|u|v)";
+    var SYL = new RegExp("^" + INITIAL + FINAL + "$");
+    var TONE_OF = {}, PLAIN = {};
+    ["āēīōūǖ", "áéíóúǘ", "ǎěǐǒǔǚ", "àèìòùǜ"].forEach(function (s, t) {
+        Array.from(s).forEach(function (c, k) { TONE_OF[c] = t + 1; PLAIN[c] = "aeiouv"[k]; });
+    });
+    PLAIN["ü"] = "v";
+    function pyPlain(s) { return Array.from(String(s || "").toLowerCase()).map(function (c) { return PLAIN[c] || c; }).join(""); }
+    function pyTone(s) { var a = Array.from(String(s || "")); for (var i = 0; i < a.length; i++) if (TONE_OF[a[i]]) return TONE_OF[a[i]]; return 5; }
+    function isSyl(b) { return b === "r" || b === "m" || b === "n" || b === "ng" || SYL.test(b); }
+    function splitPinyin(py, n) {
+        if (!py || !n) return null;
+        var parts = String(py).toLowerCase().normalize("NFC").replace(/[^a-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü'\s\-]/g, " ").split(/[\s'\-]+/).filter(Boolean);
+        var memo = {};
+        function splitChunk(ch) {
+            if (memo[ch]) return memo[ch];
+            var b = pyPlain(ch), res = [];
+            (function go(pos, acc) {
+                if (res.length > 12) return;
+                if (pos === b.length) { res.push(acc.slice()); return; }
+                for (var len = Math.min(6, b.length - pos); len >= 1; len--) {
+                    if (!isSyl(b.substr(pos, len))) continue;
+                    acc.push(ch.substr(pos, len)); go(pos + len, acc); acc.pop();
+                }
+            })(0, []);
+            return (memo[ch] = res);
+        }
+        var options = parts.map(splitChunk);
+        if (options.some(function (o) { return !o.length; })) return null;
+        var out = null;
+        (function pick(k, acc) {
+            if (out) return;
+            if (k === options.length) { if (acc.length === n) out = acc.slice(); return; }
+            for (var j = 0; j < options[k].length && !out; j++) {
+                if (acc.length + options[k][j].length > n) continue;
+                pick(k + 1, acc.concat(options[k][j]));
+            }
+        })(0, []);
+        return out;
+    }
+    var VN_TONE = { "̀": "huyền", "́": "sắc", "̉": "hỏi", "̃": "ngã", "̣": "nặng" };
+    function hvTone(s) {
+        var d = String(s || "").toLowerCase().normalize("NFD");
+        for (var i = 0; i < d.length; i++) if (VN_TONE[d[i]]) return VN_TONE[d[i]];
+        return "ngang";
+    }
+    function hvBase(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̣̀́̉̃]/g, "").normalize("NFC"); }
+    // phụ âm đầu Hán Việt → các phụ âm đầu pinyin thường gặp ("" = không có phụ âm đầu: a-, e-, o-, y-, w-)
+    var INIT_RULES = [
+        ["ngh", ["", "n"]], ["ng", ["", "n"]], ["nh", ["r", ""]], ["ph", ["f", "p"]], ["tr", ["zh", "ch"]], ["ch", ["zh", "ch"]],
+        ["kh", ["k", "q"]], ["gi", ["j", "x"]], ["đ", ["d", "t"]], ["v", ["w", "y"]], ["h", ["h", "x"]], ["m", ["m", "w"]],
+        ["l", ["l"]], ["b", ["b", "p"]], ["n", ["n"]], ["th", null], ["t", ["z", "j", "x", "c", "q", "s"]],
+        ["k", ["g", "j", "k", "q"]], ["c", ["g", "j", "k", "q"]], ["q", ["g", "j", "k", "q"]], ["s", null], ["x", null], ["d", null], ["r", null]
+    ];
+    function pyInitial(p) { var m = /^(zh|ch|sh|[bpmfdtnlgkhjqxrzcs])/.exec(p); return m ? m[1] : ""; }
+    // Kiểm tra một chữ: trả {tone:{ok,txt}, init:{ok,txt}|null, fin:{ok,txt}|null, enter}
+    function checkChar(hv, py) {
+        var b = hvBase(hv), t = hvTone(hv), p = pyPlain(py), pt = pyTone(py);
+        if (!b || !p) return null;
+        var enter = /(p|t|c|ch)$/.test(b);
+        var r = { enter: enter, tone: null, init: null, fin: null };
+        // thanh điệu
+        if (enter) r.tone = { ok: null, txt: "vần -" + /(ch|p|t|c)$/.exec(b)[1] + ": thanh phải nhớ riêng" };
+        else {
+            var exp = { "huyền": [2], "hỏi": [3], "sắc": [4], "nặng": [4], "ngã": [3, 4], "ngang": [1, 2] }[t];
+            var main = { "huyền": "2", "hỏi": "3", "sắc": "4", "nặng": "4", "ngã": "3 hoặc 4", "ngang": "1 (đôi khi 2)" }[t];
+            var ok = exp.indexOf(pt) >= 0;
+            r.tone = { ok: ok, txt: ok ? t + " → thanh " + pt : t + " thường là thanh " + main + ", chữ này thanh " + (pt === 5 ? "nhẹ" : pt) };
+        }
+        // vần cuối
+        var pFin = /ng$/.test(p) ? "-ng" : /n$/.test(p) && p !== "n" ? "-n" : "";
+        var want = enter ? "" : /(ng|nh)$/.test(b) ? "-ng" : /[mn]$/.test(b) ? "-n" : "";
+        var hvEnd = enter ? "-" + /(ch|p|t|c)$/.exec(b)[1] : /nh$/.test(b) ? "-nh" : /ng$/.test(b) ? "-ng" : /m$/.test(b) ? "-m" : /n$/.test(b) ? "-n" : "vần mở";
+        var fok = pFin === want;
+        r.fin = { ok: fok, txt: fok ? (want ? hvEnd + " → " + want : "") : hvEnd + " thường " + (want ? "→ " + want : "không có -n/-ng") + ", chữ này " + (pFin || "không có -n/-ng") };
+        // phụ âm đầu
+        var rule = null;
+        for (var i = 0; i < INIT_RULES.length; i++) if (b.indexOf(INIT_RULES[i][0]) === 0) { rule = INIT_RULES[i]; break; }
+        if (rule && rule[1]) {
+            var pi = pyInitial(p);
+            if (pi === "y" || pi === "w") pi = "";
+            var allow = rule[1].map(function (x) { return x === "w" || x === "y" ? "" : x; });
+            var iok = allow.indexOf(pi) >= 0;
+            var show = rule[1].map(function (x) { return x || "(không phụ âm)"; }).join("/");
+            r.init = { ok: iok, txt: iok ? rule[0] + " → " + (pyInitial(p) || "vần") : rule[0] + " thường → " + show + ", chữ này " + (pyInitial(p) || "không có phụ âm đầu") };
+        }
+        return r;
+    }
+    function toneColor(py) { var t = pyTone(py); return "var(--ui-tone-" + (t === 5 ? 0 : t) + ",inherit)"; }
+    // Danh sách (chữ, Hán Việt, pinyin) của một từ
+    function charRows(hz, py, hv) {
+        var D = window.HOC_DICT;
+        var chars = Array.from(cleanHz(hz)).filter(function (c) { return HAN.test(c); });
+        if (!chars.length) return [];
+        var sy = splitPinyin(py, chars.length);
+        var hvs = String(hv || "").trim().split(/\s+/).filter(Boolean);
+        if (hvs.length !== chars.length) hvs = [];
+        return chars.map(function (c, i) {
+            var dc = D && D.c[c];
+            return { c: c, py: (sy && sy[i]) || (dc && dc[0]) || "", hv: hvs[i] || (dc && dc[1]) || "" };
+        }).filter(function (x) { return x.py && x.hv; });
+    }
+    // Khối "🔤 Hán Việt → pinyin" cho mặt sau thẻ: mỗi chữ một dòng, quy tắc khớp thì ✓, không khớp thì ⚠ ngoại lệ
+    function readingHTML(hz, py, hv) {
+        if (!settings().rules) return "";
+        injectCSS();
+        var rows = charRows(hz, py, hv);
+        if (!rows.length) return "";
+        var nWarn = 0;
+        var body = rows.map(function (x) {
+            var r = checkChar(x.hv, x.py);
+            if (!r) return "";
+            var okBits = [], warn = [];
+            [r.init, r.fin, r.tone].forEach(function (k) {
+                if (!k || !k.txt) return;
+                if (k.ok === false) warn.push(k.txt); else if (k.ok) okBits.push(k.txt); else warn.push(k.txt);
+            });
+            var bad = [r.init, r.fin, r.tone].some(function (k) { return k && k.ok === false; });
+            if (bad) nWarn++;
+            return '<div class="hv-rd' + (bad ? " bad" : "") + '"><span class="c" data-hv-write="' + esc(x.c) + '" title="Nét viết · họ chữ cùng bộ âm">' + esc(x.c) + "</span>" +
+                '<span class="m"><b>' + esc(String(x.hv).toUpperCase()) + '</b> → <b style="color:' + toneColor(x.py) + '">' + esc(x.py) + "</b></span>" +
+                '<span class="r">' + (okBits.length ? '<span class="ok">✓ ' + esc(okBits.join(" · ")) + "</span>" : "") +
+                warn.map(function (w) { return '<span class="' + (r.enter && w.indexOf("nhớ riêng") >= 0 ? "nt" : "wn") + '">' + (w.indexOf("nhớ riêng") >= 0 ? "• " : "⚠ ") + esc(w) + "</span>"; }).join("") + "</span></div>";
+        }).join("");
+        if (!body) return "";
+        var pairs = rows.map(function (x) { return esc(String(x.hv).toUpperCase()) + ' → <b style="color:' + toneColor(x.py) + '">' + esc(x.py) + "</b>"; }).join(" · ");
+        return '<details class="hv-read"' + (nWarn ? " open" : "") + '><summary>🔤 ' + pairs + (nWarn ? ' <em>· ⚠ ' + nWarn + " chữ ngoại lệ</em>" : " <small>· ✓ đúng quy tắc</small>") + "</summary>" + body + "</details>";
+    }
+
+    // ================================================================ (B) Họ chữ cùng bộ âm (hình thanh)
+    var phoIndex = null, wordFreq = {};
+    function buildPhoIndex() {
+        if (phoIndex || !window.HOC_PARTS) return;
+        phoIndex = {};
+        var C = HOC_PARTS.c;
+        Object.keys(C).forEach(function (x) { var p = C[x][1] === "p" && C[x][3]; if (p) (phoIndex[p] = phoIndex[p] || []).push(x); });
+    }
+    function freq(c) {      // số từ trong từ điển có chữ này: ước lượng độ thông dụng
+        if (wordFreq[c] != null) return wordFreq[c];
+        var D = window.HOC_DICT, n = 0;
+        if (D) for (var w in D.w) if (w.indexOf(c) >= 0) n++;
+        return (wordFreq[c] = n);
+    }
+    function familyHTML(ch) {
+        buildPhoIndex();
+        var P = window.HOC_PARTS, D = window.HOC_DICT;
+        if (!phoIndex || !D) return "";
+        var e = P.c[ch];
+        var keys = [];
+        if (e && e[1] === "p" && e[3]) keys.push(e[3]);                     // họ của bộ âm trong chữ này
+        if (phoIndex[ch] && phoIndex[ch].length >= 2) keys.push(ch);          // chữ này làm bộ âm cho chữ khác
+        var h = "";
+        keys.forEach(function (key) {
+            var mem = (phoIndex[key] || []).slice();
+            if (D.c[key] && mem.indexOf(key) < 0) mem.unshift(key);
+            mem = mem.filter(function (x) { return D.c[x] && D.c[x][0]; });
+            if (mem.length < 2) return;
+            mem.sort(function (a, b) { return (a === key ? -1 : b === key ? 1 : 0) || freq(b) - freq(a); });
+            var more = mem.length - 16;
+            mem = mem.slice(0, 16);
+            // vần chung nhiều nhất trong họ
+            var cnt = {};
+            mem.forEach(function (x) { var f = pyPlain(D.c[x][0]).replace(/^(zh|ch|sh|[bpmfdtnlgkhjqxrzcsyw])/, ""); cnt[f] = (cnt[f] || 0) + 1; });
+            var top = Object.keys(cnt).sort(function (a, b) { return cnt[b] - cnt[a]; })[0];
+            var kinfo = P.p[key] || [];
+            h += '<div class="hv-fam-h">👪 Họ bộ âm <b>' + esc(key) + "</b>" + (kinfo[0] ? " (" + esc(kinfo[0]) + ")" : "") +
+                (cnt[top] >= 2 ? " · " + cnt[top] + "/" + mem.length + " chữ có vần <b>-" + esc(top) + "</b>" : "") + "</div>" +
+                '<div class="hv-fam">' + mem.map(function (x) {
+                    var py = D.c[x][0], hvx = D.c[x][1] || "";
+                    return '<button type="button" class="hv-fc' + (x === ch ? " on" : "") + '" data-hv-write="' + esc(x) + '" title="' + esc(hvx) + '">' +
+                        '<span class="z">' + esc(x) + '</span><span class="p" style="color:' + toneColor(py) + '">' + esc(py) + '</span><span class="v">' + esc(String(hvx).toUpperCase()) + "</span></button>";
+                }).join("") + (more > 0 ? '<span class="hv-more">+' + more + "</span>" : "") + "</div>";
+        });
+        return h ? '<div class="hv-famwrap">' + h + '<div class="hv-msg" style="text-align:left;max-width:none">Cùng bộ âm thường cùng vần pinyin, chỉ khác phụ âm đầu hoặc thanh. Chạm một chữ để xem chữ đó.</div></div>' : "";
+    }
+
     var TYPES = {
         p: ["形声 · Hình thanh", "một bộ chỉ nghĩa + một bộ gợi cách đọc"],
         i: ["会意 · Hội ý", "ghép nghĩa các bộ phận lại"],
@@ -256,33 +457,42 @@
         var hv = c[1] || (sw && sw[1]) || "", py = c[0] || (sw && sw[0]) || "";
         var mean = sw && sw[2] ? String(sw[2]) : "";
         var e = P.c[ch];
-        var h = '<div class="hv-big"><span class="hv-hvn">' + esc(String(hv).toUpperCase()) + '</span><span class="py">' + esc(py) + "</span></div>" +
+        var h = '<div class="hv-big"><span class="hv-hvn">' + esc(String(hv).toUpperCase()) + '</span><span class="py" style="color:' + toneColor(py) + '">' + esc(py) + "</span></div>" +
             (mean ? '<div class="hv-mean">' + esc(mean.length > 90 ? mean.slice(0, 90) + "…" : mean) + "</div>" : '<div class="hv-mean"></div>');
-        if (!e) { box.innerHTML = h + '<p class="hv-msg" style="text-align:left">Chưa có dữ liệu tách bộ cho chữ này.</p>'; return; }
-        var parts = Array.from(e[0] || ""), type = e[1], sem = e[2], pho = e[3];
-        if (TYPES[type]) h += '<div class="hv-type" title="' + esc(TYPES[type][1]) + '">' + TYPES[type][0] + " — " + TYPES[type][1] + "</div>";
-        else if (parts.length) h += '<div class="hv-type">Cấu tạo</div>';
-        var list = parts.slice();
-        [sem, pho].forEach(function (x) { if (x && list.indexOf(x) < 0) list.push(x); });
-        list.forEach(function (x) {
-            var info = P.p[x] || [];
-            var role = type === "p" ? (x === sem ? '<span class="hv-role sem">bộ nghĩa</span>' : x === pho ? '<span class="hv-role pho">bộ âm</span>' : "") : "";
-            h += '<div class="hv-part"><span class="pc"' + (HAN.test(x) ? ' data-zizu="' + esc(x) + '" title="Họ chữ"' : "") + ">" + esc(x) + "</span>" +
-                '<span class="pt"><b>' + esc(info[0] || "") + "</b>" + (info[1] ? "<small>" + esc(info[1]) + "</small>" : "") + "</span>" + role + "</div>";
-        });
-        if (type === "p" && pho) {
-            var phv = (P.p[pho] || [])[0] || "";
-            if (phv && hv) {
-                var HV = String(hv).toUpperCase(), PH = String(phv).toUpperCase();
-                var how = PH === HV ? "đọc giống hệt — nhớ bộ âm là biết luôn âm Hán Việt."
-                    : norm(PH) === norm(HV) ? "chỉ khác dấu thanh — nhớ bộ âm là đoán gần đúng âm Hán Việt."
-                    : rhyme(PH) === rhyme(HV) ? "cùng vần, dễ đoán."
-                    : "âm đã đổi khác, nhưng bộ âm vẫn giúp nhận ra chữ.";
-                h += '<div class="hv-tip">💡 Bộ âm <b>' + esc(pho) + "</b> đọc " + esc(PH) + " → chữ <b>" + esc(ch) + "</b> đọc " + esc(HV) + ": " + how + "</div>";
-            }
+        var rule = hv && py ? checkChar(hv, py) : null;
+        if (rule) {
+            var bits = [rule.init, rule.fin, rule.tone].filter(function (k) { return k && k.txt; });
+            h += '<div class="hv-rule">' + bits.map(function (k) {
+                return '<span class="' + (k.ok === false ? "wn" : k.ok ? "ok" : "nt") + '">' + (k.ok === false ? "⚠ " : k.ok ? "✓ " : "• ") + esc(k.txt) + "</span>";
+            }).join("") + "</div>";
         }
-        if (e[4]) h += '<div class="hv-tip">💡 <i>Gợi ý (tiếng Anh):</i> ' + esc(e[4]) + "</div>";
+        if (e) {
+            var parts = Array.from(e[0] || ""), type = e[1], sem = e[2], pho = e[3];
+            if (TYPES[type]) h += '<div class="hv-type" title="' + esc(TYPES[type][1]) + '">' + TYPES[type][0] + " — " + TYPES[type][1] + "</div>";
+            else if (parts.length) h += '<div class="hv-type">Cấu tạo</div>';
+            var list = parts.slice();
+            [sem, pho].forEach(function (x) { if (x && list.indexOf(x) < 0) list.push(x); });
+            list.forEach(function (x) {
+                var info = P.p[x] || [];
+                var role = type === "p" ? (x === sem ? '<span class="hv-role sem">bộ nghĩa</span>' : x === pho ? '<span class="hv-role pho">bộ âm</span>' : "") : "";
+                h += '<div class="hv-part"><span class="pc"' + (HAN.test(x) ? ' data-zizu="' + esc(x) + '" title="Họ chữ"' : "") + ">" + esc(x) + "</span>" +
+                    '<span class="pt"><b>' + esc(info[0] || "") + "</b>" + (info[1] ? "<small>" + esc(info[1]) + "</small>" : "") + "</span>" + role + "</div>";
+            });
+            if (type === "p" && pho) {
+                var phv = (P.p[pho] || [])[0] || "";
+                if (phv && hv) {
+                    var HV = String(hv).toUpperCase(), PH = String(phv).toUpperCase();
+                    var how = PH === HV ? "đọc giống hệt — nhớ bộ âm là biết luôn âm Hán Việt."
+                        : norm(PH) === norm(HV) ? "chỉ khác dấu thanh — nhớ bộ âm là đoán gần đúng âm Hán Việt."
+                        : rhyme(PH) === rhyme(HV) ? "cùng vần, dễ đoán."
+                        : "âm đã đổi khác, nhưng bộ âm vẫn giúp nhận ra chữ.";
+                    h += '<div class="hv-tip">💡 Bộ âm <b>' + esc(pho) + "</b> đọc " + esc(PH) + " → chữ <b>" + esc(ch) + "</b> đọc " + esc(HV) + ": " + how + "</div>";
+                }
+            }
+            if (e[4]) h += '<div class="hv-tip">💡 <i>Gợi ý (tiếng Anh):</i> ' + esc(e[4]) + "</div>";
+        } else h += '<p class="hv-msg" style="text-align:left">Chưa có dữ liệu tách bộ cho chữ này.</p>';
         if (window.HocNotes && HocNotes.get(ch)) h += '<div class="hv-tip">📝 ' + esc(HocNotes.get(ch)) + "</div>";
+        h += familyHTML(ch);
         box.innerHTML = h;
     }
     function norm(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d"); }
@@ -300,5 +510,6 @@
         e.stopPropagation();
         if (e.key === "Escape") { e.preventDefault(); close(); }
     }, true);
-    window.HocVisual = { emoji: emoji, barHTML: barHTML, write: write, close: close, settings: settings, set: set, imgUrl: imgUrl };
+    window.HocVisual = { emoji: emoji, barHTML: barHTML, readingHTML: readingHTML, checkChar: checkChar, splitPinyin: splitPinyin,
+        write: write, close: close, settings: settings, set: set, imgUrl: imgUrl };
 })();

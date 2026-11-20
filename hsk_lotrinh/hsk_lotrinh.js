@@ -657,7 +657,7 @@
             <div class="wc-py">${esc(w.py)} <button class="say-btn" data-say="${esc(w.clean)}" title="Nghe">🔊</button></div>
             ${w.hv ? `<div class="wc-hv">Hán Việt: ${esc(w.hv)}</div>` : ""}
             <div class="wc-vi">${esc(w.vi)}</div>
-            ${window.HocVisual ? HocVisual.barHTML(w.clean) : ""}
+            ${window.HocVisual ? HocVisual.barHTML(w.clean) + HocVisual.readingHTML(w.clean, w.py, w.hv) : ""}
             ${w.ex ? `<div class="wc-ex">
                 <div class="ex-hz">${highlight(w.ex, w.clean)} <button class="say-btn sm" data-say="${esc(w.ex)}" title="Nghe câu">🔊</button></div>
                 <div class="ex-py">${esc(w.expy)}</div>

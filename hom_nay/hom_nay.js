@@ -722,7 +722,8 @@
         $("fc-py").textContent = g.py || "";
         $("fc-hv").textContent = g.hv ? g.hv.toUpperCase() : "";
         $("fc-vi").textContent = g.vi || "";
-        $("fc-vis").innerHTML = window.HocVisual ? HocVisual.barHTML(g.hz) : "";   // emoji · ảnh · nét viết
+        // emoji · ảnh · nét viết + quy tắc Hán Việt → pinyin từng chữ (shared/visual.js)
+        $("fc-vis").innerHTML = window.HocVisual ? HocVisual.barHTML(g.hz) + HocVisual.readingHTML(g.hz, g.py, g.hv) : "";
         const ex = exampleFor(g);
         if (ex) {
             const zh = esc(ex.zh).split(esc(g.hz)).join(`<mark>${esc(g.hz)}</mark>`);
