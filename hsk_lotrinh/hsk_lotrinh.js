@@ -90,7 +90,9 @@
 
     // ---------------------------------------------------------------- Lưu trữ
     const DEFAULT_STATE = {
-        settings: { goal: 20, speak: true, rate: 0.8, dir: "mix", free: false },
+        settings: { goal: 20, speak: true, rate: 0.8, dir: "mix", free: false,
+                    qtLearn: ["meaning", "pinyin", "hanzi", "listen", "cloze"],     // loại câu hỏi khi học bài mới (luyện tập bài + kiểm tra chặng)
+                    qtReview: ["meaning", "pinyin", "hanzi", "listen", "cloze"] },  // loại câu hỏi ở tab Ôn tập (Ôn từ hay sai, Trắc nghiệm nhanh)
         units: {},     // key -> { done, best, stars, at }
         stages: {},    // key -> { done, best, at }
         unlocked: {},  // level -> true (mở khóa cấp thủ công)
@@ -679,6 +681,7 @@
                 <button class="btn" data-nav="prev" ${s.i === 0 ? "disabled" : ""}>← Trước</button>
                 <button class="btn btn-primary" data-nav="next">${s.i === s.words.length - 1 ? "Bắt đầu luyện tập →" : "Tiếp →"}</button>
             </div>
+            ${s.i === s.words.length - 1 ? `<div class="qt-inline"><b>Loại câu hỏi khi luyện tập:</b> <span data-qt="learn">${qtChipsHTML("learn")}</span></div>` : ""}
             <div class="kbd-hint">Phím: ← → để chuyển · Space để nghe</div>`;
         autoSpeakWord(w);
         body().onclick = e => {
@@ -712,6 +715,26 @@
         cloze: "Chọn từ điền vào chỗ trống",
         pinyin: "Chọn phiên âm đúng",
     };
+    // Loại câu hỏi người học cho phép (Cài đặt hoặc chip ngay trên trang); không bao giờ rỗng
+    const QT_ORDER = ["meaning", "pinyin", "hanzi", "listen", "cloze"];
+    const QT_SHORT = { meaning: "Chọn nghĩa", pinyin: "Chọn pinyin", hanzi: "Nghĩa → chữ Hán", listen: "Nghe chọn từ", cloze: "Điền từ vào câu" };
+    function qTypes(kind) {
+        const a = (S.settings[kind === "review" ? "qtReview" : "qtLearn"] || []).filter(t => QT_ORDER.indexOf(t) >= 0);
+        return a.length ? a : QT_ORDER.slice();
+    }
+    // chọn các loại trong "prefer" mà người học cho phép; không còn loại nào thì dùng mọi loại được phép
+    function pickTypes(kind, prefer) {
+        const ok = qTypes(kind), m = prefer.filter(t => ok.indexOf(t) >= 0);
+        return m.length ? m : ok;
+    }
+    function qtChipsHTML(kind) {
+        const ok = qTypes(kind);
+        return `<span class="qt-chips" data-qt-box="${kind}">${QT_ORDER.map(t =>
+            `<label class="qt-chip"><input type="checkbox" data-qt-kind="${kind}" value="${t}" ${ok.indexOf(t) >= 0 ? "checked" : ""}> ${QT_SHORT[t]}</label>`).join("")}</span>`;
+    }
+    function renderQtBoxes() {
+        document.querySelectorAll("[data-qt]").forEach(el => { el.innerHTML = qtChipsHTML(el.dataset.qt); });
+    }
     function makeQuestion(w, type, pool) {
         if (type === "cloze" && (!w.ex || w.ex.indexOf(w.clean) < 0)) type = "hanzi";
         const ds = pickDistractors(w, 3, pool, type === "meaning" ? "vi" : type === "pinyin" ? "py" : "clean");
@@ -734,9 +757,12 @@
         const s = session;
         s.dirty = true;
         const pool = LEVELS[s.unit.level].words;
-        const r1 = shuffle(s.words).map(w => makeQuestion(w, Math.random() < 0.5 ? "meaning" : "pinyin", pool));
-        const hard = ["hanzi", "listen", "cloze", "cloze"];
-        const r2 = shuffle(s.words).map(w => makeQuestion(w, hard[Math.floor(Math.random() * hard.length)], pool));
+        // vòng 1 ưu tiên câu dễ (nghĩa / pinyin), vòng 2 câu khó (chữ Hán / nghe / điền từ) — trong số loại người học cho phép
+        const easy = pickTypes("learn", ["meaning", "pinyin"]);
+        const hard = pickTypes("learn", ["hanzi", "listen", "cloze", "cloze"]);
+        const rnd = a => a[Math.floor(Math.random() * a.length)];
+        const r1 = shuffle(s.words).map(w => makeQuestion(w, rnd(easy), pool));
+        const r2 = shuffle(s.words).map(w => makeQuestion(w, rnd(hard), pool));
         runQuiz({
             title: "Bước 2/2 · Luyện tập",
             questions: r1.concat(r2),
@@ -877,7 +903,7 @@
         S.lastLevel = st.level; save();
         const words = shuffle([].concat(...st.units.map(u => u.words))).slice(0, 25);
         const pool = LEVELS[st.level].words;
-        const types = ["meaning", "hanzi", "listen", "cloze", "pinyin"];
+        const types = shuffle(qTypes("learn"));
         session = { kind: "stage", stage: st, dirty: true };
         openSession(`HSK ${st.level} · Kiểm tra chặng ${st.n + 1}`);
         runQuiz({
@@ -971,6 +997,7 @@
         sel.value = cur && !sel.querySelector(`option[value="${cur}"]`).disabled ? cur : (firstOk ? firstOk.value : "1");
         $("btn-quick").disabled = !firstOk;
         $("btn-listen").disabled = learned < 4;
+        renderQtBoxes();
     }
     function weakWords() {
         return Object.keys(S.srs).filter(id => BY_ID.has(id) && (S.srs[id].lapses || 0) >= 2).map(id => BY_ID.get(id));
@@ -1656,8 +1683,21 @@
         $("set-rate").value = String(S.settings.rate);
         $("set-dir").value = S.settings.dir;
         $("set-free").checked = !!S.settings.free;
+        renderQtBoxes();
     }
     function bindSettings() {
+        // Chip chọn loại câu hỏi (ở Cài đặt, tab Ôn tập và thẻ cuối trước khi luyện tập): đổi một chỗ thì mọi chỗ cập nhật
+        document.addEventListener("change", e => {
+            const cb = e.target.closest && e.target.closest("[data-qt-kind]");
+            if (!cb) return;
+            const kind = cb.dataset.qtKind, key = kind === "review" ? "qtReview" : "qtLearn";
+            const box = cb.closest("[data-qt-box]");
+            const sel = [...box.querySelectorAll("input:checked")].map(x => x.value);
+            if (!sel.length) { cb.checked = true; toast("Cần giữ ít nhất một loại câu hỏi"); return; }
+            S.settings[key] = QT_ORDER.filter(t => sel.indexOf(t) >= 0);
+            save();
+            renderQtBoxes();
+        });
         $("set-goal").onchange = e => { S.settings.goal = +e.target.value; save(); toast("Đã lưu mục tiêu"); };
         $("set-speak").onchange = e => { S.settings.speak = e.target.checked; save(); };
         $("set-rate").onchange = e => { S.settings.rate = +e.target.value; save(); speak("你好，欢迎学习汉语"); };
@@ -1743,10 +1783,10 @@
         $("tabs").onclick = e => { const b = e.target.closest(".tab"); if (b) showView(b.dataset.view); };
         $("ss-close").onclick = () => closeSession();
         $("btn-start-review").onclick = startReview;
-        $("btn-weak").onclick = () => startFreeQuiz(weakWords(), "Ôn từ hay sai", ["hanzi", "meaning", "listen", "cloze"]);
+        $("btn-weak").onclick = () => startFreeQuiz(weakWords(), "Ôn từ hay sai", pickTypes("review", ["hanzi", "meaning", "listen", "cloze"]));
         $("btn-quick").onclick = () => {
             const lv = +$("quick-level").value;
-            startFreeQuiz(LEVELS[lv].words.filter(w => S.srs[w.id]), "Trắc nghiệm nhanh HSK " + lv, ["meaning", "hanzi", "cloze", "pinyin", "listen"]);
+            startFreeQuiz(LEVELS[lv].words.filter(w => S.srs[w.id]), "Trắc nghiệm nhanh HSK " + lv, shuffle(qTypes("review")));
         };
         $("btn-speed").onclick = () => startSpeed($("speed-src").value, +$("speed-count").value, +$("speed-start").value);
         $("btn-listen").onclick = () => startFreeQuiz(WORDS.filter(w => S.srs[w.id]), "Luyện nghe", ["listen"]);

@@ -147,6 +147,7 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
 - Chặng hiện tại là chặng đầu tiên chưa hoàn thành.
 - Khung "Ôn tập hôm nay" cộng `due` của mọi trang.
 - Mục "Công cụ bổ trợ": `doc_them`, `luyen_tap`, `thong_ke`, `word_learning`.
+- `word_learning` (HSK 3.0) bị ẩn khỏi "Ôn tập hôm nay" và "Công cụ bổ trợ" khi `hsk_wl_srs_v3` chưa có thẻ nào (người dùng chưa học từ nào ở đó); khi ẩn có một dòng nhỏ kèm link "vẫn mở được".
 - `tuvung` và `sach_boya` đã ẩn khỏi trang chủ: nội dung trùng với `boya_learning`, file vẫn giữ và có dải thông báo chuyển trang. Thẻ SRS cũ của `tuvung` (`boya_tv_srs`) vẫn được ôn ở `hom_nay`; dòng "tuvung" trong khung "Ôn tập hôm nay" trỏ tới `hom_nay`.
 - **Link vào trang con:** `hsk_lotrinh.html?level=N`, `boya_learning.html?book=<id>&lesson=N`.
 
@@ -290,6 +291,10 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
 - **Cấu trúc lộ trình:** Cấp → Chặng (5 bài + 1 bài kiểm tra chặng) → Bài. Số từ mỗi bài nằm trong `UNIT_SIZE` (HSK1–3: 10, HSK4: 15, HSK5–6: 20).
 - **Điều kiện mở khóa:** qua bài khi đạt ≥ 70% (`PASS_UNIT`), qua chặng khi đạt ≥ 80% (`PASS_STAGE`), xong cấp trước mới mở cấp sau. Có thể mở khóa cấp thủ công (`S.unlocked`) hoặc bật chế độ tự do (`settings.free`).
 - **Luồng học một bài:** học thẻ → luyện tập 2 vòng (chọn nghĩa/pinyin → chọn chữ Hán/nghe chọn từ/điền từ vào câu). Engine trắc nghiệm dùng chung là `runQuiz()`.
+- **Chọn loại câu hỏi trắc nghiệm** (`settings.qtLearn`, `settings.qtReview`, mặc định cả 5 loại `meaning/pinyin/hanzi/listen/cloze`):
+  - `qtLearn` áp dụng cho luyện tập bài (vòng 1 lấy các loại dễ meaning/pinyin, vòng 2 lấy hanzi/listen/cloze, trong số loại được chọn; không còn loại nào thì dùng mọi loại được chọn) và kiểm tra chặng.
+  - `qtReview` áp dụng cho "Ôn từ hay sai" và "Trắc nghiệm nhanh" ở tab Ôn tập. "Luyện nghe" luôn chỉ có câu nghe; ôn thẻ SRS vẫn theo "Chiều ôn tập" (`dir`).
+  - Chip chọn (`qtChipsHTML`, phần tử `[data-qt="learn|review"]`) có ở tab Cài đặt, đầu khối trắc nghiệm của tab Ôn tập và thẻ cuối trước khi luyện tập; luôn giữ ít nhất 1 loại. Hàm: `qTypes(kind)`, `pickTypes(kind, prefer)`.
 - **SRS:** SM-2 rút gọn trong `schedule(card, rating)`, với rating 1 Quên / 2 Khó / 3 Nhớ / 4 Dễ. Hạn ôn được làm tròn về đầu ngày. Trạng thái: `new` / `learning` / `familiar` (iv ≥ 7) / `mastered` (iv ≥ 21).
 - **Đo tốc độ nhận diện:** `card.rt` (ms) là trung bình trượt (0,6 × cũ + 0,4 × mới), cập nhật khi ôn thẻ có mặt trước là chữ Hán và khi luyện Đọc nhanh. Từ có `rt ≥ SLOW_MS` (3000ms) thuộc nhóm "cần tăng tốc".
 - **Đọc nhanh** (`startSpeed`): chọn 1 trong 2 nghĩa trong thời gian giới hạn, tốc độ tự điều chỉnh ±15% trong khoảng `SPEED_MIN`–`SPEED_MAX`. Kỷ lục lưu ở `S.speed.best` (chỉ tính khi độ chính xác ≥ 80%).

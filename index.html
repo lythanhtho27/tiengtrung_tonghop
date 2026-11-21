@@ -236,6 +236,8 @@
               tracks: ["gc1", "gc2", "gc3", "hsk6"] },
         ];
         const P = window.HocProgress ? HocProgress.all() : {};
+        // Giáo trình HSK 3.0: chưa có thẻ ôn nào (chưa lật thẻ học từ nào) thì ẩn khỏi trang chủ
+        const WL_CARDS = (function () { try { return Object.keys(JSON.parse(localStorage.getItem("hsk_wl_srs_v3") || "null") || {}).length; } catch (e) { return 0; } })();
         const hsk = P.hsk_lotrinh || {}, boya = P.boya_learning || {};
         const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
         const fmt = n => Number(n || 0).toLocaleString("vi-VN");
@@ -290,7 +292,7 @@
             { key: "boya_learning", name: "Từ vựng & bài khóa Boya", url: "boya_learning/boya_learning.html" },
             { key: "tuvung", name: "Thẻ cũ của trang Ôn từ vựng TC1–4 (ôn ở Hôm nay)", url: "hom_nay/hom_nay.html" },
             { key: "word_learning", name: "Giáo trình HSK 3.0", url: "word_learning/word_learning.html" },
-        ].filter(r => P[r.key]);
+        ].filter(r => P[r.key] && (r.key !== "word_learning" || WL_CARDS > 0));
         // Cấp HSK đang tạm ẩn ở trang Hôm nay (hom_nay_v1.settings.skipLv): không tính vào số từ đến hạn
         const SKIP_LV = (function () { try { return ((JSON.parse(localStorage.getItem("hom_nay_v1") || "null") || {}).settings || {}).skipLv || []; } catch (e) { return []; } })();
         const HSK_HIDDEN = (function () {
@@ -377,12 +379,12 @@
             { key: "thong_ke", ic: "📊", name: "Thống kê & dự báo", url: "thong_ke/thong_ke.html",
               desc: "Số từ đã học và đã thuộc, từ mới theo tuần, dự báo số từ cần ôn 7–30 ngày tới, tỉ lệ nhớ theo cấp HSK, lịch học, tốc độ và từ hay quên." },
         ];
-        document.getElementById("tools").innerHTML = TOOLS.map(t => {
+        document.getElementById("tools").innerHTML = TOOLS.filter(t => t.key !== "word_learning" || WL_CARDS > 0).map(t => {
             const d = P[t.key] ? P[t.key].due || 0 : 0;
             return `<a class="card tool" href="${t.url}"><span class="tool-ic">${t.ic}</span>
                 <span><h3>${t.name}</h3><p>${t.desc}</p></span>
                 ${d ? `<span class="due-badge" title="Từ đến hạn ôn">${fmt(d)}</span>` : ""}</a>`;
-        }).join("");
+        }).join("") + (WL_CARDS ? "" : `<p class="muted" style="grid-column:1/-1;font-size:13px;margin:4px 2px">Giáo trình HSK 3.0 đang ẩn vì bạn chưa học từ nào ở đó · <a href="word_learning/word_learning.html" style="color:var(--ui-primary)">vẫn mở được</a></p>`);
     })();
     </script>
 </body>
