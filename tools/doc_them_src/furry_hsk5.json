@@ -1,0 +1,474 @@
+[
+ {
+  "id": "f5-01",
+  "kind": "article",
+  "level": 5,
+  "title": "琴里的那个音",
+  "title_vi": "Nốt nhạc nằm trong cây đàn",
+  "topic": "truyện furry · trinh thám",
+  "paragraphs": [
+   "绿林城老街的最东边，有一家小小的钢琴修理店。店主是一只叫阿铃的蝙蝠。她的眼睛不太好，可是耳朵特别好，别人听不出来的声音，她都能听得清清楚楚。哪架钢琴的哪根弦松了一点儿，她只要听一遍就知道。所以，城里的音乐家都喜欢把钢琴送到她这里来。",
+   "一个下雨的下午，门口的铃响了。进来的是一只年轻的小羊，身上的毛被雨打湿了，手里紧紧拿着一个文件夹。“您好，我叫拉拉。”她不好意思地说，“我爷爷是写曲子的音乐家。上个月他身体不好，搬到南方的姑姑家去住了。他把家里的旧钢琴留给了我，还留下了这份曲谱。可是我弹了很多次，总觉得这首曲子少了点儿什么。”",
+   "阿铃接过曲谱。那是爷爷自己写的，题目叫《雨后》。最后一页的下面，有一行很小的字：最重要的那个音，在琴里。拉拉说：“我问过爷爷这是什么意思，他只是笑，说等我自己去找。现在他越来越容易忘事，有时候连我的名字都想不起来了。”说到这里，她的声音低了下去。",
+   "第二天，钢琴被送到了店里。阿铃把曲谱放好，从头到尾慢慢地弹了一遍。曲子很美，像雨停以后安静的小街。可是弹到最后，她也有一种奇怪的感觉：每一句好像都在等着什么，却又总是停在一半。她又弹了两遍，忽然明白了——整首曲子里，一个“拉”的音都没有。",
+   "“这么长的一首曲子，竟然一次也没有用到‘拉’，这不可能是偶然。”阿铃对自己说，“我记得，羊爷爷以前写的曲子里，最常用的就是这个音。要是把它放进这几个空着的地方……”她试着弹了一下，旋律一下子完整了，就像一个人终于说完了心里想说的话。",
+   "接着，她一个键一个键地检查这架钢琴。别的键声音都很干净，只有中间那个“拉”键，按下去的时候声音有一点儿闷，后面还跟着一种极轻的“沙沙”声。一般人根本听不见，但是阿铃的耳朵立刻动了一下。她想：这不是弦的问题，里面一定有纸。",
+   "她小心地打开钢琴，拿着小灯往里照。果然，在“拉”键的后面，贴着一个旧旧的信封，上面写着：“给拉拉。”阿铃没有打开它，而是马上给拉拉打了电话。半个小时以后，小羊几乎是跑着进了店门，身上又湿了一半。",
+   "信里只有几行字：“拉拉，我知道，总有一天我会忘记很多事情。所以我写了这首曲子，故意把你的音留了下来，没有写在纸上。因为你不是写出来的，你是我心里一直在弹的那个音。如果有一天我叫不出你的名字，请你来弹给我听，把那个音补上。”",
+   "拉拉读完，哭得说不出话来。阿铃没有说什么，只是把琴前的位置让了出来。小羊坐下来，擦了擦眼泪，把每一个空着的地方都补上了“拉”。窗外的雨停了，阳光照进小店，那首曲子终于完整地响了起来。",
+   "一个星期以后，阿铃收到一封从南方寄来的信。拉拉在信里说，她在爷爷的房间里弹了那首《雨后》。弹到第三句的时候，爷爷忽然抬起头，看着她，慢慢地叫出了她的名字。信的最后写着：“谢谢您，听见了别人听不见的声音。”"
+  ],
+  "translations": [
+   "Ở đầu phía đông con phố cổ của thành Lục Lâm có một tiệm sửa đàn piano nho nhỏ. Chủ tiệm là một cô dơi tên A Linh. Mắt cô không tốt lắm, nhưng tai thì cực kỳ thính, những âm thanh người khác không nghe ra, cô đều nghe rõ mồn một. Cây đàn nào có sợi dây nào hơi chùng một chút, cô chỉ cần nghe một lượt là biết. Vì thế các nhạc sĩ trong thành đều thích mang đàn đến chỗ cô.",
+   "Một buổi chiều mưa, chuông cửa reo. Người bước vào là một cô cừu non, bộ lông ướt sũng nước mưa, tay cầm chặt một tập hồ sơ. “Chào chị, em tên là Lạp Lạp.” Cô ngại ngùng nói, “Ông em là nhạc sĩ sáng tác. Tháng trước sức khỏe ông không tốt nên đã chuyển xuống nhà cô em ở phương Nam sống. Ông để lại cho em cây đàn cũ trong nhà, còn để lại bản nhạc này. Nhưng em đã đàn rất nhiều lần, lúc nào cũng thấy bản nhạc này thiếu thiếu gì đó.”",
+   "A Linh nhận lấy bản nhạc. Đó là bản ông tự viết, tên là “Sau cơn mưa”. Ở cuối trang cuối có một dòng chữ rất nhỏ: Nốt quan trọng nhất ở trong cây đàn. Lạp Lạp nói: “Em đã hỏi ông câu đó nghĩa là gì, ông chỉ cười, bảo đợi em tự đi tìm. Bây giờ ông ngày càng hay quên, có lúc ngay cả tên em cũng không nhớ ra.” Nói đến đây, giọng cô nhỏ dần.",
+   "Hôm sau, cây đàn được chở đến tiệm. A Linh đặt bản nhạc ngay ngắn, chậm rãi đàn từ đầu đến cuối một lượt. Bản nhạc rất đẹp, như con phố nhỏ yên tĩnh sau khi mưa tạnh. Nhưng đàn đến cuối, cô cũng có một cảm giác kỳ lạ: câu nào dường như cũng đang chờ đợi điều gì, rồi lại luôn dừng giữa chừng. Cô đàn thêm hai lượt nữa, bỗng hiểu ra: trong cả bản nhạc không có lấy một nốt “La”.",
+   "“Một bản nhạc dài như vậy mà không dùng nốt ‘La’ lấy một lần, chuyện này không thể là ngẫu nhiên.” A Linh tự nhủ, “Mình nhớ những bản nhạc ông Cừu viết trước đây, nốt dùng nhiều nhất chính là nốt này. Nếu đặt nó vào mấy chỗ còn trống này thì…” Cô thử đàn một chút, giai điệu lập tức trọn vẹn, như một người cuối cùng đã nói hết điều muốn nói trong lòng.",
+   "Tiếp đó, cô kiểm tra từng phím của cây đàn. Các phím khác âm thanh đều rất trong, chỉ có phím “La” ở giữa, khi ấn xuống thì tiếng hơi đục, phía sau còn kèm theo một tiếng “sột soạt” cực khẽ. Người bình thường hoàn toàn không nghe thấy, nhưng tai A Linh lập tức khẽ động. Cô nghĩ: đây không phải lỗi dây đàn, bên trong chắc chắn có giấy.",
+   "Cô cẩn thận mở đàn ra, cầm một chiếc đèn nhỏ soi vào trong. Quả nhiên, ở phía sau phím “La” có dán một phong bì cũ, bên trên viết: “Gửi Lạp Lạp.” A Linh không mở nó ra mà lập tức gọi điện cho Lạp Lạp. Nửa tiếng sau, cô cừu non gần như chạy vào cửa tiệm, người lại ướt mất một nửa.",
+   "Trong thư chỉ có vài dòng: “Lạp Lạp, ông biết rồi sẽ có một ngày ông quên rất nhiều chuyện. Vì vậy ông viết bản nhạc này, cố ý giữ lại nốt nhạc của cháu, không viết lên giấy. Bởi vì cháu không phải là thứ được viết ra, cháu là nốt nhạc ông vẫn luôn đàn trong tim. Nếu một ngày ông không gọi được tên cháu, cháu hãy đến đàn cho ông nghe, điền nốt nhạc ấy vào.”",
+   "Lạp Lạp đọc xong, khóc đến không nói nên lời. A Linh không nói gì, chỉ nhường chỗ trước cây đàn. Cô cừu non ngồi xuống, lau nước mắt, điền nốt “La” vào từng chỗ còn trống. Ngoài cửa sổ mưa đã tạnh, ánh nắng chiếu vào tiệm nhỏ, bản nhạc ấy cuối cùng đã vang lên trọn vẹn.",
+   "Một tuần sau, A Linh nhận được một lá thư gửi từ phương Nam. Lạp Lạp viết trong thư rằng cô đã đàn bản “Sau cơn mưa” trong phòng của ông. Đàn đến câu thứ ba, ông bỗng ngẩng đầu lên, nhìn cô, chậm rãi gọi ra tên cô. Cuối thư viết: “Cảm ơn chị đã nghe thấy những âm thanh người khác không nghe thấy.”"
+  ],
+  "questions": [
+   {
+    "q": "阿铃最大的特点是什么？",
+    "q_vi": "Đặc điểm nổi bật nhất của A Linh là gì?",
+    "options": [
+     "眼睛特别好",
+     "耳朵特别好",
+     "弹琴弹得最快",
+     "会写曲子"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 1: mắt cô không tốt nhưng tai cực kỳ thính (耳朵特别好)."
+   },
+   {
+    "q": "阿铃是怎么发现曲子有问题的？",
+    "q_vi": "A Linh phát hiện bản nhạc có vấn đề như thế nào?",
+    "options": [
+     "整首曲子一次也没有用到“拉”这个音",
+     "曲谱的最后一页不见了",
+     "曲子的题目写错了",
+     "拉拉弹错了很多地方"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 4–5: cả bản nhạc không có nốt “La” nào, điều này không thể là ngẫu nhiên."
+   },
+   {
+    "q": "“拉”键的声音为什么有点儿闷？",
+    "q_vi": "Vì sao tiếng của phím “La” hơi đục?",
+    "options": [
+     "那根弦松了",
+     "钢琴被雨打湿了",
+     "阿铃的耳朵出了问题",
+     "键的后面贴着一个信封"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 6–7: tiếng sột soạt là do có giấy; sau phím “La” dán một phong bì."
+   },
+   {
+    "q": "爷爷为什么不把“拉”写在曲谱上？",
+    "q_vi": "Vì sao ông không viết nốt “La” lên bản nhạc?",
+    "options": [
+     "他忘记了怎么写这个音",
+     "他不喜欢这个音",
+     "他希望拉拉亲自把这个代表她的音补上",
+     "曲谱的纸不够用了"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 8: nốt “La” tượng trưng cho Lạp Lạp; ông muốn cháu tự đàn và điền vào khi ông quên tên cháu."
+   },
+   {
+    "q": "最后一段主要想告诉我们什么？",
+    "q_vi": "Đoạn cuối chủ yếu muốn nói với chúng ta điều gì?",
+    "options": [
+     "拉拉以后想当修琴师",
+     "那首曲子让爷爷想起了拉拉",
+     "爷爷的病已经完全好了",
+     "阿铃也去了南方"
+    ],
+    "answer": 1,
+    "explain_vi": "Khi nghe bản nhạc trọn vẹn, ông ngẩng đầu và gọi được tên “Lạp Lạp”."
+   }
+  ]
+ },
+ {
+  "id": "f5-02",
+  "kind": "article",
+  "level": 5,
+  "title": "缆车上的交换日记",
+  "title_vi": "Cuốn nhật ký trao đổi trên cáp treo",
+  "topic": "truyện furry · tình cảm",
+  "paragraphs": [
+   "在一座很高的雪山上，有一个小小的气象站。站里只有一位工作人员，是一只叫石风的雪豹。他每天的工作是记录温度、风的大小和云的变化，再把数据发给山下。山上非常安静，有时候一整个月，他都见不到一个客人。陪着他的，只有窗外的风声和一台旧收音机。",
+   "山下也有一个小站，负责给山上送东西。每个星期一，一辆运货的缆车会把吃的、用的和信件送上山。去年秋天的一天，石风在一箱苹果中间发现了一个蓝色的本子。第一页写着：“你好！我是山下站新来的工作人员小枫。听说你一个人在山上，一定很无聊吧？我们来写交换日记好不好？你写一页，我写一页，每周跟着缆车走一趟。”最后，还画了一片小小的枫叶。",
+   "石风不太会跟别人聊天。看着空白的一页，他想了很久，最后只写了一句：“今天的天气：晴，零下十二度，西北风四级。”他觉得自己写得太无聊了，没想到下一周，本子上多了一大段话。小枫说，她最喜欢看他写的天气，因为每次看完，她就知道山上的他冷不冷，要不要多给他送一条毯子。",
+   "就这样，蓝色的本子在山上和山下之间来来回回。石风慢慢学会了写天气以外的事情：早上看到的日出，一只迷路的小鸟，夜里特别亮的星星。小枫则告诉他山下的生活：她烤的饼干又烤黑了，她养的花终于开了，她害怕打雷，下雨的晚上总是睡不着。每一页的最后，都有那片小小的枫叶。",
+   "冬天到了。有一页，石风犹豫了很久，才写下：“有时候我会想，如果能见你一面就好了。可是山路太远，冬天又常常下大雪，大概不可能吧。”写完，他差点儿把这一页撕掉。最后，他还是把本子放进了缆车的箱子里，红着脸看着缆车慢慢消失在雪里。",
+   "下一个星期一，缆车准时上来了，箱子里有面包、水果和药，却没有那个蓝色的本子。石风把箱子翻了三遍，什么也没找到。他的心一下子空了：是不是自己说错了话？是不是她不想再写了？那一整天，他记录数据的时候，好几次把数字写错。",
+   "更糟糕的是，第二天夜里刮起了大风雪。收音机里说，缆车的线路出了问题，要停几天。石风站在窗前，看着外面白白的一片，第一次觉得山上这么冷。他拿出以前的日记，一页一页地重新读小枫写过的话。读到“我害怕打雷”的时候，他忽然担心起来：这么大的风雪，她会不会害怕？",
+   "第四天中午，风雪终于停了。远处传来了说话的声音，一支修理队正沿着缆车的线路往山上走。队伍的最后，跟着一只穿着红衣服的小熊猫。她背着一个大包，走几步就停下来休息一下。等她走近了，石风看见她的围巾上，有一片小小的枫叶。",
+   "小熊猫站在门口，脸冻得红红的，却笑着从包里拿出了那个蓝色的本子。“对不起，上个星期的本子是我故意没放进去的。”她说，“你那一页的问题，我不想写在纸上回答。正好修理队要上山，我就跟着来了。”说完，她把本子打开，递给了石风。",
+   "最新的一页上写着：今天的天气，晴，零下十五度，没有风；心情，终于见到你了。旁边画着一片枫叶，比以前的每一片都大。石风看着那一行字，很久都说不出话来。最后，他转身去烧了一壶热水，小声说：“山上很冷，我给你……多拿一条毯子。”"
+  ],
+  "translations": [
+   "Trên một ngọn núi tuyết rất cao có một trạm khí tượng nho nhỏ. Trong trạm chỉ có một nhân viên, là một chú báo tuyết tên Thạch Phong. Công việc mỗi ngày của anh là ghi lại nhiệt độ, sức gió và sự thay đổi của mây, rồi gửi số liệu xuống chân núi. Trên núi vô cùng yên tĩnh, có khi cả tháng trời anh không gặp một vị khách nào. Bầu bạn với anh chỉ có tiếng gió ngoài cửa sổ và một chiếc radio cũ.",
+   "Dưới chân núi cũng có một trạm nhỏ, phụ trách đưa đồ lên núi. Mỗi thứ Hai, một chiếc cáp treo chở hàng mang đồ ăn, đồ dùng và thư từ lên núi. Một ngày mùa thu năm ngoái, giữa một thùng táo, Thạch Phong phát hiện một cuốn sổ màu xanh. Trang đầu tiên viết: “Xin chào! Tôi là Tiểu Phong, nhân viên mới của trạm dưới núi. Nghe nói anh ở trên núi một mình, chắc buồn lắm nhỉ? Chúng mình viết nhật ký trao đổi nhé? Anh viết một trang, tôi viết một trang, mỗi tuần theo cáp treo đi một chuyến.” Cuối trang còn vẽ một chiếc lá phong nho nhỏ.",
+   "Thạch Phong không giỏi trò chuyện với người khác. Nhìn trang giấy trống, anh nghĩ rất lâu, cuối cùng chỉ viết một câu: “Thời tiết hôm nay: nắng, âm mười hai độ, gió tây bắc cấp bốn.” Anh thấy mình viết thật nhạt nhẽo, không ngờ tuần sau trong sổ có thêm cả một đoạn dài. Tiểu Phong nói cô thích đọc phần thời tiết anh viết nhất, vì mỗi lần đọc xong cô biết được anh trên núi có lạnh không, có cần gửi thêm cho anh một chiếc chăn không.",
+   "Cứ như vậy, cuốn sổ xanh đi đi về về giữa trên núi và dưới núi. Thạch Phong dần học được cách viết những chuyện ngoài thời tiết: bình minh nhìn thấy buổi sáng, một chú chim lạc đường, những vì sao đặc biệt sáng trong đêm. Còn Tiểu Phong kể cho anh nghe cuộc sống dưới núi: bánh quy cô nướng lại bị cháy đen, chậu hoa cô trồng cuối cùng cũng nở, cô sợ sấm, những đêm mưa thường không ngủ được. Cuối mỗi trang đều có chiếc lá phong nho nhỏ ấy.",
+   "Mùa đông đến. Có một trang, Thạch Phong do dự rất lâu mới viết: “Đôi khi tôi nghĩ, nếu được gặp cô một lần thì tốt biết mấy. Nhưng đường núi quá xa, mùa đông lại hay có tuyết lớn, chắc là không thể rồi.” Viết xong, anh suýt xé trang ấy đi. Cuối cùng, anh vẫn đặt cuốn sổ vào thùng của cáp treo, đỏ mặt nhìn cáp treo từ từ khuất vào trong tuyết.",
+   "Thứ Hai tuần sau, cáp treo lên đúng giờ, trong thùng có bánh mì, hoa quả và thuốc, nhưng không có cuốn sổ màu xanh. Thạch Phong lật thùng ba lần mà chẳng tìm thấy gì. Lòng anh bỗng trống rỗng: phải chăng mình đã nói sai điều gì? Phải chăng cô không muốn viết nữa? Cả ngày hôm đó, khi ghi số liệu, anh viết sai số mấy lần.",
+   "Tệ hơn nữa, đêm hôm sau nổi lên một trận bão tuyết lớn. Radio nói đường cáp treo gặp sự cố, phải ngừng vài ngày. Thạch Phong đứng bên cửa sổ, nhìn bên ngoài trắng xóa một màu, lần đầu tiên thấy trên núi lạnh đến vậy. Anh lấy những trang nhật ký trước đây ra, đọc lại từng trang những lời Tiểu Phong đã viết. Đọc đến câu “Tôi sợ sấm”, anh bỗng lo lắng: bão tuyết lớn thế này, liệu cô có sợ không?",
+   "Trưa ngày thứ tư, bão tuyết cuối cùng cũng tạnh. Từ xa vọng lại tiếng nói chuyện, một đội sửa chữa đang men theo đường cáp treo đi lên núi. Cuối đoàn là một cô gấu trúc đỏ mặc áo đỏ. Cô đeo một chiếc ba lô lớn, đi vài bước lại dừng lại nghỉ một chút. Đợi cô đến gần, Thạch Phong nhìn thấy trên khăn quàng của cô có một chiếc lá phong nho nhỏ.",
+   "Cô gấu trúc đỏ đứng ở cửa, mặt lạnh đến đỏ ửng, nhưng vẫn mỉm cười lấy cuốn sổ màu xanh ra khỏi ba lô. “Xin lỗi, cuốn sổ tuần trước là tôi cố ý không bỏ vào.” Cô nói, “Câu hỏi trong trang của anh, tôi không muốn trả lời trên giấy. Vừa hay đội sửa chữa phải lên núi, nên tôi đi theo luôn.” Nói xong, cô mở cuốn sổ ra, đưa cho Thạch Phong.",
+   "Trang mới nhất viết: Thời tiết hôm nay, nắng, âm mười lăm độ, không có gió; tâm trạng, cuối cùng cũng gặp được anh rồi. Bên cạnh vẽ một chiếc lá phong, to hơn tất cả những chiếc trước đây. Thạch Phong nhìn dòng chữ ấy, rất lâu không nói nên lời. Cuối cùng, anh quay người đi đun một ấm nước nóng, khẽ nói: “Trên núi lạnh lắm, để tôi lấy thêm… cho cô một chiếc chăn.”"
+  ],
+  "questions": [
+   {
+    "q": "石风第一次在日记里写了什么？",
+    "q_vi": "Lần đầu tiên Thạch Phong viết gì trong nhật ký?",
+    "options": [
+     "山上的日出",
+     "一只迷路的小鸟",
+     "当天的天气情况",
+     "他害怕打雷"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 3: anh chỉ viết một câu về thời tiết: nắng, âm 12 độ, gió tây bắc cấp 4."
+   },
+   {
+    "q": "小枫为什么最喜欢看石风写的天气？",
+    "q_vi": "Vì sao Tiểu Phong thích đọc phần thời tiết Thạch Phong viết nhất?",
+    "options": [
+     "可以知道山上的他冷不冷",
+     "她的工作需要这些数据",
+     "她想学习写日记",
+     "她对天气很感兴趣"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 3: đọc xong cô biết anh có lạnh không, có cần gửi thêm chăn không."
+   },
+   {
+    "q": "那个星期一，本子为什么没有跟着缆车上来？",
+    "q_vi": "Thứ Hai hôm đó, vì sao cuốn sổ không theo cáp treo lên núi?",
+    "options": [
+     "缆车的线路出了问题",
+     "小枫不想再写日记了",
+     "本子被风吹走了",
+     "小枫想当面回答石风的问题"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 9: cô cố ý không bỏ sổ vào vì không muốn trả lời câu hỏi “có thể gặp nhau không” trên giấy. Đường cáp hỏng là chuyện xảy ra sau đó."
+   },
+   {
+    "q": "石风是怎么认出小熊猫就是小枫的？",
+    "q_vi": "Thạch Phong nhận ra cô gấu trúc đỏ chính là Tiểu Phong bằng cách nào?",
+    "options": [
+     "她穿着红衣服",
+     "她的围巾上有一片枫叶",
+     "修理队告诉了他",
+     "她叫出了他的名字"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 8: trên khăn quàng có chiếc lá phong, giống ký hiệu cuối mỗi trang nhật ký."
+   },
+   {
+    "q": "从最后一段可以看出石风是一个什么样的人？",
+    "q_vi": "Từ đoạn cuối có thể thấy Thạch Phong là người như thế nào?",
+    "options": [
+     "很会说话，很热情",
+     "对小枫的到来很不高兴",
+     "不太会表达，但很关心小枫",
+     "只关心自己的工作"
+    ],
+    "answer": 2,
+    "explain_vi": "Anh xúc động không nói nên lời, chỉ lặng lẽ đun nước và lấy chăn: vụng về thể hiện nhưng rất quan tâm."
+   }
+  ]
+ },
+ {
+  "id": "f5-03",
+  "kind": "article",
+  "level": 5,
+  "title": "没有颜色的设计师",
+  "title_vi": "Nhà thiết kế không có màu riêng",
+  "topic": "truyện furry · kết bất ngờ",
+  "paragraphs": [
+   "青木是一只变色龙，去年刚从美术学院毕业，学的是设计。他的作品不错，可是找工作找了半年，已经失败了七次。每一次面试，他一紧张，皮肤就会变成身边东西的颜色：坐在黑椅子上，他就变成黑的；站在黄墙前，他就变成黄的。面试官们看着他，总是摇摇头说：“你连自己的颜色都没有，怎么做设计呢？”",
+   "今天，他要去的是城里最有名的彩虹设计公司。等候室很大，三面墙都是白的，只有一面墙上画着一大片绿色的森林。来面试的还有好几位：孔雀的尾巴又长又亮，鹦鹉穿着红黄蓝三色的衣服，蝴蝶小姐的翅膀像一幅画。青木坐在角落里，靠着那面画着森林的墙，身上很快就变成了一片绿色，几乎没有人注意到他。",
+   "这时，一位老乌龟拿着拖把，慢慢地走进来打扫。走到中间的时候，他不小心碰倒了水桶，水流了一地。孔雀皱着眉头站了起来，鹦鹉往旁边躲了躲，谁也没有说话。只有青木走过去，帮老乌龟把水桶扶起来，又拿起一块布，蹲下来一起擦地。老乌龟笑着问他：“年轻人，你身上的颜色怎么一会儿一个样？”",
+   "“我也没有办法，”青木不好意思地说，“我一紧张就会这样，靠着什么，就变成什么颜色。大家都说，这说明我没有自己的想法。”他一边说，一边又靠回那面墙。忽然，他发现了一件奇怪的事：他的左手和右手，变成了两种不太一样的绿色，左边的深一点儿，右边的浅一点儿。他凑近墙仔细看了看，才发现这幅画的左右两边，用的其实是两种很接近的绿色，用眼睛几乎看不出来，可是他的皮肤“复制”得清清楚楚。",
+   "“老爷爷，这面墙左右两边的绿色不一样，”青木小声对老乌龟说，“可能是后来重新补过的。要是让客户看到，也许会觉得不太舒服。”老乌龟抬起头，看了看墙，又看了看他，眼睛里好像闪了一下，却什么也没说，只是拿着拖把慢慢地走了出去。",
+   "轮到青木面试了。负责面试的是公司的设计部经理，一只白色的长毛猫。她翻了翻青木的作品，说：“作品还可以，可是风格不够明显。我们看了你半天，也不知道你到底是一个什么样的人。说实话，你好像没有自己的颜色。”青木低下头，看着自己灰灰的手，连一句为自己说话的话都想不出来。",
+   "走出公司大门的时候，天已经快黑了。青木觉得，这大概又是第八次失败。没想到，第二天早上，他接到了公司打来的电话，请他马上到顶楼的办公室去。他紧张得一路上换了好几种颜色。推开办公室的门，他吃惊地停住了：坐在大桌子后面的，正是昨天那位擦地的老乌龟。",
+   "“我是这家公司的创办人。”老乌龟笑着请他坐下，“墙上那幅画，是我故意请人用两种绿色画的。三年来，几百个来面试的人在那面墙前坐过，只有你发现了。很多设计师都想让自己看起来最漂亮、最显眼，可是在我看来，设计师最重要的能力，是能看见别人看不见的差别。”",
+   "青木忍不住小声问，可是大家不是都说他没有自己的颜色吗？老乌龟摇了摇头：“那是他们没有看到。昨天你蹲下来帮我擦地的时候，你身上变成了暖暖的橙色。那时候墙是白的，地是灰的，屋子里没有一样东西是橙色的。”",
+   "青木低头看自己的手。不知道什么时候，他的手又慢慢变成了那种温暖的橙色。原来，他一直都有自己的颜色，只是那种颜色，不是在紧张的时候出现，而是在他做回自己的时候，才会出现。"
+  ],
+  "translations": [
+   "Thanh Mộc là một chú tắc kè hoa, năm ngoái vừa tốt nghiệp học viện mỹ thuật, chuyên ngành thiết kế. Tác phẩm của anh không tệ, nhưng tìm việc suốt nửa năm, anh đã thất bại bảy lần. Mỗi lần phỏng vấn, hễ căng thẳng là da anh lại đổi sang màu của đồ vật bên cạnh: ngồi trên ghế đen thì anh thành màu đen; đứng trước bức tường vàng thì anh thành màu vàng. Các nhà tuyển dụng nhìn anh, lúc nào cũng lắc đầu: “Đến màu của chính mình cậu còn không có, làm thiết kế thế nào được?”",
+   "Hôm nay, nơi anh đến là Công ty Thiết kế Cầu Vồng nổi tiếng nhất thành phố. Phòng chờ rất rộng, ba bức tường đều màu trắng, chỉ có một bức vẽ cả một khu rừng xanh lớn. Đến phỏng vấn còn có mấy người nữa: đuôi công vừa dài vừa óng, vẹt mặc áo ba màu đỏ vàng xanh, cánh của cô bướm đẹp như một bức tranh. Thanh Mộc ngồi trong góc, dựa vào bức tường vẽ rừng, chẳng mấy chốc người đã thành một mảng xanh lục, gần như không ai chú ý đến anh.",
+   "Lúc đó, một ông rùa già cầm cây lau nhà chậm rãi đi vào quét dọn. Đi đến giữa phòng, ông vô ý làm đổ xô nước, nước chảy lênh láng ra sàn. Công cau mày đứng dậy, vẹt né sang một bên, không ai nói gì. Chỉ có Thanh Mộc bước tới, giúp ông rùa dựng xô nước lên, rồi cầm một miếng vải, ngồi xuống cùng lau sàn. Ông rùa cười hỏi anh: “Chàng trai, sao màu trên người cậu lúc thế này lúc thế khác vậy?”",
+   "“Cháu cũng không có cách nào,” Thanh Mộc ngượng ngùng nói, “hễ căng thẳng là cháu như vậy, dựa vào cái gì thì thành màu đó. Mọi người đều nói thế chứng tỏ cháu không có chính kiến.” Vừa nói, anh vừa dựa lại vào bức tường. Bỗng anh phát hiện một chuyện lạ: tay trái và tay phải của anh biến thành hai màu xanh không giống nhau lắm, bên trái đậm hơn một chút, bên phải nhạt hơn một chút. Anh ghé sát tường nhìn kỹ, mới phát hiện hai nửa trái phải của bức tranh thật ra dùng hai màu xanh rất gần nhau, mắt thường gần như không nhìn ra, nhưng làn da của anh lại “sao chép” rõ mồn một.",
+   "“Ông ơi, màu xanh hai bên trái phải của bức tường này không giống nhau,” Thanh Mộc khẽ nói với ông rùa, “có lẽ sau này đã được sơn bù lại. Nếu để khách hàng nhìn thấy, có thể họ sẽ thấy không thoải mái lắm.” Ông rùa ngẩng đầu, nhìn bức tường rồi nhìn anh, trong mắt dường như lóe lên một tia sáng, nhưng không nói gì, chỉ cầm cây lau nhà chậm rãi đi ra ngoài.",
+   "Đến lượt Thanh Mộc phỏng vấn. Người phỏng vấn là trưởng phòng thiết kế của công ty, một cô mèo lông dài màu trắng. Cô lật xem tác phẩm của Thanh Mộc, nói: “Tác phẩm cũng tạm được, nhưng phong cách chưa đủ rõ ràng. Chúng tôi nhìn cậu cả buổi mà cũng không biết rốt cuộc cậu là người thế nào. Nói thật, hình như cậu không có màu sắc của riêng mình.” Thanh Mộc cúi đầu, nhìn đôi tay xám xịt của mình, ngay cả một câu để nói cho bản thân cũng không nghĩ ra.",
+   "Lúc bước ra khỏi cổng công ty, trời đã sắp tối. Thanh Mộc nghĩ chắc đây lại là lần thất bại thứ tám. Không ngờ sáng hôm sau, anh nhận được điện thoại của công ty, mời anh lập tức lên văn phòng ở tầng thượng. Anh căng thẳng đến mức trên đường đi đổi mấy lần màu. Đẩy cửa văn phòng ra, anh sững người lại: ngồi sau chiếc bàn lớn chính là ông rùa lau sàn hôm qua.",
+   "“Ta là người sáng lập công ty này.” Ông rùa cười, mời anh ngồi, “Bức tranh trên tường đó là ta cố ý nhờ người vẽ bằng hai màu xanh. Ba năm nay, mấy trăm người đến phỏng vấn đã ngồi trước bức tường ấy, chỉ có cậu phát hiện ra. Rất nhiều nhà thiết kế muốn mình trông thật đẹp, thật nổi bật, nhưng theo ta, năng lực quan trọng nhất của một nhà thiết kế là nhìn thấy những khác biệt mà người khác không thấy.”",
+   "Thanh Mộc không nhịn được khẽ hỏi: chẳng phải mọi người đều nói anh không có màu của riêng mình sao? Ông rùa lắc đầu: “Đó là vì họ không nhìn thấy. Hôm qua lúc cậu ngồi xuống giúp ta lau sàn, người cậu biến thành màu cam ấm áp. Khi đó tường màu trắng, sàn màu xám, trong phòng không có một thứ gì màu cam cả.”",
+   "Thanh Mộc cúi nhìn tay mình. Chẳng biết từ lúc nào, tay anh lại dần chuyển sang màu cam ấm áp ấy. Hóa ra anh vẫn luôn có màu của riêng mình, chỉ là màu ấy không xuất hiện lúc căng thẳng, mà chỉ hiện ra khi anh được là chính mình."
+  ],
+  "questions": [
+   {
+    "q": "青木以前面试为什么总是失败？",
+    "q_vi": "Vì sao trước đây Thanh Mộc phỏng vấn luôn thất bại?",
+    "options": [
+     "他的作品不好",
+     "他总是迟到",
+     "他不会说话",
+     "面试官觉得他没有自己的颜色"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 1: da anh đổi màu theo đồ vật xung quanh, nhà tuyển dụng nói anh không có màu riêng."
+   },
+   {
+    "q": "在等候室里，青木做了一件什么事？",
+    "q_vi": "Trong phòng chờ, Thanh Mộc đã làm việc gì?",
+    "options": [
+     "帮老乌龟一起擦地",
+     "和孔雀吵了一架",
+     "在墙上画了一幅画",
+     "给经理打了电话"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 3: mọi người né tránh, chỉ có Thanh Mộc giúp ông rùa dựng xô và lau sàn."
+   },
+   {
+    "q": "青木是怎么发现墙上有两种绿色的？",
+    "q_vi": "Thanh Mộc phát hiện trên tường có hai màu xanh như thế nào?",
+    "options": [
+     "老乌龟告诉了他",
+     "他靠着墙时，两只手变成了深浅不同的绿色",
+     "他用尺子量了一下",
+     "孔雀提醒了他"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 4: da anh sao chép chính xác màu tường, tay trái đậm, tay phải nhạt."
+   },
+   {
+    "q": "那位老乌龟到底是谁？",
+    "q_vi": "Rốt cuộc ông rùa già là ai?",
+    "options": [
+     "设计部的经理",
+     "青木的老师",
+     "这家公司的创办人",
+     "来面试的人"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 7–8: ông ngồi trong văn phòng tầng thượng và tự giới thiệu là người sáng lập công ty."
+   },
+   {
+    "q": "老乌龟说的“橙色”说明了什么？",
+    "q_vi": "“Màu cam” mà ông rùa nói cho thấy điều gì?",
+    "options": [
+     "青木生病了",
+     "办公室里的东西是橙色的",
+     "青木最喜欢橙色的衣服",
+     "青木其实有自己的颜色，在他做回自己时才出现"
+    ],
+    "answer": 3,
+    "explain_vi": "Lúc giúp người khác, trong phòng không có gì màu cam, nên đó là màu của chính anh, hiện ra khi anh là chính mình."
+   }
+  ]
+ },
+ {
+  "id": "f5-04",
+  "kind": "article",
+  "level": 5,
+  "title": "奶泡上的古老文字",
+  "title_vi": "Chữ cổ trên lớp bọt sữa",
+  "topic": "truyện furry · trinh thám + tình cảm",
+  "paragraphs": [
+   "河边有一家小咖啡馆，店主是一只叫阿澜的水獭。她做的拿铁很有名，因为她能在奶泡上画出各种各样的图案：叶子、小熊、月亮，客人们常常舍不得喝，先拿出手机拍一张照片。阿澜很喜欢观察客人，谁爱喝甜的，谁总是坐同一个位子，她都记得清清楚楚。",
+   "一个月前，店里来了一位新客人。那是一只戴眼镜的灰狼，每天下午三点准时出现，总是坐在靠窗的位子，点一杯拿铁，然后打开一本厚厚的书。书里印满了奇怪的符号，阿澜一个也看不懂。灰狼很少说话，每次只喝半杯咖啡。走之前，他会用小勺子在剩下的奶泡上，认真地画一个符号，然后轻轻地关上门离开。",
+   "第一天，他画的是一条弯弯的线，下面有几个点，像正在落下的水滴。第二天，是一个细细的弯月。第三天，是一个像打开的蘑菇一样的形状，下面还有一根小棍子。第四天，是一个弯着腰的身影。第五天，是一个圆圆的、中间有几条线的图案，有点儿像一颗心。阿澜每天收杯子的时候，都把这些符号画在自己的小本子上。",
+   "“水滴、月亮、蘑菇、一个人、一颗心……”晚上关了店，阿澜看着本子，对自己说：“他是在跟谁说话吗？如果只是随便画画，为什么每天都不一样，而且画得那么认真？要是在跟我说话，我却一句也听不懂，那也太可惜了。”",
+   "第六天，灰狼走得很急，把一张书签忘在了座位上。阿澜拿起来一看，上面印着一个符号，和他第一天画的一模一样，旁边有一行小字：甲骨文，雨。她一下子明白了：原来那些都是很古老的汉字！第二天一早，她就去图书馆借了一本关于甲骨文的书。书里的“月”是一个弯月，“人”是一个弯着腰的人，“心”的样子，正像一颗心。",
+   "只有那个“蘑菇”，书里怎么也找不到。阿澜在纸上写了很多字，想找一个长得像的。写到“伞”的时候，她停住了：这个字本身，不就像一把打开的伞吗？雨、月、伞、人、心——下雨的夜里，一把伞，一个人。她的心跳忽然快了起来。她想起了去年冬天的一个晚上。",
+   "那天下着大雨，快关门的时候，一只浑身湿透的狼站在店门外躲雨。他低着头，看起来很难过。阿澜什么也没问，给他做了一杯热咖啡，又把自己的伞借给了他，只说了一句：“雨总会停的。”那天他的帽子压得很低，她连他的脸都没看清楚，后来也再没见过他。",
+   "第七天下午三点，灰狼又来了。这一次，阿澜没等他点单，就端上了一杯拿铁。奶泡上，是她用心画的一个“伞”字，旁边还有一个小小的问号。灰狼看着杯子，愣了好久，耳朵慢慢地红了。他从包里拿出一把干干净净的蓝伞，放在桌上，正是阿澜去年借出去的那一把。",
+   "“那天晚上，我刚刚又一次找工作失败，觉得自己什么都做不好。”灰狼小声说，“是你的那杯咖啡和那句话，让我坚持了下来。现在，我在博物馆研究古代文字。我早就想把伞还给你，可是每次走到柜台前，就不知道该怎么开口，只好用我最熟悉的方式，一天写一个字。”",
+   "阿澜笑了，指着本子上的最后一个符号，问他：“那这个‘心’，是什么意思呢？”灰狼没有回答，只是拿起小勺子，在阿澜面前那杯还没喝的咖啡上，画了一个新的字。那是两个并排站着的人。阿澜记得书里写过，这个字的意思是“跟着、在一起”。",
+   "窗外的阳光照在奶泡上，两个人的影子靠得很近。从那天起，灰狼不再只喝半杯咖啡了。他每天都把杯子喝得干干净净，因为杯子底下，总有阿澜画给他的一个新的图案。"
+  ],
+  "translations": [
+   "Bên bờ sông có một quán cà phê nhỏ, chủ quán là một cô rái cá tên A Lan. Ly latte cô pha rất nổi tiếng, vì cô có thể vẽ đủ loại hình trên lớp bọt sữa: chiếc lá, chú gấu nhỏ, mặt trăng; khách thường không nỡ uống, phải lấy điện thoại ra chụp một tấm trước. A Lan rất thích quan sát khách, ai thích uống ngọt, ai lúc nào cũng ngồi một chỗ, cô đều nhớ rõ mồn một.",
+   "Một tháng trước, quán có một vị khách mới. Đó là một anh sói xám đeo kính, ngày nào cũng xuất hiện đúng ba giờ chiều, luôn ngồi ở chỗ cạnh cửa sổ, gọi một ly latte rồi mở ra một cuốn sách dày cộp. Trong sách in đầy những ký hiệu kỳ lạ, A Lan không hiểu nổi một cái nào. Anh sói rất ít nói, mỗi lần chỉ uống nửa ly cà phê. Trước khi đi, anh dùng chiếc thìa nhỏ chăm chú vẽ một ký hiệu lên lớp bọt sữa còn lại, rồi nhẹ nhàng đóng cửa rời đi.",
+   "Ngày thứ nhất, anh vẽ một đường cong, bên dưới có mấy dấu chấm, như những giọt nước đang rơi. Ngày thứ hai là một vầng trăng khuyết mảnh. Ngày thứ ba là một hình giống cây nấm đang xòe, bên dưới còn có một que nhỏ. Ngày thứ tư là một bóng người đang khom lưng. Ngày thứ năm là một hình tròn tròn, giữa có mấy đường kẻ, hơi giống một trái tim. Mỗi ngày khi dọn ly, A Lan đều vẽ lại những ký hiệu này vào cuốn sổ nhỏ của mình.",
+   "“Giọt nước, mặt trăng, cây nấm, một người, một trái tim…” Tối đóng cửa quán, A Lan nhìn cuốn sổ, tự nhủ: “Anh ấy đang nói chuyện với ai sao? Nếu chỉ vẽ bừa, sao ngày nào cũng khác nhau, lại còn vẽ chăm chú như thế? Nếu là đang nói với mình mà mình lại chẳng hiểu câu nào thì tiếc quá.”",
+   "Ngày thứ sáu, anh sói đi vội, để quên một tấm thẻ đánh dấu sách trên ghế. A Lan cầm lên xem, trên đó in một ký hiệu giống hệt cái anh vẽ ngày đầu tiên, bên cạnh có một dòng chữ nhỏ: Giáp cốt văn, Vũ (mưa). Cô lập tức hiểu ra: hóa ra đó đều là những chữ Hán rất cổ! Sáng sớm hôm sau, cô đến thư viện mượn một cuốn sách về giáp cốt văn. Trong sách, chữ “Nguyệt” là một vầng trăng khuyết, chữ “Nhân” là một người đang khom lưng, còn chữ “Tâm” trông đúng như một trái tim.",
+   "Chỉ có “cây nấm” kia là tìm mãi không thấy trong sách. A Lan viết rất nhiều chữ ra giấy, muốn tìm một chữ trông giống nó. Viết đến chữ “伞” (cái ô), cô khựng lại: bản thân chữ này chẳng phải trông giống một chiếc ô đang mở sao? Mưa, trăng, ô, người, tim: một đêm mưa, một chiếc ô, một con người. Tim cô bỗng đập nhanh hơn. Cô nhớ lại một buổi tối mùa đông năm ngoái.",
+   "Hôm đó trời mưa to, lúc sắp đóng cửa, một chú sói ướt sũng từ đầu đến chân đứng trú mưa ngoài cửa quán. Anh cúi đầu, trông rất buồn. A Lan không hỏi gì, pha cho anh một ly cà phê nóng, rồi cho anh mượn chiếc ô của mình, chỉ nói một câu: “Mưa rồi sẽ tạnh thôi.” Hôm đó anh kéo mũ rất thấp, cô còn không nhìn rõ mặt anh, sau này cũng không gặp lại nữa.",
+   "Ba giờ chiều ngày thứ bảy, anh sói lại đến. Lần này, A Lan không đợi anh gọi món đã bưng ra một ly latte. Trên lớp bọt sữa là chữ “伞” cô dồn hết tâm sức vẽ, bên cạnh còn có một dấu hỏi nho nhỏ. Anh sói nhìn ly cà phê, sững người rất lâu, tai từ từ đỏ lên. Anh lấy từ trong túi ra một chiếc ô xanh sạch sẽ, đặt lên bàn, chính là chiếc ô A Lan cho mượn năm ngoái.",
+   "“Tối hôm đó, tôi vừa lại một lần nữa tìm việc thất bại, cảm thấy mình chẳng làm được gì ra hồn.” Anh sói khẽ nói, “Chính ly cà phê và câu nói ấy của cô đã giúp tôi kiên trì. Bây giờ tôi làm việc ở bảo tàng, nghiên cứu chữ cổ. Tôi đã muốn trả ô cho cô từ lâu, nhưng mỗi lần đến trước quầy là lại không biết mở lời thế nào, đành dùng cách quen thuộc nhất của mình: mỗi ngày viết một chữ.”",
+   "A Lan bật cười, chỉ vào ký hiệu cuối cùng trong cuốn sổ, hỏi anh: “Vậy chữ ‘Tâm’ này nghĩa là gì?” Anh sói không trả lời, chỉ cầm chiếc thìa nhỏ lên, vẽ một chữ mới lên ly cà phê chưa uống trước mặt A Lan. Đó là hai người đứng cạnh nhau. A Lan nhớ trong sách có viết, chữ này có nghĩa là “đi theo, ở bên nhau”.",
+   "Ánh nắng ngoài cửa sổ chiếu lên lớp bọt sữa, bóng của hai người tựa vào nhau rất gần. Từ hôm đó, anh sói không còn chỉ uống nửa ly cà phê nữa. Ngày nào anh cũng uống sạch ly, vì dưới đáy ly luôn có một hình vẽ mới A Lan vẽ tặng anh."
+  ],
+  "questions": [
+   {
+    "q": "灰狼每次离开咖啡馆之前会做什么？",
+    "q_vi": "Mỗi lần trước khi rời quán, anh sói làm gì?",
+    "options": [
+     "给阿澜留一张纸条",
+     "把咖啡全部喝完",
+     "在剩下的奶泡上画一个符号",
+     "拍一张照片"
+    ],
+    "answer": 2,
+    "explain_vi": "Đoạn 2: anh chỉ uống nửa ly, rồi dùng thìa vẽ một ký hiệu lên lớp bọt sữa còn lại."
+   },
+   {
+    "q": "帮助阿澜解开秘密的关键线索是什么？",
+    "q_vi": "Manh mối then chốt giúp A Lan giải được bí mật là gì?",
+    "options": [
+     "灰狼忘在座位上的书签",
+     "图书馆的工作人员",
+     "灰狼的手机",
+     "一张旧照片"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 5: thẻ đánh dấu sách in chữ giáp cốt “mưa” giống hệt ký hiệu ngày đầu, cô mới biết đó là chữ cổ."
+   },
+   {
+    "q": "那个像“蘑菇”的符号其实是什么字？",
+    "q_vi": "Ký hiệu giống “cây nấm” thật ra là chữ gì?",
+    "options": [
+     "雨",
+     "伞",
+     "人",
+     "心"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 6: chữ 伞 tự nó trông giống một chiếc ô đang mở."
+   },
+   {
+    "q": "灰狼为什么要用画字的方式和阿澜交流？",
+    "q_vi": "Vì sao anh sói giao tiếp với A Lan bằng cách vẽ chữ?",
+    "options": [
+     "他不会说话",
+     "阿澜不让客人说话",
+     "他想考考阿澜的水平",
+     "他不知道怎么开口，只好用最熟悉的方式"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 9: mỗi lần đến quầy anh lại không biết mở lời, nên dùng cách quen thuộc nhất của người nghiên cứu chữ cổ."
+   },
+   {
+    "q": "这篇文章主要讲了什么？",
+    "q_vi": "Bài văn chủ yếu kể về điều gì?",
+    "options": [
+     "阿澜怎么学会画拿铁",
+     "甲骨文是怎么产生的",
+     "一位客人用古老的汉字向阿澜表达感谢和好感",
+     "灰狼找工作的经历"
+    ],
+    "answer": 2,
+    "explain_vi": "Anh sói dùng chữ cổ kể lại đêm mưa được cho mượn ô, để cảm ơn và bày tỏ tình cảm với A Lan."
+   }
+  ]
+ },
+ {
+  "id": "f5-05",
+  "kind": "article",
+  "level": 5,
+  "title": "最后一班夜车",
+  "title_vi": "Chuyến xe đêm cuối cùng",
+  "topic": "truyện furry · ấm áp",
+  "paragraphs": [
+   "在绿林城，每天夜里十二点以后，还有一辆公共汽车在街上慢慢地开着。那是十八路夜班车，司机是一只叫大山的老熊。他已经开了整整三十年夜车，城里的每一条路、每一个红绿灯，他闭上眼睛都能想起来。每个乘客下车的时候，他都会说同一句话：“回家路上小心。”",
+   "夜班车上的乘客不多，大部分都是老面孔。猫头鹰护士在医院上夜班，每天凌晨一点下班，总是坐在第一排。仓鼠小米是大学生，常常在图书馆学到很晚，一上车就抱着书包睡着。刺猬阿婆白天在家，晚上推着小车在路口卖烤红薯，收了摊才坐车回家。还有一些新面孔，来了又走，大山师傅也都记得。",
+   "大山师傅有很多小习惯。到了医院那一站，即使没有人在等，他也会多停一分钟，因为猫头鹰护士有时会晚一点儿出来。刺猬阿婆的小车很重，他总是先把车停稳，再下去帮她把车推上来。仓鼠小米睡着了，他会在快到学校的时候，轻轻按两下喇叭。这些事情，他从来没有对别人说过，也从来没有觉得有什么特别。",
+   "今天，是大山师傅最后一次开夜车。明天开始，他就要退休了。他没有告诉任何乘客，因为他觉得说了以后，大家反而会不好意思。他像平时一样，把车擦得干干净净，把座位一个一个地检查了一遍，十二点整，准时从总站出发了。",
+   "可是，这天晚上有点儿奇怪。到了医院那一站，他多等了一分钟、两分钟、五分钟，猫头鹰护士也没有出来。图书馆门口没有小米，路口也看不到刺猬阿婆的小车。整辆车空空的，只有发动机的声音。大山师傅一边开车，一边在心里笑自己：“老家伙，难道还希望大家来送你吗？大家都有自己的生活啊。”",
+   "车子开到终点站的时候，已经是凌晨两点了。他刚把车停好，车站里的灯忽然一下子全亮了。站台上站满了熟悉的面孔：猫头鹰护士手里拿着一个大蛋糕，刺猬阿婆抱着一袋还冒着热气的烤红薯，仓鼠小米站在最前面，脸红红的。后面还有很多他叫不出名字、却很眼熟的乘客。",
+   "“大山师傅，您以为我们不知道吗？”猫头鹰护士笑着说，“上个星期，我看到车站贴出了新的排班表，下个月十八路的司机换了名字。我们找了好几天，才把这些年常坐您车的人都找到。为了今天，大家都提前下班了。今晚您多等我的那五分钟，我就在这里等您。”",
+   "小米走上前，双手递给大山师傅一张卡片。那是他自己做的车票，上面画着十八路夜班车，写着：“永久免费乘车票，乘客：大山。”小米说，这三十年来，大山师傅一直在送大家回家，今天晚上，应该换大家送他回家了。说完，一只年轻的浣熊从人群里走出来，他穿着新的司机制服，是下个月开始接班的新司机。",
+   "大山师傅说不出话，只好重重地点点头。他第一次坐在了乘客的座位上。车子出发了，窗外的路灯一盏一盏地往后退。他这才发现，原来从后面看，这辆开了三十年的车是这么温暖。大家一边吃蛋糕和烤红薯，一边讲着这些年在车上发生的故事：谁在车上丢过钱包，谁在车上第一次哭，谁又在车上遇到了后来的爱人。",
+   "车子停在了大山师傅家门口。他走下车，回过头，看见车上所有的乘客都把头伸出窗外，连开车的小浣熊也一起，大声地对他喊：“回家路上小心！”夜很深，风有点儿凉，老熊站在路边，一直看着那辆车的灯光慢慢消失在远处。"
+  ],
+  "translations": [
+   "Ở thành Lục Lâm, mỗi đêm sau mười hai giờ, vẫn còn một chiếc xe buýt chậm rãi chạy trên phố. Đó là tuyến xe đêm số 18, tài xế là một bác gấu già tên Đại Sơn. Bác đã lái xe đêm tròn ba mươi năm, mỗi con đường, mỗi cột đèn giao thông trong thành, bác nhắm mắt cũng nhớ ra. Mỗi khi hành khách xuống xe, bác đều nói cùng một câu: “Đường về nhà cẩn thận nhé.”",
+   "Hành khách trên xe đêm không nhiều, phần lớn là những gương mặt quen. Cô cú mèo là y tá trực đêm ở bệnh viện, ngày nào cũng tan ca lúc một giờ sáng, luôn ngồi hàng ghế đầu. Chuột hamster Tiểu Mễ là sinh viên, thường học ở thư viện đến rất khuya, vừa lên xe là ôm cặp ngủ thiếp đi. Bà nhím ban ngày ở nhà, buổi tối đẩy xe nhỏ bán khoai lang nướng ở ngã tư, dọn hàng xong mới đi xe về nhà. Còn có một số gương mặt mới, đến rồi lại đi, bác Đại Sơn cũng đều nhớ cả.",
+   "Bác Đại Sơn có rất nhiều thói quen nhỏ. Đến trạm bệnh viện, dù không có ai đợi, bác cũng dừng thêm một phút, vì cô y tá cú mèo đôi khi ra muộn một chút. Chiếc xe đẩy của bà nhím rất nặng, bác luôn đỗ xe cho chắc trước, rồi xuống giúp bà đẩy xe lên. Tiểu Mễ ngủ quên, sắp đến trường thì bác bấm nhẹ hai tiếng còi. Những chuyện này, bác chưa từng kể với ai, cũng chưa bao giờ thấy có gì đặc biệt.",
+   "Hôm nay là lần cuối cùng bác Đại Sơn lái xe đêm. Từ ngày mai, bác sẽ nghỉ hưu. Bác không nói với hành khách nào, vì bác nghĩ nói ra rồi mọi người lại thấy ngại. Bác vẫn như mọi ngày, lau xe sạch bong, kiểm tra từng chiếc ghế một lượt, đúng mười hai giờ thì xuất phát từ bến chính.",
+   "Nhưng đêm nay hơi lạ. Đến trạm bệnh viện, bác đợi thêm một phút, hai phút, năm phút, cô y tá cú mèo vẫn không ra. Trước cửa thư viện không có Tiểu Mễ, ở ngã tư cũng không thấy xe đẩy của bà nhím. Cả chiếc xe trống trơn, chỉ có tiếng động cơ. Bác Đại Sơn vừa lái xe, vừa tự cười mình trong lòng: “Ông già này, chẳng lẽ còn mong mọi người đến tiễn mình sao? Ai cũng có cuộc sống riêng mà.”",
+   "Khi xe chạy đến bến cuối thì đã hai giờ sáng. Bác vừa đỗ xe xong, đèn trong bến bỗng bật sáng hết cùng một lúc. Trên sân ga đứng kín những gương mặt quen thuộc: cô y tá cú mèo cầm một chiếc bánh kem lớn, bà nhím ôm một túi khoai lang nướng còn bốc hơi nóng, Tiểu Mễ đứng ở hàng đầu, mặt đỏ ửng. Phía sau còn rất nhiều hành khách bác không gọi được tên nhưng rất quen mặt.",
+   "“Bác Đại Sơn, bác tưởng chúng cháu không biết sao?” Cô y tá cú mèo cười nói, “Tuần trước cháu thấy bến xe dán bảng phân ca mới, tháng sau tài xế tuyến 18 đổi tên. Chúng cháu tìm mấy ngày liền mới tìm được hết những người hay đi xe của bác mấy năm nay. Vì hôm nay, mọi người đều tan làm sớm. Năm phút tối nay bác đợi cháu, thì cháu ở đây đợi bác.”",
+   "Tiểu Mễ bước lên, hai tay đưa cho bác Đại Sơn một tấm thẻ. Đó là tấm vé cậu tự làm, trên vẽ chiếc xe đêm số 18, viết: “Vé đi xe miễn phí trọn đời, hành khách: Đại Sơn.” Tiểu Mễ nói, ba mươi năm nay bác Đại Sơn luôn đưa mọi người về nhà, tối nay đến lượt mọi người đưa bác về. Nói xong, một chàng gấu mèo trẻ từ trong đám đông bước ra, mặc bộ đồng phục tài xế mới, chính là tài xế mới sẽ nhận ca từ tháng sau.",
+   "Bác Đại Sơn không nói nên lời, chỉ biết gật đầu thật mạnh. Lần đầu tiên bác ngồi trên ghế hành khách. Xe chuyển bánh, những ngọn đèn đường ngoài cửa sổ lần lượt lùi lại phía sau. Đến lúc này bác mới phát hiện, hóa ra nhìn từ phía sau, chiếc xe bác lái ba mươi năm lại ấm áp đến thế. Mọi người vừa ăn bánh kem và khoai lang nướng, vừa kể những câu chuyện xảy ra trên xe mấy năm qua: ai từng đánh rơi ví trên xe, ai lần đầu khóc trên xe, ai lại gặp được người yêu sau này ngay trên xe.",
+   "Xe dừng trước cửa nhà bác Đại Sơn. Bác bước xuống, ngoảnh lại, thấy tất cả hành khách trên xe đều thò đầu ra cửa sổ, cả chàng gấu mèo đang lái xe cũng vậy, cùng hét to với bác: “Đường về nhà cẩn thận nhé!” Đêm đã khuya, gió hơi lạnh, bác gấu già đứng bên đường, nhìn mãi theo ánh đèn của chiếc xe dần khuất ở phía xa."
+  ],
+  "questions": [
+   {
+    "q": "大山师傅每次乘客下车时都会说什么？",
+    "q_vi": "Mỗi khi hành khách xuống xe, bác Đại Sơn đều nói gì?",
+    "options": [
+     "回家路上小心",
+     "明天见",
+     "谢谢乘坐",
+     "请拿好东西"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 1: bác luôn nói “回家路上小心” (Đường về nhà cẩn thận nhé)."
+   },
+   {
+    "q": "到了医院那一站，大山师傅为什么总是多停一分钟？",
+    "q_vi": "Đến trạm bệnh viện, vì sao bác Đại Sơn luôn dừng thêm một phút?",
+    "options": [
+     "那里的乘客特别多",
+     "公司要求他这样做",
+     "他要在那里休息",
+     "猫头鹰护士有时会晚一点儿出来"
+    ],
+    "answer": 3,
+    "explain_vi": "Đoạn 3: vì cô y tá cú mèo đôi khi ra muộn một chút."
+   },
+   {
+    "q": "最后一天晚上，乘客们为什么都没有上车？",
+    "q_vi": "Đêm cuối cùng, vì sao hành khách đều không lên xe?",
+    "options": [
+     "他们都生病了",
+     "他们提前到终点站去给他准备惊喜",
+     "那天下大雨",
+     "他们都换了别的车"
+    ],
+    "answer": 1,
+    "explain_vi": "Đoạn 6–7: mọi người tan làm sớm, đến bến cuối chuẩn bị bánh kem, khoai nướng để tiễn bác."
+   },
+   {
+    "q": "乘客们是怎么知道大山师傅要退休的？",
+    "q_vi": "Hành khách biết bác Đại Sơn sắp nghỉ hưu bằng cách nào?",
+    "options": [
+     "猫头鹰护士看到了新的排班表",
+     "大山师傅自己告诉了他们",
+     "新司机告诉了小米",
+     "报纸上写了"
+    ],
+    "answer": 0,
+    "explain_vi": "Đoạn 7: cô y tá thấy bảng phân ca mới, tháng sau tài xế tuyến 18 đổi tên."
+   },
+   {
+    "q": "故事最后，乘客们一起喊“回家路上小心”，说明了什么？",
+    "q_vi": "Cuối truyện, hành khách cùng hét “Đường về nhà cẩn thận nhé”, điều đó cho thấy gì?",
+    "options": [
+     "他们想让大山师傅继续开车",
+     "大山师傅的家很远",
+     "这一次轮到大家用他的话来关心他",
+     "新司机开车不太安全"
+    ],
+    "answer": 2,
+    "explain_vi": "Câu nói bác dành cho hành khách suốt 30 năm, nay mọi người nói lại với bác: lần này đến lượt họ quan tâm, đưa bác về nhà."
+   }
+  ]
+ }
+]

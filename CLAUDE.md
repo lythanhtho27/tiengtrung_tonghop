@@ -28,7 +28,7 @@ word_learning/        Giáo trình HSK 3.0 (词汇速记速练手册)
   word_learning.html/.css/.js, hsk_book_data.js, json_data/quyen_*.js(.json)
 hsk_lotrinh/          Lộ trình từ vựng HSK 1–6 (SRS, đọc nhanh)
   hsk_lotrinh.html/.css/.js, hsk_vocab_data.js
-doc_them/             Đọc thêm: 299 bài (truyện dài, bài đọc, hội thoại, thành ngữ) + 14 đề luyện đọc HSK, bài tự dán, đọc lại bài khóa Boya
+doc_them/             Đọc thêm: 333 bài (truyện dài, bài đọc, hội thoại, thành ngữ) + 14 đề luyện đọc HSK, bài tự dán, đọc lại bài khóa Boya
   doc_them.html/.css/.js, doc_data.js (sinh tự động)
   comic_art.js (chế độ Truyện tranh: khung tranh + bong bóng thoại), comic_data.js (sinh tự động), comics/<series>/*.webp
 thong_ke/             Thống kê & dự báo (chỉ đọc localStorage của mọi trang): tổng quan, dự báo ôn 7/30 ngày, theo tuần, theo cấp, heatmap, tốc độ, từ hay quên
@@ -44,8 +44,8 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
   hanviet/            Bảng âm Hán Việt theo (chữ, pinyin): hv_1..3.tsv, overrides.tsv (sửa tay), hanviet.py
   add_hanviet_wl.py, build_dict.py, build_luyen_tap.py, build_doc_them.py, build_visual.py
   hanzi_parts/        Nguồn tách bộ: dictionary.txt (Make Me a Hanzi, LGPL, tự tải, không commit), unihan_vi.tsv (âm Việt dự phòng từ Unihan)
-  doc_them_src/       Nguồn tài liệu đọc (sáng tác mới): hsk*.json, more_hsk*.json, series_s1..s5.json, series_s6_a/b/c.json, series_s7_a/b/c.json, series_s8_a/b/c.json, series_s9_a/b/c.json, series_s10_a/b/c.json, dialogues.json, chengyu_a/b.json, exam_hsk4/5.json
-                      + BRIEF.md, BRIEF_MORE.md (quy cách viết từng loại), BRIEF_S6.md … BRIEF_S10.md (dàn ý bộ truyện s6–s10) + vocab_hskN.txt
+  doc_them_src/       Nguồn tài liệu đọc (sáng tác mới): hsk*.json, more_hsk*.json, series_s1..s5.json, series_s6_a/b/c.json, series_s7_a/b/c.json, series_s8_a/b/c.json, series_s9_a/b/c.json, series_s10_a/b/c.json, series_s11_a/b/c.json, series_s12_a/b/c.json, furry_hsk4/5.json, dialogues.json, chengyu_a/b.json, exam_hsk4/5.json
+                      + BRIEF.md, BRIEF_MORE.md (quy cách viết từng loại), BRIEF_S6.md … BRIEF_S12.md (dàn ý bộ truyện s6–s12), BRIEF_FURRY.md (truyện ngắn furry) + vocab_hskN.txt
   comics/             Truyện tranh: characters.json, panels_<series>.json (kịch bản + người nói), gen_comics.py (Qwen-Image qua ComfyUI/diffusers), build_comics.py → doc_them/comic_data.js; xem README.md
   scratch/            Script xử lý một lần (OCR, kiểm tra, sửa dữ liệu), chỉ để tham khảo
 ```
@@ -218,9 +218,9 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
 
 ## Đọc thêm (`doc_them/`)
 
-- **Nội dung** (sáng tác mới; quy cách trong `BRIEF.md` và `BRIEF_MORE.md`): 299 bài, khoảng 212.000 chữ Hán.
-  - 95 bài đọc (`kind:"article"`): HSK 1–2 mỗi cấp 5 bài, HSK 3: 15, HSK 4: 30, HSK 5: 25, HSK 6: 15. Phần lớn là truyện ngắn, vì người dùng thích truyện.
-  - 10 bộ truyện dài, 124 chương (`kind:"series"`, có các trường `series`, `series_title(_vi)`, `chapter`):
+- **Nội dung** (sáng tác mới; quy cách trong `BRIEF.md` và `BRIEF_MORE.md`): 333 bài, khoảng 245.000 chữ Hán.
+  - 105 bài đọc (`kind:"article"`): HSK 1–2 mỗi cấp 5 bài, HSK 3: 15, HSK 4: 35, HSK 5: 30, HSK 6: 15. Phần lớn là truyện ngắn, vì người dùng thích truyện; trong đó 10 truyện ngắn furry độc lập (`f4-01..05`, `f5-01..05`, quy cách ở `BRIEF_FURRY.md`).
+  - 12 bộ truyện dài, 148 chương (`kind:"series"`, có các trường `series`, `series_title(_vi)`, `chapter`):
     - s1 一碗汤的距离 (HSK 4, 12 chương);
     - s2 十一点的钟声, trinh thám (HSK 5, 15 chương);
     - s3 等一盏灯, tình cảm đô thị (HSK 4→5, 15 chương);
@@ -230,7 +230,9 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
     - s7 寻找月亮湖, furry phiêu lưu sa mạc, cùng thế giới với s6 (HSK 4, 12 chương, `BRIEF_S7.md`);
     - s8 星之泪失窃案, furry trinh thám (không án mạng, manh mối cài sẵn theo bảng trong `BRIEF_S8.md`), cùng thế giới (HSK 4, 12 chương);
     - s9 消失的夜莺, vụ án thứ hai của thám tử 夜白 (HSK 5, 12 chương, `BRIEF_S9.md`);
-    - s10 十年后的情书, vụ án thứ ba của 夜白, trinh thám + tình cảm (夜白×白霜, 阿栗×刺刺) (HSK 4, 12 chương, `BRIEF_S10.md`).
+    - s10 十年后的情书, vụ án thứ ba của 夜白, trinh thám + tình cảm (夜白×白霜, 阿栗×刺刺) (HSK 4, 12 chương, `BRIEF_S10.md`);
+    - s11 北极星号上的戒指, vụ án thứ tư của 夜白: trộm nhẫn trên tàu đêm bị kẹt tuyết, 夜白 ra mắt gia đình 白霜 (HSK 4, 12 chương, `BRIEF_S11.md`);
+    - s12 潮汐书店, furry bí ẩn + tình cảm, nhân vật mới ở thị trấn biển 蓝湾镇 (HSK 5, 12 chương, `BRIEF_S12.md`).
   - Người dùng thích nhất truyện furry trinh thám + tình cảm: viết thêm thì ưu tiên thể loại này. Bộ truyện được sắp theo số (`s10` sau `s9`) trong `build_doc_them.py`.
   - 30 hội thoại (`kind:"dialogue"`): mỗi đoạn có dạng "Tên：lời", kèm `speakers`, `scene_vi`.
   - 50 thành ngữ (`kind:"chengyu"`, có `idiom{hz,py,hv,meaning,usage,examples}`).
