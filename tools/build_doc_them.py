@@ -16,6 +16,7 @@ import json
 import os
 import re
 import sys
+from collections import Counter
 
 import jieba
 from pypinyin import pinyin, Style, load_phrases_dict
@@ -68,6 +69,114 @@ def han_pinyin(text):
     if len(out) != len(HAN.findall(text)):
         out = [p[0] for p in pinyin(text, style=Style.TONE, errors="ignore")]
     return " ".join(out)
+
+
+SENT_MAX = 14        # mỗi từ giữ tối đa 14 câu (mỗi bài tối đa 2 câu)
+
+
+def split_zh(text):
+    """Tách câu tiếng Trung; dấu đóng ngoặc/ngoặc kép đi theo câu trước."""
+    out, cur, i = [], "", 0
+    while i < len(text):
+        cur += text[i]
+        if text[i] in "。！？!?" or (text[i] == "…" and i + 1 < len(text) and text[i + 1] != "…"):
+            while i + 1 < len(text) and text[i + 1] in "。！？!?…”’」』）)":
+                i += 1
+                cur += text[i]
+            out.append(cur.strip())
+            cur = ""
+        i += 1
+    if cur.strip():
+        out.append(cur.strip())
+    return [x for x in out if HAN.search(x)]
+
+
+def split_vi(text):
+    return [x.strip() for x in re.findall(r".+?(?:[.!?…]+[”’\"')\]]*(?=\s|$)|$)", text.strip(), re.S) if re.search(r"\w", x)]
+
+
+def fix_quotes(s, pairs):
+    """Bỏ dấu ngoặc kép lẻ do câu bị cắt giữa lời thoại."""
+    for a, b in pairs:
+        while s.count(a) > s.count(b) and s.startswith(a):
+            s = s[1:]
+        while s.count(b) > s.count(a) and s.endswith(b):
+            s = s[:-1]
+        if s.count(a) != s.count(b):
+            s = s.replace(a, "").replace(b, "")
+    return s.strip()
+
+
+def build_sents(texts, segment_words):
+    """doc_them/doc_sents.js: câu ví dụ lấy từ bài đọc cho từng từ (trang Hôm nay dùng khi ôn)."""
+    pairs_zh = (("“", "”"), ("「", "」"), ("‘", "’"))
+    tlist, sents, by_word, aligned = [], [], {}, 0
+    for t in texts:
+        ti = len(tlist)
+        title = t["title"]
+        if t["kind"] == "series":
+            title = f"{t['series_title']} · {t['chapter']}. {t['title']}"
+        tlist.append([t["id"], title, 1 if t["kind"] == "series" else 0])
+        # chữ trong tên riêng bị tách lẻ (鹿鸣): cặp chữ lẻ lặp lại ≥ 3 lần trong bài
+        pair = Counter()
+        for para in t["paragraphs"]:
+            pos, prev = 0, ""
+            for m in re.finditer(r"[㐀-鿿]+", para):
+                prev = ""
+                for w in segment_words(m.group()):
+                    if prev and len(w) == 1:
+                        pair[prev + w] += 1
+                    prev = w if len(w) == 1 else ""
+        names = {k for k, v in pair.items() if v >= 3}
+        for para, tr in zip(t["paragraphs"], t["translations"]):
+            if t["kind"] == "dialogue":
+                para = re.sub(r"^\s*[㐀-鿿A-Za-z]{1,6}\s*[：:]", "", para)
+                tr = re.sub(r"^\s*[^:：]{1,24}[:：]\s*", "", tr)
+            zs, vs = split_zh(para), split_vi(tr)
+            ok = len(zs) == len(vs)
+            for i, z in enumerate(zs):
+                n = len(HAN.findall(z))
+                if n < 6 or n > 42:
+                    continue
+                vi = fix_quotes(vs[i], (("“", "”"),)) if ok else (tr if len(zs) == 1 else "")
+                zc = fix_quotes(z, pairs_zh)
+                si = len(sents)
+                sents.append([zc, vi, ti])
+                aligned += 1 if vi else 0
+                seen = set()
+                for m in re.finditer(r"[㐀-鿿]+", zc):
+                    ws = segment_words(m.group())
+                    for k, w in enumerate(ws):
+                        if w in seen:
+                            continue
+                        if len(w) == 1 and ((k and ws[k - 1] + w in names) or (k + 1 < len(ws) and w + ws[k + 1] in names)):
+                            continue
+                        seen.add(w)
+                        by_word.setdefault(w, []).append(si)
+    # chọn câu cho mỗi từ: có bản dịch, dài vừa phải, rải nhiều bài
+    used, words = set(), {}
+    for w, lst in by_word.items():
+        if len(w) == 1 and len(lst) > 400:
+            continue                      # hư từ quá phổ biến (的, 了, 我…): không cần câu ví dụ riêng
+        lst = sorted(lst, key=lambda i: (0 if sents[i][1] else 1, abs(len(HAN.findall(sents[i][0])) - 16)))
+        per, pick = Counter(), []
+        for i in lst:
+            if per[sents[i][2]] >= 2:
+                continue
+            per[sents[i][2]] += 1
+            pick.append(i)
+            if len(pick) >= SENT_MAX:
+                break
+        words[w] = pick
+        used.update(pick)
+    remap = {old: k for k, old in enumerate(sorted(used))}
+    data = {"t": tlist, "s": [sents[i] for i in sorted(used)], "w": {w: [remap[i] for i in v] for w, v in sorted(words.items())}}
+    out = os.path.join(ROOT, "doc_them", "doc_sents.js")
+    with open(out, "w", encoding="utf-8") as f:
+        f.write("/* Sinh tự động bởi tools/build_doc_them.py — câu ví dụ theo từ, lấy từ bài đọc: t [id, tên, là truyện dài], s [câu, dịch, chỉ số t], w {từ: [chỉ số s]} */\nwindow.DOC_SENTS = ")
+        json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
+        f.write(";\n")
+    print(f"-> {out}: {len(data['s'])} câu ({sum(1 for x in data['s'] if x[1])} có dịch), {len(words)} từ, {os.path.getsize(out) // 1024}KB")
 
 
 def main():
@@ -196,6 +305,7 @@ def main():
         f.write("/* Sinh tự động bởi tools/build_doc_them.py — mục lục nhẹ của doc_data.js (gợi ý bài ở trang Hôm nay) */\nwindow.DOC_INDEX = ")
         json.dump(index, f, ensure_ascii=False, separators=(",", ":"))
         f.write(";\n")
+    build_sents(texts, segment_words)
     for t in texts:
         print(f"{t['id']:8s} {t['kind']:8s} HSK{t['level']} {t['chars']:5d} chữ  {len(t['paragraphs']):2d} đoạn  {len(t['questions'])} câu hỏi  ngoài cấp {len(t['beyond'])}  {t['title']}")
     from collections import Counter

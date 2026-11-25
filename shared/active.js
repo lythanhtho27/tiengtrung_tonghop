@@ -638,5 +638,5 @@ html.ha-lock{overflow:hidden}
         if (Date.now() - A.shownAt > 300) go.click();
     }, true);
 
-    window.HocActive = { open, startFresh, freshInfo, otherKnown, knownIv, settings, set, isOpen: () => !!A, KNOWN_IV };
+    window.HocActive = { open, startFresh, freshInfo, otherKnown, knownIv, settings, set, audio, setAudio, match, isOpen: () => !!A, KNOWN_IV };
 })();

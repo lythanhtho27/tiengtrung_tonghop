@@ -62,7 +62,19 @@
                                     <option value="0">Tất cả</option>
                                 </select>
                             </label>
-                            <label class="field-inline">Kiểu thẻ
+                            <label class="field-inline">Cách ôn
+                                <select id="opt-review">
+                                    <option value="active">🧠 Ôn chủ động</option>
+                                    <option value="flip">🃏 Lật thẻ</option>
+                                </select>
+                            </label>
+                            <label class="field-inline" id="wrap-recall">Trả lời
+                                <select id="opt-recall">
+                                    <option value="type">Gõ chữ Hán / pinyin</option>
+                                    <option value="self">Không gõ, tự chấm</option>
+                                </select>
+                            </label>
+                            <label class="field-inline" id="wrap-mode">Kiểu thẻ
                                 <select id="opt-mode">
                                     <option value="mix">Trộn (khuyên dùng)</option>
                                     <option value="hz">Chữ → nghĩa</option>
@@ -70,7 +82,9 @@
                                     <option value="listen">Nghe → nghĩa</option>
                                 </select>
                             </label>
+                            <label class="check" id="wrap-listen"><input type="checkbox" id="opt-listen"> 🎧 Có câu nghe</label>
                             <label class="check"><input type="checkbox" id="opt-speak"> Tự đọc khi lật thẻ</label>
+                            <label class="check"><input type="checkbox" id="opt-story"> Câu ví dụ từ truyện</label>
                         </div>
                         <details class="skip-box" id="skip-box">
                             <summary>⏸ Tạm ẩn thẻ theo cấp HSK <span id="skip-sum"></span></summary>
@@ -160,6 +174,7 @@
                 </div>
                 <div class="fc-front" id="fc-front"></div>
                 <div class="fc-back" id="fc-back" hidden>
+                    <div class="fc-res" id="fc-res" hidden></div>
                     <div class="fc-py" id="fc-py"></div>
                     <div class="fc-hv" id="fc-hv"></div>
                     <div class="fc-vi" id="fc-vi"></div>

@@ -1045,6 +1045,18 @@
                 tools + (p.tr ? '<div class="ptr">' + esc(p.tr) + "</div>" : "") + "</div>";
         }).join("");
         markNew();
+        jumpToSent();
+    }
+    // ?s=<mấy chữ đầu câu>: cuộn tới đoạn chứa câu đó (link "Mở lại đoạn" ở Buổi học hôm nay), chỉ một lần mỗi lần mở trang
+    var jumpS = new URLSearchParams(location.search).get("s") || "";
+    function jumpToSent() {
+        if (!jumpS || !doc || new URLSearchParams(location.search).get("s") !== jumpS) return;
+        var els = document.querySelectorAll("#doc-body .ptext"), q = jumpS.replace(/[“”‘’「」]/g, "");
+        for (var i = 0; i < els.length; i++) {
+            if ((els[i].getAttribute("data-lk-text") || "").replace(/[“”‘’「」]/g, "").indexOf(q) < 0) continue;
+            (function (el) { setTimeout(function () { el.scrollIntoView({ block: "center" }); el.classList.add("jump"); }, 60); })(els[i]);
+            return;
+        }
     }
     // Tô các chữ thuộc từ chưa học + tính % biết của bài đang mở
     function markNew() {

@@ -451,3 +451,4 @@ a { color: inherit; }
 .act-txt { min-width: 0; flex: 1 1 220px; }
 .act-txt small { display: block; color: var(--muted); font-family: var(--ui-font-cn); font-size: 15px; overflow-wrap: anywhere; }
 .act-box .btn { min-height: 44px; }
+.ptext.jump { background: var(--ui-highlight); border-radius: 8px; }

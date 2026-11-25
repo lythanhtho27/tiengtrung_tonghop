@@ -379,7 +379,7 @@
     const SRC_KEYS = Object.keys(SOURCES);
 
     // ====================================================================== Trạng thái trang
-    const DEFAULT = { settings: { limit: 50, speak: true, cardMode: "mix", skipLv: [], readGoal: 3 }, days: {}, streak: { count: 0, last: "", best: 0 } };
+    const DEFAULT = { settings: { limit: 50, speak: true, review: "active", storyEx: true, cardMode: "mix", skipLv: [], readGoal: 3 }, days: {}, streak: { count: 0, last: "", best: 0 } };
     let S = loadState();
     function loadState() {
         const o = readJSON(STORE, {}) || {};
@@ -534,6 +534,140 @@
         return wlLoading;
     }
 
+    // ====================================================================== Câu ví dụ đổi mới từ bài đọc (doc_them/doc_sents.js)
+    let sentsLoading = null;
+    function ensureSents() {
+        if (!S.settings.storyEx) return Promise.resolve(false);
+        if (window.DOC_SENTS) return Promise.resolve(true);
+        if (sentsLoading) return sentsLoading;
+        sentsLoading = new Promise(resolve => {
+            const s = document.createElement("script");
+            s.src = "../doc_them/doc_sents.js";
+            s.onload = () => resolve(!!window.DOC_SENTS);
+            s.onerror = () => { sentsLoading = null; resolve(false); };
+            document.head.appendChild(s);
+        });
+        return sentsLoading;
+    }
+    let readDone = null;           // tập id bài đã đọc ở Đọc thêm (dựng lại mỗi phiên)
+    function doneTexts() {
+        if (readDone) return readDone;
+        const r = (readJSON("doc_them_v1", {}) || {}).read || {};
+        return (readDone = new Set(Object.keys(r).filter(id => r[id] && r[id].done)));
+    }
+    // Câu trong bài đã đọc; chưa có thì câu trong bài đọc lẻ chưa đọc (không lấy truyện dài chưa đọc để khỏi lộ tình tiết)
+    function storySents(hz) {
+        const D = window.DOC_SENTS, list = D && S.settings.storyEx && D.w[hz];
+        if (!list) return { read: [], other: [] };
+        const done = doneTexts(), out = { read: [], other: [] };
+        list.forEach(i => {
+            const s = D.s[i], t = D.t[s[2]], x = { zh: s[0], py: "", vi: s[1], src: t[1], url: "../doc_them/doc_them.html?id=" + encodeURIComponent(t[0]) + "&s=" + encodeURIComponent(s[0].slice(0, 14)) };
+            if (done.has(t[0])) out.read.push(x); else if (!t[2]) out.other.push(x);
+        });
+        return out;
+    }
+    // Mỗi lần ôn một câu khác: xoay theo số lần ôn + ngày. Từ còn mới thì giữ câu ví dụ gốc cho dễ.
+    function pickExample(g) {
+        const base = exampleFor(g), reps = Math.max.apply(null, g.cards.map(c => (c.card && c.card.reps) || 0));
+        if (reps <= 1) return base;
+        const st = storySents(g.hz);
+        const pool = st.read.length ? (st.read.length < 3 && base ? st.read.concat([base]) : st.read) : (base ? [base] : []).concat(st.other);
+        if (!pool.length) return base;
+        return pool[(reps + Math.floor(startOfDay() / DAY)) % pool.length];
+    }
+
+    // ====================================================================== Ôn chủ động: hỏi theo độ chín của từ, trang gợi ý mức chấm
+    //   iv < 3 (mới / vừa quên): chọn nghĩa · 3–13: gõ từ (1/4 là nghe) · ≥ 14: điền vào câu truyện, gõ từ, nghe, đôi lúc chọn nghĩa
+    const QMODES = { pick: "Chọn nghĩa", type: "Nhớ ra từ", ltype: "Nghe ra từ", cloze: "Điền vào câu" };
+    function activeOn() { return S.settings.review !== "flip" && !!window.HocActive; }
+    function pickActive(it) {
+        const g = it.g, vi = meaningOnly(g.vi);
+        if (!vi) return "";
+        const iv = Math.max.apply(null, g.cards.map(c => (c.card && c.card.iv) || 0)), reps = Math.max.apply(null, g.cards.map(c => (c.card && c.card.reps) || 0));
+        const listen = "speechSynthesis" in window && HocActive.audio().listen, x = Math.random();
+        if (iv < 3 || reps <= 1 || it.again) return "pick";
+        if (iv < 14) return listen && x < 0.25 ? "ltype" : "type";
+        if (x < 0.2) return "pick";
+        if (x < 0.4 && listen) return "ltype";
+        it.ex = pickExample(g);
+        return it.ex && it.ex.zh.indexOf(g.hz) >= 0 ? "cloze" : "type";
+    }
+    function shuffled(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+    function pickOptions(g) {
+        const right = meaningOnly(g.vi), seen = new Set([right]), out = [], n = g.hz.length;
+        const take = list => { for (const x of list) { if (out.length >= 3) return; const v = meaningOnly(x.vi); if (v && x.hz !== g.hz && !seen.has(v)) { seen.add(v); out.push(v); } } };
+        const near = session.pool || (session.pool = shuffled(session.queue.filter(q => q.g).map(q => ({ hz: q.g.hz, vi: q.g.vi })))
+            .concat(shuffled(Object.keys(LT.words)).slice(0, 400).map(k => ({ hz: LT.words[k][0], vi: LT.words[k][2] }))));
+        take(shuffled(near.filter(x => x.hz.length === n)));
+        take(shuffled(near));
+        return shuffled([right].concat(out));
+    }
+    function renderActiveFront(it) {
+        const g = it.g, q = it.q, self = HocActive.settings().recall === "self" && q !== "pick", s = session;
+        it.self = self; it.hint = 0; it.res = null;
+        it.mode = q;
+        $("fc-mode").textContent = QMODES[q];
+        $("fc-mode").className = "fc-mode m-" + (q === "ltype" ? "listen" : q === "pick" ? "hz" : q === "cloze" ? "sent" : "vi");
+        const vi = esc(meaningOnly(g.vi)), n = Array.from(g.hz).filter(ch => HAN.test(ch)).length;
+        const form = self ? "" : `<form class="q-form" id="q-form"><input class="q-in" id="q-in" lang="zh-CN" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Chữ Hán hoặc pinyin" aria-label="Gõ chữ Hán hoặc pinyin không dấu"><button class="btn btn-primary">Kiểm tra</button></form>`;
+        const hint = `<button class="btn btn-sm hint-btn" type="button" data-hint>💡 Gợi ý</button><div class="fc-hintbox" id="fc-hintbox" hidden></div>`;
+        let h = "";
+        if (q === "pick") {
+            it.opts = pickOptions(g);
+            h = `<div class="fc-hz">${esc(g.hz)}</div><div class="q-opts">${it.opts.map((o, i) => `<button class="q-opt" type="button" data-opt="${i}"><kbd>${i + 1}</kbd><span>${esc(o.length > 70 ? o.slice(0, 70) + "…" : o)}</span></button>`).join("")}</div>`;
+        } else if (q === "type") h = `<div class="fc-q-vi">${vi}</div><div class="fc-q-sub">${n} chữ Hán · từ tiếng Trung là gì?</div>${form}${hint}`;
+        else if (q === "ltype") h = `<button class="say-big" type="button" data-say-word title="Nghe lại" aria-label="Nghe lại">🔊</button>
+            <div class="listen-row"><button class="btn btn-sm" type="button" data-say-slow>🐢 Chậm</button><button class="btn btn-sm" type="button" data-mute>🔇 Không nghe được lúc này</button></div>${form}${hint}`;
+        else {
+            const gap = `<span class="gap">${"＿".repeat(Math.max(2, n))}</span>`;
+            h = `<div class="fc-sent">${esc(it.ex.zh).split(esc(g.hz)).join(gap)}</div><div class="fc-q-sub">Từ bị che nghĩa là: <b>${vi}</b></div>${form}${hint}`;
+        }
+        $("fc-front").className = "fc-front m-q";
+        $("fc-front").innerHTML = h;
+        $("fc-back").hidden = true;
+        $("fcard").classList.remove("flipped");
+        $("fc-hint").hidden = true;
+        $("btn-flip").hidden = false;
+        $("btn-flip").innerHTML = self ? "Xem đáp án <kbd>Space</kbd>" : "Không nhớ";
+        $("btn-flip").classList.toggle("btn-primary", self);       // tránh bấm nhầm "Không nhớ"
+        $("rate-row").hidden = true;
+        s.t0 = performance.now();
+        window.scrollTo(0, 0);
+        if (q === "ltype") setTimeout(() => { if (curItem() === it && !s.flipped) speak(g.hz); }, 120);
+        const inp = $("q-in");
+        if (inp) {
+            inp.focus({ preventScroll: true });
+            inp.addEventListener("keydown", e => {
+                if (e.key === "Enter" && (e.isComposing || e.keyCode === 229)) e.preventDefault();    // Enter đang chọn chữ trong bộ gõ
+                if (e.key === "Escape") { e.stopPropagation(); inp.blur(); }
+            });
+            $("q-form").onsubmit = e => {
+                e.preventDefault();
+                const v = inp.value.trim();
+                if (v && curItem() === it && !s.flipped) answerActive(HocActive.match({ hz: g.hz, py: g.py || "" }, v), v);
+            };
+        }
+    }
+    // Mức chấm gợi ý: sai → Quên; đúng → Nhớ; đúng mà chậm hoặc dùng gợi ý → Khó
+    function answerActive(ok, typed) {
+        const s = session, it = curItem();
+        if (!it || !it.q || s.flipped) return;
+        const ms = performance.now() - s.t0, slow = ms > (it.q === "pick" ? 7000 : 25000);
+        it.res = { ok, typed: typed || "", sugg: !ok ? 1 : slow || it.hint ? 2 : 3, why: ok && it.hint ? "có gợi ý" : ok && slow ? "hơi lâu" : "" };
+        s.ansAt = Date.now();
+        flip();
+    }
+    function showActiveRes(it) {
+        const box = $("fc-res"), r = it && it.res;
+        box.hidden = !r;
+        document.querySelectorAll("#rate-row .rate").forEach(b => b.classList.toggle("sugg", !!r && +b.dataset.rate === r.sugg));
+        if (!r) return;
+        box.className = "fc-res " + (r.ok ? "ok" : "bad");
+        box.innerHTML = (r.ok ? `✓ Đúng${r.why ? " (" + r.why + ")" : ""}` : r.typed ? `✗ Bạn ${it.q === "pick" ? "chọn" : "gõ"}: <b>${esc(r.typed)}</b>` : "Chưa nhớ")
+            + (!r.ok && r.typed && it.q !== "pick" ? ` <button class="btn btn-sm" type="button" data-accept>Từ tôi gõ cũng đúng nghĩa</button>` : "")
+            + `<small>Gợi ý chấm: <b>${["", "Quên", "Khó", "Nhớ", "Dễ"][r.sugg]}</b><span class="kb-only"> · nhấn Enter để nhận</span></small>`;
+    }
+
     // ====================================================================== Phát âm
     let zhVoice = null;
     function pickVoice() {
@@ -591,7 +725,9 @@
             practice: !!practice,
             flipped: false, t0: 0, ms: 0,
         };
+        readDone = null;
         if (groups.some(g => g.cards.some(c => c.src === "wl"))) ensureWLSents();
+        ensureSents();
         document.body.classList.add("in-review");
         $("practice-note").hidden = !practice;
         show("review");
@@ -674,8 +810,14 @@
         s.flipped = false;
         $("prog-bar").style.width = (s.done / s.total * 100) + "%";
         $("prog-text").textContent = Math.min(s.done + 1, s.total) + "/" + s.total;
+        showActiveRes(null);
+        $("btn-flip").innerHTML = "Lật thẻ <kbd>Space</kbd>";
+        $("btn-flip").classList.add("btn-primary");
         if (it.sent) { renderSentCard(it); return; }
-        if (!it.mode) it.mode = pickMode(g);
+        if (!it.mode) {
+            it.q = activeOn() ? pickActive(it) : "";
+            it.mode = it.q || pickMode(g);
+        }
         $("fc-mode").textContent = MODES[it.mode];
         $("fc-mode").className = "fc-mode m-" + it.mode;
         $("fc-src").innerHTML = uniqSrc(g).map(src => `<span class="s-${src}">${esc(SRC[src].name)}</span>`).join("");
@@ -684,6 +826,7 @@
         $("fc-hard").hidden = hc < HARD_MIN;
         $("fc-hard").textContent = "🧠 Cứng đầu";
         $("fc-hard").title = `Đã quên ${hc} lần`;
+        if (it.q) { renderActiveFront(it); return; }
         $("fc-front").className = "fc-front m-" + it.mode;
         $("fc-front").innerHTML = frontHTML(g, it.mode);
         $("fc-back").hidden = true;
@@ -701,6 +844,10 @@
         const it = curItem(), box = $("fc-hintbox");
         if (!it || !box) return;
         if (it.sent) { showSentHint(it, box); return; }
+        if (it.q) {
+            it.hint = (it.hint || 0) + 1;
+            if (it.q === "ltype") { box.innerHTML = `Nghĩa: <b>${esc(meaningOnly(it.g.vi))}</b>`; box.hidden = false; return; }
+        }
         const note = window.HocNotes ? HocNotes.get(it.g.hz) : "";
         const py = String(it.g.py || "").trim();
         box.innerHTML = note ? `📝 ${esc(note)}`
@@ -715,7 +862,7 @@
         s.flipped = true;
         s.ms = performance.now() - s.t0;
         const it = s.queue[0], g = it.g;
-        if (it.sent) { flipSent(it); return; }
+        if (it.sent) { flipSent(it); showActiveRes(it); return; }
         $("fc-front").className = "fc-front m-back";
         $("fc-front").innerHTML = `<div class="fc-hz">${zizuHTML(g.hz)}</div>
             <button class="say" id="fc-say" type="button" title="Nghe phát âm" aria-label="Nghe phát âm">🔊</button>`;
@@ -724,12 +871,14 @@
         $("fc-vi").textContent = g.vi || "";
         // emoji · ảnh · nét viết + quy tắc Hán Việt → pinyin từng chữ (shared/visual.js)
         $("fc-vis").innerHTML = window.HocVisual ? HocVisual.barHTML(g.hz) + HocVisual.readingHTML(g.hz, g.py, g.hv) : "";
-        const ex = exampleFor(g);
+        const ex = it.ex || (it.ex = pickExample(g));
         if (ex) {
             const zh = esc(ex.zh).split(esc(g.hz)).join(`<mark>${esc(g.hz)}</mark>`);
             $("fc-ex").innerHTML = `<button class="say" data-say="${esc(ex.zh)}" title="Nghe câu ví dụ">🔊</button>
-                <div class="zh">${zh}</div>${ex.py ? `<div class="py">${esc(ex.py)}</div>` : ""}${ex.vi ? `<div class="vi">${esc(ex.vi)}</div>` : ""}`;
+                <div class="zh">${zh}</div>${ex.py ? `<div class="py">${esc(ex.py)}</div>` : ""}${ex.vi ? `<div class="vi">${esc(ex.vi)}</div>` : ""}
+                ${ex.url ? `<div class="sent-src">📖 ${esc(ex.src)} · <a href="${esc(ex.url)}" target="_blank" rel="noopener">Mở lại đoạn ↗</a></div>` : ""}`;
         } else $("fc-ex").innerHTML = "";
+        showActiveRes(it);
         const nb = $("fc-note");
         nb.dataset.hz = g.hz;
         nb.dataset.hard = hardCount(g) >= HARD_MIN ? "1" : "0";
@@ -745,7 +894,7 @@
         for (let r = 1; r <= 4; r++) $("iv-" + r).textContent = s.practice ? "luyện thêm"
             : ivText(sched(Object.assign({ ef: 2.5, iv: 0, reps: 0, lapses: 0 }, live), r).iv);
         // đọc từ rồi đọc câu ví dụ (thẻ Nghe → nghĩa đã đọc từ ở mặt trước nên chỉ đọc câu)
-        if (S.settings.speak) speakCard(it.mode === "listen" ? "" : g.hz, ex && ex.zh);
+        if (S.settings.speak) speakCard(it.mode === "listen" || it.mode === "ltype" ? "" : g.hz, ex && ex.zh);
     }
     // Đọc lại thẻ mới nhất từ localStorage (thẻ có thể vừa đổi sau một lần chấm "Quên")
     function freshCard(c) {
@@ -804,7 +953,7 @@
     }
     function renderSentCard(it) {
         const s = session, e = it.sent;
-        it.typed = "";
+        it.typed = ""; it.res = null;
         $("fc-mode").textContent = "✂️ Điền từ";
         $("fc-mode").className = "fc-mode m-sent";
         $("fc-src").innerHTML = `<span class="s-sent">${esc(SENT_LABEL)}</span>`;
@@ -857,10 +1006,11 @@
         let res = "";
         if (typed) {
             const ok = typed === hanOnly(e.target);
+            it.res = { ok, typed, sugg: ok ? 3 : 1, why: "" };
             res = `<div class="sent-res ${ok ? "ok" : "bad"}">${ok ? "✓ Bạn gõ đúng" : "✗ Bạn gõ"}: <span class="zh-in">${esc(typed)}</span></div>`;
         }
         const url = e.url ? "../" + String(e.url).replace(/^\.?\//, "") : "";
-        $("fc-ex").innerHTML = res
+        $("fc-ex").innerHTML = (it.res ? "" : res)
             + (e.ctx_vi ? `<div class="vi">${esc(e.ctx_vi)}</div>` : "")
             + (e.src || url ? `<div class="sent-src">${esc(e.src || "Nguồn")}${url ? ` · <a href="${esc(url)}">Mở lại bài ↗</a>` : ""}</div>` : "");
         const nb = $("fc-note");
@@ -1375,6 +1525,13 @@
         $("opt-limit").value = String(lim);
         $("opt-speak").checked = !!S.settings.speak;
         $("opt-mode").value = MODES[S.settings.cardMode] ? S.settings.cardMode : "mix";
+        const act = activeOn();
+        $("opt-review").value = act ? "active" : "flip";
+        $("wrap-mode").hidden = act;
+        $("wrap-recall").hidden = $("wrap-listen").hidden = !act;
+        if (window.HocActive) { $("opt-recall").value = HocActive.settings().recall; $("opt-listen").checked = !!HocActive.audio().listen; }
+        $("opt-story").checked = !!S.settings.storyEx;
+        if (nDue) setTimeout(ensureSents, 800);      // nạp sẵn câu ví dụ từ truyện trước khi bắt đầu ôn
         renderSkip();
         renderHard();
         renderSentBox();
@@ -1482,6 +1639,10 @@
     $("btn-review").onclick = startReview;
     $("opt-limit").onchange = e => { S.settings.limit = +e.target.value; save(); renderHome(); };
     $("opt-speak").onchange = e => { S.settings.speak = e.target.checked; save(); };
+    $("opt-review").onchange = e => { S.settings.review = e.target.value; save(); renderHome(); };
+    $("opt-recall").onchange = e => HocActive.set("recall", e.target.value);
+    $("opt-listen").onchange = e => HocActive.setAudio("listen", e.target.checked);
+    $("opt-story").onchange = e => { S.settings.storyEx = e.target.checked; save(); ensureSents(); };
     $("opt-mode").onchange = e => { S.settings.cardMode = e.target.value; save(); };
     $("opt-read-goal").onchange = e => { S.settings.readGoal = +e.target.value; save(); renderHome(); };
     $("skip-lv").onchange = e => {
@@ -1520,16 +1681,27 @@
     });
     if (window.HocSentences) HocSentences.onChange(() => { if (!$("home").hidden) renderSentBox(); });
     if (window.HocNotes) HocNotes.onChange(() => { if (!$("home").hidden && !document.querySelector("#hard-list textarea")) renderHard(); });
-    $("btn-flip").onclick = flip;
+    $("btn-flip").onclick = () => { const it = curItem(); it && it.q && !it.self ? answerActive(false, "") : flip(); };
     $("fcard").addEventListener("click", e => {
         if (e.target.closest(".note-box") || e.target.closest("[data-zizu]")) return;   // ghi chú / Họ chữ tự xử lý
-        if (e.target.closest("input, a")) return;                                       // ô gõ thử / link mở lại bài (thẻ câu)
+        const opt = e.target.closest("[data-opt]"), cur = curItem();
+        if (opt && cur && cur.q === "pick" && !session.flipped) { const v = cur.opts[+opt.dataset.opt]; answerActive(v === meaningOnly(cur.g.vi), v); return; }
+        if (e.target.closest("[data-accept]") && cur && cur.res) { cur.res = { ok: true, typed: "", sugg: cur.hint ? 2 : 3, why: "bạn xác nhận" }; showActiveRes(cur); return; }
+        if (e.target.closest("[data-mute]") && cur && cur.q === "ltype") {
+            if ("speechSynthesis" in window) speechSynthesis.cancel();
+            HocActive.setAudio("listen", false); S.settings.speak = false; save();
+            session.queue.forEach(x => { if (x.q === "ltype") { x.q = "type"; x.mode = "type"; } });
+            renderCard(); toast("Đã tắt câu nghe và tự đọc (bật lại ở trang chính)");
+            return;
+        }
+        if (e.target.closest("input, a, form")) return;                                       // ô gõ thử / link mở lại bài (thẻ câu)
         if (e.target.closest("[data-say-word]")) { e.stopPropagation(); sayCur(); return; }
         if (e.target.closest("[data-say-slow]")) { e.stopPropagation(); sayCur(true); return; }
         if (e.target.closest("[data-hint]")) { e.stopPropagation(); showHint(); return; }
         const say = e.target.closest("[data-say]");
         if (say) { e.stopPropagation(); speak(say.dataset.say); return; }
         if (e.target.closest("#fc-say")) { e.stopPropagation(); sayCur(); return; }
+        if (cur && cur.q && !cur.self) return;                                          // ôn chủ động: phải trả lời, không lật bằng cách chạm thẻ
         flip();
     });
     $("rate-row").addEventListener("click", e => { const b = e.target.closest("[data-rate]"); if (b) rate(+b.dataset.rate); });
@@ -1538,19 +1710,28 @@
     let zzOpenAtKey = false;
     window.addEventListener("keydown", () => { zzOpenAtKey = !!document.getElementById("zz-ov"); }, true);
     document.addEventListener("keydown", e => {
-        if (!session || $("review").hidden || zzOpenAtKey) return;
+        if (!session || $("review").hidden || zzOpenAtKey || (window.HocActive && HocActive.isOpen())) return;
         if (e.ctrlKey || e.metaKey || e.altKey) return;
         const tag = e.target && e.target.tagName;
         if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
-        if (e.key === " " || e.key === "Enter") {
+        const it0 = curItem(), need = it0 && it0.q && !it0.self && !session.flipped;       // đang chờ trả lời
+        if (need && it0.q === "pick" && /^[1-4]$/.test(e.key)) {
+            const v = it0.opts[+e.key - 1];
+            if (v) { e.preventDefault(); answerActive(v === meaningOnly(it0.g.vi), v); }
+        } else if (need && (e.key === " " || e.key === "Enter")) {
+            if (tag !== "BUTTON") { e.preventDefault(); if ($("q-in")) $("q-in").focus(); }
+        } else if (e.key === " " || e.key === "Enter") {
+            if (e.key === "Enter" && tag === "BUTTON" && session.flipped && e.target.closest("#fcard")) return;   // Enter trên nút trong thẻ
             e.preventDefault();
-            if (!session.flipped) flip(); else if (e.key === " ") sayCur();
+            if (!session.flipped) flip();
+            else if (e.key === " ") sayCur();
+            else if (it0 && it0.res && Date.now() - (session.ansAt || 0) > 350) rate(it0.res.sugg);
         } else if ((e.key === "h" || e.key === "H") && !session.flipped) showHint();
-        else if (/^[1-4]$/.test(e.key) && session.flipped) { e.preventDefault(); rate(+e.key); }
+        else if (/^[1-4]$/.test(e.key) && session.flipped) { e.preventDefault(); if (Date.now() - (session.ansAt || 0) > 350) rate(+e.key); }
         else if (e.key === "Escape") finishReview(true);
         else if (e.key === "r" || e.key === "R") {
             const it = curItem();
-            if (it && (session.flipped || (!it.sent && it.mode !== "vi"))) sayCur();   // Nghĩa → chữ / thẻ câu: không đọc trước khi lật (lộ đáp án)
+            if (it && (session.flipped || (!it.sent && ["vi", "type", "cloze"].indexOf(it.mode) < 0))) sayCur();   // Nghĩa → chữ / thẻ câu: không đọc trước khi lật (lộ đáp án)
         }
     });
 
@@ -1568,5 +1749,5 @@
     show("home");
     // test tự động có thể dùng
     window.__HN = { collectDue, collectHard, startReview, startPractice, flip, rate, finishReview, stepState, renderHard, pickMode, meaningOnly, state: () => S, session: () => session, SOURCES,
-        sentDue, readSuggestions, rereadDue, readCountToday, buildKnown, knownPctOf, ensureDocIndex, renderHome };
+        sentDue, pickExample, storySents, pickActive, answerActive, ensureSents, readSuggestions, rereadDue, readCountToday, buildKnown, knownPctOf, ensureDocIndex, renderHome };
 })();
