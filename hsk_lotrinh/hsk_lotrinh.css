@@ -646,3 +646,16 @@ kbd {
     .mode-pick { grid-template-columns: 1fr; }
     .ac-recall .btn-row .btn { min-height: 46px; }
 }
+
+/* ---------- Từ đã biết: nhãn nguồn, quét nhanh, kiểm chứng ---------- */
+.ac-src { display: inline-block; font-size: 11.5px; color: var(--muted); border: 1px solid var(--border); border-radius: 99px; padding: 1px 8px; margin-top: 3px; line-height: 1.5; }
+.ac-src.on { color: var(--ok); border-color: var(--ok); }
+.ac-word .ac-src { display: block; border: 0; padding: 0; margin-top: 2px; }
+.scan-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; max-width: 520px; margin: 18px auto 0; }
+.scan-row .rate { min-height: 64px; }
+.scan-btn { color: var(--primary); border-color: var(--primary); }
+.vf-list { list-style: none; margin: 14px auto 8px; padding: 0; max-width: 440px; text-align: left; }
+.vf-list li { padding: 10px 14px; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 8px; background: var(--bg); color: var(--text); }
+.vf-list li.ok { background: var(--ok-soft); border-color: var(--ok); }
+.vf-list li.bad { background: var(--bad-soft); border-color: var(--bad); }
+.quiz.center { text-align: center; }

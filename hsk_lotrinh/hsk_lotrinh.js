@@ -105,6 +105,7 @@
         speed: { best: null, runs: 0 }, // kỷ lục chế độ đọc nhanh
         lastLevel: 1,
         fresh: {},       // wordId -> { at, s, u } từ học hôm nay chờ nhớ lại (xem NHỚ LẠI TRONG NGÀY)
+        scan: {},        // wordId -> { v: 0 chưa biết | 1 hơi quen, at } kết quả Quét nhanh (từ chưa có thẻ)
         placement: null, // kết quả kiểm tra xếp lớp gần nhất: { at, range, result }
     };
     let S = load();
@@ -194,6 +195,7 @@
         if (S.srs[id]) return;
         S.srs[id] = { ef: 2.5, iv: knewIt ? 1 : 0, reps: knewIt ? 1 : 0, lapses: 0, first: Date.now(), last: Date.now(),
             due: knewIt ? startOfDay() + DAY : Date.now() + 10 * 60000 };
+        delete S.scan[id];
         if (S.settings.sameDay && !noFresh) S.fresh[id] = { at: Date.now(), s: 0 };
         today().n++;
     }
@@ -456,6 +458,7 @@
             const done = st.units.filter(unitDone).length;
             html += `<div class="stage ${stageDone(st) ? "stage-done" : ""}" style="--c:${color}">
                 <div class="stage-head"><span>Chặng ${st.n + 1}</span><small>${done}/${st.units.length} bài${stageDone(st) ? " · đã qua kiểm tra" : ""}</small>
+                    ${levelUnlocked(lv) && !stageDone(st) && stageUnseen(st).length >= 5 ? `<button class="reset-btn scan-btn" data-scan-stage="${st.key}" title="Lướt các từ chưa học của chặng, bỏ qua từ đã biết">⚡ Quét nhanh ${stageUnseen(st).length} từ</button>` : ""}
                     ${done || stageDone(st) ? `<button class="reset-btn" data-reset-stage="${st.key}" title="Đặt lại chặng ${st.n + 1}">↺ Đặt lại</button>` : ""}</div>
                 <div class="nodes">`;
             st.units.forEach(u => {
@@ -493,6 +496,8 @@
             if (e.target.id === "btn-unlock") {
                 S.unlocked[lv] = true; S.lastLevel = lv; save(); renderPath(); toast("Đã mở khóa HSK " + lv); return;
             }
+            const sc = e.target.closest("[data-scan-stage]");
+            if (sc) { startScan(L.stages.find(x => x.key === sc.dataset.scanStage)); return; }
             const rs = e.target.closest("[data-reset-stage]");
             if (rs) { const st = L.stages.find(x => x.key === rs.dataset.resetStage); confirmReset(`HSK ${lv} · Chặng ${st.n + 1}`, st.units, [st]); return; }
             if (e.target.closest("[data-reset-level]")) { confirmReset(`toàn bộ HSK ${lv}`, L.units, L.stages); return; }
@@ -549,6 +554,7 @@
             if (mode === "placed" || mode === "all") u.words.forEach(w => {
                 const c = S.srs[w.id];
                 if (c && (mode === "all" || untouchedPlacedCard(c))) { delete S.srs[w.id]; nc++; }
+                if (mode === "all") delete S.scan[w.id];
             });
         });
         stages.forEach(st => {
@@ -617,15 +623,18 @@
     function closeSession(force) {
         if (session && session.dirty && !force) {
             const pl = session.kind === "placement";
-            if (pl) clearTimeout(session.timer);
+            if (pl || session.vf) clearTimeout(session.timer);
             const msg = pl
                 ? (session.stage === "result" ? "Thoát mà không áp dụng kết quả kiểm tra xếp lớp?" : "Thoát bài kiểm tra xếp lớp? Các câu đã làm sẽ không được lưu.")
+                : session.vf ? "Thoát khi đang kiểm chứng? Kết quả kiểm chứng của lần này sẽ không được lưu."
+                : session.kind === "scan" ? "Thoát quét nhanh? Các từ vừa chọn sẽ không được lưu (bấm “Dừng” để lưu)."
                 : session.kind === "active" && session.batches && session.bi > 0
                     ? `Thoát phiên học? ${session.bi} lượt đã xong vẫn được lưu, phần đang làm thì không.`
                     : "Thoát phiên học? Kết quả của phần đang làm sẽ không được lưu.";
             if (!confirm(msg)) {
                 // tiếp tục câu đang làm với đồng hồ mới
                 if (pl && session.stage === "quiz") renderPlacementQ();
+                if (session.vf) { session.vf.i = Math.min(session.vf.i, session.vf.res.size); renderVerify(); }
                 return;
             }
         }
@@ -724,7 +733,20 @@
         session = { kind: "active", unit: u, words: u.words, todo: relearn ? u.words.slice() : left, relearn,
             known: new Set(), introduced: new Set(), weak: new Set(), dirty: false };
         openSession(`HSK ${u.level} · Bài ${u.n + 1}`);
+        s_mark();
         renderFilter();
+        // nạp xong dữ liệu Boya thì đánh dấu thêm, trừ các từ người học đã tự chạm
+        const s = session;
+        loadOther().then(() => { if (session === s && $("ac-go")) { s_mark(); renderFilter(); } });
+    }
+    function s_mark() {
+        const s = session, map = otherKnown();
+        s.other = new Map(); s.touched = s.touched || new Set();
+        s.todo.forEach(w => {
+            const o = s.relearn ? null : knownOf(map, w);
+            if (o) s.other.set(w.id, o);
+            if (o && o.iv >= KNOWN_IV && !S.scan[w.id] && !s.touched.has(w.id)) s.known.add(w.id);
+        });
     }
     // Bước 1: lọc nhanh từ đã biết
     function renderFilter() {
@@ -732,30 +754,55 @@
         setProgress(0, "Lọc từ");
         body().innerHTML = `<div class="step-tag">Học chủ động · Lọc nhanh</div>
             <div class="quiz">
-                <p class="ac-lead"><b>Từ nào bạn đã biết chắc?</b> Chạm để đánh dấu, các từ đó chỉ được hỏi lại ở cuối bài.</p>
+                <p class="ac-lead"><b>Từ nào bạn đã biết chắc?</b> Chạm để đánh dấu hoặc bỏ đánh dấu. Các từ đó được kiểm chứng nhanh rồi hẹn ôn xa.</p>
+                ${s.todo.some(w => s.other.has(w.id) && s.other.get(w.id).iv >= KNOWN_IV) ? `<p class="muted center">Từ bạn đã nhớ ở trang khác được đánh dấu sẵn.</p>` : ""}
                 ${prev ? `<p class="muted center">${prev} từ của bài đã có thẻ ôn, lần này học ${s.todo.length} từ còn lại.</p>` : ""}
-                <div class="ac-words">${s.todo.map(w => `<button type="button" class="ac-word" data-known="${esc(w.id)}" aria-pressed="false"><span class="hz">${esc(w.hz)}</span></button>`).join("")}</div>
+                <div class="ac-words">${s.todo.map(w => `<button type="button" class="ac-word ${s.known.has(w.id) ? "on" : ""}" data-known="${esc(w.id)}" aria-pressed="${s.known.has(w.id)}"><span class="hz">${esc(w.hz)}</span>${filterTag(w)}</button>`).join("")}</div>
                 <div class="btn-row center"><button class="btn btn-primary btn-lg" data-ac="next" id="ac-go"></button></div>
                 <p class="center ac-switch"><a href="#" data-ac="classic">🃏 Chuyển sang cách lật thẻ</a></p>
             </div>`;
-        const label = () => { const n = s.todo.length - s.known.size; $("ac-go").textContent = n ? `Học ${n} từ →` : "Làm bài chốt →"; };
+        const label = () => { const n = s.todo.length - s.known.size; $("ac-go").textContent = s.known.size ? `Kiểm chứng ${s.known.size} từ${n ? `, rồi học ${n} từ` : ""} →` : `Học ${n} từ →`; };
         label();
         body().onclick = e => {
             const k = e.target.closest("[data-known]");
             if (k) {
                 const id = k.dataset.known;
                 s.known.has(id) ? s.known.delete(id) : s.known.add(id);
+                s.touched.add(id);
                 k.classList.toggle("on", s.known.has(id)); k.setAttribute("aria-pressed", String(s.known.has(id)));
                 label(); return;
             }
             const a = e.target.closest("[data-ac]"); if (!a) return;
             e.preventDefault();
             if (a.dataset.ac === "classic") { setLearnMode("classic"); toast("Đã chuyển sang lật thẻ (đổi lại trong Cài đặt)"); startUnit(s.unit); return; }
-            startBatches();
+            s.known.size ? verifyKnown() : startBatches();
         };
+        function filterTag(w) {
+            const o = s.other.get(w.id), sc = S.scan[w.id];
+            if (o) return `<small class="ac-src ${o.iv >= KNOWN_IV ? "on" : ""}">${o.iv >= KNOWN_IV ? "đã nhớ" : "đang học"} · ${esc(o.src)}</small>`;
+            return sc ? `<small class="ac-src">${sc.v ? "hơi quen" : "chưa biết"}</small>` : "";
+        }
+    }
+    // Kiểm chứng các từ vừa đánh dấu "đã biết"; từ chưa chắc chuyển vào danh sách học
+    function verifyKnown() {
+        const s = session;
+        runVerify({
+            words: s.todo.filter(w => s.known.has(w.id)),
+            onDone: res => {
+                const n = applyVerify(res, true);
+                res.forEach((r, id) => { if (r === "unsure" || r === "bad") s.known.delete(id); });
+                s.todo = s.todo.filter(w => s.relearn ? !s.known.has(w.id) : !S.srs[w.id]);
+                s.vfCount = n.fast + n.slow;
+                body().innerHTML = `<div class="step-tag">Kiểm chứng xong</div><div class="quiz"><ul class="vf-list">${verifyLines(n)}</ul>
+                    <div class="btn-row center"><button class="btn btn-primary btn-lg" data-ac="next">${s.todo.length ? `Học ${s.todo.length} từ →` : "Hoàn thành bài →"}</button></div></div>`;
+                s.shownAt = Date.now();
+                body().onclick = e => { if (e.target.closest('[data-ac="next"]')) startBatches(); };
+            },
+        });
     }
     function startBatches() {
         const s = session, learn = s.todo.filter(w => !s.known.has(w.id));
+        learn.sort((a, b) => ((S.scan[a.id] || {}).v || 0) - ((S.scan[b.id] || {}).v || 0));   // từ "chưa biết" học trước, "hơi quen" học sau
         s.dirty = true;
         s.batches = [];
         for (let i = 0; i < learn.length; i += BATCH) s.batches.push(learn.slice(i, i + BATCH));
@@ -980,9 +1027,12 @@
         const s = session, pool = LEVELS[s.unit.level].words;
         const types = pickTypes("learn", ["cloze", "cloze", "hanzi"]);
         s.dirty = true; s.rc = null; s.guess = null;
+        // chốt những từ còn đang học; từ đã biết chắc (iv ≥ 7) không hỏi lại. Cả bài đều biết thì xong luôn
+        const need = s.relearn || s.retryAll ? s.words : s.words.filter(w => !S.srs[w.id] || S.srs[w.id].iv < KNOWN_IV);
+        if (!need.length) { finishUnit({ score: 100, correct: s.words.length, total: s.words.length, wrong: [] }, true); return; }
         runQuiz({
             title: "Chốt bài",
-            questions: shuffle(s.words).map(w => makeQuestion(w, types[Math.floor(Math.random() * types.length)], pool)),
+            questions: shuffle(need).map(w => makeQuestion(w, types[Math.floor(Math.random() * types.length)], pool)),
             retryWrong: true,
             onDone: res => finishUnit(res),
         });
@@ -1015,6 +1065,205 @@
         };
     }
     function setLearnMode(m) { S.settings.learnMode = m === "classic" ? "classic" : "active"; save(); }
+
+    // ================================================================ TỪ ĐÃ BIẾT: nhận ra từ nguồn khác · kiểm chứng · quét nhanh
+    const VF_LIMIT = 8000, VF_FAST = 4000;   // kiểm chứng: 8 giây/câu, đúng trong 4 giây là "nhớ chắc" (giống kiểm tra xếp lớp)
+    const KNOWN_IV = 7;                      // thẻ ở nguồn khác có iv ≥ 7 ngày thì đánh dấu sẵn là đã biết
+    // Dữ liệu id thẻ Boya -> chữ Hán (luyen_tap/lt_data.js, ~1,6MB): chỉ nạp khi có thẻ Boya
+    let ltPromise = null;
+    function readKey(k) { try { return JSON.parse(localStorage.getItem(k) || "null") || {}; } catch (e) { return {}; } }
+    function loadOther() {
+        const need = Object.keys((readKey("boya_learning_progress_v2").srs) || {}).length || Object.keys(readKey("boya_tv_srs")).length;
+        if (!need || window.LT_DATA) return Promise.resolve();
+        return ltPromise || (ltPromise = new Promise(res => {
+            const sc = document.createElement("script");
+            sc.src = "../luyen_tap/lt_data.js";
+            sc.onload = res;
+            sc.onerror = () => { ltPromise = null; res(); };     // thiếu file thì chỉ bỏ qua nguồn Boya
+            document.head.appendChild(sc);
+        }));
+    }
+    // Map chữ Hán -> { iv, src } lấy khoảng ôn dài nhất ở các nguồn khác (chỉ đọc)
+    function otherKnown() {
+        const out = new Map();
+        const add = (hz, iv, src) => {
+            hz = cleanHanzi(String(hz || ""));
+            if (!hz || !(iv >= 1)) return;
+            const o = out.get(hz);
+            if (!o || iv > o.iv) out.set(hz, { iv, src });
+        };
+        const lt = (window.LT_DATA && window.LT_DATA.words) || {};
+        const boya = (srs, src) => Object.keys(srs || {}).forEach(id => { if (lt[id] && srs[id]) add(lt[id][0], srs[id].iv, src); });
+        boya(readKey("boya_learning_progress_v2").srs, "Boya");
+        boya(readKey("boya_tv_srs"), "Boya");
+        const wl = readKey("hsk_wl_srs_v3");
+        Object.keys(wl).forEach(id => { if (wl[id]) add(wl[id].hz, wl[id].iv, "HSK 3.0"); });
+        const my = readKey("hoc_mywords_v1").words || {};
+        Object.keys(my).forEach(k => { const e = my[k]; if (e && e.card) add(e.hz || k, e.card.iv, "Từ của tôi"); });
+        Object.keys(S.srs).forEach(id => { const w = BY_ID.get(id); if (w) add(w.clean, S.srs[id].iv, "HSK " + w.level); });
+        return out;
+    }
+    function knownOf(map, w) {
+        const f = [w.clean].concat(w.clean.split(/[\/／|、，,]/));
+        for (const x of f) if (map.has(x)) return map.get(x);
+        return null;
+    }
+    // Thêm thẻ cho từ đã biết sau khi kiểm chứng. speed: "fast" hẹn 14–30 ngày, "slow" hẹn 3–7 ngày (rải ngẫu nhiên để không dồn một ngày)
+    function addKnown(id, speed) {
+        if (S.srs[id]) return;
+        const iv = speed === "fast" ? 14 + Math.floor(Math.random() * 17) : 3 + Math.floor(Math.random() * 5);
+        S.srs[id] = { ef: 2.5, iv, reps: speed === "fast" ? 3 : 2, lapses: 0, first: Date.now(), last: Date.now(), due: startOfDay() + iv * DAY, kn: 1 };
+        delete S.scan[id];
+    }
+    // ---------- Kiểm chứng: thấy chữ (không pinyin), chọn nghĩa trong 8 giây. onDone(Map id -> "fast" | "slow" | "unsure" | "bad")
+    function runVerify(cfg) {
+        session.vf = { cfg, i: 0, res: new Map(), words: shuffle(cfg.words) };
+        session.dirty = true;
+        renderVerify();
+    }
+    function renderVerify() {
+        const s = session, v = s.vf;
+        clearTimeout(s.timer);
+        if (v.i >= v.words.length) { s.vf = null; v.cfg.onDone(v.res); return; }
+        const w = v.words[v.i];
+        v.opts = shuffle([w].concat(pickDistractors(w, 3, LEVELS[w.level].words, "vi")));
+        v.open = true;
+        setProgress(v.i / v.words.length, `${v.i + 1}/${v.words.length}`);
+        body().innerHTML = `<div class="pl-q">
+            <div class="step-tag">Kiểm chứng từ đã biết</div>
+            <div class="sp-timer"><i style="animation-duration:${VF_LIMIT}ms"></i></div>
+            <div class="pl-hz">${esc(w.hz)}</div>
+            <div class="pl-py" id="vf-py">Nghĩa của từ này là gì?</div>
+            <div class="opts pl-opts">${v.opts.map((o, k) => `<button class="opt" data-v="${k}"><kbd>${k + 1}</kbd><span>${esc(o.vi)}</span></button>`).join("")}</div>
+            <button class="btn pl-dk" data-v="-2">🤔 Không chắc <kbd class="kbd-only">0</kbd></button>
+        </div>`;
+        body().onclick = e => { const b = e.target.closest("[data-v]"); if (b) answerVerify(+b.dataset.v); };
+        v.t0 = performance.now();
+        s.timer = setTimeout(() => answerVerify(-1), VF_LIMIT);
+    }
+    function answerVerify(k) {
+        const s = session, v = s && s.vf; if (!v || !v.open) return;
+        v.open = false;
+        clearTimeout(s.timer);
+        const w = v.words[v.i], ms = performance.now() - v.t0, ok = k >= 0 && v.opts[k] === w;
+        const r = ok ? (ms <= VF_FAST ? "fast" : "slow") : k === -2 ? "unsure" : "bad";
+        v.res.set(w.id, r);
+        if (k !== -2) logAnswer(ok);
+        body().querySelectorAll(".opt").forEach((b, i) => { b.disabled = true; if (v.opts[i] === w) b.classList.add("correct"); else if (i === k) b.classList.add("wrong"); });
+        const t = body().querySelector(".sp-timer"); if (t) t.style.visibility = "hidden";
+        const p = $("vf-py"); if (p) p.textContent = w.py + (ok && r === "slow" ? " · đúng nhưng hơi lâu" : k === -1 ? " · hết giờ" : "");
+        if (!ok && S.settings.speak) speak(w.clean);
+        v.i++;
+        s.timer = setTimeout(() => { if (session === s && s.vf === v) renderVerify(); }, ok ? 450 : 1500);
+    }
+    // Ghi kết quả kiểm chứng vào lịch ôn; trả về số từ từng loại. count: có tính vào "từ mới hôm nay" không
+    function applyVerify(res, count) {
+        const n = { fast: 0, slow: 0, unsure: 0, bad: 0 };
+        res.forEach((r, id) => {
+            n[r]++;
+            if (r === "fast" || r === "slow") { if (!S.srs[id]) { addKnown(id, r); if (count) today().n++; } }
+            else if (S.srs[id]) softFail(id);                // học lại bài cũ mà không chắc: ôn sau 10 phút
+            else S.scan[id] = { v: r === "unsure" ? 1 : 0, at: Date.now() };
+        });
+        save();
+        return n;
+    }
+    function verifyLines(n) {
+        return [n.fast ? `<li class="ok">✓ <b>${n.fast}</b> từ nhớ chắc, hẹn ôn sau 14–30 ngày</li>` : "",
+            n.slow ? `<li>⏱ <b>${n.slow}</b> từ nhớ nhưng hơi lâu, hẹn ôn sau 3–7 ngày</li>` : "",
+            n.unsure + n.bad ? `<li class="bad">↩ <b>${n.unsure + n.bad}</b> từ chưa chắc, chuyển sang học mới</li>` : ""].join("");
+    }
+    // ---------- Quét nhanh một chặng: biết / hơi quen / chưa biết → kiểm chứng các từ "biết"
+    function stageUnseen(st) { return [].concat(...st.units.map(u => u.words)).filter(w => !S.srs[w.id]); }
+    function startScan(st) {
+        const all = stageUnseen(st);
+        if (!all.length) { toast("Chặng này không còn từ nào chưa có thẻ ôn"); return; }
+        const left = all.filter(w => !S.scan[w.id]);
+        session = { kind: "scan", stage: st, words: left.length ? left : all, again: !left.length, i: 0, picks: [], dirty: false, other: otherKnown() };
+        openSession(`⚡ Quét nhanh · HSK ${st.level} chặng ${st.n + 1}`);
+        renderScan();
+        loadOther().then(() => { const s = session; if (s && s.kind === "scan" && !s.vf && !s.over) { s.other = otherKnown(); if (s.i < s.words.length) renderScan(); } });
+    }
+    function renderScan() {
+        const s = session;
+        if (s.i >= s.words.length) { scanVerify(); return; }
+        const w = s.words[s.i], o = knownOf(s.other, w);
+        const known = s.picks.filter(p => p === 2).length;
+        setProgress(s.i / s.words.length, `${s.i + 1}/${s.words.length}`);
+        body().innerHTML = `<div class="pl-q">
+            <div class="step-tag">Bạn biết từ này không?</div>
+            <div class="pl-hz">${esc(w.hz)}</div>
+            <div class="pl-py">${o ? `<span class="ac-src ${o.iv >= KNOWN_IV ? "on" : ""}">${o.iv >= KNOWN_IV ? "đã nhớ ở" : "đang học ở"} ${esc(o.src)}</span>` : s.scanNote || "&nbsp;"}</div>
+            <div class="scan-row">
+                <button class="rate r1" data-sc="0"><kbd>1</kbd><b>Chưa biết</b></button>
+                <button class="rate r2" data-sc="1"><kbd>2</kbd><b>Hơi quen</b></button>
+                <button class="rate r3" data-sc="2"><kbd>3</kbd><b>Biết</b></button>
+            </div>
+            <div class="pl-foot">
+                ${s.i ? `<button class="pl-link" data-sc="back">← Từ trước</button>` : ""}
+                <button class="pl-link" data-sc="stop">${known ? `Dừng và kiểm chứng ${known} từ` : "Dừng ở đây"}</button>
+            </div>
+        </div>`;
+        body().onclick = e => { const b = e.target.closest("[data-sc]"); if (b) scanPick(b.dataset.sc); };
+    }
+    function scanPick(x) {
+        const s = session;
+        if (s.vf || s.over) return;
+        if (x === "stop") { scanVerify(); return; }
+        if (x === "back") { if (s.i) { s.i--; s.picks.length = s.i; renderScan(); } return; }
+        s.picks[s.i] = +x;
+        s.i++; s.dirty = true;
+        renderScan();
+    }
+    function scanVerify() {
+        const s = session;
+        s.over = true;
+        // lưu ngay các từ "chưa biết / hơi quen" để lần quét sau không hỏi lại
+        s.picks.forEach((p, i) => { if (p < 2) S.scan[s.words[i].id] = { v: p, at: Date.now() }; });
+        if (s.picks.length) save();
+        const ks = s.words.filter((w, i) => s.picks[i] === 2);
+        if (!ks.length) { scanResult({ fast: 0, slow: 0, unsure: 0, bad: 0 }); return; }
+        body().innerHTML = `<div class="step-tag">Quét nhanh</div><div class="quiz center">
+            <h2>Bạn biết ${ks.length}/${s.picks.length} từ</h2>
+            <p class="muted">Giờ kiểm chứng nhanh: nhìn chữ, chọn nghĩa trong 8 giây. Từ nào đúng sẽ được hẹn ôn xa, từ nào sai chuyển sang học mới.</p>
+            <div class="btn-row center"><button class="btn btn-primary btn-lg" data-ac="next">Kiểm chứng ${ks.length} từ →</button></div></div>`;
+        body().onclick = e => { if (e.target.closest('[data-ac="next"]')) runVerify({ words: ks, onDone: res => scanResult(applyVerify(res, false)) }); };
+    }
+    function scanResult(n) {
+        const s = session, st = s.stage;
+        s.dirty = false; s.picks = s.picks || [];
+        // bài mà mọi từ đều đã biết chắc thì coi như xong, không phải học lại
+        let units = 0;
+        st.units.forEach(u => {
+            if (unitDone(u) || !u.words.every(w => S.srs[w.id] && (S.srs[w.id].kn || S.srs[w.id].iv >= KNOWN_IV))) return;
+            const p = S.units[u.key] || {};
+            S.units[u.key] = { done: true, best: Math.max(p.best || 0, PASS_UNIT * 100), stars: p.stars || 0, at: Date.now(), known: true };
+            units++;
+        });
+        save();
+        setProgress(1);
+        const hint = s.picks.filter(p => p === 1).length, none = s.picks.filter(p => p === 0).length;
+        const rest = stageUnseen(st).length, unscanned = stageUnseen(st).filter(w => !S.scan[w.id]).length;
+        const open = st.units.find(u => !unitDone(u) && unitAvailable(u));
+        body().innerHTML = `<div class="result pass"><h2>Quét xong ${s.picks.length} từ</h2>
+            <ul class="vf-list">${verifyLines(n)}
+                ${hint + none ? `<li>📚 <b>${hint + none}</b> từ để học (${hint} hơi quen, ${none} chưa biết)</li>` : ""}
+                ${units ? `<li class="ok">🏁 <b>${units}</b> bài đã biết hết, được đánh dấu xong</li>` : ""}</ul>
+            <p class="muted">Chặng ${st.n + 1} còn <b>${rest}</b> từ cần học${unscanned ? `, trong đó ${unscanned} từ chưa quét` : ""}.</p>
+            <div class="btn-row center">
+                ${unscanned ? `<button class="btn" data-res="scan">⚡ Quét tiếp</button>` : ""}
+                ${!rest && stageUnitsDone(st) && !stageDone(st) ? `<button class="btn btn-primary" data-res="test">🏁 Kiểm tra chặng ${st.n + 1} →</button>` : ""}
+                ${open && rest ? `<button class="btn btn-primary" data-res="learn">Học bài ${open.n + 1} →</button>` : ""}
+                <button class="btn" data-res="home">Về lộ trình</button></div></div>`;
+        body().onclick = e => {
+            const b = e.target.closest("[data-res]"); if (!b) return;
+            const r = b.dataset.res;
+            closeSession(true);
+            if (r === "test") startStage(st);
+            if (r === "scan") startScan(st);
+            if (r === "learn") startUnit(open);
+        };
+    }
 
     // ================================================================ NHỚ LẠI TRONG NGÀY (settings.sameDay)
     // S.fresh[id] = { at: lúc học, s: số lượt đã nhớ lại }: lượt 1 sau 10 phút, lượt 2 buổi tối (từ 19h, cách lúc học ≥ 2 giờ).
@@ -1224,7 +1473,7 @@
     }
     function starsFor(score) { return score >= 95 ? 3 : score >= 85 ? 2 : score >= 70 ? 1 : 0; }
 
-    function finishUnit(res) {
+    function finishUnit(res, allKnown) {
         const s = session, u = s.unit;
         const passed = res.score >= PASS_UNIT * 100;
         const wrongIds = new Set(res.wrong.map(w => w.id));
@@ -1233,10 +1482,8 @@
         u.words.forEach(w => {
             const ok = !wrongIds.has(w.id);
             if (!S.srs[w.id]) {
-                const kn = known.has(w.id) && ok;        // từ tự đánh dấu "đã biết" và trả lời đúng: hẹn ôn sau 3 ngày
-                introduce(w.id, ok, kn); newCount++;
-                if (kn) Object.assign(S.srs[w.id], { iv: 3, reps: 2, due: startOfDay() + 3 * DAY });
-            } else if (act && !ok && intro.has(w.id)) softFail(w.id);
+                introduce(w.id, ok); newCount++;
+            } else if (act && !ok && (intro.has(w.id) || known.has(w.id))) softFail(w.id);   // học hoặc kiểm chứng ở phiên này mà sai
         });
         newCount += intro.size;
         const prev = S.units[u.key] || {};
@@ -1248,8 +1495,8 @@
         const next = passed ? nextStep() : null;
         renderResult({
             passed, res, stars,
-            title: passed ? "Hoàn thành bài học!" : "Chưa đạt — hãy thử lại",
-            note: passed
+            title: allKnown ? "Bạn đã biết cả bài!" : passed ? "Hoàn thành bài học!" : "Chưa đạt — hãy thử lại",
+            note: allKnown ? "Mọi từ của bài đều đã nhớ chắc nên không cần làm bài chốt. Các từ vẫn được hẹn ôn theo lịch." : passed
                 ? `${newCount ? newCount + " từ mới đã được thêm vào lịch ôn tập. " : ""}Các từ trả lời sai sẽ được hẹn ôn lại sau 10 phút.${S.settings.sameDay && newCount ? " Từ mới còn được hỏi lại trong ngày." : ""}`
                 : `Cần đạt ít nhất ${PASS_UNIT * 100}% để qua bài. Xem lại các từ sai bên dưới rồi luyện lại nhé.`,
             actions: passed
@@ -1259,7 +1506,7 @@
                 if (id === "home") closeSession(true);
                 if (id === "recall") { renderRecallAll(u); return; }
                 if (act && id === "relearn") { startUnit(u); return; }
-                if (act && id === "retry") { session = { kind: "active", unit: u, words: u.words, known: new Set(), introduced: new Set(), weak: new Set() }; startFinal(); return; }
+                if (act && id === "retry") { session = { kind: "active", unit: u, words: u.words, known: new Set(), introduced: new Set(), weak: new Set(), retryAll: !u.words.some(w => !S.srs[w.id] || S.srs[w.id].iv < KNOWN_IV) }; startFinal(); return; }
                 if (id === "retry") { session = { kind: "unit", unit: u, words: u.words, i: 0 }; startPractice(); }
                 if (id === "relearn") { session = { kind: "unit", unit: u, words: u.words, i: 0 }; renderLearnCard(); }
                 if (id === "next") { closeSession(true); next.type === "unit" ? startUnit(next.u) : startStage(next.st); }
@@ -2146,6 +2393,14 @@
             const q = session.quiz;
             if (!q.answered && /^[1-4]$/.test(e.key)) { e.preventDefault(); answer(+e.key - 1); }
             else if (q.answered && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); tryContinue(); }
+            return;
+        }
+        if (session.vf) { if (/^[0-4]$/.test(e.key)) { e.preventDefault(); answerVerify(e.key === "0" ? -2 : +e.key - 1); } return; }
+        if (session.kind === "scan") {
+            if (!session.over) {
+                if (/^[1-3]$/.test(e.key)) { e.preventDefault(); scanPick(String(+e.key - 1)); }
+                else if (e.key === "ArrowLeft" || e.key === "Backspace") { e.preventDefault(); scanPick("back"); }
+            } else if (e.key === "Enter") { const b = body().querySelector('[data-ac="next"]'); if (b && e.target.tagName !== "BUTTON") { e.preventDefault(); b.click(); } }
             return;
         }
         if (session.kind === "active" || session.kind === "fresh") {
