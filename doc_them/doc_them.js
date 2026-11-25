@@ -1064,6 +1064,95 @@
         });
         var k = $("doc-known");
         if (k) k.textContent = tot ? "🧠 Biết " + Math.round(ok * 100 / tot) + "% từ" : "";
+        renderActive();
+    }
+
+    // ---------------------------------------------------------------------- Học chủ động từ mới của bài (shared/active.js), lưu vào Từ của tôi
+    var ACT_MAX = 40, ACT_PICK = 10;       // tối đa 40 từ hiện ra, chọn sẵn 10 từ hay gặp nhất trong bài
+    function newWordsOf(d) {
+        var D = window.HOC_DICT && HOC_DICT.w, map = {}, list = [], ord = 0;
+        if (!D || !known) return list;
+        function put(hz, info, pi, at) {
+            var o = map[hz];
+            if (o) { o.n++; return; }
+            var p = d.paras[pi];
+            o = map[hz] = { id: hz, hz: hz, py: info[0] || "", hv: info[1] || "", vi: info[2] || "", n: 1, ord: ord++,
+                ex: HocLookup.sentenceAround(p.text, at, at + hz.length), exvi: p.tr && p.tr.length <= 220 ? p.tr : "" };
+            if (o.vi) list.push(o);
+        }
+        var beyond = {};
+        (d.beyond || []).forEach(function (w) { beyond[w[0]] = [w[1], w[2], w[3]]; });
+        d.paras.forEach(function (p, pi) {
+            if (p.kind && p.kind !== "p") return;
+            var pos = 0;
+            HocLookup.segment(p.text).forEach(function (s) {
+                if (HAN.test(s.t) && !isKnownTok(s.t) && (beyond[s.t] || D[s.t])) put(s.t, beyond[s.t] || D[s.t], pi, pos);
+                pos += s.t.length;
+            });
+            // từ ngoài cấp mà từ điển tách khác đi
+            Object.keys(beyond).forEach(function (hz) { var at = map[hz] || known.has(hz) ? -1 : p.text.indexOf(hz); if (at >= 0) put(hz, beyond[hz], pi, at); });
+        });
+        // chữ trong tên riêng (鹿鸣, 夜白) bị từ điển tách lẻ: phần lớn lần xuất hiện đi cùng một chữ lẻ khác → bỏ
+        var pair = {}, inName = {};
+        d.paras.forEach(function (p) {
+            var prev = "";
+            HocLookup.segment(p.text).forEach(function (s) {
+                var one = s.t.length === 1 && HAN.test(s.t) ? s.t : "";
+                if (prev && one) pair[prev + one] = (pair[prev + one] || 0) + 1;
+                prev = one;
+            });
+        });
+        Object.keys(pair).forEach(function (k) { if (pair[k] >= 3) { inName[k[0]] = (inName[k[0]] || 0) + pair[k]; inName[k[1]] = (inName[k[1]] || 0) + pair[k]; } });
+        list = list.filter(function (w) { return w.hz.length > 1 || !(inName[w.hz] >= w.n * 0.6); });
+        list.sort(function (a, b) { return b.n - a.n || a.ord - b.ord; });
+        return list.slice(0, ACT_MAX);
+    }
+    function renderActive() {
+        var box = $("doc-active");
+        if (!box) return;
+        if (!doc || !window.HocActive || !window.HocMyWords || !known || !HocLookup.ready()) { box.hidden = true; return; }
+        doc.newWords = newWordsOf(doc);
+        var n = doc.newWords.length;
+        box.hidden = !n;
+        if (!n) return;
+        box.innerHTML = '<div class="act-txt"><b>🧠 ' + n + (n >= ACT_MAX ? "+" : "") + " từ chưa học trong bài</b><small>" +
+            doc.newWords.slice(0, 8).map(function (w) { return esc(w.hz); }).join(" · ") + (n > 8 ? " …" : "") +
+            '</small></div><button class="btn btn-primary" id="act-go" type="button">Học trước khi đọc</button>';
+    }
+    function startActive() {
+        var d = doc;
+        if (!d || !d.newWords || !d.newWords.length) return;
+        stopAll();
+        HocLookup.close();
+        var D = HOC_DICT.w, keys = Object.keys(D), pool = [];
+        for (var i = 0; i < 400; i++) { var k = keys[Math.floor(Math.random() * keys.length)]; if (D[k][2] && k.length <= 4) pool.push({ hz: k, vi: D[k][2] }); }
+        function add(id, card) {
+            var w = d.newWords.filter(function (x) { return x.id === id; })[0], had = HocMyWords.get(id);
+            if (!w || had) return;
+            HocMyWords.add({ hz: w.hz, py: w.py, hv: w.hv, vi: w.vi, ex: w.ex, exvi: "", src: d.src });
+            HocMyWords.update(id, { card: card });
+        }
+        var DAYMS = 86400000;
+        HocActive.open({
+            title: d.title, kind: "my", words: d.newWords.slice(), pool: pool, later: ACT_PICK, doneLabel: "Đọc bài →",
+            related: function (ch, hz) {
+                var out = [];
+                known.forEach(function (x) { if (out.length < 4 && x !== hz && x.length > 1 && x.indexOf(ch) >= 0 && D[x]) out.push({ hz: x, py: D[x][0], vi: D[x][2] }); });
+                return out;
+            },
+            onKnown: function (id, speed) {
+                var iv = HocActive.knownIv(speed);
+                add(id, { ef: 2.5, iv: iv, reps: speed === "fast" ? 3 : 2, lapses: 0, last: Date.now(), due: startOfDay() + iv * DAYMS, kn: 1 });
+            },
+            onLearned: function (id, ok) {
+                add(id, { ef: 2.5, iv: ok ? 1 : 0, reps: ok ? 1 : 0, lapses: 0, last: Date.now(), due: ok ? startOfDay() + DAYMS : Date.now() + 600000 });
+            },
+            onFail: function (id) {
+                var e = HocMyWords.get(id);
+                if (e && e.card) HocMyWords.update(id, { card: Object.assign({}, e.card, { iv: 0, reps: 0, last: Date.now(), due: Date.now() + 600000 }) });
+            },
+            onClose: function () { if (doc === d) { renderBeyond(); buildKnown(); renderBody(); } }
+        });
     }
 
     function renderBeyond() {
@@ -1951,6 +2040,7 @@
             onSentence: sentenceSaved
         });
 
+        $("doc-active").addEventListener("click", function (e) { if (e.target.closest("#act-go")) startActive(); });
         $("doc-beyond").addEventListener("click", function (e) { var b = e.target.closest("[data-bw]"); if (b) toggleBeyond(+b.dataset.bw); });
         // Truyện dài: chuyển chương (thanh trên + cuối bài)
         $("reader").addEventListener("click", function (e) {

@@ -4261,3 +4261,16 @@ html[data-theme="dark"] .sp-btn-stop { color: var(--ui-bg); }
 /* Hàng phát âm + hình ảnh (shared/visual.js) ở mặt sau flashcard */
 .fc-vis-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; margin-top: 8px; }
 .fc-vis-row .hv-bar { margin: 0; }
+
+/* ---------- Cách học từ vựng: Học chủ động / Lật thẻ ---------- */
+.lm-switch { display: flex; gap: 6px; justify-content: center; margin: 0 auto 14px; padding: 4px; border: 1px solid var(--ui-border); border-radius: 12px; background: var(--ui-surface); width: max-content; max-width: 100%; }
+.lm-btn { border: 0; background: none; color: var(--ui-text-2); font: inherit; font-weight: 600; font-size: 14px; padding: 8px 14px; border-radius: 9px; cursor: pointer; min-height: 40px; }
+.lm-btn.active { background: var(--primary); color: var(--ui-on-primary, #fff); }
+.lm-card { border: 1px solid var(--ui-border); border-radius: 18px; background: var(--ui-surface); padding: 22px; text-align: center; max-width: 720px; margin: 0 auto; }
+.lm-card h3 { margin: 0 0 8px; font-size: 20px; color: var(--ui-text); }
+.lm-card p { margin: 0 auto 14px; color: var(--ui-text-2); max-width: 520px; line-height: 1.5; }
+.lm-go { border: 0; border-radius: 12px; background: var(--primary); color: var(--ui-on-primary, #fff); font: inherit; font-weight: 700; font-size: 16px; padding: 13px 26px; cursor: pointer; min-height: 48px; }
+.lm-words { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 18px 0 12px; }
+.lm-w { font-family: var(--ui-font-cn); font-size: 16px; border: 1px solid var(--ui-border); border-radius: 99px; padding: 2px 11px; color: var(--ui-text); }
+.lm-w.in { border-color: var(--ui-success); background: var(--ui-success-soft); }
+.lm-card .lm-note { margin: 0; font-size: 14px; color: var(--ui-muted); }

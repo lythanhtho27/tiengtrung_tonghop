@@ -1301,12 +1301,19 @@
     }
     function renderFresh() {
         const f = freshInfo(), el = $("fresh-list");
-        el.hidden = !f.ready && !f.waiting;
+        // từ mới học chủ động ở Boya và Đọc thêm (shared/active.js): nhớ lại ngay tại trang này
+        const a = window.HocActive ? HocActive.freshInfo() : { ready: [], waiting: 0, next: 0 };
+        el.hidden = !f.ready && !f.waiting && !a.ready.length && !a.waiting;
         if (el.hidden) return;
+        if (!f.ready && (a.waiting || f.waiting)) { f.next = f.next && a.next ? Math.min(f.next, a.next) : f.next || a.next; f.waiting += a.waiting; }
         const d = new Date(f.next), at = d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0");
         el.innerHTML = f.ready
             ? `<a class="lesson" href="../hsk_lotrinh/hsk_lotrinh.html?fresh=1"><span><b>🌱 Nhớ lại ${fmt(f.ready)} từ mới hôm nay</b><small>Tự nhớ ra từ vừa học để chống quên · khoảng ${Math.max(1, Math.round(f.ready / 4))} phút</small></span><span class="go">Nhớ lại ▶</span></a>`
-            : `<p class="muted">🌱 ${fmt(f.waiting)} từ mới sẽ đến lượt nhớ lại từ ${at}.</p>`;
+            : f.waiting && !a.ready.length ? `<p class="muted">🌱 ${fmt(f.waiting)} từ mới sẽ đến lượt nhớ lại từ ${at}.</p>` : "";
+        if (a.ready.length) {
+            el.insertAdjacentHTML("beforeend", `<a class="lesson" href="#" id="fresh-go"><span><b>🌱 Nhớ lại ${fmt(a.ready.length)} từ mới Boya · Đọc thêm</b><small>Tự nhớ ra từ vừa học để chống quên · khoảng ${Math.max(1, Math.round(a.ready.length / 4))} phút</small></span><span class="go">Nhớ lại ▶</span></a>`);
+            $("fresh-go").onclick = e => { e.preventDefault(); HocActive.startFresh({ onClose: renderHome }); };
+        }
     }
     function renderHome() {
         const due = collectDue();

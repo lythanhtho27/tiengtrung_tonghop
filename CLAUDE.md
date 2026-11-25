@@ -99,6 +99,10 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
   - API: `barHTML(hz, {photo, emoji, compact})` trả chuỗi HTML thanh nhỏ; `emoji(hz)`; `write(hz, i)`; `readingHTML`; `checkChar`; `splitPinyin`; `loadParts()` (Promise) rồi `partsHTML(hz)` (một dòng tách bộ mỗi chữ). Nút `[data-hv-write]` và link `[data-hv-img]` được bắt ở pha capture để không lật thẻ. Khung đang mở thì chặn phím tắt của trang.
   - Cài đặt (ảnh minh họa, hiện emoji, nút ảnh, quy tắc Hán Việt → pinyin, Baidu/Google) ở chân khung Nét viết, lưu theo thiết bị ở `hoc_visual_v1`, không đồng bộ.
   - Đang gắn ở: mặt sau thẻ ôn `hom_nay` (cả thẻ câu), khung tra từ `lookup.js` (doc_them) và `boya_learning`, flashcard + Ôn hôm nay `boya_learning` (dạng `compact`), `wordCardHTML` của `hsk_lotrinh`, flashcard `word_learning` (emoji thay cho biểu tượng đoán theo bộ thủ khi có).
+- **`active.js`** (`HocActive`): Học chủ động dùng chung, khung toàn màn hình `#ha-ov` (chặn phím tắt của trang). Cùng phương pháp với Học chủ động của `hsk_lotrinh` (trang đó giữ bản riêng; đổi cách học thì cân nhắc sửa cả hai): lọc nhanh → kiểm chứng → lượt 5 từ (đoán nghĩa, xem thẻ + móc nhớ, tự nhớ lại) → chốt bài → thử nhớ lại hết.
+  - `open({title, words, pool, known, later, kind, related, onKnown, onLearned, onFail, onBatch, onFinish, onClose})`: module **không ghi SRS**, trang tự ghi trong các hàm on…; xong lượt nào gọi `onLearned` + `onBatch` lượt đó. `later` = số từ chọn học sẵn, có thêm trạng thái "Để sau".
+  - Key `hoc_active_v1` = `{settings{recall, sameDay}, fresh{"boya:<id>"|"my:<hz>": {at, s, u, w}}}` (được đồng bộ). Nhớ lại trong ngày (10 phút + từ 19 giờ) chạy ở `hom_nay` qua `startFresh()`, quên thì tự ghi `iv 0` / 10 phút vào thẻ nguồn.
+  - Dùng ở: bước Từ vựng của `boya_learning` (`state.learnMode` `active`|`classic`, `startActiveVocab`; từ học/biết được đánh dấu `lessons[].fc`), khối "N từ chưa học trong bài" của `doc_them` (`renderActive`/`startActive`, lưu vào Từ của tôi, chọn sẵn 10 từ hay gặp nhất), `hom_nay`.
 - **`dict_vi.js`** (khoảng 0,9MB, sinh bởi `tools/build_dict.py`): `HOC_DICT = {m, w: {từ: [pinyin, HÁN VIỆT, nghĩa]}, c: {chữ: [pinyin, HÁN VIỆT]}}`, gộp khoảng 13.000 từ của HSK, Boya và HSK 3.0. Các trang nạp lười file này (`boya_learning` nạp khi mở Bài khóa).
 
 ## Tài khoản & đồng bộ (`shared/sync.js`, Supabase)
@@ -306,7 +310,7 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
   - **Nhận ra từ nguồn khác** (`otherKnown`, chỉ đọc): Boya (cần `luyen_tap/lt_data.js`, `loadOther()` nạp lười khi có thẻ Boya), HSK 3.0, Từ của tôi, cấp HSK khác. Ở màn Lọc nhanh, từ có `iv ≥ 7` được đánh dấu sẵn kèm nhãn nguồn.
   - **Kiểm chứng** (`runVerify`, `session.vf`): thấy chữ chọn nghĩa, 8 giây/câu. Đúng ≤ 4 giây → thẻ `iv` 14–30; đúng chậm hơn → `iv` 3–7 (`addKnown`, thẻ có `kn:1`); sai / không chắc → `S.scan` và chuyển sang học mới.
   - **Quét nhanh chặng** (`startScan`, nút ⚡ ở đầu chặng khi còn ≥ 5 từ chưa có thẻ): biết / hơi quen / chưa biết, lưu `S.scan[id] = {v: 0 chưa biết | 1 hơi quen, at}`, kiểm chứng các từ "biết". Không tính vào số từ mới trong ngày. Bài mà mọi từ đều `kn` hoặc `iv ≥ 7` được đánh dấu xong (`known:true`); vẫn phải làm kiểm tra chặng.
-- **Nhớ lại trong ngày** (`settings.sameDay`, mặc định bật, áp dụng cả hai cách học): `introduce()` ghi `S.fresh[id] = {at, s, u}`; lượt 1 sau 10 phút, lượt 2 từ 19 giờ (cách lúc học ≥ 2 giờ), qua ngày thì xóa. Nhớ đúng không đổi lịch SRS, chưa nhớ thì `softFail`. Thẻ đang đến hạn SRS không hỏi ở đây. Nút ở kế hoạch hôm nay, `?fresh=1`; `hom_nay.js` có bản chép `freshInfo()` để hiện dải nhắc ở bước 2, sửa thì sửa cả hai.
+- **Nhớ lại trong ngày** (`settings.sameDay`, mặc định bật, áp dụng cả hai cách học): `introduce()` ghi `S.fresh[id] = {at, s, u}`; lượt 1 sau 10 phút, lượt 2 từ 19 giờ (cách lúc học ≥ 2 giờ), qua ngày thì xóa. Nhớ đúng không đổi lịch SRS, chưa nhớ thì `softFail`. Thẻ đang đến hạn SRS không hỏi ở đây. Nút ở kế hoạch hôm nay, `?fresh=1`; `hom_nay.js` có bản chép `freshInfo()` để hiện dải nhắc ở bước 2 (từ Boya / Đọc thêm do `shared/active.js` lo), sửa thì sửa cả hai.
 - **Chọn loại câu hỏi trắc nghiệm** (`settings.qtLearn`, `settings.qtReview`, mặc định cả 5 loại `meaning/pinyin/hanzi/listen/cloze`):
   - `qtLearn` áp dụng cho luyện tập bài (vòng 1 lấy các loại dễ meaning/pinyin, vòng 2 lấy hanzi/listen/cloze, trong số loại được chọn; không còn loại nào thì dùng mọi loại được chọn) và kiểm tra chặng.
   - `qtReview` áp dụng cho "Ôn từ hay sai" và "Trắc nghiệm nhanh" ở tab Ôn tập. "Luyện nghe" luôn chỉ có câu nghe; ôn thẻ SRS vẫn theo "Chiều ôn tập" (`dir`).
@@ -346,7 +350,7 @@ Ba trang dưới đây theo cùng một mô hình với `hsk_lotrinh`:
 Khi sửa logic SRS ở một trang, cân nhắc sửa đồng bộ ở các trang còn lại.
 
 ### `boya_learning/` (7 quyển, 82 bài, 5.348 từ)
-- **Mỗi bài có 4 bước:** Từ vựng (lật hết flashcard) → Bài khóa (cuộn hết từng phần hoặc đọc xong một lượt tính giờ) → Ngữ pháp (xem hết các thẻ) → Kiểm tra.
+- **Mỗi bài có 4 bước:** Từ vựng (Học chủ động hoặc lật hết flashcard) → Bài khóa (cuộn hết từng phần hoặc đọc xong một lượt tính giờ) → Ngữ pháp (xem hết các thẻ) → Kiểm tra.
 - **Hoàn thành bài:** chỉ khi bài kiểm tra đạt ≥ 80%. Bài kiểm tra có tối đa 12 câu từ vựng và 3 câu ngữ pháp; câu sai được hỏi lại; điểm tính theo lần trả lời đầu.
 - **Ôn tập:** "Ôn hôm nay" gom từ đến hạn của mọi quyển.
 - **Đọc bài khóa:** đọc tính giờ (chữ/phút, chỉ đếm chữ Hán), có nút nhại theo TTS, có chế độ "Che từ vựng".

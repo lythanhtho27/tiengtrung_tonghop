@@ -444,3 +444,10 @@ a { color: inherit; }
 .para.comic-panel .ptools { padding: 0 10px 8px; margin-top: 0; }
 .para.comic-panel .ptr { margin: 0 10px 10px; }
 .para.comic-panel.cm-banner { padding: 10px 14px; text-align: center; background: var(--surface-2); border-style: dashed; }
+
+/* Học chủ động từ mới của bài */
+.act-box { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 14px 16px; border-left: 4px solid var(--ui-primary); }
+.act-box[hidden] { display: none; }
+.act-txt { min-width: 0; flex: 1 1 220px; }
+.act-txt small { display: block; color: var(--muted); font-family: var(--ui-font-cn); font-size: 15px; overflow-wrap: anywhere; }
+.act-box .btn { min-height: 44px; }

@@ -59,6 +59,7 @@
         fcIndex: 0,
         fcFlipped: false,
         fcScope: 'all',            // 'all' | 'starred'
+        learnMode: 'active',       // cách học từ vựng: 'active' (Học chủ động, shared/active.js) | 'classic' (Lật thẻ)
         fcDeck: [],
         fcDeckKey: '',
 
@@ -172,6 +173,7 @@
                 if (parsed.pinyinVisible !== undefined) state.pinyinVisible = parsed.pinyinVisible;
                 if (parsed.quizSubMode) state.quizSubMode = parsed.quizSubMode;
                 if (parsed.lookupOn !== undefined) state.lookupOn = !!parsed.lookupOn;
+                if (parsed.learnMode === 'classic' || parsed.learnMode === 'active') state.learnMode = parsed.learnMode;
                 // Mặc định bản dịch luôn thu gọn để người học tự luyện đọc trước
                 state.transVisible = false;
             }
@@ -231,7 +233,8 @@
                 pinyinVisible: state.pinyinVisible,
                 transVisible: state.transVisible,
                 quizSubMode: state.quizSubMode,
-                lookupOn: state.lookupOn
+                lookupOn: state.lookupOn,
+                learnMode: state.learnMode
             };
             localStorage.setItem(STORAGE_KEY_SETTINGS, JSON.stringify(sett));
         } catch (e) {}
@@ -350,7 +353,7 @@
         const steps = [
             { key: 'vocab', mode: 'flashcard', icon: '🏮', label: 'Từ vựng', n: fcN, total: words.length,
               done: !!L.done || fcN >= words.length,
-              crit: `Lật hết thẻ Flashcards của bài (${fcN}/${words.length} thẻ)` },
+              crit: `Học hết từ của bài bằng Học chủ động hoặc Lật thẻ (${fcN}/${words.length} từ)` },
             { key: 'reading', mode: 'reading', icon: '📖', label: 'Bài khóa', n: rdN, total: readings.length,
               done: !!L.done || rdN >= readings.length,
               crit: `Đọc tới cuối từng phần bài khóa (${rdN}/${readings.length} phần)` },
@@ -2429,7 +2432,114 @@
         return ex ? fillTilde(ex, word.hz) : '';
     }
 
+    // ---------- Học chủ động (shared/active.js): bước Từ vựng, thay cho lật thẻ khi state.learnMode = 'active'
+    function learnModeHtml() {
+        return `<div class="lm-switch" role="radiogroup" aria-label="Cách học từ vựng">
+            <button class="lm-btn ${state.learnMode === 'active' ? 'active' : ''}" data-lm="active" role="radio" aria-checked="${state.learnMode === 'active'}">🧠 Học chủ động</button>
+            <button class="lm-btn ${state.learnMode === 'classic' ? 'active' : ''}" data-lm="classic" role="radio" aria-checked="${state.learnMode === 'classic'}">🃏 Lật thẻ</button>
+        </div>`;
+    }
+    function bindLearnMode() {
+        dom.modeContainer.querySelectorAll('[data-lm]').forEach(b => b.addEventListener('click', () => {
+            if (state.learnMode === b.getAttribute('data-lm')) return;
+            state.learnMode = b.getAttribute('data-lm');
+            state.fcFlipped = false;
+            saveSettings();
+            renderFlashcardStudio();
+        }));
+    }
+    function renderActiveStudio() {
+        const lesson = getActiveLesson(), book = getActiveBook();
+        const all = eligibleWords(lesson), left = all.filter(w => !P.srs[w.id]);
+        const info = lessonSteps(book, lesson).steps[0];
+        state.fcFlip = null; state.fcGo = null; state.fcDeck = []; state.fcDeckKey = ''; state.fcFlipped = false;
+        dom.modeContainer.innerHTML = `
+            <div class="flashcard-studio">
+                ${learnModeHtml()}
+                <div class="lm-card">
+                    <h3>${left.length ? (left.length < all.length ? `Học tiếp ${left.length} từ còn lại` : `${all.length} từ của bài`) : `✓ Cả ${all.length} từ của bài đã vào lịch ôn`}</h3>
+                    <p>Lọc từ đã biết, rồi học từng lượt 5 từ: đoán nghĩa, xem thẻ, tự nhớ lại. Cuối cùng là điền từ vào câu. Xong lượt nào lưu lượt đó.</p>
+                    <button class="lm-go" id="btnActiveGo">${left.length ? `Học ${left.length} từ →` : 'Học lại cả bài →'}</button>
+                    <div class="lm-words">${all.map(w => `<span class="lm-w ${P.srs[w.id] ? 'in' : ''}" title="${escapeHtml(w.py)} · ${escapeHtml(cleanMean(w.mean))}">${escapeHtml(cleanHz(w.hz))}</span>`).join('')}</div>
+                    <p class="lm-note">${info.done ? '✓ Bước Từ vựng đã hoàn thành.' : `Bước 1 · Từ vựng: đã xong ${info.n}/${info.total} từ.`}</p>
+                </div>
+            </div>`;
+        bindLearnMode();
+        document.getElementById('btnActiveGo').addEventListener('click', startActiveVocab);
+    }
+    // Từ của bài -> dạng HocActive
+    function activeWord(w) {
+        const m = splitLessonMean(w.mean);
+        return {
+            id: w.id, hz: cleanHz(w.hz), py: w.py || '', hv: m.hv, vi: m.vi || cleanMean(w.mean),
+            ex: speechExample(w) || ttsClean(exampleFor(w).split(/\s*\/\s*|\s*◎\s*/)[0]), exvi: '',
+            cloze: (clozeSentence(w) || '').replace(/～+/g, '～')
+        };
+    }
+    function startActiveVocab() {
+        if (!window.HocActive) { showToast('Không tải được phần Học chủ động'); return; }
+        const lesson = getActiveLesson(), book = getActiveBook(), lid = lessonId(book, lesson);
+        const all = eligibleWords(lesson), left = all.filter(w => !P.srs[w.id]);
+        const todo = left.length ? left : all;
+        // đánh dấu bước Từ vựng cho các từ đã học / đã biết
+        const seen = ids => {
+            const before = lessonSteps(book, lesson).steps[0].done, fc = lessonState(lid).fc;
+            ids.forEach(id => { fc[id] = 1; });
+            if (!before && lessonSteps(book, lesson).steps[0].done) showToast('✓ Xong bước "Từ vựng"');
+        };
+        seen(all.filter(w => P.srs[w.id]).map(w => w.id));
+        saveProgress();
+        // từ đã nhớ ở trang khác hoặc ở bài Boya khác (cùng chữ)
+        const known = new Map();
+        if (left.length) {
+            const map = HocActive.otherKnown();
+            Object.keys(P.srs).forEach(id => {
+                const e = WORDS.get(id); if (!e) return;
+                const h = cleanHz(e.w.hz), iv = P.srs[id].iv || 0, o = map.get(h);
+                if (iv >= 1 && (!o || iv > o.iv)) map.set(h, { iv, src: 'Boya' });
+            });
+            todo.forEach(w => { const o = map.get(cleanHz(w.hz)); if (o) known.set(w.id, o); });
+        }
+        const learnedList = Object.keys(P.srs).map(id => WORDS.get(id)).filter(Boolean).map(e => e.w);
+        const soon = c => Object.assign(c, { iv: 0, reps: 0, last: Date.now(), due: Date.now() + 10 * 60000 });
+        stopRoleplay();
+        HocActive.open({
+            title: `${book.name} · Bài ${lesson.lesson_num}`, kind: 'boya', doneLabel: 'Về bài học',
+            words: todo.map(activeWord),
+            pool: shuffle(bookWords(book)).slice(0, 300).map(w => ({ hz: cleanHz(w.hz), vi: splitLessonMean(w.mean).vi || cleanMean(w.mean) })),
+            known,
+            related: (ch, hz) => {
+                const got = new Set([hz]), out = [];
+                for (const w of learnedList) {
+                    const h = cleanHz(w.hz);
+                    if (out.length >= 4) break;
+                    if (h.includes(ch) && !got.has(h)) { got.add(h); out.push({ hz: h, py: w.py, vi: splitLessonMean(w.mean).vi }); }
+                }
+                return out;
+            },
+            onKnown: (id, speed) => {
+                if (!P.srs[id]) {
+                    const iv = HocActive.knownIv(speed);
+                    P.srs[id] = Object.assign(newCard(startOfDay() + iv * DAY, iv), { reps: speed === 'fast' ? 3 : 2, last: Date.now(), kn: 1 });
+                    today().n = (today().n || 0) + 1;
+                }
+                seen([id]);
+            },
+            onLearned: (id, ok) => {
+                if (!P.srs[id]) {
+                    P.srs[id] = Object.assign(ok ? newCard(startOfDay() + DAY, 1) : newCard(Date.now() + 10 * 60000), { last: Date.now() });
+                    today().n = (today().n || 0) + 1;
+                } else if (!ok) P.srs[id] = schedule(P.srs[id], 1);
+                seen([id]);
+            },
+            onFail: id => { if (P.srs[id]) soon(P.srs[id]); },
+            onBatch: n => { if (n) addActivity('q', n); else { saveProgress(); refreshGlobal(); } },
+            onClose: () => { saveProgress(); refreshGlobal(); renderLessonPath(); renderSidebar(); if (state.activeMode === 'flashcard') renderFlashcardStudio(); }
+        });
+    }
+
     function renderFlashcardStudio() {
+        if (state.learnMode === 'active' && window.HocActive && eligibleWords(getActiveLesson()).length) { renderActiveStudio(); return; }
         const lesson = getActiveLesson();
         const book = getActiveBook();
         let words = eligibleWords(lesson);
@@ -2468,6 +2578,7 @@
 
         dom.modeContainer.innerHTML = `
             <div class="flashcard-studio ${state.fcFlipped ? 'is-flipped' : ''}" id="fcStudio">
+                ${learnModeHtml()}
                 <div class="fc-step-note ${seenN >= all.length ? 'is-done' : ''}">
                     ${seenN >= all.length
                         ? `✓ Đã lật hết ${all.length} thẻ của bài — bước Từ vựng hoàn thành.`
@@ -2519,6 +2630,7 @@
             </div>
         `;
 
+        bindLearnMode();
         const stage = document.getElementById('flashcardStage');
         const flip = () => {
             state.fcFlipped = !state.fcFlipped;
