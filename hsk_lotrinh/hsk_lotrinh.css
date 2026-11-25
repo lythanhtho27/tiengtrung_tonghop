@@ -659,3 +659,6 @@ kbd {
 .vf-list li.ok { background: var(--ok-soft); border-color: var(--ok); }
 .vf-list li.bad { background: var(--bad-soft); border-color: var(--bad); }
 .quiz.center { text-align: center; }
+.ac-audio { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; margin-top: 14px; font-size: 14px; }
+.ac-audio label { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; cursor: pointer; }
+.ac-audio input { accent-color: var(--primary); width: 17px; height: 17px; }

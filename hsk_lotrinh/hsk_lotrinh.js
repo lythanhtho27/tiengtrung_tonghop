@@ -759,10 +759,14 @@
                 ${prev ? `<p class="muted center">${prev} từ của bài đã có thẻ ôn, lần này học ${s.todo.length} từ còn lại.</p>` : ""}
                 <div class="ac-words">${s.todo.map(w => `<button type="button" class="ac-word ${s.known.has(w.id) ? "on" : ""}" data-known="${esc(w.id)}" aria-pressed="${s.known.has(w.id)}"><span class="hz">${esc(w.hz)}</span>${filterTag(w)}</button>`).join("")}</div>
                 <div class="btn-row center"><button class="btn btn-primary btn-lg" data-ac="next" id="ac-go"></button></div>
+                <div class="ac-audio"><label><input type="checkbox" id="ac-listen" ${listenOn() ? "checked" : ""}> 🎧 Có câu nghe</label>
+                    <label><input type="checkbox" id="ac-speak" ${S.settings.speak ? "checked" : ""}> 🔊 Tự phát âm</label></div>
                 <p class="center ac-switch"><a href="#" data-ac="classic">🃏 Chuyển sang cách lật thẻ</a></p>
             </div>`;
         const label = () => { const n = s.todo.length - s.known.size; $("ac-go").textContent = s.known.size ? `Kiểm chứng ${s.known.size} từ${n ? `, rồi học ${n} từ` : ""} →` : `Học ${n} từ →`; };
         label();
+        $("ac-listen").onchange = e => setListen(e.target.checked);
+        $("ac-speak").onchange = e => { S.settings.speak = e.target.checked; save(); };
         body().onclick = e => {
             const k = e.target.closest("[data-known]");
             if (k) {
@@ -811,6 +815,9 @@
         s.total = learn.length * 2; s.did = 0; s.bi = 0; s.gi = 0;
         learn.length ? renderGuess() : startFinal();
     }
+    // Câu nghe ở bước tự nhớ lại: lưu theo thiết bị ở "hoc_listen_v1" (dùng chung với shared/active.js, không đồng bộ)
+    function listenOn() { return readKey("hoc_listen_v1").listen !== false; }
+    function setListen(v) { try { localStorage.setItem("hoc_listen_v1", JSON.stringify(Object.assign(readKey("hoc_listen_v1"), { listen: v }))); } catch (e) {} }
     const batchLabel = s => `Lượt ${s.bi + 1}/${s.batches.length}`;
     // Bước 2: đoán nghĩa (chữ + Hán Việt + câu ví dụ) rồi mới xem thẻ; Hán Việt trùng nghĩa (安全 = an toàn) thì ẩn để không lộ đáp án
     function renderGuess() {
@@ -915,7 +922,7 @@
     // ---------- Bộ hỏi "tự nhớ lại" (dùng chung cho Học chủ động và Nhớ lại trong ngày)
     // cfg: { words, tag, progress(n), onDone(Map id -> đúng ngay lần đầu) }
     function runRecall(cfg) {
-        const listen = "speechSynthesis" in window && qTypes("learn").indexOf("listen") >= 0;
+        const listen = "speechSynthesis" in window && listenOn() && qTypes("learn").indexOf("listen") >= 0;
         session.rc = { cfg, res: new Map(), n: 0, queue: cfg.words.map((w, i) => ({ w, ask: listen && i % 3 === 2 ? "listen" : "vi", retry: false })) };
         renderRecall();
     }
@@ -928,7 +935,7 @@
         body().innerHTML = `<div class="step-tag">${r.cfg.tag}${it.retry ? " · <em>hỏi lại</em>" : ""} · còn ${r.queue.length}</div>
             <div class="quiz ac-recall">
                 <div class="q-type">${it.ask === "listen" ? "Nghe rồi nhớ ra từ" : "Từ tiếng Trung là gì?"}</div>
-                <div class="q-prompt">${it.ask === "listen" ? `<button class="listen-btn" type="button" data-say="${esc(w.clean)}">🔊</button><div class="q-sub">Bấm để nghe lại</div>` : `<div class="q-vi">${esc(w.vi)}</div>`}<div class="q-sub" id="rc-hint"></div></div>
+                <div class="q-prompt">${it.ask === "listen" ? `<button class="listen-btn" type="button" data-say="${esc(w.clean)}">🔊</button><div class="q-sub">Bấm để nghe lại</div><button class="pl-link" type="button" data-rc="mute">🔇 Không nghe được lúc này</button>` : `<div class="q-vi">${esc(w.vi)}</div>`}<div class="q-sub" id="rc-hint"></div></div>
                 ${typing
                     ? `<form class="rc-form" id="rc-form"><input class="input" id="rc-in" lang="zh-CN" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Chữ Hán hoặc pinyin" aria-label="Gõ chữ Hán hoặc pinyin không dấu"><button class="btn btn-primary">Kiểm tra</button></form>`
                     : `<div class="btn-row center"><button class="btn btn-primary btn-lg" type="button" data-rc="show">Xem đáp án</button></div>`}
@@ -954,6 +961,13 @@
             const a = b.dataset.rc;
             if (a === "right") { acceptRecall(b); return; }
             if (!r.open) return;
+            if (a === "mute") {
+                if ("speechSynthesis" in window) speechSynthesis.cancel();
+                setListen(false); S.settings.speak = false; save();
+                r.queue.forEach(x => { x.ask = "vi"; });
+                renderRecall(); toast("Đã tắt câu nghe và tự phát âm (bật lại ở màn lọc từ hoặc Cài đặt)");
+                return;
+            }
             if (a === "hint") recallHint(w);
             if (a === "dk") answerRecall(false, "");
             if (a === "show") selfRecall(w);
@@ -1061,7 +1075,7 @@
             const row = e.target.closest("[data-ra]"); if (!row) return;
             const w = words[+row.dataset.ra], m = e.target.closest("[data-m]");
             if (m) { const ok = m.dataset.m === "1"; marks.set(w.id, ok); row.classList.toggle("ok", ok); row.classList.toggle("bad", !ok); draw(); return; }
-            if (e.target.closest(".ra-q")) { row.querySelector(".ra-a").hidden = false; speak(w.clean); }
+            if (e.target.closest(".ra-q")) { row.querySelector(".ra-a").hidden = false; autoSpeak(w.clean); }
         };
     }
     function setLearnMode(m) { S.settings.learnMode = m === "classic" ? "classic" : "active"; save(); }
@@ -2320,6 +2334,7 @@
         $("set-mode").value = S.settings.learnMode === "classic" ? "classic" : "active";
         $("set-recall").value = S.settings.recall === "self" ? "self" : "type";
         $("set-sameday").checked = !!S.settings.sameDay;
+        $("set-listen").checked = listenOn();
         renderQtBoxes();
     }
     function bindSettings() {
@@ -2339,6 +2354,7 @@
         document.addEventListener("change", e => { if (e.target.name === "learn-mode") setLearnMode(e.target.value); });
         $("set-mode").onchange = e => { setLearnMode(e.target.value); toast(S.settings.learnMode === "classic" ? "Đã chọn Lật thẻ" : "Đã chọn Học chủ động"); };
         $("set-recall").onchange = e => { S.settings.recall = e.target.value; save(); };
+        $("set-listen").onchange = e => setListen(e.target.checked);
         $("set-sameday").onchange = e => { S.settings.sameDay = e.target.checked; save(); };
         $("set-goal").onchange = e => { S.settings.goal = +e.target.value; save(); toast("Đã lưu mục tiêu"); };
         $("set-speak").onchange = e => { S.settings.speak = e.target.checked; save(); };

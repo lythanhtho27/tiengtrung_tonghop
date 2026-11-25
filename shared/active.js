@@ -12,7 +12,8 @@
        onKnown(id, "fast"|"slow"), onLearned(id, đúng ngay lần đầu), onFail(id), onBatch(số câu), onFinish(res), onClose() })
      Module không ghi SRS: trang tự ghi trong các hàm on…
    - Nhớ lại trong ngày: key "hoc_active_v1" = { settings{recall, sameDay}, fresh{"boya:<id>" | "my:<hz>": {at, s, u, w}} }
-     (được sync.js đồng bộ). HocActive.freshInfo() / startFresh({onClose}) — chạy ở trang Buổi học hôm nay.
+     (được sync.js đồng bộ). Âm thanh theo thiết bị: key "hoc_listen_v1" = { listen: có câu nghe, speak: tự đọc to } (không đồng bộ;
+     hsk_lotrinh dùng chung "listen"). HocActive.freshInfo() / startFresh({onClose}) — chạy ở trang Buổi học hôm nay.
    - HocActive.otherKnown() -> Map chữ Hán -> {iv, src} (đọc thẻ HSK, HSK 3.0, Từ của tôi).
    ========================================================================== */
 (function () {
@@ -40,6 +41,11 @@
     }
     function settings() { return load().settings; }
     function set(k, v) { const o = load(); o.settings[k] = v; writeJSON(KEY, o); }
+
+    // Âm thanh: tùy lúc có tai nghe hay không nên lưu theo thiết bị, không đồng bộ
+    function audio() { return Object.assign({ listen: true, speak: true }, readJSON("hoc_listen_v1", {}) || {}); }
+    function setAudio(k, v) { const o = audio(); o[k] = v; writeJSON("hoc_listen_v1", o); }
+    function autoSay(t) { if (audio().speak) say(t); }
 
     // Từ đã học ở nguồn khác; Boya cần tên chữ nên trang Boya tự gộp thêm thẻ của mình
     function otherKnown() {
@@ -71,6 +77,7 @@
         speechSynthesis.speak(u);
     }
     function sayWord(w) {
+        if (!audio().speak) return;
         if (window.HocTTS && HocTTS.speakWord) HocTTS.speakWord(w.hz, w.ex || "", { rate: 0.85 });
         else say(w.hz);
     }
@@ -215,7 +222,7 @@ html.ha-lock{overflow:hidden}
     }
     function pick(st) { return A.words.filter(w => A.st[w.id] === st); }
     function renderFilter() {
-        const known = A.known || new Map(), st = settings();
+        const known = A.known || new Map(), st = settings(), au = audio();
         prog(0, "Lọc từ");
         const tag = w => {
             const s = A.st[w.id], k = known.get(w.id);
@@ -229,9 +236,13 @@ html.ha-lock{overflow:hidden}
             <div class="ha-words">${A.words.map(w => `<button type="button" class="ha-w ${A.st[w.id]}${A.later ? " sel" : ""}" data-w="${esc(w.id)}"><b>${esc(w.hz)}</b>${tag(w)}</button>`).join("")}</div>
             <div class="ha-row"><button type="button" class="ha-btn pri lg" data-go="start" id="ha-go"></button></div>
             <div class="ha-opt-row"><label>Bước tự nhớ lại <select id="ha-recall"><option value="type">Gõ chữ Hán / pinyin</option><option value="self">Không gõ, tự chấm</option></select></label>
+            <label><input type="checkbox" id="ha-listen" ${au.listen ? "checked" : ""}> 🎧 Có câu nghe</label>
+            <label><input type="checkbox" id="ha-speak" ${au.speak ? "checked" : ""}> 🔊 Tự đọc to</label>
             ${A.kind ? `<label><input type="checkbox" id="ha-same" ${st.sameDay ? "checked" : ""}> Nhớ lại trong ngày</label>` : ""}</div></div>`);
         el("ha-recall").value = st.recall;
         el("ha-recall").onchange = e => set("recall", e.target.value);
+        el("ha-listen").onchange = e => setAudio("listen", e.target.checked);
+        el("ha-speak").onchange = e => setAudio("speak", e.target.checked);
         if (el("ha-same")) el("ha-same").onchange = e => set("sameDay", e.target.checked);
         const label = () => {
             const k = pick("known").length, l = pick("learn").length;
@@ -278,7 +289,7 @@ html.ha-lock{overflow:hidden}
         B().querySelectorAll(".ha-o").forEach((b, i) => { b.disabled = true; if (v.opts[i] === w) b.classList.add("ok"); else if (i === k) b.classList.add("no"); });
         B().querySelector(".ha-timer").style.visibility = "hidden";
         el("ha-vp").textContent = w.py + (k === -1 ? " · hết giờ" : ok && ms > VF_FAST ? " · đúng nhưng hơi lâu" : "");
-        if (!ok) say(w.hz);
+        if (!ok) autoSay(w.hz);
         a.answers++;
         a.timer = setTimeout(() => { if (A === a && a.vf === v) renderVerify(); }, ok ? 450 : 1500);
     }
@@ -392,7 +403,7 @@ html.ha-lock{overflow:hidden}
 
     // ---------------------------------------------------------------- Bộ hỏi tự nhớ lại
     function runRecall(cfg) {
-        const listen = "speechSynthesis" in window;
+        const listen = "speechSynthesis" in window && audio().listen;
         A.rc = { cfg, res: new Map(), n: 0, queue: cfg.words.map((w, i) => ({ w, ask: listen && i % 3 === 2 ? "listen" : "vi", retry: false })) };
         renderRecall();
     }
@@ -403,7 +414,7 @@ html.ha-lock{overflow:hidden}
         r.cfg.progress(r.n); r.open = true; r.hint = 0; r.shown = false;
         html(`<div class="ha-tag">${r.cfg.tag}${it.retry ? " · <em>hỏi lại</em>" : ""} · còn ${r.queue.length}</div><div class="ha-card" id="ha-rc">
             <div class="ha-c ha-muted">${it.ask === "listen" ? "Nghe rồi nhớ ra từ" : "Từ tiếng Trung là gì?"}</div>
-            <div class="ha-c" style="padding:16px 0 12px">${it.ask === "listen" ? `<button type="button" class="ha-listen" data-say="${esc(w.hz)}">🔊</button><div class="ha-muted">Bấm để nghe lại</div>` : `<div class="ha-vi">${esc(w.vi)}</div>`}<div class="ha-muted" id="ha-hint"></div></div>
+            <div class="ha-c" style="padding:16px 0 12px">${it.ask === "listen" ? `<button type="button" class="ha-listen" data-say="${esc(w.hz)}">🔊</button><div class="ha-muted">Bấm để nghe lại</div><button type="button" class="ha-link" data-rc="mute">🔇 Không nghe được lúc này</button>` : `<div class="ha-vi">${esc(w.vi)}</div>`}<div class="ha-muted" id="ha-hint"></div></div>
             ${typing ? `<form class="ha-form" id="ha-form"><input id="ha-in" lang="zh-CN" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Chữ Hán hoặc pinyin" aria-label="Gõ chữ Hán hoặc pinyin không dấu"><button class="ha-btn pri">Kiểm tra</button></form>`
                 : `<div class="ha-row"><button type="button" class="ha-btn pri lg" data-rc="show">Xem đáp án</button></div>`}
             <div class="ha-row"><button type="button" class="ha-btn" data-rc="hint">💡 Gợi ý</button><button type="button" class="ha-btn" data-rc="dk">Không nhớ</button></div>
@@ -422,9 +433,10 @@ html.ha-lock{overflow:hidden}
             const x = b.dataset.rc;
             if (x === "right") { r.last.ok = true; if (!it.retry) r.res.set(w.id, !r.hint); const f = el("ha-fb").querySelector(".ha-fb"); f.className = "ha-fb ok"; f.querySelector(".t").textContent = "Đã tính là đúng"; b.remove(); return; }
             if (!r.open) return;
+            if (x === "mute") { hush(); setAudio("listen", false); setAudio("speak", false); r.queue.forEach(y => { y.ask = "vi"; }); renderRecall(); toast("Đã tắt câu nghe và tự đọc (bật lại ở màn lọc từ)"); return; }
             if (x === "hint") hint(w);
             if (x === "dk") answerRecall(false, "");
-            if (x === "show") { r.shown = true; A.shownAt = Date.now(); clearInputs(); el("ha-fb").innerHTML = `<div class="ha-fb">${fbWord(w)}<div class="ha-two"><button type="button" class="ha-btn" data-rc="no">✗ Chưa nhớ</button><button type="button" class="ha-btn pri" data-rc="yes">✓ Nhớ đúng</button></div></div>`; say(w.hz); }
+            if (x === "show") { r.shown = true; A.shownAt = Date.now(); clearInputs(); el("ha-fb").innerHTML = `<div class="ha-fb">${fbWord(w)}<div class="ha-two"><button type="button" class="ha-btn" data-rc="no">✗ Chưa nhớ</button><button type="button" class="ha-btn pri" data-rc="yes">✓ Nhớ đúng</button></div></div>`; autoSay(w.hz); }
             if (x === "yes") answerRecall(true, "");
             if (x === "no") answerRecall(false, "");
         });
@@ -457,7 +469,7 @@ html.ha-lock{overflow:hidden}
             ${!ok && typed ? `<div class="ha-muted">Bạn gõ: ${esc(typed)}</div>` : ""}${fbWord(w)}
             ${!ok && typed ? '<button type="button" class="ha-btn" data-rc="right">Từ tôi gõ cũng đúng nghĩa</button>' : ""}
             <button type="button" class="ha-btn pri" data-go="next">Tiếp tục <span class="ko">(Enter)</span></button></div>`;
-        say(w.hz);
+        autoSay(w.hz);
     }
     function recallNext() {
         const r = A && A.rc;
@@ -502,7 +514,7 @@ html.ha-lock{overflow:hidden}
         f.again = !ok;
         el("ha-fb").innerHTML = `<div class="ha-fb ${ok ? "ok" : "no"}"><div class="t">${ok ? "Chính xác! 🎉" : "Chưa đúng"}</div>${fbWord(w)}<button type="button" class="ha-btn pri" data-go="next">Tiếp tục <span class="ko">(Enter)</span></button></div>`;
         el("ha-fb").scrollIntoView({ block: "nearest" });
-        say(w.hz);
+        autoSay(w.hz);
     }
     function finalNext() {
         const f = A && A.fq;
@@ -538,7 +550,7 @@ html.ha-lock{overflow:hidden}
             const row = e.target.closest(".ha-ra"); if (!row) return;
             const w = ws[+row.dataset.i], m = e.target.closest("[data-m]");
             if (m) { const ok = m.dataset.m === "1"; marks.set(w.id, ok); row.className = "ha-ra " + (ok ? "ok" : "no"); prog(marks.size / ws.length, `${marks.size}/${ws.length}`); return; }
-            row.querySelector("div").hidden = false; say(w.hz);
+            row.querySelector("div").hidden = false; autoSay(w.hz);
         });
     }
 
