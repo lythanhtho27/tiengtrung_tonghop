@@ -2,3 +2,4 @@ tools/comics/raw/
 *.pdf
 # Nguồn tách bộ chữ Hán (tải tự động bởi tools/build_visual.py)
 tools/hanzi_parts/dictionary.txt
+__pycache__/

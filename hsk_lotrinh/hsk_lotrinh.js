@@ -2,7 +2,8 @@
    LỘ TRÌNH TỪ VỰNG HSK 1–6
    - Dữ liệu: hsk_vocab_data.js (sinh từ word_list_data/HSK1-HSK6_full.xlsx)
    - Lộ trình: Cấp → Chặng (5 bài + kiểm tra chặng) → Bài (10–20 từ)
-   - Mỗi bài: Học thẻ → Luyện tập (≥70% để qua) → từ vào hàng đợi ôn tập
+   - Mỗi bài: Học chủ động (đoán nghĩa → tự nhớ lại theo lượt 5 từ → chốt bài) hoặc Lật thẻ → Luyện tập; ≥70% để qua → từ vào hàng đợi ôn tập
+   - Nhớ lại trong ngày: từ mới được hỏi lại sau 10 phút và buổi tối
    - Ôn tập: lặp lại ngắt quãng (SM-2 rút gọn), 4 mức Quên / Khó / Nhớ / Dễ
    ========================================================================== */
 (function () {
@@ -91,6 +92,9 @@
     // ---------------------------------------------------------------- Lưu trữ
     const DEFAULT_STATE = {
         settings: { goal: 20, speak: true, rate: 0.8, dir: "mix", free: false,
+                    learnMode: "active",  // cách học từ mới: "active" (Học chủ động) | "classic" (Lật thẻ)
+                    recall: "type",       // bước tự nhớ lại: "type" (gõ chữ Hán / pinyin) | "self" (tự chấm)
+                    sameDay: true,        // nhớ lại từ mới trong ngày (sau 10 phút + buổi tối)
                     qtLearn: ["meaning", "pinyin", "hanzi", "listen", "cloze"],     // loại câu hỏi khi học bài mới (luyện tập bài + kiểm tra chặng)
                     qtReview: ["meaning", "pinyin", "hanzi", "listen", "cloze"] },  // loại câu hỏi ở tab Ôn tập (Ôn từ hay sai, Trắc nghiệm nhanh)
         units: {},     // key -> { done, best, stars, at }
@@ -100,6 +104,7 @@
         days: {},      // yyyy-mm-dd -> { n: từ mới, r: lượt ôn, c: đúng, t: tổng câu, ms/mc: tổng thời gian & số lần nhận diện đúng }
         speed: { best: null, runs: 0 }, // kỷ lục chế độ đọc nhanh
         lastLevel: 1,
+        fresh: {},       // wordId -> { at, s, u } từ học hôm nay chờ nhớ lại (xem NHỚ LẠI TRONG NGÀY)
         placement: null, // kết quả kiểm tra xếp lớp gần nhất: { at, range, result }
     };
     let S = load();
@@ -185,10 +190,11 @@
         if ($("view-review").classList.contains("active")) renderReview(); else renderPath();
     });
     // Thêm từ vừa học vào hàng đợi ôn
-    function introduce(id, knewIt) {
+    function introduce(id, knewIt, noFresh) {
         if (S.srs[id]) return;
         S.srs[id] = { ef: 2.5, iv: knewIt ? 1 : 0, reps: knewIt ? 1 : 0, lapses: 0, first: Date.now(), last: Date.now(),
             due: knewIt ? startOfDay() + DAY : Date.now() + 10 * 60000 };
+        if (S.settings.sameDay && !noFresh) S.fresh[id] = { at: Date.now(), s: 0 };
         today().n++;
     }
     // Tính lần ôn kế tiếp; rating: 1 Quên, 2 Khó, 3 Nhớ, 4 Dễ
@@ -345,11 +351,14 @@
         steps.push(`<li class="${d.n >= goal ? "done" : ""}"><b>Học từ mới</b> — ${d.n >= goal ? "đã đạt mục tiêu ✓" : `còn ${goal - d.n} từ để đạt mục tiêu`}</li>`);
         const slowN = slowWords().length;
         const speedToday = (d.sp || 0) > 0;
+        const fr = freshInfo();
+        if (fr.ready.length || fr.waiting) steps.push(`<li class="${fr.ready.length ? "" : "done"}"><b>🌱 Nhớ lại từ mới hôm nay</b> — ${fr.ready.length ? `${fr.ready.length} từ đến lượt` : `lượt tới lúc ${hm(fr.next)} (${fr.waiting} từ)`}</li>`);
         steps.push(`<li class="${speedToday ? "done" : ""}"><b>Tăng tốc đọc</b> — ${speedToday ? "đã luyện đọc nhanh hôm nay ✓" : slowN ? `${slowN} từ nhận diện chậm, luyện 3–5 phút` : "luyện đọc nhanh 3–5 phút"}</li>`);
         $("plan-steps").innerHTML = steps.join("");
 
         const acts = [];
         if (due > 0) acts.push(`<button class="btn btn-primary btn-lg" data-act="review">🔁 Ôn tập ${fmtNum(due)} từ</button>`);
+        if (fr.ready.length) acts.push(`<button class="btn ${due > 0 ? "" : "btn-primary"} btn-lg" data-act="fresh">🌱 Nhớ lại ${fr.ready.length} từ mới</button>`);
         if (learnedCount() >= 4 && !speedToday) acts.push(`<button class="btn btn-lg" data-act="speed">⚡ Đọc nhanh</button>`);
         if (next) {
             const label = next.type === "unit"
@@ -363,6 +372,7 @@
         $("today-actions").onclick = e => {
             const a = e.target.closest("[data-act]"); if (!a) return;
             if (a.dataset.act === "review") startReview();
+            if (a.dataset.act === "fresh") startFresh();
             if (a.dataset.act === "speed") startSpeed(slowN >= 10 ? "slow" : "all", 30, 2000);
             if (a.dataset.act === "next" && next) next.type === "unit" ? startUnit(next.u) : startStage(next.st);
         };
@@ -508,6 +518,10 @@
         openModal(`<div class="modal-head"><h3>HSK ${u.level} · Bài ${u.n + 1}</h3><button class="icon-btn" data-close>✕</button></div>
             <p class="muted">${u.words.length} từ${r ? ` · Điểm cao nhất ${r.best}%` : ""}. Bấm vào từ để nghe phát âm.</p>
             <div class="table-wrap"><table class="wtable">${rows}</table></div>
+            <div class="mode-pick" role="radiogroup" aria-label="Cách học">
+                <label><input type="radio" name="learn-mode" value="active" ${S.settings.learnMode !== "classic" ? "checked" : ""}><span><b>🧠 Học chủ động</b><small>Đoán nghĩa, tự nhớ lại, từng lượt 5 từ</small></span></label>
+                <label><input type="radio" name="learn-mode" value="classic" ${S.settings.learnMode === "classic" ? "checked" : ""}><span><b>🃏 Lật thẻ</b><small>Xem hết thẻ rồi làm trắc nghiệm</small></span></label>
+            </div>
             <div class="btn-row end">
                 ${r && (r.done || r.best) ? `<button class="btn btn-ghost-danger" data-go="reset" title="Bỏ đánh dấu hoàn thành bài này">↺ Đặt lại bài</button>` : ""}
                 ${r && r.done ? `<button class="btn" data-go="practice">Chỉ luyện tập</button>` : ""}
@@ -606,7 +620,9 @@
             if (pl) clearTimeout(session.timer);
             const msg = pl
                 ? (session.stage === "result" ? "Thoát mà không áp dụng kết quả kiểm tra xếp lớp?" : "Thoát bài kiểm tra xếp lớp? Các câu đã làm sẽ không được lưu.")
-                : "Thoát phiên học? Kết quả của phần đang làm sẽ không được lưu.";
+                : session.kind === "active" && session.batches && session.bi > 0
+                    ? `Thoát phiên học? ${session.bi} lượt đã xong vẫn được lưu, phần đang làm thì không.`
+                    : "Thoát phiên học? Kết quả của phần đang làm sẽ không được lưu.";
             if (!confirm(msg)) {
                 // tiếp tục câu đang làm với đồng hồ mới
                 if (pl && session.stage === "quiz") renderPlacementQ();
@@ -644,6 +660,7 @@
     // ---------- Học bài: bước 1 - thẻ từ
     function startUnit(u, skipLearn) {
         S.lastLevel = u.level; save();
+        if (!skipLearn && S.settings.learnMode !== "classic") { startActive(u); return; }
         session = { kind: "unit", unit: u, words: u.words, i: 0, dirty: false };
         openSession(`HSK ${u.level} · Bài ${u.n + 1}`);
         skipLearn ? startPractice() : renderLearnCard();
@@ -695,6 +712,364 @@
         if (d > 0 && s.i === s.words.length - 1) { startPractice(); return; }
         s.i = Math.max(0, Math.min(s.words.length - 1, s.i + d));
         renderLearnCard();
+    }
+
+    // ================================================================ HỌC CHỦ ĐỘNG (settings.learnMode = "active")
+    // Lọc từ đã biết → từng lượt 5 từ: đoán nghĩa rồi mới xem thẻ → tự nhớ lại (gõ chữ Hán / pinyin, hoặc tự chấm),
+    // xen vài từ của lượt trước → chốt bài bằng điền từ vào câu. Xong lượt nào lưu từ của lượt đó.
+    const BATCH = 5;
+    function startActive(u) {
+        const left = u.words.filter(w => !S.srs[w.id]);
+        const relearn = !left.length;
+        session = { kind: "active", unit: u, words: u.words, todo: relearn ? u.words.slice() : left, relearn,
+            known: new Set(), introduced: new Set(), weak: new Set(), dirty: false };
+        openSession(`HSK ${u.level} · Bài ${u.n + 1}`);
+        renderFilter();
+    }
+    // Bước 1: lọc nhanh từ đã biết
+    function renderFilter() {
+        const s = session, prev = s.relearn ? 0 : s.words.length - s.todo.length;
+        setProgress(0, "Lọc từ");
+        body().innerHTML = `<div class="step-tag">Học chủ động · Lọc nhanh</div>
+            <div class="quiz">
+                <p class="ac-lead"><b>Từ nào bạn đã biết chắc?</b> Chạm để đánh dấu, các từ đó chỉ được hỏi lại ở cuối bài.</p>
+                ${prev ? `<p class="muted center">${prev} từ của bài đã có thẻ ôn, lần này học ${s.todo.length} từ còn lại.</p>` : ""}
+                <div class="ac-words">${s.todo.map(w => `<button type="button" class="ac-word" data-known="${esc(w.id)}" aria-pressed="false"><span class="hz">${esc(w.hz)}</span></button>`).join("")}</div>
+                <div class="btn-row center"><button class="btn btn-primary btn-lg" data-ac="next" id="ac-go"></button></div>
+                <p class="center ac-switch"><a href="#" data-ac="classic">🃏 Chuyển sang cách lật thẻ</a></p>
+            </div>`;
+        const label = () => { const n = s.todo.length - s.known.size; $("ac-go").textContent = n ? `Học ${n} từ →` : "Làm bài chốt →"; };
+        label();
+        body().onclick = e => {
+            const k = e.target.closest("[data-known]");
+            if (k) {
+                const id = k.dataset.known;
+                s.known.has(id) ? s.known.delete(id) : s.known.add(id);
+                k.classList.toggle("on", s.known.has(id)); k.setAttribute("aria-pressed", String(s.known.has(id)));
+                label(); return;
+            }
+            const a = e.target.closest("[data-ac]"); if (!a) return;
+            e.preventDefault();
+            if (a.dataset.ac === "classic") { setLearnMode("classic"); toast("Đã chuyển sang lật thẻ (đổi lại trong Cài đặt)"); startUnit(s.unit); return; }
+            startBatches();
+        };
+    }
+    function startBatches() {
+        const s = session, learn = s.todo.filter(w => !s.known.has(w.id));
+        s.dirty = true;
+        s.batches = [];
+        for (let i = 0; i < learn.length; i += BATCH) s.batches.push(learn.slice(i, i + BATCH));
+        // lượt cuối quá ngắn thì gộp vào lượt trước
+        if (s.batches.length > 1 && s.batches[s.batches.length - 1].length < 3) { const last = s.batches.pop(); s.batches[s.batches.length - 1] = s.batches[s.batches.length - 1].concat(last); }
+        s.total = learn.length * 2; s.did = 0; s.bi = 0; s.gi = 0;
+        learn.length ? renderGuess() : startFinal();
+    }
+    const batchLabel = s => `Lượt ${s.bi + 1}/${s.batches.length}`;
+    // Bước 2: đoán nghĩa (chữ + Hán Việt + câu ví dụ) rồi mới xem thẻ; Hán Việt trùng nghĩa (安全 = an toàn) thì ẩn để không lộ đáp án
+    function renderGuess() {
+        const s = session, b = s.batches[s.bi], w = b[s.gi];
+        setProgress(s.did / s.total * 0.75, batchLabel(s));
+        s.opts = shuffle([w].concat(pickDistractors(w, 3, LEVELS[w.level].words, "vi")));
+        s.guess = w;
+        body().innerHTML = `<div class="step-tag">${batchLabel(s)} · Đoán nghĩa ${s.gi + 1}/${b.length}</div>
+            <div class="quiz ac-guess">
+                <div class="q-type">Đoán nghĩa trước khi xem đáp án</div>
+                <div class="q-prompt">
+                    <div class="q-hz">${esc(w.hz)}</div>
+                    ${w.hv && norm(w.vi).indexOf(norm(w.hv)) < 0 ? `<div class="q-sub">Hán Việt: <b>${esc(w.hv)}</b></div>` : ""}
+                    ${w.ex ? `<div class="ac-ex">${highlight(w.ex, w.clean)}</div>` : ""}
+                </div>
+                <div class="opts">${s.opts.map((o, i) => `<button class="opt" data-g="${i}"><kbd>${i + 1}</kbd><span>${esc(o.vi)}</span></button>`).join("")}</div>
+                <div class="btn-row center"><button class="btn" data-g="-1">Không đoán được <kbd class="kbd-only">0</kbd></button></div>
+            </div>`;
+        body().onclick = e => { const g = e.target.closest("[data-g]"); if (g) revealGuess(+g.dataset.g); };
+    }
+    function revealGuess(i) {
+        const s = session, w = s.guess; if (!w) return;
+        const ok = i >= 0 && s.opts[i] === w;
+        s.guess = null; s.shownAt = Date.now();
+        if (!ok) s.weak.add(w.id);
+        s.did++;
+        const b = s.batches[s.bi], last = s.gi === b.length - 1;
+        setProgress(s.did / s.total * 0.75, batchLabel(s));
+        body().innerHTML = `<div class="step-tag">${batchLabel(s)} · Từ ${s.gi + 1}/${b.length}</div>
+            <div class="ac-verdict ${ok ? "ok" : "bad"}">${ok ? "✓ Đoán đúng!" : i < 0 ? "Xem thẻ và tìm một cách nhớ nhé" : `✗ Bạn đoán: ${esc(s.opts[i].vi)}`}</div>
+            ${wordCardHTML(w)}
+            ${hooksHTML(w)}
+            <div class="btn-row center"><button class="btn btn-primary btn-lg" data-ac="next">${last ? "Tự nhớ lại →" : "Từ tiếp theo →"}</button></div>`;
+        $("session").scrollTop = 0;
+        fillParts(w);
+        const note = $("ac-note");
+        if (note) note.onchange = () => HocNotes.set(w.clean, note.value);
+        autoSpeakWord(w);
+        body().onclick = e => {
+            const say = e.target.closest("[data-say]"); if (say) { speak(say.dataset.say); return; }
+            if (!e.target.closest('[data-ac="next"]')) return;
+            if (note) HocNotes.get(w.clean) !== note.value.trim() && HocNotes.set(w.clean, note.value);
+            if (last) { startRecall(); return; }
+            s.gi++; renderGuess();
+        };
+    }
+    // Móc nhớ: bộ phận chữ, từ đã học có cùng chữ, ghi chú gợi nhớ (shared/notes.js)
+    function hooksHTML(w) {
+        const chars = [...new Set(Array.from(w.clean).filter(c => /[一-鿿]/.test(c)))];
+        const learned = Object.keys(S.srs).map(id => BY_ID.get(id)).filter(Boolean);
+        const rows = chars.map(ch => {
+            const seen = new Set([w.clean]);
+            const rel = learned.filter(x => x.clean.indexOf(ch) >= 0 && !seen.has(x.clean) && seen.add(x.clean)).slice(0, 4);
+            return rel.length ? `<div class="ac-rel"><b>${esc(ch)}</b> ${rel.map(x => `<button type="button" class="ac-chip" data-say="${esc(x.clean)}" title="${esc(x.py)}"><span class="hz">${esc(x.clean)}</span> ${esc(x.vi)}</button>`).join("")}</div>` : "";
+        }).join("");
+        const note = window.HocNotes ? HocNotes.get(w.clean) : "";
+        return `<div class="ac-hooks">
+            <div class="ac-parts" id="ac-parts" hidden></div>
+            ${rows ? `<div class="ac-h"><h4>🔗 Từ đã học có cùng chữ</h4>${rows}</div>` : ""}
+            ${window.HocNotes ? `<div class="ac-h"><h4>📝 Cách nhớ của bạn</h4><textarea id="ac-note" rows="2" maxlength="500" placeholder="Một hình ảnh, câu chuyện, hay từ tiếng Việt nghe giống… (không bắt buộc)">${esc(note)}</textarea></div>` : ""}
+        </div>`;
+    }
+    function fillParts(w) {
+        if (!window.HocVisual || !HocVisual.loadParts) return;
+        const el = $("ac-parts");
+        HocVisual.loadParts().then(() => {
+            const h = el && el.isConnected ? HocVisual.partsHTML(w.clean) : "";
+            if (h) { el.innerHTML = `<h4>🧩 Bộ phận chữ</h4>${h}`; el.hidden = false; }
+        }).catch(() => {});
+    }
+    // Bước 3: tự nhớ lại các từ của lượt, xen tối đa 2 từ của lượt trước (ưu tiên từ từng sai)
+    function startRecall() {
+        const s = session, b = s.batches[s.bi];
+        const old = [].concat(...s.batches.slice(0, s.bi));
+        const mix = shuffle(old).sort((x, y) => (s.weak.has(y.id) ? 1 : 0) - (s.weak.has(x.id) ? 1 : 0)).slice(0, 2);
+        const q = shuffle(b);
+        mix.forEach((w, i) => q.splice(Math.min(q.length, 2 + i * 2), 0, w));
+        runRecall({
+            words: q,
+            tag: `${batchLabel(s)} · Tự nhớ lại`,
+            progress: n => setProgress((s.did + Math.min(n, b.length)) / s.total * 0.75, batchLabel(s)),
+            onDone: res => {
+                b.forEach(w => {
+                    if (!S.srs[w.id]) { introduce(w.id, res.get(w.id)); s.introduced.add(w.id); }
+                    else if (!res.get(w.id)) softFail(w.id);
+                });
+                mix.forEach(w => { if (!res.get(w.id)) softFail(w.id); });
+                q.forEach(w => { res.get(w.id) ? s.weak.delete(w.id) : s.weak.add(w.id); });
+                save();
+                s.did += b.length; s.bi++; s.gi = 0;
+                toast(`✓ Xong lượt ${s.bi}/${s.batches.length}, đã lưu ${b.length} từ`);
+                s.bi < s.batches.length ? renderGuess() : startFinal();
+            },
+        });
+    }
+    // Chưa nhớ từ vừa học: hẹn ôn sau 10 phút. Từ học hôm nay không tính là một lần "quên"; từ cũ thì theo schedule()
+    function softFail(id) {
+        const c = S.srs[id]; if (!c) return;
+        if (dayKey(c.first) !== dayKey()) { S.srs[id] = schedule(c, 1); return; }
+        c.iv = 0; c.reps = 0; c.last = Date.now(); c.due = Date.now() + 10 * 60000;
+    }
+    // ---------- Bộ hỏi "tự nhớ lại" (dùng chung cho Học chủ động và Nhớ lại trong ngày)
+    // cfg: { words, tag, progress(n), onDone(Map id -> đúng ngay lần đầu) }
+    function runRecall(cfg) {
+        const listen = "speechSynthesis" in window && qTypes("learn").indexOf("listen") >= 0;
+        session.rc = { cfg, res: new Map(), n: 0, queue: cfg.words.map((w, i) => ({ w, ask: listen && i % 3 === 2 ? "listen" : "vi", retry: false })) };
+        renderRecall();
+    }
+    function renderRecall() {
+        const s = session, r = s.rc;
+        if (!r.queue.length) { s.rc = null; r.cfg.onDone(r.res); return; }
+        const it = r.queue[0], w = it.w, typing = S.settings.recall !== "self";
+        r.cfg.progress(r.n);
+        r.open = true; r.hint = 0;
+        body().innerHTML = `<div class="step-tag">${r.cfg.tag}${it.retry ? " · <em>hỏi lại</em>" : ""} · còn ${r.queue.length}</div>
+            <div class="quiz ac-recall">
+                <div class="q-type">${it.ask === "listen" ? "Nghe rồi nhớ ra từ" : "Từ tiếng Trung là gì?"}</div>
+                <div class="q-prompt">${it.ask === "listen" ? `<button class="listen-btn" type="button" data-say="${esc(w.clean)}">🔊</button><div class="q-sub">Bấm để nghe lại</div>` : `<div class="q-vi">${esc(w.vi)}</div>`}<div class="q-sub" id="rc-hint"></div></div>
+                ${typing
+                    ? `<form class="rc-form" id="rc-form"><input class="input" id="rc-in" lang="zh-CN" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Chữ Hán hoặc pinyin" aria-label="Gõ chữ Hán hoặc pinyin không dấu"><button class="btn btn-primary">Kiểm tra</button></form>`
+                    : `<div class="btn-row center"><button class="btn btn-primary btn-lg" type="button" data-rc="show">Xem đáp án</button></div>`}
+                <div class="btn-row center"><button class="btn" type="button" data-rc="hint">💡 Gợi ý</button><button class="btn" type="button" data-rc="dk">Không nhớ</button></div>
+                <div id="rc-fb"></div>
+            </div>`;
+        if (it.ask === "listen") setTimeout(() => { if (session === s && s.rc === r && r.queue[0] === it && r.open) speak(w.clean); }, 200);
+        const inp = $("rc-in");
+        if (inp) {
+            inp.focus({ preventScroll: true });
+            // Enter đang chọn chữ trong bộ gõ thì không nộp bài
+            inp.addEventListener("keydown", e => { if (e.key === "Enter" && (e.isComposing || e.keyCode === 229)) e.preventDefault(); });
+            $("rc-form").onsubmit = e => {
+                e.preventDefault();
+                const v = inp.value.trim();
+                if (r.open && v) answerRecall(recallMatch(w, v), v);
+            };
+        }
+        body().onclick = e => {
+            const say = e.target.closest("[data-say]"); if (say) { speak(say.dataset.say); return; }
+            if (e.target.closest('[data-ac="next"]')) { recallNext(); return; }
+            const b = e.target.closest("[data-rc]"); if (!b) return;
+            const a = b.dataset.rc;
+            if (a === "right") { acceptRecall(b); return; }
+            if (!r.open) return;
+            if (a === "hint") recallHint(w);
+            if (a === "dk") answerRecall(false, "");
+            if (a === "show") selfRecall(w);
+            if (a === "self1") answerRecall(true, "");
+            if (a === "self0") answerRecall(false, "");
+        };
+    }
+    // Đúng khi gõ đúng chữ Hán (một trong các dạng "儿子/女儿") hoặc đúng pinyin, bỏ qua dấu thanh và khoảng trắng
+    function recallMatch(w, v) {
+        const han = t => String(t).replace(/[^㐀-鿿]/g, "");
+        const py = t => norm(t).replace(/v/g, "u").replace(/[^a-z]/g, "");
+        if (han(v)) return w.clean.split(/[\/／|、，,]/).map(han).filter(Boolean).indexOf(han(v)) >= 0;
+        return !!py(v) && w.py.split(/[\/／;,，]/).map(py).indexOf(py(v)) >= 0;
+    }
+    function recallHint(w) {
+        const n = ++session.rc.hint, py = norm(w.py).replace(/[^a-z ]/g, " ").trim();
+        $("rc-hint").textContent = n === 1
+            ? `${Array.from(w.clean).length} chữ · pinyin bắt đầu bằng “${py.charAt(0)}”`
+            : (w.hv ? `Hán Việt: ${w.hv} · ` : "") + py.split(/\s+/).map(x => x.slice(0, 2) + "…").join(" ");
+        const i = $("rc-in"); if (i) i.focus({ preventScroll: true });
+    }
+    function recallWordHTML(w) {
+        return `<div class="fb-word"><span class="fb-hz">${esc(w.hz)}</span> <span class="py">${esc(w.py)}</span> — ${esc(w.vi)} <button class="say-btn sm" type="button" data-say="${esc(w.clean)}">🔊</button></div>
+            ${w.ex ? `<div class="fb-ex">${highlight(w.ex, w.clean)}<br><small>${esc(w.exvi)}</small></div>` : ""}`;
+    }
+    function clearRecallInputs() {
+        body().querySelectorAll(".ac-recall > .btn-row").forEach(x => x.remove());
+        const f = $("rc-form"); if (f) f.remove();
+    }
+    function selfRecall(w) {
+        session.shownAt = Date.now();
+        clearRecallInputs();
+        $("rc-fb").innerHTML = `<div class="fb">${recallWordHTML(w)}<div class="ac-two"><button class="btn" type="button" data-rc="self0">✗ Chưa nhớ <kbd class="kbd-only">1</kbd></button><button class="btn btn-primary" type="button" data-rc="self1">✓ Nhớ đúng <kbd class="kbd-only">2</kbd></button></div></div>`;
+        if (S.settings.speak) speak(w.clean);
+    }
+    function answerRecall(ok, typed) {
+        const s = session, r = s.rc, it = r.queue[0], w = it.w;
+        if (!r.open) return;
+        const viaSelf = !!body().querySelector('[data-rc="self1"]');
+        r.open = false; s.shownAt = Date.now();
+        if (!it.retry) { logAnswer(ok); r.res.set(w.id, ok && !r.hint); }   // dùng gợi ý thì không tính là tự nhớ
+        r.last = { ok };
+        if (viaSelf) { s.shownAt = 0; recallNext(); return; }              // tự chấm: đáp án đã xem rồi, sang từ tiếp
+        clearRecallInputs();
+        $("rc-fb").innerHTML = `<div class="fb ${ok ? "fb-ok" : "fb-bad"}">
+            <div class="fb-title">${ok ? (r.hint ? "Đúng (có gợi ý)" : "Nhớ đúng! 🎉") : "Chưa nhớ, sẽ hỏi lại ngay"}</div>
+            ${!ok && typed ? `<div class="muted">Bạn gõ: ${esc(typed)}</div>` : ""}
+            ${recallWordHTML(w)}
+            ${!ok && typed ? `<button class="btn" type="button" data-rc="right">Từ tôi gõ cũng đúng nghĩa</button>` : ""}
+            <button class="btn btn-primary" type="button" data-ac="next">Tiếp tục <span class="kbd-only">(Enter)</span></button></div>`;
+        if (S.settings.speak) speak(w.clean);
+    }
+    function acceptRecall(btn) {
+        const r = session.rc, it = r.queue[0];
+        r.last.ok = true;
+        if (!it.retry) { r.res.set(it.w.id, !r.hint); today().c++; }
+        const fb = $("rc-fb").querySelector(".fb");
+        fb.className = "fb fb-ok"; fb.querySelector(".fb-title").textContent = "Đã tính là đúng";
+        btn.remove();
+    }
+    function recallNext() {
+        const s = session, r = s && s.rc;
+        if (!r || r.open || Date.now() - (s.shownAt || 0) < 300) return;
+        const it = r.queue.shift();
+        if (!it.retry) r.n++;
+        if (!r.last.ok) r.queue.splice(Math.min(r.queue.length, 2), 0, { w: it.w, ask: "vi", retry: true });
+        renderRecall();
+    }
+    // Bước 4: chốt cả bài bằng điền từ vào câu
+    function startFinal() {
+        const s = session, pool = LEVELS[s.unit.level].words;
+        const types = pickTypes("learn", ["cloze", "cloze", "hanzi"]);
+        s.dirty = true; s.rc = null; s.guess = null;
+        runQuiz({
+            title: "Chốt bài",
+            questions: shuffle(s.words).map(w => makeQuestion(w, types[Math.floor(Math.random() * types.length)], pool)),
+            retryWrong: true,
+            onDone: res => finishUnit(res),
+        });
+    }
+    // Tùy chọn cuối bài: nhìn nghĩa, tự nhớ lại toàn bộ từ của bài rồi tự chấm
+    function renderRecallAll(u) {
+        const marks = new Map(), words = shuffle(u.words);
+        session = { kind: "active", unit: u, words, dirty: false };
+        openSession(`HSK ${u.level} · Bài ${u.n + 1}`);
+        body().innerHTML = `<div class="step-tag">Thử nhớ lại cả bài</div>
+            <div class="quiz"><p class="ac-lead">Nhìn nghĩa, tự nói to từ tiếng Trung, rồi chạm để xem và tự chấm.</p>
+            <div class="ra-list">${words.map((w, i) => `<div class="ra-item" data-ra="${i}"><button type="button" class="ra-q">${esc(w.vi)}</button>
+                <div class="ra-a" hidden><span class="hz">${esc(w.hz)}</span> <span class="py">${esc(w.py)}</span> <span class="ra-btns"><button type="button" class="btn" data-m="0" title="Chưa nhớ">✗</button><button type="button" class="btn" data-m="1" title="Nhớ đúng">✓</button></span></div></div>`).join("")}</div>
+            <div class="btn-row center"><button class="btn btn-primary" id="ra-done"></button></div></div>`;
+        const draw = () => { setProgress(marks.size / words.length, `${marks.size}/${words.length}`); $("ra-done").textContent = marks.size < words.length ? `Kết thúc (${marks.size}/${words.length})` : "Xong ✓"; };
+        draw();
+        body().onclick = e => {
+            if (e.target.closest("#ra-done")) {
+                marks.forEach((ok, id) => { if (!ok) softFail(id); });
+                save();
+                const bad = [...marks.values()].filter(x => !x).length;
+                closeSession(true);
+                if (marks.size) toast(`Nhớ ${marks.size - bad}/${marks.size} từ${bad ? ` · ${bad} từ sẽ được ôn lại sau 10 phút` : " 🎉"}`);
+                return;
+            }
+            const row = e.target.closest("[data-ra]"); if (!row) return;
+            const w = words[+row.dataset.ra], m = e.target.closest("[data-m]");
+            if (m) { const ok = m.dataset.m === "1"; marks.set(w.id, ok); row.classList.toggle("ok", ok); row.classList.toggle("bad", !ok); draw(); return; }
+            if (e.target.closest(".ra-q")) { row.querySelector(".ra-a").hidden = false; speak(w.clean); }
+        };
+    }
+    function setLearnMode(m) { S.settings.learnMode = m === "classic" ? "classic" : "active"; save(); }
+
+    // ================================================================ NHỚ LẠI TRONG NGÀY (settings.sameDay)
+    // S.fresh[id] = { at: lúc học, s: số lượt đã nhớ lại }: lượt 1 sau 10 phút, lượt 2 buổi tối (từ 19h, cách lúc học ≥ 2 giờ).
+    // Chỉ là luyện thêm: nhớ đúng không đổi lịch SRS, chưa nhớ thì hẹn ôn sau 10 phút. Qua ngày hôm sau thì bỏ.
+    // hom_nay.js có bản chép freshInfo() để hiện dải nhắc; sửa ở đây thì sửa cả bên đó.
+    function freshStep(f, c) { return f.s === 0 && c.last > f.at + 5 * 60000 ? 1 : f.s; }   // đã ôn thẻ này ở chỗ khác thì coi như xong lượt 1
+    function freshEvening(f) { return Math.max(startOfDay() + 19 * 3600000, f.at + 2 * 3600000); }
+    function freshAt(id) {
+        const f = S.fresh[id], c = S.srs[id];
+        if (!f || !c || !BY_ID.has(id) || dayKey(f.at) !== dayKey()) return 0;
+        const st = freshStep(f, c);
+        if (st === 0) return f.at + 10 * 60000;
+        if (st === 1) { const t = freshEvening(f); return t < startOfDay() + DAY ? t : 0; }
+        return 0;
+    }
+    function freshInfo() {
+        const now = Date.now(), out = { ready: [], next: 0, waiting: 0 };
+        if (!S.settings.sameDay) return out;
+        Object.keys(S.fresh).forEach(id => {
+            const t = freshAt(id); if (!t) return;
+            if (t <= now) { if (!isDue(S.srs[id], now)) out.ready.push(id); }   // đã đến hạn SRS thì để phần Ôn tập hỏi
+            else { out.waiting++; if (!out.next || t < out.next) out.next = t; }
+        });
+        return out;
+    }
+    function hm(t) { const d = new Date(t); return d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0"); }
+    function startFresh() {
+        const ids = freshInfo().ready;
+        if (!ids.length) { toast("Chưa có từ nào đến lượt nhớ lại"); return; }
+        const words = shuffle(ids.map(id => BY_ID.get(id))).slice(0, 30);
+        session = { kind: "fresh", dirty: true };
+        openSession(`🌱 Nhớ lại từ mới · ${words.length} từ`);
+        runRecall({
+            words, tag: "Nhớ lại từ học hôm nay",
+            progress: n => setProgress(n / words.length, `${Math.min(n + 1, words.length)}/${words.length}`),
+            onDone: res => {
+                const now = Date.now();
+                const wrong = words.filter(w => !res.get(w.id)), ok = words.length - wrong.length;
+                words.forEach(w => {
+                    const f = S.fresh[w.id], c = S.srs[w.id];
+                    if (f && c) S.fresh[w.id] = { at: f.at, s: freshStep(f, c) === 0 && now < freshEvening(f) ? 1 : 2, u: now };
+                });
+                wrong.forEach(w => softFail(w.id));
+                save();
+                session.dirty = false;
+                setProgress(1);
+                renderResult({
+                    passed: true, res: { score: Math.round(ok / words.length * 100), correct: ok, total: words.length, wrong },
+                    title: "Xong lượt nhớ lại!",
+                    note: wrong.length ? "Từ chưa nhớ sẽ vào phần Ôn tập sau 10 phút." : "Bạn nhớ được hết các từ vừa học.",
+                    actions: [{ id: "home", label: "Về lộ trình", primary: true }],
+                    onAction: () => closeSession(true),
+                });
+            },
+        });
     }
 
     // ---------- Bộ sinh câu hỏi
@@ -854,7 +1229,16 @@
         const passed = res.score >= PASS_UNIT * 100;
         const wrongIds = new Set(res.wrong.map(w => w.id));
         let newCount = 0;
-        u.words.forEach(w => { if (!S.srs[w.id]) { introduce(w.id, !wrongIds.has(w.id)); newCount++; } });
+        const act = s.kind === "active", known = s.known || new Set(), intro = s.introduced || new Set();
+        u.words.forEach(w => {
+            const ok = !wrongIds.has(w.id);
+            if (!S.srs[w.id]) {
+                const kn = known.has(w.id) && ok;        // từ tự đánh dấu "đã biết" và trả lời đúng: hẹn ôn sau 3 ngày
+                introduce(w.id, ok, kn); newCount++;
+                if (kn) Object.assign(S.srs[w.id], { iv: 3, reps: 2, due: startOfDay() + 3 * DAY });
+            } else if (act && !ok && intro.has(w.id)) softFail(w.id);
+        });
+        newCount += intro.size;
         const prev = S.units[u.key] || {};
         const stars = starsFor(res.score);
         S.units[u.key] = { done: prev.done || passed, best: Math.max(prev.best || 0, res.score), stars: Math.max(prev.stars || 0, stars), at: Date.now() };
@@ -866,13 +1250,16 @@
             passed, res, stars,
             title: passed ? "Hoàn thành bài học!" : "Chưa đạt — hãy thử lại",
             note: passed
-                ? `${newCount ? newCount + " từ mới đã được thêm vào lịch ôn tập. " : ""}Các từ trả lời sai sẽ được hẹn ôn lại sau 10 phút.`
+                ? `${newCount ? newCount + " từ mới đã được thêm vào lịch ôn tập. " : ""}Các từ trả lời sai sẽ được hẹn ôn lại sau 10 phút.${S.settings.sameDay && newCount ? " Từ mới còn được hỏi lại trong ngày." : ""}`
                 : `Cần đạt ít nhất ${PASS_UNIT * 100}% để qua bài. Xem lại các từ sai bên dưới rồi luyện lại nhé.`,
             actions: passed
-                ? [next ? { id: "next", label: next.type === "unit" ? `Bài tiếp theo (Bài ${next.u.n + 1}) →` : `Kiểm tra chặng ${next.st.n + 1} →`, primary: true } : null, { id: "home", label: "Về lộ trình" }]
-                : [{ id: "retry", label: "Luyện lại", primary: true }, { id: "relearn", label: "Học lại thẻ từ" }, { id: "home", label: "Về lộ trình" }],
+                ? [act ? { id: "recall", label: "🧾 Thử nhớ lại hết" } : null, next ? { id: "next", label: next.type === "unit" ? `Bài tiếp theo (Bài ${next.u.n + 1}) →` : `Kiểm tra chặng ${next.st.n + 1} →`, primary: true } : null, { id: "home", label: "Về lộ trình" }]
+                : [{ id: "retry", label: "Luyện lại", primary: true }, { id: "relearn", label: act ? "Học lại từ đầu" : "Học lại thẻ từ" }, { id: "home", label: "Về lộ trình" }],
             onAction: id => {
                 if (id === "home") closeSession(true);
+                if (id === "recall") { renderRecallAll(u); return; }
+                if (act && id === "relearn") { startUnit(u); return; }
+                if (act && id === "retry") { session = { kind: "active", unit: u, words: u.words, known: new Set(), introduced: new Set(), weak: new Set() }; startFinal(); return; }
                 if (id === "retry") { session = { kind: "unit", unit: u, words: u.words, i: 0 }; startPractice(); }
                 if (id === "relearn") { session = { kind: "unit", unit: u, words: u.words, i: 0 }; renderLearnCard(); }
                 if (id === "next") { closeSession(true); next.type === "unit" ? startUnit(next.u) : startStage(next.st); }
@@ -1683,6 +2070,9 @@
         $("set-rate").value = String(S.settings.rate);
         $("set-dir").value = S.settings.dir;
         $("set-free").checked = !!S.settings.free;
+        $("set-mode").value = S.settings.learnMode === "classic" ? "classic" : "active";
+        $("set-recall").value = S.settings.recall === "self" ? "self" : "type";
+        $("set-sameday").checked = !!S.settings.sameDay;
         renderQtBoxes();
     }
     function bindSettings() {
@@ -1698,6 +2088,11 @@
             save();
             renderQtBoxes();
         });
+        // Cách học từ mới: chọn ở Cài đặt hoặc ngay trong hộp xem trước bài
+        document.addEventListener("change", e => { if (e.target.name === "learn-mode") setLearnMode(e.target.value); });
+        $("set-mode").onchange = e => { setLearnMode(e.target.value); toast(S.settings.learnMode === "classic" ? "Đã chọn Lật thẻ" : "Đã chọn Học chủ động"); };
+        $("set-recall").onchange = e => { S.settings.recall = e.target.value; save(); };
+        $("set-sameday").onchange = e => { S.settings.sameDay = e.target.checked; save(); };
         $("set-goal").onchange = e => { S.settings.goal = +e.target.value; save(); toast("Đã lưu mục tiêu"); };
         $("set-speak").onchange = e => { S.settings.speak = e.target.checked; save(); };
         $("set-rate").onchange = e => { S.settings.rate = +e.target.value; save(); speak("你好，欢迎学习汉语"); };
@@ -1737,7 +2132,7 @@
     document.addEventListener("keydown", e => {
         if (!$("modal").hidden && e.key === "Escape") { closeModal(); return; }
         if (!session || $("session").hidden) return;
-        if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
+        if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT" || e.target.tagName === "TEXTAREA") return;
         if (e.key === "Escape") { closeSession(); return; }
         if (session.kind === "placement") { placementKey(e); return; }
         if (session.kind === "speed") {
@@ -1751,6 +2146,21 @@
             const q = session.quiz;
             if (!q.answered && /^[1-4]$/.test(e.key)) { e.preventDefault(); answer(+e.key - 1); }
             else if (q.answered && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); tryContinue(); }
+            return;
+        }
+        if (session.kind === "active" || session.kind === "fresh") {
+            if (session.guess) { if (/^[0-4]$/.test(e.key)) { e.preventDefault(); revealGuess(+e.key - 1); } return; }
+            const self1 = body().querySelector('[data-rc="self1"]');
+            if (self1) {
+                if ((e.key === "1" || e.key === "2") && Date.now() - session.shownAt > 300) { e.preventDefault(); (e.key === "2" ? self1 : body().querySelector('[data-rc="self0"]')).click(); }
+                return;
+            }
+            if (e.key !== "Enter" && e.key !== " ") return;
+            const go = body().querySelector('[data-rc="show"], [data-ac="next"]');
+            if (e.target.tagName === "BUTTON" && e.target !== go && body().contains(e.target)) return;   // Enter trên nút khác: để nút đó xử lý
+            if (!go) return;
+            e.preventDefault();
+            if (Date.now() - (session.shownAt || 0) > 300) go.click();
             return;
         }
         if (session.kind === "unit" && body().querySelector(".wcard") && !session.quiz) {
@@ -1777,6 +2187,7 @@
             if (!has && window.HocTheme) HocTheme.set(S.settings.theme);
             delete S.settings.theme; save();
         }
+        Object.keys(S.fresh).forEach(id => { if (dayKey(S.fresh[id].at) !== dayKey()) delete S.fresh[id]; });   // chỉ nhớ lại trong ngày
         // Link thẳng tới một cấp: hsk_lotrinh.html?level=3
         const qLevel = +new URLSearchParams(location.search).get("level");
         if (qLevel >= 1 && qLevel <= 6) S.lastLevel = qLevel;
@@ -1801,6 +2212,16 @@
         writeSummary(); // cập nhật số từ đến hạn cho trang chủ mỗi lần mở trang
         // Mở thẳng kiểm tra xếp lớp: hsk_lotrinh.html?placement=1
         if (new URLSearchParams(location.search).get("placement")) openPlacementIntro();
+        // Nhớ lại từ mới trong ngày: hsk_lotrinh.html?fresh=1 (dải nhắc ở Buổi học hôm nay)
+        if (new URLSearchParams(location.search).get("fresh")) startFresh();
+        // Đến giờ nhớ lại thì cập nhật kế hoạch hôm nay (chỉ khi đang ở tab Lộ trình và không trong phiên học)
+        let freshN = freshInfo().ready.length;
+        setInterval(() => {
+            const n = freshInfo().ready.length;
+            if (n === freshN) return;
+            freshN = n;
+            if (!session && $("modal").hidden && $("view-path").classList.contains("active")) renderPath();
+        }, 30000);
     }
     init();
 })();

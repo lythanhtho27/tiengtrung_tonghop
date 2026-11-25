@@ -1279,6 +1279,35 @@
         $("skip-sum").textContent = skip.length ? `· đang ẩn HSK ${skip.join(", ")} (${fmt(hidden)} thẻ)` : "";
         if (skip.length) $("skip-box").classList.add("on"); else $("skip-box").classList.remove("on");
     }
+    // Từ mới học hôm nay ở Lộ trình HSK chờ nhớ lại (bản chép freshAt()/freshInfo() của hsk_lotrinh.js)
+    function freshInfo() {
+        const H = readJSON("hsk_lotrinh_v1", {}) || {}, F = H.fresh || {}, srs = H.srs || {}, now = Date.now();
+        const out = { ready: 0, waiting: 0, next: 0 };
+        if (H.settings && H.settings.sameDay === false) return out;
+        const d0 = new Date(); d0.setHours(0, 0, 0, 0);
+        const sod = d0.getTime();
+        Object.keys(F).forEach(id => {
+            const f = F[id], c = srs[id];
+            if (!f || !c || f.at < sod) return;
+            const st = f.s === 0 && c.last > f.at + 5 * 60000 ? 1 : f.s;
+            let t = 0;
+            if (st === 0) t = f.at + 10 * 60000;
+            else if (st === 1) { t = Math.max(sod + 19 * 3600000, f.at + 2 * 3600000); if (t >= sod + 86400000) t = 0; }
+            if (!t) return;
+            if (t <= now) { if (c.due > now) out.ready++; }
+            else { out.waiting++; if (!out.next || t < out.next) out.next = t; }
+        });
+        return out;
+    }
+    function renderFresh() {
+        const f = freshInfo(), el = $("fresh-list");
+        el.hidden = !f.ready && !f.waiting;
+        if (el.hidden) return;
+        const d = new Date(f.next), at = d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0");
+        el.innerHTML = f.ready
+            ? `<a class="lesson" href="../hsk_lotrinh/hsk_lotrinh.html?fresh=1"><span><b>🌱 Nhớ lại ${fmt(f.ready)} từ mới hôm nay</b><small>Tự nhớ ra từ vừa học để chống quên · khoảng ${Math.max(1, Math.round(f.ready / 4))} phút</small></span><span class="go">Nhớ lại ▶</span></a>`
+            : `<p class="muted">🌱 ${fmt(f.waiting)} từ mới sẽ đến lượt nhớ lại từ ${at}.</p>`;
+    }
     function renderHome() {
         const due = collectDue();
         const sdue = sentDue();
@@ -1353,6 +1382,8 @@
                 <span><b>${esc(n.label)}</b><small>${n.kind} · đã xong ${n.pct}%</small></span>
                 <span class="go">Học ▶</span>
             </a>`).join("") || `<a class="lesson" href="../word_learning/word_learning.html"><span><b>Giáo trình HSK 3.0</b><small>8 quyển · 368 bài</small></span><span class="go">Mở ▶</span></a>`;
+
+        renderFresh();
 
         // Bước 3 · Đọc 1 bài
         renderRead(st.read, curStep === 2);

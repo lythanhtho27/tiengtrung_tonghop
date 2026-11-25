@@ -27,7 +27,7 @@
         var s = document.currentScript && document.currentScript.src;
         return s ? s.replace(/[^/]*$/, "") : "../shared/";
     })();
-    var DEF = { emoji: true, img: true, imgSrc: "baidu", rules: true };
+    var DEF = { photo: true, emoji: true, img: true, imgSrc: "baidu", rules: true };
 
     function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
     function cleanHz(s) { return String(s || "").replace(/[（(]([^）)]*)[）)](?=[一-鿿])/g, "$1").replace(/\s*[（(][^）)]*[）)]\s*/g, "").replace(/[\s～~…]+/g, ""); }
@@ -52,13 +52,33 @@
             document.head.appendChild(s);
         }));
     }
-    // emoji_map.js nhỏ (~25KB) nên nạp sẵn ngay khi trang mở
+    // emoji_map.js (~25KB) và vocab_img_map.js (nếu có) nạp sẵn ngay khi trang mở
     if (!window.HOC_EMOJI) loadScript(base + "emoji_map.js", function () { return !!window.HOC_EMOJI; });
+    if (!window.HOC_IMG) loadScript(base + "vocab_img_map.js", function () { return !!window.HOC_IMG; });
 
+    // Tìm trong bảng (ảnh / emoji): đúng từ → từng dạng của "儿子/女儿" → bỏ 儿 cuối (玩儿 → 玩).
+    // Đuôi 子 chỉ bỏ với các từ mà bỏ đi vẫn cùng nghĩa (卷子 ≠ 卷, 包子 ≠ 包).
+    var DROP_ZI = /^(剪|窗|棋|女|男|疯|老|鸭|柿|金|帘)子$/;
+    function pick(m, w) {
+        var forms = [w].concat(w.split(/[\/／|｜、，,]+/));
+        for (var i = 0; i < forms.length; i++) {
+            var x = forms[i]; if (!x) continue;
+            if (Object.prototype.hasOwnProperty.call(m, x)) return m[x];
+            if (x.length > 1 && (/儿$/.test(x) || DROP_ZI.test(x)) && m[x.slice(0, -1)]) return m[x.slice(0, -1)];
+        }
+        return "";
+    }
+    function photoRaw(hz) {
+        var m = window.HOC_IMG; if (!m) return "";
+        var w = cleanHz(hz);
+        var f = pick(m, w);
+        return f ? base + "vocab_img/" + f : "";
+    }
+    function photo(hz) { return settings().photo ? photoRaw(hz) : ""; }
     function emojiRaw(hz) {
         var m = window.HOC_EMOJI; if (!m) return "";
         var w = cleanHz(hz);
-        return m[w] || m[w.replace(/[儿子]$/, "")] || "";
+        return pick(m, w);
     }
     function emoji(hz) { return settings().emoji ? emojiRaw(hz) : ""; }
     function imgUrl(hz) {
@@ -71,17 +91,36 @@
         var w = cleanHz(hz);
         if (!w || !HAN.test(w)) return "";
         injectCSS();
-        var st = settings(), e = opts.emoji === false ? "" : emoji(w);
-        return '<div class="hv-bar' + (opts.compact ? " hv-compact" : "") + '">' +
+        var st = settings();
+        var p = opts.photo === false ? "" : photo(w);
+        var e = (p || opts.emoji === false) ? "" : emoji(w);
+        var phHtml = p ? '<img class="hv-photo" src="' + esc(p) + '" alt="' + esc(w) + '" loading="lazy" data-hv-zoom="' + esc(p) + '" data-hv-cap="' + esc(w) + '" title="Chạm để phóng to ảnh minh họa">' : "";
+        if (opts.compact) {
+            return '<div class="hv-bar hv-compact">' +
+                phHtml +
+                (e ? '<span class="hv-emoji" title="Hình minh họa">' + e + "</span>" : "") +
+                (st.img ? '<a class="hv-btn" data-hv-img href="' + esc(imgUrl(w)) + '" target="_blank" rel="noopener" title="Xem ảnh thật của từ này (mở tab mới)">🖼️</a>' : "") +
+                '<button type="button" class="hv-btn" data-hv-write="' + esc(w) + '" title="Thứ tự nét, tự viết thử, tách bộ">✍️</button>' +
+                "</div>";
+        }
+        return (phHtml ? '<div class="hv-photo-wrap">' + phHtml + "</div>" : "") +
+            '<div class="hv-bar">' +
             (e ? '<span class="hv-emoji" title="Hình minh họa">' + e + "</span>" : "") +
-            (st.img ? '<a class="hv-btn" data-hv-img href="' + esc(imgUrl(w)) + '" target="_blank" rel="noopener" title="Xem ảnh thật của từ này (mở tab mới)">🖼️' + (opts.compact ? "" : " Ảnh") + "</a>" : "") +
-            '<button type="button" class="hv-btn" data-hv-write="' + esc(w) + '" title="Thứ tự nét, tự viết thử, tách bộ">✍️' + (opts.compact ? "" : " Nét viết") + "</button>" +
+            (st.img ? '<a class="hv-btn" data-hv-img href="' + esc(imgUrl(w)) + '" target="_blank" rel="noopener" title="Xem ảnh thật của từ này (mở tab mới)">🖼️ Ảnh</a>' : "") +
+            '<button type="button" class="hv-btn" data-hv-write="' + esc(w) + '" title="Thứ tự nét, tự viết thử, tách bộ">✍️ Nét viết</button>' +
             "</div>";
     }
 
     // ---------------------------------------------------------------- Giao diện
     var CSS = "" +
         ".hv-bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center;margin:8px 0 4px}" +
+        ".hv-photo-wrap{display:flex;justify-content:center;margin:8px 0 6px}" +
+        ".hv-photo{max-width:210px;max-height:132px;width:auto;height:auto;object-fit:cover;border-radius:12px;border:1px solid var(--ui-border,#e2e8f0);box-shadow:0 2px 8px rgba(15,23,42,.08);cursor:zoom-in;display:block;background:var(--ui-surface-2,#f1f5f9)}" +
+        ".hv-compact .hv-photo{width:48px;height:36px;max-width:48px;max-height:36px;border-radius:7px;box-shadow:none}" +
+        ".lk-pop .hv-photo-wrap{justify-content:flex-start;margin:6px 0 4px}.lk-pop .hv-photo{max-width:160px;max-height:104px}" +
+        ".hv-zoom-box{display:flex;flex-direction:column;align-items:center;gap:10px;max-width:92vw;max-height:90vh}" +
+        ".hv-zoom-box img{max-width:90vw;max-height:78vh;border-radius:14px;box-shadow:0 12px 36px rgba(0,0,0,.45);background:#fff}" +
+        ".hv-zoom-cap{color:#fff;font:700 22px/1.2 var(--ui-font-cn,serif);text-shadow:0 2px 8px rgba(0,0,0,.6)}" +
         ".hv-emoji{font-size:40px;line-height:1;margin-right:4px;font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif}" +
         ".hv-compact{margin:0;display:inline-flex}.hv-compact .hv-emoji{font-size:26px}.lk-pop .hv-bar{justify-content:flex-start}" +
         ".hv-btn{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--ui-border-strong,#cbd5e1);background:var(--ui-surface,#fff);color:var(--ui-text,#0f172a);border-radius:99px;padding:4px 11px;font:600 12.5px/1.4 var(--ui-font-sans,system-ui,sans-serif);cursor:pointer;text-decoration:none}" +
@@ -176,6 +215,7 @@
             '<div class="hv-msg" id="hv-msg"></div></div>' +
             '<div class="hv-info" id="hv-info">Đang tải…</div></div>' +
             '<div class="hv-foot">' +
+            '<label><input type="checkbox" data-set="photo"> Ảnh minh họa</label>' +
             '<label><input type="checkbox" data-set="emoji"> Hiện emoji</label>' +
             '<label><input type="checkbox" data-set="img"> Nút ảnh</label>' +
             '<label><input type="checkbox" data-set="rules"> Quy tắc Hán Việt → pinyin</label>' +
@@ -183,6 +223,7 @@
             "</div></div>";
         document.body.appendChild(ov);
         var st = settings();
+        ov.querySelector('[data-set="photo"]').checked = st.photo;
         ov.querySelector('[data-set="emoji"]').checked = st.emoji;
         ov.querySelector('[data-set="img"]').checked = st.img;
         ov.querySelector('[data-set="rules"]').checked = st.rules;
@@ -495,10 +536,38 @@
         h += familyHTML(ch);
         box.innerHTML = h;
     }
+    // Một dòng tách bộ cho mỗi chữ: 请 = 讠 (NGÔN, lời nói · nghĩa) + 青 (THANH · âm). Gọi loadParts() trước.
+    function loadParts() { return loadScript(base + "hanzi_parts.js", function () { return !!window.HOC_PARTS; }); }
+    function partsHTML(hz) {
+        var P = window.HOC_PARTS, seen = {}; if (!P) return "";
+        return Array.from(cleanHz(hz)).filter(function (c) { return HAN.test(c) && !seen[c] && (seen[c] = 1); }).map(function (ch) {
+            var e = P.c[ch]; if (!e) return "";
+            var list = Array.from(e[0] || "");
+            [e[2], e[3]].forEach(function (x) { if (x && list.indexOf(x) < 0) list.push(x); });
+            if (!list.length) return "";
+            return '<div class="hv-pline"><b>' + esc(ch) + "</b> = " + list.map(function (x) {
+                var i = P.p[x] || [], role = e[1] === "p" ? (x === e[2] ? "nghĩa" : x === e[3] ? "âm" : "") : "";
+                var note = [i[0], i[1]].filter(Boolean).join(", ") + (role ? (i[0] || i[1] ? " · " : "") + role : "");
+                return '<span class="pc">' + esc(x) + "</span>" + (note ? " <small>(" + esc(note) + ")</small>" : "");
+            }).join(" + ") + "</div>";
+        }).join("");
+    }
     function norm(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d"); }
     function rhyme(s) { return norm(s).replace(/^(ngh|ng|nh|ch|gh|gi|kh|ph|th|tr|qu|[bcdghklmnpqrstvx])/, ""); }
 
+    function zoomPhoto(src, cap) {
+        if (!src) return;
+        injectCSS();
+        close();
+        var ov = document.createElement("div"); ov.className = "hv-ov"; ov.id = "hv-ov";
+        ov.innerHTML = '<div class="hv-zoom-box"><img src="' + esc(src) + '" alt="' + esc(cap || "") + '">' +
+            (cap ? '<div class="hv-zoom-cap">' + esc(cap) + "</div>" : "") + "</div>";
+        ov.addEventListener("click", close);
+        document.body.appendChild(ov);
+    }
     document.addEventListener("click", function (e) {
+        var z = e.target.closest && e.target.closest("[data-hv-zoom]");
+        if (z) { e.preventDefault(); e.stopPropagation(); zoomPhoto(z.getAttribute("data-hv-zoom"), z.getAttribute("data-hv-cap")); return; }
         var t = e.target.closest && e.target.closest("[data-hv-write]");
         if (t) { e.preventDefault(); e.stopPropagation(); write(t.getAttribute("data-hv-write")); return; }
         if (e.target.closest && e.target.closest("[data-hv-img]")) e.stopPropagation();   // mở link, nhưng không lật thẻ
@@ -510,6 +579,6 @@
         e.stopPropagation();
         if (e.key === "Escape") { e.preventDefault(); close(); }
     }, true);
-    window.HocVisual = { emoji: emoji, barHTML: barHTML, readingHTML: readingHTML, checkChar: checkChar, splitPinyin: splitPinyin,
-        write: write, close: close, settings: settings, set: set, imgUrl: imgUrl };
+    window.HocVisual = { photo: photo, emoji: emoji, barHTML: barHTML, readingHTML: readingHTML, checkChar: checkChar, splitPinyin: splitPinyin,
+        loadParts: loadParts, partsHTML: partsHTML, write: write, close: close, settings: settings, set: set, imgUrl: imgUrl };
 })();

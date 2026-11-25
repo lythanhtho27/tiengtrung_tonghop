@@ -79,7 +79,7 @@
             <div class="card method-card">
                 <h3>Phương pháp của lộ trình</h3>
                 <div class="method-grid">
-                    <div><b>1 · Học theo bài nhỏ</b><p>Mỗi bài 10–20 từ. Xem thẻ từ, nghe phát âm, đọc câu ví dụ.</p></div>
+                    <div><b>1 · Học theo bài nhỏ</b><p>Mỗi bài 10–20 từ. Học chủ động (đoán nghĩa, tự nhớ lại từng lượt 5 từ) hoặc lật thẻ, tùy bạn chọn.</p></div>
                     <div><b>2 · Luyện ngay</b><p>Trắc nghiệm nghĩa, chọn chữ, nghe chọn từ, điền từ vào câu. Đạt từ 70% mới qua bài.</p></div>
                     <div><b>3 · Kiểm tra chặng</b><p>Cứ 5 bài có một bài kiểm tra tổng hợp. Đạt 80% mới mở chặng tiếp theo.</p></div>
                     <div><b>4 · Ôn lặp ngắt quãng</b><p>Từ đã học được hẹn ôn sau 1, 3, 7, 16… ngày. Ôn đúng lúc sắp quên để nhớ lâu.</p></div>
@@ -184,6 +184,24 @@
             <div class="card settings">
                 <h3>Mục tiêu &amp; học tập</h3>
                 <label class="row">
+                    <span><b>Cách học từ mới</b><small>Học chủ động: đoán nghĩa trước, tự nhớ lại từng lượt 5 từ, rồi chốt bài. Lật thẻ: xem hết thẻ rồi làm trắc nghiệm.</small></span>
+                    <select id="set-mode" class="select">
+                        <option value="active">🧠 Học chủ động</option>
+                        <option value="classic">🃏 Lật thẻ</option>
+                    </select>
+                </label>
+                <label class="row">
+                    <span><b>Bước tự nhớ lại</b><small>Dùng trong Học chủ động và Nhớ lại trong ngày</small></span>
+                    <select id="set-recall" class="select">
+                        <option value="type">Gõ chữ Hán hoặc pinyin</option>
+                        <option value="self">Không gõ, tự chấm</option>
+                    </select>
+                </label>
+                <label class="row">
+                    <span><b>Nhớ lại trong ngày</b><small>Từ mới được hỏi lại sau 10 phút và buổi tối (từ 19 giờ). Áp dụng cho cả hai cách học.</small></span>
+                    <input type="checkbox" id="set-sameday" class="switch">
+                </label>
+                <label class="row">
                     <span><b>Số từ mới mỗi ngày</b><small>Dùng để lập kế hoạch và ước tính ngày hoàn thành</small></span>
                     <select id="set-goal" class="select">
                         <option value="10">10 từ</option><option value="20">20 từ</option><option value="30">30 từ</option>
@@ -253,6 +271,7 @@
     <div class="toast" id="toast" hidden></div>
 
     <script src="../shared/progress.js"></script>
+    <script src="../shared/notes.js"></script>
     <script src="../shared/visual.js"></script>
     <script src="hsk_vocab_data.js"></script>
     <script src="hsk_lotrinh.js"></script>
