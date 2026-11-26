@@ -33,11 +33,11 @@ doc_them/             Đọc thêm: 333 bài (truyện dài, bài đọc, hội 
   comic_art.js (chế độ Truyện tranh: khung tranh + bong bóng thoại), comic_data.js (sinh tự động), comics/<series>/*.webp
 thong_ke/             Thống kê & dự báo (chỉ đọc localStorage của mọi trang): tổng quan, dự báo ôn 7/30 ngày, theo tuần, theo cấp, heatmap, tốc độ, từ hay quên
   thong_ke.html/.css/.js
-luyen_tap/            Luyện tập: sắp xếp câu (Việt→Trung), nghe – viết từ/câu, 14 trò chơi; lấy từ đã học ở mọi trang
+luyen_tap/            Luyện tập: sắp xếp câu (Việt→Trung), nghe – viết từ/câu, chép chính tả + nghe hiểu Đúng/Sai với câu truyện, 14 trò chơi; lấy từ đã học ở mọi trang
   luyen_tap.html/.css/.js, lt_data.js, lt_data_wl.js (sinh tự động), lt_games_data.js (dữ liệu trò chơi viết sẵn)
   games/<id>.js       Mỗi trò chơi một file, tự đăng ký vào window.LT_GAMES (API: games/README.md)
 anh_ngu_3/            Bài luyện tiếng Anh HUTECH (an3*.html), trang độc lập, không liên quan tiếng Trung
-shared/               Tài nguyên dùng chung: theme, progress, sync, mywords (sổ Từ của tôi), lookup (tách từ/pinyin/tra từ), dict_vi.js (từ điển, sinh tự động),
+shared/               Tài nguyên dùng chung: theme, progress, sync, mywords (sổ Từ của tôi), lookup (tách từ/pinyin/tra từ), lookups (đếm lần tra), active (Học chủ động), dict_vi.js (từ điển, sinh tự động),
                       visual.js (emoji · ảnh · nét viết), emoji_map.js (viết tay), hanzi_parts.js (tách bộ, sinh tự động),
                       vocab_img/*.webp + vocab_img_map.js (ảnh minh họa, sinh bởi tools/fetch_vocab_img.py)
 tools/                Script sinh dữ liệu + dữ liệu nguồn
@@ -80,6 +80,7 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
   - **Lật thẻ từ vựng:** `HocTTS.speakWord(word, example, {rate})` đọc từ, nghỉ khoảng 0,45 giây rồi đọc câu ví dụ (`word` rỗng thì chỉ đọc câu). Tùy chọn "Đọc từ xong thì đọc luôn câu ví dụ" trong hộp chọn giọng (`settings.withExample`, mặc định bật). Câu ví dụ đang chờ bị hủy khi trang gọi `speechSynthesis.cancel()` hoặc tự đọc câu khác. Đang dùng ở: mặt sau thẻ `hom_nay`, thẻ học từ mới và mặt sau thẻ ôn của `hsk_lotrinh`, flashcard và Ôn hôm nay của `boya_learning` (`speechExample()` bỏ qua cụm kết hợp, chỉ lấy câu thật), flashcard `word_learning`.
 - **`mywords.js`**: sổ "Từ của tôi" (key `hoc_mywords_v1`), chứa các từ người học tự thêm khi tra trong bài khóa. Mỗi từ có thẻ SM-2 riêng (`schedule()` giống `hsk_lotrinh`). API: `HocMyWords.all/get/has/add/remove/update/due/schedule/ivLabel`. Thẻ được ôn ở `hom_nay`, và trang `luyen_tap` cũng dùng các từ này.
 - **`lookup.js`** (`HocLookup`): tách từ khớp dài nhất theo `HOC_DICT`; `pinyinOf(text)` sinh pinyin cho văn bản bất kỳ (tách âm tiết pinyin theo quy tắc thanh mẫu + vận mẫu); `rubyHTML()`; `attach(container, opts)` bật chạm-để-tra (khung tra + thêm vào Từ của tôi). Mỗi đoạn cần có `data-lk-text`, mỗi chữ là `.lk-c[data-i]`. Hiện `doc_them` dùng module này; `boya_learning` vẫn dùng bản tra từ riêng.
+- **`lookups.js`** (`HocLookups.record/count/list/remove`): đếm số lần tra từ khi đọc, key `hoc_lookups_v1` = `{v, w{hz: {n, at, src, ex}}}` (được đồng bộ; tra lại trong 30 phút không tính; giữ tối đa 1.500 từ). Ghi ở khung tra của `lookup.js` (Đọc thêm) và `boya_learning`; tra từ 2 lần trở lên mà chưa học thì khung tra nhắc thêm vào Từ của tôi, và Thư viện Đọc thêm có hàng "🔁 Từ bạn hay tra" (thêm từng từ hoặc tất cả).
 - **`notes.js`** (`HocNotes.get/set/all`): ghi chú gợi nhớ theo chữ Hán, key `hoc_notes_v1` (được đồng bộ). Ghi chú hiện ở thẻ ôn của `hom_nay`, khung tra từ (`lookup.js`) và bảng Họ chữ.
 - **`zizu.js`** (`HocZizu.open(ch)`): bảng "Họ chữ" (字族) liệt kê mọi từ chứa một chữ.
   - Phần tử có `data-zizu="字"` tự thành nút mở bảng (bắt sự kiện ở pha capture). Các trang đang có nút này: khung tra từ của `doc_them` và `boya_learning`, mặt sau thẻ và danh sách từ cứng đầu ở `hom_nay`.
@@ -259,7 +260,7 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
   - **Bài của tôi:** dán văn bản bất kỳ; pinyin sinh bằng `HocLookup.pinyinOf`.
   - **Bài khóa đã học:** các bài trong `boya_learning_progress_v2.lessons`. `boya_data.js` chỉ nạp khi mở tab; chữ và pinyin lấy từ `chinese_html` bằng DOMParser. Bài nào số đoạn khác số bản dịch thì bản dịch được chia theo tỉ lệ độ dài.
 - **Trình đọc chung:**
-  - Pinyin bật/tắt, cỡ chữ, tô từ chưa học, dịch (tắt / từng đoạn / tất cả), chạm để tra (`HocLookup.attach`).
+  - Pinyin ba nấc (`settings.py` + `settings.pyNew`: tất cả → chỉ trên từ chưa học → tắt; "chỉ từ chưa học" ẩn `rt` của chữ không có `.nw`, bật sau khi `markNew` tô xong), cỡ chữ, tô từ chưa học, dịch (tắt / từng đoạn / tất cả), chạm để tra (`HocLookup.attach`; khung tra có "🇻🇳 Dịch câu này" = `sentenceVi`: tách câu đoạn Trung và bản dịch, số câu bằng nhau thì ghép theo thứ tự, không ghép được thì không hiện).
   - Nghe cả bài hoặc từng đoạn, "Nhại" từng câu.
   - Đọc tính giờ, đếm chữ/phút chỉ tính chữ Hán.
 - **Lịch đọc lại** (quy tắc chung, `hom_nay` dùng y hệt):
@@ -276,6 +277,7 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
 - **Hai dạng bài** (theo yêu cầu người dùng: luyện nhớ bằng cách tự viết ra, không chỉ chọn đáp án):
   - **Sắp xếp câu:** đọc nghĩa tiếng Việt, bấm các mảnh để ghép thành câu tiếng Trung. Có tùy chọn thêm 2 mảnh gây nhiễu.
   - **Nghe – viết từ / câu:** nghe TTS rồi gõ chữ Hán bằng bộ gõ của máy. Enter đang soạn chữ (`isComposing`) không bị tính là nộp bài.
+- **Nghe với câu truyện** (3 dạng, `STORY_TYPES`; nút "🎧 Chỉ luyện nghe" chạy riêng ba dạng này): `dstory` chép chính tả, `tfsent` nghe rồi chọn Đúng/Sai cho câu dịch, `lchoose` nghe rồi chọn nghĩa trong 3 câu dịch. Câu lấy từ `doc_them/doc_sents.js` (nạp lười, `storyCands`): câu chứa từ trong Nguồn từ, độ dài theo `settings.slen`, ưu tiên bài đã đọc (+1,5 điểm), không lấy truyện dài chưa đọc. Nghĩa sai = bản dịch câu khác có cùng từ khóa (`otherMeanings`). Key `t:<câu>`.
 - **Nguồn từ:** chỉ lấy từ đã học, bằng cách đọc thẻ SRS của các trang khác (không ghi vào đó):
   - `hsk_lotrinh_v1.srs` (id `cấp-chữ`);
   - `boya_learning_progress_v2.srs` và `boya_tv_srs` (id `tc1_3_5`);

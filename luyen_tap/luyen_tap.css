@@ -167,3 +167,18 @@ kbd { font-family: inherit; font-size: 12px; border: 1px solid var(--border); bo
 .game-result h3 { text-align: left; font-size: 15px; margin: 18px 0 6px; }
 .game-result .mistakes { text-align: left; }
 .game-result .actions { justify-content: center; }
+
+/* Nghe với câu truyện */
+.sub-h { font-size: 15px; margin: 16px 0 6px; }
+.sub-h small { font-weight: 500; color: var(--muted); }
+.claim { font-size: 18px; line-height: 1.5; background: var(--ui-surface-2); border: 1px solid var(--ui-border); border-radius: 12px; padding: 12px 14px; margin: 14px 0 10px; }
+.claim small { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.tf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tf-btn { min-height: 52px; font-size: 16px; font-weight: 700; }
+.tf-btn.ok { color: var(--ui-success); } .tf-btn.bad { color: var(--ui-danger); }
+.lopts { display: flex; flex-direction: column; gap: 8px; margin: 14px 0 10px; }
+.lopt { display: flex; gap: 10px; align-items: center; text-align: left; justify-content: flex-start; min-height: 50px; white-space: normal; font-weight: 500; }
+.tf-btn.is-right, .lopt.is-right { border-color: var(--ui-success); background: var(--ui-success-soft); }
+.tf-btn.is-wrong, .lopt.is-wrong { border-color: var(--ui-danger); background: var(--ui-danger-soft); }
+.feedback .story { font-size: 13px; color: var(--muted); margin-top: 6px; }
+@media (max-width: 640px) { .lopt kbd, .tf-btn kbd { display: none; } }

@@ -69,7 +69,7 @@
     }
 
     // ====================================================================== Trạng thái
-    var DEFAULT_SETTINGS = { tab: "lib", kind: "all", level: 0, examLv: 0, examPy: false, py: true, size: 22, hl: false, tr: "para", lookup: true, rate: 0.9, autoHide: true, comic: false, comicLayout: "grid", comicUseAI: true, cmOpen: true };
+    var DEFAULT_SETTINGS = { tab: "lib", kind: "all", level: 0, examLv: 0, examPy: false, py: true, pyNew: false, size: 22, hl: false, tr: "para", lookup: true, rate: 0.9, autoHide: true, comic: false, comicLayout: "grid", comicUseAI: true, cmOpen: true };
     var S = (function () {
         var v = readJSON(KEY, null) || {};
         return {
@@ -441,6 +441,7 @@
             (D.due.length ? D.due.slice(0, MAXDUE).map(function (it) { return fyBtn(it, it.sub + " · lần " + (it.n + 1)); }).join("") +
                 (D.due.length > MAXDUE ? '<span class="fy-more muted small">+' + (D.due.length - MAXDUE) + " bài nữa</span>" : "")
                 : '<span class="muted small">Chưa có bài đến hạn. Bài đã đọc sẽ được nhắc đọc lại sau 3 ngày, rồi 7 ngày.</span>') + "</div></div>";
+        rows += lookupRow();
         rows += '<div class="fy-row"><div class="fy-h">🎯 Vừa sức</div><div class="fy-items">' +
             (D.fit == null ? '<span class="muted small">Đang tính % từ đã biết…</span>'
                 : D.fit.length ? D.fit.map(function (it) { return fyBtn(it, it.sub + " · biết " + it.pct + "%"); }).join("")
@@ -905,6 +906,78 @@
         $("tb-role").title = d.lkind === "dialogue" ? "Đọc nhập vai: mỗi người nói một giọng" : "Đọc nhập vai: lời dẫn một giọng, lời thoại trong ngoặc kép hai giọng luân phiên";
     }
 
+    // ---------------------------------------------------------------------- Dịch từng câu (khung tra từ: "🇻🇳 Dịch câu này")
+    // Tách câu của đoạn tiếng Trung và bản dịch; số câu bằng nhau thì ghép theo thứ tự (giống tools/build_doc_them.py)
+    function splitZh(text) {
+        var out = [], cur = "", s = String(text || "");
+        for (var i = 0; i < s.length; i++) {
+            cur += s[i];
+            if ("。！？!?".indexOf(s[i]) >= 0 || (s[i] === "…" && s[i + 1] !== "…")) {
+                while (i + 1 < s.length && "。！？!?…”’」』）)".indexOf(s[i + 1]) >= 0) cur += s[++i];
+                out.push(cur.trim()); cur = "";
+            }
+        }
+        if (cur.trim()) out.push(cur.trim());
+        return out.filter(function (x) { return HAN.test(x); });
+    }
+    function splitVi(text) {
+        return (String(text || "").trim().match(/.+?(?:[.!?…]+["”’')\]]*(?=\s|$)|$)/g) || []).map(function (x) { return x.trim(); }).filter(function (x) { return /[0-9A-Za-zÀ-ỹ]/.test(x); });
+    }
+    var plain = function (s) { return String(s || "").replace(/[^㐀-鿿A-Za-z0-9]/g, ""); };
+    function sentenceVi(paraEl, zh) {
+        var p = paraEl && paraEl.closest && paraEl.closest(".para");
+        if (!doc || !p) return "";
+        var P = doc.paras[+p.dataset.k];
+        if (!P || !P.tr) return "";
+        var tr = P.name ? P.tr.replace(/^\s*[^:：]{1,24}[:：]\s*/, "") : P.tr;
+        var zs = splitZh(P.text), vs = splitVi(tr), key = plain(zh);
+        if (zs.length < 2) return zs.length === 1 && vs.length ? tr : "";      // đoạn chỉ một câu: bản dịch cả đoạn chính là câu đó
+        var at = -1;
+        for (var i = 0; i < zs.length && at < 0; i++) if (plain(zs[i]).indexOf(key) >= 0 || key.indexOf(plain(zs[i])) >= 0) at = i;
+        if (at < 0 || !vs.length) return "";
+        if (zs.length === vs.length) return vs[at];
+        if (Math.abs(zs.length - vs.length) > 2) return "";                     // lệch nhiều quá: để nút "Dịch" của đoạn lo
+        // người dịch tách/gộp câu khác bản gốc: ghép theo tỉ lệ độ dài (groupDP, giống bài khóa Boya)
+        var zl = zs.map(function (z) { return Math.max(1, hanCount(z)); }), vl = vs.map(function (v) { return Math.max(1, v.length); });
+        if (zs.length < vs.length) {
+            var ends = groupDP(vl, zl), st = at ? ends[at - 1] + 1 : 0;
+            return vs.slice(st, ends[at] + 1).join(" ");
+        }
+        var g = groupDP(zl, vl);
+        for (var k = 0; k < g.length; k++) if (at <= g[k]) return vs[k] + ((k ? g[k - 1] + 1 : 0) === g[k] ? "" : " (dịch gộp với câu bên cạnh)");
+        return "";
+    }
+
+    // ---------------------------------------------------------------------- Từ bạn hay tra (shared/lookups.js) → gợi ý thêm vào Từ của tôi
+    var LOOK_MIN = 2, LOOK_SHOW = 12;
+    function lookupSuggest() {
+        if (!window.HocLookups || !window.HocMyWords) return [];
+        var D = window.HOC_DICT && HOC_DICT.w;
+        return HocLookups.list(LOOK_MIN).filter(function (e) { return !HocMyWords.has(e.hz) && !(known && known.has(e.hz)) && (!D || D[e.hz]); });
+    }
+    function lookupRow() {
+        var list = lookupSuggest();
+        if (!list.length) return "";
+        var D = window.HOC_DICT && HOC_DICT.w;
+        return '<div class="fy-row"><div class="fy-h">🔁 Từ bạn hay tra (' + list.length + ')</div><div class="fy-items lk-sug">' +
+            list.slice(0, LOOK_SHOW).map(function (e) {
+                var info = D && D[e.hz];
+                return '<span class="lk-sug-w" title="' + esc(e.src) + '"><b class="cn">' + esc(e.hz) + "</b>" + (info ? '<small>' + esc(String(info[2]).slice(0, 28)) + "</small>" : "") +
+                    '<i>' + e.n + ' lần</i><button type="button" data-look-add="' + esc(e.hz) + '" title="Thêm vào Từ của tôi">＋</button></span>';
+            }).join("") +
+            (list.length > 1 ? '<button type="button" class="btn btn-sm" data-look-all>＋ Thêm tất cả ' + list.length + " từ</button>" : "") + "</div></div>";
+    }
+    function lookupAdd(hzs) {
+        var D = window.HOC_DICT && HOC_DICT.w, w = {};
+        HocLookups.list(1).forEach(function (e) { w[e.hz] = e; });
+        hzs.forEach(function (hz) {
+            var info = D && D[hz], e = w[hz] || {};
+            if (info && !HocMyWords.has(hz)) HocMyWords.add({ hz: hz, py: info[0], hv: info[1], vi: info[2], ex: e.ex || "", src: e.src || "Đọc thêm · từ hay tra" });
+        });
+        toast(hzs.length > 1 ? "Đã thêm " + hzs.length + " từ vào Từ của tôi." : "Đã thêm “" + hzs[0] + "” vào Từ của tôi.");
+        renderForYou();
+    }
+
     // ---------------------------------------------------------------------- Truyện dài: chuyển chương
     function seriesSibling(dir) {
         if (!doc || !doc.series) return null;
@@ -1074,6 +1147,7 @@
                 pos += len;
             });
         });
+        $("doc-body").classList.add("nw-ready");       // pinyin "chỉ từ chưa học" dựa vào .nw nên chỉ bật sau khi đã tô
         var k = $("doc-known");
         if (k) k.textContent = tot ? "🧠 Biết " + Math.round(ok * 100 / tot) + "% từ" : "";
         renderActive();
@@ -1289,6 +1363,7 @@
         var st = S.settings, rd = $("reader");
         var hidePy = !st.py || (timer && st.autoHide);
         rd.classList.toggle("no-py", hidePy);
+        rd.classList.toggle("py-new", !hidePy && !!st.pyNew);
         rd.classList.toggle("hl-new", !!st.hl);
         rd.classList.toggle("no-lookup", !st.lookup);
         rd.classList.toggle("comic-mode", !!st.comic);
@@ -1296,6 +1371,7 @@
         rd.classList.add("tr-" + st.tr);
         rd.style.setProperty("--rd-size", st.size + "px");
         $("tb-py").classList.toggle("on", !!st.py);
+        $("tb-py-label").textContent = !st.py ? "Pinyin" : st.pyNew ? "Pinyin từ mới" : "Pinyin";
         $("tb-new").classList.toggle("on", !!st.hl);
         $("tb-lookup").classList.toggle("on", !!st.lookup);
         if ($("tb-comic")) $("tb-comic").classList.toggle("on", !!st.comic);
@@ -1966,7 +2042,14 @@
         window.addEventListener("pagehide", stopAll);
 
         // Thanh công cụ
-        $("tb-py").onclick = function () { setSetting("py", !S.settings.py); };
+        // Pinyin: tất cả → chỉ trên từ chưa học → tắt → tất cả
+        $("tb-py").onclick = function () {
+            var st = S.settings;
+            if (st.py && !st.pyNew) { st.pyNew = true; toast("Pinyin chỉ hiện trên từ chưa học."); }
+            else if (st.py) { st.py = false; st.pyNew = false; toast("Đã tắt pinyin."); }
+            else st.py = true;
+            save(); applySettings();
+        };
         $("tb-smaller").onclick = function () { setSetting("size", Math.max(16, S.settings.size - 2)); };
         $("tb-bigger").onclick = function () { setSetting("size", Math.min(36, S.settings.size + 2)); };
         $("tb-new").onclick = function () {
@@ -2037,6 +2120,8 @@
             enabled: function () { return !!S.settings.lookup; },
             speak: speakWord,
             onAdd: function () { buildKnown(); markNew(); },
+            getSentenceVi: sentenceVi,
+            isKnown: function (hz) { return !!(known && known.has(hz)); },
             // bản dịch của đoạn chứa câu (bài tự dán không có bản dịch → "")
             getContextVi: function (el) {
                 var p = el && el.closest && el.closest(".para");
@@ -2053,6 +2138,11 @@
         });
 
         $("doc-active").addEventListener("click", function (e) { if (e.target.closest("#act-go")) startActive(); });
+        $("lib-foryou").addEventListener("click", function (e) {
+            var b = e.target.closest("[data-look-add]");
+            if (b) { e.preventDefault(); lookupAdd([b.dataset.lookAdd]); return; }
+            if (e.target.closest("[data-look-all]")) { e.preventDefault(); lookupAdd(lookupSuggest().map(function (x) { return x.hz; })); }
+        });
         $("doc-beyond").addEventListener("click", function (e) { var b = e.target.closest("[data-bw]"); if (b) toggleBeyond(+b.dataset.bw); });
         // Truyện dài: chuyển chương (thanh trên + cuối bài)
         $("reader").addEventListener("click", function (e) {

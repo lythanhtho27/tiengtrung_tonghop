@@ -1865,6 +1865,12 @@
         const info = lookupInfo(c, LK.units);
         const inBook = !!(window.HocMyWords && HocMyWords.has(info.hz));
         const sentZh = sentenceOf(LK.units, c.s, c.e);
+        // đếm lần tra (shared/lookups.js): chỉ khi mở một từ mới, không tính khi vẽ lại
+        if (window.HocLookups && LK.counted !== info.hz && (window.HOC_DICT || info.isLesson)) {
+            LK.counted = info.hz;
+            LK.seenN = HocLookups.record(info.hz, { src: `Boya · ${getActiveBook().name} · Bài ${getActiveLesson().lesson_num}`, ex: sentZh });
+        }
+        const seenN = LK.counted === info.hz ? LK.seenN || 0 : 0;
         const sentIn = !!(window.HocSentences && HocSentences.has(sentZh, info.hz));
 
         // Tô sáng các chữ của từ đang tra
@@ -1898,6 +1904,7 @@
             </div>
             ${info.isLesson ? `<div class="lk-tag">📘 Từ mới của bài</div>` : ''}
             ${info.hv ? `<div class="lk-hv">${escapeHtml(info.hv)}</div>` : ''}
+            ${seenN >= 2 && !inBook && !(c.lw && P.srs[c.lw.id]) ? `<div class="lk-tag" style="background:var(--ui-warning-soft);color:var(--ui-warning)">🔁 Bạn đã tra từ này ${seenN} lần. Thêm vào Từ của tôi để ôn nhé!</div>` : ''}
             <div class="lk-vi">${info.vi ? escapeHtml(info.vi) : `<span class="lk-muted">${noMean}</span>`}</div>
             ${window.HocVisual ? HocVisual.barHTML(info.hz) : ''}
             ${charsHtml}

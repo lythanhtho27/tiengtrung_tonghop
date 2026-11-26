@@ -15,7 +15,10 @@
      attach(container, opts)            bật chạm-để-tra trong container:
          mỗi đoạn là phần tử có thuộc tính data-lk-text="<văn bản thuần của đoạn>", bên trong các chữ là .lk-c[data-i]
          (data-i = chỉ số của chữ trong data-lk-text) — rubyHTML() tạo sẵn đúng dạng này.
-         opts: { getSrc(): chuỗi nguồn khi thêm vào sổ, enabled(): bool, speak(text), onAdd(entry) }
+         opts: { getSrc(): chuỗi nguồn khi thêm vào sổ, enabled(): bool, speak(text), onAdd(entry),
+                 getSentenceVi(paraEl, câu): bản dịch đúng câu đó (rỗng nếu không có) — hiện nút "Dịch câu này",
+                 isKnown(hz): từ đã học — không nhắc "hay tra" }
+         Mỗi lần mở khung tra một từ mới thì ghi vào HocLookups (shared/lookups.js) nếu trang có nạp.
      close()                            đóng khung tra
    ========================================================================== */
 (function () {
@@ -188,6 +191,9 @@
         ".lk-act .lk-sent.in{color:var(--ui-success,#047857);border-color:var(--ui-success,#047857)}" +
         ".lk-sent-prev{margin-top:8px;font-family:var(--ui-font-cn,serif);font-size:14px;color:var(--ui-muted,#64748b);line-height:1.6}" +
         ".lk-act .lk-add.in{background:var(--ui-success-soft,rgba(5,150,105,.12));color:var(--ui-success,#047857);border-color:var(--ui-success,#047857)}" +
+        ".lk-again{margin-top:8px;font-size:13px;font-weight:600;color:var(--ui-warning,#b45309);background:var(--ui-warning-soft,#fef3c7);border-radius:8px;padding:5px 9px}" +
+        ".lk-tr{margin-top:8px;font-size:14px}.lk-tr summary{cursor:pointer;color:var(--ui-primary,#4f46e5);font-weight:600;list-style:none}.lk-tr summary::-webkit-details-marker{display:none}" +
+        ".lk-tr div{margin-top:4px;color:var(--ui-text-2,#334155);line-height:1.5}" +
         ".lk-x{position:absolute;top:8px;right:10px;border:0;background:none;font-size:22px;line-height:1;cursor:pointer;color:var(--ui-muted,#64748b)}" +
         "@media (max-width:720px){.lk-pop{left:0!important;right:0;bottom:0;top:auto!important;width:auto;border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom));animation:lk-up .2s ease}}" +
         "@keyframes lk-up{from{transform:translateY(100%)}to{transform:none}}";
@@ -227,10 +233,14 @@
     function render() {
         var c = cur, I = info(c.word), opts = c.opts;
         var inBook = window.HocMyWords && HocMyWords.has(I.hz);
+        var zhSent = sentenceAround(c.text, c.start, c.end);
+        var seenN = c.seenN || 0, known = inBook || (opts.isKnown && opts.isKnown(I.hz));
+        var trVi = opts.getSentenceVi ? opts.getSentenceVi(c.para, zhSent) : "";
         pop.innerHTML = '<button class="lk-x" aria-label="Đóng">×</button>' +
             '<div class="lk-head"><span class="lk-hz">' + esc(I.hz) + '</span><span class="lk-py">' + esc(I.py) + "</span></div>" +
             (I.hv ? '<div class="lk-hv">' + esc(I.hv) + "</div>" : "") +
             '<div class="lk-vi">' + (I.vi ? esc(I.vi) : '<span class="lk-none">' + (D() ? "Chưa có nghĩa trong từ điển." : "Đang tải từ điển…") + "</span>") + "</div>" +
+            (seenN >= 2 && !known && I.vi ? '<div class="lk-again">🔁 Bạn đã tra từ này ' + seenN + " lần. Thêm vào Từ của tôi để ôn nhé!</div>" : "") +
             (window.HocNotes && HocNotes.get(I.hz) ? '<div class="lk-note">📝 ' + esc(HocNotes.get(I.hz)) + "</div>" : "") +
             (window.HocVisual ? HocVisual.barHTML(I.hz) : "") +       // emoji · ảnh · nét viết (shared/visual.js)
             '<div class="lk-chars">' + I.chars.map(function (x) { return '<div class="lk-ch"' + (window.HocZizu ? ' data-zizu="' + esc(x.c) + '" title="Họ chữ: mọi từ có chữ ' + esc(x.c) + '"' : "") + "><b>" + esc(x.c) + "</b><span>" + esc(x.py) + "</span><i>" + esc(x.hv) + "</i></div>"; }).join("") +
@@ -240,7 +250,8 @@
             (window.HocMyWords ? '<button class="lk-add' + (inBook ? " in" : "") + '">' + (inBook ? "✓ Đã trong sổ" : "＋ Từ của tôi") + "</button>" : "") +
             (window.HocSentences ? '<button class="lk-sent' + (HocSentences.has(sentenceAround(c.text, c.start, c.end), I.hz) ? " in" : "") + '" title="Lưu cả câu, che từ này để ôn dạng điền từ">' +
                 (HocSentences.has(sentenceAround(c.text, c.start, c.end), I.hz) ? "✓ Đã lưu câu" : "✂️ Lưu câu") + "</button>" : "") + "</div>" +
-            (window.HocSentences ? '<div class="lk-sent-prev">' + esc(HocSentences.cloze({ zh: sentenceAround(c.text, c.start, c.end), target: I.hz })) + "</div>" : "");
+            (window.HocSentences ? '<div class="lk-sent-prev">' + esc(HocSentences.cloze({ zh: sentenceAround(c.text, c.start, c.end), target: I.hz })) + "</div>" : "") +
+            (trVi ? '<details class="lk-tr"><summary>🇻🇳 Dịch câu này</summary><div>' + esc(trVi) + "</div></details>" : "");
         pop.querySelector(".lk-x").onclick = close;
         pop.querySelector(".lk-say").onclick = function () { (opts.speak || speakDefault)(I.hz); };
         pop.querySelectorAll(".lk-alts button").forEach(function (b) {
@@ -272,7 +283,9 @@
             var el = para.querySelector('.lk-c[data-i="' + i + '"]');
             if (el) { el.classList.add("lk-hl"); if (!anchor) anchor = el; }
         }
-        cur = { para: para, text: text, start: start, end: end, word: text.slice(start, end), alts: alts, opts: opts, anchor: anchor || para };
+        var word = text.slice(start, end), same = cur && cur.word === word && cur.para === para;
+        cur = { para: para, text: text, start: start, end: end, word: word, alts: alts, opts: opts, anchor: anchor || para,
+            seenN: same ? cur.seenN : window.HocLookups && D() && D().w[word] ? HocLookups.record(word, { src: opts.getSrc ? opts.getSrc() : "", ex: sentenceAround(text, start, end) }) : 0 };
         pop.hidden = false;
         render();
         place();

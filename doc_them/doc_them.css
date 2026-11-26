@@ -452,3 +452,12 @@ a { color: inherit; }
 .act-txt small { display: block; color: var(--muted); font-family: var(--ui-font-cn); font-size: 15px; overflow-wrap: anywhere; }
 .act-box .btn { min-height: 44px; }
 .ptext.jump { background: var(--ui-highlight); border-radius: 8px; }
+/* Pinyin chỉ trên từ chưa học (giữ chỗ để dòng không nhảy) */
+.reader.py-new .doc-body.nw-ready .lk-c:not(.nw) rt { visibility: hidden; }
+/* Từ bạn hay tra */
+.lk-sug { align-items: center; }
+.lk-sug-w { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--ui-border); border-radius: 99px; padding: 3px 4px 3px 10px; background: var(--surface); }
+.lk-sug-w b { font-size: 17px; }
+.lk-sug-w small { color: var(--muted); font-size: 12px; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lk-sug-w i { font-style: normal; font-size: 11px; color: var(--warn); font-weight: 700; }
+.lk-sug-w button { border: 0; border-radius: 50%; width: 26px; height: 26px; background: var(--ui-primary-soft); color: var(--primary); font-weight: 700; cursor: pointer; }

@@ -17,6 +17,9 @@
         order: { name: "Sắp xếp câu", ic: "🧩" },
         dword: { name: "Nghe – viết từ", ic: "🎧" },
         dsent: { name: "Nghe – viết câu", ic: "✍️" },
+        dstory: { name: "Chép chính tả câu truyện", ic: "📖" },
+        tfsent: { name: "Nghe hiểu: Đúng / Sai", ic: "✅" },
+        lchoose: { name: "Nghe hiểu: chọn nghĩa", ic: "🎧" },
     };
     const SRC_NAME = { hsk: "HSK", boya: "Boya", wl: "HSK 3.0", my: "Từ của tôi" };
     const HAN = /[㐀-鿿]/;
@@ -36,7 +39,7 @@
     function cleanMean(m) { return String(m || "").replace(/\s*\/\s*$/, "").trim(); }
 
     // ---------------------------------------------------------------- Trạng thái
-    const DEFAULT = { settings: { types: ["order", "dword", "dsent"], count: 20, rate: 0.9, src: "all", distract: false, showpy: false },
+    const DEFAULT = { settings: { types: ["order", "dword", "dsent"], count: 20, rate: 0.9, src: "all", distract: false, showpy: false, slen: "mid" },
                       items: {}, types: {}, days: {}, games: {} };
     let S = Object.assign({}, DEFAULT, readJSON(STORE, {}));
     S.settings = Object.assign({}, DEFAULT.settings, S.settings || {});
@@ -131,7 +134,94 @@
         return w;
     }
     function pickTop(list, n, keyFn, wordFn) {
-        return list.map(x => ({ x, w: weight(keyFn(x), wordFn(x)) })).sort((a, b) => b.w - a.w).slice(0, n).map(o => o.x);
+        return list.map(x => ({ x, w: weight(keyFn(x), wordFn(x)) + (x.s && x.s.read ? 1.5 : 0) })).sort((a, b) => b.w - a.w).slice(0, n).map(o => o.x);
+    }
+
+    // ---------------------------------------------------------------- Câu truyện (doc_them/doc_sents.js): chép chính tả + nghe hiểu
+    // Câu chứa từ đã học, lấy từ bài Đọc thêm: ưu tiên bài đã đọc; không lấy truyện dài chưa đọc (khỏi lộ tình tiết)
+    const STORY_TYPES = ["dstory", "tfsent", "lchoose"];
+    const SLEN = { short: [6, 14], mid: [8, 22], long: [14, 36] };
+    let storyLoading = null;
+    function ensureStory() {
+        if (window.DOC_SENTS) return Promise.resolve(true);
+        return storyLoading || (storyLoading = new Promise(resolve => {
+            const s = document.createElement("script");
+            s.src = "../doc_them/doc_sents.js";
+            s.onload = () => resolve(!!window.DOC_SENTS);
+            s.onerror = () => { storyLoading = null; resolve(false); };
+            document.head.appendChild(s);
+        }));
+    }
+    function storyCands(pool) {
+        const D = window.DOC_SENTS;
+        if (!D) return [];
+        const rd = (readJSON("doc_them_v1", {}) || {}).read || {}, [lo, hi] = SLEN[S.settings.slen] || SLEN.mid;
+        const seen = new Set(), out = [];
+        pool.forEach(w => {
+            (D.w[w.hz] || []).forEach(i => {
+                const s = D.s[i], t = D.t[s[2]], read = !!(rd[t[0]] && rd[t[0]].done);
+                if (seen.has(s[0]) || (t[2] && !read)) return;
+                const n = s[0].replace(/[^㐀-鿿]/g, "").length;
+                if (n < lo || n > hi) return;
+                seen.add(s[0]);
+                out.push({ zh: s[0], py: "", vi: s[1], word: w, read, story: t[1], url: "../doc_them/doc_them.html?id=" + encodeURIComponent(t[0]) + "&s=" + encodeURIComponent(s[0].slice(0, 14)) });
+            });
+        });
+        return out;
+    }
+    // Nghĩa sai cho câu Đúng/Sai và câu chọn nghĩa: bản dịch của câu khác có cùng từ khóa (phải hiểu cả câu mới loại được)
+    function otherMeanings(s, n) {
+        const D = window.DOC_SENTS, out = [], seen = new Set([s.vi]);
+        const take = list => { for (const i of shuffle(list.slice())) { if (out.length >= n) return; const v = D.s[i][1]; if (v && !seen.has(v) && D.s[i][0] !== s.zh) { seen.add(v); out.push(v); } } };
+        take(D.w[s.word.hz] || []);
+        if (out.length < n) take(Array.from({ length: 60 }, () => Math.floor(Math.random() * D.s.length)));
+        return out;
+    }
+    function renderListen(it) {
+        const s = it.s, tf = it.type === "tfsent";
+        if (!it.state) {
+            const wrong = otherMeanings(s, tf ? 1 : 2);
+            it.state = tf ? { truth: !wrong.length || Math.random() < 0.5 } : { opts: shuffle([s.vi].concat(wrong)) };
+            if (tf) it.state.claim = it.state.truth ? s.vi : wrong[0];
+        }
+        const st = it.state;
+        $("qcard").innerHTML = `
+            <span class="qsrc">📖 ${esc(s.read ? "Truyện đã đọc" : "Đọc thêm")}</span>
+            <div class="qtype">${tf ? "✅ Nghe rồi chọn Đúng hay Sai" : "🎧 Nghe rồi chọn nghĩa đúng"}</div>
+            <div class="listen">
+                <button class="big-play" id="b-play" title="Nghe lại (Ctrl+Space)">🔊</button>
+                <button class="btn btn-sm" id="b-slow" title="Nghe chậm">🐢 Chậm</button>
+                <button class="btn btn-sm" id="b-hint" title="Hiện từ khóa">💡 Từ khóa</button>
+                <div class="clue" id="clue">Nghe xong rồi trả lời, nghe lại bao nhiêu lần cũng được.</div>
+            </div>
+            ${tf ? `<div class="claim"><small>Câu bạn vừa nghe có nghĩa là:</small>“${esc(st.claim)}”</div>
+                <div class="tf-row"><button class="btn tf-btn ok" data-tf="1"><kbd>1</kbd> ✓ Đúng</button><button class="btn tf-btn bad" data-tf="0"><kbd>2</kbd> ✗ Sai</button></div>`
+                : `<div class="lopts">${st.opts.map((o, i) => `<button class="btn lopt" data-lo="${i}"><kbd>${i + 1}</kbd><span>${esc(o)}</span></button>`).join("")}</div>`}
+            <div id="fb"></div>`;
+        const play = rate => speak(s.zh, rate);
+        $("b-play").onclick = () => play();
+        $("b-slow").onclick = () => play(0.55);
+        $("b-hint").onclick = () => { st.hint = true; $("clue").innerHTML = `Từ khóa: <b>${esc(s.word.hz)}</b> <span class="py">${esc(s.word.py)}</span> · ${esc(s.word.mean)}`; };
+        $("qcard").querySelectorAll("[data-tf],[data-lo]").forEach(b => b.onclick = () => listenAnswer(it, b.dataset.tf != null ? b.dataset.tf === "1" : +b.dataset.lo));
+        setTimeout(() => play(), 150);
+    }
+    function listenAnswer(it, pick) {
+        if (answered) return;
+        const s = it.s, st = it.state, tf = it.type === "tfsent";
+        const ok = tf ? pick === st.truth : st.opts[pick] === s.vi;
+        answered = true;
+        $("qcard").querySelectorAll("[data-tf],[data-lo]").forEach(b => {
+            b.disabled = true;
+            const right = tf ? (b.dataset.tf === "1") === st.truth : st.opts[+b.dataset.lo] === s.vi;
+            const mine = tf ? (b.dataset.tf === "1") === pick : +b.dataset.lo === pick;
+            if (right) b.classList.add("is-right"); else if (mine) b.classList.add("is-wrong");
+        });
+        feedback(it, ok && !st.hint, `
+            <div class="verdict">${ok ? (st.hint ? "Đúng (có xem từ khóa)" : "Chính xác!") : "Chưa đúng"}</div>
+            <div class="zh">${esc(s.zh)}</div>
+            <div class="vi">${esc(s.vi)}</div>
+            ${tf && !st.truth ? `<div class="yours">Câu sai vì “${esc(st.claim)}” là nghĩa của một câu khác.</div>` : ""}
+            <div class="story">📖 ${esc(s.story)} · <a href="${esc(s.url)}" target="_blank" rel="noopener">Mở lại đoạn ↗</a></div>`);
     }
 
     // ---------------------------------------------------------------- Tạo phiên
@@ -141,7 +231,12 @@
         const orderCands = sents.filter(s => s.parts.length >= 3 && s.parts.length <= 9);
         const dsentCands = sents.filter(s => { const n = s.zh.replace(/[^㐀-鿿]/g, "").length; return n >= 4 && n <= 14; });
         const dwordCands = Array.from(pool.values()).filter(w => w.hz.length <= 6);
+        const story = types.some(t => STORY_TYPES.includes(t)) ? storyCands(pool) : [];
+        const withVi = story.filter(s => s.vi);
         const cands = {
+            dstory: story.map(s => ({ type: "dstory", key: "t:" + s.zh, s })),
+            tfsent: withVi.map(s => ({ type: "tfsent", key: "t:" + s.zh, s })),
+            lchoose: withVi.map(s => ({ type: "lchoose", key: "t:" + s.zh, s })),
             order: orderCands.map(s => ({ type: "order", key: "s:" + s.zh, s })),
             dsent: dsentCands.map(s => ({ type: "dsent", key: "s:" + s.zh, s })),
             dword: dwordCands.map(w => ({ type: "dword", key: "w:" + w.id, w })),
@@ -185,6 +280,7 @@
             if (st.src !== "all") pool = new Map(Array.from(pool).filter(([, w]) => w.src === st.src));
         }
         if (Array.from(pool.values()).some(w => w.src === "wl")) await ensureWL();
+        if (st.types.some(t => STORY_TYPES.includes(t)) && !(await ensureStory())) toast("Không tải được câu truyện (doc_them/doc_sents.js).");
         return pool;
     }
     async function startSession(opts) {
@@ -193,6 +289,7 @@
         const pool = await currentPool();
         if (!pool.size) { toast("Chưa có từ đã học ở nguồn này. Hãy chọn \"Luyện tự do\" hoặc học vài bài trước."); return; }
         const types = opts.types || st.types;
+        if (types.some(t => STORY_TYPES.includes(t))) await ensureStory();
         if (!types.length) { toast("Hãy chọn ít nhất một dạng bài."); return; }
         const items = buildItems(pool, opts.count || st.count, types, opts.onlyKeys);
         if (!items.length) { toast(opts.onlyKeys ? "Không còn câu sai nào để luyện." : "Chưa đủ câu cho các dạng bài đã chọn. Thử chọn thêm dạng bài hoặc nguồn khác."); return; }
@@ -228,6 +325,7 @@
         $("prog-bar").style.width = (session.i / total * 100) + "%";
         $("prog-text").textContent = (session.i + 1) + "/" + total;
         if (it.type === "order") renderOrder(it);
+        else if (it.type === "tfsent" || it.type === "lchoose") renderListen(it);
         else renderDict(it);
     }
     function srcLabel(it) {
@@ -324,14 +422,14 @@
 
     // ----- Nghe – viết
     function renderDict(it) {
-        const isWord = it.type === "dword";
+        const isWord = it.type === "dword", isStory = it.type === "dstory";
         const target = isWord ? it.w.hz : it.s.zh;
         const py = isWord ? it.w.py : it.s.py;
         const meaning = isWord ? it.w.mean : it.s.vi;
         it.state = { target, py, meaning, hints: 0 };
         $("qcard").innerHTML = `
-            <span class="qsrc">${esc(isWord ? (SRC_NAME[it.w.src] || "") : srcLabel(it).split(" · ")[0])}</span>
-            <div class="qtype">${isWord ? "🎧 Nghe và gõ từ" : "✍️ Nghe và gõ lại cả câu"}</div>
+            <span class="qsrc">${esc(isStory ? "📖 " + (it.s.read ? "Truyện đã đọc" : "Đọc thêm") : isWord ? (SRC_NAME[it.w.src] || "") : srcLabel(it).split(" · ")[0])}</span>
+            <div class="qtype">${isWord ? "🎧 Nghe và gõ từ" : isStory ? "📖 Chép chính tả câu truyện" : "✍️ Nghe và gõ lại cả câu"}</div>
             <div class="listen">
                 <button class="big-play" id="b-play" title="Nghe lại (Ctrl+Space)">🔊</button>
                 <button class="btn btn-sm" id="b-slow" title="Nghe chậm">🐢 Chậm</button>
@@ -364,8 +462,9 @@
         const isWord = it.type === "dword";
         const n = st.target.replace(/[^㐀-鿿]/g, "").length;
         let html = `<b>${n}</b> chữ`;
-        if (st.hints >= 1) html += ` · nghĩa: <b>${esc(st.meaning)}</b>`;
-        if (st.hints >= 2 || S.settings.showpy) html += ` · <span class="py">${esc(st.py)}</span>`;
+        if (st.hints >= 1 && st.meaning) html += ` · nghĩa: <b>${esc(st.meaning)}</b>`;
+        if (it.type === "dstory") { if (st.hints >= 2 || (st.hints >= 1 && !st.meaning)) html += ` · từ khóa: <b>${esc(it.s.word.hz)}</b> <span class="py">${esc(it.s.word.py)}</span>`; }
+        else if (st.hints >= 2 || S.settings.showpy) html += ` · <span class="py">${esc(st.py)}</span>`;
         if (!isWord && st.hints === 0) html += " · bấm 🔊 để nghe lại";
         $("clue").innerHTML = html;
     }
@@ -408,6 +507,7 @@
             <div class="py">${esc(st.py)}</div>
             <div class="vi">${esc(st.meaning)}</div>
             ${!exact && !skip ? `<div class="yours">Bạn gõ: <span>${esc(mine)}</span></div>` : ""}
+            ${it.type === "dstory" ? `<div class="story">📖 ${esc(it.s.story)} · <a href="${esc(it.s.url)}" target="_blank" rel="noopener">Mở lại đoạn ↗</a></div>` : ""}
 `,
             !exact && !skip);
         speak(st.target);
@@ -523,6 +623,7 @@
         setSeg("opt-rate", S.settings.rate);
         $("opt-distract").checked = !!S.settings.distract;
         $("opt-showpy").checked = !!S.settings.showpy;
+        $("opt-slen").value = S.settings.slen;
         // thống kê
         $("stats").innerHTML = Object.keys(TYPES).map(k => {
             const ty = S.types[k] || { n: 0, ok: 0 };
@@ -633,6 +734,9 @@
     $("opt-rate").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; S.settings.rate = +b.dataset.v; setSeg("opt-rate", S.settings.rate); save(); speak("你好，我们开始练习吧。"); });
     $("opt-distract").addEventListener("change", e => { S.settings.distract = e.target.checked; save(); });
     $("opt-showpy").addEventListener("change", e => { S.settings.showpy = e.target.checked; save(); });
+    $("opt-slen").addEventListener("change", e => { S.settings.slen = e.target.value; save(); });
+    // Phiên chỉ luyện nghe: ba dạng câu truyện, không đổi lựa chọn dạng bài đã lưu
+    $("btn-listen").onclick = () => startSession({ types: STORY_TYPES });
     $("btn-start").onclick = () => startSession();
     $("games-grid").addEventListener("click", e => { const b = e.target.closest("[data-game]"); if (b) openGame(b.dataset.game); });
     $("btn-game-quit").onclick = () => show("home");
@@ -652,7 +756,13 @@
         if (!session || $("session").hidden) return;
         const it = session.items[session.i];
         const inInput = e.target && e.target.tagName === "INPUT";
-        if (e.key === " " && e.ctrlKey && it.type !== "order") { e.preventDefault(); speak(it.state.target); return; }
+        if (e.key === " " && e.ctrlKey && it.type !== "order") { e.preventDefault(); speak(it.state.target || it.s.zh); return; }
+        if ((it.type === "tfsent" || it.type === "lchoose") && !answered && !inInput && /^[1-3]$/.test(e.key)) {
+            e.preventDefault();
+            if (it.type === "tfsent") { if (e.key !== "3") listenAnswer(it, e.key === "1"); }
+            else if (+e.key <= it.state.opts.length) listenAnswer(it, +e.key - 1);
+            return;
+        }
         if (e.key === "Enter" && !e.isComposing && e.keyCode !== 229) {
             if (inInput) return;                        // ô nhập tự xử lý Enter
             if (e.target && e.target.tagName === "BUTTON" && e.target.id !== "b-next") return;
@@ -676,5 +786,5 @@
     show("home");
     writeSummary();
     // test tự động có thể dùng
-    window.__LT = { buildPool, sentencesFor, buildItems, startSession, openGame, gameList, state: () => S, session: () => session };
+    window.__LT = { buildPool, sentencesFor, buildItems, storyCands, ensureStory, startSession, openGame, gameList, state: () => S, session: () => session };
 })();

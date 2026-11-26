@@ -82,7 +82,7 @@
     <!-- ================= Trình đọc ================= -->
     <main class="reader-wrap" id="reader-view" hidden>
         <div class="toolbar" id="toolbar" role="toolbar" aria-label="Công cụ đọc">
-            <button class="tb" id="tb-py" title="Bật/tắt pinyin"><b class="cn">拼</b> <span>Pinyin</span></button>
+            <button class="tb" id="tb-py" title="Pinyin: tất cả / chỉ trên từ chưa học / tắt"><b class="cn">拼</b> <span id="tb-py-label">Pinyin</span></button>
             <button class="tb" id="tb-smaller" title="Chữ nhỏ hơn">A−</button>
             <button class="tb" id="tb-bigger" title="Chữ lớn hơn">A+</button>
             <button class="tb" id="tb-new" title="Tô các chữ thuộc từ chưa học">🖍 <span>Từ mới</span></button>
@@ -151,6 +151,7 @@
 
     <script src="../shared/progress.js"></script>
     <script src="../shared/mywords.js"></script>
+    <script src="../shared/lookups.js"></script>
     <script src="../shared/sentences.js"></script>
     <script src="../shared/notes.js"></script>
     <script src="../shared/zizu.js"></script>

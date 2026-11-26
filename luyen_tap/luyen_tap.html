@@ -17,7 +17,7 @@
     <header class="topbar">
         <div class="topbar-inner">
             <a class="back" href="../index.html" title="Về trang chủ">←</a>
-            <div class="brand"><strong>Luyện tập</strong><small>Sắp xếp câu · Nghe – viết · Trò chơi</small></div>
+            <div class="brand"><strong>Luyện tập</strong><small>Sắp xếp câu · Nghe – viết · Nghe hiểu · Trò chơi</small></div>
             <button class="account-btn" data-hoc-account type="button">Đăng nhập</button>
             <button class="ui-voice-btn" data-hoc-voice title="Giọng đọc (chọn giọng, luân phiên, đọc nhập vai)" aria-label="Giọng đọc">🔊</button>
             <button class="ui-theme-toggle" data-ui-theme-toggle title="Đổi giao diện sáng / tối" aria-label="Đổi giao diện sáng / tối"></button>
@@ -48,6 +48,13 @@
                         <span><b>🎧 Nghe – viết từ</b><small>Nghe phát âm, gõ chữ Hán của từ.</small></span></label>
                     <label class="opt"><input type="checkbox" data-type="dsent" checked>
                         <span><b>✍️ Nghe – viết câu</b><small>Nghe một câu ngắn, gõ lại cả câu bằng chữ Hán.</small></span></label>
+                    <h3 class="sub-h">Nghe với câu truyện <small>(câu có từ bạn đã học, lấy từ Đọc thêm)</small></h3>
+                    <label class="opt"><input type="checkbox" data-type="dstory">
+                        <span><b>📖 Chép chính tả câu truyện</b><small>Nghe một câu trong truyện, gõ lại bằng chữ Hán; chấm từng chữ.</small></span></label>
+                    <label class="opt"><input type="checkbox" data-type="tfsent">
+                        <span><b>✅ Nghe hiểu: Đúng / Sai</b><small>Nghe câu (không hiện chữ), cho biết câu dịch có đúng nghĩa không.</small></span></label>
+                    <label class="opt"><input type="checkbox" data-type="lchoose">
+                        <span><b>🎧 Nghe hiểu: chọn nghĩa</b><small>Nghe câu, chọn nghĩa đúng trong 3 câu dịch.</small></span></label>
                     <p class="hint">Gõ chữ Hán bằng bộ gõ tiếng Trung của máy (Windows: thêm ngôn ngữ Tiếng Trung giản thể – Microsoft Pinyin; điện thoại: bàn phím Pinyin).</p>
                 </div>
 
@@ -82,12 +89,21 @@
                         </div>
                     </div>
                     <label class="check"><input type="checkbox" id="opt-distract"> Sắp xếp câu: thêm 2 mảnh gây nhiễu (khó hơn)</label>
+                    <div class="field">
+                        <span>Độ dài câu truyện</span>
+                        <select id="opt-slen">
+                            <option value="short">Ngắn (6–14 chữ)</option>
+                            <option value="mid">Vừa (8–22 chữ)</option>
+                            <option value="long">Dài (14–36 chữ)</option>
+                        </select>
+                    </div>
                     <label class="check"><input type="checkbox" id="opt-showpy"> Nghe – viết: hiện pinyin làm gợi ý ngay từ đầu</label>
                 </div>
             </div>
 
             <div class="actions">
                 <button class="btn btn-primary btn-lg" id="btn-start">▶ Bắt đầu luyện</button>
+                <button class="btn btn-lg" id="btn-listen" title="Chép chính tả + nghe hiểu với câu truyện">🎧 Chỉ luyện nghe</button>
                 <button class="btn" id="btn-wrong" hidden>🔁 Luyện câu hay sai (<span id="wrong-n">0</span>)</button>
             </div>
 
