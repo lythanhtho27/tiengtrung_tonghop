@@ -28,7 +28,7 @@ word_learning/        Giáo trình HSK 3.0 (词汇速记速练手册)
   word_learning.html/.css/.js, hsk_book_data.js, json_data/quyen_*.js(.json)
 hsk_lotrinh/          Lộ trình từ vựng HSK 1–6 (SRS, đọc nhanh)
   hsk_lotrinh.html/.css/.js, hsk_vocab_data.js
-doc_them/             Đọc thêm: 333 bài (truyện dài, bài đọc, hội thoại, thành ngữ) + 14 đề luyện đọc HSK, bài tự dán, đọc lại bài khóa Boya
+doc_them/             Đọc thêm: 363 bài (truyện dài, bài đọc, hội thoại, thành ngữ) + 14 đề luyện đọc HSK, bài tự dán, đọc lại bài khóa Boya
   doc_them.html/.css/.js, doc_data.js (sinh tự động)
   comic_art.js (chế độ Truyện tranh: khung tranh + bong bóng thoại), comic_data.js (sinh tự động), comics/<series>/*.webp
 thong_ke/             Thống kê & dự báo (chỉ đọc localStorage của mọi trang): tổng quan, dự báo ôn 7/30 ngày, theo tuần, theo cấp, heatmap, tốc độ, từ hay quên
@@ -46,8 +46,8 @@ tools/                Script sinh dữ liệu + dữ liệu nguồn
   add_hanviet_wl.py, build_dict.py, build_luyen_tap.py, build_doc_them.py, build_visual.py
   fetch_vocab_img.py, vocab_img_meta.json (nguồn từng ảnh), vocab_img_blocklist.txt (từ không lấy ảnh)
   hanzi_parts/        Nguồn tách bộ: dictionary.txt (Make Me a Hanzi, LGPL, tự tải, không commit), unihan_vi.tsv (âm Việt dự phòng từ Unihan)
-  doc_them_src/       Nguồn tài liệu đọc (sáng tác mới): hsk*.json, more_hsk*.json, series_s1..s5.json, series_s6_a/b/c.json, series_s7_a/b/c.json, series_s8_a/b/c.json, series_s9_a/b/c.json, series_s10_a/b/c.json, series_s11_a/b/c.json, series_s12_a/b/c.json, furry_hsk4/5.json, dialogues.json, chengyu_a/b.json, exam_hsk4/5.json
-                      + BRIEF.md, BRIEF_MORE.md (quy cách viết từng loại), BRIEF_S6.md … BRIEF_S12.md (dàn ý bộ truyện s6–s12), BRIEF_FURRY.md (truyện ngắn furry) + vocab_hskN.txt
+  doc_them_src/       Nguồn tài liệu đọc (sáng tác mới): hsk*.json, more_hsk*.json, series_s1..s5.json, series_s6_a/b/c.json, series_s7_a/b/c.json, series_s8_a/b/c.json, series_s9_a/b/c.json, series_s10_a/b/c.json, series_s11_a/b/c.json, series_s12_a/b/c.json, series_s13_a/b/c.json, series_s14_a/b/c.json, furry_hsk4/5.json, furry_hsk4b/5b.json, dialogues.json, chengyu_a/b.json, exam_hsk4/5.json
+                      + BRIEF.md, BRIEF_MORE.md (quy cách viết từng loại), BRIEF_S6.md … BRIEF_S14.md (dàn ý bộ truyện s6–s14), BRIEF_FURRY.md (truyện ngắn furry) + vocab_hskN.txt
   comics/             Truyện tranh: characters.json, panels_<series>.json (kịch bản + người nói), gen_comics.py (Qwen-Image qua ComfyUI/diffusers), build_comics.py → doc_them/comic_data.js; xem README.md
   scratch/            Script xử lý một lần (OCR, kiểm tra, sửa dữ liệu), chỉ để tham khảo
 ```
@@ -172,7 +172,7 @@ Không sửa tay các file dữ liệu sinh tự động. Sửa nguồn rồi ch
 | `tuvung/vocab_data.js` / `.json` | `sach_boya/tc1.html` … `tc4.html` | `python tools/extract_vocab.py` ⚠️ Bản `vocab_data` hiện tại có vài chỗ đã được sửa tay (ví dụ câu ví dụ "精神～"). Chạy lại script sẽ mất các chỗ sửa đó, nên kiểm tra `git diff` trước khi giữ. |
 | Âm Hán Việt: cột 8 của `hsk_vocab_data.js`, trường `han_viet` của `word_learning/json_data/quyen_*` | `tools/hanviet/hv_*.tsv` + `overrides.tsv` (sửa âm sai ở `overrides.tsv`) | `extract_hsk_vocab.py` tự điền khi Excel không có `[..]`. Với HSK 3.0 chạy `python tools/add_hanviet_wl.py` (ghi cả `.json` lẫn `.js`, giữ định dạng; dùng `--force` để ghi đè). |
 | `shared/dict_vi.js` | dữ liệu 3 trang + `tools/hanviet/` | `python tools/build_dict.py` (chạy sau khi đổi dữ liệu hoặc âm Hán Việt) |
-| `doc_them/doc_data.js` (~3MB), `doc_them/doc_index.js` (~340KB: mục lục, mỗi bài có danh sách từ `w`, `hom_nay` dùng để gợi ý bài vừa sức) và `doc_them/doc_sents.js` (~1,9MB: 9.355 câu ví dụ cho 5.131 từ, 98% có bản dịch từng câu, `hom_nay` dùng khi ôn) | mọi `tools/doc_them_src/*.json` (`exam*.json` là đề luyện thi) | `python tools/build_doc_them.py` (cần `pypinyin`, `jieba`). Script tự tính pinyin từng chữ và danh sách "từ ngoài cấp" (so với HSK 2.0 cộng HSK 3.0 cùng cấp; cụm tách nhầm cho vào `SPLIT_ARTIFACTS`). |
+| `doc_them/doc_data.js` (~3MB), `doc_them/doc_index.js` (~340KB: mục lục, mỗi bài có danh sách từ `w`, `hom_nay` dùng để gợi ý bài vừa sức) và `doc_them/doc_sents.js` (~2MB: 10.254 câu ví dụ cho 5.262 từ, 98% có bản dịch từng câu, `hom_nay` dùng khi ôn) | mọi `tools/doc_them_src/*.json` (`exam*.json` là đề luyện thi) | `python tools/build_doc_them.py` (cần `pypinyin`, `jieba`). Script tự tính pinyin từng chữ và danh sách "từ ngoài cấp" (so với HSK 2.0 cộng HSK 3.0 cùng cấp; cụm tách nhầm cho vào `SPLIT_ARTIFACTS`). |
 | `shared/hanzi_parts.js` (~170KB: tách bộ của khoảng 3.300 chữ trong `HOC_DICT`) | `tools/hanzi_parts/dictionary.txt` (Make Me a Hanzi, tự tải nếu thiếu) + `tools/hanviet/` + `tools/hanzi_parts/unihan_vi.tsv` + bảng `RADICALS` (tên bộ thủ biến thể) trong script | `python tools/build_visual.py` (chạy sau `build_dict.py` khi thêm chữ mới) |
 | `shared/vocab_img/*.webp`, `shared/vocab_img_map.js`, trang duyệt `tools/scratch/review_vocab_img.html` | Wikipedia / Wikimedia Commons (cần mạng và `Pillow`) | `python tools/fetch_vocab_img.py --levels 1,2,3` (hoặc `--source boya`, `--words …`); bỏ ảnh sai: `--block từ1,từ2` (xóa ảnh và ghi vào blocklist để không tải lại). ⚠️ Không tải thêm ảnh cho từ trừu tượng (đợt Wikidata HSK 4–6 có 46% ảnh sai/kém). Script tra theo mặt chữ nên hay sai nghĩa (大方 → huyện Đại Phương) hoặc lấy nhầm ảnh khung chủ đề chung của nhiều bài: **phải duyệt bằng mắt mọi ảnh mới tải**. `vocab_img_meta.json` chưa có tác giả/giấy phép ảnh. |
 | `luyen_tap/lt_data.js`, `lt_data_wl.js` | `hsk_lotrinh/hsk_vocab_data.js` (câu ví dụ), `boya_learning/boya_data.json` (từ + câu ví dụ ngữ pháp), `word_learning/json_data/quyen_*.json` (câu ví dụ) | `python tools/build_luyen_tap.py` (cần `pypinyin`, `jieba`). Chạy lại sau khi đổi dữ liệu ở các trang kia. |
@@ -232,9 +232,9 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
 
 ## Đọc thêm (`doc_them/`)
 
-- **Nội dung** (sáng tác mới; quy cách trong `BRIEF.md` và `BRIEF_MORE.md`): 333 bài, khoảng 245.000 chữ Hán.
-  - 105 bài đọc (`kind:"article"`): HSK 1–2 mỗi cấp 5 bài, HSK 3: 15, HSK 4: 35, HSK 5: 30, HSK 6: 15. Phần lớn là truyện ngắn, vì người dùng thích truyện; trong đó 10 truyện ngắn furry độc lập (`f4-01..05`, `f5-01..05`, quy cách ở `BRIEF_FURRY.md`).
-  - 12 bộ truyện dài, 148 chương (`kind:"series"`, có các trường `series`, `series_title(_vi)`, `chapter`):
+- **Nội dung** (sáng tác mới; quy cách trong `BRIEF.md` và `BRIEF_MORE.md`): 363 bài, khoảng 274.000 chữ Hán.
+  - 111 bài đọc (`kind:"article"`): HSK 1–2 mỗi cấp 5 bài, HSK 3: 15, HSK 4: 38, HSK 5: 33, HSK 6: 15. Phần lớn là truyện ngắn, vì người dùng thích truyện; trong đó 16 truyện ngắn furry độc lập (`f4-01..08`, `f5-01..08`; 06–08 ở `furry_hsk4b/5b.json`; quy cách ở `BRIEF_FURRY.md`).
+  - 14 bộ truyện dài, 172 chương (`kind:"series"`, có các trường `series`, `series_title(_vi)`, `chapter`):
     - s1 一碗汤的距离 (HSK 4, 12 chương);
     - s2 十一点的钟声, trinh thám (HSK 5, 15 chương);
     - s3 等一盏灯, tình cảm đô thị (HSK 4→5, 15 chương);
@@ -246,7 +246,9 @@ Trên Windows, khi in tiếng Việt / chữ Hán ra console thì đặt `PYTHON
     - s9 消失的夜莺, vụ án thứ hai của thám tử 夜白 (HSK 5, 12 chương, `BRIEF_S9.md`);
     - s10 十年后的情书, vụ án thứ ba của 夜白, trinh thám + tình cảm (夜白×白霜, 阿栗×刺刺) (HSK 4, 12 chương, `BRIEF_S10.md`);
     - s11 北极星号上的戒指, vụ án thứ tư của 夜白: trộm nhẫn trên tàu đêm bị kẹt tuyết, 夜白 ra mắt gia đình 白霜 (HSK 4, 12 chương, `BRIEF_S11.md`);
-    - s12 潮汐书店, furry bí ẩn + tình cảm, nhân vật mới ở thị trấn biển 蓝湾镇 (HSK 5, 12 chương, `BRIEF_S12.md`).
+    - s12 潮汐书店, furry bí ẩn + tình cảm, nhân vật mới ở thị trấn biển 蓝湾镇 (HSK 5, 12 chương, `BRIEF_S12.md`);
+    - s13 雾山旅馆的幽灵, vụ án thứ năm của 夜白: "bóng ma" ở lữ quán 云栖旅馆 làng 雾山村, 夜白 cầu hôn 白霜 trên cầu 千灯桥 (HSK 5, 12 chương, `BRIEF_S13.md`);
+    - s14 山城夜市的纸鹤, furry tình cảm + bí ẩn nhẹ, nhân vật mới ở chợ đêm thành phố núi 山城 (朵朵 × 熊石) (HSK 4, 12 chương, `BRIEF_S14.md`).
   - Người dùng thích nhất truyện furry trinh thám + tình cảm: viết thêm thì ưu tiên thể loại này. Bộ truyện được sắp theo số (`s10` sau `s9`) trong `build_doc_them.py`.
   - 30 hội thoại (`kind:"dialogue"`): mỗi đoạn có dạng "Tên：lời", kèm `speakers`, `scene_vi`.
   - 50 thành ngữ (`kind:"chengyu"`, có `idiom{hz,py,hv,meaning,usage,examples}`).
